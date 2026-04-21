@@ -11,6 +11,7 @@ from typing import Any
 from uuid import uuid4
 
 import httpx
+from fastapi import BackgroundTasks
 from fastapi import HTTPException
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -426,6 +427,32 @@ async def _persist_usage_event_to_supabase(
         )
 
 
+async def _persist_usage_event_background(
+    *,
+    request: Request,
+    settings: Settings,
+    bearer_token: str | None,
+    user: AuthenticatedUser | None,
+    request_id: str,
+    request_body: dict[str, Any],
+    response_payload: dict[str, Any] | None,
+    status_code: int,
+) -> None:
+    try:
+        await _persist_usage_event_to_supabase(
+            request=request,
+            settings=settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=request_body,
+            response_payload=response_payload,
+            status_code=status_code,
+        )
+    except Exception:
+        logger.exception("Failed to persist Supabase usage event for request %s", request_id)
+
+
 def _write_usage_log(
     *,
     settings: Settings,
@@ -610,6 +637,7 @@ async def set_dev_plan_override(
 async def proxy_anthropic_messages(
     payload: MessagePayload,
     request: Request,
+    background_tasks: BackgroundTasks,
 ) -> JSONResponse:
     active_settings = _get_runtime_settings(request)
     request_id = str(uuid4())
@@ -735,6 +763,7 @@ async def proxy_anthropic_messages(
             active_settings.anthropic_api_url,
             headers=upstream_headers,
             json=body,
+            timeout=httpx.Timeout(active_settings.anthropic_timeout_seconds, connect=10.0),
         )
     except httpx.TimeoutException:
         return JSONResponse(
@@ -785,19 +814,17 @@ async def proxy_anthropic_messages(
     except Exception:
         logger.exception("Failed to write local usage log for request %s", request_id)
 
-    try:
-        await _persist_usage_event_to_supabase(
-            request=request,
-            settings=active_settings,
-            bearer_token=bearer_token,
-            user=user,
-            request_id=request_id,
-            request_body=body,
-            response_payload=response_payload,
-            status_code=upstream_response.status_code,
-        )
-    except Exception:
-        logger.exception("Failed to persist Supabase usage event for request %s", request_id)
+    background_tasks.add_task(
+        _persist_usage_event_background,
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        request_id=request_id,
+        request_body=body,
+        response_payload=response_payload,
+        status_code=upstream_response.status_code,
+    )
 
     if user:
         usage_cache = getattr(request.app.state, "usage_cache", None)
@@ -825,6 +852,7 @@ async def proxy_anthropic_messages(
         status_code=upstream_response.status_code,
         headers=passthrough_headers,
         content=response_payload,
+        background=background_tasks,
     )
 
 

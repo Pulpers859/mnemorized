@@ -12,6 +12,8 @@ services:
         sync: false
       - key: ANTHROPIC_API_KEY
         sync: false
+      - key: ANTHROPIC_TIMEOUT_SECONDS
+        value: "180"
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_ANON_KEY

@@ -34,6 +34,7 @@ class Settings:
     app_base_url: str
     anthropic_api_key: str
     anthropic_api_url: str
+    anthropic_timeout_seconds: float
     cors_origins: tuple[str, ...]
     rate_limit_requests: int
     rate_limit_window_seconds: int
@@ -104,6 +105,7 @@ def get_settings() -> Settings:
             "ANTHROPIC_API_URL",
             "https://api.anthropic.com/v1/messages",
         ).strip(),
+        anthropic_timeout_seconds=float(os.getenv("ANTHROPIC_TIMEOUT_SECONDS", "180")),
         cors_origins=_split_csv(os.getenv("CORS_ORIGINS", "*")),
         rate_limit_requests=int(os.getenv("RATE_LIMIT_REQUESTS", "20")),
         rate_limit_window_seconds=int(os.getenv("RATE_LIMIT_WINDOW_SECONDS", "60")),
