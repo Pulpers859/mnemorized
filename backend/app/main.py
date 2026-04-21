@@ -973,17 +973,24 @@ async def generate_image(
 
             if resp.status_code != 200:
                 error_detail = resp.text[:500]
+                upstream_error_message = None
+                try:
+                    error_payload = resp.json()
+                    upstream_error_message = error_payload.get("error", {}).get("message")
+                except ValueError:
+                    error_payload = None
                 logger.warning(
                     "Gemini API error for request %s prompt %d: %s %s",
                     request_id, idx + 1, resp.status_code, error_detail,
                 )
                 return JSONResponse(
-                    status_code=502,
+                    status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
                     headers={"X-Request-ID": request_id},
                     content={
                         "error": {
                             "type": "upstream_error",
-                            "message": (
+                            "message": upstream_error_message
+                            or (
                                 f"Gemini returned {resp.status_code} for prompt {idx + 1} "
                                 f"using model {model}."
                             ),
