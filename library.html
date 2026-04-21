@@ -461,6 +461,11 @@ function getApiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
 }
 
+function getForgeRedirectUrl() {
+  const baseUrl = (appConfig.appBaseUrl || window.location.origin || '').replace(/\/+$/, '');
+  return `${baseUrl}/forge`;
+}
+
 function withTimeout(promise, ms, label) {
   let timeoutId;
   const normalizedPromise = Promise.resolve(promise);
@@ -761,7 +766,13 @@ async function signUpWithPassword() {
   try {
     const { data, error } = await runSupabaseQuery(
       'sign up',
-      supabaseClient.auth.signUp({ email, password })
+      supabaseClient.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: getForgeRedirectUrl()
+        }
+      })
     );
     if (error) {
       setAuthStatus(error.message, 'error');

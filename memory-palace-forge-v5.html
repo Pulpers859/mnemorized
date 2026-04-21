@@ -1387,6 +1387,11 @@ function getBackendBaseLabel() {
   return API_BASE || window.location.origin;
 }
 
+function getForgeRedirectUrl() {
+  const baseUrl = (appConfig.appBaseUrl || window.location.origin || '').replace(/\/+$/, '');
+  return `${baseUrl}/forge`;
+}
+
 function syncConnectionModal(detail) {
   document.getElementById('backend-endpoint-label').textContent = getBackendBaseLabel();
   if (detail) document.getElementById('backend-health-detail').textContent = detail;
@@ -1528,7 +1533,8 @@ refreshBackendStatus();
 const appConfig = {
   authEnabled: false,
   supabaseUrl: '',
-  supabaseAnonKey: ''
+  supabaseAnonKey: '',
+  appBaseUrl: ''
 };
 
 let supabaseClient = null;
@@ -2130,7 +2136,13 @@ async function signUpWithPassword() {
   try {
     const { data, error } = await runSupabaseQuery(
       'sign up',
-      supabaseClient.auth.signUp({ email, password })
+      supabaseClient.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: getForgeRedirectUrl()
+        }
+      })
     );
     if (error) {
       setAuthModalStatus(error.message, 'error');
@@ -2179,6 +2191,7 @@ async function loadAuthSystem() {
     appConfig.authEnabled = !!config.auth_enabled;
     appConfig.supabaseUrl = config.supabase_url || '';
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
+    appConfig.appBaseUrl = config.app_base_url || window.location.origin;
 
     if (!appConfig.authEnabled) {
       refreshAuthUI();
