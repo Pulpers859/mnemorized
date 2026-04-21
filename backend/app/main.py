@@ -983,7 +983,10 @@ async def generate_image(
                     content={
                         "error": {
                             "type": "upstream_error",
-                            "message": f"Gemini returned {resp.status_code} for prompt {idx + 1}.",
+                            "message": (
+                                f"Gemini returned {resp.status_code} for prompt {idx + 1} "
+                                f"using model {model}."
+                            ),
                             "detail": error_detail,
                         }
                     },

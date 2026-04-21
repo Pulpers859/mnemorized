@@ -119,6 +119,6 @@ def get_settings() -> Settings:
         pro_monthly_requests=int(os.getenv("PRO_MONTHLY_REQUESTS", "400")),
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
         gemini_api_key=os.getenv("GEMINI_API_KEY", "").strip(),
-        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash-exp").strip(),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
     )
