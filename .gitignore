@@ -1,0 +1,16 @@
+backend/.env
+backend/logs/
+backend/dev_data/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+*.afdesign
+projects/

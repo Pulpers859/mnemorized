@@ -1,0 +1,3254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c8f135">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mnemorized">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="Profile_pic.png">
+<title>Mnemorized — Memory Palace Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:   #080a0e;
+  --ink:     #0f1218;
+  --card:    #13171f;
+  --border:  rgba(255,255,255,.07);
+  --white:   #f0ede6;
+  --muted:   #7a7f8a;
+  --acid:    #c8f135;
+  --acid2:   #a8e020;
+  --acid-dim: rgba(200,241,53,.15);
+  --acid-glow: rgba(200,241,53,.08);
+  --red:     #ff3d3d;
+  --blue:    #3d9eff;
+  --gold:    #f5c842;
+  --green:   #4ade80;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Noise overlay — matches landing page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+  opacity: .4;
+}
+
+/* Subtle glow */
+body::after {
+  content: '';
+  position: fixed;
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(200,241,53,.04) 0%, transparent 70%);
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,10,14,.88);
+  backdrop-filter: blur(12px);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: .08em;
+  color: var(--acid);
+}
+.nav-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* ── WRAP ── */
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 100px 24px 120px;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  animation: fadeUp .6s ease both;
+}
+.header-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--acid-glow);
+  border: 1px solid rgba(200,241,53,.2);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 24px;
+}
+.header-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--acid);
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .2; }
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(42px, 7vw, 72px);
+  line-height: .95;
+  letter-spacing: .02em;
+  margin-bottom: 16px;
+}
+h1 .accent { color: var(--acid); }
+.subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 44px 0 36px;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200,241,53,.25), transparent);
+}
+.divider-gem {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--acid);
+  opacity: .5;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-bottom: 28px;
+  animation: fadeUp .5s ease both;
+}
+.section:nth-child(1){animation-delay:.05s}
+.section:nth-child(2){animation-delay:.1s}
+.section:nth-child(3){animation-delay:.15s}
+.section:nth-child(4){animation-delay:.2s}
+.section:nth-child(5){animation-delay:.25s}
+.section:nth-child(6){animation-delay:.3s}
+.section:nth-child(7){animation-delay:.35s}
+.section:nth-child(8){animation-delay:.4s}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 8px;
+}
+.section-hint {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+/* ── STANDARD INPUT ── */
+.input-field {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  resize: vertical;
+}
+.input-field::placeholder { color: rgba(122,127,138,.5); }
+.input-field:focus { border-color: rgba(200,241,53,.35); box-shadow: 0 0 0 3px rgba(200,241,53,.06); }
+
+/* ── DROPDOWN SELECT ── */
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: '▾';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--acid);
+  font-size: 13px;
+  pointer-events: none;
+}
+.fancy-select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  padding: 12px 38px 12px 16px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s;
+}
+.fancy-select:focus { border-color: rgba(200,241,53,.35); box-shadow: 0 0 0 3px rgba(200,241,53,.06); }
+.fancy-select option { background: var(--ink); color: var(--white); font-size: 14px; padding: 6px; }
+.fancy-select optgroup { background: var(--black); color: var(--acid); font-style: normal; font-size: 12px; letter-spacing: .06em; }
+
+.custom-field { margin-top: 10px; display: none; }
+
+/* ── TOGGLE ── */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--acid-glow);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+.toggle-label { flex: 1; font-size: 15px; color: var(--white); }
+.toggle-sublabel { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.toggle-switch { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
+.toggle-switch input { opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: absolute; inset: 0;
+  background: rgba(200,241,53,.1);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background .2s;
+}
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  background: var(--muted);
+  border-radius: 50%;
+  top: 3px; left: 3px;
+  transition: transform .2s, background .2s;
+}
+.toggle-switch input:checked + .toggle-track { background: rgba(200,241,53,.2); border-color: var(--acid); }
+.toggle-switch input:checked + .toggle-track::after { transform: translateX(20px); background: var(--acid); }
+
+/* ── CHIP GRID ── */
+.chip-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .18s ease;
+  user-select: none;
+}
+.chip:hover { border-color: rgba(200,241,53,.3); color: var(--white); background: rgba(200,241,53,.04); }
+.chip.active {
+  border-color: var(--acid);
+  background: rgba(200,241,53,.1);
+  color: var(--acid);
+  box-shadow: 0 0 12px rgba(200,241,53,.08);
+}
+
+/* ── SLIDER ── */
+.slider-row { display: flex; align-items: center; gap: 14px; }
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, var(--acid) var(--pct, 66%), rgba(200,241,53,.12) var(--pct, 66%));
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  background: var(--acid);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(200,241,53,.35);
+  transition: transform .15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.slider-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--muted); }
+.slider-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--acid);
+  min-width: 28px;
+  text-align: right;
+}
+
+/* ── FORGE BUTTON ── */
+.btn-forge {
+  width: 100%;
+  margin-top: 40px;
+  padding: 18px;
+  background: var(--acid);
+  border: none;
+  border-radius: 8px;
+  color: var(--black);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: .1em;
+  cursor: pointer;
+  transition: all .25s ease;
+  font-weight: 700;
+}
+.btn-forge:hover { background: var(--acid2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,241,53,.15); }
+.btn-forge:active { transform: translateY(0); }
+.btn-forge:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; background: var(--muted); }
+.spin {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(8,10,14,.2);
+  border-top-color: var(--black);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── PIPELINE ── */
+.pipeline { margin-top: 48px; display: none; flex-direction: column; }
+.pipeline.visible { display: flex; }
+
+.stage {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  animation: fadeUp .4s ease both;
+  background: var(--card);
+}
+.stage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: rgba(200,241,53,.03);
+  border-bottom: 1px solid var(--border);
+}
+.stage-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  color: rgba(200,241,53,.3);
+}
+.stage-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--acid);
+  flex: 1;
+}
+.stage-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  transition: color .3s;
+}
+.stage-status.running { color: var(--acid); }
+.stage-status.done { color: var(--green); }
+.stage-status.error { color: var(--red); }
+
+.stage-body { padding: 22px 24px; }
+
+/* Story */
+.story-scene-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(18px, 3vw, 28px);
+  color: var(--acid);
+  letter-spacing: .04em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.story-opening {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 22px;
+  font-style: italic;
+  border-left: 2px solid rgba(200,241,53,.25);
+  padding-left: 16px;
+}
+.story-text {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--white);
+  white-space: pre-wrap;
+  max-height: 460px;
+  overflow-y: auto;
+}
+.story-text::-webkit-scrollbar { width: 5px; }
+.story-text::-webkit-scrollbar-thumb { background: rgba(200,241,53,.15); border-radius: 3px; }
+
+/* Voiceover table */
+.vo-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+}
+.vo-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--acid);
+  opacity: .7;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  background: rgba(200,241,53,.03);
+}
+.vo-table td {
+  padding: 14px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.7;
+  color: var(--white);
+  font-size: 14px;
+}
+.vo-table tr:last-child td { border-bottom: none; }
+.vo-table tr:hover td { background: rgba(200,241,53,.02); }
+.vo-table td:first-child { width: 44%; border-right: 1px solid var(--border); }
+.vo-table td:nth-child(2) { width: 34%; border-right: 1px solid var(--border); }
+.vo-table td:last-child { width: 22%; }
+.encodes-cell {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+/* Row number badge */
+.row-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--acid-dim);
+  border: 1px solid rgba(200,241,53,.3);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--acid);
+  margin-right: 8px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.anchor-tag {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  padding-left: 2px;
+  line-height: 1.5;
+}
+.anchor-tag::before { content: '↳ '; color: rgba(200,241,53,.3); }
+
+/* Narration cue spans */
+.cue-pause {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: rgba(200,241,53,.5);
+  letter-spacing: .06em;
+  font-style: normal;
+}
+.cue-em { color: var(--acid); font-style: normal; font-weight: 600; }
+
+/* Legend / Review */
+.legend {
+  margin-top: 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.legend-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  opacity: .7;
+  margin-bottom: 14px;
+}
+.legend-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+}
+.legend-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.legend-table td {
+  padding: 10px;
+  vertical-align: top;
+  color: var(--white);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+.legend-table tr:last-child td { border-bottom: none; }
+.legend-table td:first-child {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  color: rgba(200,241,53,.4);
+  width: 32px;
+}
+
+/* Image prompts */
+.img-prompt-box {
+  background: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 6px;
+}
+.img-prompt-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--acid);
+  opacity: .7;
+  margin-bottom: 12px;
+}
+.prompt-text {
+  font-size: 14px;
+  color: var(--white);
+  line-height: 1.8;
+  font-family: 'DM Sans', sans-serif;
+  white-space: pre-wrap;
+}
+
+/* ── BUTTONS ── */
+.btn-copy {
+  margin-top: 12px;
+  padding: 7px 18px;
+  background: transparent;
+  border: 1px solid rgba(200,241,53,.25);
+  border-radius: 6px;
+  color: var(--acid);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-copy:hover { background: rgba(200,241,53,.08); border-color: rgba(200,241,53,.4); }
+.btn-copy.copied { color: var(--green); border-color: var(--green); }
+
+/* ── UPLOAD ZONE ── */
+.upload-zone {
+  border: 1.5px dashed rgba(200,241,53,.25);
+  border-radius: 10px;
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(200,241,53,.02);
+  transition: all .2s;
+}
+.upload-zone:hover, .upload-zone.dragover {
+  border-color: var(--acid);
+  background: rgba(200,241,53,.06);
+}
+.upload-icon { font-size: 28px; color: var(--acid); opacity: .6; margin-bottom: 12px; }
+.upload-primary { font-size: 15px; color: var(--white); margin-bottom: 6px; }
+.upload-secondary {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .08em;
+}
+
+.file-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+.btn-clear-file {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  line-height: 1;
+}
+.btn-clear-file:hover { color: var(--red); }
+
+/* ── EXTRACT / ACTION BUTTONS ── */
+.btn-extract {
+  width: 100%;
+  padding: 14px;
+  background: rgba(200,241,53,.06);
+  border: 1px solid rgba(200,241,53,.3);
+  border-radius: 8px;
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-extract:hover { background: rgba(200,241,53,.12); border-color: var(--acid); }
+.btn-extract:disabled { opacity: .4; cursor: not-allowed; }
+.btn-extract.secondary { background: transparent; font-size: 10px; }
+.btn-extract.secondary:hover { background: rgba(200,241,53,.06); }
+
+/* ── SKIP BUTTON ── */
+.btn-skip {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px;
+  transition: color .2s;
+}
+.btn-skip:hover { color: var(--acid); }
+
+/* ── CONCEPT CHECKLIST ── */
+.checklist-toolbar { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.btn-check-all {
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-check-all:hover { border-color: rgba(200,241,53,.3); color: var(--white); }
+.concept-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.concept-item:last-child { border-bottom: none; }
+.concept-item.excluded { opacity: .3; }
+.concept-item input[type="checkbox"] { margin-top: 3px; accent-color: var(--acid); flex-shrink: 0; }
+.concept-text { font-size: 14px; color: var(--white); line-height: 1.55; }
+.concept-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--acid);
+  letter-spacing: .06em;
+  opacity: .6;
+  margin-top: 3px;
+}
+.concept-check {
+  width: 18px; height: 18px;
+  border: 1.5px solid rgba(200,241,53,.3);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  transition: all .15s;
+  background: transparent;
+}
+.concept-item:not(.excluded) .concept-check {
+  background: var(--acid);
+  border-color: var(--acid);
+}
+.concept-item:not(.excluded) .concept-check::after {
+  content: '✓';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  color: var(--black);
+  font-weight: 700;
+}
+
+.ornament {
+  text-align: center;
+  color: var(--acid);
+  opacity: .15;
+  font-size: 18px;
+  margin: 26px 0;
+  letter-spacing: 16px;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── DEMO MODE TOGGLE ── */
+.demo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  user-select: none;
+}
+.demo-toggle input { display: none; }
+.demo-track {
+  width: 32px; height: 18px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  position: relative;
+  transition: all .2s;
+}
+.demo-track::after {
+  content: '';
+  position: absolute;
+  width: 12px; height: 12px;
+  background: var(--muted);
+  border-radius: 50%;
+  top: 2px; left: 2px;
+  transition: all .2s;
+}
+.demo-toggle input:checked + .demo-track {
+  background: rgba(255,61,61,.15);
+  border-color: rgba(255,61,61,.4);
+}
+.demo-toggle input:checked + .demo-track::after {
+  transform: translateX(14px);
+  background: var(--red);
+}
+.demo-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color .2s;
+}
+.demo-toggle input:checked ~ .demo-label { color: var(--red); }
+
+/* ── OPERATOR TOGGLE (amber color variant) ── */
+.operator-toggle-label .op-track {}
+.operator-toggle-label input:checked + .op-track {
+  background: rgba(245,200,66,.15) !important;
+  border-color: rgba(245,200,66,.4) !important;
+}
+.operator-toggle-label input:checked + .op-track::after {
+  background: var(--gold) !important;
+}
+.operator-toggle-label input:checked ~ .op-label { color: var(--gold) !important; }
+
+/* ── HANDOFF MESSAGE ── */
+.handoff-message {
+  text-align: center;
+  padding: 32px 20px;
+}
+.handoff-icon {
+  width: 48px; height: 48px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(200,241,53,.12);
+  border: 1px solid rgba(200,241,53,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--acid);
+}
+.handoff-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: .03em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.handoff-text {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── OPERATOR PANEL ── */
+.operator-panel {
+  display: none;
+  margin-top: 16px;
+  border: 1px solid rgba(245,200,66,.2);
+  border-radius: 10px;
+  background: rgba(245,200,66,.03);
+  padding: 24px;
+  animation: fadeUp .4s ease both;
+}
+.operator-panel.visible { display: block; }
+.operator-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(245,200,66,.12);
+}
+.operator-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(245,200,66,.1);
+  border: 1px solid rgba(245,200,66,.25);
+  border-radius: 100px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+}
+
+/* ── RAPID REVIEW BULLET POINTS ── */
+.review-text {
+  font-size: 14px;
+  color: var(--white);
+  line-height: 1.85;
+  font-family: 'DM Sans', sans-serif;
+}
+.review-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.review-text li {
+  padding: 8px 0 8px 20px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.review-text li:last-child { border-bottom: none; }
+.review-text li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--acid);
+  font-size: 10px;
+  top: 11px;
+}
+
+/* ── DEMO BANNER ── */
+.demo-banner {
+  display: none;
+  background: rgba(255,61,61,.08);
+  border: 1px solid rgba(255,61,61,.25);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: var(--red);
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: .04em;
+  animation: fadeUp .3s ease both;
+}
+.demo-banner.visible { display: block; }
+
+/* ── FEEDBACK LINK ── */
+.btn-feedback {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  padding: 12px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all .2s;
+}
+.btn-feedback:hover {
+  color: var(--acid);
+  border-color: rgba(200,241,53,.25);
+  background: rgba(200,241,53,.04);
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  nav { padding: 14px 16px; }
+  .wrap { padding: 88px 16px 80px; }
+  .vo-table td:nth-child(2),
+  .vo-table th:nth-child(2) { display: none; }
+  .vo-table td:first-child { width: 65%; }
+  .vo-table td:last-child { width: 35%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mnemorized</div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <label class="demo-toggle" title="Demo mode — no API calls, uses sample DKA data">
+      <input type="checkbox" id="demo-mode-toggle" checked>
+      <span class="demo-track"></span>
+      <span class="demo-label">Demo</span>
+    </label>
+    <label class="demo-toggle operator-toggle-label" title="Show operator panel with image prompts">
+      <input type="checkbox" id="operator-toggle">
+      <span class="demo-track op-track"></span>
+      <span class="demo-label op-label">Operator</span>
+    </label>
+    <div class="nav-tag">Forge v5</div>
+    <a href="/library" style="text-decoration:none;background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;letter-spacing:.04em;transition:all .2s;">LIBRARY</a>
+    <button id="account-btn" onclick="openAuthModal()" title="Account and saved palaces" style="background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;cursor:pointer;letter-spacing:.04em;transition:all .2s;">
+      <span id="account-status">AUTH OFF</span>
+    </button>
+    <button id="backend-btn" onclick="openConnectionModal()" title="Backend proxy status" style="background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;cursor:pointer;letter-spacing:.04em;transition:all .2s;">
+      <span id="backend-status">⚠ PROXY OFFLINE</span>
+    </button>
+  </div>
+</nav>
+
+<!-- CONNECTION MODAL -->
+<div id="connection-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;width:420px;max-width:90vw;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--acid);letter-spacing:.08em;margin-bottom:8px;">API PROXY</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">The forge now expects a backend proxy instead of storing an Anthropic key in the browser.</div>
+    <div style="font-size:11px;color:var(--white);margin-bottom:10px;opacity:.85;line-height:1.6;">Start the FastAPI service, set <span style="font-family:'DM Mono',monospace;">ANTHROPIC_API_KEY</span> in <span style="font-family:'DM Mono',monospace;">backend/.env</span>, and keep the proxy reachable at <span id="backend-endpoint-label" style="font-family:'DM Mono',monospace;">http://127.0.0.1:8000</span>.</div>
+    <div id="backend-health-detail" style="font-size:12px;color:var(--muted);margin-bottom:20px;line-height:1.6;">Checking backend status…</div>
+    <div style="display:flex;gap:10px;">
+      <button id="retry-backend-btn" onclick="retryConnection()" style="flex:1;background:var(--acid);color:var(--black);font-weight:700;font-size:14px;border:none;border-radius:8px;padding:10px;cursor:pointer;">Retry Connection</button>
+      <button onclick="closeConnectionModal()" style="flex:1;background:var(--ink);color:var(--muted);font-size:14px;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div id="auth-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:center;justify-content:center;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;width:440px;max-width:92vw;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--acid);letter-spacing:.08em;margin-bottom:8px;">ACCOUNT</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6;">Sign in with Supabase to save palaces, build a personal library, and reconnect your work to the backend proxy.</div>
+    <input id="auth-email-input" type="email" placeholder="Email" style="width:100%;background:var(--ink);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:10px;">
+    <input id="auth-password-input" type="password" placeholder="Password" style="width:100%;background:var(--ink);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;margin-bottom:12px;">
+    <div id="auth-modal-status" style="font-size:12px;color:var(--muted);margin-bottom:18px;line-height:1.6;">Auth is waiting for backend Supabase config.</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button id="auth-signin-btn" onclick="signInWithPassword()" style="flex:1;min-width:120px;background:var(--acid);color:var(--black);font-weight:700;font-size:14px;border:none;border-radius:8px;padding:10px;cursor:pointer;">Sign In</button>
+      <button id="auth-signup-btn" onclick="signUpWithPassword()" style="flex:1;min-width:120px;background:var(--ink);color:var(--white);font-size:14px;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;">Sign Up</button>
+      <button id="auth-signout-btn" onclick="signOutAccount()" style="flex:1;min-width:120px;background:rgba(255,61,61,.08);color:#fca5a5;font-size:14px;border:1px solid rgba(255,61,61,.2);border-radius:8px;padding:10px;cursor:pointer;display:none;">Sign Out</button>
+      <button onclick="closeAuthModal()" style="flex:1;min-width:120px;background:var(--ink);color:var(--muted);font-size:14px;border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- DEMO BANNER -->
+  <div class="demo-banner visible" id="demo-banner">✦ DEMO MODE — No API calls. Using sample DKA data. Toggle off in nav to go live.</div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Memory Palace Engine</div>
+    <h1>PALACE<br><span class="accent">FORGE</span></h1>
+    <p class="subtitle">Upload → Extract → Configure → Generate → Image Prompt</p>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-gem">✦</div><div class="divider-line"></div></div>
+
+  <!-- ══ STAGE 0: DOCUMENT INTELLIGENCE ══ -->
+  <div class="doc-stage" id="doc-stage">
+
+    <!-- 0A: Upload -->
+    <div class="section">
+      <p class="section-label">0. Document Upload</p>
+      <p class="section-hint">Upload your source material — lecture notes, Amboss export, UpToDate printout, textbook chapter. Supported: PDF, TXT, or an image of handwritten notes.</p>
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+        <div class="upload-icon">⬆</div>
+        <div class="upload-primary">Drop file here or click to browse</div>
+        <div class="upload-secondary">PDF · TXT · PNG · JPG</div>
+        <input type="file" id="file-input" accept=".pdf,.txt,.text,.png,.jpg,.jpeg,.webp" style="display:none" onchange="handleFileSelect(event)">
+      </div>
+      <div id="file-status" style="display:none;" class="file-status-bar">
+        <span id="file-status-icon">📄</span>
+        <span id="file-status-name"></span>
+        <span id="file-status-size" style="color:var(--muted);font-size:12px;"></span>
+        <button class="btn-clear-file" onclick="clearFile()">✕</button>
+      </div>
+    </div>
+
+    <!-- 0B: Extract Sections button -->
+    <div class="section" id="extract-btn-wrap" style="display:none;">
+      <button class="btn-extract" id="extract-btn" onclick="extractSections()">
+        <span id="extract-btn-text">✦ IDENTIFY SECTIONS</span>
+      </button>
+    </div>
+
+    <!-- 0C: Section picker -->
+    <div class="section" id="section-picker-wrap" style="display:none;">
+      <p class="section-label">Select Section</p>
+      <p class="section-hint">Claude found the following topics in your document. Pick one to extract all high-yield concepts from.</p>
+      <div class="select-wrap">
+        <select class="fancy-select" id="section-select" onchange="onSectionChange()">
+          <option value="">— choose a section —</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 0D: Extract concepts button -->
+    <div class="section" id="concepts-btn-wrap" style="display:none;">
+      <button class="btn-extract" id="concepts-btn" onclick="extractConcepts()">
+        <span id="concepts-btn-text">✦ EXTRACT HIGH-YIELD CONCEPTS</span>
+      </button>
+    </div>
+
+    <!-- 0E: Concept checklist -->
+    <div class="section" id="checklist-wrap" style="display:none;">
+      <p class="section-label">High-Yield Concepts</p>
+      <p class="section-hint">Every testable concept extracted from this section. Toggle off anything you want to exclude, then hit Forge.</p>
+      <div class="checklist-toolbar">
+        <button class="btn-check-all" onclick="toggleAll(true)">Select All</button>
+        <button class="btn-check-all" onclick="toggleAll(false)">Deselect All</button>
+        <span id="checklist-count" style="font-size:12px;color:var(--muted);margin-left:auto;"></span>
+      </div>
+      <div id="concept-checklist"></div>
+      <div style="margin-top:14px;">
+        <button class="btn-extract secondary" onclick="proceedToForge()">✦ USE SELECTED CONCEPTS →</button>
+      </div>
+    </div>
+
+  </div><!-- /doc-stage -->
+
+  <!-- Skip link -->
+  <div id="manual-bypass" style="text-align:center;margin:4px 0 0;">
+    <button class="btn-skip" onclick="skipUpload()">✦ Skip upload — type topic manually</button>
+  </div>
+
+  <div class="divider" id="config-divider" style="display:none;"><div class="divider-line"></div><div class="divider-gem">✦</div><div class="divider-line"></div></div>
+
+  <!-- ══ CONFIGURATION ══ -->
+  <div id="config-wrap" style="display:none;">
+
+  <!-- 1: Topic -->
+  <div class="section">
+    <p class="section-label">I. What Must Be Memorized</p>
+    <p class="section-hint">Auto-populated from your document, or type/paste directly. Edit freely before generating.</p>
+    <textarea class="input-field" id="topic" rows="5" placeholder="e.g. The 12 cranial nerves in order, ACLS algorithm for pulseless V-tach, vasopressor receptor affinities…"></textarea>
+    <p style="font-size:12px;color:var(--muted);margin-top:6px;">Or skip document upload entirely and type here directly, then scroll to configure below.</p>
+  </div>
+
+  <!-- 2: Architecture (hidden — auto-selected by AI based on topic) -->
+  <div class="section" style="display:none;">
+    <p class="section-label">II. Palace Architecture</p>
+    <p class="section-hint">One unified scene — everything lives here simultaneously, Sketchy-style. Not room-by-room.</p>
+    <div class="select-wrap">
+      <select class="fancy-select" id="setting-select">
+        <optgroup label="⚰ MACABRE &amp; GOTHIC">
+          <option value="a crumbling haunted Victorian mansion frozen at twilight — every room visible as one vast cross-section, time standing still">Haunted Mansion</option>
+          <option value="a plague doctor's vast underground apothecary — shelves of impossible specimens stretching to a vaulted ceiling lost in yellow smoke">Plague Apothecary</option>
+          <option value="a baroque cathedral slowly digesting itself — melting pews, stained glass liquefying mid-scene, gargoyles caught mid-transformation">Cannibal Cathedral</option>
+          <option value="an enormous Victorian funeral parlor where every corpse is mid-conversation, completely oblivious to their condition">Funeral Parlor of the Oblivious</option>
+          <option value="a cursed wax museum mid-animation — the figures have started moving and are deeply confused about it">Awakening Wax Museum</option>
+        </optgroup>
+        <optgroup label="🚀 COSMIC &amp; SCI-FI">
+          <option value="a derelict space station's single massive bay, gravity working sideways, a dying red giant visible through cracked viewports">Derelict Space Station Bay</option>
+          <option value="the cross-sectioned interior of a planet-sized alien organism — organs as rooms, bioluminescent veins as corridors, all visible simultaneously">Alien Organism Interior</option>
+          <option value="a time-fractured research facility where every workstation exists at a different decade simultaneously, overlapping and bleeding together">Time Fracture Lab</option>
+          <option value="a generation ship's cargo hold run by a deranged AI — cryo-pods, crates, and evidence of a civilization's slow unraveling">AI Generation Ship Hold</option>
+          <option value="a black hole's event horizon stretched into navigable architecture — rooms compressed at the edges, time moving differently in each corridor">Event Horizon Palace</option>
+        </optgroup>
+        <optgroup label="🌊 NATURAL &amp; ELEMENTAL">
+          <option value="a thriving civilization inside a dead sea leviathan's ribcage — bones as architecture, bioluminescent parasites as lighting">Dead Leviathan City</option>
+          <option value="a sentient storm that has arranged its interior into navigable rooms — lightning corridors, thunder vaults, rain-curtain walls">Sentient Storm Interior</option>
+          <option value="an inverted ancient forest — roots in a violet sky, canopy underground, everything alive and enormous and wrong">Inverted Forest</option>
+          <option value="the interior of an active volcano structured as a luxury resort — pools of lava, concierge demons, guests in denial">Volcano Resort</option>
+          <option value="a glacier palace carved by a civilization that no longer exists — every chamber preserving a frozen moment from their history">Glacier Palace</option>
+        </optgroup>
+        <optgroup label="🎪 SURREAL &amp; DREAMLIKE">
+          <option value="a 1920s traveling carnival frozen mid-performance — big top, sideshows, and midway compressed into one impossible panorama outside of time">Psychedelic Carnival (Frozen)</option>
+          <option value="a grand hotel atrium where every floor obeys different laws of physics, all visible simultaneously from below">Impossible Hotel Atrium</option>
+          <option value="a fever dream library where stolen memories play on every surface — shelves infinite, the librarian is something ancient and watching">Stolen Memory Library</option>
+          <option value="a bureaucratic hellscape's central processing floor — every department handles a different sin, fluorescent lights, eternal queues">Bureaucracy of Hell</option>
+          <option value="a television studio where every set is a different decade and reality bleeds between them">Reality TV Purgatory</option>
+        </optgroup>
+        <optgroup label="🏛 HISTORICAL &amp; MYTHIC">
+          <option value="an ancient Roman bathhouse at peak hour — gods, gladiators, senators, and something unspeakable in the steam room, all sharing tiled space">Roman Bathhouse (Divine Hour)</option>
+          <option value="a Mesoamerican pyramid temple interior during active ritual — every chamber devoted to a different deity, smoke, gold, spectacle">Aztec Temple Interior</option>
+          <option value="a Viking longship crossing the ocean of the dead — crew are legendary historical figures, cargo is impossible, destination is worse">Viking Death Ship</option>
+          <option value="a Silk Road caravanserai where every civilization exists simultaneously — merchants, mystics, and monarchs sharing impossible space">Silk Road Crossroads Inn</option>
+          <option value="the Paris catacombs, but the bones have rearranged themselves into elaborate art installations and are arguing about the choices">Opinionated Catacombs</option>
+        </optgroup>
+        <optgroup label="🃏 DECADENT &amp; CRIMINAL">
+          <option value="an underground casino run by interdimensional crime syndicates — every table game involves different rules of reality, smoke thick enough to chew">Interdimensional Underground Casino</option>
+          <option value="a Michelin-starred restaurant where the chefs are demons, the ingredients are memories, and the menu changes based on your sins">Demon's Restaurant</option>
+          <option value="a grand opera house mid-performance of a crime — every seat occupied by a suspect, every chandelier hiding a body, orchestra plays on">Crime Opera House</option>
+          <option value="a floating palazzo on a river of molten gold, hosting a party that has lasted 400 years — the guests have forgotten why they came">The Eternal Palazzo Party</option>
+          <option value="a Prohibition-era speakeasy hidden inside another speakeasy, infinitely nested — each layer has different rules and different secrets">Nested Speakeasy</option>
+        </optgroup>
+        <optgroup label="✦ CUSTOM">
+          <option value="custom">Custom — describe your own…</option>
+        </optgroup>
+      </select>
+    </div>
+    <textarea class="input-field custom-field" id="custom-setting" rows="2" placeholder="Describe your palace setting in vivid detail…"></textarea>
+  </div>
+
+  <!-- 3: Guide (hidden — no guide character, more room for anchors) -->
+  <div class="section" style="display:none;">
+    <p class="section-label">III. Palace Guide</p>
+    <p class="section-hint">This character appears prominently in the scene — their personality bleeds into every element and every anchor they interact with.</p>
+    <div class="select-wrap">
+      <select class="fancy-select" id="guide-select">
+        <optgroup label="🎭 UNHINGED PROFESSIONALS">
+          <option value="a manic carnival barker with a gambling addiction and zero filter — always mid-pitch, always sweating, gesturing at everything">Manic Carnival Barker</option>
+          <option value="a burned-out ER attending who narrates everything like a trauma debriefing — clipped, clinical, visibly haunted, coffee in hand">Burned-Out ER Attending</option>
+          <option value="a disgraced museum curator convinced every artifact is a forgery — furious, gesticulating wildly, occasionally and infuriatingly correct">Disgraced Museum Curator</option>
+          <option value="a pharmaceutical sales rep who has been sampling the product for years — extremely enthusiastic, tangential, pupils fully dilated">Pharma Rep (Self-Medicating)</option>
+          <option value="an overconfident life coach who has clearly never left their apartment — confident about everything, wrong about half of it, cheerful throughout">Delusional Life Coach</option>
+          <option value="a forensic accountant who has seen too much — narrates everything in terms of risk, liability, and unexplained line items">Paranoid Forensic Accountant</option>
+        </optgroup>
+        <optgroup label="👻 SUPERNATURAL ENTITIES">
+          <option value="a chain-smoking ghost detective still working the case that killed them — trench coat, cigarette, obsessive certainty, refuses to accept they're dead">Ghost Detective (In Denial)</option>
+          <option value="Death itself — exhausted, underpaid, carrying a clipboard, deeply unimpressed by everything including you personally">Exhausted Death (On Shift)</option>
+          <option value="a demon who moonlights as a sommelier — judges every scene on its nose, finish, and structural integrity with insufferable expertise">Demon Sommelier</option>
+          <option value="a poltergeist with a PhD who cannot stop correcting everyone's methodology — invisible, furious, throws objects to make academic points">Academic Poltergeist</option>
+          <option value="an ancient god of memory with severe ADHD — magnificent, distracted, forgets their own name, occasionally brilliant">Memory God (ADHD)</option>
+          <option value="a banshee who has been legally forbidden from screaming — rage barely contained, communicates through increasingly aggressive gestures">Legally Muzzled Banshee</option>
+        </optgroup>
+        <optgroup label="🤡 CHAOTIC CHARACTERS">
+          <option value="a Victorian naturalist horrified by every discovery but biologically incapable of stopping — cataloguing with one hand, nearly fainting with the other">Horrified Victorian Naturalist</option>
+          <option value="a time traveler who has visited this exact moment 47 times and is profoundly bored — sighing, finishing your sentences, checking their watch">Bored Time Traveler (47th Visit)</option>
+          <option value="a conspiracy theorist who is correct about absolutely everything but draws completely insane conclusions from accurate facts">The Correct Conspiracy Theorist</option>
+          <option value="a method actor so deep in a role they no longer know who they actually are — shifting personas mid-sentence, genuinely distressed about it">Lost Method Actor</option>
+          <option value="a hyperactive medieval court jester who speaks exclusively in riddles they then answer incorrectly with absolute confidence">Court Jester (Always Wrong)</option>
+        </optgroup>
+        <optgroup label="🧠 CLINICAL &amp; COLD">
+          <option value="a hyper-rational alien anthropologist studying human memory — clinical detachment, meticulous notes, occasional involuntary expressions of revulsion">Alien Anthropologist</option>
+          <option value="a malfunctioning AI tour guide — helpful, increasingly menacing, stuck in a loop, smiling at entirely inappropriate moments">Glitching AI Tour Guide</option>
+          <option value="a psychoanalyst who turns every anchor image into an unsolicited interpretation of your childhood — always behind a notepad, always wrong in interesting ways">Intrusive Psychoanalyst</option>
+        </optgroup>
+        <optgroup label="🌿 MINIMAL">
+          <option value="no named guide — the scene communicates entirely through objects, atmosphere, impossible environmental details, and absurdist staging">No Guide (Environment Only)</option>
+          <option value="a silent monk visible in every scene — always pointing at exactly the right thing, expression unreadable, never explains anything">The Silent Pointing Monk</option>
+        </optgroup>
+        <optgroup label="✦ CUSTOM">
+          <option value="custom">Custom — describe your own…</option>
+        </optgroup>
+      </select>
+    </div>
+    <textarea class="input-field custom-field" id="custom-guide" rows="2" placeholder="Describe your guide character — personality, appearance, quirks…"></textarea>
+  </div>
+
+  <!-- 4: Absurdity -->
+  <div class="section">
+    <p class="section-label">IV. Absurdity Dial</p>
+    <p class="section-hint">How far from reality the scene is allowed to drift.</p>
+    <div class="slider-row">
+      <input type="range" id="chaos" min="1" max="10" value="7">
+      <span class="slider-val" id="chaos-val">7</span>
+    </div>
+    <div class="slider-labels"><span>Vivid but grounded</span><span>Cosmically deranged</span></div>
+  </div>
+
+  <!-- 5: Art Style -->
+  <div class="section">
+    <p class="section-label">V. Visual Art Style</p>
+    <p class="section-hint">How the generated image should look.</p>
+    <div class="select-wrap">
+      <select class="fancy-select" id="style-select">
+        <option value="richly illustrated educational poster with bold ink outlines, flat vivid color fills, slightly grotesque Roald Dahl energy, Sketchy Medical aesthetic">Sketchy-Style Illustrated (Default)</option>
+        <option value="detailed pen-and-ink engraving with watercolor washes, Victorian scientific illustration meets fever dream, cross-hatching and stippling">Ink &amp; Watercolor Engraving</option>
+        <option value="1970s psychedelic rock concert poster, heavy ink outlines, neon and earth-tone palette, Roger Dean and Peter Max influence">Psychedelic Rock Poster</option>
+        <option value="Flemish Old Master oil painting, hyper-detailed, dramatic chiaroscuro, candlelit atmosphere, rich jewel tones">Flemish Oil Painting</option>
+        <option value="cutaway architectural diagram meets fantasy RPG map, isometric perspective, hand-labeled annotations, aged parchment tones">Fantasy Isometric Diagram</option>
+        <option value="modern graphic novel art, clean bold linework, dynamic panel-free composition, cinematic color grading, heavy blacks">Graphic Novel / Comic Art</option>
+        <option value="Studio Ghibli-inspired animation cel, soft warm light, lush environmental detail, whimsical but grounded, hand-painted textures">Studio Ghibli Animation Style</option>
+        <option value="Soviet propaganda poster aesthetic, bold geometric composition, limited palette, heroic scale, stark graphic forms">Soviet Propaganda Poster</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 6: Tone -->
+  <div class="section">
+    <p class="section-label">VI. Narrative Tone</p>
+    <p class="section-hint">Voice and atmosphere of the scene writing.</p>
+    <div class="chip-grid" id="tone-chips">
+      <div class="chip active" data-val="visceral and cinematic">Cinematic</div>
+      <div class="chip" data-val="darkly comic">Dark Comedy</div>
+      <div class="chip" data-val="mythic and epic">Mythic</div>
+      <div class="chip" data-val="fever-dream surrealist">Surrealist</div>
+      <div class="chip" data-val="pulpy noir thriller">Pulp Noir</div>
+    </div>
+  </div>
+
+  </div><!-- /config-wrap -->
+
+  <div id="forge-wrap" style="display:none;">
+    <button class="btn-forge" id="forge-btn" onclick="runPipeline()">LET'S MNEMORIZE</button>
+    <a href="mailto:feedback@mnemorized.com?subject=Mnemorized%20Forge%20Feedback" class="btn-feedback">
+      Have feedback? Tell us what you think →
+    </a>
+  </div>
+
+  <div id="library-panel" style="display:block;margin:26px 0 12px;padding:18px 20px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px;">
+      <div>
+        <div class="section-label" style="margin-bottom:6px;">Library Hub</div>
+        <div id="auth-summary" style="font-size:13px;color:var(--muted);line-height:1.6;">Connect Supabase auth to save palaces in the forge, then manage them from the full library page.</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn-copy" id="open-auth-btn" onclick="openAuthModal()" style="margin:0;">Sign In</button>
+        <a href="/library" class="btn-copy" id="open-library-link" style="margin:0;text-decoration:none;display:inline-flex;align-items:center;">Open Library</a>
+        <button class="btn-copy" id="save-palace-btn" onclick="saveCurrentPalace()" style="margin:0;" disabled>Save Palace</button>
+        <button class="btn-copy" id="save-as-new-btn" onclick="saveCurrentPalace(true)" style="margin:0;" disabled>Save As New</button>
+        <button class="btn-copy" id="new-draft-btn" onclick="startNewPalaceDraft()" style="margin:0;" disabled>New Draft</button>
+        <button class="btn-copy" id="refresh-library-btn" onclick="loadLibrary()" style="margin:0;" disabled>Sync Summary</button>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+      <input class="input-field" id="palace-title-input" type="text" placeholder="Palace title" style="flex:1;min-width:240px;">
+      <div id="library-status" style="min-width:220px;padding:12px 14px;background:var(--ink);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted);display:flex;align-items:center;">No account connected.</div>
+    </div>
+    <div id="library-empty" style="font-size:12px;color:var(--muted);padding:10px 0;">Sign in to unlock the full library page, search, filters, rename tools, and load saved palaces into the forge.</div>
+    <div id="library-summary-note" style="font-size:12px;color:var(--muted);padding:8px 0 0;line-height:1.6;">No library sync yet.</div>
+    <div id="library-list" style="display:none;"></div>
+  </div>
+
+  <!-- Debug error box -->
+  <div id="debug-box" style="display:none; margin:16px 0; padding:14px 16px;
+    background:rgba(255,61,61,.06); border:1px solid rgba(255,61,61,.3);
+    border-radius:8px; font-family:'DM Mono',monospace; font-size:12px;
+    color:#fca5a5; white-space:pre-wrap; word-break:break-all; max-height:300px; overflow-y:auto;">
+  </div>
+
+  <div class="ornament">· · ·</div>
+
+  <!-- PIPELINE OUTPUT -->
+  <div class="pipeline" id="pipeline">
+
+    <!-- Stage I: Story / Voiceover Script -->
+    <div class="stage" id="stage-story">
+      <div class="stage-header">
+        <span class="stage-num">01</span>
+        <span class="stage-title">Memory Palace Scene</span>
+        <span class="stage-status" id="status-story">Waiting…</span>
+      </div>
+      <div class="stage-body" id="body-story" style="display:none;">
+        <div id="story-header" style="margin-bottom:20px;"></div>
+        <div id="vo-table-wrap" style="display:none;">
+          <table class="vo-table" id="vo-table">
+            <thead>
+              <tr>
+                <th style="width:44%">SPOKEN NARRATION</th>
+                <th style="width:34%">VISUAL / ACTION ON SCREEN</th>
+                <th style="width:22%">ENCODES</th>
+              </tr>
+            </thead>
+            <tbody id="vo-body"></tbody>
+          </table>
+          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn-copy" id="copy-vo-btn" onclick="copyVoScript()">Copy Full Script</button>
+            <button class="btn-copy" id="copy-narration-btn" onclick="copyNarrationOnly()">Copy Narration Only</button>
+          </div>
+        </div>
+        <div class="legend" id="review-wrap" style="display:none;">
+          <p class="legend-title">✦ RAPID REVIEW SCRIPT</p>
+          <div class="review-text" id="review-text"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 2: User-facing handoff message -->
+    <div class="stage" id="stage-prompt">
+      <div class="stage-header">
+        <span class="stage-num">02</span>
+        <span class="stage-title">Scene Illustration</span>
+        <span class="stage-status" id="status-prompt">Waiting…</span>
+      </div>
+      <div class="stage-body" id="body-prompt" style="display:none;">
+        <div class="handoff-message" id="handoff-message">
+          <div class="handoff-icon">✓</div>
+          <div class="handoff-title">Your palace script is complete.</div>
+          <div class="handoff-text">Scene illustration is in progress — we'll email you when it's ready.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Operator Panel — hidden from users, toggle in nav -->
+    <div class="operator-panel" id="operator-panel">
+      <div class="operator-header">
+        <span class="operator-badge">✦ OPERATOR</span>
+        <span style="flex:1;font-size:13px;color:var(--muted);">Image prompts — paste into Gemini in order, same chat</span>
+        <button class="btn-copy" id="copy-all-tsv" onclick="copyAllTSV()" style="margin:0;">Copy All → Spreadsheet</button>
+      </div>
+      <div class="img-prompt-box" style="margin-bottom:14px;">
+        <p class="img-prompt-label">✦ PROMPT 1 — SCENE FOUNDATION</p>
+        <div class="prompt-text" id="img-prompt-1"></div>
+      </div>
+      <button class="btn-copy" id="copy-prompt-1" onclick="copyPrompt(1)">Copy Prompt 1</button>
+      <div class="img-prompt-box" style="margin-top:20px;margin-bottom:14px;">
+        <p class="img-prompt-label">✦ PROMPT 2 — ALL ANCHORS</p>
+        <div class="prompt-text" id="img-prompt-2"></div>
+      </div>
+      <button class="btn-copy" id="copy-prompt-2" onclick="copyPrompt(2)">Copy Prompt 2</button>
+      <textarea id="prompt-copy-1" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
+      <textarea id="prompt-copy-2" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
+    </div>
+
+  </div><!-- /pipeline -->
+</div><!-- /wrap -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// ══════════════════════════════════════════════════
+// BACKEND PROXY CONNECTION
+// ══════════════════════════════════════════════════
+
+const API_BASE = (
+  window.location.protocol === 'file:' ||
+  window.location.hostname === '127.0.0.1' ||
+  window.location.hostname === 'localhost'
+) && window.location.port !== '8000'
+  ? 'http://127.0.0.1:8000'
+  : '';
+let backendState = { checked: false, reachable: false, configured: false };
+
+function getApiUrl(path) {
+  return API_BASE ? `${API_BASE}${path}` : path;
+}
+
+function getBackendBaseLabel() {
+  return API_BASE || window.location.origin;
+}
+
+function syncConnectionModal(detail) {
+  document.getElementById('backend-endpoint-label').textContent = getBackendBaseLabel();
+  if (detail) document.getElementById('backend-health-detail').textContent = detail;
+}
+
+function setBackendBadge(mode, label) {
+  const btn = document.getElementById('backend-btn');
+  const status = document.getElementById('backend-status');
+  status.textContent = label;
+
+  if (mode === 'online') {
+    btn.style.color = 'var(--acid)';
+    btn.style.borderColor = 'rgba(200,241,53,.3)';
+  } else if (mode === 'warning') {
+    btn.style.color = 'var(--gold)';
+    btn.style.borderColor = 'rgba(245,200,66,.35)';
+  } else {
+    btn.style.color = 'var(--red)';
+    btn.style.borderColor = 'rgba(255,61,61,.3)';
+  }
+}
+
+async function refreshBackendStatus(showModalOnError = false) {
+  try {
+    const res = await fetch(getApiUrl('/api/health'));
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    backendState = {
+      checked: true,
+      reachable: true,
+      configured: !!data.anthropic_configured
+    };
+
+    if (backendState.configured) {
+      setBackendBadge('online', '✓ PROXY LIVE');
+      syncConnectionModal('Backend reachable and Anthropic is configured server-side.');
+    } else {
+      setBackendBadge('warning', '⚠ KEY MISSING');
+      syncConnectionModal('Backend reachable, but ANTHROPIC_API_KEY is not configured on the server yet.');
+    }
+  } catch (err) {
+    backendState = {
+      checked: true,
+      reachable: false,
+      configured: false
+    };
+    setBackendBadge('offline', '⚠ PROXY OFFLINE');
+    syncConnectionModal(`Could not reach ${getApiUrl('/api/health')}. Start the backend and retry.`);
+    if (showModalOnError) openConnectionModal();
+  }
+
+  return backendState;
+}
+
+function openConnectionModal() {
+  syncConnectionModal(document.getElementById('backend-health-detail').textContent);
+  document.getElementById('connection-modal').style.display = 'flex';
+}
+
+function closeConnectionModal() {
+  document.getElementById('connection-modal').style.display = 'none';
+}
+
+async function retryConnection() {
+  const btn = document.getElementById('retry-backend-btn');
+  btn.disabled = true;
+  btn.textContent = 'Checking…';
+  await refreshBackendStatus(true);
+  btn.disabled = false;
+  btn.textContent = 'Retry Connection';
+}
+
+document.getElementById('connection-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeConnectionModal();
+});
+
+async function claudeFetch(body) {
+  if (!backendState.checked) await refreshBackendStatus();
+
+  if (!backendState.reachable) {
+    openConnectionModal();
+    throw new Error(`Proxy unavailable. Start the backend at ${getBackendBaseLabel()} and retry.`);
+  }
+
+  if (!backendState.configured) {
+    openConnectionModal();
+    throw new Error('Backend is reachable, but ANTHROPIC_API_KEY is not configured on the server.');
+  }
+
+  try {
+    const headers = {
+      'Content-Type': 'application/json',
+      'anthropic-version': '2023-06-01'
+    };
+    if (authState.session?.access_token) {
+      headers.Authorization = `Bearer ${authState.session.access_token}`;
+    }
+
+    const res = await fetch(getApiUrl('/api/anthropic/messages'), {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body)
+    });
+
+    if (res.status === 401) {
+      openAuthModal();
+      throw new Error('Sign in to use the API proxy.');
+    } else if (res.status === 402) {
+      const quota = await res.json().catch(() => ({}));
+      const used = quota.usage?.used ?? '?';
+      const limit = quota.usage?.limit ?? '?';
+      throw new Error(`Monthly quota exceeded (${used}/${limit} requests). Upgrade your plan or wait for the next billing period.`);
+    } else if (res.status === 503) {
+      backendState.configured = false;
+      setBackendBadge('warning', '⚠ KEY MISSING');
+      syncConnectionModal('Backend reached the proxy, but ANTHROPIC_API_KEY is missing or invalid.');
+    } else if (res.ok) {
+      backendState = { checked: true, reachable: true, configured: true };
+      setBackendBadge('online', '✓ PROXY LIVE');
+    }
+
+    return res;
+  } catch (err) {
+    backendState = { checked: true, reachable: false, configured: false };
+    setBackendBadge('offline', '⚠ PROXY OFFLINE');
+    syncConnectionModal(`Could not reach ${getApiUrl('/api/anthropic/messages')}. Start the backend and retry.`);
+    openConnectionModal();
+    throw new Error(`Proxy unavailable: ${err.message}`);
+  }
+}
+
+refreshBackendStatus();
+
+// ══════════════════════════════════════════════════
+// AUTH + PALACE PERSISTENCE
+// ══════════════════════════════════════════════════
+
+const appConfig = {
+  authEnabled: false,
+  supabaseUrl: '',
+  supabaseAnonKey: ''
+};
+
+let supabaseClient = null;
+let authState = { session: null, user: null };
+let currentPalaceMeta = null;
+let currentStoryData = null;
+let currentPromptData = { prompt1: '', prompt2: '' };
+let libraryRowsCache = [];
+const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palace');
+let palaceRouteHydrated = false;
+
+function withTimeout(promise, ms, label) {
+  let timeoutId;
+  const normalizedPromise = Promise.resolve(promise);
+  const timeoutPromise = new Promise((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`));
+    }, ms);
+  });
+
+  return Promise.race([
+    normalizedPromise.finally(() => clearTimeout(timeoutId)),
+    timeoutPromise
+  ]);
+}
+
+async function runSupabaseQuery(label, promise, timeoutMs = 15000) {
+  try {
+    const result = await withTimeout(promise, timeoutMs, label);
+    return result;
+  } catch (error) {
+    console.error(`[Supabase] ${label} failed`, error);
+    throw error;
+  }
+}
+
+function escapeHtml(text) {
+  return String(text || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function formatNarrationHtml(text) {
+  return String(text || '')
+    .replace(/\[PAUSE\]/gi, '<span class="cue-pause">[pause]</span>')
+    .replace(/\[BEAT\]/gi, '<span class="cue-pause">[beat]</span>')
+    .replace(/\[EMPHASIS:\s*([^\]]+)\]/gi, '<span class="cue-em">$1</span>');
+}
+
+function getActiveToneValue() {
+  return document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
+}
+
+function setActiveToneValue(value) {
+  let matched = false;
+  document.querySelectorAll('#tone-chips .chip').forEach(chip => {
+    const isMatch = chip.dataset.val === value;
+    chip.classList.toggle('active', isMatch);
+    if (isMatch) matched = true;
+  });
+  if (!matched) {
+    const first = document.querySelector('#tone-chips .chip');
+    if (first) first.classList.add('active');
+  }
+}
+
+function getDefaultPalaceTitle() {
+  const typed = document.getElementById('palace-title-input')?.value?.trim();
+  if (typed) return typed;
+  if (currentStoryData?.scene_title) return currentStoryData.scene_title;
+  const topic = document.getElementById('topic')?.value?.trim() || '';
+  const firstLine = topic.split('\n').find(Boolean) || 'Untitled palace';
+  return firstLine.replace(/^\[(.+?)\]\s*$/, '$1').slice(0, 90);
+}
+
+function getCurrentSourceName() {
+  return uploadedFileData?.name || currentPalaceMeta?.source_name || null;
+}
+
+function hasSavablePalace() {
+  return !!(currentStoryData && currentPromptData.prompt1 && currentPromptData.prompt2);
+}
+
+function ensureForgeVisible() {
+  document.getElementById('config-divider').style.display = 'flex';
+  document.getElementById('config-wrap').style.display = 'block';
+  document.getElementById('forge-wrap').style.display = 'block';
+  document.getElementById('manual-bypass').style.display = 'none';
+}
+
+function setAccountBadge(mode, label) {
+  const btn = document.getElementById('account-btn');
+  const status = document.getElementById('account-status');
+  status.textContent = label;
+
+  if (mode === 'online') {
+    btn.style.color = 'var(--acid)';
+    btn.style.borderColor = 'rgba(200,241,53,.3)';
+  } else if (mode === 'warning') {
+    btn.style.color = 'var(--gold)';
+    btn.style.borderColor = 'rgba(245,200,66,.35)';
+  } else {
+    btn.style.color = 'var(--muted)';
+    btn.style.borderColor = 'var(--border)';
+  }
+}
+
+function setLibraryStatus(message, tone = 'muted') {
+  const box = document.getElementById('library-status');
+  box.textContent = message;
+  if (tone === 'success') {
+    box.style.color = 'var(--acid)';
+    box.style.borderColor = 'rgba(200,241,53,.25)';
+  } else if (tone === 'error') {
+    box.style.color = '#fca5a5';
+    box.style.borderColor = 'rgba(255,61,61,.25)';
+  } else {
+    box.style.color = 'var(--muted)';
+    box.style.borderColor = 'var(--border)';
+  }
+}
+
+function setAuthModalStatus(message, tone = 'muted') {
+  const el = document.getElementById('auth-modal-status');
+  el.textContent = message;
+  el.style.color = tone === 'error' ? '#fca5a5' : tone === 'success' ? 'var(--acid)' : 'var(--muted)';
+}
+
+function openAuthModal() {
+  document.getElementById('auth-modal').style.display = 'flex';
+}
+
+function closeAuthModal() {
+  document.getElementById('auth-modal').style.display = 'none';
+}
+
+document.getElementById('auth-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeAuthModal();
+});
+
+function buildPalaceSnapshot() {
+  return {
+    title: getDefaultPalaceTitle(),
+    topic: document.getElementById('topic').value.trim(),
+    source_name: getCurrentSourceName(),
+    scene_title: currentStoryData?.scene_title || '',
+    status: 'generated',
+    generation_inputs: {
+      topic: document.getElementById('topic').value.trim(),
+      source_name: getCurrentSourceName(),
+      settings: {
+        chaos: parseInt(document.getElementById('chaos').value, 10),
+        art_style: document.getElementById('style-select').value,
+        tone: getActiveToneValue(),
+        demo_mode: isDemoMode()
+      }
+    },
+    generation_outputs: {
+      story: currentStoryData,
+      prompts: {
+        prompt1: currentPromptData.prompt1,
+        prompt2: currentPromptData.prompt2
+      }
+    }
+  };
+}
+
+function renderStoryData(storyData) {
+  if (!storyData) return;
+
+  showBody('story');
+  document.getElementById('story-header').innerHTML =
+    `<div class="story-scene-title">${escapeHtml(storyData.scene_title || '')}</div>
+     <div class="story-opening">${escapeHtml(storyData.opening || '')}</div>`;
+
+  document.getElementById('vo-body').innerHTML = (storyData.voLines || []).map(v => `
+    <tr>
+      <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
+      <td>${escapeHtml(v.visual || '')}</td>
+      <td class="encodes-cell">${escapeHtml(v.anchor || '')}</td>
+    </tr>`).join('');
+  document.getElementById('vo-table-wrap').style.display = storyData.voLines?.length ? 'block' : 'none';
+
+  if (storyData.review_script) {
+    document.getElementById('review-text').innerHTML = formatReviewBullets(storyData.review_script);
+    document.getElementById('review-wrap').style.display = 'block';
+  } else {
+    document.getElementById('review-wrap').style.display = 'none';
+  }
+}
+
+function renderPromptData(prompt1, prompt2) {
+  showBody('prompt');
+  document.getElementById('img-prompt-1').textContent = prompt1 || '';
+  document.getElementById('img-prompt-2').textContent = prompt2 || '';
+  document.getElementById('prompt-copy-1').value = prompt1 || '';
+  document.getElementById('prompt-copy-2').value = prompt2 || '';
+}
+
+function setCurrentPalaceData(storyData, prompt1, prompt2) {
+  currentStoryData = storyData;
+  currentPromptData = {
+    prompt1: prompt1 || '',
+    prompt2: prompt2 || ''
+  };
+  document.getElementById('palace-title-input').value = getDefaultPalaceTitle();
+  refreshAuthUI();
+}
+
+async function maybeLoadRoutePalace() {
+  if (!palaceIdFromRoute || palaceRouteHydrated || !authState.user) return;
+  palaceRouteHydrated = true;
+  await loadPalace(palaceIdFromRoute, { silentScroll: true });
+  const url = new URL(window.location.href);
+  url.searchParams.delete('palace');
+  window.history.replaceState({}, '', url.toString());
+}
+
+function applyPalaceSnapshot(palaceRow, versionRow) {
+  const inputs = versionRow?.generation_inputs || {};
+  const outputs = versionRow?.generation_outputs || {};
+  const story = outputs.story || null;
+  const prompts = outputs.prompts || {};
+
+  ensureForgeVisible();
+  document.getElementById('topic').value = inputs.topic || palaceRow.topic || '';
+
+  if (inputs.settings?.chaos) {
+    document.getElementById('chaos').value = String(inputs.settings.chaos);
+    updateSlider();
+  }
+  if (inputs.settings?.art_style) {
+    const styleSelect = document.getElementById('style-select');
+    const optionExists = [...styleSelect.options].some(option => option.value === inputs.settings.art_style);
+    if (optionExists) styleSelect.value = inputs.settings.art_style;
+  }
+  if (inputs.settings?.tone) setActiveToneValue(inputs.settings.tone);
+
+  document.getElementById('pipeline').classList.add('visible');
+  setStatus('story', '✓ Loaded', 'done');
+  setStatus('prompt', '✓ Loaded', 'done');
+
+  if (story) renderStoryData(story);
+  if (prompts.prompt1 || prompts.prompt2) renderPromptData(prompts.prompt1, prompts.prompt2);
+
+  currentPalaceMeta = palaceRow;
+  document.getElementById('palace-title-input').value = palaceRow.title || story?.scene_title || '';
+  setCurrentPalaceData(story, prompts.prompt1, prompts.prompt2);
+  setLibraryStatus(`Loaded "${palaceRow.title}"`, 'success');
+}
+
+function renderLibraryRows(rows) {
+  libraryRowsCache = rows || [];
+  const empty = document.getElementById('library-empty');
+  const summary = document.getElementById('library-summary-note');
+
+  if (!rows.length) {
+    empty.style.display = 'block';
+    empty.textContent = 'No saved palaces yet. Generate one in the forge, then save it and manage it from the library page.';
+    summary.textContent = '0 saved palaces. Open Library once you save your first palace.';
+    return;
+  }
+
+  empty.style.display = 'none';
+  const latest = rows[0];
+  summary.innerHTML = `${rows.length} saved palace${rows.length === 1 ? '' : 's'} synced. Latest: <span style="color:var(--white)">${escapeHtml(latest.title || 'Untitled palace')}</span> • v${latest.latest_version_number || 1}. Use <a href="/library" style="color:var(--acid);text-decoration:none;">Open Library</a> for search, filters, rename, delete, and load.`;
+}
+
+function refreshAuthUI() {
+  const openAuthBtn = document.getElementById('open-auth-btn');
+  const saveBtn = document.getElementById('save-palace-btn');
+  const saveAsNewBtn = document.getElementById('save-as-new-btn');
+  const newDraftBtn = document.getElementById('new-draft-btn');
+  const refreshBtn = document.getElementById('refresh-library-btn');
+  const signOutBtn = document.getElementById('auth-signout-btn');
+
+  if (!appConfig.authEnabled) {
+    setAccountBadge('offline', 'AUTH OFF');
+    document.getElementById('auth-summary').textContent = 'Backend auth config is missing. Add SUPABASE_URL and SUPABASE_ANON_KEY to turn on accounts and saved palaces.';
+    setAuthModalStatus('Set SUPABASE_URL and SUPABASE_ANON_KEY on the backend to enable login.');
+    openAuthBtn.textContent = 'Auth Setup';
+    saveBtn.disabled = true;
+    saveAsNewBtn.disabled = true;
+    newDraftBtn.disabled = true;
+    refreshBtn.disabled = true;
+    signOutBtn.style.display = 'none';
+    renderLibraryRows([]);
+    setLibraryStatus('Auth disabled until Supabase is configured.');
+    return;
+  }
+
+  if (authState.user) {
+    const label = authState.user.email ? authState.user.email.split('@')[0].slice(0, 12) : 'SIGNED IN';
+    setAccountBadge('online', label.toUpperCase());
+    document.getElementById('auth-summary').textContent = `Signed in as ${authState.user.email || authState.user.id}. Save from the forge here, then manage the full collection from the dedicated library page.`;
+    setAuthModalStatus(`Signed in as ${authState.user.email || authState.user.id}.`);
+    openAuthBtn.textContent = 'Account';
+    saveBtn.disabled = !hasSavablePalace();
+    saveBtn.textContent = currentPalaceMeta?.id ? 'Save Version' : 'Save Palace';
+    saveAsNewBtn.disabled = !hasSavablePalace();
+    newDraftBtn.disabled = false;
+    refreshBtn.disabled = false;
+    signOutBtn.style.display = 'block';
+    setLibraryStatus(currentPalaceMeta ? `Editing "${currentPalaceMeta.title}"` : 'Library connected.', 'success');
+  } else {
+    setAccountBadge('warning', 'SIGN IN');
+    document.getElementById('auth-summary').textContent = 'Sign in to save palaces, keep a history, and build your personal library.';
+    setAuthModalStatus('Create an account or sign in to start saving palaces.');
+    openAuthBtn.textContent = 'Sign In';
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'Save Palace';
+    saveAsNewBtn.disabled = true;
+    newDraftBtn.disabled = true;
+    refreshBtn.disabled = true;
+    signOutBtn.style.display = 'none';
+    renderLibraryRows([]);
+    setLibraryStatus('Sign in to access your library.');
+  }
+}
+
+function startNewPalaceDraft(fromPalaceId = '') {
+  if (!appConfig.authEnabled || !authState.user) {
+    openAuthModal();
+    return;
+  }
+
+  const sourceRow = fromPalaceId ? libraryRowsCache.find(row => row.id === fromPalaceId) : currentPalaceMeta;
+  currentPalaceMeta = null;
+  if (sourceRow) {
+    document.getElementById('palace-title-input').value = `${sourceRow.title} Copy`;
+    setLibraryStatus(`Forked "${sourceRow.title}" into a new draft.`, 'success');
+  } else {
+    document.getElementById('palace-title-input').value = getDefaultPalaceTitle();
+    setLibraryStatus('New draft started. The next save will create a new palace.', 'success');
+  }
+  refreshAuthUI();
+  renderLibraryRows(libraryRowsCache);
+}
+
+async function ensureProfileRecord() {
+  if (!supabaseClient || !authState.user) return;
+
+  const payload = {
+    id: authState.user.id,
+    email: authState.user.email || null,
+    display_name: (authState.user.user_metadata?.display_name || authState.user.email || '').split('@')[0] || null
+  };
+
+  const { error } = await runSupabaseQuery(
+    'profile upsert',
+    supabaseClient.from('profiles').upsert(payload, { onConflict: 'id' })
+  );
+  if (error) console.warn('Profile upsert warning:', error.message);
+}
+
+async function loadLibrary() {
+  if (!supabaseClient || !authState.user) {
+    refreshAuthUI();
+    return;
+  }
+
+  setLibraryStatus('Loading library…');
+  const { data, error } = await runSupabaseQuery(
+    'library load',
+    supabaseClient
+      .from('palaces')
+      .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
+      .eq('user_id', authState.user.id)
+      .order('updated_at', { ascending: false })
+  );
+
+  if (error) {
+    renderLibraryRows([]);
+    setLibraryStatus(`Library load failed: ${error.message}`, 'error');
+    return;
+  }
+
+  renderLibraryRows(data || []);
+  setLibraryStatus(`Loaded ${(data || []).length} saved palace${(data || []).length === 1 ? '' : 's'}.`, 'success');
+  await maybeLoadRoutePalace();
+}
+
+async function deletePalace(palaceId) {
+  if (!supabaseClient || !authState.user) {
+    openAuthModal();
+    return;
+  }
+
+  const row = libraryRowsCache.find(item => item.id === palaceId);
+  const label = row?.title || 'this palace';
+  if (!confirm(`Delete "${label}" and all saved versions? This cannot be undone.`)) {
+    return;
+  }
+
+  setLibraryStatus(`Deleting "${label}"…`);
+  const { error } = await runSupabaseQuery(
+    'palace delete',
+    supabaseClient.from('palaces').delete().eq('id', palaceId)
+  );
+  if (error) {
+    setLibraryStatus(`Delete failed: ${error.message}`, 'error');
+    return;
+  }
+
+  if (currentPalaceMeta?.id === palaceId) {
+    currentPalaceMeta = null;
+    refreshAuthUI();
+  }
+
+  setLibraryStatus(`Deleted "${label}".`, 'success');
+  await loadLibrary();
+}
+
+async function loadPalace(palaceId, options = {}) {
+  if (!supabaseClient || !authState.user) {
+    openAuthModal();
+    return;
+  }
+
+  setLibraryStatus('Loading palace…');
+  const [{ data: palace, error: palaceError }, { data: version, error: versionError }] = await Promise.all([
+    runSupabaseQuery(
+      'palace load',
+      supabaseClient
+        .from('palaces')
+        .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
+        .eq('id', palaceId)
+        .single()
+    ),
+    runSupabaseQuery(
+      'palace version load',
+      supabaseClient
+        .from('palace_versions')
+        .select('version_number,generation_inputs,generation_outputs,created_at')
+        .eq('palace_id', palaceId)
+        .order('version_number', { ascending: false })
+        .limit(1)
+        .single()
+    )
+  ]);
+
+  if (palaceError || versionError) {
+    setLibraryStatus(`Load failed: ${(palaceError || versionError).message}`, 'error');
+    return;
+  }
+
+  applyPalaceSnapshot(palace, version);
+  if (!options.silentScroll) {
+    setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  }
+}
+
+async function saveCurrentPalace(asNew = false) {
+  if (!appConfig.authEnabled || !supabaseClient) {
+    openAuthModal();
+    return;
+  }
+
+  if (!authState.user) {
+    openAuthModal();
+    return;
+  }
+
+  if (!hasSavablePalace()) {
+    setLibraryStatus('Generate a palace first, then save it.', 'error');
+    return;
+  }
+
+  const snapshot = buildPalaceSnapshot();
+  const nowIso = new Date().toISOString();
+  setLibraryStatus(asNew ? 'Saving new palace…' : 'Saving palace…');
+
+  try {
+    let palaceRow = asNew ? null : currentPalaceMeta;
+    let nextVersion = asNew ? 1 : (currentPalaceMeta?.latest_version_number || 0) + 1;
+
+    if (!palaceRow?.id) {
+      nextVersion = 1;
+      const insertPayload = {
+        user_id: authState.user.id,
+        title: snapshot.title,
+        topic: snapshot.topic,
+        source_name: snapshot.source_name,
+        scene_title: snapshot.scene_title,
+        status: snapshot.status,
+        latest_version_number: nextVersion,
+        updated_at: nowIso
+      };
+      const { data, error } = await runSupabaseQuery(
+        'palace insert',
+        supabaseClient
+          .from('palaces')
+          .insert(insertPayload)
+          .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
+          .single()
+      );
+      if (error) throw error;
+      palaceRow = data;
+    } else {
+      const { data, error } = await runSupabaseQuery(
+        'palace update',
+        supabaseClient
+          .from('palaces')
+          .update({
+            title: snapshot.title,
+            topic: snapshot.topic,
+            source_name: snapshot.source_name,
+            scene_title: snapshot.scene_title,
+            status: snapshot.status,
+            latest_version_number: nextVersion,
+            updated_at: nowIso
+          })
+          .eq('id', palaceRow.id)
+          .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
+          .single()
+      );
+      if (error) throw error;
+      palaceRow = data;
+    }
+
+    const versionPayload = {
+      palace_id: palaceRow.id,
+      version_number: nextVersion,
+      generation_inputs: snapshot.generation_inputs,
+      generation_outputs: snapshot.generation_outputs
+    };
+    const { error: versionError } = await runSupabaseQuery(
+      'palace version insert',
+      supabaseClient.from('palace_versions').insert(versionPayload)
+    );
+    if (versionError) throw versionError;
+
+    currentPalaceMeta = palaceRow;
+    document.getElementById('palace-title-input').value = palaceRow.title || '';
+    setLibraryStatus(`Saved "${palaceRow.title}" as version ${nextVersion}.`, 'success');
+    refreshAuthUI();
+    await loadLibrary();
+  } catch (error) {
+    setLibraryStatus(`Save failed: ${error.message}`, 'error');
+  }
+}
+
+async function signInWithPassword() {
+  if (!supabaseClient) {
+    setAuthModalStatus('Supabase is not configured yet.', 'error');
+    return;
+  }
+
+  const email = document.getElementById('auth-email-input').value.trim();
+  const password = document.getElementById('auth-password-input').value;
+  if (!email || !password) {
+    setAuthModalStatus('Enter both email and password.', 'error');
+    return;
+  }
+
+  setAuthModalStatus('Signing in…');
+  try {
+    const { data, error } = await runSupabaseQuery(
+      'sign in',
+      supabaseClient.auth.signInWithPassword({ email, password })
+    );
+    if (error) {
+      setAuthModalStatus(error.message, 'error');
+      return;
+    }
+
+    authState = { session: data.session, user: data.user };
+    refreshAuthUI();
+    setAuthModalStatus(`Signed in as ${data.user?.email || email}.`, 'success');
+
+    const results = await Promise.allSettled([ensureProfileRecord(), loadLibrary()]);
+    const failed = results.find(result => result.status === 'rejected');
+    if (failed) {
+      const reason = failed.reason?.message || 'Library sync failed after sign-in.';
+      setAuthModalStatus(`Signed in, but follow-up sync failed: ${reason}`, 'error');
+    }
+  } catch (error) {
+    setAuthModalStatus(error.message || 'Sign in failed.', 'error');
+  }
+}
+
+async function signUpWithPassword() {
+  if (!supabaseClient) {
+    setAuthModalStatus('Supabase is not configured yet.', 'error');
+    return;
+  }
+
+  const email = document.getElementById('auth-email-input').value.trim();
+  const password = document.getElementById('auth-password-input').value;
+  if (!email || !password) {
+    setAuthModalStatus('Enter both email and password.', 'error');
+    return;
+  }
+
+  setAuthModalStatus('Creating account…');
+  try {
+    const { data, error } = await runSupabaseQuery(
+      'sign up',
+      supabaseClient.auth.signUp({ email, password })
+    );
+    if (error) {
+      setAuthModalStatus(error.message, 'error');
+      return;
+    }
+
+    authState = { session: data.session, user: data.user };
+    refreshAuthUI();
+
+    if (data.user) {
+      const results = await Promise.allSettled([ensureProfileRecord(), loadLibrary()]);
+      const failed = results.find(result => result.status === 'rejected');
+      if (failed) {
+        const reason = failed.reason?.message || 'Library sync failed after sign-up.';
+        setAuthModalStatus(`Account created, but follow-up sync failed: ${reason}`, 'error');
+        return;
+      }
+    }
+
+    setAuthModalStatus(
+      data.session
+        ? `Account created and signed in as ${data.user?.email || email}.`
+        : 'Account created. Check your email if your Supabase project requires confirmation.',
+      'success'
+    );
+  } catch (error) {
+    setAuthModalStatus(error.message || 'Sign up failed.', 'error');
+  }
+}
+
+async function signOutAccount() {
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signOut();
+  authState = { session: null, user: null };
+  currentPalaceMeta = null;
+  libraryRowsCache = [];
+  refreshAuthUI();
+  setAuthModalStatus('Signed out.');
+}
+
+async function loadAuthSystem() {
+  try {
+    const res = await fetch(getApiUrl('/api/config/public'));
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const config = await res.json();
+    appConfig.authEnabled = !!config.auth_enabled;
+    appConfig.supabaseUrl = config.supabase_url || '';
+    appConfig.supabaseAnonKey = config.supabase_anon_key || '';
+
+    if (!appConfig.authEnabled) {
+      refreshAuthUI();
+      return;
+    }
+
+    if (!window.supabase?.createClient) {
+      setAuthModalStatus('Supabase client failed to load in the browser.', 'error');
+      refreshAuthUI();
+      return;
+    }
+
+    supabaseClient = window.supabase.createClient(
+      appConfig.supabaseUrl,
+      appConfig.supabaseAnonKey,
+      { auth: { persistSession: true, autoRefreshToken: true } }
+    );
+
+    const { data } = await supabaseClient.auth.getSession();
+    authState = { session: data.session, user: data.session?.user || null };
+    if (authState.user) await ensureProfileRecord();
+
+    supabaseClient.auth.onAuthStateChange(async (_event, session) => {
+      authState = { session, user: session?.user || null };
+      refreshAuthUI();
+    if (authState.user) {
+      const results = await Promise.allSettled([ensureProfileRecord(), loadLibrary()]);
+      const failed = results.find(result => result.status === 'rejected');
+        if (failed) {
+          console.error('Auth state sync failed:', failed.reason);
+          setLibraryStatus(
+            `Signed in, but library sync failed: ${failed.reason?.message || 'Unknown error'}`,
+            'error'
+          );
+        }
+      }
+    });
+
+    refreshAuthUI();
+    if (authState.user) await loadLibrary();
+    await maybeLoadRoutePalace();
+  } catch (error) {
+    appConfig.authEnabled = false;
+    supabaseClient = null;
+    refreshAuthUI();
+    setAuthModalStatus(`Auth config load failed: ${error.message}`, 'error');
+  }
+}
+
+refreshAuthUI();
+loadAuthSystem();
+
+// ══════════════════════════════════════════════════
+// SHARED CONSTANTS (used by both demo mode and live pipeline)
+// ══════════════════════════════════════════════════
+
+const SKETCHY_STYLE = 'Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. ' +
+  'Wobbly, imperfect ink outlines with visible line weight variation — thick at corners, thin on straights, ' +
+  'slightly unsteady like a real human hand drew every line. NO clean digital vector lines. ' +
+  'Cell-shaded flat coloring: each surface has ONE base color and ONE shadow color with a HARD crisp edge, ' +
+  'like coloring with markers that leave visible fill strokes. NO soft gradients, NO airbrush, NO blending. ' +
+  'Limited muted earth-tone palette, maximum 5 colors plus black. ' +
+  'Characters are angular cartoon caricatures with big heads, pointy chins, exaggerated expressions — ' +
+  'like editorial newspaper cartoons, NOT anime, NOT 3D, NOT realistic proportions. ' +
+  'Backgrounds filled with hand-drawn linework, cross-hatching, and flat marker fills. ' +
+  'NO gradient fills, NO atmospheric haze, NO depth of field blur. ' +
+  'Flat even lighting — NO spotlight cones, NO volumetric light, NO lens flares, NO glowing effects. ' +
+  'All text in the scene looks hand-written with a marker, slightly uneven and imperfect. ' +
+  'Every object looks like it was drawn on a whiteboard or poster board with markers. ' +
+  'Style reference: Sketchy Medical, Pixorize, editorial cartoon, medical education poster drawn by hand.';
+
+const ANTI_META_TEXT = 'TEXT RULES: Do NOT render any floating labels, zone names, category descriptions, ' +
+  'or meta-commentary as visible text in the image. The ONLY text that should appear is text that is ' +
+  'physically part of an object in the scene — written on signs, sticky notes, labels, screens, bottles, ' +
+  'chalkboards, or other in-world surfaces. No floating captions. No zone labels. No anchor descriptions.';
+
+const ZONE_CYCLE = [
+  'FAR LEFT', 'LEFT', 'CENTER LEFT', 'CENTER', 'CENTER RIGHT', 'RIGHT',
+  'FAR RIGHT', 'FOREGROUND LEFT', 'FOREGROUND CENTER', 'FOREGROUND RIGHT',
+  'BACKGROUND LEFT', 'BACKGROUND CENTER', 'BACKGROUND RIGHT', 'BACKGROUND CORNER', 'DOORWAY'
+];
+
+function buildAnchorLines(anchors) {
+  return anchors.map(v => `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${v.visual}`).join('\n');
+}
+
+// ══════════════════════════════════════════════════
+// DEMO MODE — Realistic canned DKA data, zero API calls
+// ══════════════════════════════════════════════════
+
+const DEMO_DATA = {
+  clinical_context: {
+    core_concepts: `1. DKA diagnostic triad: hyperglycemia (>250 mg/dL), anion gap metabolic acidosis (pH <7.3, bicarb <18), ketonemia/ketonuria
+2. Fluid resuscitation first: 1-2L NS bolus in first hour, then 250-500 mL/hr; switch to D5 1/2NS when glucose <200
+3. Insulin drip: 0.1-0.14 units/kg/hr — do NOT bolus; do NOT start until K+ ≥3.3
+4. Potassium replacement: if K+ <3.3, hold insulin and replete aggressively; if 3.3-5.3, add 20-40 mEq/L to each liter of IVF
+5. Monitor anion gap closure, NOT glucose, to determine resolution — gap closes before glucose normalizes
+6. Cerebral edema risk in pediatrics with overly aggressive fluid resuscitation or rapid glucose drops`,
+    scene_logic: `Guide character stands center frame at an IV pole. Left side: diagnostic triad elements (glucose meter, pH strip, ketone test). Center: fluid bags and insulin drip. Right side: potassium bottles arranged by threshold values. Foreground: anion gap monitor. Background: pediatric warning sign.`
+  },
+  scene_title: 'The Midnight Drip Bar',
+  opening: 'Welcome to the Midnight Drip Bar — a dimly lit speakeasy where every drink is an IV bag and the bartender is a burned-out ER attending who exclusively serves fluids based on lab values. The neon sign above the bar flickers between "OPEN" and "ANION GAP: 24." The whole place smells like normal saline and regret. Our bartender stands behind the counter, one hand on an IV pole, the other pointing at a chalkboard menu that lists fluids by potassium level. Let\'s walk through how this attending runs a DKA resuscitation — one drip at a time.',
+  voLines: [
+    {
+      n: 1,
+      narration: 'Take a look at the neon sign above the entrance. You can see three numbers glowing in red: 250, 7.3, and 18. These are your DKA diagnostic thresholds — glucose above 250, pH below 7.3, and bicarb below 18. Notice how the sign also shows the word "GAP" buzzing in and out. That\'s your anion gap metabolic acidosis. All three need to be present. Get it? Three numbers on the sign, three criteria for the diagnosis.',
+      visual: 'A flickering neon bar sign above the entrance displaying "250 | 7.3 | 18" in red with the word "GAP" buzzing intermittently below — three glowing diagnostic thresholds',
+      anchor: 'DKA diagnostic triad: glucose >250 mg/dL, pH <7.3, bicarb <18 mEq/L, plus anion gap metabolic acidosis'
+    },
+    {
+      n: 2,
+      narration: 'Now look at the bartender — our attending — pouring from a massive jug labeled "NS" into two enormous pint glasses. Notice the clock on the wall behind them reads "HOUR 1" and the glasses are marked "1L" each. That\'s your initial fluid resuscitation: 1 to 2 liters of normal saline bolused in the first hour. Fluids come first in DKA. Before insulin, before anything else. The body is profoundly volume depleted — sometimes 6 to 9 liters down.',
+      visual: 'The bartender (ER attending in scrubs) pouring from a giant jug labeled "NS" into two oversized pint glasses each marked "1L", with a wall clock showing "HOUR 1" behind them',
+      anchor: 'Initial fluid resuscitation: 1-2L normal saline bolus in the first hour; fluids before insulin; patients are 6-9L volume depleted'
+    },
+    {
+      n: 3,
+      narration: 'Over on the left side of the bar, notice the shelf of smaller bottles. There\'s a bottle labeled "D5 ½NS" with a sticky note that says "WHEN GLUCOSE < 200." This is your fluid switch point. Once the blood glucose drops below 200, you don\'t stop fluids — you switch to dextrose-containing fluids. This prevents hypoglycemia while you keep the insulin drip running to close the anion gap. The gap is what matters, not the glucose number.',
+      visual: 'A bar shelf on the left holding a bottle labeled "D5 ½NS" with a prominent sticky note reading "WHEN GLUCOSE < 200" in red marker — the fluid switch point',
+      anchor: 'Switch to D5 ½NS when glucose <200 mg/dL — continue insulin to close anion gap, add dextrose to prevent hypoglycemia'
+    },
+    {
+      n: 4,
+      narration: 'Right here behind the bar, look at the IV pump mounted on the central pole. The rate display reads "0.1 units/kg/hr" and there\'s a big red sticker that says "NO BOLUS." That\'s your insulin drip protocol. You start at 0.1 to 0.14 units per kg per hour — continuous infusion, no bolus. The bolus was removed from modern protocols because it increases hypoglycemia and hypokalemia risk without improving outcomes. Just the drip.',
+      visual: 'An IV pump mounted on a central pole displaying "0.1 units/kg/hr" with a large red circular sticker reading "NO BOLUS" — the insulin drip protocol station',
+      anchor: 'Insulin drip: 0.1-0.14 units/kg/hr continuous infusion; do NOT give insulin bolus — increases hypoglycemia and hypokalemia risk'
+    },
+    {
+      n: 5,
+      narration: 'Now this is critical — look at the three potassium bottles lined up on the right side of the bar. They\'re color-coded like a traffic light. The red one says "K < 3.3 — HOLD INSULIN." The yellow one says "K 3.3-5.3 — add 20-40 mEq/L." The green one says "K > 5.3 — recheck in 2 hrs." This is the single most dangerous part of DKA management. If you start insulin when potassium is below 3.3, you will drive it further down and cause fatal arrhythmias. Always check potassium before starting the drip.',
+      visual: 'Three potassium bottles on the right bar shelf, traffic-light colored: RED labeled "K<3.3 HOLD INSULIN", YELLOW labeled "K 3.3-5.3 Add 20-40mEq", GREEN labeled "K>5.3 Recheck 2hr" — the potassium decision tree',
+      anchor: 'Potassium protocol: K<3.3 = hold insulin and replete aggressively; K 3.3-5.3 = add 20-40 mEq/L to IVF; K>5.3 = recheck in 2 hours'
+    },
+    {
+      n: 6,
+      narration: 'Finally, notice the chalkboard behind the bartender. At the top it says "CLOSING TIME" and underneath there\'s a drawing of an anion gap graph trending downward — NOT a glucose graph. This is how you know DKA is resolving. You follow the anion gap, not the glucose. The glucose will normalize first, but if the gap is still open, the patient is still in DKA. Resolution means: gap closed, pH above 7.3, bicarb above 18, and the patient can eat. Then you overlap subcutaneous insulin 2 hours before stopping the drip.',
+      visual: 'A large chalkboard behind the bar reading "CLOSING TIME" at the top with a hand-drawn anion gap graph trending down, the word "GLUCOSE" crossed out, and a checklist: "Gap closed ✓ pH>7.3 ✓ Bicarb>18 ✓ Eating ✓ → Overlap SQ 2hr"',
+      anchor: 'Monitor anion gap (not glucose) for DKA resolution; resolution = gap closed + pH>7.3 + bicarb>18 + tolerating PO; overlap SQ insulin 2hr before stopping drip'
+    },
+    {
+      n: 7,
+      narration: 'Now look at the jukebox in the far left corner. Instead of song titles, the playlist shows the 5 I\'s — Infection, Insulin noncompliance, Ischemia, Intoxication, and Iatrogenic. These are the five most common precipitants of DKA. The number one cause? Infection. Number two? Insulin noncompliance — the patient stopped taking their insulin. Every DKA workup should include a search for the trigger. Get it? The jukebox plays what started this whole episode.',
+      visual: 'A retro jukebox in the far left corner with a playlist display showing five song titles: "1. Infection", "2. Insulin Noncompliance", "3. Ischemia", "4. Intoxication", "5. Iatrogenic" — the 5 I\'s of DKA precipitants',
+      anchor: 'DKA precipitants (5 I\'s): Infection (#1 cause), Insulin noncompliance (#2), Ischemia, Intoxication, Iatrogenic'
+    },
+    {
+      n: 8,
+      narration: 'Over by the bathroom door, notice the sign that says "NO BICARB ZONE" with a pH threshold of 6.9 written below it. Here\'s the rule: do NOT give bicarbonate in DKA unless the pH is below 6.9. Above 6.9, the acidosis will correct itself once you close the anion gap with insulin and fluids. Giving bicarb when it\'s not needed can worsen hypokalemia and paradoxically worsen CNS acidosis. The only exception is that critical pH below 6.9 where cardiac function is at risk.',
+      visual: 'A bathroom door with a large prohibition-style sign reading "NO BICARB ZONE" and below it "Unless pH < 6.9" in red — the bicarbonate threshold rule',
+      anchor: 'Do NOT give bicarbonate unless pH <6.9 — bicarb worsens hypokalemia and paradoxical CNS acidosis; acidosis self-corrects with insulin and fluids'
+    },
+    {
+      n: 9,
+      narration: 'Take a look at the small VIP table in the foreground — there\'s a child-sized chair with a warning sign that says "SLOW DOWN" and a brain icon with swelling arrows. This is your cerebral edema warning. In pediatric DKA, overly aggressive fluid resuscitation or dropping the glucose too fast can cause fatal cerebral edema. The rule: don\'t drop glucose faster than 50 to 75 mg/dL per hour in kids. This is the number one cause of death in pediatric DKA — not the acidosis itself.',
+      visual: 'A small VIP table in the foreground with a child-sized chair, a warning placard reading "SLOW DOWN — 50-75/hr MAX" and a cartoon brain icon with red swelling arrows — the pediatric cerebral edema warning',
+      anchor: 'Pediatric DKA: cerebral edema is #1 cause of death; do not drop glucose >50-75 mg/dL/hr; avoid overly aggressive fluid resuscitation in children'
+    },
+    {
+      n: 10,
+      narration: 'Finally, check out the tip jar at the end of the bar. It\'s labeled "BHB > Urine Ketones" and there\'s a note taped to it that says "UA lies." This is a clinical pearl most people miss. Urine ketones measure acetoacetate, but in DKA the predominant ketone is beta-hydroxybutyrate. As the patient improves, BHB converts to acetoacetate — so urine ketones can actually increase as the patient gets better. That\'s why you follow the serum BHB or the anion gap, never the urine dipstick, to track resolution.',
+      visual: 'A glass tip jar at the far end of the bar labeled "BHB > Urine Ketones" with a sticky note reading "UA lies — ketones rise as patient improves" — the beta-hydroxybutyrate monitoring pearl',
+      anchor: 'Follow serum beta-hydroxybutyrate (BHB) or anion gap, NOT urine ketones — urine acetoacetate rises paradoxically during DKA treatment as BHB converts'
+    }
+  ],
+  review_script: `When you see the neon sign with 250, 7.3, and 18 — remember the DKA diagnostic triad: glucose >250, pH <7.3, bicarb <18 with anion gap acidosis.
+When you see the bartender pouring two 1L pint glasses of NS — remember fluids first, 1-2L NS in hour one, before insulin.
+When you see the D5 ½NS bottle with the "glucose <200" note — remember to switch fluids when glucose drops below 200 to prevent hypoglycemia while closing the gap.
+When you see the IV pump reading 0.1 units/kg/hr with the "NO BOLUS" sticker — remember insulin drip only, no bolus, 0.1-0.14 units/kg/hr.
+When you see the three traffic-light potassium bottles — remember K<3.3 means hold insulin, K 3.3-5.3 means add 20-40 mEq, K>5.3 means recheck.
+When you see the chalkboard showing anion gap trending down with "GLUCOSE" crossed out — remember to follow the gap, not glucose, for resolution.
+When you see the jukebox playing the 5 I's — remember DKA precipitants: Infection, Insulin noncompliance, Ischemia, Intoxication, Iatrogenic.
+When you see the "NO BICARB ZONE" bathroom sign with pH 6.9 — remember do not give bicarbonate unless pH <6.9.
+When you see the child-sized VIP chair with "SLOW DOWN" and the swelling brain — remember pediatric cerebral edema risk, don't drop glucose >50-75/hr.
+When you see the tip jar labeled "BHB > Urine Ketones" — remember follow serum BHB or anion gap, not urine ketones, which rise paradoxically during treatment.`,
+  prompt1_sample: 'Dimly lit speakeasy bar interior at night, warm amber and deep teal muted palette, neon signage casting colored glow, burned-out ER attending character standing center frame behind a bar counter with IV poles instead of beer taps, shelves of IV fluid bags and medicine bottles lining the back wall, chalkboard menu visible in background, wide establishing shot showing full room layout with clear zones far left left center right far right foreground background, enough space for 8-10 distinct labeled medical objects'
+};
+
+// Demo mode toggle
+const demoToggle = document.getElementById('demo-mode-toggle');
+const demoBanner = document.getElementById('demo-banner');
+demoToggle.addEventListener('change', () => {
+  demoBanner.classList.toggle('visible', demoToggle.checked);
+});
+
+// Operator mode toggle
+const operatorToggle = document.getElementById('operator-toggle');
+const operatorPanel = document.getElementById('operator-panel');
+
+let operatorUnlocked = false;
+const OPERATOR_CODE = 'forge';
+
+operatorToggle.addEventListener('change', () => {
+  if (operatorToggle.checked && !operatorUnlocked) {
+    const code = prompt('Enter operator access code:');
+    if (code !== OPERATOR_CODE) {
+      operatorToggle.checked = false;
+      return;
+    }
+    operatorUnlocked = true;
+  }
+});
+
+operatorToggle.addEventListener('change', () => {
+  if (operatorUnlocked) {
+    operatorPanel.classList.toggle('visible', operatorToggle.checked);
+  }
+});
+
+function isDemoMode() { return demoToggle.checked; }
+function isOperatorMode() { return operatorToggle.checked; }
+function demoDelay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Copy all prompts as tab-separated row for spreadsheet paste
+// Format: Topic \t Prompt1 \t Prompt2
+function copyAllTSV() {
+  const topic = document.getElementById('topic')?.value?.trim() || '';
+  const p1 = document.getElementById('prompt-copy-1')?.value || '';
+  const p2 = document.getElementById('prompt-copy-2')?.value || '';
+  const clean = s => s.replace(/[\t\n\r]/g, ' ');
+  const tsv = [clean(topic), clean(p1), clean(p2)].join('\t');
+  const btn = document.getElementById('copy-all-tsv');
+  copyToClipboard(tsv, btn, 'Copy All → Spreadsheet');
+}
+
+// Format review script as bullet points
+function formatReviewBullets(text) {
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length <= 1) return `<ul><li>${text}</li></ul>`;
+  return '<ul>' + lines.map(l => `<li>${l}</li>`).join('') + '</ul>';
+}
+
+// ══════════════════════════════════════════════════
+// STAGE 0 — DOCUMENT INTELLIGENCE
+// ══════════════════════════════════════════════════
+
+let uploadedFileData = null; // { name, type, base64, text, isImage }
+let documentSections = [];   // [{ title, summary }]
+let selectedSectionText = '';
+
+// ── Drag & Drop ────────────────────────────────────
+const zone = document.getElementById('upload-zone');
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+zone.addEventListener('drop', e => {
+  e.preventDefault(); zone.classList.remove('dragover');
+  const f = e.dataTransfer.files[0];
+  if (f) processFile(f);
+});
+
+async function handleFileSelect(e) {
+  const f = e.target.files[0];
+  if (f) processFile(f);
+}
+
+async function processFile(file) {
+  const allowedTypes = ['application/pdf','text/plain','image/png','image/jpeg','image/jpg','image/webp'];
+  const ext = file.name.split('.').pop().toLowerCase();
+  const allowedExts = ['pdf','txt','text','png','jpg','jpeg','webp'];
+  if (!allowedExts.includes(ext)) {
+    alert('Unsupported file type. Please upload PDF, TXT, PNG, or JPG.');
+    return;
+  }
+
+  const isImage = ['png','jpg','jpeg','webp'].includes(ext);
+  const isText  = ['txt','text'].includes(ext);
+
+  // Show status bar
+  document.getElementById('file-status').style.display = 'flex';
+  document.getElementById('file-status-name').textContent = file.name;
+  document.getElementById('file-status-size').textContent = `(${(file.size/1024).toFixed(0)} KB)`;
+  document.getElementById('file-status-icon').textContent = isImage ? '🖼' : ext === 'pdf' ? '📄' : '📝';
+
+  // Read file
+  const reader = new FileReader();
+
+  if (isText) {
+    reader.onload = e => {
+      uploadedFileData = { name: file.name, type: ext, base64: null, text: e.target.result, isImage: false };
+      document.getElementById('extract-btn-wrap').style.display = 'block';
+    };
+    reader.readAsText(file);
+  } else {
+    reader.onload = e => {
+      const b64 = e.target.result.split(',')[1];
+      uploadedFileData = { name: file.name, type: ext, base64: b64, text: null, isImage };
+      document.getElementById('extract-btn-wrap').style.display = 'block';
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function clearFile() {
+  uploadedFileData = null; documentSections = []; selectedSectionText = '';
+  document.getElementById('file-input').value = '';
+  document.getElementById('file-status').style.display = 'none';
+  document.getElementById('extract-btn-wrap').style.display = 'none';
+  document.getElementById('section-picker-wrap').style.display = 'none';
+  document.getElementById('concepts-btn-wrap').style.display = 'none';
+  document.getElementById('checklist-wrap').style.display = 'none';
+  document.getElementById('config-divider').style.display = 'none';
+  document.getElementById('config-wrap').style.display = 'none';
+  document.getElementById('forge-wrap').style.display = 'none';
+}
+
+// ── Section Extraction ─────────────────────────────
+async function extractSections() {
+  const btn = document.getElementById('extract-btn');
+  const btnText = document.getElementById('extract-btn-text');
+  btn.disabled = true;
+  btnText.textContent = '✦ Identifying sections…';
+
+  const messages = buildFileMessage(
+    `You are a medical educator analyzing a document. Identify all distinct sections, topics, or chapters in this document.
+
+Respond ONLY with XML. No preamble, no explanation.
+
+<sections>
+<section><title>Section name (concise, 2-6 words)</title><summary>One sentence describing what this section covers and what it would be good to memorize.</summary></section>
+</sections>
+
+List every distinct section. If the document is one continuous topic with no clear sections, create logical sub-topic groupings of 4–8 concepts each.`
+  );
+
+  try {
+    const res = await claudeFetch({ model: 'claude-sonnet-4-6', max_tokens: 1200, messages });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message || 'API error');
+    const txt = data.content?.[0]?.text || '';
+
+    const titleMatches = [...txt.matchAll(/<title>([\s\S]*?)<\/title>/gi)].map(m => m[1].trim());
+    const summaryMatches = [...txt.matchAll(/<summary>([\s\S]*?)<\/summary>/gi)].map(m => m[1].trim());
+
+    documentSections = titleMatches.map((t, i) => ({ title: t, summary: summaryMatches[i] || '' }));
+
+    if (!documentSections.length) throw new Error('No sections found. Try a different file.');
+
+    // Populate section picker
+    const sel = document.getElementById('section-select');
+    sel.innerHTML = '<option value="">— choose a section —</option>';
+    documentSections.forEach((s, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = s.title;
+      opt.title = s.summary;
+      sel.appendChild(opt);
+    });
+
+    document.getElementById('section-picker-wrap').style.display = 'block';
+    btnText.textContent = `✓ Found ${documentSections.length} sections`;
+  } catch(e) {
+    btnText.textContent = '✗ ' + e.message;
+    btn.disabled = false;
+  }
+}
+
+function onSectionChange() {
+  const val = document.getElementById('section-select').value;
+  document.getElementById('concepts-btn-wrap').style.display = val !== '' ? 'block' : 'none';
+  document.getElementById('checklist-wrap').style.display = 'none';
+}
+
+// ── Concept Extraction ─────────────────────────────
+async function extractConcepts() {
+  const idx = parseInt(document.getElementById('section-select').value);
+  const section = documentSections[idx];
+  const btn = document.getElementById('concepts-btn');
+  const btnText = document.getElementById('concepts-btn-text');
+  btn.disabled = true;
+  btnText.textContent = '✦ Extracting high-yield concepts…';
+
+  const messages = buildFileMessage(
+    `You are a senior medical educator and board exam question writer. Extract EVERY high-yield, board-testable concept from the section titled "${section.title}" in this document.
+
+High-yield means: commonly tested, clinically important, or frequently pimped on rounds. Include:
+- Mechanisms, pathophysiology
+- Drug names, classes, receptor affinities, indications, contraindications
+- Key numbers, thresholds, doses
+- Classic presentations, buzzword findings
+- Management algorithms and decision points
+- Diagnostic criteria
+- Common clinical mistakes / pitfalls
+
+Respond ONLY with XML. No preamble.
+
+<concepts>
+<concept>
+<text>The specific fact, mechanism, or clinical pearl — written as a crisp, self-contained learning point</text>
+<category>one of: Mechanism | Drug | Numbers | Presentation | Management | Diagnosis | Pitfall</category>
+</concept>
+</concepts>
+
+Extract every testable concept. Do not summarize or collapse related items — list each separately.`
+  );
+
+  try {
+    const res = await claudeFetch({ model: 'claude-sonnet-4-6', max_tokens: 2500, messages });
+    const data = await res.json();
+    if (data.error) throw new Error(data.error.message || 'API error');
+    const txt = data.content?.[0]?.text || '';
+
+    const textMatches = [...txt.matchAll(/<text>([\s\S]*?)<\/text>/gi)].map(m => m[1].trim());
+    const catMatches  = [...txt.matchAll(/<category>([\s\S]*?)<\/category>/gi)].map(m => m[1].trim());
+
+    if (!textMatches.length) throw new Error('No concepts extracted. Try a different section.');
+
+    // Render checklist
+    const container = document.getElementById('concept-checklist');
+    container.innerHTML = '';
+    textMatches.forEach((text, i) => {
+      const cat = catMatches[i] || '';
+      const item = document.createElement('div');
+      item.className = 'concept-item';
+      item.dataset.idx = i;
+      item.innerHTML = `
+        <div class="concept-check"></div>
+        <div class="flex-col" style="flex:1">
+          <div class="concept-text">${text}</div>
+          ${cat ? `<div class="concept-tag">${cat}</div>` : ''}
+        </div>`;
+      item.addEventListener('click', () => {
+        item.classList.toggle('excluded');
+        updateChecklistCount();
+      });
+      container.appendChild(item);
+    });
+
+    updateChecklistCount();
+    document.getElementById('checklist-wrap').style.display = 'block';
+    btnText.textContent = `✓ Extracted ${textMatches.length} concepts`;
+  } catch(e) {
+    btnText.textContent = '✗ ' + e.message;
+    btn.disabled = false;
+  }
+}
+
+function updateChecklistCount() {
+  const total = document.querySelectorAll('.concept-item').length;
+  const selected = document.querySelectorAll('.concept-item:not(.excluded)').length;
+  document.getElementById('checklist-count').textContent = `${selected} of ${total} selected`;
+}
+
+function toggleAll(on) {
+  document.querySelectorAll('.concept-item').forEach(el => {
+    if (on) el.classList.remove('excluded');
+    else el.classList.add('excluded');
+  });
+  updateChecklistCount();
+}
+
+function proceedToForge() {
+  const selected = [...document.querySelectorAll('.concept-item:not(.excluded)')]
+    .map(el => el.querySelector('.concept-text').textContent.trim());
+
+  if (!selected.length) { alert('Select at least one concept.'); return; }
+
+  const sectionTitle = documentSections[parseInt(document.getElementById('section-select').value)]?.title || '';
+  const topicText = (sectionTitle ? `[${sectionTitle}]\n` : '') + selected.join('\n');
+  document.getElementById('topic').value = topicText;
+
+  // Show config + forge
+  document.getElementById('config-divider').style.display = 'flex';
+  document.getElementById('config-wrap').style.display = 'block';
+  document.getElementById('forge-wrap').style.display = 'block';
+  document.getElementById('manual-bypass').style.display = 'none';
+
+  // Scroll to config
+  setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function skipUpload() {
+  document.getElementById('config-divider').style.display = 'flex';
+  document.getElementById('config-wrap').style.display = 'block';
+  document.getElementById('forge-wrap').style.display = 'block';
+  document.getElementById('manual-bypass').style.display = 'none';
+  setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+// ── Build API message with correct content type ───
+function buildFileMessage(prompt) {
+  if (!uploadedFileData) return [{ role: 'user', content: prompt }];
+
+  const { type, base64, text, isImage } = uploadedFileData;
+
+  if (text) {
+    return [{ role: 'user', content: `${prompt}\n\n<document>\n${text.slice(0, 60000)}\n</document>` }];
+  }
+
+  if (isImage) {
+    const mediaMap = { png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', webp: 'image/webp' };
+    return [{
+      role: 'user',
+      content: [
+        { type: 'image', source: { type: 'base64', media_type: mediaMap[type] || 'image/png', data: base64 } },
+        { type: 'text', text: prompt }
+      ]
+    }];
+  }
+
+  if (type === 'pdf') {
+    return [{
+      role: 'user',
+      content: [
+        { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: base64 } },
+        { type: 'text', text: prompt }
+      ]
+    }];
+  }
+
+  return [{ role: 'user', content: prompt }];
+}
+
+// ══════════════════════════════════════════════════
+// END STAGE 0
+// ══════════════════════════════════════════════════
+
+function setupSelectCustom(selectId, customFieldId) {
+  const sel = document.getElementById(selectId);
+  const field = document.getElementById(customFieldId);
+  sel.addEventListener('change', () => {
+    field.style.display = sel.value === 'custom' ? 'block' : 'none';
+  });
+}
+setupSelectCustom('setting-select', 'custom-setting');
+setupSelectCustom('guide-select', 'custom-guide');
+
+// ─ TONE CHIPS ──────────────────────────────────────────────────
+document.querySelectorAll('#tone-chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('#tone-chips .chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+  });
+});
+
+// ─ SLIDER ──────────────────────────────────────────────────────
+const slider = document.getElementById('chaos');
+const sliderValEl = document.getElementById('chaos-val');
+function updateSlider() {
+  const pct = Math.round((slider.value - 1) / 9 * 100);
+  slider.style.setProperty('--pct', pct + '%');
+  sliderValEl.textContent = slider.value;
+}
+slider.addEventListener('input', updateSlider);
+updateSlider();
+
+// ─ HELPERS ─────────────────────────────────────────────────────
+function getSelectVal(selectId, customFieldId) {
+  const sel = document.getElementById(selectId);
+  if (sel.value === 'custom') return document.getElementById(customFieldId)?.value?.trim() || 'a custom setting';
+  return sel.value;
+}
+function setStatus(id, text, cls) {
+  const el = document.getElementById('status-' + id);
+  el.textContent = text;
+  el.className = 'stage-status ' + (cls || '');
+}
+function showBody(id) { document.getElementById('body-' + id).style.display = 'block'; }
+function copyToClipboard(text, btn, label) {
+  const done = () => {
+    btn.textContent = '✓ Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = label; btn.classList.remove('copied'); }, 2000);
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); done(); } catch(e) { alert('Copy failed — please select and copy manually.'); }
+  document.body.removeChild(ta);
+}
+
+function copyVoScript() {
+  const rows = [...document.querySelectorAll('#vo-body tr')];
+  const sceneTitle = document.querySelector('.story-scene-title')?.textContent || '';
+  const opening = document.querySelector('.story-opening')?.innerText?.trim() || '';
+  const header = `SCENE: ${sceneTitle}\n\n${opening}\n\n`;
+  const lines = rows.map((row, i) => {
+    const cells = row.querySelectorAll('td');
+    const narClone = cells[0]?.cloneNode(true);
+    narClone?.querySelectorAll('.row-num').forEach(el => el.remove());
+    const narration = narClone?.innerText?.trim() || '';
+    const visual    = cells[1]?.textContent?.trim() || '';
+    const encodes   = cells[2]?.textContent?.trim() || '';
+    return `[${i+1}] NARRATION: ${narration}\n    VISUAL: ${visual}\n    ENCODES: ${encodes}`;
+  }).join('\n\n');
+  const full = header + lines + '\n\n── RAPID REVIEW ──\n' + (document.getElementById('review-text')?.innerText || '');
+  const btn = document.getElementById('copy-vo-btn');
+  copyToClipboard(full, btn, 'Copy Full Script');
+}
+
+function copyNarrationOnly() {
+  const rows  = [...document.querySelectorAll('#vo-body tr')];
+  const title = document.querySelector('.story-scene-title')?.textContent || '';
+  const opening = document.querySelector('.story-opening')?.innerText?.trim() || '';
+
+  const lines = rows.map(row => {
+    const cell  = row.querySelectorAll('td')[0];
+    const clone = cell.cloneNode(true);
+    clone.querySelectorAll('.row-num').forEach(el => el.remove());
+    return clone.innerText.trim()
+      .replace(/\[PAUSE\]/gi, '...')
+      .replace(/\[BEAT\]/gi,  '...')
+      .replace(/\[EMPHASIS:\s*([^\]]+)\]/gi, '$1')
+      .trim();
+  }).filter(Boolean);
+
+  // Opening paragraph comes first as the spoken scene intro, then each anchor narration
+  const script = `${title}\n\n${opening}\n\n${lines.join('\n\n')}`;
+  const btn = document.getElementById('copy-narration-btn');
+  copyToClipboard(script, btn, 'Copy Narration Only');
+}
+
+function copyPrompt(n) {
+  const src = document.getElementById(`prompt-copy-${n}`);
+  const btn = document.getElementById(`copy-prompt-${n}`);
+  if (!src || !btn) return;
+  copyToClipboard(src.value, btn, `Copy Prompt ${n}`);
+}
+
+// ─ MAIN PIPELINE ───────────────────────────────────────────────
+async function runPipeline() {
+  const topic    = document.getElementById('topic').value.trim();
+  const setting  = 'AUTO'; // Claude will choose the best setting for flat illustration based on the topic
+  const guide    = 'no named guide — the scene communicates entirely through objects, atmosphere, and absurdist staging';
+  const chaos    = parseInt(slider.value);
+  const artStyle = document.getElementById('style-select').value;
+  const tone     = document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
+
+  if (!topic) { alert('Please describe what needs to be memorized (Section I).'); return; }
+
+  currentStoryData = null;
+  currentPromptData = { prompt1: '', prompt2: '' };
+  refreshAuthUI();
+
+  const btn = document.getElementById('forge-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> MNEMORIZING…';
+
+  document.getElementById('pipeline').classList.add('visible');
+
+  // ══ DEMO MODE — full UI flow, zero API calls ══════════════════
+  if (isDemoMode()) {
+    const D = DEMO_DATA;
+
+    // Stage 1: Scene
+    setStatus('story', '✦ Writing scene…', 'running');
+    await demoDelay(1800);
+
+    showBody('story');
+    document.getElementById('story-header').innerHTML =
+      `<div class="story-scene-title">${D.scene_title}</div>
+       <div class="story-opening">${D.opening}</div>`;
+
+    document.getElementById('vo-body').innerHTML = D.voLines.map(v => `
+      <tr>
+        <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
+        <td>${v.visual}</td>
+        <td class="encodes-cell">${v.anchor}</td>
+      </tr>`).join('');
+    document.getElementById('vo-table-wrap').style.display = 'block';
+
+    document.getElementById('review-text').innerHTML = formatReviewBullets(D.review_script);
+    document.getElementById('review-wrap').style.display = 'block';
+
+    setStatus('story', '✓ Complete', 'done');
+    await demoDelay(800);
+
+    // Stage 2: Image prompts (built same as live — programmatic from VISUAL fields)
+    setStatus('prompt', '✦ Building image prompts…', 'running');
+    await demoDelay(1200);
+
+    const n = D.voLines.length;
+    const assigned = D.voLines.map((v, i) => ({ ...v, zone: ZONE_CYCLE[i % ZONE_CYCLE.length] }));
+
+    const demoP1 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
+
+    const demoP2 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
+      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      `${ANTI_META_TEXT}\n\n` +
+      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
+      `Place each one in its general area using the exact visual description given — ` +
+      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
+      buildAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
+      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `Maintain same lighting, color palette, and atmosphere.`;
+
+    showBody('prompt');
+    if (isOperatorMode()) operatorPanel.classList.add('visible');
+    document.getElementById('img-prompt-1').textContent = demoP1;
+    document.getElementById('img-prompt-2').textContent = demoP2;
+    document.getElementById('prompt-copy-1').value = demoP1;
+    document.getElementById('prompt-copy-2').value = demoP2;
+    setStatus('prompt', isOperatorMode()
+      ? `✓ 2 prompts ready (${n} anchors in single pass)`
+      : '✓ Scene illustration in progress', 'done');
+    setCurrentPalaceData(
+      {
+        scene_title: D.scene_title,
+        opening: D.opening,
+        voLines: D.voLines,
+        review_script: D.review_script
+      },
+      demoP1,
+      demoP2
+    );
+
+    btn.disabled = false; btn.innerHTML = "LET'S MNEMORIZE";
+    return; // ← Exit here, no API calls made
+  }
+  // ══ END DEMO MODE ═════════════════════════════════════════════
+
+  // Guide character removed — scene uses objects only, no character taking up visual real estate
+
+  // ── XML TAG PARSER ────────────────────────────────────────────
+  function extractTag(text, tag) {
+    const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'i');
+    const m = text.match(re);
+    if (!m) return '';
+    return m[0].replace(new RegExp(`^<${tag}>`, 'i'), '').replace(new RegExp(`<\\/${tag}>$`, 'i'), '').trim();
+  }
+
+  function extractAllTags(text, tag) {
+    const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'gi');
+    return [...text.matchAll(re)].map(m =>
+      m[0].replace(new RegExp(`^<${tag}>`, 'i'), '').replace(new RegExp(`<\\/${tag}>$`, 'i'), '').trim()
+    );
+  }
+
+  function showDebug(label, data) {
+    const box = document.getElementById('debug-box');
+    box.style.display = 'block';
+    box.textContent = `── ${label} ──\n${typeof data === 'string' ? data : JSON.stringify(data, null, 2)}`;
+  }
+
+  function parseAPIResponse(raw, context) {
+    showDebug(context + ' — raw API response', raw);
+    if (raw.type === 'error' || raw.error) {
+      const msg = raw.error?.message || raw.message || JSON.stringify(raw);
+      throw new Error(`${context}: ${msg}`);
+    }
+    if (!raw.content || !Array.isArray(raw.content)) {
+      throw new Error(`${context}: unexpected structure — ${JSON.stringify(raw).slice(0, 300)}`);
+    }
+    const text = raw.content[0]?.text;
+    if (!text) {
+      throw new Error(`${context}: empty content — stop_reason=${raw.stop_reason}`);
+    }
+    document.getElementById('debug-box').style.display = 'none';
+    return text;
+  }
+
+  // ── STAGE 1: Silent Clinical Context ──────────────
+  let clinicalContext = '';
+  try {
+    const ctxRes = await claudeFetch({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 1200,
+        system: `You are a senior clinical educator and board exam question writer designing memory scenes. Extract the essential teaching points for a Sketchy-style mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
+
+COMPLETENESS CHECK: Before finalizing, verify you have not omitted any major category. For example:
+- For scoring systems: every sub-item and its specific scoring range
+- For interpretation algorithms: every step in the systematic approach
+- For drug classes: mechanism, indications, contraindications, key side effects, monitoring
+- For pathophysiology: etiology, pathogenesis, clinical features, diagnosis, management, complications
+- For procedures/protocols: indications, contraindications, steps, complications, alternatives
+
+Output ONLY these two XML tags, nothing else:
+
+<core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
+<scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
+        messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ED/ICU physician — needs precise, high-yield anchors.` }]
+      });
+    const ctxRaw = await ctxRes.json();
+    const ctxTxt = ctxRaw.content?.[0]?.text || '';
+    const core   = extractTag(ctxTxt, 'core_concepts');
+    const logic  = extractTag(ctxTxt, 'scene_logic');
+    if (core || logic) {
+      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.`;
+    }
+  } catch(e) {
+  }
+
+  // ── STAGE 2: Voiceover Script ─────────────────────
+  setStatus('story', '✦ Writing scene…', 'running');
+
+  const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is NO guide character in the scene — only objects, signs, and environmental elements.
+
+SCENE SETTING — YOU CHOOSE:
+- Pick a setting that is THEMATICALLY CONNECTED to the medical topic and made of materials that render flat (wood, paper, brick, chalkboard, fabric, cork, cardboard)
+- BEST settings: bars, pubs, offices, classrooms, workshops, kitchens, libraries, old shops, speakeasies, market stalls, barber shops, diners
+- AVOID settings with: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
+- The setting should be clever and memorable — the connection between the setting and the topic should make the student smile or remember it more easily
+
+NARRATION RULES — follow these exactly:
+1. Direct the viewer's attention to each element — use phrases like "notice", "take a look at", "you'll see", "over here", "right here"
+2. Name the visual element plainly as it appears in the static image
+3. Explicitly state the mnemonic link — "this is here to help you remember...", "get it? [word] for [concept]?"
+4. Immediately teach the clinical fact tied to that anchor — be specific and medically accurate
+5. Conversational, friendly, slightly enthusiastic tone — like a peer tutor, not a movie narrator
+6. NEVER describe movement, characters doing actions dynamically, or things happening — the image is frozen
+7. NEVER use cinematic or dramatic language — no "surges", "crashes", "races", "battles"
+8. Short punchy sentences — written for spoken audio, natural rhythm, easy to follow
+
+CLINICAL ACCURACY — NON-NEGOTIABLE:
+- Every number, threshold, dose, duration, and scoring range MUST be correct per current guidelines
+- When combining related sub-items into one anchor, preserve EVERY specific number for EACH sub-item — do not merge or average them
+- Example: if arm drift is tested at 90° for 10 seconds and leg drift is tested at 30° for 5 seconds, BOTH specific angles AND durations must appear separately — do NOT say "10 seconds" for both
+- When in doubt about a specific number, use the most conservative/standard value from UpToDate or major society guidelines
+- Double-check: scoring ranges, time thresholds, dose units, anatomical specifics, and classification cutoffs
+
+COMPLETENESS — NON-NEGOTIABLE:
+- Before writing anchors, mentally enumerate EVERY major category, classification, or step in the topic
+- If the topic is a scoring system, EVERY item must be covered (group related items but do not skip any)
+- If the topic is a stepwise process (e.g. EKG interpretation, ACLS algorithm), EVERY step must appear — do not skip steps even if they seem "obvious"
+- If the topic has a classification system (e.g. types of heart block), include ALL types including the most severe/dangerous one
+- Common omission errors to avoid: skipping complete/3rd-degree heart block when covering AV blocks, omitting the most severe classification tier, forgetting disposition/resolution criteria, leaving out common exceptions to rules
+- After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
+
+VISUAL DESCRIPTION RULES:
+- MAXIMUM 20 WORDS per visual description — this is a hard limit
+- Describe ONLY: the object, its key labels/text, and its general position (left, center, right, foreground, background)
+- Every anchor must be a PHYSICAL object that can be drawn flat: signs, bottles, posters, dials, chalkboards, sticky notes, jars, masks, clipboards, charts
+- Do NOT describe: era-specific aesthetics, materials (wood-grain, brass, neon), technology type (holographic, digital, CRT), atmospheric details, or lighting
+- Do NOT use words that imply non-flat rendering: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, illuminated, LED
+- TEXT ON OBJECTS: Keep all labels as SHORT as possible — use abbreviations, symbols, and numbers instead of full words. Fewer characters = fewer Gemini typos. Example: "≥1mm LIMB, ≥2mm PRECORDIAL" NOT "at least one millimeter of elevation in two contiguous limb leads." Use arrows (↑↓), symbols (≥≤±), and standard medical abbreviations aggressively.
+- Good example: "A poster on the left wall showing 'QTc >440♂ >460♀ >500=TORSADES' with a formula"
+- Bad example: "A 1980s neon-lit holographic display panel with brushed aluminum frame showing translucent 3D drug molecules floating in a blue glow"
+
+ABSURDITY LEVEL: ${chaos}/10 — dial how strange the visual anchors are, not how dramatic the narration is.
+
+${clinicalContext}
+
+Respond using ONLY these XML tags in order. Write freely inside — no JSON:
+
+<scene_title>Short evocative title for the memory scene</scene_title>
+
+<opening>2-3 sentences introducing the scene. Set the location and overall vibe conversationally — like "Our scene today takes place at..." or "Welcome to...". Do not describe action or movement.</opening>
+
+For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total — cover the topic comprehensively at board-exam level, the way Sketchy Medical does. Do not stop at 5-6 if there are more high-yield facts to encode.
+
+GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 items, a drug class with 12 side effects), combine closely related sub-items into a SINGLE anchor with one visual element that encodes 2-3 facts together. For example: a scoring scale's "questions" and "commands" sub-items can share one visual station; motor arm and motor leg can share one stopwatch display; language and articulation can share one communication desk. This keeps the total anchor count at 8-10 while still covering every testable fact. Each visual should encode MORE information, not less — denser per anchor, fewer total anchors.
+
+CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, different time limits, different angles, different doses), the visual description and narration must clearly show BOTH distinct values. For instance, if arms are tested for 10 seconds and legs for 5 seconds, the visual must show "10 SEC" AND "5 SEC" as separate labels — never collapse them into one number.
+<vo_line>
+NARRATION: [2-4 sentences. Direct viewer attention → name the element → state the mnemonic link explicitly → teach the clinical fact → optional reinforcement "get it? X for Y?". Natural spoken rhythm. No dramatic language. No movement descriptions.]
+VISUAL: [MAXIMUM 20 WORDS. Physical object + labels + position only. No era styling, no material descriptions, no technology type, no lighting effects.]
+ANCHOR: [The specific clinical fact this visual encodes — one crisp line]
+</vo_line>
+
+<review_script>
+Rapid-fire recall. One line per anchor. Format: "When you see [image element] — remember [clinical fact]"
+</review_script>`;
+
+  const storyUser = `Create a Pixorize/Sketchy-style memory palace narration script for: ${topic}
+Tone: ${tone}
+Absurdity: ${chaos}/10
+TARGET: 8-10 anchors covering this topic comprehensively at board-exam level. Do NOT omit any major category, step, or classification tier.
+
+SETTING SELECTION (you choose): Pick a setting with a clever thematic pun or connection to the medical topic that makes it memorable. The setting MUST be made of physical, hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces with glass, chrome, screens, or technology. Good examples: a speakeasy bar for pharmacology, a vintage workshop for procedures, a kitchen for metabolic topics, a courtroom for diagnostic criteria, a train station for stepwise algorithms, a barbershop for dermatology, a butcher shop for anatomy. The more absurd and memorable the thematic connection, the better.
+
+NO guide character — the scene communicates entirely through objects, signs, posters, and environmental details. No people in the scene. The narrator is an unseen voice.
+
+The narrator points out elements in a STATIC IMAGE. No movement. No action. Direct the viewer's attention to each visual anchor, state the mnemonic link explicitly, then teach the clinical fact.`;
+
+  let storyData = null;
+  let imagePromptText = '';
+
+  try {
+    const requestBody = {
+      model: 'claude-sonnet-4-6',
+      max_tokens: 4096,
+      system: storySystem,
+      messages: [{ role: 'user', content: storyUser }]
+    };
+
+    // Log request for debugging
+    showDebug('STORY REQUEST (sending...)', JSON.stringify({
+      model: requestBody.model,
+      max_tokens: requestBody.max_tokens,
+      system_length: requestBody.system.length,
+      user_length: storyUser.length
+    }));
+
+    let res;
+    try {
+      res = await claudeFetch(requestBody);
+    } catch(fetchErr) {
+      throw new Error(`Fetch failed (network/CORS): ${fetchErr.message}`);
+    }
+
+    // Capture raw response text first — before parsing as JSON
+    const rawText = await res.text().catch(() => '(could not read body)');
+    showDebug(`STORY RESPONSE — HTTP ${res.status}`, rawText.slice(0, 2000));
+
+    if (!res.ok) {
+      throw new Error(`Scene Narrative: HTTP ${res.status} — ${rawText.slice(0, 500)}`);
+    }
+
+    let raw;
+    try {
+      raw = JSON.parse(rawText);
+    } catch(jsonErr) {
+      throw new Error(`JSON parse failed: ${jsonErr.message} — raw: ${rawText.slice(0, 300)}`);
+    }
+
+    const txt = parseAPIResponse(raw, 'Scene Narrative');
+
+    const scene_title   = extractTag(txt, 'scene_title');
+    const opening       = extractTag(txt, 'opening');
+    const review_script = extractTag(txt, 'review_script');
+
+    // Parse vo_line blocks
+    const voRaw = extractAllTags(txt, 'vo_line');
+
+    const voLines = voRaw.map((block, i) => {
+      const getField = (label) => {
+        const re = new RegExp(
+          `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:NARRATION|VISUAL|ANCHOR):|$)`,
+          'i'
+        );
+        const m = block.match(re);
+        if (!m) return '';
+        return m[1].replace(/\]?\s*$/, '').trim();
+      };
+      return {
+        n:         i + 1,
+        narration: getField('NARRATION'),
+        visual:    getField('VISUAL'),
+        anchor:    getField('ANCHOR'),
+      };
+    });
+
+    storyData = { scene_title, opening, voLines, review_script };
+
+    showBody('story');
+
+    document.getElementById('story-header').innerHTML =
+      `<div class="story-scene-title">${scene_title}</div>
+       <div class="story-opening">${opening}</div>`;
+
+    if (voLines.length === 0) {
+      showDebug('PARSE WARNING — vo_line blocks: 0. Full raw response (first 1200 chars):', txt.slice(0, 1200));
+    }
+
+    if (voLines.length) {
+      document.getElementById('vo-body').innerHTML = voLines.map(v => `
+        <tr>
+          <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
+          <td>${v.visual}</td>
+          <td class="encodes-cell">${v.anchor}</td>
+        </tr>`).join('');
+      document.getElementById('vo-table-wrap').style.display = 'block';
+    }
+
+    if (review_script) {
+      document.getElementById('review-text').innerHTML = formatReviewBullets(review_script);
+      document.getElementById('review-wrap').style.display = 'block';
+    }
+
+    setStatus('story', '✓ Complete', 'done');
+  } catch(e) {
+    const box = document.getElementById('debug-box');
+    const prev = box.textContent;
+    box.style.display = 'block';
+    box.textContent = `── STORY ERROR ──\n${e.message}\n\n── Previous debug output ──\n${prev}`;
+    setStatus('story', '✗ ' + e.message.slice(0, 80), 'error');
+    btn.disabled = false; btn.innerHTML = "LET'S MNEMORIZE";
+    return;
+  }
+
+  // ── STAGE 3: Three-prompt image strategy (matches forge_auto.py) ──
+  // Prompt 1: Claude writes scene foundation (includes anchor count for composition)
+  // Prompts 2 & 3: Built PROGRAMMATICALLY from VISUAL fields — no Claude rewriting
+  //   Each anchor gets a spatial zone assignment for explicit placement
+  //   Anti-photorealism language appended to all prompts
+  setStatus('prompt', '✦ Building image prompts…', 'running');
+
+  try {
+    const n = storyData.voLines.length;
+    const assigned = storyData.voLines.map((v, i) => ({
+      ...v,
+      zone: ZONE_CYCLE[i % ZONE_CYCLE.length]
+    }));
+
+    // ── PROMPT 1: Claude writes ONLY the scene-specific content ──
+    // Style block is prepended programmatically — never trust Claude to reproduce it exactly
+    const ipSystem = 'You write scene descriptions for Gemini Imagen image generation. ' +
+      'Output ONLY the scene-specific content — setting, objects, composition, atmosphere. ' +
+      'Dense, comma-separated descriptive phrases. Do NOT include any style instructions, art style language, ' +
+      'or rendering directives — those are handled separately. ' +
+      'YOUR MOST IMPORTANT JOB: Choose a setting/location that is thematically clever for the medical topic ' +
+      'AND renders well as a flat hand-drawn illustration. Best settings use physical materials: ' +
+      'wood, paper, brick, chalkboard, cork, fabric, stone, ceramic. ' +
+      'Examples of GOOD settings: a speakeasy bar (for pharmacology), a cluttered professors office (for scoring systems), ' +
+      'a vintage workshop (for procedural topics), a kitchen (for metabolic topics), a train station (for algorithms). ' +
+      'Examples of BAD settings: research facilities, hospitals, modern labs, anything with glass/chrome/screens/technology. ' +
+      'The setting should have a memorable thematic connection to the topic that makes it stick in memory.';
+
+    const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene content — no style directives.
+
+MEDICAL TOPIC: ${topic}
+SCENE TITLE: ${storyData.scene_title}
+ATMOSPHERE: ${storyData.opening}
+TOTAL ANCHORS TO FIT: ${n} (scene must be wide and spacious enough)
+
+Requirements:
+- 60-80 words maximum — scene content ONLY, no style language
+- Choose a setting that has a clever thematic connection to the medical topic — make it memorable and slightly absurd
+- The setting MUST be made of flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — ABSOLUTELY NO glass, chrome, metal panels, screens, monitors, or modern clinical equipment
+- NO guide character — the scene is empty of people, only objects and environment
+- Scene wide enough to hold ${n} distinct objects spread across left, center, right, foreground, and background
+- End with: wide establishing shot, enough space for ${n} labeled objects, aspect ratio 16:9`;
+
+    const p1Res = await claudeFetch({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 300,
+        system: ipSystem,
+        messages: [{ role: 'user', content: p1UserMsg }]
+      });
+    if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status} — ${await p1Res.text()}`);
+    const p1Raw = await p1Res.json();
+    const sceneDesc = parseAPIResponse(p1Raw, 'Scene Description').trim();
+
+    // Construct Prompt 1: style block + scene description
+    const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
+
+    // ── PROMPT 2: Style block + scene description + ALL anchors in single pass ──
+    const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
+      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      `${ANTI_META_TEXT}\n\n` +
+      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
+      `Place each one in its general area using the exact visual description given — ` +
+      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
+      buildAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
+      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `Maintain same lighting, color palette, and atmosphere.`;
+
+    showBody('prompt');
+    if (isOperatorMode()) operatorPanel.classList.add('visible');
+    document.getElementById('img-prompt-1').textContent = prompt1;
+    document.getElementById('img-prompt-2').textContent = prompt2;
+    document.getElementById('prompt-copy-1').value = prompt1;
+    document.getElementById('prompt-copy-2').value = prompt2;
+
+    setStatus('prompt', '✦ Image prompts ready', 'done');
+    setCurrentPalaceData(storyData, prompt1, prompt2);
+
+  } catch(e) {
+    setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');
+    console.error('Image prompt error:', e);
+    setCurrentPalaceData(storyData, '', '');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '✦ FORGE PALACE';
+}
+
+// ══════════════════════════════════════════════════
+// PWA SERVICE WORKER REGISTRATION
+// ══════════════════════════════════════════════════
+if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+</html>

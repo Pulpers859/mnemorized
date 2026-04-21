@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forge — Anchor Mapper</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --void:       #06030f;
+    --surface:    #0e0a1a;
+    --border:     rgba(201,168,76,.18);
+    --gold:       #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-dim:   rgba(201,168,76,.35);
+    --text:       #e8dcc8;
+    --hint:       #b8a98a;
+    --muted:      #7a6a52;
+    --green:      #6ee7b7;
+    --red:        #f87171;
+    --pulse:      rgba(201,168,76,.6);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--void);
+    color: var(--text);
+    font-family: 'Crimson Pro', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 18px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(201,168,76,.03);
+    flex-shrink: 0;
+  }
+  header h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    letter-spacing: .25em;
+    color: var(--gold);
+  }
+  header p {
+    font-size: 13px;
+    color: var(--hint);
+    margin-left: auto;
+  }
+
+  /* ── LAYOUT ── */
+  .layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    height: calc(100vh - 57px);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(0,0,0,.2);
+  }
+
+  .sidebar-section {
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8px;
+    letter-spacing: .2em;
+    color: var(--gold);
+    opacity: .7;
+    margin-bottom: 10px;
+  }
+
+  /* Script paste area */
+  .script-input {
+    width: 100%;
+    height: 120px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    line-height: 1.6;
+    padding: 10px 12px;
+    resize: none;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .script-input:focus { border-color: var(--gold-dim); }
+  .script-input::placeholder { color: var(--muted); }
+
+  .btn {
+    width: 100%;
+    padding: 9px 14px;
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    border-radius: 2px;
+    color: var(--gold);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8px;
+    letter-spacing: .15em;
+    cursor: pointer;
+    transition: all .2s;
+    margin-top: 8px;
+  }
+  .btn:hover { background: rgba(201,168,76,.08); }
+  .btn.primary {
+    background: rgba(201,168,76,.12);
+    border-color: var(--gold);
+  }
+  .btn.primary:hover { background: rgba(201,168,76,.2); }
+  .btn.success {
+    border-color: var(--green);
+    color: var(--green);
+    background: rgba(110,231,183,.08);
+  }
+  .btn:disabled { opacity: .3; cursor: not-allowed; }
+
+  /* Anchor list */
+  .anchor-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 16px;
+  }
+  .anchor-list::-webkit-scrollbar { width: 4px; }
+  .anchor-list::-webkit-scrollbar-thumb { background: rgba(201,168,76,.15); border-radius: 2px; }
+
+  .anchor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: all .15s;
+    border: 1px solid transparent;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+  .anchor-item:hover { background: rgba(201,168,76,.05); border-color: var(--border); }
+  .anchor-item.active {
+    background: rgba(201,168,76,.15);
+    border-color: var(--gold);
+    border-left: 4px solid var(--gold-light);
+    box-shadow: inset 0 0 12px rgba(201,168,76,.08);
+  }
+  .anchor-item.active .anchor-num {
+    background: var(--gold);
+    color: var(--void);
+    border-color: var(--gold-light);
+    transform: scale(1.15);
+    font-weight: 700;
+  }
+  .anchor-item.active .anchor-encode {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+  .anchor-item.done {
+    opacity: .5;
+  }
+  .anchor-item.done .anchor-num { background: rgba(110,231,183,.2); border-color: rgba(110,231,183,.5); color: var(--green); }
+
+  .anchor-num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(201,168,76,.12);
+    border: 1px solid var(--gold-dim);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8px;
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .anchor-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .anchor-encode {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+  .anchor-visual {
+    font-size: 11px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .anchor-coord {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--green);
+    margin-top: 3px;
+  }
+
+  .check-icon {
+    width: 16px; height: 16px;
+    color: var(--green);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* Progress */
+  .progress-bar-wrap {
+    height: 3px;
+    background: rgba(201,168,76,.1);
+    flex-shrink: 0;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--gold);
+    transition: width .3s ease;
+    width: 0%;
+  }
+
+  /* Status strip */
+  .status-strip {
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--hint);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    min-height: 40px;
+  }
+  .status-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--muted);
+    flex-shrink: 0;
+  }
+  .status-dot.active { background: var(--gold); animation: pulse 1.5s infinite; }
+  .status-dot.done   { background: var(--green); animation: none; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .3; }
+  }
+
+  /* Export section */
+  .export-section {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .export-filename {
+    width: 100%;
+    background: rgba(255,255,255,.03);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 7px 10px;
+    outline: none;
+    margin-bottom: 8px;
+  }
+  .export-filename:focus { border-color: var(--gold-dim); }
+
+  /* ── CANVAS AREA ── */
+  .canvas-area {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drop-zone {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px dashed rgba(201,168,76,.2);
+    margin: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--gold-dim);
+    background: rgba(201,168,76,.03);
+  }
+  .drop-zone-icon {
+    font-size: 36px;
+    opacity: .3;
+  }
+  .drop-zone-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    letter-spacing: .2em;
+    color: var(--gold);
+    opacity: .6;
+  }
+  .drop-zone-hint {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Image canvas */
+  #img-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+  }
+
+  /* Click overlay */
+  #click-overlay {
+    position: absolute;
+    inset: 0;
+    cursor: crosshair;
+    display: none;
+  }
+
+  /* Placed pins */
+  .pin {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .pin-ring {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: rgba(201,168,76,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pinDrop .25s ease;
+  }
+  .pin-ring.done-pin {
+    border-color: var(--green);
+    background: rgba(110,231,183,.15);
+  }
+  .pin-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 8px;
+    color: var(--gold);
+  }
+  .pin-ring.done-pin .pin-label { color: var(--green); }
+
+  @keyframes pinDrop {
+    0%   { transform: scale(0); opacity: 0; }
+    70%  { transform: scale(1.15); }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Crosshair cursor ring that follows mouse */
+  #cursor-ring {
+    position: absolute;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: opacity .1s;
+  }
+
+  /* Active anchor banner — top of canvas */
+  .canvas-banner {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 20;
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(6,3,15,.96) 0%, rgba(6,3,15,.82) 100%);
+    border-bottom: 2px solid var(--gold);
+    padding: 10px 18px 10px 18px;
+    backdrop-filter: blur(6px);
+  }
+  .canvas-banner-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .canvas-banner-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--void);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .canvas-banner-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 9px;
+    letter-spacing: .18em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .canvas-banner-counter {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .canvas-banner-encode {
+    font-size: 13px;
+    color: var(--gold-light);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .canvas-banner-visual {
+    font-size: 12px;
+    color: var(--hint);
+    font-family: 'Crimson Pro', serif;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* Keep old instruction hidden — replaced by banner */
+  .canvas-instruction { display: none !important; }
+
+  /* Empty state */
+  .empty-msg {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⬡ FORGE — ANCHOR MAPPER</h1>
+  <p>Click each anchor location on your scene image · Export coords JSON</p>
+</header>
+
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <div class="sidebar">
+
+    <!-- Script input -->
+    <div class="sidebar-section">
+      <div class="sidebar-label">✦ PASTE SCRIPT</div>
+      <textarea class="script-input" id="script-input"
+        placeholder="Paste your full script here (from forge_auto.py output or Forge app 'Copy Full Script')…"></textarea>
+      <button class="btn primary" onclick="parseScript()">PARSE ANCHORS</button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Anchor list -->
+    <div class="anchor-list" id="anchor-list">
+      <div class="empty-msg">Paste your script above and click Parse Anchors to begin.</div>
+    </div>
+
+    <!-- Export -->
+    <div class="export-section">
+      <div class="sidebar-label">✦ EXPORT</div>
+      <input class="export-filename" id="export-filename"
+             type="text" placeholder="coords_filename.json" value="scene_coords.json">
+      <button class="btn success" id="export-btn" onclick="exportCoords()" disabled>
+        EXPORT COORDS JSON
+      </button>
+      <button class="btn" id="clear-btn" onclick="clearAll()" style="margin-top:6px;">
+        RESET SESSION / NEW IMAGE
+      </button>
+    </div>
+
+    <!-- Status -->
+    <div class="status-strip">
+      <div class="status-dot" id="status-dot"></div>
+      <span id="status-text">Load an image and paste your script to begin.</span>
+    </div>
+
+  </div>
+
+  <!-- ── CANVAS ── -->
+  <div class="canvas-area" id="canvas-area"
+       ondragover="onDragOver(event)"
+       ondragleave="onDragLeave(event)"
+       ondrop="onDrop(event)">
+
+    <!-- Active anchor banner — top of canvas -->
+    <div class="canvas-banner" id="canvas-banner">
+      <div class="canvas-banner-top">
+        <div class="canvas-banner-num" id="banner-num">1</div>
+        <div class="canvas-banner-label">CLICK THIS ANCHOR ON THE IMAGE</div>
+        <div class="canvas-banner-counter" id="banner-counter">0 / 0 placed</div>
+      </div>
+      <div class="canvas-banner-encode" id="banner-encode"></div>
+      <div class="canvas-banner-visual" id="banner-visual"></div>
+    </div>
+
+    <!-- Drop zone -->
+    <div class="drop-zone" id="drop-zone"
+         onclick="document.getElementById('file-input').click()">
+      <div class="drop-zone-icon">⬡</div>
+      <div class="drop-zone-title">LOAD SCENE IMAGE</div>
+      <div class="drop-zone-hint">Click or drag & drop your PNG / JPG</div>
+    </div>
+    <input type="file" id="file-input" accept="image/*"
+           style="display:none" onchange="loadImage(event)">
+
+    <!-- Image display -->
+    <img id="img-canvas" alt="Scene">
+
+    <!-- Click overlay -->
+    <div id="click-overlay" onclick="handleClick(event)" onmousemove="moveCursor(event)"
+         onmouseenter="showCursor()" onmouseleave="hideCursor()"></div>
+
+    <!-- Cursor ring -->
+    <div id="cursor-ring"></div>
+
+    <!-- Pins container -->
+    <div id="pins"></div>
+
+    <!-- Bottom instruction -->
+    <div class="canvas-instruction" id="canvas-instruction">
+      Click to place anchor <span id="instruction-num">1</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────────────
+let anchors    = [];   // { n, encode, visual }
+let coords     = {};   // { n: {x, y} }  normalized 0-1
+let activeIdx  = 0;    // which anchor we're placing next
+let imageEl    = null;
+let imgNatW    = 0, imgNatH = 0;
+let imgRect    = null; // bounding rect of rendered image within canvas
+
+// ── SCRIPT PARSING ─────────────────────────────────────────────────
+function parseScript() {
+  const txt = document.getElementById('script-input').value.trim();
+  if (!txt) { setStatus('Paste a script first.', ''); return; }
+
+  anchors = [];
+  coords  = {};
+  activeIdx = 0;
+
+  // Try structured [N] NARRATION / VISUAL / ENCODES format
+  const blockRe = /\[(\d+)\]\s*NARRATION:\s*([\s\S]*?)\n\s*VISUAL:\s*([\s\S]*?)\n\s*ENCODES:\s*([\s\S]*?)(?=\n\[|\n\n──|\n\n$|$)/gi;
+  let m;
+  while ((m = blockRe.exec(txt)) !== null) {
+    anchors.push({
+      n:       parseInt(m[1]),
+      narration: m[2].trim(),
+      visual:  m[3].trim(),
+      encode:  m[4].trim(),
+    });
+  }
+
+  // Fallback: try XML vo_line format
+  if (anchors.length === 0) {
+    const voRe = /<vo_line>([\s\S]*?)<\/vo_line>/gi;
+    let i = 1;
+    while ((m = voRe.exec(txt)) !== null) {
+      const block = m[1];
+      const narr  = fieldOf(block, 'NARRATION');
+      const vis   = fieldOf(block, 'VISUAL');
+      const anc   = fieldOf(block, 'ANCHOR');
+      if (narr || vis || anc) {
+        anchors.push({ n: i++, narration: narr, visual: vis, encode: anc });
+      }
+    }
+  }
+
+  if (anchors.length === 0) {
+    setStatus('Could not parse anchors. Make sure you used "Copy Full Script".', '');
+    return;
+  }
+
+  renderAnchorList();
+  updateProgress();
+  setStatus(`${anchors.length} anchors loaded. Load an image then click each location.`, 'active');
+}
+
+function fieldOf(block, label) {
+  const m = block.match(new RegExp(`${label}:\\s*\\[?([\\s\\S]*?)(?=\\n(?:NARRATION|VISUAL|ANCHOR):|$)`, 'i'));
+  return m ? m[1].replace(/\]?\s*$/, '').trim() : '';
+}
+
+// ── ANCHOR LIST RENDER ─────────────────────────────────────────────
+function renderAnchorList() {
+  const list = document.getElementById('anchor-list');
+  if (anchors.length === 0) {
+    list.innerHTML = '<div class="empty-msg">No anchors loaded.</div>';
+    return;
+  }
+
+  list.innerHTML = anchors.map((a, i) => {
+    const isDone   = coords[a.n] !== undefined;
+    const isActive = i === activeIdx && !isDone;
+    const c        = coords[a.n];
+    return `
+      <div class="anchor-item ${isDone ? 'done' : ''} ${isActive ? 'active' : ''}"
+           id="anchor-item-${a.n}" onclick="selectAnchor(${i})">
+        <div class="anchor-num">${a.n}</div>
+        <div class="anchor-text">
+          <div class="anchor-encode">${truncate(a.encode, 60)}</div>
+          <div class="anchor-visual">${truncate(a.visual, 55)}</div>
+          ${isDone ? `<div class="anchor-coord">x:${c.x.toFixed(3)} y:${c.y.toFixed(3)}</div>` : ''}
+        </div>
+        ${isDone ? '<svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>' : ''}
+      </div>`;
+  }).join('');
+
+  updateInstruction();
+}
+
+function selectAnchor(i) {
+  activeIdx = i;
+  renderAnchorList();
+  updateInstruction();
+}
+
+function truncate(str, n) {
+  return str && str.length > n ? str.slice(0, n) + '…' : (str || '');
+}
+
+// ── IMAGE LOADING ──────────────────────────────────────────────────
+function loadImage(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  loadImageFile(file);
+}
+
+function loadImageFile(file) {
+  const url = URL.createObjectURL(file);
+  const img = document.getElementById('img-canvas');
+  img.onload = () => {
+    imgNatW  = img.naturalWidth;
+    imgNatH  = img.naturalHeight;
+    imageEl  = img;
+    img.style.display = 'block';
+    document.getElementById('drop-zone').style.display = 'none';
+    document.getElementById('click-overlay').style.display = 'block';
+    document.getElementById('cursor-ring').style.display   = 'block';
+    updateInstruction();
+    // Suggest filename from image name
+    const base = file.name.replace(/\.[^.]+$/, '');
+    document.getElementById('export-filename').value = base + '_coords.json';
+    setStatus(`Image loaded (${imgNatW}×${imgNatH}). Click anchor locations in order.`, 'active');
+    updateInstruction();
+    renderPins();
+  };
+  img.src = url;
+}
+
+function onDragOver(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  // Show dragover state on drop zone if visible, otherwise highlight canvas
+  const dz = document.getElementById('drop-zone');
+  if (dz.style.display !== 'none') {
+    dz.classList.add('dragover');
+  } else {
+    document.getElementById('canvas-area').style.outline = '2px solid rgba(201,168,76,.5)';
+  }
+}
+function onDragLeave(e) {
+  e.stopPropagation();
+  document.getElementById('drop-zone').classList.remove('dragover');
+  document.getElementById('canvas-area').style.outline = '';
+}
+function onDrop(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  document.getElementById('drop-zone').classList.remove('dragover');
+  document.getElementById('canvas-area').style.outline = '';
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) loadImageFile(file);
+}
+
+// ── CLICK HANDLING ─────────────────────────────────────────────────
+function handleClick(e) {
+  if (!imageEl || anchors.length === 0) return;
+  if (activeIdx >= anchors.length) return;
+
+  const { nx, ny } = getNormalized(e);
+  const anchor = anchors[activeIdx];
+
+  coords[anchor.n] = { x: nx, y: ny };
+
+  // Advance to next unplaced anchor
+  let next = activeIdx + 1;
+  while (next < anchors.length && coords[anchors[next].n] !== undefined) next++;
+  activeIdx = next;
+
+  renderAnchorList();
+  renderPins();
+  updateProgress();
+  checkExportReady();
+  updateInstruction();
+
+  if (activeIdx >= anchors.length) {
+    setStatus(`All ${anchors.length} anchors placed. Export your coords JSON.`, 'done');
+    document.getElementById('canvas-banner').style.display = 'none';
+  }
+}
+
+function getNormalized(e) {
+  const img    = document.getElementById('img-canvas');
+  const rect   = img.getBoundingClientRect();
+  const canvasRect = document.getElementById('canvas-area').getBoundingClientRect();
+
+  // Position of click relative to the rendered image
+  const clickX = e.clientX - rect.left;
+  const clickY = e.clientY - rect.top;
+
+  // Clamp to image bounds
+  const cx = Math.max(0, Math.min(clickX, rect.width));
+  const cy = Math.max(0, Math.min(clickY, rect.height));
+
+  return {
+    nx: parseFloat((cx / rect.width).toFixed(4)),
+    ny: parseFloat((cy / rect.height).toFixed(4)),
+    px: cx, py: cy,
+    rectLeft: rect.left - canvasRect.left,
+    rectTop:  rect.top  - canvasRect.top,
+    rectW:    rect.width,
+    rectH:    rect.height,
+  };
+}
+
+// ── CURSOR RING ────────────────────────────────────────────────────
+function moveCursor(e) {
+  const ring    = document.getElementById('cursor-ring');
+  const canvasR = document.getElementById('canvas-area').getBoundingClientRect();
+  ring.style.left = (e.clientX - canvasR.left) + 'px';
+  ring.style.top  = (e.clientY - canvasR.top)  + 'px';
+}
+function showCursor() { document.getElementById('cursor-ring').style.opacity = '1'; }
+function hideCursor()  { document.getElementById('cursor-ring').style.opacity = '0'; }
+
+// ── PIN RENDERING ──────────────────────────────────────────────────
+function renderPins() {
+  const container = document.getElementById('pins');
+  const img       = document.getElementById('img-canvas');
+  if (!img) return;
+
+  const rect      = img.getBoundingClientRect();
+  const canvasRect = document.getElementById('canvas-area').getBoundingClientRect();
+  const offL = rect.left - canvasRect.left;
+  const offT = rect.top  - canvasRect.top;
+
+  container.innerHTML = Object.entries(coords).map(([n, c]) => {
+    const px = offL + c.x * rect.width;
+    const py = offT + c.y * rect.height;
+    return `
+      <div class="pin" style="left:${px}px;top:${py}px;">
+        <div class="pin-ring done-pin">
+          <span class="pin-label">${n}</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+// Re-render pins on window resize
+window.addEventListener('resize', renderPins);
+
+// ── PROGRESS ───────────────────────────────────────────────────────
+function updateProgress() {
+  const done  = Object.keys(coords).length;
+  const total = anchors.length;
+  const pct   = total > 0 ? (done / total) * 100 : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+}
+
+function updateInstruction() {
+  const banner = document.getElementById('canvas-banner');
+  if (!imageEl || anchors.length === 0 || activeIdx >= anchors.length) {
+    banner.style.display = 'none';
+    return;
+  }
+  const a    = anchors[activeIdx];
+  const done = Object.keys(coords).length;
+
+  banner.style.display        = 'flex';
+  document.getElementById('banner-num').textContent     = a.n;
+  document.getElementById('banner-encode').textContent  = a.encode || a.anchor || '';
+  document.getElementById('banner-visual').textContent  = a.visual ? '↳ ' + truncate(a.visual, 120) : '';
+  document.getElementById('banner-counter').textContent = `${done} / ${anchors.length} placed`;
+
+  // Auto-scroll sidebar to active anchor
+  const el = document.getElementById(`anchor-item-${a.n}`);
+  if (el) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+// ── EXPORT ─────────────────────────────────────────────────────────
+function checkExportReady() {
+  const done  = Object.keys(coords).length;
+  const ready = done > 0;
+  document.getElementById('export-btn').disabled = !ready;
+}
+
+function exportCoords() {
+  const output = anchors.map(a => {
+    const c = coords[a.n] || { x: 0.5, y: 0.5 };
+    return {
+      n:       a.n,
+      encodes: a.encode,
+      x:       c.x,
+      y:       c.y,
+      found:   coords[a.n] !== undefined,
+      note:    truncate(a.visual, 60),
+      _hint:   "Edit x/y (0.0-1.0) then re-run with --coords to skip Vision step"
+    };
+  });
+
+  const json     = JSON.stringify(output, null, 2);
+  const filename = document.getElementById('export-filename').value || 'scene_coords.json';
+  const blob     = new Blob([json], { type: 'application/json' });
+  const url      = URL.createObjectURL(blob);
+  const a        = document.createElement('a');
+  a.href         = url;
+  a.download     = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+
+  setStatus(`Exported ${output.length} anchors → ${filename}`, 'done');
+}
+
+// ── CLEAR ──────────────────────────────────────────────────────────
+function clearAll() {
+  // Reset state
+  coords    = {};
+  activeIdx = 0;
+  anchors   = [];
+  imageEl   = null;
+  imgNatW   = 0;
+  imgNatH   = 0;
+
+  // Reset image
+  const img = document.getElementById('img-canvas');
+  img.src   = '';
+  img.style.display = 'none';
+
+  // Restore drop zone
+  document.getElementById('drop-zone').style.display = 'block';
+  document.getElementById('click-overlay').style.display = 'none';
+  document.getElementById('cursor-ring').style.display   = 'none';
+  document.getElementById('canvas-banner').style.display = 'none';
+
+  // Clear pins
+  document.getElementById('pins').innerHTML = '';
+
+  // Reset sidebar
+  document.getElementById('anchor-list').innerHTML =
+    '<div class="empty-msg">Paste your script above and click Parse Anchors to begin.</div>';
+  document.getElementById('script-input').value = '';
+  document.getElementById('export-filename').value = 'scene_coords.json';
+  document.getElementById('export-btn').disabled = true;
+
+  updateProgress();
+  setStatus('Session cleared. Load a new image and paste your script.', '');
+}
+
+// ── STATUS ─────────────────────────────────────────────────────────
+function setStatus(msg, state) {
+  document.getElementById('status-text').textContent = msg;
+  const dot = document.getElementById('status-dot');
+  dot.className = 'status-dot' + (state ? ' ' + state : '');
+}
+
+// ── KEYBOARD SHORTCUTS ─────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  // Left/right arrow to cycle active anchor
+  if (e.key === 'ArrowRight' && activeIdx < anchors.length - 1) {
+    activeIdx++;
+    renderAnchorList();
+    updateInstruction();
+  }
+  if (e.key === 'ArrowLeft' && activeIdx > 0) {
+    activeIdx--;
+    renderAnchorList();
+    updateInstruction();
+  }
+  // Backspace to undo last placed anchor
+  if (e.key === 'Backspace' && !e.target.closest('textarea, input')) {
+    e.preventDefault();
+    // Find highest placed anchor and remove it
+    const placed = anchors.filter(a => coords[a.n] !== undefined);
+    if (placed.length === 0) return;
+    const last = placed[placed.length - 1];
+    delete coords[last.n];
+    activeIdx = anchors.findIndex(a => a.n === last.n);
+    renderAnchorList();
+    renderPins();
+    updateProgress();
+    checkExportReady();
+    setStatus(`Anchor ${last.n} removed. Click to re-place.`, 'active');
+  }
+});
+</script>
+</body>
+</html>

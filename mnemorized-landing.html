@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mnemorized — Build Memory Palaces for Any Medical Topic</title>
+<meta name="description" content="Generate visual mnemonic palace videos for any medical topic in minutes. Built by a physician. Join the waitlist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:   #080a0e;
+  --ink:     #0f1218;
+  --card:    #13171f;
+  --border:  rgba(255,255,255,.07);
+  --white:   #f0ede6;
+  --muted:   #7a7f8a;
+  --acid:    #c8f135;
+  --acid2:   #a8e020;
+  --red:     #ff3d3d;
+  --blue:    #3d9eff;
+  --gold:    #f5c842;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 100;
+  opacity: .4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8,10,14,.85);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: .08em;
+  color: var(--acid);
+}
+
+.nav-cta {
+  background: var(--acid);
+  color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 9px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+}
+.nav-cta:hover { background: var(--acid2); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Background glow blobs */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(200,241,53,.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200,241,53,.1);
+  border: 1px solid rgba(200,241,53,.25);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: var(--acid);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  animation: fadeUp .6s ease both;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--acid);
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .2; }
+}
+
+.hero-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 10vw, 130px);
+  line-height: .92;
+  letter-spacing: .02em;
+  margin-bottom: 28px;
+  animation: fadeUp .6s .1s ease both;
+}
+
+.hero-headline .line-accent { color: var(--acid); }
+.hero-headline .line-red    { color: var(--red);  }
+
+.hero-sub {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0 auto 48px;
+  font-weight: 400;
+  animation: fadeUp .6s .2s ease both;
+}
+
+.hero-sub strong { color: var(--white); font-weight: 500; }
+
+/* ── WAITLIST FORM ── */
+.waitlist-form {
+  display: flex;
+  gap: 10px;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto 24px;
+  animation: fadeUp .6s .3s ease both;
+}
+
+.waitlist-input {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  transition: border-color .2s;
+}
+.waitlist-input::placeholder { color: var(--muted); }
+.waitlist-input:focus { border-color: rgba(200,241,53,.4); }
+
+.waitlist-btn {
+  background: var(--acid);
+  color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.waitlist-btn:hover { background: var(--acid2); transform: translateY(-1px); }
+.waitlist-btn:active { transform: translateY(0); }
+.waitlist-btn.success { background: #4ade80; }
+
+.waitlist-note {
+  font-size: 12px;
+  color: var(--muted);
+  animation: fadeUp .6s .4s ease both;
+}
+
+.waitlist-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  animation: fadeUp .6s .5s ease both;
+}
+
+.avatars {
+  display: flex;
+}
+.avatar {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--black);
+  margin-left: -6px;
+  font-size: 11px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600;
+}
+.avatar:first-child { margin-left: 0; }
+.av1 { background: #3d9eff; color: #fff; }
+.av2 { background: #ff3d3d; color: #fff; }
+.av3 { background: var(--acid); color: var(--black); }
+.av4 { background: #c084fc; color: #fff; }
+
+/* ── SCROLL INDICATOR ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: fadeUp .6s .8s ease both;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+  animation: scrollPulse 2s infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: .3; }
+  50% { opacity: 1; }
+}
+
+/* ── HOW IT WORKS ── */
+.section {
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--acid);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: .02em;
+  margin-bottom: 20px;
+}
+
+.section-sub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 64px;
+}
+
+/* Steps grid */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2px;
+}
+
+.step {
+  background: var(--card);
+  padding: 36px 28px;
+  position: relative;
+  border: 1px solid var(--border);
+  transition: border-color .2s;
+}
+.step:hover { border-color: rgba(200,241,53,.2); }
+.step:first-child { border-radius: 12px 0 0 12px; }
+.step:last-child  { border-radius: 0 12px 12px 0; }
+
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  color: rgba(200,241,53,.15);
+  margin-bottom: 16px;
+}
+
+.step-icon {
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.step-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.step-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(200,241,53,.1);
+  color: var(--acid);
+  text-transform: uppercase;
+}
+
+/* ── WHY IT'S DIFFERENT ── */
+.why-section {
+  padding: 100px 24px;
+  background: var(--ink);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.why-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table th:nth-child(2) { color: var(--muted); text-align: center; }
+.compare-table th:nth-child(3) { color: var(--acid);  text-align: center; }
+
+.compare-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  vertical-align: middle;
+}
+
+.compare-table td:first-child { color: var(--white); }
+.compare-table td:nth-child(2) { text-align: center; }
+.compare-table td:nth-child(3) { text-align: center; }
+
+.compare-table tr:last-child td { border-bottom: none; }
+
+.check { color: var(--acid); font-size: 16px; }
+.cross { color: var(--muted); font-size: 16px; opacity: .4; }
+
+/* ── QUOTES ── */
+.quotes-section {
+  padding: 100px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 56px;
+}
+
+.quote-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px;
+  transition: border-color .2s, transform .2s;
+}
+.quote-card:hover {
+  border-color: rgba(200,241,53,.2);
+  transform: translateY(-2px);
+}
+
+.quote-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.quote-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--white);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quote-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.quote-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.quote-role {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── BUILT BY ── */
+.built-section {
+  padding: 100px 24px;
+  background: var(--ink);
+  border-top: 1px solid var(--border);
+}
+
+.built-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.built-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,200,66,.08);
+  border: 1px solid rgba(245,200,66,.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.built-text {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.built-text strong { color: var(--white); font-weight: 500; }
+
+/* ── FINAL CTA ── */
+.cta-section {
+  padding: 120px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,241,53,.05) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: .95;
+  letter-spacing: .02em;
+  margin-bottom: 20px;
+}
+
+.cta-sub {
+  font-size: 17px;
+  color: var(--muted);
+  margin-bottom: 48px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 32px 40px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: .08em;
+  color: var(--acid);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── SUCCESS STATE ── */
+.success-msg {
+  display: none;
+  color: var(--acid);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 16px;
+  animation: fadeUp .4s ease both;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+
+  .waitlist-form { flex-direction: column; }
+  .waitlist-btn  { width: 100%; padding: 16px; }
+
+  .why-inner { grid-template-columns: 1fr; gap: 48px; }
+
+  .step:first-child { border-radius: 12px 12px 0 0; }
+  .step:last-child  { border-radius: 0 0 12px 12px; }
+
+  footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* Ticker tape */
+.ticker-wrap {
+  overflow: hidden;
+  background: var(--acid);
+  padding: 10px 0;
+  border-top: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+}
+
+.ticker {
+  display: flex;
+  gap: 0;
+  animation: ticker 25s linear infinite;
+  white-space: nowrap;
+}
+
+.ticker-item {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: .1em;
+  color: var(--black);
+  padding: 0 32px;
+  flex-shrink: 0;
+}
+
+.ticker-sep {
+  color: rgba(0,0,0,.3);
+  padding: 0 4px;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mnemorized</div>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="/forge" class="nav-cta">Open Forge</a>
+    <a href="#waitlist" class="nav-cta" style="background:transparent;color:var(--white);border:1px solid var(--border);">Join Waitlist</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-eyebrow">Now accepting waitlist signups</div>
+
+  <h1 class="hero-headline">
+    <span class="line-accent">STOP</span><br>
+    RE-READING.<br>
+    <span class="line-red">START</span><br>
+    REMEMBERING.
+  </h1>
+
+  <p class="hero-sub">
+    Generate a <strong>visual mnemonic palace video</strong> for any medical topic in minutes —
+    fully personalized to exactly what <em>you</em> need to memorize.
+  </p>
+
+  <div class="waitlist-form" id="waitlist">
+    <input type="email" class="waitlist-input" id="email-input"
+           placeholder="your@email.com" autocomplete="email">
+    <button class="waitlist-btn" id="waitlist-btn" onclick="joinWaitlist()">
+      Get Early Access
+    </button>
+  </div>
+
+  <p class="waitlist-note">No spam. No credit card. Just early access.</p>
+  <p class="success-msg" id="success-msg">
+    ✓ You're on the list — we'll be in touch soon.
+  </p>
+
+  <div class="waitlist-count">
+    <div class="avatars">
+      <div class="avatar av1">MD</div>
+      <div class="avatar av2">R2</div>
+      <div class="avatar av3">M3</div>
+      <div class="avatar av4">PA</div>
+    </div>
+    &nbsp; Physicians, residents & students already signed up
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <!-- First copy -->
+    <span class="ticker-item">ARRHYTHMIAS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">DERMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PEDIATRIC DOSING <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RHEUMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OB/GYN <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PHARMACOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">SURGICAL ANATOMY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PSYCHIATRY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ORTHOPEDICS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">NEUROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ENDOCRINOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">CARDIOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">INFECTIOUS DISEASE <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RENAL FAILURE <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">HEMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">UROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OPHTHALMOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PULMONOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">GASTROENTEROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ONCOLOGY <span class="ticker-sep">✦</span></span>
+    <!-- Second copy for seamless loop -->
+    <span class="ticker-item">ARRHYTHMIAS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">DERMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PEDIATRIC DOSING <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RHEUMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OB/GYN <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PHARMACOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">SURGICAL ANATOMY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PSYCHIATRY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ORTHOPEDICS <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">NEUROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ENDOCRINOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">CARDIOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">INFECTIOUS DISEASE <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">RENAL FAILURE <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">HEMATOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">UROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">OPHTHALMOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">PULMONOLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">GASTROENTEROLOGY <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">ONCOLOGY <span class="ticker-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section reveal">
+  <div class="section-label">How it works</div>
+  <h2 class="section-title">Four steps.<br>One video.</h2>
+  <p class="section-sub">Type any topic. We handle the rest — script, narration, scene image, and final video.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-icon">⌨️</div>
+      <div class="step-title">Type your topic</div>
+      <div class="step-desc">Enter anything you need to memorize — a drug class, a syndrome, a clinical algorithm. No templates, no limits.</div>
+      <span class="step-tag">Any topic</span>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-icon">🧠</div>
+      <div class="step-title">We build the palace</div>
+      <div class="step-desc">A fully structured visual mnemonic palace script is generated — with anchors, mnemonics, and clinical facts woven together.</div>
+      <span class="step-tag">Clinically accurate</span>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-icon">🎨</div>
+      <div class="step-title">Scene comes to life</div>
+      <div class="step-desc">A unique illustrated scene is generated for your palace — every anchor has a visual that maps directly to what the narration describes.</div>
+      <span class="step-tag">Fully illustrated</span>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-icon">🎬</div>
+      <div class="step-title">Download your video</div>
+      <div class="step-desc">Professional narration, timed pan and highlight on each anchor, and a rapid review at the end. Ready to watch, share, or study.</div>
+      <span class="step-tag">Video ready</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY DIFFERENT -->
+<section class="why-section">
+  <div class="why-inner reveal">
+    <div>
+      <div class="section-label">Why Mnemorized</div>
+      <h2 class="section-title">Not another<br>flashcard app.</h2>
+      <p class="section-sub" style="margin-bottom:0;">
+        Existing mnemonic video libraries only cover what their team decided to make.
+        Mnemorized generates a palace for <em>whatever you need right now</em> —
+        including the obscure stuff that never made it into anyone's curriculum.
+      </p>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Traditional Libraries</th>
+          <th>Mnemorized</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Any topic on demand</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Personalized to your curriculum</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Advanced topics across all specialties</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Memory palace video format</td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Built by a practicing physician</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>Generate in minutes</td>
+          <td><span class="cross">✗</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- QUOTES — Replace with real beta tester feedback before launch -->
+<section class="quotes-section reveal">
+  <div class="section-label">Beta program</div>
+  <h2 class="section-title">Join the<br>beta.</h2>
+
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <div class="quote-stars" style="color:var(--acid);">✦ ✦ ✦</div>
+      <p class="quote-text" style="font-style:normal; color:var(--muted);">We're looking for medical students, residents, and physicians to test Mnemorized and share honest feedback. Early beta testers get free access and help shape the product.</p>
+      <div class="quote-author">
+        <div class="quote-avatar" style="background:var(--acid);color:var(--black);">→</div>
+        <div>
+          <div class="quote-name">Be the first to try it</div>
+          <div class="quote-role">Join the waitlist above for early access</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-stars" style="color:var(--acid);">✦ ✦ ✦</div>
+      <p class="quote-text" style="font-style:normal; color:var(--muted);">Every palace is generated fresh for your exact topic — no fixed catalog, no waiting for someone else to cover what you need. Subspecialty pharmacology, rare presentations, scoring systems — anything.</p>
+      <div class="quote-author">
+        <div class="quote-avatar" style="background:var(--blue);color:#fff;">∞</div>
+        <div>
+          <div class="quote-name">Unlimited topics</div>
+          <div class="quote-role">Any medical subject, on demand</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-card">
+      <div class="quote-stars" style="color:var(--acid);">✦ ✦ ✦</div>
+      <p class="quote-text" style="font-style:normal; color:var(--muted);">Built by a physician who understands what it takes to memorize medicine under pressure. Clinical accuracy isn't optional — every palace is designed around real pathophysiology and board-testable facts.</p>
+      <div class="quote-author">
+        <div class="quote-avatar" style="background:var(--gold);color:var(--black);">⚕</div>
+        <div>
+          <div class="quote-name">Physician-built</div>
+          <div class="quote-role">Clinical accuracy as the foundation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT BY -->
+<section class="built-section">
+  <div class="built-inner reveal">
+    <div class="built-badge">⚕ Built by a physician</div>
+    <h2 class="section-title" style="font-size:clamp(36px,5vw,60px);">
+      Clinical accuracy isn't optional.
+    </h2>
+    <p class="built-text">
+      Mnemorized was built by a <strong>practicing physician</strong> who knows what it actually takes to memorize medicine under pressure.
+      Every palace is designed with clinical accuracy as the non-negotiable foundation —
+      not just memorable, but <strong>medically correct</strong>.
+      The mnemonics connect to real pathophysiology. The anchors encode facts that
+      actually matter — whether you're on the wards, in clinic, or sitting your boards.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section reveal">
+  <h2 class="cta-headline">
+    YOUR TOPIC.<br>
+    <span style="color:var(--acid)">YOUR PALACE.</span><br>
+    YOUR EXAM.
+  </h2>
+  <p class="cta-sub">
+    Join the waitlist and be the first to know when Mnemorized launches.
+    Early access members get priority.
+  </p>
+
+  <div class="waitlist-form" style="margin-bottom:16px;">
+    <input type="email" class="waitlist-input" id="email-input-2"
+           placeholder="your@email.com" autocomplete="email">
+    <button class="waitlist-btn" id="waitlist-btn-2" onclick="joinWaitlist2()">
+      Get Early Access
+    </button>
+  </div>
+  <p class="waitlist-note">No spam. No credit card. Just early access.</p>
+  <p class="success-msg" id="success-msg-2"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mnemorized</div>
+  <div>© 2026 Mnemorized · mnemorized.com</div>
+  <div>Built by a physician, for clinicians.</div>
+</footer>
+
+<script>
+// ── WAITLIST SUBMISSION ──────────────────────────────────────────
+function joinWaitlist() {
+  const email = document.getElementById('email-input').value.trim();
+  if (!validateEmail(email)) {
+    document.getElementById('email-input').style.borderColor = 'rgba(255,61,61,.5)';
+    return;
+  }
+  submitEmail(email, 'waitlist-btn', 'success-msg');
+}
+
+function joinWaitlist2() {
+  const email = document.getElementById('email-input-2').value.trim();
+  if (!validateEmail(email)) {
+    document.getElementById('email-input-2').style.borderColor = 'rgba(255,61,61,.5)';
+    return;
+  }
+  submitEmail(email, 'waitlist-btn-2', 'success-msg-2');
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function submitEmail(email, btnId, msgId) {
+  const btn = document.getElementById(btnId);
+  const msg = document.getElementById(msgId);
+
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/xpqyjeez', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ email: email })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.ok) {
+      btn.textContent = "✓ You're in";
+      btn.classList.add('success');
+      msg.style.display = 'block';
+      msg.textContent = `✓ ${email} — you're on the list. We'll be in touch soon.`;
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  });
+}
+
+// ── SCROLL REVEAL ────────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── SMOOTH ANCHOR SCROLL ─────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
