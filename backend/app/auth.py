@@ -1,6 +1,4 @@
 from __future__ import annotations
-
-import json
 import time
 from dataclasses import dataclass
 from typing import Any
@@ -62,11 +60,14 @@ class SupabaseTokenVerifier:
         if key_data is None:
             raise InvalidTokenError("Signing key not found for token.")
 
-        public_key = jwt.algorithms.RSAAlgorithm.from_jwk(json.dumps(key_data))
+        jwk = jwt.PyJWK.from_dict(
+            key_data,
+            algorithm=header.get("alg") or key_data.get("alg"),
+        )
         decode_options = {"verify_aud": self.audience is not None}
         claims = jwt.decode(
             token,
-            key=public_key,
+            key=jwk.key,
             algorithms=[key_data.get("alg", "RS256")],
             audience=self.audience,
             issuer=self.issuer,
