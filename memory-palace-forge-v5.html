@@ -1353,11 +1353,23 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <div class="prompt-text" id="img-prompt-1"></div>
       </div>
       <button class="btn-copy" id="copy-prompt-1" onclick="copyPrompt(1)">Copy Prompt 1</button>
+      <div class="gen-img-container" id="gen-img-1" style="display:none;margin-top:12px;">
+        <img id="gen-img-1-el" style="max-width:100%;border-radius:8px;border:1px solid var(--border);" />
+        <button class="btn-copy" onclick="downloadGenImage(1)" style="margin-top:6px;">⬇ Download Image 1</button>
+      </div>
       <div class="img-prompt-box" style="margin-top:20px;margin-bottom:14px;">
         <p class="img-prompt-label">✦ PROMPT 2 — ALL ANCHORS</p>
         <div class="prompt-text" id="img-prompt-2"></div>
       </div>
       <button class="btn-copy" id="copy-prompt-2" onclick="copyPrompt(2)">Copy Prompt 2</button>
+      <div class="gen-img-container" id="gen-img-2" style="display:none;margin-top:12px;">
+        <img id="gen-img-2-el" style="max-width:100%;border-radius:8px;border:1px solid var(--border);" />
+        <button class="btn-copy" onclick="downloadGenImage(2)" style="margin-top:6px;">⬇ Download Image 2</button>
+      </div>
+      <div style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
+        <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
+        <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
+      </div>
       <textarea id="prompt-copy-1" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
       <textarea id="prompt-copy-2" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
     </div>
@@ -1377,7 +1389,7 @@ const API_BASE = (
 ) && window.location.port !== '8000'
   ? 'http://127.0.0.1:8000'
   : '';
-let backendState = { checked: false, reachable: false, configured: false };
+let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false };
 
 function getApiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
@@ -1423,7 +1435,8 @@ async function refreshBackendStatus(showModalOnError = false) {
     backendState = {
       checked: true,
       reachable: true,
-      configured: !!data.anthropic_configured
+      configured: !!data.anthropic_configured,
+      geminiConfigured: !!data.gemini_configured
     };
 
     if (backendState.configured) {
@@ -1437,7 +1450,8 @@ async function refreshBackendStatus(showModalOnError = false) {
     backendState = {
       checked: true,
       reachable: false,
-      configured: false
+      configured: false,
+      geminiConfigured: false
     };
     setBackendBadge('offline', '⚠ PROXY OFFLINE');
     syncConnectionModal(`Could not reach ${getApiUrl('/api/health')}. Start the backend and retry.`);
@@ -2815,6 +2829,82 @@ function copyPrompt(n) {
   const btn = document.getElementById(`copy-prompt-${n}`);
   if (!src || !btn) return;
   copyToClipboard(src.value, btn, `Copy Prompt ${n}`);
+}
+
+async function generateImages() {
+  const p1 = document.getElementById('prompt-copy-1')?.value;
+  const p2 = document.getElementById('prompt-copy-2')?.value;
+  if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
+
+  const btn = document.getElementById('generate-images-btn');
+  const status = document.getElementById('gen-img-status');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span> Generating…';
+  status.textContent = 'Sending prompts to Gemini…';
+
+  document.getElementById('gen-img-1').style.display = 'none';
+  document.getElementById('gen-img-2').style.display = 'none';
+
+  const prompts = [p1, p2].filter(Boolean);
+  const headers = { 'Content-Type': 'application/json' };
+  if (authState.session?.access_token) {
+    headers.Authorization = `Bearer ${authState.session.access_token}`;
+  }
+
+  try {
+    const res = await fetch(getApiUrl('/api/generate-image'), {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ prompts })
+    });
+
+    if (res.status === 401) {
+      openAuthModal();
+      throw new Error('Sign in to generate images.');
+    } else if (res.status === 402) {
+      const quota = await res.json().catch(() => ({}));
+      throw new Error(`Monthly quota exceeded (${quota.usage?.used ?? '?'}/${quota.usage?.limit ?? '?'}).`);
+    } else if (res.status === 503) {
+      throw new Error('GEMINI_API_KEY is not configured on the backend.');
+    } else if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error?.message || `Image generation failed (HTTP ${res.status}).`);
+    }
+
+    const data = await res.json();
+    const images = data.images || [];
+
+    images.forEach((img, i) => {
+      const n = i + 1;
+      const container = document.getElementById(`gen-img-${n}`);
+      const el = document.getElementById(`gen-img-${n}-el`);
+      if (container && el) {
+        el.src = `data:${img.mime_type};base64,${img.data}`;
+        container.style.display = 'block';
+      }
+    });
+
+    status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`;
+    status.style.color = 'var(--green)';
+  } catch (err) {
+    status.textContent = `✗ ${err.message}`;
+    status.style.color = '#f56565';
+    console.error('Image generation error:', err);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '✦ Generate Images';
+  }
+}
+
+function downloadGenImage(n) {
+  const el = document.getElementById(`gen-img-${n}-el`);
+  if (!el || !el.src) return;
+  const a = document.createElement('a');
+  a.href = el.src;
+  const topic = document.getElementById('topic')?.value?.trim() || 'palace';
+  const safeName = topic.replace(/[^a-zA-Z0-9]+/g, '_').substring(0, 40);
+  a.download = `${safeName}_image_${n}.png`;
+  a.click();
 }
 
 // ─ MAIN PIPELINE ───────────────────────────────────────────────

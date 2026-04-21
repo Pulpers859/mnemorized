@@ -81,6 +81,12 @@ class DevPlanOverridePayload(BaseModel):
     clear: bool = False
 
 
+class ImageGenerationPayload(BaseModel):
+    prompts: list[str] = Field(min_length=1, max_length=2)
+
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+
+
 def _client_id(request: Request) -> str:
     forwarded_for = request.headers.get("x-forwarded-for")
     if forwarded_for:
@@ -365,7 +371,7 @@ async def _persist_usage_event_to_supabase(
     usage = response_payload.get("usage", {}) if response_payload else {}
     payload = {
         "user_id": user.user_id,
-        "provider": "anthropic",
+        "provider": request_body.get("provider") or "anthropic",
         "model": request_body.get("model"),
         "request_id": request_id,
         "input_tokens": usage.get("input_tokens"),
@@ -495,6 +501,7 @@ async def health() -> dict[str, Any]:
         "status": "ok",
         "service": "mnemorized-backend",
         "anthropic_configured": active_settings.anthropic_configured,
+        "gemini_configured": active_settings.gemini_configured,
         "supabase_auth_configured": active_settings.supabase_auth_configured,
         "rate_limit": {
             "requests": active_settings.rate_limit_requests,
@@ -736,27 +743,34 @@ async def proxy_anthropic_messages(
     except ValueError:
         logger.warning("Anthropic returned non-JSON content for request %s", request_id)
 
-    _write_usage_log(
-        settings=active_settings,
-        request_id=request_id,
-        client_id=client_id,
-        user_id=user.user_id if user else None,
-        user_email=user.email if user else None,
-        duration_ms=duration_ms,
-        request_body=body,
-        response_payload=response_payload,
-        status_code=upstream_response.status_code,
-    )
-    await _persist_usage_event_to_supabase(
-        request=request,
-        settings=active_settings,
-        bearer_token=bearer_token,
-        user=user,
-        request_id=request_id,
-        request_body=body,
-        response_payload=response_payload,
-        status_code=upstream_response.status_code,
-    )
+    try:
+        _write_usage_log(
+            settings=active_settings,
+            request_id=request_id,
+            client_id=client_id,
+            user_id=user.user_id if user else None,
+            user_email=user.email if user else None,
+            duration_ms=duration_ms,
+            request_body=body,
+            response_payload=response_payload,
+            status_code=upstream_response.status_code,
+        )
+    except Exception:
+        logger.exception("Failed to write local usage log for request %s", request_id)
+
+    try:
+        await _persist_usage_event_to_supabase(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=body,
+            response_payload=response_payload,
+            status_code=upstream_response.status_code,
+        )
+    except Exception:
+        logger.exception("Failed to persist Supabase usage event for request %s", request_id)
 
     if user:
         usage_cache = getattr(request.app.state, "usage_cache", None)
@@ -784,6 +798,213 @@ async def proxy_anthropic_messages(
         status_code=upstream_response.status_code,
         headers=passthrough_headers,
         content=response_payload,
+    )
+
+
+@app.post("/api/generate-image")
+async def generate_image(
+    payload: ImageGenerationPayload,
+    request: Request,
+) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+
+    if not active_settings.gemini_configured:
+        return JSONResponse(
+            status_code=503,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "configuration_error",
+                    "message": "GEMINI_API_KEY is not configured on the backend.",
+                }
+            },
+        )
+
+    user: AuthenticatedUser | None = await _resolve_authenticated_user(
+        request,
+        active_settings,
+    )
+    bearer_token = _extract_bearer_token(request)
+
+    if active_settings.supabase_auth_configured and user is None:
+        return JSONResponse(
+            status_code=401,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "authentication_required",
+                    "message": "Sign in to generate images.",
+                }
+            },
+        )
+
+    summary = await _get_subscription_and_usage_summary(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        use_cache=True,
+    )
+    monthly_limit = summary["monthly_request_limit"]
+    monthly_used = summary["monthly_requests_used"]
+    if monthly_limit is not None and monthly_used >= monthly_limit:
+        return JSONResponse(
+            status_code=402,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "quota_exceeded",
+                    "message": (
+                        f"You have used {monthly_used} of {monthly_limit} monthly requests "
+                        "for your current plan. Upgrade or wait for the next billing period."
+                    ),
+                },
+                "usage": {
+                    "used": monthly_used,
+                    "limit": monthly_limit,
+                    "remaining": summary["monthly_requests_remaining"],
+                    "period_ends_at": summary["period_ends_at"],
+                },
+            },
+        )
+
+    model = active_settings.gemini_model
+    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    http_client, owns_http_client = _get_http_client(request)
+    images: list[dict[str, Any]] = []
+    conversation: list[dict[str, Any]] = []
+
+    try:
+        for idx, prompt_text in enumerate(payload.prompts):
+            conversation.append({"role": "user", "parts": [{"text": prompt_text}]})
+
+            gemini_body: dict[str, Any] = {
+                "contents": conversation.copy(),
+                "generationConfig": {
+                    "responseModalities": ["IMAGE"],
+                },
+            }
+
+            try:
+                resp = await http_client.post(
+                    api_url,
+                    params={"key": active_settings.gemini_api_key},
+                    json=gemini_body,
+                    timeout=httpx.Timeout(120.0, connect=10.0),
+                )
+            except httpx.TimeoutException:
+                return JSONResponse(
+                    status_code=504,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "upstream_timeout",
+                            "message": f"Gemini did not respond in time for prompt {idx + 1}.",
+                        }
+                    },
+                )
+            except httpx.HTTPError as exc:
+                return JSONResponse(
+                    status_code=502,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "upstream_connection_error",
+                            "message": f"Could not reach Gemini: {exc}",
+                        }
+                    },
+                )
+
+            if resp.status_code != 200:
+                error_detail = resp.text[:500]
+                logger.warning(
+                    "Gemini API error for request %s prompt %d: %s %s",
+                    request_id, idx + 1, resp.status_code, error_detail,
+                )
+                return JSONResponse(
+                    status_code=502,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "upstream_error",
+                            "message": f"Gemini returned {resp.status_code} for prompt {idx + 1}.",
+                            "detail": error_detail,
+                        }
+                    },
+                )
+
+            resp_json = resp.json()
+            candidates = resp_json.get("candidates", [])
+            if not candidates:
+                return JSONResponse(
+                    status_code=502,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "upstream_empty",
+                            "message": f"Gemini returned no candidates for prompt {idx + 1}.",
+                        }
+                    },
+                )
+
+            model_parts = candidates[0].get("content", {}).get("parts", [])
+            image_part = None
+            for part in model_parts:
+                if "inlineData" in part:
+                    image_part = part["inlineData"]
+                    break
+
+            if image_part is None:
+                return JSONResponse(
+                    status_code=502,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "no_image_in_response",
+                            "message": f"Gemini did not return an image for prompt {idx + 1}.",
+                        }
+                    },
+                )
+
+            images.append({
+                "prompt_index": idx,
+                "mime_type": image_part.get("mimeType", "image/png"),
+                "data": image_part["data"],
+            })
+
+            conversation.append({
+                "role": "model",
+                "parts": [{"inlineData": image_part}],
+            })
+
+    finally:
+        if owns_http_client:
+            await http_client.aclose()
+
+    try:
+        await _persist_usage_event_to_supabase(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body={"provider": "gemini", "model": model, "prompts": len(payload.prompts)},
+            response_payload={"usage": {}},
+            status_code=200,
+        )
+    except Exception:
+        logger.exception("Failed to persist Gemini usage event for request %s", request_id)
+
+    if user:
+        usage_cache = getattr(request.app.state, "usage_cache", None)
+        if usage_cache is not None:
+            usage_cache.increment_used(user.user_id)
+
+    return JSONResponse(
+        status_code=200,
+        headers={"X-Request-ID": request_id},
+        content={"images": images},
     )
 
 

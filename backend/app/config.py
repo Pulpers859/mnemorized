@@ -45,11 +45,17 @@ class Settings:
     free_monthly_requests: int
     pro_monthly_requests: int
     team_monthly_requests: int
+    gemini_api_key: str
+    gemini_model: str
     plan_override_path: Path
 
     @property
     def anthropic_configured(self) -> bool:
         return bool(self.anthropic_api_key)
+
+    @property
+    def gemini_configured(self) -> bool:
+        return bool(self.gemini_api_key)
 
     @property
     def supabase_auth_configured(self) -> bool:
@@ -110,5 +116,7 @@ def get_settings() -> Settings:
         free_monthly_requests=int(os.getenv("FREE_MONTHLY_REQUESTS", "40")),
         pro_monthly_requests=int(os.getenv("PRO_MONTHLY_REQUESTS", "400")),
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
+        gemini_api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash-exp").strip(),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
     )
