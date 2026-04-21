@@ -163,6 +163,16 @@ def _parse_content_range_total(header_value: str | None) -> int:
         return 0
 
 
+def _parse_optional_timestamp(value: Any) -> datetime | None:
+    if value in (None, ""):
+        return None
+    if isinstance(value, datetime):
+        return value
+    if not isinstance(value, str):
+        raise ValueError(f"expected ISO timestamp string, got {type(value).__name__}")
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
 def _get_http_client(request: Request) -> tuple[httpx.AsyncClient, bool]:
     http_client = getattr(request.app.state, "http_client", None)
     if http_client is None:
@@ -292,15 +302,27 @@ async def _get_subscription_and_usage_summary(
             ),
         )
 
-    subscription_rows = subscription_response.json()
-    subscription = subscription_rows[0] if subscription_rows else None
-    current_period_end = subscription.get("current_period_end") if subscription else None
+    try:
+        subscription_rows = subscription_response.json()
+        if not isinstance(subscription_rows, list):
+            raise ValueError(f"expected list, got {type(subscription_rows).__name__}")
+        subscription = subscription_rows[0] if subscription_rows else None
+        if subscription is not None and not isinstance(subscription, dict):
+            raise ValueError(f"expected object, got {type(subscription).__name__}")
+        current_period_end = subscription.get("current_period_end") if subscription else None
+        parsed_period_end = _parse_optional_timestamp(current_period_end)
+    except (ValueError, TypeError, AttributeError) as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Unexpected subscription payload from Supabase: {exc}",
+        ) from exc
+
     subscription_active = bool(
         subscription
         and subscription.get("status") in {"active", "trialing"}
         and (
-            not current_period_end
-            or datetime.fromisoformat(current_period_end.replace("Z", "+00:00")) > datetime.now(UTC)
+            parsed_period_end is None
+            or parsed_period_end > datetime.now(UTC)
         )
     )
     plan_code = subscription.get("plan_code") if subscription_active else "free"
@@ -605,7 +627,12 @@ async def proxy_anthropic_messages(
         )
 
     content_length = request.headers.get("content-length")
-    if content_length and int(content_length) > active_settings.max_request_bytes:
+    try:
+        request_size = int(content_length) if content_length else 0
+    except ValueError:
+        request_size = 0
+
+    if request_size > active_settings.max_request_bytes:
         return JSONResponse(
             status_code=413,
             headers={"X-Request-ID": request_id},
