@@ -14,4 +14,4 @@ venv/
 Thumbs.db
 *.afdesign
 projects/
-Mnemorized_support_archive*/
+local_archive/

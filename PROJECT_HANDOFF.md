@@ -29,9 +29,9 @@
 - Standalone local mapper: `tools/forge-anchor-mapper.html`
 - Backend architecture notes: `docs/backend/auth-persistence-foundation.md`
 - UI/UX resource decision memo: `docs/design-resource-evaluation.md`
-- Local ignored material moved out of the active repo:
-  - `C:\Dev\Mnemorized_support_archive_2026-06-29\projects`
-  - `C:\Dev\Mnemorized_support_archive_2026-06-29\Profile_pic.afdesign`
+- Local ignored material retained inside the repo folder but outside Git:
+  - `C:\Dev\Mnemorized\local_archive\2026-06-29\projects`
+  - `C:\Dev\Mnemorized\local_archive\2026-06-29\Profile_pic.afdesign`
 
 ## Agent Workflow
 
