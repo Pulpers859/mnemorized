@@ -574,6 +574,8 @@ async def _get_subscription_and_usage_summary(
         params={
             "select": "plan_code,status,current_period_end",
             "user_id": f"eq.{user.user_id}",
+            "status": "in.(active,trialing)",
+            "order": "current_period_end.desc.nullslast",
             "limit": "1",
         },
     )
@@ -802,7 +804,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=list(settings.cors_origins) or ["*"],
     allow_credentials=False,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
     expose_headers=["Retry-After", "X-Request-ID", "X-Anthropic-Request-ID"],
 )
@@ -1319,6 +1321,7 @@ async def proxy_anthropic_messages(
 async def generate_image(
     payload: ImageGenerationPayload,
     request: Request,
+    background_tasks: BackgroundTasks,
 ) -> JSONResponse:
     active_settings = _get_runtime_settings(request)
     request_id = str(uuid4())
@@ -1441,7 +1444,25 @@ async def generate_image(
                     },
                 )
 
-            resp_json = resp.json()
+            try:
+                resp_json = resp.json()
+            except ValueError:
+                logger.warning(
+                    "Gemini returned non-JSON content for request %s prompt %d",
+                    request_id,
+                    idx + 1,
+                )
+                return JSONResponse(
+                    status_code=502,
+                    headers={"X-Request-ID": request_id},
+                    content={
+                        "error": {
+                            "type": "upstream_parse_error",
+                            "message": f"Gemini returned a non-JSON response for prompt {idx + 1}.",
+                        }
+                    },
+                )
+
             candidates = resp_json.get("candidates", [])
             if not candidates:
                 return JSONResponse(
@@ -1462,7 +1483,7 @@ async def generate_image(
                     image_part = part["inlineData"]
                     break
 
-            if image_part is None:
+            if not isinstance(image_part, dict) or not image_part.get("data"):
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1490,7 +1511,8 @@ async def generate_image(
             await http_client.aclose()
 
     try:
-        await _persist_usage_event_to_supabase(
+        background_tasks.add_task(
+            _persist_usage_event_background,
             request=request,
             settings=active_settings,
             bearer_token=bearer_token,
@@ -1501,12 +1523,13 @@ async def generate_image(
             status_code=200,
         )
     except Exception:
-        logger.exception("Failed to persist Gemini usage event for request %s", request_id)
+        logger.exception("Failed to schedule Gemini usage event persistence for request %s", request_id)
 
     return JSONResponse(
         status_code=200,
         headers={"X-Request-ID": request_id},
         content={"images": images},
+        background=background_tasks,
     )
 
 
