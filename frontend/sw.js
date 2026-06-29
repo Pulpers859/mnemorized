@@ -1,9 +1,10 @@
-const CACHE_NAME = 'mnemorized-v7';
+const CACHE_NAME = 'mnemorized-v8';
 const STATIC_ASSETS = [
   '/',
   '/forge',
   '/library',
   '/manifest.json',
+  '/scripts/palace-api.js',
   '/assets/profile-pic.png',
 ];
 

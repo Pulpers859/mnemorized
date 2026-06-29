@@ -443,6 +443,7 @@ h1 {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/scripts/palace-api.js?v=20260629-1"></script>
 <script>
 const API_BASE = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
 
@@ -486,6 +487,12 @@ async function runSupabaseQuery(label, promise, timeoutMs = 15000) {
     console.error(`[Library] ${label} failed`, error);
     throw error;
   }
+}
+
+function getAuthToken() {
+  const token = authState.session?.access_token;
+  if (!token) throw new Error('Sign in to access saved palaces.');
+  return token;
 }
 
 function escapeHtml(text) {
@@ -637,23 +644,14 @@ async function loadLibrary() {
   }
 
   setLibraryStatus('Loading library…');
-  const { data, error } = await runSupabaseQuery(
-    'library load',
-    supabaseClient
-      .from('palaces')
-      .select('id,title,topic,scene_title,status,latest_version_number,updated_at')
-      .eq('user_id', authState.user.id)
-      .order('updated_at', { ascending: false })
-  );
-
-  if (error) {
+  try {
+    const payload = await MnemorizedPalaceApi.list(getAuthToken());
+    libraryRows = payload.palaces || [];
+    renderLibrary();
+    setLibraryStatus(`Loaded ${libraryRows.length} palace${libraryRows.length === 1 ? '' : 's'}.`, 'success');
+  } catch (error) {
     setLibraryStatus(`Library load failed: ${error.message}`, 'error');
-    return;
   }
-
-  libraryRows = data || [];
-  renderLibrary();
-  setLibraryStatus(`Loaded ${libraryRows.length} palace${libraryRows.length === 1 ? '' : 's'}.`, 'success');
 }
 
 async function renamePalace(palaceId) {
@@ -664,15 +662,9 @@ async function renamePalace(palaceId) {
   if (!nextTitle || nextTitle.trim() === currentTitle) return;
 
   setLibraryStatus(`Renaming "${currentTitle}"…`);
-  const { error } = await runSupabaseQuery(
-    'palace rename',
-    supabaseClient
-      .from('palaces')
-      .update({ title: nextTitle.trim() })
-      .eq('id', palaceId)
-  );
-
-  if (error) {
+  try {
+    await MnemorizedPalaceApi.rename(getAuthToken(), palaceId, nextTitle.trim());
+  } catch (error) {
     setLibraryStatus(`Rename failed: ${error.message}`, 'error');
     return;
   }
@@ -687,11 +679,9 @@ async function deletePalace(palaceId) {
   if (!confirm(`Delete "${label}" and all saved versions? This cannot be undone.`)) return;
 
   setLibraryStatus(`Deleting "${label}"…`);
-  const { error } = await runSupabaseQuery(
-    'palace delete',
-    supabaseClient.from('palaces').delete().eq('id', palaceId)
-  );
-  if (error) {
+  try {
+    await MnemorizedPalaceApi.delete(getAuthToken(), palaceId);
+  } catch (error) {
     setLibraryStatus(`Delete failed: ${error.message}`, 'error');
     return;
   }

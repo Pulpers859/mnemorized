@@ -1378,6 +1378,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   </div><!-- /pipeline -->
 </div><!-- /wrap -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/scripts/palace-api.js?v=20260629-1"></script>
 <script>
 // ══════════════════════════════════════════════════
 // BACKEND PROXY CONNECTION
@@ -1590,6 +1591,12 @@ async function runSupabaseQuery(label, promise, timeoutMs = 15000) {
     console.error(`[Supabase] ${label} failed`, error);
     throw error;
   }
+}
+
+function getAuthToken() {
+  const token = authState.session?.access_token;
+  if (!token) throw new Error('Sign in to access saved palaces.');
+  return token;
 }
 
 function escapeHtml(text) {
@@ -1921,24 +1928,15 @@ async function loadLibrary() {
   }
 
   setLibraryStatus('Loading library…');
-  const { data, error } = await runSupabaseQuery(
-    'library load',
-    supabaseClient
-      .from('palaces')
-      .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
-      .eq('user_id', authState.user.id)
-      .order('updated_at', { ascending: false })
-  );
-
-  if (error) {
+  try {
+    const payload = await MnemorizedPalaceApi.list(getAuthToken());
+    renderLibraryRows(payload.palaces || []);
+    setLibraryStatus(`Loaded ${(payload.palaces || []).length} saved palace${(payload.palaces || []).length === 1 ? '' : 's'}.`, 'success');
+    await maybeLoadRoutePalace();
+  } catch (error) {
     renderLibraryRows([]);
     setLibraryStatus(`Library load failed: ${error.message}`, 'error');
-    return;
   }
-
-  renderLibraryRows(data || []);
-  setLibraryStatus(`Loaded ${(data || []).length} saved palace${(data || []).length === 1 ? '' : 's'}.`, 'success');
-  await maybeLoadRoutePalace();
 }
 
 async function deletePalace(palaceId) {
@@ -1954,11 +1952,9 @@ async function deletePalace(palaceId) {
   }
 
   setLibraryStatus(`Deleting "${label}"…`);
-  const { error } = await runSupabaseQuery(
-    'palace delete',
-    supabaseClient.from('palaces').delete().eq('id', palaceId)
-  );
-  if (error) {
+  try {
+    await MnemorizedPalaceApi.delete(getAuthToken(), palaceId);
+  } catch (error) {
     setLibraryStatus(`Delete failed: ${error.message}`, 'error');
     return;
   }
@@ -1979,33 +1975,15 @@ async function loadPalace(palaceId, options = {}) {
   }
 
   setLibraryStatus('Loading palace…');
-  const [{ data: palace, error: palaceError }, { data: version, error: versionError }] = await Promise.all([
-    runSupabaseQuery(
-      'palace load',
-      supabaseClient
-        .from('palaces')
-        .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
-        .eq('id', palaceId)
-        .single()
-    ),
-    runSupabaseQuery(
-      'palace version load',
-      supabaseClient
-        .from('palace_versions')
-        .select('version_number,generation_inputs,generation_outputs,created_at')
-        .eq('palace_id', palaceId)
-        .order('version_number', { ascending: false })
-        .limit(1)
-        .single()
-    )
-  ]);
-
-  if (palaceError || versionError) {
-    setLibraryStatus(`Load failed: ${(palaceError || versionError).message}`, 'error');
+  let payload;
+  try {
+    payload = await MnemorizedPalaceApi.load(getAuthToken(), palaceId);
+  } catch (error) {
+    setLibraryStatus(`Load failed: ${error.message}`, 'error');
     return;
   }
 
-  applyPalaceSnapshot(palace, version);
+  applyPalaceSnapshot(payload.palace, payload.version);
   if (!options.silentScroll) {
     setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   }
@@ -2028,73 +2006,15 @@ async function saveCurrentPalace(asNew = false) {
   }
 
   const snapshot = buildPalaceSnapshot();
-  const nowIso = new Date().toISOString();
   setLibraryStatus(asNew ? 'Saving new palace…' : 'Saving palace…');
 
-  let createdPalaceId = null;
-  let versionSaved = false;
-
   try {
-    let palaceRow = asNew ? null : currentPalaceMeta;
-    let nextVersion = asNew ? 1 : (currentPalaceMeta?.latest_version_number || 0) + 1;
-
-    if (!palaceRow?.id) {
-      nextVersion = 1;
-      const insertPayload = {
-        user_id: authState.user.id,
-        title: snapshot.title,
-        topic: snapshot.topic,
-        source_name: snapshot.source_name,
-        scene_title: snapshot.scene_title,
-        status: snapshot.status,
-        latest_version_number: nextVersion,
-        updated_at: nowIso
-      };
-      const { data, error } = await runSupabaseQuery(
-        'palace insert',
-        supabaseClient
-          .from('palaces')
-          .insert(insertPayload)
-          .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
-          .single()
-      );
-      if (error) throw error;
-      palaceRow = data;
-      createdPalaceId = palaceRow?.id || null;
-    }
-
-    const versionPayload = {
-      palace_id: palaceRow.id,
-      version_number: nextVersion,
-      generation_inputs: snapshot.generation_inputs,
-      generation_outputs: snapshot.generation_outputs
-    };
-    const { error: versionError } = await runSupabaseQuery(
-      'palace version insert',
-      supabaseClient.from('palace_versions').insert(versionPayload)
-    );
-    if (versionError) throw versionError;
-    versionSaved = true;
-
-    const { data: updatedPalace, error: updateError } = await runSupabaseQuery(
-      'palace metadata update',
-      supabaseClient
-        .from('palaces')
-        .update({
-          title: snapshot.title,
-          topic: snapshot.topic,
-          source_name: snapshot.source_name,
-          scene_title: snapshot.scene_title,
-          status: snapshot.status,
-          latest_version_number: nextVersion,
-          updated_at: nowIso
-        })
-        .eq('id', palaceRow.id)
-        .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
-        .single()
-    );
-    if (updateError) throw updateError;
-    palaceRow = updatedPalace;
+    const result = await MnemorizedPalaceApi.save(getAuthToken(), {
+      palace_id: asNew ? null : currentPalaceMeta?.id || null,
+      snapshot
+    });
+    const palaceRow = result.palace;
+    const nextVersion = result.version_number || palaceRow.latest_version_number || 1;
 
     currentPalaceMeta = palaceRow;
     document.getElementById('palace-title-input').value = palaceRow.title || '';
@@ -2102,12 +2022,6 @@ async function saveCurrentPalace(asNew = false) {
     refreshAuthUI();
     await loadLibrary();
   } catch (error) {
-    if (createdPalaceId && !versionSaved) {
-      await runSupabaseQuery(
-        'cleanup empty palace',
-        supabaseClient.from('palaces').delete().eq('id', createdPalaceId)
-      ).catch(cleanupError => console.warn('Empty palace cleanup failed:', cleanupError));
-    }
     setLibraryStatus(`Save failed: ${error.message}`, 'error');
   }
 }

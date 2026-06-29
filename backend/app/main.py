@@ -107,6 +107,25 @@ class DevPlanOverridePayload(BaseModel):
     clear: bool = False
 
 
+class PalaceSnapshotPayload(BaseModel):
+    title: str = Field(min_length=1, max_length=160)
+    topic: str = Field(min_length=1, max_length=20000)
+    source_name: str | None = Field(default=None, max_length=240)
+    scene_title: str | None = Field(default=None, max_length=240)
+    status: str = Field(default="generated", max_length=40)
+    generation_inputs: dict[str, Any] = Field(default_factory=dict)
+    generation_outputs: dict[str, Any] = Field(default_factory=dict)
+
+
+class PalaceSavePayload(BaseModel):
+    palace_id: str | None = None
+    snapshot: PalaceSnapshotPayload
+
+
+class PalaceRenamePayload(BaseModel):
+    title: str = Field(min_length=1, max_length=160)
+
+
 ImagePrompt = Annotated[
     str,
     StringConstraints(strip_whitespace=True, min_length=1, max_length=8000),
@@ -401,6 +420,109 @@ async def _supabase_rest_request(
     finally:
         if owns_http_client:
             await http_client.aclose()
+
+
+PALACE_SELECT = "id,title,topic,scene_title,status,latest_version_number,updated_at,source_name"
+PALACE_VERSION_SELECT = "version_number,generation_inputs,generation_outputs,created_at"
+
+
+async def _require_persistence_context(
+    request: Request,
+    settings: Settings,
+) -> tuple[str, AuthenticatedUser]:
+    bearer_token = _extract_bearer_token(request)
+    if not bearer_token:
+        raise HTTPException(status_code=401, detail="Sign in to access saved palaces.")
+    if not settings.supabase_auth_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="Supabase persistence is not configured on the backend.",
+        )
+
+    user = await _resolve_authenticated_user(request, settings)
+    if user is None:
+        raise HTTPException(status_code=401, detail="Sign in to access saved palaces.")
+
+    return bearer_token, user
+
+
+def _parse_supabase_rows(response: httpx.Response, label: str) -> list[dict[str, Any]]:
+    if response.status_code >= 400:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not {label} in Supabase: {response.text[:300]}",
+        )
+    try:
+        rows = response.json()
+    except ValueError as exc:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Supabase returned non-JSON while trying to {label}.",
+        ) from exc
+    if not isinstance(rows, list):
+        raise HTTPException(
+            status_code=502,
+            detail=f"Unexpected Supabase payload while trying to {label}.",
+        )
+    return rows
+
+
+def _single_row(rows: list[dict[str, Any]], label: str) -> dict[str, Any]:
+    if not rows:
+        raise HTTPException(status_code=404, detail=f"Saved palace not found while trying to {label}.")
+    row = rows[0]
+    if not isinstance(row, dict):
+        raise HTTPException(status_code=502, detail=f"Unexpected row payload while trying to {label}.")
+    return row
+
+
+async def _load_palace_row(
+    *,
+    request: Request,
+    settings: Settings,
+    bearer_token: str,
+    user: AuthenticatedUser,
+    palace_id: str,
+) -> dict[str, Any]:
+    response = await _supabase_rest_request(
+        request=request,
+        settings=settings,
+        bearer_token=bearer_token,
+        method="GET",
+        path="/rest/v1/palaces",
+        params={
+            "select": PALACE_SELECT,
+            "id": f"eq.{palace_id}",
+            "user_id": f"eq.{user.user_id}",
+            "limit": "1",
+        },
+    )
+    return _single_row(_parse_supabase_rows(response, "load palace"), "load palace")
+
+
+async def _delete_empty_palace_best_effort(
+    *,
+    request: Request,
+    settings: Settings,
+    bearer_token: str,
+    palace_id: str | None,
+) -> None:
+    if not palace_id:
+        return
+    try:
+        response = await _supabase_rest_request(
+            request=request,
+            settings=settings,
+            bearer_token=bearer_token,
+            method="DELETE",
+            path="/rest/v1/palaces",
+            params={"id": f"eq.{palace_id}"},
+            headers={"Prefer": "return=minimal"},
+        )
+        if response.status_code >= 400:
+            logger.warning("Cleanup delete failed for empty palace %s: %s", palace_id, response.text[:300])
+    except httpx.HTTPError as exc:
+        logger.warning("Cleanup delete errored for empty palace %s: %s", palace_id, exc)
 
 
 async def _get_subscription_and_usage_summary(
@@ -749,6 +871,204 @@ async def account_summary(request: Request) -> dict[str, Any]:
         "dev_mode": active_settings.dev_mode,
         **summary,
     }
+
+
+@app.get("/api/palaces")
+async def list_palaces(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="GET",
+        path="/rest/v1/palaces",
+        params={
+            "select": PALACE_SELECT,
+            "user_id": f"eq.{user.user_id}",
+            "order": "updated_at.desc",
+        },
+    )
+    rows = _parse_supabase_rows(response, "load saved palaces")
+    return {"palaces": rows}
+
+
+@app.get("/api/palaces/{palace_id}")
+async def get_palace(palace_id: str, request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    palace = await _load_palace_row(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        palace_id=palace_id,
+    )
+    version_response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="GET",
+        path="/rest/v1/palace_versions",
+        params={
+            "select": PALACE_VERSION_SELECT,
+            "palace_id": f"eq.{palace_id}",
+            "order": "version_number.desc",
+            "limit": "1",
+        },
+    )
+    version = _single_row(_parse_supabase_rows(version_response, "load palace version"), "load palace version")
+    return {"palace": palace, "version": version}
+
+
+@app.post("/api/palaces/save")
+async def save_palace(payload: PalaceSavePayload, request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    snapshot = payload.snapshot
+    palace_id = payload.palace_id
+    created_palace_id: str | None = None
+
+    try:
+        if palace_id:
+            palace_row = await _load_palace_row(
+                request=request,
+                settings=active_settings,
+                bearer_token=bearer_token,
+                user=user,
+                palace_id=palace_id,
+            )
+            next_version = int(palace_row.get("latest_version_number") or 0) + 1
+        else:
+            insert_response = await _supabase_rest_request(
+                request=request,
+                settings=active_settings,
+                bearer_token=bearer_token,
+                method="POST",
+                path="/rest/v1/palaces",
+                json_body={
+                    "user_id": user.user_id,
+                    "title": snapshot.title,
+                    "topic": snapshot.topic,
+                    "source_name": snapshot.source_name,
+                    "scene_title": snapshot.scene_title,
+                    "status": snapshot.status,
+                    "latest_version_number": 1,
+                },
+                headers={"Prefer": "return=representation"},
+            )
+            palace_row = _single_row(_parse_supabase_rows(insert_response, "create palace"), "create palace")
+            palace_id = palace_row.get("id")
+            created_palace_id = palace_id
+            next_version = 1
+
+        version_response = await _supabase_rest_request(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            method="POST",
+            path="/rest/v1/palace_versions",
+            json_body={
+                "palace_id": palace_id,
+                "version_number": next_version,
+                "generation_inputs": snapshot.generation_inputs,
+                "generation_outputs": snapshot.generation_outputs,
+            },
+            headers={"Prefer": "return=minimal"},
+        )
+        if version_response.status_code >= 400:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Could not save palace version in Supabase: {version_response.text[:300]}",
+            )
+
+        update_response = await _supabase_rest_request(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            method="PATCH",
+            path="/rest/v1/palaces",
+            params={"id": f"eq.{palace_id}", "user_id": f"eq.{user.user_id}"},
+            json_body={
+                "title": snapshot.title,
+                "topic": snapshot.topic,
+                "source_name": snapshot.source_name,
+                "scene_title": snapshot.scene_title,
+                "status": snapshot.status,
+                "latest_version_number": next_version,
+            },
+            headers={"Prefer": "return=representation"},
+        )
+        palace_row = _single_row(_parse_supabase_rows(update_response, "update palace metadata"), "update palace metadata")
+    except HTTPException:
+        if created_palace_id:
+            await _delete_empty_palace_best_effort(
+                request=request,
+                settings=active_settings,
+                bearer_token=bearer_token,
+                palace_id=created_palace_id,
+            )
+        raise
+
+    return {
+        "palace": palace_row,
+        "version_number": next_version,
+    }
+
+
+@app.patch("/api/palaces/{palace_id}")
+async def rename_palace(
+    palace_id: str,
+    payload: PalaceRenamePayload,
+    request: Request,
+) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="PATCH",
+        path="/rest/v1/palaces",
+        params={"id": f"eq.{palace_id}", "user_id": f"eq.{user.user_id}"},
+        json_body={"title": payload.title},
+        headers={"Prefer": "return=representation"},
+    )
+    row = _single_row(_parse_supabase_rows(response, "rename palace"), "rename palace")
+    return {"palace": row}
+
+
+@app.delete("/api/palaces/{palace_id}")
+async def delete_palace(palace_id: str, request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    await _load_palace_row(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        palace_id=palace_id,
+    )
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="DELETE",
+        path="/rest/v1/palaces",
+        params={"id": f"eq.{palace_id}", "user_id": f"eq.{user.user_id}"},
+        headers={"Prefer": "return=minimal"},
+    )
+    if response.status_code >= 400:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not delete palace in Supabase: {response.text[:300]}",
+        )
+    return {"deleted": True, "palace_id": palace_id}
 
 
 @app.post("/api/dev/plan-override")
