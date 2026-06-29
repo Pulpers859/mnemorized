@@ -1907,18 +1907,7 @@ function startNewPalaceDraft(fromPalaceId = '') {
 
 async function ensureProfileRecord() {
   if (!supabaseClient || !authState.user) return;
-
-  const payload = {
-    id: authState.user.id,
-    email: authState.user.email || null,
-    display_name: (authState.user.user_metadata?.display_name || authState.user.email || '').split('@')[0] || null
-  };
-
-  const { error } = await runSupabaseQuery(
-    'profile upsert',
-    supabaseClient.from('profiles').upsert(payload, { onConflict: 'id' })
-  );
-  if (error) console.warn('Profile upsert warning:', error.message);
+  await MnemorizedPalaceApi.ensureProfile(getAuthToken());
 }
 
 async function loadLibrary() {

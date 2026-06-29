@@ -99,6 +99,38 @@ def test_list_palaces_uses_backend_owned_supabase_query(
     assert supabase.calls[0]["bearer_token"] == "local-token"
 
 
+def test_ensure_profile_upserts_authenticated_user_through_backend(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    supabase = SupabaseMock([
+        httpx.Response(
+            200,
+            json=[{
+                "id": "user-123",
+                "email": "patrick@example.com",
+                "display_name": "patrick",
+            }],
+        )
+    ])
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.post("/api/profile/ensure", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 200
+    assert response.json()["profile"]["id"] == "user-123"
+    assert supabase.calls[0]["method"] == "POST"
+    assert supabase.calls[0]["path"] == "/rest/v1/profiles"
+    assert supabase.calls[0]["params"] == {"on_conflict": "id"}
+    assert supabase.calls[0]["headers"]["Prefer"] == "resolution=merge-duplicates,return=representation"
+    assert supabase.calls[0]["json_body"] == {
+        "id": "user-123",
+        "email": "patrick@example.com",
+        "display_name": "patrick",
+    }
+    assert supabase.calls[0]["bearer_token"] == "local-token"
+
+
 def test_save_existing_palace_inserts_next_version_before_metadata_update(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
@@ -162,6 +194,13 @@ def test_save_existing_palace_inserts_next_version_before_metadata_update(
 
 def test_palace_routes_require_bearer_token(client: TestClient) -> None:
     response = client.get("/api/palaces")
+
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Sign in to access saved palaces."
+
+
+def test_profile_ensure_requires_bearer_token(client: TestClient) -> None:
+    response = client.post("/api/profile/ensure")
 
     assert response.status_code == 401
     assert response.json()["detail"] == "Sign in to access saved palaces."

@@ -34,7 +34,7 @@ The proxy is the first permanent backend surface. The next layer should attach i
 ## Backend integration points already prepared
 
 - `/api/anthropic/messages` is the future enforcement point for quotas and plans
-- `/api/palaces` is the backend-owned saved-palace surface; the browser keeps Supabase Auth for session management but no longer writes palace tables directly.
+- `/api/profile/ensure` and `/api/palaces` are the backend-owned persistence surfaces; the browser keeps Supabase Auth for session management but no longer writes profile or palace tables directly.
 - Usage logging already records request metadata
 - Authenticated proxy requests can now also persist `usage_events` into Supabase
 - Health checks already advertise auth and persistence as planned foundations

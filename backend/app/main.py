@@ -476,6 +476,18 @@ def _single_row(rows: list[dict[str, Any]], label: str) -> dict[str, Any]:
     return row
 
 
+def _profile_display_name(user: AuthenticatedUser) -> str | None:
+    metadata = user.claims.get("user_metadata")
+    if isinstance(metadata, dict):
+        display_name = metadata.get("display_name") or metadata.get("full_name") or metadata.get("name")
+        if isinstance(display_name, str) and display_name.strip():
+            return display_name.strip()
+
+    if user.email and "@" in user.email:
+        return user.email.split("@", 1)[0] or None
+    return None
+
+
 async def _load_palace_row(
     *,
     request: Request,
@@ -871,6 +883,29 @@ async def account_summary(request: Request) -> dict[str, Any]:
         "dev_mode": active_settings.dev_mode,
         **summary,
     }
+
+
+@app.post("/api/profile/ensure")
+async def ensure_profile(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="POST",
+        path="/rest/v1/profiles",
+        params={"on_conflict": "id"},
+        json_body={
+            "id": user.user_id,
+            "email": user.email,
+            "display_name": _profile_display_name(user),
+        },
+        headers={"Prefer": "resolution=merge-duplicates,return=representation"},
+    )
+    row = _single_row(_parse_supabase_rows(response, "sync profile"), "sync profile")
+    return {"profile": row}
 
 
 @app.get("/api/palaces")

@@ -2,7 +2,7 @@
 
 Mnemorized is a web app for generating visual medical memory palaces, saving them to a Supabase-backed library, and routing AI provider calls through a FastAPI backend.
 
-The browser uses Supabase Auth for sessions, while saved-palace CRUD is routed through FastAPI under `/api/palaces` so ownership, versioning, and persistence errors have one backend contract.
+The browser uses Supabase Auth for sessions, while profile sync and saved-palace CRUD are routed through FastAPI under `/api/profile/ensure` and `/api/palaces` so ownership, versioning, and persistence errors have one backend contract.
 
 ## Source Of Truth
 

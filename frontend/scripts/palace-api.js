@@ -31,6 +31,12 @@
   }
 
   window.MnemorizedPalaceApi = {
+    ensureProfile(token) {
+      return request('/api/profile/ensure', {
+        method: 'POST',
+        token
+      });
+    },
     list(token) {
       return request('/api/palaces', { token });
     },
