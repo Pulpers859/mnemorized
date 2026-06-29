@@ -37,21 +37,21 @@ python -m pip install -r backend/requirements.txt
 6. Start the server:
 
 ```powershell
-python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8001 --reload
 ```
 
 Or on Windows:
 
 ```powershell
-.\backend\start.ps1
+.\tools\Start-Mnemorized-App.ps1
 ```
 
 7. Open the served app routes:
 
 ```text
-http://127.0.0.1:8000/
-http://127.0.0.1:8000/forge
-http://127.0.0.1:8000/library
+http://127.0.0.1:8001/
+http://127.0.0.1:8001/forge
+http://127.0.0.1:8001/library
 ```
 
 ## Logging

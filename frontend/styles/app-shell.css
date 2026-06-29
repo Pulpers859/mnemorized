@@ -40,6 +40,15 @@ nav {
   padding: 14px clamp(18px, 3vw, 36px) !important;
   border-bottom-color: rgba(213, 223, 216, .14) !important;
   background: rgba(9, 12, 15, .88) !important;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-left,
+.nav-right,
+.nav-actions {
+  min-width: 0;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -196,10 +205,24 @@ textarea:focus-visible,
     gap: 10px;
   }
 
+  .nav-left,
+  .nav-right,
+  .nav-actions {
+    width: 100%;
+    flex: 1 1 100% !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .nav-logo {
+    font-size: 20px !important;
+  }
+
   .wrap {
     width: min(100% - 24px, 1180px) !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    padding-top: 132px !important;
   }
 
   .hero,

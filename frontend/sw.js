@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mnemorized-v6';
+const CACHE_NAME = 'mnemorized-v7';
 const STATIC_ASSETS = [
   '/',
   '/forge',
@@ -32,6 +32,21 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
   if (url.pathname.startsWith('/api/')) {
+    return;
+  }
+
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
     return;
   }
 

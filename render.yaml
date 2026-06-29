@@ -14,6 +14,8 @@ services:
         sync: false
       - key: ANTHROPIC_TIMEOUT_SECONDS
         value: "180"
+      - key: ANTHROPIC_MAX_TOKENS
+        value: "8192"
       - key: SUPABASE_URL
         sync: false
       - key: SUPABASE_ANON_KEY
@@ -24,3 +26,5 @@ services:
         sync: false
       - key: CORS_ORIGINS
         value: "*"
+      - key: TRUST_PROXY_HEADERS
+        value: "true"

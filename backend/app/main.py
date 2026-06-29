@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from datetime import UTC, datetime
 from pathlib import Path
 from threading import Lock
-from typing import Any
+from typing import Annotated, Any
 from uuid import uuid4
 
 import httpx
@@ -18,7 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from jwt import InvalidTokenError
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints
 
 from .auth import AuthenticatedUser, SupabaseTokenVerifier
 from .config import Settings, get_settings
@@ -63,6 +63,29 @@ class UsageSummaryCache:
                 data["monthly_requests_remaining"] = max(0, limit - data["monthly_requests_used"])
             self._entries[user_id] = (ts, data)
 
+    def reserve_request(self, user_id: str, summary: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
+        with self._lock:
+            now = time.time()
+            entry = self._entries.get(user_id)
+            if entry is None or now - entry[0] > self._ttl:
+                data = summary.copy()
+                ts = now
+            else:
+                ts, data = entry
+                data = data.copy()
+
+            used = int(data.get("monthly_requests_used") or 0)
+            limit = data.get("monthly_request_limit")
+            if limit is not None and used >= int(limit):
+                self._entries[user_id] = (ts, data)
+                return False, data.copy()
+
+            data["monthly_requests_used"] = used + 1
+            if limit is not None:
+                data["monthly_requests_remaining"] = max(0, int(limit) - data["monthly_requests_used"])
+            self._entries[user_id] = (ts, data)
+            return True, data.copy()
+
 
 logger = logging.getLogger("mnemorized.proxy")
 logging.basicConfig(
@@ -84,15 +107,22 @@ class DevPlanOverridePayload(BaseModel):
     clear: bool = False
 
 
+ImagePrompt = Annotated[
+    str,
+    StringConstraints(strip_whitespace=True, min_length=1, max_length=8000),
+]
+
+
 class ImageGenerationPayload(BaseModel):
-    prompts: list[str] = Field(min_length=1, max_length=2)
+    prompts: list[ImagePrompt] = Field(min_length=1, max_length=2)
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 
 
 def _client_id(request: Request) -> str:
+    settings = _get_runtime_settings(request)
     forwarded_for = request.headers.get("x-forwarded-for")
-    if forwarded_for:
+    if settings.trust_proxy_headers and forwarded_for:
         return forwarded_for.split(",")[0].strip()
     return request.client.host if request.client else "unknown"
 
@@ -118,6 +148,123 @@ def _get_rate_limiter(request: Request, settings: Settings) -> InMemoryRateLimit
         )
         request.app.state.rate_limiter = limiter
     return limiter
+
+
+def _request_size(request: Request) -> int:
+    content_length = request.headers.get("content-length")
+    try:
+        return int(content_length) if content_length else 0
+    except ValueError:
+        return 0
+
+
+def _rate_limit_subject(request: Request, user: AuthenticatedUser | None = None) -> str:
+    if user:
+        return f"user:{user.user_id}"
+    return f"ip:{_client_id(request)}"
+
+
+def _rate_limit_response(request_id: str, retry_after: int) -> JSONResponse:
+    return JSONResponse(
+        status_code=429,
+        headers={
+            "Retry-After": str(retry_after),
+            "X-Request-ID": request_id,
+        },
+        content={
+            "error": {
+                "type": "rate_limit_error",
+                "message": "Too many requests. Slow down and try again in a moment.",
+            }
+        },
+    )
+
+
+def _request_too_large_response(settings: Settings, request_id: str) -> JSONResponse:
+    return JSONResponse(
+        status_code=413,
+        headers={"X-Request-ID": request_id},
+        content={
+            "error": {
+                "type": "request_too_large",
+                "message": f"Request exceeds MAX_REQUEST_BYTES={settings.max_request_bytes}.",
+            }
+        },
+    )
+
+
+def _auth_not_configured_response(request_id: str) -> JSONResponse:
+    return JSONResponse(
+        status_code=503,
+        headers={"X-Request-ID": request_id},
+        content={
+            "error": {
+                "type": "auth_not_configured",
+                "message": (
+                    "Provider calls require Supabase auth in production, but Supabase "
+                    "is not configured on the backend."
+                ),
+            }
+        },
+    )
+
+
+def _auth_required_response(request_id: str, message: str) -> JSONResponse:
+    return JSONResponse(
+        status_code=401,
+        headers={"X-Request-ID": request_id},
+        content={
+            "error": {
+                "type": "authentication_required",
+                "message": message,
+            }
+        },
+    )
+
+
+def _quota_exceeded_response(request_id: str, summary: dict[str, Any]) -> JSONResponse:
+    monthly_limit = summary["monthly_request_limit"]
+    monthly_used = summary["monthly_requests_used"]
+    return JSONResponse(
+        status_code=402,
+        headers={"X-Request-ID": request_id},
+        content={
+            "error": {
+                "type": "quota_exceeded",
+                "message": (
+                    f"You have used {monthly_used} of {monthly_limit} monthly requests "
+                    "for your current plan. Upgrade or wait for the next billing period."
+                ),
+            },
+            "plan": {
+                "code": summary["plan_code"],
+                "status": summary["subscription_status"],
+            },
+            "usage": {
+                "used": monthly_used,
+                "limit": monthly_limit,
+                "remaining": summary["monthly_requests_remaining"],
+                "period_ends_at": summary["period_ends_at"],
+            },
+        },
+    )
+
+
+def _reserve_quota_if_needed(
+    request: Request,
+    user: AuthenticatedUser | None,
+    summary: dict[str, Any],
+) -> tuple[bool, dict[str, Any]]:
+    if user is None:
+        return True, summary
+
+    usage_cache: UsageSummaryCache | None = getattr(request.app.state, "usage_cache", None)
+    if usage_cache is None:
+        monthly_limit = summary["monthly_request_limit"]
+        monthly_used = summary["monthly_requests_used"]
+        return monthly_limit is None or monthly_used < monthly_limit, summary
+
+    return usage_cache.reserve_request(user.user_id, summary)
 
 
 def _ensure_log_path(path: Path) -> None:
@@ -554,6 +701,11 @@ async def health() -> dict[str, Any]:
         "anthropic_configured": active_settings.anthropic_configured,
         "gemini_configured": active_settings.gemini_configured,
         "supabase_auth_configured": active_settings.supabase_auth_configured,
+        "provider_auth_required": active_settings.provider_auth_required,
+        "provider_auth_ready": (
+            not active_settings.provider_auth_required
+            or active_settings.supabase_auth_configured
+        ),
         "rate_limit": {
             "requests": active_settings.rate_limit_requests,
             "window_seconds": active_settings.rate_limit_window_seconds,
@@ -656,41 +808,19 @@ async def proxy_anthropic_messages(
             },
         )
 
-    content_length = request.headers.get("content-length")
-    try:
-        request_size = int(content_length) if content_length else 0
-    except ValueError:
-        request_size = 0
+    if _request_size(request) > active_settings.max_request_bytes:
+        return _request_too_large_response(active_settings, request_id)
 
-    if request_size > active_settings.max_request_bytes:
+    if payload.max_tokens > active_settings.anthropic_max_tokens:
         return JSONResponse(
-            status_code=413,
+            status_code=400,
             headers={"X-Request-ID": request_id},
             content={
                 "error": {
-                    "type": "request_too_large",
+                    "type": "max_tokens_exceeded",
                     "message": (
-                        f"Request exceeds MAX_REQUEST_BYTES={active_settings.max_request_bytes}."
-                    ),
-                }
-            },
-        )
-
-    client_id = _client_id(request)
-    rate_limiter = _get_rate_limiter(request, active_settings)
-    allowed, retry_after = rate_limiter.allow(client_id)
-    if not allowed:
-        return JSONResponse(
-            status_code=429,
-            headers={
-                "Retry-After": str(retry_after),
-                "X-Request-ID": request_id,
-            },
-            content={
-                "error": {
-                    "type": "rate_limit_error",
-                    "message": (
-                        "Too many requests. Slow down and try again in a moment."
+                        f"max_tokens exceeds ANTHROPIC_MAX_TOKENS="
+                        f"{active_settings.anthropic_max_tokens}."
                     ),
                 }
             },
@@ -702,17 +832,16 @@ async def proxy_anthropic_messages(
     )
     bearer_token = _extract_bearer_token(request)
 
-    if active_settings.supabase_auth_configured and user is None:
-        return JSONResponse(
-            status_code=401,
-            headers={"X-Request-ID": request_id},
-            content={
-                "error": {
-                    "type": "authentication_required",
-                    "message": "Sign in to use the API proxy.",
-                }
-            },
-        )
+    if active_settings.provider_auth_required:
+        if not active_settings.supabase_auth_configured:
+            return _auth_not_configured_response(request_id)
+        if user is None:
+            return _auth_required_response(request_id, "Sign in to use the API proxy.")
+
+    rate_limiter = _get_rate_limiter(request, active_settings)
+    allowed, retry_after = rate_limiter.allow(_rate_limit_subject(request, user))
+    if not allowed:
+        return _rate_limit_response(request_id, retry_after)
 
     summary = await _get_subscription_and_usage_summary(
         request=request,
@@ -721,32 +850,9 @@ async def proxy_anthropic_messages(
         user=user,
         use_cache=True,
     )
-    monthly_limit = summary["monthly_request_limit"]
-    monthly_used = summary["monthly_requests_used"]
-    if monthly_limit is not None and monthly_used >= monthly_limit:
-        return JSONResponse(
-            status_code=402,
-            headers={"X-Request-ID": request_id},
-            content={
-                "error": {
-                    "type": "quota_exceeded",
-                    "message": (
-                        f"You have used {monthly_used} of {monthly_limit} monthly requests "
-                        "for your current plan. Upgrade or wait for the next billing period."
-                    ),
-                },
-                "plan": {
-                    "code": summary["plan_code"],
-                    "status": summary["subscription_status"],
-                },
-                "usage": {
-                    "used": monthly_used,
-                    "limit": monthly_limit,
-                    "remaining": summary["monthly_requests_remaining"],
-                    "period_ends_at": summary["period_ends_at"],
-                },
-            },
-        )
+    quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
+    if not quota_allowed:
+        return _quota_exceeded_response(request_id, quota_summary)
 
     body = payload.model_dump(exclude_none=True)
     upstream_headers = {
@@ -758,6 +864,7 @@ async def proxy_anthropic_messages(
         upstream_headers["anthropic-beta"] = request.headers["anthropic-beta"]
 
     started = time.perf_counter()
+    client_id = _client_id(request)
     http_client, owns_http_client = _get_http_client(request)
 
     try:
@@ -828,11 +935,6 @@ async def proxy_anthropic_messages(
         status_code=upstream_response.status_code,
     )
 
-    if user:
-        usage_cache = getattr(request.app.state, "usage_cache", None)
-        if usage_cache is not None:
-            usage_cache.increment_used(user.user_id)
-
     passthrough_headers = {"X-Request-ID": request_id}
     anthropic_request_id = upstream_response.headers.get("request-id")
     if anthropic_request_id:
@@ -878,23 +980,25 @@ async def generate_image(
             },
         )
 
+    if _request_size(request) > active_settings.max_request_bytes:
+        return _request_too_large_response(active_settings, request_id)
+
     user: AuthenticatedUser | None = await _resolve_authenticated_user(
         request,
         active_settings,
     )
     bearer_token = _extract_bearer_token(request)
 
-    if active_settings.supabase_auth_configured and user is None:
-        return JSONResponse(
-            status_code=401,
-            headers={"X-Request-ID": request_id},
-            content={
-                "error": {
-                    "type": "authentication_required",
-                    "message": "Sign in to generate images.",
-                }
-            },
-        )
+    if active_settings.provider_auth_required:
+        if not active_settings.supabase_auth_configured:
+            return _auth_not_configured_response(request_id)
+        if user is None:
+            return _auth_required_response(request_id, "Sign in to generate images.")
+
+    rate_limiter = _get_rate_limiter(request, active_settings)
+    allowed, retry_after = rate_limiter.allow(_rate_limit_subject(request, user))
+    if not allowed:
+        return _rate_limit_response(request_id, retry_after)
 
     summary = await _get_subscription_and_usage_summary(
         request=request,
@@ -903,28 +1007,9 @@ async def generate_image(
         user=user,
         use_cache=True,
     )
-    monthly_limit = summary["monthly_request_limit"]
-    monthly_used = summary["monthly_requests_used"]
-    if monthly_limit is not None and monthly_used >= monthly_limit:
-        return JSONResponse(
-            status_code=402,
-            headers={"X-Request-ID": request_id},
-            content={
-                "error": {
-                    "type": "quota_exceeded",
-                    "message": (
-                        f"You have used {monthly_used} of {monthly_limit} monthly requests "
-                        "for your current plan. Upgrade or wait for the next billing period."
-                    ),
-                },
-                "usage": {
-                    "used": monthly_used,
-                    "limit": monthly_limit,
-                    "remaining": summary["monthly_requests_remaining"],
-                    "period_ends_at": summary["period_ends_at"],
-                },
-            },
-        )
+    quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
+    if not quota_allowed:
+        return _quota_exceeded_response(request_id, quota_summary)
 
     model = active_settings.gemini_model
     api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
@@ -1062,11 +1147,6 @@ async def generate_image(
         )
     except Exception:
         logger.exception("Failed to persist Gemini usage event for request %s", request_id)
-
-    if user:
-        usage_cache = getattr(request.app.state, "usage_cache", None)
-        if usage_cache is not None:
-            usage_cache.increment_used(user.user_id)
 
     return JSONResponse(
         status_code=200,

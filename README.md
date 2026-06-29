@@ -28,14 +28,21 @@ render.yaml              Render deployment configuration
 ```powershell
 python -m pip install -r backend/requirements.txt
 Copy-Item backend\.env.example backend\.env
-python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000 --reload
+python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8001 --reload
+```
+
+Or use the Windows launcher, which installs requirements, chooses an available local port,
+starts the backend, and opens Forge:
+
+```powershell
+.\tools\Start-Mnemorized-App.ps1
 ```
 
 Open:
 
-- `http://127.0.0.1:8000/`
-- `http://127.0.0.1:8000/forge`
-- `http://127.0.0.1:8000/library`
+- `http://127.0.0.1:8001/`
+- `http://127.0.0.1:8001/forge`
+- `http://127.0.0.1:8001/library`
 
 ## Configuration
 

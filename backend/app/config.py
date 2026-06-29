@@ -26,6 +26,27 @@ def _split_csv(raw: str) -> tuple[str, ...]:
     return tuple(item for item in values if item)
 
 
+def _clean_env_value(key: str, default: str = "") -> str:
+    value = os.getenv(key, default).strip()
+    lowered = value.lower()
+    placeholder_fragments = (
+        "replace-with",
+        "your-project-ref",
+        "your-public-anon-key",
+        "your-local",
+    )
+    if not value or any(fragment in lowered for fragment in placeholder_fragments):
+        return ""
+    return value
+
+
+def _env_bool(key: str, default: bool) -> bool:
+    value = os.getenv(key)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 @dataclass(frozen=True)
 class Settings:
     app_env: str
@@ -34,8 +55,10 @@ class Settings:
     app_base_url: str
     anthropic_api_key: str
     anthropic_api_url: str
+    anthropic_max_tokens: int
     anthropic_timeout_seconds: float
     cors_origins: tuple[str, ...]
+    trust_proxy_headers: bool
     rate_limit_requests: int
     rate_limit_window_seconds: int
     max_request_bytes: int
@@ -78,6 +101,10 @@ class Settings:
     def dev_mode(self) -> bool:
         return self.app_env.lower() != "production"
 
+    @property
+    def provider_auth_required(self) -> bool:
+        return self.supabase_auth_configured or not self.dev_mode
+
     def request_limit_for_plan(self, plan_code: str | None) -> int | None:
         plan = (plan_code or "free").strip().lower()
         if plan in {"enterprise", "unlimited"}:
@@ -100,25 +127,27 @@ def get_settings() -> Settings:
         host=os.getenv("HOST", "127.0.0.1"),
         port=int(os.getenv("PORT", "8000")),
         app_base_url=os.getenv("APP_BASE_URL", "http://127.0.0.1:8000").strip(),
-        anthropic_api_key=os.getenv("ANTHROPIC_API_KEY", "").strip(),
+        anthropic_api_key=_clean_env_value("ANTHROPIC_API_KEY"),
         anthropic_api_url=os.getenv(
             "ANTHROPIC_API_URL",
             "https://api.anthropic.com/v1/messages",
         ).strip(),
+        anthropic_max_tokens=int(os.getenv("ANTHROPIC_MAX_TOKENS", "8192")),
         anthropic_timeout_seconds=float(os.getenv("ANTHROPIC_TIMEOUT_SECONDS", "180")),
         cors_origins=_split_csv(os.getenv("CORS_ORIGINS", "*")),
+        trust_proxy_headers=_env_bool("TRUST_PROXY_HEADERS", False),
         rate_limit_requests=int(os.getenv("RATE_LIMIT_REQUESTS", "20")),
         rate_limit_window_seconds=int(os.getenv("RATE_LIMIT_WINDOW_SECONDS", "60")),
         max_request_bytes=int(os.getenv("MAX_REQUEST_BYTES", "12000000")),
         usage_log_path=Path(os.getenv("USAGE_LOG_PATH", str(default_log_path))),
-        supabase_url=os.getenv("SUPABASE_URL", "").strip(),
-        supabase_anon_key=os.getenv("SUPABASE_ANON_KEY", "").strip(),
+        supabase_url=_clean_env_value("SUPABASE_URL"),
+        supabase_anon_key=_clean_env_value("SUPABASE_ANON_KEY"),
         supabase_jwt_audience=os.getenv("SUPABASE_JWT_AUDIENCE", "authenticated").strip()
         or None,
         free_monthly_requests=int(os.getenv("FREE_MONTHLY_REQUESTS", "40")),
         pro_monthly_requests=int(os.getenv("PRO_MONTHLY_REQUESTS", "400")),
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
-        gemini_api_key=os.getenv("GEMINI_API_KEY", "").strip(),
+        gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
     )

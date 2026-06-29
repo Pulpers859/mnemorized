@@ -950,14 +950,14 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   .vo-table td:last-child { width: 35%; }
 }
 </style>
-<link rel="stylesheet" href="/styles/app-shell.css">
+<link rel="stylesheet" href="/styles/app-shell.css?v=20260629-3">
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Mnemorized</div>
-  <div style="display:flex;align-items:center;gap:12px;">
+  <div class="nav-actions" style="display:flex;align-items:center;gap:12px;">
     <label class="demo-toggle" title="Demo mode — no API calls, uses sample DKA data">
       <input type="checkbox" id="demo-mode-toggle" checked>
       <span class="demo-track"></span>
@@ -1383,14 +1383,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 // BACKEND PROXY CONNECTION
 // ══════════════════════════════════════════════════
 
-const API_BASE = (
-  window.location.protocol === 'file:' ||
-  window.location.hostname === '127.0.0.1' ||
-  window.location.hostname === 'localhost'
-) && window.location.port !== '8000'
-  ? 'http://127.0.0.1:8000'
-  : '';
-let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false };
+const API_BASE = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
+let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: true };
 
 function getApiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path;
@@ -1437,10 +1431,14 @@ async function refreshBackendStatus(showModalOnError = false) {
       checked: true,
       reachable: true,
       configured: !!data.anthropic_configured,
-      geminiConfigured: !!data.gemini_configured
+      geminiConfigured: !!data.gemini_configured,
+      providerAuthReady: !!data.provider_auth_ready
     };
 
-    if (backendState.configured) {
+    if (!backendState.providerAuthReady) {
+      setBackendBadge('warning', '⚠ AUTH SETUP');
+      syncConnectionModal('Provider calls require Supabase auth, but backend auth is not configured yet.');
+    } else if (backendState.configured) {
       setBackendBadge('online', '✓ PROXY LIVE');
       syncConnectionModal('Backend reachable and Anthropic is configured server-side.');
     } else {
@@ -1452,7 +1450,8 @@ async function refreshBackendStatus(showModalOnError = false) {
       checked: true,
       reachable: false,
       configured: false,
-      geminiConfigured: false
+      geminiConfigured: false,
+      providerAuthReady: false
     };
     setBackendBadge('offline', '⚠ PROXY OFFLINE');
     syncConnectionModal(`Could not reach ${getApiUrl('/api/health')}. Start the backend and retry.`);
@@ -1497,46 +1496,53 @@ async function claudeFetch(body) {
     throw new Error('Backend is reachable, but ANTHROPIC_API_KEY is not configured on the server.');
   }
 
-  try {
-    const headers = {
-      'Content-Type': 'application/json',
-      'anthropic-version': '2023-06-01'
-    };
-    if (authState.session?.access_token) {
-      headers.Authorization = `Bearer ${authState.session.access_token}`;
-    }
+  if (!backendState.providerAuthReady) {
+    openConnectionModal();
+    throw new Error('Provider calls require Supabase auth, but backend auth is not configured yet.');
+  }
 
-    const res = await fetch(getApiUrl('/api/anthropic/messages'), {
+  const headers = {
+    'Content-Type': 'application/json',
+    'anthropic-version': '2023-06-01'
+  };
+  if (authState.session?.access_token) {
+    headers.Authorization = `Bearer ${authState.session.access_token}`;
+  }
+
+  let res;
+  try {
+    res = await fetch(getApiUrl('/api/anthropic/messages'), {
       method: 'POST',
       headers,
       body: JSON.stringify(body)
     });
-
-    if (res.status === 401) {
-      openAuthModal();
-      throw new Error('Sign in to use the API proxy.');
-    } else if (res.status === 402) {
-      const quota = await res.json().catch(() => ({}));
-      const used = quota.usage?.used ?? '?';
-      const limit = quota.usage?.limit ?? '?';
-      throw new Error(`Monthly quota exceeded (${used}/${limit} requests). Upgrade your plan or wait for the next billing period.`);
-    } else if (res.status === 503) {
-      backendState.configured = false;
-      setBackendBadge('warning', '⚠ KEY MISSING');
-      syncConnectionModal('Backend reached the proxy, but ANTHROPIC_API_KEY is missing or invalid.');
-    } else if (res.ok) {
-      backendState = { checked: true, reachable: true, configured: true };
-      setBackendBadge('online', '✓ PROXY LIVE');
-    }
-
-    return res;
   } catch (err) {
-    backendState = { checked: true, reachable: false, configured: false };
+    backendState = { checked: true, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: false };
     setBackendBadge('offline', '⚠ PROXY OFFLINE');
     syncConnectionModal(`Could not reach ${getApiUrl('/api/anthropic/messages')}. Start the backend and retry.`);
     openConnectionModal();
     throw new Error(`Proxy unavailable: ${err.message}`);
   }
+
+  if (res.status === 401) {
+    openAuthModal();
+    throw new Error('Sign in to use the API proxy.');
+  } else if (res.status === 402) {
+    const quota = await res.json().catch(() => ({}));
+    const used = quota.usage?.used ?? '?';
+    const limit = quota.usage?.limit ?? '?';
+    throw new Error(`Monthly quota exceeded (${used}/${limit} requests). Upgrade your plan or wait for the next billing period.`);
+  } else if (res.status === 503) {
+    const payload = await res.clone().json().catch(() => ({}));
+    backendState.configured = false;
+    setBackendBadge('warning', '⚠ KEY MISSING');
+    syncConnectionModal(payload.error?.message || 'Backend reached the proxy, but a required provider key or auth setting is missing.');
+  } else if (res.ok) {
+    backendState = { checked: true, reachable: true, configured: true, geminiConfigured: backendState.geminiConfigured, providerAuthReady: backendState.providerAuthReady };
+    setBackendBadge('online', '✓ PROXY LIVE');
+  }
+
+  return res;
 }
 
 refreshBackendStatus();
@@ -1596,7 +1602,7 @@ function escapeHtml(text) {
 }
 
 function formatNarrationHtml(text) {
-  return String(text || '')
+  return escapeHtml(text)
     .replace(/\[PAUSE\]/gi, '<span class="cue-pause">[pause]</span>')
     .replace(/\[BEAT\]/gi, '<span class="cue-pause">[beat]</span>')
     .replace(/\[EMPHASIS:\s*([^\]]+)\]/gi, '<span class="cue-em">$1</span>');
@@ -2025,6 +2031,9 @@ async function saveCurrentPalace(asNew = false) {
   const nowIso = new Date().toISOString();
   setLibraryStatus(asNew ? 'Saving new palace…' : 'Saving palace…');
 
+  let createdPalaceId = null;
+  let versionSaved = false;
+
   try {
     let palaceRow = asNew ? null : currentPalaceMeta;
     let nextVersion = asNew ? 1 : (currentPalaceMeta?.latest_version_number || 0) + 1;
@@ -2051,26 +2060,7 @@ async function saveCurrentPalace(asNew = false) {
       );
       if (error) throw error;
       palaceRow = data;
-    } else {
-      const { data, error } = await runSupabaseQuery(
-        'palace update',
-        supabaseClient
-          .from('palaces')
-          .update({
-            title: snapshot.title,
-            topic: snapshot.topic,
-            source_name: snapshot.source_name,
-            scene_title: snapshot.scene_title,
-            status: snapshot.status,
-            latest_version_number: nextVersion,
-            updated_at: nowIso
-          })
-          .eq('id', palaceRow.id)
-          .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
-          .single()
-      );
-      if (error) throw error;
-      palaceRow = data;
+      createdPalaceId = palaceRow?.id || null;
     }
 
     const versionPayload = {
@@ -2084,6 +2074,27 @@ async function saveCurrentPalace(asNew = false) {
       supabaseClient.from('palace_versions').insert(versionPayload)
     );
     if (versionError) throw versionError;
+    versionSaved = true;
+
+    const { data: updatedPalace, error: updateError } = await runSupabaseQuery(
+      'palace metadata update',
+      supabaseClient
+        .from('palaces')
+        .update({
+          title: snapshot.title,
+          topic: snapshot.topic,
+          source_name: snapshot.source_name,
+          scene_title: snapshot.scene_title,
+          status: snapshot.status,
+          latest_version_number: nextVersion,
+          updated_at: nowIso
+        })
+        .eq('id', palaceRow.id)
+        .select('id,title,topic,scene_title,status,latest_version_number,updated_at,source_name')
+        .single()
+    );
+    if (updateError) throw updateError;
+    palaceRow = updatedPalace;
 
     currentPalaceMeta = palaceRow;
     document.getElementById('palace-title-input').value = palaceRow.title || '';
@@ -2091,6 +2102,12 @@ async function saveCurrentPalace(asNew = false) {
     refreshAuthUI();
     await loadLibrary();
   } catch (error) {
+    if (createdPalaceId && !versionSaved) {
+      await runSupabaseQuery(
+        'cleanup empty palace',
+        supabaseClient.from('palaces').delete().eq('id', createdPalaceId)
+      ).catch(cleanupError => console.warn('Empty palace cleanup failed:', cleanupError));
+    }
     setLibraryStatus(`Save failed: ${error.message}`, 'error');
   }
 }
@@ -2433,9 +2450,9 @@ function copyAllTSV() {
 
 // Format review script as bullet points
 function formatReviewBullets(text) {
-  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
-  if (lines.length <= 1) return `<ul><li>${text}</li></ul>`;
-  return '<ul>' + lines.map(l => `<li>${l}</li>`).join('') + '</ul>';
+  const lines = String(text || '').split('\n').map(l => l.trim()).filter(Boolean);
+  if (lines.length <= 1) return `<ul><li>${escapeHtml(text)}</li></ul>`;
+  return '<ul>' + lines.map(l => `<li>${escapeHtml(l)}</li>`).join('') + '</ul>';
 }
 
 // ══════════════════════════════════════════════════
@@ -2623,8 +2640,8 @@ Extract every testable concept. Do not summarize or collapse related items — l
       item.innerHTML = `
         <div class="concept-check"></div>
         <div class="flex-col" style="flex:1">
-          <div class="concept-text">${text}</div>
-          ${cat ? `<div class="concept-tag">${cat}</div>` : ''}
+          <div class="concept-text">${escapeHtml(text)}</div>
+          ${cat ? `<div class="concept-tag">${escapeHtml(cat)}</div>` : ''}
         </div>`;
       item.addEventListener('click', () => {
         item.classList.toggle('excluded');
@@ -2836,6 +2853,20 @@ async function generateImages() {
   const p1 = document.getElementById('prompt-copy-1')?.value;
   const p2 = document.getElementById('prompt-copy-2')?.value;
   if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
+  if (!backendState.checked) await refreshBackendStatus();
+  if (!backendState.reachable) {
+    openConnectionModal();
+    return;
+  }
+  if (!backendState.providerAuthReady) {
+    openConnectionModal();
+    return;
+  }
+  if (!backendState.geminiConfigured) {
+    openConnectionModal();
+    syncConnectionModal('Backend reachable, but GEMINI_API_KEY is not configured on the server yet.');
+    return;
+  }
 
   const btn = document.getElementById('generate-images-btn');
   const status = document.getElementById('gen-img-status');
@@ -3226,28 +3257,11 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
     showBody('story');
 
-    document.getElementById('story-header').innerHTML =
-      `<div class="story-scene-title">${scene_title}</div>
-       <div class="story-opening">${opening}</div>`;
-
     if (voLines.length === 0) {
       showDebug('PARSE WARNING — vo_line blocks: 0. Full raw response (first 1200 chars):', txt.slice(0, 1200));
     }
 
-    if (voLines.length) {
-      document.getElementById('vo-body').innerHTML = voLines.map(v => `
-        <tr>
-          <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
-          <td>${v.visual}</td>
-          <td class="encodes-cell">${v.anchor}</td>
-        </tr>`).join('');
-      document.getElementById('vo-table-wrap').style.display = 'block';
-    }
-
-    if (review_script) {
-      document.getElementById('review-text').innerHTML = formatReviewBullets(review_script);
-      document.getElementById('review-wrap').style.display = 'block';
-    }
+    renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
   } catch(e) {
