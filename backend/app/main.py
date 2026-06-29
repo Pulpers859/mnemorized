@@ -25,7 +25,9 @@ from .config import Settings, get_settings
 from .dev_tools import clear_plan_override, read_plan_override, write_plan_override
 from .rate_limit import InMemoryRateLimiter
 
-FRONTEND_DIR = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[2]
+FRONTEND_DIR = REPO_ROOT / "frontend"
+PAGES_DIR = FRONTEND_DIR / "pages"
 
 
 class UsageSummaryCache:
@@ -527,7 +529,7 @@ app.add_middleware(
 
 @app.get("/")
 async def landing():
-    path = FRONTEND_DIR / "mnemorized-landing.html"
+    path = PAGES_DIR / "landing.html"
     if path.exists():
         return FileResponse(path, media_type="text/html")
     return JSONResponse({"service": "mnemorized-backend", "status": "ok"})
@@ -535,12 +537,12 @@ async def landing():
 
 @app.get("/forge")
 async def forge():
-    return FileResponse(FRONTEND_DIR / "memory-palace-forge-v5.html", media_type="text/html")
+    return FileResponse(PAGES_DIR / "forge.html", media_type="text/html")
 
 
 @app.get("/library")
 async def library():
-    return FileResponse(FRONTEND_DIR / "library.html", media_type="text/html")
+    return FileResponse(PAGES_DIR / "library.html", media_type="text/html")
 
 
 @app.get("/api/health")

@@ -9,13 +9,13 @@
   "orientation": "any",
   "icons": [
     {
-      "src": "Profile_pic.png",
+      "src": "/assets/profile-pic.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "Profile_pic.png",
+      "src": "/assets/profile-pic.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

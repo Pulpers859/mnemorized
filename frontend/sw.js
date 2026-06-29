@@ -1,8 +1,10 @@
-const CACHE_NAME = 'mnemorized-v5';
+const CACHE_NAME = 'mnemorized-v6';
 const STATIC_ASSETS = [
+  '/',
   '/forge',
+  '/library',
   '/manifest.json',
-  '/Profile_pic.png',
+  '/assets/profile-pic.png',
 ];
 
 const CDN_ASSETS = [

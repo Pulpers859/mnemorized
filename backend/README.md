@@ -20,6 +20,7 @@ It gives you:
 - `GET /api/config/public`
 - `GET /api/account/summary`
 - `POST /api/anthropic/messages`
+- `POST /api/generate-image`
 
 ## Local Run
 
@@ -60,3 +61,7 @@ Proxy usage events are appended to:
 - `backend/logs/anthropic_usage.jsonl`
 
 This is intentionally lightweight for now. In phase 2, those records can move into Postgres and attach to authenticated users.
+
+## Repo Layout Note
+
+The backend serves routed HTML from `frontend/pages/` and static PWA assets from `frontend/`. Keep root-level runtime clutter out of the repo root unless a deployment tool explicitly requires it.

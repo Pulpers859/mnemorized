@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mnemorized">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="Profile_pic.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="/assets/profile-pic.png">
 <title>Mnemorized — Memory Palace Forge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -950,6 +950,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   .vo-table td:last-child { width: 35%; }
 }
 </style>
+<link rel="stylesheet" href="/styles/app-shell.css">
 </head>
 <body>
 
@@ -3351,7 +3352,7 @@ Requirements:
 // PWA SERVICE WORKER REGISTRATION
 // ══════════════════════════════════════════════════
 if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
 }
 </script>
 </html>

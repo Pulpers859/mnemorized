@@ -1,0 +1,213 @@
+:root {
+  --black: #090c0f;
+  --ink: #10161a;
+  --card: #151c21;
+  --border: rgba(213, 223, 216, .13);
+  --white: #f3f5ef;
+  --muted: #96a19b;
+  --acid: #c9ef4d;
+  --acid2: #abd834;
+  --teal: #48d6c3;
+  --amber: #f4c95d;
+  --red: #ff6b66;
+  --blue: #65a8ff;
+  --gold: #f4c95d;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-soft: 0 18px 60px rgba(0, 0, 0, .22);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(72, 214, 195, .04), transparent 300px),
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, .018) 1px, transparent 1px),
+    var(--black);
+  background-size: auto, 56px 56px, 56px 56px, auto;
+}
+
+body::after,
+.hero::after {
+  display: none !important;
+}
+
+nav {
+  min-height: 64px;
+  padding: 14px clamp(18px, 3vw, 36px) !important;
+  border-bottom-color: rgba(213, 223, 216, .14) !important;
+  background: rgba(9, 12, 15, .88) !important;
+}
+
+.nav-logo {
+  color: var(--white) !important;
+  letter-spacing: .1em !important;
+}
+
+.nav-logo::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--acid), var(--teal));
+  box-shadow: 0 0 0 1px rgba(201, 239, 77, .18);
+  vertical-align: 1px;
+}
+
+.wrap {
+  width: min(100% - 32px, 1180px) !important;
+  max-width: 1180px !important;
+}
+
+.header,
+.hero {
+  text-align: left !important;
+}
+
+.header {
+  margin-bottom: 34px !important;
+}
+
+.header h1,
+.hero-headline,
+h1 {
+  letter-spacing: .01em !important;
+}
+
+.header-eyebrow,
+.hero-eyebrow,
+.eyebrow {
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: var(--teal) !important;
+  letter-spacing: .14em !important;
+}
+
+.header-eyebrow::before,
+.hero-eyebrow::before,
+.eyebrow::before {
+  display: none !important;
+}
+
+.panel,
+.stat-card,
+.library-card,
+.modal,
+.upload-zone,
+.output-box,
+.img-prompt-box,
+.concept-item,
+#library-panel {
+  border-radius: var(--radius-md) !important;
+  border-color: var(--border) !important;
+  background-color: rgba(16, 22, 26, .88) !important;
+  box-shadow: none !important;
+}
+
+.section {
+  padding: 18px 0;
+  border-top: 1px solid rgba(213, 223, 216, .08);
+}
+
+.section-label,
+.stat-label {
+  color: var(--teal) !important;
+  letter-spacing: .16em !important;
+}
+
+.section-hint,
+.subtitle,
+.hero-copy,
+.account-copy,
+.status-line {
+  color: var(--muted) !important;
+}
+
+.input-field,
+.waitlist-input,
+.input,
+.select,
+.fancy-select,
+textarea,
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  border-radius: var(--radius-md) !important;
+  border-color: rgba(213, 223, 216, .14) !important;
+  background: rgba(9, 12, 15, .72) !important;
+}
+
+.btn-forge,
+.waitlist-btn,
+.nav-cta,
+.action-btn.primary {
+  border-radius: var(--radius-md) !important;
+  background: var(--acid) !important;
+  color: #080b0d !important;
+  box-shadow: 0 10px 28px rgba(201, 239, 77, .12) !important;
+}
+
+.btn-copy,
+.btn-extract,
+.btn-check-all,
+.btn-feedback,
+.action-btn,
+.nav-pill,
+.nav-button {
+  border-radius: var(--radius-md) !important;
+  border-color: rgba(213, 223, 216, .14) !important;
+  background: rgba(16, 22, 26, .72) !important;
+}
+
+.chip,
+.toggle-label,
+.nav-tag {
+  border-radius: var(--radius-sm) !important;
+}
+
+a,
+button,
+select,
+input,
+textarea,
+[tabindex] {
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--teal) !important;
+}
+
+@media (max-width: 760px) {
+  nav {
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .wrap {
+    width: min(100% - 24px, 1180px) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .hero,
+  .header {
+    text-align: left !important;
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr !important;
+  }
+}
