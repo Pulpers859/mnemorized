@@ -6,7 +6,7 @@ Mnemorized is a web app for generating visual medical memory palaces, saving the
 
 - Active repo: `C:\Dev\Mnemorized`
 - GitHub remote: `https://github.com/Pulpers859/mnemorized.git`
-- Current tracked branch: `master`
+- Current tracked branch: `main`
 - Previous OneDrive/Desktop copy: stale transitional copy after the June 29, 2026 migration
 - Ignored support archive: `C:\Dev\Mnemorized\local_archive\2026-06-29`
 

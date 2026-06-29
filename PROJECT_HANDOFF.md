@@ -7,8 +7,8 @@
 - Source-of-truth repo path: `C:\Dev\Mnemorized`
 - Stale/old copy to ignore: `C:\Users\Patrick's Computer\OneDrive - WV School of Osteopathic Medicine\Desktop\Mnemorized`
 - GitHub remote: `https://github.com/Pulpers859/mnemorized.git`
-- Current stable/working branch: `master`
-- Branch note: repo currently tracks `origin/master`; do not silently rename to `main` without a deliberate remote migration.
+- Current stable/working branch: `main`
+- Branch note: normal work should stay on `main` unless explicitly requested otherwise.
 
 ## Live Runtime
 
@@ -49,4 +49,4 @@
 
 - The app can load without provider keys, but generation endpoints require local or hosted secrets.
 - Supabase auth/library features are enabled only when Supabase config exists.
-- The current default branch is `master`, despite the preferred workstation default of `main` for new projects.
+- The current working branch is `main`, matching the preferred workstation default.
