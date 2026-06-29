@@ -19,7 +19,7 @@ frontend/
   assets/                Runtime image assets used by the PWA manifest and pages
   styles/                Shared app-shell visual system overrides
 docs/                    Product, architecture, and workflow notes
-tools/                   Standalone local support tools, not normal runtime routes
+tools/                   Standalone local support tools and Claude launcher
 render.yaml              Render deployment configuration
 ```
 
@@ -54,3 +54,13 @@ Important variables:
 - The forge page is still a large static HTML file with inline CSS and JS. Keep near-term edits targeted.
 - `frontend/styles/app-shell.css` is the shared visual layer added during migration; prefer extending it before duplicating more page-local CSS.
 - If the forge grows further, the next architecture step should be extracting shared frontend scripts and components without changing runtime behavior.
+
+## Claude Code Shortcut
+
+The intended desktop shortcut is `Mnemorized Claude Code`. It opens PowerShell 7 in `C:\Dev\Mnemorized` and runs:
+
+```powershell
+C:\Dev\Mnemorized\tools\Launch-Mnemorized-Claude.ps1
+```
+
+The repo-local agent guidance lives in `AGENTS.md`, `CLAUDE.md`, `.claude/`, and `.agents/`.

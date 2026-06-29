@@ -1,0 +1,31 @@
+# Mnemorized Claude Workflow
+
+Use `AGENTS.md` as the shared source for workflow and risk priorities.
+
+Claude-specific assumptions:
+
+- Source of truth: `C:\Dev\Mnemorized`
+- Normal branch: `main` tracking `origin/main`
+- Fetch at the start of a task; pull with `--ff-only` only when the tree is clean.
+- Commit and push completed tracked changes to `origin/main` unless Patrick explicitly says not to.
+- Old OneDrive/Desktop copies are stale unless Patrick explicitly asks to inspect them.
+- Real local secrets live in ignored `backend/.env`.
+- The main runtime surfaces are `backend/app/main.py`, `frontend/pages/*.html`, `frontend/styles/app-shell.css`, and `render.yaml`.
+
+Highest-risk areas:
+
+1. Provider proxy safety and error handling
+2. Auth, Supabase persistence, and quota enforcement
+3. Forge page workflow regressions
+4. Library save/load behavior
+5. Static frontend visual/state drift
+6. Deployment configuration
+
+Claude-local workflow helpers:
+
+- Use `@.claude/skills/mnemorized-handoff/SKILL.md` at the start of a fresh session unless the task is already deep in one known file.
+- Use `@.claude/skills/mnemorized-context-compact/SKILL.md` for older work, mixed context, long logs, or handoff prep.
+- Use `@.claude/skills/mnemorized-parallel-audit/SKILL.md` for broad reviews spanning multiple high-risk areas.
+- For focused bugs, use `forge-static-ui-check`, `backend-auth-persistence-check`, and `provider-proxy-quota-check`.
+- Launching Claude through `tools/Launch-Mnemorized-Claude.ps1` opens directly in `C:\Dev\Mnemorized` and detects repo-local commands and skills.
+

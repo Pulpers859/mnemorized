@@ -45,6 +45,17 @@
   - `python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`
   - browser checks for `/`, `/forge`, `/library`, `/api/health`
 
+## PowerShell / Agent Standard
+
+- Do not globally pin every PowerShell session to this project.
+- A dedicated desktop shortcut should exist:
+  - `Mnemorized Claude Code`
+- That shortcut should open directly in `C:\Dev\Mnemorized`.
+- The shortcut should call `tools/Launch-Mnemorized-Claude.ps1` through PowerShell 7 when available.
+- Repo-local agent guidance lives in `AGENTS.md`, `CLAUDE.md`, `.claude/`, and `.agents/`.
+- Use `mnemorized-handoff` for fresh orientation, `mnemorized-context-compact` for resumed or long work, and `mnemorized-parallel-audit` for broad investigations.
+- Use focused skills for normal bug work: `forge-static-ui-check`, `backend-auth-persistence-check`, and `provider-proxy-quota-check`.
+
 ## Known Constraints
 
 - The app can load without provider keys, but generation endpoints require local or hosted secrets.
