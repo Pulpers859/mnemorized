@@ -61,6 +61,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const fetchPromise = fetch(event.request)

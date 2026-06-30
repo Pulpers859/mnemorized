@@ -445,7 +445,7 @@ h1 {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/scripts/palace-api.js?v=20260629-1"></script>
 <script>
-const API_BASE = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
+const { getApiUrl, escapeHtml, escapeJsString, runSupabaseQuery } = MnemorizedUtils;
 
 const appConfig = {
   authEnabled: false,
@@ -459,59 +459,15 @@ let authState = { session: null, user: null };
 let libraryRows = [];
 let latestAccountSummary = null;
 
-function getApiUrl(path) {
-  return API_BASE ? `${API_BASE}${path}` : path;
-}
-
 function getForgeRedirectUrl() {
   const baseUrl = (appConfig.appBaseUrl || window.location.origin || '').replace(/\/+$/, '');
   return `${baseUrl}/forge`;
-}
-
-function withTimeout(promise, ms, label) {
-  let timeoutId;
-  const normalizedPromise = Promise.resolve(promise);
-  const timeoutPromise = new Promise((_, reject) => {
-    timeoutId = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`)), ms);
-  });
-  return Promise.race([
-    normalizedPromise.finally(() => clearTimeout(timeoutId)),
-    timeoutPromise
-  ]);
-}
-
-async function runSupabaseQuery(label, promise, timeoutMs = 15000) {
-  try {
-    return await withTimeout(promise, timeoutMs, label);
-  } catch (error) {
-    console.error(`[Library] ${label} failed`, error);
-    throw error;
-  }
 }
 
 function getAuthToken() {
   const token = authState.session?.access_token;
   if (!token) throw new Error('Sign in to access saved palaces.');
   return token;
-}
-
-function escapeHtml(text) {
-  return String(text || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function escapeJsString(text) {
-  return String(text || '')
-    .replace(/\\/g, '\\\\')
-    .replace(/'/g, "\\'")
-    .replace(/\r/g, '\\r')
-    .replace(/\n/g, '\\n')
-    .replace(/\u2028/g, '\\u2028')
-    .replace(/\u2029/g, '\\u2029');
 }
 
 function setAuthStatus(message, tone = 'muted') {

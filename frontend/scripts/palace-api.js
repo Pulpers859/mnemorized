@@ -1,67 +1,105 @@
 (function () {
-  function getApiBase() {
-    return window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
-  }
+  var API_BASE_CACHED = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
 
   function getApiUrl(path) {
-    return `${getApiBase()}${path}`;
+    return API_BASE_CACHED + path;
   }
 
-  async function request(path, options = {}) {
-    const headers = {
-      'Content-Type': 'application/json',
-      ...(options.headers || {})
+  function escapeHtml(text) {
+    return String(text || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function escapeJsString(text) {
+    return String(text || '')
+      .replace(/\\/g, '\\\\')
+      .replace(/'/g, "\\'")
+      .replace(/\r/g, '\\r')
+      .replace(/\n/g, '\\n')
+      .replace(/ /g, '\\u2028')
+      .replace(/ /g, '\\u2029');
+  }
+
+  function withTimeout(promise, ms, label) {
+    var timeoutId;
+    var normalizedPromise = Promise.resolve(promise);
+    var timeoutPromise = new Promise(function (_, reject) {
+      timeoutId = setTimeout(function () {
+        reject(new Error(label + ' timed out after ' + Math.round(ms / 1000) + 's'));
+      }, ms);
+    });
+    return Promise.race([
+      normalizedPromise.finally(function () { clearTimeout(timeoutId); }),
+      timeoutPromise
+    ]);
+  }
+
+  async function runSupabaseQuery(label, promise, timeoutMs) {
+    try {
+      return await withTimeout(promise, timeoutMs || 15000, label);
+    } catch (error) {
+      console.error('[Mnemorized] ' + label + ' failed', error);
+      throw error;
+    }
+  }
+
+  async function request(path, options) {
+    options = options || {};
+    var headers = {
+      'Content-Type': 'application/json'
     };
+    if (options.headers) {
+      Object.assign(headers, options.headers);
+    }
     if (options.token) {
-      headers.Authorization = `Bearer ${options.token}`;
+      headers.Authorization = 'Bearer ' + options.token;
     }
 
-    const res = await fetch(getApiUrl(path), {
+    var res = await fetch(getApiUrl(path), {
       method: options.method || 'GET',
-      headers,
+      headers: headers,
       body: options.body === undefined ? undefined : JSON.stringify(options.body)
     });
 
-    const payload = await res.json().catch(() => ({}));
+    var payload = await res.json().catch(function () { return {}; });
     if (!res.ok) {
-      const detail = payload.detail || payload.error?.message || `HTTP ${res.status}`;
+      var detail = payload.detail || (payload.error && payload.error.message) || ('HTTP ' + res.status);
       throw new Error(detail);
     }
     return payload;
   }
 
+  window.MnemorizedUtils = {
+    getApiBase: function () { return API_BASE_CACHED; },
+    getApiUrl: getApiUrl,
+    escapeHtml: escapeHtml,
+    escapeJsString: escapeJsString,
+    withTimeout: withTimeout,
+    runSupabaseQuery: runSupabaseQuery
+  };
+
   window.MnemorizedPalaceApi = {
-    ensureProfile(token) {
-      return request('/api/profile/ensure', {
-        method: 'POST',
-        token
-      });
+    ensureProfile: function (token) {
+      return request('/api/profile/ensure', { method: 'POST', token: token });
     },
-    list(token) {
-      return request('/api/palaces', { token });
+    list: function (token) {
+      return request('/api/palaces', { token: token });
     },
-    load(token, palaceId) {
-      return request(`/api/palaces/${encodeURIComponent(palaceId)}`, { token });
+    load: function (token, palaceId) {
+      return request('/api/palaces/' + encodeURIComponent(palaceId), { token: token });
     },
-    save(token, body) {
-      return request('/api/palaces/save', {
-        method: 'POST',
-        token,
-        body
-      });
+    save: function (token, body) {
+      return request('/api/palaces/save', { method: 'POST', token: token, body: body });
     },
-    rename(token, palaceId, title) {
-      return request(`/api/palaces/${encodeURIComponent(palaceId)}`, {
-        method: 'PATCH',
-        token,
-        body: { title }
-      });
+    rename: function (token, palaceId, title) {
+      return request('/api/palaces/' + encodeURIComponent(palaceId), { method: 'PATCH', token: token, body: { title: title } });
     },
-    delete(token, palaceId) {
-      return request(`/api/palaces/${encodeURIComponent(palaceId)}`, {
-        method: 'DELETE',
-        token
-      });
+    delete: function (token, palaceId) {
+      return request('/api/palaces/' + encodeURIComponent(palaceId), { method: 'DELETE', token: token });
     }
   };
 })();

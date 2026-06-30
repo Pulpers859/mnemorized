@@ -360,8 +360,10 @@ def test_forge_does_not_label_auth_failures_as_network_cors() -> None:
 def test_library_inline_handlers_escape_palace_ids() -> None:
     root = Path(__file__).resolve().parents[1]
     html = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+    shared = (root / "frontend" / "scripts" / "palace-api.js").read_text(encoding="utf-8")
 
-    assert "function escapeJsString" in html
+    assert "function escapeJsString" in shared
+    assert "escapeJsString" in html
     assert "onclick=\"renamePalace('${palaceId}')\"" in html
     assert "onclick=\"deletePalace('${palaceId}')\"" in html
 

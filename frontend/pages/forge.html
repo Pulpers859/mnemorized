@@ -1384,15 +1384,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 // BACKEND PROXY CONNECTION
 // ══════════════════════════════════════════════════
 
-const API_BASE = window.location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
+const { getApiUrl, escapeHtml: _escapeHtml, runSupabaseQuery } = MnemorizedUtils;
 let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: true };
 
-function getApiUrl(path) {
-  return API_BASE ? `${API_BASE}${path}` : path;
-}
-
 function getBackendBaseLabel() {
-  return API_BASE || window.location.origin;
+  return MnemorizedUtils.getApiBase() || window.location.origin;
 }
 
 function getForgeRedirectUrl() {
@@ -1568,45 +1564,13 @@ let libraryRowsCache = [];
 const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palace');
 let palaceRouteHydrated = false;
 
-function withTimeout(promise, ms, label) {
-  let timeoutId;
-  const normalizedPromise = Promise.resolve(promise);
-  const timeoutPromise = new Promise((_, reject) => {
-    timeoutId = setTimeout(() => {
-      reject(new Error(`${label} timed out after ${Math.round(ms / 1000)}s`));
-    }, ms);
-  });
-
-  return Promise.race([
-    normalizedPromise.finally(() => clearTimeout(timeoutId)),
-    timeoutPromise
-  ]);
-}
-
-async function runSupabaseQuery(label, promise, timeoutMs = 15000) {
-  try {
-    const result = await withTimeout(promise, timeoutMs, label);
-    return result;
-  } catch (error) {
-    console.error(`[Supabase] ${label} failed`, error);
-    throw error;
-  }
-}
-
 function getAuthToken() {
   const token = authState.session?.access_token;
   if (!token) throw new Error('Sign in to access saved palaces.');
   return token;
 }
 
-function escapeHtml(text) {
-  return String(text || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
+function escapeHtml(text) { return _escapeHtml(text); }
 
 function formatNarrationHtml(text) {
   return escapeHtml(text)
@@ -2152,9 +2116,9 @@ async function loadAuthSystem() {
     supabaseClient.auth.onAuthStateChange(async (_event, session) => {
       authState = { session, user: session?.user || null };
       refreshAuthUI();
-    if (authState.user) {
-      const results = await Promise.allSettled([ensureProfileRecord(), loadLibrary()]);
-      const failed = results.find(result => result.status === 'rejected');
+      if (authState.user) {
+        const results = await Promise.allSettled([ensureProfileRecord(), loadLibrary()]);
+        const failed = results.find(result => result.status === 'rejected');
         if (failed) {
           console.error('Auth state sync failed:', failed.reason);
           setLibraryStatus(
@@ -2316,12 +2280,18 @@ const operatorToggle = document.getElementById('operator-toggle');
 const operatorPanel = document.getElementById('operator-panel');
 
 let operatorUnlocked = false;
-const OPERATOR_CODE = 'forge';
 
-operatorToggle.addEventListener('change', () => {
+async function checkOperatorCode(input) {
+  const data = new TextEncoder().encode(input || '');
+  const hash = await crypto.subtle.digest('SHA-256', data);
+  const hex = [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
+  return hex === '71b41d6dd48dc58eba8f5cf9edf30fef6597fdf285a521bb8fcbad4b3d50887d';
+}
+
+operatorToggle.addEventListener('change', async () => {
   if (operatorToggle.checked && !operatorUnlocked) {
     const code = prompt('Enter operator access code:');
-    if (code !== OPERATOR_CODE) {
+    if (!(await checkOperatorCode(code))) {
       operatorToggle.checked = false;
       return;
     }
@@ -2382,10 +2352,10 @@ async function handleFileSelect(e) {
 }
 
 async function processFile(file) {
-  const allowedTypes = ['application/pdf','text/plain','image/png','image/jpeg','image/jpg','image/webp'];
   const ext = file.name.split('.').pop().toLowerCase();
   const allowedExts = ['pdf','txt','text','png','jpg','jpeg','webp'];
-  if (!allowedExts.includes(ext)) {
+  const allowedMimeTypes = ['application/pdf','text/plain','image/png','image/jpeg','image/webp'];
+  if (!allowedExts.includes(ext) || (file.type && !allowedMimeTypes.includes(file.type))) {
     alert('Unsupported file type. Please upload PDF, TXT, PNG, or JPG.');
     return;
   }

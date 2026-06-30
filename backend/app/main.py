@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from threading import Lock
 from typing import Annotated, Any
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 import httpx
 from fastapi import BackgroundTasks
@@ -427,6 +427,13 @@ PALACE_SELECT = "id,title,topic,scene_title,status,latest_version_number,updated
 PALACE_VERSION_SELECT = "version_number,generation_inputs,generation_outputs,created_at"
 
 
+def _validate_palace_id(palace_id: str) -> str:
+    try:
+        return str(UUID(palace_id))
+    except (ValueError, AttributeError):
+        raise HTTPException(status_code=400, detail="Invalid palace ID format.")
+
+
 async def _require_persistence_context(
     request: Request,
     settings: Settings,
@@ -519,6 +526,7 @@ async def _delete_empty_palace_best_effort(
     settings: Settings,
     bearer_token: str,
     palace_id: str | None,
+    user_id: str,
 ) -> None:
     if not palace_id:
         return
@@ -529,7 +537,7 @@ async def _delete_empty_palace_best_effort(
             bearer_token=bearer_token,
             method="DELETE",
             path="/rest/v1/palaces",
-            params={"id": f"eq.{palace_id}"},
+            params={"id": f"eq.{palace_id}", "user_id": f"eq.{user_id}"},
             headers={"Prefer": "return=minimal"},
         )
         if response.status_code >= 400:
@@ -897,8 +905,8 @@ async def library():
 
 
 @app.get("/api/health")
-async def health() -> dict[str, Any]:
-    active_settings = get_settings()
+async def health(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
     return {
         "status": "ok",
         "service": "mnemorized-backend",
@@ -1001,6 +1009,7 @@ async def list_palaces(request: Request) -> dict[str, Any]:
 
 @app.get("/api/palaces/{palace_id}")
 async def get_palace(palace_id: str, request: Request) -> dict[str, Any]:
+    palace_id = _validate_palace_id(palace_id)
     active_settings = _get_runtime_settings(request)
     bearer_token, user = await _require_persistence_context(request, active_settings)
 
@@ -1115,6 +1124,7 @@ async def save_palace(payload: PalaceSavePayload, request: Request) -> dict[str,
                 settings=active_settings,
                 bearer_token=bearer_token,
                 palace_id=created_palace_id,
+                user_id=user.user_id,
             )
         raise
 
@@ -1130,6 +1140,7 @@ async def rename_palace(
     payload: PalaceRenamePayload,
     request: Request,
 ) -> dict[str, Any]:
+    palace_id = _validate_palace_id(palace_id)
     active_settings = _get_runtime_settings(request)
     bearer_token, user = await _require_persistence_context(request, active_settings)
 
@@ -1149,6 +1160,7 @@ async def rename_palace(
 
 @app.delete("/api/palaces/{palace_id}")
 async def delete_palace(palace_id: str, request: Request) -> dict[str, Any]:
+    palace_id = _validate_palace_id(palace_id)
     active_settings = _get_runtime_settings(request)
     bearer_token, user = await _require_persistence_context(request, active_settings)
 
@@ -1501,7 +1513,6 @@ async def generate_image(
                 )
 
             if resp.status_code != 200:
-                error_detail = resp.text[:500]
                 upstream_error_message = None
                 try:
                     error_payload = resp.json()
@@ -1510,7 +1521,7 @@ async def generate_image(
                     error_payload = None
                 logger.warning(
                     "Gemini API error for request %s prompt %d: %s %s",
-                    request_id, idx + 1, resp.status_code, error_detail,
+                    request_id, idx + 1, resp.status_code, resp.text[:500],
                 )
                 schedule_gemini_usage(resp.status_code)
                 return JSONResponse(
@@ -1524,7 +1535,6 @@ async def generate_image(
                                 f"Gemini returned {resp.status_code} for prompt {idx + 1} "
                                 f"using model {model}."
                             ),
-                            "detail": error_detail,
                         }
                     },
                 )
