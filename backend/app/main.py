@@ -14,6 +14,7 @@ import httpx
 from fastapi import BackgroundTasks
 from fastapi import HTTPException
 from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -738,6 +739,34 @@ async def _persist_usage_event_background(
         logger.exception("Failed to persist Supabase usage event for request %s", request_id)
 
 
+def _schedule_usage_event(
+    *,
+    background_tasks: BackgroundTasks,
+    request: Request,
+    settings: Settings,
+    bearer_token: str | None,
+    user: AuthenticatedUser | None,
+    request_id: str,
+    request_body: dict[str, Any],
+    response_payload: dict[str, Any] | None,
+    status_code: int,
+) -> None:
+    try:
+        background_tasks.add_task(
+            _persist_usage_event_background,
+            request=request,
+            settings=settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=request_body,
+            response_payload=response_payload,
+            status_code=status_code,
+        )
+    except Exception:
+        logger.exception("Failed to schedule usage event persistence for request %s", request_id)
+
+
 def _write_usage_log(
     *,
     settings: Settings,
@@ -808,6 +837,45 @@ app.add_middleware(
     allow_headers=["*"],
     expose_headers=["Retry-After", "X-Request-ID", "X-Anthropic-Request-ID"],
 )
+
+
+@app.middleware("http")
+async def reject_oversized_api_requests(request: Request, call_next):
+    active_settings = _get_runtime_settings(request)
+    if (
+        request.url.path.startswith("/api/")
+        and request.method in {"POST", "PUT", "PATCH"}
+        and _request_size(request) > active_settings.max_request_bytes
+    ):
+        return _request_too_large_response(active_settings, str(uuid4()))
+    return await call_next(request)
+
+
+@app.exception_handler(RequestValidationError)
+async def request_validation_exception_handler(
+    request: Request,
+    exc: RequestValidationError,
+) -> JSONResponse:
+    request_id = str(uuid4())
+    issues = []
+    for error in exc.errors():
+        issues.append({
+            "type": error.get("type", "validation_error"),
+            "loc": [str(part) for part in error.get("loc", [])],
+            "message": error.get("msg", "Invalid request field."),
+        })
+
+    return JSONResponse(
+        status_code=422,
+        headers={"X-Request-ID": request_id},
+        content={
+            "error": {
+                "type": "validation_error",
+                "message": "Request validation failed.",
+                "issues": issues,
+            }
+        },
+    )
 
 
 @app.get("/")
@@ -1280,8 +1348,8 @@ async def proxy_anthropic_messages(
     except Exception:
         logger.exception("Failed to write local usage log for request %s", request_id)
 
-    background_tasks.add_task(
-        _persist_usage_event_background,
+    _schedule_usage_event(
+        background_tasks=background_tasks,
         request=request,
         settings=active_settings,
         bearer_token=bearer_token,
@@ -1374,6 +1442,20 @@ async def generate_image(
     http_client, owns_http_client = _get_http_client(request)
     images: list[dict[str, Any]] = []
     conversation: list[dict[str, Any]] = []
+    usage_request_body = {"provider": "gemini", "model": model, "prompts": len(payload.prompts)}
+
+    def schedule_gemini_usage(status_code: int) -> None:
+        _schedule_usage_event(
+            background_tasks=background_tasks,
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=usage_request_body,
+            response_payload={"usage": {}},
+            status_code=status_code,
+        )
 
     try:
         for idx, prompt_text in enumerate(payload.prompts):
@@ -1394,6 +1476,7 @@ async def generate_image(
                     timeout=httpx.Timeout(120.0, connect=10.0),
                 )
             except httpx.TimeoutException:
+                schedule_gemini_usage(504)
                 return JSONResponse(
                     status_code=504,
                     headers={"X-Request-ID": request_id},
@@ -1405,6 +1488,7 @@ async def generate_image(
                     },
                 )
             except httpx.HTTPError as exc:
+                schedule_gemini_usage(502)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1428,6 +1512,7 @@ async def generate_image(
                     "Gemini API error for request %s prompt %d: %s %s",
                     request_id, idx + 1, resp.status_code, error_detail,
                 )
+                schedule_gemini_usage(resp.status_code)
                 return JSONResponse(
                     status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
                     headers={"X-Request-ID": request_id},
@@ -1452,6 +1537,7 @@ async def generate_image(
                     request_id,
                     idx + 1,
                 )
+                schedule_gemini_usage(502)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1465,6 +1551,7 @@ async def generate_image(
 
             candidates = resp_json.get("candidates", [])
             if not candidates:
+                schedule_gemini_usage(502)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1484,6 +1571,7 @@ async def generate_image(
                     break
 
             if not isinstance(image_part, dict) or not image_part.get("data"):
+                schedule_gemini_usage(502)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1510,20 +1598,7 @@ async def generate_image(
         if owns_http_client:
             await http_client.aclose()
 
-    try:
-        background_tasks.add_task(
-            _persist_usage_event_background,
-            request=request,
-            settings=active_settings,
-            bearer_token=bearer_token,
-            user=user,
-            request_id=request_id,
-            request_body={"provider": "gemini", "model": model, "prompts": len(payload.prompts)},
-            response_payload={"usage": {}},
-            status_code=200,
-        )
-    except Exception:
-        logger.exception("Failed to schedule Gemini usage event persistence for request %s", request_id)
+    schedule_gemini_usage(200)
 
     return JSONResponse(
         status_code=200,

@@ -3111,7 +3111,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     try {
       res = await claudeFetch(requestBody);
     } catch(fetchErr) {
-      throw new Error(`Fetch failed (network/CORS): ${fetchErr.message}`);
+      throw new Error(fetchErr.message || 'Could not reach the provider proxy.');
     }
 
     // Capture raw response text first — before parsing as JSON
