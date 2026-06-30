@@ -380,7 +380,9 @@ def test_forge_story_output_avoids_nested_scroll_traps() -> None:
 
     assert ".story-table-scroll {\n  overflow: visible;" in html
     assert "position: sticky" not in html
-    assert 'class="story-review-drawer" id="review-wrap"' in html
+    assert '<aside class="story-summary-panel">' in html
+    assert 'class="legend story-side-review" id="review-wrap"' in html
+    assert "story-review-drawer" not in html
 
 
 def test_library_inline_handlers_escape_palace_ids() -> None:

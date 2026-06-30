@@ -517,6 +517,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .story-output-grid {
   display: grid;
   grid-template-columns: minmax(260px, 30%) minmax(0, 1fr);
+  align-items: start;
 }
 .story-summary-panel {
   padding: 20px 22px;
@@ -552,37 +553,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .story-table-scroll {
   overflow: visible;
 }
-.story-review-drawer {
-  border-top: 1px solid var(--border);
-  background: rgba(9, 12, 15, .16);
-}
-.story-review-drawer summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 13px 18px;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--acid);
-}
-.story-review-drawer summary::-webkit-details-marker { display: none; }
-.story-review-drawer summary::before {
-  content: '+';
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  color: var(--acid);
-}
-.story-review-drawer[open] summary::before { content: '-'; }
-.story-review-body {
-  padding: 0 18px 18px;
-}
+.story-side-review { margin-top: 18px; }
 .story-scene-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(18px, 3vw, 28px);
@@ -1488,6 +1459,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <div class="story-output-grid">
           <aside class="story-summary-panel">
             <div id="story-header"></div>
+            <div class="legend story-side-review" id="review-wrap" style="display:none;">
+              <p class="legend-title">✦ RAPID REVIEW SCRIPT</p>
+              <div class="review-text" id="review-text"></div>
+            </div>
           </aside>
           <div class="story-anchor-panel">
             <div class="story-panel-head">
@@ -1513,12 +1488,6 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
             </div>
           </div>
         </div>
-        <details class="story-review-drawer" id="review-wrap" style="display:none;">
-          <summary>Rapid Review Script</summary>
-          <div class="story-review-body">
-            <div class="review-text" id="review-text"></div>
-          </div>
-        </details>
       </div>
     </div>
 
