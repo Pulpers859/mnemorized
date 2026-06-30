@@ -2549,6 +2549,7 @@ function toggleAll(on) {
   document.querySelectorAll('.concept-item').forEach(el => {
     if (on) el.classList.remove('excluded');
     else el.classList.add('excluded');
+    el.setAttribute('aria-checked', on ? 'true' : 'false');
   });
   updateChecklistCount();
 }
@@ -2858,14 +2859,14 @@ async function runPipeline() {
 
     showBody('story');
     document.getElementById('story-header').innerHTML =
-      `<div class="story-scene-title">${D.scene_title}</div>
-       <div class="story-opening">${D.opening}</div>`;
+      `<div class="story-scene-title">${escapeHtml(D.scene_title)}</div>
+       <div class="story-opening">${escapeHtml(D.opening)}</div>`;
 
     document.getElementById('vo-body').innerHTML = D.voLines.map(v => `
       <tr>
         <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
-        <td>${v.visual}</td>
-        <td class="encodes-cell">${v.anchor}</td>
+        <td>${escapeHtml(v.visual)}</td>
+        <td class="encodes-cell">${escapeHtml(v.anchor)}</td>
       </tr>`).join('');
     document.getElementById('vo-table-wrap').style.display = 'block';
 

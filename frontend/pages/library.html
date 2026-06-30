@@ -22,7 +22,10 @@
   --muted: #96a19b;
   --acid: #c9ef4d;
   --acid2: #abd834;
+  --acid-dim: rgba(201,239,77,.15);
+  --acid-glow: rgba(201,239,77,.08);
   --gold: #f4c95d;
+  --green: #4ade80;
   --red: #ff6b66;
 }
 
@@ -884,6 +887,13 @@ document.getElementById('account-badge').addEventListener('click', () => {
 refreshAuthUI();
 renderLibrary();
 loadAuthSystem();
+
+if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
+  navigator.serviceWorker
+    .register('/sw.js', { updateViaCache: 'none' })
+    .then(registration => registration.update())
+    .catch(() => {});
+}
 </script>
 </body>
 </html>

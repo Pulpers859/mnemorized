@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c9ef4d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mnemorized">
 <title>Mnemorized — Build Memory Palaces for Any Medical Topic</title>
 <meta name="description" content="Generate visual mnemonic palace videos for any medical topic in minutes. Built by a physician. Join the waitlist.">
 <link rel="manifest" href="/manifest.json">
@@ -19,9 +23,12 @@
   --muted:   #96a19b;
   --acid:    #c9ef4d;
   --acid2:   #abd834;
+  --acid-dim: rgba(201,239,77,.15);
+  --acid-glow: rgba(201,239,77,.08);
   --red:     #ff6b66;
   --blue:    #65a8ff;
   --gold:    #f4c95d;
+  --green:   #4ade80;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -1008,6 +1015,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// ── SERVICE WORKER ───────────────────────────────────────────────
+if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
+  navigator.serviceWorker
+    .register('/sw.js', { updateViaCache: 'none' })
+    .then(registration => registration.update())
+    .catch(() => {});
+}
 </script>
 </body>
 </html>
