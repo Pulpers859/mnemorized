@@ -36,6 +36,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 ## Skill-First Workflow
 
 - At the start of a fresh session, use `.claude/skills/mnemorized-handoff/SKILL.md` or `.agents/skills/mnemorized-handoff/SKILL.md` unless the task is already deep in one known file.
+- Use `.agents/skills/mnemorized-agent-delegation/SKILL.md` when Patrick asks for efficient agent usage, broad audits, stress testing, cross-surface feature work, or parallel review.
 - Use `mnemorized-context-compact` when resuming old work, preparing a handoff, or keeping a long review from ballooning.
 - Use `mnemorized-parallel-audit` for broad reviews spanning backend, forge UI, library, auth, persistence, provider proxy, and deployment.
 - Use focused skills for normal bug work:
@@ -43,6 +44,16 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
   - `backend-auth-persistence-check`
   - `provider-proxy-quota-check`
 - Prefer the smallest matching skill set; do not load every project doc by default.
+
+## Delegation Constitution
+
+- Main Codex acts as architect, risk owner, and integrator.
+- Keep provider proxy safety, auth, Supabase persistence, quota, usage logging, billing, secrets, Render, Supabase dashboard work, commits, and pushes under main-agent control.
+- Use explorer subagents for bounded read-only questions with evidence-backed findings.
+- Use worker subagents only for disjoint write scopes with explicit file/module ownership.
+- Do not delegate the immediate blocking task when the main agent needs that result before moving.
+- Avoid overlapping edits to `frontend/pages/forge.html`; it is fragile and should have one owner at a time.
+- Require subagents to report changed files, validation run, and any uncertainty.
 
 ## Validation
 
@@ -53,4 +64,3 @@ Run what is realistic for the change:
 - Browser routes: `/`, `/forge`, `/library`, `/api/health`
 
 Do not claim provider-generation validation unless local or hosted API keys were actually available and exercised.
-

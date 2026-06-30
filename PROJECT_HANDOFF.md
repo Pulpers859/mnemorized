@@ -54,7 +54,12 @@
 - The shortcut should call `tools/Launch-Mnemorized-Claude.ps1` through PowerShell 7 when available.
 - Repo-local agent guidance lives in `AGENTS.md`, `CLAUDE.md`, `.claude/`, and `.agents/`.
 - Use `mnemorized-handoff` for fresh orientation, `mnemorized-context-compact` for resumed or long work, and `mnemorized-parallel-audit` for broad investigations.
+- Use `mnemorized-agent-delegation` when Patrick wants efficient main-agent/subagent coordination.
 - Use focused skills for normal bug work: `forge-static-ui-check`, `backend-auth-persistence-check`, and `provider-proxy-quota-check`.
+
+## Delegation Preference
+
+Patrick prefers main Codex to carry high-judgment architecture, risk, integration, secrets, production, and commit/push work while delegating bounded independent lanes to explorer or worker subagents. Explorers should answer specific read-only questions. Workers should own disjoint file/module scopes and must not revert other edits.
 
 ## Known Constraints
 
