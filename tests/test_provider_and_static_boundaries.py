@@ -360,6 +360,20 @@ def test_forge_does_not_label_auth_failures_as_network_cors() -> None:
     assert "Fetch failed (network/CORS)" not in html
 
 
+def test_forge_prioritizes_direct_topic_entry_over_upload() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+
+    topic_index = html.index('id="topic"')
+    upload_index = html.index('id="upload-zone"')
+
+    assert topic_index < upload_index
+    assert '<details class="optional-upload" id="optional-upload">' in html
+    assert '<div id="config-wrap" style="display:block;">' in html
+    assert '<div id="forge-wrap" style="display:block;">' in html
+    assert "manual-bypass" not in html
+
+
 def test_library_inline_handlers_escape_palace_ids() -> None:
     root = Path(__file__).resolve().parents[1]
     html = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")

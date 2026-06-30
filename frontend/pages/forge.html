@@ -417,7 +417,145 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 
 .stage-body { padding: 22px 24px; }
 
+/* Optional document intake */
+.optional-upload {
+  margin-top: 14px;
+  border-top: 1px solid rgba(213, 223, 216, .08);
+}
+.optional-upload summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.optional-upload summary::-webkit-details-marker { display: none; }
+.optional-upload summary::before {
+  content: '+';
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+}
+.optional-upload[open] summary::before { content: '-'; }
+.optional-upload-panel {
+  padding: 14px 0 2px;
+}
+
+/* Save / library strip */
+.library-strip {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  margin: 18px 0 12px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(213, 223, 216, .08);
+  border-bottom: 1px solid rgba(213, 223, 216, .08);
+}
+.library-strip-main {
+  min-width: 0;
+}
+.library-strip-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.library-strip-title {
+  margin-bottom: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.library-strip-summary {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.library-title-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, auto);
+  gap: 10px;
+  margin-top: 10px;
+}
+.library-status-pill {
+  min-width: 180px;
+  padding: 10px 12px;
+  background: rgba(9, 12, 15, .72);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+.library-details {
+  grid-column: 1 / -1;
+  margin-top: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
 /* Story */
+.story-stage .stage-body {
+  padding: 0;
+}
+.story-output-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 32%) minmax(0, 1fr);
+  min-height: 360px;
+}
+.story-summary-panel {
+  padding: 20px 22px;
+  border-right: 1px solid var(--border);
+  background: rgba(9, 12, 15, .18);
+}
+.story-anchor-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.story-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.story-panel-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.story-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.story-table-scroll {
+  max-height: 560px;
+  overflow: auto;
+}
+.story-table-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+.story-table-scroll::-webkit-scrollbar-thumb { background: rgba(201,239,77,.16); border-radius: 4px; }
 .story-scene-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(18px, 3vw, 28px);
@@ -427,10 +565,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   margin-bottom: 12px;
 }
 .story-opening {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 22px;
+  line-height: 1.65;
+  margin-bottom: 0;
   font-style: italic;
   border-left: 2px solid rgba(201,239,77,.25);
   padding-left: 16px;
@@ -460,18 +598,21 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   text-transform: uppercase;
   color: var(--acid);
   opacity: .7;
-  padding: 10px 14px;
+  padding: 9px 12px;
   text-align: left;
   border-bottom: 1px solid var(--border);
   background: rgba(201,239,77,.03);
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .vo-table td {
-  padding: 14px;
+  padding: 12px;
   vertical-align: top;
   border-bottom: 1px solid var(--border);
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--white);
-  font-size: 14px;
+  font-size: 13px;
 }
 .vo-table tr:last-child td { border-bottom: none; }
 .vo-table tr:hover td { background: rgba(201,239,77,.02); }
@@ -879,9 +1020,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 
 /* ── RAPID REVIEW BULLET POINTS ── */
 .review-text {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--white);
-  line-height: 1.85;
+  line-height: 1.65;
   font-family: 'DM Sans', sans-serif;
 }
 .review-text ul {
@@ -890,7 +1031,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   margin: 0;
 }
 .review-text li {
-  padding: 8px 0 8px 20px;
+  padding: 7px 0 7px 18px;
   position: relative;
   border-bottom: 1px solid var(--border);
 }
@@ -945,6 +1086,33 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 @media (max-width: 600px) {
   nav { padding: 14px 16px; }
   .wrap { padding: 88px 16px 80px; }
+  .optional-upload summary { align-items: flex-start; }
+  .library-strip {
+    grid-template-columns: 1fr;
+  }
+  .library-strip-actions {
+    justify-content: flex-start;
+  }
+  .library-title-row {
+    grid-template-columns: 1fr;
+  }
+  .story-output-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-summary-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .story-panel-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .story-actions {
+    justify-content: flex-start;
+  }
+  .story-table-scroll {
+    max-height: 520px;
+  }
   .vo-table td:nth-child(2),
   .vo-table th:nth-child(2) { display: none; }
   .vo-table td:first-child { width: 65%; }
@@ -1020,18 +1188,27 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   <div class="header">
     <div class="header-eyebrow">Memory Palace Engine</div>
     <h1>PALACE<br><span class="accent">FORGE</span></h1>
-    <p class="subtitle">Upload → Extract → Configure → Generate → Image Prompt</p>
+    <p class="subtitle">Type or paste → Configure → Generate → Save</p>
   </div>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-gem">✦</div><div class="divider-line"></div></div>
 
-  <!-- ══ STAGE 0: DOCUMENT INTELLIGENCE ══ -->
-  <div class="doc-stage" id="doc-stage">
+  <!-- ══ CONFIGURATION ══ -->
+  <div id="config-wrap" style="display:block;">
 
-    <!-- 0A: Upload -->
-    <div class="section">
-      <p class="section-label">0. Document Upload</p>
-      <p class="section-hint">Upload your source material — lecture notes, Amboss export, UpToDate printout, textbook chapter. Supported: PDF, TXT, or an image of handwritten notes.</p>
+  <!-- 1: Topic -->
+  <div class="section">
+    <p class="section-label">I. What Must Be Memorized</p>
+    <p class="section-hint">Paste notes, a topic list, or the exact facts you need encoded. The fastest path is to type directly here, then configure below.</p>
+    <textarea class="input-field" id="topic" rows="7" placeholder="e.g. The 12 cranial nerves in order, ACLS algorithm for pulseless V-tach, vasopressor receptor affinities..."></textarea>
+
+    <details class="optional-upload" id="optional-upload">
+      <summary>Use document upload instead</summary>
+      <div class="optional-upload-panel doc-stage" id="doc-stage">
+
+    <!-- Optional document upload -->
+    <div class="section" style="padding-top:0;">
+      <p class="section-hint">Upload source material only if you want Mnemorized to extract sections and high-yield concepts first. Supported: PDF, TXT, PNG, JPG.</p>
       <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
         <div class="upload-icon">⬆</div>
         <div class="upload-primary">Drop file here or click to browse</div>
@@ -1086,24 +1263,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       </div>
     </div>
 
-  </div><!-- /doc-stage -->
-
-  <!-- Skip link -->
-  <div id="manual-bypass" style="text-align:center;margin:4px 0 0;">
-    <button class="btn-skip" onclick="skipUpload()">✦ Skip upload — type topic manually</button>
-  </div>
-
-  <div class="divider" id="config-divider" style="display:none;"><div class="divider-line"></div><div class="divider-gem">✦</div><div class="divider-line"></div></div>
-
-  <!-- ══ CONFIGURATION ══ -->
-  <div id="config-wrap" style="display:none;">
-
-  <!-- 1: Topic -->
-  <div class="section">
-    <p class="section-label">I. What Must Be Memorized</p>
-    <p class="section-hint">Auto-populated from your document, or type/paste directly. Edit freely before generating.</p>
-    <textarea class="input-field" id="topic" rows="5" placeholder="e.g. The 12 cranial nerves in order, ACLS algorithm for pulseless V-tach, vasopressor receptor affinities…"></textarea>
-    <p style="font-size:12px;color:var(--muted);margin-top:6px;">Or skip document upload entirely and type here directly, then scroll to configure below.</p>
+      </div><!-- /doc-stage -->
+    </details>
   </div>
 
   <!-- 2: Architecture (hidden — auto-selected by AI based on topic) -->
@@ -1208,9 +1369,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
     <textarea class="input-field custom-field" id="custom-guide" rows="2" placeholder="Describe your guide character — personality, appearance, quirks…"></textarea>
   </div>
 
-  <!-- 4: Absurdity -->
+  <!-- 2: Absurdity -->
   <div class="section">
-    <p class="section-label">IV. Absurdity Dial</p>
+    <p class="section-label">II. Absurdity Dial</p>
     <p class="section-hint">How far from reality the scene is allowed to drift.</p>
     <div class="slider-row">
       <input type="range" id="chaos" min="1" max="10" value="7">
@@ -1219,9 +1380,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
     <div class="slider-labels"><span>Vivid but grounded</span><span>Cosmically deranged</span></div>
   </div>
 
-  <!-- 5: Art Style -->
+  <!-- 3: Art Style -->
   <div class="section">
-    <p class="section-label">V. Visual Art Style</p>
+    <p class="section-label">III. Visual Art Style</p>
     <p class="section-hint">How the generated image should look.</p>
     <div class="select-wrap">
       <select class="fancy-select" id="style-select">
@@ -1237,9 +1398,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
     </div>
   </div>
 
-  <!-- 6: Tone -->
+  <!-- 4: Tone -->
   <div class="section">
-    <p class="section-label">VI. Narrative Tone</p>
+    <p class="section-label">IV. Narrative Tone</p>
     <p class="section-hint">Voice and atmosphere of the scene writing.</p>
     <div class="chip-grid" id="tone-chips" role="radiogroup" aria-label="Narrative tone">
       <div class="chip active" data-val="visceral and cinematic" role="radio" aria-checked="true" tabindex="0">Cinematic</div>
@@ -1252,34 +1413,34 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 
   </div><!-- /config-wrap -->
 
-  <div id="forge-wrap" style="display:none;">
+  <div id="forge-wrap" style="display:block;">
     <button class="btn-forge" id="forge-btn" onclick="runPipeline()">LET'S MNEMORIZE</button>
     <a href="mailto:feedback@mnemorized.com?subject=Mnemorized%20Forge%20Feedback" class="btn-feedback">
       Have feedback? Tell us what you think →
     </a>
   </div>
 
-  <div id="library-panel" style="display:block;margin:26px 0 12px;padding:18px 20px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:14px;">
-    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px;">
-      <div>
-        <div class="section-label" style="margin-bottom:6px;">Library Hub</div>
-        <div id="auth-summary" style="font-size:13px;color:var(--muted);line-height:1.6;">Connect Supabase auth to save palaces in the forge, then manage them from the full library page.</div>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn-copy" id="open-auth-btn" onclick="openAuthModal()" style="margin:0;">Sign In</button>
-        <a href="/library" class="btn-copy" id="open-library-link" style="margin:0;text-decoration:none;display:inline-flex;align-items:center;">Open Library</a>
-        <button class="btn-copy" id="save-palace-btn" onclick="saveCurrentPalace()" style="margin:0;" disabled>Save Palace</button>
-        <button class="btn-copy" id="save-as-new-btn" onclick="saveCurrentPalace(true)" style="margin:0;" disabled>Save As New</button>
-        <button class="btn-copy" id="new-draft-btn" onclick="startNewPalaceDraft()" style="margin:0;" disabled>New Draft</button>
-        <button class="btn-copy" id="refresh-library-btn" onclick="loadLibrary()" style="margin:0;" disabled>Sync Summary</button>
+  <div class="library-strip" id="save-library-strip">
+    <div class="library-strip-main">
+      <div class="library-strip-title">Save & Library</div>
+      <div id="auth-summary" class="library-strip-summary">Connect Supabase auth to save palaces, then manage the full collection from Library.</div>
+      <div class="library-title-row">
+        <input class="input-field" id="palace-title-input" type="text" placeholder="Palace title">
+        <div id="library-status" class="library-status-pill">No account connected.</div>
       </div>
     </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
-      <input class="input-field" id="palace-title-input" type="text" placeholder="Palace title" style="flex:1;min-width:240px;">
-      <div id="library-status" style="min-width:220px;padding:12px 14px;background:var(--ink);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted);display:flex;align-items:center;">No account connected.</div>
+    <div class="library-strip-actions">
+      <button class="btn-copy" id="open-auth-btn" onclick="openAuthModal()" style="margin:0;">Sign In</button>
+      <button class="btn-copy" id="save-palace-btn" onclick="saveCurrentPalace()" style="margin:0;" disabled>Save Palace</button>
+      <button class="btn-copy" id="save-as-new-btn" onclick="saveCurrentPalace(true)" style="margin:0;" disabled>Save As New</button>
+      <button class="btn-copy" id="new-draft-btn" onclick="startNewPalaceDraft()" style="margin:0;" disabled>New Draft</button>
+      <a href="/library" class="btn-copy" id="open-library-link" style="margin:0;text-decoration:none;display:inline-flex;align-items:center;">Open Library</a>
+      <button class="btn-copy" id="refresh-library-btn" onclick="loadLibrary()" style="margin:0;" disabled>Sync</button>
     </div>
-    <div id="library-empty" style="font-size:12px;color:var(--muted);padding:10px 0;">Sign in to unlock the full library page, search, filters, rename tools, and load saved palaces into the forge.</div>
-    <div id="library-summary-note" style="font-size:12px;color:var(--muted);padding:8px 0 0;line-height:1.6;">No library sync yet.</div>
+    <div class="library-details">
+      <span id="library-empty">Sign in to unlock search, filters, rename tools, and saved palace loading.</span>
+      <span id="library-summary-note">No library sync yet.</span>
+    </div>
     <div id="library-list" style="display:none;"></div>
   </div>
 
@@ -1296,33 +1457,44 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   <div class="pipeline" id="pipeline">
 
     <!-- Stage I: Story / Voiceover Script -->
-    <div class="stage" id="stage-story">
+    <div class="stage story-stage" id="stage-story">
       <div class="stage-header">
         <span class="stage-num">01</span>
         <span class="stage-title">Memory Palace Scene</span>
         <span class="stage-status" id="status-story">Waiting…</span>
       </div>
       <div class="stage-body" id="body-story" style="display:none;">
-        <div id="story-header" style="margin-bottom:20px;"></div>
-        <div id="vo-table-wrap" style="display:none;">
-          <table class="vo-table" id="vo-table">
-            <thead>
-              <tr>
-                <th style="width:44%">SPOKEN NARRATION</th>
-                <th style="width:34%">VISUAL / ACTION ON SCREEN</th>
-                <th style="width:22%">ENCODES</th>
-              </tr>
-            </thead>
-            <tbody id="vo-body"></tbody>
-          </table>
-          <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-            <button class="btn-copy" id="copy-vo-btn" onclick="copyVoScript()">Copy Full Script</button>
-            <button class="btn-copy" id="copy-narration-btn" onclick="copyNarrationOnly()">Copy Narration Only</button>
+        <div class="story-output-grid">
+          <aside class="story-summary-panel">
+            <div id="story-header"></div>
+            <div class="legend" id="review-wrap" style="display:none;">
+              <p class="legend-title">✦ RAPID REVIEW SCRIPT</p>
+              <div class="review-text" id="review-text"></div>
+            </div>
+          </aside>
+          <div class="story-anchor-panel">
+            <div class="story-panel-head">
+              <div>
+                <div class="story-panel-label">Anchor Script</div>
+              </div>
+              <div class="story-actions">
+                <button class="btn-copy" id="copy-vo-btn" onclick="copyVoScript()" style="margin:0;">Copy Full Script</button>
+                <button class="btn-copy" id="copy-narration-btn" onclick="copyNarrationOnly()" style="margin:0;">Copy Narration</button>
+              </div>
+            </div>
+            <div id="vo-table-wrap" class="story-table-scroll" style="display:none;">
+              <table class="vo-table" id="vo-table">
+                <thead>
+                  <tr>
+                    <th style="width:44%">SPOKEN NARRATION</th>
+                    <th style="width:34%">VISUAL / ACTION ON SCREEN</th>
+                    <th style="width:22%">ENCODES</th>
+                  </tr>
+                </thead>
+                <tbody id="vo-body"></tbody>
+              </table>
+            </div>
           </div>
-        </div>
-        <div class="legend" id="review-wrap" style="display:none;">
-          <p class="legend-title">✦ RAPID REVIEW SCRIPT</p>
-          <div class="review-text" id="review-text"></div>
         </div>
       </div>
     </div>

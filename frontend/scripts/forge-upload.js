@@ -10,13 +10,15 @@ let selectedSectionText = '';
 // ── Drag & Drop ───────────────────────────────────────────────────
 
 const zone = document.getElementById('upload-zone');
-zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
-zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
-zone.addEventListener('drop', e => {
-  e.preventDefault(); zone.classList.remove('dragover');
-  const f = e.dataTransfer.files[0];
-  if (f) processFile(f);
-});
+if (zone) {
+  zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('drop', e => {
+    e.preventDefault(); zone.classList.remove('dragover');
+    const f = e.dataTransfer.files[0];
+    if (f) processFile(f);
+  });
+}
 
 async function handleFileSelect(e) {
   const f = e.target.files[0];
@@ -24,6 +26,8 @@ async function handleFileSelect(e) {
 }
 
 async function processFile(file) {
+  document.getElementById('optional-upload')?.setAttribute('open', '');
+
   const ext = file.name.split('.').pop().toLowerCase();
   const allowedExts = ['pdf','txt','text','png','jpg','jpeg','webp'];
   const allowedMimeTypes = ['application/pdf','text/plain','image/png','image/jpeg','image/webp'];
@@ -66,9 +70,6 @@ function clearFile() {
   document.getElementById('section-picker-wrap').style.display = 'none';
   document.getElementById('concepts-btn-wrap').style.display = 'none';
   document.getElementById('checklist-wrap').style.display = 'none';
-  document.getElementById('config-divider').style.display = 'none';
-  document.getElementById('config-wrap').style.display = 'none';
-  document.getElementById('forge-wrap').style.display = 'none';
 }
 
 // ── Section Extraction ────────────────────────────────────────────
@@ -235,19 +236,15 @@ function proceedToForge() {
   const topicText = (sectionTitle ? `[${sectionTitle}]\n` : '') + selected.join('\n');
   document.getElementById('topic').value = topicText;
 
-  document.getElementById('config-divider').style.display = 'flex';
   document.getElementById('config-wrap').style.display = 'block';
   document.getElementById('forge-wrap').style.display = 'block';
-  document.getElementById('manual-bypass').style.display = 'none';
 
-  setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  setTimeout(() => document.getElementById('topic').scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
 }
 
 function skipUpload() {
-  document.getElementById('config-divider').style.display = 'flex';
   document.getElementById('config-wrap').style.display = 'block';
   document.getElementById('forge-wrap').style.display = 'block';
-  document.getElementById('manual-bypass').style.display = 'none';
   setTimeout(() => document.getElementById('config-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
 

@@ -62,10 +62,8 @@ function hasSavablePalace() {
 }
 
 function ensureForgeVisible() {
-  document.getElementById('config-divider').style.display = 'flex';
   document.getElementById('config-wrap').style.display = 'block';
   document.getElementById('forge-wrap').style.display = 'block';
-  document.getElementById('manual-bypass').style.display = 'none';
 }
 
 // ── Account badge ─────────────────────────────────────────────────
