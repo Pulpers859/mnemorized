@@ -1371,6 +1371,17 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
         <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
       </div>
+      <div id="catalog-publish-section" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
+        <span class="operator-badge" style="margin-bottom:12px;display:inline-block;">CATALOG PUBLISH</span>
+        <div style="margin-bottom:10px;">
+          <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:6px;">Tags (comma-separated)</label>
+          <input id="catalog-tags-input" type="text" placeholder="cardiology, pharmacology, emergency" style="width:100%;background:var(--ink);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;">
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+          <button class="btn-copy" id="publish-catalog-btn" onclick="publishToCatalog()" style="color:var(--green);border-color:var(--green);">Publish to Catalog</button>
+          <span id="catalog-publish-status" style="font-size:12px;color:var(--muted);"></span>
+        </div>
+      </div>
       <textarea id="prompt-copy-1" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
       <textarea id="prompt-copy-2" style="position:absolute;left:-9999px;opacity:0;" readonly></textarea>
     </div>

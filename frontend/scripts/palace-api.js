@@ -102,4 +102,23 @@
       return request('/api/palaces/' + encodeURIComponent(palaceId), { method: 'DELETE', token: token });
     }
   };
+
+  window.MnemorizedCatalogApi = {
+    list: function (params) {
+      var parts = [];
+      if (params && params.tag) parts.push('tag=' + encodeURIComponent(params.tag));
+      if (params && params.q) parts.push('q=' + encodeURIComponent(params.q));
+      var query = parts.length ? '?' + parts.join('&') : '';
+      return request('/api/catalog' + query, {});
+    },
+    get: function (catalogId) {
+      return request('/api/catalog/' + encodeURIComponent(catalogId), {});
+    },
+    publish: function (token, body) {
+      return request('/api/catalog/publish', { method: 'POST', token: token, body: body });
+    },
+    unpublish: function (token, catalogId) {
+      return request('/api/catalog/' + encodeURIComponent(catalogId), { method: 'DELETE', token: token });
+    }
+  };
 })();

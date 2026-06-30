@@ -76,6 +76,7 @@ class Settings:
     gemini_api_key: str
     gemini_model: str
     plan_override_path: Path
+    admin_emails: tuple[str, ...]
 
     @property
     def anthropic_configured(self) -> bool:
@@ -167,4 +168,5 @@ def get_settings() -> Settings:
         gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
+        admin_emails=_split_csv(os.getenv("ADMIN_EMAILS", "")),
     )

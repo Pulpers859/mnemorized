@@ -128,6 +128,16 @@ class PalaceRenamePayload(BaseModel):
     title: str = Field(min_length=1, max_length=160)
 
 
+class CatalogPublishPayload(BaseModel):
+    title: str = Field(min_length=1, max_length=160)
+    topic: str = Field(min_length=1, max_length=20000)
+    source_name: str | None = Field(default=None, max_length=240)
+    scene_title: str | None = Field(default=None, max_length=240)
+    tags: list[str] = Field(default_factory=list)
+    generation_inputs: dict[str, Any] = Field(default_factory=dict)
+    generation_outputs: dict[str, Any] = Field(default_factory=dict)
+
+
 ImagePrompt = Annotated[
     str,
     StringConstraints(strip_whitespace=True, min_length=1, max_length=8000),
@@ -394,18 +404,19 @@ async def _supabase_rest_request(
     *,
     request: Request,
     settings: Settings,
-    bearer_token: str,
+    bearer_token: str | None,
     method: str,
     path: str,
     params: dict[str, Any] | None = None,
     json_body: dict[str, Any] | None = None,
     headers: dict[str, str] | None = None,
 ) -> httpx.Response:
-    base_headers = {
+    base_headers: dict[str, str] = {
         "apikey": settings.supabase_anon_key,
-        "Authorization": f"Bearer {bearer_token}",
         "Content-Type": "application/json",
     }
+    if bearer_token:
+        base_headers["Authorization"] = f"Bearer {bearer_token}"
     if headers:
         base_headers.update(headers)
 
@@ -426,6 +437,16 @@ async def _supabase_rest_request(
 
 PALACE_SELECT = "id,title,topic,scene_title,status,latest_version_number,updated_at,source_name"
 PALACE_VERSION_SELECT = "version_number,generation_inputs,generation_outputs,created_at"
+CATALOG_SELECT = (
+    "id,title,topic,source_name,scene_title,tags,"
+    "generation_inputs,generation_outputs,published_by,published_at"
+)
+
+
+def _is_admin(user: AuthenticatedUser, settings: Settings) -> bool:
+    if not user.email:
+        return False
+    return user.email.lower() in {e.lower() for e in settings.admin_emails}
 
 
 def _validate_palace_id(palace_id: str) -> str:
@@ -1187,6 +1208,144 @@ async def delete_palace(palace_id: str, request: Request) -> dict[str, Any]:
             detail=f"Could not delete palace in Supabase: {response.text[:300]}",
         )
     return {"deleted": True, "palace_id": palace_id}
+
+
+# ── Shared palace catalog ────────────────────────────────────────
+
+
+@app.get("/api/catalog")
+async def list_catalog(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    if not active_settings.supabase_auth_configured:
+        return {"catalog": []}
+
+    params: dict[str, str] = {
+        "select": CATALOG_SELECT,
+        "order": "published_at.desc",
+    }
+
+    tag = request.query_params.get("tag")
+    if tag:
+        clean_tag = tag.strip().lower()
+        params["tags"] = f"cs.{{{clean_tag}}}"
+
+    q = request.query_params.get("q")
+    if q:
+        safe_q = q.replace("%", "").strip()
+        if safe_q:
+            params["or"] = f"(title.ilike.%{safe_q}%,topic.ilike.%{safe_q}%)"
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=None,
+        method="GET",
+        path="/rest/v1/catalog_palaces",
+        params=params,
+    )
+    rows = _parse_supabase_rows(response, "load catalog")
+    return {"catalog": rows}
+
+
+@app.get("/api/catalog/{catalog_id}")
+async def get_catalog_entry(catalog_id: str, request: Request) -> dict[str, Any]:
+    catalog_id = _validate_palace_id(catalog_id)
+    active_settings = _get_runtime_settings(request)
+    if not active_settings.supabase_auth_configured:
+        raise HTTPException(status_code=404, detail="Catalog is not available.")
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=None,
+        method="GET",
+        path="/rest/v1/catalog_palaces",
+        params={
+            "select": CATALOG_SELECT,
+            "id": f"eq.{catalog_id}",
+            "limit": "1",
+        },
+    )
+    row = _single_row(
+        _parse_supabase_rows(response, "load catalog entry"),
+        "load catalog entry",
+    )
+    return {"entry": row}
+
+
+@app.post("/api/catalog/publish")
+async def publish_to_catalog(
+    payload: CatalogPublishPayload,
+    request: Request,
+) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    if not _is_admin(user, active_settings):
+        raise HTTPException(
+            status_code=403,
+            detail="Only admins can publish to the catalog.",
+        )
+
+    clean_tags = list(dict.fromkeys(
+        t.strip().lower() for t in payload.tags if t.strip()
+    ))
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="POST",
+        path="/rest/v1/catalog_palaces",
+        json_body={
+            "title": payload.title,
+            "topic": payload.topic,
+            "source_name": payload.source_name,
+            "scene_title": payload.scene_title,
+            "tags": clean_tags,
+            "generation_inputs": payload.generation_inputs,
+            "generation_outputs": payload.generation_outputs,
+            "published_by": user.user_id,
+        },
+        headers={"Prefer": "return=representation"},
+    )
+    row = _single_row(
+        _parse_supabase_rows(response, "publish to catalog"),
+        "publish to catalog",
+    )
+    return {"entry": row}
+
+
+@app.delete("/api/catalog/{catalog_id}")
+async def unpublish_from_catalog(
+    catalog_id: str,
+    request: Request,
+) -> dict[str, Any]:
+    catalog_id = _validate_palace_id(catalog_id)
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    if not _is_admin(user, active_settings):
+        raise HTTPException(
+            status_code=403,
+            detail="Only admins can unpublish from the catalog.",
+        )
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="DELETE",
+        path="/rest/v1/catalog_palaces",
+        params={"id": f"eq.{catalog_id}"},
+        headers={"Prefer": "return=minimal"},
+    )
+    if response.status_code >= 400:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Could not unpublish catalog entry: {response.text[:300]}",
+        )
+    return {"deleted": True, "catalog_id": catalog_id}
 
 
 @app.post("/api/dev/plan-override")

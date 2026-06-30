@@ -174,6 +174,41 @@ create index if not exists idx_palaces_user_id on public.palaces (user_id);
 create index if not exists idx_palace_versions_palace_id on public.palace_versions (palace_id);
 create index if not exists idx_usage_events_user_id on public.usage_events (user_id);
 
+-- ── Shared palace catalog (public read, admin write) ──
+
+create table if not exists public.catalog_palaces (
+  id                 uuid primary key default gen_random_uuid(),
+  title              text not null,
+  topic              text not null,
+  source_name        text,
+  scene_title        text,
+  tags               text[] not null default '{}',
+  generation_inputs  jsonb not null default '{}'::jsonb,
+  generation_outputs jsonb not null default '{}'::jsonb,
+  published_by       uuid references public.profiles (id) on delete set null,
+  published_at       timestamptz not null default now()
+);
+
+alter table public.catalog_palaces enable row level security;
+
+create policy "catalog_select_public"
+on public.catalog_palaces
+for select
+using (true);
+
+create policy "catalog_insert_authenticated"
+on public.catalog_palaces
+for insert
+with check (auth.role() = 'authenticated');
+
+create policy "catalog_delete_authenticated"
+on public.catalog_palaces
+for delete
+using (auth.role() = 'authenticated');
+
+create index if not exists idx_catalog_palaces_published_at
+  on public.catalog_palaces (published_at desc);
+
 -- Auto-update updated_at on palaces
 create or replace function public.set_updated_at()
 returns trigger

@@ -29,3 +29,5 @@ services:
         sync: false
       - key: TRUST_PROXY_HEADERS
         value: "true"
+      - key: ADMIN_EMAILS
+        sync: false

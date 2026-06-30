@@ -354,6 +354,51 @@ h1 {
   nav { padding: 14px 16px; }
   .wrap { padding: 94px 16px 70px; }
 }
+
+.tab-bar {
+  display: flex;
+  gap: 0;
+  margin-bottom: 18px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: var(--ink);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .15s, background .15s, border-color .15s;
+}
+.tab-btn:first-child { border-radius: 10px 0 0 10px; }
+.tab-btn:last-child { border-radius: 0 10px 10px 0; }
+.tab-btn.active {
+  background: rgba(201,239,77,.08);
+  color: var(--acid);
+  border-color: rgba(201,239,77,.22);
+}
+.catalog-tag-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: .06em;
+  background: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+}
+.catalog-tag-chip:hover { color: var(--white); border-color: var(--muted); }
+.catalog-tag-chip.active {
+  color: var(--acid);
+  border-color: rgba(201,239,77,.3);
+  background: rgba(201,239,77,.08);
+}
 </style>
 <link rel="stylesheet" href="/styles/app-shell.css?v=20260629-3">
 </head>
@@ -433,8 +478,15 @@ h1 {
     </div>
   </section>
 
+  <div class="tab-bar">
+    <button id="tab-catalog" class="tab-btn active" onclick="switchTab('catalog')">Public Catalog</button>
+    <button id="tab-library" class="tab-btn" onclick="switchTab('library')">My Library</button>
+  </div>
+
+  <div id="catalog-tags" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;"></div>
+
   <section class="toolbar">
-    <input id="search-input" class="input" type="search" placeholder="Search title or topic…" disabled>
+    <input id="search-input" class="input" type="search" placeholder="Search title or topic…">
     <select id="filter-select" class="select" disabled>
       <option value="all">All statuses</option>
       <option value="generated">Generated</option>
@@ -465,6 +517,9 @@ let supabaseClient = null;
 let authState = { session: null, user: null };
 let libraryRows = [];
 let latestAccountSummary = null;
+let activeTab = 'catalog';
+let catalogRows = [];
+let activeTag = null;
 
 function getForgeRedirectUrl() {
   const baseUrl = (appConfig.appBaseUrl || window.location.origin || '').replace(/\/+$/, '');
@@ -490,9 +545,9 @@ function setLibraryStatus(message, tone = 'muted') {
 }
 
 function toggleControls(enabled) {
-  document.getElementById('search-input').disabled = !enabled;
+  document.getElementById('search-input').disabled = activeTab === 'catalog' ? false : !enabled;
   document.getElementById('filter-select').disabled = !enabled;
-  document.getElementById('clear-search-btn').disabled = !enabled;
+  document.getElementById('clear-search-btn').disabled = activeTab === 'catalog' ? false : !enabled;
 }
 
 function refreshAuthUI() {
@@ -515,11 +570,13 @@ function refreshAuthUI() {
       appConfig.authEnabled ? 'muted' : 'error'
     );
     toggleControls(false);
-    document.getElementById('library-list').innerHTML = '';
-    document.getElementById('library-empty').style.display = 'block';
-    document.getElementById('library-empty').textContent = appConfig.authEnabled
-      ? 'Sign in to see and manage your library.'
-      : 'Auth is not configured on the backend yet.';
+    if (activeTab === 'library') {
+      document.getElementById('library-list').innerHTML = '';
+      document.getElementById('library-empty').style.display = 'block';
+      document.getElementById('library-empty').textContent = appConfig.authEnabled
+        ? 'Sign in to see and manage your library.'
+        : 'Auth is not configured on the backend yet.';
+    }
   }
 }
 
@@ -668,7 +725,104 @@ async function deletePalace(palaceId) {
 function clearFilters() {
   document.getElementById('search-input').value = '';
   document.getElementById('filter-select').value = 'all';
-  renderLibrary();
+  activeTag = null;
+  if (activeTab === 'catalog') loadCatalog();
+  else renderLibrary();
+}
+
+// ── Tab switching ──────────────────────────────────────────
+
+function switchTab(tab) {
+  activeTab = tab;
+  document.getElementById('tab-catalog').classList.toggle('active', tab === 'catalog');
+  document.getElementById('tab-library').classList.toggle('active', tab === 'library');
+  document.getElementById('catalog-tags').style.display = tab === 'catalog' ? 'flex' : 'none';
+  document.getElementById('filter-select').style.display = tab === 'catalog' ? 'none' : '';
+  document.getElementById('search-input').disabled = tab === 'library' && !authState.user;
+
+  if (tab === 'catalog') {
+    loadCatalog();
+  } else {
+    if (authState.user) renderLibrary();
+    else refreshAuthUI();
+  }
+}
+
+// ── Catalog browse ─────────────────────────────────────────
+
+async function loadCatalog() {
+  setLibraryStatus('Loading public catalog…');
+  try {
+    const params = {};
+    if (activeTag) params.tag = activeTag;
+    const q = document.getElementById('search-input').value.trim();
+    if (q) params.q = q;
+    const payload = await MnemorizedCatalogApi.list(params);
+    catalogRows = payload.catalog || [];
+    renderCatalogTags();
+    renderCatalog();
+    setLibraryStatus(
+      catalogRows.length + ' catalog ' + (catalogRows.length === 1 ? 'palace' : 'palaces') + '.',
+      catalogRows.length ? 'success' : 'muted'
+    );
+  } catch (error) {
+    setLibraryStatus('Catalog load failed: ' + error.message, 'error');
+  }
+}
+
+function renderCatalogTags() {
+  const allTags = {};
+  catalogRows.forEach(row => {
+    (row.tags || []).forEach(t => { allTags[t] = (allTags[t] || 0) + 1; });
+  });
+  const container = document.getElementById('catalog-tags');
+  container.innerHTML = Object.keys(allTags).sort().map(tag => {
+    const isActive = activeTag === tag;
+    return '<button class="catalog-tag-chip' + (isActive ? ' active' : '') + '" onclick="toggleTag(\'' + escapeJsString(tag) + '\')">'
+      + escapeHtml(tag) + ' (' + allTags[tag] + ')</button>';
+  }).join('');
+}
+
+function toggleTag(tag) {
+  activeTag = activeTag === tag ? null : tag;
+  loadCatalog();
+}
+
+function renderCatalog() {
+  const list = document.getElementById('library-list');
+  const empty = document.getElementById('library-empty');
+
+  if (!catalogRows.length) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    empty.textContent = activeTag
+      ? 'No catalog palaces match the selected tag.'
+      : 'No published palaces in the catalog yet.';
+    return;
+  }
+
+  empty.style.display = 'none';
+  list.innerHTML = catalogRows.map(row => {
+    const tags = (row.tags || []).map(t =>
+      '<span class="badge" style="font-size:9px;padding:2px 8px;background:rgba(201,239,77,.08);color:var(--acid);border:1px solid rgba(201,239,77,.18);">' + escapeHtml(t) + '</span>'
+    ).join(' ');
+    return '<article class="library-card">' +
+      '<div>' +
+        '<div class="card-title">' +
+          '<div class="title-text">' + escapeHtml(row.title || 'Untitled') + '</div>' +
+          tags +
+        '</div>' +
+        '<div class="card-topic">' + escapeHtml(row.topic || '') + '</div>' +
+        '<div class="meta-row">' +
+          '<span>' + escapeHtml(row.scene_title || '') + '</span>' +
+          '<span>Published ' + escapeHtml(new Date(row.published_at).toLocaleDateString()) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-actions">' +
+        '<a class="action-btn primary" href="/forge?catalog=' + encodeURIComponent(row.id) + '">Clone to Forge</a>' +
+      '</div>' +
+    '</article>';
+  }).join('');
 }
 
 async function ensureProfileRecord() {
@@ -874,7 +1028,10 @@ async function loadAuthSystem() {
   }
 }
 
-document.getElementById('search-input').addEventListener('input', renderLibrary);
+document.getElementById('search-input').addEventListener('input', () => {
+  if (activeTab === 'catalog') loadCatalog();
+  else renderLibrary();
+});
 document.getElementById('filter-select').addEventListener('change', renderLibrary);
 document.getElementById('account-badge').addEventListener('click', () => {
   if (authState.user) {
@@ -885,7 +1042,7 @@ document.getElementById('account-badge').addEventListener('click', () => {
 });
 
 refreshAuthUI();
-renderLibrary();
+switchTab(activeTab);
 loadAuthSystem();
 
 if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {

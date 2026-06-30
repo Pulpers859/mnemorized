@@ -18,6 +18,8 @@ let currentPromptData = { prompt1: '', prompt2: '' };
 let libraryRowsCache = [];
 const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palace');
 let palaceRouteHydrated = false;
+const catalogIdFromRoute = new URLSearchParams(window.location.search).get('catalog');
+let catalogRouteHydrated = false;
 
 function getAuthToken() {
   const token = authState.session?.access_token;
@@ -434,6 +436,81 @@ async function saveCurrentPalace(asNew = false) {
   }
 }
 
+// ── Catalog publish ──────────────────────────────────────────────
+
+async function publishToCatalog() {
+  if (!authState.user) {
+    openAuthModal();
+    return;
+  }
+  if (!hasSavablePalace()) {
+    document.getElementById('catalog-publish-status').textContent = 'Generate a palace first.';
+    return;
+  }
+
+  const tagsRaw = document.getElementById('catalog-tags-input')?.value || '';
+  const tags = tagsRaw.split(',').map(t => t.trim()).filter(Boolean);
+  const snapshot = buildPalaceSnapshot();
+  const statusEl = document.getElementById('catalog-publish-status');
+  statusEl.textContent = 'Publishing…';
+  statusEl.style.color = 'var(--muted)';
+
+  try {
+    const result = await MnemorizedCatalogApi.publish(getAuthToken(), {
+      title: snapshot.title,
+      topic: snapshot.topic,
+      source_name: snapshot.source_name,
+      scene_title: snapshot.scene_title,
+      tags,
+      generation_inputs: snapshot.generation_inputs,
+      generation_outputs: snapshot.generation_outputs,
+    });
+    statusEl.textContent = `Published "${result.entry.title}" to the catalog.`;
+    statusEl.style.color = 'var(--green)';
+  } catch (error) {
+    statusEl.textContent = `Publish failed: ${error.message}`;
+    statusEl.style.color = '#fca5a5';
+  }
+}
+
+// ── Catalog clone ────────────────────────────────────────────────
+
+async function maybeLoadCatalogPalace() {
+  if (!catalogIdFromRoute || catalogRouteHydrated) return;
+  catalogRouteHydrated = true;
+
+  try {
+    const payload = await MnemorizedCatalogApi.get(catalogIdFromRoute);
+    const entry = payload.entry;
+    if (!entry) throw new Error('Catalog entry not found.');
+
+    const syntheticPalaceRow = {
+      id: null,
+      title: entry.title,
+      topic: entry.topic,
+      source_name: entry.source_name,
+      scene_title: entry.scene_title,
+      status: 'generated',
+      latest_version_number: 0,
+    };
+    const syntheticVersionRow = {
+      generation_inputs: entry.generation_inputs,
+      generation_outputs: entry.generation_outputs,
+    };
+
+    applyPalaceSnapshot(syntheticPalaceRow, syntheticVersionRow);
+    currentPalaceMeta = null;
+    document.getElementById('palace-title-input').value = entry.title;
+    setLibraryStatus(`Loaded "${entry.title}" from the public catalog. Save to add it to your library.`, 'success');
+  } catch (error) {
+    setLibraryStatus(`Catalog load failed: ${error.message}`, 'error');
+  }
+
+  const url = new URL(window.location.href);
+  url.searchParams.delete('catalog');
+  window.history.replaceState({}, '', url.toString());
+}
+
 // ── Sign in / up / out ────────────────────────────────────────────
 
 async function signInWithPassword() {
@@ -591,6 +668,7 @@ async function loadAuthSystem() {
     refreshAuthUI();
     if (authState.user) await loadLibrary();
     await maybeLoadRoutePalace();
+    await maybeLoadCatalogPalace();
   } catch (error) {
     appConfig.authEnabled = false;
     supabaseClient = null;
