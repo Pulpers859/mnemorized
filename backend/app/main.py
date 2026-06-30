@@ -65,18 +65,6 @@ class UsageSummaryCache:
         with self._lock:
             self._entries[user_id] = (time.time(), data.copy())
 
-    def increment_used(self, user_id: str) -> None:
-        with self._lock:
-            entry = self._entries.get(user_id)
-            if entry is None:
-                return
-            ts, data = entry
-            data["monthly_requests_used"] = data.get("monthly_requests_used", 0) + 1
-            limit = data.get("monthly_request_limit")
-            if limit is not None:
-                data["monthly_requests_remaining"] = max(0, limit - data["monthly_requests_used"])
-            self._entries[user_id] = (ts, data)
-
     def reserve_request(self, user_id: str, summary: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
         with self._lock:
             now = time.time()
