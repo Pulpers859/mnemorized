@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mnemorized-v9';
+const CACHE_NAME = 'mnemorized-v10';
 const STATIC_ASSETS = [
   '/manifest.json',
   '/assets/profile-pic.png',
