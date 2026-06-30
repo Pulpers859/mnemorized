@@ -165,6 +165,7 @@ function renderStoryData(storyData) {
 
   if (storyData.review_script) {
     document.getElementById('review-text').innerHTML = formatReviewBullets(storyData.review_script);
+    document.getElementById('review-wrap').removeAttribute('open');
     document.getElementById('review-wrap').style.display = 'block';
   } else {
     document.getElementById('review-wrap').style.display = 'none';

@@ -374,6 +374,15 @@ def test_forge_prioritizes_direct_topic_entry_over_upload() -> None:
     assert "manual-bypass" not in html
 
 
+def test_forge_story_output_avoids_nested_scroll_traps() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+
+    assert ".story-table-scroll {\n  overflow: visible;" in html
+    assert "position: sticky" not in html
+    assert 'class="story-review-drawer" id="review-wrap"' in html
+
+
 def test_library_inline_handlers_escape_palace_ids() -> None:
     root = Path(__file__).resolve().parents[1]
     html = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")

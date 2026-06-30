@@ -402,6 +402,7 @@ async function runPipeline() {
     document.getElementById('vo-table-wrap').style.display = 'block';
 
     document.getElementById('review-text').innerHTML = formatReviewBullets(D.review_script);
+    document.getElementById('review-wrap').removeAttribute('open');
     document.getElementById('review-wrap').style.display = 'block';
 
     setStatus('story', '✓ Complete', 'done');
