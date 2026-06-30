@@ -88,6 +88,21 @@ class UsageSummaryCache:
             self._entries[user_id] = (ts, data)
             return True, data.copy()
 
+    def release_request(self, user_id: str) -> None:
+        with self._lock:
+            entry = self._entries.get(user_id)
+            if entry is None:
+                return
+            ts, data = entry
+            data = data.copy()
+            used = int(data.get("monthly_requests_used") or 0)
+            if used > 0:
+                data["monthly_requests_used"] = used - 1
+            limit = data.get("monthly_request_limit")
+            if limit is not None:
+                data["monthly_requests_remaining"] = max(0, int(limit) - data["monthly_requests_used"])
+            self._entries[user_id] = (ts, data)
+
 
 logger = logging.getLogger("mnemorized.proxy")
 logging.basicConfig(
@@ -296,6 +311,17 @@ def _reserve_quota_if_needed(
         return monthly_limit is None or monthly_used < monthly_limit, summary
 
     return usage_cache.reserve_request(user.user_id, summary)
+
+
+def _release_quota_reservation(
+    request: Request,
+    user: AuthenticatedUser | None,
+) -> None:
+    if user is None:
+        return
+    usage_cache: UsageSummaryCache | None = getattr(request.app.state, "usage_cache", None)
+    if usage_cache is not None:
+        usage_cache.release_request(user.user_id)
 
 
 def _ensure_log_path(path: Path) -> None:
@@ -1493,6 +1519,7 @@ async def proxy_anthropic_messages(
             timeout=httpx.Timeout(active_settings.anthropic_timeout_seconds, connect=10.0),
         )
     except httpx.TimeoutException:
+        _release_quota_reservation(request, user)
         return JSONResponse(
             status_code=504,
             headers={"X-Request-ID": request_id},
@@ -1504,6 +1531,7 @@ async def proxy_anthropic_messages(
             },
         )
     except httpx.HTTPError as exc:
+        _release_quota_reservation(request, user)
         return JSONResponse(
             status_code=502,
             headers={"X-Request-ID": request_id},
@@ -1526,6 +1554,10 @@ async def proxy_anthropic_messages(
     except ValueError:
         logger.warning("Anthropic returned non-JSON content for request %s", request_id)
 
+    upstream_ok = 200 <= upstream_response.status_code < 300
+    if not upstream_ok:
+        _release_quota_reservation(request, user)
+
     try:
         _write_usage_log(
             settings=active_settings,
@@ -1541,17 +1573,18 @@ async def proxy_anthropic_messages(
     except Exception:
         logger.exception("Failed to write local usage log for request %s", request_id)
 
-    _schedule_usage_event(
-        background_tasks=background_tasks,
-        request=request,
-        settings=active_settings,
-        bearer_token=bearer_token,
-        user=user,
-        request_id=request_id,
-        request_body=body,
-        response_payload=response_payload,
-        status_code=upstream_response.status_code,
-    )
+    if upstream_ok:
+        _schedule_usage_event(
+            background_tasks=background_tasks,
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=body,
+            response_payload=response_payload,
+            status_code=upstream_response.status_code,
+        )
 
     passthrough_headers = {"X-Request-ID": request_id}
     anthropic_request_id = upstream_response.headers.get("request-id")
@@ -1637,7 +1670,10 @@ async def generate_image(
     conversation: list[dict[str, Any]] = []
     usage_request_body = {"provider": "gemini", "model": model, "prompts": len(payload.prompts)}
 
-    def schedule_gemini_usage(status_code: int) -> None:
+    def schedule_gemini_usage(status_code: int, count_quota: bool = True) -> None:
+        if not count_quota:
+            _release_quota_reservation(request, user)
+            return
         _schedule_usage_event(
             background_tasks=background_tasks,
             request=request,
@@ -1669,7 +1705,7 @@ async def generate_image(
                     timeout=httpx.Timeout(120.0, connect=10.0),
                 )
             except httpx.TimeoutException:
-                schedule_gemini_usage(504)
+                schedule_gemini_usage(504, count_quota=False)
                 return JSONResponse(
                     status_code=504,
                     headers={"X-Request-ID": request_id},
@@ -1681,7 +1717,7 @@ async def generate_image(
                     },
                 )
             except httpx.HTTPError as exc:
-                schedule_gemini_usage(502)
+                schedule_gemini_usage(502, count_quota=False)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1704,7 +1740,7 @@ async def generate_image(
                     "Gemini API error for request %s prompt %d: %s %s",
                     request_id, idx + 1, resp.status_code, resp.text[:500],
                 )
-                schedule_gemini_usage(resp.status_code)
+                schedule_gemini_usage(resp.status_code, count_quota=False)
                 return JSONResponse(
                     status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
                     headers={"X-Request-ID": request_id},
@@ -1728,7 +1764,7 @@ async def generate_image(
                     request_id,
                     idx + 1,
                 )
-                schedule_gemini_usage(502)
+                schedule_gemini_usage(502, count_quota=False)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1742,7 +1778,7 @@ async def generate_image(
 
             candidates = resp_json.get("candidates", [])
             if not candidates:
-                schedule_gemini_usage(502)
+                schedule_gemini_usage(502, count_quota=False)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
@@ -1762,7 +1798,7 @@ async def generate_image(
                     break
 
             if not isinstance(image_part, dict) or not image_part.get("data"):
-                schedule_gemini_usage(502)
+                schedule_gemini_usage(502, count_quota=False)
                 return JSONResponse(
                     status_code=502,
                     headers={"X-Request-ID": request_id},
