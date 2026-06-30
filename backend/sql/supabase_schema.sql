@@ -24,6 +24,8 @@ begin
 end;
 $$;
 
+revoke execute on function public.handle_new_user() from public, anon, authenticated;
+
 drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
 after insert on auth.users
@@ -86,32 +88,34 @@ alter table public.subscriptions enable row level security;
 create policy "profiles_select_own"
 on public.profiles
 for select
-using (auth.uid() = id);
+using ((select auth.uid()) = id);
 
 create policy "profiles_insert_own"
 on public.profiles
 for insert
-with check (auth.uid() = id);
+with check ((select auth.uid()) = id);
 
 create policy "profiles_update_own"
 on public.profiles
 for update
-using (auth.uid() = id);
+using ((select auth.uid()) = id)
+with check ((select auth.uid()) = id);
 
 create policy "palaces_select_own"
 on public.palaces
 for select
-using (auth.uid() = user_id);
+using ((select auth.uid()) = user_id);
 
 create policy "palaces_insert_own"
 on public.palaces
 for insert
-with check (auth.uid() = user_id);
+with check ((select auth.uid()) = user_id);
 
 create policy "palaces_update_own"
 on public.palaces
 for update
-using (auth.uid() = user_id);
+using ((select auth.uid()) = user_id)
+with check ((select auth.uid()) = user_id);
 
 create policy "palace_versions_select_own"
 on public.palace_versions
@@ -121,7 +125,7 @@ using (
     select 1
     from public.palaces
     where public.palaces.id = palace_versions.palace_id
-      and public.palaces.user_id = auth.uid()
+      and public.palaces.user_id = (select auth.uid())
   )
 );
 
@@ -133,24 +137,24 @@ with check (
     select 1
     from public.palaces
     where public.palaces.id = palace_versions.palace_id
-      and public.palaces.user_id = auth.uid()
+      and public.palaces.user_id = (select auth.uid())
   )
 );
 
 create policy "usage_events_select_own"
 on public.usage_events
 for select
-using (auth.uid() = user_id);
+using ((select auth.uid()) = user_id);
 
 create policy "usage_events_insert_own"
 on public.usage_events
 for insert
-with check (auth.uid() = user_id);
+with check ((select auth.uid()) = user_id);
 
 create policy "palaces_delete_own"
 on public.palaces
 for delete
-using (auth.uid() = user_id);
+using ((select auth.uid()) = user_id);
 
 create policy "palace_versions_delete_own"
 on public.palace_versions
@@ -160,14 +164,14 @@ using (
     select 1
     from public.palaces
     where public.palaces.id = palace_versions.palace_id
-      and public.palaces.user_id = auth.uid()
+      and public.palaces.user_id = (select auth.uid())
   )
 );
 
 create policy "subscriptions_select_own"
 on public.subscriptions
 for select
-using (auth.uid() = user_id);
+using ((select auth.uid()) = user_id);
 
 -- Indexes on foreign keys (RLS policies query these on every request)
 create index if not exists idx_palaces_user_id on public.palaces (user_id);
@@ -191,6 +195,7 @@ create table if not exists public.catalog_palaces (
 
 alter table public.catalog_palaces enable row level security;
 
+revoke all on public.catalog_palaces from anon, authenticated;
 grant select on public.catalog_palaces to anon, authenticated;
 
 create policy "catalog_select_public"
@@ -201,17 +206,22 @@ using (true);
 
 create index if not exists idx_catalog_palaces_published_at
   on public.catalog_palaces (published_at desc);
+create index if not exists idx_catalog_palaces_published_by
+  on public.catalog_palaces (published_by);
 
 -- Auto-update updated_at on palaces
 create or replace function public.set_updated_at()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 begin
   new.updated_at = now();
   return new;
 end;
 $$;
+
+revoke execute on function public.set_updated_at() from public, anon, authenticated;
 
 drop trigger if exists palaces_set_updated_at on public.palaces;
 create trigger palaces_set_updated_at

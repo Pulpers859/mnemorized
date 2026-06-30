@@ -376,10 +376,25 @@ def test_catalog_schema_does_not_grant_browser_write_policies() -> None:
     schema = (root / "backend" / "sql" / "supabase_schema.sql").read_text(encoding="utf-8")
     catalog_block = schema.split("Shared palace catalog", 1)[1].split("Auto-update updated_at", 1)[0]
 
+    assert "revoke all on public.catalog_palaces from anon, authenticated" in catalog_block
     assert "grant select on public.catalog_palaces to anon, authenticated" in catalog_block
     assert "for insert" not in catalog_block
     assert "for delete" not in catalog_block
     assert "auth.role()" not in catalog_block
+    assert "idx_catalog_palaces_published_by" in catalog_block
+
+
+def test_supabase_schema_hardens_rls_and_trigger_functions() -> None:
+    root = Path(__file__).resolve().parents[1]
+    schema = (root / "backend" / "sql" / "supabase_schema.sql").read_text(encoding="utf-8")
+
+    assert "revoke execute on function public.handle_new_user() from public, anon, authenticated" in schema
+    assert "revoke execute on function public.set_updated_at() from public, anon, authenticated" in schema
+    assert "set search_path = public" in schema
+    assert "using (auth.uid()" not in schema
+    assert "with check (auth.uid()" not in schema
+    assert "with check ((select auth.uid()) = id)" in schema
+    assert "with check ((select auth.uid()) = user_id)" in schema
 
 
 def test_service_worker_does_not_cache_html_or_itself() -> None:
