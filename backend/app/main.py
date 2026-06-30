@@ -1267,6 +1267,9 @@ async def list_catalog(request: Request) -> dict[str, Any]:
     q = request.query_params.get("q")
     if q:
         safe_q = q.replace("%", "").strip()
+        for ch in ("(", ")", ",", ".", "*"):
+            safe_q = safe_q.replace(ch, "")
+        safe_q = safe_q.strip()
         if safe_q:
             params["or"] = f"(title.ilike.%{safe_q}%,topic.ilike.%{safe_q}%)"
 
@@ -1592,6 +1595,7 @@ async def proxy_anthropic_messages(
         passthrough_headers["X-Anthropic-Request-ID"] = anthropic_request_id
 
     if response_payload is None:
+        _release_quota_reservation(request, user)
         return JSONResponse(
             status_code=502,
             headers=passthrough_headers,
@@ -1673,7 +1677,6 @@ async def generate_image(
     def schedule_gemini_usage(status_code: int, count_quota: bool = True) -> None:
         if not count_quota:
             _release_quota_reservation(request, user)
-            return
         _schedule_usage_event(
             background_tasks=background_tasks,
             request=request,

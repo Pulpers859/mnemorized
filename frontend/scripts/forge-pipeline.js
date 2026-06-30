@@ -363,8 +363,6 @@ function downloadGenImage(n) {
 
 async function runPipeline() {
   const topic    = document.getElementById('topic').value.trim();
-  const setting  = 'AUTO';
-  const guide    = 'no named guide — the scene communicates entirely through objects, atmosphere, and absurdist staging';
   const chaos    = parseInt(slider.value);
   const artStyle = document.getElementById('style-select').value;
   const tone     = document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
@@ -520,6 +518,7 @@ Output ONLY these two XML tags, nothing else:
       clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.`;
     }
   } catch(e) {
+    console.warn('Clinical context extraction failed (non-fatal):', e.message);
   }
 
   // ── STAGE 2: Voiceover Script ─────────────────────

@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="Mnemorized">
 <title>Mnemorized — Library</title>
 <link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/assets/profile-pic.png">
 <link rel="apple-touch-icon" href="/assets/profile-pic.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -502,7 +503,7 @@ h1 {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/scripts/palace-api.js?v=20260629-1"></script>
+<script src="/scripts/palace-api.js?v=20260630-1"></script>
 <script>
 const { getApiUrl, escapeHtml, escapeJsString, runSupabaseQuery } = MnemorizedUtils;
 
@@ -1028,9 +1029,14 @@ async function loadAuthSystem() {
   }
 }
 
+let searchDebounceTimer = null;
 document.getElementById('search-input').addEventListener('input', () => {
-  if (activeTab === 'catalog') loadCatalog();
-  else renderLibrary();
+  if (activeTab === 'catalog') {
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(loadCatalog, 300);
+  } else {
+    renderLibrary();
+  }
 });
 document.getElementById('filter-select').addEventListener('change', renderLibrary);
 document.getElementById('account-badge').addEventListener('click', () => {
