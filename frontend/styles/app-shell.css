@@ -7,11 +7,13 @@
   --muted: #96a19b;
   --acid: #c9ef4d;
   --acid2: #abd834;
+  --acid-dim: rgba(201, 239, 77, .15);
+  --acid-glow: rgba(201, 239, 77, .08);
   --teal: #48d6c3;
-  --amber: #f4c95d;
   --red: #ff6b66;
   --blue: #65a8ff;
   --gold: #f4c95d;
+  --green: #4ade80;
   --radius-sm: 4px;
   --radius-md: 8px;
   --shadow-soft: 0 18px 60px rgba(0, 0, 0, .22);

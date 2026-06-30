@@ -4,8 +4,8 @@
   "description": "Generate visual mnemonic memory palaces for medical education.",
   "start_url": "/forge",
   "display": "standalone",
-  "background_color": "#080a0e",
-  "theme_color": "#c8f135",
+  "background_color": "#090c0f",
+  "theme_color": "#c9ef4d",
   "orientation": "any",
   "icons": [
     {

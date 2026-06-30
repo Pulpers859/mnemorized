@@ -11,17 +11,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black:   #080a0e;
-  --ink:     #0f1218;
-  --card:    #13171f;
-  --border:  rgba(255,255,255,.07);
-  --white:   #f0ede6;
-  --muted:   #7a7f8a;
-  --acid:    #c8f135;
-  --acid2:   #a8e020;
-  --red:     #ff3d3d;
-  --blue:    #3d9eff;
-  --gold:    #f5c842;
+  --black:   #090c0f;
+  --ink:     #10161a;
+  --card:    #151c21;
+  --border:  rgba(213,223,216,.13);
+  --white:   #f3f5ef;
+  --muted:   #96a19b;
+  --acid:    #c9ef4d;
+  --acid2:   #abd834;
+  --red:     #ff6b66;
+  --blue:    #65a8ff;
+  --gold:    #f4c95d;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -57,7 +57,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
-  background: rgba(8,10,14,.85);
+  background: rgba(9,12,15,.85);
   backdrop-filter: blur(12px);
 }
 
@@ -102,7 +102,7 @@ nav {
   content: '';
   position: absolute;
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(200,241,53,.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,239,77,.06) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -112,8 +112,8 @@ nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(200,241,53,.1);
-  border: 1px solid rgba(200,241,53,.25);
+  background: rgba(201,239,77,.1);
+  border: 1px solid rgba(201,239,77,.25);
   border-radius: 100px;
   padding: 6px 14px;
   font-size: 12px;
@@ -185,7 +185,7 @@ nav {
   transition: border-color .2s;
 }
 .waitlist-input::placeholder { color: var(--muted); }
-.waitlist-input:focus { border-color: rgba(200,241,53,.4); }
+.waitlist-input:focus { border-color: rgba(201,239,77,.4); }
 
 .waitlist-btn {
   background: var(--acid);
@@ -312,7 +312,7 @@ nav {
   border: 1px solid var(--border);
   transition: border-color .2s;
 }
-.step:hover { border-color: rgba(200,241,53,.2); }
+.step:hover { border-color: rgba(201,239,77,.2); }
 .step:first-child { border-radius: 12px 0 0 12px; }
 .step:last-child  { border-radius: 0 12px 12px 0; }
 
@@ -320,7 +320,7 @@ nav {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 56px;
   line-height: 1;
-  color: rgba(200,241,53,.15);
+  color: rgba(201,239,77,.15);
   margin-bottom: 16px;
 }
 
@@ -350,7 +350,7 @@ nav {
   letter-spacing: .1em;
   padding: 3px 8px;
   border-radius: 3px;
-  background: rgba(200,241,53,.1);
+  background: rgba(201,239,77,.1);
   color: var(--acid);
   text-transform: uppercase;
 }
@@ -430,7 +430,7 @@ nav {
   transition: border-color .2s, transform .2s;
 }
 .quote-card:hover {
-  border-color: rgba(200,241,53,.2);
+  border-color: rgba(201,239,77,.2);
   transform: translateY(-2px);
 }
 
@@ -524,7 +524,7 @@ nav {
   content: '';
   position: absolute;
   width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(200,241,53,.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,239,77,.05) 0%, transparent 70%);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;

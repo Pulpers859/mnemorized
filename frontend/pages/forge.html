@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#c8f135">
+<meta name="theme-color" content="#c9ef4d">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mnemorized">
@@ -14,19 +14,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black:   #080a0e;
-  --ink:     #0f1218;
-  --card:    #13171f;
-  --border:  rgba(255,255,255,.07);
-  --white:   #f0ede6;
-  --muted:   #7a7f8a;
-  --acid:    #c8f135;
-  --acid2:   #a8e020;
-  --acid-dim: rgba(200,241,53,.15);
-  --acid-glow: rgba(200,241,53,.08);
-  --red:     #ff3d3d;
-  --blue:    #3d9eff;
-  --gold:    #f5c842;
+  --black:   #090c0f;
+  --ink:     #10161a;
+  --card:    #151c21;
+  --border:  rgba(213,223,216,.13);
+  --white:   #f3f5ef;
+  --muted:   #96a19b;
+  --acid:    #c9ef4d;
+  --acid2:   #abd834;
+  --acid-dim: rgba(201,239,77,.15);
+  --acid-glow: rgba(201,239,77,.08);
+  --red:     #ff6b66;
+  --blue:    #65a8ff;
+  --gold:    #f4c95d;
   --green:   #4ade80;
 }
 
@@ -58,7 +58,7 @@ body::after {
   content: '';
   position: fixed;
   width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(200,241,53,.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,239,77,.04) 0%, transparent 70%);
   top: 0; left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -75,7 +75,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
-  background: rgba(8,10,14,.88);
+  background: rgba(9,12,15,.88);
   backdrop-filter: blur(12px);
 }
 .nav-logo {
@@ -116,7 +116,7 @@ nav {
   align-items: center;
   gap: 8px;
   background: var(--acid-glow);
-  border: 1px solid rgba(200,241,53,.2);
+  border: 1px solid rgba(201,239,77,.2);
   border-radius: 100px;
   padding: 5px 14px;
   font-family: 'DM Mono', monospace;
@@ -162,7 +162,7 @@ h1 .accent { color: var(--acid); }
 .divider-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200,241,53,.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(201,239,77,.25), transparent);
 }
 .divider-gem {
   font-family: 'DM Mono', monospace;
@@ -219,7 +219,7 @@ h1 .accent { color: var(--acid); }
   resize: vertical;
 }
 .input-field::placeholder { color: rgba(122,127,138,.5); }
-.input-field:focus { border-color: rgba(200,241,53,.35); box-shadow: 0 0 0 3px rgba(200,241,53,.06); }
+.input-field:focus { border-color: rgba(201,239,77,.35); box-shadow: 0 0 0 3px rgba(201,239,77,.06); }
 
 /* ── DROPDOWN SELECT ── */
 .select-wrap { position: relative; }
@@ -248,7 +248,7 @@ h1 .accent { color: var(--acid); }
   cursor: pointer;
   transition: border-color .2s, box-shadow .2s;
 }
-.fancy-select:focus { border-color: rgba(200,241,53,.35); box-shadow: 0 0 0 3px rgba(200,241,53,.06); }
+.fancy-select:focus { border-color: rgba(201,239,77,.35); box-shadow: 0 0 0 3px rgba(201,239,77,.06); }
 .fancy-select option { background: var(--ink); color: var(--white); font-size: 14px; padding: 6px; }
 .fancy-select optgroup { background: var(--black); color: var(--acid); font-style: normal; font-size: 12px; letter-spacing: .06em; }
 
@@ -270,7 +270,7 @@ h1 .accent { color: var(--acid); }
 .toggle-switch input { opacity: 0; width: 0; height: 0; }
 .toggle-track {
   position: absolute; inset: 0;
-  background: rgba(200,241,53,.1);
+  background: rgba(201,239,77,.1);
   border: 1px solid var(--border);
   border-radius: 24px;
   cursor: pointer;
@@ -285,7 +285,7 @@ h1 .accent { color: var(--acid); }
   top: 3px; left: 3px;
   transition: transform .2s, background .2s;
 }
-.toggle-switch input:checked + .toggle-track { background: rgba(200,241,53,.2); border-color: var(--acid); }
+.toggle-switch input:checked + .toggle-track { background: rgba(201,239,77,.2); border-color: var(--acid); }
 .toggle-switch input:checked + .toggle-track::after { transform: translateX(20px); background: var(--acid); }
 
 /* ── CHIP GRID ── */
@@ -302,12 +302,12 @@ h1 .accent { color: var(--acid); }
   transition: all .18s ease;
   user-select: none;
 }
-.chip:hover { border-color: rgba(200,241,53,.3); color: var(--white); background: rgba(200,241,53,.04); }
+.chip:hover { border-color: rgba(201,239,77,.3); color: var(--white); background: rgba(201,239,77,.04); }
 .chip.active {
   border-color: var(--acid);
-  background: rgba(200,241,53,.1);
+  background: rgba(201,239,77,.1);
   color: var(--acid);
-  box-shadow: 0 0 12px rgba(200,241,53,.08);
+  box-shadow: 0 0 12px rgba(201,239,77,.08);
 }
 
 /* ── SLIDER ── */
@@ -317,7 +317,7 @@ input[type="range"] {
   appearance: none;
   flex: 1;
   height: 3px;
-  background: linear-gradient(90deg, var(--acid) var(--pct, 66%), rgba(200,241,53,.12) var(--pct, 66%));
+  background: linear-gradient(90deg, var(--acid) var(--pct, 66%), rgba(201,239,77,.12) var(--pct, 66%));
   outline: none;
   cursor: pointer;
   border-radius: 2px;
@@ -327,7 +327,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 18px; height: 18px;
   background: var(--acid);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(200,241,53,.35);
+  box-shadow: 0 0 10px rgba(201,239,77,.35);
   transition: transform .15s;
 }
 input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
@@ -356,13 +356,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   transition: all .25s ease;
   font-weight: 700;
 }
-.btn-forge:hover { background: var(--acid2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,241,53,.15); }
+.btn-forge:hover { background: var(--acid2); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,239,77,.15); }
 .btn-forge:active { transform: translateY(0); }
 .btn-forge:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; background: var(--muted); }
 .spin {
   display: inline-block;
   width: 14px; height: 14px;
-  border: 2px solid rgba(8,10,14,.2);
+  border: 2px solid rgba(9,12,15,.2);
   border-top-color: var(--black);
   border-radius: 50%;
   animation: spin .7s linear infinite;
@@ -388,13 +388,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   align-items: center;
   gap: 12px;
   padding: 14px 20px;
-  background: rgba(200,241,53,.03);
+  background: rgba(201,239,77,.03);
   border-bottom: 1px solid var(--border);
 }
 .stage-num {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 16px;
-  color: rgba(200,241,53,.3);
+  color: rgba(201,239,77,.3);
 }
 .stage-title {
   font-family: 'DM Mono', monospace;
@@ -431,7 +431,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   line-height: 1.8;
   margin-bottom: 22px;
   font-style: italic;
-  border-left: 2px solid rgba(200,241,53,.25);
+  border-left: 2px solid rgba(201,239,77,.25);
   padding-left: 16px;
 }
 .story-text {
@@ -443,7 +443,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   overflow-y: auto;
 }
 .story-text::-webkit-scrollbar { width: 5px; }
-.story-text::-webkit-scrollbar-thumb { background: rgba(200,241,53,.15); border-radius: 3px; }
+.story-text::-webkit-scrollbar-thumb { background: rgba(201,239,77,.15); border-radius: 3px; }
 
 /* Voiceover table */
 .vo-table {
@@ -462,7 +462,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   padding: 10px 14px;
   text-align: left;
   border-bottom: 1px solid var(--border);
-  background: rgba(200,241,53,.03);
+  background: rgba(201,239,77,.03);
 }
 .vo-table td {
   padding: 14px;
@@ -473,7 +473,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   font-size: 14px;
 }
 .vo-table tr:last-child td { border-bottom: none; }
-.vo-table tr:hover td { background: rgba(200,241,53,.02); }
+.vo-table tr:hover td { background: rgba(201,239,77,.02); }
 .vo-table td:first-child { width: 44%; border-right: 1px solid var(--border); }
 .vo-table td:nth-child(2) { width: 34%; border-right: 1px solid var(--border); }
 .vo-table td:last-child { width: 22%; }
@@ -492,7 +492,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   width: 22px; height: 22px;
   border-radius: 50%;
   background: var(--acid-dim);
-  border: 1px solid rgba(200,241,53,.3);
+  border: 1px solid rgba(201,239,77,.3);
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   color: var(--acid);
@@ -509,13 +509,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   padding-left: 2px;
   line-height: 1.5;
 }
-.anchor-tag::before { content: '↳ '; color: rgba(200,241,53,.3); }
+.anchor-tag::before { content: '↳ '; color: rgba(201,239,77,.3); }
 
 /* Narration cue spans */
 .cue-pause {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
-  color: rgba(200,241,53,.5);
+  color: rgba(201,239,77,.5);
   letter-spacing: .06em;
   font-style: normal;
 }
@@ -563,7 +563,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .legend-table td:first-child {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 14px;
-  color: rgba(200,241,53,.4);
+  color: rgba(201,239,77,.4);
   width: 32px;
 }
 
@@ -597,7 +597,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   margin-top: 12px;
   padding: 7px 18px;
   background: transparent;
-  border: 1px solid rgba(200,241,53,.25);
+  border: 1px solid rgba(201,239,77,.25);
   border-radius: 6px;
   color: var(--acid);
   font-family: 'DM Sans', sans-serif;
@@ -606,22 +606,22 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   cursor: pointer;
   transition: all .2s;
 }
-.btn-copy:hover { background: rgba(200,241,53,.08); border-color: rgba(200,241,53,.4); }
+.btn-copy:hover { background: rgba(201,239,77,.08); border-color: rgba(201,239,77,.4); }
 .btn-copy.copied { color: var(--green); border-color: var(--green); }
 
 /* ── UPLOAD ZONE ── */
 .upload-zone {
-  border: 1.5px dashed rgba(200,241,53,.25);
+  border: 1.5px dashed rgba(201,239,77,.25);
   border-radius: 10px;
   padding: 40px 24px;
   text-align: center;
   cursor: pointer;
-  background: rgba(200,241,53,.02);
+  background: rgba(201,239,77,.02);
   transition: all .2s;
 }
 .upload-zone:hover, .upload-zone.dragover {
   border-color: var(--acid);
-  background: rgba(200,241,53,.06);
+  background: rgba(201,239,77,.06);
 }
 .upload-icon { font-size: 28px; color: var(--acid); opacity: .6; margin-bottom: 12px; }
 .upload-primary { font-size: 15px; color: var(--white); margin-bottom: 6px; }
@@ -659,8 +659,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .btn-extract {
   width: 100%;
   padding: 14px;
-  background: rgba(200,241,53,.06);
-  border: 1px solid rgba(200,241,53,.3);
+  background: rgba(201,239,77,.06);
+  border: 1px solid rgba(201,239,77,.3);
   border-radius: 8px;
   color: var(--acid);
   font-family: 'DM Mono', monospace;
@@ -670,10 +670,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   cursor: pointer;
   transition: all .2s;
 }
-.btn-extract:hover { background: rgba(200,241,53,.12); border-color: var(--acid); }
+.btn-extract:hover { background: rgba(201,239,77,.12); border-color: var(--acid); }
 .btn-extract:disabled { opacity: .4; cursor: not-allowed; }
 .btn-extract.secondary { background: transparent; font-size: 10px; }
-.btn-extract.secondary:hover { background: rgba(200,241,53,.06); }
+.btn-extract.secondary:hover { background: rgba(201,239,77,.06); }
 
 /* ── SKIP BUTTON ── */
 .btn-skip {
@@ -703,7 +703,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   cursor: pointer;
   transition: all .2s;
 }
-.btn-check-all:hover { border-color: rgba(200,241,53,.3); color: var(--white); }
+.btn-check-all:hover { border-color: rgba(201,239,77,.3); color: var(--white); }
 .concept-item {
   display: flex;
   align-items: flex-start;
@@ -727,7 +727,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .concept-check {
   width: 18px; height: 18px;
-  border: 1.5px solid rgba(200,241,53,.3);
+  border: 1.5px solid rgba(201,239,77,.3);
   border-radius: 4px;
   flex-shrink: 0;
   margin-top: 2px;
@@ -823,8 +823,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   width: 48px; height: 48px;
   margin: 0 auto 16px;
   border-radius: 50%;
-  background: rgba(200,241,53,.12);
-  border: 1px solid rgba(200,241,53,.3);
+  background: rgba(201,239,77,.12);
+  border: 1px solid rgba(201,239,77,.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -936,8 +936,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .btn-feedback:hover {
   color: var(--acid);
-  border-color: rgba(200,241,53,.25);
-  background: rgba(200,241,53,.04);
+  border-color: rgba(201,239,77,.25);
+  background: rgba(201,239,77,.04);
 }
 
 /* ── MOBILE ── */
@@ -1240,12 +1240,12 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   <div class="section">
     <p class="section-label">VI. Narrative Tone</p>
     <p class="section-hint">Voice and atmosphere of the scene writing.</p>
-    <div class="chip-grid" id="tone-chips">
-      <div class="chip active" data-val="visceral and cinematic">Cinematic</div>
-      <div class="chip" data-val="darkly comic">Dark Comedy</div>
-      <div class="chip" data-val="mythic and epic">Mythic</div>
-      <div class="chip" data-val="fever-dream surrealist">Surrealist</div>
-      <div class="chip" data-val="pulpy noir thriller">Pulp Noir</div>
+    <div class="chip-grid" id="tone-chips" role="radiogroup" aria-label="Narrative tone">
+      <div class="chip active" data-val="visceral and cinematic" role="radio" aria-checked="true" tabindex="0">Cinematic</div>
+      <div class="chip" data-val="darkly comic" role="radio" aria-checked="false" tabindex="0">Dark Comedy</div>
+      <div class="chip" data-val="mythic and epic" role="radio" aria-checked="false" tabindex="0">Mythic</div>
+      <div class="chip" data-val="fever-dream surrealist" role="radio" aria-checked="false" tabindex="0">Surrealist</div>
+      <div class="chip" data-val="pulpy noir thriller" role="radio" aria-checked="false" tabindex="0">Pulp Noir</div>
     </div>
   </div>
 
@@ -1384,7 +1384,8 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 // BACKEND PROXY CONNECTION
 // ══════════════════════════════════════════════════
 
-const { getApiUrl, escapeHtml: _escapeHtml, runSupabaseQuery } = MnemorizedUtils;
+const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
+const CLAUDE_MODEL = 'claude-sonnet-4-6';
 let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: true };
 
 function getBackendBaseLabel() {
@@ -1408,7 +1409,7 @@ function setBackendBadge(mode, label) {
 
   if (mode === 'online') {
     btn.style.color = 'var(--acid)';
-    btn.style.borderColor = 'rgba(200,241,53,.3)';
+    btn.style.borderColor = 'rgba(201,239,77,.3)';
   } else if (mode === 'warning') {
     btn.style.color = 'var(--gold)';
     btn.style.borderColor = 'rgba(245,200,66,.35)';
@@ -1570,8 +1571,6 @@ function getAuthToken() {
   return token;
 }
 
-function escapeHtml(text) { return _escapeHtml(text); }
-
 function formatNarrationHtml(text) {
   return escapeHtml(text)
     .replace(/\[PAUSE\]/gi, '<span class="cue-pause">[pause]</span>')
@@ -1627,7 +1626,7 @@ function setAccountBadge(mode, label) {
 
   if (mode === 'online') {
     btn.style.color = 'var(--acid)';
-    btn.style.borderColor = 'rgba(200,241,53,.3)';
+    btn.style.borderColor = 'rgba(201,239,77,.3)';
   } else if (mode === 'warning') {
     btn.style.color = 'var(--gold)';
     btn.style.borderColor = 'rgba(245,200,66,.35)';
@@ -1642,7 +1641,7 @@ function setLibraryStatus(message, tone = 'muted') {
   box.textContent = message;
   if (tone === 'success') {
     box.style.color = 'var(--acid)';
-    box.style.borderColor = 'rgba(200,241,53,.25)';
+    box.style.borderColor = 'rgba(201,239,77,.25)';
   } else if (tone === 'error') {
     box.style.color = '#fca5a5';
     box.style.borderColor = 'rgba(255,61,61,.25)';
@@ -2421,7 +2420,7 @@ List every distinct section. If the document is one continuous topic with no cle
   );
 
   try {
-    const res = await claudeFetch({ model: 'claude-sonnet-4-6', max_tokens: 1200, messages });
+    const res = await claudeFetch({ model: CLAUDE_MODEL, max_tokens: 1200, messages });
     const data = await res.json();
     if (data.error) throw new Error(data.error.message || 'API error');
     const txt = data.content?.[0]?.text || '';
@@ -2492,7 +2491,7 @@ Extract every testable concept. Do not summarize or collapse related items — l
   );
 
   try {
-    const res = await claudeFetch({ model: 'claude-sonnet-4-6', max_tokens: 2500, messages });
+    const res = await claudeFetch({ model: CLAUDE_MODEL, max_tokens: 2500, messages });
     const data = await res.json();
     if (data.error) throw new Error(data.error.message || 'API error');
     const txt = data.content?.[0]?.text || '';
@@ -2510,15 +2509,23 @@ Extract every testable concept. Do not summarize or collapse related items — l
       const item = document.createElement('div');
       item.className = 'concept-item';
       item.dataset.idx = i;
+      item.setAttribute('role', 'checkbox');
+      item.setAttribute('aria-checked', 'true');
+      item.setAttribute('tabindex', '0');
       item.innerHTML = `
         <div class="concept-check"></div>
         <div class="flex-col" style="flex:1">
           <div class="concept-text">${escapeHtml(text)}</div>
           ${cat ? `<div class="concept-tag">${escapeHtml(cat)}</div>` : ''}
         </div>`;
-      item.addEventListener('click', () => {
+      function toggleItem() {
         item.classList.toggle('excluded');
+        item.setAttribute('aria-checked', item.classList.contains('excluded') ? 'false' : 'true');
         updateChecklistCount();
+      }
+      item.addEventListener('click', toggleItem);
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleItem(); }
       });
       container.appendChild(item);
     });
@@ -2624,9 +2631,17 @@ setupSelectCustom('guide-select', 'custom-guide');
 
 // ─ TONE CHIPS ──────────────────────────────────────────────────
 document.querySelectorAll('#tone-chips .chip').forEach(chip => {
-  chip.addEventListener('click', () => {
-    document.querySelectorAll('#tone-chips .chip').forEach(c => c.classList.remove('active'));
+  function selectChip() {
+    document.querySelectorAll('#tone-chips .chip').forEach(c => {
+      c.classList.remove('active');
+      c.setAttribute('aria-checked', 'false');
+    });
     chip.classList.add('active');
+    chip.setAttribute('aria-checked', 'true');
+  }
+  chip.addEventListener('click', selectChip);
+  chip.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectChip(); }
   });
 });
 
@@ -2949,7 +2964,7 @@ async function runPipeline() {
   let clinicalContext = '';
   try {
     const ctxRes = await claudeFetch({
-        model: 'claude-sonnet-4-6',
+        model: CLAUDE_MODEL,
         max_tokens: 1200,
         system: `You are a senior clinical educator and board exam question writer designing memory scenes. Extract the essential teaching points for a Sketchy-style mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
 
@@ -3063,7 +3078,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
   try {
     const requestBody = {
-      model: 'claude-sonnet-4-6',
+      model: CLAUDE_MODEL,
       max_tokens: 4096,
       system: storySystem,
       messages: [{ role: 'user', content: storyUser }]
@@ -3191,7 +3206,7 @@ Requirements:
 - End with: wide establishing shot, enough space for ${n} labeled objects, aspect ratio 16:9`;
 
     const p1Res = await claudeFetch({
-        model: 'claude-sonnet-4-6',
+        model: CLAUDE_MODEL,
         max_tokens: 300,
         system: ipSystem,
         messages: [{ role: 'user', content: p1UserMsg }]

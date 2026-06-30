@@ -32,18 +32,31 @@ PAGES_DIR = FRONTEND_DIR / "pages"
 
 
 class UsageSummaryCache:
+    _CLEANUP_INTERVAL = 300
+
     def __init__(self, ttl_seconds: int = 60) -> None:
         self._ttl = ttl_seconds
         self._entries: dict[str, tuple[float, dict[str, Any]]] = {}
         self._lock = Lock()
+        self._last_cleanup = time.time()
+
+    def _purge_stale(self, now: float) -> None:
+        stale = [k for k, (ts, _) in self._entries.items() if now - ts > self._ttl]
+        for k in stale:
+            del self._entries[k]
 
     def get(self, user_id: str) -> dict[str, Any] | None:
         with self._lock:
+            now = time.time()
+            if now - self._last_cleanup > self._CLEANUP_INTERVAL:
+                self._purge_stale(now)
+                self._last_cleanup = now
+
             entry = self._entries.get(user_id)
             if entry is None:
                 return None
             ts, data = entry
-            if time.time() - ts > self._ttl:
+            if now - ts > self._ttl:
                 del self._entries[user_id]
                 return None
             return data.copy()
@@ -931,8 +944,8 @@ async def health(request: Request) -> dict[str, Any]:
 
 
 @app.get("/api/config/public")
-async def public_config() -> dict[str, Any]:
-    active_settings = get_settings()
+async def public_config(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
     return {
         "auth_enabled": active_settings.supabase_auth_configured,
         "supabase_url": active_settings.supabase_url or None,

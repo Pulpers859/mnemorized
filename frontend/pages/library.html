@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c9ef4d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mnemorized">
 <title>Mnemorized — Library</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="apple-touch-icon" href="/assets/profile-pic.png">
@@ -10,16 +14,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black: #080a0e;
-  --ink: #0f1218;
-  --card: #13171f;
-  --border: rgba(255,255,255,.07);
-  --white: #f0ede6;
-  --muted: #7a7f8a;
-  --acid: #c8f135;
-  --acid2: #a8e020;
-  --gold: #f5c842;
-  --red: #ff6b6b;
+  --black: #090c0f;
+  --ink: #10161a;
+  --card: #151c21;
+  --border: rgba(213,223,216,.13);
+  --white: #f3f5ef;
+  --muted: #96a19b;
+  --acid: #c9ef4d;
+  --acid2: #abd834;
+  --gold: #f4c95d;
+  --red: #ff6b66;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +49,7 @@ body::after {
   position: fixed;
   width: 920px;
   height: 920px;
-  background: radial-gradient(circle, rgba(200,241,53,.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,239,77,.05) 0%, transparent 70%);
   top: -120px;
   right: -120px;
   pointer-events: none;
@@ -63,7 +67,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border);
-  background: rgba(8,10,14,.9);
+  background: rgba(9,12,15,.9);
   backdrop-filter: blur(12px);
 }
 .nav-left, .nav-right {
@@ -118,8 +122,8 @@ nav {
   gap: 8px;
   margin-bottom: 16px;
   border-radius: 999px;
-  border: 1px solid rgba(200,241,53,.22);
-  background: rgba(200,241,53,.08);
+  border: 1px solid rgba(201,239,77,.22);
+  background: rgba(201,239,77,.08);
   padding: 6px 12px;
   color: var(--acid);
   font-family: 'DM Mono', monospace;
@@ -260,7 +264,7 @@ h1 {
   padding: 18px;
 }
 .library-card.active {
-  border-color: rgba(200,241,53,.3);
+  border-color: rgba(201,239,77,.3);
 }
 .card-title {
   display: flex;
@@ -277,7 +281,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(200,241,53,.22);
+  border: 1px solid rgba(201,239,77,.22);
   padding: 4px 10px;
   font-size: 10px;
   letter-spacing: .16em;
@@ -355,7 +359,7 @@ h1 {
   <div class="nav-left">
     <a class="nav-logo" href="/">Mnemorized</a>
     <a class="nav-pill" href="/forge">FORGE</a>
-    <span class="nav-pill" style="color:var(--acid);border-color:rgba(200,241,53,.22);">LIBRARY</span>
+    <span class="nav-pill" style="color:var(--acid);border-color:rgba(201,239,77,.22);">LIBRARY</span>
   </div>
   <div class="nav-right">
     <button id="account-badge" class="nav-button" type="button">AUTH OFF</button>
