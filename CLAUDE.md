@@ -21,6 +21,14 @@ Highest-risk areas:
 5. Static frontend visual/state drift
 6. Deployment configuration
 
+Audit task pattern:
+
+- For broad reviews spanning multiple risk areas, do NOT read every file into the main conversation.
+- Spawn parallel Explore agents (model: sonnet) scoped to each risk area above. Each agent returns only: file path, line number, issue summary, severity.
+- Main conversation applies fixes from findings using targeted Read (offset+limit), never full-file reads.
+- Run `/compact` after each commit before starting the next phase.
+- Run test suite verification in a sonnet subagent, not inline.
+
 Claude-local workflow helpers:
 
 - Use `@.claude/skills/mnemorized-handoff/SKILL.md` at the start of a fresh session unless the task is already deep in one known file.
