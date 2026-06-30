@@ -367,7 +367,7 @@ h1 {
     <div class="panel">
       <div class="eyebrow">Saved Palaces</div>
       <h1>YOUR MEMORY<br><span class="accent">LIBRARY</span></h1>
-      <p class="hero-copy">Search, filter, rename, and reopen every saved palace from one place. This page is now served by the backend app itself, so auth and persistence stay on the same origin instead of bouncing between loose local files.</p>
+      <p class="hero-copy">Search, filter, rename, and reopen every saved palace from one secure workspace. Keep generated scenes, prompts, and version history organized as your study library grows.</p>
 
       <div id="signed-out-panel" style="display:none;">
         <div class="auth-gate">
@@ -504,6 +504,16 @@ function escapeHtml(text) {
     .replace(/'/g, '&#39;');
 }
 
+function escapeJsString(text) {
+  return String(text || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/\r/g, '\\r')
+    .replace(/\n/g, '\\n')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+}
+
 function setAuthStatus(message, tone = 'muted') {
   const el = document.getElementById('auth-status');
   el.textContent = message;
@@ -614,7 +624,9 @@ function renderLibrary() {
   }
 
   empty.style.display = 'none';
-  list.innerHTML = rows.map(row => `
+  list.innerHTML = rows.map(row => {
+    const palaceId = escapeJsString(row.id);
+    return `
     <article class="library-card">
       <div>
         <div class="card-title">
@@ -630,11 +642,12 @@ function renderLibrary() {
       </div>
       <div class="card-actions">
         <a class="action-btn primary" href="/forge?palace=${encodeURIComponent(row.id)}">Open in Forge</a>
-        <button class="action-btn" type="button" onclick="renamePalace('${row.id}')">Rename</button>
-        <button class="action-btn danger" type="button" onclick="deletePalace('${row.id}')">Delete</button>
+        <button class="action-btn" type="button" onclick="renamePalace('${palaceId}')">Rename</button>
+        <button class="action-btn danger" type="button" onclick="deletePalace('${palaceId}')">Delete</button>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 }
 
 async function loadLibrary() {

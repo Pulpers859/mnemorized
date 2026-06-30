@@ -2918,7 +2918,7 @@ async function runPipeline() {
     document.getElementById('prompt-copy-2').value = demoP2;
     setStatus('prompt', isOperatorMode()
       ? `✓ 2 prompts ready (${n} anchors in single pass)`
-      : '✓ Scene illustration in progress', 'done');
+      : '✓ Image prompts ready', 'done');
     setCurrentPalaceData(
       {
         scene_title: D.scene_title,
@@ -3269,7 +3269,10 @@ Requirements:
 // PWA SERVICE WORKER REGISTRATION
 // ══════════════════════════════════════════════════
 if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
-  navigator.serviceWorker.register('/sw.js').catch(() => {});
+  navigator.serviceWorker
+    .register('/sw.js', { updateViaCache: 'none' })
+    .then(registration => registration.update())
+    .catch(() => {});
 }
 </script>
 </html>

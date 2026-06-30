@@ -26,6 +26,10 @@ def _split_csv(raw: str) -> tuple[str, ...]:
     return tuple(item for item in values if item)
 
 
+def _normalize_origin(raw: str) -> str:
+    return raw.strip().rstrip("/")
+
+
 def _clean_env_value(key: str, default: str = "") -> str:
     value = os.getenv(key, default).strip()
     lowered = value.lower()
@@ -104,6 +108,19 @@ class Settings:
     @property
     def provider_auth_required(self) -> bool:
         return self.supabase_auth_configured or not self.dev_mode
+
+    @property
+    def cors_allowed_origins(self) -> tuple[str, ...]:
+        origins = tuple(_normalize_origin(origin) for origin in self.cors_origins if origin.strip())
+        if self.dev_mode:
+            return origins or ("*",)
+
+        explicit_origins = tuple(origin for origin in origins if origin != "*")
+        if explicit_origins:
+            return explicit_origins
+
+        app_origin = _normalize_origin(self.app_base_url)
+        return (app_origin,) if app_origin else ()
 
     def request_limit_for_plan(self, plan_code: str | None) -> int | None:
         plan = (plan_code or "free").strip().lower()

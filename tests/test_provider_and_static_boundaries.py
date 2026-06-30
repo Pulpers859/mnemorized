@@ -218,3 +218,46 @@ def test_static_pages_load_shared_backend_persistence_script_before_inline_code(
         api_use_index = html.index("MnemorizedPalaceApi")
 
         assert shared_script_index < api_use_index
+
+
+def test_production_cors_does_not_allow_wildcard(tmp_path: Path) -> None:
+    settings = make_settings(
+        tmp_path,
+        app_env="production",
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+    )
+
+    assert settings.cors_origins == ("*",)
+    assert settings.cors_allowed_origins == ("http://127.0.0.1:8001",)
+
+
+def test_demo_mode_status_matches_actual_output() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+
+    assert "✓ Image prompts ready" in html
+    assert "✓ Scene illustration in progress" not in html
+
+
+def test_library_inline_handlers_escape_palace_ids() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+
+    assert "function escapeJsString" in html
+    assert "onclick=\"renamePalace('${palaceId}')\"" in html
+    assert "onclick=\"deletePalace('${palaceId}')\"" in html
+
+
+def test_service_worker_does_not_cache_html_or_itself() -> None:
+    root = Path(__file__).resolve().parents[1]
+    sw = (root / "frontend" / "sw.js").read_text(encoding="utf-8")
+    forge = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+
+    static_block = sw.split("];", 1)[0]
+    assert "'/forge'" not in static_block
+    assert "'/library'" not in static_block
+    assert "'/'" not in static_block
+    assert "url.pathname === '/sw.js'" in sw
+    assert "fetch(event.request, { cache: 'no-store' })" in sw
+    assert "updateViaCache: 'none'" in forge

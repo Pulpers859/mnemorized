@@ -1,16 +1,7 @@
-const CACHE_NAME = 'mnemorized-v8';
+const CACHE_NAME = 'mnemorized-v9';
 const STATIC_ASSETS = [
-  '/',
-  '/forge',
-  '/library',
   '/manifest.json',
-  '/scripts/palace-api.js',
   '/assets/profile-pic.png',
-];
-
-const CDN_ASSETS = [
-  'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap',
-  'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2',
 ];
 
 self.addEventListener('install', (event) => {
@@ -32,13 +23,32 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  if (url.pathname.startsWith('/api/')) {
+  if (
+    event.request.method !== 'GET'
+    || url.pathname.startsWith('/api/')
+    || url.pathname === '/sw.js'
+  ) {
     return;
   }
 
   if (event.request.mode === 'navigate') {
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, { cache: 'no-store' })
+        .then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  if (url.origin === self.location.origin && /\/(scripts|styles)\//.test(url.pathname)) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-store' })
         .then((response) => {
           if (response.ok) {
             const clone = response.clone();
