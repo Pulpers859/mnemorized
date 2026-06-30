@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -30,6 +31,7 @@ def make_settings(tmp_path: Path) -> Settings:
         usage_log_path=tmp_path / "usage.jsonl",
         supabase_url="https://project.supabase.co",
         supabase_anon_key="anon-key",
+        supabase_service_role_key="",
         supabase_jwt_audience="authenticated",
         free_monthly_requests=40,
         pro_monthly_requests=400,
@@ -37,6 +39,7 @@ def make_settings(tmp_path: Path) -> Settings:
         gemini_api_key="",
         gemini_model="gemini-2.5-flash-image",
         plan_override_path=tmp_path / "plan_overrides.json",
+        admin_emails=(),
     )
 
 
@@ -204,3 +207,78 @@ def test_profile_ensure_requires_bearer_token(client: TestClient) -> None:
 
     assert response.status_code == 401
     assert response.json()["detail"] == "Sign in to access saved palaces."
+
+
+def test_catalog_publish_fails_closed_without_service_role_key(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(make_settings(tmp_path), admin_emails=("patrick@example.com",))
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+
+    response = client.post(
+        "/api/catalog/publish",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "title": "DKA Bar",
+            "topic": "DKA",
+            "tags": ["emergency"],
+            "generation_inputs": {},
+            "generation_outputs": {},
+        },
+    )
+
+    assert response.status_code == 503
+    assert "SUPABASE_SERVICE_ROLE_KEY" in response.json()["detail"]
+
+
+def test_catalog_publish_uses_service_role_after_admin_check(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    supabase = SupabaseMock([
+        httpx.Response(
+            201,
+            json=[{
+                "id": "11111111-1111-1111-1111-111111111111",
+                "title": "DKA Bar",
+                "topic": "DKA",
+                "source_name": None,
+                "scene_title": None,
+                "tags": ["emergency"],
+                "generation_inputs": {},
+                "generation_outputs": {},
+                "published_by": "user-123",
+                "published_at": "2026-06-30T12:00:00Z",
+            }],
+        )
+    ])
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.post(
+        "/api/catalog/publish",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "title": "DKA Bar",
+            "topic": "DKA",
+            "tags": ["Emergency", "emergency", " "],
+            "generation_inputs": {},
+            "generation_outputs": {},
+        },
+    )
+
+    assert response.status_code == 200
+    assert supabase.calls[0]["method"] == "POST"
+    assert supabase.calls[0]["path"] == "/rest/v1/catalog_palaces"
+    assert supabase.calls[0]["bearer_token"] is None
+    assert supabase.calls[0]["use_service_role"] is True
+    assert supabase.calls[0]["json_body"]["tags"] == ["emergency"]

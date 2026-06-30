@@ -33,8 +33,9 @@ python -m pip install -r backend/requirements.txt
 
 3. Copy `backend/.env.example` to `backend/.env` and set `ANTHROPIC_API_KEY`.
 4. If you want auth + saved palaces, also set `SUPABASE_URL` and `SUPABASE_ANON_KEY`.
-5. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement.
-6. Start the server:
+5. If you want admin catalog publishing, set `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS`.
+6. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement.
+7. Start the server:
 
 ```powershell
 python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8001 --reload
@@ -46,7 +47,7 @@ Or on Windows:
 .\tools\Start-Mnemorized-App.ps1
 ```
 
-7. Open the served app routes:
+8. Open the served app routes:
 
 ```text
 http://127.0.0.1:8001/

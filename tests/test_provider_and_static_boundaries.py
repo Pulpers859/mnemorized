@@ -21,6 +21,8 @@ def make_settings(
     gemini_api_key: str = "",
     supabase_url: str = "",
     supabase_anon_key: str = "",
+    supabase_service_role_key: str = "",
+    admin_emails: tuple[str, ...] = (),
 ) -> Settings:
     return Settings(
         app_env=app_env,
@@ -39,6 +41,7 @@ def make_settings(
         usage_log_path=tmp_path / "usage.jsonl",
         supabase_url=supabase_url,
         supabase_anon_key=supabase_anon_key,
+        supabase_service_role_key=supabase_service_role_key,
         supabase_jwt_audience="authenticated",
         free_monthly_requests=40,
         pro_monthly_requests=400,
@@ -46,6 +49,7 @@ def make_settings(
         gemini_api_key=gemini_api_key,
         gemini_model="gemini-2.5-flash-image",
         plan_override_path=tmp_path / "plan_overrides.json",
+        admin_emails=admin_emails,
     )
 
 
@@ -322,12 +326,11 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
 
 def test_static_pages_load_shared_backend_persistence_script_before_inline_code() -> None:
     root = Path(__file__).resolve().parents[1]
-    for page_name in ("forge.html", "library.html"):
-        html = (root / "frontend" / "pages" / page_name).read_text(encoding="utf-8")
-        shared_script_index = html.index("/scripts/palace-api.js")
-        api_use_index = html.index("MnemorizedPalaceApi")
+    library = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+    forge = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
 
-        assert shared_script_index < api_use_index
+    assert library.index("/scripts/palace-api.js") < library.index("MnemorizedPalaceApi")
+    assert forge.index("/scripts/palace-api.js") < forge.index("/scripts/forge-auth.js")
 
 
 def test_production_cors_does_not_allow_wildcard(tmp_path: Path) -> None:
@@ -344,10 +347,10 @@ def test_production_cors_does_not_allow_wildcard(tmp_path: Path) -> None:
 
 def test_demo_mode_status_matches_actual_output() -> None:
     root = Path(__file__).resolve().parents[1]
-    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
 
-    assert "✓ Image prompts ready" in html
-    assert "✓ Scene illustration in progress" not in html
+    assert "✓ Image prompts ready" in pipeline
+    assert "✓ Scene illustration in progress" not in pipeline
 
 
 def test_forge_does_not_label_auth_failures_as_network_cors() -> None:
@@ -368,10 +371,21 @@ def test_library_inline_handlers_escape_palace_ids() -> None:
     assert "onclick=\"deletePalace('${palaceId}')\"" in html
 
 
+def test_catalog_schema_does_not_grant_browser_write_policies() -> None:
+    root = Path(__file__).resolve().parents[1]
+    schema = (root / "backend" / "sql" / "supabase_schema.sql").read_text(encoding="utf-8")
+    catalog_block = schema.split("Shared palace catalog", 1)[1].split("Auto-update updated_at", 1)[0]
+
+    assert "grant select on public.catalog_palaces to anon, authenticated" in catalog_block
+    assert "for insert" not in catalog_block
+    assert "for delete" not in catalog_block
+    assert "auth.role()" not in catalog_block
+
+
 def test_service_worker_does_not_cache_html_or_itself() -> None:
     root = Path(__file__).resolve().parents[1]
     sw = (root / "frontend" / "sw.js").read_text(encoding="utf-8")
-    forge = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    forge_pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
 
     static_block = sw.split("];", 1)[0]
     assert "'/forge'" not in static_block
@@ -379,7 +393,7 @@ def test_service_worker_does_not_cache_html_or_itself() -> None:
     assert "'/'" not in static_block
     assert "url.pathname === '/sw.js'" in sw
     assert "fetch(event.request, { cache: 'no-store' })" in sw
-    assert "updateViaCache: 'none'" in forge
+    assert "updateViaCache: 'none'" in forge_pipeline
 
 
 def test_pwa_icon_is_optimized_for_install_surface() -> None:

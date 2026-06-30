@@ -56,6 +56,8 @@ Important variables:
 - `GEMINI_API_KEY`
 - `SUPABASE_URL`
 - `SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` for backend-only catalog publishing
+- `ADMIN_EMAILS` for comma-separated catalog publisher emails
 - `CORS_ORIGINS`
 
 ## Notes For Future Work

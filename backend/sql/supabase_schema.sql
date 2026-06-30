@@ -191,20 +191,13 @@ create table if not exists public.catalog_palaces (
 
 alter table public.catalog_palaces enable row level security;
 
+grant select on public.catalog_palaces to anon, authenticated;
+
 create policy "catalog_select_public"
 on public.catalog_palaces
 for select
+to anon, authenticated
 using (true);
-
-create policy "catalog_insert_authenticated"
-on public.catalog_palaces
-for insert
-with check (auth.role() = 'authenticated');
-
-create policy "catalog_delete_authenticated"
-on public.catalog_palaces
-for delete
-using (auth.role() = 'authenticated');
 
 create index if not exists idx_catalog_palaces_published_at
   on public.catalog_palaces (published_at desc);

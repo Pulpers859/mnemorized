@@ -410,12 +410,20 @@ async def _supabase_rest_request(
     params: dict[str, Any] | None = None,
     json_body: dict[str, Any] | None = None,
     headers: dict[str, str] | None = None,
+    use_service_role: bool = False,
 ) -> httpx.Response:
+    api_key = (
+        settings.supabase_service_role_key
+        if use_service_role and settings.supabase_service_role_key
+        else settings.supabase_anon_key
+    )
     base_headers: dict[str, str] = {
-        "apikey": settings.supabase_anon_key,
+        "apikey": api_key,
         "Content-Type": "application/json",
     }
-    if bearer_token:
+    if use_service_role:
+        base_headers["Authorization"] = f"Bearer {api_key}"
+    elif bearer_token:
         base_headers["Authorization"] = f"Bearer {bearer_token}"
     if headers:
         base_headers.update(headers)
@@ -935,6 +943,7 @@ async def health(request: Request) -> dict[str, Any]:
         "anthropic_configured": active_settings.anthropic_configured,
         "gemini_configured": active_settings.gemini_configured,
         "supabase_auth_configured": active_settings.supabase_auth_configured,
+        "supabase_admin_configured": active_settings.supabase_admin_configured,
         "provider_auth_required": active_settings.provider_auth_required,
         "provider_auth_ready": (
             not active_settings.provider_auth_required
@@ -1286,6 +1295,11 @@ async def publish_to_catalog(
             status_code=403,
             detail="Only admins can publish to the catalog.",
         )
+    if not active_settings.supabase_admin_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="Catalog publishing requires SUPABASE_SERVICE_ROLE_KEY on the backend.",
+        )
 
     clean_tags = list(dict.fromkeys(
         t.strip().lower() for t in payload.tags if t.strip()
@@ -1294,7 +1308,7 @@ async def publish_to_catalog(
     response = await _supabase_rest_request(
         request=request,
         settings=active_settings,
-        bearer_token=bearer_token,
+        bearer_token=None,
         method="POST",
         path="/rest/v1/catalog_palaces",
         json_body={
@@ -1308,6 +1322,7 @@ async def publish_to_catalog(
             "published_by": user.user_id,
         },
         headers={"Prefer": "return=representation"},
+        use_service_role=True,
     )
     row = _single_row(
         _parse_supabase_rows(response, "publish to catalog"),
@@ -1330,15 +1345,21 @@ async def unpublish_from_catalog(
             status_code=403,
             detail="Only admins can unpublish from the catalog.",
         )
+    if not active_settings.supabase_admin_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="Catalog unpublishing requires SUPABASE_SERVICE_ROLE_KEY on the backend.",
+        )
 
     response = await _supabase_rest_request(
         request=request,
         settings=active_settings,
-        bearer_token=bearer_token,
+        bearer_token=None,
         method="DELETE",
         path="/rest/v1/catalog_palaces",
         params={"id": f"eq.{catalog_id}"},
         headers={"Prefer": "return=minimal"},
+        use_service_role=True,
     )
     if response.status_code >= 400:
         raise HTTPException(

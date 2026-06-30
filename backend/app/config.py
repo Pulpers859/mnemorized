@@ -37,6 +37,7 @@ def _clean_env_value(key: str, default: str = "") -> str:
         "replace-with",
         "your-project-ref",
         "your-public-anon-key",
+        "your-server-only-service-role-key",
         "your-local",
     )
     if not value or any(fragment in lowered for fragment in placeholder_fragments):
@@ -69,6 +70,7 @@ class Settings:
     usage_log_path: Path
     supabase_url: str
     supabase_anon_key: str
+    supabase_service_role_key: str
     supabase_jwt_audience: str | None
     free_monthly_requests: int
     pro_monthly_requests: int
@@ -89,6 +91,10 @@ class Settings:
     @property
     def supabase_auth_configured(self) -> bool:
         return bool(self.supabase_url and self.supabase_anon_key)
+
+    @property
+    def supabase_admin_configured(self) -> bool:
+        return bool(self.supabase_auth_configured and self.supabase_service_role_key)
 
     @property
     def supabase_jwks_url(self) -> str:
@@ -160,6 +166,7 @@ def get_settings() -> Settings:
         usage_log_path=Path(os.getenv("USAGE_LOG_PATH", str(default_log_path))),
         supabase_url=_clean_env_value("SUPABASE_URL"),
         supabase_anon_key=_clean_env_value("SUPABASE_ANON_KEY"),
+        supabase_service_role_key=_clean_env_value("SUPABASE_SERVICE_ROLE_KEY"),
         supabase_jwt_audience=os.getenv("SUPABASE_JWT_AUDIENCE", "authenticated").strip()
         or None,
         free_monthly_requests=int(os.getenv("FREE_MONTHLY_REQUESTS", "40")),
