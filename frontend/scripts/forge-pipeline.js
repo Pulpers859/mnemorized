@@ -380,6 +380,8 @@ async function runPipeline() {
   btn.innerHTML = '<span class="spin"></span> MNEMORIZING…';
 
   document.getElementById('pipeline').classList.add('visible');
+  setStatus('story', 'Waiting…', '');
+  setStatus('prompt', 'Waiting…', '');
 
   // ══ DEMO MODE — full UI flow, zero API calls ══════════════════
   if (isDemoMode()) {
@@ -488,7 +490,8 @@ async function runPipeline() {
     return text;
   }
 
-  // ── STAGE 1: Silent Clinical Context ──────────────
+  // ── STAGE 1: Clinical Context ─────────────────────
+  setStatus('story', '✦ Analyzing topic…', 'running');
   let clinicalContext = '';
   try {
     const ctxRes = await claudeFetch({
