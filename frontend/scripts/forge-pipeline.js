@@ -305,6 +305,12 @@ async function generateImages() {
   if (resultContainer) resultContainer.style.display = 'none';
 
   const prompts = [p1, p2].filter(Boolean);
+
+  // Refresh token before image gen — the pipeline may have been running for minutes
+  if (typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+    try { await supabaseClient.auth.getSession(); } catch (_) { /* best-effort */ }
+  }
+
   const headers = {
     'Content-Type': 'application/json',
     ...getReplayHeaders('stage4-gemini-image'),
@@ -314,11 +320,23 @@ async function generateImages() {
   }
 
   try {
-    const res = await fetch(getApiUrl('/api/generate-image'), {
+    let res = await fetch(getApiUrl('/api/generate-image'), {
       method: 'POST',
       headers,
       body: JSON.stringify({ prompts })
     });
+
+    if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+      const { data } = await supabaseClient.auth.refreshSession();
+      if (data?.session?.access_token) {
+        headers.Authorization = `Bearer ${data.session.access_token}`;
+        res = await fetch(getApiUrl('/api/generate-image'), {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ prompts })
+        });
+      }
+    }
 
     if (res.status === 401) {
       openAuthModal();

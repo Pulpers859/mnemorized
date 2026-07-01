@@ -1867,6 +1867,10 @@ async def medical_knowledge_quality_check(
         _release_quota_reservation(request, user)
         raise
 
+    # Only show citations genuinely relevant to the queried topic
+    QUALITY_GATE_MIN_SIMILARITY = 0.50
+    rows = [r for r in rows if (r.get("similarity") or 0) >= QUALITY_GATE_MIN_SIMILARITY]
+
     output_text = _flatten_generation_text(payload.generation_outputs).lower()
     coverage = []
     for concept in required_concepts:

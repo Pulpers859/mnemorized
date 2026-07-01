@@ -299,7 +299,7 @@ function renderQualityGateResult(result) {
             <span>${escapeHtml(item.source_title || item.source_key || 'Medical source')}</span>
             <small>${escapeHtml(page)}${escapeHtml(score)}</small>
           </div>`;
-        }).join('') : '<div class="quality-empty">No citations returned for this topic yet.</div>'}
+        }).join('') : '<div class="quality-empty">No relevant citations found for this topic. Upload source material to enable evidence-backed review.</div>'}
       </div>
     </div>`;
 }
