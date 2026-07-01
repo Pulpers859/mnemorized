@@ -246,11 +246,16 @@ function parseStoryXml(text) {
   };
 }
 
-function renderQualityGateMessage(message, tone = 'muted') {
+function renderQualityGateMessage(message, tone = 'muted', title = 'Medical Quality Gate') {
   showBody('quality');
   const body = document.getElementById('quality-result');
   const toneClass = tone === 'error' ? 'quality-error' : tone === 'success' ? 'quality-success' : '';
-  body.innerHTML = `<div class="quality-summary ${toneClass}">${escapeHtml(message)}</div>`;
+  const verdict = tone === 'error' ? 'Needs attention' : tone === 'success' ? 'Ready' : 'Working';
+  body.innerHTML = `<div class="quality-summary ${toneClass}">
+    <div class="quality-kicker">${escapeHtml(title)}</div>
+    <div class="quality-verdict">${escapeHtml(verdict)}</div>
+    <div class="quality-copy">${escapeHtml(message)}</div>
+  </div>`;
 }
 
 function renderQualityGateResult(result) {
@@ -262,6 +267,9 @@ function renderQualityGateResult(result) {
   const repairFocus = result?.repair_focus || [];
   const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
   const showRepair = !!authState.user && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
+  setStageDetail('quality', result?.verdict === 'needs_repair'
+    ? 'Quality gate found weak or missing medical coverage. Repair can use backend-only private references.'
+    : 'Quality gate completed. Review citations and save the version you want to keep.');
 
   document.getElementById('quality-result').innerHTML = `
     <div class="quality-grid">
@@ -309,6 +317,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
     btn.innerHTML = '<span class="spin"></span> Repairing...';
   }
   setStatus('quality', 'Repairing...', 'running');
+  setStageDetail('quality', 'Retrieving private evidence and rewriting weak anchors while preserving the scene.');
 
   try {
     const token = getAuthToken();
@@ -372,9 +381,12 @@ Repair requirements:
     } else {
       currentPromptData = { prompt1: '', prompt2: '' };
       setStatus('prompt', 'Rebuild prompts needed', '');
+      setStageDetail('prompt', 'The repaired script is ready, but image prompts need a manual rebuild.');
     }
+    setLibraryStatus('Medical repair complete. Review the updated script, then save a new version.', 'success');
   } catch (error) {
     setStatus('quality', 'Repair failed', 'error');
+    setStageDetail('quality', 'Repair did not complete. The prior script is still visible for review.');
     renderQualityGateMessage(`Medical repair failed: ${error.message}`, 'error');
   } finally {
     const repairBtn = document.getElementById('repair-quality-btn');
@@ -389,6 +401,7 @@ async function runMedicalQualityGate(storyData = currentStoryData) {
   currentQualityGateData = null;
   if (!storyData) {
     setStatus('quality', 'Waiting...', '');
+    setStageDetail('quality', 'Quality gate waits until a palace script exists.');
     renderQualityGateMessage('Generate a palace script before checking medical evidence.');
     return;
   }
@@ -396,6 +409,7 @@ async function runMedicalQualityGate(storyData = currentStoryData) {
   showBody('quality');
   if (!authState.user) {
     setStatus('quality', 'Sign in required', 'error');
+    setStageDetail('quality', 'Sign in is required because private medical retrieval runs through the backend account context.');
     renderQualityGateMessage('Sign in to run the private medical quality gate.', 'error');
     return;
   }
@@ -403,12 +417,14 @@ async function runMedicalQualityGate(storyData = currentStoryData) {
   if (!backendState.checked) await refreshBackendStatus();
   if (!appConfig.medicalKnowledgeEnabled || !backendState.medicalKnowledgeConfigured) {
     setStatus('quality', 'Medical KB off', 'error');
+    setStageDetail('quality', 'The backend is reachable, but private medical knowledge retrieval is not configured.');
     renderQualityGateMessage('Medical knowledge is not configured on this backend yet.', 'error');
     return;
   }
 
   setStatus('quality', 'Checking evidence...', 'running');
-  renderQualityGateMessage('Retrieving private medical citations and checking generated anchors...');
+  setStageDetail('quality', 'Retrieving backend-only reference snippets and checking generated anchors.');
+  renderQualityGateMessage('Retrieving private medical citations and checking generated anchors...', 'muted', 'Evidence Check');
   try {
     const result = await MnemorizedMedicalApi.qualityCheck(getAuthToken(), {
       topic: document.getElementById('topic').value.trim(),
@@ -421,6 +437,7 @@ async function runMedicalQualityGate(storyData = currentStoryData) {
     setStatus('quality', result.verdict === 'needs_repair' ? 'Needs review' : 'Evidence checked', result.verdict === 'needs_repair' ? 'error' : 'done');
   } catch (error) {
     setStatus('quality', 'Check failed', 'error');
+    setStageDetail('quality', 'The script is still available, but the evidence check did not finish.');
     renderQualityGateMessage(`Medical quality check failed: ${error.message}`, 'error');
   }
 }
@@ -677,6 +694,12 @@ async function saveCurrentPalace(asNew = false) {
 
   const snapshot = buildPalaceSnapshot();
   setLibraryStatus(asNew ? 'Saving new palace…' : 'Saving palace…');
+  const saveBtn = document.getElementById(asNew ? 'save-as-new-btn' : 'save-palace-btn');
+  const originalSaveLabel = saveBtn?.textContent || '';
+  if (saveBtn) {
+    saveBtn.disabled = true;
+    saveBtn.textContent = 'Saving...';
+  }
 
   try {
     const result = await MnemorizedPalaceApi.save(getAuthToken(), {
@@ -688,11 +711,21 @@ async function saveCurrentPalace(asNew = false) {
 
     currentPalaceMeta = palaceRow;
     document.getElementById('palace-title-input').value = palaceRow.title || '';
-    setLibraryStatus(`Saved "${palaceRow.title}" as version ${nextVersion}.`, 'success');
+    const savedMessage = `Saved to Library: "${palaceRow.title}" version ${nextVersion}.`;
+    setLibraryStatus(savedMessage, 'success');
     refreshAuthUI();
+    const primarySaveBtn = document.getElementById('save-palace-btn');
+    if (primarySaveBtn && !primarySaveBtn.disabled) {
+      primarySaveBtn.textContent = 'Saved';
+      setTimeout(refreshAuthUI, 1800);
+    }
     await loadLibrary();
+    setLibraryStatus(savedMessage, 'success');
   } catch (error) {
     setLibraryStatus(`Save failed: ${error.message}`, 'error');
+    if (saveBtn) saveBtn.textContent = originalSaveLabel;
+  } finally {
+    if (saveBtn) saveBtn.disabled = !hasSavablePalace();
   }
 }
 

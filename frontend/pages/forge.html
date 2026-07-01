@@ -204,6 +204,31 @@ h1 .accent { color: var(--acid); }
   margin-bottom: 14px;
   line-height: 1.6;
 }
+.safety-note {
+  margin: 12px 0 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(245,200,66,.22);
+  border-radius: 8px;
+  background: rgba(245,200,66,.045);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.safety-note strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.safety-note ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.safety-note li { margin: 3px 0; }
+.upload-privacy-note { margin-top: 12px; }
 
 /* ── STANDARD INPUT ── */
 .input-field {
@@ -414,6 +439,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .stage-status.running { color: var(--acid); }
 .stage-status.done { color: var(--green); }
 .stage-status.error { color: var(--red); }
+.stage-detail {
+  padding: 0 20px 14px 52px;
+  margin-top: -6px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
 
 .stage-body { padding: 22px 24px; }
 
@@ -1190,6 +1222,13 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   .quality-citation {
     grid-template-columns: 1fr;
   }
+  .stage-detail {
+    padding: 0 16px 12px;
+    margin-top: -2px;
+  }
+  .safety-note {
+    padding: 11px 12px;
+  }
   .vo-table td:nth-child(2),
   .vo-table th:nth-child(2) { display: none; }
   .vo-table td:first-child { width: 65%; }
@@ -1277,6 +1316,15 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   <div class="section">
     <p class="section-label">I. What Must Be Memorized</p>
     <p class="section-hint">Paste notes, a topic list, or the exact facts you need encoded. The fastest path is to type directly here, then configure below.</p>
+    <div class="safety-note" id="content-safety-note">
+      <strong>Safety & Privacy</strong>
+      <ul>
+        <li>Do not enter patient-identifying information.</li>
+        <li>Use educational/source material only.</li>
+        <li>Uploaded or pasted content may be sent to AI providers for generation.</li>
+        <li>Private medical reference retrieval uses backend-only access.</li>
+      </ul>
+    </div>
     <textarea class="input-field" id="topic" rows="7" placeholder="e.g. The 12 cranial nerves in order, ACLS algorithm for pulseless V-tach, vasopressor receptor affinities..."></textarea>
 
     <details class="optional-upload" id="optional-upload">
@@ -1286,6 +1334,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
     <!-- Optional document upload -->
     <div class="section" style="padding-top:0;">
       <p class="section-hint">Upload source material only if you want Mnemorized to extract sections and high-yield concepts first. Supported: PDF, TXT, PNG, JPG.</p>
+      <div class="safety-note upload-privacy-note">
+        <strong>Before Upload</strong>
+        Remove patient identifiers first. Use educational/source material only; uploaded content may be sent to AI providers for extraction and generation.
+      </div>
       <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
         <div class="upload-icon">⬆</div>
         <div class="upload-primary">Drop file here or click to browse</div>
@@ -1540,6 +1592,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <span class="stage-title">Memory Palace Scene</span>
         <span class="stage-status" id="status-story">Waiting…</span>
       </div>
+      <div class="stage-detail" id="detail-story">Builds the clinical fact map, scene setting, narration anchors, and rapid review script.</div>
       <div class="stage-body" id="body-story" style="display:none;">
         <div class="story-output-grid">
           <aside class="story-summary-panel">
@@ -1583,6 +1636,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <span class="stage-title">Medical Quality Gate</span>
         <span class="stage-status" id="status-quality">Waiting…</span>
       </div>
+      <div class="stage-detail" id="detail-quality">Checks generated anchors against private medical references when account and backend access are available.</div>
       <div class="stage-body" id="body-quality" style="display:none;">
         <div id="quality-result"></div>
       </div>
@@ -1595,6 +1649,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <span class="stage-title">Scene Illustration</span>
         <span class="stage-status" id="status-prompt">Waiting…</span>
       </div>
+      <div class="stage-detail" id="detail-prompt">Prepares image prompts after the script is generated and the quality gate has had a chance to run.</div>
       <div class="stage-body" id="body-prompt" style="display:none;">
         <div class="handoff-message" id="handoff-message">
           <div class="handoff-icon">✓</div>

@@ -382,6 +382,20 @@ def test_forge_prioritizes_direct_topic_entry_over_upload() -> None:
     assert "manual-bypass" not in html
 
 
+def test_forge_shows_medical_safety_privacy_guardrails() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    assert 'id="content-safety-note"' in html
+    assert "Do not enter patient-identifying information." in html
+    assert "Use educational/source material only." in html
+    assert "Uploaded or pasted content may be sent to AI providers for generation." in html
+    assert "Private medical reference retrieval uses backend-only access." in html
+    assert "upload-privacy-note" in html
+    assert "Do not include patient-identifying information." in pipeline
+
+
 def test_forge_story_output_avoids_nested_scroll_traps() -> None:
     root = Path(__file__).resolve().parents[1]
     html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
@@ -403,19 +417,47 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert 'id="stage-quality"' in html
     assert 'id="status-quality"' in html
     assert 'id="quality-result"' in html
+    assert 'id="detail-story"' in html
+    assert 'id="detail-quality"' in html
+    assert 'id="detail-prompt"' in html
     assert '<span class="stage-num">02</span>\n        <span class="stage-title">Medical Quality Gate</span>' in html
     assert '<span class="stage-num">03</span>\n        <span class="stage-title">Scene Illustration</span>' in html
+    assert "function setStageDetail" in (root / "frontend" / "scripts" / "forge-state.js").read_text(encoding="utf-8")
+    assert "Retrieving backend-only reference snippets" in auth
     assert "await runMedicalQualityGate(storyData);" in pipeline
     assert "Demo mode uses built-in sample content" in pipeline
     assert "function runMedicalQualityGate" in auth
     assert "function repairCurrentPalaceWithMedicalEvidence" in auth
     assert "Repair with Medical Evidence" in auth
     assert "MnemorizedMedicalApi.context" in auth
+    assert "Medical repair complete. Review the updated script" in auth
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
     assert "quality_gate: currentQualityGateData" in auth
     assert "window.MnemorizedMedicalApi" in shared
+
+
+def test_forge_save_has_visible_success_confirmation() -> None:
+    root = Path(__file__).resolve().parents[1]
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+
+    assert "Saved to Library:" in auth
+    assert "saveBtn.textContent = 'Saving...'" in auth
+    assert "primarySaveBtn.textContent = 'Saved'" in auth
+
+
+def test_library_catalog_has_loading_error_and_empty_states() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+
+    assert "let catalogLoading = false;" in html
+    assert "let catalogError = '';" in html
+    assert "Loading curated catalog..." in html
+    assert "Catalog could not load:" in html
+    assert "No catalog palaces match this tag yet." in html
+    assert "No catalog palaces match that search yet." in html
+    assert "No curated palaces are published yet." in html
 
 
 def test_library_inline_handlers_escape_palace_ids() -> None:

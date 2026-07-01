@@ -521,6 +521,8 @@ let latestAccountSummary = null;
 let activeTab = 'catalog';
 let catalogRows = [];
 let activeTag = null;
+let catalogLoading = false;
+let catalogError = '';
 
 function getForgeRedirectUrl() {
   const baseUrl = (appConfig.appBaseUrl || window.location.origin || '').replace(/\/+$/, '');
@@ -752,7 +754,12 @@ function switchTab(tab) {
 // ── Catalog browse ─────────────────────────────────────────
 
 async function loadCatalog() {
+  catalogLoading = true;
+  catalogError = '';
+  catalogRows = [];
   setLibraryStatus('Loading public catalog…');
+  renderCatalogTags();
+  renderCatalog();
   try {
     const params = {};
     if (activeTag) params.tag = activeTag;
@@ -760,6 +767,7 @@ async function loadCatalog() {
     if (q) params.q = q;
     const payload = await MnemorizedCatalogApi.list(params);
     catalogRows = payload.catalog || [];
+    catalogLoading = false;
     renderCatalogTags();
     renderCatalog();
     setLibraryStatus(
@@ -767,6 +775,11 @@ async function loadCatalog() {
       catalogRows.length ? 'success' : 'muted'
     );
   } catch (error) {
+    catalogLoading = false;
+    catalogError = error.message || 'Unknown catalog error';
+    catalogRows = [];
+    renderCatalogTags();
+    renderCatalog();
     setLibraryStatus('Catalog load failed: ' + error.message, 'error');
   }
 }
@@ -792,13 +805,30 @@ function toggleTag(tag) {
 function renderCatalog() {
   const list = document.getElementById('library-list');
   const empty = document.getElementById('library-empty');
+  const query = document.getElementById('search-input').value.trim();
+
+  if (catalogLoading) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    empty.textContent = 'Loading curated catalog...';
+    return;
+  }
+
+  if (catalogError) {
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    empty.textContent = 'Catalog could not load: ' + catalogError;
+    return;
+  }
 
   if (!catalogRows.length) {
     list.innerHTML = '';
     empty.style.display = 'block';
     empty.textContent = activeTag
-      ? 'No catalog palaces match the selected tag.'
-      : 'No published palaces in the catalog yet.';
+      ? 'No catalog palaces match this tag yet. Clear the tag or try search.'
+      : (query
+        ? 'No catalog palaces match that search yet.'
+        : 'No curated palaces are published yet. Your private saved palaces still live in Library.');
     return;
   }
 

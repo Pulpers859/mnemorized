@@ -196,8 +196,14 @@ refreshBackendStatus();
 
 function setStatus(id, text, cls) {
   const el = document.getElementById('status-' + id);
+  if (!el) return;
   el.textContent = text;
   el.className = 'stage-status ' + (cls || '');
+}
+
+function setStageDetail(id, text) {
+  const el = document.getElementById('detail-' + id);
+  if (el) el.textContent = text;
 }
 
 function showBody(id) {

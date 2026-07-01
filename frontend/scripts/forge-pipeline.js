@@ -362,6 +362,7 @@ function downloadGenImage(n) {
 async function rebuildImagePromptsForStory(storyData) {
   if (!storyData?.voLines?.length) {
     setStatus('prompt', 'No repaired story', 'error');
+    setStageDetail('prompt', 'Image prompts could not be rebuilt because the repaired script has no anchors.');
     return;
   }
 
@@ -373,6 +374,7 @@ async function rebuildImagePromptsForStory(storyData) {
   }));
 
   setStatus('prompt', 'Rebuilding image prompts...', 'running');
+  setStageDetail('prompt', 'Rebuilding illustration prompts from the repaired anchor script.');
 
   const ipSystem = 'You write scene descriptions for Gemini Imagen image generation. ' +
     'Output ONLY the scene-specific content — setting, objects, composition, atmosphere. ' +
@@ -426,9 +428,11 @@ Requirements:
     document.getElementById('prompt-copy-2').value = prompt2;
     setCurrentPalaceData(storyData, prompt1, prompt2);
     setStatus('prompt', '✓ Rebuilt from repaired script', 'done');
+    setStageDetail('prompt', `Illustration handoff rebuilt with ${n} repaired anchors.`);
   } catch (error) {
     setCurrentPalaceData(storyData, '', '');
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
+    setStageDetail('prompt', 'The repaired script was kept, but image prompts need to be regenerated.');
   }
 }
 
@@ -440,7 +444,7 @@ async function runPipeline() {
   const artStyle = document.getElementById('style-select').value;
   const tone     = document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
 
-  if (!topic) { alert('Please describe what needs to be memorized (Section I).'); return; }
+  if (!topic) { alert('Please describe what needs to be memorized in Section I. Do not include patient-identifying information.'); return; }
 
   currentStoryData = null;
   currentPromptData = { prompt1: '', prompt2: '' };
@@ -455,12 +459,16 @@ async function runPipeline() {
   setStatus('story', 'Waiting…', '');
   setStatus('quality', 'Waiting…', '');
   setStatus('prompt', 'Waiting…', '');
+  setStageDetail('story', 'Waiting to build the clinical fact map and memory palace script.');
+  setStageDetail('quality', 'Runs after the script when sign-in and private medical retrieval are available.');
+  setStageDetail('prompt', 'Runs after the script is generated and checked.');
 
   // ══ DEMO MODE — full UI flow, zero API calls ══════════════════
   if (isDemoMode()) {
     const D = DEMO_DATA;
 
     setStatus('story', '✦ Writing scene…', 'running');
+    setStageDetail('story', 'Demo mode is loading the sample DKA palace without contacting AI providers.');
     await demoDelay(1800);
 
     showBody('story');
@@ -481,12 +489,15 @@ async function runPipeline() {
     document.getElementById('review-wrap').style.display = 'block';
 
     setStatus('story', '✓ Complete', 'done');
+    setStageDetail('story', `${D.voLines.length} sample anchors generated with a rapid review script.`);
     await demoDelay(800);
     setStatus('quality', 'Demo skipped', 'done');
+    setStageDetail('quality', 'Demo mode skips private medical retrieval and provider calls.');
     renderQualityGateMessage('Demo mode uses built-in sample content, so private medical retrieval is skipped.', 'success');
     await demoDelay(400);
 
     setStatus('prompt', '✦ Building image prompts…', 'running');
+    setStageDetail('prompt', 'Preparing illustration handoff prompts from the sample scene.');
     await demoDelay(1200);
 
     const n = D.voLines.length;
@@ -514,6 +525,7 @@ async function runPipeline() {
     setStatus('prompt', isOperatorMode()
       ? `✓ 2 prompts ready (${n} anchors in single pass)`
       : '✓ Image prompts ready', 'done');
+    setStageDetail('prompt', `Illustration handoff ready with ${n} anchors.`);
     setCurrentPalaceData(
       {
         scene_title: D.scene_title,
@@ -569,6 +581,7 @@ async function runPipeline() {
 
   // ── STAGE 1: Clinical Context ─────────────────────
   setStatus('story', '✦ Analyzing topic…', 'running');
+  setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
   let clinicalContext = '';
   try {
     const ctxRes = await claudeFetch({
@@ -602,6 +615,7 @@ Output ONLY these two XML tags, nothing else:
 
   // ── STAGE 2: Voiceover Script ─────────────────────
   setStatus('story', '✦ Writing scene…', 'running');
+  setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
   const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is NO guide character in the scene — only objects, signs, and environmental elements.
 
@@ -758,6 +772,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
+    setStageDetail('story', `${voLines.length} anchors generated. Review the script, then save or repair if needed.`);
     await runMedicalQualityGate(storyData);
   } catch(e) {
     const box = document.getElementById('debug-box');
@@ -765,12 +780,14 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     box.style.display = 'block';
     box.textContent = `── STORY ERROR ──\n${e.message}\n\n── Previous debug output ──\n${prev}`;
     setStatus('story', '✗ ' + e.message.slice(0, 80), 'error');
+    setStageDetail('story', 'Scene generation stopped before a usable script was created.');
     btn.disabled = false; btn.innerHTML = "LET'S MNEMORIZE";
     return;
   }
 
   // ── STAGE 3: Image prompts ────────────────────────
   setStatus('prompt', '✦ Building image prompts…', 'running');
+  setStageDetail('prompt', 'Preparing illustration prompts from the generated anchor script.');
 
   try {
     const n = storyData.voLines.length;
@@ -837,10 +854,12 @@ Requirements:
     document.getElementById('prompt-copy-2').value = prompt2;
 
     setStatus('prompt', '✦ Image prompts ready', 'done');
+    setStageDetail('prompt', `Illustration handoff ready with ${n} anchors.`);
     setCurrentPalaceData(storyData, prompt1, prompt2);
 
   } catch(e) {
     setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');
+    setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
     console.error('Image prompt error:', e);
     setCurrentPalaceData(storyData, '', '');
   }
