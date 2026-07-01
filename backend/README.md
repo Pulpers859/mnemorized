@@ -12,6 +12,7 @@ It gives you:
 - Supabase-aware user context on proxied AI requests
 - Authenticated usage event persistence into Supabase `usage_events`
 - Plan-aware monthly request quota enforcement before Anthropic is called
+- Private, service-role-only medical knowledge retrieval for future quality gates
 - Clean extension points for auth, persistence, and subscriptions
 
 ## Endpoints
@@ -19,6 +20,8 @@ It gives you:
 - `GET /api/health`
 - `GET /api/config/public`
 - `GET /api/account/summary`
+- `POST /api/medical-knowledge/context`
+- `POST /api/medical-knowledge/quality-check`
 - `POST /api/anthropic/messages`
 - `POST /api/generate-image`
 
@@ -34,8 +37,9 @@ python -m pip install -r backend/requirements.txt
 3. Copy `backend/.env.example` to `backend/.env` and set `ANTHROPIC_API_KEY`.
 4. If you want auth + saved palaces, also set `SUPABASE_URL` and `SUPABASE_ANON_KEY`.
 5. If you want admin catalog publishing, set `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS`.
-6. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement.
-7. Start the server:
+6. If you want private medical knowledge retrieval, set `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY`.
+7. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement.
+8. Start the server:
 
 ```powershell
 python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8001 --reload
@@ -47,7 +51,7 @@ Or on Windows:
 .\tools\Start-Mnemorized-App.ps1
 ```
 
-8. Open the served app routes:
+9. Open the served app routes:
 
 ```text
 http://127.0.0.1:8001/
@@ -62,6 +66,18 @@ Proxy usage events are appended to:
 - `backend/logs/anthropic_usage.jsonl`
 
 This is intentionally lightweight for now. In phase 2, those records can move into Postgres and attach to authenticated users.
+
+## Private Medical Knowledge
+
+Run the medical SQL block in `backend/sql/supabase_schema.sql` before retrieval. It creates a private `medical` schema, RLS-hardened source/chunk tables, vector search indexes, and service-role-only RPC functions.
+
+Local ingestion is handled by:
+
+```powershell
+python tools\ingest_medical_knowledge.py --source-dir "C:\Users\Patrick's Computer\OneDrive - WV School of Osteopathic Medicine\Desktop\Files need moved to USB\TinTin Chapters" --dry-run --limit-files 1
+```
+
+Actual ingestion sends chunk text to OpenAI for embeddings, so the script refuses to run unless you explicitly add `--confirm-send-to-openai`. Browser endpoints return citation metadata and short excerpts only; full source chunks remain backend/database-side.
 
 ## Repo Layout Note
 

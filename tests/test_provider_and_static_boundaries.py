@@ -19,6 +19,7 @@ def make_settings(
     app_env: str = "development",
     anthropic_api_key: str = "",
     gemini_api_key: str = "",
+    openai_api_key: str = "",
     supabase_url: str = "",
     supabase_anon_key: str = "",
     supabase_service_role_key: str = "",
@@ -48,6 +49,9 @@ def make_settings(
         team_monthly_requests=4000,
         gemini_api_key=gemini_api_key,
         gemini_model="gemini-2.5-flash-image",
+        openai_api_key=openai_api_key,
+        openai_embedding_model="text-embedding-3-small",
+        openai_embedding_dimensions=1536,
         plan_override_path=tmp_path / "plan_overrides.json",
         admin_emails=admin_emails,
     )
@@ -322,6 +326,8 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     assert ".from('palace_versions')" not in combined
     assert "/api/profile/ensure" in combined
     assert "/api/palaces/save" in combined
+    assert "medical.medical_knowledge_chunks" not in combined
+    assert "match_medical_knowledge_chunks" not in combined
 
 
 def test_static_pages_load_shared_backend_persistence_script_before_inline_code() -> None:
@@ -420,6 +426,47 @@ def test_supabase_schema_hardens_rls_and_trigger_functions() -> None:
     assert "with check (auth.uid()" not in schema
     assert "with check ((select auth.uid()) = id)" in schema
     assert "with check ((select auth.uid()) = user_id)" in schema
+
+
+def test_medical_knowledge_schema_is_private_service_role_only() -> None:
+    root = Path(__file__).resolve().parents[1]
+    schema = (root / "backend" / "sql" / "supabase_schema.sql").read_text(encoding="utf-8")
+    medical_block = schema.split("Private medical knowledge base", 1)[1]
+
+    assert "create schema if not exists medical" in medical_block
+    assert "alter table medical.medical_sources enable row level security" in medical_block
+    assert "alter table medical.medical_knowledge_chunks enable row level security" in medical_block
+    assert "medical_sources_no_browser_access" in medical_block
+    assert "medical_chunks_no_browser_access" in medical_block
+    assert "using (false)" in medical_block
+    assert "revoke all on schema medical from public, anon, authenticated" in medical_block
+    assert "revoke all on medical.medical_knowledge_chunks from public, anon, authenticated" in medical_block
+    assert "grant select, insert, update, delete on medical.medical_knowledge_chunks to service_role" in medical_block
+    assert "security definer" in medical_block
+    assert "revoke execute on function public.match_medical_knowledge_chunks" in medical_block
+    assert "grant execute on function public.match_medical_knowledge_chunks" in medical_block
+    assert "to service_role" in medical_block
+    assert "grant select on medical.medical_knowledge_chunks to anon" not in medical_block
+    assert "grant select on medical.medical_knowledge_chunks to authenticated" not in medical_block
+
+
+def test_medical_env_examples_are_placeholder_only() -> None:
+    root = Path(__file__).resolve().parents[1]
+    example = (root / "backend" / ".env.example").read_text(encoding="utf-8")
+
+    assert "OPENAI_API_KEY=replace-with-local-openai-key" in example
+    assert "OPENAI_EMBEDDING_MODEL=text-embedding-3-small" in example
+    assert "OPENAI_EMBEDDING_DIMENSIONS=1536" in example
+    assert "sk-" not in example
+
+
+def test_medical_ingestion_requires_explicit_openai_confirmation() -> None:
+    root = Path(__file__).resolve().parents[1]
+    tool = (root / "tools" / "ingest_medical_knowledge.py").read_text(encoding="utf-8")
+
+    assert "--confirm-send-to-openai" in tool
+    assert "Refusing to upload private source text" in tool
+    assert "p_source_path\": path.name" in tool
 
 
 def test_service_worker_does_not_cache_html_or_itself() -> None:

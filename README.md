@@ -54,11 +54,16 @@ Important variables:
 
 - `ANTHROPIC_API_KEY`
 - `GEMINI_API_KEY`
+- `OPENAI_API_KEY` for private medical knowledge embeddings
 - `SUPABASE_URL`
 - `SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_ROLE_KEY` for backend-only catalog publishing
+- `SUPABASE_SERVICE_ROLE_KEY` for backend-only catalog publishing and private medical knowledge RPCs
 - `ADMIN_EMAILS` for comma-separated catalog publisher emails
 - `CORS_ORIGINS`
+
+## Private Medical Knowledge
+
+The medical reference foundation is intentionally private: source chunks live in the non-public Supabase `medical` schema, browser clients do not receive raw chunks, and backend access uses service-role-only RPCs. Use `tools/ingest_medical_knowledge.py --dry-run` to inspect chunk counts before any upload. Actual ingestion requires `--confirm-send-to-openai` because PDF text must be sent to OpenAI to create embeddings.
 
 ## Notes For Future Work
 

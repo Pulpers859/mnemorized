@@ -38,6 +38,9 @@ def make_settings(tmp_path: Path) -> Settings:
         team_monthly_requests=4000,
         gemini_api_key="",
         gemini_model="gemini-2.5-flash-image",
+        openai_api_key="",
+        openai_embedding_model="text-embedding-3-small",
+        openai_embedding_dimensions=1536,
         plan_override_path=tmp_path / "plan_overrides.json",
         admin_emails=(),
     )
@@ -282,3 +285,135 @@ def test_catalog_publish_uses_service_role_after_admin_check(
     assert supabase.calls[0]["bearer_token"] is None
     assert supabase.calls[0]["use_service_role"] is True
     assert supabase.calls[0]["json_body"]["tags"] == ["emergency"]
+
+
+def test_medical_context_uses_service_role_and_returns_capped_excerpts(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        openai_api_key="openai-key",
+    )
+    long_chunk = "DKA management requires careful fluids and potassium checks. " * 20
+    supabase = SupabaseMock([
+        httpx.Response(
+            200,
+            json=[{
+                "chunk_id": "chunk-1",
+                "source_key": "tintin-endocrine",
+                "title": "Tintin Endocrine",
+                "page_start": 12,
+                "page_end": 13,
+                "section_title": "DKA",
+                "chunk_text": long_chunk,
+                "similarity": 0.82,
+                "keyword_rank": 0.4,
+            }],
+        )
+    ])
+    scheduled_usage: list[dict[str, Any]] = []
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 0,
+            "monthly_requests_remaining": 40,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+        }
+
+    async def fake_embedding(**kwargs: Any) -> tuple[list[float], dict[str, Any]]:
+        return [0.01] * 1536, {"prompt_tokens": 8}
+
+    def fake_schedule_usage_event(**kwargs: Any) -> None:
+        scheduled_usage.append(kwargs)
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    monkeypatch.setattr(app_main, "_create_openai_embedding", fake_embedding)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+    monkeypatch.setattr(app_main, "_schedule_usage_event", fake_schedule_usage_event)
+
+    response = client.post(
+        "/api/medical-knowledge/context",
+        headers={"Authorization": "Bearer local-token"},
+        json={"topic": "DKA fluids and potassium", "max_chunks": 3},
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] == 1
+    assert "chunk_text" not in response.text
+    assert payload["context"][0]["excerpt"].endswith("...")
+    assert len(payload["context"][0]["excerpt"]) <= 420
+    assert supabase.calls[0]["path"] == "/rest/v1/rpc/match_medical_knowledge_chunks"
+    assert supabase.calls[0]["bearer_token"] is None
+    assert supabase.calls[0]["use_service_role"] is True
+    assert supabase.calls[0]["json_body"]["p_match_count"] == 3
+    assert scheduled_usage[0]["request_body"]["provider"] == "openai"
+
+
+def test_medical_quality_check_reports_missing_required_concepts_without_raw_chunks(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        openai_api_key="openai-key",
+    )
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 0,
+            "monthly_requests_remaining": 40,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+        }
+
+    async def fake_retrieve(**kwargs: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return [
+            {
+                "source_key": "tintin-endocrine",
+                "title": "Tintin Endocrine",
+                "page_start": 12,
+                "page_end": 12,
+                "section_title": "DKA",
+                "chunk_text": "potassium must be checked before insulin",
+                "similarity": 0.9,
+                "keyword_rank": 0.5,
+            }
+        ], {"prompt_tokens": 6}
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    monkeypatch.setattr(app_main, "_retrieve_medical_context", fake_retrieve)
+    monkeypatch.setattr(app_main, "_schedule_usage_event", lambda **kwargs: None)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "topic": "DKA",
+            "generation_outputs": {"script": "Give fluids first."},
+            "required_concepts": ["potassium"],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["verdict"] == "needs_repair"
+    assert payload["repair_focus"] == ["potassium"]
+    assert payload["required_concept_coverage"][0]["evidence_refs"][0]["source_key"] == "tintin-endocrine"
+    assert "potassium must be checked before insulin" not in response.text

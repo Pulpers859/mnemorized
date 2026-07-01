@@ -77,6 +77,9 @@ class Settings:
     team_monthly_requests: int
     gemini_api_key: str
     gemini_model: str
+    openai_api_key: str
+    openai_embedding_model: str
+    openai_embedding_dimensions: int
     plan_override_path: Path
     admin_emails: tuple[str, ...]
 
@@ -89,12 +92,20 @@ class Settings:
         return bool(self.gemini_api_key)
 
     @property
+    def openai_embeddings_configured(self) -> bool:
+        return bool(self.openai_api_key and self.openai_embedding_model)
+
+    @property
     def supabase_auth_configured(self) -> bool:
         return bool(self.supabase_url and self.supabase_anon_key)
 
     @property
     def supabase_admin_configured(self) -> bool:
         return bool(self.supabase_auth_configured and self.supabase_service_role_key)
+
+    @property
+    def medical_knowledge_configured(self) -> bool:
+        return bool(self.supabase_admin_configured and self.openai_embeddings_configured)
 
     @property
     def supabase_jwks_url(self) -> str:
@@ -174,6 +185,12 @@ def get_settings() -> Settings:
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
         gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
+        openai_api_key=_clean_env_value("OPENAI_API_KEY"),
+        openai_embedding_model=os.getenv(
+            "OPENAI_EMBEDDING_MODEL",
+            "text-embedding-3-small",
+        ).strip(),
+        openai_embedding_dimensions=int(os.getenv("OPENAI_EMBEDDING_DIMENSIONS", "1536")),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
         admin_emails=_split_csv(os.getenv("ADMIN_EMAILS", "")),
     )

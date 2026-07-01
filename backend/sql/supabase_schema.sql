@@ -227,3 +227,241 @@ drop trigger if exists palaces_set_updated_at on public.palaces;
 create trigger palaces_set_updated_at
 before update on public.palaces
 for each row execute procedure public.set_updated_at();
+
+-- ── Private medical knowledge base (backend service-role only) ──
+
+create extension if not exists vector with schema extensions;
+
+create schema if not exists medical;
+
+revoke all on schema medical from public, anon, authenticated;
+grant usage on schema medical to service_role;
+
+create table if not exists medical.medical_sources (
+  id          uuid primary key default gen_random_uuid(),
+  source_key  text not null unique,
+  title       text not null,
+  source_path text,
+  metadata    jsonb not null default '{}'::jsonb,
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+
+create table if not exists medical.medical_knowledge_chunks (
+  id             uuid primary key default gen_random_uuid(),
+  source_id      uuid not null references medical.medical_sources (id) on delete cascade,
+  chunk_index    integer not null,
+  page_start     integer,
+  page_end       integer,
+  section_title  text,
+  chunk_text     text not null,
+  token_estimate integer not null default 0,
+  embedding      vector(1536) not null,
+  metadata       jsonb not null default '{}'::jsonb,
+  content_tsv    tsvector generated always as (
+    to_tsvector('english', coalesce(section_title, '') || ' ' || chunk_text)
+  ) stored,
+  created_at     timestamptz not null default now(),
+  updated_at     timestamptz not null default now(),
+  unique (source_id, chunk_index)
+);
+
+alter table medical.medical_sources enable row level security;
+alter table medical.medical_knowledge_chunks enable row level security;
+
+create policy "medical_sources_no_browser_access"
+on medical.medical_sources
+for all
+to anon, authenticated
+using (false)
+with check (false);
+
+create policy "medical_chunks_no_browser_access"
+on medical.medical_knowledge_chunks
+for all
+to anon, authenticated
+using (false)
+with check (false);
+
+revoke all on medical.medical_sources from public, anon, authenticated;
+revoke all on medical.medical_knowledge_chunks from public, anon, authenticated;
+grant select, insert, update, delete on medical.medical_sources to service_role;
+grant select, insert, update, delete on medical.medical_knowledge_chunks to service_role;
+
+create index if not exists idx_medical_chunks_source_id
+  on medical.medical_knowledge_chunks (source_id);
+create index if not exists idx_medical_chunks_tsv
+  on medical.medical_knowledge_chunks using gin (content_tsv);
+create index if not exists idx_medical_chunks_embedding_hnsw
+  on medical.medical_knowledge_chunks using hnsw (embedding vector_cosine_ops);
+
+create or replace function public.upsert_medical_source(
+  p_source_key text,
+  p_title text,
+  p_source_path text default null,
+  p_metadata jsonb default '{}'::jsonb
+) returns uuid
+language plpgsql
+security definer
+set search_path = medical, public, extensions
+as $$
+declare
+  v_source_id uuid;
+begin
+  insert into medical.medical_sources (source_key, title, source_path, metadata, updated_at)
+  values (p_source_key, p_title, p_source_path, coalesce(p_metadata, '{}'::jsonb), now())
+  on conflict (source_key) do update
+    set title = excluded.title,
+        source_path = excluded.source_path,
+        metadata = excluded.metadata,
+        updated_at = now()
+  returning id into v_source_id;
+
+  return v_source_id;
+end;
+$$;
+
+create or replace function public.upsert_medical_knowledge_chunk(
+  p_source_key text,
+  p_chunk_index integer,
+  p_page_start integer,
+  p_page_end integer,
+  p_section_title text,
+  p_chunk_text text,
+  p_token_estimate integer,
+  p_embedding text,
+  p_metadata jsonb default '{}'::jsonb
+) returns uuid
+language plpgsql
+security definer
+set search_path = medical, public, extensions
+as $$
+declare
+  v_source_id uuid;
+  v_chunk_id uuid;
+begin
+  select id into v_source_id
+  from medical.medical_sources
+  where source_key = p_source_key;
+
+  if v_source_id is null then
+    raise exception 'medical source % does not exist', p_source_key;
+  end if;
+
+  insert into medical.medical_knowledge_chunks (
+    source_id,
+    chunk_index,
+    page_start,
+    page_end,
+    section_title,
+    chunk_text,
+    token_estimate,
+    embedding,
+    metadata,
+    updated_at
+  )
+  values (
+    v_source_id,
+    p_chunk_index,
+    p_page_start,
+    p_page_end,
+    p_section_title,
+    p_chunk_text,
+    coalesce(p_token_estimate, 0),
+    p_embedding::vector,
+    coalesce(p_metadata, '{}'::jsonb),
+    now()
+  )
+  on conflict (source_id, chunk_index) do update
+    set page_start = excluded.page_start,
+        page_end = excluded.page_end,
+        section_title = excluded.section_title,
+        chunk_text = excluded.chunk_text,
+        token_estimate = excluded.token_estimate,
+        embedding = excluded.embedding,
+        metadata = excluded.metadata,
+        updated_at = now()
+  returning id into v_chunk_id;
+
+  return v_chunk_id;
+end;
+$$;
+
+create or replace function public.match_medical_knowledge_chunks(
+  p_query_embedding text,
+  p_query_text text default '',
+  p_match_count integer default 8,
+  p_min_similarity double precision default 0.15
+) returns table (
+  chunk_id uuid,
+  source_key text,
+  title text,
+  page_start integer,
+  page_end integer,
+  section_title text,
+  chunk_text text,
+  similarity double precision,
+  keyword_rank double precision
+)
+language sql
+stable
+security definer
+set search_path = medical, public, extensions
+as $$
+  with query_input as (
+    select
+      nullif(p_query_embedding, '')::vector as embedding,
+      websearch_to_tsquery('english', coalesce(p_query_text, '')) as tsq
+  )
+  select
+    chunks.id as chunk_id,
+    sources.source_key,
+    sources.title,
+    chunks.page_start,
+    chunks.page_end,
+    chunks.section_title,
+    chunks.chunk_text,
+    case
+      when query_input.embedding is null then 0
+      else 1 - (chunks.embedding <=> query_input.embedding)
+    end as similarity,
+    case
+      when coalesce(trim(p_query_text), '') = '' then 0
+      else ts_rank(chunks.content_tsv, query_input.tsq)
+    end as keyword_rank
+  from medical.medical_knowledge_chunks as chunks
+  join medical.medical_sources as sources on sources.id = chunks.source_id
+  cross join query_input
+  where (
+      query_input.embedding is not null
+      and 1 - (chunks.embedding <=> query_input.embedding) >= coalesce(p_min_similarity, 0)
+    )
+    or (
+      coalesce(trim(p_query_text), '') <> ''
+      and chunks.content_tsv @@ query_input.tsq
+    )
+  order by
+    case
+      when query_input.embedding is null then 1
+      else chunks.embedding <=> query_input.embedding
+    end asc,
+    keyword_rank desc,
+    chunks.chunk_index asc
+  limit greatest(1, least(coalesce(p_match_count, 8), 20));
+$$;
+
+revoke execute on function public.upsert_medical_source(text, text, text, jsonb)
+  from public, anon, authenticated;
+revoke execute on function public.upsert_medical_knowledge_chunk(
+  text, integer, integer, integer, text, text, integer, text, jsonb
+) from public, anon, authenticated;
+revoke execute on function public.match_medical_knowledge_chunks(text, text, integer, double precision)
+  from public, anon, authenticated;
+
+grant execute on function public.upsert_medical_source(text, text, text, jsonb)
+  to service_role;
+grant execute on function public.upsert_medical_knowledge_chunk(
+  text, integer, integer, integer, text, text, integer, text, jsonb
+) to service_role;
+grant execute on function public.match_medical_knowledge_chunks(text, text, integer, double precision)
+  to service_role;

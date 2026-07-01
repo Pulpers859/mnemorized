@@ -162,7 +162,22 @@ ImagePrompt = Annotated[
 class ImageGenerationPayload(BaseModel):
     prompts: list[ImagePrompt] = Field(min_length=1, max_length=2)
 
+
+class MedicalContextPayload(BaseModel):
+    topic: str = Field(min_length=1, max_length=20000)
+    max_chunks: int = Field(default=8, ge=1, le=12)
+
+
+class MedicalQualityGatePayload(BaseModel):
+    topic: str = Field(min_length=1, max_length=20000)
+    generation_outputs: dict[str, Any] = Field(default_factory=dict)
+    required_concepts: list[str] = Field(default_factory=list, max_length=40)
+    max_evidence_chunks: int = Field(default=8, ge=1, le=12)
+
+
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+OPENAI_EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
+MEDICAL_EXCERPT_CHARS = 420
 
 
 def _client_id(request: Request) -> str:
@@ -538,6 +553,177 @@ def _single_row(rows: list[dict[str, Any]], label: str) -> dict[str, Any]:
     if not isinstance(row, dict):
         raise HTTPException(status_code=502, detail=f"Unexpected row payload while trying to {label}.")
     return row
+
+
+def _serialize_vector(values: list[float]) -> str:
+    return json.dumps([round(float(value), 8) for value in values], separators=(",", ":"))
+
+
+def _capped_excerpt(text: str, max_chars: int = MEDICAL_EXCERPT_CHARS) -> str:
+    normalized = " ".join(str(text or "").split())
+    if len(normalized) <= max_chars:
+        return normalized
+    return normalized[: max_chars - 3].rstrip() + "..."
+
+
+def _medical_citation(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "source_key": row.get("source_key"),
+        "source_title": row.get("title"),
+        "page_start": row.get("page_start"),
+        "page_end": row.get("page_end"),
+        "section_title": row.get("section_title"),
+        "similarity": row.get("similarity"),
+        "keyword_rank": row.get("keyword_rank"),
+    }
+
+
+def _public_medical_context_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        **_medical_citation(row),
+        "excerpt": _capped_excerpt(str(row.get("chunk_text") or "")),
+    }
+
+
+def _flatten_generation_text(value: Any, *, max_chars: int = 20000) -> str:
+    parts: list[str] = []
+
+    def visit(current: Any) -> None:
+        if sum(len(part) for part in parts) >= max_chars:
+            return
+        if isinstance(current, str):
+            parts.append(current)
+            return
+        if isinstance(current, dict):
+            for child in current.values():
+                visit(child)
+            return
+        if isinstance(current, list):
+            for child in current:
+                visit(child)
+
+    visit(value)
+    return " ".join(" ".join(parts).split())[:max_chars]
+
+
+async def _create_openai_embedding(
+    *,
+    request: Request,
+    settings: Settings,
+    text: str,
+) -> tuple[list[float], dict[str, Any]]:
+    if not settings.openai_embeddings_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="OPENAI_API_KEY is not configured for medical knowledge embeddings.",
+        )
+
+    body: dict[str, Any] = {
+        "model": settings.openai_embedding_model,
+        "input": text[:20000],
+    }
+    if settings.openai_embedding_dimensions > 0:
+        body["dimensions"] = settings.openai_embedding_dimensions
+
+    http_client, owns_http_client = _get_http_client(request)
+    try:
+        response = await http_client.post(
+            OPENAI_EMBEDDINGS_URL,
+            headers={
+                "Authorization": f"Bearer {settings.openai_api_key}",
+                "Content-Type": "application/json",
+            },
+            json=body,
+            timeout=httpx.Timeout(60.0, connect=10.0),
+        )
+    except httpx.TimeoutException as exc:
+        raise HTTPException(status_code=504, detail="OpenAI embeddings timed out.") from exc
+    except httpx.HTTPError as exc:
+        raise HTTPException(status_code=502, detail=f"Could not reach OpenAI embeddings: {exc}") from exc
+    finally:
+        if owns_http_client:
+            await http_client.aclose()
+
+    if response.status_code >= 400:
+        raise HTTPException(
+            status_code=502,
+            detail=f"OpenAI embeddings request failed: {response.text[:300]}",
+        )
+
+    try:
+        payload = response.json()
+        data = payload.get("data")
+        embedding = data[0].get("embedding") if isinstance(data, list) and data else None
+        if not isinstance(embedding, list) or not embedding:
+            raise ValueError("missing embedding data")
+        return [float(value) for value in embedding], payload.get("usage", {})
+    except (ValueError, TypeError, AttributeError) as exc:
+        raise HTTPException(status_code=502, detail="OpenAI embeddings returned an unexpected payload.") from exc
+
+
+async def _retrieve_medical_context(
+    *,
+    request: Request,
+    settings: Settings,
+    query_text: str,
+    max_chunks: int,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    if not settings.medical_knowledge_configured:
+        raise HTTPException(
+            status_code=503,
+            detail=(
+                "Medical knowledge is not configured. Set SUPABASE_SERVICE_ROLE_KEY "
+                "and OPENAI_API_KEY on the backend."
+            ),
+        )
+
+    embedding, usage = await _create_openai_embedding(
+        request=request,
+        settings=settings,
+        text=query_text,
+    )
+    response = await _supabase_rest_request(
+        request=request,
+        settings=settings,
+        bearer_token=None,
+        method="POST",
+        path="/rest/v1/rpc/match_medical_knowledge_chunks",
+        json_body={
+            "p_query_embedding": _serialize_vector(embedding),
+            "p_query_text": query_text,
+            "p_match_count": max(1, min(max_chunks, 12)),
+            "p_min_similarity": 0.12,
+        },
+        use_service_role=True,
+    )
+    rows = _parse_supabase_rows(response, "retrieve private medical context")
+    return rows, usage
+
+
+async def _reserve_provider_quota_for_user(
+    *,
+    request: Request,
+    settings: Settings,
+    bearer_token: str,
+    user: AuthenticatedUser,
+    request_id: str,
+) -> JSONResponse | None:
+    rate_limiter = _get_rate_limiter(request, settings)
+    allowed, retry_after = rate_limiter.allow(_rate_limit_subject(request, user))
+    if not allowed:
+        return _rate_limit_response(request_id, retry_after)
+
+    summary = await _get_subscription_and_usage_summary(
+        request=request,
+        settings=settings,
+        bearer_token=bearer_token,
+        user=user,
+        use_cache=True,
+    )
+    quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
+    if not quota_allowed:
+        return _quota_exceeded_response(request_id, quota_summary)
+    return None
 
 
 def _profile_display_name(user: AuthenticatedUser) -> str | None:
@@ -968,8 +1154,10 @@ async def health(request: Request) -> dict[str, Any]:
         "service": "mnemorized-backend",
         "anthropic_configured": active_settings.anthropic_configured,
         "gemini_configured": active_settings.gemini_configured,
+        "openai_embeddings_configured": active_settings.openai_embeddings_configured,
         "supabase_auth_configured": active_settings.supabase_auth_configured,
         "supabase_admin_configured": active_settings.supabase_admin_configured,
+        "medical_knowledge_configured": active_settings.medical_knowledge_configured,
         "provider_auth_required": active_settings.provider_auth_required,
         "provider_auth_ready": (
             not active_settings.provider_auth_required
@@ -996,7 +1184,168 @@ async def public_config(request: Request) -> dict[str, Any]:
         "supabase_anon_key": active_settings.supabase_anon_key or None,
         "app_base_url": active_settings.app_base_url,
         "dev_mode": active_settings.dev_mode,
+        "medical_knowledge_enabled": active_settings.medical_knowledge_configured,
     }
+
+
+@app.post("/api/medical-knowledge/context")
+async def medical_knowledge_context(
+    payload: MedicalContextPayload,
+    request: Request,
+    background_tasks: BackgroundTasks,
+) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+
+    if _request_size(request) > active_settings.max_request_bytes:
+        return _request_too_large_response(active_settings, request_id)
+
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+    quota_response = await _reserve_provider_quota_for_user(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        request_id=request_id,
+    )
+    if quota_response is not None:
+        return quota_response
+
+    try:
+        rows, usage = await _retrieve_medical_context(
+            request=request,
+            settings=active_settings,
+            query_text=payload.topic,
+            max_chunks=payload.max_chunks,
+        )
+    except HTTPException:
+        _release_quota_reservation(request, user)
+        raise
+
+    _schedule_usage_event(
+        background_tasks=background_tasks,
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        request_id=request_id,
+        request_body={"provider": "openai", "model": active_settings.openai_embedding_model},
+        response_payload={
+            "usage": {
+                "input_tokens": usage.get("prompt_tokens") or usage.get("total_tokens"),
+                "output_tokens": 0,
+            }
+        },
+        status_code=200,
+    )
+    return JSONResponse(
+        headers={"X-Request-ID": request_id},
+        content={
+            "count": len(rows),
+            "context": [_public_medical_context_row(row) for row in rows],
+            "copyright_boundary": (
+                "Private source material is retained server-side; browser responses include only "
+                "short excerpts and citation metadata."
+            ),
+        },
+        background=background_tasks,
+    )
+
+
+@app.post("/api/medical-knowledge/quality-check")
+async def medical_knowledge_quality_check(
+    payload: MedicalQualityGatePayload,
+    request: Request,
+    background_tasks: BackgroundTasks,
+) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+
+    if _request_size(request) > active_settings.max_request_bytes:
+        return _request_too_large_response(active_settings, request_id)
+
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+    quota_response = await _reserve_provider_quota_for_user(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        request_id=request_id,
+    )
+    if quota_response is not None:
+        return quota_response
+
+    query_text = payload.topic
+    required_concepts = [concept.strip() for concept in payload.required_concepts if concept.strip()]
+    if required_concepts:
+        query_text = f"{payload.topic}\n\nRequired concepts:\n" + "\n".join(required_concepts)
+
+    try:
+        rows, usage = await _retrieve_medical_context(
+            request=request,
+            settings=active_settings,
+            query_text=query_text,
+            max_chunks=payload.max_evidence_chunks,
+        )
+    except HTTPException:
+        _release_quota_reservation(request, user)
+        raise
+
+    output_text = _flatten_generation_text(payload.generation_outputs).lower()
+    coverage = []
+    for concept in required_concepts:
+        needle = concept.lower()
+        evidence_refs = [
+            _medical_citation(row)
+            for row in rows
+            if needle and needle in str(row.get("chunk_text") or "").lower()
+        ][:3]
+        coverage.append(
+            {
+                "concept": concept,
+                "present_in_generation": bool(needle and needle in output_text),
+                "evidence_refs": evidence_refs,
+            }
+        )
+
+    missing_or_weak = [
+        item["concept"]
+        for item in coverage
+        if not item["present_in_generation"]
+    ]
+    verdict = "needs_repair" if missing_or_weak else "ready_for_review"
+
+    _schedule_usage_event(
+        background_tasks=background_tasks,
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        request_id=request_id,
+        request_body={"provider": "openai", "model": active_settings.openai_embedding_model},
+        response_payload={
+            "usage": {
+                "input_tokens": usage.get("prompt_tokens") or usage.get("total_tokens"),
+                "output_tokens": 0,
+            }
+        },
+        status_code=200,
+    )
+    return JSONResponse(
+        headers={"X-Request-ID": request_id},
+        content={
+            "verdict": verdict,
+            "evidence_count": len(rows),
+            "evidence": [_medical_citation(row) for row in rows],
+            "required_concept_coverage": coverage,
+            "repair_focus": missing_or_weak,
+            "limits": (
+                "This deterministic gate checks retrieval coverage and required-concept presence. "
+                "It is not a standalone clinical correctness guarantee."
+            ),
+        },
+        background=background_tasks,
+    )
 
 
 @app.get("/api/account/summary")
