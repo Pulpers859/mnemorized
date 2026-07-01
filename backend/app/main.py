@@ -289,23 +289,72 @@ def _auth_required_response(request_id: str, message: str) -> JSONResponse:
     )
 
 
+def _billing_context(settings: Settings) -> dict[str, Any]:
+    return {
+        "billing_mode": settings.billing_mode,
+        "beta_mode": settings.billing_mode == "beta",
+        "billing_enabled": settings.billing_upgrade_path_enabled,
+        "upgrade_enabled": settings.billing_upgrade_path_enabled,
+        "upgrade_path_enabled": settings.billing_upgrade_path_enabled,
+        "billing_message": settings.billing_message,
+        "upgrade_url": None,
+        "quota_unit_label": "AI requests",
+        "quota_reset_policy": "monthly",
+    }
+
+
+def _plan_display_name(plan_code: str | None, settings: Settings) -> str:
+    plan = (plan_code or "free").strip().lower()
+    if settings.billing_mode == "beta" and plan == "free":
+        return "Free Beta"
+    if plan == "pro":
+        return "Pro"
+    if plan == "team":
+        return "Team"
+    if plan == "enterprise":
+        return "Enterprise"
+    if plan == "unlimited":
+        return "Unlimited"
+    return "Free"
+
+
 def _quota_exceeded_response(request_id: str, summary: dict[str, Any]) -> JSONResponse:
     monthly_limit = summary["monthly_request_limit"]
     monthly_used = summary["monthly_requests_used"]
+    upgrade_path_enabled = bool(summary.get("upgrade_path_enabled"))
+    billing_mode = summary.get("billing_mode") or "beta"
+    billing_message = summary.get(
+        "billing_message",
+        "Billing is not active yet; account request limits are fixed by the backend.",
+    )
+    if upgrade_path_enabled:
+        message = (
+            f"You have used {monthly_used} of {monthly_limit} monthly requests "
+            "for your current plan. Upgrade or wait for the next billing period."
+        )
+    else:
+        message = (
+            f"You have used {monthly_used} of {monthly_limit} monthly requests "
+            "for your current plan. Billing is not active yet; wait for the next "
+            "billing period or contact the app admin."
+        )
     return JSONResponse(
         status_code=402,
         headers={"X-Request-ID": request_id},
         content={
             "error": {
                 "type": "quota_exceeded",
-                "message": (
-                    f"You have used {monthly_used} of {monthly_limit} monthly requests "
-                    "for your current plan. Upgrade or wait for the next billing period."
-                ),
+                "message": message,
             },
             "plan": {
                 "code": summary["plan_code"],
+                "display_name": summary.get("plan_display_name") or summary["plan_code"],
                 "status": summary["subscription_status"],
+            },
+            "billing": {
+                "mode": billing_mode,
+                "upgrade_path_enabled": upgrade_path_enabled,
+                "message": billing_message,
             },
             "usage": {
                 "used": monthly_used,
@@ -1072,8 +1121,10 @@ async def _get_subscription_and_usage_summary(
     use_cache: bool = False,
 ) -> dict[str, Any]:
     if not (settings.supabase_auth_configured and bearer_token and user):
+        plan_code = "free"
         return {
-            "plan_code": "free",
+            "plan_code": plan_code,
+            "plan_display_name": _plan_display_name(plan_code, settings),
             "subscription_status": "inactive",
             "monthly_request_limit": settings.request_limit_for_plan("free"),
             "monthly_requests_used": 0,
@@ -1081,6 +1132,7 @@ async def _get_subscription_and_usage_summary(
             "period_started_at": _iso_month_start(),
             "period_ends_at": _iso_next_month_start(),
             "is_dev_override": False,
+            **_billing_context(settings),
         }
 
     if use_cache:
@@ -1172,6 +1224,7 @@ async def _get_subscription_and_usage_summary(
 
     result = {
         "plan_code": plan_code or "free",
+        "plan_display_name": _plan_display_name(plan_code, settings),
         "subscription_status": subscription_status,
         "monthly_request_limit": monthly_limit,
         "monthly_requests_used": used,
@@ -1179,6 +1232,7 @@ async def _get_subscription_and_usage_summary(
         "period_started_at": _iso_month_start(),
         "period_ends_at": _iso_next_month_start(),
         "is_dev_override": bool(override),
+        **_billing_context(settings),
     }
 
     cache_store: UsageSummaryCache | None = getattr(request.app.state, "usage_cache", None)
@@ -1438,6 +1492,8 @@ async def health(request: Request) -> dict[str, Any]:
         "supabase_auth_configured": active_settings.supabase_auth_configured,
         "supabase_admin_configured": active_settings.supabase_admin_configured,
         "medical_knowledge_configured": active_settings.medical_knowledge_configured,
+        "billing_mode": active_settings.billing_mode,
+        "upgrade_path_enabled": active_settings.billing_upgrade_path_enabled,
         "provider_auth_required": active_settings.provider_auth_required,
         "provider_auth_ready": (
             not active_settings.provider_auth_required
@@ -1450,7 +1506,7 @@ async def health(request: Request) -> dict[str, Any]:
         "next_foundations": {
             "auth": "supabase-ready" if active_settings.supabase_auth_configured else "planned",
             "persistence": "supabase-ready" if active_settings.supabase_auth_configured else "planned",
-            "billing": "planned",
+            "billing": active_settings.billing_foundation_status,
         },
     }
 
@@ -1465,6 +1521,7 @@ async def public_config(request: Request) -> dict[str, Any]:
         "app_base_url": active_settings.app_base_url,
         "dev_mode": active_settings.dev_mode,
         "medical_knowledge_enabled": active_settings.medical_knowledge_configured,
+        **_billing_context(active_settings),
     }
 
 

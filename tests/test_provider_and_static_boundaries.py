@@ -47,6 +47,7 @@ def make_settings(
         free_monthly_requests=40,
         pro_monthly_requests=400,
         team_monthly_requests=4000,
+        billing_mode="beta",
         gemini_api_key=gemini_api_key,
         gemini_model="gemini-2.5-flash-image",
         openai_api_key=openai_api_key,
@@ -157,11 +158,99 @@ def test_account_summary_selects_current_active_subscription(
     assert response.status_code == 200
     payload = response.json()
     assert payload["plan_code"] == "pro"
+    assert payload["plan_display_name"] == "Pro"
+    assert payload["beta_mode"] is True
+    assert payload["billing_enabled"] is False
+    assert payload["upgrade_enabled"] is False
+    assert payload["quota_unit_label"] == "AI requests"
     assert payload["monthly_requests_used"] == 7
     subscription_params = supabase.calls[0]["params"]
     assert subscription_params["status"] == "in.(active,trialing)"
     assert subscription_params["order"] == "current_period_end.desc.nullslast"
     assert subscription_params["limit"] == "1"
+
+
+def test_public_config_exposes_explicit_beta_billing_contract(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+        supabase_service_role_key="service-role-secret",
+    )
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    client = TestClient(app_main.app)
+
+    response = client.get("/api/config/public")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["billing_mode"] == "beta"
+    assert payload["beta_mode"] is True
+    assert payload["billing_enabled"] is False
+    assert payload["upgrade_enabled"] is False
+    assert payload["upgrade_path_enabled"] is False
+    assert payload["quota_unit_label"] == "AI requests"
+    assert "private beta" in payload["billing_message"]
+    assert "service-role-secret" not in response.text
+
+
+def test_quota_exceeded_response_is_beta_safe_and_skips_provider(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        gemini_api_key="gemini-key",
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+    )
+    provider = FakeProviderClient([])
+
+    async def fake_user(request: Any, active_settings: Settings) -> AuthenticatedUser:
+        return AuthenticatedUser(
+            user_id="user-123",
+            email="patrick@example.com",
+            claims={"sub": "user-123"},
+        )
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "plan_display_name": "Free Beta",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 40,
+            "monthly_requests_remaining": 0,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+            **app_main._billing_context(settings),
+        }
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    monkeypatch.setattr(app_main, "_resolve_authenticated_user", fake_user)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/generate-image",
+        headers={"Authorization": "Bearer local-token"},
+        json={"prompts": ["draw a clean palace"]},
+    )
+
+    assert response.status_code == 402
+    payload = response.json()
+    assert payload["error"]["type"] == "quota_exceeded"
+    assert "Billing is not active yet" in payload["error"]["message"]
+    assert "Upgrade or wait" not in payload["error"]["message"]
+    assert payload["plan"]["display_name"] == "Free Beta"
+    assert payload["billing"]["mode"] == "beta"
+    assert payload["billing"]["upgrade_path_enabled"] is False
+    assert provider.calls == []
 
 
 def test_gemini_non_json_response_returns_explicit_502(
@@ -330,6 +419,19 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     assert "/api/medical-knowledge/context" in combined
     assert "medical.medical_knowledge_chunks" not in combined
     assert "match_medical_knowledge_chunks" not in combined
+
+
+def test_frontend_surfaces_beta_quota_language() -> None:
+    root = Path(__file__).resolve().parents[1]
+    forge_state = (root / "frontend" / "scripts" / "forge-state.js").read_text(encoding="utf-8")
+    forge_auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+    library = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+
+    assert "Monthly beta quota exceeded" in forge_state
+    assert "Billing and upgrades are not active yet" in forge_state
+    assert "Mnemorized is in private beta" in forge_auth
+    assert "Monthly AI Requests" in library
+    assert "Free Beta" in library
 
 
 def test_static_pages_load_shared_backend_persistence_script_before_inline_code() -> None:

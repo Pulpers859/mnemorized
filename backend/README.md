@@ -12,6 +12,7 @@ It gives you:
 - Supabase-aware user context on proxied AI requests
 - Authenticated usage event persistence into Supabase `usage_events`
 - Plan-aware monthly request quota enforcement before Anthropic is called
+- Explicit beta-mode billing copy so quota limits do not imply an active upgrade path
 - Private, service-role-only medical knowledge retrieval for future quality gates
 - Clean extension points for auth, persistence, and subscriptions
 
@@ -41,7 +42,7 @@ python -m pip install -r backend/requirements.txt
 4. If you want auth + saved palaces, also set `SUPABASE_URL` and `SUPABASE_ANON_KEY`.
 5. If you want admin catalog publishing, set `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS`.
 6. If you want private medical knowledge retrieval, set `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY`.
-7. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement.
+7. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement. Keep `BILLING_MODE=beta` until there is a real upgrade path.
 8. Start the server:
 
 ```powershell

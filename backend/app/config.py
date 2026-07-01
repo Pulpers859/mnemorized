@@ -52,6 +52,13 @@ def _env_bool(key: str, default: bool) -> bool:
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _normalize_billing_mode(raw: str) -> str:
+    mode = raw.strip().lower()
+    if mode in {"beta", "stripe", "production", "disabled"}:
+        return mode
+    return "beta"
+
+
 @dataclass(frozen=True)
 class Settings:
     app_env: str
@@ -75,6 +82,7 @@ class Settings:
     free_monthly_requests: int
     pro_monthly_requests: int
     team_monthly_requests: int
+    billing_mode: str
     gemini_api_key: str
     gemini_model: str
     openai_api_key: str
@@ -126,6 +134,29 @@ class Settings:
     @property
     def provider_auth_required(self) -> bool:
         return self.supabase_auth_configured or not self.dev_mode
+
+    @property
+    def billing_upgrade_path_enabled(self) -> bool:
+        return self.billing_mode in {"stripe", "production"}
+
+    @property
+    def billing_foundation_status(self) -> str:
+        if self.billing_upgrade_path_enabled:
+            return "active"
+        if self.billing_mode == "disabled":
+            return "disabled"
+        return "beta"
+
+    @property
+    def billing_message(self) -> str:
+        if self.billing_upgrade_path_enabled:
+            return "Billing is active. Paid plan upgrades can change monthly request limits."
+        if self.billing_mode == "disabled":
+            return "Billing is disabled. Account request limits are fixed by the backend."
+        return (
+            "Mnemorized is in private beta. Billing is not active yet; beta accounts use "
+            "fixed monthly request limits."
+        )
 
     @property
     def cors_allowed_origins(self) -> tuple[str, ...]:
@@ -183,6 +214,7 @@ def get_settings() -> Settings:
         free_monthly_requests=int(os.getenv("FREE_MONTHLY_REQUESTS", "40")),
         pro_monthly_requests=int(os.getenv("PRO_MONTHLY_REQUESTS", "400")),
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
+        billing_mode=_normalize_billing_mode(os.getenv("BILLING_MODE", "beta")),
         gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
         openai_api_key=_clean_env_value("OPENAI_API_KEY"),

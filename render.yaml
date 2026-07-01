@@ -41,3 +41,5 @@ services:
         value: "true"
       - key: ADMIN_EMAILS
         sync: false
+      - key: BILLING_MODE
+        value: beta

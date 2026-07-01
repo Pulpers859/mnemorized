@@ -36,6 +36,7 @@ def make_settings(tmp_path: Path) -> Settings:
         free_monthly_requests=40,
         pro_monthly_requests=400,
         team_monthly_requests=4000,
+        billing_mode="beta",
         gemini_api_key="",
         gemini_model="gemini-2.5-flash-image",
         openai_api_key="",

@@ -8,7 +8,14 @@ const appConfig = {
   supabaseUrl: '',
   supabaseAnonKey: '',
   appBaseUrl: '',
-  medicalKnowledgeEnabled: false
+  medicalKnowledgeEnabled: false,
+  billingMode: 'beta',
+  betaMode: true,
+  billingEnabled: false,
+  upgradeEnabled: false,
+  upgradePathEnabled: false,
+  billingMessage: 'Mnemorized is in private beta. Billing is not active yet; beta accounts use fixed monthly request limits.',
+  quotaUnitLabel: 'AI requests'
 };
 
 let supabaseClient = null;
@@ -556,7 +563,7 @@ function refreshAuthUI() {
   if (authState.user) {
     const label = authState.user.email ? authState.user.email.split('@')[0].slice(0, 12) : 'SIGNED IN';
     setAccountBadge('online', label.toUpperCase());
-    document.getElementById('auth-summary').textContent = `Signed in as ${authState.user.email || authState.user.id}. Save from the forge here, then manage the full collection from the dedicated library page.`;
+    document.getElementById('auth-summary').textContent = `Signed in as ${authState.user.email || authState.user.id}. ${appConfig.billingMessage} Save here, then manage the full collection from Library.`;
     setAuthModalStatus(`Signed in as ${authState.user.email || authState.user.id}.`);
     openAuthBtn.textContent = 'Account';
     saveBtn.disabled = !hasSavablePalace();
@@ -568,7 +575,7 @@ function refreshAuthUI() {
     setLibraryStatus(currentPalaceMeta ? `Editing "${currentPalaceMeta.title}"` : 'Library connected.', 'success');
   } else {
     setAccountBadge('warning', 'SIGN IN');
-    document.getElementById('auth-summary').textContent = 'Sign in to save palaces, keep a history, and build your personal library.';
+    document.getElementById('auth-summary').textContent = `Sign in to save palaces, keep a history, and build your personal library. ${appConfig.billingMessage}`;
     setAuthModalStatus('Create an account or sign in to start saving palaces.');
     openAuthBtn.textContent = 'Sign In';
     saveBtn.disabled = true;
@@ -921,6 +928,13 @@ async function loadAuthSystem() {
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
     appConfig.appBaseUrl = config.app_base_url || window.location.origin;
     appConfig.medicalKnowledgeEnabled = !!config.medical_knowledge_enabled;
+    appConfig.billingMode = config.billing_mode || 'beta';
+    appConfig.betaMode = !!config.beta_mode;
+    appConfig.billingEnabled = !!config.billing_enabled;
+    appConfig.upgradeEnabled = !!config.upgrade_enabled;
+    appConfig.upgradePathEnabled = !!config.upgrade_path_enabled;
+    appConfig.billingMessage = config.billing_message || appConfig.billingMessage;
+    appConfig.quotaUnitLabel = config.quota_unit_label || 'AI requests';
 
     if (!appConfig.authEnabled) {
       refreshAuthUI();

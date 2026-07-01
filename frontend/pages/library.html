@@ -452,12 +452,12 @@ h1 {
       <div class="eyebrow">Usage</div>
       <div class="stats">
         <div class="stat-card">
-          <div class="stat-label">Plan</div>
+          <div class="stat-label">Access</div>
           <div class="stat-value" id="plan-value">Free</div>
           <div class="stat-note" id="plan-note">No active subscription on file.</div>
         </div>
         <div class="stat-card">
-          <div class="stat-label">Monthly Requests</div>
+          <div class="stat-label">Monthly AI Requests</div>
           <div class="stat-value" id="usage-value">0 / --</div>
           <div class="stat-note" id="usage-note">Sign in to see your live quota.</div>
         </div>
@@ -511,7 +511,14 @@ const appConfig = {
   authEnabled: false,
   supabaseUrl: '',
   supabaseAnonKey: '',
-  appBaseUrl: ''
+  appBaseUrl: '',
+  billingMode: 'beta',
+  betaMode: true,
+  billingEnabled: false,
+  upgradeEnabled: false,
+  upgradePathEnabled: false,
+  billingMessage: 'Mnemorized is in private beta. Billing is not active yet; beta accounts use fixed monthly request limits.',
+  quotaUnitLabel: 'AI requests'
 };
 
 let supabaseClient = null;
@@ -586,8 +593,8 @@ function refreshAuthUI() {
 async function loadAccountSummary() {
   if (!authState.session?.access_token) {
     latestAccountSummary = null;
-    document.getElementById('plan-value').textContent = 'Free';
-    document.getElementById('plan-note').textContent = 'No signed-in user yet.';
+    document.getElementById('plan-value').textContent = appConfig.betaMode ? 'Free Beta' : 'Free';
+    document.getElementById('plan-note').textContent = appConfig.billingMessage;
     document.getElementById('usage-value').textContent = '0 / --';
     document.getElementById('usage-note').textContent = 'Sign in to see your live quota.';
     document.getElementById('dev-plan-panel').style.display = 'none';
@@ -603,12 +610,15 @@ async function loadAccountSummary() {
   const data = await res.json();
   latestAccountSummary = data;
   const limit = data.monthly_request_limit == null ? 'Unlimited' : data.monthly_request_limit;
-  document.getElementById('plan-value').textContent = (data.plan_code || 'free').toUpperCase();
-  document.getElementById('plan-note').textContent = `Status: ${data.subscription_status || 'inactive'} • Resets ${new Date(data.period_ends_at).toLocaleDateString()}`;
+  const planDisplay = data.plan_display_name || (data.plan_code || 'free').toUpperCase();
+  document.getElementById('plan-value').textContent = planDisplay;
+  document.getElementById('plan-note').textContent = data.billing_message
+    ? `${data.billing_message} Resets ${new Date(data.period_ends_at).toLocaleDateString()}.`
+    : `Status: ${data.subscription_status || 'inactive'} • Resets ${new Date(data.period_ends_at).toLocaleDateString()}`;
   document.getElementById('usage-value').textContent = `${data.monthly_requests_used} / ${limit}`;
   document.getElementById('usage-note').textContent = data.monthly_request_limit == null
-    ? 'No request cap is configured for this plan.'
-    : `${data.monthly_requests_remaining} requests remaining this month.`;
+    ? `No ${data.quota_unit_label || appConfig.quotaUnitLabel} cap is configured for this access level.`
+    : `${data.monthly_requests_remaining} ${data.quota_unit_label || appConfig.quotaUnitLabel} remaining this month.`;
   document.getElementById('dev-plan-panel').style.display = data.dev_mode ? 'block' : 'none';
   document.getElementById('dev-plan-select').value = (data.plan_code || 'free').toLowerCase();
   document.getElementById('dev-plan-note').textContent = data.is_dev_override
@@ -1010,6 +1020,13 @@ async function loadAuthSystem() {
     appConfig.supabaseUrl = config.supabase_url || '';
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
     appConfig.appBaseUrl = config.app_base_url || window.location.origin;
+    appConfig.billingMode = config.billing_mode || 'beta';
+    appConfig.betaMode = !!config.beta_mode;
+    appConfig.billingEnabled = !!config.billing_enabled;
+    appConfig.upgradeEnabled = !!config.upgrade_enabled;
+    appConfig.upgradePathEnabled = !!config.upgrade_path_enabled;
+    appConfig.billingMessage = config.billing_message || appConfig.billingMessage;
+    appConfig.quotaUnitLabel = config.quota_unit_label || 'AI requests';
 
     if (!appConfig.authEnabled) {
       refreshAuthUI();

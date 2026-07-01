@@ -315,7 +315,7 @@ async function generateImages() {
       throw new Error('Sign in to generate images.');
     } else if (res.status === 402) {
       const quota = await res.json().catch(() => ({}));
-      throw new Error(`Monthly quota exceeded (${quota.usage?.used ?? '?'}/${quota.usage?.limit ?? '?'}).`);
+      throw new Error(getQuotaExceededMessage(quota));
     } else if (res.status === 503) {
       throw new Error('GEMINI_API_KEY is not configured on the backend.');
     } else if (!res.ok) {

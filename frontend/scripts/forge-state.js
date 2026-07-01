@@ -24,6 +24,29 @@ function getForgeRedirectUrl() {
   return `${baseUrl}/forge`;
 }
 
+function getQuotaExceededMessage(payload) {
+  const used = payload?.usage?.used ?? '?';
+  const limit = payload?.usage?.limit ?? '?';
+  const unit = payload?.billing?.quota_unit_label || appConfig?.quotaUnitLabel || 'AI requests';
+  const reset = payload?.usage?.period_ends_at
+    ? new Date(payload.usage.period_ends_at).toLocaleDateString()
+    : '';
+  const billingMessage = payload?.billing?.message || appConfig?.billingMessage || '';
+  const canUpgrade = !!(
+    payload?.billing?.upgrade_path_enabled ||
+    payload?.billing?.upgrade_enabled ||
+    appConfig?.upgradePathEnabled ||
+    appConfig?.upgradeEnabled
+  );
+  const resetCopy = reset ? ` Access resets ${reset}.` : '';
+
+  if (canUpgrade) {
+    return `Monthly quota exceeded (${used}/${limit} ${unit}). Upgrade your plan or wait for the next billing period.${resetCopy}`;
+  }
+
+  return `Monthly beta quota exceeded (${used}/${limit} ${unit}). Billing and upgrades are not active yet; wait for the next reset or contact the app admin.${resetCopy}${billingMessage ? ` ${billingMessage}` : ''}`;
+}
+
 // ── Backend connection UI ─────────────────────────────────────────
 
 function syncConnectionModal(detail) {
@@ -167,9 +190,7 @@ async function claudeFetch(body) {
     throw new Error('Sign in to use the API proxy.');
   } else if (res.status === 402) {
     const quota = await res.json().catch(() => ({}));
-    const used = quota.usage?.used ?? '?';
-    const limit = quota.usage?.limit ?? '?';
-    throw new Error(`Monthly quota exceeded (${used}/${limit} requests). Upgrade your plan or wait for the next billing period.`);
+    throw new Error(getQuotaExceededMessage(quota));
   } else if (res.status === 503) {
     const payload = await res.clone().json().catch(() => ({}));
     backendState.configured = false;
