@@ -290,12 +290,23 @@ async function generateImages() {
 
   const btn = document.getElementById('generate-images-btn');
   const status = document.getElementById('gen-img-status');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spin"></span> Generating…';
-  status.textContent = 'Sending prompts to Gemini…';
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Generating…'; }
+  if (status) status.textContent = 'Sending prompts to Gemini…';
+
+  setStatus('prompt', '✦ Generating image…', 'running');
+  setStageDetail('prompt', 'Gemini is illustrating your memory palace. This may take up to 60 seconds.');
+  showBody('prompt');
+  const handoffTitle = document.getElementById('handoff-title');
+  const handoffText = document.getElementById('handoff-text');
+  const handoffMsg = document.getElementById('handoff-message');
+  if (handoffTitle) handoffTitle.textContent = 'Generating your memory palace…';
+  if (handoffText) handoffText.textContent = 'Gemini is illustrating the scene with all anchors. This may take up to 60 seconds.';
+  if (handoffMsg) handoffMsg.style.display = '';
 
   document.getElementById('gen-img-1').style.display = 'none';
   document.getElementById('gen-img-2').style.display = 'none';
+  const resultContainer = document.getElementById('gen-img-result');
+  if (resultContainer) resultContainer.style.display = 'none';
 
   const prompts = [p1, p2].filter(Boolean);
   const headers = { 'Content-Type': 'application/json' };
@@ -336,15 +347,26 @@ async function generateImages() {
       }
     });
 
-    status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`;
-    status.style.color = 'var(--green)';
+    const finalImage = images.length >= 2 ? images[images.length - 1] : images[0];
+    const resultEl = document.getElementById('gen-img-result-el');
+    if (resultContainer && resultEl && finalImage) {
+      resultEl.src = `data:${finalImage.mime_type};base64,${finalImage.data}`;
+      resultContainer.style.display = 'block';
+    }
+
+    if (handoffMsg) handoffMsg.style.display = 'none';
+    if (status) { status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`; status.style.color = 'var(--green)'; }
+    setStatus('prompt', '✓ Palace illustrated', 'done');
+    setStageDetail('prompt', 'Your memory palace image is ready. Download it or regenerate for a different result.');
   } catch (err) {
-    status.textContent = `✗ ${err.message}`;
-    status.style.color = '#f56565';
+    if (status) { status.textContent = `✗ ${err.message}`; status.style.color = '#f56565'; }
+    if (handoffTitle) handoffTitle.textContent = 'Image generation failed';
+    if (handoffText) handoffText.textContent = err.message + ' — click Regenerate to try again, or use the prompts manually.';
+    setStatus('prompt', '✗ Image failed', 'error');
+    setStageDetail('prompt', err.message);
     console.error('Image generation error:', err);
   } finally {
-    btn.disabled = false;
-    btn.innerHTML = '✦ Generate Images';
+    if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
   }
 }
 
@@ -831,7 +853,7 @@ Requirements:
     document.getElementById('prompt-copy-1').value = prompt1;
     document.getElementById('prompt-copy-2').value = prompt2;
 
-    setStatus('prompt', '✦ Image prompts ready', 'done');
+    setStatus('prompt', '✓ Image prompts ready', 'done');
     setStageDetail('prompt', `Illustration handoff ready with ${n} anchors.`);
     setCurrentPalaceData(storyData, prompt1, prompt2);
 
@@ -840,7 +862,13 @@ Requirements:
     setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
     console.error('Image prompt error:', e);
     setCurrentPalaceData(storyData, '', '');
+    btn.disabled = false;
+    btn.innerHTML = '✦ FORGE PALACE';
+    return;
   }
+
+  // ── STAGE 4: Automated image generation ──────────
+  await generateImages();
 
   btn.disabled = false;
   btn.innerHTML = '✦ FORGE PALACE';

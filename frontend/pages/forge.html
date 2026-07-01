@@ -1898,9 +1898,16 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       <div class="stage-detail" id="detail-prompt">Prepares image prompts after the script is generated and the quality gate has had a chance to run.</div>
       <div class="stage-body" id="body-prompt" style="display:none;">
         <div class="handoff-message" id="handoff-message">
-          <div class="handoff-icon">✓</div>
-          <div class="handoff-title">Your palace script is complete.</div>
-          <div class="handoff-text">Scene illustration is in progress — we'll email you when it's ready.</div>
+          <div class="handoff-icon">✦</div>
+          <div class="handoff-title" id="handoff-title">Generating your memory palace…</div>
+          <div class="handoff-text" id="handoff-text">Gemini is illustrating the scene with all anchors. This may take up to 60 seconds.</div>
+        </div>
+        <div class="gen-img-container" id="gen-img-result" style="display:none;margin-top:16px;">
+          <img id="gen-img-result-el" style="max-width:100%;border-radius:10px;border:1px solid var(--border);" />
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;">
+            <button class="btn-copy" onclick="downloadGenImage(2)" style="color:var(--green);border-color:var(--green);">⬇ Download Palace Image</button>
+            <button class="btn-copy" onclick="generateImages()">↻ Regenerate</button>
+          </div>
         </div>
       </div>
     </div>
