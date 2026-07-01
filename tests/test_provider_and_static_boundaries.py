@@ -584,7 +584,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert '<span class="stage-num">03</span>\n        <span class="stage-title">Scene Illustration</span>' in html
     assert "function setStageDetail" in (root / "frontend" / "scripts" / "forge-state.js").read_text(encoding="utf-8")
     assert "Retrieving backend-only reference snippets" in auth
-    assert "await runMedicalQualityGate(storyData);" in pipeline
+    assert "await runMedicalQualityGate(storyData, coreConcepts);" in pipeline
     assert "Demo mode uses built-in sample content" in pipeline
     assert "function runMedicalQualityGate" in auth
     assert "function repairCurrentPalaceWithMedicalEvidence" in auth

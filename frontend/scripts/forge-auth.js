@@ -403,7 +403,7 @@ Repair requirements:
   }
 }
 
-async function runMedicalQualityGate(storyData = currentStoryData) {
+async function runMedicalQualityGate(storyData = currentStoryData, clinicalConcepts = null) {
   currentQualityGateData = null;
   if (!storyData) {
     setStatus('quality', 'Waiting...', '');
@@ -435,7 +435,7 @@ async function runMedicalQualityGate(storyData = currentStoryData) {
     const result = await MnemorizedMedicalApi.qualityCheck(getAuthToken(), {
       topic: document.getElementById('topic').value.trim(),
       generation_outputs: { story: storyData },
-      required_concepts: getQualityGateConcepts(storyData),
+      required_concepts: (clinicalConcepts && clinicalConcepts.length) ? clinicalConcepts : getQualityGateConcepts(storyData),
       max_evidence_chunks: 6,
     });
     currentQualityGateData = result;

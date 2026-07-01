@@ -559,6 +559,7 @@ async function runPipeline() {
   setStatus('story', '✦ Analyzing topic…', 'running');
   setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
   let clinicalContext = '';
+  let coreConcepts = [];
   try {
     const ctxRes = await claudeFetch({
         model: CLAUDE_MODEL,
@@ -584,6 +585,7 @@ Output ONLY these two XML tags, nothing else:
     const logic  = extractXmlTag(ctxTxt, 'scene_logic');
     if (core || logic) {
       clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.`;
+      coreConcepts = core.split('\n').map(l => l.replace(/^[-•*\d.)\s]+/, '').trim()).filter(Boolean).slice(0, 12);
     }
   } catch(e) {
     console.warn('Clinical context extraction failed (non-fatal):', e.message);
@@ -749,7 +751,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
     setStatus('story', '✓ Complete', 'done');
     setStageDetail('story', `${voLines.length} anchors generated. Review the script, then save or repair if needed.`);
-    await runMedicalQualityGate(storyData);
+    await runMedicalQualityGate(storyData, coreConcepts);
   } catch(e) {
     const box = document.getElementById('debug-box');
     const prev = box.textContent;

@@ -114,11 +114,14 @@ logging.basicConfig(
 
 
 class MessagePayload(BaseModel):
-    model_config = ConfigDict(extra="allow")
+    model_config = ConfigDict(extra="forbid")
 
     model: str = Field(min_length=1)
     max_tokens: int = Field(gt=0, le=64000)
     messages: list[dict[str, Any]] = Field(min_length=1)
+    system: str | None = None
+    temperature: float | None = Field(default=None, ge=0, le=1)
+    top_p: float | None = Field(default=None, ge=0, le=1)
 
 
 class DevPlanOverridePayload(BaseModel):
@@ -851,9 +854,10 @@ async def _require_persistence_context(
 
 def _parse_supabase_rows(response: httpx.Response, label: str) -> list[dict[str, Any]]:
     if response.status_code >= 400:
+        logger.error("Supabase error during %s: HTTP %s — %s", label, response.status_code, response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=f"Could not {label} in Supabase: {response.text[:300]}",
+            detail=f"Could not {label} — the database returned an error. Please try again.",
         )
     try:
         rows = response.json()
@@ -969,9 +973,10 @@ async def _create_openai_embedding(
             await http_client.aclose()
 
     if response.status_code >= 400:
+        logger.error("OpenAI embeddings error: HTTP %s — %s", response.status_code, response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=f"OpenAI embeddings request failed: {response.text[:300]}",
+            detail="OpenAI embeddings request failed. Please try again.",
         )
 
     try:
@@ -1158,12 +1163,10 @@ async def _get_subscription_and_usage_summary(
         },
     )
     if subscription_response.status_code >= 400:
+        logger.error("Subscription lookup error: HTTP %s — %s", subscription_response.status_code, subscription_response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=(
-                "Could not load your subscription state from Supabase: "
-                f"{subscription_response.text[:300]}"
-            ),
+            detail="Could not load your subscription state. Please try again.",
         )
 
     try:
@@ -1211,12 +1214,10 @@ async def _get_subscription_and_usage_summary(
         headers={"Prefer": "count=exact"},
     )
     if usage_response.status_code >= 400:
+        logger.error("Usage summary lookup error: HTTP %s — %s", usage_response.status_code, usage_response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=(
-                "Could not load your usage summary from Supabase: "
-                f"{usage_response.text[:300]}"
-            ),
+            detail="Could not load your usage summary. Please try again.",
         )
 
     used = _parse_content_range_total(usage_response.headers.get("content-range"))
@@ -2067,9 +2068,10 @@ async def save_palace(payload: PalaceSavePayload, request: Request) -> dict[str,
             headers={"Prefer": "return=minimal"},
         )
         if version_response.status_code >= 400:
+            logger.error("Palace version save error: HTTP %s — %s", version_response.status_code, version_response.text[:500])
             raise HTTPException(
                 status_code=502,
-                detail=f"Could not save palace version in Supabase: {version_response.text[:300]}",
+                detail="Could not save palace version. Please try again.",
             )
 
         update_response = await _supabase_rest_request(
@@ -2154,9 +2156,10 @@ async def delete_palace(palace_id: str, request: Request) -> dict[str, Any]:
         headers={"Prefer": "return=minimal"},
     )
     if response.status_code >= 400:
+        logger.error("Palace delete error: HTTP %s — %s", response.status_code, response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=f"Could not delete palace in Supabase: {response.text[:300]}",
+            detail="Could not delete palace. Please try again.",
         )
     return {"deleted": True, "palace_id": palace_id}
 
@@ -2177,8 +2180,12 @@ async def list_catalog(request: Request) -> dict[str, Any]:
 
     tag = request.query_params.get("tag")
     if tag:
-        clean_tag = tag.strip().lower()
-        params["tags"] = f"cs.{{{clean_tag}}}"
+        clean_tag = tag[:100].strip().lower()
+        for ch in ("(", ")", ",", ".", "*", "{", "}"):
+            clean_tag = clean_tag.replace(ch, "")
+        clean_tag = clean_tag.strip()
+        if clean_tag:
+            params["tags"] = f"cs.{{{clean_tag}}}"
 
     q = request.query_params.get("q")
     if q:
@@ -2293,9 +2300,10 @@ async def clone_catalog_entry(catalog_id: str, request: Request) -> dict[str, An
             headers={"Prefer": "return=minimal"},
         )
         if version_response.status_code >= 400:
+            logger.error("Catalog clone version error: HTTP %s — %s", version_response.status_code, version_response.text[:500])
             raise HTTPException(
                 status_code=502,
-                detail=f"Could not clone catalog version in Supabase: {version_response.text[:300]}",
+                detail="Could not clone catalog version. Please try again.",
             )
     except HTTPException:
         await _delete_empty_palace_best_effort(
@@ -2394,9 +2402,10 @@ async def unpublish_from_catalog(
         use_service_role=True,
     )
     if response.status_code >= 400:
+        logger.error("Catalog unpublish error: HTTP %s — %s", response.status_code, response.text[:500])
         raise HTTPException(
             status_code=502,
-            detail=f"Could not unpublish catalog entry: {response.text[:300]}",
+            detail="Could not unpublish catalog entry. Please try again.",
         )
     return {"deleted": True, "catalog_id": catalog_id}
 
