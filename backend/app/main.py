@@ -825,8 +825,8 @@ async def _find_catalog_entry_by_seed_slug(
 def _validate_palace_id(palace_id: str) -> str:
     try:
         return str(UUID(palace_id))
-    except (ValueError, AttributeError):
-        raise HTTPException(status_code=400, detail="Invalid palace ID format.")
+    except (ValueError, AttributeError) as exc:
+        raise HTTPException(status_code=400, detail="Invalid palace ID format.") from exc
 
 
 async def _require_persistence_context(
@@ -2182,8 +2182,8 @@ async def list_catalog(request: Request) -> dict[str, Any]:
 
     q = request.query_params.get("q")
     if q:
-        safe_q = q.replace("%", "").strip()
-        for ch in ("(", ")", ",", ".", "*"):
+        safe_q = q[:200].replace("%", "").strip()
+        for ch in ("(", ")", ",", ".", "*", "{", "}"):
             safe_q = safe_q.replace(ch, "")
         safe_q = safe_q.strip()
         if safe_q:
@@ -2225,6 +2225,93 @@ async def get_catalog_entry(catalog_id: str, request: Request) -> dict[str, Any]
         "load catalog entry",
     )
     return {"entry": row}
+
+
+@app.post("/api/catalog/{catalog_id}/clone")
+async def clone_catalog_entry(catalog_id: str, request: Request) -> dict[str, Any]:
+    catalog_id = _validate_palace_id(catalog_id)
+    active_settings = _get_runtime_settings(request)
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    catalog_response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=None,
+        method="GET",
+        path="/rest/v1/catalog_palaces",
+        params={
+            "select": CATALOG_SELECT,
+            "id": f"eq.{catalog_id}",
+            "limit": "1",
+        },
+    )
+    entry = _single_row(
+        _parse_supabase_rows(catalog_response, "load catalog entry for clone"),
+        "load catalog entry for clone",
+    )
+
+    insert_response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="POST",
+        path="/rest/v1/palaces",
+        json_body={
+            "user_id": user.user_id,
+            "title": entry.get("title") or "Catalog palace",
+            "topic": entry.get("topic") or "",
+            "source_name": entry.get("source_name") or "Mnemorized catalog",
+            "scene_title": entry.get("scene_title"),
+            "status": "generated",
+            "latest_version_number": 1,
+        },
+        headers={"Prefer": "return=representation"},
+    )
+    palace_row = _single_row(_parse_supabase_rows(insert_response, "clone catalog palace"), "clone catalog palace")
+    palace_id = palace_row.get("id")
+
+    generation_inputs = dict(entry.get("generation_inputs") or {})
+    generation_inputs["catalog_clone"] = {
+        "catalog_id": catalog_id,
+        "published_at": entry.get("published_at"),
+        "tags": entry.get("tags") or [],
+    }
+
+    try:
+        version_response = await _supabase_rest_request(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            method="POST",
+            path="/rest/v1/palace_versions",
+            json_body={
+                "palace_id": palace_id,
+                "version_number": 1,
+                "generation_inputs": generation_inputs,
+                "generation_outputs": entry.get("generation_outputs") or {},
+            },
+            headers={"Prefer": "return=minimal"},
+        )
+        if version_response.status_code >= 400:
+            raise HTTPException(
+                status_code=502,
+                detail=f"Could not clone catalog version in Supabase: {version_response.text[:300]}",
+            )
+    except HTTPException:
+        await _delete_empty_palace_best_effort(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            palace_id=palace_id,
+            user_id=user.user_id,
+        )
+        raise
+
+    return {
+        "palace": palace_row,
+        "version_number": 1,
+        "catalog_id": catalog_id,
+    }
 
 
 @app.post("/api/catalog/publish")

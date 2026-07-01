@@ -114,6 +114,9 @@
     get: function (catalogId) {
       return request('/api/catalog/' + encodeURIComponent(catalogId), {});
     },
+    clone: function (token, catalogId) {
+      return request('/api/catalog/' + encodeURIComponent(catalogId) + '/clone', { method: 'POST', token: token });
+    },
     publish: function (token, body) {
       return request('/api/catalog/publish', { method: 'POST', token: token, body: body });
     },

@@ -687,6 +687,24 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   line-height: 1.5;
   color: var(--muted);
 }
+.library-ops-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+.library-ops-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+.library-ops-note strong {
+  color: var(--acid);
+  font-weight: 600;
+}
 
 /* Story */
 .story-stage .stage-body {
@@ -1768,7 +1786,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   </div><!-- /config-wrap -->
 
   <div id="forge-wrap" style="display:block;">
-    <button class="btn-forge" id="forge-btn" onclick="runPipeline()">LET'S MNEMORIZE</button>
+    <button class="btn-forge" id="forge-btn" onclick="runPipeline()">✦ FORGE PALACE</button>
     <a href="mailto:feedback@mnemorized.com?subject=Mnemorized%20Forge%20Feedback" class="btn-feedback">
       Have feedback? Tell us what you think →
     </a>
@@ -1794,6 +1812,12 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
     <div class="library-details">
       <span id="library-empty">Sign in to unlock search, filters, rename tools, and saved palace loading.</span>
       <span id="library-summary-note">No library sync yet.</span>
+    </div>
+    <div class="library-ops-row">
+      <span class="library-ops-note" id="forge-draft-status">Local draft not saved yet.</span>
+      <span class="library-ops-note" id="forge-account-usage">Sign in for live quota.</span>
+      <button class="btn-copy" id="restore-draft-btn" onclick="restoreLocalForgeDraft()" style="margin:0;display:none;">Restore Draft</button>
+      <button class="btn-copy" id="clear-draft-btn" onclick="clearLocalForgeDraft()" style="margin:0;display:none;">Clear Draft</button>
     </div>
     <div id="library-list" style="display:none;"></div>
   </div>

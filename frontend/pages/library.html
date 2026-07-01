@@ -860,10 +860,32 @@ function renderCatalog() {
         '</div>' +
       '</div>' +
       '<div class="card-actions">' +
+        '<button class="action-btn" type="button" onclick="cloneCatalogToLibrary(\'' + escapeJsString(row.id) + '\')">' +
+          (authState.user ? 'Add to My Library' : 'Sign In to Save') +
+        '</button>' +
         '<a class="action-btn primary" href="/forge?catalog=' + encodeURIComponent(row.id) + '">Clone to Forge</a>' +
       '</div>' +
     '</article>';
   }).join('');
+}
+
+async function cloneCatalogToLibrary(catalogId) {
+  if (!appConfig.authEnabled || !authState.user) {
+    setLibraryStatus('Sign in first to add catalog palaces to your library.', 'error');
+    switchTab('library');
+    return;
+  }
+
+  const row = catalogRows.find(item => item.id === catalogId);
+  const title = row?.title || 'catalog palace';
+  setLibraryStatus('Adding "' + title + '" to your library...');
+  try {
+    const result = await MnemorizedCatalogApi.clone(getAuthToken(), catalogId);
+    await loadLibrary();
+    setLibraryStatus('Added "' + (result.palace?.title || title) + '" to My Library.', 'success');
+  } catch (error) {
+    setLibraryStatus('Catalog clone failed: ' + error.message, 'error');
+  }
 }
 
 async function ensureProfileRecord() {

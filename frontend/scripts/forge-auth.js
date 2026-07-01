@@ -29,7 +29,6 @@ const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palac
 let palaceRouteHydrated = false;
 const catalogIdFromRoute = new URLSearchParams(window.location.search).get('catalog');
 let catalogRouteHydrated = false;
-
 function getAuthToken() {
   const token = authState.session?.access_token;
   if (!token) throw new Error('Sign in to access saved palaces.');

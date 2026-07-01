@@ -32,7 +32,6 @@ body {
   background-size: auto, 56px 56px, 56px 56px, auto;
 }
 
-body::after,
 .hero::after {
   display: none !important;
 }

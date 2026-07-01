@@ -537,24 +537,10 @@ async function runPipeline() {
       demoP2
     );
 
-    btn.disabled = false; btn.innerHTML = "LET'S MNEMORIZE";
+    btn.disabled = false; btn.innerHTML = '✦ FORGE PALACE';
     return;
   }
   // ══ END DEMO MODE ═════════════════════════════════════════════
-
-  function extractTag(text, tag) {
-    const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'i');
-    const m = text.match(re);
-    if (!m) return '';
-    return m[0].replace(new RegExp(`^<${tag}>`, 'i'), '').replace(new RegExp(`<\\/${tag}>$`, 'i'), '').trim();
-  }
-
-  function extractAllTags(text, tag) {
-    const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'gi');
-    return [...text.matchAll(re)].map(m =>
-      m[0].replace(new RegExp(`^<${tag}>`, 'i'), '').replace(new RegExp(`<\\/${tag}>$`, 'i'), '').trim()
-    );
-  }
 
   function showDebug(label, data) {
     const box = document.getElementById('debug-box');
@@ -564,17 +550,7 @@ async function runPipeline() {
 
   function parseAPIResponse(raw, context) {
     showDebug(context + ' — raw API response', raw);
-    if (raw.type === 'error' || raw.error) {
-      const msg = raw.error?.message || raw.message || JSON.stringify(raw);
-      throw new Error(`${context}: ${msg}`);
-    }
-    if (!raw.content || !Array.isArray(raw.content)) {
-      throw new Error(`${context}: unexpected structure — ${JSON.stringify(raw).slice(0, 300)}`);
-    }
-    const text = raw.content[0]?.text;
-    if (!text) {
-      throw new Error(`${context}: empty content — stop_reason=${raw.stop_reason}`);
-    }
+    const text = parseProviderContent(raw, context);
     document.getElementById('debug-box').style.display = 'none';
     return text;
   }
@@ -604,8 +580,8 @@ Output ONLY these two XML tags, nothing else:
       });
     const ctxRaw = await ctxRes.json();
     const ctxTxt = ctxRaw.content?.[0]?.text || '';
-    const core   = extractTag(ctxTxt, 'core_concepts');
-    const logic  = extractTag(ctxTxt, 'scene_logic');
+    const core   = extractXmlTag(ctxTxt, 'core_concepts');
+    const logic  = extractXmlTag(ctxTxt, 'scene_logic');
     if (core || logic) {
       clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.`;
     }
@@ -737,11 +713,11 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
     const txt = parseAPIResponse(raw, 'Scene Narrative');
 
-    const scene_title   = extractTag(txt, 'scene_title');
-    const opening       = extractTag(txt, 'opening');
-    const review_script = extractTag(txt, 'review_script');
+    const scene_title   = extractXmlTag(txt, 'scene_title');
+    const opening       = extractXmlTag(txt, 'opening');
+    const review_script = extractXmlTag(txt, 'review_script');
 
-    const voRaw = extractAllTags(txt, 'vo_line');
+    const voRaw = extractAllXmlTags(txt, 'vo_line');
 
     const voLines = voRaw.map((block, i) => {
       const getField = (label) => {
@@ -781,7 +757,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     box.textContent = `── STORY ERROR ──\n${e.message}\n\n── Previous debug output ──\n${prev}`;
     setStatus('story', '✗ ' + e.message.slice(0, 80), 'error');
     setStageDetail('story', 'Scene generation stopped before a usable script was created.');
-    btn.disabled = false; btn.innerHTML = "LET'S MNEMORIZE";
+    btn.disabled = false; btn.innerHTML = '✦ FORGE PALACE';
     return;
   }
 
