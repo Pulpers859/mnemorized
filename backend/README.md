@@ -5,7 +5,7 @@ This backend is the first architectural layer between the browser and Anthropic.
 It gives you:
 
 - Server-side Anthropic key storage instead of `localStorage`
-- Real app routes served from the backend: `/`, `/forge`, and `/library`
+- Real app routes served from the backend: `/`, `/forge`, `/library`, and `/admin`
 - A stable proxy endpoint for the forge UI
 - Basic per-IP rate limiting
 - Request/usage logging for future analytics and billing
@@ -20,6 +20,7 @@ It gives you:
 - `GET /api/health`
 - `GET /api/config/public`
 - `GET /api/account/summary`
+- `GET /api/admin/diagnostics`
 - `POST /api/medical-knowledge/context`
 - `POST /api/medical-knowledge/quality-check`
 - `POST /api/anthropic/messages`
@@ -57,6 +58,7 @@ Or on Windows:
 http://127.0.0.1:8001/
 http://127.0.0.1:8001/forge
 http://127.0.0.1:8001/library
+http://127.0.0.1:8001/admin
 ```
 
 ## Logging

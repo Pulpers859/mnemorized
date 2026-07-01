@@ -287,6 +287,125 @@ def test_catalog_publish_uses_service_role_after_admin_check(
     assert supabase.calls[0]["json_body"]["tags"] == ["emergency"]
 
 
+def test_admin_diagnostics_requires_admin_email(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("other@example.com",),
+    )
+    supabase = SupabaseMock([])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.get("/api/admin/diagnostics", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 403
+    assert response.json()["detail"] == "Admin access is required."
+    assert supabase.calls == []
+
+
+def test_admin_diagnostics_requires_service_role_key(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(make_settings(tmp_path), admin_emails=("patrick@example.com",))
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+
+    response = client.get("/api/admin/diagnostics", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 503
+    assert "SUPABASE_SERVICE_ROLE_KEY" in response.json()["detail"]
+
+
+def test_admin_diagnostics_uses_service_role_and_local_failure_log(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    usage_log = tmp_path / "usage.jsonl"
+    usage_log.write_text(
+        "\n".join([
+            '{"timestamp":"2026-07-01T12:00:00+00:00","request_id":"ok-local","status_code":200,"model":"claude-test","input_tokens":10,"output_tokens":20}',
+            '{"timestamp":"2026-07-01T12:01:00+00:00","request_id":"fail-local","status_code":529,"model":"claude-test","input_tokens":12,"output_tokens":0}',
+        ]),
+        encoding="utf-8",
+    )
+    settings = replace(
+        make_settings(tmp_path),
+        usage_log_path=usage_log,
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    supabase = SupabaseMock([
+        httpx.Response(
+            200,
+            json=[{
+                "id": "usage-1",
+                "user_id": "user-123",
+                "provider": "gemini",
+                "model": "gemini-test",
+                "request_id": "img-1",
+                "input_tokens": None,
+                "output_tokens": None,
+                "status_code": 502,
+                "created_at": "2026-07-01T12:02:00Z",
+            }],
+        ),
+        httpx.Response(
+            200,
+            json=[{
+                "id": "palace-1",
+                "user_id": "user-123",
+                "title": "DKA Bar",
+                "topic": "DKA management " * 30,
+                "scene_title": "The Drip Bar",
+                "status": "generated",
+                "latest_version_number": 2,
+                "source_name": None,
+                "updated_at": "2026-07-01T12:03:00Z",
+            }],
+        ),
+        httpx.Response(
+            200,
+            json=[{
+                "id": "catalog-1",
+                "title": "DKA Bar",
+                "topic": "DKA",
+                "scene_title": "The Drip Bar",
+                "tags": ["emergency"],
+                "published_by": "user-123",
+                "published_at": "2026-07-01T12:04:00Z",
+            }],
+        ),
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.get("/api/admin/diagnostics", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["admin"]["email"] == "patrick@example.com"
+    assert payload["summary"]["recent_usage_events"] == 1
+    assert payload["summary"]["recent_usage_failures"] == 1
+    assert payload["summary"]["recent_local_provider_failures"] == 1
+    assert payload["recent_provider_failures"][0]["request_id"] in {"img-1", "fail-local"}
+    assert payload["recent_palaces"][0]["topic_preview"].endswith("...")
+    assert payload["catalog_publish_history"][0]["title"] == "DKA Bar"
+    assert [call["path"] for call in supabase.calls] == [
+        "/rest/v1/usage_events",
+        "/rest/v1/palaces",
+        "/rest/v1/catalog_palaces",
+    ]
+    assert all(call["use_service_role"] is True for call in supabase.calls)
+    assert all(call["bearer_token"] is None for call in supabase.calls)
+
+
 def test_medical_context_uses_service_role_and_returns_capped_excerpts(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,

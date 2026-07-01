@@ -490,12 +490,140 @@ CATALOG_SELECT = (
     "id,title,topic,source_name,scene_title,tags,"
     "generation_inputs,generation_outputs,published_by,published_at"
 )
+ADMIN_USAGE_SELECT = (
+    "id,user_id,provider,model,request_id,input_tokens,output_tokens,status_code,created_at"
+)
+ADMIN_PALACE_SELECT = (
+    "id,user_id,title,topic,scene_title,status,latest_version_number,source_name,updated_at"
+)
+ADMIN_CATALOG_SELECT = "id,title,topic,scene_title,tags,published_by,published_at"
 
 
 def _is_admin(user: AuthenticatedUser, settings: Settings) -> bool:
     if not user.email:
         return False
     return user.email.lower() in {e.lower() for e in settings.admin_emails}
+
+
+async def _require_admin_context(
+    request: Request,
+    settings: Settings,
+) -> tuple[str, AuthenticatedUser]:
+    bearer_token, user = await _require_persistence_context(request, settings)
+    if not _is_admin(user, settings):
+        raise HTTPException(status_code=403, detail="Admin access is required.")
+    return bearer_token, user
+
+
+def _truncate_text(value: Any, limit: int = 180) -> str:
+    text = str(value or "").strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "..."
+
+
+def _sanitize_usage_record(record: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "timestamp": record.get("timestamp") or record.get("created_at"),
+        "request_id": record.get("request_id"),
+        "user_id": record.get("user_id"),
+        "user_email": record.get("user_email"),
+        "provider": record.get("provider") or ("anthropic" if record.get("model") else None),
+        "model": record.get("model"),
+        "status_code": record.get("status_code"),
+        "duration_ms": record.get("duration_ms"),
+        "input_tokens": record.get("input_tokens"),
+        "output_tokens": record.get("output_tokens"),
+    }
+
+
+def _read_recent_usage_log(settings: Settings, *, limit: int = 50) -> tuple[list[dict[str, Any]], str | None]:
+    if not settings.usage_log_path.exists():
+        return [], None
+
+    try:
+        lines = settings.usage_log_path.read_text(encoding="utf-8").splitlines()
+    except OSError as exc:
+        return [], f"Could not read local usage log: {exc}"
+
+    records: list[dict[str, Any]] = []
+    for line in reversed(lines[-500:]):
+        if not line.strip():
+            continue
+        try:
+            raw = json.loads(line)
+        except ValueError:
+            continue
+        if isinstance(raw, dict):
+            records.append(_sanitize_usage_record(raw))
+        if len(records) >= limit:
+            break
+    return records, None
+
+
+async def _admin_supabase_rows(
+    *,
+    request: Request,
+    settings: Settings,
+    path: str,
+    params: dict[str, Any],
+    label: str,
+) -> tuple[list[dict[str, Any]], str | None]:
+    try:
+        response = await _supabase_rest_request(
+            request=request,
+            settings=settings,
+            bearer_token=None,
+            method="GET",
+            path=path,
+            params=params,
+            use_service_role=True,
+        )
+        return _parse_supabase_rows(response, label), None
+    except HTTPException as exc:
+        return [], str(exc.detail)
+    except httpx.HTTPError as exc:
+        return [], f"Could not {label}: {exc}"
+
+
+def _safe_status_code(value: Any) -> int | None:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _usage_failure_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        row for row in rows
+        if (status := _safe_status_code(row.get("status_code"))) is not None and status >= 400
+    ]
+
+
+def _sanitize_palace_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "id": row.get("id"),
+        "user_id": row.get("user_id"),
+        "title": row.get("title"),
+        "topic_preview": _truncate_text(row.get("topic"), 160),
+        "scene_title": row.get("scene_title"),
+        "status": row.get("status"),
+        "latest_version_number": row.get("latest_version_number"),
+        "source_name": row.get("source_name"),
+        "updated_at": row.get("updated_at"),
+    }
+
+
+def _sanitize_catalog_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "id": row.get("id"),
+        "title": row.get("title"),
+        "topic_preview": _truncate_text(row.get("topic"), 160),
+        "scene_title": row.get("scene_title"),
+        "tags": row.get("tags") or [],
+        "published_by": row.get("published_by"),
+        "published_at": row.get("published_at"),
+    }
 
 
 def _validate_palace_id(palace_id: str) -> str:
@@ -1146,6 +1274,11 @@ async def library():
     return FileResponse(PAGES_DIR / "library.html", media_type="text/html")
 
 
+@app.get("/admin")
+async def admin_dashboard():
+    return FileResponse(PAGES_DIR / "admin.html", media_type="text/html")
+
+
 @app.get("/api/health")
 async def health(request: Request) -> dict[str, Any]:
     active_settings = _get_runtime_settings(request)
@@ -1185,6 +1318,111 @@ async def public_config(request: Request) -> dict[str, Any]:
         "app_base_url": active_settings.app_base_url,
         "dev_mode": active_settings.dev_mode,
         "medical_knowledge_enabled": active_settings.medical_knowledge_configured,
+    }
+
+
+@app.get("/api/admin/diagnostics")
+async def admin_diagnostics(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    _bearer_token, user = await _require_admin_context(request, active_settings)
+
+    if not active_settings.supabase_admin_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="SUPABASE_SERVICE_ROLE_KEY is required for admin diagnostics.",
+        )
+
+    errors: dict[str, str] = {}
+    usage_rows, usage_error = await _admin_supabase_rows(
+        request=request,
+        settings=active_settings,
+        path="/rest/v1/usage_events",
+        params={
+            "select": ADMIN_USAGE_SELECT,
+            "order": "created_at.desc",
+            "limit": "50",
+        },
+        label="load admin usage events",
+    )
+    if usage_error:
+        errors["usage_events"] = usage_error
+
+    palace_rows, palace_error = await _admin_supabase_rows(
+        request=request,
+        settings=active_settings,
+        path="/rest/v1/palaces",
+        params={
+            "select": ADMIN_PALACE_SELECT,
+            "order": "updated_at.desc",
+            "limit": "25",
+        },
+        label="load recent palaces",
+    )
+    if palace_error:
+        errors["palaces"] = palace_error
+
+    catalog_rows, catalog_error = await _admin_supabase_rows(
+        request=request,
+        settings=active_settings,
+        path="/rest/v1/catalog_palaces",
+        params={
+            "select": ADMIN_CATALOG_SELECT,
+            "order": "published_at.desc",
+            "limit": "25",
+        },
+        label="load catalog publish history",
+    )
+    if catalog_error:
+        errors["catalog"] = catalog_error
+
+    local_usage, local_error = _read_recent_usage_log(active_settings, limit=75)
+    if local_error:
+        errors["local_usage_log"] = local_error
+
+    local_failures = [
+        row for row in local_usage
+        if (status := _safe_status_code(row.get("status_code"))) is not None and status >= 400
+    ]
+    supabase_failures = _usage_failure_rows(usage_rows)
+    recent_failures = sorted(
+        [*local_failures[:20], *supabase_failures[:20]],
+        key=lambda row: str(row.get("timestamp") or row.get("created_at") or ""),
+        reverse=True,
+    )[:20]
+
+    return {
+        "generated_at": datetime.now(UTC).isoformat(),
+        "admin": {
+            "email": user.email,
+            "user_id": user.user_id,
+        },
+        "config": {
+            "environment": active_settings.app_env,
+            "anthropic_configured": active_settings.anthropic_configured,
+            "gemini_configured": active_settings.gemini_configured,
+            "openai_embeddings_configured": active_settings.openai_embeddings_configured,
+            "supabase_auth_configured": active_settings.supabase_auth_configured,
+            "supabase_admin_configured": active_settings.supabase_admin_configured,
+            "medical_knowledge_configured": active_settings.medical_knowledge_configured,
+            "provider_auth_required": active_settings.provider_auth_required,
+            "rate_limit": {
+                "requests": active_settings.rate_limit_requests,
+                "window_seconds": active_settings.rate_limit_window_seconds,
+            },
+        },
+        "summary": {
+            "recent_usage_events": len(usage_rows),
+            "recent_usage_failures": len(supabase_failures),
+            "recent_local_provider_failures": len(local_failures),
+            "recent_palaces": len(palace_rows),
+            "recent_catalog_entries": len(catalog_rows),
+            "sections_with_errors": sorted(errors.keys()),
+        },
+        "recent_usage_events": [_sanitize_usage_record(row) for row in usage_rows],
+        "recent_provider_failures": [_sanitize_usage_record(row) for row in recent_failures],
+        "recent_palaces": [_sanitize_palace_row(row) for row in palace_rows],
+        "catalog_publish_history": [_sanitize_catalog_row(row) for row in catalog_rows],
+        "errors": errors,
     }
 
 

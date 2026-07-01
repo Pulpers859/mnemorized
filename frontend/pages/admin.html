@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#c9ef4d">
+<title>Mnemorized - Admin Ops</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/assets/profile-pic.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #090c0f;
+  --card: #151c21;
+  --panel: rgba(19,23,31,.92);
+  --border: rgba(213,223,216,.13);
+  --white: #f3f5ef;
+  --muted: #96a19b;
+  --acid: #c9ef4d;
+  --green: #4ade80;
+  --gold: #f4c95d;
+  --red: #ff6b66;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,239,77,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,239,77,.035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  pointer-events: none;
+}
+nav {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(9,12,15,.9);
+  backdrop-filter: blur(12px);
+}
+.nav-left, .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.nav-logo {
+  color: var(--acid);
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: .08em;
+}
+.nav-pill, button {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 7px 11px;
+  text-decoration: none;
+  cursor: pointer;
+}
+button.primary, .nav-pill.primary {
+  color: var(--black);
+  background: var(--acid);
+  border-color: var(--acid);
+  font-weight: 700;
+}
+button:disabled { opacity: .45; cursor: not-allowed; }
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 104px 22px 80px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.eyebrow {
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(48px, 8vw, 86px);
+  letter-spacing: .04em;
+  line-height: .9;
+  margin-bottom: 12px;
+}
+.copy {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.status-line {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+}
+.auth-grid {
+  display: grid;
+  gap: 10px;
+}
+.input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(0,0,0,.24);
+  color: var(--white);
+  padding: 11px 12px;
+  font: inherit;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.stat {
+  background: rgba(21,28,33,.9);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+.stat-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: var(--white);
+}
+.stat-label {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.section-title h2 {
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.badge {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+.badge.ok { color: var(--green); border-color: rgba(74,222,128,.3); }
+.badge.warn { color: var(--gold); border-color: rgba(244,201,93,.3); }
+.badge.error { color: var(--red); border-color: rgba(255,107,102,.3); }
+.table-wrap { overflow-x: auto; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  color: var(--white);
+  vertical-align: top;
+}
+td.muted { color: var(--muted); }
+.empty {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.config-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.config-item strong { color: var(--white); }
+.wide { grid-column: 1 / -1; }
+@media (max-width: 860px) {
+  nav { position: static; }
+  .wrap { padding-top: 24px; }
+  .hero, .grid, .stats, .config-list { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-left">
+    <a href="/" class="nav-logo">Mnemorized</a>
+    <span class="nav-pill">Admin Ops</span>
+  </div>
+  <div class="nav-right">
+    <a href="/forge" class="nav-pill">Forge</a>
+    <a href="/library" class="nav-pill">Library</a>
+    <button id="refresh-btn" type="button" onclick="loadDiagnostics()" disabled>Refresh</button>
+    <button id="signout-btn" type="button" onclick="signOut()" style="display:none;">Sign Out</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="panel">
+      <div class="eyebrow">Backend Operations</div>
+      <h1>Admin<br>Dashboard</h1>
+      <p class="copy">Admin-only visibility for provider failures, usage events, recent saved palaces, catalog publishing, and backend configuration readiness.</p>
+      <div class="status-line" id="status-line">Bootstrapping auth...</div>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Account</div>
+      <div id="signed-out" class="auth-grid">
+        <input class="input" id="email-input" type="email" placeholder="Admin email">
+        <input class="input" id="password-input" type="password" placeholder="Password">
+        <button class="primary" type="button" onclick="signIn()">Sign In</button>
+      </div>
+      <div id="signed-in" style="display:none;">
+        <p class="copy" id="account-copy">Signed in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="grid">
+    <div class="panel">
+      <div class="section-title">
+        <h2>Provider Failures</h2>
+        <span class="badge error" id="failure-count">0</span>
+      </div>
+      <div id="failures"></div>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">
+        <h2>Backend Config</h2>
+        <span class="badge" id="generated-at">Waiting</span>
+      </div>
+      <div class="config-list" id="config-list"></div>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">
+        <h2>Recent Usage Events</h2>
+        <span class="badge" id="usage-count">0</span>
+      </div>
+      <div id="usage-events"></div>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">
+        <h2>Recent Palaces</h2>
+        <span class="badge" id="palace-count">0</span>
+      </div>
+      <div id="palaces"></div>
+    </div>
+
+    <div class="panel wide">
+      <div class="section-title">
+        <h2>Catalog Publish History</h2>
+        <span class="badge" id="catalog-count">0</span>
+      </div>
+      <div id="catalog"></div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/scripts/palace-api.js?v=20260701-1"></script>
+<script>
+const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
+let appConfig = { authEnabled: false, supabaseUrl: '', supabaseAnonKey: '' };
+let supabaseClient = null;
+let authState = { session: null, user: null };
+
+function setStatus(message, tone) {
+  const el = document.getElementById('status-line');
+  el.textContent = message;
+  el.style.color = tone === 'error' ? 'var(--red)' : tone === 'success' ? 'var(--acid)' : 'var(--muted)';
+}
+
+function token() {
+  const accessToken = authState.session && authState.session.access_token;
+  if (!accessToken) throw new Error('Sign in with an admin account.');
+  return accessToken;
+}
+
+function renderAuth() {
+  const signedIn = !!authState.user;
+  document.getElementById('signed-out').style.display = signedIn ? 'none' : 'grid';
+  document.getElementById('signed-in').style.display = signedIn ? 'block' : 'none';
+  document.getElementById('signout-btn').style.display = signedIn ? 'inline-block' : 'none';
+  document.getElementById('refresh-btn').disabled = !signedIn;
+  document.getElementById('account-copy').textContent = signedIn
+    ? 'Signed in as ' + (authState.user.email || authState.user.id) + '.'
+    : 'Not signed in.';
+}
+
+function cell(value) {
+  return escapeHtml(value == null || value === '' ? '-' : String(value));
+}
+
+function timeCell(value) {
+  if (!value) return '-';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return escapeHtml(value);
+  return escapeHtml(date.toLocaleString());
+}
+
+function statusBadge(value) {
+  const code = Number(value || 0);
+  const cls = code >= 500 ? 'error' : code >= 400 ? 'warn' : code >= 200 ? 'ok' : '';
+  return '<span class="badge ' + cls + '">' + cell(value) + '</span>';
+}
+
+function renderStats(summary) {
+  const items = [
+    ['Usage Events', summary.recent_usage_events],
+    ['Usage Failures', summary.recent_usage_failures],
+    ['Local Failures', summary.recent_local_provider_failures],
+    ['Recent Palaces', summary.recent_palaces],
+    ['Catalog Entries', summary.recent_catalog_entries],
+  ];
+  document.getElementById('stats').innerHTML = items.map(item =>
+    '<div class="stat"><div class="stat-value">' + cell(item[1]) + '</div><div class="stat-label">' + cell(item[0]) + '</div></div>'
+  ).join('');
+}
+
+function renderConfig(config, generatedAt, errors) {
+  document.getElementById('generated-at').textContent = generatedAt ? new Date(generatedAt).toLocaleTimeString() : 'Waiting';
+  const rows = Object.keys(config || {}).map(key => {
+    const value = typeof config[key] === 'object' ? JSON.stringify(config[key]) : config[key];
+    const normalized = value === true ? 'ready' : value === false ? 'off' : value;
+    return '<div class="config-item"><span>' + cell(key.replaceAll('_', ' ')) + '</span><strong>' + cell(normalized) + '</strong></div>';
+  });
+  const errorRows = Object.keys(errors || {}).map(key =>
+    '<div class="config-item"><span>' + cell(key) + '</span><strong style="color:var(--red);">' + cell(errors[key]) + '</strong></div>'
+  );
+  document.getElementById('config-list').innerHTML = rows.concat(errorRows).join('') || '<div class="empty">No configuration data loaded.</div>';
+}
+
+function renderTable(targetId, rows, columns, emptyMessage) {
+  const target = document.getElementById(targetId);
+  if (!rows || !rows.length) {
+    target.innerHTML = '<div class="empty">' + escapeHtml(emptyMessage) + '</div>';
+    return;
+  }
+  target.innerHTML = '<div class="table-wrap"><table><thead><tr>' +
+    columns.map(col => '<th>' + escapeHtml(col.label) + '</th>').join('') +
+    '</tr></thead><tbody>' +
+    rows.map(row => '<tr>' + columns.map(col => '<td class="' + (col.muted ? 'muted' : '') + '">' + col.render(row) + '</td>').join('') + '</tr>').join('') +
+    '</tbody></table></div>';
+}
+
+function renderDiagnostics(data) {
+  renderStats(data.summary || {});
+  renderConfig(data.config || {}, data.generated_at, data.errors || {});
+  const failures = data.recent_provider_failures || [];
+  const usage = data.recent_usage_events || [];
+  const palaces = data.recent_palaces || [];
+  const catalog = data.catalog_publish_history || [];
+
+  document.getElementById('failure-count').textContent = failures.length;
+  document.getElementById('usage-count').textContent = usage.length;
+  document.getElementById('palace-count').textContent = palaces.length;
+  document.getElementById('catalog-count').textContent = catalog.length;
+
+  renderTable('failures', failures, [
+    { label: 'Time', render: row => timeCell(row.timestamp || row.created_at), muted: true },
+    { label: 'Provider', render: row => cell(row.provider || row.model) },
+    { label: 'Status', render: row => statusBadge(row.status_code) },
+    { label: 'Request', render: row => cell(row.request_id), muted: true },
+  ], 'No recent provider failures found in Supabase or the local usage log.');
+
+  renderTable('usage-events', usage, [
+    { label: 'Time', render: row => timeCell(row.timestamp || row.created_at), muted: true },
+    { label: 'Provider', render: row => cell(row.provider) },
+    { label: 'Model', render: row => cell(row.model), muted: true },
+    { label: 'Status', render: row => statusBadge(row.status_code) },
+    { label: 'Tokens', render: row => cell((row.input_tokens || 0) + '/' + (row.output_tokens || 0)), muted: true },
+  ], 'No recent usage events returned.');
+
+  renderTable('palaces', palaces, [
+    { label: 'Updated', render: row => timeCell(row.updated_at), muted: true },
+    { label: 'Title', render: row => cell(row.title) },
+    { label: 'Topic', render: row => cell(row.topic_preview), muted: true },
+    { label: 'Status', render: row => cell(row.status) },
+    { label: 'Version', render: row => cell(row.latest_version_number), muted: true },
+  ], 'No saved palace activity returned.');
+
+  renderTable('catalog', catalog, [
+    { label: 'Published', render: row => timeCell(row.published_at), muted: true },
+    { label: 'Title', render: row => cell(row.title) },
+    { label: 'Topic', render: row => cell(row.topic_preview), muted: true },
+    { label: 'Tags', render: row => cell((row.tags || []).join(', ')) },
+    { label: 'Publisher', render: row => cell(row.published_by), muted: true },
+  ], 'No catalog publish history returned.');
+}
+
+async function loadDiagnostics() {
+  document.getElementById('refresh-btn').disabled = true;
+  setStatus('Loading admin diagnostics...');
+  try {
+    const data = await MnemorizedAdminApi.diagnostics(token());
+    renderDiagnostics(data);
+    setStatus('Diagnostics loaded for ' + (data.admin.email || data.admin.user_id) + '.', 'success');
+  } catch (error) {
+    setStatus('Diagnostics failed: ' + error.message, 'error');
+  } finally {
+    document.getElementById('refresh-btn').disabled = !authState.user;
+  }
+}
+
+async function signIn() {
+  if (!supabaseClient) {
+    setStatus('Supabase auth is not configured.', 'error');
+    return;
+  }
+  const email = document.getElementById('email-input').value.trim();
+  const password = document.getElementById('password-input').value;
+  if (!email || !password) {
+    setStatus('Enter admin email and password.', 'error');
+    return;
+  }
+  setStatus('Signing in...');
+  const { data, error } = await runSupabaseQuery(
+    'admin sign in',
+    supabaseClient.auth.signInWithPassword({ email, password })
+  );
+  if (error) {
+    setStatus(error.message, 'error');
+    return;
+  }
+  authState = { session: data.session, user: data.user };
+  renderAuth();
+  await loadDiagnostics();
+}
+
+async function signOut() {
+  if (!supabaseClient) return;
+  await supabaseClient.auth.signOut();
+  authState = { session: null, user: null };
+  renderAuth();
+  setStatus('Signed out.');
+}
+
+async function bootstrap() {
+  try {
+    const config = await fetch(getApiUrl('/api/config/public')).then(res => res.json());
+    appConfig = {
+      authEnabled: !!config.auth_enabled,
+      supabaseUrl: config.supabase_url || '',
+      supabaseAnonKey: config.supabase_anon_key || ''
+    };
+    if (!appConfig.authEnabled) {
+      renderAuth();
+      setStatus('Supabase auth is not configured on the backend.', 'error');
+      return;
+    }
+    supabaseClient = window.supabase.createClient(
+      appConfig.supabaseUrl,
+      appConfig.supabaseAnonKey,
+      { auth: { persistSession: true, autoRefreshToken: true } }
+    );
+    const { data } = await supabaseClient.auth.getSession();
+    authState = { session: data.session, user: data.session && data.session.user };
+    renderAuth();
+    supabaseClient.auth.onAuthStateChange(async (_event, session) => {
+      authState = { session, user: session && session.user };
+      renderAuth();
+      if (authState.user) await loadDiagnostics();
+    });
+    if (authState.user) {
+      await loadDiagnostics();
+    } else {
+      setStatus('Sign in with an admin account to view diagnostics.');
+    }
+  } catch (error) {
+    renderAuth();
+    setStatus('Admin bootstrap failed: ' + error.message, 'error');
+  }
+}
+
+renderAuth();
+bootstrap();
+</script>
+</body>
+</html>

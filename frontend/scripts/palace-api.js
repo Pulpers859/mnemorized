@@ -130,4 +130,10 @@
       return request('/api/medical-knowledge/quality-check', { method: 'POST', token: token, body: body });
     }
   };
+
+  window.MnemorizedAdminApi = {
+    diagnostics: function (token) {
+      return request('/api/admin/diagnostics', { token: token });
+    }
+  };
 })();

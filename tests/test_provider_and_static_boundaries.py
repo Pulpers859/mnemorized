@@ -336,9 +336,29 @@ def test_static_pages_load_shared_backend_persistence_script_before_inline_code(
     root = Path(__file__).resolve().parents[1]
     library = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
     forge = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    admin = (root / "frontend" / "pages" / "admin.html").read_text(encoding="utf-8")
 
     assert library.index("/scripts/palace-api.js") < library.index("MnemorizedPalaceApi")
     assert forge.index("/scripts/palace-api.js") < forge.index("/scripts/forge-auth.js")
+    assert admin.index("/scripts/palace-api.js") < admin.index("MnemorizedAdminApi")
+
+
+def test_admin_dashboard_wires_protected_diagnostics_flow() -> None:
+    root = Path(__file__).resolve().parents[1]
+    admin = (root / "frontend" / "pages" / "admin.html").read_text(encoding="utf-8")
+    shared = (root / "frontend" / "scripts" / "palace-api.js").read_text(encoding="utf-8")
+    backend = (root / "backend" / "app" / "main.py").read_text(encoding="utf-8")
+
+    assert "@app.get(\"/admin\")" in backend
+    assert "@app.get(\"/api/admin/diagnostics\")" in backend
+    assert "Admin access is required." in backend
+    assert "SUPABASE_SERVICE_ROLE_KEY is required for admin diagnostics." in backend
+    assert "window.MnemorizedAdminApi" in shared
+    assert "/api/admin/diagnostics" in shared
+    assert "MnemorizedAdminApi.diagnostics(token())" in admin
+    assert "Provider Failures" in admin
+    assert "Catalog Publish History" in admin
+    assert "supabaseClient.auth.signInWithPassword" in admin
 
 
 def test_production_cors_does_not_allow_wildcard(tmp_path: Path) -> None:
@@ -546,6 +566,7 @@ def test_service_worker_does_not_cache_html_or_itself() -> None:
     static_block = sw.split("];", 1)[0]
     assert "'/forge'" not in static_block
     assert "'/library'" not in static_block
+    assert "'/admin'" not in static_block
     assert "'/'" not in static_block
     assert "url.pathname === '/sw.js'" in sw
     assert "fetch(event.request, { cache: 'no-store' })" in sw
