@@ -273,19 +273,15 @@ async function generateImages() {
   const p1 = document.getElementById('prompt-copy-1')?.value;
   const p2 = document.getElementById('prompt-copy-2')?.value;
   if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
-  if (!backendState.checked) await refreshBackendStatus();
-  if (!backendState.reachable) {
-    openConnectionModal();
-    return;
-  }
-  if (!backendState.providerAuthReady) {
-    openConnectionModal();
-    return;
-  }
-  if (!backendState.geminiConfigured) {
-    openConnectionModal();
-    syncConnectionModal('Backend reachable, but GEMINI_API_KEY is not configured on the server yet.');
-    return;
+  if (forgeReplayMode !== 'replay') {
+    if (!backendState.checked) await refreshBackendStatus();
+    if (!backendState.reachable) { openConnectionModal(); return; }
+    if (!backendState.providerAuthReady) { openConnectionModal(); return; }
+    if (!backendState.geminiConfigured) {
+      openConnectionModal();
+      syncConnectionModal('Backend reachable, but GEMINI_API_KEY is not configured on the server yet.');
+      return;
+    }
   }
 
   const btn = document.getElementById('generate-images-btn');
@@ -309,7 +305,10 @@ async function generateImages() {
   if (resultContainer) resultContainer.style.display = 'none';
 
   const prompts = [p1, p2].filter(Boolean);
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = {
+    'Content-Type': 'application/json',
+    ...getReplayHeaders('stage4-gemini-image'),
+  };
   if (authState.session?.access_token) {
     headers.Authorization = `Bearer ${authState.session.access_token}`;
   }
@@ -425,7 +424,7 @@ Requirements:
       max_tokens: 300,
       system: ipSystem,
       messages: [{ role: 'user', content: p1UserMsg }]
-    });
+    }, 'repair-image-prompt');
     if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status}`);
     const p1Raw = await p1Res.json();
     const sceneDesc = parseProviderContent(p1Raw, 'Scene Description').trim();
@@ -600,7 +599,7 @@ Output ONLY these two XML tags, nothing else:
 <core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
 <scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
         messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ED/ICU physician — needs precise, high-yield anchors.` }]
-      });
+      }, 'stage1-clinical-context');
     const ctxRaw = await ctxRes.json();
     const ctxTxt = ctxRaw.content?.[0]?.text || '';
     const core   = extractXmlTag(ctxTxt, 'core_concepts');
@@ -716,7 +715,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
     let res;
     try {
-      res = await claudeFetch(requestBody);
+      res = await claudeFetch(requestBody, 'stage2-story-script');
     } catch(fetchErr) {
       throw new Error(fetchErr.message || 'Could not reach the provider proxy.');
     }
@@ -828,7 +827,7 @@ Requirements:
         max_tokens: 300,
         system: ipSystem,
         messages: [{ role: 'user', content: p1UserMsg }]
-      });
+      }, 'stage3-image-prompt');
     if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status} — ${await p1Res.text()}`);
     const p1Raw = await p1Res.json();
     const sceneDesc = parseAPIResponse(p1Raw, 'Scene Description').trim();

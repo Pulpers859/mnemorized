@@ -1222,6 +1222,30 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .operator-toggle-label input:checked ~ .op-label { color: var(--gold) !important; }
 
+/* ── REPLAY MODE ── */
+.replay-select {
+  background: var(--ink);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .06em;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.replay-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .1em;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.replay-live { color: var(--muted); border: 1px solid var(--border); }
+.replay-record { color: var(--red); border: 1px solid rgba(255,107,102,.4); background: rgba(255,107,102,.08); }
+.replay-replay { color: var(--blue, #65a8ff); border: 1px solid rgba(101,168,255,.4); background: rgba(101,168,255,.08); }
+
 /* ── HANDOFF MESSAGE ── */
 .handoff-message {
   text-align: center;
@@ -1437,6 +1461,12 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       <span class="demo-track op-track"></span>
       <span class="demo-label op-label">Operator</span>
     </label>
+    <select id="replay-select" class="replay-select" onchange="setReplayMode(this.value)" style="display:none;">
+      <option value="live">LIVE</option>
+      <option value="record">RECORD</option>
+      <option value="replay">REPLAY</option>
+    </select>
+    <span id="replay-badge" class="replay-badge replay-live" style="display:none;">LIVE</span>
     <div class="nav-tag">Forge v5</div>
     <a href="/library" style="text-decoration:none;background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;letter-spacing:.04em;transition:all .2s;">LIBRARY</a>
     <button id="account-btn" onclick="openAuthModal()" title="Account and saved palaces" style="background:none;border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;padding:4px 10px;border-radius:6px;cursor:pointer;letter-spacing:.04em;transition:all .2s;">

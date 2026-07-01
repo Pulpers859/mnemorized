@@ -927,6 +927,13 @@ async function loadAuthSystem() {
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
     appConfig.appBaseUrl = config.app_base_url || window.location.origin;
     appConfig.medicalKnowledgeEnabled = !!config.medical_knowledge_enabled;
+    appConfig.devMode = !!config.dev_mode;
+    if (appConfig.devMode) {
+      const replaySelect = document.getElementById('replay-select');
+      const replayBadge = document.getElementById('replay-badge');
+      if (replaySelect) replaySelect.style.display = '';
+      if (replayBadge) replayBadge.style.display = '';
+    }
     appConfig.billingMode = config.billing_mode || 'beta';
     appConfig.betaMode = !!config.beta_mode;
     appConfig.billingEnabled = !!config.billing_enabled;

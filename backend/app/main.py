@@ -25,6 +25,14 @@ from .auth import AuthenticatedUser, SupabaseTokenVerifier
 from .config import Settings, get_settings
 from .dev_tools import clear_plan_override, read_plan_override, write_plan_override
 from .rate_limit import InMemoryRateLimiter
+from .replay import (
+    clear_cassette,
+    get_replay_meta,
+    get_replay_mode,
+    list_cassettes,
+    load_cassette,
+    save_cassette,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FRONTEND_DIR = REPO_ROOT / "frontend"
@@ -2514,6 +2522,23 @@ async def proxy_anthropic_messages(
         return _quota_exceeded_response(request_id, quota_summary)
 
     body = payload.model_dump(exclude_none=True)
+
+    replay_mode = get_replay_mode(request.headers) if active_settings.dev_mode else None
+    replay_topic, replay_stage = get_replay_meta(request.headers) if replay_mode else (None, None)
+    if replay_mode == "replay" and replay_topic and replay_stage:
+        cassette = load_cassette(replay_topic, replay_stage)
+        if cassette is not None:
+            return JSONResponse(
+                status_code=200,
+                headers={"X-Request-ID": request_id, "X-Replay": "hit"},
+                content=cassette,
+            )
+        return JSONResponse(
+            status_code=404,
+            headers={"X-Request-ID": request_id, "X-Replay": "miss"},
+            content={"error": {"type": "replay_miss", "message": f"No cassette for {replay_topic}/{replay_stage}. Switch to Record mode first."}},
+        )
+
     upstream_headers = {
         "content-type": "application/json",
         "x-api-key": active_settings.anthropic_api_key,
@@ -2619,6 +2644,10 @@ async def proxy_anthropic_messages(
             },
         )
 
+    if replay_mode == "record" and replay_topic and replay_stage and upstream_ok and response_payload:
+        save_cassette(replay_topic, replay_stage, response_payload)
+        passthrough_headers["X-Replay"] = "recorded"
+
     return JSONResponse(
         status_code=upstream_response.status_code,
         headers=passthrough_headers,
@@ -2678,6 +2707,22 @@ async def generate_image(
     quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
     if not quota_allowed:
         return _quota_exceeded_response(request_id, quota_summary)
+
+    replay_mode = get_replay_mode(request.headers) if active_settings.dev_mode else None
+    replay_topic, replay_stage = get_replay_meta(request.headers) if replay_mode else (None, None)
+    if replay_mode == "replay" and replay_topic and replay_stage:
+        cassette = load_cassette(replay_topic, replay_stage)
+        if cassette is not None:
+            return JSONResponse(
+                status_code=200,
+                headers={"X-Request-ID": request_id, "X-Replay": "hit"},
+                content=cassette,
+            )
+        return JSONResponse(
+            status_code=404,
+            headers={"X-Request-ID": request_id, "X-Replay": "miss"},
+            content={"error": {"type": "replay_miss", "message": f"No cassette for {replay_topic}/{replay_stage}. Switch to Record mode first."}},
+        )
 
     model = active_settings.gemini_model
     api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
@@ -2842,12 +2887,39 @@ async def generate_image(
 
     schedule_gemini_usage(200)
 
+    response_content = {"images": images}
+    response_headers: dict[str, str] = {"X-Request-ID": request_id}
+    if replay_mode == "record" and replay_topic and replay_stage and images:
+        save_cassette(replay_topic, replay_stage, response_content)
+        response_headers["X-Replay"] = "recorded"
+
     return JSONResponse(
         status_code=200,
-        headers={"X-Request-ID": request_id},
-        content={"images": images},
+        headers=response_headers,
+        content=response_content,
         background=background_tasks,
     )
+
+
+@app.get("/api/dev/replay-cassettes")
+async def list_replay_cassettes(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    if not active_settings.dev_mode:
+        raise HTTPException(status_code=404, detail="Not found.")
+    return {"cassettes": list_cassettes()}
+
+
+@app.delete("/api/dev/replay-cassettes")
+async def clear_replay_cassettes(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    if not active_settings.dev_mode:
+        raise HTTPException(status_code=404, detail="Not found.")
+    topic = request.query_params.get("topic", "")
+    stage = request.query_params.get("stage")
+    if not topic:
+        raise HTTPException(status_code=400, detail="topic is required.")
+    removed = clear_cassette(topic, stage)
+    return {"removed": removed, "topic": topic, "stage": stage}
 
 
 app.mount("/", StaticFiles(directory=str(FRONTEND_DIR)), name="frontend")

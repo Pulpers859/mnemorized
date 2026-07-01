@@ -1,6 +1,7 @@
 backend/.env
 backend/logs/
 backend/dev_data/
+backend/replay/
 __pycache__/
 *.pyc
 *.pyo

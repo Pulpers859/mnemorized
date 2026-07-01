@@ -6,6 +6,29 @@
 const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
 const CLAUDE_MODEL = 'claude-sonnet-4-6';
 
+let forgeReplayMode = 'live';
+
+function getReplayMode() { return forgeReplayMode; }
+function setReplayMode(mode) {
+  forgeReplayMode = (mode === 'record' || mode === 'replay') ? mode : 'live';
+  const badge = document.getElementById('replay-badge');
+  if (badge) {
+    badge.textContent = forgeReplayMode === 'live' ? 'LIVE' : forgeReplayMode === 'record' ? 'REC' : 'REPLAY';
+    badge.className = 'replay-badge replay-' + forgeReplayMode;
+  }
+}
+
+function getReplayHeaders(stage) {
+  if (forgeReplayMode === 'live') return {};
+  const topic = (document.getElementById('topic')?.value || '').trim();
+  if (!topic) return {};
+  return {
+    'x-forge-replay': forgeReplayMode,
+    'x-forge-replay-topic': topic,
+    'x-forge-replay-stage': stage || 'unknown',
+  };
+}
+
 let backendState = {
   checked: false,
   reachable: false,
@@ -137,27 +160,30 @@ document.getElementById('connection-modal').addEventListener('click', function(e
 
 // ── Claude API fetch wrapper ──────────────────────────────────────
 
-async function claudeFetch(body) {
+async function claudeFetch(body, stage) {
   if (!backendState.checked) await refreshBackendStatus();
 
-  if (!backendState.reachable) {
-    openConnectionModal();
-    throw new Error(`Proxy unavailable. Start the backend at ${getBackendBaseLabel()} and retry.`);
-  }
+  if (forgeReplayMode !== 'replay') {
+    if (!backendState.reachable) {
+      openConnectionModal();
+      throw new Error(`Proxy unavailable. Start the backend at ${getBackendBaseLabel()} and retry.`);
+    }
 
-  if (!backendState.configured) {
-    openConnectionModal();
-    throw new Error('Backend is reachable, but ANTHROPIC_API_KEY is not configured on the server.');
-  }
+    if (!backendState.configured) {
+      openConnectionModal();
+      throw new Error('Backend is reachable, but ANTHROPIC_API_KEY is not configured on the server.');
+    }
 
-  if (!backendState.providerAuthReady) {
-    openConnectionModal();
-    throw new Error('Provider calls require Supabase auth, but backend auth is not configured yet.');
+    if (!backendState.providerAuthReady) {
+      openConnectionModal();
+      throw new Error('Provider calls require Supabase auth, but backend auth is not configured yet.');
+    }
   }
 
   const headers = {
     'Content-Type': 'application/json',
-    'anthropic-version': '2023-06-01'
+    'anthropic-version': '2023-06-01',
+    ...getReplayHeaders(stage || 'claude'),
   };
   if (authState.session?.access_token) {
     headers.Authorization = `Bearer ${authState.session.access_token}`;
