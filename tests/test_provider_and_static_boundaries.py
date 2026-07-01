@@ -327,6 +327,7 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     assert "/api/profile/ensure" in combined
     assert "/api/palaces/save" in combined
     assert "/api/medical-knowledge/quality-check" in combined
+    assert "/api/medical-knowledge/context" in combined
     assert "medical.medical_knowledge_chunks" not in combined
     assert "match_medical_knowledge_chunks" not in combined
 
@@ -407,6 +408,11 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "await runMedicalQualityGate(storyData);" in pipeline
     assert "Demo mode uses built-in sample content" in pipeline
     assert "function runMedicalQualityGate" in auth
+    assert "function repairCurrentPalaceWithMedicalEvidence" in auth
+    assert "Repair with Medical Evidence" in auth
+    assert "MnemorizedMedicalApi.context" in auth
+    assert "function rebuildImagePromptsForStory" in pipeline
+    assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
     assert "quality_gate: currentQualityGateData" in auth
     assert "window.MnemorizedMedicalApi" in shared

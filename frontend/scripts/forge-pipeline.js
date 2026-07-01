@@ -359,6 +359,79 @@ function downloadGenImage(n) {
   a.click();
 }
 
+async function rebuildImagePromptsForStory(storyData) {
+  if (!storyData?.voLines?.length) {
+    setStatus('prompt', 'No repaired story', 'error');
+    return;
+  }
+
+  const topic = document.getElementById('topic')?.value?.trim() || 'medical topic';
+  const n = storyData.voLines.length;
+  const assigned = storyData.voLines.map((v, i) => ({
+    ...v,
+    zone: ZONE_CYCLE[i % ZONE_CYCLE.length]
+  }));
+
+  setStatus('prompt', 'Rebuilding image prompts...', 'running');
+
+  const ipSystem = 'You write scene descriptions for Gemini Imagen image generation. ' +
+    'Output ONLY the scene-specific content — setting, objects, composition, atmosphere. ' +
+    'Dense, comma-separated descriptive phrases. Do NOT include any style instructions, art style language, ' +
+    'or rendering directives — those are handled separately. ' +
+    'Choose a setting/location that is thematically clever for the medical topic and renders well as a flat hand-drawn illustration.';
+
+  const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene content — no style directives.
+
+MEDICAL TOPIC: ${topic}
+SCENE TITLE: ${storyData.scene_title}
+ATMOSPHERE: ${storyData.opening}
+TOTAL ANCHORS TO FIT: ${n}
+
+Requirements:
+- 60-80 words maximum
+- Clever thematic setting connected to the topic
+- Flat-friendly physical materials only: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic
+- NO guide character, no modern clinical screens, no glass/chrome
+- Wide enough for ${n} distinct objects across left, center, right, foreground, and background
+- End with: wide establishing shot, enough space for ${n} labeled objects, aspect ratio 16:9`;
+
+  try {
+    const p1Res = await claudeFetch({
+      model: CLAUDE_MODEL,
+      max_tokens: 300,
+      system: ipSystem,
+      messages: [{ role: 'user', content: p1UserMsg }]
+    });
+    if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status}`);
+    const p1Raw = await p1Res.json();
+    const sceneDesc = parseProviderContent(p1Raw, 'Scene Description').trim();
+
+    const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
+    const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
+      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      `${ANTI_META_TEXT}\n\n` +
+      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
+      `Place each one in its general area using the exact visual description given — ` +
+      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
+      buildAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
+      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `Maintain same lighting, color palette, and atmosphere.`;
+
+    showBody('prompt');
+    if (isOperatorMode()) operatorPanel.classList.add('visible');
+    document.getElementById('img-prompt-1').textContent = prompt1;
+    document.getElementById('img-prompt-2').textContent = prompt2;
+    document.getElementById('prompt-copy-1').value = prompt1;
+    document.getElementById('prompt-copy-2').value = prompt2;
+    setCurrentPalaceData(storyData, prompt1, prompt2);
+    setStatus('prompt', '✓ Rebuilt from repaired script', 'done');
+  } catch (error) {
+    setCurrentPalaceData(storyData, '', '');
+    setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
+  }
+}
+
 // ── Main pipeline ────────────────────────────────────────────────
 
 async function runPipeline() {

@@ -183,6 +183,69 @@ function getQualityGateConcepts(storyData) {
     .slice(0, 12);
 }
 
+function extractXmlTag(text, tag) {
+  const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'i');
+  const match = String(text || '').match(re);
+  if (!match) return '';
+  return match[0]
+    .replace(new RegExp(`^<${tag}>`, 'i'), '')
+    .replace(new RegExp(`<\\/${tag}>$`, 'i'), '')
+    .trim();
+}
+
+function extractAllXmlTags(text, tag) {
+  const re = new RegExp(`<${tag}>[\\s\\S]*?<\\/${tag}>`, 'gi');
+  return [...String(text || '').matchAll(re)].map(match =>
+    match[0]
+      .replace(new RegExp(`^<${tag}>`, 'i'), '')
+      .replace(new RegExp(`<\\/${tag}>$`, 'i'), '')
+      .trim()
+  );
+}
+
+function parseProviderContent(raw, context) {
+  if (raw.type === 'error' || raw.error) {
+    const msg = raw.error?.message || raw.message || JSON.stringify(raw);
+    throw new Error(`${context}: ${msg}`);
+  }
+  if (!raw.content || !Array.isArray(raw.content)) {
+    throw new Error(`${context}: unexpected provider response.`);
+  }
+  const text = raw.content[0]?.text;
+  if (!text) {
+    throw new Error(`${context}: empty provider response.`);
+  }
+  return text;
+}
+
+function parseStoryXml(text) {
+  const voRaw = extractAllXmlTags(text, 'vo_line');
+  const voLines = voRaw.map((block, index) => {
+    const getField = (label) => {
+      const re = new RegExp(
+        `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:NARRATION|VISUAL|ANCHOR):|$)`,
+        'i'
+      );
+      const match = block.match(re);
+      if (!match) return '';
+      return match[1].replace(/\]?\s*$/, '').trim();
+    };
+    return {
+      n: index + 1,
+      narration: getField('NARRATION'),
+      visual: getField('VISUAL'),
+      anchor: getField('ANCHOR'),
+    };
+  });
+
+  return {
+    scene_title: extractXmlTag(text, 'scene_title'),
+    opening: extractXmlTag(text, 'opening'),
+    voLines,
+    review_script: extractXmlTag(text, 'review_script'),
+  };
+}
+
 function renderQualityGateMessage(message, tone = 'muted') {
   showBody('quality');
   const body = document.getElementById('quality-result');
@@ -198,6 +261,7 @@ function renderQualityGateResult(result) {
   const coverageLabel = coverage.length ? `${presentCount}/${coverage.length} generated anchors present` : 'No required anchors were supplied.';
   const repairFocus = result?.repair_focus || [];
   const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
+  const showRepair = !!authState.user && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
 
   document.getElementById('quality-result').innerHTML = `
     <div class="quality-grid">
@@ -206,6 +270,9 @@ function renderQualityGateResult(result) {
         <div class="quality-verdict">${escapeHtml(verdictLabel)}</div>
         <div class="quality-copy">${escapeHtml(coverageLabel)} • ${evidence.length} private evidence citation${evidence.length === 1 ? '' : 's'} retrieved.</div>
         ${repairFocus.length ? `<div class="quality-repair">Repair focus: ${escapeHtml(repairFocus.join(', '))}</div>` : ''}
+        ${showRepair ? `<div class="quality-actions">
+          <button class="btn-copy" id="repair-quality-btn" onclick="repairCurrentPalaceWithMedicalEvidence()">Repair with Medical Evidence</button>
+        </div>` : ''}
       </div>
       <div class="quality-citations">
         <div class="quality-kicker">Retrieved Citations</div>
@@ -221,6 +288,101 @@ function renderQualityGateResult(result) {
         }).join('') : '<div class="quality-empty">No citations returned for this topic yet.</div>'}
       </div>
     </div>`;
+}
+
+async function repairCurrentPalaceWithMedicalEvidence() {
+  if (!currentStoryData) {
+    renderQualityGateMessage('Generate a palace script before running repair.', 'error');
+    return;
+  }
+  if (!authState.user) {
+    openAuthModal();
+    return;
+  }
+  if (!currentQualityGateData) {
+    await runMedicalQualityGate(currentStoryData);
+  }
+
+  const btn = document.getElementById('repair-quality-btn');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spin"></span> Repairing...';
+  }
+  setStatus('quality', 'Repairing...', 'running');
+
+  try {
+    const token = getAuthToken();
+    const topic = document.getElementById('topic').value.trim();
+    const contextPayload = await MnemorizedMedicalApi.context(token, {
+      topic,
+      max_chunks: 6,
+    });
+    const evidence = (contextPayload.context || []).map((item, index) => {
+      const page = item.page_start === item.page_end
+        ? `p${item.page_start || '?'}`
+        : `p${item.page_start || '?'}-${item.page_end || '?'}`;
+      return `[${index + 1}] ${item.source_title || item.source_key || 'Medical source'} ${page}: ${item.excerpt || ''}`;
+    }).join('\n');
+    const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ');
+
+    const res = await claudeFetch({
+      model: CLAUDE_MODEL,
+      max_tokens: 4096,
+      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain NARRATION, VISUAL, and ANCHOR fields.`,
+      messages: [{
+        role: 'user',
+        content: `Clinical topic: ${topic}
+
+Repair focus from the medical quality gate:
+- ${repairFocus || 'No specific repair focus returned; improve medical coverage against the retrieved evidence.'}
+
+Private evidence excerpts and citations:
+${evidence || 'No evidence excerpts returned.'}
+
+Current script JSON:
+${JSON.stringify(currentStoryData, null, 2)}
+
+Repair requirements:
+- Preserve the scene title and setting if they still work.
+- Keep strong existing anchors when medically sound.
+- Rewrite or add anchors for any missing/weak repair-focus concepts.
+- Maintain concise visual descriptions and specific board-level medical facts.
+- Return XML only.`
+      }]
+    });
+
+    if (!res.ok) {
+      throw new Error(`Repair provider call failed (HTTP ${res.status}).`);
+    }
+    const raw = await res.json();
+    const repairedText = parseProviderContent(raw, 'Medical Repair');
+    const repairedStory = parseStoryXml(repairedText);
+    if (!repairedStory.voLines.length) {
+      throw new Error('Repair response did not include any vo_line anchors.');
+    }
+
+    currentQualityGateData = null;
+    currentStoryData = repairedStory;
+    renderStoryData(repairedStory);
+    setStatus('story', '✓ Repaired', 'done');
+    await runMedicalQualityGate(repairedStory);
+
+    if (typeof rebuildImagePromptsForStory === 'function') {
+      await rebuildImagePromptsForStory(repairedStory);
+    } else {
+      currentPromptData = { prompt1: '', prompt2: '' };
+      setStatus('prompt', 'Rebuild prompts needed', '');
+    }
+  } catch (error) {
+    setStatus('quality', 'Repair failed', 'error');
+    renderQualityGateMessage(`Medical repair failed: ${error.message}`, 'error');
+  } finally {
+    const repairBtn = document.getElementById('repair-quality-btn');
+    if (repairBtn) {
+      repairBtn.disabled = false;
+      repairBtn.textContent = 'Repair with Medical Evidence';
+    }
+  }
 }
 
 async function runMedicalQualityGate(storyData = currentStoryData) {
