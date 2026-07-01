@@ -134,6 +134,16 @@
   window.MnemorizedAdminApi = {
     diagnostics: function (token) {
       return request('/api/admin/diagnostics', { token: token });
+    },
+    catalogSeeds: function (token) {
+      return request('/api/admin/catalog-seeds', { token: token });
+    },
+    publishCatalogSeed: function (token, slug) {
+      return request('/api/admin/catalog-seeds/publish', {
+        method: 'POST',
+        token: token,
+        body: { slug: slug }
+      });
     }
   };
 })();

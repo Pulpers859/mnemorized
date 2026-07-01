@@ -21,6 +21,8 @@ It gives you:
 - `GET /api/config/public`
 - `GET /api/account/summary`
 - `GET /api/admin/diagnostics`
+- `GET /api/admin/catalog-seeds`
+- `POST /api/admin/catalog-seeds/publish`
 - `POST /api/medical-knowledge/context`
 - `POST /api/medical-knowledge/quality-check`
 - `POST /api/anthropic/messages`
@@ -68,6 +70,10 @@ Proxy usage events are appended to:
 - `backend/logs/anthropic_usage.jsonl`
 
 This is intentionally lightweight for now. In phase 2, those records can move into Postgres and attach to authenticated users.
+
+## Catalog Seeds
+
+Admin-only catalog seeds live in `backend/catalog_seed/*.json`. The admin dashboard can list and publish them through service-role-only backend routes. Seeds use deterministic tags like `seed:<slug>` and `seed-version:<n>` so publishing is idempotent and newer seed versions update the existing catalog row instead of creating duplicates.
 
 ## Private Medical Knowledge
 

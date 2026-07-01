@@ -1,0 +1,99 @@
+{
+  "slug": "dka-management",
+  "version": 1,
+  "title": "DKA Management: The Midnight Drip Bar",
+  "topic": "DKA diagnosis and management for emergency and ICU learners. Cover diagnostic triad, initial fluids, insulin drip without bolus, potassium thresholds, dextrose-containing fluid switch, anion gap closure, bicarbonate threshold, pediatric cerebral edema risk, and beta-hydroxybutyrate monitoring. Educational/source material only. Do not include patient-identifying information.",
+  "source_name": "Mnemorized seed catalog",
+  "scene_title": "The Midnight Drip Bar",
+  "summary": "A high-yield DKA resuscitation palace focused on thresholds, sequencing, potassium safety, and resolution criteria.",
+  "tags": ["emergency", "endocrine", "icu", "protocol", "dka"],
+  "generation_inputs": {
+    "topic": "DKA diagnosis and management",
+    "settings": {
+      "tone": "darkly comic",
+      "art_style": "sketchy",
+      "chaos": 6
+    },
+    "seed_version": "2026-07-01"
+  },
+  "generation_outputs": {
+    "story": {
+      "scene_title": "The Midnight Drip Bar",
+      "opening": "Welcome to the Midnight Drip Bar, a strange little emergency-medicine lounge where every bottle on the wall is really a DKA decision point. The room is arranged like a resuscitation bay disguised as a bar: diagnosis at the entrance, fluids at the counter, potassium on the right shelf, and resolution criteria on the back wall.",
+      "voLines": [
+        {
+          "n": 1,
+          "narration": "Start at the front door and notice the house sign with three big numbers: glucose over 250, pH under 7.3, and bicarbonate under 18. That is your DKA diagnostic triad. The sign also has GAP flashing underneath it, because this is an anion-gap metabolic acidosis, not just hyperglycemia.",
+          "visual": "Entrance sign reading GLU >250, pH <7.3, HCO3 <18, with GAP underneath",
+          "anchor": "DKA diagnostic triad: glucose >250 mg/dL, pH <7.3, bicarbonate <18 mEq/L, plus anion gap metabolic acidosis"
+        },
+        {
+          "n": 2,
+          "narration": "At the bar counter, two giant pitchers labeled NS sit beside a clock marked HOUR 1. This reminds you that fluids come first: give about 1 to 2 liters of isotonic saline in the first hour unless contraindicated. DKA patients are profoundly volume depleted, so fluid resuscitation starts before insulin.",
+          "visual": "Bar counter with two NS pitchers marked 1L and a clock labeled HOUR 1",
+          "anchor": "Initial fluid resuscitation: isotonic saline first, commonly 1-2 L in the first hour before insulin"
+        },
+        {
+          "n": 3,
+          "narration": "Behind the counter is an IV pump showing 0.1 units per kilogram per hour and a sticker that says NO BOLUS. That is the insulin drip station. Modern protocols use continuous regular insulin, commonly 0.1 units/kg/hr, and avoid routine bolus because bolus dosing increases hypoglycemia and hypokalemia risk without clear outcome benefit.",
+          "visual": "IV pump labeled 0.1 U/kg/hr with a red NO BOLUS sticker",
+          "anchor": "Regular insulin infusion: commonly 0.1 units/kg/hr; avoid routine insulin bolus"
+        },
+        {
+          "n": 4,
+          "narration": "Now look at the right shelf with three potassium bottles arranged like a traffic light. Red says K under 3.3: hold insulin and replete potassium. Yellow says K 3.3 to 5.3: give insulin and add potassium to fluids. Green says K over 5.3: give insulin but monitor and recheck potassium. This is the most dangerous branch point in DKA.",
+          "visual": "Traffic-light potassium shelf: K<3.3 HOLD, K 3.3-5.3 ADD K, K>5.3 RECHECK",
+          "anchor": "Potassium protocol: K<3.3 hold insulin and replete; K 3.3-5.3 add K; K>5.3 monitor and recheck"
+        },
+        {
+          "n": 5,
+          "narration": "On the left shelf there is a bottle labeled D5 half-normal saline with a note saying glucose under 200. When glucose falls to around 200 mg/dL, you do not stop insulin if the gap is still open. You add dextrose-containing fluid so insulin can continue closing the anion gap without causing hypoglycemia.",
+          "visual": "Left shelf bottle labeled D5 1/2NS with sticky note GLU <200",
+          "anchor": "Switch to dextrose-containing fluids around glucose <200 mg/dL while continuing insulin until the gap closes"
+        },
+        {
+          "n": 6,
+          "narration": "The back wall has a chalkboard with glucose crossed out and ANION GAP trending down. That is the resolution target. Follow the anion gap and acidosis, not just the glucose number. Resolution generally means closed gap, improved pH and bicarbonate, and ability to transition safely to subcutaneous insulin with overlap.",
+          "visual": "Chalkboard showing ANION GAP downtrend, glucose crossed out, SQ overlap 2 hr",
+          "anchor": "Monitor anion gap and acidosis for resolution; overlap subcutaneous insulin before stopping drip"
+        },
+        {
+          "n": 7,
+          "narration": "Near the bathroom door is a warning sign reading NO BICARB unless pH is under 6.9. Bicarbonate is not routine in DKA. It is generally reserved for severe acidemia around pH less than 6.9 because unnecessary bicarbonate can worsen potassium shifts and has not shown routine benefit.",
+          "visual": "Bathroom sign reading NO BICARB unless pH <6.9",
+          "anchor": "Do not routinely give bicarbonate in DKA; consider only severe acidemia, classically pH <6.9"
+        },
+        {
+          "n": 8,
+          "narration": "In the foreground is a tiny pediatric table with a swollen brain icon and a sign saying slow glucose fall. Pediatric DKA carries cerebral edema risk, especially with overly aggressive shifts. Avoid dropping glucose too fast and reassess neurologic status closely in children.",
+          "visual": "Small pediatric table with swollen brain icon and SLOW GLUCOSE FALL sign",
+          "anchor": "Pediatric DKA: cerebral edema risk; avoid overly rapid glucose/osmolality shifts and monitor neurologic status"
+        },
+        {
+          "n": 9,
+          "narration": "At the tip jar, the label says BHB beats urine ketones. Serum beta-hydroxybutyrate tracks DKA better than urine ketones. Urine ketones can be misleading during treatment because beta-hydroxybutyrate converts back to acetoacetate as the patient improves.",
+          "visual": "Tip jar labeled BHB > urine ketones with note UA can mislead",
+          "anchor": "Use serum beta-hydroxybutyrate or anion gap to follow DKA; urine ketones can mislead during treatment"
+        }
+      ],
+      "review_script": "When you see the entrance sign with glucose >250, pH <7.3, and HCO3 <18, remember the DKA diagnostic triad plus anion gap acidosis.\nWhen you see the two NS pitchers and HOUR 1 clock, remember fluids first, usually 1-2 L isotonic saline in the first hour.\nWhen you see the IV pump at 0.1 U/kg/hr with NO BOLUS, remember continuous insulin infusion without routine bolus.\nWhen you see the potassium traffic light, remember K<3.3 means hold insulin, K 3.3-5.3 means add potassium, and K>5.3 means monitor and recheck.\nWhen you see the D5 half-normal saline bottle with glucose <200, remember to add dextrose while continuing insulin until the gap closes.\nWhen you see glucose crossed out and anion gap trending down, remember resolution follows the gap and acidosis, not glucose alone.\nWhen you see the NO BICARB unless pH <6.9 sign, remember bicarbonate is not routine.\nWhen you see the pediatric brain warning, remember cerebral edema risk and avoid overly rapid shifts.\nWhen you see BHB beats urine ketones, remember serum beta-hydroxybutyrate or anion gap is better for tracking resolution."
+    },
+    "quality_gate": {
+      "verdict": "ready",
+      "repair_focus": [],
+      "required_concept_coverage": [
+        {"concept": "DKA diagnostic triad", "present_in_generation": true},
+        {"concept": "initial fluid resuscitation", "present_in_generation": true},
+        {"concept": "insulin infusion without routine bolus", "present_in_generation": true},
+        {"concept": "potassium thresholds", "present_in_generation": true},
+        {"concept": "dextrose fluid switch", "present_in_generation": true},
+        {"concept": "anion gap resolution", "present_in_generation": true}
+      ],
+      "evidence": []
+    },
+    "prompts": {
+      "prompt1": "",
+      "prompt2": ""
+    }
+  }
+}

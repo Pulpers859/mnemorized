@@ -356,9 +356,15 @@ def test_admin_dashboard_wires_protected_diagnostics_flow() -> None:
     assert "SUPABASE_SERVICE_ROLE_KEY is required for admin diagnostics." in backend
     assert "window.MnemorizedAdminApi" in shared
     assert "/api/admin/diagnostics" in shared
+    assert "/api/admin/catalog-seeds" in shared
+    assert "/api/admin/catalog-seeds/publish" in shared
     assert "MnemorizedAdminApi.diagnostics(token())" in admin
+    assert "MnemorizedAdminApi.catalogSeeds(token())" in admin
+    assert "MnemorizedAdminApi.publishCatalogSeed(token(), slug)" in admin
     assert "Provider Failures" in admin
     assert "Catalog Publish History" in admin
+    assert "Catalog Seeds" in admin
+    assert "seedPublishPending" in admin
     assert "supabaseClient.auth.signInWithPassword" in admin
 
 

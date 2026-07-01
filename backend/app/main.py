@@ -29,6 +29,8 @@ from .rate_limit import InMemoryRateLimiter
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FRONTEND_DIR = REPO_ROOT / "frontend"
 PAGES_DIR = FRONTEND_DIR / "pages"
+CATALOG_SEED_DIR = REPO_ROOT / "backend" / "catalog_seed"
+CATALOG_SEED_TAG_PREFIX = "seed:"
 
 
 class UsageSummaryCache:
@@ -151,6 +153,10 @@ class CatalogPublishPayload(BaseModel):
     tags: list[str] = Field(default_factory=list)
     generation_inputs: dict[str, Any] = Field(default_factory=dict)
     generation_outputs: dict[str, Any] = Field(default_factory=dict)
+
+
+class CatalogSeedPublishPayload(BaseModel):
+    slug: str = Field(min_length=1, max_length=80, pattern="^[a-z0-9][a-z0-9-]*$")
 
 
 ImagePrompt = Annotated[
@@ -497,6 +503,9 @@ ADMIN_PALACE_SELECT = (
     "id,user_id,title,topic,scene_title,status,latest_version_number,source_name,updated_at"
 )
 ADMIN_CATALOG_SELECT = "id,title,topic,scene_title,tags,published_by,published_at"
+ADMIN_CATALOG_SEED_SELECT = (
+    "id,title,topic,scene_title,tags,published_by,published_at,generation_inputs"
+)
 
 
 def _is_admin(user: AuthenticatedUser, settings: Settings) -> bool:
@@ -624,6 +633,144 @@ def _sanitize_catalog_row(row: dict[str, Any]) -> dict[str, Any]:
         "published_by": row.get("published_by"),
         "published_at": row.get("published_at"),
     }
+
+
+def _catalog_seed_tag(slug: str) -> str:
+    return f"{CATALOG_SEED_TAG_PREFIX}{slug}"
+
+
+def _catalog_seed_version_tag(version: int) -> str:
+    return f"seed-version:{version}"
+
+
+def _clean_catalog_tags(tags: list[str]) -> list[str]:
+    clean_tags: list[str] = []
+    seen: set[str] = set()
+    for raw_tag in tags:
+        tag = str(raw_tag).strip().lower()
+        if not tag or tag in seen:
+            continue
+        seen.add(tag)
+        clean_tags.append(tag[:40])
+    return clean_tags
+
+
+def _validate_catalog_seed_payload(payload: Any, source_name: str) -> dict[str, Any]:
+    if not isinstance(payload, dict):
+        raise ValueError(f"{source_name} must contain a JSON object.")
+
+    required = ("slug", "version", "title", "topic", "scene_title", "tags", "generation_inputs", "generation_outputs")
+    missing = [key for key in required if key not in payload]
+    if missing:
+        raise ValueError(f"{source_name} is missing required field(s): {', '.join(missing)}.")
+
+    slug = str(payload["slug"]).strip().lower()
+    try:
+        CatalogSeedPublishPayload(slug=slug)
+    except Exception as exc:
+        raise ValueError(f"{source_name} has invalid slug {slug!r}.") from exc
+
+    tags = _clean_catalog_tags(list(payload.get("tags") or []))
+    version = int(payload.get("version") or 1)
+    seed_tag = _catalog_seed_tag(slug)
+    if seed_tag not in tags:
+        tags.append(seed_tag)
+    version_tag = _catalog_seed_version_tag(version)
+    if version_tag not in tags:
+        tags.append(version_tag)
+
+    generation_inputs = payload.get("generation_inputs") or {}
+    if not isinstance(generation_inputs, dict):
+        raise ValueError(f"{source_name} field generation_inputs must be an object.")
+    generation_inputs = {
+        **generation_inputs,
+        "seed": {
+            "source": "catalog_seed",
+            "slug": slug,
+            "version": version,
+        },
+    }
+
+    return {
+        "slug": slug,
+        "version": version,
+        "title": str(payload["title"]).strip()[:160],
+        "topic": str(payload["topic"]).strip()[:20000],
+        "source_name": str(payload.get("source_name") or "Mnemorized seed catalog").strip()[:240],
+        "scene_title": str(payload.get("scene_title") or "").strip()[:240],
+        "tags": tags,
+        "generation_inputs": generation_inputs,
+        "generation_outputs": payload.get("generation_outputs") or {},
+        "summary": str(payload.get("summary") or "").strip()[:240],
+    }
+
+
+def _load_catalog_seed_payloads() -> tuple[list[dict[str, Any]], list[str]]:
+    if not CATALOG_SEED_DIR.exists():
+        return [], [f"Catalog seed directory not found: {CATALOG_SEED_DIR}"]
+
+    seeds: list[dict[str, Any]] = []
+    errors: list[str] = []
+    seen_slugs: set[str] = set()
+    for path in sorted(CATALOG_SEED_DIR.glob("*.json")):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            seed = _validate_catalog_seed_payload(payload, path.name)
+        except (OSError, ValueError) as exc:
+            errors.append(str(exc))
+            continue
+
+        if seed["slug"] in seen_slugs:
+            errors.append(f"Duplicate catalog seed slug: {seed['slug']}.")
+            continue
+        seen_slugs.add(seed["slug"])
+        seeds.append(seed)
+    return seeds, errors
+
+
+def _catalog_seed_public_view(seed: dict[str, Any], published_entry: dict[str, Any] | None = None) -> dict[str, Any]:
+    return {
+        "slug": seed["slug"],
+        "version": seed["version"],
+        "title": seed["title"],
+        "topic_preview": _truncate_text(seed["topic"], 160),
+        "scene_title": seed.get("scene_title"),
+        "tags": [
+            tag for tag in seed.get("tags", [])
+            if not tag.startswith(CATALOG_SEED_TAG_PREFIX) and not tag.startswith("seed-version:")
+        ],
+        "summary": seed.get("summary") or "",
+        "published": bool(published_entry),
+        "catalog_id": published_entry.get("id") if published_entry else None,
+        "published_at": published_entry.get("published_at") if published_entry else None,
+        "published_version": (
+            (published_entry.get("generation_inputs") or {}).get("seed", {}).get("version")
+            if published_entry else None
+        ),
+    }
+
+
+async def _find_catalog_entry_by_seed_slug(
+    *,
+    request: Request,
+    settings: Settings,
+    slug: str,
+) -> dict[str, Any] | None:
+    response = await _supabase_rest_request(
+        request=request,
+        settings=settings,
+        bearer_token=None,
+        method="GET",
+        path="/rest/v1/catalog_palaces",
+        params={
+            "select": ADMIN_CATALOG_SEED_SELECT,
+            "tags": f"cs.{{{_catalog_seed_tag(slug)}}}",
+            "limit": "1",
+        },
+        use_service_role=True,
+    )
+    rows = _parse_supabase_rows(response, "find catalog seed entry")
+    return rows[0] if rows else None
 
 
 def _validate_palace_id(palace_id: str) -> str:
@@ -1423,6 +1570,131 @@ async def admin_diagnostics(request: Request) -> dict[str, Any]:
         "recent_palaces": [_sanitize_palace_row(row) for row in palace_rows],
         "catalog_publish_history": [_sanitize_catalog_row(row) for row in catalog_rows],
         "errors": errors,
+    }
+
+
+@app.get("/api/admin/catalog-seeds")
+async def list_catalog_seeds(request: Request) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    _bearer_token, _user = await _require_admin_context(request, active_settings)
+
+    if not active_settings.supabase_admin_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="SUPABASE_SERVICE_ROLE_KEY is required for catalog seed publishing.",
+        )
+
+    seeds, errors = _load_catalog_seed_payloads()
+    seed_views: list[dict[str, Any]] = []
+    for seed in seeds:
+        published_entry = await _find_catalog_entry_by_seed_slug(
+            request=request,
+            settings=active_settings,
+            slug=seed["slug"],
+        )
+        seed_views.append(_catalog_seed_public_view(seed, published_entry))
+
+    return {
+        "seeds": seed_views,
+        "errors": errors,
+    }
+
+
+@app.post("/api/admin/catalog-seeds/publish")
+async def publish_catalog_seed(
+    payload: CatalogSeedPublishPayload,
+    request: Request,
+) -> dict[str, Any]:
+    active_settings = _get_runtime_settings(request)
+    _bearer_token, user = await _require_admin_context(request, active_settings)
+
+    if not active_settings.supabase_admin_configured:
+        raise HTTPException(
+            status_code=503,
+            detail="SUPABASE_SERVICE_ROLE_KEY is required for catalog seed publishing.",
+        )
+
+    seeds, errors = _load_catalog_seed_payloads()
+    seed = next((item for item in seeds if item["slug"] == payload.slug), None)
+    if seed is None:
+        detail = f"Catalog seed not found: {payload.slug}."
+        if errors:
+            detail += " Seed load errors: " + "; ".join(errors[:3])
+        raise HTTPException(status_code=404, detail=detail)
+
+    existing = await _find_catalog_entry_by_seed_slug(
+        request=request,
+        settings=active_settings,
+        slug=seed["slug"],
+    )
+    if existing:
+        existing_seed = (existing.get("generation_inputs") or {}).get("seed", {})
+        if existing_seed.get("version") != seed["version"]:
+            update_response = await _supabase_rest_request(
+                request=request,
+                settings=active_settings,
+                bearer_token=None,
+                method="PATCH",
+                path="/rest/v1/catalog_palaces",
+                params={"id": f"eq.{existing['id']}"},
+                json_body={
+                    "title": seed["title"],
+                    "topic": seed["topic"],
+                    "source_name": seed["source_name"],
+                    "scene_title": seed["scene_title"],
+                    "tags": seed["tags"],
+                    "generation_inputs": seed["generation_inputs"],
+                    "generation_outputs": seed["generation_outputs"],
+                    "published_by": user.user_id,
+                },
+                headers={"Prefer": "return=representation"},
+                use_service_role=True,
+            )
+            row = _single_row(
+                _parse_supabase_rows(update_response, "update catalog seed"),
+                "update catalog seed",
+            )
+            return {
+                "published": True,
+                "updated": True,
+                "entry": row,
+                "seed": _catalog_seed_public_view(seed, row),
+                "message": f"Updated catalog seed '{seed['slug']}' to version {seed['version']}.",
+            }
+        return {
+            "published": False,
+            "updated": False,
+            "entry": existing,
+            "seed": _catalog_seed_public_view(seed, existing),
+            "message": f"Catalog seed '{seed['slug']}' is already published.",
+        }
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=None,
+        method="POST",
+        path="/rest/v1/catalog_palaces",
+        json_body={
+            "title": seed["title"],
+            "topic": seed["topic"],
+            "source_name": seed["source_name"],
+            "scene_title": seed["scene_title"],
+            "tags": seed["tags"],
+            "generation_inputs": seed["generation_inputs"],
+            "generation_outputs": seed["generation_outputs"],
+            "published_by": user.user_id,
+        },
+        headers={"Prefer": "return=representation"},
+        use_service_role=True,
+    )
+    row = _single_row(_parse_supabase_rows(response, "publish catalog seed"), "publish catalog seed")
+    return {
+        "published": True,
+        "updated": False,
+        "entry": row,
+        "seed": _catalog_seed_public_view(seed, row),
+        "message": f"Published catalog seed '{seed['slug']}'.",
     }
 
 

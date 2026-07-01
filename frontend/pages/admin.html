@@ -241,10 +241,42 @@ td.muted { color: var(--muted); }
 }
 .config-item strong { color: var(--white); }
 .wide { grid-column: 1 / -1; }
+.seed-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.seed-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(9,12,15,.24);
+  padding: 14px;
+}
+.seed-title {
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.seed-meta {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.seed-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.seed-status {
+  color: var(--muted);
+  font-size: 12px;
+}
 @media (max-width: 860px) {
   nav { position: static; }
   .wrap { padding-top: 24px; }
-  .hero, .grid, .stats, .config-list { grid-template-columns: 1fr; }
+  .hero, .grid, .stats, .config-list, .seed-list { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -325,6 +357,14 @@ td.muted { color: var(--muted); }
       </div>
       <div id="catalog"></div>
     </div>
+
+    <div class="panel wide">
+      <div class="section-title">
+        <h2>Catalog Seeds</h2>
+        <span class="badge" id="seed-count">0</span>
+      </div>
+      <div id="catalog-seeds"></div>
+    </div>
   </section>
 </main>
 
@@ -335,6 +375,8 @@ const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
 let appConfig = { authEnabled: false, supabaseUrl: '', supabaseAnonKey: '' };
 let supabaseClient = null;
 let authState = { session: null, user: null };
+let catalogSeeds = [];
+let seedPublishPending = null;
 
 function setStatus(message, tone) {
   const el = document.getElementById('status-line');
@@ -460,6 +502,74 @@ function renderDiagnostics(data) {
   ], 'No catalog publish history returned.');
 }
 
+function renderCatalogSeeds() {
+  const target = document.getElementById('catalog-seeds');
+  document.getElementById('seed-count').textContent = catalogSeeds.length;
+  if (!catalogSeeds.length) {
+    target.innerHTML = '<div class="empty">No catalog seed files found on the backend.</div>';
+    return;
+  }
+
+  target.innerHTML = '<div class="seed-list">' + catalogSeeds.map(seed => {
+    const publishLabel = seed.published
+      ? (seed.published_version === seed.version ? 'Published' : 'Update Seed')
+      : 'Publish Seed';
+    const disabled = seedPublishPending || (seed.published && seed.published_version === seed.version);
+    const badgeClass = seed.published
+      ? (seed.published_version === seed.version ? 'ok' : 'warn')
+      : 'warn';
+    const status = seed.published
+      ? (seed.published_version === seed.version
+        ? 'Published version ' + cell(seed.published_version)
+        : 'Published version ' + cell(seed.published_version) + '; seed version ' + cell(seed.version) + ' available')
+      : 'Not published';
+    return '<article class="seed-card">' +
+      '<div class="seed-title">' + cell(seed.title) + '</div>' +
+      '<div class="seed-meta">' + cell(seed.summary || seed.topic_preview) + '</div>' +
+      '<div class="seed-meta">Slug: ' + cell(seed.slug) + ' • Version ' + cell(seed.version) + ' • Tags: ' + cell((seed.tags || []).join(', ')) + '</div>' +
+      '<div class="seed-actions">' +
+        '<button class="primary" type="button" data-seed-slug="' + cell(seed.slug) + '" onclick="publishSeed(&quot;' + cell(seed.slug) + '&quot;)" ' + (disabled ? 'disabled' : '') + '>' + publishLabel + '</button>' +
+        '<span class="badge ' + badgeClass + '">' + status + '</span>' +
+      '</div>' +
+    '</article>';
+  }).join('') + '</div>';
+}
+
+async function loadCatalogSeeds() {
+  if (!authState.user) {
+    catalogSeeds = [];
+    renderCatalogSeeds();
+    return;
+  }
+  try {
+    const data = await MnemorizedAdminApi.catalogSeeds(token());
+    catalogSeeds = data.seeds || [];
+    renderCatalogSeeds();
+    if (data.errors && data.errors.length) {
+      setStatus('Catalog seed load warning: ' + data.errors[0], 'error');
+    }
+  } catch (error) {
+    document.getElementById('catalog-seeds').innerHTML = '<div class="empty">Catalog seeds failed to load: ' + escapeHtml(error.message) + '</div>';
+  }
+}
+
+async function publishSeed(slug) {
+  if (!slug || seedPublishPending) return;
+  seedPublishPending = slug;
+  renderCatalogSeeds();
+  setStatus('Publishing catalog seed ' + slug + '...');
+  try {
+    const result = await MnemorizedAdminApi.publishCatalogSeed(token(), slug);
+    setStatus(result.message || 'Catalog seed published.', 'success');
+    await Promise.allSettled([loadCatalogSeeds(), loadDiagnostics()]);
+  } catch (error) {
+    setStatus('Catalog seed publish failed: ' + error.message, 'error');
+  } finally {
+    seedPublishPending = null;
+    renderCatalogSeeds();
+  }
+}
+
 async function loadDiagnostics() {
   document.getElementById('refresh-btn').disabled = true;
   setStatus('Loading admin diagnostics...');
@@ -496,14 +606,16 @@ async function signIn() {
   }
   authState = { session: data.session, user: data.user };
   renderAuth();
-  await loadDiagnostics();
+  await Promise.allSettled([loadDiagnostics(), loadCatalogSeeds()]);
 }
 
 async function signOut() {
   if (!supabaseClient) return;
   await supabaseClient.auth.signOut();
   authState = { session: null, user: null };
+  catalogSeeds = [];
   renderAuth();
+  renderCatalogSeeds();
   setStatus('Signed out.');
 }
 
@@ -531,11 +643,12 @@ async function bootstrap() {
     supabaseClient.auth.onAuthStateChange(async (_event, session) => {
       authState = { session, user: session && session.user };
       renderAuth();
-      if (authState.user) await loadDiagnostics();
+      if (authState.user) await Promise.allSettled([loadDiagnostics(), loadCatalogSeeds()]);
     });
     if (authState.user) {
-      await loadDiagnostics();
+      await Promise.allSettled([loadDiagnostics(), loadCatalogSeeds()]);
     } else {
+      renderCatalogSeeds();
       setStatus('Sign in with an admin account to view diagnostics.');
     }
   } catch (error) {

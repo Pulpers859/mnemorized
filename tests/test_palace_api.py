@@ -406,6 +406,177 @@ def test_admin_diagnostics_uses_service_role_and_local_failure_log(
     assert all(call["bearer_token"] is None for call in supabase.calls)
 
 
+def test_admin_catalog_seed_list_uses_service_role(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    supabase = SupabaseMock([
+        httpx.Response(200, json=[]),
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.get("/api/admin/catalog-seeds", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 200
+    assert response.json()["seeds"][0]["slug"] == "dka-management"
+    assert response.json()["seeds"][0]["published"] is False
+    assert supabase.calls[0]["path"] == "/rest/v1/catalog_palaces"
+    assert supabase.calls[0]["use_service_role"] is True
+    assert supabase.calls[0]["bearer_token"] is None
+    assert supabase.calls[0]["params"]["tags"] == "cs.{seed:dka-management}"
+
+
+def test_admin_catalog_seed_publish_inserts_seed_once(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    supabase = SupabaseMock([
+        httpx.Response(200, json=[]),
+        httpx.Response(
+            201,
+            json=[{
+                "id": "catalog-1",
+                "title": "DKA Management: The Midnight Drip Bar",
+                "topic": "DKA",
+                "scene_title": "The Midnight Drip Bar",
+                "tags": ["dka", "seed:dka-management", "seed-version:1"],
+                "published_by": "user-123",
+                "published_at": "2026-07-01T12:00:00Z",
+                "generation_inputs": {
+                    "seed": {"source": "catalog_seed", "slug": "dka-management", "version": 1}
+                },
+            }],
+        ),
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.post(
+        "/api/admin/catalog-seeds/publish",
+        headers={"Authorization": "Bearer local-token"},
+        json={"slug": "dka-management"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["published"] is True
+    assert response.json()["updated"] is False
+    assert [call["method"] for call in supabase.calls] == ["GET", "POST"]
+    insert_body = supabase.calls[1]["json_body"]
+    assert insert_body["published_by"] == "user-123"
+    assert "seed:dka-management" in insert_body["tags"]
+    assert "seed-version:1" in insert_body["tags"]
+    assert insert_body["generation_inputs"]["seed"] == {
+        "source": "catalog_seed",
+        "slug": "dka-management",
+        "version": 1,
+    }
+    assert supabase.calls[1]["use_service_role"] is True
+    assert supabase.calls[1]["bearer_token"] is None
+
+
+def test_admin_catalog_seed_publish_is_idempotent_for_current_version(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    existing = {
+        "id": "catalog-1",
+        "title": "DKA Management: The Midnight Drip Bar",
+        "topic": "DKA",
+        "scene_title": "The Midnight Drip Bar",
+        "tags": ["dka", "seed:dka-management", "seed-version:1"],
+        "published_by": "user-123",
+        "published_at": "2026-07-01T12:00:00Z",
+        "generation_inputs": {
+            "seed": {"source": "catalog_seed", "slug": "dka-management", "version": 1}
+        },
+    }
+    supabase = SupabaseMock([httpx.Response(200, json=[existing])])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.post(
+        "/api/admin/catalog-seeds/publish",
+        headers={"Authorization": "Bearer local-token"},
+        json={"slug": "dka-management"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["published"] is False
+    assert response.json()["updated"] is False
+    assert response.json()["entry"]["id"] == "catalog-1"
+    assert [call["method"] for call in supabase.calls] == ["GET"]
+
+
+def test_admin_catalog_seed_publish_updates_existing_old_version(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        admin_emails=("patrick@example.com",),
+    )
+    existing = {
+        "id": "catalog-1",
+        "title": "Old DKA",
+        "topic": "Old topic",
+        "scene_title": "Old",
+        "tags": ["seed:dka-management", "seed-version:0"],
+        "published_by": "user-123",
+        "published_at": "2026-07-01T12:00:00Z",
+        "generation_inputs": {
+            "seed": {"source": "catalog_seed", "slug": "dka-management", "version": 0}
+        },
+    }
+    updated = {
+        **existing,
+        "title": "DKA Management: The Midnight Drip Bar",
+        "tags": ["dka", "seed:dka-management", "seed-version:1"],
+        "generation_inputs": {
+            "seed": {"source": "catalog_seed", "slug": "dka-management", "version": 1}
+        },
+    }
+    supabase = SupabaseMock([
+        httpx.Response(200, json=[existing]),
+        httpx.Response(200, json=[updated]),
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_supabase_rest_request", supabase)
+
+    response = client.post(
+        "/api/admin/catalog-seeds/publish",
+        headers={"Authorization": "Bearer local-token"},
+        json={"slug": "dka-management"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["published"] is True
+    assert response.json()["updated"] is True
+    assert [call["method"] for call in supabase.calls] == ["GET", "PATCH"]
+    assert supabase.calls[1]["params"] == {"id": "eq.catalog-1"}
+    assert supabase.calls[1]["json_body"]["published_by"] == "user-123"
+
+
 def test_medical_context_uses_service_role_and_returns_capped_excerpts(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
