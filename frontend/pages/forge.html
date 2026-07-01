@@ -230,6 +230,152 @@ h1 .accent { color: var(--acid); }
 .safety-note li { margin: 3px 0; }
 .upload-privacy-note { margin-top: 12px; }
 
+/* Guided input builder */
+.input-builder {
+  margin: 14px 0;
+  border: 1px solid rgba(201,239,77,.16);
+  border-radius: 10px;
+  background: rgba(21,28,33,.62);
+  overflow: hidden;
+}
+.input-builder summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 14px;
+  cursor: pointer;
+}
+.input-builder summary::-webkit-details-marker { display: none; }
+.builder-summary-title {
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.builder-summary-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: right;
+}
+.input-builder summary::before {
+  content: '+';
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+.input-builder[open] summary::before { content: '-'; }
+.builder-panel {
+  border-top: 1px solid var(--border);
+  padding: 14px;
+}
+.builder-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.builder-chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(9,12,15,.3);
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 7px 11px;
+  cursor: pointer;
+  transition: all .18s ease;
+}
+.builder-chip:hover,
+.builder-chip.active {
+  border-color: rgba(201,239,77,.38);
+  background: rgba(201,239,77,.08);
+  color: var(--acid);
+}
+.builder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.builder-field.wide { grid-column: 1 / -1; }
+.builder-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.builder-input,
+.builder-textarea,
+.builder-select {
+  width: 100%;
+  background: rgba(9,12,15,.35);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+}
+.builder-textarea { min-height: 86px; resize: vertical; }
+.builder-input:focus,
+.builder-textarea:focus,
+.builder-select:focus {
+  border-color: rgba(201,239,77,.36);
+  box-shadow: 0 0 0 3px rgba(201,239,77,.06);
+}
+.builder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.builder-primary {
+  border: 1px solid var(--acid);
+  border-radius: 8px;
+  background: var(--acid);
+  color: var(--black);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  cursor: pointer;
+}
+.builder-secondary {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255,255,255,.02);
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 10px 13px;
+  cursor: pointer;
+}
+.builder-status {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 /* ── STANDARD INPUT ── */
 .input-field {
   width: 100%;
@@ -1189,6 +1335,26 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   nav { padding: 14px 16px; }
   .wrap { padding: 88px 16px 80px; }
   .optional-upload summary { align-items: flex-start; }
+  .input-builder summary {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .builder-summary-note {
+    text-align: left;
+    width: 100%;
+    padding-left: 34px;
+  }
+  .builder-grid {
+    grid-template-columns: 1fr;
+  }
+  .builder-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .builder-primary,
+  .builder-secondary {
+    width: 100%;
+  }
   .library-strip {
     grid-template-columns: 1fr;
   }
@@ -1325,6 +1491,65 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <li>Private medical reference retrieval uses backend-only access.</li>
       </ul>
     </div>
+    <details class="input-builder" id="guided-input-builder">
+      <summary>
+        <span class="builder-summary-title">Guided Input Builder</span>
+        <span class="builder-summary-note">Optional. Build a clean brief, then edit the final text box below.</span>
+      </summary>
+      <div class="builder-panel">
+        <div class="builder-presets" id="builder-presets" aria-label="Input builder presets">
+          <button class="builder-chip active" type="button" data-builder-preset="condition" onclick="selectBuilderPreset('condition')">Condition</button>
+          <button class="builder-chip" type="button" data-builder-preset="drug-class" onclick="selectBuilderPreset('drug-class')">Drug Class</button>
+          <button class="builder-chip" type="button" data-builder-preset="algorithm" onclick="selectBuilderPreset('algorithm')">Algorithm</button>
+          <button class="builder-chip" type="button" data-builder-preset="differential" onclick="selectBuilderPreset('differential')">Differential</button>
+          <button class="builder-chip" type="button" data-builder-preset="anatomy" onclick="selectBuilderPreset('anatomy')">Anatomy</button>
+        </div>
+        <div class="builder-grid">
+          <div class="builder-field">
+            <label for="builder-topic">Topic</label>
+            <input class="builder-input" id="builder-topic" type="text" placeholder="e.g. DKA management">
+          </div>
+          <div class="builder-field">
+            <label for="builder-learner">Learner</label>
+            <select class="builder-select" id="builder-learner">
+              <option>Medical student</option>
+              <option>COMLEX / USMLE board review</option>
+              <option>Emergency medicine resident</option>
+              <option>ICU resident</option>
+              <option>Physician refresher</option>
+            </select>
+          </div>
+          <div class="builder-field">
+            <label for="builder-goal">Learning Goal</label>
+            <input class="builder-input" id="builder-goal" type="text" placeholder="e.g. diagnose and treat safely under pressure">
+          </div>
+          <div class="builder-field">
+            <label for="builder-source">Source Type</label>
+            <select class="builder-select" id="builder-source">
+              <option>Educational notes typed by user</option>
+              <option>Board-review outline</option>
+              <option>Guideline/protocol summary</option>
+              <option>Textbook chapter excerpt</option>
+              <option>No source, use general high-yield coverage</option>
+            </select>
+          </div>
+          <div class="builder-field wide">
+            <label for="builder-must-include">Must Include</label>
+            <textarea class="builder-textarea" id="builder-must-include" placeholder="One per line: diagnostic criteria, key thresholds, first-line management, pitfalls, complications..."></textarea>
+          </div>
+          <div class="builder-field wide">
+            <label for="builder-constraints">Accuracy Constraints</label>
+            <textarea class="builder-textarea" id="builder-constraints" placeholder="e.g. preserve exact doses and thresholds; include contraindications; do not omit severe variants"></textarea>
+          </div>
+        </div>
+        <div class="builder-actions">
+          <button class="builder-primary" type="button" onclick="draftGuidedTopic('replace')">Draft Into Text Box</button>
+          <button class="builder-secondary" type="button" onclick="draftGuidedTopic('append')">Append Requirements</button>
+          <button class="builder-secondary" type="button" onclick="clearGuidedBuilder()">Clear Builder</button>
+          <span class="builder-status" id="builder-status">No patient-identifying information. Only the final Section I text box is sent for generation.</span>
+        </div>
+      </div>
+    </details>
     <textarea class="input-field" id="topic" rows="7" placeholder="e.g. The 12 cranial nerves in order, ACLS algorithm for pulseless V-tach, vasopressor receptor affinities..."></textarea>
 
     <details class="optional-upload" id="optional-upload">
@@ -1710,6 +1935,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 <script src="/scripts/forge-state.js?v=20260630-1"></script>
 <script src="/scripts/forge-auth.js?v=20260630-1"></script>
 <script src="/scripts/forge-upload.js?v=20260630-1"></script>
+<script src="/scripts/forge-input-builder.js?v=20260701-1"></script>
 <script src="/scripts/forge-pipeline.js?v=20260630-1"></script>
 </body>
 </html>

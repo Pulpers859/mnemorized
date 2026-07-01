@@ -340,6 +340,7 @@ def test_static_pages_load_shared_backend_persistence_script_before_inline_code(
 
     assert library.index("/scripts/palace-api.js") < library.index("MnemorizedPalaceApi")
     assert forge.index("/scripts/palace-api.js") < forge.index("/scripts/forge-auth.js")
+    assert forge.index("/scripts/forge-input-builder.js") < forge.index("/scripts/forge-pipeline.js")
     assert admin.index("/scripts/palace-api.js") < admin.index("MnemorizedAdminApi")
 
 
@@ -400,6 +401,37 @@ def test_forge_prioritizes_direct_topic_entry_over_upload() -> None:
     assert '<div id="config-wrap" style="display:block;">' in html
     assert '<div id="forge-wrap" style="display:block;">' in html
     assert "manual-bypass" not in html
+
+
+def test_forge_guided_input_builder_writes_existing_topic_field() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    builder = (root / "frontend" / "scripts" / "forge-input-builder.js").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    builder_index = html.index('id="guided-input-builder"')
+    topic_index = html.index('id="topic"')
+    upload_index = html.index('id="upload-zone"')
+
+    assert builder_index < topic_index < upload_index
+    assert '<details class="input-builder" id="guided-input-builder">' in html
+    assert "Guided Input Builder" in html
+    assert "Draft Into Text Box" in html
+    assert "Only the final Section I text box is sent for generation." in html
+    assert "No patient-identifying information" in html
+    assert "const INPUT_BUILDER_PRESETS" in builder
+    assert "function selectBuilderPreset" in builder
+    assert "function draftGuidedTopic" in builder
+    assert "function clearGuidedBuilder" in builder
+    assert "topicField.value" in builder
+    assert "document.getElementById('topic')" in builder
+    assert "fetch(" not in builder
+    assert "claudeFetch" not in builder
+    assert "supabase" not in builder.lower()
+    assert "Mnemorized" not in builder
+    assert "Uploaded or pasted content may be sent to AI providers" in html
+    assert "document.getElementById('topic').value.trim()" in pipeline
+    assert "builder-topic" not in pipeline
 
 
 def test_forge_shows_medical_safety_privacy_guardrails() -> None:
