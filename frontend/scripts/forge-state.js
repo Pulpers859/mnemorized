@@ -6,7 +6,14 @@
 const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
 const CLAUDE_MODEL = 'claude-sonnet-4-6';
 
-let backendState = { checked: false, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: true };
+let backendState = {
+  checked: false,
+  reachable: false,
+  configured: false,
+  geminiConfigured: false,
+  medicalKnowledgeConfigured: false,
+  providerAuthReady: true
+};
 
 function getBackendBaseLabel() {
   return MnemorizedUtils.getApiBase() || window.location.origin;
@@ -52,6 +59,7 @@ async function refreshBackendStatus(showModalOnError = false) {
       reachable: true,
       configured: !!data.anthropic_configured,
       geminiConfigured: !!data.gemini_configured,
+      medicalKnowledgeConfigured: !!data.medical_knowledge_configured,
       providerAuthReady: !!data.provider_auth_ready
     };
 
@@ -71,6 +79,7 @@ async function refreshBackendStatus(showModalOnError = false) {
       reachable: false,
       configured: false,
       geminiConfigured: false,
+      medicalKnowledgeConfigured: false,
       providerAuthReady: false
     };
     setBackendBadge('offline', '⚠ PROXY OFFLINE');
@@ -139,7 +148,14 @@ async function claudeFetch(body) {
       body: JSON.stringify(body)
     });
   } catch (err) {
-    backendState = { checked: true, reachable: false, configured: false, geminiConfigured: false, providerAuthReady: false };
+    backendState = {
+      checked: true,
+      reachable: false,
+      configured: false,
+      geminiConfigured: false,
+      medicalKnowledgeConfigured: false,
+      providerAuthReady: false
+    };
     setBackendBadge('offline', '⚠ PROXY OFFLINE');
     syncConnectionModal(`Could not reach ${getApiUrl('/api/anthropic/messages')}. Start the backend and retry.`);
     openConnectionModal();
@@ -160,7 +176,14 @@ async function claudeFetch(body) {
     setBackendBadge('warning', '⚠ KEY MISSING');
     syncConnectionModal(payload.error?.message || 'Backend reached the proxy, but a required provider key or auth setting is missing.');
   } else if (res.ok) {
-    backendState = { checked: true, reachable: true, configured: true, geminiConfigured: backendState.geminiConfigured, providerAuthReady: backendState.providerAuthReady };
+    backendState = {
+      checked: true,
+      reachable: true,
+      configured: true,
+      geminiConfigured: backendState.geminiConfigured,
+      medicalKnowledgeConfigured: backendState.medicalKnowledgeConfigured,
+      providerAuthReady: backendState.providerAuthReady
+    };
     setBackendBadge('online', '✓ PROXY LIVE');
   }
 

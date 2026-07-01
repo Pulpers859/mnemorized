@@ -7,7 +7,8 @@ const appConfig = {
   authEnabled: false,
   supabaseUrl: '',
   supabaseAnonKey: '',
-  appBaseUrl: ''
+  appBaseUrl: '',
+  medicalKnowledgeEnabled: false
 };
 
 let supabaseClient = null;
@@ -15,6 +16,7 @@ let authState = { session: null, user: null };
 let currentPalaceMeta = null;
 let currentStoryData = null;
 let currentPromptData = { prompt1: '', prompt2: '' };
+let currentQualityGateData = null;
 let libraryRowsCache = [];
 const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palace');
 let palaceRouteHydrated = false;
@@ -139,6 +141,7 @@ function buildPalaceSnapshot() {
     },
     generation_outputs: {
       story: currentStoryData,
+      quality_gate: currentQualityGateData,
       prompts: {
         prompt1: currentPromptData.prompt1,
         prompt2: currentPromptData.prompt2
@@ -169,6 +172,94 @@ function renderStoryData(storyData) {
     document.getElementById('review-wrap').style.display = 'block';
   } else {
     document.getElementById('review-wrap').style.display = 'none';
+  }
+}
+
+function getQualityGateConcepts(storyData) {
+  return (storyData?.voLines || [])
+    .map(line => line.anchor || line.narration || '')
+    .map(text => String(text).trim())
+    .filter(Boolean)
+    .slice(0, 12);
+}
+
+function renderQualityGateMessage(message, tone = 'muted') {
+  showBody('quality');
+  const body = document.getElementById('quality-result');
+  const toneClass = tone === 'error' ? 'quality-error' : tone === 'success' ? 'quality-success' : '';
+  body.innerHTML = `<div class="quality-summary ${toneClass}">${escapeHtml(message)}</div>`;
+}
+
+function renderQualityGateResult(result) {
+  showBody('quality');
+  const evidence = result?.evidence || [];
+  const coverage = result?.required_concept_coverage || [];
+  const presentCount = coverage.filter(item => item.present_in_generation).length;
+  const coverageLabel = coverage.length ? `${presentCount}/${coverage.length} generated anchors present` : 'No required anchors were supplied.';
+  const repairFocus = result?.repair_focus || [];
+  const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
+
+  document.getElementById('quality-result').innerHTML = `
+    <div class="quality-grid">
+      <div class="quality-summary ${result?.verdict === 'needs_repair' ? 'quality-error' : 'quality-success'}">
+        <div class="quality-kicker">Medical Quality Gate</div>
+        <div class="quality-verdict">${escapeHtml(verdictLabel)}</div>
+        <div class="quality-copy">${escapeHtml(coverageLabel)} • ${evidence.length} private evidence citation${evidence.length === 1 ? '' : 's'} retrieved.</div>
+        ${repairFocus.length ? `<div class="quality-repair">Repair focus: ${escapeHtml(repairFocus.join(', '))}</div>` : ''}
+      </div>
+      <div class="quality-citations">
+        <div class="quality-kicker">Retrieved Citations</div>
+        ${evidence.length ? evidence.map(item => {
+          const page = item.page_start === item.page_end
+            ? `p${item.page_start || '?'}`
+            : `p${item.page_start || '?'}-${item.page_end || '?'}`;
+          const score = typeof item.similarity === 'number' ? ` • ${(item.similarity * 100).toFixed(0)}% match` : '';
+          return `<div class="quality-citation">
+            <span>${escapeHtml(item.source_title || item.source_key || 'Medical source')}</span>
+            <small>${escapeHtml(page)}${escapeHtml(score)}</small>
+          </div>`;
+        }).join('') : '<div class="quality-empty">No citations returned for this topic yet.</div>'}
+      </div>
+    </div>`;
+}
+
+async function runMedicalQualityGate(storyData = currentStoryData) {
+  currentQualityGateData = null;
+  if (!storyData) {
+    setStatus('quality', 'Waiting...', '');
+    renderQualityGateMessage('Generate a palace script before checking medical evidence.');
+    return;
+  }
+
+  showBody('quality');
+  if (!authState.user) {
+    setStatus('quality', 'Sign in required', 'error');
+    renderQualityGateMessage('Sign in to run the private medical quality gate.', 'error');
+    return;
+  }
+
+  if (!backendState.checked) await refreshBackendStatus();
+  if (!appConfig.medicalKnowledgeEnabled || !backendState.medicalKnowledgeConfigured) {
+    setStatus('quality', 'Medical KB off', 'error');
+    renderQualityGateMessage('Medical knowledge is not configured on this backend yet.', 'error');
+    return;
+  }
+
+  setStatus('quality', 'Checking evidence...', 'running');
+  renderQualityGateMessage('Retrieving private medical citations and checking generated anchors...');
+  try {
+    const result = await MnemorizedMedicalApi.qualityCheck(getAuthToken(), {
+      topic: document.getElementById('topic').value.trim(),
+      generation_outputs: { story: storyData },
+      required_concepts: getQualityGateConcepts(storyData),
+      max_evidence_chunks: 6,
+    });
+    currentQualityGateData = result;
+    renderQualityGateResult(result);
+    setStatus('quality', result.verdict === 'needs_repair' ? 'Needs review' : 'Evidence checked', result.verdict === 'needs_repair' ? 'error' : 'done');
+  } catch (error) {
+    setStatus('quality', 'Check failed', 'error');
+    renderQualityGateMessage(`Medical quality check failed: ${error.message}`, 'error');
   }
 }
 
@@ -204,6 +295,7 @@ function applyPalaceSnapshot(palaceRow, versionRow) {
   const inputs = versionRow?.generation_inputs || {};
   const outputs = versionRow?.generation_outputs || {};
   const story = outputs.story || null;
+  const qualityGate = outputs.quality_gate || null;
   const prompts = outputs.prompts || {};
 
   ensureForgeVisible();
@@ -222,9 +314,16 @@ function applyPalaceSnapshot(palaceRow, versionRow) {
 
   document.getElementById('pipeline').classList.add('visible');
   setStatus('story', '✓ Loaded', 'done');
+  setStatus('quality', qualityGate ? 'Evidence loaded' : 'Not checked', qualityGate ? 'done' : '');
   setStatus('prompt', '✓ Loaded', 'done');
 
   if (story) renderStoryData(story);
+  if (qualityGate) {
+    currentQualityGateData = qualityGate;
+    renderQualityGateResult(qualityGate);
+  } else {
+    renderQualityGateMessage('This saved palace does not include a medical quality gate result yet.');
+  }
   if (prompts.prompt1 || prompts.prompt2) renderPromptData(prompts.prompt1, prompts.prompt2);
 
   currentPalaceMeta = palaceRow;
@@ -626,6 +725,7 @@ async function loadAuthSystem() {
     appConfig.supabaseUrl = config.supabase_url || '';
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
     appConfig.appBaseUrl = config.app_base_url || window.location.origin;
+    appConfig.medicalKnowledgeEnabled = !!config.medical_knowledge_enabled;
 
     if (!appConfig.authEnabled) {
       refreshAuthUI();

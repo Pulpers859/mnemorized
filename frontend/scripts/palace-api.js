@@ -121,4 +121,13 @@
       return request('/api/catalog/' + encodeURIComponent(catalogId), { method: 'DELETE', token: token });
     }
   };
+
+  window.MnemorizedMedicalApi = {
+    context: function (token, body) {
+      return request('/api/medical-knowledge/context', { method: 'POST', token: token, body: body });
+    },
+    qualityCheck: function (token, body) {
+      return request('/api/medical-knowledge/quality-check', { method: 'POST', token: token, body: body });
+    }
+  };
 })();

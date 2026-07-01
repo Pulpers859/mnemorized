@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import json
 import re
 import sys
@@ -213,7 +214,10 @@ def ingest_pdf(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Ingest private medical PDFs into Supabase via backend-only RPCs.")
-    parser.add_argument("--source-dir", required=True, type=Path, help="Directory containing source PDFs.")
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--source-dir", type=Path, help="Directory containing source PDFs.")
+    source.add_argument("--source-file", type=Path, help="One PDF file to ingest.")
+    parser.add_argument("--include", default=None, help="Optional filename glob when using --source-dir, e.g. '*Endocrine*'.")
     parser.add_argument("--limit-files", type=int, default=None, help="Optional number of PDFs to process.")
     parser.add_argument("--limit-chunks", type=int, default=None, help="Optional chunks per PDF for smoke tests.")
     parser.add_argument("--chunk-chars", type=int, default=3500, help="Approximate maximum characters per chunk.")
@@ -225,7 +229,11 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    if not args.source_dir.exists():
+    if args.source_file and not args.source_file.exists():
+        raise SystemExit(f"Source file not found: {args.source_file}")
+    if args.source_file and args.source_file.suffix.lower() != ".pdf":
+        raise SystemExit("--source-file must point to a PDF.")
+    if args.source_dir and not args.source_dir.exists():
         raise SystemExit(f"Source directory not found: {args.source_dir}")
     if args.chunk_chars < 1000:
         raise SystemExit("--chunk-chars must be at least 1000.")
@@ -239,7 +247,12 @@ def main() -> int:
     if not args.dry_run:
         require_settings(settings)
 
-    pdfs = sorted(args.source_dir.glob("*.pdf"))
+    if args.source_file:
+        pdfs = [args.source_file]
+    else:
+        pdfs = sorted(args.source_dir.glob("*.pdf"))
+        if args.include:
+            pdfs = [pdf for pdf in pdfs if fnmatch.fnmatch(pdf.name, args.include)]
     if args.limit_files is not None:
         pdfs = pdfs[: args.limit_files]
     if not pdfs:

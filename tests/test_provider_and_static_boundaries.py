@@ -326,6 +326,7 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     assert ".from('palace_versions')" not in combined
     assert "/api/profile/ensure" in combined
     assert "/api/palaces/save" in combined
+    assert "/api/medical-knowledge/quality-check" in combined
     assert "medical.medical_knowledge_chunks" not in combined
     assert "match_medical_knowledge_chunks" not in combined
 
@@ -389,6 +390,26 @@ def test_forge_story_output_avoids_nested_scroll_traps() -> None:
     assert '<aside class="story-summary-panel">' in html
     assert 'class="legend story-side-review" id="review-wrap"' in html
     assert "story-review-drawer" not in html
+
+
+def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+    shared = (root / "frontend" / "scripts" / "palace-api.js").read_text(encoding="utf-8")
+
+    assert 'id="stage-quality"' in html
+    assert 'id="status-quality"' in html
+    assert 'id="quality-result"' in html
+    assert '<span class="stage-num">02</span>\n        <span class="stage-title">Medical Quality Gate</span>' in html
+    assert '<span class="stage-num">03</span>\n        <span class="stage-title">Scene Illustration</span>' in html
+    assert "await runMedicalQualityGate(storyData);" in pipeline
+    assert "Demo mode uses built-in sample content" in pipeline
+    assert "function runMedicalQualityGate" in auth
+    assert "medicalKnowledgeEnabled" in auth
+    assert "quality_gate: currentQualityGateData" in auth
+    assert "window.MnemorizedMedicalApi" in shared
 
 
 def test_library_inline_handlers_escape_palace_ids() -> None:

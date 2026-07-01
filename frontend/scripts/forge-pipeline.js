@@ -371,6 +371,7 @@ async function runPipeline() {
 
   currentStoryData = null;
   currentPromptData = { prompt1: '', prompt2: '' };
+  currentQualityGateData = null;
   refreshAuthUI();
 
   const btn = document.getElementById('forge-btn');
@@ -379,6 +380,7 @@ async function runPipeline() {
 
   document.getElementById('pipeline').classList.add('visible');
   setStatus('story', 'Waiting…', '');
+  setStatus('quality', 'Waiting…', '');
   setStatus('prompt', 'Waiting…', '');
 
   // ══ DEMO MODE — full UI flow, zero API calls ══════════════════
@@ -407,6 +409,9 @@ async function runPipeline() {
 
     setStatus('story', '✓ Complete', 'done');
     await demoDelay(800);
+    setStatus('quality', 'Demo skipped', 'done');
+    renderQualityGateMessage('Demo mode uses built-in sample content, so private medical retrieval is skipped.', 'success');
+    await demoDelay(400);
 
     setStatus('prompt', '✦ Building image prompts…', 'running');
     await demoDelay(1200);
@@ -680,6 +685,7 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
+    await runMedicalQualityGate(storyData);
   } catch(e) {
     const box = document.getElementById('debug-box');
     const prev = box.textContent;

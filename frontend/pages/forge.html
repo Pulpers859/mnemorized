@@ -582,6 +582,70 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .story-text::-webkit-scrollbar { width: 5px; }
 .story-text::-webkit-scrollbar-thumb { background: rgba(201,239,77,.15); border-radius: 3px; }
 
+/* Medical quality gate */
+.quality-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, .85fr) minmax(0, 1.15fr);
+  gap: 0;
+}
+.quality-summary {
+  min-height: 150px;
+  padding: 22px;
+  border-right: 1px solid var(--border);
+  background: rgba(9, 12, 15, .2);
+}
+.quality-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.quality-verdict {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: .04em;
+  color: var(--white);
+  line-height: 1.1;
+}
+.quality-copy,
+.quality-repair,
+.quality-empty {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+.quality-success .quality-verdict,
+.quality-success.quality-summary { color: var(--acid); }
+.quality-error .quality-verdict,
+.quality-error.quality-summary { color: #fca5a5; }
+.quality-citations {
+  padding: 18px 20px;
+}
+.quality-citation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--white);
+}
+.quality-citation:last-child { border-bottom: 0; }
+.quality-citation span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.quality-citation small {
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+}
+
 /* Voiceover table */
 .vo-table {
   width: 100%;
@@ -1105,6 +1169,16 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   .story-actions {
     justify-content: flex-start;
   }
+  .quality-grid {
+    grid-template-columns: 1fr;
+  }
+  .quality-summary {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .quality-citation {
+    grid-template-columns: 1fr;
+  }
   .vo-table td:nth-child(2),
   .vo-table th:nth-child(2) { display: none; }
   .vo-table td:first-child { width: 65%; }
@@ -1491,10 +1565,22 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       </div>
     </div>
 
-    <!-- Stage 2: User-facing handoff message -->
-    <div class="stage" id="stage-prompt">
+    <!-- Stage 2: Medical quality gate -->
+    <div class="stage" id="stage-quality">
       <div class="stage-header">
         <span class="stage-num">02</span>
+        <span class="stage-title">Medical Quality Gate</span>
+        <span class="stage-status" id="status-quality">Waiting…</span>
+      </div>
+      <div class="stage-body" id="body-quality" style="display:none;">
+        <div id="quality-result"></div>
+      </div>
+    </div>
+
+    <!-- Stage 3: User-facing handoff message -->
+    <div class="stage" id="stage-prompt">
+      <div class="stage-header">
+        <span class="stage-num">03</span>
         <span class="stage-title">Scene Illustration</span>
         <span class="stage-status" id="status-prompt">Waiting…</span>
       </div>

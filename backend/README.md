@@ -75,9 +75,16 @@ Local ingestion is handled by:
 
 ```powershell
 python tools\ingest_medical_knowledge.py --source-dir "C:\Users\Patrick's Computer\OneDrive - WV School of Osteopathic Medicine\Desktop\Files need moved to USB\TinTin Chapters" --dry-run --limit-files 1
+python tools\ingest_medical_knowledge.py --source-file "C:\Users\Patrick's Computer\OneDrive - WV School of Osteopathic Medicine\Desktop\Files need moved to USB\TinTin Chapters\Tintin_Endocrine.pdf" --confirm-send-to-openai
 ```
 
 Actual ingestion sends chunk text to OpenAI for embeddings, so the script refuses to run unless you explicitly add `--confirm-send-to-openai`. Browser endpoints return citation metadata and short excerpts only; full source chunks remain backend/database-side.
+
+After a pilot ingestion, run retrieval QA without printing private source chunks:
+
+```powershell
+python tools\qa_medical_retrieval.py
+```
 
 ## Repo Layout Note
 
