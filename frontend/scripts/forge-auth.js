@@ -270,19 +270,25 @@ function renderQualityGateResult(result) {
   const coverage = result?.required_concept_coverage || [];
   const presentCount = coverage.filter(item => item.present_in_generation).length;
   const coverageLabel = coverage.length ? `${presentCount}/${coverage.length} generated anchors present` : 'No required anchors were supplied.';
+  const hasRelevantEvidence = result?.evidence_status !== 'no_relevant_source';
+  const evidenceLabel = hasRelevantEvidence
+    ? `${evidence.length} private evidence citation${evidence.length === 1 ? '' : 's'} retrieved.`
+    : 'No relevant private source found for this topic.';
   const repairFocus = result?.repair_focus || [];
   const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
   const showRepair = !!authState.user && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
   setStageDetail('quality', result?.verdict === 'needs_repair'
     ? 'Quality gate found weak or missing medical coverage. Repair can use backend-only private references.'
-    : 'Quality gate completed. Review citations and save the version you want to keep.');
+    : (hasRelevantEvidence
+      ? 'Quality gate completed. Review citations and save the version you want to keep.'
+      : 'Generated anchors were checked, but no relevant private source material was found.'));
 
   document.getElementById('quality-result').innerHTML = `
     <div class="quality-grid">
       <div class="quality-summary ${result?.verdict === 'needs_repair' ? 'quality-error' : 'quality-success'}">
         <div class="quality-kicker">Medical Quality Gate</div>
         <div class="quality-verdict">${escapeHtml(verdictLabel)}</div>
-        <div class="quality-copy">${escapeHtml(coverageLabel)} • ${evidence.length} private evidence citation${evidence.length === 1 ? '' : 's'} retrieved.</div>
+        <div class="quality-copy">${escapeHtml(coverageLabel)} • ${escapeHtml(evidenceLabel)}</div>
         ${repairFocus.length ? `<div class="quality-repair">Repair focus: ${escapeHtml(repairFocus.join(', '))}</div>` : ''}
         ${showRepair ? `<div class="quality-actions">
           <button class="btn-copy" id="repair-quality-btn" onclick="repairCurrentPalaceWithMedicalEvidence()">Repair with Medical Evidence</button>
@@ -440,7 +446,10 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
     });
     currentQualityGateData = result;
     renderQualityGateResult(result);
-    setStatus('quality', result.verdict === 'needs_repair' ? 'Needs review' : 'Evidence checked', result.verdict === 'needs_repair' ? 'error' : 'done');
+    const statusLabel = result.evidence_status === 'no_relevant_source'
+      ? 'No source match'
+      : (result.verdict === 'needs_repair' ? 'Needs review' : 'Evidence checked');
+    setStatus('quality', statusLabel, result.verdict === 'needs_repair' ? 'error' : 'done');
   } catch (error) {
     setStatus('quality', 'Check failed', 'error');
     setStageDetail('quality', 'The script is still available, but the evidence check did not finish.');

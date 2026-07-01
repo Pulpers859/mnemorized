@@ -1867,9 +1867,11 @@ async def medical_knowledge_quality_check(
         _release_quota_reservation(request, user)
         raise
 
-    # Only show citations genuinely relevant to the queried topic
-    QUALITY_GATE_MIN_SIMILARITY = 0.50
+    # Only show citations genuinely relevant to the queried topic. A lower cutoff
+    # allowed unrelated high-level emergency terms to surface wrong source families.
+    QUALITY_GATE_MIN_SIMILARITY = 0.58
     rows = [r for r in rows if (r.get("similarity") or 0) >= QUALITY_GATE_MIN_SIMILARITY]
+    evidence_status = "matched" if rows else "no_relevant_source"
 
     output_text = _flatten_generation_text(payload.generation_outputs).lower()
     coverage = []
@@ -1915,6 +1917,8 @@ async def medical_knowledge_quality_check(
         headers={"X-Request-ID": request_id},
         content={
             "verdict": verdict,
+            "evidence_status": evidence_status,
+            "min_evidence_similarity": QUALITY_GATE_MIN_SIMILARITY,
             "evidence_count": len(rows),
             "evidence": [_medical_citation(row) for row in rows],
             "required_concept_coverage": coverage,

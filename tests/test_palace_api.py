@@ -708,3 +708,64 @@ def test_medical_quality_check_reports_missing_required_concepts_without_raw_chu
     assert payload["repair_focus"] == ["potassium"]
     assert payload["required_concept_coverage"][0]["evidence_refs"][0]["source_key"] == "tintin-endocrine"
     assert "potassium must be checked before insulin" not in response.text
+
+
+def test_medical_quality_check_suppresses_cross_topic_citations(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        openai_api_key="openai-key",
+    )
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 0,
+            "monthly_requests_remaining": 40,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+        }
+
+    async def fake_retrieve(**kwargs: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return [
+            {
+                "source_key": "tintin-endocrine",
+                "title": "Tintin Endocrine",
+                "page_start": 38,
+                "page_end": 38,
+                "section_title": "DKA",
+                "chunk_text": "shock and fluids in endocrine emergencies",
+                "similarity": 0.53,
+                "keyword_rank": 0.46,
+            }
+        ], {"prompt_tokens": 6}
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    monkeypatch.setattr(app_main, "_retrieve_medical_context", fake_retrieve)
+    monkeypatch.setattr(app_main, "_schedule_usage_event", lambda **kwargs: None)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "topic": "ATLS trauma primary survey",
+            "generation_outputs": {"script": "Airway comes first in ATLS."},
+            "required_concepts": ["airway"],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["evidence_status"] == "no_relevant_source"
+    assert payload["evidence_count"] == 0
+    assert payload["evidence"] == []
+    assert payload["required_concept_coverage"][0]["evidence_refs"] == []
+    assert "Tintin Endocrine" not in response.text

@@ -591,6 +591,8 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "Repair with Medical Evidence" in auth
     assert "MnemorizedMedicalApi.context" in auth
     assert "Medical repair complete. Review the updated script" in auth
+    assert "No relevant private source found for this topic." in auth
+    assert "No source match" in auth
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
