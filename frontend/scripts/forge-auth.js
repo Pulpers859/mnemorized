@@ -252,6 +252,61 @@ function parseStoryXml(text) {
   };
 }
 
+function countWords(text) {
+  return String(text || '').trim().split(/\s+/).filter(Boolean).length;
+}
+
+function validateStoryData(storyData) {
+  const fatal = [];
+  const warnings = [];
+  const lines = storyData?.voLines || [];
+
+  if (!storyData) {
+    fatal.push('Story response was empty.');
+    return { fatal, warnings, all: fatal.concat(warnings) };
+  }
+  if (!storyData.scene_title) warnings.push('Missing scene title.');
+  if (!storyData.opening) warnings.push('Missing opening narration.');
+  if (!lines.length) fatal.push('No vo_line anchors were returned.');
+  if (lines.length && lines.length < 6) warnings.push(`Only ${lines.length} anchors returned; most topics need 8-10.`);
+  if (lines.length > 10) warnings.push(`${lines.length} anchors returned; image generation is less reliable above 10.`);
+
+  const visualKeys = new Set();
+  lines.forEach((line, index) => {
+    const label = `Anchor ${index + 1}`;
+    if (!line.narration) fatal.push(`${label} is missing NARRATION.`);
+    if (!line.visual) fatal.push(`${label} is missing VISUAL.`);
+    if (!line.anchor) fatal.push(`${label} is missing ANCHOR.`);
+
+    const visualWordCount = countWords(line.visual);
+    if (visualWordCount > 20) warnings.push(`${label} visual is ${visualWordCount} words; target is 20 or fewer.`);
+
+    const anchorWordCount = countWords(line.anchor);
+    if (anchorWordCount > 35) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);
+    if (/\bget it\b|\bremember\b|\bthis is your\b/i.test(line.anchor || '')) {
+      warnings.push(`${label} anchor contains mnemonic/narration language; ANCHOR should be clinical fact only.`);
+    }
+
+    const visualKey = String(line.visual || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    if (visualKey) {
+      if (visualKeys.has(visualKey)) warnings.push(`${label} duplicates a prior visual anchor.`);
+      visualKeys.add(visualKey);
+    }
+  });
+
+  const reviewLines = String(storyData.review_script || '')
+    .split(/\n+/)
+    .map(line => line.trim())
+    .filter(Boolean);
+  if (!storyData.review_script) {
+    warnings.push('Missing rapid review script.');
+  } else if (lines.length && reviewLines.length < lines.length) {
+    warnings.push(`Rapid review has ${reviewLines.length} lines for ${lines.length} anchors.`);
+  }
+
+  return { fatal, warnings, all: fatal.concat(warnings) };
+}
+
 function renderQualityGateMessage(message, tone = 'muted', title = 'Medical Quality Gate') {
   showBody('quality');
   const body = document.getElementById('quality-result');
@@ -378,8 +433,9 @@ Repair requirements:
     const raw = await res.json();
     const repairedText = parseProviderContent(raw, 'Medical Repair');
     const repairedStory = parseStoryXml(repairedText);
-    if (!repairedStory.voLines.length) {
-      throw new Error('Repair response did not include any vo_line anchors.');
+    const repairedValidation = validateStoryData(repairedStory);
+    if (repairedValidation.fatal.length) {
+      throw new Error(`Repair response failed story validation: ${repairedValidation.fatal.join(' ')}`);
     }
 
     currentQualityGateData = null;
@@ -395,7 +451,10 @@ Repair requirements:
       setStatus('prompt', 'Rebuild prompts needed', '');
       setStageDetail('prompt', 'The repaired script is ready, but image prompts need a manual rebuild.');
     }
-    setLibraryStatus('Medical repair complete. Review the updated script, then save a new version.', 'success');
+    const warningSuffix = repairedValidation.warnings.length
+      ? ` ${repairedValidation.warnings.length} script warning(s) remain for review.`
+      : '';
+    setLibraryStatus(`Medical repair complete. Review the updated script, then save a new version.${warningSuffix}`, 'success');
   } catch (error) {
     setStatus('quality', 'Repair failed', 'error');
     setStageDetail('quality', 'Repair did not complete. The prior script is still visible for review.');

@@ -835,6 +835,11 @@ VISUAL DESCRIPTION RULES:
 - Good example: "Pressure gauge on left wall, labeled 'TARGET 88-92%'"
 - Bad example: "Round wooden-framed pressure gauge on brick wall, needles labeled 'PaO2 <60' and 'SaO2 <90,' sign below reads 'TARGET: 88–92%'" (too much text, too many labels per object)
 
+ANCHOR FIELD RULES:
+- ANCHOR is the clinical fact only. No "get it", no mnemonic explanation, no scene description, no teaching aside.
+- Keep ANCHOR to one crisp sentence under 35 words.
+- Put memory-scene explanation in NARRATION, not in ANCHOR.
+
 ABSURDITY LEVEL: ${chaos}/10 — dial how strange the visual anchors are, not how dramatic the narration is.
 
 ${clinicalContext}
@@ -853,7 +858,7 @@ CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items hav
 <vo_line>
 NARRATION: [2-4 sentences. Direct viewer attention → name the element → state the mnemonic link explicitly → teach the clinical fact → optional reinforcement "get it? X for Y?". Natural spoken rhythm. No dramatic language. No movement descriptions.]
 VISUAL: [MAXIMUM 20 WORDS. Physical object + labels + position only. No era styling, no material descriptions, no technology type, no lighting effects.]
-ANCHOR: [The specific clinical fact this visual encodes — one crisp line]
+ANCHOR: [Clinical fact only. One crisp line under 35 words. No mnemonic wording, no "get it", no scene description.]
 </vo_line>
 
 <review_script>
@@ -911,43 +916,26 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
     }
 
     const txt = parseAPIResponse(raw, 'Scene Narrative');
-
-    const scene_title   = extractXmlTag(txt, 'scene_title');
-    const opening       = extractXmlTag(txt, 'opening');
-    const review_script = extractXmlTag(txt, 'review_script');
-
-    const voRaw = extractAllXmlTags(txt, 'vo_line');
-
-    const voLines = voRaw.map((block, i) => {
-      const getField = (label) => {
-        const re = new RegExp(
-          `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:NARRATION|VISUAL|ANCHOR):|$)`,
-          'i'
-        );
-        const m = block.match(re);
-        if (!m) return '';
-        return m[1].replace(/\]?\s*$/, '').trim();
-      };
-      return {
-        n:         i + 1,
-        narration: getField('NARRATION'),
-        visual:    getField('VISUAL'),
-        anchor:    getField('ANCHOR'),
-      };
-    });
-
-    storyData = { scene_title, opening, voLines, review_script };
+    storyData = parseStoryXml(txt);
+    const storyValidation = validateStoryData(storyData);
+    if (storyValidation.fatal.length) {
+      showDebug('STORY VALIDATION FAILED', storyValidation);
+      throw new Error(`Scene Narrative validation failed: ${storyValidation.fatal.join(' ')}`);
+    }
 
     showBody('story');
 
-    if (voLines.length === 0) {
-      showDebug('PARSE WARNING — vo_line blocks: 0. Full raw response (first 1200 chars):', txt.slice(0, 1200));
+    if (storyValidation.warnings.length) {
+      showDebug('STORY VALIDATION WARNINGS', storyValidation.warnings);
     }
 
     renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
-    setStageDetail('story', `${voLines.length} anchors generated. Review the script, then save or repair if needed.`);
+    const warningSuffix = storyValidation.warnings.length
+      ? ` ${storyValidation.warnings.length} structure warning(s) need review.`
+      : '';
+    setStageDetail('story', `${storyData.voLines.length} anchors generated. Review the script, then save or repair if needed.${warningSuffix}`);
     await runMedicalQualityGate(storyData, coreConcepts);
   } catch(e) {
     const box = document.getElementById('debug-box');

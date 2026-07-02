@@ -640,6 +640,20 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "window.MnemorizedMedicalApi" in shared
 
 
+def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+
+    assert "function validateStoryData" in auth
+    assert "const storyValidation = validateStoryData(storyData);" in pipeline
+    assert "storyData = parseStoryXml(txt);" in pipeline
+    assert "ANCHOR is the clinical fact only" in pipeline
+    assert "anchor contains mnemonic/narration language" in auth
+    assert "const scene_title   = extractXmlTag(txt, 'scene_title');" not in pipeline
+    assert "const voRaw = extractAllXmlTags(txt, 'vo_line');" not in pipeline
+
+
 def test_forge_save_has_visible_success_confirmation() -> None:
     root = Path(__file__).resolve().parents[1]
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
