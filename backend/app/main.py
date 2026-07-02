@@ -1521,6 +1521,61 @@ async def health(request: Request) -> dict[str, Any]:
     }
 
 
+@app.get("/api/diagnose-gemini")
+async def diagnose_gemini(request: Request) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+
+    if not active_settings.gemini_api_key:
+        return JSONResponse(content={
+            "status": "no_key",
+            "message": "GEMINI_API_KEY is not set in backend environment.",
+        })
+
+    model = active_settings.gemini_model
+    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+
+    try:
+        async with httpx.AsyncClient() as client:
+            resp = await client.post(
+                api_url,
+                params={"key": active_settings.gemini_api_key},
+                json={
+                    "contents": [{"role": "user", "parts": [{"text": "Say OK"}]}],
+                    "generationConfig": {"maxOutputTokens": 5},
+                },
+                timeout=httpx.Timeout(15.0, connect=5.0),
+            )
+    except httpx.HTTPError as exc:
+        return JSONResponse(content={
+            "status": "unreachable",
+            "message": f"Could not reach Gemini API: {exc}",
+        })
+
+    try:
+        body = resp.json()
+    except ValueError:
+        body = {"raw": resp.text[:500]}
+
+    if resp.status_code == 200:
+        return JSONResponse(content={
+            "status": "ok",
+            "model": model,
+            "message": "Gemini API key is valid and the model responded.",
+            "gemini_response": body,
+        })
+
+    return JSONResponse(
+        status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
+        content={
+            "status": "error",
+            "http_status": resp.status_code,
+            "model": model,
+            "message": body.get("error", {}).get("message", resp.text[:500]),
+            "gemini_response": body,
+        },
+    )
+
+
 @app.get("/api/config/public")
 async def public_config(request: Request) -> dict[str, Any]:
     active_settings = _get_runtime_settings(request)
