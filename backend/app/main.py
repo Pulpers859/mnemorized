@@ -1524,6 +1524,8 @@ async def health(request: Request) -> dict[str, Any]:
 @app.get("/api/diagnose-gemini")
 async def diagnose_gemini(request: Request) -> JSONResponse:
     active_settings = _get_runtime_settings(request)
+    if not active_settings.dev_mode:
+        await _require_admin_context(request, active_settings)
 
     if not active_settings.gemini_api_key:
         return JSONResponse(content={

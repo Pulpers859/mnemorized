@@ -211,6 +211,26 @@ def test_public_config_exposes_explicit_beta_billing_contract(
     assert "service-role-secret" not in response.text
 
 
+def test_gemini_diagnostic_requires_admin_outside_dev(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        app_env="production",
+        gemini_api_key="gemini-key",
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+    )
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    client = TestClient(app_main.app)
+
+    response = client.get("/api/diagnose-gemini")
+
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Sign in to access saved palaces."
+
+
 def test_quota_exceeded_response_is_beta_safe_and_skips_provider(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
