@@ -594,11 +594,21 @@ async function runPipeline() {
     return text;
   }
 
-  // ── STAGE 1: Clinical Context ─────────────────────
-  setStatus('story', '✦ Analyzing topic…', 'running');
-  setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
+  // ── STAGE 1: Clinical Context (with evidence grounding) ──
+  const evidenceAvailable = !!(authState.user && appConfig.medicalKnowledgeEnabled && backendState.medicalKnowledgeConfigured);
+  if (evidenceAvailable) {
+    setStatus('story', '✦ Retrieving source evidence…', 'running');
+    setStageDetail('story', 'Searching private medical knowledge base before generating concepts.');
+  } else {
+    setStatus('story', '✦ Analyzing topic…', 'running');
+    setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
+  }
   let clinicalContext = '';
   let coreConcepts = [];
+  const evidenceHeaders = evidenceAvailable ? {
+    'x-evidence-grounding': 'true',
+    'x-evidence-topic': topic,
+  } : {};
   try {
     const ctxRes = await claudeFetch({
         model: CLAUDE_MODEL,
@@ -612,12 +622,16 @@ COMPLETENESS CHECK: Before finalizing, verify you have not omitted any major cat
 - For pathophysiology: etiology, pathogenesis, clinical features, diagnosis, management, complications
 - For procedures/protocols: indications, contraindications, steps, complications, alternatives
 
+When SOURCE EVIDENCE is provided below, derive your core concepts primarily from that material. Use the exact terminology, thresholds, and clinical details from the source. You may supplement with critical safety facts from your own knowledge, but prioritize source-grounded facts.
+
 Output ONLY these two XML tags, nothing else:
 
 <core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
 <scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
         messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ED/ICU physician — needs precise, high-yield anchors.` }]
-      }, 'stage1-clinical-context');
+      }, 'stage1-clinical-context', evidenceHeaders);
+    setStatus('story', '✦ Analyzing topic…', 'running');
+    setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
     const ctxRaw = await ctxRes.json();
     const ctxTxt = ctxRaw.content?.[0]?.text || '';
     const core   = extractXmlTag(ctxTxt, 'core_concepts');

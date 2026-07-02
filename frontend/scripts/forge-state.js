@@ -160,7 +160,7 @@ document.getElementById('connection-modal').addEventListener('click', function(e
 
 // ── Claude API fetch wrapper ──────────────────────────────────────
 
-async function claudeFetch(body, stage) {
+async function claudeFetch(body, stage, extraHeaders) {
   if (!backendState.checked) await refreshBackendStatus();
 
   if (forgeReplayMode !== 'replay') {
@@ -184,6 +184,7 @@ async function claudeFetch(body, stage) {
     'Content-Type': 'application/json',
     'anthropic-version': '2023-06-01',
     ...getReplayHeaders(stage || 'claude'),
+    ...(extraHeaders || {}),
   };
   if (authState.session?.access_token) {
     headers.Authorization = `Bearer ${authState.session.access_token}`;

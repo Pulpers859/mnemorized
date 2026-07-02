@@ -1764,6 +1764,37 @@ async def publish_catalog_seed(
     }
 
 
+@app.get("/api/medical-knowledge/coverage")
+async def medical_knowledge_coverage(request: Request) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    if not active_settings.supabase_admin_configured:
+        return JSONResponse(
+            status_code=503,
+            content={"error": {"message": "Medical knowledge is not configured."}},
+        )
+
+    response = await _supabase_rest_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=None,
+        method="GET",
+        path="/rest/v1/medical_sources",
+        params={"select": "source_key,title,metadata"},
+        headers={"Accept-Profile": "medical"},
+        use_service_role=True,
+    )
+    rows = _parse_supabase_rows(response, "retrieve medical knowledge coverage")
+    sources = []
+    for row in rows:
+        meta = row.get("metadata") or {}
+        sources.append({
+            "source_key": row.get("source_key"),
+            "title": row.get("title"),
+            "tags": meta.get("tags", []),
+        })
+    return JSONResponse(content={"sources": sources, "source_count": len(sources)})
+
+
 @app.post("/api/medical-knowledge/context")
 async def medical_knowledge_context(
     payload: MedicalContextPayload,
@@ -2528,6 +2559,53 @@ async def proxy_anthropic_messages(
     quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
     if not quota_allowed:
         return _quota_exceeded_response(request_id, quota_summary)
+
+    # ── Evidence-first generation: inject source material into system prompt ──
+    evidence_topic = request.headers.get("x-evidence-topic", "").strip()
+    if (
+        request.headers.get("x-evidence-grounding") == "true"
+        and evidence_topic
+        and active_settings.medical_knowledge_configured
+        and payload.system
+    ):
+        try:
+            rows, _ev_usage = await _retrieve_medical_context(
+                request=request,
+                settings=active_settings,
+                query_text=evidence_topic,
+                max_chunks=6,
+            )
+            EVIDENCE_MIN_SIMILARITY = 0.45
+            relevant = [r for r in rows if (r.get("similarity") or 0) >= EVIDENCE_MIN_SIMILARITY]
+            if relevant:
+                evidence_lines = []
+                for i, row in enumerate(relevant, 1):
+                    src = row.get("title") or row.get("source_key") or "Medical source"
+                    ps = row.get("page_start") or "?"
+                    pe = row.get("page_end") or ps
+                    page_ref = f"p{ps}" if ps == pe else f"p{ps}-{pe}"
+                    section = row.get("section_title") or ""
+                    section_label = f" — {section}" if section else ""
+                    chunk = str(row.get("chunk_text") or "")[:1500]
+                    evidence_lines.append(
+                        f"[{i}] {src} ({page_ref}{section_label}):\n{chunk}"
+                    )
+                evidence_block = (
+                    "\n\nSOURCE EVIDENCE — The following excerpts are from the student's "
+                    "verified medical reference material. Derive your core concepts "
+                    "primarily from these facts. Use the same terminology, thresholds, "
+                    "and clinical details that appear in the source. You may supplement "
+                    "with critical safety facts from your training knowledge, but the "
+                    "source material is the primary authority.\n\n"
+                    + "\n\n".join(evidence_lines)
+                )
+                payload.system = payload.system + evidence_block
+                logger.info(
+                    "Evidence grounding: injected %d source excerpts for topic '%s' (request %s)",
+                    len(relevant), evidence_topic[:60], request_id,
+                )
+        except Exception as exc:
+            logger.warning("Evidence grounding retrieval failed (non-fatal): %s", exc)
 
     body = payload.model_dump(exclude_none=True)
 
