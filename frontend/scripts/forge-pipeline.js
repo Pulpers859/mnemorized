@@ -450,6 +450,47 @@ function downloadGenImage(n) {
   a.click();
 }
 
+function downloadForgeBundle() {
+  const topic = document.getElementById('topic')?.value?.trim() || '';
+  if (!topic && !currentStoryData) { alert('Forge a palace first.'); return; }
+
+  const qualityResultEl = document.getElementById('quality-result');
+  const qualitySummary = qualityResultEl?.innerText?.trim() || '';
+
+  const img1 = document.getElementById('gen-img-1-el');
+  const img2 = document.getElementById('gen-img-2-el');
+  const resultImg = document.getElementById('gen-img-result-el');
+
+  const bundle = {
+    _format: 'mnemorized-forge-bundle-v1',
+    exported_at: new Date().toISOString(),
+    topic: topic,
+    model: CLAUDE_MODEL,
+    sketchy_style_prompt: SKETCHY_STYLE,
+    anti_meta_text: ANTI_META_TEXT,
+    story: currentStoryData || null,
+    image_prompts: {
+      prompt1: document.getElementById('prompt-copy-1')?.value || '',
+      prompt2: document.getElementById('prompt-copy-2')?.value || '',
+    },
+    quality_gate: qualitySummary,
+    generated_images: {
+      image_1: (img1?.src && img1.src.startsWith('data:')) ? img1.src : null,
+      image_2: (img2?.src && img2.src.startsWith('data:')) ? img2.src : null,
+      final: (resultImg?.src && resultImg.src.startsWith('data:')) ? resultImg.src : null,
+    },
+  };
+
+  const json = JSON.stringify(bundle, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const safeName = topic.replace(/[^a-zA-Z0-9]+/g, '_').substring(0, 40) || 'forge';
+  a.download = `${safeName}_bundle.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
 async function rebuildImagePromptsForStory(storyData) {
   if (!storyData?.voLines?.length) {
     setStatus('prompt', 'No repaired story', 'error');
