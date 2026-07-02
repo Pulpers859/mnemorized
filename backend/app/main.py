@@ -1533,47 +1533,60 @@ async def diagnose_gemini(request: Request) -> JSONResponse:
 
     model = active_settings.gemini_model
     api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    test_body = {
+        "contents": [{"role": "user", "parts": [{"text": "Say OK"}]}],
+        "generationConfig": {"maxOutputTokens": 5},
+    }
+    key = active_settings.gemini_api_key
+    results: dict[str, Any] = {"model": model, "key_prefix": key[:8] + "..."}
 
-    try:
-        async with httpx.AsyncClient() as client:
-            resp = await client.post(
+    async with httpx.AsyncClient(timeout=httpx.Timeout(15.0, connect=5.0)) as client:
+        # Method 1: ?key= query parameter (classic API keys starting with AIza)
+        try:
+            resp1 = await client.post(api_url, params={"key": key}, json=test_body)
+            body1 = resp1.json() if resp1.headers.get("content-type", "").startswith("application/json") else {"raw": resp1.text[:300]}
+            results["query_param"] = {"status": resp1.status_code, "response": body1}
+        except httpx.HTTPError as exc:
+            results["query_param"] = {"status": "unreachable", "error": str(exc)}
+
+        # Method 2: Authorization: Bearer header (newer keys)
+        try:
+            resp2 = await client.post(
                 api_url,
-                params={"key": active_settings.gemini_api_key},
-                json={
-                    "contents": [{"role": "user", "parts": [{"text": "Say OK"}]}],
-                    "generationConfig": {"maxOutputTokens": 5},
-                },
-                timeout=httpx.Timeout(15.0, connect=5.0),
+                headers={"Authorization": f"Bearer {key}"},
+                json=test_body,
             )
-    except httpx.HTTPError as exc:
-        return JSONResponse(content={
-            "status": "unreachable",
-            "message": f"Could not reach Gemini API: {exc}",
-        })
+            body2 = resp2.json() if resp2.headers.get("content-type", "").startswith("application/json") else {"raw": resp2.text[:300]}
+            results["bearer_header"] = {"status": resp2.status_code, "response": body2}
+        except httpx.HTTPError as exc:
+            results["bearer_header"] = {"status": "unreachable", "error": str(exc)}
 
-    try:
-        body = resp.json()
-    except ValueError:
-        body = {"raw": resp.text[:500]}
+        # Method 3: x-goog-api-key header
+        try:
+            resp3 = await client.post(
+                api_url,
+                headers={"x-goog-api-key": key},
+                json=test_body,
+            )
+            body3 = resp3.json() if resp3.headers.get("content-type", "").startswith("application/json") else {"raw": resp3.text[:300]}
+            results["x_goog_api_key"] = {"status": resp3.status_code, "response": body3}
+        except httpx.HTTPError as exc:
+            results["x_goog_api_key"] = {"status": "unreachable", "error": str(exc)}
 
-    if resp.status_code == 200:
-        return JSONResponse(content={
-            "status": "ok",
-            "model": model,
-            "message": "Gemini API key is valid and the model responded.",
-            "gemini_response": body,
-        })
+    working = []
+    for method in ("query_param", "bearer_header", "x_goog_api_key"):
+        if results.get(method, {}).get("status") == 200:
+            working.append(method)
 
-    return JSONResponse(
-        status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
-        content={
-            "status": "error",
-            "http_status": resp.status_code,
-            "model": model,
-            "message": body.get("error", {}).get("message", resp.text[:500]),
-            "gemini_response": body,
-        },
-    )
+    if working:
+        results["status"] = "ok"
+        results["working_methods"] = working
+        results["message"] = f"Gemini key works via: {', '.join(working)}"
+        return JSONResponse(content=results)
+
+    results["status"] = "all_failed"
+    results["message"] = "Key failed with all three auth methods. See responses for details."
+    return JSONResponse(status_code=401, content=results)
 
 
 @app.get("/api/config/public")

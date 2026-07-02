@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 import struct
 from typing import Any
@@ -10,7 +11,7 @@ from fastapi.testclient import TestClient
 
 from backend.app import main as app_main
 from backend.app.auth import AuthenticatedUser
-from backend.app.config import Settings
+from backend.app.config import Settings, _load_env_file
 
 
 def make_settings(
@@ -56,6 +57,19 @@ def make_settings(
         plan_override_path=tmp_path / "plan_overrides.json",
         admin_emails=admin_emails,
     )
+
+
+def test_env_file_overrides_stale_process_env(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    env_path = tmp_path / ".env"
+    env_path.write_text("GEMINI_API_KEY=AIza-new-local-key\n", encoding="utf-8")
+    monkeypatch.setenv("GEMINI_API_KEY", "AQ.old-stale-key")
+
+    _load_env_file(env_path)
+
+    assert os.environ["GEMINI_API_KEY"] == "AIza-new-local-key"
 
 
 class SupabaseMock:

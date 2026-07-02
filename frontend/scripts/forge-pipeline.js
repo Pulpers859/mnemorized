@@ -286,7 +286,7 @@ async function generateImages() {
 
   const btn = document.getElementById('generate-images-btn');
   const status = document.getElementById('gen-img-status');
-  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Generating…'; }
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Generating…'; btn.style.borderColor = ''; btn.style.color = ''; }
   if (status) status.textContent = 'Sending prompts to Gemini…';
 
   setStatus('prompt', '✦ Generating image…', 'running');
@@ -424,13 +424,19 @@ async function generateImages() {
   } catch (err) {
     if (status) { status.textContent = `✗ ${err.message}`; status.style.color = '#f56565'; }
     if (handoffTitle) handoffTitle.textContent = 'Image generation failed';
-    if (handoffText) handoffText.textContent = err.message + ' — click Regenerate to try again, or use the prompts manually.';
+    if (handoffText) handoffText.textContent = err.message;
     setStatus('prompt', '✗ Image failed', 'error');
     setStageDetail('prompt', err.message);
     console.error('Image generation error:', err);
-  } finally {
-    if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '⟳ Retry Image Generation';
+      btn.style.borderColor = 'rgba(245,200,66,.6)';
+      btn.style.color = 'var(--gold)';
+    }
+    return;
   }
+  if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
 }
 
 function downloadGenImage(n) {
