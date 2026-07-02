@@ -19,7 +19,7 @@ const SKETCHY_STYLE = 'Hand-drawn 2D cartoon illustration drawn with Micron pens
   'Flat even lighting — NO spotlight cones, NO volumetric light, NO lens flares, NO glowing effects. ' +
   'All text in the scene looks hand-written with a marker, slightly uneven and imperfect. ' +
   'Every object looks like it was drawn on a whiteboard or poster board with markers. ' +
-  'Style reference: Sketchy Medical, Pixorize, editorial cartoon, medical education poster drawn by hand.';
+  'Style principles: hand-drawn educational visual mnemonic poster, editorial cartoon caricature, dense but readable medical teaching map.';
 
 const SKETCHY_STYLE_ROOM = 'Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. ' +
   'Wobbly, imperfect ink outlines with visible line weight variation — thick at corners, thin on straights, ' +
@@ -32,7 +32,7 @@ const SKETCHY_STYLE_ROOM = 'Hand-drawn 2D cartoon illustration drawn with Micron
   'NO gradient fills, NO atmospheric haze, NO depth of field blur, NO film grain, NO paper texture noise. ' +
   'Flat even lighting — NO spotlight cones, NO volumetric light, NO lens flares, NO glowing effects. ' +
   'Every object looks like it was drawn on a whiteboard or poster board with markers. ' +
-  'Style reference: Sketchy Medical, Pixorize, editorial cartoon, medical education poster drawn by hand. ' +
+  'Style principles: hand-drawn educational visual mnemonic poster, editorial cartoon background, dense but readable medical teaching map. ' +
   'EMPTY ROOM ONLY — absolutely NO people, NO characters, NO figures, NO animals. ' +
   'NO text, NO labels, NO signs, NO writing on any surface. Just the bare room.';
 
@@ -794,7 +794,7 @@ async function runPipeline() {
     const ctxRes = await claudeFetch({
         model: CLAUDE_MODEL,
         max_tokens: 1200,
-        system: `You are a senior clinical educator and board exam question writer designing memory scenes. Extract the essential teaching points for a Sketchy-style mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
+        system: `You are a senior clinical educator and board exam question writer designing original visual mnemonic memory scenes. Extract the essential teaching points for a silhouette-first mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
 
 COMPLETENESS CHECK: Before finalizing, verify you have not omitted any major category. For example:
 - For scoring systems: every sub-item and its specific scoring range
@@ -829,7 +829,7 @@ Output ONLY these two XML tags, nothing else:
   setStatus('story', '✦ Writing scene…', 'running');
   setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
-  const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is no narrator or tour-guide character — but MNEMONIC CHARACTERS (figures whose names, shapes, or actions encode medical facts) are encouraged. Think of how Sketchy Medical uses characters that ARE the concepts, not guides explaining them.
+  const storySystem = `You are writing narration for an original medical visual mnemonic memory palace. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is no narrator or tour-guide character — but MNEMONIC CHARACTERS (figures whose names, shapes, or actions encode medical facts) are encouraged. Characters should be the concepts themselves, not guides explaining them.
 
 SCENE SETTING — YOU CHOOSE:
 - Strongly prefer an ORIGINAL phonetic pun or sound-alike for a key term in the medical topic, but do not force a bad pun. If no clean pun exists, choose a thematic setting whose physical layout teaches the topic.
@@ -933,7 +933,7 @@ Respond using ONLY these XML tags in order. Write freely inside — no JSON:
 
 <opening>2-3 sentences introducing the scene. Set the location and overall vibe conversationally — like "Our scene today takes place at..." or "Welcome to...". Do not describe action or movement.</opening>
 
-For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total — cover the topic comprehensively at board-exam level, the way Sketchy Medical does. Do not stop at 5-6 if there are more high-yield facts to encode.
+For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total — cover the topic comprehensively at board-exam level with dense, original visual mnemonics. Do not stop at 5-6 if there are more high-yield facts to encode.
 
 GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 items, a drug class with 12 side effects), combine closely related sub-items into a SINGLE anchor with one visual element that encodes 2-3 facts together. For example: a scoring scale's "questions" and "commands" sub-items can share one visual station; motor arm and motor leg can share one stopwatch display; language and articulation can share one communication desk. This keeps the total anchor count at 8-10 while still covering every testable fact. Each visual should encode MORE information, not less — denser per anchor, fewer total anchors.
 
@@ -949,7 +949,7 @@ ANCHOR: [Clinical fact only. One crisp line under 35 words. No mnemonic wording,
 Rapid-fire recall. One line per anchor. Format: "When you see [image element] — remember [clinical fact]"
 </review_script>`;
 
-  const storyUser = `Create a Pixorize/Sketchy-style memory palace narration script for: ${topic}
+  const storyUser = `Create an original visual mnemonic memory palace narration script for: ${topic}
 Tone: ${tone}
 Absurdity: ${chaos}/10
 TARGET: 8-10 anchors covering this topic comprehensively at board-exam level. Do NOT omit any major category, step, or classification tier.
