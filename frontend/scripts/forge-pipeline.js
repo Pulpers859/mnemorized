@@ -824,6 +824,20 @@ COMPLETENESS — NON-NEGOTIABLE:
 - Common omission errors to avoid: skipping complete/3rd-degree heart block when covering AV blocks, omitting the most severe classification tier, forgetting disposition/resolution criteria, leaving out common exceptions to rules
 - After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
 
+VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
+- Do NOT make anchors label-first. A labeled clipboard is weak unless the clipboard's shape, position, contents, and relationship to nearby objects encode the fact.
+- For each clinical fact, choose a memory hook BEFORE choosing the object:
+  1. sound-alike hook: a word or abbreviation sounds like a concrete object
+  2. look-alike hook: a number, symbol, organ, drug, or bug resembles a physical shape
+  3. meaning hook: the object's real-world function mirrors the clinical concept
+  4. contrast hook: two opposing objects show a threshold, contraindication, or decision split
+  5. spatial hook: left/right/up/down/door/exit/locked area encodes sequence, escalation, or disposition
+- Great anchors should still be recognizable if the label vanished. The label confirms the cue; it must not carry the whole memory.
+- Prefer absurd, concrete, tactile objects over generic documents: broken locks, overflowing buckets, scales, traps, warning gates, split roads, clocks, masks, melting ice, shrinking doors, heavy chains, color-coded jars, tipped scales, blocked chimneys.
+- Use visual relationships: one object blocking another, a tiny object dwarfed by a giant one, two objects chained together, a threshold gate, a before/after pair, or a danger object isolated in a corner.
+- When encoding drug/bug-style facts, think like high-quality Sketchy/Pixorize: recurring concrete symbols, puns, shape cues, and a cohesive scene where each symbol has a job. Do not copy existing proprietary sketches; invent original cues.
+- Avoid weak anchors: plain checklist, generic poster, ordinary clipboard, unlabeled bottle, or any object whose only mnemonic value is text printed on it.
+
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 20 WORDS per visual description — this is a hard limit
 - FORMAT: [Object type] on/at [position], labeled "[1-3 SHORT words]"

@@ -654,6 +654,22 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     assert "const voRaw = extractAllXmlTags(txt, 'vo_line');" not in pipeline
 
 
+def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    assert "VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT" in pipeline
+    assert "Do NOT make anchors label-first" in pipeline
+    assert "sound-alike hook" in pipeline
+    assert "look-alike hook" in pipeline
+    assert "meaning hook" in pipeline
+    assert "contrast hook" in pipeline
+    assert "spatial hook" in pipeline
+    assert "The label confirms the cue; it must not carry the whole memory." in pipeline
+    assert "Do not copy existing proprietary sketches; invent original cues." in pipeline
+    assert "Avoid weak anchors: plain checklist, generic poster, ordinary clipboard" in pipeline
+
+
 def test_forge_save_has_visible_success_confirmation() -> None:
     root = Path(__file__).resolve().parents[1]
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
