@@ -31,6 +31,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Prefer extending `frontend/styles/app-shell.css` before duplicating more page-local CSS.
 - Keep real secrets in ignored `backend/.env`; keep `backend/.env.example` placeholder-only.
 - Protect provider proxy behavior, auth context, quota enforcement, usage logging, and Supabase persistence paths from silent regressions.
+- Treat `docs/visual-mnemonic-prompt-contract.md` as the source of truth for medical visual mnemonic prompt quality and the boundary against copying proprietary visual mnemonic products.
 - Be clear about what was validated locally and what still needs browser/provider-key testing.
 
 ## Skill-First Workflow

@@ -689,10 +689,26 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "MUST be a PHONETIC PUN" not in pipeline
     assert "SHAPE DIVERSITY RULE" in pipeline
     assert "FORMULA RULE" in pipeline
+    assert "PRECISION TEXT EXCEPTION" in pipeline
+    assert "ANCHOR LEGIBILITY RULE" in pipeline
+    assert "EXACT LABEL RULE" in pipeline
     assert "SCENE TEXT BUDGET" in pipeline
     assert "SKETCHY_STYLE_ROOM" in pipeline
     assert "EMPTY ROOM ONLY" in pipeline
     assert "NO film grain, NO paper texture noise" in pipeline
+
+
+def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> None:
+    root = Path(__file__).resolve().parents[1]
+    agents = (root / "AGENTS.md").read_text(encoding="utf-8")
+    contract = (root / "docs" / "visual-mnemonic-prompt-contract.md").read_text(encoding="utf-8")
+
+    assert "docs/visual-mnemonic-prompt-contract.md" in agents
+    assert "Precision Text Exception" in contract
+    assert "Do not copy named scenes" not in contract
+    assert "It is not acceptable to copy or closely paraphrase proprietary scenes" in contract
+    assert "pre-image structural audit: `>=85`" in contract
+    assert "final manual image audit: `>=95`" in contract
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:
