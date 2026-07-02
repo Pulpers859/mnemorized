@@ -668,6 +668,11 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "The label confirms the cue; it must not carry the whole memory." in pipeline
     assert "Do not copy existing proprietary sketches; invent original cues." in pipeline
     assert "Avoid weak anchors: plain checklist, generic poster, ordinary clipboard" in pipeline
+    assert "Each anchor must have a \"why this image works\" link in the narration" in pipeline
+    assert "For mechanisms, show physical causality" in pipeline
+    assert "For adverse effects and contraindications, show visible consequences" in pipeline
+    assert "For thresholds and algorithms, make the spatial path do the work" in pipeline
+    assert "One supporting prop is allowed only if it visually explains the fact." in pipeline
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:

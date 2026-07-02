@@ -837,11 +837,16 @@ VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
 - Use visual relationships: one object blocking another, a tiny object dwarfed by a giant one, two objects chained together, a threshold gate, a before/after pair, or a danger object isolated in a corner.
 - When encoding drug/bug-style facts, think like high-quality Sketchy/Pixorize: recurring concrete symbols, puns, shape cues, and a cohesive scene where each symbol has a job. Do not copy existing proprietary sketches; invent original cues.
 - Avoid weak anchors: plain checklist, generic poster, ordinary clipboard, unlabeled bottle, or any object whose only mnemonic value is text printed on it.
+- Each anchor must have a "why this image works" link in the narration: say whether the cue sounds like, looks like, acts like, blocks, opens, spills, shrinks, speeds up, slows down, or warns about the clinical fact.
+- For mechanisms, show physical causality: a key opening a lock, a cork blocking a pipe, a valve widening, a guard stopping entry, a scale tipping, a timer expiring, a bucket overflowing.
+- For adverse effects and contraindications, show visible consequences: slipping, spilling, alarms, cracked objects, warning tape, isolated danger zones, or damaged props.
+- For thresholds and algorithms, make the spatial path do the work: gates, stairs, split roads, checkpoints, stop signs, exit doors, before/after stations, or escalating shelves.
+- Use one primary cue per anchor plus one supporting prop only when the relationship itself teaches the fact. Do not create clutter.
 
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 20 WORDS per visual description — this is a hard limit
 - FORMAT: [Object type] on/at [position], labeled "[1-3 SHORT words]"
-- Each anchor gets ONE recognizable physical object (sign, jar, poster, dial, clipboard, bottle, chalkboard, corkboard, gauge, tablet, cabinet) with a SINGLE short label (2-4 words max on the object)
+- Each anchor gets ONE primary recognizable cue object with a SINGLE short label (2-4 words max on the object). One supporting prop is allowed only if it visually explains the fact.
 - The object's SHAPE and TYPE is the primary memory cue, not the text — a pressure gauge encodes "monitoring thresholds" even without perfect text
 - TEXT ON OBJECTS: Maximum 4 words per label. Use abbreviations, numbers, and symbols aggressively. NEVER put full sentences, checklists, or multi-line content on a single object. If an anchor encodes multiple facts, split them across sub-objects (e.g., two separate jars instead of one jar with a paragraph)
 - Do NOT describe: era-specific aesthetics, materials, technology type, atmospheric details, or lighting
@@ -870,7 +875,7 @@ GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 item
 
 CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, different time limits, different angles, different doses), the visual description and narration must clearly show BOTH distinct values. For instance, if arms are tested for 10 seconds and legs for 5 seconds, the visual must show "10 SEC" AND "5 SEC" as separate labels — never collapse them into one number.
 <vo_line>
-NARRATION: [2-4 sentences. Direct viewer attention → name the element → state the mnemonic link explicitly → teach the clinical fact → optional reinforcement "get it? X for Y?". Natural spoken rhythm. No dramatic language. No movement descriptions.]
+NARRATION: [2-4 sentences. Direct viewer attention → name the element → explain why the cue works by sound/shape/function/contrast/space → teach the clinical fact → optional reinforcement "get it? X for Y?". Natural spoken rhythm. No dramatic language. No movement descriptions.]
 VISUAL: [MAXIMUM 20 WORDS. Physical object + labels + position only. No era styling, no material descriptions, no technology type, no lighting effects.]
 ANCHOR: [Clinical fact only. One crisp line under 35 words. No mnemonic wording, no "get it", no scene description.]
 </vo_line>
