@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import time
@@ -2832,6 +2833,10 @@ async def generate_image(
             status_code=status_code,
         )
 
+    GEMINI_RETRYABLE = {429, 500, 503}
+    GEMINI_MAX_RETRIES = 2
+    prompt_errors: list[dict[str, Any]] = []
+
     try:
         for idx, prompt_text in enumerate(payload.prompts):
             conversation.append({"role": "user", "parts": [{"text": prompt_text}]})
@@ -2843,98 +2848,105 @@ async def generate_image(
                 },
             }
 
-            try:
-                resp = await http_client.post(
-                    api_url,
-                    params={"key": active_settings.gemini_api_key},
-                    json=gemini_body,
-                    timeout=httpx.Timeout(120.0, connect=10.0),
-                )
-            except httpx.TimeoutException:
-                schedule_gemini_usage(504, count_quota=False)
-                return JSONResponse(
-                    status_code=504,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "upstream_timeout",
-                            "message": f"Gemini did not respond in time for prompt {idx + 1}.",
-                        }
-                    },
-                )
-            except httpx.HTTPError as exc:
-                schedule_gemini_usage(502, count_quota=False)
-                return JSONResponse(
-                    status_code=502,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "upstream_connection_error",
-                            "message": f"Could not reach Gemini: {exc}",
-                        }
-                    },
-                )
+            resp = None
+            last_error: str | None = None
+            last_error_type: str | None = None
+
+            for attempt in range(1 + GEMINI_MAX_RETRIES):
+                try:
+                    resp = await http_client.post(
+                        api_url,
+                        params={"key": active_settings.gemini_api_key},
+                        json=gemini_body,
+                        timeout=httpx.Timeout(120.0, connect=10.0),
+                    )
+                except httpx.TimeoutException:
+                    last_error = f"Gemini did not respond in time for prompt {idx + 1}."
+                    last_error_type = "upstream_timeout"
+                    if attempt < GEMINI_MAX_RETRIES:
+                        await asyncio.sleep(2 ** attempt)
+                        continue
+                    break
+                except httpx.HTTPError as exc:
+                    last_error = f"Could not reach Gemini: {exc}"
+                    last_error_type = "upstream_connection_error"
+                    if attempt < GEMINI_MAX_RETRIES:
+                        await asyncio.sleep(2 ** attempt)
+                        continue
+                    break
+
+                if resp.status_code in GEMINI_RETRYABLE and attempt < GEMINI_MAX_RETRIES:
+                    logger.info(
+                        "Gemini %d for request %s prompt %d, retry %d",
+                        resp.status_code, request_id, idx + 1, attempt + 1,
+                    )
+                    await asyncio.sleep(2 ** attempt)
+                    resp = None
+                    continue
+                break
+
+            if resp is None:
+                prompt_errors.append({
+                    "prompt_index": idx,
+                    "type": last_error_type or "upstream_connection_error",
+                    "message": last_error or f"Gemini unreachable for prompt {idx + 1} after retries.",
+                })
+                conversation.pop()
+                continue
 
             if resp.status_code != 200:
                 upstream_error_message = None
+                error_type = "upstream_error"
                 try:
                     error_payload = resp.json()
                     upstream_error_message = error_payload.get("error", {}).get("message")
+                    if resp.status_code == 400 and "safety" in (upstream_error_message or "").lower():
+                        error_type = "safety_block"
                 except ValueError:
-                    error_payload = None
+                    pass
                 logger.warning(
                     "Gemini API error for request %s prompt %d: %s %s",
                     request_id, idx + 1, resp.status_code, resp.text[:500],
                 )
-                schedule_gemini_usage(resp.status_code, count_quota=False)
-                return JSONResponse(
-                    status_code=resp.status_code if 400 <= resp.status_code < 500 else 502,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "upstream_error",
-                            "message": upstream_error_message
-                            or (
-                                f"Gemini returned {resp.status_code} for prompt {idx + 1} "
-                                f"using model {model}."
-                            ),
-                        }
-                    },
-                )
+                prompt_errors.append({
+                    "prompt_index": idx,
+                    "type": error_type,
+                    "message": upstream_error_message
+                    or f"Gemini returned {resp.status_code} for prompt {idx + 1} using model {model}.",
+                })
+                conversation.pop()
+                continue
 
             try:
                 resp_json = resp.json()
             except ValueError:
                 logger.warning(
                     "Gemini returned non-JSON content for request %s prompt %d",
-                    request_id,
-                    idx + 1,
+                    request_id, idx + 1,
                 )
-                schedule_gemini_usage(502, count_quota=False)
-                return JSONResponse(
-                    status_code=502,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "upstream_parse_error",
-                            "message": f"Gemini returned a non-JSON response for prompt {idx + 1}.",
-                        }
-                    },
-                )
+                prompt_errors.append({
+                    "prompt_index": idx,
+                    "type": "upstream_parse_error",
+                    "message": f"Gemini returned a non-JSON response for prompt {idx + 1}.",
+                })
+                conversation.pop()
+                continue
 
             candidates = resp_json.get("candidates", [])
-            if not candidates:
-                schedule_gemini_usage(502, count_quota=False)
-                return JSONResponse(
-                    status_code=502,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "upstream_empty",
-                            "message": f"Gemini returned no candidates for prompt {idx + 1}.",
-                        }
-                    },
-                )
+            finish_reason = candidates[0].get("finishReason", "") if candidates else ""
+            if not candidates or finish_reason == "SAFETY":
+                prompt_errors.append({
+                    "prompt_index": idx,
+                    "type": "safety_block" if finish_reason == "SAFETY" else "upstream_empty",
+                    "message": (
+                        f"Gemini blocked prompt {idx + 1} for safety/content policy. "
+                        "Try rephrasing the medical scene with less graphic clinical language."
+                    ) if finish_reason == "SAFETY" else (
+                        f"Gemini returned no candidates for prompt {idx + 1}."
+                    ),
+                })
+                conversation.pop()
+                continue
 
             model_parts = candidates[0].get("content", {}).get("parts", [])
             image_part = None
@@ -2944,17 +2956,13 @@ async def generate_image(
                     break
 
             if not isinstance(image_part, dict) or not image_part.get("data"):
-                schedule_gemini_usage(502, count_quota=False)
-                return JSONResponse(
-                    status_code=502,
-                    headers={"X-Request-ID": request_id},
-                    content={
-                        "error": {
-                            "type": "no_image_in_response",
-                            "message": f"Gemini did not return an image for prompt {idx + 1}.",
-                        }
-                    },
-                )
+                prompt_errors.append({
+                    "prompt_index": idx,
+                    "type": "no_image_in_response",
+                    "message": f"Gemini did not return an image for prompt {idx + 1}.",
+                })
+                conversation.pop()
+                continue
 
             images.append({
                 "prompt_index": idx,
@@ -2971,9 +2979,26 @@ async def generate_image(
         if owns_http_client:
             await http_client.aclose()
 
+    if not images and prompt_errors:
+        schedule_gemini_usage(502, count_quota=False)
+        first_err = prompt_errors[0]
+        return JSONResponse(
+            status_code=502,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": first_err["type"],
+                    "message": first_err["message"],
+                },
+                "prompt_errors": prompt_errors,
+            },
+        )
+
     schedule_gemini_usage(200)
 
-    response_content = {"images": images}
+    response_content: dict[str, Any] = {"images": images}
+    if prompt_errors:
+        response_content["prompt_errors"] = prompt_errors
     response_headers: dict[str, str] = {"X-Request-ID": request_id}
     if replay_mode == "record" and replay_topic and replay_stage and images:
         save_cassette(replay_topic, replay_stage, response_content)

@@ -301,9 +301,8 @@ def test_gemini_upstream_error_schedules_usage_event(
         supabase_url="https://project.supabase.co",
         supabase_anon_key="anon-key",
     )
-    provider = FakeProviderClient([
-        httpx.Response(500, json={"error": {"message": "temporary upstream failure"}})
-    ])
+    error_response = httpx.Response(500, json={"error": {"message": "temporary upstream failure"}})
+    provider = FakeProviderClient([error_response, error_response, error_response])
     recorded_events: list[dict[str, Any]] = []
 
     async def fake_user(request: Any, active_settings: Settings) -> AuthenticatedUser:
@@ -328,6 +327,12 @@ def test_gemini_upstream_error_schedules_usage_event(
     async def fake_persist_usage_event_background(**kwargs: Any) -> None:
         recorded_events.append(kwargs)
 
+    import asyncio
+    real_sleep = asyncio.sleep
+    async def fast_sleep(seconds: float) -> None:
+        await real_sleep(0)
+    monkeypatch.setattr(asyncio, "sleep", fast_sleep)
+
     monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
     monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
     monkeypatch.setattr(app_main, "_resolve_authenticated_user", fake_user)
@@ -347,8 +352,9 @@ def test_gemini_upstream_error_schedules_usage_event(
 
     assert response.status_code == 502
     assert response.json()["error"]["type"] == "upstream_error"
+    assert len(provider.calls) == 3, f"Expected 3 attempts (1 + 2 retries), got {len(provider.calls)}"
     assert len(recorded_events) == 1
-    assert recorded_events[0]["status_code"] == 500
+    assert recorded_events[0]["status_code"] == 502
     assert recorded_events[0]["request_body"]["provider"] == "gemini"
     assert recorded_events[0]["request_body"]["prompts"] == 1
 

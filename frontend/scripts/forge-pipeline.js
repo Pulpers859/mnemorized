@@ -306,9 +306,14 @@ async function generateImages() {
 
   const prompts = [p1, p2].filter(Boolean);
 
-  // Refresh token before image gen — the pipeline may have been running for minutes
+  // Force-refresh the token — the pipeline may have run for minutes and the JWT expired
   if (typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
-    try { await supabaseClient.auth.getSession(); } catch (_) { /* best-effort */ }
+    try {
+      const { data: refreshed } = await supabaseClient.auth.refreshSession();
+      if (refreshed?.session) {
+        authState.session = refreshed.session;
+      }
+    } catch (_) { /* best-effort — the 401 retry below will catch it */ }
   }
 
   const headers = {
@@ -319,17 +324,29 @@ async function generateImages() {
     headers.Authorization = `Bearer ${authState.session.access_token}`;
   }
 
-  try {
-    let res = await fetch(getApiUrl('/api/generate-image'), {
-      method: 'POST',
-      headers,
-      body: JSON.stringify({ prompts })
-    });
+  const TRANSIENT_CODES = new Set([502, 503, 504]);
+  const MAX_RETRIES = 1;
 
+  async function attemptImageGen() {
+    let res;
+    try {
+      res = await fetch(getApiUrl('/api/generate-image'), {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ prompts })
+      });
+    } catch (fetchErr) {
+      backendState.reachable = false;
+      setBackendBadge('offline', '⚠ PROXY OFFLINE');
+      throw new Error(`Proxy unavailable: ${fetchErr.message}`);
+    }
+
+    // 401 → refresh token and retry once
     if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
-      const { data } = await supabaseClient.auth.refreshSession();
-      if (data?.session?.access_token) {
-        headers.Authorization = `Bearer ${data.session.access_token}`;
+      const { data: refreshData } = await supabaseClient.auth.refreshSession();
+      if (refreshData?.session?.access_token) {
+        authState.session = refreshData.session;
+        headers.Authorization = `Bearer ${refreshData.session.access_token}`;
         res = await fetch(getApiUrl('/api/generate-image'), {
           method: 'POST',
           headers,
@@ -346,13 +363,32 @@ async function generateImages() {
       throw new Error(getQuotaExceededMessage(quota));
     } else if (res.status === 503) {
       throw new Error('GEMINI_API_KEY is not configured on the backend.');
-    } else if (!res.ok) {
+    }
+    return res;
+  }
+
+  try {
+    let res;
+    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+      res = await attemptImageGen();
+      if (res.ok || !TRANSIENT_CODES.has(res.status) || attempt === MAX_RETRIES) break;
+      if (status) status.textContent = 'Gemini hiccup — retrying…';
+      await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+    }
+
+    if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err.error?.message || `Image generation failed (HTTP ${res.status}).`);
+      const msg = err.error?.message || `Image generation failed (HTTP ${res.status}).`;
+      const isSafety = err.error?.type === 'safety_block' || (err.prompt_errors || []).some(e => e.type === 'safety_block');
+      if (isSafety) {
+        throw new Error('Gemini blocked the image prompt for safety/content policy. Try rephrasing the scene with less graphic clinical language, then hit Regenerate.');
+      }
+      throw new Error(msg);
     }
 
     const data = await res.json();
     const images = data.images || [];
+    const promptErrors = data.prompt_errors || [];
 
     images.forEach((img, i) => {
       const n = i + 1;
@@ -372,9 +408,19 @@ async function generateImages() {
     }
 
     if (handoffMsg) handoffMsg.style.display = 'none';
-    if (status) { status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`; status.style.color = 'var(--green)'; }
-    setStatus('prompt', '✓ Palace illustrated', 'done');
-    setStageDetail('prompt', 'Your memory palace image is ready. Download it or regenerate for a different result.');
+
+    if (images.length > 0 && promptErrors.length > 0) {
+      const failedIdx = promptErrors.map(e => e.prompt_index + 1).join(', ');
+      if (status) { status.textContent = `✓ ${images.length} image(s) — prompt ${failedIdx} failed`; status.style.color = 'var(--gold)'; }
+      setStatus('prompt', '⚠ Partial success', 'done');
+      setStageDetail('prompt', `${images.length} image(s) generated. Prompt ${failedIdx} failed: ${promptErrors[0].message}`);
+    } else if (images.length > 0) {
+      if (status) { status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`; status.style.color = 'var(--green)'; }
+      setStatus('prompt', '✓ Palace illustrated', 'done');
+      setStageDetail('prompt', 'Your memory palace image is ready. Download it or regenerate for a different result.');
+    } else {
+      throw new Error('No images were generated. Try regenerating.');
+    }
   } catch (err) {
     if (status) { status.textContent = `✗ ${err.message}`; status.style.color = '#f56565'; }
     if (handoffTitle) handoffTitle.textContent = 'Image generation failed';
