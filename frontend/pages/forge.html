@@ -1939,6 +1939,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
             <button class="btn-copy" onclick="generateImages()">↻ Regenerate</button>
           </div>
         </div>
+        <div id="user-image-actions" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
+          <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
+          <button class="btn-copy" onclick="downloadForgeBundle()" style="margin-left:8px;padding:10px 16px;font-size:13px;">⬇ Export Bundle</button>
+          <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
+        </div>
       </div>
     </div>
 
@@ -1966,11 +1971,6 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       <div class="gen-img-container" id="gen-img-2" style="display:none;margin-top:12px;">
         <img id="gen-img-2-el" style="max-width:100%;border-radius:8px;border:1px solid var(--border);" />
         <button class="btn-copy" onclick="downloadGenImage(2)" style="margin-top:6px;">⬇ Download Image 2</button>
-      </div>
-      <div style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
-        <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
-        <button class="btn-copy" onclick="downloadForgeBundle()" style="margin-left:8px;padding:10px 16px;font-size:13px;">⬇ Export Bundle</button>
-        <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
       </div>
       <div id="catalog-publish-section" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
         <span class="operator-badge" style="margin-bottom:12px;display:inline-block;">CATALOG PUBLISH</span>
