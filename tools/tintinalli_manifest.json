@@ -1,0 +1,152 @@
+[
+  {
+    "file": "Tintin_Resuscitation.pdf",
+    "source_key": "tintin-resuscitation",
+    "title": "Tintinalli - Resuscitation",
+    "tags": ["resuscitation", "cpr", "acls", "cardiac-arrest", "shock", "airway-management", "hemorrhagic-shock", "septic-shock", "cardiogenic-shock", "anaphylactic-shock", "atls", "post-arrest-care"]
+  },
+  {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "source_key": "tintin-resuscitation-procedures",
+    "title": "Tintinalli - Resuscitation Procedures",
+    "tags": ["resuscitation", "procedures", "intubation", "chest-tube", "central-line", "cricothyrotomy", "pericardiocentesis", "thoracotomy", "io-access", "airway", "mechanical-ventilation", "rsi"]
+  },
+  {
+    "file": "Tintin_Trauma.pdf",
+    "source_key": "tintin-trauma",
+    "title": "Tintinalli - Trauma",
+    "tags": ["trauma", "atls", "hemorrhage", "penetrating-trauma", "blunt-trauma", "head-injury", "tbi", "thoracic-trauma", "abdominal-trauma", "pelvic-trauma", "vascular-injury", "neck-trauma", "spinal-trauma", "massive-transfusion"]
+  },
+  {
+    "file": "Tintin_Cardiovascular.pdf",
+    "source_key": "tintin-cardiovascular",
+    "title": "Tintinalli - Cardiovascular Emergencies",
+    "tags": ["cardiovascular", "cardiology", "chest-pain", "acs", "stemi", "nstemi", "heart-failure", "chf", "arrhythmia", "atrial-fibrillation", "aortic-dissection", "aortic-aneurysm", "hypertensive-emergency", "syncope", "pericarditis", "myocarditis", "valvular", "dvt", "cardiomyopathy", "cardiac-tamponade"]
+  },
+  {
+    "file": "Tintin_Pulm.pdf",
+    "source_key": "tintin-pulm",
+    "title": "Tintinalli - Pulmonary Emergencies",
+    "tags": ["pulmonary", "respiratory", "asthma", "copd", "pneumothorax", "tension-pneumothorax", "pulmonary-embolism", "pe", "intubation", "ventilation", "respiratory-failure", "pleural-effusion", "hemoptysis", "ards"]
+  },
+  {
+    "file": "Tintin_GI.pdf",
+    "source_key": "tintin-gi",
+    "title": "Tintinalli - Gastrointestinal Emergencies",
+    "tags": ["gastrointestinal", "gi", "abdominal-pain", "gi-bleed", "upper-gi-bleed", "lower-gi-bleed", "appendicitis", "pancreatitis", "hepatic", "liver-failure", "biliary", "cholecystitis", "cholangitis", "bowel-obstruction", "diverticulitis", "esophageal-perforation", "mesenteric-ischemia", "hernia"]
+  },
+  {
+    "file": "Tintin_Neuro.pdf",
+    "source_key": "tintin-neuro",
+    "title": "Tintinalli - Neurologic Emergencies",
+    "tags": ["neurology", "stroke", "ischemic-stroke", "hemorrhagic-stroke", "seizure", "status-epilepticus", "headache", "altered-mental-status", "tbi", "spinal-cord-injury", "peripheral-neuropathy", "guillain-barre", "myasthenia-gravis", "meningitis", "encephalitis", "vertigo"]
+  },
+  {
+    "file": "Tintin_Endocrine.pdf",
+    "source_key": "tintin-endocrine",
+    "title": "Tintinalli - Endocrine Emergencies",
+    "tags": ["endocrine", "diabetes", "dka", "diabetic-ketoacidosis", "hhs", "thyroid", "thyroid-storm", "myxedema", "adrenal", "adrenal-crisis", "addisonian-crisis", "hypoglycemia", "hyperglycemia", "pheochromocytoma"]
+  },
+  {
+    "file": "Tintin_ID.pdf",
+    "source_key": "tintin-id",
+    "title": "Tintinalli - Infectious Disease Emergencies",
+    "tags": ["infectious-disease", "sepsis", "septic-shock", "meningitis", "pneumonia", "hiv", "aids", "cellulitis", "abscess", "endocarditis", "necrotizing-fasciitis", "tetanus", "rabies", "tuberculosis", "fungal", "parasitic", "tick-borne", "malaria"]
+  },
+  {
+    "file": "Tintin_Renal_GU.pdf",
+    "source_key": "tintin-renal-gu",
+    "title": "Tintinalli - Renal & Genitourinary Emergencies",
+    "tags": ["renal", "genitourinary", "uti", "pyelonephritis", "kidney-stone", "nephrolithiasis", "aki", "acute-kidney-injury", "electrolyte", "hyperkalemia", "hyponatremia", "dialysis", "urinary-retention", "testicular-torsion", "hematuria", "rhabdomyolysis"]
+  },
+  {
+    "file": "Tintin_OBGYN.pdf",
+    "source_key": "tintin-obgyn",
+    "title": "Tintinalli - Obstetrics & Gynecology Emergencies",
+    "tags": ["obstetrics", "gynecology", "pregnancy", "ectopic-pregnancy", "preeclampsia", "eclampsia", "hellp", "emergency-delivery", "vaginal-bleeding", "miscarriage", "placental-abruption", "placenta-previa", "postpartum-hemorrhage", "ovarian-torsion", "pid"]
+  },
+  {
+    "file": "Tintin_Peds.pdf",
+    "source_key": "tintin-peds",
+    "title": "Tintinalli - Pediatric Emergencies",
+    "tags": ["pediatrics", "neonatal", "pediatric-emergency", "febrile-seizure", "pals", "pediatric-resuscitation", "child", "infant", "adolescent", "congenital", "pediatric-trauma", "croup", "bronchiolitis", "kawasaki", "intussusception", "pyloric-stenosis", "neonatal-resuscitation"]
+  },
+  {
+    "file": "Tintin_Heme_Onc.pdf",
+    "source_key": "tintin-heme-onc",
+    "title": "Tintinalli - Hematologic & Oncologic Emergencies",
+    "tags": ["hematology", "oncology", "anemia", "coagulopathy", "transfusion", "massive-transfusion", "sickle-cell", "leukemia", "lymphoma", "neutropenic-fever", "dic", "thrombocytopenia", "ttp", "hus", "hemophilia", "tumor-lysis", "anticoagulation-reversal"]
+  },
+  {
+    "file": "Tintin_Environmental Injuries.pdf",
+    "source_key": "tintin-environmental-injuries",
+    "title": "Tintinalli - Environmental Injuries",
+    "tags": ["environmental", "hypothermia", "hyperthermia", "heat-stroke", "heat-exhaustion", "drowning", "submersion", "altitude-sickness", "diving", "decompression-sickness", "envenomation", "snake-bite", "marine-envenomation", "lightning", "frostbite", "radiation-injury", "burns"]
+  },
+  {
+    "file": "Tintin_Derm.pdf",
+    "source_key": "tintin-dermatology",
+    "title": "Tintinalli - Dermatologic Emergencies",
+    "tags": ["dermatology", "skin", "rash", "cellulitis", "abscess", "urticaria", "anaphylaxis", "stevens-johnson-syndrome", "toxic-epidermal-necrolysis", "pemphigus", "erythema-multiforme", "drug-reaction", "petechiae", "purpura"]
+  },
+  {
+    "file": "Tintin_EENT.pdf",
+    "source_key": "tintin-eent",
+    "title": "Tintinalli - Eye, Ear, Nose, Throat & Dental",
+    "tags": ["eent", "ophthalmology", "ent", "eye-emergency", "ear-emergency", "dental-emergency", "throat", "sinusitis", "epistaxis", "glaucoma", "retinal-detachment", "otitis", "peritonsillar-abscess", "ludwig-angina", "orbital-cellulitis", "globe-rupture", "chemical-eye-burn"]
+  },
+  {
+    "file": "Tintin_Ortho.pdf",
+    "source_key": "tintin-ortho",
+    "title": "Tintinalli - Orthopedic Emergencies",
+    "tags": ["orthopedics", "fracture", "dislocation", "splinting", "reduction", "joint-injury", "spine-fracture", "pelvic-fracture", "extremity-fracture", "hand-injury", "foot-injury", "compartment-syndrome", "open-fracture", "salter-harris"]
+  },
+  {
+    "file": "Tintin_MSK.pdf",
+    "source_key": "tintin-msk",
+    "title": "Tintinalli - Musculoskeletal (Non-Traumatic)",
+    "tags": ["musculoskeletal", "arthritis", "septic-arthritis", "gout", "pseudogout", "back-pain", "cauda-equina", "tendinopathy", "bursitis", "myopathy", "rhabdomyolysis", "compartment-syndrome", "rheumatologic", "lupus", "vasculitis"]
+  },
+  {
+    "file": "Tintin_Wound Management.pdf",
+    "source_key": "tintin-wound-management",
+    "title": "Tintinalli - Wound Management",
+    "tags": ["wound", "laceration", "suture", "wound-closure", "tetanus-prophylaxis", "bite-wound", "wound-infection", "foreign-body", "burn-wound", "skin-adhesive", "staple", "debridement", "irrigation"]
+  },
+  {
+    "file": "Tintin_Analgesia_Anesthesia_Procedural Sedation.pdf",
+    "source_key": "tintin-analgesia-anesthesia",
+    "title": "Tintinalli - Analgesia, Anesthesia & Procedural Sedation",
+    "tags": ["analgesia", "anesthesia", "procedural-sedation", "pain-management", "sedation", "regional-anesthesia", "local-anesthetic", "nerve-block", "ketamine", "propofol", "opioid-analgesia", "non-opioid-analgesia"]
+  },
+  {
+    "file": "Tintin_Psychosocial.pdf",
+    "source_key": "tintin-psychosocial",
+    "title": "Tintinalli - Psychosocial Emergencies",
+    "tags": ["psychiatry", "psychosocial", "suicidal-ideation", "suicide", "behavioral-emergency", "agitation", "substance-abuse", "alcohol-withdrawal", "opioid-overdose", "withdrawal", "psychosis", "depression", "anxiety", "involuntary-hold", "chemical-restraint"]
+  },
+  {
+    "file": "Tintin_Prehospital Care.pdf",
+    "source_key": "tintin-prehospital-care",
+    "title": "Tintinalli - Prehospital Care",
+    "tags": ["prehospital", "ems", "field-triage", "transport", "stabilization", "paramedic", "ambulance", "start-triage", "mass-casualty", "air-medical"]
+  },
+  {
+    "file": "Tintin_Disaster Management.pdf",
+    "source_key": "tintin-disaster-management",
+    "title": "Tintinalli - Disaster Management",
+    "tags": ["disaster", "mass-casualty-incident", "triage", "hazmat", "bioterrorism", "cbrn", "chemical-exposure", "incident-command", "decontamination", "blast-injury", "radiation-exposure"]
+  },
+  {
+    "file": "Tintin_Assult_Abuse.pdf",
+    "source_key": "tintin-assault-abuse",
+    "title": "Tintinalli - Assault & Abuse",
+    "tags": ["assault", "abuse", "domestic-violence", "child-abuse", "elder-abuse", "sexual-assault", "forensic-examination", "intimate-partner-violence", "human-trafficking", "mandatory-reporting"]
+  },
+  {
+    "file": "Tintin_Special Situations.pdf",
+    "source_key": "tintin-special-situations",
+    "title": "Tintinalli - Special Situations",
+    "tags": ["special-situations", "geriatric-emergency", "bariatric", "disabled", "palliative-care", "end-of-life", "chronic-pain", "implanted-devices", "transplant", "dialysis-patient", "pregnant-trauma"]
+  }
+]

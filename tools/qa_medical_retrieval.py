@@ -16,22 +16,39 @@ from tools.ingest_medical_knowledge import embed_text, require_settings, rpc, se
 
 
 DEFAULT_CASES = [
-    {
-        "query": "DKA insulin potassium fluids anion gap beta hydroxybutyrate",
-        "expected_source": "tintin-endocrine",
-    },
-    {
-        "query": "thyroid storm treatment beta blocker propylthiouracil iodine glucocorticoids",
-        "expected_source": "tintin-endocrine",
-    },
-    {
-        "query": "myxedema coma hypothermia hyponatremia hydrocortisone levothyroxine",
-        "expected_source": "tintin-endocrine",
-    },
-    {
-        "query": "adrenal crisis emergency hydrocortisone dextrose saline hyperkalemia",
-        "expected_source": "tintin-endocrine",
-    },
+    {"query": "DKA insulin potassium fluids anion gap beta hydroxybutyrate", "expected_source": "tintin-endocrine"},
+    {"query": "thyroid storm treatment beta blocker propylthiouracil iodine glucocorticoids", "expected_source": "tintin-endocrine"},
+    {"query": "adrenal crisis emergency hydrocortisone dextrose saline hyperkalemia", "expected_source": "tintin-endocrine"},
+    {"query": "ATLS primary survey airway breathing circulation hemorrhage control", "expected_source": "tintin-trauma"},
+    {"query": "blunt abdominal trauma FAST exam spleen laceration exploratory laparotomy", "expected_source": "tintin-trauma"},
+    {"query": "penetrating chest wound hemothorax chest tube thoracotomy", "expected_source": "tintin-trauma"},
+    {"query": "ACLS cardiac arrest pulseless ventricular tachycardia defibrillation epinephrine", "expected_source": "tintin-resuscitation"},
+    {"query": "hemorrhagic shock massive transfusion protocol permissive hypotension", "expected_source": "tintin-resuscitation"},
+    {"query": "STEMI acute myocardial infarction troponin PCI thrombolytics", "expected_source": "tintin-cardiovascular"},
+    {"query": "atrial fibrillation rate control rhythm control anticoagulation", "expected_source": "tintin-cardiovascular"},
+    {"query": "asthma exacerbation albuterol ipratropium magnesium intubation", "expected_source": "tintin-pulm"},
+    {"query": "pulmonary embolism d-dimer CT angiography heparin thrombolysis", "expected_source": "tintin-pulm"},
+    {"query": "sepsis septic shock lactate broad spectrum antibiotics fluid resuscitation", "expected_source": "tintin-id"},
+    {"query": "bacterial meningitis lumbar puncture empiric antibiotics dexamethasone", "expected_source": "tintin-id"},
+    {"query": "acute ischemic stroke tPA thrombolysis NIHSS door to needle time", "expected_source": "tintin-neuro"},
+    {"query": "status epilepticus benzodiazepine lorazepam phenytoin refractory seizure", "expected_source": "tintin-neuro"},
+    {"query": "upper GI bleed melena hematemesis PPI octreotide endoscopy", "expected_source": "tintin-gi"},
+    {"query": "acute pancreatitis lipase Ranson criteria NPO IV fluids", "expected_source": "tintin-gi"},
+    {"query": "ectopic pregnancy beta hCG transvaginal ultrasound methotrexate ruptured", "expected_source": "tintin-obgyn"},
+    {"query": "preeclampsia magnesium sulfate delivery blood pressure proteinuria", "expected_source": "tintin-obgyn"},
+    {"query": "hyperkalemia ECG changes calcium gluconate insulin kayexalate dialysis", "expected_source": "tintin-renal-gu"},
+    {"query": "testicular torsion acute scrotum doppler salvage detorsion orchiopexy", "expected_source": "tintin-renal-gu"},
+    {"query": "pediatric febrile seizure child fever management evaluation", "expected_source": "tintin-peds"},
+    {"query": "sickle cell crisis vaso-occlusive pain acute chest syndrome transfusion", "expected_source": "tintin-heme-onc"},
+    {"query": "hypothermia rewarming active core frostbite cold exposure", "expected_source": "tintin-environmental-injuries"},
+    {"query": "snake bite envenomation antivenom crotalidae wound management", "expected_source": "tintin-environmental-injuries"},
+    {"query": "hip fracture dislocation femoral neck reduction splint", "expected_source": "tintin-ortho"},
+    {"query": "procedural sedation ketamine propofol fasting guidelines monitoring", "expected_source": "tintin-analgesia-anesthesia"},
+    {"query": "laceration repair suture technique wound closure irrigation", "expected_source": "tintin-wound-management"},
+    {"query": "rapid sequence intubation RSI cricothyrotomy surgical airway", "expected_source": "tintin-resuscitation-procedures"},
+    {"query": "suicidal ideation risk assessment safety plan psychiatric hold", "expected_source": "tintin-psychosocial"},
+    {"query": "retinal detachment acute vision loss globe rupture chemical burn eye", "expected_source": "tintin-eent"},
+    {"query": "Stevens-Johnson syndrome toxic epidermal necrolysis drug reaction mucocutaneous", "expected_source": "tintin-dermatology"},
 ]
 
 

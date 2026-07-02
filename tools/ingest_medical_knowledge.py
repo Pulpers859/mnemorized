@@ -5,6 +5,7 @@ import fnmatch
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Iterable
 
@@ -19,6 +20,16 @@ from backend.app.config import Settings, get_settings  # noqa: E402
 
 
 OPENAI_EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
+EMBED_BATCH_SIZE = 80
+
+_SECTION_RE = re.compile(
+    r"^(?:"
+    r"[A-Z][A-Z\s,&\-/]{4,80}$"
+    r"|(?:CHAPTER|SECTION)\s+\d+[:\s]"
+    r"|(?:TABLE|FIGURE)\s+\d+"
+    r")",
+    re.MULTILINE,
+)
 
 
 def slugify(value: str) -> str:
@@ -32,6 +43,16 @@ def estimate_tokens(text: str) -> int:
 
 def serialize_vector(values: list[float]) -> str:
     return json.dumps([round(float(value), 8) for value in values], separators=(",", ":"))
+
+
+def detect_section_title(text: str) -> str | None:
+    for line in text.split("\n")[:5]:
+        line = line.strip()
+        if not line or len(line) < 5 or len(line) > 120:
+            continue
+        if _SECTION_RE.match(line):
+            return line
+    return None
 
 
 def iter_pdf_pages(path: Path) -> Iterable[tuple[int, str]]:
@@ -52,8 +73,13 @@ def iter_chunks(
     page_start: int | None = None
     page_end: int | None = None
     chunk_index = 0
+    current_section: str | None = None
 
     for page_number, page_text in pages:
+        section = detect_section_title(page_text)
+        if section:
+            current_section = section
+
         paragraphs = [part.strip() for part in re.split(r"\n{2,}", page_text) if part.strip()]
         if not paragraphs:
             paragraphs = [page_text]
@@ -66,6 +92,7 @@ def iter_chunks(
                     "chunk_index": chunk_index,
                     "page_start": page_start,
                     "page_end": page_end,
+                    "section_title": current_section,
                     "chunk_text": text,
                     "token_estimate": estimate_tokens(text),
                 }
@@ -85,6 +112,7 @@ def iter_chunks(
             "chunk_index": chunk_index,
             "page_start": page_start,
             "page_end": page_end,
+            "section_title": current_section,
             "chunk_text": text,
             "token_estimate": estimate_tokens(text),
         }
@@ -128,9 +156,17 @@ def rpc(
 
 
 def embed_text(client: httpx.Client, settings: Settings, text: str) -> list[float]:
+    return embed_batch(client, settings, [text])[0]
+
+
+def embed_batch(
+    client: httpx.Client,
+    settings: Settings,
+    texts: list[str],
+) -> list[list[float]]:
     payload: dict[str, object] = {
         "model": settings.openai_embedding_model,
-        "input": text,
+        "input": texts,
     }
     if settings.openai_embedding_dimensions > 0:
         payload["dimensions"] = settings.openai_embedding_dimensions
@@ -142,17 +178,17 @@ def embed_text(client: httpx.Client, settings: Settings, text: str) -> list[floa
             "Content-Type": "application/json",
         },
         json=payload,
-        timeout=60.0,
+        timeout=120.0,
     )
     if response.status_code >= 400:
         raise RuntimeError(f"OpenAI embedding failed: {response.status_code} {response.text[:500]}")
 
     body = response.json()
     data = body.get("data")
-    embedding = data[0].get("embedding") if isinstance(data, list) and data else None
-    if not isinstance(embedding, list) or not embedding:
-        raise RuntimeError("OpenAI embedding response did not include an embedding vector.")
-    return [float(value) for value in embedding]
+    if not isinstance(data, list) or len(data) != len(texts):
+        raise RuntimeError(f"OpenAI returned {len(data) if data else 0} embeddings for {len(texts)} inputs.")
+    data.sort(key=lambda d: d.get("index", 0))
+    return [[float(v) for v in item["embedding"]] for item in data]
 
 
 def ingest_pdf(
@@ -163,53 +199,69 @@ def ingest_pdf(
     chunk_chars: int,
     limit_chunks: int | None,
     dry_run: bool,
+    source_key: str | None = None,
+    title: str | None = None,
+    tags: list[str] | None = None,
 ) -> int:
-    source_key = slugify(path.stem)
+    source_key = source_key or slugify(path.stem)
+    title = title or path.stem.replace("_", " ")
     chunks = list(iter_chunks(iter_pdf_pages(path), chunk_chars=chunk_chars))
     if limit_chunks is not None:
         chunks = chunks[:limit_chunks]
 
-    print(f"{path.name}: {len(chunks)} chunk(s)")
+    print(f"  {path.name}: {len(chunks)} chunk(s), key={source_key}")
     if dry_run:
         return len(chunks)
 
-    rpc(
-        client,
-        settings,
-        "upsert_medical_source",
-        {
-            "p_source_key": source_key,
-            "p_title": path.stem.replace("_", " "),
-            "p_source_path": path.name,
-            "p_metadata": {
-                "file_name": path.name,
-                "file_size_bytes": path.stat().st_size,
-                "ingestion_tool": "tools/ingest_medical_knowledge.py",
-            },
-        },
-    )
+    source_meta: dict[str, object] = {
+        "file_name": path.name,
+        "file_size_bytes": path.stat().st_size,
+        "ingestion_tool": "tools/ingest_medical_knowledge.py",
+    }
+    if tags:
+        source_meta["tags"] = tags
 
-    for chunk in chunks:
-        embedding = embed_text(client, settings, str(chunk["chunk_text"]))
-        rpc(
-            client,
-            settings,
-            "upsert_medical_knowledge_chunk",
-            {
+    rpc(client, settings, "upsert_medical_source", {
+        "p_source_key": source_key,
+        "p_title": title,
+        "p_source_path": path.name,
+        "p_metadata": source_meta,
+    })
+
+    for batch_start in range(0, len(chunks), EMBED_BATCH_SIZE):
+        batch = chunks[batch_start : batch_start + EMBED_BATCH_SIZE]
+        texts = [str(c["chunk_text"]) for c in batch]
+        t0 = time.time()
+        embeddings = embed_batch(client, settings, texts)
+        dt = time.time() - t0
+        print(f"    embedded {len(batch)} chunks in {dt:.1f}s (batch {batch_start // EMBED_BATCH_SIZE + 1})")
+
+        for chunk, embedding in zip(batch, embeddings):
+            rpc(client, settings, "upsert_medical_knowledge_chunk", {
                 "p_source_key": source_key,
                 "p_chunk_index": chunk["chunk_index"],
                 "p_page_start": chunk["page_start"],
                 "p_page_end": chunk["page_end"],
-                "p_section_title": None,
+                "p_section_title": chunk.get("section_title"),
                 "p_chunk_text": chunk["chunk_text"],
                 "p_token_estimate": chunk["token_estimate"],
                 "p_embedding": serialize_vector(embedding),
                 "p_metadata": {"file_name": path.name},
-            },
-        )
-        print(f"  upserted chunk {chunk['chunk_index']} pages {chunk['page_start']}-{chunk['page_end']}")
+            })
+        print(f"    upserted chunks {batch_start}-{batch_start + len(batch) - 1}")
 
     return len(chunks)
+
+
+def load_manifest(manifest_path: Path) -> list[dict[str, object]]:
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if not isinstance(data, list):
+        raise SystemExit("Manifest must be a JSON array.")
+    for entry in data:
+        for key in ("file", "source_key", "title", "tags"):
+            if key not in entry:
+                raise SystemExit(f"Manifest entry missing required key '{key}': {entry}")
+    return data
 
 
 def main() -> int:
@@ -217,6 +269,8 @@ def main() -> int:
     source = parser.add_mutually_exclusive_group(required=True)
     source.add_argument("--source-dir", type=Path, help="Directory containing source PDFs.")
     source.add_argument("--source-file", type=Path, help="One PDF file to ingest.")
+    source.add_argument("--manifest", type=Path, help="JSON manifest with source_key, title, tags per PDF.")
+    parser.add_argument("--manifest-dir", type=Path, default=None, help="PDF directory (required with --manifest).")
     parser.add_argument("--include", default=None, help="Optional filename glob when using --source-dir, e.g. '*Endocrine*'.")
     parser.add_argument("--limit-files", type=int, default=None, help="Optional number of PDFs to process.")
     parser.add_argument("--limit-chunks", type=int, default=None, help="Optional chunks per PDF for smoke tests.")
@@ -229,6 +283,13 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    if args.manifest:
+        if not args.manifest.exists():
+            raise SystemExit(f"Manifest not found: {args.manifest}")
+        if not args.manifest_dir:
+            raise SystemExit("--manifest-dir is required when using --manifest.")
+        if not args.manifest_dir.exists():
+            raise SystemExit(f"Manifest directory not found: {args.manifest_dir}")
     if args.source_file and not args.source_file.exists():
         raise SystemExit(f"Source file not found: {args.source_file}")
     if args.source_file and args.source_file.suffix.lower() != ".pdf":
@@ -247,6 +308,33 @@ def main() -> int:
     if not args.dry_run:
         require_settings(settings)
 
+    if args.manifest:
+        manifest = load_manifest(args.manifest)
+        if args.limit_files is not None:
+            manifest = manifest[: args.limit_files]
+        print(f"Manifest: {len(manifest)} sources from {args.manifest.name}")
+        total_chunks = 0
+        t_start = time.time()
+        with httpx.Client() as client:
+            for i, entry in enumerate(manifest, 1):
+                pdf_path = args.manifest_dir / entry["file"]
+                if not pdf_path.exists():
+                    print(f"  [{i}/{len(manifest)}] SKIP (not found): {entry['file']}")
+                    continue
+                print(f"  [{i}/{len(manifest)}] {entry['title']}")
+                total_chunks += ingest_pdf(
+                    client, settings, pdf_path,
+                    chunk_chars=args.chunk_chars,
+                    limit_chunks=args.limit_chunks,
+                    dry_run=args.dry_run,
+                    source_key=entry["source_key"],
+                    title=entry["title"],
+                    tags=entry["tags"],
+                )
+        elapsed = time.time() - t_start
+        print(f"\nDone. {len(manifest)} sources, {total_chunks} chunks, {elapsed:.0f}s elapsed.")
+        return 0
+
     if args.source_file:
         pdfs = [args.source_file]
     else:
@@ -262,9 +350,7 @@ def main() -> int:
     with httpx.Client() as client:
         for pdf in pdfs:
             total_chunks += ingest_pdf(
-                client,
-                settings,
-                pdf,
+                client, settings, pdf,
                 chunk_chars=args.chunk_chars,
                 limit_chunks=args.limit_chunks,
                 dry_run=args.dry_run,
