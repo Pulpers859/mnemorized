@@ -659,20 +659,19 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
 
     assert "VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT" in pipeline
-    assert "Do NOT make anchors label-first" in pipeline
-    assert "sound-alike hook" in pipeline
-    assert "look-alike hook" in pipeline
-    assert "meaning hook" in pipeline
-    assert "contrast hook" in pipeline
-    assert "spatial hook" in pipeline
-    assert "The label confirms the cue; it must not carry the whole memory." in pipeline
-    assert "Do not copy existing proprietary sketches; invent original cues." in pipeline
-    assert "Avoid weak anchors: plain checklist, generic poster, ordinary clipboard" in pipeline
-    assert "Each anchor must have a \"why this image works\" link in the narration" in pipeline
-    assert "For mechanisms, show physical causality" in pipeline
-    assert "For adverse effects and contraindications, show visible consequences" in pipeline
-    assert "For thresholds and algorithms, make the spatial path do the work" in pipeline
-    assert "One supporting prop is allowed only if it visually explains the fact." in pipeline
+    assert "ENCODING HIERARCHY" in pipeline
+    assert "SOUND-ALIKE (strongest)" in pipeline
+    assert "LOOK-ALIKE" in pipeline
+    assert "FUNCTIONAL ANALOGY" in pipeline
+    assert "CONTRAST/THRESHOLD" in pipeline
+    assert "SPATIAL" in pipeline
+    assert "LABELED TEXT (weakest — LAST RESORT)" in pipeline
+    assert "SILHOUETTE TEST" in pipeline
+    assert "CHARACTER DESIGN (encouraged)" in pipeline
+    assert "OBJECT INTERACTION = CLINICAL RELATIONSHIP" in pipeline
+    assert "Plain checklists, generic posters, ordinary clipboards" in pipeline
+    assert "silhouette test" in pipeline
+    assert "HOOK:" in pipeline
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:

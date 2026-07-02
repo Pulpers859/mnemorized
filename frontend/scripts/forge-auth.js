@@ -166,7 +166,7 @@ function renderStoryData(storyData) {
 
   document.getElementById('vo-body').innerHTML = (storyData.voLines || []).map(v => `
     <tr>
-      <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
+      <td><span class="row-num">${v.n}</span>${v.hook ? `<div class="hook-tag">${escapeHtml(v.hook)}</div>` : ''}${formatNarrationHtml(v.narration)}</td>
       <td>${escapeHtml(v.visual || '')}</td>
       <td class="encodes-cell">${escapeHtml(v.anchor || '')}</td>
     </tr>`).join('');
@@ -229,7 +229,7 @@ function parseStoryXml(text) {
   const voLines = voRaw.map((block, index) => {
     const getField = (label) => {
       const re = new RegExp(
-        `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:NARRATION|VISUAL|ANCHOR):|$)`,
+        `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:HOOK|NARRATION|VISUAL|ANCHOR):|$)`,
         'i'
       );
       const match = block.match(re);
@@ -238,6 +238,7 @@ function parseStoryXml(text) {
     };
     return {
       n: index + 1,
+      hook: getField('HOOK'),
       narration: getField('NARRATION'),
       visual: getField('VISUAL'),
       anchor: getField('ANCHOR'),
@@ -279,7 +280,7 @@ function validateStoryData(storyData) {
     if (!line.anchor) fatal.push(`${label} is missing ANCHOR.`);
 
     const visualWordCount = countWords(line.visual);
-    if (visualWordCount > 20) warnings.push(`${label} visual is ${visualWordCount} words; target is 20 or fewer.`);
+    if (visualWordCount > 30) warnings.push(`${label} visual is ${visualWordCount} words; target is 30 or fewer.`);
 
     const anchorWordCount = countWords(line.anchor);
     if (anchorWordCount > 35) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);
@@ -404,7 +405,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
     const res = await claudeFetch({
       model: CLAUDE_MODEL,
       max_tokens: 4096,
-      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain NARRATION, VISUAL, and ANCHOR fields.`,
+      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text.`,
       messages: [{
         role: 'user',
         content: `Clinical topic: ${topic}

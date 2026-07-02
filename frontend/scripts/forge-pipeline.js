@@ -97,62 +97,72 @@ const DEMO_DATA = {
   voLines: [
     {
       n: 1,
-      narration: 'Take a look at the neon sign above the entrance. You can see three numbers glowing in red: 250, 7.3, and 18. These are your DKA diagnostic thresholds — glucose above 250, pH below 7.3, and bicarb below 18. Notice how the sign also shows the word "GAP" buzzing in and out. That\'s your anion gap metabolic acidosis. All three need to be present. Get it? Three numbers on the sign, three criteria for the diagnosis.',
-      visual: 'A flickering neon bar sign above the entrance displaying "250 | 7.3 | 18" in red with the word "GAP" buzzing intermittently below — three glowing diagnostic thresholds',
+      hook: 'look-alike — three-pronged trident shape encodes the diagnostic triad',
+      narration: 'Take a look at the trident mounted above the entrance — three prongs, each with a number etched into the metal: 250, 7.3, and 18. Three prongs, three criteria. Get it? Glucose above 250, pH below 7.3, bicarb below 18. And notice the gap in the wall right behind it — a literal gap in the brickwork. That\'s your anion gap metabolic acidosis. All three prongs plus the gap equals DKA.',
+      visual: 'Trident mounted above entrance with numbers 250, 7.3, 18 on each prong, a visible gap in the brick wall behind it',
       anchor: 'DKA diagnostic triad: glucose >250 mg/dL, pH <7.3, bicarb <18 mEq/L, plus anion gap metabolic acidosis'
     },
     {
       n: 2,
-      narration: 'Now look at the bartender — our attending — pouring from a massive jug labeled "NS" into two enormous pint glasses. Notice the clock on the wall behind them reads "HOUR 1" and the glasses are marked "1L" each. That\'s your initial fluid resuscitation: 1 to 2 liters of normal saline bolused in the first hour. Fluids come first in DKA. Before insulin, before anything else. The body is profoundly volume depleted — sometimes 6 to 9 liters down.',
-      visual: 'The bartender (ER attending in scrubs) pouring from a giant jug labeled "NS" into two oversized pint glasses each marked "1L", with a wall clock showing "HOUR 1" behind them',
+      hook: 'functional — bartender pouring fluid mirrors IV fluid resuscitation, two giant glasses = 1-2L bolus',
+      narration: 'Now look at the bartender — pouring from a massive jug labeled "NS" into two enormous pint glasses. The clock on the wall behind them reads "HOUR 1" and the glasses are marked "1L" each. That\'s your initial fluid resuscitation: 1 to 2 liters of normal saline bolused in the first hour. Fluids come first in DKA. Before insulin, before anything else. The body is profoundly volume depleted — sometimes 6 to 9 liters down.',
+      visual: 'Bartender pouring from giant "NS" jug into two oversized 1L pint glasses, wall clock showing "HOUR 1"',
       anchor: 'Initial fluid resuscitation: 1-2L normal saline bolus in the first hour; fluids before insulin; patients are 6-9L volume depleted'
     },
     {
       n: 3,
-      narration: 'Over on the left side of the bar, notice the shelf of smaller bottles. There\'s a bottle labeled "D5 ½NS" with a sticky note that says "WHEN GLUCOSE < 200." This is your fluid switch point. Once the blood glucose drops below 200, you don\'t stop fluids — you switch to dextrose-containing fluids. This prevents hypoglycemia while you keep the insulin drip running to close the anion gap. The gap is what matters, not the glucose number.',
-      visual: 'A bar shelf on the left holding a bottle labeled "D5 ½NS" with a prominent sticky note reading "WHEN GLUCOSE < 200" in red marker — the fluid switch point',
+      hook: 'contrast — full bottle vs empty bottle at a threshold line encodes the fluid switch point at glucose 200',
+      narration: 'Over on the left side of the bar, notice two bottles on a shelf with a line drawn between them at "200." Above the line, a full NS bottle. Below, a bottle of D5 half-NS. This is your fluid switch point. Once glucose drops below 200, don\'t stop fluids — switch to dextrose-containing fluids. This prevents hypoglycemia while you keep the insulin drip running to close the anion gap.',
+      visual: 'Two bottles on left shelf divided by a line marked "200" — NS bottle above, D5 half-NS below the threshold',
       anchor: 'Switch to D5 ½NS when glucose <200 mg/dL — continue insulin to close anion gap, add dextrose to prevent hypoglycemia'
     },
     {
       n: 4,
-      narration: 'Right here behind the bar, look at the IV pump mounted on the central pole. The rate display reads "0.1 units/kg/hr" and there\'s a big red sticker that says "NO BOLUS." That\'s your insulin drip protocol. You start at 0.1 to 0.14 units per kg per hour — continuous infusion, no bolus. The bolus was removed from modern protocols because it increases hypoglycemia and hypokalemia risk without improving outcomes. Just the drip.',
-      visual: 'An IV pump mounted on a central pole displaying "0.1 units/kg/hr" with a large red circular sticker reading "NO BOLUS" — the insulin drip protocol station',
+      hook: 'functional — slow dripping tap mirrors continuous insulin drip; a smashed shot glass = no bolus',
+      narration: 'Right here behind the bar, see the beer tap dripping slowly and steadily — "0.1 u/kg/hr" engraved on the handle. And on the floor below it, a smashed shot glass with a red X painted over it. That\'s your insulin protocol: slow continuous drip only, no bolus shot. The bolus was removed from modern protocols because it increases hypoglycemia and hypokalemia risk without improving outcomes. Just the drip, never the shot.',
+      visual: 'Beer tap dripping steadily with "0.1" on handle, smashed shot glass with red X on the floor below it',
       anchor: 'Insulin drip: 0.1-0.14 units/kg/hr continuous infusion; do NOT give insulin bolus — increases hypoglycemia and hypokalemia risk'
     },
     {
       n: 5,
-      narration: 'Now this is critical — look at the three potassium bottles lined up on the right side of the bar. They\'re color-coded like a traffic light. The red one says "K < 3.3 — HOLD INSULIN." The yellow one says "K 3.3-5.3 — add 20-40 mEq/L." The green one says "K > 5.3 — recheck in 2 hrs." This is the single most dangerous part of DKA management. If you start insulin when potassium is below 3.3, you will drive it further down and cause fatal arrhythmias. Always check potassium before starting the drip.',
-      visual: 'Three potassium bottles on the right bar shelf, traffic-light colored: RED labeled "K<3.3 HOLD INSULIN", YELLOW labeled "K 3.3-5.3 Add 20-40mEq", GREEN labeled "K>5.3 Recheck 2hr" — the potassium decision tree',
+      hook: 'contrast — traffic light color coding (red/yellow/green) encodes three potassium thresholds and actions',
+      narration: 'Now this is critical — look at the three bottles on the right side of the bar, color-coded like a traffic light. The red one has a STOP hand on it — K below 3.3, hold insulin. The yellow one shows a slow-pour — K 3.3 to 5.3, add 20-40 mEq. The green one just says "recheck." If you start insulin when potassium is below 3.3, you will drive it further down and cause fatal arrhythmias. Always check potassium before starting the drip.',
+      visual: 'Three traffic-light colored bottles on right shelf: red with STOP hand, yellow with slow-pour, green with checkmark',
       anchor: 'Potassium protocol: K<3.3 = hold insulin and replete aggressively; K 3.3-5.3 = add 20-40 mEq/L to IVF; K>5.3 = recheck in 2 hours'
     },
     {
       n: 6,
-      narration: 'Finally, notice the chalkboard behind the bartender. At the top it says "CLOSING TIME" and underneath there\'s a drawing of an anion gap graph trending downward — NOT a glucose graph. This is how you know DKA is resolving. You follow the anion gap, not the glucose. The glucose will normalize first, but if the gap is still open, the patient is still in DKA. Resolution means: gap closed, pH above 7.3, bicarb above 18, and the patient can eat. Then you overlap subcutaneous insulin 2 hours before stopping the drip.',
-      visual: 'A large chalkboard behind the bar reading "CLOSING TIME" at the top with a hand-drawn anion gap graph trending down, the word "GLUCOSE" crossed out, and a checklist: "Gap closed ✓ pH>7.3 ✓ Bicarb>18 ✓ Eating ✓ → Overlap SQ 2hr"',
+      hook: 'functional — "CLOSING TIME" sign = resolution criteria; crossed-out glucose meter = follow the gap not glucose',
+      narration: 'Notice the chalkboard behind the bartender. At the top it says "CLOSING TIME" and underneath there\'s a hand-drawn gap in the board narrowing to a close — the anion gap closing. A glucose meter is crossed out with a big X. This is how you know DKA is resolving. You follow the gap, not glucose. Resolution means: gap closed, pH above 7.3, bicarb above 18, and the patient can eat. Then overlap subcutaneous insulin 2 hours before stopping the drip.',
+      visual: 'Chalkboard reading "CLOSING TIME" with a drawn gap narrowing shut, a crossed-out glucose meter beside it',
       anchor: 'Monitor anion gap (not glucose) for DKA resolution; resolution = gap closed + pH>7.3 + bicarb>18 + tolerating PO; overlap SQ insulin 2hr before stopping drip'
     },
     {
       n: 7,
-      narration: 'Now look at the jukebox in the far left corner. Instead of song titles, the playlist shows the 5 I\'s — Infection, Insulin noncompliance, Ischemia, Intoxication, and Iatrogenic. These are the five most common precipitants of DKA. The number one cause? Infection. Number two? Insulin noncompliance — the patient stopped taking their insulin. Every DKA workup should include a search for the trigger. Get it? The jukebox plays what started this whole episode.',
-      visual: 'A retro jukebox in the far left corner with a playlist display showing five song titles: "1. Infection", "2. Insulin Noncompliance", "3. Ischemia", "4. Intoxication", "5. Iatrogenic" — the 5 I\'s of DKA precipitants',
+      hook: 'sound-alike — jukebox with 5 song slots, each "I" title sounds like the precipitant',
+      narration: 'Look at the jukebox in the far left corner. Five song slots, each starting with "I" — Infection, Insulin noncompliance, Ischemia, Intoxication, and Iatrogenic. The top slot is lit up brightest because infection is the number one cause. Get it? Five I\'s on the jukebox, five precipitants of DKA. Every DKA workup should include a search for the trigger.',
+      visual: 'Retro jukebox in far left corner with 5 glowing song slots, top slot brightest, all titles start with "I"',
       anchor: 'DKA precipitants (5 I\'s): Infection (#1 cause), Insulin noncompliance (#2), Ischemia, Intoxication, Iatrogenic'
     },
     {
       n: 8,
-      narration: 'Over by the bathroom door, notice the sign that says "NO BICARB ZONE" with a pH threshold of 6.9 written below it. Here\'s the rule: do NOT give bicarbonate in DKA unless the pH is below 6.9. Above 6.9, the acidosis will correct itself once you close the anion gap with insulin and fluids. Giving bicarb when it\'s not needed can worsen hypokalemia and paradoxically worsen CNS acidosis. The only exception is that critical pH below 6.9 where cardiac function is at risk.',
-      visual: 'A bathroom door with a large prohibition-style sign reading "NO BICARB ZONE" and below it "Unless pH < 6.9" in red — the bicarbonate threshold rule',
+      hook: 'spatial — bathroom door blocked by a bouncer encodes "do not give bicarb"; the 6.9 on the bouncer\'s shirt = the only exception threshold',
+      narration: 'Over by the bathroom door, there\'s a bouncer blocking entry. On his shirt: "6.9." He won\'t let bicarb through unless the pH drops below that number. Do NOT give bicarbonate in DKA unless pH is below 6.9. Above that, acidosis self-corrects with insulin and fluids. Giving bicarb when it\'s not needed worsens hypokalemia and paradoxically worsens CNS acidosis.',
+      visual: 'Muscular bouncer blocking the bathroom door, "6.9" printed on his shirt, arms crossed in refusal',
       anchor: 'Do NOT give bicarbonate unless pH <6.9 — bicarb worsens hypokalemia and paradoxical CNS acidosis; acidosis self-corrects with insulin and fluids'
     },
     {
       n: 9,
-      narration: 'Take a look at the small VIP table in the foreground — there\'s a child-sized chair with a warning sign that says "SLOW DOWN" and a brain icon with swelling arrows. This is your cerebral edema warning. In pediatric DKA, overly aggressive fluid resuscitation or dropping the glucose too fast can cause fatal cerebral edema. The rule: don\'t drop glucose faster than 50 to 75 mg/dL per hour in kids. This is the number one cause of death in pediatric DKA — not the acidosis itself.',
-      visual: 'A small VIP table in the foreground with a child-sized chair, a warning placard reading "SLOW DOWN — 50-75/hr MAX" and a cartoon brain icon with red swelling arrows — the pediatric cerebral edema warning',
+      hook: 'contrast — tiny child-sized chair next to adult furniture encodes pediatric risk; swelling balloon-brain = cerebral edema',
+      narration: 'Take a look at the small VIP table in the foreground — a child-sized chair next to the adult furniture, with a balloon shaped like a brain slowly inflating above it. That\'s your cerebral edema warning. In pediatric DKA, dropping glucose too fast causes fatal brain swelling. The rule: don\'t drop glucose faster than 50 to 75 mg/dL per hour in kids. This is the number one cause of death in pediatric DKA.',
+      visual: 'Tiny child-sized chair at foreground VIP table, inflating balloon shaped like a brain hovering above it',
       anchor: 'Pediatric DKA: cerebral edema is #1 cause of death; do not drop glucose >50-75 mg/dL/hr; avoid overly aggressive fluid resuscitation in children'
     },
     {
       n: 10,
-      narration: 'Finally, check out the tip jar at the end of the bar. It\'s labeled "BHB > Urine Ketones" and there\'s a note taped to it that says "UA lies." This is a clinical pearl most people miss. Urine ketones measure acetoacetate, but in DKA the predominant ketone is beta-hydroxybutyrate. As the patient improves, BHB converts to acetoacetate — so urine ketones can actually increase as the patient gets better. That\'s why you follow the serum BHB or the anion gap, never the urine dipstick, to track resolution.',
-      visual: 'A glass tip jar at the far end of the bar labeled "BHB > Urine Ketones" with a sticky note reading "UA lies — ketones rise as patient improves" — the beta-hydroxybutyrate monitoring pearl',
+      hook: 'functional — tip jar overflowing upward (paradoxical rise) encodes how urine ketones rise during treatment',
+      narration: 'Finally, check out the tip jar at the end of the bar — it\'s overflowing upward, coins floating out the top like they\'re defying gravity. That\'s the paradox. Urine ketones measure acetoacetate, but in DKA the predominant ketone is beta-hydroxybutyrate. As the patient improves, BHB converts to acetoacetate — so urine ketones actually increase as the patient gets better. Follow serum BHB or the anion gap, never the urine dipstick.',
+      visual: 'Tip jar at bar\'s end overflowing upward with coins floating out, defying gravity — the paradoxical rise',
       anchor: 'Follow serum beta-hydroxybutyrate (BHB) or anion gap, NOT urine ketones — urine acetoacetate rises paradoxically during DKA treatment as BHB converts'
     }
   ],
@@ -230,11 +240,13 @@ function copyVoScript() {
   const lines = rows.map((row, i) => {
     const cells = row.querySelectorAll('td');
     const narClone = cells[0]?.cloneNode(true);
-    narClone?.querySelectorAll('.row-num').forEach(el => el.remove());
+    narClone?.querySelectorAll('.row-num, .hook-tag').forEach(el => el.remove());
+    const hookEl = cells[0]?.querySelector('.hook-tag');
+    const hook = hookEl?.textContent?.trim() || '';
     const narration = narClone?.innerText?.trim() || '';
     const visual    = cells[1]?.textContent?.trim() || '';
     const encodes   = cells[2]?.textContent?.trim() || '';
-    return `[${i+1}] NARRATION: ${narration}\n    VISUAL: ${visual}\n    ENCODES: ${encodes}`;
+    return `[${i+1}]${hook ? ` HOOK: ${hook}\n    ` : ' '}NARRATION: ${narration}\n    VISUAL: ${visual}\n    ENCODES: ${encodes}`;
   }).join('\n\n');
   const full = header + lines + '\n\n── RAPID REVIEW ──\n' + (document.getElementById('review-text')?.innerText || '');
   const btn = document.getElementById('copy-vo-btn');
@@ -588,14 +600,14 @@ Requirements:
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
       `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
-      `ONLY the ${n} medical anchor objects below should have visible labels or text. ` +
-      `Everything else in the scene is unlabeled background.\n\n` +
-      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
-      `Focus on making each object visually distinct and recognizable by its SHAPE and POSITION first, text second. ` +
+      `Background surfaces are unlabeled.\n\n` +
+      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
+      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present. ` +
-      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `All ${n} anchors must be present and visually distinct. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
@@ -657,7 +669,7 @@ async function runPipeline() {
 
     document.getElementById('vo-body').innerHTML = D.voLines.map(v => `
       <tr>
-        <td><span class="row-num">${v.n}</span>${formatNarrationHtml(v.narration)}</td>
+        <td><span class="row-num">${v.n}</span>${v.hook ? `<div class="hook-tag">${escapeHtml(v.hook)}</div>` : ''}${formatNarrationHtml(v.narration)}</td>
         <td>${escapeHtml(v.visual)}</td>
         <td class="encodes-cell">${escapeHtml(v.anchor)}</td>
       </tr>`).join('');
@@ -688,13 +700,14 @@ async function runPipeline() {
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
       `SCENE OBJECT RULE: Do NOT label or name any part of the room itself. ` +
-      `ONLY the ${n} medical anchor objects below should have visible labels or text.\n\n` +
-      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
-      `Focus on making each object visually distinct by SHAPE and POSITION first, text second. ` +
+      `Background surfaces are unlabeled.\n\n` +
+      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
+      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present. ` +
-      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `All ${n} anchors must be present and visually distinct. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
@@ -791,13 +804,13 @@ Output ONLY these two XML tags, nothing else:
   setStatus('story', '✦ Writing scene…', 'running');
   setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
-  const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is NO guide character in the scene — only objects, signs, and environmental elements.
+  const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is no narrator or tour-guide character — but MNEMONIC CHARACTERS (figures whose names, shapes, or actions encode medical facts) are encouraged. Think of how Sketchy Medical uses characters that ARE the concepts, not guides explaining them.
 
 SCENE SETTING — YOU CHOOSE:
-- Pick a setting that is THEMATICALLY CONNECTED to the medical topic and made of materials that render flat (wood, paper, brick, chalkboard, fabric, cork, cardboard)
-- BEST settings: bars, pubs, offices, classrooms, workshops, kitchens, libraries, old shops, speakeasies, market stalls, barber shops, diners
-- AVOID settings with: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
-- The setting should be clever and memorable — the connection between the setting and the topic should make the student smile or remember it more easily
+- The scene title MUST be a PHONETIC PUN or sound-alike for a key term in the medical topic. Examples: "Amino's Space Cantina" for aminopenicillins, "The Hemo Globe Tavern" for hemoglobin, "Aldo's Steakhouse" for aldosterone. The name should make the student laugh AND help them recall the topic.
+- Made of materials that render flat: wood, paper, brick, chalkboard, fabric, cork, cardboard, stone, ceramic
+- BEST settings: bars, pubs, workshops, kitchens, old shops, speakeasies, market stalls, barber shops, diners, courtrooms, train stations
+- AVOID: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
 
 NARRATION RULES — follow these exactly:
 1. Direct the viewer's attention to each element — use phrases like "notice", "take a look at", "you'll see", "over here", "right here"
@@ -825,34 +838,49 @@ COMPLETENESS — NON-NEGOTIABLE:
 - After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
 
 VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
-- Do NOT make anchors label-first. A labeled clipboard is weak unless the clipboard's shape, position, contents, and relationship to nearby objects encode the fact.
-- For each clinical fact, choose a memory hook BEFORE choosing the object:
-  1. sound-alike hook: a word or abbreviation sounds like a concrete object
-  2. look-alike hook: a number, symbol, organ, drug, or bug resembles a physical shape
-  3. meaning hook: the object's real-world function mirrors the clinical concept
-  4. contrast hook: two opposing objects show a threshold, contraindication, or decision split
-  5. spatial hook: left/right/up/down/door/exit/locked area encodes sequence, escalation, or disposition
-- Great anchors should still be recognizable if the label vanished. The label confirms the cue; it must not carry the whole memory.
-- Prefer absurd, concrete, tactile objects over generic documents: broken locks, overflowing buckets, scales, traps, warning gates, split roads, clocks, masks, melting ice, shrinking doors, heavy chains, color-coded jars, tipped scales, blocked chimneys.
-- Use visual relationships: one object blocking another, a tiny object dwarfed by a giant one, two objects chained together, a threshold gate, a before/after pair, or a danger object isolated in a corner.
-- When encoding drug/bug-style facts, think like high-quality Sketchy/Pixorize: recurring concrete symbols, puns, shape cues, and a cohesive scene where each symbol has a job. Do not copy existing proprietary sketches; invent original cues.
-- Avoid weak anchors: plain checklist, generic poster, ordinary clipboard, unlabeled bottle, or any object whose only mnemonic value is text printed on it.
-- Each anchor must have a "why this image works" link in the narration: say whether the cue sounds like, looks like, acts like, blocks, opens, spills, shrinks, speeds up, slows down, or warns about the clinical fact.
-- For mechanisms, show physical causality: a key opening a lock, a cork blocking a pipe, a valve widening, a guard stopping entry, a scale tipping, a timer expiring, a bucket overflowing.
-- For adverse effects and contraindications, show visible consequences: slipping, spilling, alarms, cracked objects, warning tape, isolated danger zones, or damaged props.
-- For thresholds and algorithms, make the spatial path do the work: gates, stairs, split roads, checkpoints, stop signs, exit doors, before/after stations, or escalating shelves.
-- Use one primary cue per anchor plus one supporting prop only when the relationship itself teaches the fact. Do not create clutter.
+These principles come from studying Sketchy Medical and Pixorize. The goal: a student recalls the medical fact from the SHAPE and IDENTITY of the object alone, even with ALL text removed.
+
+ENCODING HIERARCHY — try each level in order, use the FIRST that fits:
+1. SOUND-ALIKE (strongest): Object or character NAME sounds like the medical term. "Ant" → Anthonisen. "Van" → vancomycin. A chef named "Aldo" → aldosterone. A hippo → hippocampus. Phonetic puns are the most powerful and most memorable encoding.
+2. LOOK-ALIKE: Object SHAPE mirrors a number, symbol, organ, or process. Fork with 3 prongs → triad. Cracked wall → inhibition. Y-shaped branch → antibody. A figure-8 knot → chromosome 8.
+3. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
+4. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
+5. SPATIAL: POSITION encodes meaning. Escalation goes up (stairs, shelves). Sequence goes left-to-right. Danger is isolated behind barriers. Exit/door = discharge criteria. Basement = last-resort therapy.
+6. LABELED TEXT (weakest — LAST RESORT): A sign or tag with 1-3 words. If you resort to this, the anchor is weak. Go back and try levels 1-5 harder.
+
+CHARACTER DESIGN (encouraged):
+- Mnemonic characters are figures whose NAME, APPEARANCE, or ACTION encodes a concept — they are NOT narrators
+- A character's name should SOUND LIKE the medical term (e.g., a bartender named "Pred" for prednisone)
+- Clothing, size, color, and held objects encode properties (a tiny character = low dose, a giant = high dose)
+- A character's action encodes mechanism: blocking a door = antagonist, pouring liquid = secretion, smashing a wall = bactericidal
+- Every character must have a distinctive SILHOUETTE — recognizable by shape alone even as a black shadow
+
+SILHOUETTE TEST: If you turned every anchor into a black shadow with no text visible, could the student still identify what it represents? If no → the visual encoding is too weak. Go back to the encoding hierarchy.
+
+OBJECT INTERACTION = CLINICAL RELATIONSHIP:
+- Objects touching/connected = synergy or combination therapy
+- Object blocking another = inhibition/antagonism
+- Object chained to another = required co-administration
+- Objects on opposite sides of a barrier = contraindication
+- Progressive size increase = dose escalation or worsening severity
+- Two objects on a tilting scale = risk-benefit or threshold decision
+- Object in a cage/trap = monitoring requirement or boxed warning
+
+WHAT TO AVOID:
+- Plain checklists, generic posters, ordinary clipboards, labeled bottles — these fail the silhouette test
+- Any anchor whose ONLY mnemonic value is text printed on it
+- Medical equipment used literally (stethoscope for "auscultation" is lazy — use a giant ear trumpet or a character with comically oversized ears)
+- Long text strings on any surface — the image generator cannot reliably render more than 3-4 words per label
 
 VISUAL DESCRIPTION RULES:
-- MAXIMUM 20 WORDS per visual description — this is a hard limit
-- FORMAT: [Object type] on/at [position], labeled "[1-3 SHORT words]"
-- Each anchor gets ONE primary recognizable cue object with a SINGLE short label (2-4 words max on the object). One supporting prop is allowed only if it visually explains the fact.
-- The object's SHAPE and TYPE is the primary memory cue, not the text — a pressure gauge encodes "monitoring thresholds" even without perfect text
-- TEXT ON OBJECTS: Maximum 4 words per label. Use abbreviations, numbers, and symbols aggressively. NEVER put full sentences, checklists, or multi-line content on a single object. If an anchor encodes multiple facts, split them across sub-objects (e.g., two separate jars instead of one jar with a paragraph)
-- Do NOT describe: era-specific aesthetics, materials, technology type, atmospheric details, or lighting
-- Do NOT use: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, illuminated, LED
-- Good example: "Pressure gauge on left wall, labeled 'TARGET 88-92%'"
-- Bad example: "Round wooden-framed pressure gauge on brick wall, needles labeled 'PaO2 <60' and 'SaO2 <90,' sign below reads 'TARGET: 88–92%'" (too much text, too many labels per object)
+- MAXIMUM 30 WORDS per visual description
+- Describe the mnemonic device, its encoding strategy, and its position — text labels are OPTIONAL (1-3 words max if present)
+- The visual MUST work even if all text were removed — shape and identity carry the memory
+- Do NOT describe: era-specific aesthetics, materials, atmospheric details, lighting effects
+- Do NOT use: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, LED
+- GOOD: "Giant ant character inspecting three overflowing buckets at center workbench" (ant = Anthonisen, 3 buckets = triad criteria, overflowing = sputum)
+- GOOD: "Two bellows — small one pumping fast, large one pumping slow — hanging from ceiling hooks" (dual bronchodilator therapy, size = relative dosing)
+- BAD: "Clipboard labeled 'ANTHONISEN' with checklist: 'DYSPNEA / SPUTUM / PURULENCE'" (text-dependent, fails silhouette test, too many words for image generator)
 
 ANCHOR FIELD RULES:
 - ANCHOR is the clinical fact only. No "get it", no mnemonic explanation, no scene description, no teaching aside.
@@ -875,8 +903,9 @@ GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 item
 
 CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, different time limits, different angles, different doses), the visual description and narration must clearly show BOTH distinct values. For instance, if arms are tested for 10 seconds and legs for 5 seconds, the visual must show "10 SEC" AND "5 SEC" as separate labels — never collapse them into one number.
 <vo_line>
-NARRATION: [2-4 sentences. Direct viewer attention → name the element → explain why the cue works by sound/shape/function/contrast/space → teach the clinical fact → optional reinforcement "get it? X for Y?". Natural spoken rhythm. No dramatic language. No movement descriptions.]
-VISUAL: [MAXIMUM 20 WORDS. Physical object + labels + position only. No era styling, no material descriptions, no technology type, no lighting effects.]
+HOOK: [sound-alike | look-alike | functional | contrast | spatial] — one sentence: what encodes what and why
+NARRATION: [2-4 sentences. Direct viewer attention → name the element → explain the mnemonic link explicitly ("get it? X sounds like Y" or "notice how the shape of X looks like Y") → teach the clinical fact. Natural spoken rhythm. No dramatic language. No movement descriptions.]
+VISUAL: [MAXIMUM 30 WORDS. Mnemonic device + encoding strategy + position. Text labels optional (1-3 words max). No era styling, materials, lighting.]
 ANCHOR: [Clinical fact only. One crisp line under 35 words. No mnemonic wording, no "get it", no scene description.]
 </vo_line>
 
@@ -889,11 +918,11 @@ Tone: ${tone}
 Absurdity: ${chaos}/10
 TARGET: 8-10 anchors covering this topic comprehensively at board-exam level. Do NOT omit any major category, step, or classification tier.
 
-SETTING SELECTION (you choose): Pick a setting with a clever thematic pun or connection to the medical topic that makes it memorable. The setting MUST be made of physical, hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces with glass, chrome, screens, or technology. Good examples: a speakeasy bar for pharmacology, a vintage workshop for procedures, a kitchen for metabolic topics, a courtroom for diagnostic criteria, a train station for stepwise algorithms, a barbershop for dermatology, a butcher shop for anatomy. The more absurd and memorable the thematic connection, the better.
+SETTING: Pick a setting whose NAME is a phonetic pun or sound-alike for a key term in the topic. The setting must use hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces. Good examples: "Amino's Space Cantina" for aminopenicillins, "Aldo's Steakhouse" for aldosterone, "The Hemo Globe Tavern" for hemoglobin. The more absurd the pun, the more memorable.
 
-NO guide character — the scene communicates entirely through objects, signs, posters, and environmental details. No people in the scene. The narrator is an unseen voice.
+MNEMONIC CHARACTERS are encouraged — figures whose names, shapes, or actions encode medical concepts. No tour-guide narrator character. The scene is a frozen static moment, not an animation.
 
-The narrator points out elements in a STATIC IMAGE. No movement. No action. Direct the viewer's attention to each visual anchor, state the mnemonic link explicitly, then teach the clinical fact.`;
+For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, contrast, or spatial) and explain WHY the visual encodes the fact. The narrator points out elements in a STATIC IMAGE and explicitly states the mnemonic link.`;
 
   let storyData = null;
   let imagePromptText = '';
@@ -1014,14 +1043,14 @@ Requirements:
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
       `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
-      `ONLY the ${n} medical anchor objects below should have visible labels or text. ` +
-      `Everything else in the scene is unlabeled background.\n\n` +
-      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
-      `Focus on making each object visually distinct and recognizable by its SHAPE and POSITION first, text second. ` +
+      `Background surfaces are unlabeled.\n\n` +
+      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
+      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present. ` +
-      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `All ${n} anchors must be present and visually distinct. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
