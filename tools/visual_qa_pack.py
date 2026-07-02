@@ -274,6 +274,17 @@ def md_escape(text: Any) -> str:
     return str(text or "").replace("\n", "<br>").replace("|", "\\|")
 
 
+def plain_anchor_table(anchors: list[dict[str, Any]]) -> str:
+    lines = ["# Anchor Table", ""]
+    for anchor in anchors:
+        lines.append(f"Anchor {anchor.get('n', '')}")
+        lines.append(f"HOOK: {anchor.get('hook', '')}")
+        lines.append(f"VISUAL: {anchor.get('visual', '')}")
+        lines.append(f"ENCODES: {anchor.get('anchor', '')}")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
 def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text.rstrip() + "\n", encoding="utf-8")
@@ -325,6 +336,7 @@ Auto structural score before image review: **{score}/100**.
         rows.append(
             f"| {anchor.get('n', '')} | {md_escape(anchor.get('hook', ''))} | {md_escape(anchor.get('visual', ''))} | {md_escape(anchor.get('anchor', ''))} |"
         )
+    plain_table = plain_anchor_table(anchors)
     write_text(
         pack_dir / "03_anchor_table.md",
         f"# Anchor Table\n\nScene: **{bundle.get('story', {}).get('scene_title', '')}**\n\n" + "\n".join(rows),
@@ -401,6 +413,75 @@ First use this scene foundation prompt:
 Then refine the same image with all anchors using this prompt:
 
 {prompts["prompt2"]}
+""",
+    )
+
+    write_text(
+        pack_dir / "07_gemini_image_audit_prompt.txt",
+        f"""You are auditing a generated Mnemorized medical visual mnemonic image.
+
+I will provide the generated image plus the anchor table below. Your job is to compare the image against the anchor table, not to praise the image.
+
+Audit rules:
+- Do not invent anchors that are not visible.
+- Treat labels as unreliable unless they are readable and spelled correctly.
+- A label alone is not enough; the visual must also have a recognizable shape, character, object interaction, or spatial placement.
+- Numeric thresholds and compact formulas are allowed, but they must be attached to a visible mnemonic device.
+- Score harshly. If an anchor is too tiny, crowded, misspelled, missing, medically ambiguous, or only text-dependent, mark it as a problem.
+- Do not suggest copying any proprietary visual mnemonic product.
+
+Return exactly this structure:
+
+OVERALL_SCORE: [0-100]
+DECISION: PASS / REPAIR / REGENERATE
+
+SUMMARY:
+[2-4 blunt sentences]
+
+ANCHOR_AUDIT:
+| # | Present? | Hook fidelity | Silhouette/readability | Text/label accuracy | Medical risk | Fix |
+|---|---|---|---|---|---|---|
+
+SYSTEMIC_FAILURES:
+- [List repeatable prompt-contract failures only. If none, write "None."]
+
+REPAIR_PROMPT:
+[If DECISION is REPAIR, write a concise image-edit prompt that fixes only the failed items while preserving the good composition. If DECISION is REGENERATE, write "N/A". If DECISION is PASS, write "N/A".]
+
+REGENERATION_PROMPT_CHANGE:
+[If DECISION is REGENERATE or there is a systemic prompt issue, write the prompt-contract change needed before regenerating. Otherwise write "N/A".]
+
+ANCHOR TABLE:
+
+{plain_table}
+""",
+    )
+
+    write_text(
+        pack_dir / "08_repair_or_regenerate_prompt_template.txt",
+        f"""Use this after completing `07_gemini_image_audit_prompt.txt`.
+
+If the audit decision is REPAIR, paste the generated image and this prompt into Gemini after replacing the bracketed sections:
+
+Edit the image you just generated. Keep the same composition, room, characters, colors, and hand-drawn style. Make ONLY these corrections:
+
+[Paste the failed anchor fixes from the audit here.]
+
+Preserve all correct anchors, formulas, labels, and spatial positions. Do not add new captions, zone labels, explanatory text, or extra anchors. This is a precision repair, not a redesign.
+
+If the audit decision is REGENERATE, rebuild the prompt first. Use this checklist:
+
+- Are all 8-10 anchors present in the prompt?
+- Does every anchor include a hook and visual cue?
+- Are precision numbers/formulas preserved exactly?
+- Are labels short and exact?
+- Are anchors large enough at 1024px width?
+- Are shelf/wall anchors staggered instead of tiny clutter?
+- Does the prompt avoid commercial visual mnemonic names and copied motifs?
+
+Then regenerate from `02_gemini_prompt_2_all_anchors.txt` or from a refreshed pack created with `--refresh-prompt-contract`.
+
+Topic: {topic}
 """,
     )
 

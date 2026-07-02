@@ -47,6 +47,8 @@ def test_visual_qa_pack_writes_gemini_prompts_and_rubric(tmp_path: Path) -> None
     assert "Hook" in (pack_dir / "02_gemini_prompt_2_all_anchors.txt").read_text(encoding="utf-8")
     assert "Anchor Table" in (pack_dir / "03_anchor_table.md").read_text(encoding="utf-8")
     assert "Manual Image Audit" in (pack_dir / "05_manual_image_audit.md").read_text(encoding="utf-8")
+    assert "OVERALL_SCORE" in (pack_dir / "07_gemini_image_audit_prompt.txt").read_text(encoding="utf-8")
+    assert "precision repair, not a redesign" in (pack_dir / "08_repair_or_regenerate_prompt_template.txt").read_text(encoding="utf-8")
     assert "qualitative sandbox" in (pack_dir / "00_README.md").read_text(encoding="utf-8")
 
 
@@ -85,3 +87,18 @@ def test_condense_for_image_does_not_treat_closing_quote_as_opening_quote() -> N
     visual = 'Left pan labeled "Na+," right pan holds weights "Cl−" and "HCO3−."'
 
     assert condense_for_image(visual) == visual
+
+
+def test_gemini_image_audit_prompt_contains_anchor_table(tmp_path: Path) -> None:
+    bundle_path = tmp_path / "bundle.json"
+    bundle_path.write_text(json.dumps(make_bundle()), encoding="utf-8")
+
+    pack_dir = build_pack(bundle_path, tmp_path / "packs")
+    audit_prompt = (pack_dir / "07_gemini_image_audit_prompt.txt").read_text(encoding="utf-8")
+
+    assert "ANCHOR_AUDIT:" in audit_prompt
+    assert "SYSTEMIC_FAILURES:" in audit_prompt
+    assert "REPAIR_PROMPT:" in audit_prompt
+    assert "Anchor 1" in audit_prompt
+    assert "HOOK: functional" in audit_prompt
+    assert "ENCODES: Clinical fact 1" in audit_prompt

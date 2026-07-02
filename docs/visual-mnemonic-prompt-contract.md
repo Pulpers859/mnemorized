@@ -15,7 +15,7 @@ The Forge pipeline uses this sequence:
 1. Clinical concept extraction: identify the 8-12 essential, exam-relevant facts.
 2. Story and anchor generation: produce 8-10 anchors, each with `HOOK`, `NARRATION`, `VISUAL`, and `ANCHOR`.
 3. Image prompt generation: create an empty room first, then place all anchors into stable spatial zones.
-4. Visual QA loop: generate image, audit against the anchor table, repair or revise prompt contract, repeat.
+4. Visual QA loop: our prompt -> Gemini image -> Gemini/image audit against our anchor table -> prompt repair -> regenerate.
 
 Do not skip the visual QA loop for high-value catalog or medical-safety content.
 
@@ -75,3 +75,28 @@ Target score:
 - final manual image audit: `>=95`
 
 If the failure would affect future topics, fix the prompt contract. If the failure is isolated to one image, use a targeted repair prompt.
+
+## Gemini Image Audit Workflow
+
+Each QA pack should include these files:
+
+- `02_gemini_prompt_2_all_anchors.txt`: the prompt to generate or regenerate the image.
+- `03_anchor_table.md`: the source of truth for what the image must contain.
+- `07_gemini_image_audit_prompt.txt`: paste this into Gemini with the generated image to get a structured audit.
+- `08_repair_or_regenerate_prompt_template.txt`: use this after the audit to repair only failed items or regenerate after a contract change.
+
+Use Gemini as a visual auditor against our anchor table, not as a source of medical truth. If Gemini says an anchor is missing, too small, misspelled, or text-dependent, verify visually and decide whether it is a one-image repair or a repeatable prompt-contract issue.
+
+Repair when:
+
+- one to three labels are misspelled
+- one anchor needs a clearer label or restored symbol
+- the composition is otherwise strong
+
+Regenerate when:
+
+- more than two anchors are missing
+- the scene ignores spatial hierarchy
+- the image becomes an infographic or checklist
+- formulas/numbers are wrong in a medically meaningful way
+- the same failure would affect future topics
