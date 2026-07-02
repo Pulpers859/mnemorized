@@ -41,6 +41,19 @@ const ANTI_META_TEXT = 'TEXT RULES: Do NOT render any floating labels, zone name
   'physically part of an object in the scene — written on signs, sticky notes, labels, screens, bottles, ' +
   'chalkboards, or other in-world surfaces. No floating captions. No zone labels. No anchor descriptions.';
 
+const PRECISION_TEXT_RULE = 'PRECISION TEXT EXCEPTION: short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. ' +
+  'They must be physically attached to the mnemonic object as a plaque, dial, ruler mark, scale beam, gauge face, or chalk mark. ' +
+  'Do not use text as the whole mnemonic: every precision label must sit on a strong non-text visual device that still reads by silhouette. ' +
+  'Keep precision text large, sparse, accurate, and readable; no sentences or paragraph labels.';
+
+const ANCHOR_LEGIBILITY_RULE = 'ANCHOR LEGIBILITY RULE: every anchor must be large enough to identify at normal 1024px image size. ' +
+  'No anchor may become tiny shelf clutter. Give each anchor clear empty space, a distinct silhouette, and enough scale to read its key shape before reading any label. ' +
+  'If a shelf or wall contains multiple anchors, stagger them vertically and enlarge each one instead of lining up small similar props.';
+
+const EXACT_LABEL_RULE = 'EXACT LABEL RULE: if a visual specifies a short label, copy it exactly. ' +
+  'Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. ' +
+  'If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.';
+
 const ZONE_CYCLE = [
   'FAR LEFT', 'LEFT', 'CENTER LEFT', 'CENTER', 'CENTER RIGHT', 'RIGHT',
   'FAR RIGHT', 'FOREGROUND LEFT', 'FOREGROUND CENTER', 'FOREGROUND RIGHT',
@@ -76,10 +89,11 @@ function assignZones(voLines) {
 function condenseForImage(visual) {
   let s = visual;
   s = s.replace(/[↑↓]/g, '');
-  s = s.replace(/"([^"]{25,})"/g, (_, inner) => {
+  s = s.replace(/(^|[\s(:])"([^"]{25,})"/g, (_, prefix, inner) => {
+    if (/[=×+\-±<>≤≥÷/]|(?:\d)/.test(inner) && inner.length <= 70) return prefix + '"' + inner + '"';
     const parts = inner.split(/[\/,;]+/).map(p => p.trim()).filter(Boolean);
-    if (parts.length > 2) return '"' + parts.slice(0, 2).join(' / ') + ' …"';
-    return '"' + inner.substring(0, 24) + '…"';
+    if (parts.length > 2) return prefix + '"' + parts.slice(0, 2).join(' / ') + ' …"';
+    return prefix + '"' + inner.substring(0, 24) + '…"';
   });
   s = s.replace(/\s*(?:with checklist|with tags|stamped|carved|labeled)[:\s]+("[^"]*"(?:\s*(?:and|,)\s*"[^"]*")*)/gi,
     (match) => match.length > 60 ? match.substring(0, 55) + '…' : match);
@@ -625,8 +639,11 @@ Requirements:
       `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
-      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
+      `${ANCHOR_LEGIBILITY_RULE} ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
+      `${PRECISION_TEXT_RULE} ` +
+      `${EXACT_LABEL_RULE} ` +
+      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +
@@ -728,8 +745,11 @@ async function runPipeline() {
       `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
-      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
+      `${ANCHOR_LEGIBILITY_RULE} ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
+      `${PRECISION_TEXT_RULE} ` +
+      `${EXACT_LABEL_RULE} ` +
+      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +
@@ -894,12 +914,15 @@ OBJECT INTERACTION = CLINICAL RELATIONSHIP:
 - Object in a cage/trap = monitoring requirement or boxed warning
 - Contact, blocking, containment, distance, scale, elevation, and sequence should show why facts relate to each other.
 - The final image should read as one coherent static map with uncluttered anchor zones, not scattered props.
+- Every anchor must be large enough to identify at normal 1024px image size. No anchor may become tiny shelf clutter. If a shelf or wall contains multiple anchors, stagger them vertically and give each one enough empty space and scale to read by shape.
 
 SHAPE DIVERSITY RULE: No two anchors may share the same base shape. If you have one jar, no other anchor can be a jar. If you have one character standing, the next character must sit, crouch, or be a completely different body type. Check your anchor list at the end — if two silhouettes would look the same, redesign one.
 
-FORMULA RULE: Mathematical formulas (equations, ratios, multi-step calculations) are TEXT-DEPENDENT by nature. NEVER encode a formula by writing it on a surface. Instead, find a CHARACTER or OBJECT whose properties represent the formula's components. Example: instead of writing "AG = Na - (Cl + HCO3)" on a chalkboard, use a scale with physically heavier/lighter pans. Instead of writing "1.5 × HCO3 + 8 ± 2" on a board, use a thermometer or ruler character whose height represents the expected value.
+FORMULA RULE / PRECISION TEXT RULE: Short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. They must be physically attached to a mnemonic device: plaque, dial, ruler mark, scale beam, gauge face, tag, or chalk mark. Do not make text the entire mnemonic. A formula anchor still needs a silhouette-first visual analogy: scale for anion gap, paired rulers for delta-delta, thermometer/ruler/gauge for Winter's formula, locked gauge cabinet for osmol gap.
 
-SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 short text labels total across ALL anchors combined. Each label is 1-3 words max. Character names count as labels. If you are over budget, convert text-dependent anchors to shape-based ones. Prioritize: character names (sound-alikes) > threshold numbers > everything else.
+SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 ordinary short text labels plus up to 4 precision labels for numbers/formulas. Ordinary labels are 1-3 words max. Precision labels may be formulas or thresholds, but must be sparse, readable, and attached to a strong visual device. Prioritize: medically essential numbers/formulas > character names (sound-alikes) > optional flavor labels.
+
+EXACT LABEL RULE: If a visual specifies a short label, copy it exactly. Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.
 
 WHAT TO AVOID:
 - Plain checklists, generic posters, ordinary clipboards, labeled bottles — these fail the silhouette test
@@ -1086,8 +1109,11 @@ Requirements:
       `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
-      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
+      `${ANCHOR_LEGIBILITY_RULE} ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
+      `${PRECISION_TEXT_RULE} ` +
+      `${EXACT_LABEL_RULE} ` +
+      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +

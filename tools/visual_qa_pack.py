@@ -14,6 +14,79 @@ from typing import Any
 
 PASS_THRESHOLD = 85
 
+VISUAL_STYLE = (
+    "Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. "
+    "Wobbly, imperfect ink outlines with visible line weight variation. NO clean digital vector lines. "
+    "Cell-shaded flat coloring with one base color and one hard-edged shadow color per surface. "
+    "Rich saturated Copic marker palette with strong contrast. "
+    "Angular editorial-cartoon caricatures with distinctive silhouettes, not anime, not 3D, not realistic. "
+    "Hand-drawn educational visual mnemonic poster, dense but readable medical teaching map. "
+    "No gradients, no atmospheric haze, no depth of field blur, no glowing effects."
+)
+
+ROOM_STYLE = (
+    "Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. "
+    "Wobbly, imperfect ink outlines with flat marker coloring. "
+    "Hand-drawn educational visual mnemonic background, dense but readable medical teaching map. "
+    "EMPTY ROOM ONLY — absolutely NO people, NO characters, NO figures, NO animals. "
+    "NO text, NO labels, NO signs, NO writing on any surface. Just the bare room."
+)
+
+ANTI_META_TEXT = (
+    "TEXT RULES: Do NOT render any floating labels, zone names, category descriptions, or meta-commentary as visible text. "
+    "The ONLY text that should appear is text that is physically part of an object in the scene. "
+    "No floating captions. No zone labels. No anchor descriptions."
+)
+
+PRECISION_TEXT_RULE = (
+    "PRECISION TEXT EXCEPTION: short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. "
+    "They must be physically attached to the mnemonic object as a plaque, dial, ruler mark, scale beam, gauge face, or chalk mark. "
+    "Do not use text as the whole mnemonic: every precision label must sit on a strong non-text visual device that still reads by silhouette. "
+    "Keep precision text large, sparse, accurate, and readable; no sentences or paragraph labels."
+)
+
+ANCHOR_LEGIBILITY_RULE = (
+    "ANCHOR LEGIBILITY RULE: every anchor must be large enough to identify at normal 1024px image size. "
+    "No anchor may become tiny shelf clutter. Give each anchor clear empty space, a distinct silhouette, and enough scale to read its key shape before reading any label. "
+    "If a shelf or wall contains multiple anchors, stagger them vertically and enlarge each one instead of lining up small similar props."
+)
+
+EXACT_LABEL_RULE = (
+    "EXACT LABEL RULE: if a visual specifies a short label, copy it exactly. "
+    "Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. "
+    "If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it."
+)
+
+ZONE_CYCLE = [
+    "FAR LEFT",
+    "LEFT",
+    "CENTER LEFT",
+    "CENTER",
+    "CENTER RIGHT",
+    "RIGHT",
+    "FAR RIGHT",
+    "FOREGROUND LEFT",
+    "FOREGROUND CENTER",
+    "FOREGROUND RIGHT",
+    "BACKGROUND LEFT",
+    "BACKGROUND CENTER",
+    "BACKGROUND RIGHT",
+    "BACKGROUND CORNER",
+    "DOORWAY",
+]
+
+ZONE_KEYWORDS = [
+    (re.compile(r"\b(?:far\s+)?left\s+wall\b", re.I), "LEFT WALL"),
+    (re.compile(r"\b(?:far\s+)?right\s+wall\b", re.I), "RIGHT WALL"),
+    (re.compile(r"\bback\s+(?:corner|wall)\b", re.I), "BACKGROUND CORNER"),
+    (re.compile(r"\bforeground\b", re.I), "FOREGROUND CENTER"),
+    (re.compile(r"\bcenter\b", re.I), "CENTER"),
+    (re.compile(r"\bceiling\b", re.I), "ABOVE CENTER"),
+    (re.compile(r"\bfloor\b|on\s+the\s+ground\b", re.I), "FOREGROUND CENTER"),
+    (re.compile(r"\bleft\b", re.I), "LEFT"),
+    (re.compile(r"\bright\b", re.I), "RIGHT"),
+]
+
 
 @dataclass
 class Finding:
@@ -67,10 +140,83 @@ def image_prompts(bundle: dict[str, Any]) -> dict[str, str]:
     }
 
 
-def audit_bundle(bundle: dict[str, Any]) -> tuple[int, list[Finding]]:
+def scene_description_from_prompt1(prompt1: str) -> str:
+    if "\n\n" in prompt1:
+        return prompt1.split("\n\n", 1)[1].strip()
+    return prompt1.strip() or "Wide uncluttered memory-palace room with clear left, center, right, foreground, and background zones, aspect ratio 16:9"
+
+
+def extract_zone(visual: str, fallback: str) -> str:
+    for pattern, zone in ZONE_KEYWORDS:
+        if pattern.search(visual):
+            return zone
+    return fallback
+
+
+def condense_for_image(visual: str) -> str:
+    text = (visual or "").replace("↑", "").replace("↓", "")
+
+    def replace_quote(match: re.Match[str]) -> str:
+        prefix = match.group(1)
+        inner = match.group(2)
+        if re.search(r"[=×+\-±<>≤≥÷/]|\d", inner) and len(inner) <= 70:
+            return f'{prefix}"{inner}"'
+        parts = [part.strip() for part in re.split(r"[/,;]+", inner) if part.strip()]
+        if len(parts) > 2:
+            return prefix + '"' + " / ".join(parts[:2]) + ' …"'
+        return prefix + '"' + inner[:24] + '…"'
+
+    return re.sub(r'(^|[\s(:])"([^"]{25,})"', replace_quote, text)
+
+
+def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
+    prompts = image_prompts(bundle)
+    scene_desc = scene_description_from_prompt1(prompts["prompt1"])
+    anchors = anchor_lines(bundle)
+    assigned = []
+    for index, anchor in enumerate(anchors):
+        visual = str(anchor.get("visual") or "")
+        assigned.append({**anchor, "zone": extract_zone(visual, ZONE_CYCLE[index % len(ZONE_CYCLE)])})
+    anchor_lines_text = []
+    for anchor in assigned:
+        hook = f" Hook: {anchor.get('hook')}." if anchor.get("hook") else ""
+        encodes = f" Encodes: {anchor.get('anchor')}" if anchor.get("anchor") else ""
+        anchor_lines_text.append(
+            f"  ({str(anchor.get('zone')).lower()}) Anchor {anchor.get('n', '')}:{hook} "
+            f"Visual: {condense_for_image(str(anchor.get('visual') or ''))}.{encodes}"
+        )
+
+    n = len(anchors)
+    prompt1 = f"{ROOM_STYLE}\n\n{scene_desc}"
+    prompt2 = (
+        f"{VISUAL_STYLE}\n\n{scene_desc}\n\n"
+        f"{ANTI_META_TEXT}\n\n"
+        "SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). "
+        "Background surfaces are unlabeled.\n\n"
+        f"Add ALL {n} of the following medical mnemonic anchors to the scene. "
+        "Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. "
+        'The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. '
+        "Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. "
+        "Each anchor should be recognizable by its SHAPE and SILHOUETTE first. "
+        f"{ANCHOR_LEGIBILITY_RULE} "
+        "Text labels are secondary and optional — if present, maximum 3 words per ordinary label. "
+        f"{PRECISION_TEXT_RULE} "
+        f"{EXACT_LABEL_RULE} "
+        "SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. "
+        "Character names and short numbers count. "
+        "Zone hints in parentheses guide placement — do NOT render zone text:\n\n"
+        + "\n".join(anchor_lines_text)
+        + f"\n\nAll {n} anchors must be present and visually distinct. "
+        "Do NOT add labels to room surfaces, walls, beams, or background objects. "
+        "Maintain same lighting, color palette, and atmosphere."
+    )
+    return {"prompt1": prompt1, "prompt2": prompt2}
+
+
+def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None = None) -> tuple[int, list[Finding]]:
     findings: list[Finding] = []
     anchors = anchor_lines(bundle)
-    prompts = image_prompts(bundle)
+    prompts = prompts_override or image_prompts(bundle)
     prompt2 = prompts["prompt2"]
 
     if not 8 <= len(anchors) <= 10:
@@ -133,14 +279,15 @@ def write_text(path: Path, text: str) -> None:
     path.write_text(text.rstrip() + "\n", encoding="utf-8")
 
 
-def build_pack(bundle_path: Path, output_root: Path) -> Path:
+def build_pack(bundle_path: Path, output_root: Path, refresh_prompt_contract: bool = False) -> Path:
     bundle = read_bundle(bundle_path)
     topic = str(bundle.get("topic") or bundle.get("story", {}).get("scene_title") or bundle_path.stem)
     pack_dir = output_root / slugify(topic)
-    prompts = image_prompts(bundle)
+    prompts = refreshed_prompts(bundle) if refresh_prompt_contract else image_prompts(bundle)
     anchors = anchor_lines(bundle)
-    score, findings = audit_bundle(bundle)
+    score, findings = audit_bundle(bundle, prompts_override=prompts)
     now = datetime.now(timezone.utc).isoformat()
+    contract_note = "Prompt files were rebuilt from the saved story using the current visual QA prompt contract." if refresh_prompt_contract else "Prompt files are copied from the exported bundle."
 
     write_text(
         pack_dir / "00_README.md",
@@ -151,6 +298,8 @@ Generated: {now}
 Source bundle: `{bundle_path}`
 
 Use this pack to test the Gemini web app without using Mnemorized API image tokens. The Gemini app is a qualitative sandbox, not an exact API-equivalent provider test.
+
+{contract_note}
 
 Recommended flow:
 
@@ -263,6 +412,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build visual QA packs from exported Mnemorized forge bundles.")
     parser.add_argument("inputs", nargs="+", type=Path, help="Bundle JSON files or directories containing *_bundle.json files.")
     parser.add_argument("--output-root", type=Path, default=Path("local_archive") / "visual_qa_packs")
+    parser.add_argument(
+        "--refresh-prompt-contract",
+        action="store_true",
+        help="Rebuild prompt files from saved story anchors using the current QA prompt contract.",
+    )
     return parser.parse_args()
 
 
@@ -272,7 +426,7 @@ def main() -> int:
     if not paths:
         raise SystemExit("No *_bundle.json files found.")
     for path in paths:
-        pack_dir = build_pack(path, args.output_root)
+        pack_dir = build_pack(path, args.output_root, refresh_prompt_contract=args.refresh_prompt_contract)
         print(pack_dir)
     return 0
 

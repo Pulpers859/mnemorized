@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from tools.visual_qa_pack import audit_bundle, build_pack
+from tools.visual_qa_pack import audit_bundle, build_pack, condense_for_image, refreshed_prompts
 
 
 def make_bundle() -> dict:
@@ -65,3 +65,23 @@ def test_visual_qa_pack_flags_missing_hooks_and_text_heavy_visuals() -> None:
     assert "text_dependent_visuals" in codes
     assert "hook_may_render" in codes
     assert "brand_style_reference" in codes
+
+
+def test_refreshed_prompt_contract_preserves_compact_formulas() -> None:
+    bundle = make_bundle()
+    bundle["image_prompts"]["prompt1"] = "old style\n\nWide room, aspect ratio 16:9"
+    bundle["story"]["voLines"][0]["visual"] = 'Scale beam labeled "Expected pCO₂ = 1.5 × HCO₃ + 8 ± 2" at foreground'
+
+    prompts = refreshed_prompts(bundle)
+
+    assert "PRECISION TEXT EXCEPTION" in prompts["prompt2"]
+    assert "ANCHOR LEGIBILITY RULE" in prompts["prompt2"]
+    assert "EXACT LABEL RULE" in prompts["prompt2"]
+    assert "Expected pCO₂ = 1.5 × HCO₃ + 8 ± 2" in prompts["prompt2"]
+    assert "No formulas" not in prompts["prompt2"]
+
+
+def test_condense_for_image_does_not_treat_closing_quote_as_opening_quote() -> None:
+    visual = 'Left pan labeled "Na+," right pan holds weights "Cl−" and "HCO3−."'
+
+    assert condense_for_image(visual) == visual
