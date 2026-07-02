@@ -75,9 +75,11 @@ function buildAnchorLines(anchors) {
 }
 
 function buildImageAnchorLines(anchors) {
-  return anchors.map(v =>
-    `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${condenseForImage(v.visual)}`
-  ).join('\n');
+  return anchors.map(v => {
+    const hook = v.hook ? ` Hook: ${v.hook}.` : '';
+    const anchor = v.anchor ? ` Encodes: ${v.anchor}` : '';
+    return `  (${v.zone.toLowerCase()}) Anchor ${v.n}:${hook} Visual: ${condenseForImage(v.visual)}.${anchor}`;
+  }).join('\n');
 }
 
 // ── Demo data ────────────────────────────────────────────────────
@@ -567,7 +569,8 @@ async function rebuildImagePromptsForStory(storyData) {
     'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
     'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
     'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
-    'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into.';
+    'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
+    'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
 
   const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
 
@@ -582,7 +585,7 @@ Requirements:
 - Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
 - Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
 - NO people or characters
-- Wide establishing shot, spacious enough for ${n} objects, aspect ratio 16:9`;
+- Wide establishing shot, spacious enough for ${n} objects in distinct uncluttered zones, aspect ratio 16:9`;
 
   try {
     const p1Res = await claudeFetch({
@@ -603,6 +606,8 @@ Requirements:
       `Background surfaces are unlabeled.\n\n` +
       `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
       `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
+      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
@@ -703,6 +708,8 @@ async function runPipeline() {
       `Background surfaces are unlabeled.\n\n` +
       `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
       `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
+      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
@@ -807,10 +814,12 @@ Output ONLY these two XML tags, nothing else:
   const storySystem = `You are writing narration for a medical memory palace video in the style of Pixorize and Sketchy Medical. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is no narrator or tour-guide character — but MNEMONIC CHARACTERS (figures whose names, shapes, or actions encode medical facts) are encouraged. Think of how Sketchy Medical uses characters that ARE the concepts, not guides explaining them.
 
 SCENE SETTING — YOU CHOOSE:
-- The scene title MUST be a PHONETIC PUN or sound-alike for a key term in the medical topic. Examples: "Amino's Space Cantina" for aminopenicillins, "The Hemo Globe Tavern" for hemoglobin, "Aldo's Steakhouse" for aldosterone. The name should make the student laugh AND help them recall the topic.
+- Strongly prefer an ORIGINAL phonetic pun or sound-alike for a key term in the medical topic, but do not force a bad pun. If no clean pun exists, choose a thematic setting whose physical layout teaches the topic.
+- Do NOT reuse named scenes, recurring characters, or proprietary symbols from existing commercial visual mnemonic products. Learn from the design principles; invent fresh cues.
 - Made of materials that render flat: wood, paper, brick, chalkboard, fabric, cork, cardboard, stone, ceramic
 - BEST settings: bars, pubs, workshops, kitchens, old shops, speakeasies, market stalls, barber shops, diners, courtrooms, train stations
 - AVOID: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
+- The setting is a spatial memory map, not a backdrop. Each anchor must belong to the same environment and occupy a memorable zone.
 
 NARRATION RULES — follow these exactly:
 1. Direct the viewer's attention to each element — use phrases like "notice", "take a look at", "you'll see", "over here", "right here"
@@ -838,10 +847,10 @@ COMPLETENESS — NON-NEGOTIABLE:
 - After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
 
 VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
-These principles come from studying Sketchy Medical and Pixorize. The goal: a student recalls the medical fact from the SHAPE and IDENTITY of the object alone, even with ALL text removed.
+These principles are inspired by visual mnemonic education, but every scene and symbol must be original. The goal: a student recalls the medical fact from the SHAPE, IDENTITY, RELATIONSHIP, and POSITION of the cue even with ALL text removed.
 
 ENCODING HIERARCHY — try each level in order, use the FIRST that fits:
-1. SOUND-ALIKE (strongest): Object or character NAME sounds like the medical term. "Ant" → Anthonisen. "Van" → vancomycin. A chef named "Aldo" → aldosterone. A hippo → hippocampus. Phonetic puns are the most powerful and most memorable encoding.
+1. SOUND-ALIKE (strongest): Object or character NAME sounds like the medical term. Invent a fresh phonetic pun for the term; do not reuse known commercial mnemonic symbols. Phonetic puns are powerful when they are clean and obvious.
 2. LOOK-ALIKE: Object SHAPE mirrors a number, symbol, organ, or process. Fork with 3 prongs → triad. Cracked wall → inhibition. Y-shaped branch → antibody. A figure-8 knot → chromosome 8.
 3. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
 4. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
@@ -865,6 +874,8 @@ OBJECT INTERACTION = CLINICAL RELATIONSHIP:
 - Progressive size increase = dose escalation or worsening severity
 - Two objects on a tilting scale = risk-benefit or threshold decision
 - Object in a cage/trap = monitoring requirement or boxed warning
+- Contact, blocking, containment, distance, scale, elevation, and sequence should show why facts relate to each other.
+- The final image should read as one coherent static map with uncluttered anchor zones, not scattered props.
 
 WHAT TO AVOID:
 - Plain checklists, generic posters, ordinary clipboards, labeled bottles — these fail the silhouette test
@@ -918,7 +929,7 @@ Tone: ${tone}
 Absurdity: ${chaos}/10
 TARGET: 8-10 anchors covering this topic comprehensively at board-exam level. Do NOT omit any major category, step, or classification tier.
 
-SETTING: Pick a setting whose NAME is a phonetic pun or sound-alike for a key term in the topic. The setting must use hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces. Good examples: "Amino's Space Cantina" for aminopenicillins, "Aldo's Steakhouse" for aldosterone, "The Hemo Globe Tavern" for hemoglobin. The more absurd the pun, the more memorable.
+SETTING: Prefer an ORIGINAL setting name that is a clean phonetic pun or sound-alike for a key term in the topic. If that would be awkward, use a thematic setting whose spatial layout teaches the topic. Use hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces.
 
 MNEMONIC CHARACTERS are encouraged — figures whose names, shapes, or actions encode medical concepts. No tour-guide narrator character. The scene is a frozen static moment, not an animation.
 
@@ -1010,7 +1021,8 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
       'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
       'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
       'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
-      'Think of it as painting a stage backdrop before the props are placed.';
+      'Think of it as painting a stage backdrop before the props are placed. ' +
+      'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
 
     const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
 
@@ -1025,7 +1037,7 @@ Requirements:
 - Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
 - Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
 - NO people or characters
-- Wide establishing shot, spacious enough for ${n} objects spread across left/center/right/foreground/background, aspect ratio 16:9`;
+- Wide establishing shot, spacious enough for ${n} objects spread across distinct uncluttered left/center/right/foreground/background zones, aspect ratio 16:9`;
 
     const p1Res = await claudeFetch({
         model: CLAUDE_MODEL,
@@ -1046,6 +1058,8 @@ Requirements:
       `Background surfaces are unlabeled.\n\n` +
       `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
       `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
+      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +

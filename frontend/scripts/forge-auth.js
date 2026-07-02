@@ -261,6 +261,7 @@ function validateStoryData(storyData) {
   const fatal = [];
   const warnings = [];
   const lines = storyData?.voLines || [];
+  const hookTypes = /^(sound-alike|look-alike|functional|contrast|spatial)\b/i;
 
   if (!storyData) {
     fatal.push('Story response was empty.');
@@ -278,6 +279,11 @@ function validateStoryData(storyData) {
     if (!line.narration) fatal.push(`${label} is missing NARRATION.`);
     if (!line.visual) fatal.push(`${label} is missing VISUAL.`);
     if (!line.anchor) fatal.push(`${label} is missing ANCHOR.`);
+    if (!line.hook) {
+      warnings.push(`${label} is missing HOOK; visual cue quality may degrade.`);
+    } else if (!hookTypes.test(line.hook)) {
+      warnings.push(`${label} HOOK should start with sound-alike, look-alike, functional, contrast, or spatial.`);
+    }
 
     const visualWordCount = countWords(line.visual);
     if (visualWordCount > 30) warnings.push(`${label} visual is ${visualWordCount} words; target is 30 or fewer.`);
@@ -405,7 +411,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
     const res = await claudeFetch({
       model: CLAUDE_MODEL,
       max_tokens: 4096,
-      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text.`,
+      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text. Use visual-mnemonic design principles only; do not copy named scenes, recurring characters, or proprietary symbols from existing commercial mnemonic products.`,
       messages: [{
         role: 'user',
         content: `Clinical topic: ${topic}

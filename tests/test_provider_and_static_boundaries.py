@@ -657,6 +657,7 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
 def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
 
     assert "VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT" in pipeline
     assert "ENCODING HIERARCHY" in pipeline
@@ -669,9 +670,23 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "SILHOUETTE TEST" in pipeline
     assert "CHARACTER DESIGN (encouraged)" in pipeline
     assert "OBJECT INTERACTION = CLINICAL RELATIONSHIP" in pipeline
+    assert "The setting is a spatial memory map, not a backdrop." in pipeline
+    assert "Contact, blocking, containment, distance, scale, elevation, and sequence" in pipeline
+    assert "one coherent static map with uncluttered anchor zones" in pipeline
     assert "Plain checklists, generic posters, ordinary clipboards" in pipeline
     assert "silhouette test" in pipeline
     assert "HOOK:" in pipeline
+    assert "do not reuse named scenes, recurring characters, or proprietary symbols" in pipeline.lower()
+    assert "Use visual-mnemonic design principles only; do not copy named scenes" in auth
+    assert "missing HOOK; visual cue quality may degrade" in auth
+    assert "HOOK should start with sound-alike, look-alike, functional, contrast, or spatial" in auth
+    assert "Hook: ${v.hook}" in pipeline
+    assert "Encodes: ${v.anchor}" in pipeline
+    assert 'The words "Hook" and "Encodes" are invisible design guidance only' in pipeline
+    assert "Preserve clear spatial hierarchy" in pipeline
+    assert "Design the room as a clear spatial memory map" in pipeline
+    assert "Setting must be a phonetic pun" not in pipeline
+    assert "MUST be a PHONETIC PUN" not in pipeline
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:
