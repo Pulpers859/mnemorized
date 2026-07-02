@@ -10,15 +10,31 @@ const SKETCHY_STYLE = 'Hand-drawn 2D cartoon illustration drawn with Micron pens
   'slightly unsteady like a real human hand drew every line. NO clean digital vector lines. ' +
   'Cell-shaded flat coloring: each surface has ONE base color and ONE shadow color with a HARD crisp edge, ' +
   'like coloring with markers that leave visible fill strokes. NO soft gradients, NO airbrush, NO blending. ' +
-  'Limited muted earth-tone palette, maximum 5 colors plus black. ' +
+  'Rich saturated color palette — use vivid Copic marker colors (teal, amber, crimson, forest green, ' +
+  'warm orange, dusty blue, plum) with strong contrast against a clean cream or white background. ' +
   'Characters are angular cartoon caricatures with big heads, pointy chins, exaggerated expressions — ' +
   'like editorial newspaper cartoons, NOT anime, NOT 3D, NOT realistic proportions. ' +
-  'Backgrounds filled with hand-drawn linework, cross-hatching, and flat marker fills. ' +
-  'NO gradient fills, NO atmospheric haze, NO depth of field blur. ' +
+  'Backgrounds filled with hand-drawn linework and flat marker fills — clean, not heavily cross-hatched. ' +
+  'NO gradient fills, NO atmospheric haze, NO depth of field blur, NO film grain, NO paper texture noise. ' +
   'Flat even lighting — NO spotlight cones, NO volumetric light, NO lens flares, NO glowing effects. ' +
   'All text in the scene looks hand-written with a marker, slightly uneven and imperfect. ' +
   'Every object looks like it was drawn on a whiteboard or poster board with markers. ' +
   'Style reference: Sketchy Medical, Pixorize, editorial cartoon, medical education poster drawn by hand.';
+
+const SKETCHY_STYLE_ROOM = 'Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. ' +
+  'Wobbly, imperfect ink outlines with visible line weight variation — thick at corners, thin on straights, ' +
+  'slightly unsteady like a real human hand drew every line. NO clean digital vector lines. ' +
+  'Cell-shaded flat coloring: each surface has ONE base color and ONE shadow color with a HARD crisp edge, ' +
+  'like coloring with markers that leave visible fill strokes. NO soft gradients, NO airbrush, NO blending. ' +
+  'Rich saturated color palette — use vivid Copic marker colors (teal, amber, crimson, forest green, ' +
+  'warm orange, dusty blue, plum) with strong contrast against a clean cream or white background. ' +
+  'Backgrounds filled with hand-drawn linework and flat marker fills — clean, not heavily cross-hatched. ' +
+  'NO gradient fills, NO atmospheric haze, NO depth of field blur, NO film grain, NO paper texture noise. ' +
+  'Flat even lighting — NO spotlight cones, NO volumetric light, NO lens flares, NO glowing effects. ' +
+  'Every object looks like it was drawn on a whiteboard or poster board with markers. ' +
+  'Style reference: Sketchy Medical, Pixorize, editorial cartoon, medical education poster drawn by hand. ' +
+  'EMPTY ROOM ONLY — absolutely NO people, NO characters, NO figures, NO animals. ' +
+  'NO text, NO labels, NO signs, NO writing on any surface. Just the bare room.';
 
 const ANTI_META_TEXT = 'TEXT RULES: Do NOT render any floating labels, zone names, category descriptions, ' +
   'or meta-commentary as visible text in the image. The ONLY text that should appear is text that is ' +
@@ -178,7 +194,7 @@ When you see the jukebox playing the 5 I's — remember DKA precipitants: Infect
 When you see the "NO BICARB ZONE" bathroom sign with pH 6.9 — remember do not give bicarbonate unless pH <6.9.
 When you see the child-sized VIP chair with "SLOW DOWN" and the swelling brain — remember pediatric cerebral edema risk, don't drop glucose >50-75/hr.
 When you see the tip jar labeled "BHB > Urine Ketones" — remember follow serum BHB or anion gap, not urine ketones, which rise paradoxically during treatment.`,
-  prompt1_sample: 'Dimly lit speakeasy bar interior at night, warm amber and deep teal muted palette, neon signage casting colored glow, burned-out ER attending character standing center frame behind a bar counter with IV poles instead of beer taps, shelves of IV fluid bags and medicine bottles lining the back wall, chalkboard menu visible in background, wide establishing shot showing full room layout with clear zones far left left center right far right foreground background, enough space for 8-10 distinct labeled medical objects'
+  prompt1_sample: 'Speakeasy bar interior, warm amber and deep teal palette, wide-plank wooden floor, brick walls with peeling plaster, heavy timber ceiling beams, bar counter with shelving behind it, chalkboard menu on back wall, wide establishing shot showing full room layout with clear zones far left left center right far right foreground background, spacious enough for 8-10 distinct objects'
 };
 
 // ── Demo / operator toggles ──────────────────────────────────────
@@ -598,7 +614,7 @@ Requirements:
     const p1Raw = await p1Res.json();
     const sceneDesc = parseProviderContent(p1Raw, 'Scene Description').trim();
 
-    const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
+    const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
     const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
@@ -610,6 +626,7 @@ Requirements:
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
+      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +
@@ -699,7 +716,7 @@ async function runPipeline() {
     const n = D.voLines.length;
     const assigned = assignZones(D.voLines);
 
-    const demoP1 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
+    const demoP1 = SKETCHY_STYLE_ROOM + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
 
     const demoP2 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
@@ -712,6 +729,7 @@ async function runPipeline() {
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
+      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +
@@ -877,11 +895,18 @@ OBJECT INTERACTION = CLINICAL RELATIONSHIP:
 - Contact, blocking, containment, distance, scale, elevation, and sequence should show why facts relate to each other.
 - The final image should read as one coherent static map with uncluttered anchor zones, not scattered props.
 
+SHAPE DIVERSITY RULE: No two anchors may share the same base shape. If you have one jar, no other anchor can be a jar. If you have one character standing, the next character must sit, crouch, or be a completely different body type. Check your anchor list at the end — if two silhouettes would look the same, redesign one.
+
+FORMULA RULE: Mathematical formulas (equations, ratios, multi-step calculations) are TEXT-DEPENDENT by nature. NEVER encode a formula by writing it on a surface. Instead, find a CHARACTER or OBJECT whose properties represent the formula's components. Example: instead of writing "AG = Na - (Cl + HCO3)" on a chalkboard, use a scale with physically heavier/lighter pans. Instead of writing "1.5 × HCO3 + 8 ± 2" on a board, use a thermometer or ruler character whose height represents the expected value.
+
+SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 short text labels total across ALL anchors combined. Each label is 1-3 words max. Character names count as labels. If you are over budget, convert text-dependent anchors to shape-based ones. Prioritize: character names (sound-alikes) > threshold numbers > everything else.
+
 WHAT TO AVOID:
 - Plain checklists, generic posters, ordinary clipboards, labeled bottles — these fail the silhouette test
 - Any anchor whose ONLY mnemonic value is text printed on it
 - Medical equipment used literally (stethoscope for "auscultation" is lazy — use a giant ear trumpet or a character with comically oversized ears)
 - Long text strings on any surface — the image generator cannot reliably render more than 3-4 words per label
+- Multiple jars, bottles, or containers that would look identical as silhouettes — each anchor needs a unique shape
 
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 30 WORDS per visual description
@@ -1049,7 +1074,7 @@ Requirements:
     const p1Raw = await p1Res.json();
     const sceneDesc = parseAPIResponse(p1Raw, 'Scene Description').trim();
 
-    const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
+    const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
 
     const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
@@ -1062,6 +1087,7 @@ Requirements:
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `Text labels are secondary and optional — if present, maximum 3 words per label. ` +
+      `SCENE TEXT BUDGET: maximum 12 text labels in the ENTIRE image. Character names and short numbers count. No formulas, no sentences. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +

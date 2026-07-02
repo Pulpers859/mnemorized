@@ -687,6 +687,12 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Design the room as a clear spatial memory map" in pipeline
     assert "Setting must be a phonetic pun" not in pipeline
     assert "MUST be a PHONETIC PUN" not in pipeline
+    assert "SHAPE DIVERSITY RULE" in pipeline
+    assert "FORMULA RULE" in pipeline
+    assert "SCENE TEXT BUDGET" in pipeline
+    assert "SKETCHY_STYLE_ROOM" in pipeline
+    assert "EMPTY ROOM ONLY" in pipeline
+    assert "NO film grain, NO paper texture noise" in pipeline
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:
