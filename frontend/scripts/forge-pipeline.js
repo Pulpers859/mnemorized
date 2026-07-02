@@ -31,8 +31,53 @@ const ZONE_CYCLE = [
   'BACKGROUND LEFT', 'BACKGROUND CENTER', 'BACKGROUND RIGHT', 'BACKGROUND CORNER', 'DOORWAY'
 ];
 
+const ZONE_KEYWORDS = [
+  [/\b(?:far\s+)?left\s+wall\b/i, 'LEFT WALL'],
+  [/\b(?:far\s+)?right\s+wall\b/i, 'RIGHT WALL'],
+  [/\bback\s+(?:corner|wall)\b/i, 'BACKGROUND CORNER'],
+  [/\bforeground\b/i, 'FOREGROUND CENTER'],
+  [/\bcenter\b/i, 'CENTER'],
+  [/\bceiling\b/i, 'ABOVE CENTER'],
+  [/\bfloor\b|on\s+the\s+ground\b/i, 'FOREGROUND CENTER'],
+  [/\bleft\b/i, 'LEFT'],
+  [/\bright\b/i, 'RIGHT'],
+];
+
+function extractZone(visual, fallback) {
+  for (const [re, zone] of ZONE_KEYWORDS) {
+    if (re.test(visual)) return zone;
+  }
+  return fallback;
+}
+
+function assignZones(voLines) {
+  return voLines.map((v, i) => ({
+    ...v,
+    zone: extractZone(v.visual, ZONE_CYCLE[i % ZONE_CYCLE.length])
+  }));
+}
+
+function condenseForImage(visual) {
+  let s = visual;
+  s = s.replace(/[↑↓]/g, '');
+  s = s.replace(/"([^"]{25,})"/g, (_, inner) => {
+    const parts = inner.split(/[\/,;]+/).map(p => p.trim()).filter(Boolean);
+    if (parts.length > 2) return '"' + parts.slice(0, 2).join(' / ') + ' …"';
+    return '"' + inner.substring(0, 24) + '…"';
+  });
+  s = s.replace(/\s*(?:with checklist|with tags|stamped|carved|labeled)[:\s]+("[^"]*"(?:\s*(?:and|,)\s*"[^"]*")*)/gi,
+    (match) => match.length > 60 ? match.substring(0, 55) + '…' : match);
+  return s;
+}
+
 function buildAnchorLines(anchors) {
   return anchors.map(v => `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${v.visual}`).join('\n');
+}
+
+function buildImageAnchorLines(anchors) {
+  return anchors.map(v =>
+    `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${condenseForImage(v.visual)}`
+  ).join('\n');
 }
 
 // ── Demo data ────────────────────────────────────────────────────
@@ -500,21 +545,19 @@ async function rebuildImagePromptsForStory(storyData) {
 
   const topic = document.getElementById('topic')?.value?.trim() || 'medical topic';
   const n = storyData.voLines.length;
-  const assigned = storyData.voLines.map((v, i) => ({
-    ...v,
-    zone: ZONE_CYCLE[i % ZONE_CYCLE.length]
-  }));
+  const assigned = assignZones(storyData.voLines);
 
   setStatus('prompt', 'Rebuilding image prompts...', 'running');
   setStageDetail('prompt', 'Rebuilding illustration prompts from the repaired anchor script.');
 
-  const ipSystem = 'You write scene descriptions for Gemini Imagen image generation. ' +
-    'Output ONLY the scene-specific content — setting, objects, composition, atmosphere. ' +
-    'Dense, comma-separated descriptive phrases. Do NOT include any style instructions, art style language, ' +
-    'or rendering directives — those are handled separately. ' +
-    'Choose a setting/location that is thematically clever for the medical topic and renders well as a flat hand-drawn illustration.';
+  const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
+    'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
+    'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
+    'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
+    'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
+    'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into.';
 
-  const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene content — no style directives.
+  const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
 
 MEDICAL TOPIC: ${topic}
 SCENE TITLE: ${storyData.scene_title}
@@ -522,12 +565,12 @@ ATMOSPHERE: ${storyData.opening}
 TOTAL ANCHORS TO FIT: ${n}
 
 Requirements:
-- 60-80 words maximum
-- Clever thematic setting connected to the topic
-- Flat-friendly physical materials only: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic
-- NO guide character, no modern clinical screens, no glass/chrome
-- Wide enough for ${n} distinct objects across left, center, right, foreground, and background
-- End with: wide establishing shot, enough space for ${n} labeled objects, aspect ratio 16:9`;
+- 40-60 words maximum — room/space description ONLY
+- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
+- Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
+- Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
+- NO people or characters
+- Wide establishing shot, spacious enough for ${n} objects, aspect ratio 16:9`;
 
   try {
     const p1Res = await claudeFetch({
@@ -542,14 +585,18 @@ Requirements:
 
     const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
     const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
-      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
-      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
-      `Place each one in its general area using the exact visual description given — ` +
-      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
-      buildAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
-      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
+      `ONLY the ${n} medical anchor objects below should have visible labels or text. ` +
+      `Everything else in the scene is unlabeled background.\n\n` +
+      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
+      `Focus on making each object visually distinct and recognizable by its SHAPE and POSITION first, text second. ` +
+      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+      buildImageAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present. ` +
+      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
     showBody('prompt');
@@ -633,19 +680,22 @@ async function runPipeline() {
     await demoDelay(1200);
 
     const n = D.voLines.length;
-    const assigned = D.voLines.map((v, i) => ({ ...v, zone: ZONE_CYCLE[i % ZONE_CYCLE.length] }));
+    const assigned = assignZones(D.voLines);
 
     const demoP1 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
 
     const demoP2 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
-      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
-      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
-      `Place each one in its general area using the exact visual description given — ` +
-      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
-      buildAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
-      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself. ` +
+      `ONLY the ${n} medical anchor objects below should have visible labels or text.\n\n` +
+      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
+      `Focus on making each object visually distinct by SHAPE and POSITION first, text second. ` +
+      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+      buildImageAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present. ` +
+      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
     showBody('prompt');
@@ -776,13 +826,14 @@ COMPLETENESS — NON-NEGOTIABLE:
 
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 20 WORDS per visual description — this is a hard limit
-- Describe ONLY: the object, its key labels/text, and its general position (left, center, right, foreground, background)
-- Every anchor must be a PHYSICAL object that can be drawn flat: signs, bottles, posters, dials, chalkboards, sticky notes, jars, masks, clipboards, charts
-- Do NOT describe: era-specific aesthetics, materials (wood-grain, brass, neon), technology type (holographic, digital, CRT), atmospheric details, or lighting
-- Do NOT use words that imply non-flat rendering: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, illuminated, LED
-- TEXT ON OBJECTS: Keep all labels as SHORT as possible — use abbreviations, symbols, and numbers instead of full words. Fewer characters = fewer Gemini typos. Example: "≥1mm LIMB, ≥2mm PRECORDIAL" NOT "at least one millimeter of elevation in two contiguous limb leads." Use arrows (↑↓), symbols (≥≤±), and standard medical abbreviations aggressively.
-- Good example: "A poster on the left wall showing 'QTc >440♂ >460♀ >500=TORSADES' with a formula"
-- Bad example: "A 1980s neon-lit holographic display panel with brushed aluminum frame showing translucent 3D drug molecules floating in a blue glow"
+- FORMAT: [Object type] on/at [position], labeled "[1-3 SHORT words]"
+- Each anchor gets ONE recognizable physical object (sign, jar, poster, dial, clipboard, bottle, chalkboard, corkboard, gauge, tablet, cabinet) with a SINGLE short label (2-4 words max on the object)
+- The object's SHAPE and TYPE is the primary memory cue, not the text — a pressure gauge encodes "monitoring thresholds" even without perfect text
+- TEXT ON OBJECTS: Maximum 4 words per label. Use abbreviations, numbers, and symbols aggressively. NEVER put full sentences, checklists, or multi-line content on a single object. If an anchor encodes multiple facts, split them across sub-objects (e.g., two separate jars instead of one jar with a paragraph)
+- Do NOT describe: era-specific aesthetics, materials, technology type, atmospheric details, or lighting
+- Do NOT use: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, illuminated, LED
+- Good example: "Pressure gauge on left wall, labeled 'TARGET 88-92%'"
+- Bad example: "Round wooden-framed pressure gauge on brick wall, needles labeled 'PaO2 <60' and 'SaO2 <90,' sign below reads 'TARGET: 88–92%'" (too much text, too many labels per object)
 
 ABSURDITY LEVEL: ${chaos}/10 — dial how strange the visual anchors are, not how dramatic the narration is.
 
@@ -915,24 +966,17 @@ The narrator points out elements in a STATIC IMAGE. No movement. No action. Dire
 
   try {
     const n = storyData.voLines.length;
-    const assigned = storyData.voLines.map((v, i) => ({
-      ...v,
-      zone: ZONE_CYCLE[i % ZONE_CYCLE.length]
-    }));
+    const assigned = assignZones(storyData.voLines);
 
-    const ipSystem = 'You write scene descriptions for Gemini Imagen image generation. ' +
-      'Output ONLY the scene-specific content — setting, objects, composition, atmosphere. ' +
-      'Dense, comma-separated descriptive phrases. Do NOT include any style instructions, art style language, ' +
-      'or rendering directives — those are handled separately. ' +
-      'YOUR MOST IMPORTANT JOB: Choose a setting/location that is thematically clever for the medical topic ' +
-      'AND renders well as a flat hand-drawn illustration. Best settings use physical materials: ' +
-      'wood, paper, brick, chalkboard, cork, fabric, stone, ceramic. ' +
-      'Examples of GOOD settings: a speakeasy bar (for pharmacology), a cluttered professors office (for scoring systems), ' +
-      'a vintage workshop (for procedural topics), a kitchen (for metabolic topics), a train station (for algorithms). ' +
-      'Examples of BAD settings: research facilities, hospitals, modern labs, anything with glass/chrome/screens/technology. ' +
-      'The setting should have a memorable thematic connection to the topic that makes it stick in memory.';
+    const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
+      'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
+      'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
+      'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
+      'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
+      'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
+      'Think of it as painting a stage backdrop before the props are placed.';
 
-    const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene content — no style directives.
+    const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
 
 MEDICAL TOPIC: ${topic}
 SCENE TITLE: ${storyData.scene_title}
@@ -940,12 +984,12 @@ ATMOSPHERE: ${storyData.opening}
 TOTAL ANCHORS TO FIT: ${n} (scene must be wide and spacious enough)
 
 Requirements:
-- 60-80 words maximum — scene content ONLY, no style language
-- Choose a setting that has a clever thematic connection to the medical topic — make it memorable and slightly absurd
-- The setting MUST be made of flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — ABSOLUTELY NO glass, chrome, metal panels, screens, monitors, or modern clinical equipment
-- NO guide character — the scene is empty of people, only objects and environment
-- Scene wide enough to hold ${n} distinct objects spread across left, center, right, foreground, and background
-- End with: wide establishing shot, enough space for ${n} labeled objects, aspect ratio 16:9`;
+- 40-60 words maximum — room/space description ONLY
+- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
+- Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
+- Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
+- NO people or characters
+- Wide establishing shot, spacious enough for ${n} objects spread across left/center/right/foreground/background, aspect ratio 16:9`;
 
     const p1Res = await claudeFetch({
         model: CLAUDE_MODEL,
@@ -960,14 +1004,18 @@ Requirements:
     const prompt1 = SKETCHY_STYLE + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
 
     const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
-      ', aspect ratio 16:9, flat 2D cartoon. \n\n' +
+      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
-      `Add ALL ${n} of the following anchor elements to the scene in a single pass. ` +
-      `Place each one in its general area using the exact visual description given — ` +
-      `do not rephrase or alter the descriptions. Zone hints in parentheses are composition guidance only — do NOT render them as text:\n\n` +
-      buildAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and clearly identifiable in the final image. ` +
-      `Text on objects must be legible. Keep all text labels SHORT — maximum 3-4 words per label to minimize spelling errors. Use numbers and abbreviations where possible instead of full words. ` +
+      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
+      `ONLY the ${n} medical anchor objects below should have visible labels or text. ` +
+      `Everything else in the scene is unlabeled background.\n\n` +
+      `Add ALL ${n} of the following medical anchor objects to the scene. ` +
+      `Focus on making each object visually distinct and recognizable by its SHAPE and POSITION first, text second. ` +
+      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+      buildImageAnchorLines(assigned) + '\n\n' +
+      `All ${n} anchors must be present. ` +
+      `Each anchor's text labels should be 2-4 words maximum — abbreviate aggressively. ` +
+      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
 
     showBody('prompt');
