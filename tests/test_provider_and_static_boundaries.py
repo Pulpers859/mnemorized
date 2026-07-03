@@ -440,6 +440,62 @@ def test_oversized_api_request_rejected_before_provider_call(
     assert provider.calls == []
 
 
+def test_advisor_tool_fields_pass_through_proxy(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(tmp_path, anthropic_api_key="anthropic-key")
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    upstream_response = httpx.Response(200, json={"content": [{"text": "ok"}], "model": "claude-sonnet-4-6"})
+    provider = FakeProviderClient([upstream_response])
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/anthropic/messages",
+        json={
+            "model": "claude-sonnet-4-6",
+            "max_tokens": 100,
+            "messages": [{"role": "user", "content": "test"}],
+            "tools": [{"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-4-8"}],
+            "betas": ["advisor-tool-2026-03-01"],
+        },
+    )
+
+    assert response.status_code == 200
+    assert len(provider.calls) == 1
+    sent_body = provider.calls[0].get("json", {})
+    assert sent_body["tools"] == [{"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-4-8"}]
+    assert "betas" not in sent_body
+
+
+def test_advisor_betas_merged_into_upstream_header(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(tmp_path, anthropic_api_key="anthropic-key")
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    upstream_response = httpx.Response(200, json={"content": [{"text": "ok"}], "model": "claude-sonnet-4-6"})
+    provider = FakeProviderClient([upstream_response])
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/anthropic/messages",
+        json={
+            "model": "claude-sonnet-4-6",
+            "max_tokens": 100,
+            "messages": [{"role": "user", "content": "test"}],
+            "betas": ["advisor-tool-2026-03-01"],
+        },
+    )
+
+    assert response.status_code == 200
+    assert len(provider.calls) == 1
+    sent_headers = provider.calls[0].get("headers", {})
+    assert "advisor-tool-2026-03-01" in sent_headers.get("anthropic-beta", "")
+
+
 def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     root = Path(__file__).resolve().parents[1]
     frontend_files = [
@@ -696,6 +752,20 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "SKETCHY_STYLE_ROOM" in pipeline
     assert "EMPTY ROOM ONLY" in pipeline
     assert "NO film grain, NO paper texture noise" in pipeline
+
+
+def test_forge_uses_advisor_tool_for_creative_stages() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+    state = (root / "frontend" / "scripts" / "forge-state.js").read_text(encoding="utf-8")
+
+    assert "ADVISOR_TOOL" in state
+    assert "advisor_20260301" in state
+    assert "ADVISOR_BETA" in state
+    assert "function withAdvisor" in state
+    assert "withAdvisor(" in pipeline, "Stage 2 story generation should use advisor"
+    assert "withAdvisor(" in auth, "Repair prompt should use advisor"
 
 
 def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> None:

@@ -828,7 +828,7 @@ async function runPipeline() {
     'x-evidence-topic': topic,
   } : {};
   try {
-    const ctxRes = await claudeFetch({
+    const ctxRes = await claudeFetch(withAdvisor({
         model: CLAUDE_MODEL,
         max_tokens: 1200,
         system: `You are a senior clinical educator and board exam question writer designing original visual mnemonic memory scenes. Extract the essential teaching points for a silhouette-first mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
@@ -847,7 +847,7 @@ Output ONLY these two XML tags, nothing else:
 <core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
 <scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
         messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ED/ICU physician — needs precise, high-yield anchors.` }]
-      }, 'stage1-clinical-context', evidenceHeaders);
+      }), 'stage1-clinical-context', evidenceHeaders);
     setStatus('story', '✦ Analyzing topic…', 'running');
     setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
     const ctxRaw = await ctxRes.json();
@@ -1014,15 +1014,16 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
   let imagePromptText = '';
 
   try {
-    const requestBody = {
+    const requestBody = withAdvisor({
       model: CLAUDE_MODEL,
       max_tokens: 4096,
       system: storySystem,
       messages: [{ role: 'user', content: storyUser }]
-    };
+    });
 
     showDebug('STORY REQUEST (sending...)', JSON.stringify({
       model: requestBody.model,
+      advisor: CLAUDE_ADVISOR_MODEL,
       max_tokens: requestBody.max_tokens,
       system_length: requestBody.system.length,
       user_length: storyUser.length

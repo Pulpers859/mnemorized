@@ -5,6 +5,21 @@
 
 const { getApiUrl, escapeHtml, runSupabaseQuery } = MnemorizedUtils;
 const CLAUDE_MODEL = 'claude-sonnet-4-6';
+const CLAUDE_ADVISOR_MODEL = 'claude-opus-4-8';
+const ADVISOR_BETA = 'advisor-tool-2026-03-01';
+const ADVISOR_TOOL = {
+  type: 'advisor_20260301',
+  name: 'advisor',
+  model: CLAUDE_ADVISOR_MODEL,
+};
+
+function withAdvisor(requestBody) {
+  return {
+    ...requestBody,
+    tools: [ADVISOR_TOOL, ...(requestBody.tools || [])],
+    betas: [ADVISOR_BETA, ...(requestBody.betas || [])],
+  };
+}
 
 let forgeReplayMode = 'live';
 

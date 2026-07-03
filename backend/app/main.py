@@ -131,6 +131,8 @@ class MessagePayload(BaseModel):
     system: str | None = None
     temperature: float | None = Field(default=None, ge=0, le=1)
     top_p: float | None = Field(default=None, ge=0, le=1)
+    tools: list[dict[str, Any]] | None = None
+    betas: list[str] | None = None
 
 
 class DevPlanOverridePayload(BaseModel):
@@ -2679,6 +2681,7 @@ async def proxy_anthropic_messages(
             logger.warning("Evidence grounding retrieval failed (non-fatal): %s", exc)
 
     body = payload.model_dump(exclude_none=True)
+    body_betas: list[str] = body.pop("betas", None) or []
 
     replay_mode = get_replay_mode(request.headers) if active_settings.dev_mode else None
     replay_topic, replay_stage = get_replay_meta(request.headers) if replay_mode else (None, None)
@@ -2701,8 +2704,12 @@ async def proxy_anthropic_messages(
         "x-api-key": active_settings.anthropic_api_key,
         "anthropic-version": request.headers.get("anthropic-version", "2023-06-01"),
     }
-    if request.headers.get("anthropic-beta"):
-        upstream_headers["anthropic-beta"] = request.headers["anthropic-beta"]
+    beta_parts: list[str] = list(body_betas)
+    header_beta = request.headers.get("anthropic-beta", "")
+    if header_beta:
+        beta_parts.extend(b.strip() for b in header_beta.split(",") if b.strip())
+    if beta_parts:
+        upstream_headers["anthropic-beta"] = ",".join(dict.fromkeys(beta_parts))
 
     started = time.perf_counter()
     client_id = _client_id(request)

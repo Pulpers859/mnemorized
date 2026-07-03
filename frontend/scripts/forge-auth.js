@@ -408,7 +408,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
     }).join('\n');
     const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ');
 
-    const res = await claudeFetch({
+    const res = await claudeFetch(withAdvisor({
       model: CLAUDE_MODEL,
       max_tokens: 4096,
       system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text. Use visual-mnemonic design principles only; do not copy named scenes, recurring characters, or proprietary symbols from existing commercial mnemonic products.`,
@@ -432,7 +432,7 @@ Repair requirements:
 - Maintain concise visual descriptions and specific board-level medical facts.
 - Return XML only.`
       }]
-    });
+    }));
 
     if (!res.ok) {
       throw new Error(`Repair provider call failed (HTTP ${res.status}).`);
