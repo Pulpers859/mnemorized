@@ -81,6 +81,7 @@ These rules are derived from stress-testing Gemini's image generation across mul
 - **More than ~3 spatial constraints per figure**: "standing in the left ring, leaning forward, right knee bent, hands at navel" — Gemini honors 1-2 of these and ignores the rest.
 - **Clock hand positions**: "hands frozen at one o'clock" is silently ignored. Gemini renders random clock hand positions. Use text labels ("1 HR" plaque) instead.
 - **Ambiguous motion verbs**: "crossing the line" may render as approaching. Use completed-state language: "ALREADY PAST the line," "boot planted BEYOND the line."
+- **Action-state ambiguity**: "ready to exhale," "preparing to throw," or any "about to X" phrasing renders as actively doing X. Gemini defaults to active states. To show a character waiting/idle, describe completed inactivity: "arms FOLDED ACROSS HER CHEST," "torch resting on the ground," "standing still, WAITING."
 
 ### Prompt Length Rule
 Shorter prompts score higher. Every sentence is a chance for Gemini to misinterpret. Target:
