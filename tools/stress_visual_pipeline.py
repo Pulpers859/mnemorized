@@ -186,8 +186,18 @@ Prefer a phonetic scene title when natural. Use a single coherent static room wi
 Every anchor must be a masterful visual cue for what the student is trying to remember, not a labeled prop."""
 
 
+GEMINI_CAPABILITY_RULES = """
+GEMINI CAPABILITY GUARDRAILS — what the renderer can and cannot draw:
+CAN: distinct separate objects, characters with props, objects on/near each other, objects of different sizes/colors/materials, objects in specific positions (left/center/right), text labels of 1-4 words on surfaces, specific materials (wood/metal/brick/glass), specific states (broken/burning/leaking/glowing/tilting).
+CANNOT: one object morphed into the shape of another (e.g. "a leg shaped like a cuff" → Gemini draws a cuff ON a leg). Instead use SEPARATE objects placed together.
+CANNOT: abstract conceptual instructions ("the texture should evoke despair"). Use concrete physical descriptions.
+CANNOT: reliably render more than 6-8 distinct text labels in one image. Budget text carefully.
+WORKAROUND: if you need "object A represents concept B through shape," use a RECOGNIZABLE version of B as a SEPARATE object attached to or replacing A. Example: instead of "stool leg morphed into blood pressure cuff shape," write "one stool leg is REPLACED BY a dangling deflated blood pressure cuff acting as the leg."
+""".strip()
+
+
 def visual_director_system_prompt() -> str:
-    return """You are the visual director for Mnemorized medical mnemonic images.
+    return f"""You are the visual director for Mnemorized medical mnemonic images.
 
 Your job is to rewrite a generated anchor table into ONE coherent Gemini image prompt.
 Optimize for image adherence, not for prose completeness.
@@ -208,6 +218,8 @@ Principles:
 - Before writing the final prompt, silently check that every source anchor is covered.
 - Avoid saying Hook, Encodes, Anchor, station, checklist, rubric, or meta-instructions in the image prompt.
 - Final prompt must read like a camera-directed illustration brief, not a numbered list.
+
+{GEMINI_CAPABILITY_RULES}
 
 Return ONLY:
 <image_prompt>...</image_prompt>
@@ -569,6 +581,42 @@ REGENERATION_PROMPT_CHANGE:
 """
 
 
+def director_repair_system_prompt() -> str:
+    return f"""You are the visual director for Mnemorized medical mnemonic images.
+
+You are REWRITING a visual director prompt that Gemini failed to render correctly.
+You have the original prompt and the audit feedback explaining what went wrong.
+
+Your job: rewrite the ENTIRE image prompt from scratch, keeping what worked and REPLACING what failed with a different, simpler visual strategy that Gemini CAN draw.
+
+{GEMINI_CAPABILITY_RULES}
+
+KEY RULE: Do NOT repeat the same instruction that failed. If the audit says "X was not rendered correctly," find a DIFFERENT visual metaphor for the same medical fact. The goal is to encode the same fact through a visual Gemini can actually produce.
+
+Return ONLY:
+<image_prompt>...</image_prompt>
+"""
+
+
+def director_repair_user_prompt(
+    original_prompt: str,
+    audit_text: str,
+    story: dict[str, Any],
+) -> str:
+    return f"""Rewrite this Gemini image prompt. The original was partially successful but had failures.
+
+ORIGINAL PROMPT:
+{original_prompt}
+
+AUDIT FEEDBACK:
+{audit_text}
+
+ANCHOR TABLE (what must be encoded):
+{anchor_table(story)}
+
+Rewrite the full image prompt. Keep everything that worked. For each failure described in the audit, use a DIFFERENT, SIMPLER visual strategy. Do not repeat the failed instruction. Write a complete replacement prompt, not a diff."""
+
+
 def parse_audit_score(text: str) -> tuple[int, str]:
     score_match = re.search(r"OVERALL_SCORE\s*:\s*(\d{1,3})", text, flags=re.I)
     decision_match = re.search(r"DECISION\s*:\s*(PASS|REPAIR|REGENERATE)", text, flags=re.I)
@@ -815,23 +863,23 @@ async def run_topic(
                     or repair_prompt.upper() == "N/A"
                 )
                 if should_regenerate:
-                    regeneration_guidance = regen_change
-                    if not regeneration_guidance or regeneration_guidance.upper() == "N/A":
-                        regeneration_guidance = repair_prompt
-                    if not regeneration_guidance or regeneration_guidance.upper() == "N/A":
-                        regeneration_guidance = (
-                            "Regenerate from scratch using the audit findings. Make every anchor larger and more literal, "
-                            "avoid exact repeated counts above 12, preserve exact medical labels, and prioritize strong "
-                            "silhouette cues over small details. Do not edit the previous weak image."
+                    rewritten_raw = await anthropic_text(
+                        client,
+                        env["ANTHROPIC_API_KEY"],
+                        model,
+                        director_repair_system_prompt(),
+                        director_repair_user_prompt(prompt2_base, audit_text, plate_story),
+                        max_tokens=2600,
+                    )
+                    rewritten = tag_text(rewritten_raw, "image_prompt") or strip_code_fences(rewritten_raw)
+                    if rewritten and len(rewritten) > 100:
+                        prompt2 = rewritten
+                        prompt2_base = rewritten
+                        (plate_dir / f"director_repair_iter{iteration}.txt").write_text(
+                            rewritten, encoding="utf-8",
                         )
                     else:
-                        regeneration_guidance = re.sub(
-                            r"\b(?:edit|adjust|revise|repair|in-paint)\b(?:\s+the\s+(?:existing\s+)?image)?",
-                            "regenerate the image from scratch so it",
-                            regeneration_guidance,
-                            flags=re.I,
-                        )
-                    prompt2 = f"{prompt2_base}\n\nADDITIONAL REGENERATION FIX FROM IMAGE AUDIT:\n{regeneration_guidance}\n"
+                        prompt2 = f"{prompt2_base}\n\nADDITIONAL REGENERATION FIX:\n{repair_prompt}\n"
                     current_image = None
                 time.sleep(1)
             result["plates"].append(plate_result)
@@ -839,6 +887,44 @@ async def run_topic(
         result["passed"] = all(plate.get("passed") for plate in result["plates"])
 
         return result
+
+
+def assemble_plate_set(result: dict[str, Any], output_dir: Path) -> Path | None:
+    """Stitch passing plate composites into a single publishable plate-set image."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return None
+
+    plates = result.get("plates") or []
+    passing: list[Path] = []
+    for plate in plates:
+        if not plate.get("passed"):
+            continue
+        for iteration in reversed(plate.get("iterations", [])):
+            composite = iteration.get("verified_composite")
+            if composite and Path(composite).exists():
+                passing.append(Path(composite))
+                break
+
+    if not passing:
+        return None
+
+    images = [Image.open(path).convert("RGB") for path in passing]
+    widths = [img.width for img in images]
+    max_width = max(widths)
+    total_height = sum(img.height for img in images)
+
+    canvas = Image.new("RGB", (max_width, total_height), (12, 18, 18))
+    y = 0
+    for img in images:
+        x = (max_width - img.width) // 2
+        canvas.paste(img, (x, y))
+        y += img.height
+
+    set_path = output_dir / "publishable_plate_set.png"
+    canvas.save(set_path)
+    return set_path
 
 
 async def async_main() -> int:
@@ -878,6 +964,10 @@ async def async_main() -> int:
         )
         results.append(result)
         best = max((item["score"] for item in result["iterations"]), default=None)
+        plate_set = assemble_plate_set(result, args.output_root / topic.slug)
+        if plate_set:
+            result["plate_set"] = str(plate_set)
+            print(f"ASSEMBLED {plate_set}", flush=True)
         print(f"DONE {topic.slug} passed={result['passed']} best={best}", flush=True)
 
     summary_path = args.output_root / "stress_summary.json"
