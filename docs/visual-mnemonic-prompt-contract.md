@@ -79,6 +79,8 @@ These rules are derived from stress-testing Gemini's image generation across mul
 - **Shape-morphing**: flames shaped exactly like a specific letter, clouds forming a word. Sometimes works for large bold numerals; fails for complex shapes.
 - **Abstract concepts rendered visually**: "dysregulated host response" cannot be drawn. Must be encoded as a concrete object or character.
 - **More than ~3 spatial constraints per figure**: "standing in the left ring, leaning forward, right knee bent, hands at navel" — Gemini honors 1-2 of these and ignores the rest.
+- **Clock hand positions**: "hands frozen at one o'clock" is silently ignored. Gemini renders random clock hand positions. Use text labels ("1 HR" plaque) instead.
+- **Ambiguous motion verbs**: "crossing the line" may render as approaching. Use completed-state language: "ALREADY PAST the line," "boot planted BEYOND the line."
 
 ### Prompt Length Rule
 Shorter prompts score higher. Every sentence is a chance for Gemini to misinterpret. Target:
