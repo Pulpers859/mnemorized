@@ -2,7 +2,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$NameOrPath,
 
-    [string]$WorktreeRoot = 'C:\Dev\Mnemorized-agent-worktrees',
+    [string]$WorktreeRoot = 'C:\Dev\.agent-sandboxes\Mnemorized',
 
     [switch]$DeleteBranch,
 

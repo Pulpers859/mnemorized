@@ -30,8 +30,8 @@ Skip it for:
 4. Review the worktree diff from the main repo before integrating:
 
    ```powershell
-   git -C C:\Dev\Mnemorized-agent-worktrees\ui-polish status --short
-   git -C C:\Dev\Mnemorized-agent-worktrees\ui-polish diff
+   git -C C:\Dev\.agent-sandboxes\Mnemorized\ui-polish status --short
+   git -C C:\Dev\.agent-sandboxes\Mnemorized\ui-polish diff
    ```
 
 5. Integrate only the useful changes into `main`, then run validation from the main repo.

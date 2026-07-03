@@ -4,7 +4,7 @@ param(
 
     [string]$BaseBranch = 'main',
 
-    [string]$WorktreeRoot = 'C:\Dev\Mnemorized-agent-worktrees',
+    [string]$WorktreeRoot = 'C:\Dev\.agent-sandboxes\Mnemorized',
 
     [switch]$InstallRequirements
 )

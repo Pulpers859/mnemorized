@@ -81,6 +81,8 @@ For risky AI-assisted work, use a disposable git worktree instead of experimenti
 
 The sandbox workflow is documented in `docs/agent-sandbox-workflow.md`. Use one worktree per agent or experiment, keep `C:\Dev\Mnemorized` as the integration checkout on `main`, and remove sandboxes when finished:
 
+By default, sandboxes are created under `C:\Dev\.agent-sandboxes\Mnemorized` so they do not clutter the project folder list.
+
 ```powershell
 .\tools\Remove-MnemorizedAgentWorktree.ps1 -NameOrPath ui-polish -DeleteBranch
 ```
