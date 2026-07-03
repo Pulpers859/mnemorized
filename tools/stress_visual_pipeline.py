@@ -377,13 +377,20 @@ async def gemini_generate_image(
             "contents": conversation,
             "generationConfig": {"responseModalities": ["IMAGE"]},
         }
-        response = await client.post(
-            api_url,
-            params={"key": api_key},
-            json=body,
-            timeout=httpx.Timeout(180.0, connect=10.0),
-        )
-        if response.status_code != 200:
+        for attempt in range(1, 4):
+            response = await client.post(
+                api_url,
+                params={"key": api_key},
+                json=body,
+                timeout=httpx.Timeout(180.0, connect=10.0),
+            )
+            if response.status_code == 200:
+                break
+            if response.status_code in (429, 503) and attempt < 3:
+                wait = 30 * attempt
+                print(f"  Gemini image {response.status_code}, retry in {wait}s (attempt {attempt}/3)", flush=True)
+                time.sleep(wait)
+                continue
             raise RuntimeError(f"Gemini image HTTP {response.status_code}: {response.text[:500]}")
         payload = response.json()
         candidates = payload.get("candidates") or []
@@ -591,7 +598,12 @@ Your job: rewrite the ENTIRE image prompt from scratch, keeping what worked and 
 
 {GEMINI_CAPABILITY_RULES}
 
-KEY RULE: Do NOT repeat the same instruction that failed. If the audit says "X was not rendered correctly," find a DIFFERENT visual metaphor for the same medical fact. The goal is to encode the same fact through a visual Gemini can actually produce.
+KEY RULES:
+1. Do NOT repeat the same instruction that failed. If the audit says "X was not rendered correctly," find a DIFFERENT visual metaphor for the same medical fact.
+2. The rewritten prompt must be SHORTER or equal in length to the original. Never add detail — remove or replace.
+3. Spatial precision beyond left/center/right and top/middle/bottom is WASTED on Gemini. Do not specify exact heights, exact ring positions, or anatomical placement of flames/objects. Use relative terms only.
+4. Do not specify character micro-poses (interlocked fingers, balloon-puffed cheeks, white knuckles). Gemini ignores these and the extra text dilutes the instructions it CAN follow.
+5. Keep the prompt under 10 short paragraphs. Write a camera brief, not a novel.
 
 Return ONLY:
 <image_prompt>...</image_prompt>
@@ -655,13 +667,20 @@ async def gemini_audit_image(
             }
         ]
     }
-    response = await client.post(
-        api_url,
-        params={"key": api_key},
-        json=body,
-        timeout=httpx.Timeout(120.0, connect=10.0),
-    )
-    if response.status_code != 200:
+    for attempt in range(1, 4):
+        response = await client.post(
+            api_url,
+            params={"key": api_key},
+            json=body,
+            timeout=httpx.Timeout(120.0, connect=10.0),
+        )
+        if response.status_code == 200:
+            break
+        if response.status_code in (429, 503) and attempt < 3:
+            wait = 30 * attempt
+            print(f"  Gemini audit {response.status_code}, retry in {wait}s (attempt {attempt}/3)", flush=True)
+            time.sleep(wait)
+            continue
         raise RuntimeError(f"Gemini audit HTTP {response.status_code}: {response.text[:500]}")
     payload = response.json()
     candidates = payload.get("candidates") or []
@@ -686,6 +705,7 @@ async def run_topic(
     plate_size: int,
     deterministic_overlay: bool,
     use_image_edit_repair: bool,
+    start_plate: int = 1,
 ) -> dict[str, Any]:
     topic_dir = output_root / topic.slug
     topic_dir.mkdir(parents=True, exist_ok=True)
@@ -694,51 +714,63 @@ async def run_topic(
     audit_model = env.get("GEMINI_AUDIT_MODEL", DEFAULT_GEMINI_AUDIT_MODEL)
 
     async with httpx.AsyncClient() as client:
-        story_raw = ""
-        story: dict[str, Any] = {"voLines": []}
-        for story_attempt in range(1, 4):
-            extra = ""
-            if story_attempt > 1:
-                extra = (
-                    "\n\nYour previous response was invalid because it included planning text or did not produce 8-10 "
-                    "<vo_line> blocks. Output ONLY the required XML tags now. No <thinking>, no markdown, no headings."
+        story_raw_path = topic_dir / "story_raw.xml"
+        room_desc_path = topic_dir / "room_description.txt"
+        director_path = topic_dir / "visual_director_prompt.txt"
+        can_reuse = start_plate > 1 and story_raw_path.exists() and room_desc_path.exists()
+
+        if can_reuse:
+            story_raw = story_raw_path.read_text(encoding="utf-8")
+            story = parse_story_xml(story_raw)
+            room_description = room_desc_path.read_text(encoding="utf-8")
+            director_prompt = director_path.read_text(encoding="utf-8") if director_path.exists() else ""
+            print(f"  REUSE existing story ({len(story['voLines'])} anchors)", flush=True)
+        else:
+            story_raw = ""
+            story = {"voLines": []}
+            for story_attempt in range(1, 4):
+                extra = ""
+                if story_attempt > 1:
+                    extra = (
+                        "\n\nYour previous response was invalid because it included planning text or did not produce 8-10 "
+                        "<vo_line> blocks. Output ONLY the required XML tags now. No <thinking>, no markdown, no headings."
+                    )
+                story_raw = await anthropic_text(
+                    client,
+                    env["ANTHROPIC_API_KEY"],
+                    model,
+                    story_system_prompt(),
+                    story_user_prompt(topic) + extra,
+                    max_tokens=4096,
                 )
-            story_raw = await anthropic_text(
+                story = parse_story_xml(story_raw)
+                if 8 <= len(story["voLines"]) <= 10:
+                    break
+            story_raw_path.write_text(story_raw, encoding="utf-8")
+            if not 8 <= len(story["voLines"]) <= 10:
+                raise RuntimeError(f"{topic.title}: expected 8-10 anchors, got {len(story['voLines'])}")
+
+            room_raw = await anthropic_text(
                 client,
                 env["ANTHROPIC_API_KEY"],
                 model,
-                story_system_prompt(),
-                story_user_prompt(topic) + extra,
-                max_tokens=4096,
+                "You write empty-room scene descriptions for visual mnemonic image generation.",
+                room_user_prompt(topic, story),
+                max_tokens=300,
             )
-            story = parse_story_xml(story_raw)
-            if 8 <= len(story["voLines"]) <= 10:
-                break
-        (topic_dir / "story_raw.xml").write_text(story_raw, encoding="utf-8")
-        if not 8 <= len(story["voLines"]) <= 10:
-            raise RuntimeError(f"{topic.title}: expected 8-10 anchors, got {len(story['voLines'])}")
+            room_description = re.sub(r"\s+", " ", room_raw).strip()
+            room_desc_path.write_text(room_description, encoding="utf-8")
 
-        room_raw = await anthropic_text(
-            client,
-            env["ANTHROPIC_API_KEY"],
-            model,
-            "You write empty-room scene descriptions for visual mnemonic image generation.",
-            room_user_prompt(topic, story),
-            max_tokens=300,
-        )
-        room_description = re.sub(r"\s+", " ", room_raw).strip()
-        (topic_dir / "room_description.txt").write_text(room_description, encoding="utf-8")
-
-        director_raw = await anthropic_text(
-            client,
-            env["ANTHROPIC_API_KEY"],
-            model,
-            visual_director_system_prompt(),
-            visual_director_user_prompt(topic, story, room_description),
-            max_tokens=3000,
-        )
-        director_prompt = tag_text(director_raw, "image_prompt") or strip_code_fences(director_raw)
-        (topic_dir / "visual_director_prompt.txt").write_text(director_prompt, encoding="utf-8")
+            director_raw = await anthropic_text(
+                client,
+                env["ANTHROPIC_API_KEY"],
+                model,
+                visual_director_system_prompt(),
+                visual_director_user_prompt(topic, story, room_description),
+                max_tokens=3000,
+            )
+            director_prompt = tag_text(director_raw, "image_prompt") or strip_code_fences(director_raw)
+            director_path.write_text(director_prompt, encoding="utf-8")
 
         bundle = make_bundle(topic, story, room_description, model, director_prompt=director_prompt)
         bundle_path = topic_dir / f"{topic.slug}_bundle.json"
@@ -760,6 +792,21 @@ async def run_topic(
         result["plates"] = []
         plates = split_anchor_plates(story, plate_size=plate_size)
         for plate_index, plate_story in enumerate(plates, start=1):
+            if plate_index < start_plate:
+                audit_file = topic_dir / f"plate_{plate_index}" / f"iter{max_iterations}_audit.txt"
+                for i in range(max_iterations, 0, -1):
+                    candidate = topic_dir / f"plate_{plate_index}" / f"iter{i}_audit.txt"
+                    if candidate.exists():
+                        audit_file = candidate
+                        break
+                if audit_file.exists():
+                    score, decision = parse_audit_score(audit_file.read_text(encoding="utf-8"))
+                    result["plates"].append({"plate": plate_index, "passed": decision == "PASS", "skipped": True})
+                    print(f"  SKIP plate {plate_index} (prior score {score}, {decision})", flush=True)
+                else:
+                    result["plates"].append({"plate": plate_index, "passed": False, "skipped": True})
+                    print(f"  SKIP plate {plate_index} (no prior audit)", flush=True)
+                continue
             plate_label = f"Plate {plate_index} of {len(plates)}"
             plate_dir = topic_dir / f"plate_{plate_index}"
             plate_dir.mkdir(parents=True, exist_ok=True)
@@ -938,6 +985,7 @@ async def async_main() -> int:
     parser.add_argument("--use-image-edit-repair", action="store_true", help="Try Gemini image-edit repair before regenerating. Default regenerates from prompt guidance because image edits are less stable.")
     parser.add_argument("--skip-images", action="store_true", help="Generate bundles and QA packs only.")
     parser.add_argument("--topic", action="append", help="Run only a default topic by slug or title.")
+    parser.add_argument("--start-plate", type=int, default=1, help="Skip plates before this index (1-based). Useful for resuming.")
     args = parser.parse_args()
 
     env = load_env(args.env)
@@ -961,6 +1009,7 @@ async def async_main() -> int:
             args.plate_size,
             deterministic_overlay=not args.no_deterministic_overlay,
             use_image_edit_repair=args.use_image_edit_repair,
+            start_plate=args.start_plate,
         )
         results.append(result)
         best = max((item["score"] for item in result["iterations"]), default=None)
