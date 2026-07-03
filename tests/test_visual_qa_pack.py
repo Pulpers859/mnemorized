@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from tools.visual_qa_pack import audit_bundle, build_pack, condense_for_image, refreshed_prompts
+from tools.visual_qa_pack import audit_bundle, build_pack, condense_for_image, refreshed_prompts, visible_text_surface_count
 
 
 def make_bundle() -> dict:
@@ -67,6 +67,33 @@ def test_visual_qa_pack_flags_missing_hooks_and_text_heavy_visuals() -> None:
     assert "text_dependent_visuals" in codes
     assert "hook_may_render" in codes
     assert "brand_style_reference" in codes
+
+
+def test_visual_qa_pack_flags_unquoted_label_piles() -> None:
+    bundle = make_bundle()
+    bundle["story"]["voLines"][0]["visual"] = (
+        "Armory rack with key labeled P2Y12, fishnet labeled UFH/LMWH, "
+        "banner reads CHEW FIRST, plaque stamped 90 MIN"
+    )
+
+    score, findings = audit_bundle(bundle)
+    codes = {finding.code for finding in findings}
+
+    assert visible_text_surface_count(bundle["story"]["voLines"][0]["visual"]) > 2
+    assert score < 100
+    assert "too_many_text_surfaces" in codes
+
+
+def test_visual_qa_pack_flags_visual_meta_leak_without_overcounting_no_labels() -> None:
+    bundle = make_bundle()
+    bundle["story"]["voLines"][0]["visual"] = "Cracked eyeball bottle at left wall. No text labels."
+
+    score, findings = audit_bundle(bundle)
+    codes = {finding.code for finding in findings}
+
+    assert visible_text_surface_count(bundle["story"]["voLines"][0]["visual"]) == 0
+    assert score < 100
+    assert "visual_meta_leak" in codes
 
 
 def test_refreshed_prompt_contract_preserves_compact_formulas() -> None:

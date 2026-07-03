@@ -218,6 +218,7 @@ const demoBanner = document.getElementById('demo-banner');
 demoToggle.addEventListener('change', () => {
   demoBanner.classList.toggle('visible', demoToggle.checked);
 });
+demoBanner.classList.toggle('visible', demoToggle.checked);
 
 const operatorToggle = document.getElementById('operator-toggle');
 const operatorPanel = document.getElementById('operator-panel');
@@ -251,6 +252,12 @@ operatorToggle.addEventListener('change', () => {
 function isDemoMode() { return demoToggle.checked; }
 function isOperatorMode() { return operatorToggle.checked; }
 function demoDelay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function isRealUserPrompt(topic) {
+  const normalized = (topic || '').trim().toLowerCase();
+  if (!normalized) return false;
+  return !/^e\.g\./.test(normalized) && normalized.length > 24;
+}
 
 // ── Copy helpers ─────────────────────────────────────────────────
 
@@ -675,6 +682,16 @@ async function runPipeline() {
   const tone     = document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
 
   if (!topic) { alert('Please describe what needs to be memorized in Section I. Do not include patient-identifying information.'); return; }
+  if (isDemoMode() && isRealUserPrompt(topic)) {
+    const useDemo = confirm(
+      'Demo mode is on and will ignore your Section I prompt, loading the built-in DKA sample instead. Turn Demo off to forge this topic.\n\nContinue with the demo sample anyway?'
+    );
+    if (!useDemo) {
+      demoToggle.checked = false;
+      demoBanner.classList.remove('visible');
+      return;
+    }
+  }
 
   currentStoryData = null;
   currentPromptData = { prompt1: '', prompt2: '' };
@@ -920,6 +937,10 @@ SHAPE DIVERSITY RULE: No two anchors may share the same base shape. If you have 
 
 FORMULA RULE / PRECISION TEXT RULE: Short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. They must be physically attached to a mnemonic device: plaque, dial, ruler mark, scale beam, gauge face, tag, or chalk mark. Do not make text the entire mnemonic. A formula anchor still needs a silhouette-first visual analogy: scale for anion gap, paired rulers for delta-delta, thermometer/ruler/gauge for Winter's formula, locked gauge cabinet for osmol gap.
 
+LARGE NUMBER RULE: Do NOT encode numbers greater than 12 by asking for exact repeated object counts. Image generators cannot reliably draw exactly 30 soldiers, 40 tablets, or 90 items. Use one strong object with an exact plaque, gauge, dial, ruler, or stamped marker instead.
+
+HOOK/VISUAL CONSISTENCY RULE: Do not claim an anchor is label-free if the tested fact requires a number or formula label. If precision text is necessary, make it intentional and attached to a visual device.
+
 SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 ordinary short text labels plus up to 4 precision labels for numbers/formulas. Ordinary labels are 1-3 words max. Precision labels may be formulas or thresholds, but must be sparse, readable, and attached to a strong visual device. Prioritize: medically essential numbers/formulas > character names (sound-alikes) > optional flavor labels.
 
 EXACT LABEL RULE: If a visual specifies a short label, copy it exactly. Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.
@@ -933,7 +954,11 @@ WHAT TO AVOID:
 
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 30 WORDS per visual description
+- Aim for no more than two visible text elements per anchor. A visible text element is any label, number/formula plaque, tag, banner, stamp, dial, gauge, sign, or written word.
+- Do not cram a list of labels into one visual. If an anchor needs several facts, encode most with shape/scale/position/action and reserve text only for the essential number or short mnemonic name.
+- If the VISUAL starts turning into a label list, simplify it into one stronger object interaction.
 - Describe the mnemonic device, its encoding strategy, and its position — text labels are OPTIONAL (1-3 words max if present)
+- VISUAL must describe only what should be drawn. Do not include meta commentary such as "no text labels", "single text element", or "two text elements".
 - The visual MUST work even if all text were removed — shape and identity carry the memory
 - Do NOT describe: era-specific aesthetics, materials, atmospheric details, lighting effects
 - Do NOT use: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, LED
@@ -951,6 +976,7 @@ ABSURDITY LEVEL: ${chaos}/10 — dial how strange the visual anchors are, not ho
 ${clinicalContext}
 
 Respond using ONLY these XML tags in order. Write freely inside — no JSON:
+Do not include <thinking>, markdown, analysis, planning notes, headings, or commentary outside these XML tags.
 
 <scene_title>Short evocative title for the memory scene</scene_title>
 
@@ -961,6 +987,7 @@ For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total �
 GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 items, a drug class with 12 side effects), combine closely related sub-items into a SINGLE anchor with one visual element that encodes 2-3 facts together. For example: a scoring scale's "questions" and "commands" sub-items can share one visual station; motor arm and motor leg can share one stopwatch display; language and articulation can share one communication desk. This keeps the total anchor count at 8-10 while still covering every testable fact. Each visual should encode MORE information, not less — denser per anchor, fewer total anchors.
 
 CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, different time limits, different angles, different doses), the visual description and narration must clearly show BOTH distinct values. For instance, if arms are tested for 10 seconds and legs for 5 seconds, the visual must show "10 SEC" AND "5 SEC" as separate labels — never collapse them into one number.
+ANCHOR COUNT HARD STOP: Never output more than 10 <vo_line> blocks. If you find an 11th fact, merge it into the closest existing anchor before responding.
 <vo_line>
 HOOK: [sound-alike | look-alike | functional | contrast | spatial] — one sentence: what encodes what and why
 NARRATION: [2-4 sentences. Direct viewer attention → name the element → explain the mnemonic link explicitly ("get it? X sounds like Y" or "notice how the shape of X looks like Y") → teach the clinical fact. Natural spoken rhythm. No dramatic language. No movement descriptions.]
@@ -1141,8 +1168,8 @@ Requirements:
     return;
   }
 
-  // ── STAGE 4: Automated image generation ──────────
-  await generateImages();
+  // ── STAGE 4: Explicit image generation ──────────
+  setStageDetail('prompt', 'Image prompts are ready. Use Generate Images when you want to spend an image request, or export the bundle for Gemini web QA.');
 
   btn.disabled = false;
   btn.innerHTML = '✦ FORGE PALACE';

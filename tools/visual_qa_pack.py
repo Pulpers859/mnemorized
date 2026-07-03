@@ -128,6 +128,27 @@ def quoted_segments(text: str) -> list[str]:
     return re.findall(r'"([^"]+)"', text or "")
 
 
+TEXT_SURFACE_RE = re.compile(
+    r"\b(?:label(?:ed)?|marked|stamped|reads?|says?|text|printed|engraved|writing|word(?:s)?)\b",
+    re.I,
+)
+VISUAL_META_RE = re.compile(
+    r"\b(?:no\s+(?:extra\s+)?text\s+labels?|no\s+(?:extra\s+)?labels?|single\s+text\s+element|two\s+text\s+elements?|text\s+elements?)\b",
+    re.I,
+)
+
+
+def visible_text_surface_count(text: str) -> int:
+    """Estimate how many visible text-bearing surfaces an anchor asks for."""
+    if not text:
+        return 0
+    text = VISUAL_META_RE.sub("", text)
+    quoted = len(quoted_segments(text))
+    explicit = len(TEXT_SURFACE_RE.findall(text))
+    semicolon_pressure = 1 if ";" in text and explicit else 0
+    return max(quoted, explicit) + semicolon_pressure
+
+
 def anchor_lines(bundle: dict[str, Any]) -> list[dict[str, Any]]:
     return list(bundle.get("story", {}).get("voLines") or [])
 
@@ -230,6 +251,8 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
     seen_visuals: set[str] = set()
     long_visuals = 0
     text_heavy = 0
+    too_many_text_surfaces = 0
+    visual_meta_leaks = 0
     for index, anchor in enumerate(anchors, start=1):
         visual = str(anchor.get("visual") or "")
         visual_key = re.sub(r"\s+", " ", visual.lower()).strip()
@@ -241,6 +264,10 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
             long_visuals += 1
         if sum(len(segment.split()) for segment in quoted_segments(visual)) > 8:
             text_heavy += 1
+        if visible_text_surface_count(visual) > 2:
+            too_many_text_surfaces += 1
+        if VISUAL_META_RE.search(visual):
+            visual_meta_leaks += 1
 
         anchor_fact = str(anchor.get("anchor") or "")
         if re.search(r"\b(get it|remember|this is your)\b", anchor_fact, flags=re.I):
@@ -252,6 +279,10 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
         findings.append(Finding("minor", "long_visuals", f"{long_visuals} visual descriptions exceed 30 words."))
     if text_heavy:
         findings.append(Finding("major", "text_dependent_visuals", f"{text_heavy} anchors rely on more than 8 quoted label words."))
+    if too_many_text_surfaces:
+        findings.append(Finding("major", "too_many_text_surfaces", f"{too_many_text_surfaces} anchors request more than two visible text-bearing surfaces."))
+    if visual_meta_leaks:
+        findings.append(Finding("major", "visual_meta_leak", f"{visual_meta_leaks} visual descriptions include meta-instructions instead of drawable scene content."))
 
     if not prompts["prompt1"] or not prompts["prompt2"]:
         findings.append(Finding("critical", "missing_prompts", "Bundle does not include both image prompts."))

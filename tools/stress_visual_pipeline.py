@@ -1,0 +1,896 @@
+#!/usr/bin/env python3
+"""Run an end-to-end visual mnemonic stress loop against provider APIs.
+
+This local tool is intentionally outside the app runtime. It uses ignored
+developer credentials from backend/.env, writes artifacts to an ignored
+troubleshooting directory, and gives future agents a repeatable way to test:
+
+topic -> story anchors -> image prompts -> Gemini image -> image audit -> repair
+"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import json
+import re
+import time
+import textwrap
+from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+import sys
+from typing import Any
+
+import httpx
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from tools.visual_qa_pack import build_pack, refreshed_prompts
+
+
+ANTHROPIC_URL = "https://api.anthropic.com/v1/messages"
+GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+DEFAULT_CLAUDE_MODEL = "claude-sonnet-4-6"
+DEFAULT_GEMINI_IMAGE_MODEL = "gemini-2.5-flash-image"
+DEFAULT_GEMINI_AUDIT_MODEL = "gemini-2.5-flash"
+TARGET_SCORE = 96
+
+
+@dataclass
+class TopicCase:
+    slug: str
+    title: str
+    prompt: str
+
+
+DEFAULT_TOPICS = [
+    TopicCase(
+        slug="sepsis_septic_shock_initial_management",
+        title="Sepsis and septic shock initial management",
+        prompt=(
+            "Sepsis and septic shock initial management for medical students. Include Sepsis-3 definition, "
+            "qSOFA/SOFA risk recognition, lactate, blood cultures before antibiotics when feasible, "
+            "broad-spectrum antibiotics within 1 hour for shock/high likelihood sepsis, 30 mL/kg crystalloid "
+            "for hypotension or lactate >=4, norepinephrine first-line vasopressor to MAP >=65, source control, "
+            "reassessment of perfusion, repeat lactate if elevated, and steroid role for refractory shock. "
+            "Preserve exact thresholds and timing."
+        ),
+    ),
+    TopicCase(
+        slug="acute_coronary_syndrome_stemi_management",
+        title="Acute coronary syndrome / STEMI initial management",
+        prompt=(
+            "Acute coronary syndrome and STEMI initial ED management for medical students. Include immediate ECG "
+            "within 10 minutes, STEMI criteria, aspirin loading, P2Y12/heparin basics, nitrates contraindications "
+            "including PDE5 inhibitors and RV infarct/hypotension, oxygen only if hypoxemic, high-intensity statin, "
+            "PCI door-to-balloon <=90 minutes, fibrinolysis if PCI unavailable within appropriate window, troponin "
+            "trend for NSTEMI, and dangerous mimics like aortic dissection. Preserve exact thresholds and timing."
+        ),
+    ),
+    TopicCase(
+        slug="toxic_alcohol_poisoning_diagnosis_treatment",
+        title="Toxic alcohol poisoning diagnosis and treatment",
+        prompt=(
+            "Toxic alcohol poisoning diagnosis and treatment for medical students. Include methanol vs ethylene glycol, "
+            "early osmolar gap then later anion gap metabolic acidosis, visual symptoms for methanol, calcium oxalate "
+            "crystals/renal injury for ethylene glycol, fomepizole mechanism blocking alcohol dehydrogenase, ethanol "
+            "alternative, indications for hemodialysis including severe acidosis/end-organ toxicity/high levels, folinic "
+            "acid for methanol, thiamine/pyridoxine for ethylene glycol, and do not wait for confirmatory levels when "
+            "suspicion is high. Preserve formulas and thresholds if included."
+        ),
+    ),
+]
+
+
+def load_env(path: Path) -> dict[str, str]:
+    values: dict[str, str] = {}
+    if not path.exists():
+        return values
+    for raw in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        values[key.strip()] = value.strip().strip('"').strip("'")
+    return values
+
+
+def slugify(value: str) -> str:
+    return re.sub(r"[^a-zA-Z0-9]+", "_", value.strip()).strip("_").lower()[:80] or "topic"
+
+
+def strip_code_fences(text: str) -> str:
+    return re.sub(r"^```(?:xml|json)?\s*|\s*```$", "", text.strip(), flags=re.I | re.S).strip()
+
+
+def tag_text(text: str, tag: str) -> str:
+    match = re.search(fr"<{tag}>(.*?)</{tag}>", text, flags=re.I | re.S)
+    return match.group(1).strip() if match else ""
+
+
+def parse_story_xml(text: str) -> dict[str, Any]:
+    cleaned = strip_code_fences(text)
+    vo_lines: list[dict[str, Any]] = []
+    for index, block in enumerate(re.findall(r"<vo_line>(.*?)</vo_line>", cleaned, flags=re.I | re.S), start=1):
+        fields: dict[str, str] = {}
+        for name in ("HOOK", "NARRATION", "VISUAL", "ANCHOR"):
+            match = re.search(
+                fr"{name}\s*:\s*(.*?)(?=\n(?:HOOK|NARRATION|VISUAL|ANCHOR)\s*:|\Z)",
+                block.strip(),
+                flags=re.I | re.S,
+            )
+            fields[name.lower()] = re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
+        vo_lines.append(
+            {
+                "n": index,
+                "hook": fields["hook"],
+                "narration": fields["narration"],
+                "visual": fields["visual"],
+                "anchor": fields["anchor"],
+            }
+        )
+    return {
+        "scene_title": tag_text(cleaned, "scene_title"),
+        "opening": tag_text(cleaned, "opening"),
+        "voLines": vo_lines,
+        "review_script": tag_text(cleaned, "review_script"),
+    }
+
+
+def story_system_prompt() -> str:
+    return """You create original medical visual mnemonic memory-palace scripts.
+
+Your output must be suitable for Gemini image generation and must follow this contract:
+- Produce exactly 8 anchors when possible. Use 9-10 only if the topic truly cannot be covered by grouped anchors.
+- Each anchor must include HOOK, NARRATION, VISUAL, and ANCHOR.
+- HOOK explains the encoding strategy: sound-alike, look-alike, functional, contrast, or spatial.
+- VISUAL is maximum 30 words and must be silhouette-first: shape, identity, action, scale, and position carry the memory before labels.
+- Text labels are allowed only for short names, formulas, cutoffs, thresholds, and timing. Labels must be exact and attached to a visual object.
+- Aim for no more than two visible text elements per anchor. A visible text element is any label, number/formula plaque, tag, banner, stamp, dial, gauge, sign, or written word.
+- Do not cram a list of labels into one visual. If an anchor needs several facts, encode most with shape/scale/position/action and reserve text only for the essential number or short mnemonic name.
+- If the VISUAL starts turning into a label list, simplify it into one stronger object interaction.
+- VISUAL must describe only what should be drawn. Do not include meta commentary such as "no text labels", "single text element", or "two text elements".
+- LARGE NUMBER RULE: do not encode numbers greater than 12 by asking for exact repeated object counts. Use one strong object with an exact plaque, gauge, dial, ruler, or stamped marker instead.
+- HOOK/VISUAL CONSISTENCY RULE: do not claim an anchor is label-free if the tested fact requires a number or formula label.
+- Avoid clipboards, checklists, generic posters, ordinary bottles, and repeated same-shaped containers unless they are made visually unique.
+- Use original scenes and symbols. Do not copy proprietary visual mnemonic products.
+- Group related subitems when necessary, but preserve distinct numbers and thresholds.
+- Never output more than 10 <vo_line> blocks. If you find an 11th fact, merge it into the closest existing anchor before responding.
+- ANCHOR is the clinical fact only, under 35 words.
+
+Respond using ONLY these XML tags in order:
+Do not include <thinking>, markdown, analysis, planning notes, headings, or commentary outside the XML tags.
+<scene_title>...</scene_title>
+<opening>...</opening>
+Then 8 <vo_line> blocks preferred, 9-10 maximum:
+<vo_line>
+HOOK: ...
+NARRATION: ...
+VISUAL: ...
+ANCHOR: ...
+</vo_line>
+<review_script>...</review_script>
+"""
+
+
+def story_user_prompt(topic: TopicCase) -> str:
+    return f"""Create an original visual mnemonic memory palace narration script for:
+{topic.prompt}
+
+Tone: precise, memorable, premium medical education.
+Absurdity: 7/10.
+Prefer a phonetic scene title when natural. Use a single coherent static room with clear left/center/right/foreground/background zones.
+Every anchor must be a masterful visual cue for what the student is trying to remember, not a labeled prop."""
+
+
+def visual_director_system_prompt() -> str:
+    return """You are the visual director for Mnemorized medical mnemonic images.
+
+Your job is to rewrite a generated anchor table into ONE coherent Gemini image prompt.
+Optimize for image adherence, not for prose completeness.
+
+Principles:
+- Scene first: make one memorable room with a clear visual metaphor and reading path.
+- Keep the prompt drawable. Avoid legalistic checklists and long paragraphs.
+- Preserve every anchor, but rewrite each as a compact visual beat.
+- Compress 8-10 anchors into 6-8 large spatial beats when related facts belong together.
+- Put exact numbers/formulas on large physical devices only: gauges, plaques, dials, rulers, scales, clocks, tags.
+- Avoid ordinary word labels whenever an object/action can carry the meaning. Do not label obvious objects like syringes, vials, kidneys, eyes, pipes, antibiotics, or blood cultures.
+- Visible text should be an allowlist of essential precision labels only: short thresholds, formulas, timings, or one-word mnemonic names. Prefer compact labels such as "22", "100", "4", "1 HR", "30 mL/kg", "MAP 65" over long phrases.
+- Never ask Gemini to render long medical words unless the exact word is the tested fact.
+- Do not encode large numbers as exact object counts above 12.
+- Every beat must be large, distinct, and silhouette-readable at 1024px.
+- Do not reuse the same base object for two anchors in conflicting states. If one fact is "before" and another is "within 1 hour," use different symbols or a single clear sequence path, not two versions of the same cannon/syringe/clock.
+- For multi-criterion clinical screens, use body-icon cues first (brain/fog, heaving ribs, collapsing cuff) and only tiny numeric plaques if essential.
+- Before writing the final prompt, silently check that every source anchor is covered.
+- Avoid saying Hook, Encodes, Anchor, station, checklist, rubric, or meta-instructions in the image prompt.
+- Final prompt must read like a camera-directed illustration brief, not a numbered list.
+
+Return ONLY:
+<image_prompt>...</image_prompt>
+"""
+
+
+def visual_director_user_prompt(
+    topic: TopicCase,
+    story: dict[str, Any],
+    room_description: str,
+    plate_label: str | None = None,
+) -> str:
+    anchors = anchor_table(story)
+    plate_context = f"\nPLATE: {plate_label}" if plate_label else ""
+    return f"""Build a Gemini image prompt for this Mnemorized scene.
+
+TOPIC: {topic.title}
+SCENE TITLE: {story.get("scene_title", "")}
+EMPTY ROOM FOUNDATION: {room_description}
+{plate_context}
+
+ANCHOR TABLE:
+{anchors}
+
+Write one image prompt with this structure:
+First sentence: style, camera, 16:9, dense but readable hand-drawn medical mnemonic map.
+Second sentence: the room metaphor and reading path.
+Then one spatial paragraph: "In the left foreground...", "along the left wall...", "at center...", "behind center...", "on the right side...", "in the foreground...", "in the back corner..."
+Final sentence: only sparse in-world text for exact numbers, formulas, or mnemonic names; no labels on obvious objects; no floating captions, no zone labels, no checklist or infographic layout.
+
+Do not use a numbered list. Do not use headings. Do not mention anchors, hooks, encodes, stations, or audit language.
+Keep the whole image prompt under 1600 words. Make it vivid and draw-focused. Avoid medical explanation except exact labels that must appear."""
+
+
+def story_subset(story: dict[str, Any], anchors: list[dict[str, Any]], title_suffix: str) -> dict[str, Any]:
+    return {
+        "scene_title": f"{story.get('scene_title', '')} — {title_suffix}",
+        "opening": story.get("opening", ""),
+        "voLines": anchors,
+        "review_script": "",
+    }
+
+
+def split_anchor_plates(story: dict[str, Any], plate_size: int = 3) -> list[dict[str, Any]]:
+    anchors = list(story.get("voLines") or [])
+    return [
+        story_subset(story, anchors[index:index + plate_size], f"Plate {plate_index}")
+        for plate_index, index in enumerate(range(0, len(anchors), plate_size), start=1)
+    ]
+
+
+def room_user_prompt(topic: TopicCase, story: dict[str, Any]) -> str:
+    return f"""Write a scene description for a memory palace illustration. Output ONLY the empty room/space, no objects and no style directives.
+
+MEDICAL TOPIC: {topic.title}
+SCENE TITLE: {story.get("scene_title", "")}
+OPENING: {story.get("opening", "")}
+TOTAL ANCHORS TO FIT: {len(story.get("voLines") or [])}
+
+Requirements:
+- 40-60 words maximum
+- Describe walls, floor, ceiling, doorways, windows, general surfaces, and materials only
+- No people, no named props, no medical equipment, no signs, no text
+- Wide establishing shot with clear zones"""
+
+
+async def anthropic_text(
+    client: httpx.AsyncClient,
+    api_key: str,
+    model: str,
+    system: str,
+    user: str,
+    max_tokens: int,
+) -> str:
+    response = await client.post(
+        ANTHROPIC_URL,
+        headers={
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        },
+        json={
+            "model": model,
+            "max_tokens": max_tokens,
+            "system": system,
+            "messages": [{"role": "user", "content": user}],
+        },
+        timeout=httpx.Timeout(180.0, connect=10.0),
+    )
+    response.raise_for_status()
+    payload = response.json()
+    parts = payload.get("content") or []
+    return "\n".join(part.get("text", "") for part in parts if part.get("type") == "text").strip()
+
+
+def make_bundle(
+    topic: TopicCase,
+    story: dict[str, Any],
+    room_description: str,
+    model: str,
+    director_prompt: str | None = None,
+) -> dict[str, Any]:
+    bundle = {
+        "_format": "mnemorized-forge-bundle-v1",
+        "exported_at": datetime.now(timezone.utc).isoformat(),
+        "topic": topic.prompt,
+        "model": model,
+        "story": story,
+        "image_prompts": {
+            "prompt1": f"{room_description}, aspect ratio 16:9, flat 2D cartoon",
+            "prompt2": "",
+        },
+        "quality_gate": "Local stress harness: provider story generation only; medical citation gate not run.",
+        "generated_images": {},
+    }
+    bundle["image_prompts"] = refreshed_prompts(bundle)
+    if director_prompt:
+        bundle["image_prompts"]["prompt2_original"] = bundle["image_prompts"]["prompt2"]
+        bundle["image_prompts"]["prompt2"] = director_prompt
+    return bundle
+
+
+def inline_image_part(image_path: Path, mime_type: str = "image/png") -> dict[str, Any]:
+    return {
+        "inlineData": {
+            "mimeType": mime_type,
+            "data": base64.b64encode(image_path.read_bytes()).decode("ascii"),
+        }
+    }
+
+
+async def gemini_generate_image(
+    client: httpx.AsyncClient,
+    api_key: str,
+    model: str,
+    prompts: list[str],
+    output_dir: Path,
+    prefix: str,
+    seed_image: Path | None = None,
+    seed_prompt: str | None = None,
+) -> Path:
+    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    conversation: list[dict[str, Any]] = []
+    image_path: Path | None = None
+
+    if seed_image and seed_prompt:
+        prompts = [seed_prompt]
+
+    for index, prompt in enumerate(prompts, start=1):
+        parts: list[dict[str, Any]] = [{"text": prompt}]
+        if seed_image and seed_prompt:
+            parts.append(inline_image_part(seed_image))
+        conversation.append({"role": "user", "parts": parts})
+        body = {
+            "contents": conversation,
+            "generationConfig": {"responseModalities": ["IMAGE"]},
+        }
+        response = await client.post(
+            api_url,
+            params={"key": api_key},
+            json=body,
+            timeout=httpx.Timeout(180.0, connect=10.0),
+        )
+        if response.status_code != 200:
+            raise RuntimeError(f"Gemini image HTTP {response.status_code}: {response.text[:500]}")
+        payload = response.json()
+        candidates = payload.get("candidates") or []
+        parts_out = candidates[0].get("content", {}).get("parts", []) if candidates else []
+        image_data = next((part.get("inlineData") for part in parts_out if part.get("inlineData")), None)
+        if not image_data or not image_data.get("data"):
+            raise RuntimeError(f"Gemini returned no image for prompt {index}: {json.dumps(payload)[:500]}")
+        mime = image_data.get("mimeType", "image/png")
+        ext = ".png" if "png" in mime else ".jpg"
+        image_path = output_dir / f"{prefix}_prompt{index}{ext}"
+        image_path.write_bytes(base64.b64decode(image_data["data"]))
+        conversation.append({"role": "model", "parts": [{"inlineData": image_data}]})
+
+    if image_path is None:
+        raise RuntimeError("Gemini image generation produced no output.")
+    return image_path
+
+
+def anchor_table(story: dict[str, Any]) -> str:
+    lines: list[str] = []
+    for anchor in story.get("voLines") or []:
+        lines.append(f"Anchor {anchor.get('n')}")
+        lines.append(f"HOOK: {anchor.get('hook', '')}")
+        lines.append(f"VISUAL: {anchor.get('visual', '')}")
+        lines.append(f"ENCODES: {anchor.get('anchor', '')}")
+        lines.append("")
+    return "\n".join(lines).strip()
+
+
+def compact_fact(text: str, limit: int = 150) -> str:
+    fact = re.sub(r"\s+", " ", text or "").strip()
+    if len(fact) <= limit:
+        return fact
+    return fact[: limit - 1].rstrip(" ,;") + "…"
+
+
+def deterministic_overlay_image(image_path: Path, story: dict[str, Any], output_path: Path) -> Path:
+    """Add a deterministic recall strip so exact medical facts are not AI-rendered pixels.
+
+    Gemini is useful for the memory-scene art layer, but it is not reliable at
+    rendering exact thresholds, units, and formulas. This composite keeps the
+    art layer intact and adds verifiable fact text in a controlled renderer.
+    """
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError as exc:  # pragma: no cover - depends on local tool env
+        raise RuntimeError("Pillow is required for deterministic overlay output. Install with `python -m pip install pillow`.") from exc
+
+    base = Image.open(image_path).convert("RGB")
+    width, height = base.size
+    anchors = list(story.get("voLines") or [])
+    if not anchors:
+        base.save(output_path)
+        return output_path
+
+    font_candidates = [
+        Path("C:/Windows/Fonts/arial.ttf"),
+        Path("C:/Windows/Fonts/segoeui.ttf"),
+        Path("C:/Windows/Fonts/calibri.ttf"),
+    ]
+    bold_candidates = [
+        Path("C:/Windows/Fonts/arialbd.ttf"),
+        Path("C:/Windows/Fonts/segoeuib.ttf"),
+        Path("C:/Windows/Fonts/calibrib.ttf"),
+    ]
+
+    def load_font(candidates: list[Path], size: int) -> Any:
+        for candidate in candidates:
+            if candidate.exists():
+                return ImageFont.truetype(str(candidate), size=size)
+        return ImageFont.load_default()
+
+    title_font = load_font(bold_candidates, max(22, width // 54))
+    body_font = load_font(font_candidates, max(18, width // 70))
+    badge_font = load_font(bold_candidates, max(18, width // 68))
+
+    margin = max(20, width // 48)
+    gap = max(10, width // 120)
+    columns = 2 if width >= 1000 and len(anchors) > 1 else 1
+    col_width = (width - margin * 2 - gap * (columns - 1)) // columns
+    line_chars = max(34, col_width // max(9, body_font.size // 2))
+
+    wrapped: list[list[str]] = []
+    for anchor in anchors:
+        fact = compact_fact(str(anchor.get("anchor") or anchor.get("visual") or ""), 180)
+        wrapped.append(textwrap.wrap(fact, width=line_chars, max_lines=3, placeholder="…"))
+
+    card_h = max(78, body_font.size * 4 + 18)
+    rows = (len(anchors) + columns - 1) // columns
+    strip_h = margin * 2 + title_font.size + 14 + rows * card_h + (rows - 1) * gap
+
+    canvas = Image.new("RGB", (width, height + strip_h), (12, 18, 18))
+    canvas.paste(base, (0, 0))
+    draw = ImageDraw.Draw(canvas)
+    strip_y = height
+    draw.rectangle([0, strip_y, width, height + strip_h], fill=(11, 17, 17))
+    draw.line([0, strip_y, width, strip_y], fill=(190, 255, 70), width=max(2, width // 500))
+    draw.text(
+        (margin, strip_y + margin),
+        "Verified recall strip - exact protocol facts rendered deterministically",
+        fill=(210, 255, 95),
+        font=title_font,
+    )
+
+    start_y = strip_y + margin + title_font.size + 14
+    for index, anchor in enumerate(anchors):
+        row = index // columns
+        col = index % columns
+        x = margin + col * (col_width + gap)
+        y = start_y + row * (card_h + gap)
+        draw.rounded_rectangle(
+            [x, y, x + col_width, y + card_h],
+            radius=10,
+            fill=(18, 28, 28),
+            outline=(64, 86, 72),
+            width=1,
+        )
+        badge_size = max(30, body_font.size + 12)
+        badge_x = x + 12
+        badge_y = y + 12
+        draw.ellipse(
+            [badge_x, badge_y, badge_x + badge_size, badge_y + badge_size],
+            fill=(125, 160, 24),
+            outline=(210, 255, 95),
+            width=1,
+        )
+        n = str(anchor.get("n") or index + 1)
+        bbox = draw.textbbox((0, 0), n, font=badge_font)
+        draw.text(
+            (badge_x + (badge_size - (bbox[2] - bbox[0])) / 2, badge_y + (badge_size - (bbox[3] - bbox[1])) / 2 - 1),
+            n,
+            fill=(245, 255, 220),
+            font=badge_font,
+        )
+        text_x = badge_x + badge_size + 12
+        text_y = y + 12
+        for line in wrapped[index]:
+            draw.text((text_x, text_y), line, fill=(236, 241, 230), font=body_font)
+            text_y += body_font.size + 6
+
+    canvas.save(output_path)
+    return output_path
+
+
+def audit_prompt(
+    story: dict[str, Any],
+    visual_prompt: str | None = None,
+    deterministic_overlay: bool = False,
+) -> str:
+    visual_source = (
+        f"""DIRECTOR VISUAL PROMPT:
+
+{visual_prompt}
+
+"""
+        if visual_prompt
+        else ""
+    )
+    visual_rule = (
+        "Use the DIRECTOR VISUAL PROMPT as the visual source of truth. Use the anchor table to verify clinical coverage. "
+        "Do not penalize the image for differing from the anchor table's original VISUAL wording when the director prompt uses a safer or clearer visual for the same fact."
+        if visual_prompt
+        else "Use the anchor table as the visual source of truth."
+    )
+    overlay_rule = (
+        "\nThis image may include a deterministic verified recall strip below the generated art layer. Treat exact facts in that strip as valid for medical-fact accuracy and label accuracy. Still require the art layer to contain recognizable visual mnemonic cues for each numbered fact."
+        if deterministic_overlay
+        else ""
+    )
+    return f"""You are auditing a generated Mnemorized medical visual mnemonic image.
+
+{visual_rule}{overlay_rule}
+
+Score harshly but fairly. A publishable image must have all clinical facts covered, visible, readable at 1024px, medically faithful, silhouette-first, and not dependent on long labels.
+Numeric thresholds/formulas may appear, but they must be accurate and attached to a visual object.
+If the director intentionally replaces an unsafe image-generation target such as "exactly 30 objects" with a plaque/gauge/dial label like "30 mL/kg," treat that as correct.
+
+Return exactly:
+OVERALL_SCORE: [0-100]
+DECISION: PASS / REPAIR / REGENERATE
+SUMMARY: [2-4 sentences]
+ANCHOR_AUDIT:
+| # | Present? | Hook fidelity | Silhouette/readability | Text/label accuracy | Medical risk | Fix |
+|---|---|---|---|---|---|---|
+SYSTEMIC_FAILURES:
+- [repeatable failures only, or None.]
+REPAIR_PROMPT:
+[If REPAIR, write an image-edit prompt. Otherwise N/A.]
+REGENERATION_PROMPT_CHANGE:
+[If systemic regeneration needed, write prompt change. Otherwise N/A.]
+
+{visual_source}ANCHOR TABLE:
+
+{anchor_table(story)}
+"""
+
+
+def parse_audit_score(text: str) -> tuple[int, str]:
+    score_match = re.search(r"OVERALL_SCORE\s*:\s*(\d{1,3})", text, flags=re.I)
+    decision_match = re.search(r"DECISION\s*:\s*(PASS|REPAIR|REGENERATE)", text, flags=re.I)
+    score = int(score_match.group(1)) if score_match else 0
+    decision = decision_match.group(1).upper() if decision_match else "REGENERATE"
+    return min(score, 100), decision
+
+
+def extract_section(text: str, name: str) -> str:
+    match = re.search(
+        fr"{name}\s*:\s*(.*?)(?=\n[A-Z_]+\s*:|\Z)",
+        text,
+        flags=re.I | re.S,
+    )
+    return match.group(1).strip() if match else ""
+
+
+async def gemini_audit_image(
+    client: httpx.AsyncClient,
+    api_key: str,
+    model: str,
+    image_path: Path,
+    story: dict[str, Any],
+    visual_prompt: str | None = None,
+    deterministic_overlay: bool = False,
+) -> str:
+    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    body = {
+        "contents": [
+            {
+                "role": "user",
+                "parts": [
+                    {"text": audit_prompt(story, visual_prompt=visual_prompt, deterministic_overlay=deterministic_overlay)},
+                    inline_image_part(image_path),
+                ],
+            }
+        ]
+    }
+    response = await client.post(
+        api_url,
+        params={"key": api_key},
+        json=body,
+        timeout=httpx.Timeout(120.0, connect=10.0),
+    )
+    if response.status_code != 200:
+        raise RuntimeError(f"Gemini audit HTTP {response.status_code}: {response.text[:500]}")
+    payload = response.json()
+    candidates = payload.get("candidates") or []
+    parts = candidates[0].get("content", {}).get("parts", []) if candidates else []
+    return "\n".join(part.get("text", "") for part in parts if part.get("text")).strip()
+
+
+def topic_cases(selected: list[str] | None = None) -> list[TopicCase]:
+    if not selected:
+        return DEFAULT_TOPICS
+    selected_set = {slugify(item) for item in selected}
+    return [topic for topic in DEFAULT_TOPICS if topic.slug in selected_set or slugify(topic.title) in selected_set]
+
+
+async def run_topic(
+    topic: TopicCase,
+    env: dict[str, str],
+    output_root: Path,
+    max_iterations: int,
+    target_score: int,
+    skip_images: bool,
+    plate_size: int,
+    deterministic_overlay: bool,
+    use_image_edit_repair: bool,
+) -> dict[str, Any]:
+    topic_dir = output_root / topic.slug
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    model = env.get("CLAUDE_MODEL", DEFAULT_CLAUDE_MODEL)
+    image_model = env.get("GEMINI_MODEL", DEFAULT_GEMINI_IMAGE_MODEL)
+    audit_model = env.get("GEMINI_AUDIT_MODEL", DEFAULT_GEMINI_AUDIT_MODEL)
+
+    async with httpx.AsyncClient() as client:
+        story_raw = ""
+        story: dict[str, Any] = {"voLines": []}
+        for story_attempt in range(1, 4):
+            extra = ""
+            if story_attempt > 1:
+                extra = (
+                    "\n\nYour previous response was invalid because it included planning text or did not produce 8-10 "
+                    "<vo_line> blocks. Output ONLY the required XML tags now. No <thinking>, no markdown, no headings."
+                )
+            story_raw = await anthropic_text(
+                client,
+                env["ANTHROPIC_API_KEY"],
+                model,
+                story_system_prompt(),
+                story_user_prompt(topic) + extra,
+                max_tokens=4096,
+            )
+            story = parse_story_xml(story_raw)
+            if 8 <= len(story["voLines"]) <= 10:
+                break
+        (topic_dir / "story_raw.xml").write_text(story_raw, encoding="utf-8")
+        if not 8 <= len(story["voLines"]) <= 10:
+            raise RuntimeError(f"{topic.title}: expected 8-10 anchors, got {len(story['voLines'])}")
+
+        room_raw = await anthropic_text(
+            client,
+            env["ANTHROPIC_API_KEY"],
+            model,
+            "You write empty-room scene descriptions for visual mnemonic image generation.",
+            room_user_prompt(topic, story),
+            max_tokens=300,
+        )
+        room_description = re.sub(r"\s+", " ", room_raw).strip()
+        (topic_dir / "room_description.txt").write_text(room_description, encoding="utf-8")
+
+        director_raw = await anthropic_text(
+            client,
+            env["ANTHROPIC_API_KEY"],
+            model,
+            visual_director_system_prompt(),
+            visual_director_user_prompt(topic, story, room_description),
+            max_tokens=3000,
+        )
+        director_prompt = tag_text(director_raw, "image_prompt") or strip_code_fences(director_raw)
+        (topic_dir / "visual_director_prompt.txt").write_text(director_prompt, encoding="utf-8")
+
+        bundle = make_bundle(topic, story, room_description, model, director_prompt=director_prompt)
+        bundle_path = topic_dir / f"{topic.slug}_bundle.json"
+        bundle_path.write_text(json.dumps(bundle, indent=2), encoding="utf-8")
+        pack_dir = build_pack(bundle_path, output_root / "_visual_qa_packs", refresh_prompt_contract=False)
+
+        result: dict[str, Any] = {
+            "topic": topic.title,
+            "bundle": str(bundle_path),
+            "pack": str(pack_dir),
+            "anchors": len(story["voLines"]),
+            "iterations": [],
+            "passed": False,
+        }
+        if skip_images:
+            return result
+
+        prompt1 = (pack_dir / "01_gemini_prompt_1_scene_foundation.txt").read_text(encoding="utf-8")
+        result["plates"] = []
+        plates = split_anchor_plates(story, plate_size=plate_size)
+        for plate_index, plate_story in enumerate(plates, start=1):
+            plate_label = f"Plate {plate_index} of {len(plates)}"
+            plate_dir = topic_dir / f"plate_{plate_index}"
+            plate_dir.mkdir(parents=True, exist_ok=True)
+            plate_prompt_raw = await anthropic_text(
+                client,
+                env["ANTHROPIC_API_KEY"],
+                model,
+                visual_director_system_prompt(),
+                visual_director_user_prompt(topic, plate_story, room_description, plate_label=plate_label),
+                max_tokens=2600,
+            )
+            prompt2_base = tag_text(plate_prompt_raw, "image_prompt") or strip_code_fences(plate_prompt_raw)
+            (plate_dir / "visual_director_prompt.txt").write_text(prompt2_base, encoding="utf-8")
+            prompt2 = prompt2_base
+            current_image: Path | None = None
+            plate_result: dict[str, Any] = {
+                "plate": plate_index,
+                "anchors": [anchor.get("n") for anchor in plate_story.get("voLines", [])],
+                "prompt": str(plate_dir / "visual_director_prompt.txt"),
+                "iterations": [],
+                "passed": False,
+            }
+
+            for iteration in range(1, max_iterations + 1):
+                prefix = f"plate{plate_index}_iter{iteration}"
+                if current_image is not None and use_image_edit_repair:
+                    repair_prompt = plate_result["iterations"][-1].get("repair_prompt", "")
+                    if repair_prompt and repair_prompt.upper() != "N/A":
+                        current_image = await gemini_generate_image(
+                            client,
+                            env["GEMINI_API_KEY"],
+                            image_model,
+                            [],
+                            plate_dir,
+                            prefix,
+                            seed_image=current_image,
+                            seed_prompt=repair_prompt,
+                        )
+                    else:
+                        current_image = await gemini_generate_image(
+                            client,
+                            env["GEMINI_API_KEY"],
+                            image_model,
+                            [prompt1, prompt2],
+                            plate_dir,
+                            prefix,
+                        )
+                else:
+                    current_image = await gemini_generate_image(
+                        client,
+                        env["GEMINI_API_KEY"],
+                        image_model,
+                        [prompt1, prompt2],
+                        plate_dir,
+                        prefix,
+                    )
+
+                audit_image = current_image
+                composite_path: Path | None = None
+                if deterministic_overlay:
+                    composite_path = plate_dir / f"{prefix}_verified_composite.png"
+                    audit_image = deterministic_overlay_image(current_image, plate_story, composite_path)
+
+                audit_text = await gemini_audit_image(
+                    client,
+                    env["GEMINI_API_KEY"],
+                    audit_model,
+                    audit_image,
+                    plate_story,
+                    visual_prompt=prompt2_base,
+                    deterministic_overlay=deterministic_overlay,
+                )
+                audit_path = plate_dir / f"iter{iteration}_audit.txt"
+                audit_path.write_text(audit_text, encoding="utf-8")
+                score, decision = parse_audit_score(audit_text)
+                repair_prompt = extract_section(audit_text, "REPAIR_PROMPT")
+                regen_change = extract_section(audit_text, "REGENERATION_PROMPT_CHANGE")
+                iteration_result = {
+                    "iteration": iteration,
+                    "image": str(current_image),
+                    "audit_image": str(audit_image),
+                    "verified_composite": str(composite_path) if composite_path else None,
+                    "audit": str(audit_path),
+                    "score": score,
+                    "decision": decision,
+                    "repair_prompt": repair_prompt,
+                    "regeneration_prompt_change": regen_change,
+                }
+                plate_result["iterations"].append(iteration_result)
+                result["iterations"].append({"plate": plate_index, **iteration_result})
+                if score >= target_score and decision == "PASS":
+                    plate_result["passed"] = True
+                    break
+                should_regenerate = (
+                    not use_image_edit_repair
+                    or
+                    decision == "REGENERATE"
+                    or score < 55
+                    or len(repair_prompt) > 1200
+                    or not repair_prompt
+                    or repair_prompt.upper() == "N/A"
+                )
+                if should_regenerate:
+                    regeneration_guidance = regen_change
+                    if not regeneration_guidance or regeneration_guidance.upper() == "N/A":
+                        regeneration_guidance = repair_prompt
+                    if not regeneration_guidance or regeneration_guidance.upper() == "N/A":
+                        regeneration_guidance = (
+                            "Regenerate from scratch using the audit findings. Make every anchor larger and more literal, "
+                            "avoid exact repeated counts above 12, preserve exact medical labels, and prioritize strong "
+                            "silhouette cues over small details. Do not edit the previous weak image."
+                        )
+                    else:
+                        regeneration_guidance = re.sub(
+                            r"\b(?:edit|adjust|revise|repair|in-paint)\b(?:\s+the\s+(?:existing\s+)?image)?",
+                            "regenerate the image from scratch so it",
+                            regeneration_guidance,
+                            flags=re.I,
+                        )
+                    prompt2 = f"{prompt2_base}\n\nADDITIONAL REGENERATION FIX FROM IMAGE AUDIT:\n{regeneration_guidance}\n"
+                    current_image = None
+                time.sleep(1)
+            result["plates"].append(plate_result)
+
+        result["passed"] = all(plate.get("passed") for plate in result["plates"])
+
+        return result
+
+
+async def async_main() -> int:
+    parser = argparse.ArgumentParser(description="Stress-test Mnemorized visual mnemonic generation.")
+    parser.add_argument("--env", type=Path, default=Path("backend/.env"))
+    parser.add_argument("--output-root", type=Path, default=Path("Troubleshooting Prompts") / "three_topic_stress")
+    parser.add_argument("--max-iterations", type=int, default=5)
+    parser.add_argument("--target-score", type=int, default=TARGET_SCORE)
+    parser.add_argument("--plate-size", type=int, default=3, help="Anchors per generated image plate.")
+    parser.add_argument("--no-deterministic-overlay", action="store_true", help="Audit raw Gemini images without the exact-fact recall strip.")
+    parser.add_argument("--use-image-edit-repair", action="store_true", help="Try Gemini image-edit repair before regenerating. Default regenerates from prompt guidance because image edits are less stable.")
+    parser.add_argument("--skip-images", action="store_true", help="Generate bundles and QA packs only.")
+    parser.add_argument("--topic", action="append", help="Run only a default topic by slug or title.")
+    args = parser.parse_args()
+
+    env = load_env(args.env)
+    missing = [key for key in ("ANTHROPIC_API_KEY", "GEMINI_API_KEY") if not env.get(key)]
+    if missing and not args.skip_images:
+        raise SystemExit(f"Missing required env key(s): {', '.join(missing)}")
+    if not env.get("ANTHROPIC_API_KEY"):
+        raise SystemExit("Missing ANTHROPIC_API_KEY.")
+
+    args.output_root.mkdir(parents=True, exist_ok=True)
+    results = []
+    for topic in topic_cases(args.topic):
+        print(f"RUN {topic.title}", flush=True)
+        result = await run_topic(
+            topic,
+            env,
+            args.output_root,
+            args.max_iterations,
+            args.target_score,
+            args.skip_images,
+            args.plate_size,
+            deterministic_overlay=not args.no_deterministic_overlay,
+            use_image_edit_repair=args.use_image_edit_repair,
+        )
+        results.append(result)
+        best = max((item["score"] for item in result["iterations"]), default=None)
+        print(f"DONE {topic.slug} passed={result['passed']} best={best}", flush=True)
+
+    summary_path = args.output_root / "stress_summary.json"
+    summary_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
+    print(summary_path)
+    return 0 if all(result["passed"] or args.skip_images for result in results) else 2
+
+
+def main() -> int:
+    import asyncio
+
+    return asyncio.run(async_main())
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
