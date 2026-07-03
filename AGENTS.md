@@ -32,6 +32,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Keep real secrets in ignored `backend/.env`; keep `backend/.env.example` placeholder-only.
 - Protect provider proxy behavior, auth context, quota enforcement, usage logging, and Supabase persistence paths from silent regressions.
 - Treat `docs/visual-mnemonic-prompt-contract.md` as the source of truth for medical visual mnemonic prompt quality and the boundary against copying proprietary visual mnemonic products.
+- Treat `ANTIGRAVITY.md` as the source of truth for Google Antigravity visual QA/image-generation experiments. Antigravity should stay in the visual lab lane unless Patrick explicitly asks it to edit app source.
 - Be clear about what was validated locally and what still needs browser/provider-key testing.
 
 ## Skill-First Workflow
