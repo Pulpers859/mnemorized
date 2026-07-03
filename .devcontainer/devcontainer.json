@@ -1,0 +1,23 @@
+{
+  "name": "Mnemorized Agent Sandbox",
+  "image": "python:3.12-bookworm",
+  "workspaceFolder": "/workspace",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind"
+  ],
+  "runArgs": [
+    "--cpus=4",
+    "--memory=8g"
+  ],
+  "forwardPorts": [
+    8001
+  ],
+  "postCreateCommand": "python -m pip install -r backend/requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
+}

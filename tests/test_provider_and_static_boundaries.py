@@ -778,7 +778,7 @@ def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> No
     assert "Do not copy named scenes" not in contract
     assert "It is not acceptable to copy or closely paraphrase proprietary scenes" in contract
     assert "pre-image structural audit: `>=85`" in contract
-    assert "final manual image audit: `>=95`" in contract
+    assert "final manual image audit: `>=96`" in contract
 
 
 def test_forge_save_has_visible_success_confirmation() -> None:

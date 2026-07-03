@@ -48,7 +48,7 @@ def test_visual_qa_pack_writes_gemini_prompts_and_rubric(tmp_path: Path) -> None
     assert "Anchor Table" in (pack_dir / "03_anchor_table.md").read_text(encoding="utf-8")
     assert "Manual Image Audit" in (pack_dir / "05_manual_image_audit.md").read_text(encoding="utf-8")
     assert "OVERALL_SCORE" in (pack_dir / "07_gemini_image_audit_prompt.txt").read_text(encoding="utf-8")
-    assert "precision repair, not a redesign" in (pack_dir / "08_repair_or_regenerate_prompt_template.txt").read_text(encoding="utf-8")
+    assert "Rewrite the ENTIRE director prompt from scratch" in (pack_dir / "08_repair_or_regenerate_prompt_template.txt").read_text(encoding="utf-8")
     assert "qualitative sandbox" in (pack_dir / "00_README.md").read_text(encoding="utf-8")
 
 

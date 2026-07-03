@@ -29,6 +29,11 @@
 - Standalone local mapper: `tools/forge-anchor-mapper.html`
 - Backend architecture notes: `docs/backend/auth-persistence-foundation.md`
 - UI/UX resource decision memo: `docs/design-resource-evaluation.md`
+- Agent sandbox workflow: `docs/agent-sandbox-workflow.md`
+- Agent worktree helpers:
+  - `tools/New-MnemorizedAgentWorktree.ps1`
+  - `tools/Remove-MnemorizedAgentWorktree.ps1`
+- Validation helper: `tools/Invoke-MnemorizedValidation.ps1`
 - Local ignored material retained inside the repo folder but outside Git:
   - `C:\Dev\Mnemorized\local_archive\2026-06-29\projects`
   - `C:\Dev\Mnemorized\local_archive\2026-06-29\Profile_pic.afdesign`
@@ -60,6 +65,8 @@
 ## Delegation Preference
 
 Patrick prefers main Codex to carry high-judgment architecture, risk, integration, secrets, production, and commit/push work while delegating bounded independent lanes to explorer or worker subagents. Explorers should answer specific read-only questions. Workers should own disjoint file/module scopes and must not revert other edits.
+
+For risky, broad, or creative AI-assisted work, create one disposable worktree per agent or experiment with `tools/New-MnemorizedAgentWorktree.ps1`. Keep `C:\Dev\Mnemorized` as the integration checkout on `main`. Use Docker or the included Dev Container only when dependency isolation or process containment is worth the extra ceremony.
 
 ## Known Constraints
 

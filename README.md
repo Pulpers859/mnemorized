@@ -71,6 +71,26 @@ The medical reference foundation is intentionally private: source chunks live in
 - `frontend/styles/app-shell.css` is the shared visual layer added during migration; prefer extending it before duplicating more page-local CSS.
 - If the forge grows further, the next architecture step should be extracting shared frontend scripts and components without changing runtime behavior.
 
+## Agent Sandboxes
+
+For risky AI-assisted work, use a disposable git worktree instead of experimenting directly in the source-of-truth checkout:
+
+```powershell
+.\tools\New-MnemorizedAgentWorktree.ps1 -Name ui-polish
+```
+
+The sandbox workflow is documented in `docs/agent-sandbox-workflow.md`. Use one worktree per agent or experiment, keep `C:\Dev\Mnemorized` as the integration checkout on `main`, and remove sandboxes when finished:
+
+```powershell
+.\tools\Remove-MnemorizedAgentWorktree.ps1 -NameOrPath ui-polish -DeleteBranch
+```
+
+Optional validation helper:
+
+```powershell
+.\tools\Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer
+```
+
 ## Claude Code Shortcut
 
 The intended desktop shortcut is `Mnemorized Claude Code`. It opens PowerShell 7 in `C:\Dev\Mnemorized` and runs:

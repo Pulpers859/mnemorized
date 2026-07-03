@@ -55,6 +55,8 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Do not delegate the immediate blocking task when the main agent needs that result before moving.
 - Avoid overlapping edits to `frontend/pages/forge.html`; it is fragile and should have one owner at a time.
 - Require subagents to report changed files, validation run, and any uncertainty.
+- For risky, creative, or parallel agent work, prefer one disposable git worktree per agent or experiment. Use `docs/agent-sandbox-workflow.md` and `tools/New-MnemorizedAgentWorktree.ps1`.
+- Keep `C:\Dev\Mnemorized` as the integration checkout on `main`; use Docker or the Dev Container only when dependency/process isolation is worth it.
 
 ## Validation
 
