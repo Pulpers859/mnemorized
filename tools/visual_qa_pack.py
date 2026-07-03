@@ -57,22 +57,49 @@ EXACT_LABEL_RULE = (
     "If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it."
 )
 
+GEMINI_GUARDRAILS = (
+    "GEMINI CAPABILITY RULES — follow these strictly: "
+    "Gemini CAN draw distinct objects, specific materials/states, text labels of 1-4 words on objects, "
+    "coarse spatial placement (LEFT/CENTER/RIGHT/FOREGROUND/BACKGROUND), size contrast, and artistic styles. "
+    "Gemini CANNOT do micro-poses (exact finger positions, specific facial muscle states, precise joint angles), "
+    "ground/surface contrast at specific locations (pristine here vs scorched there), compound spatial positions "
+    "(center-left, foreground-right corner), shape-morphing, or abstract concepts. "
+    "Use ONLY single-axis coarse spatial terms. Describe each figure with at most 2 spatial constraints. "
+    "Let mnemonic contrast live in object SIZE and TYPE, not in background surface details."
+)
+
+MICRO_POSE_RE = re.compile(
+    r"\b(?:interlocked|laced\s+together|balloon[- ]puffed|comically\s+distended|"
+    r"fingers?\s+(?:spread|curled|wrapped|gripping)|"
+    r"knee\s+(?:bent|driving|lifted)|"
+    r"exact(?:ly)?\s+(?:at|level|height)|"
+    r"halfway\s+between|belt[- ]buckle\s+(?:level|height)|"
+    r"navel\s+level|mid[- ](?:stride|step|crouch))\b",
+    re.I,
+)
+
+COMPOUND_POSITION_RE = re.compile(
+    r"\b(?:center[- ]left|center[- ]right|foreground[- ](?:left|right)|"
+    r"background[- ](?:left|right))\b",
+    re.I,
+)
+
 ZONE_CYCLE = [
-    "FAR LEFT",
     "LEFT",
-    "CENTER LEFT",
+    "LEFT",
     "CENTER",
-    "CENTER RIGHT",
+    "CENTER",
+    "CENTER",
     "RIGHT",
-    "FAR RIGHT",
-    "FOREGROUND LEFT",
-    "FOREGROUND CENTER",
-    "FOREGROUND RIGHT",
-    "BACKGROUND LEFT",
-    "BACKGROUND CENTER",
-    "BACKGROUND RIGHT",
-    "BACKGROUND CORNER",
-    "DOORWAY",
+    "RIGHT",
+    "FOREGROUND",
+    "FOREGROUND",
+    "FOREGROUND",
+    "BACKGROUND",
+    "BACKGROUND",
+    "BACKGROUND",
+    "BACKGROUND",
+    "FOREGROUND",
 ]
 
 ZONE_KEYWORDS = [
@@ -174,8 +201,28 @@ def extract_zone(visual: str, fallback: str) -> str:
     return fallback
 
 
+COMPOUND_TO_COARSE = [
+    (re.compile(r"\bcenter[- ]left\b", re.I), "left"),
+    (re.compile(r"\bcenter[- ]right\b", re.I), "right"),
+    (re.compile(r"\bforeground[- ]left\b", re.I), "foreground"),
+    (re.compile(r"\bforeground[- ]right\b", re.I), "foreground"),
+    (re.compile(r"\bbackground[- ]left\b", re.I), "background"),
+    (re.compile(r"\bbackground[- ]right\b", re.I), "background"),
+    (re.compile(r"\bfar\s+background\s+left\b", re.I), "background"),
+    (re.compile(r"\bfar\s+background\s+right\b", re.I), "background"),
+    (re.compile(r"\bfar\s+left\b", re.I), "left"),
+    (re.compile(r"\bfar\s+right\b", re.I), "right"),
+]
+
+
 def condense_for_image(visual: str) -> str:
     text = (visual or "").replace("↑", "").replace("↓", "")
+
+    for pattern, replacement in COMPOUND_TO_COARSE:
+        text = pattern.sub(replacement, text)
+
+    text = MICRO_POSE_RE.sub("", text)
+    text = re.sub(r"\s{2,}", " ", text).strip()
 
     def replace_quote(match: re.Match[str]) -> str:
         prefix = match.group(1)
@@ -200,7 +247,9 @@ def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
         assigned.append({**anchor, "zone": extract_zone(visual, ZONE_CYCLE[index % len(ZONE_CYCLE)])})
     anchor_lines_text = []
     for anchor in assigned:
-        hook = f" Hook: {anchor.get('hook')}." if anchor.get("hook") else ""
+        hook_raw = str(anchor.get("hook") or "")
+        hook_cleaned = condense_for_image(hook_raw) if hook_raw else ""
+        hook = f" Hook: {hook_cleaned}." if hook_cleaned else ""
         encodes = f" Encodes: {anchor.get('anchor')}" if anchor.get("anchor") else ""
         anchor_lines_text.append(
             f"  ({str(anchor.get('zone')).lower()}) Anchor {anchor.get('n', '')}:{hook} "
@@ -223,6 +272,7 @@ def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
         "Text labels are secondary and optional — if present, maximum 3 words per ordinary label. "
         f"{PRECISION_TEXT_RULE} "
         f"{EXACT_LABEL_RULE} "
+        f"{GEMINI_GUARDRAILS} "
         "SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. "
         "Character names and short numbers count. "
         "Zone hints in parentheses guide placement — do NOT render zone text:\n\n"
@@ -253,6 +303,8 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
     text_heavy = 0
     too_many_text_surfaces = 0
     visual_meta_leaks = 0
+    micro_pose_anchors = 0
+    compound_position_anchors = 0
     for index, anchor in enumerate(anchors, start=1):
         visual = str(anchor.get("visual") or "")
         visual_key = re.sub(r"\s+", " ", visual.lower()).strip()
@@ -268,6 +320,10 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
             too_many_text_surfaces += 1
         if VISUAL_META_RE.search(visual):
             visual_meta_leaks += 1
+        if MICRO_POSE_RE.search(visual):
+            micro_pose_anchors += 1
+        if COMPOUND_POSITION_RE.search(visual):
+            compound_position_anchors += 1
 
         anchor_fact = str(anchor.get("anchor") or "")
         if re.search(r"\b(get it|remember|this is your)\b", anchor_fact, flags=re.I):
@@ -283,6 +339,10 @@ def audit_bundle(bundle: dict[str, Any], prompts_override: dict[str, str] | None
         findings.append(Finding("major", "too_many_text_surfaces", f"{too_many_text_surfaces} anchors request more than two visible text-bearing surfaces."))
     if visual_meta_leaks:
         findings.append(Finding("major", "visual_meta_leak", f"{visual_meta_leaks} visual descriptions include meta-instructions instead of drawable scene content."))
+    if micro_pose_anchors:
+        findings.append(Finding("major", "micro_poses", f"{micro_pose_anchors} anchors contain micro-pose descriptions that Gemini cannot render (exact finger/hand/face positions)."))
+    if compound_position_anchors:
+        findings.append(Finding("minor", "compound_positions", f"{compound_position_anchors} anchors use compound spatial positions (e.g., center-left) instead of single-axis terms."))
 
     if not prompts["prompt1"] or not prompts["prompt2"]:
         findings.append(Finding("critical", "missing_prompts", "Bundle does not include both image prompts."))
@@ -492,25 +552,40 @@ ANCHOR TABLE:
         pack_dir / "08_repair_or_regenerate_prompt_template.txt",
         f"""Use this after completing `07_gemini_image_audit_prompt.txt`.
 
-If the audit decision is REPAIR, paste the generated image and this prompt into Gemini after replacing the bracketed sections:
+## REPAIR LOOP RULES (mandatory)
 
-Edit the image you just generated. Keep the same composition, room, characters, colors, and hand-drawn style. Make ONLY these corrections:
+1. The repaired prompt must be SHORTER than or equal to the original. Longer repairs score worse.
+2. NEVER add micro-poses (exact finger positions, facial muscle states, joint angles). If an audit says "hands are wrong," REMOVE the hand description entirely.
+3. NEVER add ground/surface contrast details (pristine here vs scorched there). If floor detail failed, drop it. Let contrast live in objects/figures, not background surfaces.
+4. Rewrite the ENTIRE director prompt from scratch using different visual strategies. Do not patch individual sentences or append audit feedback.
+5. Use ONLY coarse spatial terms: LEFT, CENTER, RIGHT, FOREGROUND, BACKGROUND. Never use compound positions (center-left, foreground-right).
+6. Maximum 5 repair iterations per plate. If still failing after 5 attempts, redesign the anchor's visual hook — the encoding strategy is wrong, not just the wording.
 
-[Paste the failed anchor fixes from the audit here.]
+## If REPAIR
 
-Preserve all correct anchors, formulas, labels, and spatial positions. Do not add new captions, zone labels, explanatory text, or extra anchors. This is a precision repair, not a redesign.
+Rewrite the full director prompt for this plate/scene. Keep the same mnemonic hook and required labels but use SIMPLER visual encoding. The new prompt must be shorter than the previous version.
 
-If the audit decision is REGENERATE, rebuild the prompt first. Use this checklist:
+Do NOT paste this into Gemini:
+- Audit feedback text
+- "Fix the hands" / "move the figure" patch instructions
+- Any sentence containing micro-pose language
 
-- Are all 8-10 anchors present in the prompt?
-- Does every anchor include a hook and visual cue?
+Instead, write a clean standalone prompt that a fresh Gemini session can render without context from previous attempts.
+
+## If REGENERATE
+
+Rebuild the prompt from scratch. Checklist:
+
+- Are all anchors present with hooks and visual cues?
 - Are precision numbers/formulas preserved exactly?
-- Are labels short and exact?
+- Are labels short (1-4 words) and exact?
 - Are anchors large enough at 1024px width?
-- Are shelf/wall anchors staggered instead of tiny clutter?
-- Does the prompt avoid commercial visual mnemonic names and copied motifs?
+- Does EVERY spatial term use single-axis coarse positions only?
+- Does the prompt contain ZERO micro-pose descriptions?
+- Is the total word count under 250 (single plate) or 600 (full scene)?
+- Does the prompt avoid commercial visual mnemonic names?
 
-Then regenerate from `02_gemini_prompt_2_all_anchors.txt` or from a refreshed pack created with `--refresh-prompt-contract`.
+Then regenerate from a fresh Gemini chat.
 
 Topic: {topic}
 """,
