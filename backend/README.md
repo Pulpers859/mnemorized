@@ -27,6 +27,7 @@ It gives you:
 - `POST /api/medical-knowledge/context`
 - `POST /api/medical-knowledge/quality-check`
 - `POST /api/anthropic/messages`
+- `POST /api/gemini/prompt-director`
 - `POST /api/generate-image`
 
 ## Local Run
@@ -42,8 +43,9 @@ python -m pip install -r backend/requirements.txt
 4. If you want auth + saved palaces, also set `SUPABASE_URL` and `SUPABASE_ANON_KEY`.
 5. If you want admin catalog publishing, set `SUPABASE_SERVICE_ROLE_KEY` and `ADMIN_EMAILS`.
 6. If you want private medical knowledge retrieval, set `SUPABASE_SERVICE_ROLE_KEY` and `OPENAI_API_KEY`.
-7. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement. Keep `BILLING_MODE=beta` until there is a real upgrade path.
-8. Start the server:
+7. If you want Forge image prompt direction and image rendering, set `GEMINI_API_KEY`. `GEMINI_TEXT_MODEL` defaults to `gemini-3.1-pro-preview`; `GEMINI_IMAGE_MODEL` defaults to `gemini-3-pro-image`.
+8. Optional: tune `FREE_MONTHLY_REQUESTS`, `PRO_MONTHLY_REQUESTS`, and `TEAM_MONTHLY_REQUESTS` for plan enforcement. Keep `BILLING_MODE=beta` until there is a real upgrade path.
+9. Start the server:
 
 ```powershell
 python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8001 --reload
@@ -55,7 +57,7 @@ Or on Windows:
 .\tools\Start-Mnemorized-App.ps1
 ```
 
-9. Open the served app routes:
+10. Open the served app routes:
 
 ```text
 http://127.0.0.1:8001/

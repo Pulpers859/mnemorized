@@ -28,7 +28,11 @@ services:
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_MODEL
-        sync: false
+        value: gemini-3-pro-image
+      - key: GEMINI_TEXT_MODEL
+        value: gemini-3.1-pro-preview
+      - key: GEMINI_IMAGE_MODEL
+        value: gemini-3-pro-image
       - key: OPENAI_API_KEY
         sync: false
       - key: OPENAI_EMBEDDING_MODEL

@@ -50,7 +50,9 @@ def make_settings(
         team_monthly_requests=4000,
         billing_mode="beta",
         gemini_api_key=gemini_api_key,
-        gemini_model="gemini-2.5-flash-image",
+        gemini_model="gemini-3-pro-image",
+        gemini_text_model="gemini-3.1-pro-preview",
+        gemini_image_model="gemini-3-pro-image",
         openai_api_key=openai_api_key,
         openai_embedding_model="text-embedding-3-small",
         openai_embedding_dimensions=1536,
@@ -231,6 +233,92 @@ def test_gemini_diagnostic_requires_admin_outside_dev(
     assert response.json()["detail"] == "Sign in to access saved palaces."
 
 
+def test_gemini_prompt_director_uses_server_constitution_and_text_model(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(tmp_path, gemini_api_key="gemini-key")
+    provider = FakeProviderClient([
+        httpx.Response(
+            200,
+            json={
+                "candidates": [{
+                    "content": {
+                        "parts": [{
+                            "text": (
+                                '{"scene_description":"empty room",'
+                                '"prompt1":"foundation prompt",'
+                                '"prompt2":"anchor prompt",'
+                                '"notes":"ok"}'
+                            )
+                        }]
+                    }
+                }]
+            },
+        )
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    monkeypatch.setattr(app_main, "_load_gemini_constitution", lambda: "SENTINEL CONSTITUTION RULE")
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/gemini/prompt-director",
+        json={
+            "topic": "DKA",
+            "scene_title": "Drip Bar",
+            "opening": "A bar scene.",
+            "anchors": [{
+                "n": 1,
+                "hook": "look-alike",
+                "visual": "Trident with three prongs",
+                "anchor": "DKA diagnostic triad",
+                "zone": "CENTER",
+            }],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["prompt1"] == "foundation prompt"
+    assert payload["prompt2"] == "anchor prompt"
+    assert payload["model"] == "gemini-3.1-pro-preview"
+    assert len(provider.calls) == 1
+    call = provider.calls[0]
+    assert "gemini-3.1-pro-preview:generateContent" in call["args"][0]
+    assert call["params"] == {"key": "gemini-key"}
+    assert "SENTINEL CONSTITUTION RULE" in call["json"]["systemInstruction"]["parts"][0]["text"]
+    assert call["json"]["generationConfig"]["responseMimeType"] == "application/json"
+    assert "gemini-key" not in response.text
+
+
+def test_gemini_prompt_director_invalid_contract_returns_explicit_502(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(tmp_path, gemini_api_key="gemini-key")
+    provider = FakeProviderClient([
+        httpx.Response(
+            200,
+            json={"candidates": [{"content": {"parts": [{"text": '{"prompt1":"only one"}'}]}}]},
+        )
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/gemini/prompt-director",
+        json={
+            "topic": "DKA",
+            "anchors": [{"n": 1, "visual": "Trident", "anchor": "Triad"}],
+        },
+    )
+
+    assert response.status_code == 502
+    assert response.json()["error"]["type"] == "upstream_parse_error"
+
+
 def test_quota_exceeded_response_is_beta_safe_and_skips_provider(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -302,6 +390,11 @@ def test_gemini_non_json_response_returns_explicit_502(
     assert response.status_code == 502
     assert response.json()["error"]["type"] == "upstream_parse_error"
     assert len(provider.calls) == 1
+    call = provider.calls[0]
+    assert call["args"][0] == app_main.GEMINI_INTERACTIONS_URL
+    assert call["headers"] == {"x-goog-api-key": "gemini-key"}
+    assert call["json"]["model"] == "gemini-3-pro-image"
+    assert call["json"]["response_format"]["aspect_ratio"] == "16:9"
 
 
 def test_gemini_missing_inline_image_data_returns_explicit_502(
@@ -501,6 +594,7 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     frontend_files = [
         root / "frontend" / "pages" / "forge.html",
         root / "frontend" / "pages" / "library.html",
+        root / "frontend" / "scripts" / "forge-state.js",
         root / "frontend" / "scripts" / "palace-api.js",
     ]
     combined = "\n".join(path.read_text(encoding="utf-8") for path in frontend_files)
@@ -511,6 +605,7 @@ def test_frontend_uses_backend_owned_persistence_boundary() -> None:
     assert ".from('palace_versions')" not in combined
     assert "/api/profile/ensure" in combined
     assert "/api/palaces/save" in combined
+    assert "/api/gemini/prompt-director" in combined
     assert "/api/medical-knowledge/quality-check" in combined
     assert "/api/medical-knowledge/context" in combined
     assert "medical.medical_knowledge_chunks" not in combined

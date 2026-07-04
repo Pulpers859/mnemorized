@@ -85,6 +85,8 @@ class Settings:
     billing_mode: str
     gemini_api_key: str
     gemini_model: str
+    gemini_text_model: str
+    gemini_image_model: str
     openai_api_key: str
     openai_embedding_model: str
     openai_embedding_dimensions: int
@@ -216,7 +218,12 @@ def get_settings() -> Settings:
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
         billing_mode=_normalize_billing_mode(os.getenv("BILLING_MODE", "beta")),
         gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
-        gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash-image").strip(),
+        gemini_model=os.getenv("GEMINI_MODEL", "gemini-3-pro-image").strip(),
+        gemini_text_model=os.getenv("GEMINI_TEXT_MODEL", "gemini-3.1-pro-preview").strip(),
+        gemini_image_model=os.getenv(
+            "GEMINI_IMAGE_MODEL",
+            os.getenv("GEMINI_MODEL", "gemini-3-pro-image"),
+        ).strip(),
         openai_api_key=_clean_env_value("OPENAI_API_KEY"),
         openai_embedding_model=os.getenv(
             "OPENAI_EMBEDDING_MODEL",

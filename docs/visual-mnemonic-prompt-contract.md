@@ -63,9 +63,11 @@ It is not acceptable to copy or closely paraphrase proprietary scenes, character
 
 > **Canonical source**: `docs/gemini-constitution.txt`
 >
-> Both `tools/stress_visual_pipeline.py` and `tools/visual_qa_pack.py` load
-> the constitution file at runtime. Edit `gemini-constitution.txt` to change
-> generation rules — the Python code has no inline copies to drift.
+> The FastAPI prompt director endpoint (`POST /api/gemini/prompt-director`)
+> and the local tools (`tools/stress_visual_pipeline.py`,
+> `tools/visual_qa_pack.py`) load the constitution file at runtime. Edit
+> `gemini-constitution.txt` to change generation rules — do not maintain
+> competing inline copies.
 
 These rules are derived from stress-testing Gemini's image generation across multiple topics and iteration cycles. They apply to all prompt generation and repair workflows.
 

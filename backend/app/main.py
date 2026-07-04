@@ -183,6 +183,26 @@ class ImageGenerationPayload(BaseModel):
     prompts: list[ImagePrompt] = Field(min_length=1, max_length=2)
 
 
+class GeminiPromptAnchorPayload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    n: int = Field(ge=1, le=50)
+    hook: str | None = Field(default=None, max_length=1000)
+    visual: str = Field(min_length=1, max_length=4000)
+    anchor: str | None = Field(default=None, max_length=4000)
+    zone: str | None = Field(default=None, max_length=80)
+
+
+class GeminiPromptDirectorPayload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    topic: str = Field(min_length=1, max_length=20000)
+    scene_title: str | None = Field(default=None, max_length=240)
+    opening: str | None = Field(default=None, max_length=8000)
+    anchors: list[GeminiPromptAnchorPayload] = Field(min_length=1, max_length=20)
+    mode: str = Field(default="initial", pattern="^(initial|repair)$")
+
+
 class MedicalContextPayload(BaseModel):
     topic: str = Field(min_length=1, max_length=20000)
     max_chunks: int = Field(default=8, ge=1, le=12)
@@ -196,8 +216,10 @@ class MedicalQualityGatePayload(BaseModel):
 
 
 GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
+GEMINI_INTERACTIONS_URL = "https://generativelanguage.googleapis.com/v1beta/interactions"
 OPENAI_EMBEDDINGS_URL = "https://api.openai.com/v1/embeddings"
 MEDICAL_EXCERPT_CHARS = 420
+GEMINI_CONSTITUTION_PATH = REPO_ROOT / "docs" / "gemini-constitution.txt"
 
 
 def _client_id(request: Request) -> str:
@@ -406,6 +428,154 @@ def _release_quota_reservation(
     usage_cache: UsageSummaryCache | None = getattr(request.app.state, "usage_cache", None)
     if usage_cache is not None:
         usage_cache.release_request(user.user_id)
+
+
+def _load_gemini_constitution() -> str:
+    try:
+        constitution = GEMINI_CONSTITUTION_PATH.read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        logger.warning("Gemini constitution could not be read: %s", exc)
+        return ""
+    return constitution[:60000]
+
+
+def _gemini_text_from_response(payload: dict[str, Any]) -> str:
+    candidates = payload.get("candidates", [])
+    if not candidates:
+        return ""
+
+    parts = candidates[0].get("content", {}).get("parts", [])
+    text_parts = [part.get("text", "") for part in parts if isinstance(part, dict)]
+    return "".join(text_parts).strip()
+
+
+def _extract_gemini_interaction_images(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    images: list[dict[str, Any]] = []
+
+    def visit(value: Any) -> None:
+        if isinstance(value, dict):
+            content_type = str(value.get("type") or "").lower()
+            mime_type = (
+                value.get("mime_type")
+                or value.get("mimeType")
+                or value.get("media_type")
+                or value.get("mediaType")
+                or "image/png"
+            )
+            data = value.get("data")
+            if content_type == "image" and isinstance(data, str) and data:
+                images.append({"mime_type": mime_type, "data": data})
+                return
+
+            inline_data = value.get("inlineData") or value.get("inline_data")
+            if isinstance(inline_data, dict) and inline_data.get("data"):
+                images.append({
+                    "mime_type": inline_data.get("mimeType") or inline_data.get("mime_type") or "image/png",
+                    "data": inline_data["data"],
+                })
+                return
+
+            for child in value.values():
+                visit(child)
+        elif isinstance(value, list):
+            for item in value:
+                visit(item)
+
+    visit(payload)
+    return images
+
+
+def _gemini_prompt_director_system_prompt() -> str:
+    constitution = _load_gemini_constitution()
+    constitution_block = (
+        "CURRENT MNEMORIZED GEMINI CONSTITUTION:\n"
+        f"{constitution}\n\n"
+        if constitution else
+        "CURRENT MNEMORIZED GEMINI CONSTITUTION: unavailable; follow the built-in rules below.\n\n"
+    )
+    return (
+        "You are Mnemorized's Gemini Constitution Director. Your job is to transform a "
+        "validated memory-palace script into two image-generation prompts that maximize "
+        "anchor legibility, exact medical text, and coherent spatial layout. "
+        "Output strict JSON only. Do not include markdown, commentary, or extra keys.\n\n"
+        f"{constitution_block}"
+        "GLOBAL RULES:\n"
+        "- Do not copy proprietary visual mnemonic products, recurring named characters, or brand-specific symbols.\n"
+        "- Preserve all supplied anchors; do not invent new medical facts.\n"
+        "- Prompt 1 is the empty room foundation only: no people, characters, props, labels, signs, or anchor objects.\n"
+        "- Prompt 2 is the full single-scene mnemonic image with every supplied anchor present.\n"
+        "- Keep the image in 16:9, hand-drawn 2D educational poster style, flat marker color, no 3D, no photorealism.\n"
+        "- Use silhouette-first anchor language. Text is secondary and physically attached to mnemonic devices.\n"
+        "- For precision text, prefer engraved, etched, chiseled, stamped, painted, or sticker-like physical text devices.\n"
+        "- Avoid descriptive-noun label leakage: never ask for words like 'pharmacy label' or 'warning sign' to render.\n"
+        "- Avoid adjacent duplicate characters on glowing or digital screen text; use physical text devices instead.\n"
+        "- Keep visible labels sparse, exact, and large enough to read.\n\n"
+        "JSON SCHEMA:\n"
+        "{"
+        "\"scene_description\":\"40-70 word empty-room description\","
+        "\"prompt1\":\"complete Prompt 1 string\","
+        "\"prompt2\":\"complete Prompt 2 string\","
+        "\"notes\":\"one short implementation note\""
+        "}"
+    )
+
+
+def _gemini_prompt_director_user_prompt(payload: GeminiPromptDirectorPayload) -> str:
+    anchors = []
+    for anchor in payload.anchors:
+        zone = f" ({anchor.zone})" if anchor.zone else ""
+        hook = f"\n  Hook: {anchor.hook}" if anchor.hook else ""
+        encoded = f"\n  Encodes: {anchor.anchor}" if anchor.anchor else ""
+        anchors.append(
+            f"Anchor {anchor.n}{zone}:{hook}\n  Visual: {anchor.visual}{encoded}"
+        )
+
+    return (
+        f"MODE: {payload.mode}\n"
+        f"MEDICAL TOPIC:\n{payload.topic}\n\n"
+        f"SCENE TITLE: {payload.scene_title or 'Untitled memory palace'}\n"
+        f"OPENING / ATMOSPHERE:\n{payload.opening or ''}\n\n"
+        f"ANCHORS TO PRESERVE ({len(payload.anchors)}):\n"
+        + "\n\n".join(anchors)
+        + "\n\nBuild Prompt 1 and Prompt 2 for direct submission to Gemini image generation. "
+        "Prompt 2 must include all anchors, their zones, their exact medically essential labels or numbers, "
+        "and the anti-meta-text boundary. Prompt 1 must contain only the empty spatial foundation."
+    )
+
+
+def _validated_prompt_director_payload(raw: dict[str, Any]) -> dict[str, str]:
+    if not isinstance(raw, dict):
+        raise ValueError("Gemini prompt director did not return a JSON object.")
+
+    result: dict[str, str] = {}
+    for key in ("scene_description", "prompt1", "prompt2"):
+        value = raw.get(key)
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError(f"Gemini prompt director response is missing {key}.")
+        result[key] = value.strip()
+
+    notes = raw.get("notes")
+    result["notes"] = notes.strip() if isinstance(notes, str) else ""
+    return result
+
+
+def _parse_json_object_text(text: str) -> dict[str, Any]:
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = cleaned.strip("`").strip()
+        if cleaned.lower().startswith("json"):
+            cleaned = cleaned[4:].strip()
+    try:
+        parsed = json.loads(cleaned)
+    except json.JSONDecodeError:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start == -1 or end <= start:
+            raise
+        parsed = json.loads(cleaned[start:end + 1])
+    if not isinstance(parsed, dict):
+        raise ValueError("Expected JSON object.")
+    return parsed
 
 
 def _ensure_log_path(path: Path) -> None:
@@ -1535,14 +1705,18 @@ async def diagnose_gemini(request: Request) -> JSONResponse:
             "message": "GEMINI_API_KEY is not set in backend environment.",
         })
 
-    model = active_settings.gemini_model
+    model = active_settings.gemini_text_model
     api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
     test_body = {
         "contents": [{"role": "user", "parts": [{"text": "Say OK"}]}],
         "generationConfig": {"maxOutputTokens": 5},
     }
     key = active_settings.gemini_api_key
-    results: dict[str, Any] = {"model": model, "key_prefix": key[:8] + "..."}
+    results: dict[str, Any] = {
+        "text_model": model,
+        "image_model": active_settings.gemini_image_model,
+        "key_prefix": key[:8] + "...",
+    }
 
     async with httpx.AsyncClient(timeout=httpx.Timeout(15.0, connect=5.0)) as client:
         # Method 1: ?key= query parameter (classic API keys starting with AIza)
@@ -2820,6 +2994,212 @@ async def proxy_anthropic_messages(
     )
 
 
+@app.post("/api/gemini/prompt-director")
+async def gemini_prompt_director(
+    payload: GeminiPromptDirectorPayload,
+    request: Request,
+    background_tasks: BackgroundTasks,
+) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+
+    if not active_settings.gemini_configured:
+        return JSONResponse(
+            status_code=503,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "configuration_error",
+                    "message": "GEMINI_API_KEY is not configured on the backend.",
+                }
+            },
+        )
+
+    if _request_size(request) > active_settings.max_request_bytes:
+        return _request_too_large_response(active_settings, request_id)
+
+    user: AuthenticatedUser | None = await _resolve_authenticated_user(
+        request,
+        active_settings,
+    )
+    bearer_token = _extract_bearer_token(request)
+
+    if active_settings.provider_auth_required:
+        if not active_settings.supabase_auth_configured:
+            return _auth_not_configured_response(request_id)
+        if user is None:
+            return _auth_required_response(request_id, "Sign in to build Gemini image prompts.")
+
+    rate_limiter = _get_rate_limiter(request, active_settings)
+    allowed, retry_after = rate_limiter.allow(_rate_limit_subject(request, user))
+    if not allowed:
+        return _rate_limit_response(request_id, retry_after)
+
+    summary = await _get_subscription_and_usage_summary(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        use_cache=True,
+    )
+    quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
+    if not quota_allowed:
+        return _quota_exceeded_response(request_id, quota_summary)
+
+    replay_mode = get_replay_mode(request.headers) if active_settings.dev_mode else None
+    replay_topic, replay_stage = get_replay_meta(request.headers) if replay_mode else (None, None)
+    if replay_mode == "replay" and replay_topic and replay_stage:
+        cassette = load_cassette(replay_topic, replay_stage)
+        if cassette is not None:
+            return JSONResponse(
+                status_code=200,
+                headers={"X-Request-ID": request_id, "X-Replay": "hit"},
+                content=cassette,
+            )
+        return JSONResponse(
+            status_code=404,
+            headers={"X-Request-ID": request_id, "X-Replay": "miss"},
+            content={"error": {"type": "replay_miss", "message": f"No cassette for {replay_topic}/{replay_stage}. Switch to Record mode first."}},
+        )
+
+    model = active_settings.gemini_text_model
+    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    body = {
+        "systemInstruction": {
+            "parts": [{"text": _gemini_prompt_director_system_prompt()}],
+        },
+        "contents": [{
+            "role": "user",
+            "parts": [{"text": _gemini_prompt_director_user_prompt(payload)}],
+        }],
+        "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 8192,
+            "responseMimeType": "application/json",
+        },
+    }
+    usage_request_body = {
+        "provider": "gemini",
+        "model": model,
+        "task": "prompt_director",
+        "anchors": len(payload.anchors),
+        "constitution": "docs/gemini-constitution.txt",
+    }
+
+    def schedule_director_usage(status_code: int, count_quota: bool = True) -> None:
+        if not count_quota:
+            _release_quota_reservation(request, user)
+        _schedule_usage_event(
+            background_tasks=background_tasks,
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body=usage_request_body,
+            response_payload={"usage": {}},
+            status_code=status_code,
+        )
+
+    http_client, owns_http_client = _get_http_client(request)
+    try:
+        try:
+            resp = await http_client.post(
+                api_url,
+                params={"key": active_settings.gemini_api_key},
+                json=body,
+                timeout=httpx.Timeout(120.0, connect=10.0),
+            )
+        except httpx.TimeoutException:
+            schedule_director_usage(504, count_quota=False)
+            return JSONResponse(
+                status_code=504,
+                headers={"X-Request-ID": request_id},
+                content={
+                    "error": {
+                        "type": "upstream_timeout",
+                        "message": "Gemini prompt director did not respond before the timeout elapsed.",
+                    }
+                },
+            )
+        except httpx.HTTPError as exc:
+            schedule_director_usage(502, count_quota=False)
+            return JSONResponse(
+                status_code=502,
+                headers={"X-Request-ID": request_id},
+                content={
+                    "error": {
+                        "type": "upstream_connection_error",
+                        "message": f"Could not reach Gemini prompt director: {exc}",
+                    }
+                },
+            )
+    finally:
+        if owns_http_client:
+            await http_client.aclose()
+
+    if resp.status_code != 200:
+        upstream_error_message = None
+        try:
+            error_payload = resp.json()
+            upstream_error_message = error_payload.get("error", {}).get("message")
+        except ValueError:
+            pass
+        logger.warning(
+            "Gemini prompt director error for request %s: %s %s",
+            request_id, resp.status_code, resp.text[:500],
+        )
+        schedule_director_usage(resp.status_code, count_quota=False)
+        return JSONResponse(
+            status_code=502,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "upstream_error",
+                    "message": upstream_error_message
+                    or f"Gemini prompt director returned HTTP {resp.status_code} using model {model}.",
+                }
+            },
+        )
+
+    try:
+        raw_response = resp.json()
+        text = _gemini_text_from_response(raw_response)
+        director_payload = _validated_prompt_director_payload(_parse_json_object_text(text))
+    except (ValueError, json.JSONDecodeError, TypeError, IndexError) as exc:
+        logger.warning("Gemini prompt director parse error for request %s: %s", request_id, exc)
+        schedule_director_usage(502, count_quota=False)
+        return JSONResponse(
+            status_code=502,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "upstream_parse_error",
+                    "message": "Gemini prompt director returned an invalid prompt contract.",
+                }
+            },
+        )
+
+    response_content: dict[str, Any] = {
+        **director_payload,
+        "model": model,
+        "constitution_source": "docs/gemini-constitution.txt",
+    }
+    schedule_director_usage(200)
+
+    response_headers: dict[str, str] = {"X-Request-ID": request_id}
+    if replay_mode == "record" and replay_topic and replay_stage:
+        save_cassette(replay_topic, replay_stage, response_content)
+        response_headers["X-Replay"] = "recorded"
+
+    return JSONResponse(
+        status_code=200,
+        headers=response_headers,
+        content=response_content,
+        background=background_tasks,
+    )
+
+
 @app.post("/api/generate-image")
 async def generate_image(
     payload: ImageGenerationPayload,
@@ -2888,11 +3268,10 @@ async def generate_image(
             content={"error": {"type": "replay_miss", "message": f"No cassette for {replay_topic}/{replay_stage}. Switch to Record mode first."}},
         )
 
-    model = active_settings.gemini_model
-    api_url = f"{GEMINI_API_BASE}/{model}:generateContent"
+    model = active_settings.gemini_image_model
+    api_url = GEMINI_INTERACTIONS_URL
     http_client, owns_http_client = _get_http_client(request)
     images: list[dict[str, Any]] = []
-    conversation: list[dict[str, Any]] = []
     usage_request_body = {"provider": "gemini", "model": model, "prompts": len(payload.prompts)}
 
     def schedule_gemini_usage(status_code: int, count_quota: bool = True) -> None:
@@ -2916,12 +3295,14 @@ async def generate_image(
 
     try:
         for idx, prompt_text in enumerate(payload.prompts):
-            conversation.append({"role": "user", "parts": [{"text": prompt_text}]})
-
             gemini_body: dict[str, Any] = {
-                "contents": conversation.copy(),
-                "generationConfig": {
-                    "responseModalities": ["IMAGE"],
+                "model": model,
+                "input": prompt_text,
+                "response_format": {
+                    "type": "image",
+                    "mime_type": "image/png",
+                    "aspect_ratio": "16:9",
+                    "image_size": "2K",
                 },
             }
 
@@ -2933,7 +3314,7 @@ async def generate_image(
                 try:
                     resp = await http_client.post(
                         api_url,
-                        params={"key": active_settings.gemini_api_key},
+                        headers={"x-goog-api-key": active_settings.gemini_api_key},
                         json=gemini_body,
                         timeout=httpx.Timeout(120.0, connect=10.0),
                     )
@@ -2968,7 +3349,6 @@ async def generate_image(
                     "type": last_error_type or "upstream_connection_error",
                     "message": last_error or f"Gemini unreachable for prompt {idx + 1} after retries.",
                 })
-                conversation.pop()
                 continue
 
             if resp.status_code != 200:
@@ -2991,7 +3371,6 @@ async def generate_image(
                     "message": upstream_error_message
                     or f"Gemini returned {resp.status_code} for prompt {idx + 1} using model {model}.",
                 })
-                conversation.pop()
                 continue
 
             try:
@@ -3006,50 +3385,22 @@ async def generate_image(
                     "type": "upstream_parse_error",
                     "message": f"Gemini returned a non-JSON response for prompt {idx + 1}.",
                 })
-                conversation.pop()
                 continue
 
-            candidates = resp_json.get("candidates", [])
-            finish_reason = candidates[0].get("finishReason", "") if candidates else ""
-            if not candidates or finish_reason == "SAFETY":
-                prompt_errors.append({
-                    "prompt_index": idx,
-                    "type": "safety_block" if finish_reason == "SAFETY" else "upstream_empty",
-                    "message": (
-                        f"Gemini blocked prompt {idx + 1} for safety/content policy. "
-                        "Try rephrasing the medical scene with less graphic clinical language."
-                    ) if finish_reason == "SAFETY" else (
-                        f"Gemini returned no candidates for prompt {idx + 1}."
-                    ),
-                })
-                conversation.pop()
-                continue
-
-            model_parts = candidates[0].get("content", {}).get("parts", [])
-            image_part = None
-            for part in model_parts:
-                if "inlineData" in part:
-                    image_part = part["inlineData"]
-                    break
-
-            if not isinstance(image_part, dict) or not image_part.get("data"):
+            response_images = _extract_gemini_interaction_images(resp_json)
+            if not response_images:
                 prompt_errors.append({
                     "prompt_index": idx,
                     "type": "no_image_in_response",
                     "message": f"Gemini did not return an image for prompt {idx + 1}.",
                 })
-                conversation.pop()
                 continue
 
+            image_part = response_images[0]
             images.append({
                 "prompt_index": idx,
-                "mime_type": image_part.get("mimeType", "image/png"),
+                "mime_type": image_part.get("mime_type", "image/png"),
                 "data": image_part["data"],
-            })
-
-            conversation.append({
-                "role": "model",
-                "parts": [{"inlineData": image_part}],
             })
 
     finally:

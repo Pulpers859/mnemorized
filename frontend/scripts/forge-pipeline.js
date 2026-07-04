@@ -112,6 +112,149 @@ function buildImageAnchorLines(anchors) {
   }).join('\n');
 }
 
+function composeImagePromptPair(sceneDesc, assigned) {
+  const n = assigned.length;
+  const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
+  const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
+    ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
+    `${ANTI_META_TEXT}\n\n` +
+    `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
+    `Background surfaces are unlabeled.\n\n` +
+    `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
+    `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+    `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
+    `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
+    `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
+    `${ANCHOR_LEGIBILITY_RULE} ` +
+    `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
+    `${PRECISION_TEXT_RULE} ` +
+    `${EXACT_LABEL_RULE} ` +
+    `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
+    `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+    buildImageAnchorLines(assigned) + '\n\n' +
+    `All ${n} anchors must be present and visually distinct. ` +
+    `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
+    `Maintain same lighting, color palette, and atmosphere.`;
+
+  return { prompt1, prompt2, scene_description: sceneDesc, director: 'local' };
+}
+
+async function buildClaudeImagePromptPair(topic, storyData, assigned, stage) {
+  const n = assigned.length;
+  const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
+    'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
+    'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
+    'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
+    'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
+    'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
+    'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
+
+  const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
+
+MEDICAL TOPIC: ${topic}
+SCENE TITLE: ${storyData.scene_title}
+ATMOSPHERE: ${storyData.opening}
+TOTAL ANCHORS TO FIT: ${n}
+
+Requirements:
+- 40-60 words maximum — room/space description ONLY
+- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
+- Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
+- Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
+- NO people or characters
+- Wide establishing shot, spacious enough for ${n} objects in distinct uncluttered zones, aspect ratio 16:9`;
+
+  const p1Res = await claudeFetch({
+    model: CLAUDE_MODEL,
+    max_tokens: 300,
+    system: ipSystem,
+    messages: [{ role: 'user', content: p1UserMsg }]
+  }, stage);
+  if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status} — ${await p1Res.text()}`);
+  const p1Raw = await p1Res.json();
+  const sceneDesc = parseProviderContent(p1Raw, 'Scene Description').trim();
+  return composeImagePromptPair(sceneDesc, assigned);
+}
+
+function buildGeminiPromptDirectorPayload(topic, storyData, assigned, mode) {
+  return {
+    topic,
+    scene_title: storyData.scene_title || '',
+    opening: storyData.opening || '',
+    mode: mode || 'initial',
+    anchors: assigned.map(v => ({
+      n: Number(v.n) || 1,
+      hook: v.hook || '',
+      visual: v.visual || '',
+      anchor: v.anchor || '',
+      zone: v.zone || '',
+    })),
+  };
+}
+
+async function buildGeminiImagePromptPair(topic, storyData, assigned, mode, stage) {
+  const res = await geminiPromptDirectorFetch(
+    buildGeminiPromptDirectorPayload(topic, storyData, assigned, mode),
+    stage
+  );
+  if (!res.ok) {
+    const raw = await res.text().catch(() => '');
+    throw new Error(`Gemini prompt director: HTTP ${res.status} — ${raw.slice(0, 300)}`);
+  }
+  const data = await res.json();
+  if (!data.prompt1 || !data.prompt2) {
+    throw new Error('Gemini prompt director returned an incomplete prompt pair.');
+  }
+  return {
+    prompt1: data.prompt1,
+    prompt2: data.prompt2,
+    scene_description: data.scene_description || '',
+    director: 'gemini',
+    model: data.model || 'gemini',
+  };
+}
+
+function shouldFallbackFromGeminiDirector(error) {
+  const message = String(error?.message || '').toLowerCase();
+  return !(
+    message.includes('monthly quota') ||
+    message.includes('sign in') ||
+    message.includes('auth') ||
+    message.includes('rate limit')
+  );
+}
+
+async function buildImagePromptPair(topic, storyData, mode, geminiStage, claudeStage) {
+  const assigned = assignZones(storyData.voLines);
+  if (!backendState.checked) await refreshBackendStatus();
+
+  if (backendState.geminiConfigured || getReplayMode() === 'replay') {
+    try {
+      return await buildGeminiImagePromptPair(topic, storyData, assigned, mode, geminiStage);
+    } catch (error) {
+      console.warn('Gemini prompt director failed:', error.message);
+      if (!shouldFallbackFromGeminiDirector(error)) throw error;
+      setStageDetail('prompt', `Gemini constitution director failed; falling back to Claude room composer.`);
+    }
+  }
+
+  const fallback = await buildClaudeImagePromptPair(topic, storyData, assigned, claudeStage);
+  fallback.director = 'claude-fallback';
+  return fallback;
+}
+
+function renderImagePromptPair(storyData, pair, doneStatus, detail) {
+  showBody('prompt');
+  if (isOperatorMode()) operatorPanel.classList.add('visible');
+  document.getElementById('img-prompt-1').textContent = pair.prompt1;
+  document.getElementById('img-prompt-2').textContent = pair.prompt2;
+  document.getElementById('prompt-copy-1').value = pair.prompt1;
+  document.getElementById('prompt-copy-2').value = pair.prompt2;
+  setCurrentPalaceData(storyData, pair.prompt1, pair.prompt2);
+  setStatus('prompt', doneStatus, 'done');
+  setStageDetail('prompt', detail);
+}
+
 // ── Demo data ────────────────────────────────────────────────────
 
 const DEMO_DATA = {
@@ -596,76 +739,24 @@ async function rebuildImagePromptsForStory(storyData) {
 
   const topic = document.getElementById('topic')?.value?.trim() || 'medical topic';
   const n = storyData.voLines.length;
-  const assigned = assignZones(storyData.voLines);
 
   setStatus('prompt', 'Rebuilding image prompts...', 'running');
-  setStageDetail('prompt', 'Rebuilding illustration prompts from the repaired anchor script.');
-
-  const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
-    'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
-    'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
-    'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
-    'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
-    'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
-    'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
-
-  const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
-
-MEDICAL TOPIC: ${topic}
-SCENE TITLE: ${storyData.scene_title}
-ATMOSPHERE: ${storyData.opening}
-TOTAL ANCHORS TO FIT: ${n}
-
-Requirements:
-- 40-60 words maximum — room/space description ONLY
-- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
-- Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
-- Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
-- NO people or characters
-- Wide establishing shot, spacious enough for ${n} objects in distinct uncluttered zones, aspect ratio 16:9`;
+  setStageDetail('prompt', 'Rebuilding constitution-guided illustration prompts from the repaired anchor script.');
 
   try {
-    const p1Res = await claudeFetch({
-      model: CLAUDE_MODEL,
-      max_tokens: 300,
-      system: ipSystem,
-      messages: [{ role: 'user', content: p1UserMsg }]
-    }, 'repair-image-prompt');
-    if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status}`);
-    const p1Raw = await p1Res.json();
-    const sceneDesc = parseProviderContent(p1Raw, 'Scene Description').trim();
-
-    const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
-    const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
-      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
-      `${ANTI_META_TEXT}\n\n` +
-      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
-      `Background surfaces are unlabeled.\n\n` +
-      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
-      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
-      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
-      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `${ANCHOR_LEGIBILITY_RULE} ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
-      `${PRECISION_TEXT_RULE} ` +
-      `${EXACT_LABEL_RULE} ` +
-      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
-      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
-      buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and visually distinct. ` +
-      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-      `Maintain same lighting, color palette, and atmosphere.`;
-
-    showBody('prompt');
-    if (isOperatorMode()) operatorPanel.classList.add('visible');
-    document.getElementById('img-prompt-1').textContent = prompt1;
-    document.getElementById('img-prompt-2').textContent = prompt2;
-    document.getElementById('prompt-copy-1').value = prompt1;
-    document.getElementById('prompt-copy-2').value = prompt2;
-    setCurrentPalaceData(storyData, prompt1, prompt2);
-    setStatus('prompt', '✓ Rebuilt from repaired script', 'done');
-    setStageDetail('prompt', `Illustration handoff rebuilt with ${n} repaired anchors.`);
+    const pair = await buildImagePromptPair(
+      topic,
+      storyData,
+      'repair',
+      'repair-gemini-prompt-director',
+      'repair-image-prompt'
+    );
+    renderImagePromptPair(
+      storyData,
+      pair,
+      '✓ Rebuilt from repaired script',
+      `Illustration handoff rebuilt with ${n} repaired anchors using ${pair.director === 'gemini' ? 'Gemini constitution director' : 'fallback prompt composer'}.`
+    );
   } catch (error) {
     setCurrentPalaceData(storyData, '', '');
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
@@ -1085,79 +1176,23 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
 
   // ── STAGE 3: Image prompts ────────────────────────
   setStatus('prompt', '✦ Building image prompts…', 'running');
-  setStageDetail('prompt', 'Preparing illustration prompts from the generated anchor script.');
+  setStageDetail('prompt', 'Preparing constitution-guided illustration prompts from the generated anchor script.');
 
   try {
     const n = storyData.voLines.length;
-    const assigned = assignZones(storyData.voLines);
-
-    const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
-      'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
-      'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
-      'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
-      'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
-      'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
-      'Think of it as painting a stage backdrop before the props are placed. ' +
-      'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
-
-    const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
-
-MEDICAL TOPIC: ${topic}
-SCENE TITLE: ${storyData.scene_title}
-ATMOSPHERE: ${storyData.opening}
-TOTAL ANCHORS TO FIT: ${n} (scene must be wide and spacious enough)
-
-Requirements:
-- 40-60 words maximum — room/space description ONLY
-- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
-- Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
-- Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
-- NO people or characters
-- Wide establishing shot, spacious enough for ${n} objects spread across distinct uncluttered left/center/right/foreground/background zones, aspect ratio 16:9`;
-
-    const p1Res = await claudeFetch({
-        model: CLAUDE_MODEL,
-        max_tokens: 300,
-        system: ipSystem,
-        messages: [{ role: 'user', content: p1UserMsg }]
-      }, 'stage3-image-prompt');
-    if (!p1Res.ok) throw new Error(`Image Prompt 1: HTTP ${p1Res.status} — ${await p1Res.text()}`);
-    const p1Raw = await p1Res.json();
-    const sceneDesc = parseAPIResponse(p1Raw, 'Scene Description').trim();
-
-    const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
-
-    const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
-      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
-      `${ANTI_META_TEXT}\n\n` +
-      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
-      `Background surfaces are unlabeled.\n\n` +
-      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
-      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
-      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
-      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `${ANCHOR_LEGIBILITY_RULE} ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
-      `${PRECISION_TEXT_RULE} ` +
-      `${EXACT_LABEL_RULE} ` +
-      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
-      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
-      buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and visually distinct. ` +
-      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-      `Maintain same lighting, color palette, and atmosphere.`;
-
-    showBody('prompt');
-    if (isOperatorMode()) operatorPanel.classList.add('visible');
-    document.getElementById('img-prompt-1').textContent = prompt1;
-    document.getElementById('img-prompt-2').textContent = prompt2;
-    document.getElementById('prompt-copy-1').value = prompt1;
-    document.getElementById('prompt-copy-2').value = prompt2;
-
-    setStatus('prompt', '✓ Image prompts ready', 'done');
-    setStageDetail('prompt', `Illustration handoff ready with ${n} anchors.`);
-    setCurrentPalaceData(storyData, prompt1, prompt2);
+    const pair = await buildImagePromptPair(
+      topic,
+      storyData,
+      'initial',
+      'stage3-gemini-prompt-director',
+      'stage3-image-prompt'
+    );
+    renderImagePromptPair(
+      storyData,
+      pair,
+      '✓ Image prompts ready',
+      `Illustration handoff ready with ${n} anchors using ${pair.director === 'gemini' ? 'Gemini constitution director' : 'fallback prompt composer'}.`
+    );
 
   } catch(e) {
     setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');

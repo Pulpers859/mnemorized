@@ -253,6 +253,83 @@ async function claudeFetch(body, stage, extraHeaders) {
   return res;
 }
 
+async function geminiPromptDirectorFetch(body, stage, extraHeaders) {
+  if (!backendState.checked) await refreshBackendStatus();
+
+  if (forgeReplayMode !== 'replay') {
+    if (!backendState.reachable) {
+      openConnectionModal();
+      throw new Error(`Proxy unavailable. Start the backend at ${getBackendBaseLabel()} and retry.`);
+    }
+
+    if (!backendState.geminiConfigured) {
+      openConnectionModal();
+      throw new Error('Backend is reachable, but GEMINI_API_KEY is not configured on the server.');
+    }
+
+    if (!backendState.providerAuthReady) {
+      openConnectionModal();
+      throw new Error('Provider calls require Supabase auth, but backend auth is not configured yet.');
+    }
+  }
+
+  const headers = {
+    'Content-Type': 'application/json',
+    ...getReplayHeaders(stage || 'gemini-prompt-director'),
+    ...(extraHeaders || {}),
+  };
+  if (authState.session?.access_token) {
+    headers.Authorization = `Bearer ${authState.session.access_token}`;
+  }
+
+  let res;
+  try {
+    res = await fetch(getApiUrl('/api/gemini/prompt-director'), {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body)
+    });
+  } catch (err) {
+    backendState = {
+      checked: true,
+      reachable: false,
+      configured: false,
+      geminiConfigured: false,
+      medicalKnowledgeConfigured: false,
+      providerAuthReady: false
+    };
+    setBackendBadge('offline', '⚠ PROXY OFFLINE');
+    syncConnectionModal(`Could not reach ${getApiUrl('/api/gemini/prompt-director')}. Start the backend and retry.`);
+    openConnectionModal();
+    throw new Error(`Proxy unavailable: ${err.message}`);
+  }
+
+  if (res.status === 401) {
+    openAuthModal();
+    throw new Error('Sign in to use the Gemini prompt director.');
+  } else if (res.status === 402) {
+    const quota = await res.json().catch(() => ({}));
+    throw new Error(getQuotaExceededMessage(quota));
+  } else if (res.status === 503) {
+    const payload = await res.clone().json().catch(() => ({}));
+    backendState.geminiConfigured = false;
+    setBackendBadge('warning', '⚠ KEY MISSING');
+    syncConnectionModal(payload.error?.message || 'Backend reached the proxy, but GEMINI_API_KEY is missing.');
+  } else if (res.ok) {
+    backendState = {
+      checked: true,
+      reachable: true,
+      configured: backendState.configured,
+      geminiConfigured: true,
+      medicalKnowledgeConfigured: backendState.medicalKnowledgeConfigured,
+      providerAuthReady: backendState.providerAuthReady
+    };
+    setBackendBadge('online', '✓ PROXY LIVE');
+  }
+
+  return res;
+}
+
 refreshBackendStatus();
 
 // ── Generic UI helpers ────────────────────────────────────────────

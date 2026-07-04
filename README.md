@@ -54,6 +54,8 @@ Important variables:
 
 - `ANTHROPIC_API_KEY`
 - `GEMINI_API_KEY`
+- `GEMINI_TEXT_MODEL` for constitution-guided prompt direction, default `gemini-3.1-pro-preview`
+- `GEMINI_IMAGE_MODEL` for image rendering, default `gemini-3-pro-image`
 - `OPENAI_API_KEY` for private medical knowledge embeddings
 - `SUPABASE_URL`
 - `SUPABASE_ANON_KEY`

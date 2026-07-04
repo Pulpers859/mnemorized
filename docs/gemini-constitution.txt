@@ -4,8 +4,8 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after sepsis full-scene stress test (score 96, 4 iterations,
-9 failure modes discovered).
+Last updated after status epilepticus mixed-device stress test (score 96,
+4 iterations, 11 failure modes discovered, mixed-device vocabulary added).
 
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
@@ -55,15 +55,44 @@ WHAT GEMINI CANNOT RENDER — 9 confirmed failure modes
    FIX: Reserve ALL-CAPS exclusively for labels that MUST appear in the final image.
    Use lowercase for all emphasis, directions, and instructional language.
 
+10. DESCRIPTIVE-NOUN TEXT LEAKAGE: naming the TYPE of label in the prompt
+    ("pharmacy label", "warning sign", "product tag") causes Gemini to render the
+    descriptor noun as visible text ("PHARMAC", "WARNING", "PRODUCT").
+    FIX: Describe visual properties only. "white sticker" not "pharmacy label."
+    "red sign" not "warning sign." Never name what kind of label it is.
+
+11. SCREEN-TEXT CHARACTER DUPLICATION: glowing/digital screen text duplicates
+    adjacent identical characters. "cEEG" (2 E's) renders as "cEEEG" (3 E's).
+    FIX: Use physical-text devices (etched, engraved, stamped) for any label
+    containing adjacent repeated characters. Reserve glowing screen text for
+    labels with no adjacent identical characters.
+
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
 ═══════════════════════════════════════════════════════════════════════════
 
-LABEL READABILITY FORMULA:
-For every required text label, write:
+LABEL READABILITY — MIXED-DEVICE VOCABULARY:
+Integrate text into objects naturally using the device that fits the object type.
+Each device has been stress-tested for character precision. Listed by reliability:
+
+  1. Engraved/etched metal — shields, bezels, frames. HIGHEST precision.
+     "The word [LABEL] is deeply engraved into the face of his metal shield."
+  2. Chiseled stone — blocks, walls, foundations. High precision.
+     "The stone block has [LABEL] chiseled into its surface in deep block letters."
+  3. Riveted/stamped metal — consoles, machinery, industrial. High precision.
+     "The console has [LABEL] stamped in raised riveted metal letters."
+  4. Painted on surface — jars, dials, clock faces. Good precision.
+     "Painted directly on the glass in bold dark letters: [LABEL]."
+  5. White sticker/printed — bottles, containers. Good precision.
+     "Printed on a small white sticker in bold dark text: [LABEL]."
+     NEVER name the label type (see failure mode #10).
+  6. Glowing screen text — monitors, displays. Avoid repeated characters (#11).
+     "The screen displays [LABEL] in glowing green digital text."
+
+FALLBACK — BRASS PLAQUE FORMULA (legacy, still reliable):
+For cases where no natural device fits, or as a safe default:
   "A large brass plaque bolted to [object] reads [LABEL] in bold block letters."
-Do NOT use vague "stamped with" or bare "reads" — labels render small or garbled
-without the "bolted plaque + bold block letters" formula.
+Produces readable text but looks uniform — prefer mixed devices when possible.
 
 TEXT ALLOWLIST FENCE:
 Always end the prompt with:
