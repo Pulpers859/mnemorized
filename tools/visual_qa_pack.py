@@ -59,12 +59,17 @@ EXACT_LABEL_RULE = (
 
 GEMINI_GUARDRAILS = (
     "GEMINI CAPABILITY RULES — follow these strictly: "
-    "Gemini CAN draw distinct objects, specific materials/states, text labels of 1-4 words on objects, "
-    "coarse spatial placement (LEFT/CENTER/RIGHT/FOREGROUND/BACKGROUND), size contrast, and artistic styles. "
-    "Gemini CANNOT do micro-poses (exact finger positions, specific facial muscle states, precise joint angles), "
-    "ground/surface contrast at specific locations (pristine here vs scorched there), compound spatial positions "
-    "(center-left, foreground-right corner), shape-morphing, or abstract concepts. "
-    "Use ONLY single-axis coarse spatial terms. Describe each figure with at most 2 spatial constraints. "
+    "CAN draw: distinct objects with clear silhouettes, specific materials/states, "
+    "text labels of 1-4 words on objects, coarse spatial placement (left/center/right/foreground/background), "
+    "size contrast, artistic styles (ink-and-watercolor, hand-drawn), and lighting. "
+    "CANNOT draw: micro-poses (exact finger/hand/joint positions — silently ignored), "
+    "ground/surface contrast at specific locations, compound spatial positions (center-left renders as center), "
+    "shape-morphing, clock hand positions (use text plaques instead), abstract concepts, "
+    "or more than 3 spatial constraints per figure (honors 1-2, ignores rest). "
+    "Use completed-state language: 'has crossed' not 'crossing,' 'has swung open' not 'opening.' "
+    "Use ONLY single-axis coarse spatial terms in lowercase. "
+    "CRITICAL: any ALL-CAPS word may render as visible text — reserve caps ONLY for labels that must appear in the image. "
+    "For readable labels, use: 'a large brass plaque bolted to [object] reads [LABEL] in bold block letters.' "
     "Let mnemonic contrast live in object SIZE and TYPE, not in background surface details."
 )
 

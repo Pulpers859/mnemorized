@@ -84,6 +84,26 @@ These rules are derived from stress-testing Gemini's image generation across mul
 - **Action-state ambiguity**: "ready to exhale," "preparing to throw," or any "about to X" phrasing renders as actively doing X. Gemini defaults to active states. To show a character waiting/idle, describe completed inactivity: "arms FOLDED ACROSS HER CHEST," "torch resting on the ground," "standing still, WAITING."
 - **ALL-CAPS leakage**: Any word in ALL-CAPS in the prompt may be rendered as visible text in the image, even if it is a scene direction, not a label. Reserve ALL-CAPS exclusively for text that must appear in the final image (e.g., "qSOFA", "30 mL/kg"). Use lowercase for emphasis, spatial directions, and instructional language ("already crossed," "foreground," "left ring").
 
+### Proven Positive Patterns
+
+These formulas consistently produce A+ (>=96) images. Use them by default in every prompt.
+
+1. **Label readability formula**: For every required text label, write: *"A large brass plaque bolted to [object] reads [LABEL] in bold block letters."* Vague phrasing like "stamped with" or bare "reads" produces small or garbled labels. The "bolted plaque + bold block letters" pattern forces Gemini to render text large and legible.
+
+2. **Text allowlist fence**: Always end the prompt with: *"Visible text limited to: [comma-separated list of allowed labels]. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."* This prevents spurious text from leaking into the scene.
+
+3. **Style opener**: Begin every prompt with: *"Detailed hand-drawn medical mnemonic illustration in warm ink-and-watercolor style, wide 16:9 format, every element large and silhouette-readable."*
+
+4. **Reading path**: Include a reading path in the second sentence: *"The eye enters at [entrance], sweeps through [zones], climbs to [back], and returns."*
+
+5. **Completed-state language**: For sequence/timing anchors, describe the completed state: *"has crossed the line"* not *"crossing,"* *"has swung open"* not *"opening."* Gemini defaults to active states.
+
+6. **Multi-part verification phrase**: When a feature requires an exact count (e.g., three-headed dog), add: *"All three heads are clearly visible and separated."*
+
+7. **Full-prompt regeneration over repair patches**: When fixing issues, rewrite the complete prompt with fixes embedded. Targeted repair instructions cause previously-working elements to be dropped during regeneration.
+
+8. **External auditor, never self-grade**: The image generator (AG/Gemini) must NOT audit its own output. Self-grading inflates scores by 15-20 points. Claude audits externally against the anchor table.
+
 ### Prompt Length Rule
 Shorter prompts score higher. Every sentence is a chance for Gemini to misinterpret. Target:
 - **Single-anchor plates (plate_size=1)**: 150-250 words max for the director prompt.

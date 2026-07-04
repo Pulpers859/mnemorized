@@ -188,11 +188,39 @@ Every anchor must be a masterful visual cue for what the student is trying to re
 
 GEMINI_CAPABILITY_RULES = """
 GEMINI CAPABILITY GUARDRAILS — what the renderer can and cannot draw:
-CAN: distinct separate objects, characters with props, objects on/near each other, objects of different sizes/colors/materials, objects in specific positions (left/center/right), text labels of 1-4 words on surfaces, specific materials (wood/metal/brick/glass), specific states (broken/burning/leaking/glowing/tilting).
-CANNOT: one object morphed into the shape of another (e.g. "a leg shaped like a cuff" → Gemini draws a cuff ON a leg). Instead use SEPARATE objects placed together.
-CANNOT: abstract conceptual instructions ("the texture should evoke despair"). Use concrete physical descriptions.
-CANNOT: reliably render more than 6-8 distinct text labels in one image. Budget text carefully.
-WORKAROUND: if you need "object A represents concept B through shape," use a RECOGNIZABLE version of B as a SEPARATE object attached to or replacing A. Example: instead of "stool leg morphed into blood pressure cuff shape," write "one stool leg is REPLACED BY a dangling deflated blood pressure cuff acting as the leg."
+
+CAN RENDER RELIABLY:
+- Distinct objects with clear silhouettes (characters, animals, props, furniture)
+- Specific materials and states (glass, metal, liquid, fire, broken, deflated, glowing)
+- Text labels of 1-4 words on objects (plaques, stamps, signs, gauge faces)
+- Coarse spatial placement: LEFT, CENTER, RIGHT, FOREGROUND, BACKGROUND
+- Size contrast between objects (small vs massive, close vs distant)
+- Artistic styles (ink-and-watercolor, hand-drawn, cartoon) and lighting (warm amber, spotlight)
+
+CANNOT RENDER — do not attempt these, they silently fail:
+- Micro-poses: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions. Silently ignored; extra text dilutes instructions Gemini CAN follow.
+- Ground/surface contrast at specific locations: "pristine here, scorched there" — Gemini applies effects to nearest cause, not where you specify.
+- Compound spatial positions: "center-left" renders as center. Use single-axis terms only.
+- Shape-morphing: flames shaped like letters, clouds forming words. Use separate labeled objects.
+- More than ~3 spatial constraints per figure: Gemini honors 1-2 and ignores the rest.
+- Clock hand positions: "hands at one o'clock" is silently ignored. Use text plaques ("1 HR").
+- Ambiguous motion verbs: "crossing the line" may render as approaching. Use completed-state language: "has crossed the line," "boot planted past the line."
+- Action-state ambiguity: "ready to exhale" or "about to X" renders as actively doing X. For idle/waiting, describe completed inactivity: "arms folded," "standing still."
+- Abstract concepts: "dysregulated host response" cannot be drawn. Encode as concrete objects.
+
+ALL-CAPS TEXT LEAKAGE — critical:
+Any ALL-CAPS word in the prompt may render as visible text in the image, even scene directions (FOREGROUND, ALREADY CROSSED). Reserve ALL-CAPS exclusively for labels that MUST appear in the final image. Use lowercase for all other emphasis, directions, and instructions.
+
+LABEL READABILITY FORMULA — use this pattern for every required text label:
+"A large brass plaque bolted to [object] reads [LABEL] in bold block letters."
+Do NOT use vague phrasing like "stamped with" or "reads" alone — labels render small or garbled without the "bolted plaque + bold block letters" formula.
+
+TEXT ALLOWLIST FENCE — always end the prompt with:
+"Visible text limited to: [comma-separated label list]. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."
+
+MULTI-PART VERIFICATION — when a feature requires an exact count (e.g., three-headed dog), add: "All three heads are clearly visible and separated."
+
+WORKAROUND for shape-encoding: if you need "object A represents concept B through shape," use a RECOGNIZABLE version of B as a SEPARATE object attached to or replacing A. Example: "one stool leg is REPLACED BY a dangling deflated blood pressure cuff acting as the leg."
 """.strip()
 
 
@@ -203,18 +231,24 @@ Your job is to rewrite a generated anchor table into ONE coherent Gemini image p
 Optimize for image adherence, not for prose completeness.
 
 Principles:
-- Scene first: make one memorable room with a clear visual metaphor and reading path.
+- Scene first: make one memorable room with a clear visual metaphor and reading path ("the eye enters at X, sweeps through Y, climbs to Z").
+- Open with style and format: "Detailed hand-drawn medical mnemonic illustration in warm ink-and-watercolor style, wide 16:9 format, every element large and silhouette-readable."
 - Keep the prompt drawable. Avoid legalistic checklists and long paragraphs.
 - Preserve every anchor, but rewrite each as a compact visual beat.
 - Compress 8-10 anchors into 6-8 large spatial beats when related facts belong together.
 - Put exact numbers/formulas on large physical devices only: gauges, plaques, dials, rulers, scales, clocks, tags.
+- For every required text label, use the label readability formula: "a large brass plaque bolted to [object] reads [LABEL] in bold block letters." Never use vague "stamped with" or bare "reads."
 - Avoid ordinary word labels whenever an object/action can carry the meaning. Do not label obvious objects like syringes, vials, kidneys, eyes, pipes, antibiotics, or blood cultures.
 - Visible text should be an allowlist of essential precision labels only: short thresholds, formulas, timings, or one-word mnemonic names. Prefer compact labels such as "22", "100", "4", "1 HR", "30 mL/kg", "MAP 65" over long phrases.
+- Always end the prompt with a text allowlist fence: "Visible text limited to: [list]. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."
 - Never ask Gemini to render long medical words unless the exact word is the tested fact.
 - Do not encode large numbers as exact object counts above 12.
 - Every beat must be large, distinct, and silhouette-readable at 1024px.
 - Do not reuse the same base object for two anchors in conflicting states. If one fact is "before" and another is "within 1 hour," use different symbols or a single clear sequence path, not two versions of the same cannon/syringe/clock.
 - For multi-criterion clinical screens, use body-icon cues first (brain/fog, heaving ribs, collapsing cuff) and only tiny numeric plaques if essential.
+- Use completed-state language for sequences: "has crossed the line" not "crossing," "has swung open" not "opening." Gemini defaults to active states.
+- When a feature requires an exact count (e.g., three-headed dog), add explicit verification: "All three heads are clearly visible and separated."
+- Write ALL scene directions and emphasis in lowercase. Reserve ALL-CAPS exclusively for labels that must appear as text in the final image.
 - Before writing the final prompt, silently check that every source anchor is covered.
 - Avoid saying Hook, Encodes, Anchor, station, checklist, rubric, or meta-instructions in the image prompt.
 - Final prompt must read like a camera-directed illustration brief, not a numbered list.
@@ -601,9 +635,13 @@ Your job: rewrite the ENTIRE image prompt from scratch, keeping what worked and 
 KEY RULES:
 1. Do NOT repeat the same instruction that failed. If the audit says "X was not rendered correctly," find a DIFFERENT visual metaphor for the same medical fact.
 2. The rewritten prompt must be SHORTER or equal in length to the original. Never add detail — remove or replace.
-3. Spatial precision beyond left/center/right and top/middle/bottom is WASTED on Gemini. Do not specify exact heights, exact ring positions, or anatomical placement of flames/objects. Use relative terms only.
-4. Do not specify character micro-poses (interlocked fingers, balloon-puffed cheeks, white knuckles). Gemini ignores these and the extra text dilutes the instructions it CAN follow.
+3. Spatial precision beyond left/center/right and top/middle/bottom is WASTED on Gemini. Use relative terms only.
+4. Do not specify character micro-poses. Gemini ignores them and the extra text dilutes useful instructions.
 5. Keep the prompt under 10 short paragraphs. Write a camera brief, not a novel.
+6. Write ALL scene directions and emphasis in lowercase. Only ALL-CAPS for labels that must appear in the image.
+7. For every required text label, use: "a large brass plaque bolted to [object] reads [LABEL] in bold block letters."
+8. Always end with the text allowlist fence: "Visible text limited to: [list]. No other text..."
+9. Rewrite the COMPLETE prompt, not a repair patch — targeted repairs cause previously-working elements to be dropped.
 
 Return ONLY:
 <image_prompt>...</image_prompt>
