@@ -23,6 +23,18 @@ Use Antigravity for:
 - saving image/audit artifacts in the relevant troubleshooting folder
 - writing concise findings that Codex/Claude can fold back into the app
 
+## Codex Or Claude As Prompt Architect
+
+Codex and Claude can occupy the same non-visual control seat in this workflow.
+Whichever agent is active should own the prompt architecture, anchor-table review,
+external audit judgment, Constitution updates, source-code integration, and final
+commit/push. Antigravity remains the image-generation and visual-artifact lab.
+
+Do not duplicate effort by having Codex and Claude both rewrite the same prompt
+pack at the same time. The active architect should leave a compact run note in the
+topic folder so the next agent can continue from saved artifacts rather than
+restarting the loop.
+
 Do not use Antigravity by default for:
 
 - backend/provider proxy changes
