@@ -62,6 +62,7 @@ Important variables:
 - `SUPABASE_SERVICE_ROLE_KEY` for backend-only catalog publishing and private medical knowledge RPCs
 - `ADMIN_EMAILS` for comma-separated catalog publisher emails
 - `CORS_ORIGINS`
+- `DEMO_AUTH_BYPASS`, default `true` in development, lets local Forge provider calls run without Supabase sign-in for demos. Production ignores this by default because `APP_ENV=production` keeps provider auth required.
 
 ## Private Medical Knowledge
 

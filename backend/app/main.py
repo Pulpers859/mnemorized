@@ -1677,6 +1677,7 @@ async def health(request: Request) -> dict[str, Any]:
         "medical_knowledge_configured": active_settings.medical_knowledge_configured,
         "billing_mode": active_settings.billing_mode,
         "upgrade_path_enabled": active_settings.billing_upgrade_path_enabled,
+        "demo_auth_bypass_enabled": active_settings.dev_mode and active_settings.demo_auth_bypass,
         "provider_auth_required": active_settings.provider_auth_required,
         "provider_auth_ready": (
             not active_settings.provider_auth_required
@@ -1777,6 +1778,7 @@ async def public_config(request: Request) -> dict[str, Any]:
         "supabase_anon_key": active_settings.supabase_anon_key or None,
         "app_base_url": active_settings.app_base_url,
         "dev_mode": active_settings.dev_mode,
+        "demo_auth_bypass_enabled": active_settings.dev_mode and active_settings.demo_auth_bypass,
         "medical_knowledge_enabled": active_settings.medical_knowledge_configured,
         **_billing_context(active_settings),
     }

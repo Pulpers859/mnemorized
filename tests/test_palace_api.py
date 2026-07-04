@@ -37,6 +37,7 @@ def make_settings(tmp_path: Path) -> Settings:
         pro_monthly_requests=400,
         team_monthly_requests=4000,
         billing_mode="beta",
+        demo_auth_bypass=True,
         gemini_api_key="",
         gemini_model="gemini-3-pro-image",
         gemini_text_model="gemini-3.1-pro-preview",

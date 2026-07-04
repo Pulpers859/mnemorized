@@ -83,6 +83,7 @@ class Settings:
     pro_monthly_requests: int
     team_monthly_requests: int
     billing_mode: str
+    demo_auth_bypass: bool
     gemini_api_key: str
     gemini_model: str
     gemini_text_model: str
@@ -135,6 +136,8 @@ class Settings:
 
     @property
     def provider_auth_required(self) -> bool:
+        if self.dev_mode and self.demo_auth_bypass:
+            return False
         return self.supabase_auth_configured or not self.dev_mode
 
     @property
@@ -217,6 +220,7 @@ def get_settings() -> Settings:
         pro_monthly_requests=int(os.getenv("PRO_MONTHLY_REQUESTS", "400")),
         team_monthly_requests=int(os.getenv("TEAM_MONTHLY_REQUESTS", "4000")),
         billing_mode=_normalize_billing_mode(os.getenv("BILLING_MODE", "beta")),
+        demo_auth_bypass=_env_bool("DEMO_AUTH_BYPASS", True),
         gemini_api_key=_clean_env_value("GEMINI_API_KEY"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-3-pro-image").strip(),
         gemini_text_model=os.getenv("GEMINI_TEXT_MODEL", "gemini-3.1-pro-preview").strip(),

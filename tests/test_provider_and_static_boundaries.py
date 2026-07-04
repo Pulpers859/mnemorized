@@ -24,6 +24,7 @@ def make_settings(
     supabase_url: str = "",
     supabase_anon_key: str = "",
     supabase_service_role_key: str = "",
+    demo_auth_bypass: bool = True,
     admin_emails: tuple[str, ...] = (),
 ) -> Settings:
     return Settings(
@@ -49,6 +50,7 @@ def make_settings(
         pro_monthly_requests=400,
         team_monthly_requests=4000,
         billing_mode="beta",
+        demo_auth_bypass=demo_auth_bypass,
         gemini_api_key=gemini_api_key,
         gemini_model="gemini-3-pro-image",
         gemini_text_model="gemini-3.1-pro-preview",
@@ -135,6 +137,60 @@ def test_production_provider_auth_fails_closed_when_supabase_missing(
     assert provider.calls == []
 
 
+def test_dev_demo_auth_bypass_allows_provider_call_without_sign_in(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        anthropic_api_key="anthropic-key",
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+        demo_auth_bypass=True,
+    )
+    provider = FakeProviderClient([
+        httpx.Response(200, json={"content": [{"text": "ok"}], "usage": {}})
+    ])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/anthropic/messages",
+        json={"model": "claude-test", "max_tokens": 100, "messages": [{"role": "user", "content": "hi"}]},
+    )
+
+    assert response.status_code == 200
+    assert len(provider.calls) == 1
+
+
+def test_production_ignores_demo_auth_bypass_and_requires_sign_in(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        app_env="production",
+        anthropic_api_key="anthropic-key",
+        supabase_url="https://project.supabase.co",
+        supabase_anon_key="anon-key",
+        demo_auth_bypass=True,
+    )
+    provider = FakeProviderClient([])
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/anthropic/messages",
+        json={"model": "claude-test", "max_tokens": 100, "messages": [{"role": "user", "content": "hi"}]},
+    )
+
+    assert response.status_code == 401
+    assert response.json()["error"]["type"] == "authentication_required"
+    assert provider.calls == []
+
+
 def test_account_summary_selects_current_active_subscription(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
@@ -208,6 +264,7 @@ def test_public_config_exposes_explicit_beta_billing_contract(
     assert payload["billing_enabled"] is False
     assert payload["upgrade_enabled"] is False
     assert payload["upgrade_path_enabled"] is False
+    assert payload["demo_auth_bypass_enabled"] is True
     assert payload["quota_unit_label"] == "AI requests"
     assert "private beta" in payload["billing_message"]
     assert "service-role-secret" not in response.text

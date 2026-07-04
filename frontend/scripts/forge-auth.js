@@ -8,6 +8,7 @@ const appConfig = {
   supabaseUrl: '',
   supabaseAnonKey: '',
   appBaseUrl: '',
+  demoAuthBypass: false,
   medicalKnowledgeEnabled: false,
   billingMode: 'beta',
   betaMode: true,
@@ -651,6 +652,22 @@ function refreshAuthUI() {
     signOutBtn.style.display = 'block';
     setLibraryStatus(currentPalaceMeta ? `Editing "${currentPalaceMeta.title}"` : 'Library connected.', 'success');
   } else {
+    if (appConfig.demoAuthBypass) {
+      setAccountBadge('online', 'DEMO');
+      document.getElementById('auth-summary').textContent = 'Demo auth bypass is active for Forge generation. Sign in only when you want to save palaces or use the personal library.';
+      setAuthModalStatus('Demo auth bypass is active for provider calls. Library saves still require a real account.');
+      openAuthBtn.textContent = 'Demo Auth';
+      saveBtn.disabled = true;
+      saveBtn.textContent = 'Save Palace';
+      saveAsNewBtn.disabled = true;
+      newDraftBtn.disabled = true;
+      refreshBtn.disabled = true;
+      signOutBtn.style.display = 'none';
+      renderLibraryRows([]);
+      setLibraryStatus('Demo mode: generation works without sign-in; sign in to save to Library.', 'success');
+      return;
+    }
+
     setAccountBadge('warning', 'SIGN IN');
     document.getElementById('auth-summary').textContent = `Sign in to save palaces, keep a history, and build your personal library. ${appConfig.billingMessage}`;
     setAuthModalStatus('Create an account or sign in to start saving palaces.');
@@ -1004,6 +1021,7 @@ async function loadAuthSystem() {
     appConfig.supabaseUrl = config.supabase_url || '';
     appConfig.supabaseAnonKey = config.supabase_anon_key || '';
     appConfig.appBaseUrl = config.app_base_url || window.location.origin;
+    appConfig.demoAuthBypass = !!config.demo_auth_bypass_enabled;
     appConfig.medicalKnowledgeEnabled = !!config.medical_knowledge_enabled;
     appConfig.devMode = !!config.dev_mode;
     if (appConfig.devMode) {

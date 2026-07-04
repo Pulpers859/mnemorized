@@ -30,6 +30,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Treat `frontend/pages/forge.html` as fragile because it contains a large amount of inline UI and workflow logic.
 - Prefer extending `frontend/styles/app-shell.css` before duplicating more page-local CSS.
 - Keep real secrets in ignored `backend/.env`; keep `backend/.env.example` placeholder-only.
+- Intentional demo behavior: local/development Forge provider calls bypass Supabase sign-in by default via `DEMO_AUTH_BYPASS=true` so Patrick can demo generation without auth friction. Do not remove this as a bug. Production must still require auth unless Patrick explicitly reopens the live-publish auth work.
 - Protect provider proxy behavior, auth context, quota enforcement, usage logging, and Supabase persistence paths from silent regressions.
 - Treat `docs/visual-mnemonic-prompt-contract.md` as the source of truth for medical visual mnemonic prompt quality and the boundary against copying proprietary visual mnemonic products.
 - Treat `ANTIGRAVITY.md` as the source of truth for Google Antigravity visual QA/image-generation experiments. Antigravity should stay in the visual lab lane unless Patrick explicitly asks it to edit app source.
