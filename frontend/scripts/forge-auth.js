@@ -219,8 +219,22 @@ function parseProviderContent(raw, context) {
   if (!raw.content || !Array.isArray(raw.content)) {
     throw new Error(`${context}: unexpected provider response.`);
   }
-  const text = raw.content[0]?.text;
+  const text = raw.content
+    .filter(part => part?.type === 'text' && typeof part.text === 'string')
+    .map(part => part.text)
+    .join('\n')
+    .trim();
   if (!text) {
+    const contentTypes = raw.content
+      .map(part => part?.type || part?.name || 'unknown')
+      .filter(Boolean)
+      .join(', ');
+    if (raw.stop_reason === 'max_tokens') {
+      throw new Error(`${context}: provider response hit the max token limit before returning text.`);
+    }
+    if (contentTypes) {
+      throw new Error(`${context}: provider returned no text blocks. Content blocks: ${contentTypes}.`);
+    }
     throw new Error(`${context}: empty provider response.`);
   }
   return text;
@@ -273,7 +287,7 @@ function validateStoryData(storyData) {
   if (!storyData.opening) warnings.push('Missing opening narration.');
   if (!lines.length) fatal.push('No vo_line anchors were returned.');
   if (lines.length && lines.length < 6) warnings.push(`Only ${lines.length} anchors returned; most topics need 8-10.`);
-  if (lines.length > 10) warnings.push(`${lines.length} anchors returned; image generation is less reliable above 10.`);
+  if (lines.length > 10) fatal.push(`Too many anchors returned (${lines.length}); merge to 8-10 before image generation.`);
 
   const visualKeys = new Set();
   lines.forEach((line, index) => {
@@ -412,7 +426,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
 
     const res = await claudeFetch(withAdvisor({
       model: CLAUDE_MODEL,
-      max_tokens: 4096,
+      max_tokens: 8192,
       system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text. Use visual-mnemonic design principles only; do not copy named scenes, recurring characters, or proprietary symbols from existing commercial mnemonic products.`,
       messages: [{
         role: 'user',

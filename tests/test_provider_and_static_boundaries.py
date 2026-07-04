@@ -452,6 +452,7 @@ def test_gemini_non_json_response_returns_explicit_502(
     assert call["headers"] == {"x-goog-api-key": "gemini-key"}
     assert call["json"]["model"] == "gemini-3-pro-image"
     assert call["json"]["response_format"]["aspect_ratio"] == "16:9"
+    assert call["json"]["response_format"]["mime_type"] == "image/jpeg"
 
 
 def test_gemini_missing_inline_image_data_returns_explicit_502(
@@ -854,8 +855,12 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
 
     assert "function validateStoryData" in auth
-    assert "const storyValidation = validateStoryData(storyData);" in pipeline
+    assert "storyValidation = validateStoryData(storyData);" in pipeline
     assert "storyData = parseStoryXml(txt);" in pipeline
+    assert "Too many anchors returned" in auth
+    assert "dense-compact-strict" in pipeline
+    assert "IMAGE_PROMPT_MAX_CHARS = 7800" in pipeline
+    assert "normalizeImagePromptPair" in pipeline
     assert "ANCHOR is the clinical fact only" in pipeline
     assert "anchor contains mnemonic/narration language" in auth
     assert "const scene_title   = extractXmlTag(txt, 'scene_title');" not in pipeline
@@ -888,8 +893,8 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Use visual-mnemonic design principles only; do not copy named scenes" in auth
     assert "missing HOOK; visual cue quality may degrade" in auth
     assert "HOOK should start with sound-alike, look-alike, functional, contrast, or spatial" in auth
-    assert "Hook: ${v.hook}" in pipeline
-    assert "Encodes: ${v.anchor}" in pipeline
+    assert "Hook: ${trimWords(v.hook" in pipeline
+    assert "Encodes: ${trimWords(v.anchor" in pipeline
     assert 'The words "Hook" and "Encodes" are invisible design guidance only' in pipeline
     assert "Preserve clear spatial hierarchy" in pipeline
     assert "Design the room as a clear spatial memory map" in pipeline
@@ -918,6 +923,22 @@ def test_forge_uses_advisor_tool_for_creative_stages() -> None:
     assert "function withAdvisor" in state
     assert "withAdvisor(" in pipeline, "Stage 2 story generation should use advisor"
     assert "withAdvisor(" in auth, "Repair prompt should use advisor"
+
+
+def test_forge_parses_text_after_advisor_tool_blocks() -> None:
+    root = Path(__file__).resolve().parents[1]
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    upload = (root / "frontend" / "scripts" / "forge-upload.js").read_text(encoding="utf-8")
+
+    assert ".filter(part => part?.type === 'text'" in auth
+    assert ".map(part => part.text)" in auth
+    assert "provider returned no text blocks" in auth
+    assert "provider response hit the max token limit" in auth
+    assert "ctxRaw.content?.[0]?.text" not in pipeline
+    assert "data.content?.[0]?.text" not in upload
+    assert "max_tokens: 8192" in pipeline
+    assert "max_tokens: 8192" in auth
 
 
 def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> None:

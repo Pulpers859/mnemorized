@@ -3303,7 +3303,7 @@ async def generate_image(
                 "input": prompt_text,
                 "response_format": {
                     "type": "image",
-                    "mime_type": "image/png",
+                    "mime_type": "image/jpeg",
                     "aspect_ratio": "16:9",
                     "image_size": "2K",
                 },

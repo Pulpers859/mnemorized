@@ -72,6 +72,8 @@ const ZONE_KEYWORDS = [
   [/\bright\b/i, 'RIGHT'],
 ];
 
+const IMAGE_PROMPT_MAX_CHARS = 7800;
+
 function extractZone(visual, fallback) {
   for (const [re, zone] of ZONE_KEYWORDS) {
     if (re.test(visual)) return zone;
@@ -104,18 +106,27 @@ function buildAnchorLines(anchors) {
   return anchors.map(v => `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${v.visual}`).join('\n');
 }
 
-function buildImageAnchorLines(anchors) {
+function trimWords(text, maxWords) {
+  const words = String(text || '').trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return words.join(' ');
+  return words.slice(0, maxWords).join(' ') + '...';
+}
+
+function buildImageAnchorLines(anchors, concise = false) {
   return anchors.map(v => {
-    const hook = v.hook ? ` Hook: ${v.hook}.` : '';
-    const anchor = v.anchor ? ` Encodes: ${v.anchor}` : '';
-    return `  (${v.zone.toLowerCase()}) Anchor ${v.n}:${hook} Visual: ${condenseForImage(v.visual)}.${anchor}`;
+    const visual = trimWords(condenseForImage(v.visual), concise ? 18 : 32);
+    const anchor = v.anchor ? ` Encodes: ${trimWords(v.anchor, concise ? 18 : 32)}` : '';
+    if (concise) {
+      return `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${visual}.${anchor}`;
+    }
+    const hook = v.hook ? ` Hook: ${trimWords(v.hook, 24)}.` : '';
+    return `  (${v.zone.toLowerCase()}) Anchor ${v.n}:${hook} Visual: ${visual}.${anchor}`;
   }).join('\n');
 }
 
-function composeImagePromptPair(sceneDesc, assigned) {
+function composeImagePrompt2(sceneDesc, assigned, concise = false) {
   const n = assigned.length;
-  const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + sceneDesc + ', aspect ratio 16:9, flat 2D cartoon';
-  const prompt2 = SKETCHY_STYLE + '\n\n' + sceneDesc +
+  return SKETCHY_STYLE + '\n\n' + trimWords(sceneDesc, concise ? 45 : 70) +
     ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
     `${ANTI_META_TEXT}\n\n` +
     `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
@@ -131,12 +142,35 @@ function composeImagePromptPair(sceneDesc, assigned) {
     `${EXACT_LABEL_RULE} ` +
     `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
     `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
-    buildImageAnchorLines(assigned) + '\n\n' +
+    buildImageAnchorLines(assigned, concise) + '\n\n' +
     `All ${n} anchors must be present and visually distinct. ` +
     `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
     `Maintain same lighting, color palette, and atmosphere.`;
+}
 
-  return { prompt1, prompt2, scene_description: sceneDesc, director: 'local' };
+function clampImagePrompt(prompt, maxChars = IMAGE_PROMPT_MAX_CHARS) {
+  const text = String(prompt || '').trim();
+  if (text.length <= maxChars) return text;
+  return text.slice(0, maxChars - 180).replace(/\s+\S*$/, '') +
+    '\n\nFINAL HARD LIMIT: preserve all numbered anchors above; do not add extra labels or checklist text.';
+}
+
+function normalizeImagePromptPair(pair) {
+  return {
+    ...pair,
+    prompt1: clampImagePrompt(pair.prompt1),
+    prompt2: clampImagePrompt(pair.prompt2),
+  };
+}
+
+function composeImagePromptPair(sceneDesc, assigned) {
+  const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + trimWords(sceneDesc, 55) + ', aspect ratio 16:9, flat 2D cartoon';
+  let prompt2 = composeImagePrompt2(sceneDesc, assigned, false);
+  if (prompt2.length > IMAGE_PROMPT_MAX_CHARS) {
+    prompt2 = composeImagePrompt2(sceneDesc, assigned, true);
+  }
+
+  return normalizeImagePromptPair({ prompt1, prompt2, scene_description: sceneDesc, director: 'local' });
 }
 
 async function buildClaudeImagePromptPair(topic, storyData, assigned, stage) {
@@ -205,13 +239,13 @@ async function buildGeminiImagePromptPair(topic, storyData, assigned, mode, stag
   if (!data.prompt1 || !data.prompt2) {
     throw new Error('Gemini prompt director returned an incomplete prompt pair.');
   }
-  return {
+  return normalizeImagePromptPair({
     prompt1: data.prompt1,
     prompt2: data.prompt2,
     scene_description: data.scene_description || '',
     director: 'gemini',
     model: data.model || 'gemini',
-  };
+  });
 }
 
 function shouldFallbackFromGeminiDirector(error) {
@@ -908,6 +942,12 @@ async function runPipeline() {
     return text;
   }
 
+  function isDenseProtocolTopic(topicText, concepts = []) {
+    const haystack = `${topicText || ''}\n${(concepts || []).join('\n')}`.toLowerCase();
+    return /\b(nihss|stroke scale|score|scoring|scale|protocol|algorithm|criteria|classification|staging|checklist|items?|steps?)\b/.test(haystack)
+      || (concepts || []).length >= 10;
+  }
+
   // ── STAGE 1: Clinical Context (with evidence grounding) ──
   const evidenceAvailable = !!(authState.user && appConfig.medicalKnowledgeEnabled && backendState.medicalKnowledgeConfigured);
   if (evidenceAvailable) {
@@ -947,7 +987,7 @@ Output ONLY these two XML tags, nothing else:
     setStatus('story', '✦ Analyzing topic…', 'running');
     setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
     const ctxRaw = await ctxRes.json();
-    const ctxTxt = ctxRaw.content?.[0]?.text || '';
+    const ctxTxt = parseProviderContent(ctxRaw, 'Clinical Context');
     const core   = extractXmlTag(ctxTxt, 'core_concepts');
     const logic  = extractXmlTag(ctxTxt, 'scene_logic');
     if (core || logic) {
@@ -1110,48 +1150,136 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
   let imagePromptText = '';
 
   try {
-    const requestBody = withAdvisor({
-      model: CLAUDE_MODEL,
-      max_tokens: 4096,
-      system: storySystem,
-      messages: [{ role: 'user', content: storyUser }]
+    const compactStorySystem = `You write original medical visual mnemonic memory-palace scripts for a single static illustration.
+
+Return ONLY XML in this exact order: <scene_title>, <opening>, 8-10 repeated <vo_line> blocks, <review_script>.
+
+Clinical accuracy and completeness are mandatory:
+- For scoring systems, protocols, algorithms, and classifications, cover every major item in sequence.
+- Group related sub-items into 8-10 anchors, but preserve every distinct number, range, angle, duration, threshold, and exception.
+- Use the supplied clinical design context when present; it is the completeness checklist.
+
+Visual mnemonic rules:
+- Every anchor starts with HOOK: sound-alike, look-alike, functional, contrast, or spatial.
+- Prefer silhouette-first objects/characters over text labels. Text is allowed only for exact numbers/formulas and must be attached to a device.
+- Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
+- VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
+- No proprietary mnemonic scenes, characters, symbols, or layouts.
+
+${clinicalContext}
+
+Schema:
+<vo_line>
+HOOK: [strategy] - why the visual encodes the fact
+NARRATION: [concise spoken explanation]
+VISUAL: [drawn object/character, position, essential precision label only if needed]
+ANCHOR: [clinical fact only]
+</vo_line>
+
+<review_script>
+One line per anchor: "When you see [image element] - remember [clinical fact]"
+</review_script>`;
+
+    const denseProtocol = isDenseProtocolTopic(topic, coreConcepts);
+    const storyAttempts = [];
+    const compactBody = (label, extraUser = '') => ({
+      label,
+      body: {
+        model: CLAUDE_MODEL,
+        max_tokens: 6144,
+        system: compactStorySystem,
+        messages: [{
+          role: 'user',
+          content: extraUser ? `${storyUser}\n\n${extraUser}` : storyUser
+        }]
+      }
     });
+    if (!denseProtocol) {
+      storyAttempts.push({
+        label: 'advisor-full',
+        body: withAdvisor({
+          model: CLAUDE_MODEL,
+          max_tokens: 8192,
+          system: storySystem,
+          messages: [{ role: 'user', content: storyUser }]
+        })
+      });
+    }
+    storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'timeout-compact-fallback'));
+    storyAttempts.push(compactBody(
+      denseProtocol ? 'dense-compact-strict' : 'timeout-compact-strict-fallback',
+      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; combine them into denser visual devices.'
+    ));
 
-    showDebug('STORY REQUEST (sending...)', JSON.stringify({
-      model: requestBody.model,
-      advisor: CLAUDE_ADVISOR_MODEL,
-      max_tokens: requestBody.max_tokens,
-      system_length: requestBody.system.length,
-      user_length: storyUser.length
-    }));
+    let storyValidation = null;
+    let lastStoryError = null;
 
-    let res;
-    try {
-      res = await claudeFetch(requestBody, 'stage2-story-script');
-    } catch(fetchErr) {
-      throw new Error(fetchErr.message || 'Could not reach the provider proxy.');
+    for (let attemptIndex = 0; attemptIndex < storyAttempts.length; attemptIndex += 1) {
+      const attempt = storyAttempts[attemptIndex];
+      const requestBody = attempt.body;
+      showDebug(`STORY REQUEST (${attempt.label})`, JSON.stringify({
+        model: requestBody.model,
+        advisor: !!requestBody.tools?.some(tool => tool?.name === 'advisor') ? CLAUDE_ADVISOR_MODEL : null,
+        max_tokens: requestBody.max_tokens,
+        system_length: requestBody.system.length,
+        user_length: storyUser.length
+      }));
+
+      let res;
+      try {
+        res = await claudeFetch(requestBody, `stage2-story-script-${attempt.label}`);
+      } catch(fetchErr) {
+        lastStoryError = new Error(fetchErr.message || 'Could not reach the provider proxy.');
+        if (attemptIndex < storyAttempts.length - 1) continue;
+        throw lastStoryError;
+      }
+
+      const rawText = await res.text().catch(() => '(could not read body)');
+      showDebug(`STORY RESPONSE (${attempt.label}) — HTTP ${res.status}`, rawText.slice(0, 2000));
+
+      if (!res.ok) {
+        lastStoryError = new Error(`Scene Narrative: HTTP ${res.status} — ${rawText.slice(0, 500)}`);
+        if ((res.status === 504 || res.status === 502) && attemptIndex < storyAttempts.length - 1) continue;
+        throw lastStoryError;
+      }
+
+      let raw;
+      try {
+        raw = JSON.parse(rawText);
+      } catch(jsonErr) {
+        lastStoryError = new Error(`JSON parse failed: ${jsonErr.message} — raw: ${rawText.slice(0, 300)}`);
+        if (attemptIndex < storyAttempts.length - 1) continue;
+        throw lastStoryError;
+      }
+
+      let txt = '';
+      try {
+        txt = parseAPIResponse(raw, 'Scene Narrative');
+      } catch(parseErr) {
+        lastStoryError = parseErr;
+        if (raw?.stop_reason === 'max_tokens' && attemptIndex < storyAttempts.length - 1) continue;
+        throw parseErr;
+      }
+
+      storyData = parseStoryXml(txt);
+      storyValidation = validateStoryData(storyData);
+      if (storyValidation.fatal.length) {
+        showDebug(`STORY VALIDATION FAILED (${attempt.label})`, storyValidation);
+        lastStoryError = new Error(`Scene Narrative validation failed: ${storyValidation.fatal.join(' ')}`);
+        const retryableValidation = raw?.stop_reason === 'max_tokens'
+          || storyValidation.fatal.some(message => /Too many anchors/i.test(message));
+        if (retryableValidation && attemptIndex < storyAttempts.length - 1) continue;
+        throw lastStoryError;
+      }
+
+      if (raw?.stop_reason === 'max_tokens') {
+        storyValidation.warnings.push('Provider stopped at max_tokens; review the rapid review script for completeness.');
+      }
+      break;
     }
 
-    const rawText = await res.text().catch(() => '(could not read body)');
-    showDebug(`STORY RESPONSE — HTTP ${res.status}`, rawText.slice(0, 2000));
-
-    if (!res.ok) {
-      throw new Error(`Scene Narrative: HTTP ${res.status} — ${rawText.slice(0, 500)}`);
-    }
-
-    let raw;
-    try {
-      raw = JSON.parse(rawText);
-    } catch(jsonErr) {
-      throw new Error(`JSON parse failed: ${jsonErr.message} — raw: ${rawText.slice(0, 300)}`);
-    }
-
-    const txt = parseAPIResponse(raw, 'Scene Narrative');
-    storyData = parseStoryXml(txt);
-    const storyValidation = validateStoryData(storyData);
-    if (storyValidation.fatal.length) {
-      showDebug('STORY VALIDATION FAILED', storyValidation);
-      throw new Error(`Scene Narrative validation failed: ${storyValidation.fatal.join(' ')}`);
+    if (!storyData || !storyValidation) {
+      throw lastStoryError || new Error('Scene Narrative: no usable story response.');
     }
 
     showBody('story');

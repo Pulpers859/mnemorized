@@ -96,7 +96,7 @@ List every distinct section. If the document is one continuous topic with no cle
     const res = await claudeFetch({ model: CLAUDE_MODEL, max_tokens: 1200, messages });
     const data = await res.json();
     if (data.error) throw new Error(data.error.message || 'API error');
-    const txt = data.content?.[0]?.text || '';
+    const txt = parseProviderContent(data, 'Document Sections');
 
     const titleMatches = [...txt.matchAll(/<title>([\s\S]*?)<\/title>/gi)].map(m => m[1].trim());
     const summaryMatches = [...txt.matchAll(/<summary>([\s\S]*?)<\/summary>/gi)].map(m => m[1].trim());
@@ -167,7 +167,7 @@ Extract every testable concept. Do not summarize or collapse related items — l
     const res = await claudeFetch({ model: CLAUDE_MODEL, max_tokens: 2500, messages });
     const data = await res.json();
     if (data.error) throw new Error(data.error.message || 'API error');
-    const txt = data.content?.[0]?.text || '';
+    const txt = parseProviderContent(data, 'Concept Extraction');
 
     const textMatches = [...txt.matchAll(/<text>([\s\S]*?)<\/text>/gi)].map(m => m[1].trim());
     const catMatches  = [...txt.matchAll(/<category>([\s\S]*?)<\/category>/gi)].map(m => m[1].trim());
