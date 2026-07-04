@@ -151,7 +151,8 @@ function buildPalaceSnapshot() {
       prompts: {
         prompt1: currentPromptData.prompt1,
         prompt2: currentPromptData.prompt2
-      }
+      },
+      guided_video: window.MnemorizedGuided?.getSnapshot?.() || null
     }
   };
 }
@@ -557,6 +558,7 @@ function applyPalaceSnapshot(palaceRow, versionRow) {
   const story = outputs.story || null;
   const qualityGate = outputs.quality_gate || null;
   const prompts = outputs.prompts || {};
+  const guidedVideo = outputs.guided_video || null;
 
   ensureForgeVisible();
   document.getElementById('topic').value = inputs.topic || palaceRow.topic || '';
@@ -589,6 +591,7 @@ function applyPalaceSnapshot(palaceRow, versionRow) {
   currentPalaceMeta = palaceRow;
   document.getElementById('palace-title-input').value = palaceRow.title || story?.scene_title || '';
   setCurrentPalaceData(story, prompts.prompt1, prompts.prompt2);
+  window.MnemorizedGuided?.restoreSnapshot?.(guidedVideo);
   setLibraryStatus(`Loaded "${palaceRow.title}"`, 'success');
 }
 

@@ -251,6 +251,7 @@ function renderImagePromptPair(storyData, pair, doneStatus, detail) {
   document.getElementById('prompt-copy-1').value = pair.prompt1;
   document.getElementById('prompt-copy-2').value = pair.prompt2;
   setCurrentPalaceData(storyData, pair.prompt1, pair.prompt2);
+  window.MnemorizedGuided?.onStoryReady?.(storyData);
   setStatus('prompt', doneStatus, 'done');
   setStageDetail('prompt', detail);
 }
@@ -644,6 +645,7 @@ async function generateImages() {
     if (resultContainer && resultEl && finalImage) {
       resultEl.src = `data:${finalImage.mime_type};base64,${finalImage.data}`;
       resultContainer.style.display = 'block';
+      window.MnemorizedGuided?.onImageReady?.(resultEl.src);
     }
 
     if (handoffMsg) handoffMsg.style.display = 'none';
@@ -718,6 +720,7 @@ function downloadForgeBundle() {
       image_2: (img2?.src && img2.src.startsWith('data:')) ? img2.src : null,
       final: (resultImg?.src && resultImg.src.startsWith('data:')) ? resultImg.src : null,
     },
+    guided_video: window.MnemorizedGuided?.getBundleData?.() || null,
   };
 
   const json = JSON.stringify(bundle, null, 2);
@@ -787,6 +790,7 @@ async function runPipeline() {
   currentStoryData = null;
   currentPromptData = { prompt1: '', prompt2: '' };
   currentQualityGateData = null;
+  window.MnemorizedGuided?.reset?.();
   refreshAuthUI();
 
   const btn = document.getElementById('forge-btn');
@@ -884,6 +888,7 @@ async function runPipeline() {
       demoP1,
       demoP2
     );
+    window.MnemorizedGuided?.onStoryReady?.(currentStoryData);
 
     btn.disabled = false; btn.innerHTML = '✦ FORGE PALACE';
     return;

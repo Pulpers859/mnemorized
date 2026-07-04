@@ -1029,6 +1029,181 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 .btn-copy:hover { background: rgba(201,239,77,.08); border-color: rgba(201,239,77,.4); }
 .btn-copy.copied { color: var(--green); border-color: var(--green); }
 
+/* Guided lesson builder */
+.guided-panel {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid rgba(201,239,77,.12);
+  border-radius: 10px;
+  background: rgba(3, 8, 10, .34);
+}
+.guided-header {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.guided-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .16em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.guided-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--acid);
+  letter-spacing: .03em;
+}
+.guided-copy {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 680px;
+}
+.guided-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.guided-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr);
+  gap: 16px;
+  align-items: start;
+}
+.guided-script-box,
+.guided-map-box {
+  border: 1px solid rgba(213, 223, 216, .09);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .18);
+  padding: 14px;
+}
+.guided-label {
+  display: block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: rgba(213, 223, 216, .62);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.guided-script {
+  width: 100%;
+  min-height: 190px;
+  resize: vertical;
+  border: 1px solid rgba(213, 223, 216, .12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .25);
+  color: var(--white);
+  padding: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+}
+.guided-file-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+.guided-file-row input {
+  width: 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+.guided-status {
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.guided-preview {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(213, 223, 216, .12);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, .25);
+}
+.guided-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 650ms ease, filter 650ms ease;
+  will-change: transform;
+}
+.guided-highlight {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  border: 2px solid rgba(201,239,77,.92);
+  border-radius: 999px;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,.18), 0 0 26px rgba(201,239,77,.55);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: left 420ms ease, top 420ms ease, opacity 250ms ease;
+}
+.guided-pin-layer {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+}
+.guided-pin {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(201,239,77,.85);
+  background: rgba(20, 35, 22, .72);
+  color: var(--acid);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 14px rgba(201,239,77,.24);
+}
+.guided-anchor-list {
+  max-height: 280px;
+  overflow: auto;
+  margin-top: 12px;
+  border-top: 1px solid rgba(213, 223, 216, .08);
+}
+.guided-anchor-row {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 56px 56px;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(213, 223, 216, .07);
+  font-size: 12px;
+}
+.guided-anchor-row.active {
+  color: var(--white);
+}
+.guided-anchor-row input {
+  width: 100%;
+  padding: 5px 4px;
+  border: 1px solid rgba(213, 223, 216, .12);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .24);
+  color: var(--white);
+  font-size: 11px;
+}
+.guided-anchor-name {
+  min-width: 0;
+  color: rgba(213, 223, 216, .78);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* ── UPLOAD ZONE ── */
 .upload-zone {
   border: 1.5px dashed rgba(201,239,77,.25);
@@ -1453,6 +1628,12 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   .vo-table th:nth-child(2) { display: none; }
   .vo-table td:first-child { width: 65%; }
   .vo-table td:last-child { width: 35%; }
+  .guided-grid {
+    grid-template-columns: 1fr;
+  }
+  .guided-anchor-row {
+    grid-template-columns: 28px minmax(0, 1fr) 52px 52px;
+  }
 }
 </style>
 <link rel="stylesheet" href="/styles/app-shell.css?v=20260701-2">
@@ -1956,6 +2137,50 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
           <button class="btn-copy" onclick="downloadForgeBundle()" style="margin-left:8px;padding:10px 16px;font-size:13px;">⬇ Export Bundle</button>
           <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
         </div>
+        <div class="guided-panel" id="guided-panel">
+          <div class="guided-header">
+            <div>
+              <div class="guided-kicker">Guided Lesson Builder</div>
+              <div class="guided-title">Narration + Pan/Highlight Draft</div>
+              <div class="guided-copy">
+                Build anchor coordinates, export the narration script to ElevenLabs Studio, then upload the finished audio to preview a guided walkthrough over the palace image.
+              </div>
+            </div>
+            <div class="guided-actions">
+              <button class="btn-copy" type="button" onclick="guidedBuildPlan()">Build Plan</button>
+              <button class="btn-copy" type="button" onclick="guidedCopyElevenLabsScript()">Copy ElevenLabs Script</button>
+              <button class="btn-copy" type="button" onclick="guidedDownloadElevenLabsScript()">Download Script</button>
+              <button class="btn-copy" type="button" onclick="guidedExportJson()">Export Lesson JSON</button>
+            </div>
+          </div>
+          <div class="guided-grid">
+            <div class="guided-script-box">
+              <label class="guided-label" for="guided-elevenlabs-script">ElevenLabs Studio narration script</label>
+              <textarea class="guided-script" id="guided-elevenlabs-script" readonly placeholder="Forge a palace, then build a guided lesson plan."></textarea>
+              <div class="guided-file-row">
+                <label class="guided-label" for="guided-audio-input">Upload ElevenLabs audio export</label>
+                <input type="file" id="guided-audio-input" accept="audio/*">
+                <audio id="guided-audio" controls style="width:100%;display:none;"></audio>
+              </div>
+              <div class="guided-status" id="guided-status">Waiting for a palace script.</div>
+            </div>
+            <div class="guided-map-box">
+              <div class="guided-actions" style="margin-bottom:10px;">
+                <button class="btn-copy" type="button" onclick="guidedUseFinalImage()">Use Final Image</button>
+                <button class="btn-copy" type="button" onclick="guidedPlayPreview()">Play Preview</button>
+                <button class="btn-copy" type="button" onclick="guidedStopPreview()">Stop</button>
+                <button class="btn-copy" type="button" onclick="guidedImportCoordsClick()">Import Coords</button>
+                <input type="file" id="guided-coords-input" accept="application/json,.json" style="display:none;">
+              </div>
+              <div class="guided-preview" id="guided-preview">
+                <img id="guided-preview-image" alt="Guided lesson preview image">
+                <div class="guided-highlight" id="guided-highlight"></div>
+                <div class="guided-pin-layer" id="guided-pin-layer" title="Click to place the selected anchor"></div>
+              </div>
+              <div class="guided-anchor-list" id="guided-anchor-list"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2004,9 +2229,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="/scripts/palace-api.js?v=20260704-1"></script>
 <script src="/scripts/forge-state.js?v=20260704-1"></script>
-<script src="/scripts/forge-auth.js?v=20260704-1"></script>
+<script src="/scripts/forge-auth.js?v=20260704-guided-1"></script>
 <script src="/scripts/forge-upload.js?v=20260704-1"></script>
 <script src="/scripts/forge-input-builder.js?v=20260704-1"></script>
-<script src="/scripts/forge-pipeline.js?v=20260704-1"></script>
+<script src="/scripts/forge-pipeline.js?v=20260704-guided-1"></script>
+<script src="/scripts/forge-guided.js?v=20260704-guided-1"></script>
 </body>
 </html>
