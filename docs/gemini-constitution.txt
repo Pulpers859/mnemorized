@@ -1,0 +1,129 @@
+GEMINI IMAGE GENERATION CONSTITUTION
+=====================================
+Single source of truth for all Mnemorized prompt generation and repair.
+Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
+runtime. Edit HERE — never maintain inline copies in Python code.
+
+Last updated after sepsis full-scene stress test (score 96, 4 iterations,
+9 failure modes discovered).
+
+═══════════════════════════════════════════════════════════════════════════
+WHAT GEMINI CAN RENDER RELIABLY
+═══════════════════════════════════════════════════════════════════════════
+
+- Distinct objects with clear silhouettes (characters, animals, props, furniture)
+- Specific materials and states (glass, metal, liquid, fire, broken, deflated, glowing)
+- Text labels of 1-4 words on objects (plaques, stamps, signs, gauge faces)
+- Coarse spatial placement: left, center, right, foreground, background
+- Size contrast between objects (small vs massive, close vs distant)
+- Artistic styles (ink-and-watercolor, hand-drawn, cartoon) and lighting (warm amber, spotlight)
+- Color and palette control (warm tones, monochrome, vivid vs muted)
+
+═══════════════════════════════════════════════════════════════════════════
+WHAT GEMINI CANNOT RENDER — 9 confirmed failure modes
+═══════════════════════════════════════════════════════════════════════════
+
+1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
+   Silently ignored; extra text dilutes instructions Gemini CAN follow.
+   FIX: Remove the micro-pose. Let the character's prop or action carry the meaning.
+
+2. GROUND/SURFACE CONTRAST: "pristine sawdust here, scorched ground there."
+   Gemini applies effects to the nearest cause, not where you specify.
+   FIX: Drop surface descriptions. Let contrast live in objects, not floors.
+
+3. COMPOUND SPATIAL POSITIONS: "center-left" renders as center.
+   FIX: Use single-axis terms only (left, center, right, foreground, background).
+
+4. SHAPE-MORPHING: flames shaped like letters, clouds forming words.
+   FIX: Use separate labeled objects. "A plaque reading X" not "flames spelling X."
+
+5. TOO MANY SPATIAL CONSTRAINTS: more than ~3 per figure.
+   Gemini honors 1-2 and ignores the rest.
+   FIX: Describe each figure with at most 2 spatial constraints.
+
+6. CLOCK HAND POSITIONS: "hands frozen at one o'clock" is silently ignored.
+   FIX: Use text plaques ("1 HR") instead of clock hand angles.
+
+7. AMBIGUOUS MOTION VERBS: "crossing the line" may render as approaching.
+   FIX: Use completed-state language: "has crossed the line," "boot planted past the line."
+
+8. ACTION-STATE AMBIGUITY: "ready to exhale" or "about to X" renders as actively doing X.
+   FIX: For idle/waiting, describe completed inactivity: "arms folded," "standing still."
+
+9. ALL-CAPS TEXT LEAKAGE: any ALL-CAPS word in the prompt may render as visible text
+   in the image, even scene directions (FOREGROUND, ALREADY CROSSED, LEFT RING).
+   FIX: Reserve ALL-CAPS exclusively for labels that MUST appear in the final image.
+   Use lowercase for all emphasis, directions, and instructional language.
+
+═══════════════════════════════════════════════════════════════════════════
+PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
+═══════════════════════════════════════════════════════════════════════════
+
+LABEL READABILITY FORMULA:
+For every required text label, write:
+  "A large brass plaque bolted to [object] reads [LABEL] in bold block letters."
+Do NOT use vague "stamped with" or bare "reads" — labels render small or garbled
+without the "bolted plaque + bold block letters" formula.
+
+TEXT ALLOWLIST FENCE:
+Always end the prompt with:
+  "Visible text limited to: [comma-separated list]. No other text, no floating
+  captions, no zone labels, no speech bubbles, no directional words anywhere
+  in the image."
+This prevents spurious text from leaking into the scene.
+
+STYLE OPENER:
+Begin every prompt with:
+  "Detailed hand-drawn medical mnemonic illustration in warm ink-and-watercolor
+  style, wide 16:9 format, every element large and silhouette-readable."
+
+READING PATH:
+Include a reading path in the second sentence:
+  "The eye enters at [entrance], sweeps through [zones], climbs to [back], and returns."
+
+COMPLETED-STATE LANGUAGE:
+For sequence/timing anchors, describe the completed state:
+  "has crossed the line" not "crossing"
+  "has swung open" not "opening"
+  "boot planted past the line" not "stepping over the line"
+
+MULTI-PART VERIFICATION:
+When a feature requires an exact count (e.g., three-headed dog), add:
+  "All three heads are clearly visible and separated."
+
+SHAPE-ENCODING WORKAROUND:
+If you need "object A represents concept B through shape," use a recognizable
+version of B as a SEPARATE object attached to or replacing A.
+  Example: "one stool leg is REPLACED BY a dangling deflated blood pressure cuff."
+
+═══════════════════════════════════════════════════════════════════════════
+PROCESS RULES
+═══════════════════════════════════════════════════════════════════════════
+
+FULL-PROMPT REGENERATION OVER REPAIR PATCHES:
+When fixing issues, rewrite the COMPLETE prompt with fixes embedded.
+Targeted repair instructions cause previously-working elements to be dropped
+during regeneration. A full prompt preserves composition.
+
+EXTERNAL AUDITOR — NEVER SELF-GRADE:
+The image generator (AG/Gemini) must NOT audit its own output.
+Self-grading inflates scores by 15-20 points.
+Claude audits externally against the anchor table.
+
+PROMPT LENGTH TARGETS:
+- Single-anchor plates: 150-250 words
+- Full-scene prompts (all anchors): 400-600 words
+- If over limit, cut room/setting description first, then secondary visual details.
+  Never cut the core mnemonic hook or required labels.
+
+REPAIR LOOP LIMITS:
+- Repairs must be SHORTER or equal to the original prompt.
+- Never add micro-poses in repairs.
+- Rewrite the ENTIRE prompt on repair — do not patch individual sentences.
+- Maximum 5 repair iterations per plate.
+- After 5 failures, redesign the anchor's hook, not the prompt wording.
+
+TEXT BUDGET:
+- Maximum 6-8 distinct text labels per single image.
+- Each label: 1-4 words maximum.
+- Budget text carefully — every label competes for Gemini's attention.

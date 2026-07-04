@@ -20,7 +20,6 @@ Use this skill to rebuild the minimum correct context before coding, reviewing, 
 5. Read the smallest relevant instruction file:
    - `AGENTS.md` for shared operating rules
    - `CLAUDE.md` for Claude-specific assumptions
-   - `PROJECT_HANDOFF.md` for architecture and validation notes
 6. Explicitly call out stale copies if they appear in the task context.
 7. Identify the touched surface before editing: backend, forge UI, library UI, shared style, deployment, docs, or local tool.
 

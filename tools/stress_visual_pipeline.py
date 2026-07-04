@@ -186,42 +186,8 @@ Prefer a phonetic scene title when natural. Use a single coherent static room wi
 Every anchor must be a masterful visual cue for what the student is trying to remember, not a labeled prop."""
 
 
-GEMINI_CAPABILITY_RULES = """
-GEMINI CAPABILITY GUARDRAILS — what the renderer can and cannot draw:
-
-CAN RENDER RELIABLY:
-- Distinct objects with clear silhouettes (characters, animals, props, furniture)
-- Specific materials and states (glass, metal, liquid, fire, broken, deflated, glowing)
-- Text labels of 1-4 words on objects (plaques, stamps, signs, gauge faces)
-- Coarse spatial placement: LEFT, CENTER, RIGHT, FOREGROUND, BACKGROUND
-- Size contrast between objects (small vs massive, close vs distant)
-- Artistic styles (ink-and-watercolor, hand-drawn, cartoon) and lighting (warm amber, spotlight)
-
-CANNOT RENDER — do not attempt these, they silently fail:
-- Micro-poses: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions. Silently ignored; extra text dilutes instructions Gemini CAN follow.
-- Ground/surface contrast at specific locations: "pristine here, scorched there" — Gemini applies effects to nearest cause, not where you specify.
-- Compound spatial positions: "center-left" renders as center. Use single-axis terms only.
-- Shape-morphing: flames shaped like letters, clouds forming words. Use separate labeled objects.
-- More than ~3 spatial constraints per figure: Gemini honors 1-2 and ignores the rest.
-- Clock hand positions: "hands at one o'clock" is silently ignored. Use text plaques ("1 HR").
-- Ambiguous motion verbs: "crossing the line" may render as approaching. Use completed-state language: "has crossed the line," "boot planted past the line."
-- Action-state ambiguity: "ready to exhale" or "about to X" renders as actively doing X. For idle/waiting, describe completed inactivity: "arms folded," "standing still."
-- Abstract concepts: "dysregulated host response" cannot be drawn. Encode as concrete objects.
-
-ALL-CAPS TEXT LEAKAGE — critical:
-Any ALL-CAPS word in the prompt may render as visible text in the image, even scene directions (FOREGROUND, ALREADY CROSSED). Reserve ALL-CAPS exclusively for labels that MUST appear in the final image. Use lowercase for all other emphasis, directions, and instructions.
-
-LABEL READABILITY FORMULA — use this pattern for every required text label:
-"A large brass plaque bolted to [object] reads [LABEL] in bold block letters."
-Do NOT use vague phrasing like "stamped with" or "reads" alone — labels render small or garbled without the "bolted plaque + bold block letters" formula.
-
-TEXT ALLOWLIST FENCE — always end the prompt with:
-"Visible text limited to: [comma-separated label list]. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."
-
-MULTI-PART VERIFICATION — when a feature requires an exact count (e.g., three-headed dog), add: "All three heads are clearly visible and separated."
-
-WORKAROUND for shape-encoding: if you need "object A represents concept B through shape," use a RECOGNIZABLE version of B as a SEPARATE object attached to or replacing A. Example: "one stool leg is REPLACED BY a dangling deflated blood pressure cuff acting as the leg."
-""".strip()
+_CONSTITUTION_PATH = REPO_ROOT / "docs" / "gemini-constitution.txt"
+GEMINI_CAPABILITY_RULES = _CONSTITUTION_PATH.read_text(encoding="utf-8").strip()
 
 
 def visual_director_system_prompt() -> str:

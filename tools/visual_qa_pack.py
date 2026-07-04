@@ -57,21 +57,8 @@ EXACT_LABEL_RULE = (
     "If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it."
 )
 
-GEMINI_GUARDRAILS = (
-    "GEMINI CAPABILITY RULES — follow these strictly: "
-    "CAN draw: distinct objects with clear silhouettes, specific materials/states, "
-    "text labels of 1-4 words on objects, coarse spatial placement (left/center/right/foreground/background), "
-    "size contrast, artistic styles (ink-and-watercolor, hand-drawn), and lighting. "
-    "CANNOT draw: micro-poses (exact finger/hand/joint positions — silently ignored), "
-    "ground/surface contrast at specific locations, compound spatial positions (center-left renders as center), "
-    "shape-morphing, clock hand positions (use text plaques instead), abstract concepts, "
-    "or more than 3 spatial constraints per figure (honors 1-2, ignores rest). "
-    "Use completed-state language: 'has crossed' not 'crossing,' 'has swung open' not 'opening.' "
-    "Use ONLY single-axis coarse spatial terms in lowercase. "
-    "CRITICAL: any ALL-CAPS word may render as visible text — reserve caps ONLY for labels that must appear in the image. "
-    "For readable labels, use: 'a large brass plaque bolted to [object] reads [LABEL] in bold block letters.' "
-    "Let mnemonic contrast live in object SIZE and TYPE, not in background surface details."
-)
+_CONSTITUTION_PATH = Path(__file__).resolve().parents[1] / "docs" / "gemini-constitution.txt"
+GEMINI_GUARDRAILS = _CONSTITUTION_PATH.read_text(encoding="utf-8").strip()
 
 MICRO_POSE_RE = re.compile(
     r"\b(?:interlocked|laced\s+together|balloon[- ]puffed|comically\s+distended|"
