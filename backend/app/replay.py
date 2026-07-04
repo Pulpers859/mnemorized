@@ -17,6 +17,7 @@ import logging
 import re
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote
 
 logger = logging.getLogger("mnemorized.replay")
 
@@ -46,6 +47,8 @@ def get_replay_mode(headers: dict[str, str] | Any) -> str | None:
 def get_replay_meta(headers: dict[str, str] | Any) -> tuple[str | None, str | None]:
     topic = headers.get(HEADER_TOPIC) if hasattr(headers, "get") else None
     stage = headers.get(HEADER_STAGE) if hasattr(headers, "get") else None
+    if topic:
+        topic = unquote(topic)
     return topic, stage
 
 

@@ -9,6 +9,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from threading import Lock
 from typing import Annotated, Any
+from urllib.parse import unquote
 from uuid import UUID, uuid4
 
 import httpx
@@ -2808,7 +2809,7 @@ async def proxy_anthropic_messages(
         return _quota_exceeded_response(request_id, quota_summary)
 
     # ── Evidence-first generation: inject source material into system prompt ──
-    evidence_topic = request.headers.get("x-evidence-topic", "").strip()
+    evidence_topic = unquote(request.headers.get("x-evidence-topic", "")).strip()
     if (
         request.headers.get("x-evidence-grounding") == "true"
         and evidence_topic

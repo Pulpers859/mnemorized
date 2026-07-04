@@ -921,7 +921,7 @@ async function runPipeline() {
   let coreConcepts = [];
   const evidenceHeaders = evidenceAvailable ? {
     'x-evidence-grounding': 'true',
-    'x-evidence-topic': topic,
+    'x-evidence-topic': encodeHeaderValue(topic),
   } : {};
   try {
     const ctxRes = await claudeFetch(withAdvisor({

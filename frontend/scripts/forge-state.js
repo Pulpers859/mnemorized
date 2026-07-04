@@ -23,6 +23,10 @@ function withAdvisor(requestBody) {
 
 let forgeReplayMode = 'live';
 
+function encodeHeaderValue(value) {
+  return encodeURIComponent(String(value || '').replace(/\s+/g, ' ').trim()).slice(0, 6000);
+}
+
 function getReplayMode() { return forgeReplayMode; }
 function setReplayMode(mode) {
   forgeReplayMode = (mode === 'record' || mode === 'replay') ? mode : 'live';
@@ -39,7 +43,7 @@ function getReplayHeaders(stage) {
   if (!topic) return {};
   return {
     'x-forge-replay': forgeReplayMode,
-    'x-forge-replay-topic': topic,
+    'x-forge-replay-topic': encodeHeaderValue(topic),
     'x-forge-replay-stage': stage || 'unknown',
   };
 }
