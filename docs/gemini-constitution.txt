@@ -4,8 +4,8 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after PE visual-metaphor stress test (score 97, 12 failure
-modes, visual encoding hierarchy + metaphor library added).
+Last updated after SE v6 slop fix (score 97, 14 failure modes,
+visual encoding hierarchy + metaphor library + anatomy/duplication guards).
 
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 12 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 14 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -74,6 +74,22 @@ WHAT GEMINI CANNOT RENDER — 12 confirmed failure modes
     of the meaning. Use a 1-word label on a precision device (gauge, plaque)
     and let the scene element itself convey the second concept.
     Example: "RV" engraved on a gauge + bulging cracked wall = "RV strain."
+
+13. CHARACTER ANATOMY OVERFLOW: requesting more held items than a character
+    has hands (e.g., 2 swords + 1 shield = 3 items for 2 arms) causes Gemini
+    to render floating or anatomically impossible objects. Items appear with
+    no hand holding them, producing obvious "AI slop."
+    FIX: Count held items per character. Maximum 2 held items (one per hand).
+    If a character needs to carry more, attach extras to their body (belt,
+    back strap, shoulder sling) or place them on a nearby surface.
+    Pre-submit checklist: for every character, verify held_items <= 2.
+
+14. OBJECT DUPLICATION: when a single instance of a unique prop is intended
+    but the prompt does not constrain quantity, Gemini may render 2-3 copies
+    to fill visual space (e.g., one B6 bottle becomes two).
+    FIX: For unique props, state "one single [object]" and add "no other
+    [objects] anywhere in the scene." Only needed for small standalone props;
+    architectural elements (pillars, gears) can repeat naturally.
 
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
@@ -188,3 +204,13 @@ TEXT BUDGET:
 - Pure metaphors and hybrid encodings reduce the text count, improving reliability.
 - Each label: 1-4 words maximum.
 - Budget text carefully — every label competes for Gemini's attention.
+
+PRE-SUBMIT CHECKLIST (run before sending any prompt to AG):
+- [ ] Every character holds <= 2 items (one per hand). No 3-item combos.
+- [ ] Unique props explicitly constrained: "one single [X], no other [X]."
+- [ ] No ALL-CAPS words except intended visible labels.
+- [ ] No descriptor nouns naming label types ("pharmacy label", "warning sign").
+- [ ] Labels with adjacent repeated characters use physical devices, not screens.
+- [ ] Multi-word labels on precision devices, not painted on large surfaces.
+- [ ] Visual encoding hierarchy applied: metaphor first, text last resort.
+- [ ] Text allowlist fence present at end of prompt.
