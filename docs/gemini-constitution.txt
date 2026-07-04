@@ -116,7 +116,8 @@ Before assigning a text label to an anchor, check this priority order:
      Examples: "0.1 U/kg/hr", "pH <6.9", "AG", "CTPA", "PESI".
 
 This hierarchy reduces text labels per image (improving Gemini reliability)
-and produces more memorable, Sketchy/Pixorize-style illustrations.
+and produces more memorable visual mnemonic illustrations without referencing
+or copying commercial mnemonic products.
 
 LABEL READABILITY — MIXED-DEVICE VOCABULARY:
 Integrate text into objects naturally using the device that fits the object type.
