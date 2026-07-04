@@ -35,6 +35,44 @@ pack at the same time. The active architect should leave a compact run note in t
 topic folder so the next agent can continue from saved artifacts rather than
 restarting the loop.
 
+## Codex Antigravity Control Notes
+
+Codex can reach Antigravity's local RPC service when it is running. Verified
+calls include `GetStandaloneDir`, `StartCascade`, `SendUserCascadeMessage`,
+`HandleCascadeUserInteraction`, `CancelCascadeInvocation`, and
+`ForceStopCascadeTree`.
+
+When using raw RPC, `SendUserCascadeMessage` needs an explicit model config:
+
+```json
+{
+  "cascadeConfig": {
+    "plannerConfig": {
+      "requestedModel": {
+        "model": "MODEL_PLACEHOLDER_M20"
+      }
+    }
+  }
+}
+```
+
+`MODEL_PLACEHOLDER_M20` was observed as Antigravity's `Gemini 3.5 Flash
+(Medium)` model on Patrick's machine.
+
+Important limitation: raw `StartCascade` / `SendUserCascadeMessage` currently
+opens Antigravity's coding-agent lane, not a proven image-generator lane. In a
+Codex test run, the agent accepted the visual QA prompt but drifted into repo
+startup, git inspection, compile/test validation, and source reading instead of
+generating `antigravity_iter1.png`. Do not claim this path completed an image
+run unless the requested image and audit files exist in the troubleshooting
+folder.
+
+If the visible Antigravity window is targetable through browser/computer control,
+prefer controlling the actual UI image workflow over the raw coding-cascade RPC.
+If the visible window is not targetable, use the Gemini App/browser manual paste
+workflow or ask Patrick to run the Antigravity prompt from the visible UI, then
+audit the saved artifacts.
+
 Do not use Antigravity by default for:
 
 - backend/provider proxy changes
