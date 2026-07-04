@@ -157,6 +157,21 @@ Target score:
 - pre-image structural audit: `>=85`
 - final manual image audit: `>=96` (publishable quality)
 
+For every serious troubleshooting run, save the reproducibility packet under
+`Troubleshooting Prompts/<topic>_<date>/` before reporting a pass:
+
+- original Forge prompt and final image prompt
+- generated narration, anchor table, and clinical encodes
+- every Gemini/Antigravity repair prompt
+- all recovered generated images or screenshots
+- final audit rubric with score breakdown
+- explicit note on whether `docs/gemini-constitution.txt` was used
+
+If the image is strong but visibly text-heavy, do not call it a clean `PASS`.
+Use `PASS_WITH_TEXT_RISK` and list what would need a Constitution-compliant
+regeneration. A clean `>=96` pass must satisfy both medical coverage and text
+discipline.
+
 If the failure would affect future topics, fix the prompt contract. If the failure is isolated to one image, use a targeted repair prompt.
 
 ## Gemini Image Audit Workflow

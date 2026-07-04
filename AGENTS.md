@@ -34,6 +34,8 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Protect provider proxy behavior, auth context, quota enforcement, usage logging, and Supabase persistence paths from silent regressions.
 - Treat `docs/visual-mnemonic-prompt-contract.md` as the source of truth for medical visual mnemonic prompt quality and the boundary against copying proprietary visual mnemonic products.
 - Treat `ANTIGRAVITY.md` as the source of truth for Google Antigravity visual QA/image-generation experiments. Antigravity should stay in the visual lab lane unless Patrick explicitly asks it to edit app source.
+- For prompt/image troubleshooting loops, save the full run packet under `Troubleshooting Prompts/`: source prompt, anchor/narration table, repair prompts, generated images/screenshots, audit rubric, scores, and caveats. Do not claim a clean `>=96` pass unless the saved audit/rubric supports it.
+- Treat `docs/gemini-constitution.txt` as mandatory for image-generation prompt repair. If a fallback path or Gemini web run did not fully use the Constitution, say so explicitly in the saved run notes and final response.
 - Be clear about what was validated locally and what still needs browser/provider-key testing.
 
 ## Skill-First Workflow

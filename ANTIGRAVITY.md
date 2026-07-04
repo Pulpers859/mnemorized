@@ -50,6 +50,17 @@ Each image plate must pass:
 
 Use the audit format from the plate's `02_audit_prompt.txt` or generated QA pack. Do not invent a looser scoring system.
 
+For full-topic troubleshooting runs, save a complete run packet before reporting completion:
+
+- original Forge/image prompt
+- anchor table and narration/script
+- every repair/regeneration prompt
+- every generated image or screenshot that can be recovered
+- final audit rubric with score breakdown
+- explicit caveats, including whether the canonical Gemini Constitution was used
+
+If the image is useful but violates the Constitution text budget, mark it `PASS_WITH_TEXT_RISK` or `NEEDS_CONSTITUTION_REGEN`; do not call it a clean `PASS`.
+
 ## Plate Folder Convention
 
 For a manual plate folder such as:
@@ -97,6 +108,7 @@ For each completed topic or plate set, write a summary markdown file in the topi
 - final audit filenames
 - prompt repair lessons
 - systemic weaknesses that should be folded back into `docs/visual-mnemonic-prompt-contract.md` or the Forge pipeline
+- whether the prompt used `docs/gemini-constitution.txt`, and if not, why not
 
 Keep findings concise and evidence-backed. Do not claim an image passed unless the saved audit says `OVERALL_SCORE >= 96` and `DECISION: PASS`.
 
@@ -130,4 +142,3 @@ When done, write a concise summary markdown file in the topic troubleshooting fo
 Requested folder(s):
 [PASTE THE TOPIC OR PLATE FOLDER PATHS HERE]
 ```
-
