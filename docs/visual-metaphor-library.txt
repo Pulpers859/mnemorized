@@ -1,0 +1,117 @@
+VISUAL METAPHOR LIBRARY
+=======================
+Central catalog of proven visual metaphors for Mnemorized prompt generation.
+Referenced by gemini-constitution.txt (Visual Encoding Hierarchy).
+Metaphors must be consistent across all topics — if banana = potassium here,
+it means potassium everywhere. Add new entries after stress-test validation.
+
+Last updated after DKA mixed-device + metaphor stress test.
+
+═══════════════════════════════════════════════════════════════════════════
+BODY CHEMISTRY & ELECTROLYTES
+═══════════════════════════════════════════════════════════════════════════
+
+Banana / banana bunch       → Potassium (K+)
+Salt shaker / salt crystals → Sodium (Na+) / Normal Saline (NS)
+Lemon / acid-green liquid   → Acidosis / low pH
+Golden honey / sugar cubes  → Glucose / hyperglycemia
+Purple flame                → Ketones (burning fuel)
+Bone / milk carton          → Calcium (Ca2+)
+Horseshoe magnet            → Magnesium (Mg2+)
+Water droplets / rain       → Hydration / fluid balance
+Red blood drop              → Hemoglobin / blood
+
+═══════════════════════════════════════════════════════════════════════════
+SPEED & TIMING
+═══════════════════════════════════════════════════════════════════════════
+
+Turtle / snail              → Slow / gradual / careful correction
+Rabbit / hare               → Fast / rapid / urgent
+Clock face / hourglass      → Time / duration / timing window
+Stopwatch                   → Specific time threshold
+Metronome                   → Rate / rhythm / regular interval
+
+═══════════════════════════════════════════════════════════════════════════
+DANGER & RESTRICTION
+═══════════════════════════════════════════════════════════════════════════
+
+Skull & crossbones          → Death / toxicity / lethal
+Red X / crossed out         → Contraindicated / prohibited
+Padlock / lock              → Restricted access / locked away
+Brick wall / sealed door    → Completely blocked / never use
+Red warning triangle        → Caution / risk
+Alarm bell                  → Alert / emergency
+Cracked / shattered object  → Organ damage / rupture
+
+═══════════════════════════════════════════════════════════════════════════
+TREATMENT ACTIONS
+═══════════════════════════════════════════════════════════════════════════
+
+Fire hose / flood           → Aggressive fluid resuscitation
+Barely-open valve           → Low-dose controlled infusion
+Syringe pinching skin       → Subcutaneous injection
+IV bag dripping             → Intravenous administration
+Lance / chisel chipping     → Steady dissolution (anticoagulation)
+Dynamite / explosion        → Aggressive thrombolysis / clot busting
+Shield                      → Protection / prophylaxis
+Sword                       → First-line treatment / intervention
+Bow & arrow                 → Second-line treatment / ranged
+Lever / control panel       → Refractory / escalation treatment
+
+═══════════════════════════════════════════════════════════════════════════
+MONITORING & DIAGNOSIS
+═══════════════════════════════════════════════════════════════════════════
+
+Scale / balance             → Risk scoring / stratification
+Magnifying glass            → Diagnostic test / examination
+Monitor with waveforms      → Continuous monitoring (EEG, ECG)
+Gauge with needle           → Vital sign / lab measurement
+Clipboard with checkmarks   → Scoring system / checklist
+Dipstick / test strip       → Point-of-care test
+
+═══════════════════════════════════════════════════════════════════════════
+ANATOMY & PATHOLOGY
+═══════════════════════════════════════════════════════════════════════════
+
+Swollen / cracked object    → Edema / pressure buildup
+Bulging wall with cracks    → Chamber dilation (RV strain)
+Dark clot mass              → Thrombus / embolism
+Blocked shaft / pipe        → Vascular occlusion
+Iron grate / mesh           → Filter (IVC filter)
+Closing gap in floor        → Narrowing gap (anion gap)
+Overflowing container       → Excess / uncontrolled levels
+
+═══════════════════════════════════════════════════════════════════════════
+TEMPERATURE
+═══════════════════════════════════════════════════════════════════════════
+
+Ice / frost / icicles       → Hypothermia / therapeutic cooling
+Fire / flames               → Fever / inflammation / hyperthermia
+Steam / boiling             → Temperature rising / warming
+
+═══════════════════════════════════════════════════════════════════════════
+BODY SYSTEMS (setting-level metaphors)
+═══════════════════════════════════════════════════════════════════════════
+
+Bellows / air shaft         → Respiratory / lungs
+Pump / engine               → Heart / cardiac output
+Pipes / plumbing            → Vascular / circulation
+Wires / cables              → Nervous system / conduction
+Filter / sieve              → Kidney / renal filtration
+Factory / refinery          → Metabolic processing
+Clock tower with gears      → Brain / neurological (seizure = sparking gears)
+
+═══════════════════════════════════════════════════════════════════════════
+USAGE RULES
+═══════════════════════════════════════════════════════════════════════════
+
+1. One metaphor per concept, globally. Never reuse a metaphor for a
+   different meaning in another topic.
+2. Metaphor objects should be OVERSIZED and visually prominent — Sketchy
+   style. A banana barrel, not a single small banana.
+3. When using a pure metaphor (no text label), the object must be
+   unambiguous in context. If a viewer might confuse it, add a small
+   hybrid label.
+4. New metaphors should be stress-tested before adding to this library.
+5. Cultural universality matters — prefer metaphors that work across
+   backgrounds (banana = potassium is global medical culture).

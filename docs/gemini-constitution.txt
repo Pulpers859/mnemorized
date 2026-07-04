@@ -4,8 +4,8 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after status epilepticus mixed-device stress test (score 96,
-4 iterations, 11 failure modes discovered, mixed-device vocabulary added).
+Last updated after PE visual-metaphor stress test (score 97, 12 failure
+modes, visual encoding hierarchy + metaphor library added).
 
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 9 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 12 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -67,9 +67,40 @@ WHAT GEMINI CANNOT RENDER — 9 confirmed failure modes
     containing adjacent repeated characters. Reserve glowing screen text for
     labels with no adjacent identical characters.
 
+12. MULTI-WORD LABEL DUPLICATION: labels of 2+ words painted on large surfaces
+    (walls, floors) cause Gemini to split and duplicate the first word.
+    "RV STRAIN" renders as "RV" + "RV STRAIN" (word duplication).
+    FIX: Shorten multi-word labels by letting the visual context carry part
+    of the meaning. Use a 1-word label on a precision device (gauge, plaque)
+    and let the scene element itself convey the second concept.
+    Example: "RV" engraved on a gauge + bulging cracked wall = "RV strain."
+
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
 ═══════════════════════════════════════════════════════════════════════════
+
+VISUAL ENCODING HIERARCHY:
+Before assigning a text label to an anchor, check this priority order:
+
+  1. PURE VISUAL METAPHOR — no text needed.
+     Use when the object has an instant, universal association.
+     Examples: banana barrel = potassium, turtle = go slow, skull = death.
+     See docs/visual-metaphor-library.txt for the full catalog.
+
+  2. HYBRID — metaphor object with a small integrated label.
+     Use when the metaphor carries most of the meaning but a short label
+     disambiguates. The label goes ON the metaphor object, not a separate
+     plaque.
+     Examples: giant salt shaker with "NS" etched on cap, syringe with
+     "subQ" engraved on barrel.
+
+  3. TEXT LABEL ONLY — use the mixed-device vocabulary below.
+     Use only for specific numeric thresholds, doses, and acronyms that
+     have no visual equivalent.
+     Examples: "0.1 U/kg/hr", "pH <6.9", "AG", "CTPA", "PESI".
+
+This hierarchy reduces text labels per image (improving Gemini reliability)
+and produces more memorable, Sketchy/Pixorize-style illustrations.
 
 LABEL READABILITY — MIXED-DEVICE VOCABULARY:
 Integrate text into objects naturally using the device that fits the object type.
@@ -153,6 +184,7 @@ REPAIR LOOP LIMITS:
 - After 5 failures, redesign the anchor's hook, not the prompt wording.
 
 TEXT BUDGET:
-- Maximum 6-8 distinct text labels per single image.
+- Target 4-6 text labels per image after applying the visual encoding hierarchy.
+- Pure metaphors and hybrid encodings reduce the text count, improving reliability.
 - Each label: 1-4 words maximum.
 - Budget text carefully — every label competes for Gemini's attention.
