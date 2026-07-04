@@ -82,6 +82,7 @@ These rules are derived from stress-testing Gemini's image generation across mul
 - **Clock hand positions**: "hands frozen at one o'clock" is silently ignored. Gemini renders random clock hand positions. Use text labels ("1 HR" plaque) instead.
 - **Ambiguous motion verbs**: "crossing the line" may render as approaching. Use completed-state language: "ALREADY PAST the line," "boot planted BEYOND the line."
 - **Action-state ambiguity**: "ready to exhale," "preparing to throw," or any "about to X" phrasing renders as actively doing X. Gemini defaults to active states. To show a character waiting/idle, describe completed inactivity: "arms FOLDED ACROSS HER CHEST," "torch resting on the ground," "standing still, WAITING."
+- **ALL-CAPS leakage**: Any word in ALL-CAPS in the prompt may be rendered as visible text in the image, even if it is a scene direction, not a label. Reserve ALL-CAPS exclusively for text that must appear in the final image (e.g., "qSOFA", "30 mL/kg"). Use lowercase for emphasis, spatial directions, and instructional language ("already crossed," "foreground," "left ring").
 
 ### Prompt Length Rule
 Shorter prompts score higher. Every sentence is a chance for Gemini to misinterpret. Target:
