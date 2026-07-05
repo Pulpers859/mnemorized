@@ -214,6 +214,13 @@ For a manual plate folder such as:
 Troubleshooting Prompts\...\plate_N\manual_retry
 ```
 
+Important: in Mnemorized, a `plate` is a focused render of one to three anchors
+inside the same coherent memory-palace room. It is not a segmented grid, tiled
+storyboard, bay-by-bay checklist, or infographic layout. Grid/bay layouts should
+be rare exceptions. If a generated prompt turns a palace into panels, treat that
+as a prompt failure unless the source scene itself intentionally requires that
+metaphor and Patrick has accepted the tradeoff.
+
 Expected inputs:
 
 - `01_image_prompt.txt`: paste into image generation.

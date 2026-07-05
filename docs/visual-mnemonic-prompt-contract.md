@@ -25,6 +25,7 @@ Do not skip the visual QA loop for high-value catalog or medical-safety content.
 - Every anchor must pass the silhouette test: the cue should still mean something with text removed.
 - The image must preserve left, center, right, foreground, and background zones.
 - All anchors must be present in one coherent static scene.
+- A `plate` is a focused render of 1-3 anchors within the same coherent memory-palace scene. It is not a segmented grid, storyboard, or bay-by-bay infographic. Grid/bay layouts should be rare exceptions, not a default repair strategy.
 - No anchor may become tiny shelf clutter. At 1024px width, the major cue should still be identifiable.
 - Text is allowed only when it adds precision or a mnemonic name. Text must not be the whole mnemonic.
 - Exact labels matter. If a prompt says `LENA INN`, `ASPIRIN`, or `Gap = 8-12`, do not invent a near-spelling.
@@ -196,5 +197,6 @@ Regenerate when:
 - more than two anchors are missing
 - the scene ignores spatial hierarchy
 - the image becomes an infographic or checklist
+- the repair turns a memory palace into segmented panels, booths, or tiled cells
 - formulas/numbers are wrong in a medically meaningful way
 - the same failure would affect future topics

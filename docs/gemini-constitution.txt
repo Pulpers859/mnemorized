@@ -4,8 +4,8 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after NIHSS Antigravity loop (score 97, 16 failure modes,
-visual encoding hierarchy + metaphor library + text-leakage/panel guards).
+Last updated after corrected plate workflow tests (18 failure modes,
+visual encoding hierarchy + metaphor library + no-grid plate guard).
 
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 16 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 18 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -100,12 +100,30 @@ WHAT GEMINI CANNOT RENDER — 16 confirmed failure modes
     explicit ban on captions, subtitles, booth titles, explanatory text, role
     labels, numbered medallions, and black text strips.
 
-16. DENSE PANEL MERGE/OFF-BY-ONE: in scenes with 8-10 clusters, Gemini may
-    merge adjacent anchors, skip a panel, or renumber panels when it is asked
-    to add station numbers or captions.
-    FIX: Use exact layout language ("exactly ten separate open booths arranged
-    in two clean rows of five") and a simple reading path. Do not request
-    visible station numbers. Keep each cluster's object list short and concrete.
+16. SEGMENTED-GRID OVERFITTING: forcing many anchors into separate booths,
+    bays, numbered panels, or tiled cells produces an infographic/checklist,
+    not a memory palace. This is especially tempting after a dense-scene
+    failure, but it destroys the one-room spatial map that Mnemorized needs.
+    FIX: Plates are focused image attempts over 1-3 anchors inside the same
+    coherent room, not grid cells. Use left/center/right/foreground/background
+    zones, object relationships, and a reading path through one scene. Use
+    explicit booths/panels only as a rare last resort when the source metaphor
+    itself demands it and the user accepts the tradeoff. Default to no grids.
+
+17. PACKAGING/STICKER TEXT HALLUCINATION: boxes, cartons, commercial-looking
+    containers, stickers, and dial faces invite Gemini to invent small nonsense
+    words even when text is restricted.
+    FIX: If text is not essential, use an unmarked physical object instead:
+    clay bowl, plain vial, unlabeled sack, naked device, colored liquid, or
+    silhouette-only prop. If a label is essential, put one exact label on a
+    large physical device and include it in the allowlist.
+
+18. SLEEP-MARK TEXT LEAKAGE: words like "sleeping," "asleep," "sleepy," and
+    "zzz" can produce visible letter-like sleep marks. This is a text leak
+    when the image requires no text.
+    FIX: Show inactivity mechanically: lens cap on, unplugged cord, switch off,
+    covered with cloth, arms folded, gate locked, object resting on the ground.
+    Avoid sleep-language in strict no-text prompts.
 
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
@@ -165,9 +183,9 @@ Always end the prompt with:
   in the image."
 This prevents spurious text from leaking into the scene.
 
-For dense panel scenes, strengthen the fence:
-  "No captions, no subtitles, no booth titles, no explanatory text, no numbered
-  medallions, no speech bubbles, no floating labels, no black text strips."
+For any scene, strengthen the fence when text leakage appears:
+  "No captions, no subtitles, no explanatory text, no numbered medallions, no
+  speech bubbles, no floating labels, no black text strips."
 
 STYLE OPENER:
 Begin every prompt with:
@@ -193,13 +211,18 @@ If you need "object A represents concept B through shape," use a recognizable
 version of B as a SEPARATE object attached to or replacing A.
   Example: "one stool leg is REPLACED BY a dangling deflated blood pressure cuff."
 
-DENSE PANEL FORMULA:
-For full-scene topics with many anchors, use a simple panel layout and object-only
-descriptions:
-  "A continuous [setting] contains exactly [N] separate open booths arranged in
-  [layout], with thin dividers and no caption strips."
-Then list each booth by position with only the visible objects. Never include
-"encodes..." text in the generation prompt.
+PLATE WORKFLOW:
+A plate is a focused render of a subset of anchors inside the same memory-palace
+room. It is not a tiled grid, bay layout, storyboard, or infographic panel.
+For plate prompts, reuse the established room and place 1-3 large anchor beats
+in coherent zones. The final assembled set can contain multiple plates, but each
+plate should still feel like a real scene/crop from the palace.
+
+GRID/BAY EXCEPTION STANDARD:
+Segmented grids, separate bays, storyboard panels, and tiled booth layouts should
+almost never be used. They look cheap, flatten the mnemonic into a checklist,
+and should be considered a prompt-design failure unless there is a specific,
+approved reason to use that metaphor.
 
 ═══════════════════════════════════════════════════════════════════════════
 PROCESS RULES
@@ -244,7 +267,8 @@ PRE-SUBMIT CHECKLIST (run before sending any prompt to AG):
 - [ ] Visual encoding hierarchy applied: metaphor first, text last resort.
 - [ ] No meta-instruction words in the final image prompt: encode, anchor,
       station, represents, role label, or "clearly reads as."
-- [ ] Dense multi-anchor scenes specify exact cluster count and ban caption strips.
+- [ ] No segmented grids, booths, bays, storyboard panels, or checklist cells
+      by default. If one appears, treat it as a likely failure.
 - [ ] Text allowlist fence present at end of prompt.
 
 ═══════════════════════════════════════════════════════════════════════════
