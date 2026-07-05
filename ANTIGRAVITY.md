@@ -78,6 +78,17 @@ Repo helper:
 .\tools\Invoke-AntigravityAgentApi.ps1 -Command Metadata -ConversationId <conversation_id>
 ```
 
+When using multiline task files, pass them as `@file` references so Antigravity
+reads the whole file:
+
+```powershell
+.\tools\Invoke-AntigravityAgentApi.ps1 -Command NewConversation -Title "NIHSS Iter1" -PromptFile "C:\Dev\Mnemorized\Troubleshooting Prompts\...\ag_task.md" -PassPromptFileAsAtPath
+.\tools\Invoke-AntigravityAgentApi.ps1 -Command SendMessage -ConversationId <conversation_id> -PromptFile "C:\Dev\Mnemorized\Troubleshooting Prompts\...\repair.md" -PassPromptFileAsAtPath
+```
+
+Without `-PassPromptFileAsAtPath`, a multiline prompt may arrive as only the
+first line and Antigravity will not execute the intended image task.
+
 The helper detects the running `language_server.exe` process, sets
 `ANTIGRAVITY_LS_ADDRESS`, `ANTIGRAVITY_CSRF_TOKEN`, and
 `ANTIGRAVITY_PROJECT_ID` for the child process, then invokes `agentapi.bat`.
@@ -111,7 +122,8 @@ Expected automation loop:
    - do not audit
    - do not score
    - do not edit app source
-4. Codex/Claude calls `agentapi.bat new-conversation --model=pro --title=... @task_file`.
+4. Codex/Claude calls `agentapi.bat new-conversation --model=pro --title=... @task_file`,
+   or uses the repo helper with `-PassPromptFileAsAtPath`.
 5. Codex/Claude polls the troubleshooting folder for the output image.
 6. Codex/Claude reads the generated image and audits against
    `02_audit_prompt.txt` or the generated audit rubric.

@@ -4,8 +4,8 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after SE v6 slop fix (score 97, 14 failure modes,
-visual encoding hierarchy + metaphor library + anatomy/duplication guards).
+Last updated after NIHSS Antigravity loop (score 97, 16 failure modes,
+visual encoding hierarchy + metaphor library + text-leakage/panel guards).
 
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 14 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 16 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -91,6 +91,22 @@ WHAT GEMINI CANNOT RENDER — 14 confirmed failure modes
     [objects] anywhere in the scene." Only needed for small standalone props;
     architectural elements (pillars, gears) can repeat naturally.
 
+15. META-INSTRUCTION CAPTION LEAKAGE: words such as "encode," "anchor,"
+    "station," "represents," "clearly reads as," and topic-role names can
+    become visible caption strips or booth labels. This turns mnemonic scenes
+    into labeled infographics.
+    FIX: In the final image prompt, describe only the object and its visible
+    state. Do not say what it encodes inside the generation prompt. Add an
+    explicit ban on captions, subtitles, booth titles, explanatory text, role
+    labels, numbered medallions, and black text strips.
+
+16. DENSE PANEL MERGE/OFF-BY-ONE: in scenes with 8-10 clusters, Gemini may
+    merge adjacent anchors, skip a panel, or renumber panels when it is asked
+    to add station numbers or captions.
+    FIX: Use exact layout language ("exactly ten separate open booths arranged
+    in two clean rows of five") and a simple reading path. Do not request
+    visible station numbers. Keep each cluster's object list short and concrete.
+
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
 ═══════════════════════════════════════════════════════════════════════════
@@ -149,6 +165,10 @@ Always end the prompt with:
   in the image."
 This prevents spurious text from leaking into the scene.
 
+For dense panel scenes, strengthen the fence:
+  "No captions, no subtitles, no booth titles, no explanatory text, no numbered
+  medallions, no speech bubbles, no floating labels, no black text strips."
+
 STYLE OPENER:
 Begin every prompt with:
   "Detailed hand-drawn medical mnemonic illustration in warm ink-and-watercolor
@@ -172,6 +192,14 @@ SHAPE-ENCODING WORKAROUND:
 If you need "object A represents concept B through shape," use a recognizable
 version of B as a SEPARATE object attached to or replacing A.
   Example: "one stool leg is REPLACED BY a dangling deflated blood pressure cuff."
+
+DENSE PANEL FORMULA:
+For full-scene topics with many anchors, use a simple panel layout and object-only
+descriptions:
+  "A continuous [setting] contains exactly [N] separate open booths arranged in
+  [layout], with thin dividers and no caption strips."
+Then list each booth by position with only the visible objects. Never include
+"encodes..." text in the generation prompt.
 
 ═══════════════════════════════════════════════════════════════════════════
 PROCESS RULES
@@ -214,6 +242,9 @@ PRE-SUBMIT CHECKLIST (run before sending any prompt to AG):
 - [ ] Labels with adjacent repeated characters use physical devices, not screens.
 - [ ] Multi-word labels on precision devices, not painted on large surfaces.
 - [ ] Visual encoding hierarchy applied: metaphor first, text last resort.
+- [ ] No meta-instruction words in the final image prompt: encode, anchor,
+      station, represents, role label, or "clearly reads as."
+- [ ] Dense multi-anchor scenes specify exact cluster count and ban caption strips.
 - [ ] Text allowlist fence present at end of prompt.
 
 ═══════════════════════════════════════════════════════════════════════════
