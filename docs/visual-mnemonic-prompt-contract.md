@@ -227,4 +227,7 @@ Regenerate when:
 - the image becomes an infographic or checklist
 - the repair turns a memory palace into segmented panels, booths, or tiled cells
 - formulas/numbers are wrong in a medically meaningful way
+- the pre-image structural audit is below 85
+- visuals contain severe text overload: more than two text-bearing surfaces,
+  speech bubbles, arrow glyphs, checklist rows, or label lists
 - the same failure would affect future topics

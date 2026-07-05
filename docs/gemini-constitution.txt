@@ -4,7 +4,7 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after Forge-first stress-test correction (18 failure modes,
+Last updated after Forge-first stress-test correction (19 failure modes,
 visual encoding hierarchy + metaphor library + no-grid plate guard).
 
 ═══════════════════════════════════════════════════════════════════════════
@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 18 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 19 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -124,6 +124,15 @@ WHAT GEMINI CANNOT RENDER — 18 confirmed failure modes
     FIX: Show inactivity mechanically: lens cap on, unplugged cord, switch off,
     covered with cloth, arms folded, gate locked, object resting on the ground.
     Avoid sleep-language in strict no-text prompts.
+
+19. MIXED-CASE CHEMICAL LABEL FRAGILITY: labels where case changes meaning,
+    especially chemical abbreviations like CaCl, can render as CaCI, CACL, or
+    all-caps variants. The learner usually understands the cue, but exact
+    letterform is not reliable enough for catalog-grade precision.
+    FIX: Prefer full-word precision labels such as "chloride 1g" when space
+    allows, or use a non-text chloride cue attached to the calcium object. If
+    the abbreviation must appear, audit it manually and do not call the image a
+    clean pass if the letterform is ambiguous.
 
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
@@ -251,6 +260,15 @@ For medical board topics, do not silently replace missing source retrieval with
 generic medical knowledge. If citations are absent, unrelated, or drawn from the
 wrong textbook chapter/topic, report the retrieval failure and fix ingestion or
 querying before judging the generation as source-backed.
+
+PRE-IMAGE STRUCTURAL GATE:
+Do not send a Forge prompt to Gemini/Antigravity just because the story exists.
+If the auto structural audit is below 85, or if the story contains severe visual
+text overload, repair/retry the Forge story first. Known blockers: visuals over
+30 words, more than two text-bearing surfaces in one anchor, arrow glyphs,
+speech bubbles, checklist rows, and label lists. A 71/100 pre-image prompt
+predictably produces a weak image; a cleaned 85+ prompt is the minimum worth
+spending image-generation effort on.
 
 FULL-PROMPT REGENERATION OVER REPAIR PATCHES:
 When fixing issues, rewrite the COMPLETE prompt with fixes embedded.

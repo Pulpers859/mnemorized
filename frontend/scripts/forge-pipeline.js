@@ -1208,7 +1208,11 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'timeout-compact-fallback'));
     storyAttempts.push(compactBody(
       denseProtocol ? 'dense-compact-strict' : 'timeout-compact-strict-fallback',
-      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; combine them into denser visual devices.'
+      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, or more than two visible text surfaces in one anchor. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, scale, position, containment, blocking, and contrast. Use text only for essential numbers/formulas.'
+    ));
+    storyAttempts.push(compactBody(
+      denseProtocol ? 'dense-visual-hard-gate' : 'timeout-visual-hard-gate-fallback',
+      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no more than one quoted label per anchor; no more than two text-bearing objects per anchor; no checklist ribbons, no logbook rows, no multi-label signs. Preserve all essential medical facts by moving details into NARRATION and ANCHOR, while the VISUAL uses one strong object interaction plus at most one precision plaque.'
     ));
 
     let storyValidation = null;
@@ -1267,7 +1271,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
         showDebug(`STORY VALIDATION FAILED (${attempt.label})`, storyValidation);
         lastStoryError = new Error(`Scene Narrative validation failed: ${storyValidation.fatal.join(' ')}`);
         const retryableValidation = raw?.stop_reason === 'max_tokens'
-          || storyValidation.fatal.some(message => /Too many anchors/i.test(message));
+          || storyValidation.fatal.some(message => /Too many anchors|visual|text surfaces|arrow glyphs|speech bubble/i.test(message));
         if (retryableValidation && attemptIndex < storyAttempts.length - 1) continue;
         throw lastStoryError;
       }

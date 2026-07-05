@@ -302,7 +302,24 @@ function validateStoryData(storyData) {
     }
 
     const visualWordCount = countWords(line.visual);
-    if (visualWordCount > 30) warnings.push(`${label} visual is ${visualWordCount} words; target is 30 or fewer.`);
+    if (visualWordCount > 34) {
+      fatal.push(`${label} visual is ${visualWordCount} words; visual anchors must be 30 words or fewer before image generation.`);
+    } else if (visualWordCount > 30) {
+      warnings.push(`${label} visual is ${visualWordCount} words; target is 30 or fewer.`);
+    }
+
+    const visualText = String(line.visual || '');
+    const quotedLabels = visualText.match(/"[^"]+"/g) || [];
+    const textSurfaceMarkers = visualText.match(/\b(?:label(?:ed)?|reads?|showing|sign|chalkboard|ribbon|speech bubble|logbook|plaque|stamped|etched|row[s]?:|shows?)\b/gi) || [];
+    if (quotedLabels.length > 2 || textSurfaceMarkers.length > 3) {
+      fatal.push(`${label} visual depends on too many text surfaces; rebuild it as a silhouette-first object interaction with at most two essential labels.`);
+    }
+    if (/[→←↑↓]/.test(visualText)) {
+      fatal.push(`${label} visual uses arrow glyphs; replace arrows with spatial sequence or plain object relationships.`);
+    }
+    if (/\bspeech bubble\b/i.test(visualText)) {
+      fatal.push(`${label} visual uses a speech bubble; speech bubbles turn the scene into a captioned infographic.`);
+    }
 
     const anchorWordCount = countWords(line.anchor);
     if (anchorWordCount > 35) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);
