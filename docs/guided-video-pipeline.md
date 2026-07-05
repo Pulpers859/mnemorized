@@ -4,13 +4,14 @@ This document describes the first production-safe foundation for turning a gener
 
 ## Current Scope
 
-The app currently supports five stages:
+The app currently supports six stages:
 
 1. Anchor coordinate mapping on the generated palace image.
 2. ElevenLabs Studio narration handoff via copy/download script.
 3. Local pan/highlight preview using estimated timing or uploaded/generated audio.
 4. Backend-only ElevenLabs TTS endpoint (`POST /api/elevenlabs/tts`) with auth, rate limiting, quota enforcement, and usage logging. The API key never reaches the browser.
 5. Supabase Storage for generated/uploaded audio. Audio files are uploaded to the `palace-audio` bucket, scoped per-user and per-palace. Saved palaces with `storage: "supabase"` auto-restore audio on load.
+6. Video export via browser-side canvas capture. The guided preview is rendered to an offscreen 1920×1080 canvas with smooth pan/zoom transitions and highlight overlay, captured with `MediaRecorder` + audio stream, and downloaded as a `.webm` file.
 
 ## User Workflow
 
@@ -19,7 +20,8 @@ The app currently supports five stages:
 3. Click `Generate Audio` to create narration via the backend ElevenLabs proxy, **or** use the manual path: `Copy ElevenLabs Script` → paste into ElevenLabs Studio → export → upload.
 4. Click anchors or edit normalized `x/y` coordinates until the highlight lands on each visual mnemonic.
 5. Click `Play Preview`.
-6. Save the palace or export the bundle when the coordinate/timing metadata is ready.
+6. Click `Export Video` to render a 1080p `.webm` with narration and pan/zoom animation.
+7. Save the palace or export the bundle when the coordinate/timing metadata is ready.
 
 ## Data Model
 
@@ -72,5 +74,6 @@ Coordinates are normalized from `0.0` to `1.0`, so they survive image resizing.
 
 ## Next Stages
 
-1. Rendered video export, likely via a backend worker or local CLI pipeline rather than browser-only canvas capture.
-2. Image-audit-aware coordinate assist, where vision proposes anchor coordinates and the user confirms them.
+1. Image-audit-aware coordinate assist, where vision proposes anchor coordinates and the user confirms them.
+2. One-click guided lesson: auto-anchor placement + auto-narrate in a single flow.
+3. Review/study mode with spaced repetition scheduling.

@@ -328,6 +328,254 @@
     URL.revokeObjectURL(a.href);
   }
 
+  // --- Video Export ---
+
+  let _exportRecorder = null;
+  let _exportCancelled = false;
+  let _exportAudioEl = null;
+  let _exportTracks = [];
+
+  function _easeOut(t) {
+    return 1 - (1 - t) * (1 - t);
+  }
+
+  function _drawExportFrame(ctx, img, W, H, dr, cam, hl) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, W, H);
+    const ox = cam.x * W, oy = cam.y * H;
+    ctx.save();
+    ctx.translate(ox, oy);
+    ctx.scale(cam.scale, cam.scale);
+    ctx.translate(-ox, -oy);
+    if (cam.scale > 1) ctx.filter = 'saturate(1.05) contrast(1.03)';
+    ctx.drawImage(img, dr.x, dr.y, dr.w, dr.h);
+    ctx.filter = 'none';
+    ctx.restore();
+    if (hl.opacity > 0.01) {
+      const hx = hl.x * W, hy = hl.y * H;
+      const r = Math.round(W * 0.035);
+      ctx.save();
+      ctx.fillStyle = `rgba(0,0,0,${(0.18 * hl.opacity).toFixed(3)})`;
+      ctx.beginPath();
+      ctx.rect(0, 0, W, H);
+      ctx.arc(hx, hy, r, 0, Math.PI * 2, true);
+      ctx.fill('evenodd');
+      ctx.restore();
+      ctx.save();
+      ctx.strokeStyle = `rgba(201,239,77,${(0.92 * hl.opacity).toFixed(3)})`;
+      ctx.lineWidth = 3;
+      ctx.shadowColor = 'rgba(201,239,77,0.55)';
+      ctx.shadowBlur = 30;
+      ctx.beginPath();
+      ctx.arc(hx, hy, r, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+
+  function _stopExportTracks() {
+    _exportTracks.forEach(t => t.stop());
+    _exportTracks = [];
+  }
+
+  async function exportVideo() {
+    if (_exportRecorder) { setStatus('Export already in progress.', 'error'); return; }
+    if (!state.segments.length && !buildPlan()) return;
+    const srcImg = $('guided-preview-image');
+    if (!srcImg?.src) { setStatus('Load a palace image before exporting.', 'error'); return; }
+    const estTotal = totalDuration();
+    if (estTotal <= 0) { setStatus('Build a plan with timing before exporting.', 'error'); return; }
+
+    const btn = $('guided-export-video-btn');
+    if (btn) { btn.textContent = 'Cancel Export'; btn.onclick = cancelExport; }
+    stopPreview();
+    _exportCancelled = false;
+    setStatus('Preparing video export… keep this tab focused.', 'success');
+
+    const snapCoords = state.coords.map(c => ({ ...c }));
+    const snapSegments = state.segments.map(s => ({ ...s }));
+
+    let exportAudioUrl = null;
+    let audioCtx = null;
+    try {
+      if (_exportCancelled) throw new Error('Cancelled');
+
+      const W = 1920, H = 1080;
+      const canvas = document.createElement('canvas');
+      canvas.width = W; canvas.height = H;
+      const ctx = canvas.getContext('2d');
+
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      await new Promise((res, rej) => {
+        img.onload = res;
+        img.onerror = () => rej(new Error('Image load failed'));
+        img.src = srcImg.src;
+      });
+      if (_exportCancelled) throw new Error('Cancelled');
+
+      const ia = img.naturalWidth / img.naturalHeight;
+      const ca = W / H;
+      let dw, dh, dx, dy;
+      if (ia > ca) { dw = W; dh = W / ia; dx = 0; dy = (H - dh) / 2; }
+      else { dh = H; dw = H * ia; dx = (W - dw) / 2; dy = 0; }
+      const dr = { x: dx, y: dy, w: dw, h: dh };
+
+      const origAudio = $('guided-audio');
+      const hasAudio = !!(origAudio?.src);
+      let exportAudio = null;
+      let audioStream = null;
+      const audioBlob = state.audioBlob || (hasAudio ? await fetch(origAudio.src).then(r => r.blob()).catch(() => null) : null);
+
+      if (audioBlob) {
+        exportAudio = document.createElement('audio');
+        _exportAudioEl = exportAudio;
+        exportAudioUrl = URL.createObjectURL(audioBlob);
+        exportAudio.src = exportAudioUrl;
+        await new Promise((res, rej) => {
+          exportAudio.oncanplaythrough = res;
+          exportAudio.onerror = () => rej(new Error('Audio load failed'));
+          exportAudio.load();
+        });
+        if (_exportCancelled) throw new Error('Cancelled');
+        audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') await audioCtx.resume();
+        const source = audioCtx.createMediaElementSource(exportAudio);
+        const dest = audioCtx.createMediaStreamDestination();
+        source.connect(dest);
+        source.connect(audioCtx.destination);
+        audioStream = dest.stream;
+      }
+
+      const videoStream = canvas.captureStream(30);
+      const allTracks = [...videoStream.getTracks()];
+      if (audioStream) allTracks.push(...audioStream.getTracks());
+      _exportTracks = allTracks;
+      const combined = new MediaStream(allTracks);
+
+      const mime = MediaRecorder.isTypeSupported('video/webm;codecs=vp9,opus')
+        ? 'video/webm;codecs=vp9,opus'
+        : MediaRecorder.isTypeSupported('video/webm;codecs=vp8,opus')
+          ? 'video/webm;codecs=vp8,opus' : 'video/webm';
+      const recorder = new MediaRecorder(combined, { mimeType: mime, videoBitsPerSecond: 5_000_000 });
+      _exportRecorder = recorder;
+      const chunks = [];
+      recorder.ondataavailable = e => { if (e.data.size > 0) chunks.push(e.data); };
+
+      const useAT = !!(exportAudio && exportAudio.duration > 0);
+      const audioDur = useAT ? exportAudio.duration : 0;
+      const exportDur = useAT ? audioDur : estTotal;
+
+      function snapCoord(n) {
+        return snapCoords.find(c => Number(c.n) === Number(n));
+      }
+
+      let camX = 0.5, camY = 0.5, camScale = 1;
+      let hlX = 0.5, hlY = 0.5, hlOp = 0;
+      let fCamX = 0.5, fCamY = 0.5, fCamS = 1;
+      let fHlX = 0.5, fHlY = 0.5, fHlOp = 0;
+      let tCamX = 0.5, tCamY = 0.5, tCamS = 1;
+      let tHlX = 0.5, tHlY = 0.5, tHlOp = 0;
+      let lastN = null, transStart = -1;
+      const CAM_MS = 650, HL_MS = 420;
+
+      recorder.start(200);
+      if (exportAudio) { exportAudio.currentTime = 0; await exportAudio.play(); }
+      const t0 = performance.now();
+
+      await new Promise((resolve, reject) => {
+        recorder.onstop = () => resolve();
+        recorder.onerror = e => reject(e.error || new Error('MediaRecorder error'));
+        function tick() {
+          if (_exportCancelled) {
+            if (exportAudio) exportAudio.pause();
+            recorder.stop();
+            return;
+          }
+          const now = performance.now();
+          const secs = useAT ? exportAudio.currentTime : (now - t0) / 1000;
+          const mapped = useAT && audioDur > 0 && estTotal > 0 ? secs * (estTotal / audioDur) : secs;
+
+          const seg = snapSegments.find(s => mapped >= s.start_seconds && mapped < s.end_seconds)
+            || snapSegments[snapSegments.length - 1];
+
+          if (seg && seg.n !== lastN) {
+            const c = snapCoord(seg.n);
+            if (c) {
+              fCamX = camX; fCamY = camY; fCamS = camScale;
+              fHlX = hlX; fHlY = hlY; fHlOp = hlOp;
+              tCamX = c.x; tCamY = c.y; tCamS = 1.18;
+              tHlX = c.x; tHlY = c.y; tHlOp = 1;
+              transStart = now;
+            }
+            lastN = seg.n;
+          }
+
+          if (transStart >= 0) {
+            const dt = now - transStart;
+            const ec = _easeOut(Math.min(1, dt / CAM_MS));
+            const eh = _easeOut(Math.min(1, dt / HL_MS));
+            camX = fCamX + (tCamX - fCamX) * ec;
+            camY = fCamY + (tCamY - fCamY) * ec;
+            camScale = fCamS + (tCamS - fCamS) * ec;
+            hlX = fHlX + (tHlX - fHlX) * eh;
+            hlY = fHlY + (tHlY - fHlY) * eh;
+            hlOp = fHlOp + (tHlOp - fHlOp) * eh;
+          }
+
+          _drawExportFrame(ctx, img, W, H, dr,
+            { x: camX, y: camY, scale: camScale },
+            { x: hlX, y: hlY, opacity: hlOp });
+
+          const progress = Math.min(100, Math.round((secs / exportDur) * 100));
+          setStatus(`Exporting video… ${progress}%`, 'success');
+
+          const done = useAT ? exportAudio.ended : secs >= exportDur;
+          if (done) {
+            if (exportAudio) exportAudio.pause();
+            setTimeout(() => recorder.stop(), 500);
+          } else {
+            requestAnimationFrame(tick);
+          }
+        }
+        requestAnimationFrame(tick);
+      });
+
+      if (!_exportCancelled && chunks.length > 0) {
+        const blob = new Blob(chunks, { type: mime });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${safeTopicName()}_guided_lesson.webm`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+        setStatus(`Video exported: ${(blob.size / 1048576).toFixed(1)} MB`, 'success');
+      } else if (_exportCancelled) {
+        setStatus('Video export cancelled.', 'error');
+      } else {
+        setStatus('Export produced no data.', 'error');
+      }
+    } catch (err) {
+      if (err.message !== 'Cancelled') setStatus(`Video export failed: ${err.message}`, 'error');
+      else setStatus('Video export cancelled.', 'error');
+    } finally {
+      _exportRecorder = null;
+      _exportAudioEl = null;
+      _stopExportTracks();
+      if (exportAudioUrl) URL.revokeObjectURL(exportAudioUrl);
+      if (audioCtx) audioCtx.close().catch(() => {});
+      if (btn) { btn.textContent = 'Export Video'; btn.onclick = () => exportVideo(); }
+    }
+  }
+
+  function cancelExport() {
+    _exportCancelled = true;
+    if (_exportAudioEl) { _exportAudioEl.pause(); _exportAudioEl = null; }
+    _exportRecorder = null;
+  }
+
   function safeTopicName() {
     const topic = $('topic')?.value?.trim() || state.story?.scene_title || 'guided_lesson';
     return topic.replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').substring(0, 48) || 'guided_lesson';
@@ -391,6 +639,7 @@
   }
 
   function reset() {
+    cancelExport();
     stopPreview();
     state.story = null;
     state.segments = [];
@@ -712,6 +961,8 @@
   window.guidedImportCoordsClick = () => $('guided-coords-input')?.click();
   window.guidedPlayPreview = playPreview;
   window.guidedStopPreview = stopPreview;
+  window.guidedExportVideo = exportVideo;
+  window.guidedCancelExport = cancelExport;
   window.guidedUseFinalImage = () => {
     if (setPreviewImage(getFinalImageSrc())) setStatus('Final palace image loaded into guided preview.', 'success');
   };
