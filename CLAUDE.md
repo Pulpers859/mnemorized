@@ -27,7 +27,10 @@ Audit task pattern:
 - Spawn parallel Explore agents (model: sonnet) scoped to each risk area above. Each agent returns only: file path, line number, issue summary, severity.
 - Main conversation applies fixes from findings using targeted Read (offset+limit), never full-file reads.
 - Run `/compact` after each commit before starting the next phase.
+- Run `/compact` after every AG round-trip (prompt → generate → audit cycle).
+- Run `/clear` between topics — never carry dead iteration history into the next topic.
 - Run test suite verification in a sonnet subagent, not inline.
+- Follow the SESSION COST PROTOCOL in `docs/gemini-constitution.txt` for all iteration loops.
 
 Claude-local workflow helpers:
 

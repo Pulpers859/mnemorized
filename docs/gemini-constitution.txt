@@ -215,3 +215,39 @@ PRE-SUBMIT CHECKLIST (run before sending any prompt to AG):
 - [ ] Multi-word labels on precision devices, not painted on large surfaces.
 - [ ] Visual encoding hierarchy applied: metaphor first, text last resort.
 - [ ] Text allowlist fence present at end of prompt.
+
+═══════════════════════════════════════════════════════════════════════════
+SESSION COST PROTOCOL — mandatory for all stress-test and iteration loops
+═══════════════════════════════════════════════════════════════════════════
+
+REMINDER: /compact after every AG round-trip or commit; /clear between topics.
+
+DISPATCHER MODEL:
+Opus (main conversation) decides and reviews only. It does NOT write prompt
+files, audit reports, or task files inline. All bulk output (400+ words) is
+delegated to Sonnet subagents. Main context target: under 50k tokens always.
+
+SONNET DELEGATION:
+- Prompt file writing (400-600 words) → Sonnet subagent
+- Audit reports (anchor tables, detailed scores) → Sonnet subagent
+- Task file writing → Sonnet subagent
+- Constitution/library updates (small, targeted edits) → Opus inline OK
+- Opus receives 1-2 sentence pass/fail summaries, not full artifacts.
+
+CONTEXT HYGIENE:
+- /compact after every AG round-trip (prompt → generate → audit cycle)
+- /compact after every git commit
+- /clear between topics (when topic A passes, /clear before starting topic B)
+- Re-read constitution sections with offset+limit, not full 250+ line reads
+- After /clear, re-read only the constitution sections needed for the next task
+
+MCP TOOL DISCIPLINE:
+- Chrome/browser MCP tools: /compact immediately after browser work completes
+- Only load MCP tools when actively needed for the current step
+- Tool results rot in context — flush them with /compact once the step is done
+
+BUDGET GUARDRAILS:
+- If session usage exceeds 50%, pause and ask user whether to continue or /clear
+- Single session should not consume more than 60% of daily allocation
+- If iterating on 3+ topics, each topic gets its own /clear boundary
+- Never carry iteration history from a completed topic into the next one
