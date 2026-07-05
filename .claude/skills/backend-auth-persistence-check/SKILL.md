@@ -7,6 +7,8 @@ description: Review auth, Supabase persistence, account summary, library save/lo
 
 Use this when work touches auth context, Supabase config, saved palaces, account summary, library routes, or persistence helpers.
 
+For the full invariant list (demo-bypass semantics, static-mount ordering, RLS vs service-role paths, append-only versioning), load `mnemorized-backend-map` first.
+
 ## Workflow
 
 1. Identify the backend surface involved:
@@ -21,6 +23,9 @@ Use this when work touches auth context, Supabase config, saved palaces, account
    - saved palace records keep stable ownership and version semantics
    - failed saves/loads return explicit errors
    - example env files stay placeholder-only
+   - `DEMO_AUTH_BYPASS` (defaults true; dev-only, provider endpoints only) is not "fixed" as a bug and persistence endpoints still require sign-in
+   - the `app.mount("/", StaticFiles(...))` line stays the last statement in `main.py`
+   - user-scoped queries keep forwarding the caller's JWT (RLS); service-role usage stays limited to admin/catalog-seed/medical paths
 4. For schema or API-shape changes, update docs or examples only when behavior truly changed.
 5. Validate with `python -m compileall backend`; run the server when practical.
 

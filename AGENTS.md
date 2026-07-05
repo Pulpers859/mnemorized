@@ -27,7 +27,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 ## Product Rules
 
 - Preserve the existing static/FastAPI architecture unless there is a specific product reason to introduce a build system.
-- Treat `frontend/pages/forge.html` as fragile because it contains a large amount of inline UI and workflow logic.
+- Treat the forge surface as fragile: `frontend/pages/forge.html` carries only inline CSS and id hooks; all workflow logic lives in `frontend/scripts/forge-*.js` (~4,600 lines across 6 files), which couple to those ids with no compile-time check. See `mnemorized-forge-map` before editing either side.
 - Prefer extending `frontend/styles/app-shell.css` before duplicating more page-local CSS.
 - Keep real secrets in ignored `backend/.env`; keep `backend/.env.example` placeholder-only.
 - Intentional demo behavior: local/development Forge provider calls bypass Supabase sign-in by default via `DEMO_AUTH_BYPASS=true` so Patrick can demo generation without auth friction. Do not remove this as a bug. Production must still require auth unless Patrick explicitly reopens the live-publish auth work.
@@ -45,10 +45,18 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Use `.agents/skills/mnemorized-agent-delegation/SKILL.md` when Patrick asks for efficient agent usage, broad audits, stress testing, cross-surface feature work, or parallel review.
 - Use `mnemorized-context-compact` when resuming old work, preparing a handoff, or keeping a long review from ballooning.
 - Use `mnemorized-parallel-audit` for broad reviews spanning backend, forge UI, library, auth, persistence, provider proxy, and deployment.
+- Use architecture maps before editing unfamiliar surfaces:
+  - `mnemorized-forge-map` for forge behavior and `frontend/scripts/forge-*.js`
+  - `mnemorized-backend-map` for `backend/app` invariants, auth/quota mechanics, and provider quirks
 - Use focused skills for normal bug work:
   - `forge-static-ui-check`
   - `backend-auth-persistence-check`
   - `provider-proxy-quota-check`
+- Use operational skills for their lanes:
+  - `mnemorized-validation` before commits or "it works" claims
+  - `mnemorized-deploy-check` for `render.yaml`, env wiring, or provider model rotation
+  - `antigravity-image-loop` for AG visual mnemonic runs
+- Skills are duplicated in `.claude/skills/` and `.agents/skills/` — when editing one, apply the same change to both trees.
 - Prefer the smallest matching skill set; do not load every project doc by default.
 
 ## Delegation Constitution
@@ -67,8 +75,10 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 Run what is realistic for the change:
 
-- Backend syntax: `python -m compileall backend`
+- Standard pass: `powershell -File tools/Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer` (compileall + pytest + health/route smoke)
+- Backend syntax only: `python -m compileall backend`
+- Test suite only: `python -m pytest tests` — run this even for frontend-only changes; `tests/test_provider_and_static_boundaries.py` asserts against the static HTML
 - Server smoke: `python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`
 - Browser routes: `/`, `/forge`, `/library`, `/api/health`
 
-Do not claim provider-generation validation unless local or hosted API keys were actually available and exercised.
+There is no CI — local validation is the only enforcement before deploy. Do not claim provider-generation validation unless local or hosted API keys were actually available and exercised. See `mnemorized-validation` for what each layer does and does not prove.

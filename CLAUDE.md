@@ -10,7 +10,7 @@ Claude-specific assumptions:
 - Commit and push completed tracked changes to `origin/main` unless Patrick explicitly says not to.
 - Old OneDrive/Desktop copies are stale unless Patrick explicitly asks to inspect them.
 - Real local secrets live in ignored `backend/.env`.
-- The main runtime surfaces are `backend/app/main.py`, `frontend/pages/*.html`, `frontend/styles/app-shell.css`, and `render.yaml`.
+- The main runtime surfaces are `backend/app/main.py`, `frontend/pages/*.html`, `frontend/scripts/*.js` (all forge behavior — forge.html has no inline JS), `frontend/styles/app-shell.css`, and `render.yaml`.
 
 Highest-risk areas:
 
@@ -38,5 +38,8 @@ Claude-local workflow helpers:
 - Use `@.claude/skills/mnemorized-context-compact/SKILL.md` for older work, mixed context, long logs, or handoff prep.
 - Use `@.claude/skills/mnemorized-parallel-audit/SKILL.md` for broad reviews spanning multiple high-risk areas.
 - For focused bugs, use `forge-static-ui-check`, `backend-auth-persistence-check`, and `provider-proxy-quota-check`.
+- Before editing an unfamiliar surface, load the matching architecture map: `mnemorized-forge-map` (forge scripts, stage numbering, state model) or `mnemorized-backend-map` (backend invariants, quota mechanics, provider quirks).
+- Use `mnemorized-validation` before commits, `mnemorized-deploy-check` for `render.yaml`/model rotation, and `antigravity-image-loop` for AG visual runs.
+- Skills are duplicated in `.claude/skills/` and `.agents/skills/` — edit both trees together.
 - Launching Claude through `tools/Launch-Mnemorized-Claude.ps1` opens directly in `C:\Dev\Mnemorized` and detects repo-local commands and skills.
 

@@ -13,8 +13,9 @@ Use this skill to rebuild the minimum correct context before coding, reviewing, 
 2. Confirm the active branch is `main`, tracking `origin/main`.
 3. Run `git fetch --all --prune`; if the tree is clean, run `git pull --ff-only`.
 4. Confirm the main runtime surfaces:
-   - backend app: `backend/app/main.py`
-   - frontend pages: `frontend/pages/landing.html`, `frontend/pages/forge.html`, `frontend/pages/library.html`
+   - backend app: `backend/app/main.py` (config in `backend/app/config.py`, auth in `backend/app/auth.py`)
+   - frontend pages: `frontend/pages/landing.html`, `frontend/pages/forge.html`, `frontend/pages/library.html`, `frontend/pages/admin.html`
+   - forge behavior: `frontend/scripts/forge-*.js` and `frontend/scripts/palace-api.js` (forge.html itself has no inline JS)
    - shared visual shell: `frontend/styles/app-shell.css`
    - deploy config: `render.yaml`
 5. Read the smallest relevant instruction file:
@@ -39,4 +40,6 @@ Use this skill to rebuild the minimum correct context before coding, reviewing, 
 - Treat `backend/.env`, logs, local archives, and generated data as local-only.
 - Preserve the static/FastAPI architecture unless a task explicitly justifies changing it.
 - Do not claim provider-generation validation unless real keys were available and exercised.
+- Skills live in BOTH `.claude/skills/` and `.agents/skills/` — when editing a skill, apply the same change to both trees.
+- Validate with `tools/Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer` (see `mnemorized-validation`); there is no CI.
 
