@@ -19,6 +19,32 @@ The Forge pipeline uses this sequence:
 
 Do not skip the visual QA loop for high-value catalog or medical-safety content.
 
+## Forge-First Stress Testing
+
+Serious medical prompt troubleshooting must start from the real Mnemorized Forge
+workflow, not from hand-authored toy prompts.
+
+For board-relevant topics, the required sequence is:
+
+1. Run the topic through Forge using the same user path Patrick would use.
+2. Confirm the Medical Quality Gate ran when private retrieval is available.
+3. Verify retrieved citations are relevant to the topic before trusting the result.
+4. Export the Forge bundle (`*_bundle.json`).
+5. Build the visual QA pack from that bundle with `tools/visual_qa_pack.py`.
+6. Send the resulting full-scene or plate prompts to Gemini/Antigravity.
+7. Audit the generated image against the Forge anchor table and clinical encodes.
+
+Synthetic mini-prompts are allowed only for isolated renderer experiments, such as
+testing whether Gemini can draw one label, one prop, or one spatial relationship.
+They do not count as app stress tests, medical coverage tests, or catalog-quality
+validation. A three-anchor synthetic image for a topic like hyperkalemia is a
+renderer probe, not a usable board-study palace.
+
+If source retrieval fails, returns unrelated citations, or the relevant textbook
+material has not been ingested into the private medical knowledge tables, stop
+and report that the knowledge foundation is incomplete. Do not fill the gap with
+generic medical memory unless Patrick explicitly asks for an unsourced draft.
+
 ## Non-Negotiable Rules
 
 - Every anchor needs a clear `HOOK`: sound-alike, look-alike, functional, contrast, or spatial.
@@ -161,8 +187,10 @@ Target score:
 For every serious troubleshooting run, save the reproducibility packet under
 `Troubleshooting Prompts/<topic>_<date>/` before reporting a pass:
 
-- original Forge prompt and final image prompt
+- original user input, Forge prompt, and final image prompt
 - generated narration, anchor table, and clinical encodes
+- Medical Quality Gate result and retrieved citations, including a note if the
+  citations were absent, weak, or unrelated
 - every Gemini/Antigravity repair prompt
 - all recovered generated images or screenshots
 - final audit rubric with score breakdown

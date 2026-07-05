@@ -206,6 +206,27 @@ For full-topic troubleshooting runs, save a complete run packet before reporting
 
 If the image is useful but violates the Constitution text budget, mark it `PASS_WITH_TEXT_RISK` or `NEEDS_CONSTITUTION_REGEN`; do not call it a clean `PASS`.
 
+## Forge-First Requirement For Medical Stress Tests
+
+When Patrick asks to troubleshoot prompt generation for a medical topic, do not
+invent a small custom prompt and call that a stress test. The default must be the
+real product path:
+
+1. Run the topic through Mnemorized Forge.
+2. Let the Medical Quality Gate run when backend auth/retrieval is available.
+3. Check that retrieved citations match the topic. If they are absent or
+   unrelated, stop and document the retrieval/ingestion gap.
+4. Export the Forge bundle (`*_bundle.json`).
+5. Build a QA pack with `tools/visual_qa_pack.py`.
+6. Send the QA pack prompt to Antigravity for image generation.
+7. Codex/Claude externally audits the image against the Forge anchor table,
+   narration, clinical encodes, citations, and `docs/gemini-constitution.txt`.
+
+Synthetic prompts are allowed only for narrow renderer probes. They are not
+board-study validation, not source-grounded validation, and not catalog-quality
+validation. Label them as `renderer_experiment` so future agents do not confuse
+them with Forge results.
+
 ## Plate Folder Convention
 
 For a manual plate folder such as:
@@ -258,6 +279,8 @@ For each completed topic or plate set, write a summary markdown file in the topi
 - best score per plate
 - final image filenames
 - final audit filenames
+- whether the run started from a real Forge bundle or was only a renderer experiment
+- Medical Quality Gate citation status for full-topic medical runs
 - prompt repair lessons
 - systemic weaknesses that should be folded back into `docs/visual-mnemonic-prompt-contract.md` or the Forge pipeline
 - whether the prompt used `docs/gemini-constitution.txt`, and if not, why not

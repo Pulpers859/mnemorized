@@ -4,7 +4,7 @@ Single source of truth for all Mnemorized prompt generation and repair.
 Both stress_visual_pipeline.py and visual_qa_pack.py load this file at
 runtime. Edit HERE — never maintain inline copies in Python code.
 
-Last updated after corrected plate workflow tests (18 failure modes,
+Last updated after Forge-first stress-test correction (18 failure modes,
 visual encoding hierarchy + metaphor library + no-grid plate guard).
 
 ═══════════════════════════════════════════════════════════════════════════
@@ -227,6 +227,30 @@ approved reason to use that metaphor.
 ═══════════════════════════════════════════════════════════════════════════
 PROCESS RULES
 ═══════════════════════════════════════════════════════════════════════════
+
+FORGE-FIRST STRESS TESTING:
+Do not treat hand-authored mini-prompts as Mnemorized app validation.
+For serious medical topics, start from the actual Forge workflow:
+  1. Run the topic in Forge as a user would.
+  2. Run/inspect the Medical Quality Gate when private retrieval is available.
+  3. Confirm citations are relevant to the topic and not merely nearest-neighbor
+     noise from unrelated ingested material.
+  4. Export the Forge bundle.
+  5. Build the QA pack from the bundle with tools/visual_qa_pack.py.
+  6. Send the saved full-scene or plate prompt to Gemini/Antigravity.
+  7. Audit the image against the Forge anchor table, narration, and encodes.
+
+Synthetic prompts are only renderer probes. They may test whether Gemini can
+render one prop, one label, or one composition idea. They cannot prove medical
+coverage, source grounding, board relevance, or catalog readiness. If a prompt
+troubleshooting run did not start from a Forge bundle, label it explicitly as a
+renderer experiment, not a Forge stress test.
+
+SOURCE-GROUNDING GATE:
+For medical board topics, do not silently replace missing source retrieval with
+generic medical knowledge. If citations are absent, unrelated, or drawn from the
+wrong textbook chapter/topic, report the retrieval failure and fix ingestion or
+querying before judging the generation as source-backed.
 
 FULL-PROMPT REGENERATION OVER REPAIR PATCHES:
 When fixing issues, rewrite the COMPLETE prompt with fixes embedded.
