@@ -782,3 +782,80 @@ def test_medical_quality_check_suppresses_cross_topic_citations(
     assert payload["evidence"] == []
     assert payload["required_concept_coverage"][0]["evidence_refs"] == []
     assert "Tintin Endocrine" not in response.text
+
+
+def test_medical_quality_check_counts_long_concept_paraphrase(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        openai_api_key="openai-key",
+    )
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 0,
+            "monthly_requests_remaining": 40,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+        }
+
+    async def fake_retrieve(**kwargs: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return [
+            {
+                "source_key": "tintin-resuscitation",
+                "title": "Tintinalli - Resuscitation",
+                "page_start": 17,
+                "page_end": 17,
+                "section_title": "Anaphylaxis",
+                "chunk_text": (
+                    "First-line therapy is epinephrine 0.3 to 0.5 mg IM in the "
+                    "anterolateral thigh for adults, pediatric dose 0.01 mg/kg, "
+                    "repeat every 5 to 15 minutes if symptoms persist."
+                ),
+                "similarity": 0.9,
+                "keyword_rank": 0.5,
+            }
+        ], {"prompt_tokens": 6}
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    monkeypatch.setattr(app_main, "_retrieve_medical_context", fake_retrieve)
+    monkeypatch.setattr(app_main, "_schedule_usage_event", lambda **kwargs: None)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "topic": "anaphylaxis",
+            "generation_outputs": {
+                "story": {
+                    "anchor": (
+                        "IM epi 0.3-0.5 mg in the anterolateral thigh for adults; "
+                        "children get 0.01 mg/kg max 0.5 mg; repeat q5-15 min."
+                    )
+                }
+            },
+            "required_concepts": [
+                (
+                    "FIRST-LINE THERAPY - IM EPINEPHRINE: 0.3-0.5 mg IM "
+                    "anterolateral thigh in adults; 0.01 mg/kg in children; "
+                    "repeat every 5-15 minutes if no improvement."
+                )
+            ],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["verdict"] == "ready_for_review"
+    assert payload["repair_focus"] == []
+    assert payload["required_concept_coverage"][0]["present_in_generation"] is True
+    assert payload["required_concept_coverage"][0]["evidence_refs"][0]["source_key"] == "tintin-resuscitation"

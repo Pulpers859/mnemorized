@@ -801,6 +801,40 @@ async function rebuildImagePromptsForStory(storyData) {
   }
 }
 
+async function repairStoryVisualFormat(xmlText, validation) {
+  const errors = (validation?.fatal || []).join('\n- ');
+  if (!xmlText || !errors) return '';
+  const body = {
+    model: CLAUDE_MODEL,
+    max_tokens: 6144,
+    system: `You repair XML medical memory-palace scripts for visual format only.
+
+Return ONLY the full corrected XML. Preserve scene_title, opening, anchor count, narration medical facts, anchors, and review_script substance.
+
+Only rewrite VISUAL fields and review_script image references when necessary.
+Rules for every VISUAL:
+- 24 words or fewer.
+- One compact physical drawing instruction.
+- One main object or character interaction plus one location phrase.
+- No arrow glyphs, speech bubbles, checklist rows, multi-label signs, or more than one text-bearing surface.
+- Move excess medical detail into NARRATION or ANCHOR; do not delete clinical facts.`,
+    messages: [{
+      role: 'user',
+      content: `Fix these validation errors:\n- ${errors}\n\nOriginal XML:\n${xmlText}`
+    }]
+  };
+  const res = await claudeFetch(body, 'stage2-story-visual-micro-repair');
+  const rawText = await res.text().catch(() => '(could not read body)');
+  const box = document.getElementById('debug-box');
+  if (box) {
+    box.style.display = 'block';
+    box.textContent = `── STORY VISUAL MICRO-REPAIR — HTTP ${res.status} ──\n${rawText.slice(0, 2000)}`;
+  }
+  if (!res.ok) return '';
+  const raw = JSON.parse(rawText);
+  return parseProviderContent(raw, 'Scene Narrative visual micro-repair');
+}
+
 // ── Main pipeline ────────────────────────────────────────────────
 
 async function runPipeline() {
@@ -949,7 +983,7 @@ async function runPipeline() {
   }
 
   // ── STAGE 1: Clinical Context (with evidence grounding) ──
-  const evidenceAvailable = !!(authState.user && appConfig.medicalKnowledgeEnabled && backendState.medicalKnowledgeConfigured);
+  const evidenceAvailable = !!((authState.user || appConfig.demoAuthBypass) && appConfig.medicalKnowledgeEnabled && backendState.medicalKnowledgeConfigured);
   if (evidenceAvailable) {
     setStatus('story', '✦ Retrieving source evidence…', 'running');
     setStageDetail('story', 'Searching private medical knowledge base before generating concepts.');
@@ -1162,6 +1196,8 @@ Clinical accuracy and completeness are mandatory:
 Visual mnemonic rules:
 - Every anchor starts with HOOK: sound-alike, look-alike, functional, contrast, or spatial.
 - Prefer silhouette-first objects/characters over text labels. Text is allowed only for exact numbers/formulas and must be attached to a device.
+- VISUAL must be one compact physical drawing instruction, not a label list: one main object/character interaction, one location phrase, and at most one visible text surface.
+- Avoid the words labeled, reads, showing, shows, sign, chalkboard, ribbon, stamped, or plaque unless that single word describes the only text-bearing surface in the anchor.
 - Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
 - VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
 - No proprietary mnemonic scenes, characters, symbols, or layouts.
@@ -1208,11 +1244,11 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'timeout-compact-fallback'));
     storyAttempts.push(compactBody(
       denseProtocol ? 'dense-compact-strict' : 'timeout-compact-strict-fallback',
-      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, or more than two visible text surfaces in one anchor. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, scale, position, containment, blocking, and contrast. Use text only for essential numbers/formulas.'
+      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, scale, position, containment, blocking, and contrast. Use one short text label only when an essential number/formula cannot be encoded by shape.'
     ));
     storyAttempts.push(compactBody(
       denseProtocol ? 'dense-visual-hard-gate' : 'timeout-visual-hard-gate-fallback',
-      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no more than one quoted label per anchor; no more than two text-bearing objects per anchor; no checklist ribbons, no logbook rows, no multi-label signs. Preserve all essential medical facts by moving details into NARRATION and ANCHOR, while the VISUAL uses one strong object interaction plus at most one precision plaque.'
+      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no more than one quoted label per anchor; no more than one text-bearing object per anchor; no checklist ribbons, no logbook rows, no multi-label signs. Preserve all essential medical facts by moving details into NARRATION and ANCHOR, while the VISUAL uses one strong object interaction plus at most one precision plaque.'
     ));
 
     let storyValidation = null;
@@ -1273,6 +1309,19 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
         const retryableValidation = raw?.stop_reason === 'max_tokens'
           || storyValidation.fatal.some(message => /Too many anchors|visual|text surfaces|arrow glyphs|speech bubble/i.test(message));
         if (retryableValidation && attemptIndex < storyAttempts.length - 1) continue;
+        if (retryableValidation) {
+          const repairedText = await repairStoryVisualFormat(txt, storyValidation);
+          if (repairedText) {
+            storyData = parseStoryXml(repairedText);
+            storyValidation = validateStoryData(storyData);
+            if (!storyValidation.fatal.length) {
+              storyValidation.warnings.push('Visual fields were micro-repaired after hard-gate validation.');
+              break;
+            }
+            showDebug('STORY VISUAL MICRO-REPAIR FAILED VALIDATION', storyValidation);
+            lastStoryError = new Error(`Scene Narrative validation failed after visual micro-repair: ${storyValidation.fatal.join(' ')}`);
+          }
+        }
         throw lastStoryError;
       }
 

@@ -52,6 +52,17 @@ def _env_bool(key: str, default: bool) -> bool:
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _env_int(key: str, default: int) -> int:
+    raw = os.getenv(key)
+    if raw is None or not raw.strip():
+        return default
+    try:
+        value = int(raw.strip())
+    except ValueError:
+        return default
+    return value if value > 0 else default
+
+
 def _normalize_billing_mode(raw: str) -> str:
     mode = raw.strip().lower()
     if mode in {"beta", "stripe", "production", "disabled"}:
@@ -245,5 +256,5 @@ def get_settings() -> Settings:
         elevenlabs_api_key=_clean_env_value("ELEVENLABS_API_KEY"),
         elevenlabs_default_voice=os.getenv("ELEVENLABS_DEFAULT_VOICE", "Rachel").strip(),
         admin_emails=_split_csv(os.getenv("ADMIN_EMAILS", "")),
-        web_concurrency=int(os.getenv("WEB_CONCURRENCY", "1") or "1"),
+        web_concurrency=_env_int("WEB_CONCURRENCY", 1),
     )

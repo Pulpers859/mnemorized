@@ -11,7 +11,7 @@ from fastapi.testclient import TestClient
 
 from backend.app import main as app_main
 from backend.app.auth import AuthenticatedUser
-from backend.app.config import Settings, _load_env_file
+from backend.app.config import Settings, _env_int, _load_env_file
 
 
 def make_settings(
@@ -77,6 +77,12 @@ def test_env_file_overrides_stale_process_env(
     _load_env_file(env_path)
 
     assert os.environ["GEMINI_API_KEY"] == "AIza-new-local-key"
+
+
+def test_env_int_falls_back_for_invalid_values(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("WEB_CONCURRENCY", "auto")
+
+    assert _env_int("WEB_CONCURRENCY", 1) == 1
 
 
 class SupabaseMock:
@@ -165,6 +171,75 @@ def test_dev_demo_auth_bypass_allows_provider_call_without_sign_in(
 
     assert response.status_code == 200
     assert len(provider.calls) == 1
+
+
+def test_dev_demo_auth_bypass_allows_medical_quality_gate_without_sign_in(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        openai_api_key="openai-key",
+        supabase_url="https://project.supabase.co",
+        supabase_service_role_key="service-role-secret",
+        demo_auth_bypass=True,
+    )
+
+    async def fake_retrieve_medical_context(**kwargs: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return (
+            [{
+                "source_title": "Tintin GI",
+                "source_key": "gi",
+                "page_start": 12,
+                "page_end": 12,
+                "chunk_text": "Acute pancreatitis uses lipase and early LR fluids.",
+                "similarity": 0.9,
+            }],
+            {"total_tokens": 17},
+        )
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_retrieve_medical_context", fake_retrieve_medical_context)
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        json={
+            "topic": "Acute pancreatitis",
+            "generation_outputs": {"story": "Acute pancreatitis uses lipase and early LR fluids."},
+            "required_concepts": ["lipase", "LR fluids"],
+            "max_evidence_chunks": 6,
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["evidence_status"] == "matched"
+    assert payload["evidence_count"] == 1
+
+
+def test_production_medical_quality_gate_requires_sign_in_even_with_demo_bypass(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = make_settings(
+        tmp_path,
+        app_env="production",
+        openai_api_key="openai-key",
+        supabase_url="https://project.supabase.co",
+        supabase_service_role_key="service-role-secret",
+        demo_auth_bypass=True,
+    )
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    client = TestClient(app_main.app)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        json={"topic": "Acute pancreatitis", "generation_outputs": {}},
+    )
+
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Sign in to access private medical knowledge."
 
 
 def test_production_ignores_demo_auth_bypass_and_requires_sign_in(
@@ -845,6 +920,20 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "Medical repair complete. Review the updated script" in auth
     assert "No relevant private source found for this topic." in auth
     assert "No source match" in auth
+    assert "!authState.user && !appConfig.demoAuthBypass" in auth
+    assert "authState.user || appConfig.demoAuthBypass" in pipeline
+    assert "one compact physical drawing instruction" in pipeline
+    assert "at most one visible text surface" in pipeline
+    assert "function repairStoryVisualFormat" in pipeline
+    assert "stage2-story-visual-micro-repair" in pipeline
+    assert "document.getElementById('debug-box')" in pipeline
+    assert "function getMedicalAuthToken" in auth
+    assert "if (appConfig.demoAuthBypass) return null;" in auth
+    assert "MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken()" in auth
+    assert "function sanitizeVisualField" in auth
+    assert "sanitizeVisualField(getField('VISUAL'))" in auth
+    assert 'forge-auth.js?v=20260705-demo-medical-gate-4' in html
+    assert 'forge-pipeline.js?v=20260705-demo-medical-gate-5' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth

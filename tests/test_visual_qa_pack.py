@@ -106,6 +106,9 @@ def test_refreshed_prompt_contract_preserves_compact_formulas() -> None:
     assert "PRECISION TEXT EXCEPTION" in prompts["prompt2"]
     assert "ANCHOR LEGIBILITY RULE" in prompts["prompt2"]
     assert "EXACT LABEL RULE" in prompts["prompt2"]
+    assert "Gemini render checklist" in prompts["prompt2"]
+    assert len(prompts["prompt2"]) < 8000
+    assert "WHAT GEMINI CANNOT RENDER" not in prompts["prompt2"]
     assert "Expected pCO₂ = 1.5 × HCO₃ + 8 ± 2" in prompts["prompt2"]
     assert "No formulas" not in prompts["prompt2"]
 

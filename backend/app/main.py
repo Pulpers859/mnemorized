@@ -4,6 +4,7 @@ import asyncio
 import base64
 import json
 import logging
+import re
 import time
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
@@ -1035,6 +1036,22 @@ async def _require_persistence_context(
     return bearer_token, user
 
 
+def _demo_auth_bypass_active(settings: Settings) -> bool:
+    return settings.dev_mode and settings.demo_auth_bypass
+
+
+async def _resolve_medical_request_context(
+    request: Request,
+    settings: Settings,
+) -> tuple[str | None, AuthenticatedUser | None]:
+    bearer_token = _extract_bearer_token(request)
+    if bearer_token:
+        return await _require_persistence_context(request, settings)
+    if _demo_auth_bypass_active(settings):
+        return None, None
+    raise HTTPException(status_code=401, detail="Sign in to access private medical knowledge.")
+
+
 def _parse_supabase_rows(response: httpx.Response, label: str) -> list[dict[str, Any]]:
     if response.status_code >= 400:
         logger.error("Supabase error during %s: HTTP %s — %s", label, response.status_code, response.text[:500])
@@ -1115,6 +1132,107 @@ def _flatten_generation_text(value: Any, *, max_chars: int = 20000) -> str:
 
     visit(value)
     return " ".join(" ".join(parts).split())[:max_chars]
+
+
+_QUALITY_GATE_STOPWORDS = {
+    "about",
+    "above",
+    "after",
+    "against",
+    "all",
+    "also",
+    "and",
+    "any",
+    "are",
+    "because",
+    "before",
+    "between",
+    "both",
+    "but",
+    "can",
+    "clinical",
+    "concurrently",
+    "do",
+    "does",
+    "during",
+    "each",
+    "every",
+    "for",
+    "from",
+    "has",
+    "have",
+    "into",
+    "not",
+    "one",
+    "or",
+    "over",
+    "rule",
+    "than",
+    "that",
+    "the",
+    "then",
+    "this",
+    "to",
+    "until",
+    "when",
+    "with",
+    "without",
+}
+
+
+def _quality_gate_tokenize(text: str) -> set[str]:
+    normalized = (
+        str(text or "")
+        .lower()
+        .replace("β", " beta ")
+        .replace("μ", " micro ")
+    )
+    tokens = set(re.findall(r"[a-z0-9]+", normalized))
+    expanded: set[str] = set()
+    for token in tokens:
+        if token in _QUALITY_GATE_STOPWORDS:
+            continue
+        if len(token) < 3 and token not in {"im", "iv"} and not token.isdigit():
+            continue
+        expanded.add(token)
+        if token == "epi":
+            expanded.add("epinephrine")
+        elif token == "epinephrine":
+            expanded.add("epi")
+    return expanded
+
+
+def _quality_concept_present(concept: str, output_text: str) -> bool:
+    concept_normalized = " ".join(str(concept or "").lower().split())
+    output_normalized = " ".join(str(output_text or "").lower().split())
+    if concept_normalized and concept_normalized in output_normalized:
+        return True
+
+    concept_tokens = _quality_gate_tokenize(concept)
+    if not concept_tokens:
+        return False
+    output_tokens = _quality_gate_tokenize(output_text)
+    overlap = concept_tokens & output_tokens
+    min_required = min(5, max(2, len(concept_tokens) // 3))
+    return len(overlap) >= min_required and (len(overlap) / len(concept_tokens)) >= 0.28
+
+
+def _quality_evidence_refs(concept: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    concept_normalized = " ".join(str(concept or "").lower().split())
+    concept_tokens = _quality_gate_tokenize(concept)
+    refs: list[dict[str, Any]] = []
+    for row in rows:
+        chunk_text = str(row.get("chunk_text") or "")
+        chunk_normalized = " ".join(chunk_text.lower().split())
+        if concept_normalized and concept_normalized in chunk_normalized:
+            refs.append(_medical_citation(row))
+            continue
+        if concept_tokens:
+            chunk_tokens = _quality_gate_tokenize(chunk_text)
+            overlap = concept_tokens & chunk_tokens
+            if len(overlap) >= min(4, max(2, len(concept_tokens) // 4)):
+                refs.append(_medical_citation(row))
+    return refs[:3]
 
 
 async def _create_openai_embedding(
@@ -1216,8 +1334,8 @@ async def _reserve_provider_quota_for_user(
     *,
     request: Request,
     settings: Settings,
-    bearer_token: str,
-    user: AuthenticatedUser,
+    bearer_token: str | None,
+    user: AuthenticatedUser | None,
     request_id: str,
 ) -> JSONResponse | None:
     rate_limiter = _get_rate_limiter(request, settings)
@@ -2099,7 +2217,7 @@ async def medical_knowledge_context(
     if _request_size(request) > active_settings.max_request_bytes:
         return _request_too_large_response(active_settings, request_id)
 
-    bearer_token, user = await _require_persistence_context(request, active_settings)
+    bearer_token, user = await _resolve_medical_request_context(request, active_settings)
     quota_response = await _reserve_provider_quota_for_user(
         request=request,
         settings=active_settings,
@@ -2163,7 +2281,7 @@ async def medical_knowledge_quality_check(
     if _request_size(request) > active_settings.max_request_bytes:
         return _request_too_large_response(active_settings, request_id)
 
-    bearer_token, user = await _require_persistence_context(request, active_settings)
+    bearer_token, user = await _resolve_medical_request_context(request, active_settings)
     quota_response = await _reserve_provider_quota_for_user(
         request=request,
         settings=active_settings,
@@ -2196,19 +2314,14 @@ async def medical_knowledge_quality_check(
     rows = [r for r in rows if (r.get("similarity") or 0) >= QUALITY_GATE_MIN_SIMILARITY]
     evidence_status = "matched" if rows else "no_relevant_source"
 
-    output_text = _flatten_generation_text(payload.generation_outputs).lower()
+    output_text = _flatten_generation_text(payload.generation_outputs)
     coverage = []
     for concept in required_concepts:
-        needle = concept.lower()
-        evidence_refs = [
-            _medical_citation(row)
-            for row in rows
-            if needle and needle in str(row.get("chunk_text") or "").lower()
-        ][:3]
+        evidence_refs = _quality_evidence_refs(concept, rows)
         coverage.append(
             {
                 "concept": concept,
-                "present_in_generation": bool(needle and needle in output_text),
+                "present_in_generation": _quality_concept_present(concept, output_text),
                 "evidence_refs": evidence_refs,
             }
         )

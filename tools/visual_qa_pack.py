@@ -58,7 +58,17 @@ EXACT_LABEL_RULE = (
 )
 
 _CONSTITUTION_PATH = Path(__file__).resolve().parents[1] / "docs" / "gemini-constitution.txt"
-GEMINI_GUARDRAILS = _CONSTITUTION_PATH.read_text(encoding="utf-8").strip()
+_ = _CONSTITUTION_PATH.read_text(encoding="utf-8")
+
+COMPACT_GEMINI_GUARDRAILS = (
+    "Gemini render checklist: use only coarse spatial terms; no compound positions; "
+    "no micro-poses, exact finger positions, clock-hand angles, shaped flames, or surface-contrast tricks. "
+    "Use completed-state language. Reserve all-caps only for intended visible labels. "
+    "Avoid descriptor nouns such as pharmacy label or warning sign. "
+    "Each character holds at most two items. Unique props say one single item if duplication would confuse the cue. "
+    "No captions, subtitles, booth titles, numbered panels, grids, checklists, speech bubbles, or black text strips. "
+    "Visible text must be physically integrated into objects and limited to essential labels."
+)
 
 MICRO_POSE_RE = re.compile(
     r"\b(?:interlocked|laced\s+together|balloon[- ]puffed|comically\s+distended|"
@@ -214,6 +224,8 @@ def condense_for_image(visual: str) -> str:
         text = pattern.sub(replacement, text)
 
     text = MICRO_POSE_RE.sub("", text)
+    text = VISUAL_META_RE.sub("", text)
+    text = re.sub(r"\bno\s+text\b", "", text, flags=re.I)
     text = re.sub(r"\s{2,}", " ", text).strip()
 
     def replace_quote(match: re.Match[str]) -> str:
@@ -239,13 +251,8 @@ def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
         assigned.append({**anchor, "zone": extract_zone(visual, ZONE_CYCLE[index % len(ZONE_CYCLE)])})
     anchor_lines_text = []
     for anchor in assigned:
-        hook_raw = str(anchor.get("hook") or "")
-        hook_cleaned = condense_for_image(hook_raw) if hook_raw else ""
-        hook = f" Hook: {hook_cleaned}." if hook_cleaned else ""
-        encodes = f" Encodes: {anchor.get('anchor')}" if anchor.get("anchor") else ""
         anchor_lines_text.append(
-            f"  ({str(anchor.get('zone')).lower()}) Anchor {anchor.get('n', '')}:{hook} "
-            f"Visual: {condense_for_image(str(anchor.get('visual') or ''))}.{encodes}"
+            f"- {str(anchor.get('zone')).lower()}: {condense_for_image(str(anchor.get('visual') or ''))}."
         )
 
     n = len(anchors)
@@ -255,19 +262,18 @@ def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
         f"{ANTI_META_TEXT}\n\n"
         "SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). "
         "Background surfaces are unlabeled.\n\n"
-        f"Add ALL {n} of the following medical mnemonic anchors to the scene. "
-        "Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. "
-        'The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. '
+        f"Add ALL {n} of the following medical mnemonic objects to the scene. "
+        "They may be props, characters/figures, or interactive elements — visual mnemonics, not labeled infographics. "
         "Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. "
         "Each anchor should be recognizable by its SHAPE and SILHOUETTE first. "
         f"{ANCHOR_LEGIBILITY_RULE} "
         "Text labels are secondary and optional — if present, maximum 3 words per ordinary label. "
         f"{PRECISION_TEXT_RULE} "
         f"{EXACT_LABEL_RULE} "
-        f"{GEMINI_GUARDRAILS} "
+        f"{COMPACT_GEMINI_GUARDRAILS} "
         "SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. "
         "Character names and short numbers count. "
-        "Zone hints in parentheses guide placement — do NOT render zone text:\n\n"
+        "Zone words below guide placement only — do NOT render zone text or bullet text:\n\n"
         + "\n".join(anchor_lines_text)
         + f"\n\nAll {n} anchors must be present and visually distinct. "
         "Do NOT add labels to room surfaces, walls, beams, or background objects. "

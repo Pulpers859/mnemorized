@@ -36,6 +36,13 @@ function getAuthToken() {
   return token;
 }
 
+function getMedicalAuthToken() {
+  const token = authState.session?.access_token;
+  if (token) return token;
+  if (appConfig.demoAuthBypass) return null;
+  throw new Error('Sign in to access saved palaces.');
+}
+
 function getActiveToneValue() {
   return document.querySelector('#tone-chips .chip.active')?.dataset.val || 'visceral and cinematic';
 }
@@ -211,6 +218,16 @@ function extractAllXmlTags(text, tag) {
   );
 }
 
+function sanitizeVisualField(text) {
+  return String(text || '')
+    .replace(/[→⇒➜➔]/g, ' beside ')
+    .replace(/[←⇐]/g, ' beside ')
+    .replace(/[↑⇑]/g, ' above ')
+    .replace(/[↓⇓]/g, ' below ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function parseProviderContent(raw, context) {
   if (raw.type === 'error' || raw.error) {
     const msg = raw.error?.message || raw.message || JSON.stringify(raw);
@@ -256,7 +273,7 @@ function parseStoryXml(text) {
       n: index + 1,
       hook: getField('HOOK'),
       narration: getField('NARRATION'),
-      visual: getField('VISUAL'),
+      visual: sanitizeVisualField(getField('VISUAL')),
       anchor: getField('ANCHOR'),
     };
   });
@@ -371,7 +388,8 @@ function renderQualityGateResult(result) {
     : 'No relevant private source found for this topic.';
   const repairFocus = result?.repair_focus || [];
   const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
-  const showRepair = !!authState.user && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
+  const medicalGateAvailable = !!(authState.user || appConfig.demoAuthBypass);
+  const showRepair = medicalGateAvailable && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
   setStageDetail('quality', result?.verdict === 'needs_repair'
     ? 'Quality gate found weak or missing medical coverage. Repair can use backend-only private references.'
     : (hasRelevantEvidence
@@ -410,7 +428,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
     renderQualityGateMessage('Generate a palace script before running repair.', 'error');
     return;
   }
-  if (!authState.user) {
+  if (!authState.user && !appConfig.demoAuthBypass) {
     openAuthModal();
     return;
   }
@@ -427,7 +445,7 @@ async function repairCurrentPalaceWithMedicalEvidence() {
   setStageDetail('quality', 'Retrieving private evidence and rewriting weak anchors while preserving the scene.');
 
   try {
-    const token = getAuthToken();
+    const token = getMedicalAuthToken();
     const topic = document.getElementById('topic').value.trim();
     const contextPayload = await MnemorizedMedicalApi.context(token, {
       topic,
@@ -518,7 +536,7 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
   }
 
   showBody('quality');
-  if (!authState.user) {
+  if (!authState.user && !appConfig.demoAuthBypass) {
     setStatus('quality', 'Sign in required', 'error');
     setStageDetail('quality', 'Sign in is required because private medical retrieval runs through the backend account context.');
     renderQualityGateMessage('Sign in to run the private medical quality gate.', 'error');
@@ -537,7 +555,7 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
   setStageDetail('quality', 'Retrieving backend-only reference snippets and checking generated anchors.');
   renderQualityGateMessage('Retrieving private medical citations and checking generated anchors...', 'muted', 'Evidence Check');
   try {
-    const result = await MnemorizedMedicalApi.qualityCheck(getAuthToken(), {
+    const result = await MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken(), {
       topic: document.getElementById('topic').value.trim(),
       generation_outputs: { story: storyData },
       required_concepts: (clinicalConcepts && clinicalConcepts.length) ? clinicalConcepts : getQualityGateConcepts(storyData),
