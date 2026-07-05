@@ -46,7 +46,10 @@ def make_settings(tmp_path: Path) -> Settings:
         openai_embedding_model="text-embedding-3-small",
         openai_embedding_dimensions=1536,
         plan_override_path=tmp_path / "plan_overrides.json",
+        elevenlabs_api_key="",
+        elevenlabs_default_voice="Rachel",
         admin_emails=(),
+        web_concurrency=1,
     )
 
 
@@ -211,6 +214,13 @@ def test_palace_routes_require_bearer_token(client: TestClient) -> None:
 
 def test_profile_ensure_requires_bearer_token(client: TestClient) -> None:
     response = client.post("/api/profile/ensure")
+
+    assert response.status_code == 401
+    assert response.json()["detail"] == "Sign in to access saved palaces."
+
+
+def test_medical_coverage_requires_bearer_token(client: TestClient) -> None:
+    response = client.get("/api/medical-knowledge/coverage")
 
     assert response.status_code == 401
     assert response.json()["detail"] == "Sign in to access saved palaces."

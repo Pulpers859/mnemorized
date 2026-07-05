@@ -24,8 +24,8 @@ powershell -File tools/Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer
 
 ## What nothing covers
 
-- **There is no CI** (no `.github/workflows`) — local runs are the only enforcement; never assume main is green because it was pushed.
-- No E2E browser tests in pytest. `tools/run_forge_browser_stress.mjs` (Playwright) is separate, and falls back to importing Playwright from gitignored `local_archive/playwright-runner/node_modules` — it breaks on a fresh clone/machine unless Playwright is installed normally.
+- **CI reports but does not gate**: `.github/workflows/ci.yml` runs compileall + pytest on pushes to `main` and on PRs. It flags breakage after the fact — it cannot block a Render deploy, so local validation before pushing is still the real gate.
+- No E2E browser tests in pytest. `tools/run_forge_browser_stress.mjs` (Playwright) is separate; it resolves `playwright` normally (`npm install playwright && npx playwright install chromium` from the repo root), with a legacy fallback to gitignored `local_archive/playwright-runner` for the original dev machine.
 
 ## Honest reporting rules
 

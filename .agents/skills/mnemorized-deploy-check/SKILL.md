@@ -11,7 +11,7 @@ Ground truth verified 2026-07 against `render.yaml`.
 
 - One Render web service `mnemorized` (free plan, Python 3.12.3). Build: `pip install -r backend/requirements.txt`. Start: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`.
 - The same service serves the API and all static pages — there is no separate static site or CDN.
-- There is no CI; deploys are not test-gated. Run `mnemorized-validation` before pushing to main. (Whether Render auto-deploys on push is UNVERIFIED from the repo — confirm in the Render dashboard before relying on it.)
+- CI (`.github/workflows/ci.yml`) runs compileall + pytest on pushes/PRs but does not gate Render deploys. Run `mnemorized-validation` before pushing to main. (Whether Render auto-deploys on push is UNVERIFIED from the repo — confirm in the Render dashboard before relying on it.)
 
 ## Env vars
 

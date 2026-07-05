@@ -1451,29 +1451,61 @@ async def _persist_usage_event_to_supabase(
         "status_code": status_code,
     }
 
-    try:
-        response = await _supabase_rest_request(
-            request=request,
-            settings=settings,
-            bearer_token=bearer_token,
-            method="POST",
-            path="/rest/v1/usage_events",
-            json_body=payload,
-            headers={"Prefer": "return=minimal"},
-        )
-        if response.status_code >= 400:
-            logger.warning(
-                "Supabase usage event insert failed for request %s: %s %s",
-                request_id,
-                response.status_code,
-                response.text[:300],
+    last_error: str | None = None
+    for attempt in range(2):
+        if attempt:
+            await asyncio.sleep(1.0)
+        try:
+            response = await _supabase_rest_request(
+                request=request,
+                settings=settings,
+                bearer_token=bearer_token,
+                method="POST",
+                path="/rest/v1/usage_events",
+                json_body=payload,
+                headers={"Prefer": "return=minimal"},
             )
-    except httpx.HTTPError as exc:
-        logger.warning(
-            "Supabase usage event insert errored for request %s: %s",
-            request_id,
-            exc,
-        )
+        except httpx.HTTPError as exc:
+            last_error = str(exc)
+            continue
+        if response.status_code < 400:
+            return
+        last_error = f"HTTP {response.status_code} — {response.text[:300]}"
+        # 4xx will not succeed on retry; only retry transient upstream failures.
+        if response.status_code < 500:
+            break
+
+    logger.error(
+        "Supabase usage event insert failed after retry for request %s: %s",
+        request_id,
+        last_error,
+    )
+    _write_failed_usage_event(settings=settings, payload=payload, error=last_error)
+
+
+def _write_failed_usage_event(
+    *,
+    settings: Settings,
+    payload: dict[str, Any],
+    error: str | None,
+) -> None:
+    """Keep a local reconciliation record when a usage event never reached Supabase.
+
+    Lost inserts undercount durable usage, so billed requests would otherwise
+    vanish without a trace once the in-process reservation cache expires.
+    """
+    fallback_path = settings.usage_log_path.with_name("usage_events_failed.jsonl")
+    try:
+        _ensure_log_path(fallback_path)
+        record = {
+            "timestamp": datetime.now(UTC).isoformat(),
+            "error": error,
+            **payload,
+        }
+        with fallback_path.open("a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record) + "\n")
+    except OSError as exc:
+        logger.error("Could not write failed usage event fallback record: %s", exc)
 
 
 async def _persist_usage_event_background(
@@ -1582,6 +1614,14 @@ async def lifespan(app: FastAPI):
         timeout=httpx.Timeout(60.0, connect=10.0),
     )
     app.state.usage_cache = UsageSummaryCache(ttl_seconds=60)
+    if settings.web_concurrency > 1:
+        logger.warning(
+            "WEB_CONCURRENCY=%s: quota reservations and rate limits are per-process; "
+            "multiple workers can each grant up to the remaining monthly limit within "
+            "the 60s usage-cache window. Keep a single worker unless quota enforcement "
+            "is moved into Supabase.",
+            settings.web_concurrency,
+        )
     yield
     await app.state.http_client.aclose()
 
@@ -2018,6 +2058,7 @@ async def publish_catalog_seed(
 @app.get("/api/medical-knowledge/coverage")
 async def medical_knowledge_coverage(request: Request) -> JSONResponse:
     active_settings = _get_runtime_settings(request)
+    await _require_persistence_context(request, active_settings)
     if not active_settings.supabase_admin_configured:
         return JSONResponse(
             status_code=503,

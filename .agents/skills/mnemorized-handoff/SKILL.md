@@ -41,5 +41,5 @@ Use this skill to rebuild the minimum correct context before coding, reviewing, 
 - Preserve the static/FastAPI architecture unless a task explicitly justifies changing it.
 - Do not claim provider-generation validation unless real keys were available and exercised.
 - Skills live in BOTH `.claude/skills/` and `.agents/skills/` — when editing a skill, apply the same change to both trees.
-- Validate with `tools/Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer` (see `mnemorized-validation`); there is no CI.
+- Validate with `tools/Invoke-MnemorizedValidation.ps1 -Tests -SmokeServer` (see `mnemorized-validation`); CI runs compileall + pytest on push/PR but does not gate deploys.
 

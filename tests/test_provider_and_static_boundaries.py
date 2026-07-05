@@ -59,7 +59,10 @@ def make_settings(
         openai_embedding_model="text-embedding-3-small",
         openai_embedding_dimensions=1536,
         plan_override_path=tmp_path / "plan_overrides.json",
+        elevenlabs_api_key="",
+        elevenlabs_default_voice="Rachel",
         admin_emails=admin_emails,
+        web_concurrency=1,
     )
 
 

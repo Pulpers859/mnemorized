@@ -6,8 +6,19 @@ async function loadPlaywright() {
   try {
     return await import('playwright');
   } catch {
-    const require = createRequire(import.meta.url);
-    return require('../local_archive/playwright-runner/node_modules/playwright');
+    // Legacy convenience for the original dev machine's archived runner;
+    // local_archive/ is gitignored, so fresh clones will not have it.
+    try {
+      const require = createRequire(import.meta.url);
+      return require('../local_archive/playwright-runner/node_modules/playwright');
+    } catch {
+      throw new Error(
+        'Playwright is not installed. From the repo root run:\n' +
+        '  npm install playwright\n' +
+        '  npx playwright install chromium\n' +
+        'then re-run this script.'
+      );
+    }
   }
 }
 
@@ -47,13 +58,27 @@ const pollMs = Number(argValue('--poll-ms', '5000'));
 await fs.mkdir(outDir, { recursive: true });
 await fs.writeFile(path.join(outDir, '00_user_input.txt'), topic, 'utf8');
 
-const userHome = process.env.USERPROFILE || process.env.HOME || '';
-const executablePath = await firstExisting([
-  path.join(userHome, 'AppData/Local/ms-playwright/chromium-1228/chrome-win64/chrome.exe'),
-  path.join(userHome, 'AppData/Local/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-win64/chrome-headless-shell.exe'),
-  path.join(userHome, 'AppData/Local/ms-playwright/chromium-1200/chrome-win64/chrome.exe'),
-  path.join(userHome, 'AppData/Local/ms-playwright/chromium_headless_shell-1200/chrome-headless-shell-win64/chrome-headless-shell.exe'),
-]);
+async function findCachedChromium() {
+  const userHome = process.env.USERPROFILE || process.env.HOME || '';
+  const cacheDir = path.join(userHome, 'AppData/Local/ms-playwright');
+  let entries;
+  try {
+    entries = await fs.readdir(cacheDir);
+  } catch {
+    return null;
+  }
+  // Prefer full chromium builds over headless-shell builds, newest first.
+  const full = entries.filter((e) => e.startsWith('chromium-')).sort().reverse();
+  const shell = entries.filter((e) => e.startsWith('chromium_headless_shell-')).sort().reverse();
+  return firstExisting([
+    ...full.map((e) => path.join(cacheDir, e, 'chrome-win64/chrome.exe')),
+    ...shell.map((e) => path.join(cacheDir, e, 'chrome-headless-shell-win64/chrome-headless-shell.exe')),
+  ]);
+}
+
+// If no cached browser is found, chromium.launch() falls back to Playwright's
+// own registry resolution (works after `npx playwright install chromium`).
+const executablePath = await findCachedChromium();
 
 const browser = await chromium.launch({
   headless: true,

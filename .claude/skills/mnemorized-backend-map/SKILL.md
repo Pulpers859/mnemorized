@@ -23,7 +23,7 @@ Ground-truth backend invariants, verified 2026-07. File/function names are durab
 ## Quota mechanics
 
 - Plans: free 40 / pro 400 / team 4000 requests per calendar month (env-tunable); enterprise/unlimited uncapped. A dev plan-override file (`backend/dev_data/plan_overrides.json`) silently masks the real subscription — check it when quota behavior looks wrong locally.
-- Reservation is optimistic in an **in-process 60s cache** before the paid provider call, released on failure. The durable count is `usage_events` rows written on success by a fire-and-forget background task that swallows exceptions. Consequences: quota is per-worker-process (not global under horizontal scaling), concurrent cold-cache requests can race past the limit, and systematic Supabase write failures cause silent quota drift.
+- Reservation is optimistic in an **in-process 60s cache** before the paid provider call, released on failure. The durable count is `usage_events` rows written on success by a background task that retries once on transient failure; a final failure logs an error and appends the event to `backend/logs/usage_events_failed.jsonl` for manual reconciliation. Quota is still per-worker-process (not global under horizontal scaling); startup logs a warning when `WEB_CONCURRENCY` > 1.
 - Exhaustion returns HTTP 402 with a `quota_exceeded` body including plan/usage/billing info.
 - Rate limiting is an in-memory sliding window per user/IP; it resets on every restart and is not shared across workers.
 
@@ -41,8 +41,8 @@ Ground-truth backend invariants, verified 2026-07. File/function names are durab
 - First-save failure cleanup (`_delete_empty_palace_best_effort`) is fire-and-forget — orphaned empty palace rows are possible and non-fatal.
 - Audio lives in Supabase Storage bucket `palace-audio` at `{user_id}/{palace_id}/{filename}`; ownership is enforced only by Storage RLS on the first path segment.
 
-## Known soft spots (verified 2026-07, intentionally not yet fixed)
+## Known soft spots (verified 2026-07)
 
-- `/api/medical-knowledge/coverage` has no auth gate (only requires service-role config) — any client can enumerate medical source titles/tags.
-- Quota enforcement is per-process (see above) — acceptable at single-instance scale, revisit before scaling out.
+- Quota enforcement is per-process (see above) — accepted at single-instance scale (render.yaml runs one uvicorn worker); move reservations into Supabase before scaling out.
 - Confirm with Patrick before "fixing" anything in this section; these are recorded so future agents don't rediscover them as surprises.
+- Fixed 2026-07: `/api/medical-knowledge/coverage` now requires a Supabase bearer token like its sibling medical endpoints (regression test: `test_medical_coverage_requires_bearer_token`).

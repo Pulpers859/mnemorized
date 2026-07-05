@@ -81,4 +81,4 @@ Run what is realistic for the change:
 - Server smoke: `python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`
 - Browser routes: `/`, `/forge`, `/library`, `/api/health`
 
-There is no CI — local validation is the only enforcement before deploy. Do not claim provider-generation validation unless local or hosted API keys were actually available and exercised. See `mnemorized-validation` for what each layer does and does not prove.
+CI (`.github/workflows/ci.yml`) runs compileall + pytest on pushes to `main` and on PRs, but it does not gate Render deploys — run local validation before pushing. Do not claim provider-generation validation unless local or hosted API keys were actually available and exercised. See `mnemorized-validation` for what each layer does and does not prove.
