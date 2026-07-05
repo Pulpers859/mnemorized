@@ -4,12 +4,13 @@ This document describes the first production-safe foundation for turning a gener
 
 ## Current Scope
 
-The app currently supports four stages:
+The app currently supports five stages:
 
 1. Anchor coordinate mapping on the generated palace image.
 2. ElevenLabs Studio narration handoff via copy/download script.
 3. Local pan/highlight preview using estimated timing or uploaded/generated audio.
 4. Backend-only ElevenLabs TTS endpoint (`POST /api/elevenlabs/tts`) with auth, rate limiting, quota enforcement, and usage logging. The API key never reaches the browser.
+5. Supabase Storage for generated/uploaded audio. Audio files are uploaded to the `palace-audio` bucket, scoped per-user and per-palace. Saved palaces with `storage: "supabase"` auto-restore audio on load.
 
 ## User Workflow
 
@@ -54,7 +55,8 @@ Saved palace versions now include `generation_outputs.guided_video`:
   "audio": {
     "name": "exported-audio.mp3",
     "duration_seconds": 123,
-    "storage": "local-browser-upload-only"
+    "storage": "supabase",
+    "storage_path": "user-uuid/palace-uuid/exported-audio.mp3"
   }
 }
 ```
@@ -63,12 +65,12 @@ Coordinates are normalized from `0.0` to `1.0`, so they survive image resizing.
 
 ## Important Boundaries
 
-- Generated audio is returned as base64 in the JSON response and held in browser memory. Re-generate or re-upload after loading a saved palace if you want audio playback.
-- Supabase stores coordinate/timing metadata, not the audio file (until Stage 5 adds Supabase Storage).
+- Generated or uploaded audio is automatically persisted to Supabase Storage when a palace is saved. On load, audio is streamed back through the backend proxy — no manual re-upload needed.
+- If the palace has not been saved yet (no `palace_id`), audio stays in browser memory until the first save; the next load will restore it from storage.
 - The manual Studio copy/download path is preserved as a fallback for cost control and QA.
+- Audio files are stored at `{user_id}/{palace_id}/{filename}` in the `palace-audio` bucket, enforcing per-user isolation via Supabase RLS.
 
 ## Next Stages
 
-1. Supabase Storage or private object storage for generated audio exports.
-2. Rendered video export, likely via a backend worker or local CLI pipeline rather than browser-only canvas capture.
-3. Image-audit-aware coordinate assist, where vision proposes anchor coordinates and the user confirms them.
+1. Rendered video export, likely via a backend worker or local CLI pipeline rather than browser-only canvas capture.
+2. Image-audit-aware coordinate assist, where vision proposes anchor coordinates and the user confirms them.

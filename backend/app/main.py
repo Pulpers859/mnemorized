@@ -3456,6 +3456,14 @@ class ElevenLabsTTSPayload(BaseModel):
     similarity_boost: float = Field(default=0.75, ge=0.0, le=1.0)
 
 
+class AudioUploadPayload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    palace_id: str = Field(min_length=1, max_length=80)
+    audio_base64: str = Field(min_length=1)
+    content_type: str = Field(default="audio/mpeg", max_length=80)
+    filename: str = Field(default="narration.mp3", max_length=255)
+
+
 ELEVENLABS_VOICES: dict[str, str] = {
     "rachel": "21m00Tcm4TlvDq8ikWAM",
     "adam": "pNInz6obpgDQGcFmaJgB",
@@ -3691,6 +3699,232 @@ async def elevenlabs_tts(
             "size_bytes": len(audio_data),
         },
         background=background_tasks,
+    )
+
+
+# ── Audio storage (Supabase Storage) ──────────────────────────────────
+
+AUDIO_BUCKET = "palace-audio"
+AUDIO_MAX_BYTES = 25 * 1024 * 1024  # 25 MB
+AUDIO_ALLOWED_TYPES = {"audio/mpeg", "audio/mp3", "audio/wav", "audio/ogg", "audio/webm"}
+_SAFE_FILENAME_CHARS = frozenset("abcdefghijklmnopqrstuvwxyz0123456789_-.")
+
+
+def _sanitize_audio_filename(raw: str) -> str:
+    name = raw.strip().lower().replace(" ", "_")
+    sanitized = "".join(c for c in name if c in _SAFE_FILENAME_CHARS)
+    if not sanitized or sanitized.startswith("."):
+        sanitized = "narration.mp3"
+    if "." not in sanitized:
+        sanitized += ".mp3"
+    if len(sanitized) > 120:
+        dot = sanitized.rfind(".")
+        ext = sanitized[dot:] if dot >= 0 else ".mp3"
+        sanitized = sanitized[: 120 - len(ext)] + ext
+    return sanitized
+
+
+async def _supabase_storage_request(
+    *,
+    request: Request,
+    settings: Settings,
+    bearer_token: str,
+    method: str,
+    path: str,
+    content: bytes | None = None,
+    content_type: str = "application/octet-stream",
+    params: dict[str, Any] | None = None,
+) -> httpx.Response:
+    headers: dict[str, str] = {
+        "apikey": settings.supabase_anon_key,
+        "Authorization": f"Bearer {bearer_token}",
+    }
+    if method in {"POST", "PUT"} and content is not None:
+        headers["Content-Type"] = content_type
+
+    http_client, owns = _get_http_client(request)
+    try:
+        return await http_client.request(
+            method,
+            settings.supabase_url.rstrip("/") + path,
+            headers=headers,
+            content=content,
+            params=params,
+            timeout=httpx.Timeout(60.0, connect=10.0),
+        )
+    finally:
+        if owns:
+            await http_client.aclose()
+
+
+@app.post("/api/audio/upload")
+async def upload_audio(payload: AudioUploadPayload, request: Request) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    palace_id = _validate_palace_id(payload.palace_id)
+    filename = _sanitize_audio_filename(payload.filename)
+
+    if payload.content_type not in AUDIO_ALLOWED_TYPES:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported audio type: {payload.content_type}. Allowed: {', '.join(sorted(AUDIO_ALLOWED_TYPES))}",
+        )
+
+    try:
+        audio_bytes = base64.b64decode(payload.audio_base64, validate=True)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"Invalid base64 audio data: {exc}") from exc
+
+    if len(audio_bytes) > AUDIO_MAX_BYTES:
+        raise HTTPException(
+            status_code=413,
+            detail=f"Audio file exceeds {AUDIO_MAX_BYTES // (1024 * 1024)} MB limit.",
+        )
+    if len(audio_bytes) == 0:
+        raise HTTPException(status_code=400, detail="Audio data is empty.")
+
+    storage_path = f"{user.user_id}/{palace_id}/{filename}"
+    object_path = f"/storage/v1/object/{AUDIO_BUCKET}/{storage_path}"
+
+    response = await _supabase_storage_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="POST",
+        path=object_path,
+        content=audio_bytes,
+        content_type=payload.content_type,
+    )
+
+    if response.status_code == 400 and "already exists" in response.text.lower():
+        response = await _supabase_storage_request(
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            method="PUT",
+            path=object_path,
+            content=audio_bytes,
+            content_type=payload.content_type,
+        )
+
+    if response.status_code >= 400:
+        logger.error(
+            "Supabase Storage upload failed for %s: HTTP %s — %s",
+            storage_path, response.status_code, response.text[:500],
+        )
+        raise HTTPException(
+            status_code=502,
+            detail="Could not upload audio to storage. Please try again.",
+        )
+
+    logger.info(
+        "Audio uploaded: %s (%d bytes) for palace %s [request %s]",
+        filename, len(audio_bytes), palace_id, request_id,
+    )
+
+    return JSONResponse(
+        status_code=200,
+        headers={"X-Request-ID": request_id},
+        content={
+            "storage_path": storage_path,
+            "filename": filename,
+            "size_bytes": len(audio_bytes),
+            "content_type": payload.content_type,
+            "storage": "supabase",
+        },
+    )
+
+
+@app.get("/api/audio/{palace_id}/{filename}")
+async def download_audio(palace_id: str, filename: str, request: Request) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    palace_id = _validate_palace_id(palace_id)
+    filename = _sanitize_audio_filename(filename)
+    storage_path = f"{user.user_id}/{palace_id}/{filename}"
+
+    response = await _supabase_storage_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="GET",
+        path=f"/storage/v1/object/{AUDIO_BUCKET}/{storage_path}",
+    )
+
+    if response.status_code == 404:
+        raise HTTPException(status_code=404, detail="Audio file not found in storage.")
+
+    if response.status_code >= 400:
+        logger.error(
+            "Supabase Storage download failed for %s: HTTP %s — %s",
+            storage_path, response.status_code, response.text[:500],
+        )
+        raise HTTPException(
+            status_code=502,
+            detail="Could not retrieve audio from storage.",
+        )
+
+    audio_data = response.content
+    content_type = response.headers.get("content-type", "audio/mpeg")
+
+    return JSONResponse(
+        status_code=200,
+        headers={"X-Request-ID": request_id},
+        content={
+            "audio_base64": base64.b64encode(audio_data).decode("ascii"),
+            "content_type": content_type,
+            "size_bytes": len(audio_data),
+            "filename": filename,
+            "storage_path": storage_path,
+        },
+    )
+
+
+@app.delete("/api/audio/{palace_id}/{filename}")
+async def delete_audio(palace_id: str, filename: str, request: Request) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+    bearer_token, user = await _require_persistence_context(request, active_settings)
+
+    palace_id = _validate_palace_id(palace_id)
+    filename = _sanitize_audio_filename(filename)
+    storage_path = f"{user.user_id}/{palace_id}/{filename}"
+
+    response = await _supabase_storage_request(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        method="DELETE",
+        path=f"/storage/v1/object/{AUDIO_BUCKET}/{storage_path}",
+    )
+
+    if response.status_code == 404:
+        return JSONResponse(
+            status_code=200,
+            headers={"X-Request-ID": request_id},
+            content={"deleted": False, "reason": "not_found"},
+        )
+
+    if response.status_code >= 400:
+        logger.error(
+            "Supabase Storage delete failed for %s: HTTP %s — %s",
+            storage_path, response.status_code, response.text[:500],
+        )
+        raise HTTPException(
+            status_code=502,
+            detail="Could not delete audio from storage.",
+        )
+
+    logger.info("Audio deleted: %s [request %s]", storage_path, request_id)
+
+    return JSONResponse(
+        status_code=200,
+        headers={"X-Request-ID": request_id},
+        content={"deleted": True, "storage_path": storage_path},
     )
 
 

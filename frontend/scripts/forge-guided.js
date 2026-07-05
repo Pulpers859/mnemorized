@@ -14,14 +14,27 @@
     selectedAnchor: 1,
     audioName: '',
     audioDuration: 0,
+    audioStoragePath: '',
+    audioStorage: '',
+    audioBlob: null,
+    _currentAudioUrl: null,
     useAudioTiming: false,
     previewTimer: null,
     previewStartedAt: 0,
     previewRunning: false
   };
 
+  let _restoreGeneration = 0;
+
   function $(id) {
     return document.getElementById(id);
+  }
+
+  function _revokeAudioUrl() {
+    if (state._currentAudioUrl) {
+      URL.revokeObjectURL(state._currentAudioUrl);
+      state._currentAudioUrl = null;
+    }
   }
 
   function escapeLocalHtml(value) {
@@ -329,7 +342,8 @@
       audio: state.audioName ? {
         name: state.audioName,
         duration_seconds: state.audioDuration || null,
-        storage: 'local-browser-upload-only'
+        storage: state.audioStorage || 'local-browser-upload-only',
+        storage_path: state.audioStoragePath || null
       } : null
     };
   }
@@ -344,11 +358,35 @@
     state.segments = Array.isArray(snapshot.narration_segments) ? snapshot.narration_segments : [];
     state.audioName = snapshot.audio?.name || '';
     state.audioDuration = Number(snapshot.audio?.duration_seconds) || 0;
+    state.audioStorage = snapshot.audio?.storage || '';
+    state.audioStoragePath = snapshot.audio?.storage_path || '';
     if (story?.voLines?.length) {
       buildPlan({ story, coords: state.coords, segments: state.segments });
-      if (state.audioName) setStatus(`Guided metadata loaded. Re-upload "${state.audioName}" to preview with audio.`, 'success');
     } else {
       renderAll();
+    }
+
+    if (state.audioStorage === 'supabase' && state.audioName) {
+      const palaceId = _currentPalaceId();
+      if (palaceId) {
+        const thisGen = ++_restoreGeneration;
+        setStatus('Loading audio from cloud storage…', 'muted');
+        loadAudioFromStorage(palaceId, state.audioName).then(loaded => {
+          if (thisGen !== _restoreGeneration) return;
+          if (loaded) {
+            setStatus(`Audio restored from cloud: ${state.audioName} (${Math.round(state.audioDuration)} sec).`, 'success');
+          } else {
+            setStatus(`Guided metadata loaded. Audio "${state.audioName}" not found in storage — re-upload or regenerate.`, 'success');
+          }
+        }).catch(() => {
+          if (thisGen !== _restoreGeneration) return;
+          setStatus(`Guided metadata loaded. Could not load audio from storage — re-upload or regenerate.`, 'success');
+        });
+      } else if (state.audioName) {
+        setStatus(`Guided metadata loaded. Save palace first, then re-upload "${state.audioName}" to preview.`, 'success');
+      }
+    } else if (state.audioName) {
+      setStatus(`Guided metadata loaded. Re-upload "${state.audioName}" to preview with audio.`, 'success');
     }
   }
 
@@ -360,7 +398,12 @@
     state.selectedAnchor = 1;
     state.audioName = '';
     state.audioDuration = 0;
+    state.audioStoragePath = '';
+    state.audioStorage = '';
+    state.audioBlob = null;
+    _revokeAudioUrl();
     state.useAudioTiming = false;
+    ++_restoreGeneration;
     const textarea = $('guided-elevenlabs-script');
     if (textarea) textarea.value = '';
     const audio = $('guided-audio');
@@ -417,12 +460,25 @@
         if (!file) return;
         const audio = $('guided-audio');
         if (!audio) return;
-        audio.src = URL.createObjectURL(file);
+        _revokeAudioUrl();
+        const fileUrl = URL.createObjectURL(file);
+        state._currentAudioUrl = fileUrl;
+        audio.src = fileUrl;
         audio.style.display = 'block';
         state.audioName = file.name;
+        state.audioBlob = file;
+        state.audioStorage = '';
+        state.audioStoragePath = '';
         audio.onloadedmetadata = () => {
           state.audioDuration = audio.duration || 0;
           setStatus(`Audio loaded: ${file.name} (${Math.round(state.audioDuration)} sec).`, 'success');
+
+          const palaceId = _currentPalaceId();
+          if (palaceId) {
+            uploadAudioToStorage(file, palaceId, file.name).then(result => {
+              if (result) setStatus(`Audio loaded and saved to cloud storage: ${file.name}`, 'success');
+            }).catch(() => {});
+          }
         };
       });
     }
@@ -431,6 +487,120 @@
     if (coordsInput) {
       coordsInput.addEventListener('change', event => importCoords(event.target.files?.[0]));
     }
+  }
+
+  function _authHeaders() {
+    const headers = { 'Content-Type': 'application/json' };
+    if (typeof authState !== 'undefined' && authState.session?.access_token) {
+      headers.Authorization = `Bearer ${authState.session.access_token}`;
+    }
+    return headers;
+  }
+
+  function _apiUrl(path) {
+    return typeof MnemorizedUtils !== 'undefined' ? MnemorizedUtils.getApiUrl(path) : path;
+  }
+
+  function _currentPalaceId() {
+    return typeof currentPalaceMeta !== 'undefined' && currentPalaceMeta?.id ? currentPalaceMeta.id : null;
+  }
+
+  async function uploadAudioToStorage(blob, palaceId, filename) {
+    if (!palaceId) return null;
+    if (!blob || blob.size === 0) return null;
+
+    const reader = new FileReader();
+    const base64 = await new Promise((resolve, reject) => {
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        const comma = dataUrl.indexOf(',');
+        resolve(comma >= 0 ? dataUrl.substring(comma + 1) : dataUrl);
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+
+    const headers = _authHeaders();
+    let res = await fetch(_apiUrl('/api/audio/upload'), {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        palace_id: palaceId,
+        audio_base64: base64,
+        content_type: blob.type || 'audio/mpeg',
+        filename: filename || 'narration.mp3',
+      }),
+    });
+
+    if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+      const { data } = await supabaseClient.auth.refreshSession();
+      if (data?.session?.access_token) {
+        authState.session = data.session;
+        headers.Authorization = `Bearer ${data.session.access_token}`;
+        res = await fetch(_apiUrl('/api/audio/upload'), {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            palace_id: palaceId,
+            audio_base64: base64,
+            content_type: blob.type || 'audio/mpeg',
+            filename: filename || 'narration.mp3',
+          }),
+        });
+      }
+    }
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      console.warn('[Mnemorized] Audio upload to storage failed:', err);
+      return null;
+    }
+
+    const result = await res.json();
+    state.audioStoragePath = result.storage_path || '';
+    state.audioStorage = 'supabase';
+    return result;
+  }
+
+  async function loadAudioFromStorage(palaceId, filename) {
+    if (!palaceId || !filename) return false;
+
+    const headers = _authHeaders();
+    const url = _apiUrl(`/api/audio/${encodeURIComponent(palaceId)}/${encodeURIComponent(filename)}`);
+    let res = await fetch(url, { method: 'GET', headers });
+
+    if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+      const { data } = await supabaseClient.auth.refreshSession();
+      if (data?.session?.access_token) {
+        authState.session = data.session;
+        headers.Authorization = `Bearer ${data.session.access_token}`;
+        res = await fetch(url, { method: 'GET', headers });
+      }
+    }
+
+    if (res.status === 404) return false;
+    if (!res.ok) {
+      console.warn('[Mnemorized] Audio download from storage failed:', res.status);
+      return false;
+    }
+
+    const data = await res.json();
+    const audioBytes = Uint8Array.from(atob(data.audio_base64), c => c.charCodeAt(0));
+    const blob = new Blob([audioBytes], { type: data.content_type || 'audio/mpeg' });
+    state.audioBlob = blob;
+
+    _revokeAudioUrl();
+    const audioEl = $('guided-audio');
+    if (audioEl) {
+      const blobUrl = URL.createObjectURL(blob);
+      state._currentAudioUrl = blobUrl;
+      audioEl.src = blobUrl;
+      audioEl.style.display = 'block';
+      audioEl.onloadedmetadata = () => {
+        state.audioDuration = audioEl.duration || 0;
+      };
+    }
+    return true;
   }
 
   async function generateAudio() {
@@ -449,17 +619,11 @@
     }
     setStatus('Sending narration to ElevenLabs…', 'muted');
 
-    const headers = { 'Content-Type': 'application/json' };
-    if (typeof authState !== 'undefined' && authState.session?.access_token) {
-      headers.Authorization = `Bearer ${authState.session.access_token}`;
-    }
-
-    const apiUrl = typeof MnemorizedUtils !== 'undefined'
-      ? MnemorizedUtils.getApiUrl('/api/elevenlabs/tts')
-      : '/api/elevenlabs/tts';
+    const headers = _authHeaders();
+    const ttsUrl = _apiUrl('/api/elevenlabs/tts');
 
     try {
-      let res = await fetch(apiUrl, {
+      let res = await fetch(ttsUrl, {
         method: 'POST',
         headers,
         body: JSON.stringify({ text, voice: '', model_id: 'eleven_multilingual_v2' }),
@@ -470,7 +634,7 @@
         if (data?.session?.access_token) {
           authState.session = data.session;
           headers.Authorization = `Bearer ${data.session.access_token}`;
-          res = await fetch(apiUrl, {
+          res = await fetch(ttsUrl, {
             method: 'POST',
             headers,
             body: JSON.stringify({ text, voice: '', model_id: 'eleven_multilingual_v2' }),
@@ -497,17 +661,30 @@
       const data = await res.json();
       const audioBytes = Uint8Array.from(atob(data.audio_base64), c => c.charCodeAt(0));
       const blob = new Blob([audioBytes], { type: data.content_type || 'audio/mpeg' });
+      state.audioBlob = blob;
+      state.audioStorage = '';
+      state.audioStoragePath = '';
+      _revokeAudioUrl();
       const audioUrl = URL.createObjectURL(blob);
+      state._currentAudioUrl = audioUrl;
 
       const audio = $('guided-audio');
+      const fname = `${safeTopicName()}_elevenlabs.mp3`;
+      state.audioName = fname;
       if (audio) {
         audio.src = audioUrl;
         audio.style.display = 'block';
-        state.audioName = `${safeTopicName()}_elevenlabs.mp3`;
         audio.onloadedmetadata = () => {
           state.audioDuration = audio.duration || 0;
           setStatus(`Audio generated: ${Math.round(state.audioDuration)} sec, ${Math.round(data.size_bytes / 1024)} KB. Ready to preview.`, 'success');
         };
+      }
+
+      const palaceId = _currentPalaceId();
+      if (palaceId) {
+        uploadAudioToStorage(blob, palaceId, fname).catch(() => {
+          setStatus(`Audio generated but cloud upload failed. Audio is in browser memory only — save will retry.`, 'success');
+        });
       }
     } catch (err) {
       setStatus(`Audio generation failed: ${err.message}`, 'error');
