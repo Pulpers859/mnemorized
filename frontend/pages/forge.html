@@ -2147,7 +2147,9 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
               </div>
             </div>
             <div class="guided-actions">
+              <button class="btn-copy" type="button" onclick="guidedOneClickLesson()" id="guided-one-click-btn" style="background:var(--green);color:#000;font-weight:700;">One-Click Lesson</button>
               <button class="btn-copy" type="button" onclick="guidedBuildPlan()">Build Plan</button>
+              <button class="btn-copy" type="button" id="guided-auto-place-btn" onclick="this.disabled=true;this.textContent='Placing…';guidedAutoPlaceAnchors().then(()=>{this.textContent='Auto-Place Anchors';this.disabled=false}).catch(e=>{document.getElementById('guided-status').textContent=e.message;this.textContent='Auto-Place Anchors';this.disabled=false})">Auto-Place Anchors</button>
               <button class="btn-copy" type="button" onclick="guidedGenerateAudio()" id="guided-generate-audio-btn">Generate Audio</button>
               <button class="btn-copy" type="button" onclick="guidedCopyElevenLabsScript()">Copy ElevenLabs Script</button>
               <button class="btn-copy" type="button" onclick="guidedDownloadElevenLabsScript()">Download Script</button>

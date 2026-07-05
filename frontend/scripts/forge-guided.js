@@ -945,6 +945,115 @@
     }
   }
 
+  async function autoPlaceAnchors() {
+    const story = getStory();
+    if (!story?.voLines?.length) throw new Error('Build a palace script first.');
+    const imgSrc = getFinalImageSrc();
+    if (!imgSrc) throw new Error('Generate a palace image first.');
+
+    setStatus('Fetching palace image for vision analysis…', 'muted');
+    const imgRes = await fetch(imgSrc);
+    if (!imgRes.ok) throw new Error(`Could not load palace image (${imgRes.status}).`);
+    const imgBlob = await imgRes.blob();
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(imgBlob);
+    });
+    const mediaType = imgBlob.type || 'image/png';
+
+    const anchors = story.voLines.map(line => ({
+      n: line.n,
+      visual: line.visual,
+      anchor: line.anchor,
+    }));
+
+    const body = {
+      model: 'claude-sonnet-4-6',
+      max_tokens: 1024,
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'image', source: { type: 'base64', media_type: mediaType, data: base64 } },
+          { type: 'text', text: `You are analyzing a memory palace illustration. Each numbered anchor below describes a visual mnemonic placed somewhere in this image. Return the normalized (0-1) x,y coordinates of the CENTER of each visual element in the image.
+
+Anchors:
+${anchors.map(a => `${a.n}. "${a.visual}" (encodes: ${a.anchor})`).join('\n')}
+
+Respond with ONLY a JSON array, no markdown fences:
+[{"n":1,"x":0.32,"y":0.45,"found":true},...]
+
+If you cannot find an anchor in the image, set found:false and estimate a reasonable position. x=0 is left edge, x=1 is right edge, y=0 is top, y=1 is bottom.` }
+        ]
+      }]
+    };
+
+    setStatus('Vision AI analyzing anchor positions…', 'muted');
+    const res = await claudeFetch(body, 'guided-auto-coords');
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.error?.message || `Vision request failed (${res.status})`);
+    }
+
+    const data = await res.json();
+    const text = (data.content || []).find(b => b.type === 'text')?.text || '';
+    const jsonMatch = text.match(/\[[\s\S]*\]/);
+    if (!jsonMatch) throw new Error('Vision model returned no coordinate JSON.');
+    let visionCoords;
+    try { visionCoords = JSON.parse(jsonMatch[0]); }
+    catch { throw new Error('Vision model returned invalid coordinate data.'); }
+
+    let placed = 0;
+    state.coords = story.voLines.map((line, index) => {
+      const vc = visionCoords.find(c => Number(c.n) === Number(line.n));
+      if (vc && vc.found !== false) placed++;
+      return normalizeCoord(vc || { found: false }, index, line);
+    });
+
+    renderAll();
+    return placed;
+  }
+
+  async function oneClickLesson() {
+    const story = getStory();
+    if (!story?.voLines?.length) {
+      setStatus('Forge a palace script before using One-Click Lesson.', 'error');
+      return;
+    }
+    if (!getFinalImageSrc()) {
+      setStatus('Generate a palace image before using One-Click Lesson.', 'error');
+      return;
+    }
+
+    const btn = $('guided-one-click-btn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Working…'; }
+
+    try {
+      setStatus('Step 1/3 — Building lesson plan…', 'muted');
+      if (!buildPlan()) throw new Error('Could not build plan from story.');
+
+      setStatus('Step 2/3 — Auto-placing anchors with vision AI…', 'muted');
+      const placed = await autoPlaceAnchors();
+      const total = state.coords.length;
+
+      setStatus(`Step 3/3 — Generating narration audio… (${placed}/${total} anchors placed by vision)`, 'muted');
+      await generateAudio();
+
+      const notFound = state.coords.filter(c => !c.found).length;
+      const msg = notFound > 0
+        ? `One-Click Lesson ready! ${placed}/${total} anchors auto-placed. ${notFound} need manual adjustment. Preview or export when ready.`
+        : `One-Click Lesson ready! All ${total} anchors auto-placed. Preview or export when ready.`;
+      setStatus(msg, 'success');
+    } catch (err) {
+      setStatus(`One-Click Lesson failed: ${err.message}`, 'error');
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = 'One-Click Lesson'; }
+    }
+  }
+
+  window.guidedOneClickLesson = oneClickLesson;
+  window.guidedAutoPlaceAnchors = autoPlaceAnchors;
   window.guidedGenerateAudio = generateAudio;
   window.guidedBuildPlan = () => buildPlan();
   window.guidedCopyElevenLabsScript = copyScript;

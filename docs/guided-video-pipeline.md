@@ -4,7 +4,7 @@ This document describes the first production-safe foundation for turning a gener
 
 ## Current Scope
 
-The app currently supports six stages:
+The app currently supports seven stages:
 
 1. Anchor coordinate mapping on the generated palace image.
 2. ElevenLabs Studio narration handoff via copy/download script.
@@ -12,16 +12,18 @@ The app currently supports six stages:
 4. Backend-only ElevenLabs TTS endpoint (`POST /api/elevenlabs/tts`) with auth, rate limiting, quota enforcement, and usage logging. The API key never reaches the browser.
 5. Supabase Storage for generated/uploaded audio. Audio files are uploaded to the `palace-audio` bucket, scoped per-user and per-palace. Saved palaces with `storage: "supabase"` auto-restore audio on load.
 6. Video export via browser-side canvas capture. The guided preview is rendered to an offscreen 1920×1080 canvas with smooth pan/zoom transitions and highlight overlay, captured with `MediaRecorder` + audio stream, and downloaded as a `.webm` file.
+7. One-Click Guided Lesson. Chains plan building, vision-based auto-anchor placement (Claude Sonnet via the Anthropic proxy), and ElevenLabs TTS generation into a single flow. Also available as individual "Auto-Place Anchors" button for standalone use.
 
 ## User Workflow
 
 1. Forge the palace script and image.
-2. In `Guided Lesson Builder`, click `Build Plan`.
-3. Click `Generate Audio` to create narration via the backend ElevenLabs proxy, **or** use the manual path: `Copy ElevenLabs Script` → paste into ElevenLabs Studio → export → upload.
-4. Click anchors or edit normalized `x/y` coordinates until the highlight lands on each visual mnemonic.
-5. Click `Play Preview`.
-6. Click `Export Video` to render a 1080p `.webm` with narration and pan/zoom animation.
-7. Save the palace or export the bundle when the coordinate/timing metadata is ready.
+2. **One-click path:** Click `One-Click Lesson` — this builds the plan, auto-places anchors via vision AI, and generates TTS audio in one step. Skip to step 6.
+3. **Manual path:** In `Guided Lesson Builder`, click `Build Plan`.
+4. Click `Auto-Place Anchors` for vision-assisted placement, **or** click anchors / edit normalized `x/y` coordinates manually.
+5. Click `Generate Audio` to create narration via the backend ElevenLabs proxy, **or** use the manual path: `Copy ElevenLabs Script` → paste into ElevenLabs Studio → export → upload.
+6. Click `Play Preview`. Adjust any anchors the vision model missed.
+7. Click `Export Video` to render a 1080p `.webm` with narration and pan/zoom animation.
+8. Save the palace or export the bundle when the coordinate/timing metadata is ready.
 
 ## Data Model
 
@@ -74,6 +76,6 @@ Coordinates are normalized from `0.0` to `1.0`, so they survive image resizing.
 
 ## Next Stages
 
-1. Image-audit-aware coordinate assist, where vision proposes anchor coordinates and the user confirms them.
-2. One-click guided lesson: auto-anchor placement + auto-narrate in a single flow.
-3. Review/study mode with spaced repetition scheduling.
+1. Review/study mode with spaced repetition scheduling.
+2. Library organization (folders, tags, search).
+3. Palace sharing and study group export.
