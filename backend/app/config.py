@@ -92,7 +92,13 @@ class Settings:
     openai_embedding_model: str
     openai_embedding_dimensions: int
     plan_override_path: Path
+    elevenlabs_api_key: str
+    elevenlabs_default_voice: str
     admin_emails: tuple[str, ...]
+
+    @property
+    def elevenlabs_configured(self) -> bool:
+        return bool(self.elevenlabs_api_key)
 
     @property
     def anthropic_configured(self) -> bool:
@@ -235,5 +241,7 @@ def get_settings() -> Settings:
         ).strip(),
         openai_embedding_dimensions=int(os.getenv("OPENAI_EMBEDDING_DIMENSIONS", "1536")),
         plan_override_path=Path(os.getenv("PLAN_OVERRIDE_PATH", str(default_override_path))),
+        elevenlabs_api_key=_clean_env_value("ELEVENLABS_API_KEY"),
+        elevenlabs_default_voice=os.getenv("ELEVENLABS_DEFAULT_VOICE", "Rachel").strip(),
         admin_emails=_split_csv(os.getenv("ADMIN_EMAILS", "")),
     )

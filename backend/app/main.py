@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import base64
 import json
 import logging
 import time
@@ -3439,6 +3440,256 @@ async def generate_image(
         status_code=200,
         headers=response_headers,
         content=response_content,
+        background=background_tasks,
+    )
+
+
+# ── ElevenLabs TTS endpoint ──────────────────────────────────────────
+
+
+class ElevenLabsTTSPayload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    text: Annotated[str, StringConstraints(min_length=1, max_length=10_000)]
+    voice: str = ""
+    model_id: str = "eleven_multilingual_v2"
+    stability: float = Field(default=0.5, ge=0.0, le=1.0)
+    similarity_boost: float = Field(default=0.75, ge=0.0, le=1.0)
+
+
+ELEVENLABS_VOICES: dict[str, str] = {
+    "rachel": "21m00Tcm4TlvDq8ikWAM",
+    "adam": "pNInz6obpgDQGcFmaJgB",
+    "callum": "N2lVS1w4EtoT3dr4eOWO",
+    "charlie": "IKne3meq5aSn9XLyUdCD",
+    "charlotte": "XB0fDUnXU5powFXDhCwa",
+    "clyde": "2EiwWnXFnvU5JabPnv8n",
+    "daniel": "onwK4e9ZLuTAKqWW03F9",
+    "dave": "CYw3kZ02Hs0563khs1Fj",
+    "dorothy": "ThT5KcBeYPX3keUQqHPh",
+    "elli": "MF3mGyEYCl7XYWbV9V6O",
+    "emily": "LcfcDJNUP1GQjkzn1xUU",
+    "josh": "TxGEqnHWrfWFTfGW9XjX",
+    "sam": "yoZ06aMxZJJ28mfd3POQ",
+}
+
+
+def _resolve_elevenlabs_voice_id(voice: str, default_voice: str) -> str:
+    name = (voice or default_voice).strip().lower()
+    return ELEVENLABS_VOICES.get(name, voice or ELEVENLABS_VOICES.get(default_voice.lower(), "21m00Tcm4TlvDq8ikWAM"))
+
+
+def _write_elevenlabs_usage_log(
+    *,
+    settings: Settings,
+    request_id: str,
+    client_id: str,
+    user_id: str | None,
+    user_email: str | None,
+    duration_ms: float,
+    text_length: int,
+    voice: str,
+    model_id: str,
+    status_code: int,
+    audio_bytes: int | None,
+) -> None:
+    _ensure_log_path(settings.usage_log_path)
+    record = {
+        "timestamp": datetime.now(UTC).isoformat(),
+        "request_id": request_id,
+        "provider": "elevenlabs",
+        "client_id": client_id,
+        "user_id": user_id,
+        "user_email": user_email,
+        "status_code": status_code,
+        "duration_ms": round(duration_ms, 2),
+        "text_length": text_length,
+        "voice": voice,
+        "model_id": model_id,
+        "audio_bytes": audio_bytes,
+    }
+    with settings.usage_log_path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record) + "\n")
+
+
+@app.post("/api/elevenlabs/tts")
+async def elevenlabs_tts(
+    payload: ElevenLabsTTSPayload,
+    request: Request,
+    background_tasks: BackgroundTasks,
+) -> JSONResponse:
+    active_settings = _get_runtime_settings(request)
+    request_id = str(uuid4())
+
+    if not active_settings.elevenlabs_configured:
+        return JSONResponse(
+            status_code=503,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "configuration_error",
+                    "message": "ELEVENLABS_API_KEY is not configured on the backend.",
+                }
+            },
+        )
+
+    user: AuthenticatedUser | None = await _resolve_authenticated_user(
+        request,
+        active_settings,
+    )
+    bearer_token = _extract_bearer_token(request)
+
+    if active_settings.provider_auth_required:
+        if not active_settings.supabase_auth_configured:
+            return _auth_not_configured_response(request_id)
+        if user is None:
+            return _auth_required_response(request_id, "Sign in to use ElevenLabs TTS.")
+
+    rate_limiter = _get_rate_limiter(request, active_settings)
+    allowed, retry_after = rate_limiter.allow(_rate_limit_subject(request, user))
+    if not allowed:
+        return _rate_limit_response(request_id, retry_after)
+
+    summary = await _get_subscription_and_usage_summary(
+        request=request,
+        settings=active_settings,
+        bearer_token=bearer_token,
+        user=user,
+        use_cache=True,
+    )
+    quota_allowed, quota_summary = _reserve_quota_if_needed(request, user, summary)
+    if not quota_allowed:
+        return _quota_exceeded_response(request_id, quota_summary)
+
+    voice_id = _resolve_elevenlabs_voice_id(payload.voice, active_settings.elevenlabs_default_voice)
+
+    started = time.perf_counter()
+    client_id = _client_id(request)
+    http_client, owns_http_client = _get_http_client(request)
+
+    try:
+        upstream_response = await http_client.post(
+            f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}",
+            headers={
+                "xi-api-key": active_settings.elevenlabs_api_key,
+                "content-type": "application/json",
+                "accept": "audio/mpeg",
+            },
+            json={
+                "text": payload.text,
+                "model_id": payload.model_id,
+                "voice_settings": {
+                    "stability": payload.stability,
+                    "similarity_boost": payload.similarity_boost,
+                },
+            },
+            timeout=httpx.Timeout(120.0, connect=10.0),
+        )
+    except httpx.TimeoutException:
+        _release_quota_reservation(request, user)
+        return JSONResponse(
+            status_code=504,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "upstream_timeout",
+                    "message": "ElevenLabs did not respond before the timeout elapsed.",
+                }
+            },
+        )
+    except httpx.HTTPError as exc:
+        _release_quota_reservation(request, user)
+        return JSONResponse(
+            status_code=502,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "upstream_connection_error",
+                    "message": f"Could not reach ElevenLabs: {exc}",
+                }
+            },
+        )
+    finally:
+        if owns_http_client:
+            await http_client.aclose()
+
+    duration_ms = (time.perf_counter() - started) * 1000
+    upstream_ok = 200 <= upstream_response.status_code < 300
+
+    if not upstream_ok:
+        _release_quota_reservation(request, user)
+        error_body: dict[str, Any] = {}
+        try:
+            error_body = upstream_response.json()
+        except ValueError:
+            pass
+        try:
+            _write_elevenlabs_usage_log(
+                settings=active_settings,
+                request_id=request_id,
+                client_id=client_id,
+                user_id=user.user_id if user else None,
+                user_email=user.email if user else None,
+                duration_ms=duration_ms,
+                text_length=len(payload.text),
+                voice=voice_id,
+                model_id=payload.model_id,
+                status_code=upstream_response.status_code,
+                audio_bytes=None,
+            )
+        except Exception:
+            logger.exception("Failed to write ElevenLabs usage log for request %s", request_id)
+        return JSONResponse(
+            status_code=upstream_response.status_code,
+            headers={"X-Request-ID": request_id},
+            content={
+                "error": {
+                    "type": "elevenlabs_error",
+                    "message": error_body.get("detail", {}).get("message", "ElevenLabs returned an error."),
+                    "status": upstream_response.status_code,
+                }
+            },
+        )
+
+    audio_data = upstream_response.content
+
+    try:
+        _write_elevenlabs_usage_log(
+            settings=active_settings,
+            request_id=request_id,
+            client_id=client_id,
+            user_id=user.user_id if user else None,
+            user_email=user.email if user else None,
+            duration_ms=duration_ms,
+            text_length=len(payload.text),
+            voice=voice_id,
+            model_id=payload.model_id,
+            status_code=upstream_response.status_code,
+            audio_bytes=len(audio_data),
+        )
+    except Exception:
+        logger.exception("Failed to write ElevenLabs usage log for request %s", request_id)
+
+    if upstream_ok and user:
+        _schedule_usage_event(
+            background_tasks=background_tasks,
+            request=request,
+            settings=active_settings,
+            bearer_token=bearer_token,
+            user=user,
+            request_id=request_id,
+            request_body={"provider": "elevenlabs", "text_length": len(payload.text), "voice": voice_id},
+            response_payload={"usage": {"audio_bytes": len(audio_data)}},
+            status_code=upstream_response.status_code,
+        )
+
+    return JSONResponse(
+        status_code=200,
+        headers={"X-Request-ID": request_id},
+        content={
+            "audio_base64": base64.b64encode(audio_data).decode("ascii"),
+            "content_type": "audio/mpeg",
+            "size_bytes": len(audio_data),
+        },
         background=background_tasks,
     )
 

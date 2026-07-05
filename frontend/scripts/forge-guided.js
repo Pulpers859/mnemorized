@@ -433,6 +433,93 @@
     }
   }
 
+  async function generateAudio() {
+    const script = $('guided-elevenlabs-script')?.value || '';
+    if (!script.trim() && !buildPlan()) return;
+    const text = $('guided-elevenlabs-script')?.value || '';
+    if (!text.trim()) {
+      setStatus('No narration script to generate audio from.', 'error');
+      return;
+    }
+
+    const btn = $('guided-generate-audio-btn');
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent = 'Generating…';
+    }
+    setStatus('Sending narration to ElevenLabs…', 'muted');
+
+    const headers = { 'Content-Type': 'application/json' };
+    if (typeof authState !== 'undefined' && authState.session?.access_token) {
+      headers.Authorization = `Bearer ${authState.session.access_token}`;
+    }
+
+    const apiUrl = typeof MnemorizedUtils !== 'undefined'
+      ? MnemorizedUtils.getApiUrl('/api/elevenlabs/tts')
+      : '/api/elevenlabs/tts';
+
+    try {
+      let res = await fetch(apiUrl, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ text, voice: '', model_id: 'eleven_multilingual_v2' }),
+      });
+
+      if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+        const { data } = await supabaseClient.auth.refreshSession();
+        if (data?.session?.access_token) {
+          authState.session = data.session;
+          headers.Authorization = `Bearer ${data.session.access_token}`;
+          res = await fetch(apiUrl, {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ text, voice: '', model_id: 'eleven_multilingual_v2' }),
+          });
+        }
+      }
+
+      if (res.status === 401) {
+        if (typeof openAuthModal === 'function') openAuthModal();
+        throw new Error('Sign in to generate audio.');
+      }
+      if (res.status === 402) {
+        const quota = await res.json().catch(() => ({}));
+        const msg = typeof getQuotaExceededMessage === 'function'
+          ? getQuotaExceededMessage(quota) : 'Monthly usage limit reached.';
+        throw new Error(msg);
+      }
+      if (res.status === 503) throw new Error('ElevenLabs API key is not configured on the backend.');
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err?.error?.message || `ElevenLabs returned status ${res.status}`);
+      }
+
+      const data = await res.json();
+      const audioBytes = Uint8Array.from(atob(data.audio_base64), c => c.charCodeAt(0));
+      const blob = new Blob([audioBytes], { type: data.content_type || 'audio/mpeg' });
+      const audioUrl = URL.createObjectURL(blob);
+
+      const audio = $('guided-audio');
+      if (audio) {
+        audio.src = audioUrl;
+        audio.style.display = 'block';
+        state.audioName = `${safeTopicName()}_elevenlabs.mp3`;
+        audio.onloadedmetadata = () => {
+          state.audioDuration = audio.duration || 0;
+          setStatus(`Audio generated: ${Math.round(state.audioDuration)} sec, ${Math.round(data.size_bytes / 1024)} KB. Ready to preview.`, 'success');
+        };
+      }
+    } catch (err) {
+      setStatus(`Audio generation failed: ${err.message}`, 'error');
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'Generate Audio';
+      }
+    }
+  }
+
+  window.guidedGenerateAudio = generateAudio;
   window.guidedBuildPlan = () => buildPlan();
   window.guidedCopyElevenLabsScript = copyScript;
   window.guidedDownloadElevenLabsScript = () => {
