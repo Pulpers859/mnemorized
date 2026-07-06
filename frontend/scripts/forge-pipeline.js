@@ -861,6 +861,14 @@ async function runPipeline() {
   window.MnemorizedGuided?.reset?.();
   refreshAuthUI();
 
+  // Resolve the structured lesson blueprint (if the guided builder produced one
+  // that still matches this topic). It gives Stage 1 an explicit scope contract
+  // and the quality gate an independent must-cover anchor contract.
+  const lessonSpec = window.MnemorizedLessonSpec?.getActiveLessonSpec?.(topic) || null;
+  const lessonBlueprintText = lessonSpec
+    ? window.MnemorizedLessonSpec.lessonSpecToPromptText(lessonSpec)
+    : '';
+
   const btn = document.getElementById('forge-btn');
   btn.disabled = true;
   btn.innerHTML = '<span class="spin"></span> MNEMORIZING…';
@@ -1011,12 +1019,12 @@ COMPLETENESS CHECK: Before finalizing, verify you have not omitted any major cat
 - For procedures/protocols: indications, contraindications, steps, complications, alternatives
 
 When SOURCE EVIDENCE is provided below, derive your core concepts primarily from that material. Use the exact terminology, thresholds, and clinical details from the source. You may supplement with critical safety facts from your own knowledge, but prioritize source-grounded facts.
-
+${lessonBlueprintText ? `\n${lessonBlueprintText}\n\nStay inside this blueprint's scope: cover every MUST category, and do NOT expand into the out-of-scope areas unless the topic clearly demands it.\n` : ''}
 Output ONLY these two XML tags, nothing else:
 
 <core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
 <scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
-        messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ED/ICU physician — needs precise, high-yield anchors.` }]
+        messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ${lessonSpec?.learner || 'ED/ICU physician'} — needs precise, high-yield anchors.` }]
       }), 'stage1-clinical-context', evidenceHeaders);
     setStatus('story', '✦ Analyzing topic…', 'running');
     setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
@@ -1025,7 +1033,8 @@ Output ONLY these two XML tags, nothing else:
     const core   = extractXmlTag(ctxTxt, 'core_concepts');
     const logic  = extractXmlTag(ctxTxt, 'scene_logic');
     if (core || logic) {
-      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.`;
+      const blueprintSuffix = lessonBlueprintText ? `\n\n${lessonBlueprintText}` : '';
+      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
       coreConcepts = core.split('\n').map(l => l.replace(/^[-•*\d.)\s]+/, '').trim()).filter(Boolean).slice(0, 12);
     }
   } catch(e) {
@@ -1348,7 +1357,12 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       ? ` ${storyValidation.warnings.length} structure warning(s) need review.`
       : '';
     setStageDetail('story', `${storyData.voLines.length} anchors generated. Review the script, then save or repair if needed.${warningSuffix}`);
-    await runMedicalQualityGate(storyData, coreConcepts);
+    // Grade the generation against the upstream anchor contract (blueprint MUST
+    // categories ∪ Stage 1 core concepts), not against its own anchors.
+    const anchorContract = window.MnemorizedLessonSpec?.buildAnchorContract
+      ? window.MnemorizedLessonSpec.buildAnchorContract(lessonSpec, coreConcepts)
+      : coreConcepts;
+    await runMedicalQualityGate(storyData, anchorContract);
   } catch(e) {
     const box = document.getElementById('debug-box');
     const prev = box.textContent;

@@ -770,7 +770,40 @@ def test_static_pages_load_shared_backend_persistence_script_before_inline_code(
     assert library.index("/scripts/palace-api.js") < library.index("MnemorizedPalaceApi")
     assert forge.index("/scripts/palace-api.js") < forge.index("/scripts/forge-auth.js")
     assert forge.index("/scripts/forge-input-builder.js") < forge.index("/scripts/forge-pipeline.js")
+    # Lesson-spec ontology must load before the input builder (builds the spec) and
+    # the pipeline (reads it) so the blueprint/anchor-contract wiring is available.
+    assert forge.index("/scripts/forge-lesson-spec.js") < forge.index("/scripts/forge-input-builder.js")
+    assert forge.index("/scripts/forge-lesson-spec.js") < forge.index("/scripts/forge-pipeline.js")
     assert admin.index("/scripts/palace-api.js") < admin.index("MnemorizedAdminApi")
+
+
+def test_forge_lesson_blueprint_feeds_scope_and_anchor_contract() -> None:
+    root = Path(__file__).resolve().parents[1]
+    spec = (root / "frontend" / "scripts" / "forge-lesson-spec.js").read_text(encoding="utf-8")
+    builder = (root / "frontend" / "scripts" / "forge-input-builder.js").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    # The ontology defines archetypes with required coverage categories.
+    assert "const LESSON_ARCHETYPES" in spec
+    for archetype in ("condition", "drug-class", "algorithm", "differential", "anatomy"):
+        assert f"{archetype}:" in spec or f"'{archetype}'" in spec
+    assert "requiredCategories" in spec
+    assert "outOfScopeDefaults" in spec
+    assert "function buildAnchorContract" in spec
+    assert "function getActiveLessonSpec" in spec
+    assert "window.MnemorizedLessonSpec" in spec
+
+    # The builder stays a pure widget (no app coupling) but stamps the archetype
+    # onto the topic field so the pipeline can rebuild the structured blueprint.
+    assert "dataset.builderPreset" in builder
+    assert "readLessonSpecFromDom" in spec
+
+    # The pipeline injects the blueprint scope into Stage 1 and grades the quality
+    # gate against the independent anchor contract, not the generation's own anchors.
+    assert "getActiveLessonSpec" in pipeline
+    assert "lessonBlueprintText" in pipeline
+    assert "buildAnchorContract" in pipeline
+    assert "runMedicalQualityGate(storyData, anchorContract)" in pipeline
 
 
 def test_admin_dashboard_wires_protected_diagnostics_flow() -> None:
@@ -911,7 +944,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert '<span class="stage-num">03</span>\n        <span class="stage-title">Scene Illustration</span>' in html
     assert "function setStageDetail" in (root / "frontend" / "scripts" / "forge-state.js").read_text(encoding="utf-8")
     assert "Retrieving backend-only reference snippets" in auth
-    assert "await runMedicalQualityGate(storyData, coreConcepts);" in pipeline
+    assert "await runMedicalQualityGate(storyData, anchorContract);" in pipeline
     assert "Demo mode uses built-in sample content" in pipeline
     assert "function runMedicalQualityGate" in auth
     assert "function repairCurrentPalaceWithMedicalEvidence" in auth
@@ -932,8 +965,8 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken()" in auth
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
-    assert 'forge-auth.js?v=20260705-demo-medical-gate-4' in html
-    assert 'forge-pipeline.js?v=20260705-demo-medical-gate-5' in html
+    assert 'forge-auth.js?v=20260706-lesson-blueprint-1' in html
+    assert 'forge-pipeline.js?v=20260706-lesson-blueprint-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth

@@ -381,7 +381,7 @@ function renderQualityGateResult(result) {
   const evidence = result?.evidence || [];
   const coverage = result?.required_concept_coverage || [];
   const presentCount = coverage.filter(item => item.present_in_generation).length;
-  const coverageLabel = coverage.length ? `${presentCount}/${coverage.length} generated anchors present` : 'No required anchors were supplied.';
+  const coverageLabel = coverage.length ? `${presentCount}/${coverage.length} contract concepts covered` : 'No required anchors were supplied.';
   const hasRelevantEvidence = result?.evidence_status !== 'no_relevant_source';
   const evidenceLabel = hasRelevantEvidence
     ? `${evidence.length} private evidence citation${evidence.length === 1 ? '' : 's'} retrieved.`

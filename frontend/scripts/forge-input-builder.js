@@ -165,9 +165,16 @@ function draftGuidedTopic(mode) {
   topicField.value = shouldAppend && existing
     ? `${existing}\n\nAdditional generation requirements:\n${draft}`
     : draft;
+  // Mark which archetype produced this draft so the pipeline can rebuild a
+  // structured lesson blueprint from the builder fields without this widget
+  // needing to know anything about the rest of the app.
+  topicField.dataset.builderPreset = activeInputBuilderPreset;
+  topicField.dataset.builderTopic = builderValue('builder-topic');
   topicField.dispatchEvent(new Event('input', { bubbles: true }));
   topicField.focus();
-  setBuilderStatus(shouldAppend ? 'Requirements appended to Section I.' : 'Guided brief drafted into Section I.', 'success');
+  setBuilderStatus(shouldAppend
+    ? 'Requirements appended to Section I. Lesson blueprint attached.'
+    : 'Guided brief drafted into Section I. Lesson blueprint attached.', 'success');
 }
 
 function clearGuidedBuilder() {
@@ -180,6 +187,11 @@ function clearGuidedBuilder() {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
+  const topicField = document.getElementById('topic');
+  if (topicField) {
+    delete topicField.dataset.builderPreset;
+    delete topicField.dataset.builderTopic;
+  }
   selectBuilderPreset(activeInputBuilderPreset);
   setBuilderStatus('Builder cleared and preset defaults restored.');
 }
