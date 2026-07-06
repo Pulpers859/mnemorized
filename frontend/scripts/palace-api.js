@@ -68,6 +68,16 @@
     var payload = await res.json().catch(function () { return {}; });
     if (!res.ok) {
       var detail = payload.detail || (payload.error && payload.error.message) || ('HTTP ' + res.status);
+      // Append the backend's field-level validation issues so the user sees which
+      // field failed and why, instead of just "Request validation failed."
+      var issues = payload.error && payload.error.issues;
+      if (Array.isArray(issues) && issues.length) {
+        var parts = issues.map(function (issue) {
+          var loc = Array.isArray(issue.loc) ? issue.loc.filter(function (p) { return p !== 'body'; }).join('.') : '';
+          return (loc ? loc + ': ' : '') + (issue.message || 'invalid');
+        }).filter(Boolean);
+        if (parts.length) detail += ' (' + parts.join('; ') + ')';
+      }
       throw new Error(detail);
     }
     return payload;

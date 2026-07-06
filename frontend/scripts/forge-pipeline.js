@@ -415,6 +415,7 @@ operatorToggle.addEventListener('change', async () => {
     const code = prompt('Enter operator access code:');
     if (!(await checkOperatorCode(code))) {
       operatorToggle.checked = false;
+      if (code !== null) alert('Incorrect operator access code.');
       return;
     }
     operatorUnlocked = true;
@@ -434,7 +435,9 @@ function demoDelay(ms) { return new Promise(r => setTimeout(r, ms)); }
 function isRealUserPrompt(topic) {
   const normalized = (topic || '').trim().toLowerCase();
   if (!normalized) return false;
-  return !/^e\.g\./.test(normalized) && normalized.length > 24;
+  // Any real typed topic (even a short one like "DKA" or "ACLS") should trigger the
+  // demo-override warning; only the placeholder "e.g. …" hint is ignored.
+  return !/^e\.g\./.test(normalized) && normalized.length >= 3;
 }
 
 // ── Copy helpers ─────────────────────────────────────────────────
@@ -818,8 +821,18 @@ async function rebuildImagePromptsForStory(storyData) {
     );
   } catch (error) {
     setCurrentPalaceData(storyData, '', '');
+    // Blank the visible/copy prompt fields too, so "Generate Images" cannot
+    // silently illustrate from the stale pre-repair prompts still on screen.
+    ['img-prompt-1', 'img-prompt-2'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = '';
+    });
+    ['prompt-copy-1', 'prompt-copy-2'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
-    setStageDetail('prompt', 'The repaired script was kept, but image prompts need to be regenerated.');
+    setStageDetail('prompt', 'The repaired script was kept, but image prompts must be rebuilt before generating — click Forge again or re-run the prompt step.');
   }
 }
 

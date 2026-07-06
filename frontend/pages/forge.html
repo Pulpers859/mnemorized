@@ -1088,7 +1088,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   letter-spacing: .16em;
-  color: var(--cyan);
+  color: var(--teal);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
@@ -2190,7 +2190,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
             <div class="guided-actions">
               <button class="btn-copy" type="button" onclick="guidedOneClickLesson()" id="guided-one-click-btn" style="background:var(--green);color:#000;font-weight:700;">One-Click Lesson</button>
               <button class="btn-copy" type="button" onclick="guidedBuildPlan()">Build Plan</button>
-              <button class="btn-copy" type="button" id="guided-auto-place-btn" onclick="this.disabled=true;this.textContent='Placing…';guidedAutoPlaceAnchors().then(()=>{this.textContent='Auto-Place Anchors';this.disabled=false}).catch(e=>{document.getElementById('guided-status').textContent=e.message;this.textContent='Auto-Place Anchors';this.disabled=false})">Auto-Place Anchors</button>
+              <button class="btn-copy" type="button" id="guided-auto-place-btn" onclick="this.disabled=true;this.textContent='Placing…';guidedAutoPlaceAnchors().then(()=>{this.textContent='Auto-Place Anchors';this.disabled=false}).catch(e=>{var s=document.getElementById('guided-status');s.textContent=e.message;s.style.color='#fca5a5';this.textContent='Auto-Place Anchors';this.disabled=false})">Auto-Place Anchors</button>
               <button class="btn-copy" type="button" onclick="guidedGenerateAudio()" id="guided-generate-audio-btn">Generate Audio</button>
               <button class="btn-copy" type="button" onclick="guidedCopyElevenLabsScript()">Copy ElevenLabs Script</button>
               <button class="btn-copy" type="button" onclick="guidedDownloadElevenLabsScript()">Download Script</button>
@@ -2256,6 +2256,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
       </div>
       <div id="catalog-publish-section" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
         <span class="operator-badge" style="margin-bottom:12px;display:inline-block;">CATALOG PUBLISH</span>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:10px;">Publishing to the shared public catalog is limited to admins during beta. Your private saved palaces always live in your Library.</div>
         <div style="margin-bottom:10px;">
           <label style="font-size:12px;color:var(--muted);display:block;margin-bottom:6px;">Tags (comma-separated)</label>
           <input id="catalog-tags-input" type="text" placeholder="cardiology, pharmacology, emergency" style="width:100%;background:var(--ink);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:14px;outline:none;">
@@ -2272,14 +2273,14 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
   </div><!-- /pipeline -->
 </div><!-- /wrap -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/scripts/palace-api.js?v=20260704-1"></script>
+<script src="/scripts/palace-api.js?v=20260706-qa-fixes-1"></script>
 <script src="/scripts/forge-state.js?v=20260704-header-1"></script>
 <script src="/scripts/forge-lesson-spec.js?v=20260706-lesson-blueprint-1"></script>
-<script src="/scripts/forge-auth.js?v=20260706-structural-patch-1"></script>
+<script src="/scripts/forge-auth.js?v=20260706-qa-fixes-1"></script>
 <script src="/scripts/forge-upload.js?v=20260704-provider-retry-2"></script>
 <script src="/scripts/forge-input-builder.js?v=20260706-lesson-blueprint-1"></script>
-<script src="/scripts/forge-pipeline.js?v=20260706-structural-patch-1"></script>
-<script src="/scripts/forge-guided.js?v=20260704-guided-1"></script>
+<script src="/scripts/forge-pipeline.js?v=20260706-qa-fixes-1"></script>
+<script src="/scripts/forge-guided.js?v=20260706-qa-fixes-1"></script>
 <script src="/scripts/forge-image-audit.js?v=20260706-structural-patch-1"></script>
 </body>
 </html>

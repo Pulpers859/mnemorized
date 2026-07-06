@@ -974,21 +974,29 @@ function submitEmail(email, btnId, msgId) {
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({ email: email })
   })
-  .then(res => res.json())
-  .then(data => {
-    if (data.ok) {
+  .then(res => res.json().then(data => ({ ok: res.ok, data })))
+  .then(({ ok, data }) => {
+    if (ok && data.ok) {
       btn.textContent = "✓ You're in";
       btn.classList.add('success');
       msg.style.display = 'block';
       msg.textContent = `✓ ${email} — you're on the list. We'll be in touch soon.`;
     } else {
+      // Surface the real reason (e.g. Formspree's validation error) instead of a
+      // bare "Try again" with no explanation.
+      const reason = (data.errors && data.errors.map(e => e.message).filter(Boolean).join(', '))
+        || data.error || 'Something went wrong — please try again.';
       btn.textContent = 'Try again';
       btn.disabled = false;
+      msg.style.display = 'block';
+      msg.textContent = `⚠ ${reason}`;
     }
   })
   .catch(() => {
     btn.textContent = 'Try again';
     btn.disabled = false;
+    msg.style.display = 'block';
+    msg.textContent = '⚠ Network error — please try again.';
   });
 }
 

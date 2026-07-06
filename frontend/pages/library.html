@@ -470,6 +470,7 @@ h1 {
             <option value="pro">Pro</option>
             <option value="team">Team</option>
             <option value="enterprise">Enterprise</option>
+            <option value="unlimited">Unlimited</option>
           </select>
           <button class="action-btn" type="button" onclick="applyDevPlanOverride()">Apply Plan</button>
           <button class="action-btn danger" type="button" onclick="clearDevPlanOverride()">Clear Override</button>
@@ -491,7 +492,6 @@ h1 {
     <select id="filter-select" class="select" disabled>
       <option value="all">All statuses</option>
       <option value="generated">Generated</option>
-      <option value="draft">Draft</option>
     </select>
     <button class="action-btn" type="button" id="clear-search-btn" onclick="clearFilters()" disabled>Clear Filters</button>
     <a class="action-btn primary" href="/forge">New Palace</a>
@@ -503,7 +503,7 @@ h1 {
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/scripts/palace-api.js?v=20260701-2"></script>
+<script src="/scripts/palace-api.js?v=20260706-qa-fixes-1"></script>
 <script>
 const { getApiUrl, escapeHtml, escapeJsString, runSupabaseQuery } = MnemorizedUtils;
 
@@ -752,7 +752,9 @@ function switchTab(tab) {
   document.getElementById('tab-library').classList.toggle('active', tab === 'library');
   document.getElementById('catalog-tags').style.display = tab === 'catalog' ? 'flex' : 'none';
   document.getElementById('filter-select').style.display = tab === 'catalog' ? 'none' : '';
-  document.getElementById('search-input').disabled = tab === 'library' && !authState.user;
+  // Re-run the single source of truth for control enablement so switching tabs
+  // doesn't leave filter-select / clear-filters in a stale enabled/disabled state.
+  toggleControls(!!authState.user);
 
   if (tab === 'catalog') {
     loadCatalog();
@@ -803,7 +805,11 @@ function renderCatalogTags() {
   const container = document.getElementById('catalog-tags');
   container.innerHTML = Object.keys(allTags).sort().map(tag => {
     const isActive = activeTag === tag;
-    return '<button class="catalog-tag-chip' + (isActive ? ' active' : '') + '" onclick="toggleTag(\'' + escapeJsString(tag) + '\')">'
+    // escapeJsString makes the value safe inside the JS string; escapeHtml then makes
+    // it safe inside the double-quoted onclick attribute (a stray " in a tag can no
+    // longer break out and inject markup). HTML-decoding reverses escapeHtml before
+    // the JS runs, restoring the JS-safe value.
+    return '<button class="catalog-tag-chip' + (isActive ? ' active' : '') + '" onclick="toggleTag(\'' + escapeHtml(escapeJsString(tag)) + '\')">'
       + escapeHtml(tag) + ' (' + allTags[tag] + ')</button>';
   }).join('');
 }
@@ -919,8 +925,13 @@ async function signInWithPassword() {
 
     authState = { session: data.session, user: data.user };
     refreshAuthUI();
-    await Promise.allSettled([ensureProfileRecord(), loadAccountSummary(), loadLibrary()]);
-    setAuthStatus(`Signed in as ${data.user?.email || email}.`, 'success');
+    const syncResults = await Promise.allSettled([ensureProfileRecord(), loadAccountSummary(), loadLibrary()]);
+    const syncFailed = syncResults.some(r => r.status === 'rejected');
+    if (syncFailed) {
+      setAuthStatus(`Signed in as ${data.user?.email || email}, but some account data could not load — refresh to retry.`, 'error');
+    } else {
+      setAuthStatus(`Signed in as ${data.user?.email || email}.`, 'success');
+    }
   } catch (error) {
     setAuthStatus(error.message || 'Sign in failed.', 'error');
   }

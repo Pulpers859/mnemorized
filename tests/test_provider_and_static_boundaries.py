@@ -839,6 +839,38 @@ def test_forge_gates_image_prompt_length_before_generation() -> None:
     assert "const demoP2 = clampImagePrompt(demoP2Raw);" in pipeline
 
 
+def test_qa_sweep_fixes_are_in_place() -> None:
+    root = Path(__file__).resolve().parents[1]
+    guided = (root / "frontend" / "scripts" / "forge-guided.js").read_text(encoding="utf-8")
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+    api = (root / "frontend" / "scripts" / "palace-api.js").read_text(encoding="utf-8")
+    library = (root / "frontend" / "pages" / "library.html").read_text(encoding="utf-8")
+
+    # One-Click Lesson no longer reports success over a failed audio track.
+    assert "const audioOk = await generateAudio();" in guided
+    assert "if (!audioOk)" in guided
+    # New palace image under placed pins warns instead of exporting misaligned.
+    assert "existing anchor pins may not line up" in guided
+
+    # Demo mode warns even for short real topics; failed prompt rebuild clears the
+    # stale prompt fields so generation can't run against them.
+    assert "normalized.length >= 3" in pipeline
+    assert "silently illustrate from the stale pre-repair prompts" in pipeline
+
+    # Loading a saved palace clears any stale generated image left in the DOM.
+    assert "Generated image bytes are not part of the saved snapshot" in auth
+
+    # Validation errors surface the backend's field-level issues.
+    assert "issue.loc" in api
+
+    # Library: dead "Draft" filter removed, "unlimited" plan added, tag chips are
+    # escaped for the attribute context (no HTML injection).
+    assert '<option value="draft">Draft</option>' not in library
+    assert '<option value="unlimited">Unlimited</option>' in library
+    assert "escapeHtml(escapeJsString(tag))" in library
+
+
 def test_quality_gate_surfaces_coverage_confidence() -> None:
     root = Path(__file__).resolve().parents[1]
     main_py = (root / "backend" / "app" / "main.py").read_text(encoding="utf-8")
@@ -1011,8 +1043,8 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken()" in auth
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
-    assert 'forge-auth.js?v=20260706-structural-patch-1' in html
-    assert 'forge-pipeline.js?v=20260706-structural-patch-1' in html
+    assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
+    assert 'forge-pipeline.js?v=20260706-qa-fixes-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth

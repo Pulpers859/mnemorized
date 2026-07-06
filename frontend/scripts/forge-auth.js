@@ -621,6 +621,20 @@ function applyPalaceSnapshot(palaceRow, versionRow) {
   ensureForgeVisible();
   document.getElementById('topic').value = inputs.topic || palaceRow.topic || '';
 
+  // Generated image bytes are not part of the saved snapshot. Clear any image left
+  // in the DOM from an earlier palace this session so the user can't download or
+  // export the wrong illustration as if it belonged to the palace just loaded.
+  ['gen-img-1', 'gen-img-2', 'gen-img-result'].forEach(id => {
+    const container = document.getElementById(id);
+    if (container) container.style.display = 'none';
+    const img = document.getElementById(`${id}-el`);
+    if (img) img.removeAttribute('src');
+  });
+  const genStatus = document.getElementById('gen-img-status');
+  if (genStatus) { genStatus.textContent = 'Image not saved with palaces — regenerate to illustrate this scene.'; genStatus.style.color = 'var(--muted)'; }
+  const auditResult = document.getElementById('image-audit-result');
+  if (auditResult) auditResult.innerHTML = '';
+
   if (inputs.settings?.chaos) {
     document.getElementById('chaos').value = String(inputs.settings.chaos);
     updateSlider();

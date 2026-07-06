@@ -149,6 +149,7 @@
       return false;
     }
     img.src = src;
+    state._previewSrc = src;
     return true;
   }
 
@@ -624,11 +625,11 @@
           if (loaded) {
             setStatus(`Audio restored from cloud: ${state.audioName} (${Math.round(state.audioDuration)} sec).`, 'success');
           } else {
-            setStatus(`Guided metadata loaded. Audio "${state.audioName}" not found in storage — re-upload or regenerate.`, 'success');
+            setStatus(`Guided metadata loaded. Audio "${state.audioName}" not found in storage — re-upload or regenerate.`, 'error');
           }
         }).catch(() => {
           if (thisGen !== _restoreGeneration) return;
-          setStatus(`Guided metadata loaded. Could not load audio from storage — re-upload or regenerate.`, 'success');
+          setStatus(`Guided metadata loaded. Could not load audio from storage — re-upload or regenerate.`, 'error');
         });
       } else if (state.audioName) {
         setStatus(`Guided metadata loaded. Save palace first, then re-upload "${state.audioName}" to preview.`, 'success');
@@ -725,8 +726,14 @@
           const palaceId = _currentPalaceId();
           if (palaceId) {
             uploadAudioToStorage(file, palaceId, file.name).then(result => {
-              if (result) setStatus(`Audio loaded and saved to cloud storage: ${file.name}`, 'success');
-            }).catch(() => {});
+              if (result) {
+                setStatus(`Audio loaded and saved to cloud storage: ${file.name}`, 'success');
+              } else {
+                setStatus(`Audio loaded locally, but cloud save did not complete — save the palace to retry, or it will be gone on reload.`, 'error');
+              }
+            }).catch(() => {
+              setStatus(`Audio loaded locally, but cloud save failed — save the palace to retry, or it will be gone on reload.`, 'error');
+            });
           }
         };
       });
@@ -852,13 +859,15 @@
     return true;
   }
 
+  // Returns true only when narration audio was actually produced, so callers like
+  // oneClickLesson do not report success over a failed/absent audio track.
   async function generateAudio() {
     const script = $('guided-elevenlabs-script')?.value || '';
-    if (!script.trim() && !buildPlan()) return;
+    if (!script.trim() && !buildPlan()) return false;
     const text = $('guided-elevenlabs-script')?.value || '';
     if (!text.trim()) {
       setStatus('No narration script to generate audio from.', 'error');
-      return;
+      return false;
     }
 
     const btn = $('guided-generate-audio-btn');
@@ -931,12 +940,18 @@
 
       const palaceId = _currentPalaceId();
       if (palaceId) {
-        uploadAudioToStorage(blob, palaceId, fname).catch(() => {
-          setStatus(`Audio generated but cloud upload failed. Audio is in browser memory only — save will retry.`, 'success');
+        uploadAudioToStorage(blob, palaceId, fname).then(result => {
+          if (!result) {
+            setStatus(`Audio generated, but cloud save did not complete. Audio is in browser memory only — save the palace to retry.`, 'error');
+          }
+        }).catch(() => {
+          setStatus(`Audio generated, but cloud upload failed. Audio is in browser memory only — save the palace to retry.`, 'error');
         });
       }
+      return true;
     } catch (err) {
       setStatus(`Audio generation failed: ${err.message}`, 'error');
+      return false;
     } finally {
       if (btn) {
         btn.disabled = false;
@@ -1038,13 +1053,18 @@ If you cannot find an anchor in the image, set found:false and estimate a reason
       const total = state.coords.length;
 
       setStatus(`Step 3/3 — Generating narration audio… (${placed}/${total} anchors placed by vision)`, 'muted');
-      await generateAudio();
+      const audioOk = await generateAudio();
 
       const notFound = state.coords.filter(c => !c.found).length;
-      const msg = notFound > 0
-        ? `One-Click Lesson ready! ${placed}/${total} anchors auto-placed. ${notFound} need manual adjustment. Preview or export when ready.`
-        : `One-Click Lesson ready! All ${total} anchors auto-placed. Preview or export when ready.`;
-      setStatus(msg, 'success');
+      const placementNote = notFound > 0
+        ? `${placed}/${total} anchors auto-placed, ${notFound} need manual adjustment.`
+        : `All ${total} anchors auto-placed.`;
+      if (!audioOk) {
+        // Placement succeeded but narration did not — do not claim a full lesson.
+        setStatus(`Anchors ready — ${placementNote} Narration audio was not generated (see the error above); you can retry Generate Audio, or preview/export silently.`, 'error');
+      } else {
+        setStatus(`One-Click Lesson ready! ${placementNote} Preview or export when ready.`, 'success');
+      }
     } catch (err) {
       setStatus(`One-Click Lesson failed: ${err.message}`, 'error');
     } finally {
@@ -1087,7 +1107,17 @@ If you cannot find an anchor in the image, set found:false and estimate a reason
   window.MnemorizedGuided = {
     reset,
     onStoryReady: story => buildPlan({ story }),
-    onImageReady: src => setPreviewImage(src || getFinalImageSrc()),
+    onImageReady: src => {
+      const resolved = src || getFinalImageSrc();
+      const changed = state._previewSrc && resolved && state._previewSrc !== resolved;
+      const hadPlacement = (state.coords || []).some(c => c && c.found);
+      setPreviewImage(resolved);
+      if (changed && hadPlacement) {
+        // A new illustration replaced the one the pins were placed on — warn so the
+        // user re-runs placement instead of exporting misaligned highlights.
+        setStatus('New palace image generated — existing anchor pins may not line up. Re-run Auto-Place Anchors before exporting.', 'error');
+      }
+    },
     getSnapshot,
     restoreSnapshot,
     getBundleData: getSnapshot
