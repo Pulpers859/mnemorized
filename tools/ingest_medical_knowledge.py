@@ -64,16 +64,57 @@ def iter_pdf_pages(path: Path) -> Iterable[tuple[int, str]]:
             yield index, text
 
 
+def _buffer_chars(buffer: list[tuple[str, int]]) -> int:
+    """Character length of a buffer once joined with paragraph separators."""
+    if not buffer:
+        return 0
+    return sum(len(part) for part, _ in buffer) + 2 * (len(buffer) - 1)
+
+
+def _overlap_tail(buffer: list[tuple[str, int]], overlap_chars: int) -> list[tuple[str, int]]:
+    """Trailing paragraphs of a just-emitted chunk to carry into the next one.
+
+    Overlap keeps a clinical fact that straddles a chunk boundary (a dose table,
+    a threshold sentence) whole in at least one chunk, which is what retrieval
+    ranks on. Never carries the entire chunk forward (that would stall progress).
+    """
+    if overlap_chars <= 0 or len(buffer) <= 1:
+        return []
+    tail: list[tuple[str, int]] = []
+    size = 0
+    for item in reversed(buffer):
+        tail.insert(0, item)
+        size += len(item[0])
+        if size >= overlap_chars:
+            break
+    if len(tail) >= len(buffer):
+        tail = tail[1:]
+    return tail
+
+
 def iter_chunks(
     pages: Iterable[tuple[int, str]],
     *,
     chunk_chars: int,
+    chunk_overlap: int = 0,
 ) -> Iterable[dict[str, object]]:
-    buffer: list[str] = []
-    page_start: int | None = None
-    page_end: int | None = None
+    # Each buffer entry is (paragraph_text, source_page) so page_start/page_end
+    # stay accurate even after overlap carries paragraphs across a boundary.
+    buffer: list[tuple[str, int]] = []
     chunk_index = 0
     current_section: str | None = None
+
+    def emit(buf: list[tuple[str, int]], idx: int, section: str | None) -> dict[str, object]:
+        text = "\n\n".join(part for part, _ in buf)
+        page_numbers = [page for _, page in buf]
+        return {
+            "chunk_index": idx,
+            "page_start": min(page_numbers),
+            "page_end": max(page_numbers),
+            "section_title": section,
+            "chunk_text": text,
+            "token_estimate": estimate_tokens(text),
+        }
 
     for page_number, page_text in pages:
         section = detect_section_title(page_text)
@@ -85,37 +126,19 @@ def iter_chunks(
             paragraphs = [page_text]
 
         for paragraph in paragraphs:
-            next_size = sum(len(part) for part in buffer) + len(paragraph)
-            if buffer and next_size > chunk_chars:
-                text = "\n\n".join(buffer)
-                yield {
-                    "chunk_index": chunk_index,
-                    "page_start": page_start,
-                    "page_end": page_end,
-                    "section_title": current_section,
-                    "chunk_text": text,
-                    "token_estimate": estimate_tokens(text),
-                }
+            if buffer and _buffer_chars(buffer) + len(paragraph) + 2 > chunk_chars:
+                yield emit(buffer, chunk_index, current_section)
                 chunk_index += 1
-                buffer = []
-                page_start = None
-                page_end = None
-
-            if page_start is None:
-                page_start = page_number
-            page_end = page_number
-            buffer.append(paragraph)
+                buffer = _overlap_tail(buffer, chunk_overlap)
+                # If the carried overlap plus the new paragraph would immediately
+                # overflow again, drop the overlap so a single large paragraph can
+                # still start a fresh chunk instead of stalling.
+                if _buffer_chars(buffer) + len(paragraph) + 2 > chunk_chars:
+                    buffer = []
+            buffer.append((paragraph, page_number))
 
     if buffer:
-        text = "\n\n".join(buffer)
-        yield {
-            "chunk_index": chunk_index,
-            "page_start": page_start,
-            "page_end": page_end,
-            "section_title": current_section,
-            "chunk_text": text,
-            "token_estimate": estimate_tokens(text),
-        }
+        yield emit(buffer, chunk_index, current_section)
 
 
 def require_settings(settings: Settings) -> None:
@@ -197,6 +220,7 @@ def ingest_pdf(
     path: Path,
     *,
     chunk_chars: int,
+    chunk_overlap: int = 0,
     limit_chunks: int | None,
     dry_run: bool,
     source_key: str | None = None,
@@ -205,7 +229,7 @@ def ingest_pdf(
 ) -> int:
     source_key = source_key or slugify(path.stem)
     title = title or path.stem.replace("_", " ")
-    chunks = list(iter_chunks(iter_pdf_pages(path), chunk_chars=chunk_chars))
+    chunks = list(iter_chunks(iter_pdf_pages(path), chunk_chars=chunk_chars, chunk_overlap=chunk_overlap))
     if limit_chunks is not None:
         chunks = chunks[:limit_chunks]
 
@@ -275,6 +299,13 @@ def main() -> int:
     parser.add_argument("--limit-files", type=int, default=None, help="Optional number of PDFs to process.")
     parser.add_argument("--limit-chunks", type=int, default=None, help="Optional chunks per PDF for smoke tests.")
     parser.add_argument("--chunk-chars", type=int, default=3500, help="Approximate maximum characters per chunk.")
+    parser.add_argument(
+        "--chunk-overlap",
+        type=int,
+        default=400,
+        help="Characters of trailing overlap carried into the next chunk so a fact "
+        "spanning a boundary stays whole in at least one chunk. 0 disables overlap.",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Extract and count chunks without uploading text.")
     parser.add_argument(
         "--confirm-send-to-openai",
@@ -298,6 +329,8 @@ def main() -> int:
         raise SystemExit(f"Source directory not found: {args.source_dir}")
     if args.chunk_chars < 1000:
         raise SystemExit("--chunk-chars must be at least 1000.")
+    if args.chunk_overlap < 0 or args.chunk_overlap >= args.chunk_chars:
+        raise SystemExit("--chunk-overlap must be >= 0 and less than --chunk-chars.")
     if not args.dry_run and not args.confirm_send_to_openai:
         raise SystemExit(
             "Refusing to upload private source text. Re-run with --confirm-send-to-openai "
@@ -325,6 +358,7 @@ def main() -> int:
                 total_chunks += ingest_pdf(
                     client, settings, pdf_path,
                     chunk_chars=args.chunk_chars,
+                    chunk_overlap=args.chunk_overlap,
                     limit_chunks=args.limit_chunks,
                     dry_run=args.dry_run,
                     source_key=entry["source_key"],
@@ -352,6 +386,7 @@ def main() -> int:
             total_chunks += ingest_pdf(
                 client, settings, pdf,
                 chunk_chars=args.chunk_chars,
+                chunk_overlap=args.chunk_overlap,
                 limit_chunks=args.limit_chunks,
                 dry_run=args.dry_run,
             )

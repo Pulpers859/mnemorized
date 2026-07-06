@@ -2314,6 +2314,21 @@ async def medical_knowledge_quality_check(
     rows = [r for r in rows if (r.get("similarity") or 0) >= QUALITY_GATE_MIN_SIMILARITY]
     evidence_status = "matched" if rows else "no_relevant_source"
 
+    # Surface how strongly the ingested sources actually cover this topic so the
+    # UI can tell the user whether the lesson is source-grounded or leaned on the
+    # model's own knowledge. Derived from the retrieval scores already computed —
+    # no extra call, no schema change.
+    top_similarity = max((float(r.get("similarity") or 0) for r in rows), default=0.0)
+    coverage_confidence = round(top_similarity, 3)
+    if not rows:
+        coverage_label = "ungrounded"
+    elif top_similarity >= 0.72 and len(rows) >= 2:
+        coverage_label = "strong"
+    elif top_similarity >= 0.64:
+        coverage_label = "partial"
+    else:
+        coverage_label = "weak"
+
     output_text = _flatten_generation_text(payload.generation_outputs)
     coverage = []
     for concept in required_concepts:
@@ -2354,6 +2369,8 @@ async def medical_knowledge_quality_check(
         content={
             "verdict": verdict,
             "evidence_status": evidence_status,
+            "coverage_confidence": coverage_confidence,
+            "coverage_label": coverage_label,
             "min_evidence_similarity": QUALITY_GATE_MIN_SIMILARITY,
             "evidence_count": len(rows),
             "evidence": [_medical_citation(row) for row in rows],

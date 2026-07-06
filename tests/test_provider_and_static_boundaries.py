@@ -806,6 +806,52 @@ def test_forge_lesson_blueprint_feeds_scope_and_anchor_contract() -> None:
     assert "runMedicalQualityGate(storyData, anchorContract)" in pipeline
 
 
+def test_forge_has_in_app_image_quality_gate() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    audit = (root / "frontend" / "scripts" / "forge-image-audit.js").read_text(encoding="utf-8")
+
+    # The audit module is wired after the pipeline (needs claudeFetch/currentStoryData).
+    assert "/scripts/forge-image-audit.js" in html
+    assert html.index("/scripts/forge-pipeline.js") < html.index("/scripts/forge-image-audit.js")
+    assert 'id="image-audit-btn"' in html
+    assert 'id="image-audit-result"' in html
+    assert 'onclick="runForgeImageAudit()"' in html
+
+    # It scores the generated image via a vision call and enforces the >=96 bar.
+    assert "const TARGET_SCORE = 96" in audit
+    assert "window.runForgeImageAudit" in audit
+    assert "image-quality-audit" in audit  # claudeFetch stage tag
+    assert "OVERALL_SCORE" in audit
+    assert "DECISION" in audit
+    assert "FAILURE_MODES" in audit
+
+
+def test_forge_gates_image_prompt_length_before_generation() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    # Explicit length gate runs before spending an image request, and demo prompts
+    # are clamped the same way the live pipeline clamps.
+    assert "function gateImagePrompts" in pipeline
+    assert "gateImagePrompts(" in pipeline
+    assert "const demoP1 = clampImagePrompt(demoP1Raw);" in pipeline
+    assert "const demoP2 = clampImagePrompt(demoP2Raw);" in pipeline
+
+
+def test_quality_gate_surfaces_coverage_confidence() -> None:
+    root = Path(__file__).resolve().parents[1]
+    main_py = (root / "backend" / "app" / "main.py").read_text(encoding="utf-8")
+    auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
+
+    # Backend derives grounding strength from retrieval scores and returns it.
+    assert '"coverage_confidence": coverage_confidence' in main_py
+    assert '"coverage_label": coverage_label' in main_py
+    # Frontend surfaces the grounding status to the user.
+    assert "coverage_label" in auth
+    assert "quality-grounding" in auth
+
+
 def test_admin_dashboard_wires_protected_diagnostics_flow() -> None:
     root = Path(__file__).resolve().parents[1]
     admin = (root / "frontend" / "pages" / "admin.html").read_text(encoding="utf-8")
@@ -965,8 +1011,8 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken()" in auth
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
-    assert 'forge-auth.js?v=20260706-lesson-blueprint-1' in html
-    assert 'forge-pipeline.js?v=20260706-lesson-blueprint-1' in html
+    assert 'forge-auth.js?v=20260706-structural-patch-1' in html
+    assert 'forge-pipeline.js?v=20260706-structural-patch-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth

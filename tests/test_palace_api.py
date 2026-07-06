@@ -782,6 +782,9 @@ def test_medical_quality_check_suppresses_cross_topic_citations(
     assert payload["evidence"] == []
     assert payload["required_concept_coverage"][0]["evidence_refs"] == []
     assert "Tintin Endocrine" not in response.text
+    # No source cleared the relevance bar → explicitly flagged as not source-grounded.
+    assert payload["coverage_label"] == "ungrounded"
+    assert payload["coverage_confidence"] == 0.0
 
 
 def test_medical_quality_check_counts_long_concept_paraphrase(
@@ -859,3 +862,7 @@ def test_medical_quality_check_counts_long_concept_paraphrase(
     assert payload["repair_focus"] == []
     assert payload["required_concept_coverage"][0]["present_in_generation"] is True
     assert payload["required_concept_coverage"][0]["evidence_refs"][0]["source_key"] == "tintin-resuscitation"
+    # Grounding strength is surfaced from the retrieval scores (single strong chunk
+    # → "partial"; the top similarity is echoed as coverage_confidence).
+    assert payload["coverage_confidence"] == 0.9
+    assert payload["coverage_label"] == "partial"

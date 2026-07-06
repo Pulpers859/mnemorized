@@ -807,12 +807,51 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 }
 .quality-copy,
 .quality-repair,
+.quality-grounding,
 .quality-empty {
   margin-top: 8px;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.55;
 }
+.quality-grounding { color: var(--teal); }
+
+/* In-app image quality gate (vision audit) */
+.audit-summary {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(9, 12, 15, .35);
+}
+.audit-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.audit-verdict {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: .04em;
+  color: var(--white);
+  line-height: 1.1;
+}
+.audit-copy,
+.audit-line {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.audit-repair { color: var(--teal); }
+.audit-pass { border-color: rgba(74, 222, 128, .5); }
+.audit-pass .audit-verdict { color: var(--green); }
+.audit-warn { border-color: rgba(245, 200, 66, .5); }
+.audit-warn .audit-verdict { color: var(--gold); }
+.audit-fail { border-color: rgba(245, 101, 101, .5); }
+.audit-fail .audit-verdict { color: #fca5a5; }
 .quality-success .quality-verdict,
 .quality-success.quality-summary { color: var(--acid); }
 .quality-error .quality-verdict,
@@ -2134,8 +2173,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         </div>
         <div id="user-image-actions" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
           <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
+          <button class="btn-copy" id="image-audit-btn" onclick="runForgeImageAudit()" style="margin-left:8px;padding:10px 16px;font-size:13px;color:var(--teal);border-color:var(--teal);">✦ Audit Image Quality (≥96 gate)</button>
           <button class="btn-copy" onclick="downloadForgeBundle()" style="margin-left:8px;padding:10px 16px;font-size:13px;">⬇ Export Bundle</button>
           <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
+          <div id="image-audit-result" style="margin-top:14px;"></div>
         </div>
         <div class="guided-panel" id="guided-panel">
           <div class="guided-header">
@@ -2234,10 +2275,11 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 <script src="/scripts/palace-api.js?v=20260704-1"></script>
 <script src="/scripts/forge-state.js?v=20260704-header-1"></script>
 <script src="/scripts/forge-lesson-spec.js?v=20260706-lesson-blueprint-1"></script>
-<script src="/scripts/forge-auth.js?v=20260706-lesson-blueprint-1"></script>
+<script src="/scripts/forge-auth.js?v=20260706-structural-patch-1"></script>
 <script src="/scripts/forge-upload.js?v=20260704-provider-retry-2"></script>
 <script src="/scripts/forge-input-builder.js?v=20260706-lesson-blueprint-1"></script>
-<script src="/scripts/forge-pipeline.js?v=20260706-lesson-blueprint-1"></script>
+<script src="/scripts/forge-pipeline.js?v=20260706-structural-patch-1"></script>
 <script src="/scripts/forge-guided.js?v=20260704-guided-1"></script>
+<script src="/scripts/forge-image-audit.js?v=20260706-structural-patch-1"></script>
 </body>
 </html>

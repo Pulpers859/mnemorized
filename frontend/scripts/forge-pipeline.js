@@ -543,10 +543,32 @@ function getSelectVal(selectId, customFieldId) {
 
 // ── Image generation ─────────────────────────────────────────────
 
+// Final safety gate before spending a paid image request: guarantee both prompts
+// are non-empty and within the model-safe character budget. Returns clamped
+// prompts and whether anything had to be trimmed.
+function gateImagePrompts(rawP1, rawP2) {
+  const clampedP1 = rawP1 ? clampImagePrompt(rawP1) : '';
+  const clampedP2 = rawP2 ? clampImagePrompt(rawP2) : '';
+  const trimmed = (rawP1 && rawP1.length > clampedP1.length) || (rawP2 && rawP2.length > clampedP2.length);
+  return { p1: clampedP1, p2: clampedP2, trimmed };
+}
+
 async function generateImages() {
-  const p1 = document.getElementById('prompt-copy-1')?.value;
-  const p2 = document.getElementById('prompt-copy-2')?.value;
+  const gate = gateImagePrompts(
+    document.getElementById('prompt-copy-1')?.value,
+    document.getElementById('prompt-copy-2')?.value
+  );
+  const p1 = gate.p1;
+  const p2 = gate.p2;
   if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
+  if (gate.trimmed) {
+    // Persist the clamped versions so what we send matches what the user sees and
+    // copies. (setStageDetail below is overwritten immediately, so note it on the
+    // durable prompt panels instead.)
+    if (p1) { document.getElementById('prompt-copy-1').value = p1; document.getElementById('img-prompt-1').textContent = p1; }
+    if (p2) { document.getElementById('prompt-copy-2').value = p2; document.getElementById('img-prompt-2').textContent = p2; }
+    console.warn('[Mnemorized] Image prompt exceeded the safe length budget and was trimmed before sending to Gemini.');
+  }
   if (forgeReplayMode !== 'replay') {
     if (!backendState.checked) await refreshBackendStatus();
     if (!backendState.reachable) { openConnectionModal(); return; }
@@ -921,9 +943,9 @@ async function runPipeline() {
     const n = D.voLines.length;
     const assigned = assignZones(D.voLines);
 
-    const demoP1 = SKETCHY_STYLE_ROOM + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
+    const demoP1Raw = SKETCHY_STYLE_ROOM + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
 
-    const demoP2 = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
+    const demoP2Raw = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
       ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
       `${ANTI_META_TEXT}\n\n` +
       `SCENE OBJECT RULE: Do NOT label or name any part of the room itself. ` +
@@ -943,6 +965,11 @@ async function runPipeline() {
       `All ${n} anchors must be present and visually distinct. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.`;
+
+    // Clamp the same way the live pipeline does so the demo can't display or copy
+    // a prompt longer than the model-safe budget.
+    const demoP1 = clampImagePrompt(demoP1Raw);
+    const demoP2 = clampImagePrompt(demoP2Raw);
 
     showBody('prompt');
     if (isOperatorMode()) operatorPanel.classList.add('visible');
