@@ -429,3 +429,25 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
 6. MEDIA-TYPE TRUST (harness note). AG may save a JPEG under a .png name; the
    in-app audit trusts the blob type inferred from extension. Real app data-URL
    path is unaffected, but audit harness must match declared media type to bytes.
+
+7. ANCHOR INDEX NUMBERS LEAK AS FLOATING CAPTIONS (confirmed 2026-07-07, plate_2
+   iter2). When the prompt lists anchors as "Anchor 1:", "Anchor 2:", … the image
+   generator renders those index digits (1–10) as large floating numbers next to
+   each anchor — meta-caption leakage that trips gate G3 and caps the score at 85
+   even when the art itself is a 93. The "do NOT render zone text" fence does NOT
+   stop it, because the model reads the list index as a label to draw. FIX: do not
+   number the anchor list in the prompt at all — use plain dashes/zone hints only —
+   AND add an explicit fence line: "Do NOT render any index numbers, list numbers,
+   or the digits 1–10 as captions or labels anywhere in the image." This applies to
+   every multi-anchor scene prompt (in-app pipeline builders and offline tools).
+
+8. TEXT-BUDGET CUT IS THE HIGHEST-YIELD REPAIR (positive, plate_2 iter1→iter2:
+   83→raw 93). Cutting precision labels from ~15 to 6 and deleting sentence-fragment
+   labels moved every legibility/coherence category up and removed the crowding.
+   Reducing text is a bigger lever than adding visual detail — pair it with the
+   contract's "repairs must be shorter" rule.
+
+9. A DOMINANT SILHOUETTE RESCUES A WEAK ANCHOR (positive). Anchor 10 went from "rope
+   + number, no bell" to a giant cast-iron bell foreground-right; it became the most
+   legible anchor on the plate. When an anchor reads only by its label, give it ONE
+   oversized iconic object that fills its zone rather than more descriptive text.
