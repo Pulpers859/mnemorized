@@ -54,6 +54,22 @@ const EXACT_LABEL_RULE = 'EXACT LABEL RULE: if a visual specifies a short label,
   'Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. ' +
   'If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.';
 
+// Sanctioned universal metaphor catalog — Mnemorized's OWN approved, common-knowledge
+// vocabulary (NOT proprietary). Mirrors docs/visual-metaphor-library.txt — keep the two in
+// sync. Injected into the Stage-2 story prompt so the model reaches for a pure visual
+// metaphor (tier 1) instead of collapsing to a text-labeled generic prop.
+const VISUAL_METAPHOR_LIBRARY = [
+  'Electrolytes/chemistry: banana bunch = potassium (K+); salt sack/shaker or salt crystals = sodium (Na+) / normal saline; lemon or acid-green liquid = acidosis / low pH; golden honey or sugar cubes = glucose / hyperglycemia; purple flame = ketones; bone or milk carton = calcium; horseshoe magnet = magnesium; a box of baking soda (household carton) = bicarbonate (NaHCO3); water/rain = hydration/fluids; red blood drop = hemoglobin.',
+  'Speed/timing: turtle or snail = slow/careful correction; rabbit = fast/urgent; hourglass or clock face = time window; stopwatch = specific time threshold; metronome = rate/rhythm.',
+  'Danger/restriction: skull & crossbones = death/toxicity; red X = contraindicated; padlock = restricted / hold / locked away; brick wall or sealed door = completely blocked / never; warning triangle = caution; alarm bell = emergency; cracked/shattered object = organ damage.',
+  'Treatment actions: fire hose/flood = aggressive fluid resuscitation; barely-open valve = low-dose infusion; syringe pinching skin = subcutaneous; IV bag dripping = intravenous; chisel chipping = steady anticoagulation; dynamite = thrombolysis; shield = prophylaxis; sword = first-line; bow & arrow = second-line; lever/control panel = refractory/escalation.',
+  'Monitoring/diagnosis: balance scale = risk scoring; magnifying glass = diagnostic test; waveform monitor = continuous monitoring; needle gauge = a vital/lab value; clipboard with checkmarks = scoring checklist; dipstick = point-of-care test.',
+  'Anatomy/pathology: swollen/cracked object = edema; bulging cracked wall = chamber dilation/strain; dark clot mass = thrombus/embolism; blocked pipe = vascular occlusion; iron grate = filter (e.g. IVC filter); closing gap in the floor = anion gap; overflowing container = excess/uncontrolled level.',
+  'Temperature: ice/frost = hypothermia/cooling; fire/flames = fever/inflammation; steam = warming.',
+  'Body systems (setting-level): bellows = lungs; pump/engine = heart; pipes/plumbing = vasculature; wires = nervous conduction; sieve/filter = kidney; factory/refinery = metabolism; clock tower with gears = brain (sparking gears = seizure).',
+  'RULES: one metaphor per concept globally (never reuse a metaphor for a different meaning); oversize the metaphor object so it dominates its zone; if a pure metaphor could be ambiguous, add ONE short hybrid label ON the object rather than dropping to a bare label.',
+].map(function (line) { return '- ' + line; }).join('\n');
+
 const ZONE_CYCLE = [
   'FAR LEFT', 'LEFT', 'CENTER LEFT', 'CENTER', 'CENTER RIGHT', 'RIGHT',
   'FAR RIGHT', 'FOREGROUND LEFT', 'FOREGROUND CENTER', 'FOREGROUND RIGHT',
@@ -1089,11 +1105,11 @@ Output ONLY these two XML tags, nothing else:
 
 SCENE SETTING — YOU CHOOSE:
 - Strongly prefer an ORIGINAL phonetic pun or sound-alike for a key term in the medical topic, but do not force a bad pun. If no clean pun exists, choose a thematic setting whose physical layout teaches the topic.
-- Do NOT reuse named scenes, recurring characters, or proprietary symbols from existing commercial visual mnemonic products. Learn from the design principles; invent fresh cues.
+- Do NOT reuse named scenes, recurring characters, or fixed fact→symbol maps from existing commercial visual mnemonic products (that is the only IP line). Invent fresh SCENES and CHARACTER NAMES — but the sanctioned universal metaphors (banana = potassium, etc.) are Mnemorized's own approved vocabulary and should still be used freely.
 - Made of materials that render flat: wood, paper, brick, chalkboard, fabric, cork, cardboard, stone, ceramic
 - BEST settings: bars, pubs, workshops, kitchens, old shops, speakeasies, market stalls, barber shops, diners, courtrooms, train stations
 - AVOID: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
-- The setting is a spatial memory map, not a backdrop. Each anchor must belong to the same environment and occupy a memorable zone.
+- The setting is a spatial memory map, not a backdrop. Each anchor occupies a memorable zone. Anchors should mostly fit the environment — but a SANCTIONED metaphor (banana = potassium, baking-soda box = bicarbonate, etc.) is placed even when it is out of place in the theme; do not sacrifice a strong universal cue just to keep the scene thematically tidy.
 
 NARRATION RULES — follow these exactly:
 1. Direct the viewer's attention to each element — use phrases like "notice", "take a look at", "you'll see", "over here", "right here"
@@ -1121,15 +1137,20 @@ COMPLETENESS — NON-NEGOTIABLE:
 - After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
 
 VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
-These principles are inspired by visual mnemonic education, but every scene and symbol must be original. The goal: a student recalls the medical fact from the SHAPE, IDENTITY, RELATIONSHIP, and POSITION of the cue even with ALL text removed.
+These principles are inspired by visual mnemonic education. The goal: a student recalls the medical fact from the SHAPE, IDENTITY, RELATIONSHIP, and POSITION of the cue even with ALL text removed. Originality applies to SCENES, CHARACTER NAMES, LAYOUTS, and phonetic puns — do NOT copy proprietary curated symbol systems (named scenes, recurring characters, or fixed fact→symbol maps from commercial mnemonic products). It does NOT mean avoiding common-knowledge associations: the SANCTIONED metaphors below are Mnemorized's own approved vocabulary and MUST be used (banana = potassium is global medical culture, not proprietary). Never fall back to a bare text label when a sanctioned metaphor or a shape/function analogy exists.
 
-ENCODING HIERARCHY — try each level in order, use the FIRST that fits:
-1. SOUND-ALIKE (strongest): Object or character NAME sounds like the medical term. Invent a fresh phonetic pun for the term; do not reuse known commercial mnemonic symbols. Phonetic puns are powerful when they are clean and obvious.
-2. LOOK-ALIKE: Object SHAPE mirrors a number, symbol, organ, or process. Fork with 3 prongs → triad. Cracked wall → inhibition. Y-shaped branch → antibody. A figure-8 knot → chromosome 8.
-3. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
-4. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
-5. SPATIAL: POSITION encodes meaning. Escalation goes up (stairs, shelves). Sequence goes left-to-right. Danger is isolated behind barriers. Exit/door = discharge criteria. Basement = last-resort therapy.
-6. LABELED TEXT (weakest — LAST RESORT): A sign or tag with 1-3 words. If you resort to this, the anchor is weak. Go back and try levels 1-5 harder.
+SANCTIONED VISUAL METAPHOR LIBRARY — fixed, approved, common-knowledge cues. USE THESE FIRST whenever the concept appears, and keep them consistent across every topic (banana = potassium everywhere). They are always preferred over a text label:
+${VISUAL_METAPHOR_LIBRARY}
+
+ENCODING HIERARCHY — try each level in order, use the FIRST that fits. Only drop to LABELED TEXT after genuinely failing levels 1-6:
+1. PURE VISUAL METAPHOR (strongest — no text needed): use an instantly-recognizable object from the SANCTIONED library above (or an equally universal common-knowledge association) so the anchor reads by silhouette alone. banana bunch = potassium, salt sack/shaker = sodium/saline, household box of baking soda = bicarbonate, golden honey/sugar cubes = glucose, padlock = restricted/hold, skull = toxicity. Oversize the object. Reach for this FIRST for any electrolyte, ion, drug, fluid, or hazard that has a library entry — a barrel merely STAMPED "NaCl" or "K+" is a failure when a salt sack or banana bunch conveys it.
+   METAPHOR BEATS THEME: a sanctioned metaphor ALWAYS wins over scene-theme coherence. If the setting is a medieval mill and the fact is potassium, still draw a giant bunch of BANANAS; if it is bicarbonate, draw a household BAKING-SODA BOX — even though those objects are "out of place" in that setting. An incongruous, oddly-placed object is MORE memorable (the bizarreness effect), not less. NEVER swap a sanctioned metaphor for a theme-matching generic prop (barrel, cart, crate, sack) plus a text label. Do NOT render a drug or electrolyte as a "barrel labelled INSULIN / NaHCO3 / K+" — that is the exact failure this rule exists to stop.
+2. SOUND-ALIKE: Object or character NAME sounds like the medical term. Invent a fresh phonetic pun (puns and character names are where originality applies — do not reuse a proprietary product's named character). Clean, obvious puns are powerful.
+3. LOOK-ALIKE: Object SHAPE mirrors a number, symbol, organ, or process. Fork with 3 prongs → triad. Cracked wall → inhibition. Y-shaped branch → antibody. A figure-8 knot → chromosome 8.
+4. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
+5. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
+6. SPATIAL: POSITION encodes meaning. Escalation goes up (stairs, shelves). Sequence goes left-to-right. Danger is isolated behind barriers. Exit/door = discharge criteria. Basement = last-resort therapy.
+7. LABELED TEXT (weakest — LAST RESORT): A sign or tag with 1-3 words. If you resort to this, the anchor is weak. Go back and try levels 1-6 harder. NEVER label a generic barrel/wall/crate when a sanctioned metaphor exists.
 
 CHARACTER DESIGN (encouraged):
 - Mnemonic characters are figures whose NAME, APPEARANCE, or ACTION encodes a concept — they are NOT narrators

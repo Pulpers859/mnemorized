@@ -3325,6 +3325,23 @@ async def gemini_prompt_director(
             request_id, resp.status_code, resp.text[:500],
         )
         schedule_director_usage(resp.status_code, count_quota=False)
+        # Preserve an upstream 429 instead of collapsing it into a generic 502. A 429 from
+        # Gemini means rate-limited OR (as seen in practice) the API key's prepaid billing
+        # credits are exhausted — masking that as "502 Bad Gateway" hid the real cause and
+        # made a billing problem look like a server outage. The upstream message (e.g.
+        # "prepayment credits are depleted") is passed through so it is diagnosable.
+        if resp.status_code == 429:
+            return JSONResponse(
+                status_code=429,
+                headers={"X-Request-ID": request_id},
+                content={
+                    "error": {
+                        "type": "upstream_rate_limited",
+                        "message": upstream_error_message
+                        or "Gemini prompt director is unavailable (upstream HTTP 429 — capacity or prepaid billing credits exhausted).",
+                    }
+                },
+            )
         return JSONResponse(
             status_code=502,
             headers={"X-Request-ID": request_id},

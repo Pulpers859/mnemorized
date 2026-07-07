@@ -1044,12 +1044,31 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260706-qa-fixes-1' in html
+    assert 'forge-pipeline.js?v=20260707-metaphor-hooks-2' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
     assert "quality_gate: currentQualityGateData" in auth
     assert "window.MnemorizedMedicalApi" in shared
+
+
+def test_forge_pipeline_uses_sanctioned_visual_metaphor_library() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    # The sanctioned metaphor catalog must be embedded and injected into the story prompt so
+    # the model reaches for a pure visual metaphor (banana = potassium) instead of a text label.
+    assert "VISUAL_METAPHOR_LIBRARY" in pipeline
+    assert "banana bunch = potassium" in pipeline
+    assert "box of baking soda (household carton) = bicarbonate" in pipeline
+    assert "${VISUAL_METAPHOR_LIBRARY}" in pipeline
+    # Pure visual metaphor must be the top encoding tier, ahead of the last-resort text label.
+    assert "PURE VISUAL METAPHOR (strongest" in pipeline
+    # A sanctioned metaphor must override scene-theme coherence (else the model swaps it for a
+    # theme-matching labeled prop, as observed on the watermill re-run).
+    assert "METAPHOR BEATS THEME" in pipeline
+    # The old over-broad originality rule that suppressed sanctioned metaphors must be gone.
+    assert "every scene and symbol must be original" not in pipeline
+    assert "do not reuse known commercial mnemonic symbols" not in pipeline
 
 
 def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
@@ -1077,7 +1096,8 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
 
     assert "VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT" in pipeline
     assert "ENCODING HIERARCHY" in pipeline
-    assert "SOUND-ALIKE (strongest)" in pipeline
+    assert "PURE VISUAL METAPHOR (strongest" in pipeline
+    assert "SOUND-ALIKE" in pipeline
     assert "LOOK-ALIKE" in pipeline
     assert "FUNCTIONAL ANALOGY" in pipeline
     assert "CONTRAST/THRESHOLD" in pipeline
@@ -1092,7 +1112,7 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Plain checklists, generic posters, ordinary clipboards" in pipeline
     assert "silhouette test" in pipeline
     assert "HOOK:" in pipeline
-    assert "do not reuse named scenes, recurring characters, or proprietary symbols" in pipeline.lower()
+    assert "do not reuse named scenes, recurring characters, or fixed fact→symbol maps" in pipeline.lower()
     assert "Use visual-mnemonic design principles only; do not copy named scenes" in auth
     assert "missing HOOK; visual cue quality may degrade" in auth
     assert "HOOK should start with sound-alike, look-alike, functional, contrast, or spatial" in auth
