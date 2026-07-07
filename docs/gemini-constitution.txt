@@ -348,3 +348,76 @@ BUDGET GUARDRAILS:
 - Single session should not consume more than 60% of daily allocation
 - If iterating on 3+ topics, each topic gets its own /clear boundary
 - Never carry iteration history from a completed topic into the next one
+
+═══════════════════════════════════════════════════════════════════════════
+FIELD FINDINGS — 2026-07-07 (DKA metaphor-hooks live run, commit 63105d1)
+═══════════════════════════════════════════════════════════════════════════
+
+Context: full live E2E run on a DKA lesson, images rendered via Antigravity.
+The pre-fix build was slapping TEXT LABELS on generic barrels/walls instead of
+using sanctioned pure-visual metaphors. Root cause and fixes below; record
+structural lessons here so future runs inherit them.
+
+POSITIVE — structural components that worked, KEEP and reinforce:
+
+1. INJECT THE SANCTIONED LIBRARY INTO THE LIVE PROMPT.
+   The static frontend cannot read docs/ at runtime, so the metaphor catalog
+   was never reaching Stage-2 generation. Embedding it as VISUAL_METAPHOR_LIBRARY
+   in forge-pipeline.js and injecting it into the story prompt is what actually
+   changed model behavior. A hierarchy the model never sees does nothing —
+   the library MUST be inlined in the prompt, not just documented here.
+
+2. "METAPHOR BEATS THEME" is essential (bizarreness effect).
+   Adding tier-1 PURE VISUAL METAPHOR alone was not enough — the model still
+   swapped a sanctioned metaphor for a theme-matching labeled prop to keep the
+   scene coherent. An explicit rule that a sanctioned metaphor ALWAYS wins over
+   scene-theme coherence (an incongruous, oddly-placed iconic object is MORE
+   memorable than a theme-consistent labeled barrel) is what made the metaphors
+   actually render. Do NOT let environment coherence suppress an off-theme hook.
+
+3. THE HIERARCHY CORRECTLY KEEPS NON-METAPHOR TIERS FOR DECISIONS.
+   Not every anchor should be forced into a bare metaphor. A threshold DECISION
+   (K+ replacement bands) rendered best as a functional/contrast hook
+   (traffic-light paddles), not a forced banana. Tier 1 is for instant universal
+   associations; thresholds/doses legitimately live lower in the hierarchy.
+   Validated live: salt shaker = sodium, sugar sack = glucose, skull = cerebral
+   edema, hourglass = monitoring interval, pouring ladle = insulin delivery
+   (NOT "barrel labelled INSULIN"), traffic-light paddles = K+ bands.
+
+NEGATIVE — failure modes and over-broad rules to adjust or watch:
+
+1. WEAK HOOKS ORIGINATE UPSTREAM, AT STAGE-2 STORY, NOT AT THE IMAGE PROMPT.
+   The visual-field choice (what object represents each fact) is made when the
+   story/anchor script is generated. Fixing only the image-prompt builder cannot
+   recover a hook the story already chose as "a barrel with a label." Any future
+   hook-quality fix must land in the Stage-2 story prompt first.
+
+2. AN OVER-BROAD ORIGINALITY RULE SUPPRESSES SANCTIONED METAPHORS.
+   The prior "every scene and symbol must be original / do not reuse known
+   commercial mnemonic symbols" wording caused the model to avoid banana=K+,
+   salt=NaCl, baking-soda=bicarb and collapse to text labels. The IP boundary
+   forbids only PROPRIETARY curated systems (Sketchy/Pixorize scenes, character
+   names, layouts, fact->symbol maps) — NOT common-knowledge associations.
+   Keep originality scoped to scenes/characters/layouts; never to the sanctioned
+   universal vocabulary.
+
+3. ANCHOR DENSITY CEILING ~ 8-10 PER PLATE.
+   At 10 anchors AG rendered ~5 cleanly on the first pass with right-side
+   crowding. Dense plates degrade both render fidelity and audit reliability.
+   Prefer <=8 encoded anchors per illustration; split lessons rather than
+   overload one scene.
+
+4. THE IN-APP VISION AUDIT UNDER-DETECTS ON DENSE PLATES.
+   Scores plateaued ~52 and the auditor called present, clearly-labeled anchors
+   "entirely absent." Treat sub-target scores on crowded plates as possible
+   auditor miss, not proof of a bad image — corroborate visually before
+   iterating. Do not burn AG round-trips chasing a hallucinated deficiency.
+
+5. PRECISION TEXT IS ALLOWED BUT CLUSTERS — KEEP IT SPARSE.
+   Formulas/rates on a single device (anion-gap door, fluid-rate barrel) are
+   legitimate per the hierarchy tier 3, but several on one plate re-create the
+   text-density problem. Budget precision labels the same as any other text.
+
+6. MEDIA-TYPE TRUST (harness note). AG may save a JPEG under a .png name; the
+   in-app audit trusts the blob type inferred from extension. Real app data-URL
+   path is unaffected, but audit harness must match declared media type to bytes.
