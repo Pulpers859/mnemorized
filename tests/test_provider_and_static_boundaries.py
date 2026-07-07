@@ -824,7 +824,18 @@ def test_forge_has_in_app_image_quality_gate() -> None:
     assert "image-quality-audit" in audit  # claudeFetch stage tag
     assert "OVERALL_SCORE" in audit
     assert "DECISION" in audit
-    assert "FAILURE_MODES" in audit
+
+    # It uses the CANONICAL deterministic rubric, not the old free-form failure-mode
+    # list, and recomputes OVERALL = min(RAW_SUM, gate caps) client-side so the
+    # model's own arithmetic cannot inflate the score above what its gates allow.
+    assert "FAILURE_MODES" not in audit
+    assert "const RUBRIC" in audit
+    assert "RAW_SUM" in audit
+    assert "GATES_TRIGGERED" in audit
+    assert "CATEGORY_SCORES" in audit
+    assert "function enforceScore" in audit
+    assert "const GATE_CAPS" in audit
+    assert "PASS_WITH_TEXT_RISK" in audit
 
 
 def test_forge_gates_image_prompt_length_before_generation() -> None:
@@ -1045,6 +1056,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
     assert 'forge-pipeline.js?v=20260707-metaphor-hooks-2' in html
+    assert 'forge-image-audit.js?v=20260707-canonical-rubric-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
@@ -1069,6 +1081,45 @@ def test_forge_pipeline_uses_sanctioned_visual_metaphor_library() -> None:
     # The old over-broad originality rule that suppressed sanctioned metaphors must be gone.
     assert "every scene and symbol must be original" not in pipeline
     assert "do not reuse known commercial mnemonic symbols" not in pipeline
+
+
+def test_image_scoring_rubric_is_canonical_and_shared_across_graders() -> None:
+    """One deterministic, gated rubric governs every image grader: the canonical doc,
+    the in-app audit, and both offline QA tools must share the same standard so scores
+    are consistent across agents."""
+    root = Path(__file__).resolve().parents[1]
+    doc = (root / "docs" / "image-scoring-rubric.md").read_text(encoding="utf-8")
+    audit = (root / "frontend" / "scripts" / "forge-image-audit.js").read_text(encoding="utf-8")
+    qa_pack = (root / "tools" / "visual_qa_pack.py").read_text(encoding="utf-8")
+    stress = (root / "tools" / "stress_visual_pipeline.py").read_text(encoding="utf-8")
+
+    # The canonical doc defines the deterministic method, the six weighted categories,
+    # the hard gates, and the shared scoreblock.
+    assert "CANONICAL" in doc
+    assert "OVERALL = min(RAW" in doc
+    for gate in ("G1", "G2", "G3", "G4", "G5", "G6"):
+        assert gate in doc
+    for cat in ("Anchor Completeness — 30", "Hook Fidelity — 20", "Medical Fidelity — 10"):
+        assert cat in doc
+
+    # Every downstream doc points at the canonical rubric as the authority.
+    contract = (root / "docs" / "visual-mnemonic-prompt-contract.md").read_text(encoding="utf-8")
+    constitution = (root / "docs" / "gemini-constitution.txt").read_text(encoding="utf-8")
+    assert "image-scoring-rubric.md" in contract
+    assert "image-scoring-rubric.md" in constitution
+
+    # Both offline tools embed the shared rubric constant and the shared output format.
+    for tool in (qa_pack, stress):
+        assert "CANONICAL_RUBRIC" in tool
+        assert "RUBRIC_OUTPUT_FORMAT" in tool
+        assert "min(RAW_SUM" in tool
+
+    # The graders that parse a score back (in-app audit + stress pipeline) recompute
+    # OVERALL from the same gate cap map, so an inflated OVERALL line cannot pass.
+    assert "G2: 88" in audit and "G6: 90" in audit
+    assert "function enforceScore" in audit
+    assert '"G2": 88' in stress and '"G6": 90' in stress
+    assert "def parse_audit_score" in stress
 
 
 def test_forge_story_generation_uses_shared_parser_and_validator() -> None:

@@ -171,6 +171,12 @@ The repair process is the most common source of prompt degradation. These rules 
 
 ## QA Threshold
 
+**Image scoring is governed by `docs/image-scoring-rubric.md` (CANONICAL).** Every
+grader — the in-app Image Quality Gate, the offline QA tools, and any manual or
+subagent audit — must use that deterministic rubric (six weighted categories summing
+to 100, minus per-defect deductions, capped by hard gates; `OVERALL = min(RAW, caps)`)
+and emit its scoreblock. Do not invent a private scale.
+
 Use `tools/visual_qa_pack.py` to create review packs from exported forge bundles.
 
 For old bundles, use:

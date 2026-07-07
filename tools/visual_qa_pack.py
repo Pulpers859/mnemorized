@@ -14,6 +14,65 @@ from typing import Any
 
 PASS_THRESHOLD = 85
 
+# CANONICAL RUBRIC — mirror of docs/image-scoring-rubric.md and the in-app
+# frontend/scripts/forge-image-audit.js RUBRIC. Keep all three in sync. The image
+# score is deterministic: six weighted categories (sum 100) minus per-defect
+# deductions, then capped by any triggered hard gate. OVERALL = min(RAW, caps).
+CANONICAL_RUBRIC = """SCORING METHOD (deterministic — show the arithmetic):
+1. Start each category at its full value; subtract the per-defect deductions.
+2. RAW_SUM = sum of the six categories (max 100).
+3. Apply every triggered HARD GATE; each gate CAPS OVERALL (it does not subtract).
+4. OVERALL_SCORE = min(RAW_SUM, lowest triggered gate cap), rounded to an integer.
+When torn between two scores, choose the LOWER.
+
+CATEGORIES (weights sum to 100):
+A. Anchor Completeness — 30. -10 per absent/unidentifiable anchor; -5 per anchor too
+   tiny/crowded to read; -3 per anchor identifiable ONLY by an attached label.
+B. Hook Fidelity — 20. -8 per anchor rendered as TEXT SLAPPED ON A GENERIC PROP
+   (barrel/wall/crate/plaque) when a sanctioned metaphor existed (banana=potassium,
+   salt shaker=sodium, box of baking soda=bicarbonate, skull=toxicity, hourglass=time,
+   turtle=slow, padlock=restricted...); -4 per weak/arbitrary object; -2 per weaker
+   tier than warranted. Do NOT penalize a correct functional/contrast hook on a
+   threshold DECISION (e.g. traffic-light=K+).
+C. Silhouette & Legibility — 15. -5 illegible clutter; -4 duplicated identical
+   silhouettes; -3 reading path lost to busyness.
+D. Text Discipline — 15. -6 per misspelled/invented required label; -5 meta-
+   instruction/caption/zone text leaked into image; -3 per crammed multi-line label
+   list; -2 per needless label the metaphor already carried.
+E. Medical Fidelity — 10. -10 an implied fact/threshold is WRONG; -4 ambiguous dose.
+F. Scene Coherence — 10. -6 segmented grid/booths/panels instead of one scene; -3
+   incoherent floating placement. A deliberately off-theme sanctioned metaphor is NOT a
+   coherence defect (bizarreness effect is intended).
+
+HARD GATES (cap OVERALL; use the lowest triggered cap):
+G1: 1 anchor missing->cap 79; 2->cap 70; 3+->cap 55.
+G2: any misspelled/invented required label->cap 88.
+G3: meta-instruction/caption/zone text leaked into image->cap 85.
+G4: segmented grid/booths/panels instead of one scene->cap 80.
+G5: any medically wrong fact/threshold implied->cap 75.
+G6: any anchor encoded ONLY as text on a generic prop (no visual hook) when a
+    sanctioned metaphor/stronger hook existed->cap 90.
+
+DECISION: PASS = OVERALL>=96 AND no G1/G2/G5. PASS_WITH_TEXT_RISK = OVERALL>=90, no
+G1/G5, but G2/G3/G6 present. REPAIR = 70..95 with a bounded fixable defect.
+REGENERATE = OVERALL<70 or 2+ anchors missing. Never PASS if any anchor is missing.
+
+ANTI-INFLATION: external auditor only (never self-grade); a label alone never
+satisfies an anchor (needs shape/interaction/placement); treat labels as unreliable
+unless legible AND correctly spelled; do not invent anchors that are not visible;
+formulas allowed only attached to a visible device; on a plate with >8 anchors,
+re-verify before claiming all present."""
+
+RUBRIC_OUTPUT_FORMAT = """OVERALL_SCORE: <integer 0-100>
+DECISION: <PASS | PASS_WITH_TEXT_RISK | REPAIR | REGENERATE>
+CATEGORY_SCORES: A:<0-30> B:<0-20> C:<0-15> D:<0-15> E:<0-10> F:<0-10>
+RAW_SUM: <integer 0-100>
+GATES_TRIGGERED: <e.g. "G1(1 missing) cap79; G6 cap90" or "none">
+ANCHORS_PRESENT: <integer>/<total>
+MISSING_ANCHORS: <comma-separated anchor numbers, or none>
+TOP_ISSUES: <up to 3 short phrases separated by "; ", or none>
+REPAIR: <one or two sentences on the single highest-impact fix, or none>"""
+
 VISUAL_STYLE = (
     "Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. "
     "Wobbly, imperfect ink outlines with visible line weight variation. NO clean digital vector lines. "
@@ -454,31 +513,36 @@ Publishable threshold: **{PASS_THRESHOLD}/100 before manual image review**
 
     write_text(
         pack_dir / "05_manual_image_audit.md",
-        """# Manual Image Audit
+        f"""# Manual Image Audit
 
 Image file reviewed:
 
-Overall decision: PASS / REPAIR / REGENERATE
+Scored with the CANONICAL RUBRIC (docs/image-scoring-rubric.md). Fill the six
+category scores, subtract per-defect deductions, sum to RAW, then apply the lowest
+triggered gate cap. OVERALL = min(RAW, cap).
 
-## Scorecard
+## Scorecard (weights sum to 100)
 
-Give each category 0-10.
-
-| Category | Score | Notes |
+| Category (max) | Score | Deductions applied |
 |---|---:|---|
-| Anchor completeness: all anchors present |  |  |
-| Hook fidelity: visual matches the HOOK |  |  |
-| Silhouette strength: works without labels |  |  |
-| Medical fidelity: no wrong thresholds/facts implied |  |  |
-| Spatial map: coherent zones and sequence |  |  |
-| Low clutter: readable 16:9 scene |  |  |
-| Text safety: labels optional, short, not wrong |  |  |
-| Originality: no copied commercial scene/symbol |  |  |
-| Reusability: publishable for learners |  |  |
+| A. Anchor completeness (30) |  |  |
+| B. Hook fidelity (20) |  |  |
+| C. Silhouette & legibility (15) |  |  |
+| D. Text discipline (15) |  |  |
+| E. Medical fidelity (10) |  |  |
+| F. Scene coherence (10) |  |  |
+| **RAW_SUM (100)** |  |  |
+
+Gates triggered (G1 1miss=cap79/2=70/3+=55; G2 misspelled=88; G3 text-leak=85;
+G4 grid=80; G5 wrong-fact=75; G6 text-on-prop hook=90):
+
+**OVERALL = min(RAW_SUM, lowest cap): ____   DECISION: PASS / PASS_WITH_TEXT_RISK / REPAIR / REGENERATE**
+
+(PASS only if OVERALL>=96 and no G1/G2/G5. Never PASS with any anchor missing.)
 
 ## Anchor-by-anchor Review
 
-| # | Present? | Hook works? | Label needed? | Problem | Fix idea |
+| # | Present? | Hook works (not text-on-prop)? | Label needed? | Problem | Fix idea |
 |---|---|---|---|---|---|
 
 ## Failure Pattern
@@ -507,25 +571,21 @@ Then refine the same image with all anchors using this prompt:
 
     write_text(
         pack_dir / "07_gemini_image_audit_prompt.txt",
-        f"""You are auditing a generated Mnemorized medical visual mnemonic image.
+        f"""You are the external auditor for a generated Mnemorized medical visual mnemonic image.
 
-I will provide the generated image plus the anchor table below. Your job is to compare the image against the anchor table, not to praise the image.
+I will provide the generated image plus the anchor table below. Compare the image against the anchor table using the CANONICAL RUBRIC. Do not praise the image; grade it.
 
-Audit rules:
-- Do not invent anchors that are not visible.
-- Treat labels as unreliable unless they are readable and spelled correctly.
-- A label alone is not enough; the visual must also have a recognizable shape, character, object interaction, or spatial placement.
-- Numeric thresholds and compact formulas are allowed, but they must be attached to a visible mnemonic device.
-- Score harshly. If an anchor is too tiny, crowded, misspelled, missing, medically ambiguous, or only text-dependent, mark it as a problem.
-- Do not suggest copying any proprietary visual mnemonic product.
+This rubric is authoritative — it is the same standard used by the in-app Image
+Quality Gate and documented in docs/image-scoring-rubric.md. Score by the arithmetic,
+not by impression.
 
-Return exactly this structure:
+{CANONICAL_RUBRIC}
 
-OVERALL_SCORE: [0-100]
-DECISION: PASS / REPAIR / REGENERATE
+Return the required scoreblock EXACTLY (no markdown), with OVERALL_SCORE = min(RAW_SUM, lowest gate cap):
 
-SUMMARY:
-[2-4 blunt sentences]
+{RUBRIC_OUTPUT_FORMAT}
+
+Then, below the scoreblock, add these supporting sections:
 
 ANCHOR_AUDIT:
 | # | Present? | Hook fidelity | Silhouette/readability | Text/label accuracy | Medical risk | Fix |
@@ -535,7 +595,7 @@ SYSTEMIC_FAILURES:
 - [List repeatable prompt-contract failures only. If none, write "None."]
 
 REPAIR_PROMPT:
-[If DECISION is REPAIR, write a concise image-edit prompt that fixes only the failed items while preserving the good composition. If DECISION is REGENERATE, write "N/A". If DECISION is PASS, write "N/A".]
+[If DECISION is REPAIR, write a concise image-edit prompt that fixes only the failed items while preserving the good composition. Otherwise write "N/A".]
 
 REGENERATION_PROMPT_CHANGE:
 [If DECISION is REGENERATE or there is a systemic prompt issue, write the prompt-contract change needed before regenerating. Otherwise write "N/A".]

@@ -162,6 +162,14 @@ This hierarchy reduces text labels per image (improving Gemini reliability)
 and produces more memorable visual mnemonic illustrations without referencing
 or copying commercial mnemonic products.
 
+SCORING AUTHORITY: image grades are governed by docs/image-scoring-rubric.md
+(CANONICAL) — a deterministic rubric of six weighted categories (sum 100) minus
+per-defect deductions, capped by hard gates (OVERALL = min(RAW, caps)). Every
+grader (in-app gate, offline QA tools, manual/subagent audits) uses that one
+rubric and its scoreblock so scores are consistent across agents. A single
+missing anchor or a "text-slapped-on-a-barrel" hook is gate-capped and cannot
+reach the >=96 PASS bar no matter how polished the rest of the plate is.
+
 LABEL READABILITY — MIXED-DEVICE VOCABULARY:
 Integrate text into objects naturally using the device that fits the object type.
 Each device has been stress-tested for character precision. Listed by reliability:
