@@ -451,3 +451,26 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
    + number, no bell" to a giant cast-iron bell foreground-right; it became the most
    legible anchor on the plate. When an anchor reads only by its label, give it ONE
    oversized iconic object that fills its zone rather than more descriptive text.
+
+10. THE FINDING-#7 FIX IS NOW ENFORCED IN THE GENERATOR BY CONSTRUCTION, NOT BY
+    HAND (2026-07-07, forge-pipeline.js). Findings #7 and #8 were being re-applied
+    as per-image manual surgery (regex-stripping "Anchor N:", hand-writing an
+    allowlist) — the live composer still emitted numbered "Anchor N:" lines with no
+    closing fence, so every fresh generation reproduced the ->85 leak. Root fix,
+    landed upstream so no operator has to remember it:
+    - buildImageAnchorLines emits UNNUMBERED, visual-only lines (no "Anchor N:", no
+      "Hook:"/"Encodes:" meta). The index-leak SOURCE is gone, not just forbidden.
+    - buildTextAllowlistFence derives the renderable-text whitelist DETERMINISTICALLY
+      from the quoted tokens already written in each anchor visual, classifies
+      precision (numbers/units/formulas) ahead of ordinary (names/words), enforces
+      the budget by priority, and emits the exact "Visible text limited to: …" list
+      plus the "do NOT render digits 1 through N" fence as the LITERAL LAST LINE.
+    - ensureTextAllowlistFence wraps the server-side Gemini prompt-director output
+      too (idempotent on our marker), so all three prompt paths — local composer,
+      Claude fallback, Gemini director — inherit the guarantee; the demo path also.
+    PRINCIPLE: a rule the operator must re-apply by hand every run is not a fix. If a
+    structural finding here can be enforced deterministically in the prompt BUILDER,
+    encode it there — the Constitution should describe guarantees the code makes, not
+    chores humans repeat. Verified deterministically on two unrelated topics (DKA,
+    TCA overdose): both compose with zero numbering and a correct precision-first
+    allowlist. Locked by test_image_prompt_generator_is_unnumbered_and_fenced.

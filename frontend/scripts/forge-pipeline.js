@@ -118,26 +118,80 @@ function condenseForImage(visual) {
   return s;
 }
 
-function buildAnchorLines(anchors) {
-  return anchors.map(v => `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${v.visual}`).join('\n');
-}
-
 function trimWords(text, maxWords) {
   const words = String(text || '').trim().split(/\s+/).filter(Boolean);
   if (words.length <= maxWords) return words.join(' ');
   return words.slice(0, maxWords).join(' ') + '...';
 }
 
+// Emit UNNUMBERED, visual-only anchor lines. We deliberately drop the "Anchor N:"
+// index, the "Hook:" cue, and the "Encodes:" medical prose:
+//  - "Anchor N:" numbering leaks into the render as floating digit captions
+//    (Constitution field finding #7 — capped plate_2 iter1/iter2 at 85 via gate G3).
+//  - "Encodes:" is paragraph-length medical prose the image model must never render.
+// The tested precision numbers/formulas survive inside `visual` as quoted tokens,
+// which the closing allowlist fence (buildTextAllowlistFence) whitelists explicitly.
 function buildImageAnchorLines(anchors, concise = false) {
   return anchors.map(v => {
-    const visual = trimWords(condenseForImage(v.visual), concise ? 18 : 32);
-    const anchor = v.anchor ? ` Encodes: ${trimWords(v.anchor, concise ? 18 : 32)}` : '';
-    if (concise) {
-      return `  (${v.zone.toLowerCase()}) Anchor ${v.n}: ${visual}.${anchor}`;
-    }
-    const hook = v.hook ? ` Hook: ${trimWords(v.hook, 24)}.` : '';
-    return `  (${v.zone.toLowerCase()}) Anchor ${v.n}:${hook} Visual: ${visual}.${anchor}`;
+    const visual = trimWords(condenseForImage(v.visual), concise ? 18 : 32).replace(/[.\s]+$/, '');
+    return `  (${v.zone.toLowerCase()}) ${visual}.`;
   }).join('\n');
+}
+
+// Deterministically derive the renderable-text whitelist from the anchor visuals
+// themselves. Every exact label an anchor needs is written in the visual as a
+// "quoted" token; we collect those, classify precision (numbers/formulas/units)
+// vs ordinary (names/words), enforce the rubric text budget by priority
+// (precision facts first, then ordinary — precision cap 6, ordinary cap 12), and
+// return the exact set that is allowed to appear. Nothing is guessed.
+function extractRenderableLabels(anchors) {
+  const precision = [];
+  const ordinary = [];
+  const seen = new Set();
+  const isPrecision = (t) =>
+    /[0-9=×+\-±<>≤≥÷%]|\b(?:mL|kg|mg|mcg|mmol|mEq|mOsm|bpm|hr|min|U\/)\b/i.test(t);
+  (anchors || []).forEach(v => {
+    const src = String(v.visual || '');
+    const re = /["“”]([^"“”\n]{1,40})["“”]/g;
+    let m;
+    while ((m = re.exec(src)) !== null) {
+      const tok = m[1].trim();
+      if (!tok) continue;
+      const key = tok.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      (isPrecision(tok) ? precision : ordinary).push(tok);
+    }
+  });
+  return { precision: precision.slice(0, 6), ordinary: ordinary.slice(0, 12) };
+}
+
+// Build the closing hard-whitelist fence: the exact list of renderable text plus
+// an explicit ban on index numbers / list digits (the leak class from finding #7)
+// and any floating meta-text. This is always appended as the LITERAL LAST LINE of
+// the anchor prompt, so whichever builder wrote the body, the guarantee holds.
+function buildTextAllowlistFence(anchors) {
+  const n = (anchors || []).length;
+  const { precision, ordinary } = extractRenderableLabels(anchors);
+  const all = [...precision, ...ordinary];
+  const list = all.length
+    ? `Visible text limited to EXACTLY these items: ${all.join(', ')}.`
+    : `This scene has NO required labels — render no visible text at all.`;
+  return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ${list} ` +
+    `Do NOT render any index numbers, list numbers, bullet numbers, or the digits 1 through ${n || 10} ` +
+    `as captions, tags, or labels anywhere in the image. ` +
+    `No other text, no floating captions, no zone labels, no anchor descriptions, ` +
+    `no speech bubbles, no directional words, no title, and no legend anywhere in the image.`;
+}
+
+// Guarantee the deterministic fence is the last thing in a prompt no matter which
+// builder authored the body (local composer, Claude fallback, or the server-side
+// Gemini prompt director). Idempotent: a body that already carries our fence marker
+// is returned unchanged so no path double-fences.
+function ensureTextAllowlistFence(prompt, anchors) {
+  const text = String(prompt || '');
+  if (text.includes('RENDERABLE TEXT ALLOWLIST')) return text;
+  return text.replace(/\s+$/, '') + '\n\n' + buildTextAllowlistFence(anchors);
 }
 
 function composeImagePrompt2(sceneDesc, assigned, concise = false) {
@@ -149,7 +203,6 @@ function composeImagePrompt2(sceneDesc, assigned, concise = false) {
     `Background surfaces are unlabeled.\n\n` +
     `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
     `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-    `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
     `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
     `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
     `${ANCHOR_LEGIBILITY_RULE} ` +
@@ -161,14 +214,15 @@ function composeImagePrompt2(sceneDesc, assigned, concise = false) {
     buildImageAnchorLines(assigned, concise) + '\n\n' +
     `All ${n} anchors must be present and visually distinct. ` +
     `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-    `Maintain same lighting, color palette, and atmosphere.`;
+    `Maintain same lighting, color palette, and atmosphere.\n\n` +
+    buildTextAllowlistFence(assigned);
 }
 
 function clampImagePrompt(prompt, maxChars = IMAGE_PROMPT_MAX_CHARS) {
   const text = String(prompt || '').trim();
   if (text.length <= maxChars) return text;
   return text.slice(0, maxChars - 180).replace(/\s+\S*$/, '') +
-    '\n\nFINAL HARD LIMIT: preserve all numbered anchors above; do not add extra labels or checklist text.';
+    '\n\nFINAL HARD LIMIT: preserve all anchors above; do not add extra labels or checklist text.';
 }
 
 function normalizeImagePromptPair(pair) {
@@ -257,7 +311,7 @@ async function buildGeminiImagePromptPair(topic, storyData, assigned, mode, stag
   }
   return normalizeImagePromptPair({
     prompt1: data.prompt1,
-    prompt2: data.prompt2,
+    prompt2: ensureTextAllowlistFence(data.prompt2, assigned),
     scene_description: data.scene_description || '',
     director: 'gemini',
     model: data.model || 'gemini',
@@ -981,7 +1035,6 @@ async function runPipeline() {
       `Background surfaces are unlabeled.\n\n` +
       `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
       `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-      `The words "Hook" and "Encodes" are invisible design guidance only — do NOT render them as text. ` +
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `${ANCHOR_LEGIBILITY_RULE} ` +
@@ -993,7 +1046,8 @@ async function runPipeline() {
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present and visually distinct. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-      `Maintain same lighting, color palette, and atmosphere.`;
+      `Maintain same lighting, color palette, and atmosphere.\n\n` +
+      buildTextAllowlistFence(assigned);
 
     // Clamp the same way the live pipeline does so the demo can't display or copy
     // a prompt longer than the model-safe budget.

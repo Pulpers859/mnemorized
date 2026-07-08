@@ -850,6 +850,36 @@ def test_forge_gates_image_prompt_length_before_generation() -> None:
     assert "const demoP2 = clampImagePrompt(demoP2Raw);" in pipeline
 
 
+def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
+    """Lock the plate_2 repair-loop learnings into the generator itself.
+
+    The winning iter3 prompt beat the ->85 gate-G3 cap by (1) dropping the
+    "Anchor N:" numbering that leaked as floating digit captions and (2) ending
+    with a deterministic renderable-text allowlist + index-digit ban. These are
+    generator invariants now, not per-image hand repairs, so every path that
+    ships an anchor prompt inherits them.
+    """
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+
+    # The anchor-line builder no longer emits index numbering or Hook/Encodes meta
+    # (those are the text-leak sources). The old numbered template must be gone.
+    assert "Anchor ${v.n}:" not in pipeline
+    assert " Encodes: ${" not in pipeline
+
+    # Deterministic fence helpers exist and derive the whitelist from the anchors.
+    assert "function extractRenderableLabels" in pipeline
+    assert "function buildTextAllowlistFence" in pipeline
+    assert "function ensureTextAllowlistFence" in pipeline
+    assert "RENDERABLE TEXT ALLOWLIST" in pipeline
+    assert "digits 1 through" in pipeline
+
+    # Every prompt path applies the fence: the deterministic composer appends it,
+    # and the server-side Gemini director output is wrapped so it can't skip it.
+    assert "buildTextAllowlistFence(assigned)" in pipeline
+    assert "ensureTextAllowlistFence(data.prompt2, assigned)" in pipeline
+
+
 def test_qa_sweep_fixes_are_in_place() -> None:
     root = Path(__file__).resolve().parents[1]
     guided = (root / "frontend" / "scripts" / "forge-guided.js").read_text(encoding="utf-8")
@@ -1055,7 +1085,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260707-metaphor-hooks-2' in html
+    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-1' in html
     assert 'forge-image-audit.js?v=20260707-canonical-rubric-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
@@ -1167,9 +1197,13 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Use visual-mnemonic design principles only; do not copy named scenes" in auth
     assert "missing HOOK; visual cue quality may degrade" in auth
     assert "HOOK should start with sound-alike, look-alike, functional, contrast, or spatial" in auth
-    assert "Hook: ${trimWords(v.hook" in pipeline
-    assert "Encodes: ${trimWords(v.anchor" in pipeline
-    assert 'The words "Hook" and "Encodes" are invisible design guidance only' in pipeline
+    # The Stage-2 STORY prompt still structures anchors with HOOK:/ENCODES: labels
+    # (above) — but the IMAGE anchor lines no longer inject that meta-text, because
+    # "Hook:"/"Encodes:" and the "invisible design guidance" plea leaked into renders.
+    # It is structurally removed; see test_image_prompt_generator_is_unnumbered_and_fenced.
+    assert "Hook: ${trimWords(v.hook" not in pipeline
+    assert "Encodes: ${trimWords(v.anchor" not in pipeline
+    assert 'The words "Hook" and "Encodes" are invisible design guidance only' not in pipeline
     assert "Preserve clear spatial hierarchy" in pipeline
     assert "Design the room as a clear spatial memory map" in pipeline
     assert "Setting must be a phonetic pun" not in pipeline
