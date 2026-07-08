@@ -876,6 +876,12 @@ def test_precision_overlay_places_labels_deterministically_by_zone() -> None:
     assert "PLACEMENT IS DETERMINISTIC" in tool
     assert '"cx" in place and "cy" in place' in tool  # explicit-pixel override path
 
+    # The reserved bottom "rail" is fully self-contained: the tool paints its own
+    # ledger band so rail placement + fit are guaranteed on any plate, reserved or not.
+    assert "def _draw_band" in tool
+    assert "BAND_FRAC" in tool
+    assert "_draw_band(base)" in tool
+
 
 def test_forge_gates_image_prompt_length_before_generation() -> None:
     root = Path(__file__).resolve().parents[1]

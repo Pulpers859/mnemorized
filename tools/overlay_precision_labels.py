@@ -109,6 +109,24 @@ def _is_rail(zone: str) -> bool:
     return "rail" in z or "readout" in z or "strip" in z
 
 
+# The reserved readout rail lives in the bottom BAND_FRAC of the canvas. In production
+# the prompt keeps this band empty; the overlay can also paint the band itself so the
+# rail is fully self-contained (label placement + fit guaranteed on ANY plate).
+BAND_FRAC = 0.13
+BAND_FILL = (238, 228, 200, 255)
+BAND_BORDER = (60, 42, 26, 255)
+
+
+def _draw_band(base: Image.Image) -> None:
+    """Paint the full-width parchment ledger strip the rail labels sit on."""
+    w, h = base.width, base.height
+    top = int(h * (1 - BAND_FRAC))
+    band = Image.new("RGBA", (w, h - top), BAND_FILL)
+    bd = ImageDraw.Draw(band)
+    bd.line([(0, 1), (w, 1)], fill=BAND_BORDER, width=max(2, h // 300))
+    base.alpha_composite(band, (0, top))
+
+
 def resolve_boxes(spec: list[dict], img_w: int, img_h: int) -> list[dict]:
     """Return each placement with a concrete (cx, cy, w) resolved deterministically.
 
@@ -139,10 +157,11 @@ def resolve_boxes(spec: list[dict], img_w: int, img_h: int) -> list[dict]:
                 place.setdefault("w", 160)
                 continue
             if key == "rail":
-                # Bottom reserved readout strip: slots left-to-right.
-                place["w"] = int(cell_w * 3 / max(count, 1) * 0.8)
+                # Bottom reserved readout strip: slots left-to-right, centered in band.
+                band_top = img_h * (1 - BAND_FRAC)
+                place["w"] = int(img_w / max(count, 1) * 0.85)
                 place["cx"] = int(img_w * (slot + 0.5) / count)
-                place["cy"] = int(img_h * 0.93)
+                place["cy"] = int((band_top + img_h) / 2)
                 continue
             col, row = _zone_grid(place.get("zone"))
             base_cx = col * cell_w + cell_w / 2.0
@@ -202,7 +221,10 @@ def main() -> None:
     if not isinstance(spec, list):
         raise SystemExit("spec must be a JSON list of placements")
 
-    for place in resolve_boxes(spec, base.width, base.height):
+    resolved = resolve_boxes(spec, base.width, base.height)
+    if any(_is_rail(p.get("zone")) for p in spec):
+        _draw_band(base)
+    for place in resolved:
         _draw_one(base, place)
 
     out = Path(args.out)
