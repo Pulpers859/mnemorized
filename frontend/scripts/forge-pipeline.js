@@ -175,7 +175,8 @@ function buildTextAllowlistFence(anchors) {
   const { precision, ordinary } = extractRenderableLabels(anchors);
   const all = [...precision, ...ordinary];
   const list = all.length
-    ? `Visible text limited to EXACTLY these items: ${all.join(', ')}.`
+    ? `The ONLY text allowed is this whitelist, and each item should appear exactly once, ` +
+      `rendered legibly on its own object: ${all.join(', ')}.`
     : `This scene has NO required labels — render no visible text at all.`;
   return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ${list} ` +
     `Do NOT render any index numbers, list numbers, bullet numbers, or the digits 1 through ${n || 10} ` +
@@ -212,7 +213,7 @@ function composeImagePrompt2(sceneDesc, assigned, concise = false) {
     `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
     `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
     buildImageAnchorLines(assigned, concise) + '\n\n' +
-    `All ${n} anchors must be present and visually distinct. ` +
+    `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
     `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
     `Maintain same lighting, color palette, and atmosphere.\n\n` +
     buildTextAllowlistFence(assigned);
@@ -1044,7 +1045,7 @@ async function runPipeline() {
       `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present and visually distinct. ` +
+      `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
       `Maintain same lighting, color palette, and atmosphere.\n\n` +
       buildTextAllowlistFence(assigned);

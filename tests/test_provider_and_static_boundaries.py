@@ -879,6 +879,12 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     assert "buildTextAllowlistFence(assigned)" in pipeline
     assert "ensureTextAllowlistFence(data.prompt2, assigned)" in pipeline
 
+    # Anti-duplication guard (renders drew one anchor twice) and label-presence nudge
+    # (a whitelisted precision label was dropped) — both landed in the generator after
+    # the plate A first-shot render, not as per-image hand repairs.
+    assert "each rendered EXACTLY ONCE" in pipeline
+    assert "each item should appear exactly once" in pipeline
+
 
 def test_qa_sweep_fixes_are_in_place() -> None:
     root = Path(__file__).resolve().parents[1]
@@ -1085,7 +1091,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-1' in html
+    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-2' in html
     assert 'forge-image-audit.js?v=20260707-canonical-rubric-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline

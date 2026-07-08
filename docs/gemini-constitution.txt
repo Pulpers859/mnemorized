@@ -474,3 +474,32 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     chores humans repeat. Verified deterministically on two unrelated topics (DKA,
     TCA overdose): both compose with zero numbering and a correct precision-first
     allowlist. Locked by test_image_prompt_generator_is_unnumbered_and_fenced.
+
+11. THE NEXT TWO FAILURE MODES AFTER THE INDEX LEAK — DUPLICATION AND DROPPED
+    PRECISION LABEL — ALSO BELONG IN THE GENERATOR (2026-07-07, first-shot renders
+    from the hardened generator). With the index leak gone, a fresh 10-anchor DKA
+    plate rendered 88 (REPAIR): the generator was clean, but the image model (a) drew
+    the sodium fork sign TWICE and (b) silently dropped the anion-gap formula label.
+    Both are generalizable, so both were fixed in the BUILDER, not by hand:
+    - "each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor
+      object or figure" appended to the present-and-distinct line in both composers.
+    - The allowlist fence now reads "each item should appear exactly once, rendered
+      legibly on its own object: …" so listed precision labels are asked to APPEAR,
+      not merely permitted.
+    Re-roll result: the SAME DKA anchors went 88 -> 97 (PASS) with the duplicate gone
+    and the formula present. Confirmed to generalize: a TCA-overdose plate (different
+    topic, 8 anchors) rendered with zero index leak, zero duplication, and a correct
+    precision-first whitelist on the first shot.
+    RESIDUAL (watch, not yet code-fixable): on dense plates the model still (a) renders
+    some precision labels small (insulin rate, crossed-antidote tags) and (b) may drop
+    ONE sub-cue of a multi-part cluster (e.g. the "hare" of the anticholinergic
+    toxidrome). Consistent with finding #3 (density ceiling ~8-10). Prefer <=8 anchors
+    and one dominant object per label; treat these as re-roll/repair items.
+
+12. OPERATIONAL — AG BRIDGE MULTI-LINE PROMPT TRUNCATION (harness note). Passing a
+    multi-line prompt to tools/Invoke-AntigravityAgentApi.ps1 as -Prompt/-PromptFile
+    without -PassPromptFileAsAtPath sends only the FIRST LINE to Antigravity (the
+    batch layer truncates at the newline); AG then replies "I don't see a prompt."
+    Always dispatch task/prompt files with -PassPromptFileAsAtPath so the arg is a
+    single @<path> token and AG reads the whole file. Symptom of the bug is a long
+    silent stall with no PNG — not an AG capacity problem.
