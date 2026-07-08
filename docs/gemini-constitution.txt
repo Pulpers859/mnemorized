@@ -503,3 +503,19 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     Always dispatch task/prompt files with -PassPromptFileAsAtPath so the arg is a
     single @<path> token and AG reads the whole file. Symptom of the bug is a long
     silent stall with no PNG — not an AG capacity problem.
+
+13. THE PER-ANCHOR WORD TRIM WAS SILENTLY EATING SUB-CUES AND LABELS (2026-07-07,
+    plate B / TCA overdose). buildImageAnchorLines trimmed each anchor visual to 32
+    words. A rich anchor — a 5-part anticholinergic toxidrome (bat/bone/beet/hare/
+    hatter), or an antidote pair each with a quoted drug label — runs ~40 words, so
+    the trim cut the tail: the "hare" cue vanished, the "FLUMAZENIL"/"PHYSO" labels
+    were cut from the anchor line while the allowlist fence STILL listed them (so the
+    model rendered them blind and garbled — "FLUMAZEHIL"), and a "no text on the hose"
+    instruction was cut (so the model invented an off-whitelist "FIRE-HOSE" label).
+    None of it was stochastic — it was deterministic truncation. FIX: raise the cap to
+    48 words (24 concise), with clampImagePrompt's char ceiling + the concise fallback
+    as backstops. Re-roll result: plate B 95 -> 96 (PASS) with the full toxidrome, clean
+    antidote labels, and no invented hose label. LESSON: when the closing allowlist
+    fence names a label, the anchor BODY that gives that label its context must not be
+    truncated away — a fence without its anchor context produces garble, not omission.
+    Prefer anchors <= ~45 words; the trim is a safety net, not a design budget.

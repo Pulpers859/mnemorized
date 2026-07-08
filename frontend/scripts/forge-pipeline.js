@@ -131,9 +131,15 @@ function trimWords(text, maxWords) {
 //  - "Encodes:" is paragraph-length medical prose the image model must never render.
 // The tested precision numbers/formulas survive inside `visual` as quoted tokens,
 // which the closing allowlist fence (buildTextAllowlistFence) whitelists explicitly.
+// Per-anchor word budget. The old 32-word cap silently truncated rich anchors
+// mid-clause, dropping trailing sub-cues (e.g. one of a 5-part toxidrome) AND the
+// quoted precision labels the closing fence still demanded — so the model rendered
+// those labels blind and garbled them, and dropped "no text here" guidance. A
+// generous cap (with clampImagePrompt as the hard char backstop and the concise
+// fallback for overflow) keeps a multi-part anchor and its labels intact.
 function buildImageAnchorLines(anchors, concise = false) {
   return anchors.map(v => {
-    const visual = trimWords(condenseForImage(v.visual), concise ? 18 : 32).replace(/[.\s]+$/, '');
+    const visual = trimWords(condenseForImage(v.visual), concise ? 24 : 48).replace(/[.\s]+$/, '');
     return `  (${v.zone.toLowerCase()}) ${visual}.`;
   }).join('\n');
 }

@@ -885,6 +885,11 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     assert "each rendered EXACTLY ONCE" in pipeline
     assert "each item should appear exactly once" in pipeline
 
+    # Per-anchor word cap is generous enough to keep a multi-part anchor plus its
+    # quoted labels intact — the old 32-word cap truncated rich anchors mid-clause,
+    # dropping sub-cues and the labels the fence still demanded (they then garbled).
+    assert "concise ? 24 : 48" in pipeline
+
 
 def test_qa_sweep_fixes_are_in_place() -> None:
     root = Path(__file__).resolve().parents[1]
@@ -1091,7 +1096,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-2' in html
+    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-3' in html
     assert 'forge-image-audit.js?v=20260707-canonical-rubric-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
