@@ -213,6 +213,50 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
       </div>`);
   }
 
+  // Core scoring: fetch the image bytes, send them + the anchor list to the vision
+  // auditor, and return the parsed/gate-enforced result. Pure of DOM button state so
+  // both the manual button and the auto-retry loop can reuse it. Throws on hard error.
+  async function performAudit(anchors, imgSrc) {
+    const imgRes = await fetch(imgSrc);
+    const blob = await imgRes.blob();
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result).split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+
+    const body = {
+      model: (typeof CLAUDE_MODEL !== 'undefined' ? CLAUDE_MODEL : 'claude-sonnet-4-6'),
+      max_tokens: 700,
+      messages: [{
+        role: 'user',
+        content: [
+          { type: 'image', source: { type: 'base64', media_type: blob.type || 'image/png', data: base64 } },
+          { type: 'text', text: buildAuditPrompt(anchors) },
+        ],
+      }],
+    };
+
+    const res = await claudeFetch(body, 'image-quality-audit');
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err?.error?.message || `Audit request failed (HTTP ${res.status}).`);
+    }
+    const data = await res.json();
+    const text = (data.content || []).filter(b => b?.type === 'text').map(b => b.text).join('\n');
+    const result = parseAudit(text);
+    if (result.score === null && !result.decision) {
+      throw new Error('Auditor returned an unreadable score.');
+    }
+    return result;
+  }
+
+  function currentAnchors() {
+    const story = (typeof currentStoryData !== 'undefined' && currentStoryData) || null;
+    return story?.voLines || [];
+  }
+
   async function runImageAudit() {
     const btn = document.getElementById('image-audit-btn');
     const imgSrc = finalImageSrc();
@@ -220,8 +264,7 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
       setAuditMessage('<div class="audit-summary audit-warn"><div class="audit-copy">Generate a palace image first, then run the quality gate.</div></div>');
       return;
     }
-    const story = (typeof currentStoryData !== 'undefined' && currentStoryData) || null;
-    const anchors = story?.voLines || [];
+    const anchors = currentAnchors();
     if (!anchors.length) {
       setAuditMessage('<div class="audit-summary audit-warn"><div class="audit-copy">No anchor script is loaded to audit against.</div></div>');
       return;
@@ -231,38 +274,7 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
     setAuditMessage('<div class="audit-summary"><div class="audit-copy">Scoring the image against the anchor list and failure modes…</div></div>');
 
     try {
-      const imgRes = await fetch(imgSrc);
-      const blob = await imgRes.blob();
-      const base64 = await new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(String(reader.result).split(',')[1]);
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
-      });
-
-      const body = {
-        model: (typeof CLAUDE_MODEL !== 'undefined' ? CLAUDE_MODEL : 'claude-sonnet-4-6'),
-        max_tokens: 700,
-        messages: [{
-          role: 'user',
-          content: [
-            { type: 'image', source: { type: 'base64', media_type: blob.type || 'image/png', data: base64 } },
-            { type: 'text', text: buildAuditPrompt(anchors) },
-          ],
-        }],
-      };
-
-      const res = await claudeFetch(body, 'image-quality-audit');
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        throw new Error(err?.error?.message || `Audit request failed (HTTP ${res.status}).`);
-      }
-      const data = await res.json();
-      const text = (data.content || []).filter(b => b?.type === 'text').map(b => b.text).join('\n');
-      const result = parseAudit(text);
-      if (result.score === null && !result.decision) {
-        throw new Error('Auditor returned an unreadable score.');
-      }
+      const result = await performAudit(anchors, imgSrc);
       renderAudit(result);
     } catch (error) {
       setAuditMessage(`<div class="audit-summary audit-fail"><div class="audit-copy">Image audit failed: ${(window.escapeHtml || (s => s))(error.message)}</div></div>`);
@@ -271,6 +283,125 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
     }
   }
 
-  window.MnemorizedImageAudit = { runImageAudit, TARGET_SCORE };
+  // ── Audit → auto-retry loop ─────────────────────────────────────
+  // Turn the one-shot gate into a closed loop: audit the current image; if it does
+  // not PASS, feed the auditor's own repair note back into the image prompt, call the
+  // existing generateImages() to re-render, and re-audit — up to maxRepairs times.
+  // Deterministically keeps the highest-scoring render across attempts. Opt-in
+  // (its own button) because each pass spends a paid image + audit request, per the
+  // session cost protocol.
+  const MAX_REPAIRS_DEFAULT = 1;
+
+  // Build a bounded repair directive from the auditor's structured verdict.
+  function buildRepairDirective(result) {
+    const parts = [];
+    if (result.missing && !/^none$/i.test(result.missing)) {
+      parts.push(`These anchors are missing or unclear — add each, drawn exactly once: ${result.missing}.`);
+    }
+    const gates = String(result.gates || '').toUpperCase();
+    if (gates.includes('G3')) parts.push('Remove any leaked caption, zone-name, or meta-instruction text.');
+    if (gates.includes('G4')) parts.push('Render one single coherent scene, not a grid of panels.');
+    if (gates.includes('G2') || gates.includes('G6')) parts.push('Do not draw numbers/formulas as text; leave their signpost surfaces blank.');
+    if (result.repair && !/^none$/i.test(result.repair)) parts.push(result.repair);
+    const body = (parts.join(' ') || 'Improve anchor clarity and reduce clutter.').slice(0, 220);
+    return `REPAIR PASS — fix the single highest-impact defect while keeping every other anchor unchanged: ${body}`;
+  }
+
+  // Insert the repair directive just BEFORE the whitelist fence (so both the anchor
+  // list and the fence survive the length clamp, which trims from the tail).
+  function injectRepair(prompt, directive) {
+    const base = String(prompt || '');
+    const marker = 'RENDERABLE TEXT ALLOWLIST';
+    const idx = base.indexOf(marker);
+    if (idx >= 0) return `${base.slice(0, idx)}${directive}\n\n${base.slice(idx)}`;
+    return `${base.replace(/\s+$/, '')}\n\n${directive}`;
+  }
+
+  async function autoAuditRetry(opts) {
+    const maxRepairs = (opts && Number.isInteger(opts.maxRepairs)) ? opts.maxRepairs : MAX_REPAIRS_DEFAULT;
+    const btn = document.getElementById('image-audit-retry-btn');
+    const auditBtn = document.getElementById('image-audit-btn');
+    const anchors = currentAnchors();
+    if (!finalImageSrc()) {
+      setAuditMessage('<div class="audit-summary audit-warn"><div class="audit-copy">Generate a palace image first, then run auto-retry.</div></div>');
+      return;
+    }
+    if (!anchors.length) {
+      setAuditMessage('<div class="audit-summary audit-warn"><div class="audit-copy">No anchor script is loaded to audit against.</div></div>');
+      return;
+    }
+
+    const p2el = document.getElementById('prompt-copy-2');
+    const p2panel = document.getElementById('img-prompt-2');
+    const basePrompt2 = p2el ? p2el.value : '';
+
+    if (btn) { btn.disabled = true; btn.textContent = 'Auto-forging…'; }
+    if (auditBtn) auditBtn.disabled = true;
+
+    let best = null; // { score, decision, result }
+    let attemptsRun = 0;
+    try {
+      for (let attempt = 0; attempt <= maxRepairs; attempt++) {
+        const imgSrc = finalImageSrc();
+        if (!imgSrc) break;
+        attemptsRun = attempt + 1;
+        setAuditMessage(`<div class="audit-summary"><div class="audit-copy">Auto-retry pass ${attempt + 1}/${maxRepairs + 1}: scoring the current render…</div></div>`);
+
+        const result = await performAudit(anchors, imgSrc);
+        if (!best || (result.score ?? 0) > (best.score ?? 0)) {
+          best = { score: result.score ?? 0, decision: result.decision, result };
+        }
+        renderAudit(result);
+
+        if (result.decision === 'PASS') break;
+        if (attempt === maxRepairs) break;
+
+        // Feed the repair note back into prompt 2 and re-render.
+        if (p2el) {
+          const repaired = injectRepair(basePrompt2, buildRepairDirective(result));
+          p2el.value = repaired;
+          if (p2panel) p2panel.textContent = repaired;
+        }
+        setAuditMessage(`<div class="audit-summary"><div class="audit-copy">Below ${TARGET_SCORE}. Regenerating with a targeted repair (pass ${attempt + 2}/${maxRepairs + 1})…</div></div>`);
+        const before = finalImageSrc();
+        if (typeof generateImages === 'function') {
+          await generateImages();
+        } else {
+          break;
+        }
+        // If no fresh image landed (backend guard, error, quota), stop looping.
+        if (finalImageSrc() === before) break;
+      }
+
+      // Restore the operator's base prompt so a lingering repair note does not leak
+      // into the next manual regenerate.
+      if (p2el) { p2el.value = basePrompt2; if (p2panel) p2panel.textContent = basePrompt2; }
+
+      if (best) {
+        renderAudit(best.result);
+        const passed = best.decision === 'PASS' && (best.score ?? 0) >= TARGET_SCORE;
+        const note = passed
+          ? `Reached PASS in ${attemptsRun} pass${attemptsRun !== 1 ? 'es' : ''}.`
+          : `Best after ${attemptsRun} pass${attemptsRun !== 1 ? 'es' : ''}: ${best.score}/100 — needs a manual repair.`;
+        const el = auditResultEl();
+        if (el) {
+          const div = document.createElement('div');
+          div.className = 'audit-line';
+          div.style.marginTop = '8px';
+          div.textContent = `Auto-retry: ${note}`;
+          el.querySelector('.audit-summary')?.appendChild(div);
+        }
+      }
+    } catch (error) {
+      if (p2el) { p2el.value = basePrompt2; if (p2panel) p2panel.textContent = basePrompt2; }
+      setAuditMessage(`<div class="audit-summary audit-fail"><div class="audit-copy">Auto-retry failed: ${(window.escapeHtml || (s => s))(error.message)}</div></div>`);
+    } finally {
+      if (btn) { btn.disabled = false; btn.textContent = '✦ Auto-forge to ≥96'; }
+      if (auditBtn) auditBtn.disabled = false;
+    }
+  }
+
+  window.MnemorizedImageAudit = { runImageAudit, performAudit, autoAuditRetry, TARGET_SCORE };
   window.runForgeImageAudit = runImageAudit;
+  window.runForgeAutoRetry = autoAuditRetry;
 })();

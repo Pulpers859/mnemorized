@@ -2174,6 +2174,7 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
         <div id="user-image-actions" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
           <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
           <button class="btn-copy" id="image-audit-btn" onclick="runForgeImageAudit()" style="margin-left:8px;padding:10px 16px;font-size:13px;color:var(--teal);border-color:var(--teal);">✦ Audit Image Quality (≥96 gate)</button>
+          <button class="btn-copy" id="image-audit-retry-btn" onclick="runForgeAutoRetry()" style="margin-left:8px;padding:10px 16px;font-size:13px;color:var(--gold);border-color:var(--gold);">✦ Auto-forge to ≥96</button>
           <button class="btn-copy" onclick="downloadForgeBundle()" style="margin-left:8px;padding:10px 16px;font-size:13px;">⬇ Export Bundle</button>
           <span id="gen-img-status" style="margin-left:12px;font-size:12px;color:var(--muted);"></span>
           <div id="image-audit-result" style="margin-top:14px;"></div>
@@ -2281,6 +2282,6 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
 <script src="/scripts/forge-input-builder.js?v=20260706-lesson-blueprint-1"></script>
 <script src="/scripts/forge-pipeline.js?v=20260707-unnumbered-fence-3"></script>
 <script src="/scripts/forge-guided.js?v=20260706-qa-fixes-1"></script>
-<script src="/scripts/forge-image-audit.js?v=20260707-canonical-rubric-1"></script>
+<script src="/scripts/forge-image-audit.js?v=20260708-auto-retry-1"></script>
 </body>
 </html>

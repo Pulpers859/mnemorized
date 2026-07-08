@@ -838,6 +838,45 @@ def test_forge_has_in_app_image_quality_gate() -> None:
     assert "PASS_WITH_TEXT_RISK" in audit
 
 
+def test_forge_image_audit_has_auto_retry_loop() -> None:
+    root = Path(__file__).resolve().parents[1]
+    html = (root / "frontend" / "pages" / "forge.html").read_text(encoding="utf-8")
+    audit = (root / "frontend" / "scripts" / "forge-image-audit.js").read_text(encoding="utf-8")
+
+    # The one-shot gate is refactored into a reusable core (performAudit) that both the
+    # manual button and the closed loop (autoAuditRetry) share.
+    assert "async function performAudit" in audit
+    assert "async function autoAuditRetry" in audit
+    assert "window.runForgeAutoRetry" in audit
+    assert "performAudit, autoAuditRetry" in audit
+
+    # The loop feeds the auditor's repair note back into prompt 2, re-renders via the
+    # existing generateImages(), keeps the best-scoring pass, and restores the base
+    # prompt so a repair directive never leaks into the next manual regenerate.
+    assert "function buildRepairDirective" in audit
+    assert "function injectRepair" in audit
+    assert "generateImages()" in audit
+    assert "p2el.value = basePrompt2" in audit
+    # Cost protocol: bounded passes, opt-in via its own button.
+    assert "MAX_REPAIRS_DEFAULT" in audit
+    assert 'id="image-audit-retry-btn"' in html
+    assert 'onclick="runForgeAutoRetry()"' in html
+
+
+def test_precision_overlay_places_labels_deterministically_by_zone() -> None:
+    root = Path(__file__).resolve().parents[1]
+    tool = (root / "tools" / "overlay_precision_labels.py").read_text(encoding="utf-8")
+
+    # Placement is computed from the anchor's zone + image size (the same map the
+    # prompt uses), not eyeballed pixels or vision detection. Explicit pixels still
+    # override, and multiple facts in one zone stack instead of overlapping.
+    assert "def resolve_boxes" in tool
+    assert "def _zone_grid" in tool
+    assert "def _is_rail" in tool
+    assert "PLACEMENT IS DETERMINISTIC" in tool
+    assert '"cx" in place and "cy" in place' in tool  # explicit-pixel override path
+
+
 def test_forge_gates_image_prompt_length_before_generation() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
@@ -1097,7 +1136,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
     assert 'forge-pipeline.js?v=20260707-unnumbered-fence-3' in html
-    assert 'forge-image-audit.js?v=20260707-canonical-rubric-1' in html
+    assert 'forge-image-audit.js?v=20260708-auto-retry-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
