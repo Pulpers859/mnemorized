@@ -8,6 +8,7 @@ Claude-specific assumptions:
 - Normal branch: `main` tracking `origin/main`
 - Fetch at the start of a task; pull with `--ff-only` only when the tree is clean.
 - Commit and push completed tracked changes to `origin/main` unless Patrick explicitly says not to.
+- NEVER hand-author the medical anchors/facts/narration/scene prose yourself for an image run; ALWAYS drive the Forge (type the topic; let Stage 1 -> Stage 2 medical gate -> Stage 3 builder generate it) unless Patrick explicitly says to hand-author. Hand-crafted prose is un-gated medical content and bypasses the real builders under test. Constitution LAW #0.1.
 - Old OneDrive/Desktop copies are stale unless Patrick explicitly asks to inspect them.
 - Real local secrets live in ignored `backend/.env`.
 - The main runtime surfaces are `backend/app/main.py`, `frontend/pages/*.html`, `frontend/scripts/*.js` (all forge behavior — forge.html has no inline JS), `frontend/styles/app-shell.css`, and `render.yaml`.

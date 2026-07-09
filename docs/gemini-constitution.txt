@@ -637,6 +637,21 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     outranks finishing the task. Origin: on 2026-07-08 an audit was fabricated twice; Patrick's
     standing instruction is that this must never happen again.
 
+      LAW #0.1 — NEVER HAND-AUTHOR THE MEDICAL CONTENT; ALWAYS GENERATE THROUGH THE FORGE
+    (governs every image/prompt run in this system). The Forge production pipeline
+    (frontend/scripts/forge-*.js: topic -> Stage 1 scene/script -> Stage 2 medical quality gate
+    -> Stage 3 image-prompt builder -> image generation) is the ONLY sanctioned source of the
+    medical anchors, narration, and scene prose. It is categorically forbidden to invent the
+    anchors/facts/prose yourself and hand them to an image model (that is both un-sourced,
+    un-gated medical content AND a fabrication risk under LAW #0). Hand-crafted prose in a
+    harness also bypasses the four production image-prompt builders — the exact code the run is
+    supposed to test — so it proves nothing about the product. Type the TOPIC into the Forge and
+    let the pipeline produce the content; your job is to observe/grade the ACTUAL pixels and feed
+    lessons back into this Constitution and the builders. The ONLY exception is when Patrick
+    explicitly says to hand-author for a specific one-off; absent that explicit instruction,
+    ALWAYS use the Forge. Origin: 2026-07-09, Patrick: "never ever ever hand author the medical
+    anchors and prose yourself... ALWAYS use the Forge unless i explicitly say not to."
+
 ═══════════════════════════════════════════════════════════════════════════
 FIELD FINDINGS — 2026-07-09 (DKA weak-anchor redesign, v4->v5->v6 renders,
 REAL-PIXEL validated; retires the fabricated 2026-07-08 note above)
