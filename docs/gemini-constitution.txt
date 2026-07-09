@@ -578,3 +578,71 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     called a validation. This law outranks looking competent, outranks a tidy narrative, and
     outranks finishing the task. Origin: on 2026-07-08 an audit was fabricated twice; Patrick's
     standing instruction is that this must never happen again.
+
+═══════════════════════════════════════════════════════════════════════════
+FIELD FINDINGS — 2026-07-09 (DKA weak-anchor redesign, v4->v5->v6 renders,
+REAL-PIXEL validated; retires the fabricated 2026-07-08 note above)
+═══════════════════════════════════════════════════════════════════════════
+
+  Context: Patrick reviewed the honest DKA render and flagged 5 anchors as weak hooks
+  (ketones, fluids, insulin, bicarb-caution, resolution). Redesigned each, rendered v4/v5/v6
+  via the AG bridge, and audited EACH render against the actual pixels (LAW #0). The
+  redesigns held in the picture — this is a genuine render validation, not an intended-anchor
+  recap. What generalized:
+
+15. A SOUND-ALIKE THAT NAMES THE SUBTYPE BUT NOT THE CLASS IS A DEAD HOOK. "Reg" the cook
+    named the insulin VARIETY (Regular) but nothing in the scene said INSULIN — if you didn't
+    already know Regular is an insulin, the anchor taught nothing. FIX: encode the CLASS with
+    its canonical pure-visual metaphor (INSULIN = a KEY turning in a cell-shaped lock, shoving
+    a sugar cube inside = lowers glucose), and demote the subtype name to a small garnish tag
+    ("REG" on the keyring). Rule: name the class visually first; a sound-alike may only refine
+    a class the picture ALREADY establishes.
+
+16. METAPHOR BEATS THEME — THEME-CHOSEN PROPS ENCODE NOTHING. The weakest anchors were props
+    picked to fit the DINER (a cracked diner wall = "bicarb caution"; an exit door = "resolution").
+    A cracked wall has zero association with bicarbonate. FIX: pick the strongest MEDICAL
+    metaphor first, then place it incongruously in the scene (bizarreness is a feature): bicarb-
+    is-emergency-only -> a box of BAKING SODA sealed behind an intact BREAK-GLASS emergency case
+    with a chained hammer (restricted/last-resort reads instantly); DKA resolution + the SubQ-
+    before-stopping-the-drip overlap -> a RELAY BATON HANDOFF. Both validated in-pixel.
+
+17. LINK TWO ANCHORS WITH ONE SHARED PHYSICAL ELEMENT TO ENCODE A CAUSAL RULE. The rule "hold
+    insulin until K+ is safe" was rendered by running the SAME chain from the padlocked bananas
+    (K+) up to JAM the insulin key so it can't finish turning. One object physically coupling two
+    anchors teaches the dependency better than two separate props. Confirmed present in v4-v6.
+
+18. MOTIVATE EVERY COLOR — AN ARBITRARY COLOR IS A WASTED HOOK. v1 wasted purple on an arbitrary
+    "purple flame" for ketones. Moving the purple to the DIPSTICK TIP (a real positive-ketone
+    color change) plus a fruity/acetone breath-cloud made the ketone anchor read cleanly. Put the
+    color where the real world puts it.
+
+19. TIMING / SIMULTANEITY FACTS NEED A TIMING METAPHOR, AND STILL RENDER SOFT. "Start SubQ before
+    you stop the drip (overlap)" is a sequence fact; a static prop can't hold it, but a relay
+    baton handoff can. CAVEAT (in-pixel): the model renders a handoff "in progress" (reaching for
+    the baton) and RESISTS freezing a both-hands-clamped-at-once instant even when explicitly told.
+    Accept "handoff in progress" as sufficient for the transition/overlap concept; do not burn
+    iterations chasing a frozen simultaneous grip.
+
+  RENDERING-CRAFT failures caught only by looking at the pixels (would be invisible from the
+  prompt alone):
+
+20. SAME-COLOR COLLISION BLURS TWO OBJECTS INTO ONE. A red relay baton next to a red finish-line
+    ribbon (v5) fused visually; the overlap was unreadable. FIX (v6): delete the competing prop
+    (the ribbon) AND give the key hook a UNIQUE color (bright-orange solid baton). When a hook
+    won't read, check for a same-color neighbor before rewording anything.
+
+21. A DISCONNECTED PROP DOES NOT MODIFY THE THING IT'S NEAR. A salt shaker sitting on the counter
+    AWAY from the fire-hose water did not read as "salty saline" — it was just a shaker. Either
+    integrate the modifier INTO its target (salt crystals in the jet) or drop it. Here it was
+    dropped: the load-bearing fact is VOLUME (dehydrated patient revived by the hose); normal
+    saline is a secondary/additive detail the narration carries.
+
+22. REPEATED IDENTICAL SILHOUETTES ARE OK *ONLY* WHEN CONTEXT DISAMBIGUATES AND THEY ENCODE
+    DIFFERENT FACETS. Three "BAKING SODA" boxes are fine here because each encodes a DIFFERENT
+    bicarb fact in a DIFFERENT context (triad lab value spilling / gap-closing recovery / the
+    withheld DRUG sealed behind glass). Not a blanket duplicate-silhouette defect — judge by
+    whether a viewer can tell them apart from context, not by object-name repetition.
+
+23. PIN EXACT SPELLING OF IN-WORLD LABELS. v4 produced "Bakiog Soda"; instructing "a box lettered
+    exactly BAKING SODA" fixed all three boxes in v5/v6. For any label that must be legible, state
+    the exact target string in the prompt.
