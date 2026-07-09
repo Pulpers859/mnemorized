@@ -20,7 +20,7 @@ WHAT GEMINI CAN RENDER RELIABLY
 - Color and palette control (warm tones, monochrome, vivid vs muted)
 
 ═══════════════════════════════════════════════════════════════════════════
-WHAT GEMINI CANNOT RENDER — 19 confirmed failure modes
+WHAT GEMINI CANNOT RENDER — 21 confirmed failure modes
 ═══════════════════════════════════════════════════════════════════════════
 
 1. MICRO-POSES: interlocked fingers, balloon-puffed cheeks, specific hand/joint positions.
@@ -134,9 +134,67 @@ WHAT GEMINI CANNOT RENDER — 19 confirmed failure modes
     the abbreviation must appear, audit it manually and do not call the image a
     clean pass if the letterform is ambiguous.
 
+20. SAME-COLOR ADJACENCY FUSION: two DISTINCT objects rendered in the same color
+    and placed touching or overlapping blur into one shape — the viewer cannot tell
+    them apart. Confirmed 2026-07-09 (DKA v5): a red relay baton held right next to a
+    red finish-line ribbon fused, so the "two hands on one baton" hook was unreadable.
+    FIX: give the load-bearing hook a UNIQUE color and delete or recolor any same-color
+    neighbor (v6: bright-orange baton, ribbon removed → reads cleanly). When a hook
+    won't read, check for a same-color adjacent object BEFORE rewording the prompt.
+
+21. DISCONNECTED MODIFIER PROP: a prop meant to MODIFY another object (make water
+    "salty," make a flame "chemical") reads as an independent object when placed apart
+    from its target — a property does not jump across a gap. Confirmed 2026-07-09 (DKA
+    v4/v5): a salt shaker sitting on the counter, away from the fire-hose water, never
+    read as "saline"; it was just a shaker.
+    FIX: integrate the modifier INTO its target (salt crystals IN the jet), or drop it
+    and carry the detail in narration. A modifier only modifies what it visibly touches.
+    (Note: simultaneity/"both-at-once" timing renders soft — that is failure modes #7/#8,
+    not a new mode; accept "in progress" for a handoff and do not over-iterate.)
+
 ═══════════════════════════════════════════════════════════════════════════
 PROVEN POSITIVE FORMULAS — what consistently produces A+ (>=96) images
 ═══════════════════════════════════════════════════════════════════════════
+
+PROMPT COMPOSITION — v2→v6 DISTILLED LAWS (apply BEFORE writing any prompt):
+Real-pixel-validated across the DKA v2→v6 arc. These prevent the two costliest
+failures — floating labels (critical, never passes) and weak/arbitrary hooks — so
+apply them first, before the hierarchy below. Full evidence: the dated FIELD FINDINGS
+blocks (2026-07-07 #1–14; 2026-07-09 #15–23).
+
+  LAW 1 — WRITE FLOWING SCENE PROSE, NEVER AN ANNOTATED LIST. The model imitates the
+  STRUCTURE of the prompt: a "name — description" glossary with "(zone)" tags renders as
+  an annotated DIAGRAM with floating labels; continuous scene prose ("On the far-left
+  shelf stand three mugs…") renders as a SCENE. This one switch (v2→v3) eliminated the
+  critical floating-label failure. Describe the room as a single narrator walking through
+  it; never emit a bulleted anchor list or "label — meaning" pairs into the prompt.
+
+  LAW 2 — FRAME SURFACES POSITIVELY; NEVER NEGATE. Image models cannot parse negation —
+  "no labels" and "do not write text" each CUE the thing they forbid. State the desired
+  POSITIVE state: "every wall and the floor are completely blank and unmarked." Reserve one
+  short closing sentence listing the only allowed in-world words, each spelled exactly
+  ("a box lettered exactly BAKING SODA" — see finding #23).
+
+  LAW 3 — NAME THE CLASS VISUALLY FIRST; A SOUND-ALIKE ONLY REFINES. Encode the drug/concept
+  CLASS with its canonical pure-visual metaphor (insulin = a KEY unlocking a cell), then let
+  a sound-alike NAME refine a subtype it can already see ("REG" tag on the key). A name that
+  supplies only the subtype with no class visual (cook "Reg") is a dead hook (finding #15).
+
+  LAW 4 — METAPHOR BEATS THEME. Pick the strongest MEDICAL metaphor first, then place it
+  incongruously in the scene; never let the setting choose a prop that encodes nothing (a
+  cracked diner wall for "bicarb caution"). The bizarreness is a feature (findings #2, #16).
+
+  LAW 5 — MOTIVATE EVERY COLOR. Put a color where the real world puts it (purple on a
+  positive dipstick TIP, not an arbitrary flame). An arbitrary color is a wasted hook (#18).
+
+  LAW 6 — ENCODE A CAUSAL DEPENDENCY WITH ONE SHARED PHYSICAL ELEMENT. To teach "A gates B,"
+  make one object physically couple the two anchors (the chain from the padlocked bananas
+  jams the insulin key = hold insulin until K+ is safe). Stronger than two separate props (#17).
+
+  HARD STANDARD — FLOATING LABELS / CAPTIONS / ZONE NAMES = AUTOMATIC FAIL. Any text that is
+  not physically part of an in-world object is the critical failure; it never passes,
+  regardless of how strong the rest of the plate is (Patrick's standing standard).
+
 
 VISUAL ENCODING HIERARCHY:
 Before assigning a text label to an anchor, check this priority order:
