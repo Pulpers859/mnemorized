@@ -36,10 +36,14 @@ const SKETCHY_STYLE_ROOM = 'Hand-drawn 2D cartoon illustration drawn with Micron
   'EMPTY ROOM ONLY — absolutely NO people, NO characters, NO figures, NO animals. ' +
   'NO text, NO labels, NO signs, NO writing on any surface. Just the bare room.';
 
-const ANTI_META_TEXT = 'TEXT RULES: Do NOT render any floating labels, zone names, category descriptions, ' +
-  'or meta-commentary as visible text in the image. The ONLY text that should appear is text that is ' +
-  'physically part of an object in the scene — written on signs, sticky notes, labels, screens, bottles, ' +
-  'chalkboards, or other in-world surfaces. No floating captions. No zone labels. No anchor descriptions.';
+// Positive framing, not negation: image models cannot parse "do NOT" — each negated
+// noun CUES the thing it forbids. State the desired POSITIVE surface state instead, and
+// require every label to sit physically ON its own object (Constitution LAW 2; real-pixel
+// validated 2026-07-09, floating labels 7 -> 0 when this framing replaced the negation).
+const ANTI_META_TEXT = 'TEXT RULES: Every wall, the floor, the ceiling, and all empty space are completely ' +
+  'blank and unmarked. The only writing anywhere is short words physically lettered ON the in-world object ' +
+  'each one belongs to — printed on the object itself, a sign, a bottle, a banner, or a chalkboard, and ' +
+  'sitting directly on that object. Nothing is written in the empty air or space around the objects.';
 
 const NO_PRECISION_TEXT_RULE = 'NO PRECISION TEXT: do NOT render numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as written text anywhere in the image — no plaques, dials, gauges, tags, chalk marks, or stamps bearing values. ' +
   'A drawn number is a flashcard, not a mnemonic: the exact value is spoken in the narration and listed in the flashcards, NOT printed in the picture. ' +
@@ -152,11 +156,41 @@ function stripPrecisionTokens(text) {
     .replace(/\s{2,}/g, ' ').replace(/\s+([.,;])/g, '$1').trim();
 }
 
+// Zone -> natural prose lead-in phrase, so placement still guides the composition WITHOUT
+// emitting an annotated "(zone)" tag. An image model imitates prompt STRUCTURE: a tagged
+// list renders as a labeled DIAGRAM with floating captions; continuous scene prose renders
+// as a SCENE (Constitution LAW 1). The parenthetical zone tag was itself a top cause of the
+// floating-label failure (real-pixel validated 2026-07-09).
+const ZONE_LEAD_IN = {
+  'far left': 'On the far left', 'left': 'On the left', 'left wall': 'Against the left wall',
+  'center left': 'Just left of center', 'center': 'At center stage', 'center right': 'Just right of center',
+  'right': 'On the right', 'right wall': 'Against the right wall', 'far right': 'On the far right',
+  'foreground left': 'In the foreground at left', 'foreground center': 'In the foreground',
+  'foreground right': 'In the foreground at right', 'background left': 'In the back at left',
+  'background center': 'In the background', 'background right': 'In the back at right',
+  'background corner': 'Off in the back corner', 'above center': 'Directly overhead', 'doorway': 'In the doorway'
+};
+
+function zoneLeadIn(zone) {
+  const z = String(zone || '').trim().toLowerCase();
+  return ZONE_LEAD_IN[z] || (z ? ('Toward the ' + z) : '');
+}
+
+// Compose the anchors as ONE flowing paragraph of scene prose, never an annotated list.
+// Placement rides in a natural lead-in phrase; if the visual already opens with its own
+// placement word, the lead-in is skipped to avoid double-placement.
 function buildImageAnchorLines(anchors, concise = false) {
   return anchors.map(v => {
-    const visual = trimWords(stripPrecisionTokens(condenseForImage(v.visual)), concise ? 24 : 48).replace(/[.\s]+$/, '');
-    return `  (${v.zone.toLowerCase()}) ${visual}.`;
-  }).join('\n');
+    const visual = trimWords(stripPrecisionTokens(condenseForImage(v.visual)), concise ? 24 : 48)
+      .replace(/[.\s]+$/, '').trim();
+    if (!visual) return '';
+    const lead = zoneLeadIn(v.zone);
+    const alreadyPlaced = /^(on |at |in |against |just |directly |off |toward |above |below |behind |beside |near |far |left|right|center|foreground|background|upstage|downstage|stage-)/i.test(visual);
+    if (lead && !alreadyPlaced) {
+      return `${lead}, ${visual.charAt(0).toLowerCase()}${visual.slice(1)}.`;
+    }
+    return `${visual}.`;
+  }).filter(Boolean).join(' ');
 }
 
 // Deterministically split the anchor visuals' "quoted" tokens into precision
@@ -199,7 +233,8 @@ function buildTextAllowlistFence(anchors) {
     ? `The ONLY text allowed is this whitelist of short mnemonic names, each appearing at most once, ` +
       `rendered legibly on its own object: ${ordinary.join(', ')}.`
     : `This scene has NO required labels — render no visible text at all.`;
-  return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ${list} ` +
+  return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ` +
+    `Every wall, the floor, the ceiling, the beams, and all empty space stay completely blank and unmarked, and each allowed word sits directly on its own object. ${list} ` +
     `Do NOT render any numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as text anywhere in the image — ` +
     `those exact facts belong in the narration and flashcards, not the picture. ` +
     `Do NOT render any index numbers, list numbers, bullet numbers, or the digits 1 through ${n || 10} ` +
@@ -234,7 +269,7 @@ function composeImagePrompt2(sceneDesc, assigned, concise = false) {
     `${NO_PRECISION_TEXT_RULE} ` +
     `${EXACT_LABEL_RULE} ` +
     `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
-    `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+    `Weave ALL of them into ONE flowing scene, written as continuous prose describing a single wide shot — a narrator walking the room, never a bulleted or tagged list:\n\n` +
     buildImageAnchorLines(assigned, concise) + '\n\n' +
     `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
     `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
@@ -1066,7 +1101,7 @@ async function runPipeline() {
       `${NO_PRECISION_TEXT_RULE} ` +
       `${EXACT_LABEL_RULE} ` +
       `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
-      `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
+      `Weave ALL of them into ONE flowing scene, written as continuous prose describing a single wide shot — a narrator walking the room, never a bulleted or tagged list:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
       `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
