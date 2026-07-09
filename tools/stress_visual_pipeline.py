@@ -84,8 +84,9 @@ REGENERATE = OVERALL<70 or 2+ anchors missing. Never PASS if any anchor is missi
 ANTI-INFLATION: external auditor only (never self-grade); a label alone never
 satisfies an anchor (needs shape/interaction/placement); treat labels as unreliable
 unless legible AND correctly spelled; do not invent anchors that are not visible;
-formulas allowed only attached to a visible device; on a plate with >8 anchors,
-re-verify before claiming all present."""
+numbers/doses/formulas must NOT appear as drawn text at all (exact values live in the
+narration/flashcards) — a spelled-out value is a text-discipline defect, not a feature;
+on a plate with >8 anchors, re-verify before claiming all present."""
 
 RUBRIC_OUTPUT_FORMAT = """OVERALL_SCORE: <integer 0-100>
 DECISION: <PASS | PASS_WITH_TEXT_RISK | REPAIR | REGENERATE>
@@ -275,10 +276,10 @@ Principles:
 - Preserve every anchor, but rewrite each as a compact visual beat.
 - Compress 8-10 anchors into 6-8 large spatial beats when related facts belong together.
 - Put exact numbers/formulas on large physical devices only: gauges, plaques, dials, rulers, scales, clocks, tags.
-- For every required text label, use the label readability formula: "a large brass plaque bolted to [object] reads [LABEL] in bold block letters." Never use vague "stamped with" or bare "reads."
+- For a required NAME label, use the label readability formula: "a large brass plaque bolted to [object] reads [NAME] in bold block letters." Never use vague "stamped with" or bare "reads."
 - Avoid ordinary word labels whenever an object/action can carry the meaning. Do not label obvious objects like syringes, vials, kidneys, eyes, pipes, antibiotics, or blood cultures.
-- Visible text should be an allowlist of essential precision labels only: short thresholds, formulas, timings, or one-word mnemonic names. Prefer compact labels such as "22", "100", "4", "1 HR", "30 mL/kg", "MAP 65" over long phrases.
-- Always end the prompt with a text allowlist fence: "Visible text limited to: [list]. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."
+- NO PRECISION TEXT: never render numbers, doses, units, thresholds, or formulas as text (no "22", "30 mL/kg", "MAP 65", "1 HR"). Those exact values live in the narration/flashcards; the image carries a hook for the concept. Visible text is limited to short sound-alike NAMES only.
+- Always end the prompt with a text allowlist fence: "Visible text limited to these short names: [list]. Render no numbers, doses, units, thresholds, or formulas as text. No other text, no floating captions, no zone labels, no speech bubbles, no directional words anywhere in the image."
 - Never ask Gemini to render long medical words unless the exact word is the tested fact.
 - Do not encode large numbers as exact object counts above 12.
 - Every beat must be large, distinct, and silhouette-readable at 1024px.
@@ -638,10 +639,11 @@ def audit_prompt(
 
 Grade with the CANONICAL RUBRIC below (the same standard used in-app and in
 docs/image-scoring-rubric.md). Score by the arithmetic, not by impression.
-Numeric thresholds/formulas may appear, but they must be accurate and attached to a
-visual object. If the director intentionally replaces an unsafe target such as
-"exactly 30 objects" with a plaque/gauge/dial label like "30 mL/kg," treat that as
-correct (not a text-discipline defect).
+Numbers, doses, units, thresholds, and formulas must NOT appear as drawn text — the
+image carries a hook for the concept and the exact value lives in the narration/
+flashcards. A spelled-out value on a plaque/gauge/dial (e.g. "30 mL/kg", "MAP 65") is a
+text-discipline defect (category D), not correct. A number is acceptable only when
+encoded as a hook (a shape look-alike or a countable quantity), never as digits.
 
 {CANONICAL_RUBRIC}
 

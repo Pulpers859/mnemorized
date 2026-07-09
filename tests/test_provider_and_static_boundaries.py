@@ -924,11 +924,21 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     assert "buildTextAllowlistFence(assigned)" in pipeline
     assert "ensureTextAllowlistFence(data.prompt2, assigned)" in pipeline
 
-    # Anti-duplication guard (renders drew one anchor twice) and label-presence nudge
-    # (a whitelisted precision label was dropped) — both landed in the generator after
-    # the plate A first-shot render, not as per-image hand repairs.
+    # Anti-duplication guard (renders drew one anchor twice) and the name-label fence
+    # (only short mnemonic names may appear, each at most once) — both are generator
+    # invariants, not per-image hand repairs.
     assert "each rendered EXACTLY ONCE" in pipeline
-    assert "each item should appear exactly once" in pipeline
+    assert "each appearing at most once" in pipeline
+
+    # NO PRECISION TEXT: the generator forbids drawing numbers/doses/formulas as text
+    # (a drawn number is a flashcard, not a mnemonic — exact values are spoken/carded).
+    assert "NO_PRECISION_TEXT_RULE" in pipeline
+    assert "PRECISION_TEXT_RULE = 'PRECISION TEXT EXCEPTION" not in pipeline
+    assert "Do NOT render any numbers, digits, doses, units" in pipeline
+    # Defense-in-depth: quoted precision tokens are stripped from the drawn anchor lines
+    # so the model is never TOLD to draw a value even if an upstream visual spells one.
+    assert "function stripPrecisionTokens" in pipeline
+    assert "stripPrecisionTokens(condenseForImage" in pipeline
 
     # Per-anchor word cap is generous enough to keep a multi-part anchor plus its
     # quoted labels intact — the old 32-word cap truncated rich anchors mid-clause,
@@ -1141,7 +1151,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260707-unnumbered-fence-3' in html
+    assert 'forge-pipeline.js?v=20260708-no-precision-text-1' in html
     assert 'forge-image-audit.js?v=20260708-auto-retry-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
@@ -1239,7 +1249,7 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "FUNCTIONAL ANALOGY" in pipeline
     assert "CONTRAST/THRESHOLD" in pipeline
     assert "SPATIAL" in pipeline
-    assert "LABELED TEXT (weakest — LAST RESORT)" in pipeline
+    assert "LABELED TEXT (weakest — LAST RESORT, NAMES ONLY)" in pipeline
     assert "SILHOUETTE TEST" in pipeline
     assert "CHARACTER DESIGN (encouraged)" in pipeline
     assert "OBJECT INTERACTION = CLINICAL RELATIONSHIP" in pipeline
@@ -1265,8 +1275,8 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Setting must be a phonetic pun" not in pipeline
     assert "MUST be a PHONETIC PUN" not in pipeline
     assert "SHAPE DIVERSITY RULE" in pipeline
-    assert "FORMULA RULE" in pipeline
-    assert "PRECISION TEXT EXCEPTION" in pipeline
+    assert "PRECISION-VALUE RULE" in pipeline
+    assert "PRECISION TEXT EXCEPTION" not in pipeline
     assert "ANCHOR LEGIBILITY RULE" in pipeline
     assert "EXACT LABEL RULE" in pipeline
     assert "SCENE TEXT BUDGET" in pipeline
@@ -1311,7 +1321,8 @@ def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> No
     contract = (root / "docs" / "visual-mnemonic-prompt-contract.md").read_text(encoding="utf-8")
 
     assert "docs/visual-mnemonic-prompt-contract.md" in agents
-    assert "Precision Text Exception" in contract
+    assert "No Precision Text" in contract
+    assert "Precision Text Exception" not in contract
     assert "Do not copy named scenes" not in contract
     assert "It is not acceptable to copy or closely paraphrase proprietary scenes" in contract
     assert "pre-image structural audit: `>=85`" in contract

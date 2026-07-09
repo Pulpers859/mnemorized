@@ -53,24 +53,28 @@ generic medical memory unless Patrick explicitly asks for an unsourced draft.
 - All anchors must be present in one coherent static scene.
 - A `plate` is a focused render of 1-3 anchors within the same coherent memory-palace scene. It is not a segmented grid, storyboard, or bay-by-bay infographic. Grid/bay layouts should be rare exceptions, not a default repair strategy.
 - No anchor may become tiny shelf clutter. At 1024px width, the major cue should still be identifiable.
-- Text is allowed only when it adds precision or a mnemonic name. Text must not be the whole mnemonic.
-- Exact labels matter. If a prompt says `LENA INN`, `ASPIRIN`, or `Gap = 8-12`, do not invent a near-spelling.
-- Compact formulas and thresholds are allowed when they are the tested fact.
-- Formula labels must sit on a visual device: scale, ruler, gauge, dial, cabinet, chalk mark, plaque, or similar.
+- Visible text is allowed only as a short sound-alike NAME. Text must never be the whole mnemonic.
+- Exact NAME labels matter. If a prompt says `LENA INN` or `ASPIRIN`, do not invent a near-spelling.
+- Never render numbers, doses, units, thresholds, or formulas as text — see "No Precision Text" below.
 - Do not render `Hook`, `Encodes`, zone names, or meta-instructions into the image.
 
-## Precision Text Exception
+## No Precision Text (numbers are spoken, not drawn)
 
-Some medical topics cannot be taught honestly without numbers or formulas. Examples:
+A drawn number, dose, unit, threshold, or formula is a flashcard, not a mnemonic — black
+out every character in the image and it must still cue each fact. So exact values NEVER
+appear as text in the picture. They live in the NARRATION (spoken) and the ANCHOR /
+flashcard (written), which is exactly how Picmonic and Sketchy handle doses: the symbol
+is in the sketch, the number is in the narration and the fact list.
 
-- normal anion gap `8-12`
-- anion gap formula
-- delta-delta ratio
-- Winter's formula
-- osmolar gap calculation and `>10`
-- drug doses, scoring cutoffs, time windows, and diagnostic thresholds
+Examples that must NOT be printed on the image: normal anion gap `8-12`, the anion-gap
+formula, delta-delta ratio, Winter's formula, osmolar gap `>10`, drug doses, scoring
+cutoffs, time windows, diagnostic thresholds.
 
-Use numbers/formulas as precision plaques attached to strong visual mnemonics. The formula should confirm the cue; it should not replace the cue.
+In the image, a value has two honest fates only:
+1. **Encode it as a hook** — a shape look-alike (3 fork prongs = a triad) or a small
+   countable quantity (≤ ~5 oversized objects). This is still shape-first memory.
+2. **Omit it** — if it cannot be cleanly encoded (compound units like `0.1 U/kg/hr`),
+   leave it out of the picture entirely and let the narration + flashcard carry it.
 
 ## Design Principle Sources
 

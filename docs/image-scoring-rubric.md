@@ -65,9 +65,15 @@ Full marks: every element reads by shape first, large, uncluttered, in a wide fo
 - −3 scene so busy the reading path is lost.
 
 ### D. Text Discipline — 15 pts
-Full marks: labels are sparse, short (≤3 words on ordinary props), correctly spelled,
-and only used where the hierarchy allows (thresholds/doses/acronyms).
-- −6 per **misspelled or invented required label** (also hard gate G2).
+Full marks: the only visible text is a handful of short mnemonic NAMES (≤3 words,
+correctly spelled). **No numbers, doses, units, thresholds, lab values, or formulas
+appear as text at all** — a drawn exact value is a flashcard, not a mnemonic (it fails
+the cover-the-text test), and belongs in the narration + flashcards, not the picture.
+- −4 per **numeric value / dose / unit / threshold / formula rendered as text** on any
+  surface (plaque, dial, gauge, tag, chalkboard, stamp). Exact values are spoken and
+  carded, never drawn. A number is acceptable ONLY when it is *encoded as a hook* (a
+  shape look-alike or a countable quantity), not spelled out.
+- −6 per **misspelled or invented required NAME label** (also hard gate G2).
 - −5 meta-instruction / caption leakage — words like "Hook", "Encodes", "zone", zone
   names, speech bubbles, or directional words rendered as visible text (also G3).
 - −3 per object overloaded with a crammed multi-line label list.
@@ -100,7 +106,7 @@ anchor still cannot pass.
 | G1 | Exactly 1 required anchor missing/unidentifiable | 79 |
 | G1 | 2 required anchors missing/unidentifiable | 70 |
 | G1 | 3+ required anchors missing/unidentifiable | 55 |
-| G2 | Any misspelled or invented **required** label | 88 |
+| G2 | Any misspelled or invented **required NAME** label (numbers/doses/formulas should not be drawn at all — see category D) | 88 |
 | G3 | Meta-instruction / caption / zone-name text leaked into the image | 85 |
 | G4 | Scene is a segmented grid / booths / panels, not one coherent scene | 80 |
 | G5 | Any medically wrong fact or threshold implied | 75 |
@@ -134,8 +140,11 @@ Never call an image PASS if any anchor is missing, regardless of how the rest sc
    character, object interaction, or spatial placement. Text on a prop is not a hook.
 3. **Treat labels as unreliable** unless they are clearly legible and correctly spelled.
 4. **Do not invent anchors** that are not actually visible in the image.
-5. **Numeric thresholds/formulas are allowed only when attached to a visible device**,
-   not floating.
+5. **Numeric thresholds/doses/formulas must NOT appear as rendered text at all.** The
+   image carries hooks; exact values live in the narration + flashcards. If the image
+   prints an exact value, that is a text-discipline defect (category D), not a feature —
+   the only acceptable number in the picture is one *encoded as a hook* (a shape
+   look-alike or a countable quantity), never spelled-out digits on a device.
 6. **Tie-break downward.** Uncertain between two scores → take the lower.
 7. **Density realism.** Plates with >8 encoded anchors crowd and lose fidelity; when an
    auditor reports "all anchors present and perfect" on a 10-anchor plate, re-verify —

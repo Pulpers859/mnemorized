@@ -41,10 +41,10 @@ const ANTI_META_TEXT = 'TEXT RULES: Do NOT render any floating labels, zone name
   'physically part of an object in the scene — written on signs, sticky notes, labels, screens, bottles, ' +
   'chalkboards, or other in-world surfaces. No floating captions. No zone labels. No anchor descriptions.';
 
-const PRECISION_TEXT_RULE = 'PRECISION TEXT EXCEPTION: short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. ' +
-  'They must be physically attached to the mnemonic object as a plaque, dial, ruler mark, scale beam, gauge face, or chalk mark. ' +
-  'Do not use text as the whole mnemonic: every precision label must sit on a strong non-text visual device that still reads by silhouette. ' +
-  'Keep precision text large, sparse, accurate, and readable; no sentences or paragraph labels.';
+const NO_PRECISION_TEXT_RULE = 'NO PRECISION TEXT: do NOT render numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as written text anywhere in the image — no plaques, dials, gauges, tags, chalk marks, or stamps bearing values. ' +
+  'A drawn number is a flashcard, not a mnemonic: the exact value is spoken in the narration and listed in the flashcards, NOT printed in the picture. ' +
+  'A number may appear ONLY when it is ENCODED as a visual hook — a shape look-alike (a fork\'s 3 prongs = a triad) or a small countable quantity of oversized objects (at most ~5) — never as spelled-out digits on a surface. ' +
+  'If a value cannot be cleanly encoded as a hook, leave it OUT of the image entirely; the narration carries it.';
 
 const ANCHOR_LEGIBILITY_RULE = 'ANCHOR LEGIBILITY RULE: every anchor must be large enough to identify at normal 1024px image size. ' +
   'No anchor may become tiny shelf clutter. Give each anchor clear empty space, a distinct silhouette, and enough scale to read its key shape before reading any label. ' +
@@ -137,19 +137,34 @@ function trimWords(text, maxWords) {
 // those labels blind and garbled them, and dropped "no text here" guidance. A
 // generous cap (with clampImagePrompt as the hard char backstop and the concise
 // fallback for overflow) keeps a multi-part anchor and its labels intact.
+// Defense-in-depth for the NO-PRECISION-TEXT rule: even if an anchor visual (legacy
+// script, or a non-compliant upstream) still spells a number/dose/formula as a quoted
+// label to render, strip it from the drawn prompt so the model is never TOLD to draw a
+// value. Only quoted PRECISION tokens are removed (and a dangling "reads/labeled" verb);
+// quoted NAMES ("Pred") and unquoted shape hooks ("three prongs", "figure-8") are kept.
+function stripPrecisionTokens(text) {
+  const isPrecision = (t) =>
+    /[0-9=×+\-±<>≤≥÷%]|\b(?:mL|kg|mg|mcg|mmol|mEq|mOsm|bpm|hr|min|U\/)\b/i.test(t);
+  return String(text || '')
+    .replace(/\b(?:reads?|reading|labell?ed|marked|stamped|shows?|says?|displays?|engraved|etched|inscribed|printed)\s+["“”]([^"“”\n]{1,40})["“”]/gi,
+      (m, tok) => (isPrecision(tok) ? '' : m))
+    .replace(/["“”]([^"“”\n]{1,40})["“”]/g, (m, tok) => (isPrecision(tok) ? '' : m))
+    .replace(/\s{2,}/g, ' ').replace(/\s+([.,;])/g, '$1').trim();
+}
+
 function buildImageAnchorLines(anchors, concise = false) {
   return anchors.map(v => {
-    const visual = trimWords(condenseForImage(v.visual), concise ? 24 : 48).replace(/[.\s]+$/, '');
+    const visual = trimWords(stripPrecisionTokens(condenseForImage(v.visual)), concise ? 24 : 48).replace(/[.\s]+$/, '');
     return `  (${v.zone.toLowerCase()}) ${visual}.`;
   }).join('\n');
 }
 
-// Deterministically derive the renderable-text whitelist from the anchor visuals
-// themselves. Every exact label an anchor needs is written in the visual as a
-// "quoted" token; we collect those, classify precision (numbers/formulas/units)
-// vs ordinary (names/words), enforce the rubric text budget by priority
-// (precision facts first, then ordinary — precision cap 6, ordinary cap 12), and
-// return the exact set that is allowed to appear. Nothing is guessed.
+// Deterministically split the anchor visuals' "quoted" tokens into precision
+// (numbers/doses/units/formulas) vs ordinary (short mnemonic names/words). Precision
+// tokens are NOT renderable text — a drawn number is a flashcard, not a mnemonic, so
+// exact values live in the narration + flashcards, never in the picture. Only the
+// ordinary short names are allowed to appear; the precision list is returned solely so
+// the fence can explicitly forbid those exact strings. Nothing is guessed.
 function extractRenderableLabels(anchors) {
   const precision = [];
   const ordinary = [];
@@ -169,6 +184,7 @@ function extractRenderableLabels(anchors) {
       (isPrecision(tok) ? precision : ordinary).push(tok);
     }
   });
+  // Ordinary short names only are renderable; precision is surfaced for the ban list.
   return { precision: precision.slice(0, 6), ordinary: ordinary.slice(0, 12) };
 }
 
@@ -178,13 +194,14 @@ function extractRenderableLabels(anchors) {
 // the anchor prompt, so whichever builder wrote the body, the guarantee holds.
 function buildTextAllowlistFence(anchors) {
   const n = (anchors || []).length;
-  const { precision, ordinary } = extractRenderableLabels(anchors);
-  const all = [...precision, ...ordinary];
-  const list = all.length
-    ? `The ONLY text allowed is this whitelist, and each item should appear exactly once, ` +
-      `rendered legibly on its own object: ${all.join(', ')}.`
+  const { ordinary } = extractRenderableLabels(anchors);
+  const list = ordinary.length
+    ? `The ONLY text allowed is this whitelist of short mnemonic names, each appearing at most once, ` +
+      `rendered legibly on its own object: ${ordinary.join(', ')}.`
     : `This scene has NO required labels — render no visible text at all.`;
   return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ${list} ` +
+    `Do NOT render any numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as text anywhere in the image — ` +
+    `those exact facts belong in the narration and flashcards, not the picture. ` +
     `Do NOT render any index numbers, list numbers, bullet numbers, or the digits 1 through ${n || 10} ` +
     `as captions, tags, or labels anywhere in the image. ` +
     `No other text, no floating captions, no zone labels, no anchor descriptions, ` +
@@ -213,10 +230,10 @@ function composeImagePrompt2(sceneDesc, assigned, concise = false) {
     `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
     `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
     `${ANCHOR_LEGIBILITY_RULE} ` +
-    `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
-    `${PRECISION_TEXT_RULE} ` +
+    `Text labels are secondary and optional — if present, maximum 3 words per ordinary mnemonic name label. ` +
+    `${NO_PRECISION_TEXT_RULE} ` +
     `${EXACT_LABEL_RULE} ` +
-    `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
+    `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
     `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
     buildImageAnchorLines(assigned, concise) + '\n\n' +
     `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
@@ -1045,10 +1062,10 @@ async function runPipeline() {
       `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
       `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
       `${ANCHOR_LEGIBILITY_RULE} ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per ordinary label. ` +
-      `${PRECISION_TEXT_RULE} ` +
+      `Text labels are secondary and optional — if present, maximum 3 words per ordinary mnemonic name label. ` +
+      `${NO_PRECISION_TEXT_RULE} ` +
       `${EXACT_LABEL_RULE} ` +
-      `SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. Character names and short numbers count. ` +
+      `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
       `Zone hints in parentheses guide placement — do NOT render zone text:\n\n` +
       buildImageAnchorLines(assigned) + '\n\n' +
       `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
@@ -1188,6 +1205,7 @@ CLINICAL ACCURACY — NON-NEGOTIABLE:
 - Example: if arm drift is tested at 90° for 10 seconds and leg drift is tested at 30° for 5 seconds, BOTH specific angles AND durations must appear separately — do NOT say "10 seconds" for both
 - When in doubt about a specific number, use the most conservative/standard value from UpToDate or major society guidelines
 - Double-check: scoring ranges, time thresholds, dose units, anatomical specifics, and classification cutoffs
+- WHERE EXACT VALUES LIVE: the IMAGE never prints numbers/doses/units/thresholds/formulas. Every exact value is stated in NARRATION (spoken aloud) and recorded in ANCHOR (the flashcard). The VISUAL only carries the hook; the precise figure is heard and read, not drawn — this is how Picmonic/Sketchy handle doses (symbol in the sketch, number in the narration + fact list).
 
 COMPLETENESS — NON-NEGOTIABLE:
 - Before writing anchors, mentally enumerate EVERY major category, classification, or step in the topic
@@ -1211,7 +1229,7 @@ ENCODING HIERARCHY — try each level in order, use the FIRST that fits. Only dr
 4. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
 5. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
 6. SPATIAL: POSITION encodes meaning. Escalation goes up (stairs, shelves). Sequence goes left-to-right. Danger is isolated behind barriers. Exit/door = discharge criteria. Basement = last-resort therapy.
-7. LABELED TEXT (weakest — LAST RESORT): A sign or tag with 1-3 words. If you resort to this, the anchor is weak. Go back and try levels 1-6 harder. NEVER label a generic barrel/wall/crate when a sanctioned metaphor exists.
+7. LABELED TEXT (weakest — LAST RESORT, NAMES ONLY): a sign or tag with a 1-3 word sound-alike NAME. If you resort to this, the anchor is weak — go back and try levels 1-6 harder. This tier is for NAMES only: numbers, doses, units, thresholds, and formulas are NEVER a text tier — they are either encoded as a shape/count hook (level 3) or omitted from the image and spoken. NEVER label a generic barrel/wall/crate when a sanctioned metaphor exists.
 
 CHARACTER DESIGN (encouraged):
 - Mnemonic characters are figures whose NAME, APPEARANCE, or ACTION encodes a concept — they are NOT narrators
@@ -1236,13 +1254,13 @@ OBJECT INTERACTION = CLINICAL RELATIONSHIP:
 
 SHAPE DIVERSITY RULE: No two anchors may share the same base shape. If you have one jar, no other anchor can be a jar. If you have one character standing, the next character must sit, crouch, or be a completely different body type. Check your anchor list at the end — if two silhouettes would look the same, redesign one.
 
-FORMULA RULE / PRECISION TEXT RULE: Short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. They must be physically attached to a mnemonic device: plaque, dial, ruler mark, scale beam, gauge face, tag, or chalk mark. Do not make text the entire mnemonic. A formula anchor still needs a silhouette-first visual analogy: scale for anion gap, paired rulers for delta-delta, thermometer/ruler/gauge for Winter's formula, locked gauge cabinet for osmol gap.
+PRECISION-VALUE RULE (numbers are NOT drawn as text): a rendered number, dose, unit, threshold, lab value, or formula is a flashcard, not a mnemonic — black out all text and the picture must still cue every fact. So the EXACT value goes in NARRATION (spoken) and ANCHOR (the flashcard), never printed in the VISUAL. In the image you have two options only: (a) ENCODE the number as a visual hook — a shape look-alike (a fork's 3 prongs = a triad; a figure-8 knot = chromosome 8) or a small countable quantity of oversized objects (≤ ~5) — or (b) OMIT it from the image entirely and let the narration carry it. A compound value like "0.1 U/kg/hr" or "15-20 mL/kg/hr" is NOT cleanly encodable — do not try to draw it; encode the CONCEPT with a hook (an insulin-dripping ladle, an overflowing fluid barrel) and state the exact rate in NARRATION + ANCHOR. Never write the digits on a plaque, dial, gauge, or chalkboard.
 
-LARGE NUMBER RULE: Do NOT encode numbers greater than 12 by asking for exact repeated object counts. Image generators cannot reliably draw exactly 30 soldiers, 40 tablets, or 90 items. Use one strong object with an exact plaque, gauge, dial, ruler, or stamped marker instead.
+LARGE NUMBER RULE: Do NOT encode numbers greater than ~5 by asking for exact repeated object counts (generators cannot draw exactly 30 soldiers or 90 items) AND do NOT fall back to stamping the number as text. Use ONE strong oversized object whose scale/action signals "a lot / high / escalating," and put the exact number in NARRATION + ANCHOR.
 
-HOOK/VISUAL CONSISTENCY RULE: Do not claim an anchor is label-free if the tested fact requires a number or formula label. If precision text is necessary, make it intentional and attached to a visual device.
+HOOK/VISUAL CONSISTENCY RULE: An anchor's VISUAL must pass the cover-the-text test on its own — its shape/identity/interaction carries the memory. If an anchor "needs" a printed number or formula to be understood, its hook is too weak: redesign the hook, and move the exact value to NARRATION + ANCHOR.
 
-SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 ordinary short text labels plus up to 4 precision labels for numbers/formulas. Ordinary labels are 1-3 words max. Precision labels may be formulas or thresholds, but must be sparse, readable, and attached to a strong visual device. Prioritize: medically essential numbers/formulas > character names (sound-alikes) > optional flavor labels.
+SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 short mnemonic name labels (sound-alike character/object names, 1-3 words each) and ZERO numeric/dose/threshold/formula text. Prioritize: sound-alike character names > optional flavor labels. Exact numbers never count against this budget because they never appear in the image.
 
 EXACT LABEL RULE: If a visual specifies a short label, copy it exactly. Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.
 
@@ -1255,8 +1273,8 @@ WHAT TO AVOID:
 
 VISUAL DESCRIPTION RULES:
 - MAXIMUM 30 WORDS per visual description
-- Aim for no more than two visible text elements per anchor. A visible text element is any label, number/formula plaque, tag, banner, stamp, dial, gauge, sign, or written word.
-- Do not cram a list of labels into one visual. If an anchor needs several facts, encode most with shape/scale/position/action and reserve text only for the essential number or short mnemonic name.
+- Aim for at most ONE visible text element per anchor, and it may only be a short sound-alike NAME (1-3 words). Numbers, doses, units, thresholds, and formulas are NOT text elements you may draw — they are spoken/carded.
+- Do not cram a list of labels into one visual. If an anchor needs several facts, encode them all with shape/scale/position/action/count; reserve text only for one short mnemonic name, and never for a numeric value.
 - If the VISUAL starts turning into a label list, simplify it into one stronger object interaction.
 - Describe the mnemonic device, its encoding strategy, and its position — text labels are OPTIONAL (1-3 words max if present)
 - VISUAL must describe only what should be drawn. Do not include meta commentary such as "no text labels", "single text element", or "two text elements".
@@ -1287,7 +1305,7 @@ For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total �
 
 GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 items, a drug class with 12 side effects), combine closely related sub-items into a SINGLE anchor with one visual element that encodes 2-3 facts together. For example: a scoring scale's "questions" and "commands" sub-items can share one visual station; motor arm and motor leg can share one stopwatch display; language and articulation can share one communication desk. This keeps the total anchor count at 8-10 while still covering every testable fact. Each visual should encode MORE information, not less — denser per anchor, fewer total anchors.
 
-CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, different time limits, different angles, different doses), the visual description and narration must clearly show BOTH distinct values. For instance, if arms are tested for 10 seconds and legs for 5 seconds, the visual must show "10 SEC" AND "5 SEC" as separate labels — never collapse them into one number.
+CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, time limits, angles, doses), the NARRATION and ANCHOR must state BOTH distinct values separately — never collapse them into one number. The VISUAL encodes the two as DISTINCT hooks (e.g. a short stub vs a long pole, a nearly-empty vs a brimming vessel) so they read apart by shape — it does NOT print "10 SEC" and "5 SEC"; those exact values are spoken and carded, not drawn.
 ANCHOR COUNT HARD STOP: Never output more than 10 <vo_line> blocks. If you find an 11th fact, merge it into the closest existing anchor before responding.
 <vo_line>
 HOOK: [sound-alike | look-alike | functional | contrast | spatial] — one sentence: what encodes what and why
@@ -1326,8 +1344,8 @@ Clinical accuracy and completeness are mandatory:
 
 Visual mnemonic rules:
 - Every anchor starts with HOOK: sound-alike, look-alike, functional, contrast, or spatial.
-- Prefer silhouette-first objects/characters over text labels. Text is allowed only for exact numbers/formulas and must be attached to a device.
-- VISUAL must be one compact physical drawing instruction, not a label list: one main object/character interaction, one location phrase, and at most one visible text surface.
+- Prefer silhouette-first objects/characters over text labels. Text may only be a short sound-alike NAME; NEVER draw numbers, doses, units, thresholds, or formulas — those exact values are spoken in NARRATION and recorded in ANCHOR, never printed in the image.
+- VISUAL must be one compact physical drawing instruction, not a label list: one main object/character interaction, one location phrase, and at most one visible text surface (a name, never a number).
 - Avoid the words labeled, reads, showing, shows, sign, chalkboard, ribbon, stamped, or plaque unless that single word describes the only text-bearing surface in the anchor.
 - Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
 - VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
@@ -1339,7 +1357,7 @@ Schema:
 <vo_line>
 HOOK: [strategy] - why the visual encodes the fact
 NARRATION: [concise spoken explanation]
-VISUAL: [drawn object/character, position, essential precision label only if needed]
+VISUAL: [drawn object/character, position, one short mnemonic NAME only if needed — never a number/dose/formula]
 ANCHOR: [clinical fact only]
 </vo_line>
 

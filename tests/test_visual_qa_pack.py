@@ -103,7 +103,7 @@ def test_refreshed_prompt_contract_preserves_compact_formulas() -> None:
 
     prompts = refreshed_prompts(bundle)
 
-    assert "PRECISION TEXT EXCEPTION" in prompts["prompt2"]
+    assert "NO PRECISION TEXT" in prompts["prompt2"]
     assert "ANCHOR LEGIBILITY RULE" in prompts["prompt2"]
     assert "EXACT LABEL RULE" in prompts["prompt2"]
     assert "Gemini render checklist" in prompts["prompt2"]

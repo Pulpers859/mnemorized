@@ -36,9 +36,12 @@ B. Hook Fidelity — 20. −8 per anchor rendered as TEXT SLAPPED ON A GENERIC P
    correct functional/contrast hook on a threshold DECISION (e.g. traffic-light=K+).
 C. Silhouette & Legibility — 15. −5 illegible clutter; −4 duplicated identical
    silhouettes; −3 reading path lost to busyness.
-D. Text Discipline — 15. −6 per misspelled/invented required label; −5 meta-
-   instruction/caption/zone-name text leaked into the image; −3 per crammed multi-
-   line label list; −2 per needless label the metaphor already carried.
+D. Text Discipline — 15. −4 per number/dose/unit/threshold/formula rendered as TEXT
+   on any surface (exact values are a flashcard, not a mnemonic — they belong in the
+   narration/flashcards, not the image; a number is OK only when encoded as a hook, not
+   spelled out); −6 per misspelled/invented required NAME label; −5 meta-instruction/
+   caption/zone-name text leaked into the image; −3 per crammed multi-line label list;
+   −2 per needless label the metaphor already carried.
 E. Medical Fidelity — 10. −10 an implied fact/threshold is WRONG; −4 ambiguous dose.
 F. Scene Coherence — 10. −6 segmented grid/booths/panels instead of one scene; −3
    incoherent floating placement. A deliberately off-theme sanctioned metaphor is NOT
@@ -59,8 +62,10 @@ REGENERATE = OVERALL<70 or 2+ anchors missing. Never PASS if any anchor is missi
 
 ANTI-INFLATION: a label alone never satisfies an anchor (needs shape/interaction/
 placement); treat labels as unreliable unless legible AND correctly spelled; do not
-invent anchors that are not visible; formulas allowed only attached to a visible
-device. On a plate with >8 anchors, re-verify before claiming all present.`;
+invent anchors that are not visible; numbers/doses/formulas must NOT appear as drawn
+text at all (exact values live in the narration/flashcards) — a spelled-out value on a
+device is a category-D defect, not a feature. On a plate with >8 anchors, re-verify
+before claiming all present.`;
 
   // Gate cap lookup used to recompute OVERALL client-side so the model's arithmetic
   // cannot drift above what its own gate list allows.

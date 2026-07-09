@@ -153,10 +153,11 @@ Before assigning a text label to an anchor, check this priority order:
      Examples: giant salt shaker with "NS" etched on cap, syringe with
      "subQ" engraved on barrel.
 
-  3. TEXT LABEL ONLY — use the mixed-device vocabulary below.
-     Use only for specific numeric thresholds, doses, and acronyms that
-     have no visual equivalent.
-     Examples: "0.1 U/kg/hr", "pH <6.9", "AG", "CTPA", "PESI".
+  3. TEXT LABEL ONLY — a short sound-alike NAME or acronym, using the mixed-device
+     vocabulary below. NEVER a number, dose, unit, threshold, or formula — those are
+     not drawn at all (see finding #14): they are spoken in the narration and listed in
+     the flashcards. A value like "0.1 U/kg/hr" or "pH <6.9" is OMITTED from the image;
+     an acronym like "AG"/"CTPA"/"PESI" may be a name label if it truly has no hook.
 
 This hierarchy reduces text labels per image (improving Gemini reliability)
 and produces more memorable visual mnemonic illustrations without referencing
@@ -387,7 +388,8 @@ POSITIVE — structural components that worked, KEEP and reinforce:
    Not every anchor should be forced into a bare metaphor. A threshold DECISION
    (K+ replacement bands) rendered best as a functional/contrast hook
    (traffic-light paddles), not a forced banana. Tier 1 is for instant universal
-   associations; thresholds/doses legitimately live lower in the hierarchy.
+   associations; a threshold DECISION is encoded by a functional/contrast HOOK, not by
+   a printed number — the exact value is spoken/carded, never drawn (see finding #14).
    Validated live: salt shaker = sodium, sugar sack = glucose, skull = cerebral
    edema, hourglass = monitoring interval, pouring ladle = insulin delivery
    (NOT "barrel labelled INSULIN"), traffic-light paddles = K+ bands.
@@ -421,10 +423,12 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
    auditor miss, not proof of a bad image — corroborate visually before
    iterating. Do not burn AG round-trips chasing a hallucinated deficiency.
 
-5. PRECISION TEXT IS ALLOWED BUT CLUSTERS — KEEP IT SPARSE.
-   Formulas/rates on a single device (anion-gap door, fluid-rate barrel) are
-   legitimate per the hierarchy tier 3, but several on one plate re-create the
-   text-density problem. Budget precision labels the same as any other text.
+5. PRECISION TEXT IS NOT DRAWN AT ALL — SUPERSEDED BY FINDING #14.
+   Earlier runs treated formulas/rates on a device (anion-gap door, fluid-rate barrel)
+   as legitimate tier-3 text and merely tried to keep them sparse. That was wrong: a
+   drawn number is a flashcard, not a mnemonic. Numbers/doses/units/thresholds/formulas
+   are now NEVER rendered as text — encode the concept as a hook and speak/card the exact
+   value. See finding #14 for the full reversal.
 
 6. MEDIA-TYPE TRUST (harness note). AG may save a JPEG under a .png name; the
    in-app audit trusts the blob type inferred from extension. Real app data-URL
@@ -519,3 +523,34 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     fence names a label, the anchor BODY that gives that label its context must not be
     truncated away — a fence without its anchor context produces garble, not omission.
     Prefer anchors <= ~45 words; the trim is a safety net, not a design budget.
+
+14. THE PRECISION-TEXT EXCEPTION WAS AN ANTI-MNEMONIC CRUTCH — REMOVED (2026-07-08).
+    Root reframe, not a rendering fix. Findings #5 and #10-13 spent enormous effort making
+    exact numbers/doses/formulas render CORRECTLY on plaques/dials (spelling, placement,
+    de-duplication, an offline text-overlay tool, a zone/rail compositor). All of it was
+    polishing the wrong element. A DRAWN NUMBER IS NOT A MNEMONIC. The definition test:
+    black out every character in the image; it must still cue every fact. A scene that has
+    to PRINT "340 mOsm" or "0.1 U/kg/hr" to teach it has taught nothing — the learner reads
+    the value off a sign instead of reconstructing it from a hook. That is a flashcard in a
+    costume, and it is exactly the "labels are not the answer" failure the whole product
+    exists to avoid.
+      VERIFIED against the field: Picmonic encodes doses via the Major system (digits ->
+    sounds -> images) and states exact values in the narration + fact list; Sketchy fills a
+    sketch with consistent SYMBOLS while the narrator speaks the specifics. In both, the
+    picture carries HOOKS and the number lives in the spoken/written layer — never printed
+    in the art.
+      NEW RULE (now enforced in the generator, the backend Gemini director, the rubric, and
+    the offline QA/stress tools): the IMAGE renders numbers/doses/units/thresholds/formulas
+    as text ZERO times. Every exact value has two honest fates only — (a) ENCODE it as a
+    visual hook (shape look-alike, or a countable quantity <= ~5), or (b) OMIT it from the
+    image and carry it in NARRATION (spoken) + ANCHOR (flashcard). Mnemorized's <vo_line>
+    schema already separates VISUAL / NARRATION / ANCHOR / review_script — the fix was to
+    stop leaking the ANCHOR's numbers into the VISUAL. Compound values (0.1 U/kg/hr,
+    15-20 mL/kg/hr) are NOT cleanly encodable: draw the concept's hook (insulin-dripping
+    ladle, overflowing fluid barrel) and speak the rate. Grading: a spelled-out value on a
+    device is now a category-D text-discipline DEFECT, not a feature (rubric + audit mirror
+    updated; gate structure G1-G6 unchanged).
+      LESSON: when a fix keeps feeling like cheap patchwork, check whether you are optimizing
+    the rendering of something that should not be in the image at all. The upstream fix
+    (don't author the number into the VISUAL) dissolves the entire downstream spelling/
+    placement problem.

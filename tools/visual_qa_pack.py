@@ -60,8 +60,9 @@ REGENERATE = OVERALL<70 or 2+ anchors missing. Never PASS if any anchor is missi
 ANTI-INFLATION: external auditor only (never self-grade); a label alone never
 satisfies an anchor (needs shape/interaction/placement); treat labels as unreliable
 unless legible AND correctly spelled; do not invent anchors that are not visible;
-formulas allowed only attached to a visible device; on a plate with >8 anchors,
-re-verify before claiming all present."""
+numbers/doses/formulas must NOT appear as drawn text at all (exact values live in the
+narration/flashcards) — a spelled-out value is a text-discipline defect, not a feature;
+on a plate with >8 anchors, re-verify before claiming all present."""
 
 RUBRIC_OUTPUT_FORMAT = """OVERALL_SCORE: <integer 0-100>
 DECISION: <PASS | PASS_WITH_TEXT_RISK | REPAIR | REGENERATE>
@@ -97,11 +98,11 @@ ANTI_META_TEXT = (
     "No floating captions. No zone labels. No anchor descriptions."
 )
 
-PRECISION_TEXT_RULE = (
-    "PRECISION TEXT EXCEPTION: short numbers, thresholds, units, and compact formulas are allowed when they are the tested fact. "
-    "They must be physically attached to the mnemonic object as a plaque, dial, ruler mark, scale beam, gauge face, or chalk mark. "
-    "Do not use text as the whole mnemonic: every precision label must sit on a strong non-text visual device that still reads by silhouette. "
-    "Keep precision text large, sparse, accurate, and readable; no sentences or paragraph labels."
+NO_PRECISION_TEXT_RULE = (
+    "NO PRECISION TEXT: do NOT render numbers, digits, doses, units, thresholds, lab values, or formulas as text anywhere in the image "
+    "(no plaques, dials, gauges, tags, or chalk marks bearing values). A drawn number is a flashcard, not a mnemonic — the exact value is "
+    "spoken in the narration and listed in the flashcards, never printed in the picture. A number may appear ONLY when encoded as a visual "
+    "hook (a shape look-alike or a small countable quantity), never as spelled-out digits. If a value cannot be cleanly encoded, omit it from the image."
 )
 
 ANCHOR_LEGIBILITY_RULE = (
@@ -327,11 +328,11 @@ def refreshed_prompts(bundle: dict[str, Any]) -> dict[str, str]:
         "Each anchor should be recognizable by its SHAPE and SILHOUETTE first. "
         f"{ANCHOR_LEGIBILITY_RULE} "
         "Text labels are secondary and optional — if present, maximum 3 words per ordinary label. "
-        f"{PRECISION_TEXT_RULE} "
+        f"{NO_PRECISION_TEXT_RULE} "
         f"{EXACT_LABEL_RULE} "
         f"{COMPACT_GEMINI_GUARDRAILS} "
-        "SCENE TEXT BUDGET: maximum 12 ordinary text labels plus up to 4 precision labels for numbers/formulas in the ENTIRE image. "
-        "Character names and short numbers count. "
+        "SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. "
+        "Character names count. "
         "Zone words below guide placement only — do NOT render zone text or bullet text:\n\n"
         + "\n".join(anchor_lines_text)
         + f"\n\nAll {n} anchors must be present and visually distinct. "
