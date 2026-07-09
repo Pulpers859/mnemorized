@@ -745,6 +745,10 @@ generated the content + composed the prompt; AG-rendered; REAL-PIXEL graded = 60
     the room) and positive surface framing ("every wall is blank and unmarked; the only writing is
     <allowlist>, each on its own object"), and drop the "(zone) description" list form and the
     "Do NOT ..." negations. This is the highest-value structural fix for product image quality.
+    CONFIRMED same-day (real pixels): re-rendering the SAME 10 Forge anchors with only the STRUCTURE
+    changed — flowing prose + labels-on-objects + positive-framing allowlist — scored 76 (REPAIR) vs
+    60 (REGENERATE) and eliminated ALL floating labels (v1 had 7). Structure alone was the defect;
+    content held constant. Port this composition into forge-pipeline.js's Stage-3 builder(s).
 
 25. NEGATION-BASED TEXT BANS LEAK INVENTED WORDS. The builder's long "Do NOT render numbers/labels"
     block co-occurred with invented on-object text ("SAGRO" on the dispenser) and an out-of-allowlist
