@@ -554,3 +554,16 @@ NEGATIVE — failure modes and over-broad rules to adjust or watch:
     the rendering of something that should not be in the image at all. The upstream fix
     (don't author the number into the VISUAL) dissolves the entire downstream spelling/
     placement problem.
+      LIVE VALIDATION (2026-07-08, DKA, real new generator end-to-end): the story model
+    produced 10 anchors with 10/10 VISUAL fields free of drawn numbers; the composed image
+    prompt contained 0 dose/unit tokens; the rendered plate ("DEE-KAY-A DINER" diner scene)
+    printed NO numbers/doses/formulas at all. Every exact value (glucose >250 mg/dL, pH
+    <7.3/<7.0, bicarb <18/<10 mEq/L, K+ 3.5-5.0, insulin 0.1 U/kg/hr, anion gap) lived in
+    NARRATION + ANCHOR. Hooks that carried the load: banana bunch = potassium (sanctioned),
+    cook "Reg" = regular insulin (sound-alike), three overflowing mugs = the diagnostic
+    triad, purple flame = ketones, declining-chart arrows = falling pH/bicarb, fire hose =
+    fluid resuscitation. RESIDUAL (separate from precision text, category-D nits): a few
+    filler word-labels the metaphor already carried ("MENU", "BROTH", "ORDER") still
+    appeared, and a couple of hooks (stacked burger, cash register) read generic. Those are
+    hook-strength/text-discipline items, NOT precision-text regressions — the precision-text
+    class is structurally eliminated.
