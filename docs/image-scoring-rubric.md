@@ -29,6 +29,15 @@ Grade in this exact order and **always show the arithmetic**:
 A grader that cannot show how it reached the number has not followed the rubric.
 When genuinely torn between two category scores, **choose the lower** (Section 5).
 
+**Rule 0 — grade the pixels, never the script.** A score is only valid if it was reached
+by looking at the actual rendered image and citing what is visibly present at a specific
+location. It is categorically forbidden to grade from the story/prompt's *intended* anchors,
+to report an anchor as "present" without seeing it in the picture, or to omit a missing or
+broken anchor to inflate the number. If the image was not actually examined, the grader must
+say so and produce no score. A per-anchor audit must state, for each anchor, whether it is
+visibly present (and where) or absent — absent anchors are the most important finding, not
+something to smooth over. See Constitution LAW #0.
+
 ---
 
 ## 2. Categories (weights sum to 100)
