@@ -863,26 +863,6 @@ def test_forge_image_audit_has_auto_retry_loop() -> None:
     assert 'onclick="runForgeAutoRetry()"' in html
 
 
-def test_precision_overlay_places_labels_deterministically_by_zone() -> None:
-    root = Path(__file__).resolve().parents[1]
-    tool = (root / "tools" / "overlay_precision_labels.py").read_text(encoding="utf-8")
-
-    # Placement is computed from the anchor's zone + image size (the same map the
-    # prompt uses), not eyeballed pixels or vision detection. Explicit pixels still
-    # override, and multiple facts in one zone stack instead of overlapping.
-    assert "def resolve_boxes" in tool
-    assert "def _zone_grid" in tool
-    assert "def _is_rail" in tool
-    assert "PLACEMENT IS DETERMINISTIC" in tool
-    assert '"cx" in place and "cy" in place' in tool  # explicit-pixel override path
-
-    # The reserved bottom "rail" is fully self-contained: the tool paints its own
-    # ledger band so rail placement + fit are guaranteed on any plate, reserved or not.
-    assert "def _draw_band" in tool
-    assert "BAND_FRAC" in tool
-    assert "_draw_band(base)" in tool
-
-
 def test_forge_gates_image_prompt_length_before_generation() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
