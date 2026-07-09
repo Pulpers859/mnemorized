@@ -719,3 +719,39 @@ REAL-PIXEL validated; retires the fabricated 2026-07-08 note above)
 23. PIN EXACT SPELLING OF IN-WORLD LABELS. v4 produced "Bakiog Soda"; instructing "a box lettered
     exactly BAKING SODA" fixed all three boxes in v5/v6. For any label that must be legible, state
     the exact target string in the prompt.
+
+═══════════════════════════════════════════════════════════════════════════
+FIELD FINDINGS — 2026-07-09 (Anaphylaxis, FIRST full-PRODUCT run: Forge pipeline
+generated the content + composed the prompt; AG-rendered; REAL-PIXEL graded = 60/REGENERATE)
+═══════════════════════════════════════════════════════════════════════════
+
+  Context: first end-to-end run through the actual Forge (topic "Anaphylaxis" -> Stage 1 scene
+  -> Stage 2 medical gate -> Stage 3 image-prompt builder), then the Forge-composed prompt was
+  AG-rendered and graded against the actual pixels. Content was strong (10/10 anchors present,
+  medical gate added the bradykinin/ICATIBANT angioedema differential, doses correctly confined
+  to the flashcard layer). The IMAGE scored 60 (REGENERATE) on ONE dominant, verifiable defect.
+
+24. THE PRODUCTION IMAGE-PROMPT BUILDER STILL VIOLATES LAW 1 + LAW 2, AND IT REPRODUCES THE
+    FLOATING-LABEL FAILURE. The Stage-3 builder in frontend/scripts/forge-pipeline.js composes the
+    anchor block as an annotated "(zone) description" LIST and relies on NEGATION ("Do NOT render
+    floating labels"). The rendered plate was drowning in floating labels — "water" hanging in
+    mid-air; EPI / BILL / REFRACTORY / ICATIBANT / GLUCA / BELLOWS floating on walls and floor
+    instead of on their objects — plus invented text ("SAGRO"), a duplicate label ("GLUCA" x2),
+    and clock numerals. This is exactly what LAW 1 (flowing prose, never an annotated list) and
+    LAW 2 (positive framing, never negate) predict. DKA v6 — pure prose + positive framing, same
+    AG renderer — produced ZERO floating labels. CONCLUSION: the v2->v6 lessons live in this
+    Constitution but are NOT yet ported into the production builder. FIX (pending, code-level):
+    rewrite the Stage-3 anchor-block composition to emit continuous scene prose (a narrator walking
+    the room) and positive surface framing ("every wall is blank and unmarked; the only writing is
+    <allowlist>, each on its own object"), and drop the "(zone) description" list form and the
+    "Do NOT ..." negations. This is the highest-value structural fix for product image quality.
+
+25. NEGATION-BASED TEXT BANS LEAK INVENTED WORDS. The builder's long "Do NOT render numbers/labels"
+    block co-occurred with invented on-object text ("SAGRO" on the dispenser) and an out-of-allowlist
+    label ("BELLOWS"). Consistent with #10/#17: the more the prompt TALKS about labels/packaging
+    (even to forbid them), the more stray text the model paints. Prefer terse positive allowlists.
+
+26. CLOCK-FACE ANCHORS RENDER NUMERALS AND IGNORE REQUESTED HAND POSITIONS (reconfirms #6). "clock
+    hands at 8 and 11" rendered a full numeral dial with hands at roughly 12 & 8. A clock face also
+    drags spelled-out numerals into a no-number image. Encode a specific time as a non-clock hook,
+    or accept the clock only as a generic "time" cue, never for a precise hour.
