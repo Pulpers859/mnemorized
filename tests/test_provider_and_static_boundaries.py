@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
+import re
 import struct
 from typing import Any
 
@@ -1130,9 +1131,14 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken()" in auth
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
-    assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260709-prose-positive-framing-1' in html
-    assert 'forge-image-audit.js?v=20260708-auto-retry-1' in html
+    # These scripts must load with a non-empty cache-bust query string so
+    # browsers re-fetch them after a deploy. Assert the ?v= param exists rather
+    # than pinning the exact version — the version bumps every content change,
+    # and hard-coding it here silently red-lights CI on every legitimate bump.
+    for script in ("forge-auth.js", "forge-pipeline.js", "forge-image-audit.js"):
+        assert re.search(rf'{re.escape(script)}\?v=[\w.-]+', html), (
+            f"{script} must be referenced with a non-empty ?v= cache-bust query string"
+        )
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
     assert "medicalKnowledgeEnabled" in auth
