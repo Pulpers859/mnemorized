@@ -759,3 +759,20 @@ generated the content + composed the prompt; AG-rendered; REAL-PIXEL graded = 60
     hands at 8 and 11" rendered a full numeral dial with hands at roughly 12 & 8. A clock face also
     drags spelled-out numerals into a no-number image. Encode a specific time as a non-clock hook,
     or accept the clock only as a generic "time" cue, never for a precise hour.
+
+27. STAGE-1 ABORT IS A CLUSTER OF FATAL VISUAL GATES, NOT ONE — AND THE FAILURE MODE, NOT THE
+    THRESHOLD, WAS THE DEFECT. "status epilepticus" aborted at the Stage-1 story validator
+    (validateStoryData). Investigation found two independent fatal gates firing, not one: (a) the
+    text-surface check was counting bare English verbs ("shows"/"reads"/"showing") as drawn text,
+    false-rejecting valid silhouette descriptions; (b) the 34-word VISUAL cap aborted the whole
+    10-anchor scene when a single dense anchor landed one word over (anchor 4 at 35) after a
+    single-shot micro-repair. FIX (both shipped, verified on the real browser harness): (a) make
+    the text-surface signal precise — count text-bearing NOUNS plus verbs only when they introduce
+    an explicit quoted label; quoted labels stay the true drawn-text fatal. (b) Loop the visual
+    micro-repair (up to 3 passes) with a focused length-only escalation ("compress ONLY these named
+    anchors to <=24 words, move detail into NARRATION/ANCHOR") instead of aborting on one leftover
+    over-cap anchor. LESSON: do not loosen a quality threshold to unblock a topic — the word cap
+    protects the image generator (fewer words = fewer stray labels, per #10/#17/#25). Fix the gate's
+    PRECISION and its repair loop so a marginal, repairable formatting miss on one anchor never nukes
+    a complete scene. After the fix, "status epilepticus" cleared Stage 1 (10 anchors, image prompts
+    ready) where it previously aborted.
