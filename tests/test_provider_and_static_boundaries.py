@@ -1131,7 +1131,7 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "function sanitizeVisualField" in auth
     assert "sanitizeVisualField(getField('VISUAL'))" in auth
     assert 'forge-auth.js?v=20260706-qa-fixes-1' in html
-    assert 'forge-pipeline.js?v=20260708-no-precision-text-1' in html
+    assert 'forge-pipeline.js?v=20260709-prose-positive-framing-1' in html
     assert 'forge-image-audit.js?v=20260708-auto-retry-1' in html
     assert "function rebuildImagePromptsForStory" in pipeline
     assert "✓ Rebuilt from repaired script" in pipeline
