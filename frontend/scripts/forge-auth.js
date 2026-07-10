@@ -327,8 +327,16 @@ function validateStoryData(storyData) {
 
     const visualText = String(line.visual || '');
     const quotedLabels = visualText.match(/"[^"]+"/g) || [];
-    const textSurfaceMarkers = visualText.match(/\b(?:label(?:ed)?|reads?|showing|sign|chalkboard|ribbon|speech bubble|logbook|plaque|stamped|etched|row[s]?:|shows?)\b/gi) || [];
-    if (quotedLabels.length > 2 || textSurfaceMarkers.length > 3) {
+    // A "text surface" only counts when it actually implies DRAWN text. Two signals:
+    //  1. Nouns that ARE a text-bearing object on their own (a sign has words on it).
+    //  2. Verbs that only imply rendered text when they introduce an explicit label
+    //     (`plaque etched "C1"`). A bare "shows"/"reads" in a plain physical
+    //     description — "ant character shows three buckets" — is NOT rendered text and
+    //     must not trip the gate. Counting those verbs was over-rejecting valid scenes.
+    const textSurfaceNouns = visualText.match(/\b(?:sign|signage|chalkboard|blackboard|whiteboard|ribbon|logbook|ledger|plaque|placard|banner|poster|nameplate|marquee)\b/gi) || [];
+    const labelledVerbs = visualText.match(/\b(?:label(?:l?ed)?|reads?|showing|shows?|stamped|etched|inscribed|printed|written)\b\s*:?\s*"[^"]+"/gi) || [];
+    const textSurfaceCount = textSurfaceNouns.length + labelledVerbs.length;
+    if (quotedLabels.length > 2 || textSurfaceCount > 3) {
       fatal.push(`${label} visual depends on too many text surfaces; rebuild it as a silhouette-first object interaction with at most two essential labels.`);
     }
     if (/[→←↑↓]/.test(visualText)) {

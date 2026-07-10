@@ -685,6 +685,32 @@ function gateImagePrompts(rawP1, rawP2) {
   return { p1: clampedP1, p2: clampedP2, trimmed };
 }
 
+// Antigravity render target: when the operator opts to route to Antigravity, the
+// Forge must NOT touch the Gemini API at all (avoids the billing-blocked
+// "prepayment credits depleted" path). We stop here with the gated prompts staged
+// for the AG agentapi bridge to pick up, rather than making a provider call the
+// cloud backend can't fulfill for a local desktop renderer. See ANTIGRAVITY.md.
+function handoffToAntigravity(prompts) {
+  const status = document.getElementById('gen-img-status');
+  const btn = document.getElementById('generate-images-btn');
+  // Stage the prompts where the CLI bridge / audit loop can read them; do not POST.
+  window.__mnemorizedAntigravityPrompts = prompts;
+  window.dispatchEvent(new CustomEvent('mnemorized:antigravity-handoff', { detail: { prompts } }));
+
+  setStatus('prompt', '✦ Ready for Antigravity', 'done');
+  setStageDetail('prompt', `Gemini API skipped. ${prompts.length} gated prompt(s) staged for Antigravity — run the agentapi bridge (tools/Invoke-AntigravityAgentApi.ps1) to render, then audit against the rubric.`);
+  showBody('prompt');
+  const handoffTitle = document.getElementById('handoff-title');
+  const handoffText = document.getElementById('handoff-text');
+  const handoffMsg = document.getElementById('handoff-message');
+  if (handoffTitle) handoffTitle.textContent = 'Prompts staged for Antigravity';
+  if (handoffText) handoffText.textContent = 'The Gemini API call was skipped. Copy the image prompts below into the Antigravity render loop.';
+  if (handoffMsg) handoffMsg.style.display = '';
+  if (status) { status.textContent = `✓ ${prompts.length} prompt(s) staged for Antigravity — Gemini skipped`; status.style.color = 'var(--teal)'; }
+  if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
+  console.info('[Mnemorized] Antigravity render target: Gemini skipped; prompts staged on window.__mnemorizedAntigravityPrompts.');
+}
+
 async function generateImages() {
   const gate = gateImagePrompts(
     document.getElementById('prompt-copy-1')?.value,
@@ -701,6 +727,17 @@ async function generateImages() {
     if (p2) { document.getElementById('prompt-copy-2').value = p2; document.getElementById('img-prompt-2').textContent = p2; }
     console.warn('[Mnemorized] Image prompt exceeded the safe length budget and was trimmed before sending to Gemini.');
   }
+
+  // Render-target fork: Antigravity mode never calls the Gemini API. Branch before
+  // the backend/Gemini readiness checks so a billing-blocked or unconfigured Gemini
+  // key does not stop an Antigravity render.
+  if (document.getElementById('image-target-antigravity')?.checked) {
+    const btn = document.getElementById('generate-images-btn');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Staging…'; }
+    handoffToAntigravity([p1, p2].filter(Boolean));
+    return;
+  }
+
   if (forgeReplayMode !== 'replay') {
     if (!backendState.checked) await refreshBackendStatus();
     if (!backendState.reachable) { openConnectionModal(); return; }

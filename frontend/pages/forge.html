@@ -2172,6 +2172,10 @@ input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
           </div>
         </div>
         <div id="user-image-actions" style="margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,200,66,.12);">
+          <label id="image-target-row" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12px;color:var(--muted);cursor:pointer;">
+            <input type="checkbox" id="image-target-antigravity" style="width:14px;height:14px;cursor:pointer;" />
+            Route to Antigravity (skip the Gemini API call)
+          </label>
           <button class="btn-copy" id="generate-images-btn" onclick="generateImages()" style="padding:10px 24px;font-size:14px;color:var(--green);border-color:var(--green);">✦ Generate Images</button>
           <button class="btn-copy" id="image-audit-btn" onclick="runForgeImageAudit()" style="margin-left:8px;padding:10px 16px;font-size:13px;color:var(--teal);border-color:var(--teal);">✦ Audit Image Quality (≥96 gate)</button>
           <button class="btn-copy" id="image-audit-retry-btn" onclick="runForgeAutoRetry()" style="margin-left:8px;padding:10px 16px;font-size:13px;color:var(--gold);border-color:var(--gold);">✦ Auto-forge to ≥96</button>
