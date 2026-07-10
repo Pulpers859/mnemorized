@@ -2,6 +2,11 @@
 
 Use `AGENTS.md` as the shared source for workflow and risk priorities.
 
+At the start of a session, read `docs/handoff.md` — the running handoff / session
+log. Its newest dated entry (Part F) is where work last left off; Parts A–E are
+standing orientation, glossary, key files, run commands, and the rules/lane. Append
+a new dated entry there when you finish notable work.
+
 Claude-specific assumptions:
 
 - Source of truth: `C:\Dev\Mnemorized`
