@@ -16,6 +16,7 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 3. Ensure the active branch is `main` tracking `origin/main`.
 4. If clean, run `git pull --ff-only` before editing.
 5. Identify the touched surface: backend, frontend page, shared style, deployment config, docs, or local tool.
+6. Read `docs/handoff.md` — the running handoff/session log. Its newest dated entry (Part F) is where work last left off; Parts A–E are standing orientation, glossary, key files, run commands, and the rules/lane. Append a new dated entry there when you finish notable work.
 
 ## Branch And Git Rules
 
