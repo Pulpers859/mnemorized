@@ -1002,9 +1002,15 @@ async function rebuildImagePromptsForStory(storyData) {
   }
 }
 
-async function repairStoryVisualFormat(xmlText, validation) {
+async function repairStoryVisualFormat(xmlText, validation, options = {}) {
   const errors = (validation?.fatal || []).join('\n- ');
   if (!xmlText || !errors) return '';
+  // When the only remaining fatals are VISUALs over the hard word cap, escalate to
+  // a focused length-repair: a general repair pass often leaves a dense anchor one
+  // or two words over, and a single word-count fatal must not abort a complete scene.
+  const lengthDirective = options.lengthOnly
+    ? `\n\nCRITICAL LENGTH REPAIR: The only remaining problems are VISUAL fields over the hard word cap. Compress ONLY the named over-length VISUAL fields to 24 words or fewer each. Do NOT shorten by dropping clinical facts — move every number, dose, threshold, and detail into that same anchor's NARRATION and ANCHOR. Leave every already-valid VISUAL and all other fields byte-for-byte unchanged.`
+    : '';
   const body = {
     model: CLAUDE_MODEL,
     max_tokens: 6144,
@@ -1021,7 +1027,7 @@ Rules for every VISUAL:
 - Move excess medical detail into NARRATION or ANCHOR; do not delete clinical facts.`,
     messages: [{
       role: 'user',
-      content: `Fix these validation errors:\n- ${errors}\n\nOriginal XML:\n${xmlText}`
+      content: `Fix these validation errors:\n- ${errors}${lengthDirective}\n\nOriginal XML:\n${xmlText}`
     }]
   };
   const res = await claudeFetch(body, 'stage2-story-visual-micro-repair');
@@ -1531,17 +1537,28 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
           || storyValidation.fatal.some(message => /Too many anchors|visual|text surfaces|arrow glyphs|speech bubble/i.test(message));
         if (retryableValidation && attemptIndex < storyAttempts.length - 1) continue;
         if (retryableValidation) {
-          const repairedText = await repairStoryVisualFormat(txt, storyValidation);
-          if (repairedText) {
+          // Iterative micro-repair. One pass frequently can't drag a stubborn
+          // over-length VISUAL under the word cap, and a single leftover fatal must
+          // not abort an otherwise-complete scene. Re-run the repair, feeding the
+          // still-failing XML back, up to a small budget; once the only remaining
+          // fatals are word-count overflows, switch to the focused length repair.
+          const MAX_MICRO_REPAIRS = 3;
+          let repairInput = txt;
+          for (let repairPass = 0; repairPass < MAX_MICRO_REPAIRS; repairPass++) {
+            const lengthOnly = storyValidation.fatal.every(m => /visual is \d+ words;/i.test(m));
+            const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly });
+            if (!repairedText) break;
             storyData = parseStoryXml(repairedText);
             storyValidation = validateStoryData(storyData);
             if (!storyValidation.fatal.length) {
-              storyValidation.warnings.push('Visual fields were micro-repaired after hard-gate validation.');
+              storyValidation.warnings.push(`Visual fields were micro-repaired after hard-gate validation (${repairPass + 1} pass${repairPass ? 'es' : ''}).`);
               break;
             }
-            showDebug('STORY VISUAL MICRO-REPAIR FAILED VALIDATION', storyValidation);
+            showDebug(`STORY VISUAL MICRO-REPAIR PASS ${repairPass + 1} STILL FAILING`, storyValidation);
             lastStoryError = new Error(`Scene Narrative validation failed after visual micro-repair: ${storyValidation.fatal.join(' ')}`);
+            repairInput = repairedText;
           }
+          if (!storyValidation.fatal.length) break;
         }
         throw lastStoryError;
       }
