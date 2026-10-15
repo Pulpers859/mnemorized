@@ -93,11 +93,37 @@ try {
   });
 
   const consoleLog = [];
+  const networkCaptureTasks = [];
+  let qualityGateExchange = null;
   page.on('console', msg => {
     consoleLog.push({ ts: new Date().toISOString(), type: msg.type(), text: msg.text() });
   });
   page.on('pageerror', err => {
     consoleLog.push({ ts: new Date().toISOString(), type: 'pageerror', text: err.message });
+  });
+  page.on('response', response => {
+    if (!response.url().includes('/api/medical-knowledge/quality-check')) return;
+    networkCaptureTasks.push((async () => {
+      const request = response.request();
+      let requestBody = null;
+      let responseBody = null;
+      try {
+        requestBody = request.postDataJSON();
+      } catch {
+        requestBody = request.postData() || null;
+      }
+      try {
+        responseBody = await response.json();
+      } catch {
+        responseBody = await response.text().catch(() => null);
+      }
+      qualityGateExchange = {
+        captured_at: new Date().toISOString(),
+        status: response.status(),
+        request: requestBody,
+        response: responseBody,
+      };
+    })());
   });
 
   await page.goto(`${baseUrl}/forge`, { waitUntil: 'networkidle', timeout: 60000 });
@@ -142,6 +168,7 @@ try {
   }
 
   await page.screenshot({ path: path.join(outDir, '02_forge_after.png'), fullPage: true });
+  await Promise.allSettled(networkCaptureTasks);
   const bundle = await page.evaluate(() => {
     const topic = document.getElementById('topic')?.value?.trim() || '';
     const qualityResultEl = document.getElementById('quality-result');
@@ -180,6 +207,11 @@ try {
 
   await fs.writeFile(path.join(outDir, '03_forge_bundle.json'), JSON.stringify(bundle, null, 2), 'utf8');
   await fs.writeFile(path.join(outDir, '04_browser_console.json'), JSON.stringify(consoleLog, null, 2), 'utf8');
+  await fs.writeFile(
+    path.join(outDir, '06_quality_gate_exchange.json'),
+    JSON.stringify(qualityGateExchange, null, 2),
+    'utf8'
+  );
   await fs.writeFile(path.join(outDir, '05_run_meta.json'), JSON.stringify({
     baseUrl,
     outDir,
@@ -188,6 +220,9 @@ try {
     anchors: bundle.story?.voLines?.length || 0,
     prompt1Len: bundle.image_prompts?.prompt1?.length || 0,
     prompt2Len: bundle.image_prompts?.prompt2?.length || 0,
+    qualityGateHttpStatus: qualityGateExchange?.status || null,
+    qualityGateEvidenceStatus: qualityGateExchange?.response?.evidence_status || null,
+    qualityGateEvidenceCount: qualityGateExchange?.response?.evidence_count || 0,
   }, null, 2), 'utf8');
 
   console.log(JSON.stringify({
@@ -196,6 +231,9 @@ try {
     anchors: bundle.story?.voLines?.length || 0,
     prompt1Len: bundle.image_prompts?.prompt1?.length || 0,
     prompt2Len: bundle.image_prompts?.prompt2?.length || 0,
+    qualityGateHttpStatus: qualityGateExchange?.status || null,
+    qualityGateEvidenceStatus: qualityGateExchange?.response?.evidence_status || null,
+    qualityGateEvidenceCount: qualityGateExchange?.response?.evidence_count || 0,
   }, null, 2));
 } finally {
   await page?.close().catch(() => {});

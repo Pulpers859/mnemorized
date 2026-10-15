@@ -27,9 +27,13 @@ SPEED & TIMING
 
 Turtle / snail              → Slow / gradual / careful correction
 Rabbit / hare               → Fast / rapid / urgent
-Clock face / hourglass      → Time / duration / timing window
-Stopwatch                   → Specific time threshold
+Unmarked hourglass          → Time / duration / timing window
+Repeated sunrise/sunset     → Day sequence
 Metronome                   → Rate / rhythm / regular interval
+
+Clock faces, stopwatch readings, dial numerals, and requested hand positions
+are not render-safe precision devices. Exact times stay in narration and
+flashcards; use an unmarked physical threshold or countable objects instead.
 
 ═══════════════════════════════════════════════════════════════════════════
 DANGER & RESTRICTION

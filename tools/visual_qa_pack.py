@@ -37,8 +37,9 @@ B. Hook Fidelity — 20. -8 per anchor rendered as TEXT SLAPPED ON A GENERIC PRO
 C. Silhouette & Legibility — 15. -5 illegible clutter; -4 duplicated identical
    silhouettes; -3 reading path lost to busyness.
 D. Text Discipline — 15. -6 per misspelled/invented required label; -5 meta-
-   instruction/caption/zone text leaked into image; -3 per crammed multi-line label
-   list; -2 per needless label the metaphor already carried.
+   instruction/caption/zone text leaked into image; -4 per numeric value, dose, unit,
+   threshold, or formula rendered as text; -3 per crammed multi-line label list;
+   -2 per needless label the metaphor already carried.
 E. Medical Fidelity — 10. -10 an implied fact/threshold is WRONG; -4 ambiguous dose.
 F. Scene Coherence — 10. -6 segmented grid/booths/panels instead of one scene; -3
    incoherent floating placement. A deliberately off-theme sanctioned metaphor is NOT a
@@ -99,10 +100,11 @@ ANTI_META_TEXT = (
 )
 
 NO_PRECISION_TEXT_RULE = (
-    "NO PRECISION TEXT: do NOT render numbers, digits, doses, units, thresholds, lab values, or formulas as text anywhere in the image "
-    "(no plaques, dials, gauges, tags, or chalk marks bearing values). A drawn number is a flashcard, not a mnemonic — the exact value is "
-    "spoken in the narration and listed in the flashcards, never printed in the picture. A number may appear ONLY when encoded as a visual "
-    "hook (a shape look-alike or a small countable quantity), never as spelled-out digits. If a value cannot be cleanly encoded, omit it from the image."
+    "PRECISION VALUES LIVE ONLY IN NARRATION AND FLASHCARDS. Every depicted surface is blank and unmarked. "
+    "Encode thresholds as objects crossing a physical boundary, relative values as obvious size contrast, and small counts as oversized "
+    "countable objects (at most five). Time cues use an unmarked hourglass. Clock faces, dials, gauges, and requested hand positions are "
+    "replaced by these shape-first interactions. The illustration contains mnemonic shapes and actions while exact numbers, doses, units, "
+    "lab values, percentages, and formulas remain spoken study facts."
 )
 
 ANCHOR_LEGIBILITY_RULE = (

@@ -915,7 +915,8 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     # (a drawn number is a flashcard, not a mnemonic — exact values are spoken/carded).
     assert "NO_PRECISION_TEXT_RULE" in pipeline
     assert "PRECISION_TEXT_RULE = 'PRECISION TEXT EXCEPTION" not in pipeline
-    assert "Do NOT render any numbers, digits, doses, units" in pipeline
+    assert "PRECISION VALUES LIVE ONLY IN NARRATION AND FLASHCARDS" in pipeline
+    assert "Clock faces, dials, gauges, and requested hand positions" in pipeline
     # Defense-in-depth: quoted precision tokens are stripped from the drawn anchor lines
     # so the model is never TOLD to draw a value even if an upstream visual spells one.
     assert "function stripPrecisionTokens" in pipeline
@@ -1218,6 +1219,8 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     assert "normalizeImagePromptPair" in pipeline
     assert "ANCHOR is the clinical fact only" in pipeline
     assert "anchor contains mnemonic/narration language" in auth
+    assert "visual uses a precision clock or dial reading" in auth
+    assert "no exact-value clocks, dials, gauges, or precision plaques" in pipeline
     assert "const scene_title   = extractXmlTag(txt, 'scene_title');" not in pipeline
     assert "const voRaw = extractAllXmlTags(txt, 'vo_line');" not in pipeline
 

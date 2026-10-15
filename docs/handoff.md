@@ -199,6 +199,41 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-14 — Source-grounded random EM visual loop + precision-device hardening
+**Done (this commit):** Ran three new random topics through the real Forge browser
+pipeline, captured the structured medical quality-gate exchanges, exported Forge
+bundles, built QA packs, rendered focused plates through the supported Antigravity
+chat/image lane, and externally audited every image against the canonical rubric.
+Hardened the quality gate so generated concepts must also be independently grounded
+by topic-relevant citations; broad cross-topic citations no longer satisfy the gate.
+Added controlled Supabase transport errors, browser-harness gate capture, the missing
+numeric-text rubric deduction, and a production rule that replaces exact-value
+clocks/dials/gauges with physical thresholds, size contrast, or small countable sets.
+
+**Verified:** Final external scores were SBP 100/100 after three renders, heat stroke
+100/100 on the first improved-contract render, and pediatric intussusception 100/100
+on the first improved-contract render. All source bundles, citations, prompts, images,
+and audits are under `Troubleshooting Prompts/random_em_2026-10-14/`; each grounded
+run includes a post-fix `07_quality_gate_recheck.json`. Supabase source retrieval was
+restored and returned direct Tintinalli topic evidence for all three runs, with zero
+missing or ungrounded required concepts. Full local validation passed: compileall,
+89 pytest tests, and HTTP 200 smoke
+checks for `/`, `/forge`, `/library`, and `/api/health`.
+
+**Known risks / NOT verified:** Final images are focused plates using Forge anchors
+1-3, not full 10-anchor scene renders. The raw roughly 1,000-word Stage-3 fallback
+prompt scored 71 on its first SBP render; the concise all-visual contract, not the raw
+fallback, produced the one-shot 100s. Gemini text-director credits returned 402 during
+the run, so the production Claude fallback built the prompts. Source coverage labels
+remain conservative (`partial` for a strong exact lexical match unless multiple high-
+similarity chunks support `strong`). Antigravity did not grade its own output.
+
+**Next highest-value step:** Make the concise 1-3-anchor all-visual plate builder a
+first-class Forge output mode, then repeat this trial on full-scene output and denser
+numeric algorithms before claiming one-shot reliability for all scene sizes.
+
+---
+
 ### 2026-07-09 — Stage-1 gate cluster fix + Antigravity toggle
 **Done (all pushed to `origin/main`):**
 - `5576f57` — Made the Stage-1 **text-surface gate precise** (`forge-auth.js`): was

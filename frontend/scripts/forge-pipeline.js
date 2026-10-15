@@ -45,10 +45,10 @@ const ANTI_META_TEXT = 'TEXT RULES: Every wall, the floor, the ceiling, and all 
   'each one belongs to — printed on the object itself, a sign, a bottle, a banner, or a chalkboard, and ' +
   'sitting directly on that object. Nothing is written in the empty air or space around the objects.';
 
-const NO_PRECISION_TEXT_RULE = 'NO PRECISION TEXT: do NOT render numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as written text anywhere in the image — no plaques, dials, gauges, tags, chalk marks, or stamps bearing values. ' +
-  'A drawn number is a flashcard, not a mnemonic: the exact value is spoken in the narration and listed in the flashcards, NOT printed in the picture. ' +
-  'A number may appear ONLY when it is ENCODED as a visual hook — a shape look-alike (a fork\'s 3 prongs = a triad) or a small countable quantity of oversized objects (at most ~5) — never as spelled-out digits on a surface. ' +
-  'If a value cannot be cleanly encoded as a hook, leave it OUT of the image entirely; the narration carries it.';
+const NO_PRECISION_TEXT_RULE = 'PRECISION VALUES LIVE ONLY IN NARRATION AND FLASHCARDS. Every depicted surface is blank and unmarked. ' +
+  'Encode thresholds as objects crossing a physical boundary, relative values as obvious size contrast, and small counts as oversized countable objects (at most five). ' +
+  'Time cues use an unmarked hourglass. Clock faces, dials, gauges, and requested hand positions are replaced by these shape-first interactions. ' +
+  'The illustration contains mnemonic shapes and actions while exact numbers, doses, units, lab values, percentages, and formulas remain spoken study facts.';
 
 const ANCHOR_LEGIBILITY_RULE = 'ANCHOR LEGIBILITY RULE: every anchor must be large enough to identify at normal 1024px image size. ' +
   'No anchor may become tiny shelf clutter. Give each anchor clear empty space, a distinct silhouette, and enough scale to read its key shape before reading any label. ' +
@@ -64,7 +64,7 @@ const EXACT_LABEL_RULE = 'EXACT LABEL RULE: if a visual specifies a short label,
 // metaphor (tier 1) instead of collapsing to a text-labeled generic prop.
 const VISUAL_METAPHOR_LIBRARY = [
   'Electrolytes/chemistry: banana bunch = potassium (K+); salt sack/shaker or salt crystals = sodium (Na+) / normal saline; lemon or acid-green liquid = acidosis / low pH; golden honey or sugar cubes = glucose / hyperglycemia; purple flame = ketones; bone or milk carton = calcium; horseshoe magnet = magnesium; a box of baking soda (household carton) = bicarbonate (NaHCO3); water/rain = hydration/fluids; red blood drop = hemoglobin.',
-  'Speed/timing: turtle or snail = slow/careful correction; rabbit = fast/urgent; hourglass or clock face = time window; stopwatch = specific time threshold; metronome = rate/rhythm.',
+  'Speed/timing: turtle or snail = slow/careful correction; rabbit = fast/urgent; unmarked hourglass = time window; repeated sunrise/sunset objects = day sequence; metronome = rate/rhythm. Clock faces, stopwatch readings, and exact hand positions are not render-safe precision devices.',
   'Danger/restriction: skull & crossbones = death/toxicity; red X = contraindicated; padlock = restricted / hold / locked away; brick wall or sealed door = completely blocked / never; warning triangle = caution; alarm bell = emergency; cracked/shattered object = organ damage.',
   'Treatment actions: fire hose/flood = aggressive fluid resuscitation; barely-open valve = low-dose infusion; syringe pinching skin = subcutaneous; IV bag dripping = intravenous; chisel chipping = steady anticoagulation; dynamite = thrombolysis; shield = prophylaxis; sword = first-line; bow & arrow = second-line; lever/control panel = refractory/escalation.',
   'Monitoring/diagnosis: balance scale = risk scoring; magnifying glass = diagnostic test; waveform monitor = continuous monitoring; needle gauge = a vital/lab value; clipboard with checkmarks = scoring checklist; dipstick = point-of-care test.',
@@ -1024,6 +1024,7 @@ Rules for every VISUAL:
 - One compact physical drawing instruction.
 - One main object or character interaction plus one location phrase.
 - No arrow glyphs, speech bubbles, checklist rows, multi-label signs, or more than one text-bearing surface.
+- Replace exact-value clock faces, clock hands, stopwatches, dials, gauges, and precision plaques with an unmarked physical threshold, obvious size contrast, or at most five countable objects.
 - Move excess medical detail into NARRATION or ANCHOR; do not delete clinical facts.`,
     messages: [{
       role: 'user',
@@ -1423,6 +1424,7 @@ Clinical accuracy and completeness are mandatory:
 Visual mnemonic rules:
 - Every anchor starts with HOOK: sound-alike, look-alike, functional, contrast, or spatial.
 - Prefer silhouette-first objects/characters over text labels. Text may only be a short sound-alike NAME; NEVER draw numbers, doses, units, thresholds, or formulas — those exact values are spoken in NARRATION and recorded in ANCHOR, never printed in the image.
+- Never encode an exact value with a clock face, clock hands, stopwatch reading, dial, or gauge. Use an unmarked physical threshold, size contrast, or at most five countable oversized objects.
 - VISUAL must be one compact physical drawing instruction, not a label list: one main object/character interaction, one location phrase, and at most one visible text surface (a name, never a number).
 - Avoid the words labeled, reads, showing, shows, sign, chalkboard, ribbon, stamped, or plaque unless that single word describes the only text-bearing surface in the anchor.
 - Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
@@ -1471,11 +1473,11 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'timeout-compact-fallback'));
     storyAttempts.push(compactBody(
       denseProtocol ? 'dense-compact-strict' : 'timeout-compact-strict-fallback',
-      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, scale, position, containment, blocking, and contrast. Use one short text label only when an essential number/formula cannot be encoded by shape.'
+      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, an exact-value clock/dial/gauge, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, physical thresholds, scale, position, containment, blocking, and contrast. Exact numbers and formulas remain only in NARRATION and ANCHOR.'
     ));
     storyAttempts.push(compactBody(
       denseProtocol ? 'dense-visual-hard-gate' : 'timeout-visual-hard-gate-fallback',
-      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no more than one quoted label per anchor; no more than one text-bearing object per anchor; no checklist ribbons, no logbook rows, no multi-label signs. Preserve all essential medical facts by moving details into NARRATION and ANCHOR, while the VISUAL uses one strong object interaction plus at most one precision plaque.'
+      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no exact-value clocks, dials, gauges, or precision plaques; no more than one quoted mnemonic name per anchor; no more than one text-bearing object per anchor; no checklist ribbons, logbook rows, or multi-label signs. Preserve all essential medical facts by moving exact values into NARRATION and ANCHOR, while the VISUAL uses one strong shape-first object interaction.'
     ));
 
     let storyValidation = null;

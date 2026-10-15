@@ -345,6 +345,11 @@ function validateStoryData(storyData) {
     if (/\bspeech bubble\b/i.test(visualText)) {
       fatal.push(`${label} visual uses a speech bubble; speech bubbles turn the scene into a captioned infographic.`);
     }
+    const precisionDevice = /\b(?:clock(?:\s+face)?|stopwatch|dial|gauge)\b/i.test(visualText);
+    const exactDeviceReading = /\b(?:hands?\s+(?:pointing|set|frozen)|reads?|showing|shows?|marked|etched|numbered|numerals?)\b/i.test(visualText);
+    if (precisionDevice && exactDeviceReading) {
+      fatal.push(`${label} visual uses a precision clock or dial reading; replace it with an unmarked physical threshold, size contrast, or small countable object group.`);
+    }
 
     const anchorWordCount = countWords(line.anchor);
     if (anchorWordCount > 35) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);

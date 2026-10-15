@@ -112,6 +112,27 @@ def test_list_palaces_uses_backend_owned_supabase_query(
     assert supabase.calls[0]["bearer_token"] == "local-token"
 
 
+def test_supabase_network_failure_returns_controlled_gateway_error(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    class UnreachableSupabase:
+        async def request(self, *args: Any, **kwargs: Any) -> httpx.Response:
+            request = httpx.Request("GET", "https://project.supabase.co/rest/v1/palaces")
+            raise httpx.ConnectError("DNS lookup failed", request=request)
+
+    monkeypatch.setattr(
+        app_main,
+        "_get_http_client",
+        lambda request: (UnreachableSupabase(), False),
+    )
+
+    response = client.get("/api/palaces", headers={"Authorization": "Bearer local-token"})
+
+    assert response.status_code == 502
+    assert response.json()["detail"] == "Could not reach Supabase. Please try again."
+
+
 def test_ensure_profile_upserts_authenticated_user_through_backend(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
@@ -785,6 +806,71 @@ def test_medical_quality_check_suppresses_cross_topic_citations(
     # No source cleared the relevance bar → explicitly flagged as not source-grounded.
     assert payload["coverage_label"] == "ungrounded"
     assert payload["coverage_confidence"] == 0.0
+
+
+def test_medical_quality_check_rejects_present_but_ungrounded_concept(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    settings = replace(
+        make_settings(tmp_path),
+        supabase_service_role_key="service-role-key",
+        openai_api_key="openai-key",
+    )
+    captured_query: dict[str, str] = {}
+
+    async def fake_summary(**kwargs: Any) -> dict[str, Any]:
+        return {
+            "plan_code": "free",
+            "subscription_status": "inactive",
+            "monthly_request_limit": 40,
+            "monthly_requests_used": 0,
+            "monthly_requests_remaining": 40,
+            "period_started_at": "2026-06-01T00:00:00+00:00",
+            "period_ends_at": "2026-07-01T00:00:00+00:00",
+            "is_dev_override": False,
+        }
+
+    async def fake_retrieve(**kwargs: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        captured_query["text"] = kwargs["query_text"]
+        return [
+            {
+                "source_key": "tintin-endocrine",
+                "title": "Tintinalli - Endocrine Emergencies",
+                "page_start": 12,
+                "page_end": 12,
+                "section_title": "DKA",
+                "chunk_text": "Initial treatment begins with isotonic crystalloid fluids.",
+                "similarity": 0.9,
+                "keyword_rank": 0.5,
+            }
+        ], {"prompt_tokens": 6}
+
+    monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
+    monkeypatch.setattr(app_main, "_get_subscription_and_usage_summary", fake_summary)
+    monkeypatch.setattr(app_main, "_retrieve_medical_context", fake_retrieve)
+    monkeypatch.setattr(app_main, "_schedule_usage_event", lambda **kwargs: None)
+
+    response = client.post(
+        "/api/medical-knowledge/quality-check",
+        headers={"Authorization": "Bearer local-token"},
+        json={
+            "topic": "DKA",
+            "generation_outputs": {"script": "Check potassium before insulin."},
+            "required_concepts": ["potassium before insulin"],
+        },
+    )
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert captured_query["text"] == "DKA"
+    assert payload["verdict"] == "needs_repair"
+    assert payload["missing_from_generation"] == []
+    assert payload["ungrounded_concepts"] == ["potassium before insulin"]
+    assert payload["repair_focus"] == ["potassium before insulin"]
+    assert payload["required_concept_coverage"][0]["present_in_generation"] is True
+    assert payload["required_concept_coverage"][0]["grounded_by_evidence"] is False
 
 
 def test_medical_quality_check_counts_long_concept_paraphrase(

@@ -722,6 +722,16 @@ async def _supabase_rest_request(
             json=json_body,
         )
         return response
+    except httpx.TimeoutException as exc:
+        raise HTTPException(
+            status_code=504,
+            detail="Supabase request timed out. Please try again.",
+        ) from exc
+    except httpx.HTTPError as exc:
+        raise HTTPException(
+            status_code=502,
+            detail="Could not reach Supabase. Please try again.",
+        ) from exc
     finally:
         if owns_http_client:
             await http_client.aclose()
@@ -1201,6 +1211,44 @@ def _quality_gate_tokenize(text: str) -> set[str]:
         elif token == "epinephrine":
             expanded.add("epi")
     return expanded
+
+
+_TOPIC_SCOPE_STOPWORDS = {
+    "acute",
+    "care",
+    "diagnosis",
+    "ed",
+    "emergency",
+    "evaluation",
+    "management",
+    "recognition",
+    "review",
+    "treatment",
+}
+
+
+def _topic_relevant_medical_rows(
+    rows: list[dict[str, Any]],
+    topic: str,
+    *,
+    min_similarity: float,
+) -> list[dict[str, Any]]:
+    """Keep citations that match the named lesson, not only its broad concepts."""
+    topic_tokens = _quality_gate_tokenize(topic) - _TOPIC_SCOPE_STOPWORDS
+    required_overlap = 2 if len(topic_tokens) >= 2 else 1
+    relevant: list[dict[str, Any]] = []
+    for row in rows:
+        searchable = " ".join(
+            str(row.get(key) or "")
+            for key in ("title", "section_title", "chunk_text")
+        )
+        overlap = topic_tokens & _quality_gate_tokenize(searchable)
+        topic_match = not topic_tokens or len(overlap) >= required_overlap
+        similarity = float(row.get("similarity") or 0)
+        keyword_rank = float(row.get("keyword_rank") or 0)
+        if topic_match and (similarity >= min_similarity or keyword_rank >= 0.05):
+            relevant.append(row)
+    return relevant
 
 
 def _quality_concept_present(concept: str, output_text: str) -> bool:
@@ -2293,16 +2341,13 @@ async def medical_knowledge_quality_check(
     if quota_response is not None:
         return quota_response
 
-    query_text = payload.topic
     required_concepts = [concept.strip() for concept in payload.required_concepts if concept.strip()]
-    if required_concepts:
-        query_text = f"{payload.topic}\n\nRequired concepts:\n" + "\n".join(required_concepts)
 
     try:
         rows, usage = await _retrieve_medical_context(
             request=request,
             settings=active_settings,
-            query_text=query_text,
+            query_text=payload.topic,
             max_chunks=payload.max_evidence_chunks,
         )
     except HTTPException:
@@ -2312,7 +2357,11 @@ async def medical_knowledge_quality_check(
     # Only show citations genuinely relevant to the queried topic. A lower cutoff
     # allowed unrelated high-level emergency terms to surface wrong source families.
     QUALITY_GATE_MIN_SIMILARITY = 0.58
-    rows = [r for r in rows if (r.get("similarity") or 0) >= QUALITY_GATE_MIN_SIMILARITY]
+    rows = _topic_relevant_medical_rows(
+        rows,
+        payload.topic,
+        min_similarity=QUALITY_GATE_MIN_SIMILARITY,
+    )
     evidence_status = "matched" if rows else "no_relevant_source"
 
     # Surface how strongly the ingested sources actually cover this topic so the
@@ -2320,12 +2369,13 @@ async def medical_knowledge_quality_check(
     # model's own knowledge. Derived from the retrieval scores already computed —
     # no extra call, no schema change.
     top_similarity = max((float(r.get("similarity") or 0) for r in rows), default=0.0)
+    top_keyword_rank = max((float(r.get("keyword_rank") or 0) for r in rows), default=0.0)
     coverage_confidence = round(top_similarity, 3)
     if not rows:
         coverage_label = "ungrounded"
     elif top_similarity >= 0.72 and len(rows) >= 2:
         coverage_label = "strong"
-    elif top_similarity >= 0.64:
+    elif top_similarity >= 0.64 or top_keyword_rank >= 0.1:
         coverage_label = "partial"
     else:
         coverage_label = "weak"
@@ -2334,20 +2384,25 @@ async def medical_knowledge_quality_check(
     coverage = []
     for concept in required_concepts:
         evidence_refs = _quality_evidence_refs(concept, rows)
-        coverage.append(
-            {
-                "concept": concept,
-                "present_in_generation": _quality_concept_present(concept, output_text),
-                "evidence_refs": evidence_refs,
-            }
-        )
+        coverage.append({
+            "concept": concept,
+            "present_in_generation": _quality_concept_present(concept, output_text),
+            "grounded_by_evidence": bool(evidence_refs),
+            "evidence_refs": evidence_refs,
+        })
 
-    missing_or_weak = [
+    missing_from_generation = [
         item["concept"]
         for item in coverage
         if not item["present_in_generation"]
     ]
-    verdict = "needs_repair" if missing_or_weak else "ready_for_review"
+    ungrounded_concepts = [
+        item["concept"]
+        for item in coverage
+        if not item["grounded_by_evidence"]
+    ]
+    repair_focus = list(dict.fromkeys(missing_from_generation + ungrounded_concepts))
+    verdict = "needs_repair" if repair_focus else "ready_for_review"
 
     _schedule_usage_event(
         background_tasks=background_tasks,
@@ -2376,7 +2431,9 @@ async def medical_knowledge_quality_check(
             "evidence_count": len(rows),
             "evidence": [_medical_citation(row) for row in rows],
             "required_concept_coverage": coverage,
-            "repair_focus": missing_or_weak,
+            "missing_from_generation": missing_from_generation,
+            "ungrounded_concepts": ungrounded_concepts,
+            "repair_focus": repair_focus,
             "limits": (
                 "This deterministic gate checks retrieval coverage and required-concept presence. "
                 "It is not a standalone clinical correctness guarantee."
@@ -2999,7 +3056,11 @@ async def proxy_anthropic_messages(
                 max_chunks=6,
             )
             EVIDENCE_MIN_SIMILARITY = 0.45
-            relevant = [r for r in rows if (r.get("similarity") or 0) >= EVIDENCE_MIN_SIMILARITY]
+            relevant = _topic_relevant_medical_rows(
+                rows,
+                evidence_topic,
+                min_similarity=EVIDENCE_MIN_SIMILARITY,
+            )
             if relevant:
                 evidence_lines = []
                 for i, row in enumerate(relevant, 1):

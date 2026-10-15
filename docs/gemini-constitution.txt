@@ -776,3 +776,18 @@ generated the content + composed the prompt; AG-rendered; REAL-PIXEL graded = 60
     PRECISION and its repair loop so a marginal, repairable formatting miss on one anchor never nukes
     a complete scene. After the fix, "status epilepticus" cleared Stage 1 (10 anchors, image prompts
     ready) where it previously aborted.
+
+28. EXACT-VALUE CLOCKS FAIL EVEN ON SMALL PLATES; PHYSICAL THRESHOLDS GENERALIZE. In a real
+    source-grounded SBP plate with only three Forge anchors, the raw Stage-3 prompt requested a
+    clock face with hands at an exact value. Antigravity rendered multiple clock numerals and the
+    wrong hand position. External canonical score: 71 (REPAIR), including a medical-fidelity gate.
+    Removing the clock and all labels produced 96, but left the threshold hook visually weak.
+    Replacing it with oversized white-cell beads visibly crossing a raised stone threshold produced
+    100 (PASS). Applying the same concise, all-visual rule to fresh heat-stroke and pediatric-
+    intussusception plates produced 100 and 100 on their first improved-contract renders. FIX:
+    Stage 1 treats exact-value clock faces, clock hands, stopwatches, dials, gauges, and precision
+    plaques as repairable fatal VISUAL formats. The micro-repair replaces them with an unmarked
+    physical boundary, obvious size contrast, or at most five countable oversized objects. Exact
+    values remain in narration and flashcards. For 1-3-anchor plates, prefer zero visible text when
+    object interactions still carry the hooks; concise all-visual prompts outperformed the raw
+    1,000-word fallback plate prompt.
