@@ -20,6 +20,18 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Branch And Git Rules
 
+- Follow `C:\Dev\_Workflow\GITHUB_SYNC_RUNBOOK.md` for authenticated GitHub operations.
+  Codex may run network Git directly using `C:\Users\Public\gh-cli\gh.exe`
+  and its configured Windows-keyring credential helper. GitHub Desktop is optional,
+  not a prerequisite. This is Patrick's current workflow, replacing earlier
+  Desktop-only instructions.
+- Verify the repository root, branch, remote, intentional working changes, and
+  CLI authentication before network Git. Fetch even with an intentional dirty
+  tree, but pull only when clean and only with `--ff-only`. Never force-push.
+- Verify a push with matching local HEAD and remote branch SHA, no ahead/behind
+  commits, and preservation of the previous remote as an ancestor. Never print
+  tokens or automate credential dialogs; diagnose authentication once rather
+  than entering a retry loop.
 - Work on `main` for normal tasks.
 - Do not create side branches or pull requests unless Patrick explicitly asks in the current conversation.
 - Commit completed tracked changes directly to `main` and push to `origin/main` unless Patrick explicitly says not to.

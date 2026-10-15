@@ -11,6 +11,9 @@ Claude-specific assumptions:
 
 - Source of truth: `C:\Dev\Mnemorized`
 - Normal branch: `main` tracking `origin/main`
+- Follow `C:\Dev\_Workflow\GITHUB_SYNC_RUNBOOK.md`: authenticated direct Git
+  through the configured GitHub CLI/keyring helper is supported for Codex and
+  Claude. GitHub Desktop is optional. Verify local/remote SHA equality after push.
 - Fetch at the start of a task; pull with `--ff-only` only when the tree is clean.
 - Commit and push completed tracked changes to `origin/main` unless Patrick explicitly says not to.
 - NEVER hand-author the medical anchors/facts/narration/scene prose yourself for an image run; ALWAYS drive the Forge (type the topic; let Stage 1 -> Stage 2 medical gate -> Stage 3 builder generate it) unless Patrick explicitly says to hand-author. Hand-crafted prose is un-gated medical content and bypasses the real builders under test. Constitution LAW #0.1.

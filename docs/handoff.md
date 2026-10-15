@@ -199,6 +199,32 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-15 - GitHub CLI route verified; interrupted review work preserved
+**GitHub:** Patrick supplied the current shared sync runbook and pointed to
+Transform_clean. Verified `Pulpers859` CLI/keyring authentication and the configured
+GitHub credential helper. Direct fetch succeeded; main was ahead by one with a
+shared ancestor. Pushed `9da785e` without force, verified exact remote SHA
+`9da785e67cf15005dbd7aff00d9a197546946c09`, and verified the previous remote
+`5dd95fc` remains an ancestor. Updated repo instructions and both handoff skills:
+GitHub Desktop is optional, not a prerequisite. No credentials/config were changed.
+
+**Prompt work is NOT complete:** Newer active-Constitution, repair-context and
+review-routing edits remain intentionally uncommitted pending integration and final
+validation. Earlier validation reached 419 passes/one skip and route/UI smoke;
+later cancellation edits still need regression coverage. The independent reviewer
+also found optional repair scopes and duplicate lesson context; its follow-up worker
+became unavailable across the interruption, so do not assume that patch landed.
+No new image or passing image score is claimed.
+
+**Recovery evidence:** Paid Anthropic calls resumed after refill. v5/v6 pericarditis
+recoveries failed pre-render review; v6 exposed unsupported collision findings and
+cue substitutions inconsistent with learning text. v7 reached review round 2 before
+interruption. Its current bundle is 58,455 zero bytes, so its final outcome cannot
+be verified or reused. v4/v6 bundles remain readable. Preserve the bad packet for
+diagnosis; do not call it a pass or reconstruct clinical content by hand. Earlier
+frozen failed cohorts remain unchanged. Next integrate the bounded reviewer fixes,
+add cancellation coverage, revalidate, then resume the actual Forge workflow.
+
 ### 2026-10-15 - One-shot infrastructure and failed prospective pilot
 **Done:** Added source-grounded whole-lesson pre-render review, one bounded clinical
 correction before locking clinical text, at most two visual repair requests,

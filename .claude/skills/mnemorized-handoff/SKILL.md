@@ -11,7 +11,11 @@ Use this skill to rebuild the minimum correct context before coding, reviewing, 
 
 1. Confirm the source-of-truth repo is `C:\Dev\Mnemorized`.
 2. Confirm the active branch is `main`, tracking `origin/main`.
-3. Run `git fetch --all --prune`; if the tree is clean, run `git pull --ff-only`.
+3. Follow `C:\Dev\_Workflow\GITHUB_SYNC_RUNBOOK.md`: verify the remote and
+   authentication using `C:\Users\Public\gh-cli\gh.exe auth status`, then use
+   direct `git fetch --all --prune`; if clean, run `git pull --ff-only`.
+   GitHub Desktop is optional, not required. Never expose tokens, force-push,
+   or retry credential dialogs. Prove synchronization with local/remote SHAs.
 4. Confirm the main runtime surfaces:
    - backend app: `backend/app/main.py` (config in `backend/app/config.py`, auth in `backend/app/auth.py`)
    - frontend pages: `frontend/pages/landing.html`, `frontend/pages/forge.html`, `frontend/pages/library.html`, `frontend/pages/admin.html`
