@@ -99,7 +99,7 @@ vm.runInContext(source.slice(start, end), context);
         assert data['error']
 
 
-@pytest.mark.parametrize('mode', ['valid', 'bad_target', 'bad_response'])
+@pytest.mark.parametrize('mode', ['valid', 'visual', 'unsafe_visual', 'bad_target', 'bad_response'])
 def test_targeted_text_repair_preserves_other_fields(mode):
     node = shutil.which('node')
     if not node:
@@ -113,13 +113,15 @@ const mode = process.argv[1];
 const story = {scene_title:'Fixture', voLines:[{n:1, hook:'Old hook', narration:'Keep narration', anchor:'Keep fact', visual:'Keep visual'}], review_script:'Old review', required_concepts:['Keep scope']};
 let calls = 0;
 const context = vm.createContext({story,
-  targets: [{anchor:1, field: mode === 'bad_target' ? 'visual' : 'hook'}, {field:'review_script'}],
+  targets: [{anchor:1, field: mode === 'bad_target' ? 'scene_title' : mode.includes('visual') ? 'visual' : 'hook'}, {field:'review_script'}],
   CLAUDE_MODEL:'test', CLAUDE_ADVISOR_MODEL:'expert-test', encodeHeaderValue:encodeURIComponent,
   parseProviderContent:raw=>raw.text, validateStoryData:()=>({fatal:[]}),
   claudeFetch:async()=>{calls++; return {ok:true,json:async()=>({stop_reason:'end_turn',text:JSON.stringify({repairs:[
-    {target:0,text:'Corrected hook'}, {target:mode === 'bad_response' ? 0 : 1,text:'Corrected review'}
+    {target:0,text:mode === 'unsafe_visual' ? 'A ruler marked 12 cm.' : 'Corrected hook'}, {target:mode === 'bad_response' ? 0 : 1,text:'Corrected review'}
   ]})})};}
 });
+const pipeline = fs.readFileSync('frontend/scripts/forge-pipeline.js', 'utf8');
+vm.runInContext(pipeline.slice(0, pipeline.indexOf('function renderImagePromptPair(')),context);
 vm.runInContext(source.slice(start,end),context);
 (async()=>{try {
   const result=await vm.runInContext("repairMedicalTextFields(story,'Sample',targets,'Fix terms')",context);
@@ -133,10 +135,11 @@ vm.runInContext(source.slice(start,end),context);
     data = json.loads(result.stdout)
     assert data['story']['voLines'][0]['hook'] == 'Old hook'
     assert data['story']['review_script'] == 'Old review'
-    if mode == 'valid':
+    if mode in ('valid', 'visual'):
         line = data['result']['voLines'][0]
-        assert line == {'n': 1, 'hook': 'Corrected hook', 'narration': 'Keep narration',
-                        'anchor': 'Keep fact', 'visual': 'Keep visual'}
+        assert line == {'n': 1, 'hook': 'Old hook' if mode == 'visual' else 'Corrected hook',
+                        'narration': 'Keep narration', 'anchor': 'Keep fact',
+                        'visual': 'Corrected hook' if mode == 'visual' else 'Keep visual'}
         assert data['result']['required_concepts'] == ['Keep scope']
         assert data['result']['review_script'] == 'Corrected review'
     else:

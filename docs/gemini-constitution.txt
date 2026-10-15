@@ -818,3 +818,51 @@ FIELD FINDINGS - 2026-10-14 (full eight-unit CO student lesson; PRE-RENDER)
     accidentally. The eight-unit CO packet is clinically cleared but its first render
     was blocked by Antigravity quota. These are source/prompt/software findings, NOT
     pixel-validation evidence or a claim of one-shot image reliability.
+
+FIELD FINDINGS - 2026-10-15 (full eight-unit CO lesson; real pixels)
+
+32. IDENTIFIABLE OBJECTS NEED SIMPLE OWNERSHIP AND STABLE ACTION STATES. Across
+    five full-scene renders, a sensor 'sweep' became a broom, a red magnifier
+    handle swallowed the blood-tube cue, and a held mask did not reach a patient.
+    A receiver already at an ear communicated calling better than 'grabs the
+    ringing phone.' Prefer a single stable relationship per actor, distinct
+    silhouettes for paired objects, and the completed clinically meaningful
+    action. Do not repair these failures by specifying fingers or tiny poses.
+
+33. COMPOSITE CUES DO NOT REQUIRE SIMULTANEOUS HAND CHOREOGRAPHY. Source assessment
+    and follow-up repeatedly failed when an inspector also had to pass a blank
+    pad. A separately supported calendar with EMPTY date cells made follow-up
+    recognizable without text or handoff. An object's internal calendar grid is
+    not a segmented scene. Preserve both teaching associations; simplifying a
+    physical interaction must never erase part of the clinical scope.
+
+34. A NAMED INSTRUMENT IS NOT AN IDENTIFIABLE INSTRUMENT. The source-check device
+    read as a radio, then as a generic probe touching masonry. The fifth image
+    received 98 and 79 from independent auditors; the lower79 governed. A source
+    label in the prompt cannot establish ambient-gas sampling in the pixels.
+    After five attempts, redesign the mnemonic strategy through Forge and source
+    review instead of appending apparatus detail. Do not imply a novel clinical
+    testing technique just to distinguish a prop.
+
+35. FULL-SCENE AUDITS MUST SURVIVE REGRESSION AND DISAGREEMENT. Repairing one cue
+    can break another; all eight units were re-audited after every render. Three-
+    anchor successes do not certify a complete lesson. Retain both independent
+    reports, their actual-image hashes, and the stricter decision. A threshold
+    pass is not proof of one-shot reliability, technical equipment accuracy, or
+    comprehensive current-guideline correctness.
+
+36. VALIDATE THE REVISED MEANING BEFORE RENDERING, NOT AFTER SEEING THE RESULT.
+    The CO source-check cue was prospectively redesigned through Forge from literal
+    detector identification to an official-controlled restriction at the source plus
+    a separate calendar. Every clinical clause, including ambient measurement, stayed
+    unchanged. Both reviewers accepted that functional decision encoding before its
+    render. It is a memory cue, not a depiction of gas containment or measurement.
+    The final complete eight-unit image passed both independent canonical audits at
+    100, with image hashes and per-unit location ledgers. Prior failures stayed failed.
+
+37. REFERENCE GUIDANCE CAN PRESERVE THE DEFECT. CO render 8 accepted native ImagePaths
+    but retained healthy onlookers where shared illness was required. Render 9 used
+    the SAME reviewed full Forge prompt in a fresh image-lab conversation without
+    a reference and passed. This is one observed comparison, not proof that fresh
+    context always wins. Nine renders and extensive source-grounded repairs were
+    needed overall. Never describe this as first-attempt or general one-shot success.

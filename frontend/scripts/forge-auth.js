@@ -468,14 +468,14 @@ async function reviewMedicalCoverageContract(topic, concepts, feedback = '') {
 async function repairMedicalTextFields(story, topic, targets, feedback, expertReview = false) {
   const selected = targets.map(target => {
     const owner = target.anchor == null ? story : story.voLines.find(line => line.n === target.anchor);
-    const allowed = target.anchor == null ? ['review_script'] : ['hook', 'narration', 'anchor'];
+    const allowed = target.anchor == null ? ['review_script'] : ['hook', 'narration', 'anchor', 'visual'];
     if (!owner || !allowed.includes(target.field)) throw new Error('Invalid clinical text repair target.');
     return { ...target, text: owner[target.field] };
   });
   const response = await claudeFetch({
     model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
     max_tokens: 2600,
-    system: 'Repair only the specified clinical text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, visual references, clinical scope, source qualifiers and uncertainty. No new facts or visual props. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
+    system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. For VISUAL repairs, preserve the same teaching association with large recognizable objects, simple physical relationships and coarse placement; use at most 24 words, blank unmarked surfaces, and no exact written values. Do not redesign unrelated anchors. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
     messages: [{role: 'user', content: `Topic: ${topic}\nFeedback: ${feedback}\nTargets: ${JSON.stringify(selected)}\nReviewed coverage: ${JSON.stringify(story.required_concepts || [])}`}],
   }, 'medical-targeted-text-repair', {
     'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic),
@@ -493,6 +493,10 @@ async function repairMedicalTextFields(story, topic, targets, feedback, expertRe
   });
   const validation = validateStoryData(updated);
   if (validation.fatal.length) throw new Error(`Targeted repair failed validation: ${validation.fatal.join(' ')}`);
+  selected.filter(target => target.field === 'visual').forEach(target => {
+    const index = updated.voLines.findIndex(line => line.n === target.anchor);
+    imageAnchorVisual(updated.voLines[index], index);
+  });
   return updated;
 }
 

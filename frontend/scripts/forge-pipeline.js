@@ -176,7 +176,7 @@ function buildImageAnchorLines(anchors) {
   return anchors.map((v, index) => {
     const visual = imageAnchorVisual(v, index);
     const lead = zoneLeadIn(v.zone);
-    const alreadyPlaced = /^(on |at |in |against |just |directly |off |toward |above |below |behind |beside |near |far |left|right|center|foreground|background|upstage|downstage|stage-)/i.test(visual);
+    const alreadyPlaced = /^(on |at |in |indoors\b|outdoors\b|against |just |directly |off |toward |above |below |behind |beside |near |far |left|right|center|foreground|background|upstage|downstage|stage-)/i.test(visual);
     if (lead && !alreadyPlaced) {
       return `${lead}, ${visual.charAt(0).toLowerCase()}${visual.slice(1)}.`;
     }
@@ -230,9 +230,12 @@ function ensureTextAllowlistFence(prompt, anchors) {
 }
 
 function composeImagePrompt2(sceneDesc, assigned) {
+  const surfaceRule = extractRenderableLabels(assigned).ordinary.length
+    ? 'Clothing and device surfaces follow the final text allowlist.'
+    : 'Clothing and device surfaces stay plain and unmarked.';
   return 'Hand-drawn flat marker cartoon, wide 16:9 single coherent scene, varied ink outlines, vivid contrasting colors and even lighting. ' +
-    'The eye follows the source placements across the room and through foreground and background. ' +
-    'Every described interaction appears once, with distinct silhouettes, generous spacing and readable scale.\n\n' +
+    'Grounded objects, uncluttered spatial hierarchy. Every described interaction appears once with distinct silhouettes. ' +
+    surfaceRule + '\n\n' +
     condenseForImage(sceneDesc) + '\n\n' + buildImageAnchorLines(assigned) + '\n\n' +
     'Shapes and physical interactions carry the hooks; exact values remain in narration and flashcards.\n\n' +
     buildTextAllowlistFence(assigned);
@@ -282,7 +285,7 @@ async function buildClaudeImagePromptPair(topic, storyData, assigned, stage) {
   const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
     'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
     'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
-    'CRITICAL: Describe architecture only: one continuous room with an open, undivided floor, walls, ceiling, doorways and windows. Use fewer than 60 words. ' +
+    'CRITICAL: Describe architecture only: one continuous room with an open, undivided floor, walls, ceiling, doorways and windows. Target 20-35 words; always use fewer than 60 words. Keep architectural detail minimal. ' +
     'No divided bays, booths, panels, grids, painted zone lines, checklist walls or numbered stations. ' +
     'Do NOT invent or list anchor props, furniture, tools, people or characters. ' +
     'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
@@ -296,7 +299,7 @@ ATMOSPHERE: ${storyData.opening}
 TOTAL ANCHORS TO FIT: ${n}
 
 Requirements:
-- 40-59 words — architecture ONLY; always fewer than 60 words
+- 20-35 words — minimal architecture ONLY; always fewer than 60 words
 - One continuous room with an open, undivided floor; describe only walls, floor, ceiling, doorways, windows and their materials
 - No divided bays, booths, panels, grids, painted zone lines, checklist walls or numbered stations
 - Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors

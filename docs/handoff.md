@@ -199,6 +199,49 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-15 - Full CO lesson passes independent whole-image audits
+**Done:** Completed the preceding Forge-first student trial through nine actual
+Antigravity native image renders. Final image 9 scored 100 in each of two independent
+canonical pixel audits, with 8/8 teaching units and no hard gates. No subset plates,
+hand-authored medical scenes, or renderer self-grading. Rejected all prior images;
+used the stricter decision when reviewers disagreed. Changed failed source-check
+encoding prospectively through Forge to a conditional source-restriction/calendar
+cue while preserving all clinical clauses, facts and reviewed coverage.
+
+**App changes:** Targeted repairs can update explicitly selected visuals and now
+validate their image renderability before returning. Source-required names retain
+their exception to unmarked-surface rules; text-free lessons explicitly request
+unmarked clothing/devices. Architecture is concise, full visual fields survive,
+and explicit Indoors/Outdoors placement no longer gains a conflicting default zone.
+Cache versions and nonclinical regression tests updated. Constitution records actual
+pixel failures, cross-anchor regression, prospective redesign and reference risk.
+
+**Verified:** compileall, 133 pytest tests, JS syntax and four HTTP 200 route smoke
+checks. Independent code review's two findings were fixed and tested. Final study
+page passes 1440px desktop and 390px mobile checks: eight sections, image loaded,
+no horizontal/text overflow or page errors. All private artifacts remain ignored
+under `Troubleshooting Prompts/co_student_2026-10-14/`: final/study.html,
+final/03_forge_bundle.json, final/verification.json, antigravity_iter9.png,
+antigravity_audit_iter9_a.md and _b.md. Image SHA256 starts 18d70f98e677b711.
+The promotion script verifies both scores, arithmetic, full coverage and matching
+image hashes before embedding the image in the exact reviewed Forge bundle.
+
+**Limits:** This is one source-bounded Tintinalli introductory lesson, not licensed
+clinician certification, a current-guideline protocol, or proof of general one-shot
+reliability. Extra sample/table-placement deviations do not trigger rubric deductions
+and are disclosed in the audits. Gemini API text-director credits returned 402;
+Claude fallback and expert repairs were used, while Antigravity generated the images.
+The native image quota reset caused an approximately four-hour wait. Render 8's
+reference-guided repair failed; render 9 passed fresh with the same prompt. Nine
+renders, not one. Private source excerpts/images were not staged for GitHub.
+
+**Next highest-value step:** Evaluate the current source-reviewed pipeline on fresh
+full lessons with prospectively fixed contracts and strict independent audits;
+measure first-pass success and repair regression instead of extrapolating from one
+passing artifact. No further image work is required to complete this one-topic task.
+
+---
+
 ### 2026-10-14 - Full CO student lesson: clinical clearance, image quota wait
 **Prepared:** A fresh Forge-first carbon-monoxide introduction with all eight teaching
 units, independently reviewed against retrieved Tintinalli pages 83-85. Rejected

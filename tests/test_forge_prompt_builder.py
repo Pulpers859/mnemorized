@@ -127,6 +127,7 @@ def test_full_scene_is_compact_and_preserves_every_visual():
     for anchor in source:
         assert anchor["visual"].lower() in prompt.lower()
     assert prompt.endswith("the entire illustration is text-free.")
+    assert "Clothing and device surfaces stay plain and unmarked." in prompt
     assert "..." not in prompt
     assert "\n- " not in prompt
 
@@ -136,6 +137,12 @@ def test_long_visual_tail_survives_old_word_caps():
     result = evaluate("buildImageAnchorLines(assignZones(input))", [{"visual": visual}])
     assert visual.lower() in result.lower()
     assert result.endswith("tiny unique finial.")
+
+
+def test_existing_indoor_location_does_not_gain_conflicting_fallback_zone():
+    visual = "Indoors at the kiln, a worker holds a ceramic bowl"
+    result = evaluate("buildImageAnchorLines(input)", [{"visual": visual, "zone": "FOREGROUND LEFT"}])
+    assert result == visual + "."
 
 
 def test_oversized_source_fails_without_mutating_or_dropping_anchors():
@@ -161,6 +168,8 @@ def test_source_names_have_exact_allowlist_and_precision_text_is_removed():
     assert 'named "Reed"' in result
     assert "spelled exactly on their own objects: Reed." in result
     assert "All other surfaces and empty space stay blank" in result
+    assert "Clothing and device surfaces follow the final text allowlist." in result
+    assert "Clothing and device surfaces stay plain and unmarked." not in result
     assert "Every surface" not in result
     assert "12 cm" not in result
     assert "blue wheel" in result
