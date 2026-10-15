@@ -1236,7 +1236,8 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
 
     assert "function validateStoryData" in auth
-    assert "storyValidation = validateStoryData(storyData);" in pipeline
+    assert "storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));" in pipeline
+    assert "const result = validateStoryData(story);" in pipeline
     assert "storyData = parseStoryXml(txt);" in pipeline
     assert "Too many anchors returned" in auth
     assert "dense-compact-strict" in pipeline

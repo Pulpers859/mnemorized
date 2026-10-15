@@ -20,7 +20,7 @@ const start = source.indexOf('async function runMedicalQualityGate(');
 const end = source.indexOf('\nfunction renderPromptData(', start);
 const calls = [];
 const context = vm.createContext({
-  currentQualityGateData: null, currentStoryData: null,
+  currentQualityGateData: null, currentStoryData: null, qualityGateRequest: 0, window: {},
   authState: {user: {}}, appConfig: {medicalKnowledgeEnabled: true},
   backendState: {checked: true, medicalKnowledgeConfigured: true},
   document: {getElementById: () => ({value: 'Nonclinical test topic'})},
@@ -112,7 +112,7 @@ const end = source.indexOf('\nasync function repairCurrentPalaceWithMedicalEvide
 const mode = process.argv[1];
 const story = {scene_title:'Fixture', voLines:[{n:1, hook:'Old hook', narration:'Keep narration', anchor:'Keep fact', visual:'Keep visual'}], review_script:'Old review', required_concepts:['Keep scope']};
 let calls = 0;
-const context = vm.createContext({story,
+const context = vm.createContext({window: {}, story,
   targets: [{anchor:1, field: mode === 'bad_target' ? 'scene_title' : mode.includes('visual') ? 'visual' : 'hook'}, {field:'review_script'}],
   CLAUDE_MODEL:'test', CLAUDE_ADVISOR_MODEL:'expert-test', encodeHeaderValue:encodeURIComponent,
   parseProviderContent:raw=>raw.text, validateStoryData:()=>({fatal:[]}),

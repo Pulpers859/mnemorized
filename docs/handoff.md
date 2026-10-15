@@ -199,6 +199,46 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-15 - One-shot infrastructure and failed prospective pilot
+**Done:** Added source-grounded whole-lesson pre-render review, one bounded clinical
+correction before locking clinical text, at most two visual repair requests,
+deterministic compilation of reviewed opening/VISUALs, exact story/prompt binding,
+and a single full-scene image request. Added private review/repair export, an
+explicit reviewed redesign path, and frozen first-pass evaluation with two-auditor
+artifact hashes. Old pixel-prompt injection cannot bypass preflight. Fixed the
+retrieval relevance filter treating learner/output prose as medical topic terms.
+Protected asynchronous gate, repair and image results against newer lessons.
+
+**Actual trials:** Original frozen cohort0/3 (compartment syndrome, acetaminophen
+poisoning, myasthenic crisis); follow-up0/1 (pericarditis). All blocked before images.
+The first two completed scenes exceeded critic output budgets; acetaminophen lacked
+specific retrieved toxicology support. Pericarditis exposed a relevance-filter bug:
+identical saved retrieval rows retained1 before and5 after the correction. Recovery
+cleared clinical coverage but exhausted visual repair with unresolved critic
+objections. Some objections were demonstrably wrong; critic instructions now clarify
+object counting, mnemonic names and the actual compiler boundary. No false-positive
+elimination or one-shot reliability is claimed.
+
+**Current blocker:** A full Forge redesign produced eight anchors and passed the
+medical gate with four citations, then Anthropic returned HTTP400, credit balance
+too low. Patrick was notified; no further paid retries. Resume gate/preflight from
+`Troubleshooting Prompts/first_pass_2026-10-15/pericarditis_redesign_v4/03_forge_bundle.json`
+after refill, without discarding original failures or counting recovery as held-out.
+No new image was generated in this session. Previous nine-render CO pass remains
+development evidence only.
+
+**Validation:** Compileall, 387 tests passed (one Windows symlink skip), all four
+route smoke checks, and provider-free desktop/mobile UI checks passed. JavaScript
+syntax checks and diff whitespace checks passed. Real Forge/Anthropic/retrieval
+calls exercised the failures above. No Antigravity/image call was appropriate without
+clearance. Independent code and accounting reviewers identified and checked risks.
+
+**Next highest-value step:** Calibrate the pre-render critic against exact supporting
+quotes and actual images, then run a new prospectively frozen cohort after the final
+pipeline version is fixed. Do not increase rejection/retry count and call it quality.
+See `docs/visual-preflight.md`, `docs/first-pass-evaluation.md`, Constitution findings
+38-39, and the private pilot `RUN.md` for scope, provenance and caveats.
+
 ### 2026-10-15 - Full CO lesson passes independent whole-image audits
 **Done:** Completed the preceding Forge-first student trial through nine actual
 Antigravity native image renders. Final image 9 scored 100 in each of two independent

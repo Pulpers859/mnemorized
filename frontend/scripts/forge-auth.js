@@ -25,6 +25,7 @@ let currentPalaceMeta = null;
 let currentStoryData = null;
 let currentPromptData = { prompt1: '', prompt2: '' };
 let currentQualityGateData = null;
+let qualityGateRequest = 0;
 let libraryRowsCache = [];
 const palaceIdFromRoute = new URLSearchParams(window.location.search).get('palace');
 let palaceRouteHydrated = false;
@@ -156,6 +157,7 @@ function buildPalaceSnapshot() {
     generation_outputs: {
       story: currentStoryData,
       quality_gate: currentQualityGateData,
+      visual_preflight: window.MnemorizedVisualPreflight?.getReport() || null,
       prompts: {
         prompt1: currentPromptData.prompt1,
         prompt2: currentPromptData.prompt2
@@ -409,7 +411,9 @@ function renderQualityGateResult(result) {
   const repairFocus = result?.repair_focus || [];
   const verdictLabel = result?.verdict === 'needs_repair' ? 'Needs repair' : 'Ready for review';
   const medicalGateAvailable = !!(authState.user || appConfig.demoAuthBypass);
-  const showRepair = medicalGateAvailable && appConfig.medicalKnowledgeEnabled && result?.verdict === 'needs_repair';
+  const preflight = window.MnemorizedVisualPreflight?.getReport();
+  const visualBlocked = preflight?.status === 'blocked';
+  const showRepair = medicalGateAvailable && appConfig.medicalKnowledgeEnabled && (result?.verdict === 'needs_repair' || visualBlocked);
   setStageDetail('quality', result?.verdict === 'needs_repair'
     ? 'Quality gate found weak or missing medical coverage. Repair can use backend-only private references.'
     : (hasRelevantEvidence
@@ -424,8 +428,9 @@ function renderQualityGateResult(result) {
         <div class="quality-copy">${escapeHtml(coverageLabel)} • ${escapeHtml(evidenceLabel)}</div>
         ${groundingLabel ? `<div class="quality-grounding">${escapeHtml(groundingLabel)}</div>` : ''}
         ${repairFocus.length ? `<div class="quality-repair">Repair focus: ${escapeHtml(repairFocus.join(', '))}</div>` : ''}
+        ${visualBlocked ? `<div class="quality-repair">Image review blocked: ${escapeHtml(preflight.error || 'The draft needs redesign.')}</div>` : ''}
         ${showRepair ? `<div class="quality-actions">
-          <button class="btn-copy" id="repair-quality-btn" onclick="repairCurrentPalaceWithMedicalEvidence()">Repair with Medical Evidence</button>
+          <button class="btn-copy" id="repair-quality-btn" onclick="repairCurrentPalaceWithMedicalEvidence({redesignVisuals:${visualBlocked}})">${visualBlocked ? 'Redesign with Medical Evidence' : 'Repair with Medical Evidence'}</button>
         </div>` : ''}
       </div>
       <div class="quality-citations">
@@ -482,7 +487,9 @@ async function repairMedicalTextFields(story, topic, targets, feedback, expertRe
   });
   const raw = await response.json();
   if (!response.ok || raw.stop_reason === 'max_tokens') throw new Error('Targeted medical repair did not complete.');
-  const result = JSON.parse(parseProviderContent(raw, 'Targeted Medical Repair'));
+  const repairText = parseProviderContent(raw, 'Targeted Medical Repair').trim();
+  const fenced = repairText.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/i);
+  const result = JSON.parse(fenced ? fenced[1] : repairText);
   if (!Array.isArray(result.repairs) || result.repairs.length !== selected.length) throw new Error('Targeted repair did not return every requested field.');
   const updated = JSON.parse(JSON.stringify(story));
   result.repairs.forEach((repair, index) => {
@@ -509,8 +516,17 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
     openAuthModal();
     return;
   }
+  const priorPreflight = window.MnemorizedVisualPreflight?.getReport();
+  window.MnemorizedForgeOperations?.cancel();
+  if (typeof invalidateImagePrompts === 'function') invalidateImagePrompts();
+  const operation = window.MnemorizedForgeOperations?.current();
+  const topic = document.getElementById('topic').value.trim();
+  const sourceStory = currentStoryData;
+  const active = () => operation === window.MnemorizedForgeOperations?.current() &&
+    topic === document.getElementById('topic').value.trim();
   if (!currentQualityGateData) {
     await runMedicalQualityGate(currentStoryData);
+    if (!active()) return;
   }
 
   const btn = document.getElementById('repair-quality-btn');
@@ -523,30 +539,38 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
 
   try {
     const token = getMedicalAuthToken();
-    const topic = document.getElementById('topic').value.trim();
     const contextPayload = await MnemorizedMedicalApi.context(token, {
       topic,
       max_chunks: 6,
     });
+    if (!active()) return;
     const evidence = (contextPayload.context || []).map((item, index) => {
       const page = item.page_start === item.page_end
         ? `p${item.page_start || '?'}`
         : `p${item.page_start || '?'}-${item.page_end || '?'}`;
       return `[${index + 1}] ${item.source_title || item.source_key || 'Medical source'} ${page}: ${item.excerpt || ''}`;
     }).join('\n');
-    const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ');
-    let originalContract = currentStoryData.required_concepts?.length
-      ? [...currentStoryData.required_concepts]
+    const preflight = priorPreflight;
+    const latestReview = preflight?.status === 'blocked' ? preflight.attempts?.slice(-1)[0]?.review : null;
+    const reviewFeedback = latestReview && options.redesignVisuals
+      ? {clinical_status: latestReview.clinical_status, clinical_findings: latestReview.clinical_findings,
+          redesign_reason: 'Previous visual encoding did not clear preflight. Create fresh visual hooks from the teaching units; do not patch the old scene.'}
+      : latestReview;
+    const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ') +
+      (reviewFeedback ? `\nPrior review feedback (AI findings, verify against the draft and sources; do not copy incorrect claims): ${JSON.stringify(reviewFeedback)}` : '');
+    let originalContract = sourceStory.required_concepts?.length
+      ? [...sourceStory.required_concepts]
       : (currentQualityGateData?.required_concept_coverage || []).map(item => item.concept).filter(Boolean);
     originalContract = await reviewMedicalCoverageContract(topic, originalContract, repairFocus);
+    if (!active()) return;
     const scriptForRepair = options.redesignVisuals
-      ? { teaching_units: currentStoryData.voLines.map(item => ({ n: item.n, anchor: item.anchor })), required_scope: originalContract }
-      : currentStoryData;
+      ? { teaching_units: sourceStory.voLines.map(item => ({ n: item.n, anchor: item.anchor })), required_scope: originalContract }
+      : sourceStory;
 
     const res = await claudeFetch({
       model: options.expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
       max_tokens: 6144,
-      system: `You repair medical memory-palace scripts using private reference evidence. The current script is an UNAPPROVED draft, not a template to copy. Every explicit repair-focus criticism is mandatory. A criticized visual must be replaced with a different, stronger visual strategy; deleting its label is not a repair of an arbitrary prop. Preserve clinical scope and accurate facts, not defective wording or props. Use source evidence only and retain uncertainty. Use the requested anchor count, otherwise 8-10. Return only <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Inside each vo_line use plain uppercase HOOK:, NARRATION:, VISUAL:, ANCHOR: labels, never nested tags. VISUAL is at most 24 words and describes one large recognizable interaction. Exact values stay in narration and anchor fields, never on clocks, dials, gauges or plaques. Use functional or shape associations before names. Keep any strongest existing hooks that were NOT criticized. No proprietary mnemonic scenes or symbols.\n\nVISUAL ENCODING HIERARCHY: pure visual metaphor, then metaphor plus a short mnemonic name; no generic prop as an arbitrary stand-in.\n${typeof VISUAL_METAPHOR_LIBRARY !== 'undefined' ? VISUAL_METAPHOR_LIBRARY : ''}`,
+      system: `You repair medical memory-palace scripts using private reference evidence. The current script is an UNAPPROVED draft, not a template to copy. Every evidence-backed repair-focus finding is mandatory; verify AI feedback against the draft and sources first, discarding criticisms contradicted by them. A genuinely defective visual must be replaced with a different, stronger visual strategy; deleting its label is not a repair of an arbitrary prop. Preserve clinical scope and accurate facts, not defective wording or props. Use source evidence only and retain uncertainty. Use the requested anchor count, otherwise 8-10. Return only <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Inside each vo_line use plain uppercase HOOK:, NARRATION:, VISUAL:, ANCHOR: labels, never nested tags. VISUAL is at most 24 words and describes one large recognizable interaction. Exact values stay in narration and anchor fields, never on clocks, dials, gauges or plaques. Use functional or shape associations before names. Keep any strongest existing hooks that were NOT criticized. No proprietary mnemonic scenes or symbols.\n\nVISUAL ENCODING HIERARCHY: pure visual metaphor, then metaphor plus a short mnemonic name; no generic prop as an arbitrary stand-in.\n${typeof VISUAL_METAPHOR_LIBRARY !== 'undefined' ? VISUAL_METAPHOR_LIBRARY : ''}`,
       messages: [{
         role: 'user',
         content: `Clinical topic: ${topic}
@@ -562,7 +586,7 @@ ${JSON.stringify(scriptForRepair, null, 2)}
 
 Repair requirements:
 - ${options.redesignVisuals ? 'REDESIGN MODE: Invent a new setting and all new visual hooks from the source-grounded teaching units. Old props were intentionally withheld because that encoding strategy failed. Preserve the clinical scope, not prior visual choices.' : 'Preserve the scene title and setting if they still work.'}
-- Keep an existing anchor only when both medically sound and visually strong. Explicit repair-focus criticism overrides preservation of the old scene.
+- Keep an existing anchor only when both medically sound and visually strong. Verified repair-focus findings override preservation of the old scene.
 - Rewrite or add anchors for any missing/weak repair-focus concepts.
 - Preserve the requested lesson scope and all essential teaching units.
 - Use only supplied source evidence for medical claims; retain uncertainty and qualifiers.
@@ -571,7 +595,7 @@ Repair requirements:
 - Surfaces are blank unless a short mnemonic name is necessary. Replace text panels, numeric devices, faint marks, and tiny details with large physical interactions.
 - The opening describes the room itself; explanations and teaching notes belong in narration.
 - Keep narration focused on this introductory scope; do not append extra workup or epidemiology.
-- Recheck every repair-focus item before returning; replace every visual specifically criticized as weak.
+- Recheck every repair-focus item before returning; replace every visual with a verified weakness, not one based on incorrect AI feedback.
 - Return this exact format, using plain uppercase field labels inside each vo_line, NOT nested XML fields or Markdown fences:
 <scene_title>Title</scene_title>
 <opening>Room architecture only, at most 60 words.</opening>
@@ -587,14 +611,17 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
       'x-evidence-grounding': 'true',
       'x-evidence-topic': encodeHeaderValue(topic),
     });
+    if (!active()) return;
 
     if (!res.ok) {
       throw new Error(`Repair provider call failed (HTTP ${res.status}).`);
     }
     const raw = await res.json();
+    if (!active()) return;
     const repairedText = parseProviderContent(raw, 'Medical Repair');
     const repairedStory = parseStoryXml(repairedText);
-    const repairedValidation = validateStoryData(repairedStory);
+    const repairedValidation = typeof validateRequestedStory === 'function'
+      ? validateRequestedStory(repairedStory, requestedAnchorCount(topic)) : validateStoryData(repairedStory);
     if (repairedValidation.fatal.length) {
       throw new Error(`Repair response failed story validation: ${repairedValidation.fatal.join(' ')}`);
     }
@@ -606,6 +633,7 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
     renderStoryData(repairedStory);
     setStatus('story', '✓ Repaired', 'done');
     const repairedGate = await runMedicalQualityGate(repairedStory, originalContract.length ? originalContract : null);
+    if (!active()) return;
     if (!repairedGate || repairedGate.evidence_status === 'no_relevant_source' || repairedGate.verdict === 'needs_repair') {
       currentPromptData = { prompt1: '', prompt2: '' };
       renderPromptData('', '');
@@ -613,7 +641,8 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
     }
 
     if (typeof rebuildImagePromptsForStory === 'function') {
-      await rebuildImagePromptsForStory(repairedStory);
+      await rebuildImagePromptsForStory(repairedStory, operation);
+      if (!active()) return;
       if (!currentPromptData.prompt2) throw new Error('The repaired script needs a valid image-prompt rebuild.');
     } else {
       currentPromptData = { prompt1: '', prompt2: '' };
@@ -625,10 +654,20 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
       : '';
     setLibraryStatus(`Medical repair complete. Review the updated script, then save a new version.${warningSuffix}`, 'success');
   } catch (error) {
+    if (!active()) return;
+    if (currentQualityGateData && window.MnemorizedVisualPreflight?.getReport()?.status === 'blocked') {
+      renderQualityGateResult(currentQualityGateData);
+    } else {
+      renderQualityGateMessage(`Medical repair failed: ${error.message}`, 'error');
+    }
     setStatus('quality', 'Repair failed', 'error');
     setStageDetail('quality', 'Repair did not complete. The current script remains available for review, not publication.');
-    renderQualityGateMessage(`Medical repair failed: ${error.message}`, 'error');
+    showBody('prompt');
   } finally {
+    if (!active()) {
+      if (operation === window.MnemorizedForgeOperations?.current() && btn) btn.disabled = false;
+      return;
+    }
     const repairBtn = document.getElementById('repair-quality-btn');
     if (repairBtn) {
       repairBtn.disabled = false;
@@ -638,6 +677,11 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
 }
 
 async function runMedicalQualityGate(storyData = currentStoryData, clinicalConcepts = null) {
+  const request = ++qualityGateRequest;
+  const operation = window.MnemorizedForgeOperations?.current();
+  const topic = document.getElementById('topic').value.trim();
+  const active = () => request === qualityGateRequest && operation === window.MnemorizedForgeOperations?.current() &&
+    topic === document.getElementById('topic').value.trim();
   if (storyData && clinicalConcepts?.length) storyData.required_concepts = [...clinicalConcepts];
   currentQualityGateData = null;
   if (!storyData) {
@@ -656,6 +700,7 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
   }
 
   if (!backendState.checked) await refreshBackendStatus();
+  if (!active()) return null;
   if (!appConfig.medicalKnowledgeEnabled || !backendState.medicalKnowledgeConfigured) {
     setStatus('quality', 'Medical KB off', 'error');
     setStageDetail('quality', 'The backend is reachable, but private medical knowledge retrieval is not configured.');
@@ -668,11 +713,12 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
   renderQualityGateMessage('Retrieving private medical citations and checking generated anchors...', 'muted', 'Evidence Check');
   try {
     const result = await MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken(), {
-      topic: document.getElementById('topic').value.trim(),
+      topic,
       generation_outputs: { story: storyData },
       required_concepts: storyData.required_concepts?.length ? storyData.required_concepts : getQualityGateConcepts(storyData),
       max_evidence_chunks: 6,
     });
+    if (!active()) return null;
     currentQualityGateData = result;
     renderQualityGateResult(result);
     const statusLabel = result.evidence_status === 'no_relevant_source'
@@ -681,6 +727,7 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
     setStatus('quality', statusLabel, result.verdict === 'needs_repair' ? 'error' : 'done');
     return result;
   } catch (error) {
+    if (!active()) return null;
     setStatus('quality', 'Check failed', 'error');
     setStageDetail('quality', 'The script is still available, but the evidence check did not finish.');
     renderQualityGateMessage(`Medical quality check failed: ${error.message}`, 'error');
@@ -717,6 +764,9 @@ async function maybeLoadRoutePalace() {
 }
 
 function applyPalaceSnapshot(palaceRow, versionRow) {
+  window.MnemorizedForgeOperations?.cancel();
+  window.MnemorizedVisualPreflight?.reset();
+  currentQualityGateData = null;
   const inputs = versionRow?.generation_inputs || {};
   const outputs = versionRow?.generation_outputs || {};
   const story = outputs.story || null;

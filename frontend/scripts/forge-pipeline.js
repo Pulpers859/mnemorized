@@ -5,6 +5,13 @@
 
 // ── Shared constants ─────────────────────────────────────────────
 
+let forgeOperation = 0;
+let imageRequest = 0;
+window.MnemorizedForgeOperations = {current: () => forgeOperation, cancel() {
+  forgeOperation++;
+  window.MnemorizedVisualPreflight?.reset();
+}};
+
 const SKETCHY_STYLE = 'Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. ' +
   'Wobbly, imperfect ink outlines with visible line weight variation — thick at corners, thin on straights, ' +
   'slightly unsteady like a real human hand drew every line. NO clean digital vector lines. ' +
@@ -94,6 +101,18 @@ const ZONE_KEYWORDS = [
 
 const IMAGE_PROMPT_MAX_CHARS = 7800;
 const IMAGE_PROMPT_MAX_WORDS = 600;
+
+function requestedAnchorCount(topic) {
+  const match = String(topic || '').match(/(?<![\d-])\b(eight|nine|ten|8|9|10)\s+anchors\b/i);
+  return match ? ({eight: 8, nine: 9, ten: 10}[match[1].toLowerCase()] || Number(match[1])) : null;
+}
+
+function validateRequestedStory(story, count) {
+  const result = validateStoryData(story);
+  if (count && story?.voLines?.length !== count) result.fatal.push(`Requested exactly ${count} anchors; returned ${story?.voLines?.length || 0}. Preserve all teaching units while grouping them into the requested count.`);
+  result.all = result.fatal.concat(result.warnings);
+  return result;
+}
 
 function extractZone(visual, fallback) {
   for (const [re, zone] of ZONE_KEYWORDS) {
@@ -386,7 +405,29 @@ async function buildImagePromptPair(topic, storyData, mode, geminiStage, claudeS
   return fallback;
 }
 
+async function prepareImagePromptPair(topic, storyData) {
+  if (!window.MnemorizedVisualPreflight) throw new Error('Visual preflight module did not load. Refresh Forge.');
+  const operation = forgeOperation;
+  const originalKey = JSON.stringify(storyData);
+  const prepared = await window.MnemorizedVisualPreflight.prepare(topic, storyData, currentQualityGateData);
+  if (operation !== forgeOperation) throw new Error('Preflight operation superseded.');
+  if (document.getElementById('topic').value.trim() !== topic || JSON.stringify(storyData) !== originalKey) {
+    window.MnemorizedVisualPreflight.reset();
+    throw new Error('Lesson changed during preflight. Rebuild the current lesson.');
+  }
+  // Compile only reviewed source text: a second director must not add new props,
+  // contradictory staging, or paraphrase away a required relationship.
+  const pair = composeImagePromptPair(prepared.story.opening, assignZones(prepared.story.voLines));
+  pair.director = 'reviewed-deterministic';
+  pair.story = prepared.story;
+  await window.MnemorizedVisualPreflight.bind(topic, prepared.story, pair);
+  if (operation !== forgeOperation) throw new Error('Preflight operation superseded.');
+  return pair;
+}
+
 function renderImagePromptPair(storyData, pair, doneStatus, detail) {
+  storyData = pair.story || storyData;
+  renderStoryData(storyData);
   showBody('prompt');
   if (isOperatorMode()) operatorPanel.classList.add('visible');
   document.getElementById('img-prompt-1').textContent = pair.prompt1;
@@ -656,6 +697,7 @@ function getSelectVal(selectId, customFieldId) {
 // ── Image generation ─────────────────────────────────────────────
 
 function invalidateImagePrompts() {
+  window.MnemorizedVisualPreflight?.invalidate();
   currentPromptData = { prompt1: '', prompt2: '' };
   ['img-prompt-1', 'img-prompt-2'].forEach(id => {
     const el = document.getElementById(id);
@@ -666,6 +708,11 @@ function invalidateImagePrompts() {
     if (el) el.value = '';
   });
   delete window.__mnemorizedAntigravityPrompts;
+  const generateButton = document.getElementById('generate-images-btn');
+  if (generateButton) { generateButton.disabled = false; generateButton.innerHTML = 'Generate Images'; }
+  ['gen-img-1-el', 'gen-img-2-el', 'gen-img-result-el'].forEach(id => {
+    document.getElementById(id)?.removeAttribute('src');
+  });
 }
 
 // Validate length before spending a request. Only surrounding whitespace may
@@ -704,11 +751,25 @@ function handoffToAntigravity(prompts) {
 }
 
 async function generateImages() {
+  const request = ++imageRequest;
+  const operation = forgeOperation;
+  const topic = document.getElementById('topic')?.value?.trim() || '';
+  const storyKey = JSON.stringify(currentStoryData);
+  const rawPrompts = [document.getElementById('prompt-copy-1')?.value?.trim(), document.getElementById('prompt-copy-2')?.value?.trim()];
+  const active = () => request === imageRequest && operation === forgeOperation &&
+    topic === (document.getElementById('topic')?.value?.trim() || '') && storyKey === JSON.stringify(currentStoryData) &&
+    rawPrompts.every((value, i) => value === document.getElementById(`prompt-copy-${i + 1}`)?.value?.trim());
   let gate;
   try {
     gate = gateImagePrompts(
       document.getElementById('prompt-copy-1')?.value,
       document.getElementById('prompt-copy-2')?.value
+    );
+    if (!window.MnemorizedVisualPreflight) throw new Error('Visual preflight module did not load. Refresh Forge.');
+    window.MnemorizedVisualPreflight.requireEvidence(currentStoryData, currentQualityGateData);
+    window.MnemorizedVisualPreflight.assertReady(
+      document.getElementById('topic')?.value?.trim() || '', currentStoryData,
+      document.getElementById('prompt-copy-1')?.value, document.getElementById('prompt-copy-2')?.value
     );
   } catch (error) {
     delete window.__mnemorizedAntigravityPrompts;
@@ -721,193 +782,215 @@ async function generateImages() {
     if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
     return;
   }
-  const p1 = gate.p1;
-  const p2 = gate.p2;
-  if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
-  if (gate.trimmed) {
-    // Persist the clamped versions so what we send matches what the user sees and
-    // copies. (setStageDetail below is overwritten immediately, so note it on the
-    // durable prompt panels instead.)
-    if (p1) { document.getElementById('prompt-copy-1').value = p1; document.getElementById('img-prompt-1').textContent = p1; }
-    if (p2) { document.getElementById('prompt-copy-2').value = p2; document.getElementById('img-prompt-2').textContent = p2; }
-    console.info('[Mnemorized] Surrounding image-prompt whitespace was removed before generation.');
-  }
+  try {
+    const p1 = gate.p1;
+    const p2 = gate.p2;
+    if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
+    if (gate.trimmed) {
+      // Persist the clamped versions so what we send matches what the user sees and
+      // copies. (setStageDetail below is overwritten immediately, so note it on the
+      // durable prompt panels instead.)
+      if (p1) { document.getElementById('prompt-copy-1').value = p1; document.getElementById('img-prompt-1').textContent = p1; }
+      if (p2) { document.getElementById('prompt-copy-2').value = p2; document.getElementById('img-prompt-2').textContent = p2; }
+      console.info('[Mnemorized] Surrounding image-prompt whitespace was removed before generation.');
+    }
 
-  // Render-target fork: Antigravity mode never calls the Gemini API. Branch before
-  // the backend/Gemini readiness checks so a billing-blocked or unconfigured Gemini
-  // key does not stop an Antigravity render.
-  if (document.getElementById('image-target-antigravity')?.checked) {
-    const btn = document.getElementById('generate-images-btn');
-    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Staging…'; }
-    handoffToAntigravity([p1, p2].filter(Boolean));
-    return;
-  }
-
-  if (forgeReplayMode !== 'replay') {
-    if (!backendState.checked) await refreshBackendStatus();
-    if (!backendState.reachable) { openConnectionModal(); return; }
-    if (!backendState.providerAuthReady) { openConnectionModal(); return; }
-    if (!backendState.geminiConfigured) {
-      openConnectionModal();
-      syncConnectionModal('Backend reachable, but GEMINI_API_KEY is not configured on the server yet.');
+    // Render-target fork: Antigravity mode never calls the Gemini API. Branch before
+    // the backend/Gemini readiness checks so a billing-blocked or unconfigured Gemini
+    // key does not stop an Antigravity render.
+    if (document.getElementById('image-target-antigravity')?.checked) {
+      const btn = document.getElementById('generate-images-btn');
+      if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Staging…'; }
+      handoffToAntigravity([p2]);
       return;
     }
-  }
 
-  const btn = document.getElementById('generate-images-btn');
-  const status = document.getElementById('gen-img-status');
-  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Generating…'; btn.style.borderColor = ''; btn.style.color = ''; }
-  if (status) status.textContent = 'Sending prompts to Gemini…';
-
-  setStatus('prompt', '✦ Generating image…', 'running');
-  setStageDetail('prompt', 'Gemini is illustrating your memory palace. This may take up to 60 seconds.');
-  showBody('prompt');
-  const handoffTitle = document.getElementById('handoff-title');
-  const handoffText = document.getElementById('handoff-text');
-  const handoffMsg = document.getElementById('handoff-message');
-  if (handoffTitle) handoffTitle.textContent = 'Generating your memory palace…';
-  if (handoffText) handoffText.textContent = 'Gemini is illustrating the scene with all anchors. This may take up to 60 seconds.';
-  if (handoffMsg) handoffMsg.style.display = '';
-
-  document.getElementById('gen-img-1').style.display = 'none';
-  document.getElementById('gen-img-2').style.display = 'none';
-  const resultContainer = document.getElementById('gen-img-result');
-  if (resultContainer) resultContainer.style.display = 'none';
-
-  const prompts = [p1, p2].filter(Boolean);
-
-  // Force-refresh the token — the pipeline may have run for minutes and the JWT expired
-  if (typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
-    try {
-      const { data: refreshed } = await supabaseClient.auth.refreshSession();
-      if (refreshed?.session) {
-        authState.session = refreshed.session;
+    if (forgeReplayMode !== 'replay') {
+      if (!backendState.checked) await refreshBackendStatus();
+      if (!active()) return;
+      if (!backendState.reachable) { openConnectionModal(); return; }
+      if (!backendState.providerAuthReady) { openConnectionModal(); return; }
+      if (!backendState.geminiConfigured) {
+        openConnectionModal();
+        syncConnectionModal('Backend reachable, but GEMINI_API_KEY is not configured on the server yet.');
+        return;
       }
-    } catch (_) { /* best-effort — the 401 retry below will catch it */ }
-  }
-
-  const headers = {
-    'Content-Type': 'application/json',
-    ...getReplayHeaders('stage4-gemini-image'),
-  };
-  if (authState.session?.access_token) {
-    headers.Authorization = `Bearer ${authState.session.access_token}`;
-  }
-
-  const TRANSIENT_CODES = new Set([502, 503, 504]);
-  const MAX_RETRIES = 1;
-
-  async function attemptImageGen() {
-    let res;
-    try {
-      res = await fetch(getApiUrl('/api/generate-image'), {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ prompts })
-      });
-    } catch (fetchErr) {
-      backendState.reachable = false;
-      setBackendBadge('offline', '⚠ PROXY OFFLINE');
-      throw new Error(`Proxy unavailable: ${fetchErr.message}`);
     }
 
-    // 401 → refresh token and retry once
-    if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
-      const { data: refreshData } = await supabaseClient.auth.refreshSession();
-      if (refreshData?.session?.access_token) {
-        authState.session = refreshData.session;
-        headers.Authorization = `Bearer ${refreshData.session.access_token}`;
+    const btn = document.getElementById('generate-images-btn');
+    const status = document.getElementById('gen-img-status');
+    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spin"></span> Generating…'; btn.style.borderColor = ''; btn.style.color = ''; }
+    if (status) status.textContent = 'Sending prompts to Gemini…';
+
+    setStatus('prompt', '✦ Generating image…', 'running');
+    setStageDetail('prompt', 'Gemini is illustrating your memory palace. This may take up to 60 seconds.');
+    showBody('prompt');
+    const handoffTitle = document.getElementById('handoff-title');
+    const handoffText = document.getElementById('handoff-text');
+    const handoffMsg = document.getElementById('handoff-message');
+    if (handoffTitle) handoffTitle.textContent = 'Generating your memory palace…';
+    if (handoffText) handoffText.textContent = 'Gemini is illustrating the scene with all anchors. This may take up to 60 seconds.';
+    if (handoffMsg) handoffMsg.style.display = '';
+
+    document.getElementById('gen-img-1').style.display = 'none';
+    document.getElementById('gen-img-2').style.display = 'none';
+    const resultContainer = document.getElementById('gen-img-result');
+    if (resultContainer) resultContainer.style.display = 'none';
+
+    const prompts = [p2];
+
+    // Force-refresh the token — the pipeline may have run for minutes and the JWT expired
+    if (typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+      try {
+        const { data: refreshed } = await supabaseClient.auth.refreshSession();
+        if (!active()) return;
+        if (refreshed?.session) {
+          authState.session = refreshed.session;
+        }
+      } catch (_) { /* best-effort — the 401 retry below will catch it */ }
+    }
+    if (!active()) return;
+
+    const headers = {
+      'Content-Type': 'application/json',
+      ...getReplayHeaders('stage4-gemini-image'),
+    };
+    if (authState.session?.access_token) {
+      headers.Authorization = `Bearer ${authState.session.access_token}`;
+    }
+
+    const TRANSIENT_CODES = new Set([502, 503, 504]);
+    const MAX_RETRIES = 1;
+
+    async function attemptImageGen() {
+      let res;
+      try {
         res = await fetch(getApiUrl('/api/generate-image'), {
           method: 'POST',
           headers,
           body: JSON.stringify({ prompts })
         });
+      } catch (fetchErr) {
+        if (!active()) throw fetchErr;
+        backendState.reachable = false;
+        setBackendBadge('offline', '⚠ PROXY OFFLINE');
+        throw new Error(`Proxy unavailable: ${fetchErr.message}`);
       }
+      if (!active()) throw new Error('Image request superseded.');
+
+      // 401 → refresh token and retry once
+      if (res.status === 401 && typeof supabaseClient !== 'undefined' && supabaseClient?.auth) {
+        const { data: refreshData } = await supabaseClient.auth.refreshSession();
+        if (!active()) throw new Error('Image request superseded.');
+        if (refreshData?.session?.access_token) {
+          authState.session = refreshData.session;
+          headers.Authorization = `Bearer ${refreshData.session.access_token}`;
+          res = await fetch(getApiUrl('/api/generate-image'), {
+            method: 'POST',
+            headers,
+            body: JSON.stringify({ prompts })
+          });
+        }
+      }
+      if (!active()) throw new Error('Image request superseded.');
+
+      if (res.status === 401) {
+        openAuthModal();
+        throw new Error('Sign in to generate images.');
+      } else if (res.status === 402) {
+        const quota = await res.json().catch(() => ({}));
+        throw new Error(getQuotaExceededMessage(quota));
+      } else if (res.status === 503) {
+        throw new Error('GEMINI_API_KEY is not configured on the backend.');
+      }
+      return res;
     }
 
-    if (res.status === 401) {
-      openAuthModal();
-      throw new Error('Sign in to generate images.');
-    } else if (res.status === 402) {
-      const quota = await res.json().catch(() => ({}));
-      throw new Error(getQuotaExceededMessage(quota));
-    } else if (res.status === 503) {
-      throw new Error('GEMINI_API_KEY is not configured on the backend.');
+    try {
+      let res;
+      for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+        res = await attemptImageGen();
+        if (!active()) return;
+        if (res.ok || !TRANSIENT_CODES.has(res.status) || attempt === MAX_RETRIES) break;
+        if (status) status.textContent = 'Gemini hiccup — retrying…';
+        await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
+        if (!active()) return;
+      }
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        const msg = err.error?.message || `Image generation failed (HTTP ${res.status}).`;
+        const isSafety = err.error?.type === 'safety_block' || (err.prompt_errors || []).some(e => e.type === 'safety_block');
+        if (isSafety) {
+          throw new Error('Gemini blocked the image prompt for safety/content policy. Try rephrasing the scene with less graphic clinical language, then hit Regenerate.');
+        }
+        throw new Error(msg);
+      }
+
+      const data = await res.json();
+      if (!active()) return;
+      const images = data.images || [];
+      const promptErrors = data.prompt_errors || [];
+
+      images.forEach((img, i) => {
+        const n = images.length === 1 ? 2 : i + 1;
+        const container = document.getElementById(`gen-img-${n}`);
+        const el = document.getElementById(`gen-img-${n}-el`);
+        if (container && el) {
+          el.src = `data:${img.mime_type};base64,${img.data}`;
+          container.style.display = 'block';
+        }
+      });
+
+      const finalImage = images.length >= 2 ? images[images.length - 1] : images[0];
+      const resultEl = document.getElementById('gen-img-result-el');
+      if (resultContainer && resultEl && finalImage) {
+        resultEl.src = `data:${finalImage.mime_type};base64,${finalImage.data}`;
+        resultContainer.style.display = 'block';
+        window.MnemorizedGuided?.onImageReady?.(resultEl.src);
+      }
+
+      if (handoffMsg) handoffMsg.style.display = 'none';
+
+      if (images.length > 0 && promptErrors.length > 0) {
+        const failedIdx = promptErrors.map(e => e.prompt_index + 1).join(', ');
+        if (status) { status.textContent = `✓ ${images.length} image(s) — prompt ${failedIdx} failed`; status.style.color = 'var(--gold)'; }
+        setStatus('prompt', '⚠ Partial success', 'done');
+        setStageDetail('prompt', `${images.length} image(s) generated. Prompt ${failedIdx} failed: ${promptErrors[0].message}`);
+      } else if (images.length > 0) {
+        if (status) { status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`; status.style.color = 'var(--green)'; }
+        setStatus('prompt', '✓ Palace illustrated', 'done');
+        setStageDetail('prompt', 'Your memory palace image is ready. Download it or regenerate for a different result.');
+      } else {
+        throw new Error('No images were generated. Try regenerating.');
+      }
+    } catch (err) {
+      if (!active()) return;
+      if (status) { status.textContent = `✗ ${err.message}`; status.style.color = '#f56565'; }
+      if (handoffTitle) handoffTitle.textContent = 'Image generation failed';
+      if (handoffText) handoffText.textContent = err.message;
+      setStatus('prompt', '✗ Image failed', 'error');
+      setStageDetail('prompt', err.message);
+      console.error('Image generation error:', err);
+      if (btn) {
+        btn.disabled = false;
+        btn.innerHTML = '⟳ Retry Image Generation';
+        btn.style.borderColor = 'rgba(245,200,66,.6)';
+        btn.style.color = 'var(--gold)';
+      }
+      return;
     }
-    return res;
+    if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
+  } catch (error) {
+    if (active()) throw error;
+  } finally {
+    if (request === imageRequest && operation === forgeOperation && !active()) {
+      const button = document.getElementById('generate-images-btn');
+      if (button) button.disabled = false;
+      setStatus('prompt', 'Image request discarded', 'error');
+      setStageDetail('prompt', 'The lesson or prompts changed during generation. Rebuild before rendering again.');
+    }
   }
-
-  try {
-    let res;
-    for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
-      res = await attemptImageGen();
-      if (res.ok || !TRANSIENT_CODES.has(res.status) || attempt === MAX_RETRIES) break;
-      if (status) status.textContent = 'Gemini hiccup — retrying…';
-      await new Promise(r => setTimeout(r, 2000 * (attempt + 1)));
-    }
-
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      const msg = err.error?.message || `Image generation failed (HTTP ${res.status}).`;
-      const isSafety = err.error?.type === 'safety_block' || (err.prompt_errors || []).some(e => e.type === 'safety_block');
-      if (isSafety) {
-        throw new Error('Gemini blocked the image prompt for safety/content policy. Try rephrasing the scene with less graphic clinical language, then hit Regenerate.');
-      }
-      throw new Error(msg);
-    }
-
-    const data = await res.json();
-    const images = data.images || [];
-    const promptErrors = data.prompt_errors || [];
-
-    images.forEach((img, i) => {
-      const n = i + 1;
-      const container = document.getElementById(`gen-img-${n}`);
-      const el = document.getElementById(`gen-img-${n}-el`);
-      if (container && el) {
-        el.src = `data:${img.mime_type};base64,${img.data}`;
-        container.style.display = 'block';
-      }
-    });
-
-    const finalImage = images.length >= 2 ? images[images.length - 1] : images[0];
-    const resultEl = document.getElementById('gen-img-result-el');
-    if (resultContainer && resultEl && finalImage) {
-      resultEl.src = `data:${finalImage.mime_type};base64,${finalImage.data}`;
-      resultContainer.style.display = 'block';
-      window.MnemorizedGuided?.onImageReady?.(resultEl.src);
-    }
-
-    if (handoffMsg) handoffMsg.style.display = 'none';
-
-    if (images.length > 0 && promptErrors.length > 0) {
-      const failedIdx = promptErrors.map(e => e.prompt_index + 1).join(', ');
-      if (status) { status.textContent = `✓ ${images.length} image(s) — prompt ${failedIdx} failed`; status.style.color = 'var(--gold)'; }
-      setStatus('prompt', '⚠ Partial success', 'done');
-      setStageDetail('prompt', `${images.length} image(s) generated. Prompt ${failedIdx} failed: ${promptErrors[0].message}`);
-    } else if (images.length > 0) {
-      if (status) { status.textContent = `✓ ${images.length} image${images.length !== 1 ? 's' : ''} generated`; status.style.color = 'var(--green)'; }
-      setStatus('prompt', '✓ Palace illustrated', 'done');
-      setStageDetail('prompt', 'Your memory palace image is ready. Download it or regenerate for a different result.');
-    } else {
-      throw new Error('No images were generated. Try regenerating.');
-    }
-  } catch (err) {
-    if (status) { status.textContent = `✗ ${err.message}`; status.style.color = '#f56565'; }
-    if (handoffTitle) handoffTitle.textContent = 'Image generation failed';
-    if (handoffText) handoffText.textContent = err.message;
-    setStatus('prompt', '✗ Image failed', 'error');
-    setStageDetail('prompt', err.message);
-    console.error('Image generation error:', err);
-    if (btn) {
-      btn.disabled = false;
-      btn.innerHTML = '⟳ Retry Image Generation';
-      btn.style.borderColor = 'rgba(245,200,66,.6)';
-      btn.style.color = 'var(--gold)';
-    }
-    return;
-  }
-  if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
 }
 
 function downloadGenImage(n) {
@@ -945,6 +1028,8 @@ function downloadForgeBundle() {
       prompt2: document.getElementById('prompt-copy-2')?.value || '',
     },
     quality_gate: qualitySummary,
+    quality_gate_data: currentQualityGateData || null,
+    visual_preflight: window.MnemorizedVisualPreflight?.getReport() || null,
     generated_images: {
       image_1: (img1?.src && img1.src.startsWith('data:')) ? img1.src : null,
       image_2: (img2?.src && img2.src.startsWith('data:')) ? img2.src : null,
@@ -963,7 +1048,7 @@ function downloadForgeBundle() {
   URL.revokeObjectURL(a.href);
 }
 
-async function rebuildImagePromptsForStory(storyData) {
+async function rebuildImagePromptsForStory(storyData, operationToken = null) {
   if (!storyData?.voLines?.length) {
     setStatus('prompt', 'No repaired story', 'error');
     setStageDetail('prompt', 'Image prompts could not be rebuilt because the repaired script has no anchors.');
@@ -971,29 +1056,29 @@ async function rebuildImagePromptsForStory(storyData) {
   }
 
   const topic = document.getElementById('topic')?.value?.trim() || 'medical topic';
+  const operation = operationToken ?? ++forgeOperation;
+  if (operation !== forgeOperation) return;
   const n = storyData.voLines.length;
 
   setStatus('prompt', 'Rebuilding image prompts...', 'running');
   setStageDetail('prompt', 'Rebuilding constitution-guided illustration prompts from the repaired anchor script.');
 
   try {
-    const pair = await buildImagePromptPair(
-      topic,
-      storyData,
-      'repair',
-      'repair-gemini-prompt-director',
-      'repair-image-prompt'
-    );
+    const pair = await prepareImagePromptPair(topic, storyData);
+    if (operation !== forgeOperation) return;
     renderImagePromptPair(
       storyData,
       pair,
       '✓ Rebuilt from repaired script',
-      `Illustration handoff rebuilt with ${n} repaired anchors using ${pair.director === 'gemini' ? 'Gemini constitution director' : 'fallback prompt composer'}.`
+      `All ${n} anchors passed pre-render risk review. Pixel quality remains unverified until an independent image audit.`
     );
   } catch (error) {
+    if (operation !== forgeOperation) return;
     invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
+    showBody('prompt');
+    if (currentQualityGateData) renderQualityGateResult(currentQualityGateData);
     setStageDetail('prompt', 'The repaired script was kept, but image prompts must be rebuilt before generating — click Forge again or re-run the prompt step.');
   }
 }
@@ -1060,6 +1145,8 @@ async function runPipeline() {
   }
 
   currentStoryData = null;
+  const operation = ++forgeOperation;
+  window.MnemorizedVisualPreflight?.reset();
   invalidateImagePrompts();
   currentQualityGateData = null;
   window.MnemorizedGuided?.reset?.();
@@ -1268,6 +1355,7 @@ Output ONLY these two XML tags, nothing else:
       clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${coreConcepts.join('\n')}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
     }
   } catch(e) {
+    if (operation !== forgeOperation) return;
     console.warn('Clinical context extraction failed:', e.message);
     setStatus('story', '✗ Clinical planning failed', 'error');
     setStageDetail('story', e.message);
@@ -1278,6 +1366,7 @@ Output ONLY these two XML tags, nothing else:
   }
 
   // ── STAGE 2: Voiceover Script ─────────────────────
+  if (operation !== forgeOperation) return;
   setStatus('story', '✦ Writing scene…', 'running');
   setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
@@ -1299,7 +1388,7 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
   try {
     const compactStorySystem = `You write original medical visual mnemonic memory-palace scripts for a single static illustration.
 
-Return ONLY XML in this exact order: <scene_title>, <opening>, 8-10 repeated <vo_line> blocks, <review_script>.
+Return ONLY XML in this exact order: <scene_title>, <opening>, exactly ${requestedAnchorCount(topic) || '8-10'} repeated <vo_line> blocks, <review_script>.
 
 Clinical accuracy and completeness are mandatory:
 - For scoring systems, protocols, algorithms, and classifications, cover every major item in sequence.
@@ -1316,7 +1405,9 @@ Visual mnemonic rules:
 - VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
 - Draw one memorable cue for each coherent teaching unit; supporting lists and qualifiers remain in narration. A referral decision needs a clear decision hook, not a separate drawn item for every referral criterion.
 - ANCHOR is the clinical fact only. NARRATION points to the exact visible object, explains the memory link, and teaches its source-supported fact.
-- Use a single coherent room with large distinct objects. The opening describes that room in plain language; omit meta-instructions and diagram layouts.
+- Use a single coherent room with large distinct objects. The opening is 20-35 words of architecture ONLY: walls, floor, ceiling, doorways. No people, props, clinical explanations, labels, or diagram layouts. This exact opening will be compiled into the image prompt.
+- Make each VISUAL state the load-bearing relationship explicitly: who owns the object, what is already applied/connected/blocked, and what is distinct from neighboring props. Preparatory actions do not count as completed clinical actions. Use stable static states, not micro-poses or multi-hand choreography.
+- Check the whole scene for overlapping locations, repeated silhouettes, and same-color fusion. Supporting props rest on a surface; critical contact is explicit. Simplify the physical interaction without changing its clinical association or deleting teaching units.
 - Use strong shape or functional associations before sound-alike names. Preserve source qualifiers and uncertainty in every medical statement.
 - No proprietary mnemonic scenes, characters, symbols, or layouts.
 
@@ -1414,7 +1505,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       }
 
       storyData = parseStoryXml(txt);
-      storyValidation = validateStoryData(storyData);
+      storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));
       if (storyValidation.fatal.length) {
         showDebug(`STORY VALIDATION FAILED (${attempt.label})`, storyValidation);
         lastStoryError = new Error(`Scene Narrative validation failed: ${storyValidation.fatal.join(' ')}`);
@@ -1434,7 +1525,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
             const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly });
             if (!repairedText) break;
             storyData = parseStoryXml(repairedText);
-            storyValidation = validateStoryData(storyData);
+            storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));
             if (!storyValidation.fatal.length) {
               storyValidation.warnings.push(`Visual fields were micro-repaired after hard-gate validation (${repairPass + 1} pass${repairPass ? 'es' : ''}).`);
               break;
@@ -1464,6 +1555,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       showDebug('STORY VALIDATION WARNINGS', storyValidation.warnings);
     }
 
+    if (operation !== forgeOperation) return;
     renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
@@ -1478,6 +1570,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       : coreConcepts;
     await runMedicalQualityGate(storyData, anchorContract);
   } catch(e) {
+    if (operation !== forgeOperation) return;
     const box = document.getElementById('debug-box');
     const prev = box.textContent;
     box.style.display = 'block';
@@ -1489,31 +1582,30 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
   }
 
   // ── STAGE 3: Image prompts ────────────────────────
+  if (operation !== forgeOperation) return;
   setStatus('prompt', '✦ Building image prompts…', 'running');
   setStageDetail('prompt', 'Preparing constitution-guided illustration prompts from the generated anchor script.');
 
   try {
     const n = storyData.voLines.length;
-    const pair = await buildImagePromptPair(
-      topic,
-      storyData,
-      'initial',
-      'stage3-gemini-prompt-director',
-      'stage3-image-prompt'
-    );
+    const pair = await prepareImagePromptPair(topic, storyData);
+    if (operation !== forgeOperation) return;
     renderImagePromptPair(
       storyData,
       pair,
       '✓ Image prompts ready',
-      `Illustration handoff ready with ${n} anchors using ${pair.director === 'gemini' ? 'Gemini constitution director' : 'fallback prompt composer'}.`
+      `All ${n} anchors passed pre-render risk review. Pixel quality remains unverified until an independent image audit.`
     );
 
   } catch(e) {
+    if (operation !== forgeOperation) return;
     setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');
+    showBody('prompt');
     setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
     console.error('Image prompt error:', e);
     invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
+    if (currentQualityGateData) renderQualityGateResult(currentQualityGateData);
     btn.disabled = false;
     btn.innerHTML = '✦ FORGE PALACE';
     return;

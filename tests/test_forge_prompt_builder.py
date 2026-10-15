@@ -21,7 +21,7 @@ const source = fs.readFileSync('frontend/scripts/forge-pipeline.js', 'utf8');
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const boundary = source.indexOf(input.ui ? 'const demoToggle =' : 'function renderImagePromptPair(');
 if (boundary < 0) throw new Error('Prompt builder boundary missing');
-const context = vm.createContext({input: input.data, console: {info() {}, warn() {}, error() {}}});
+const context = vm.createContext({window: {}, input: input.data, console: {info() {}, warn() {}, error() {}}});
 vm.runInContext(source.slice(0, boundary), context);
 if (input.ui) {
   const start = source.indexOf('function invalidateImagePrompts(');
@@ -48,6 +48,25 @@ def evaluate(expression: str, data=None, *, ui=False):
         check=True,
     )
     return json.loads(result.stdout)
+
+
+@pytest.mark.parametrize("topic,count", [
+    ("Workshop, eight anchors", 8), ("Workshop, 9 anchors", 9),
+    ("Workshop, TEN anchors", 10), ("Workshop, 8-10 anchors", None),
+    ("Workshop, 18 anchors", None), ("Workshop, 8 objects", None),
+])
+def test_requested_anchor_count(topic, count):
+    assert evaluate("requestedAnchorCount(input)", topic) == count
+
+
+def test_requested_anchor_validation_preserves_shared_failures():
+    result = evaluate("""(() => {
+      validateStoryData = () => ({fatal:['existing failure'], warnings:['existing warning'], all:[]});
+      return validateRequestedStory({voLines:[{}]}, 8);
+    })()""")
+    assert result["fatal"][0] == "existing failure"
+    assert "Requested exactly 8 anchors; returned 1" in result["fatal"][1]
+    assert result["all"] == result["fatal"] + result["warnings"]
 
 
 UI_SETUP = r"""
@@ -332,7 +351,7 @@ def test_stage_three_failure_invalidates_dom_and_keeps_new_story():
     validateStoryData = () => ({fatal: [], warnings: []});
     renderStoryData = () => {};
     runMedicalQualityGate = async () => {};
-    buildImagePromptPair = async () => {
+    prepareImagePromptPair = async () => {
       document.getElementById('prompt-copy-2').value = 'stale during request';
       throw new Error('Prompt probe failed');
     };
@@ -351,7 +370,7 @@ def test_stage_three_failure_invalidates_dom_and_keeps_new_story():
 
 def test_repair_prompt_failure_invalidates_stale_handoff_and_dom():
     result = evaluate(UI_SETUP + """
-    buildImagePromptPair = async () => { throw new Error('Rebuild probe failed'); };
+    prepareImagePromptPair = async () => { throw new Error('Rebuild probe failed'); };
     (async () => {
       await rebuildImagePromptsForStory({scene_title: 'Workshop', voLines: [{visual: 'A wooden frame.'}]});
       return {...snapshot(), story: currentStoryData.scene_title};

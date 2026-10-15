@@ -43,6 +43,9 @@ async function firstExisting(paths) {
 const repoRoot = process.cwd();
 const { chromium } = await loadPlaywright();
 const topic = argValue('--topic');
+const resumeBundlePath = argValue('--resume-bundle');
+const redesign = process.argv.includes('--redesign');
+if (redesign && !resumeBundlePath) throw new Error('--redesign requires a real exported --resume-bundle.');
 if (!topic.trim()) {
   throw new Error('Usage: node tools/run_forge_browser_stress.mjs --topic "<topic>" [--base-url http://127.0.0.1:8000] [--out-dir "..."]');
 }
@@ -159,7 +162,28 @@ try {
   });
 
   await page.screenshot({ path: path.join(outDir, '01_forge_before.png'), fullPage: true });
-  await page.click('#forge-btn');
+  if (resumeBundlePath) {
+    const source = JSON.parse(await fs.readFile(resumeBundlePath, 'utf8'));
+    if (source.topic !== topic || !source.story?.voLines?.length) throw new Error('Recovery requires the exact topic and full saved Forge story.');
+    await fs.writeFile(path.join(outDir, 'recovery_provenance.json'), JSON.stringify({
+      run_kind: 'development_recovery_not_fresh_first_pass', source_bundle: path.resolve(resumeBundlePath),
+      source_exported_at: source.exported_at,
+      recovery_action: redesign ? 'forge_evidence_backed_redesign' : 'gate_and_preflight_rebuild',
+    }, null, 2));
+    await page.evaluate(({story, redesign}) => {
+      document.getElementById('pipeline').classList.add('visible');
+      currentStoryData = story;
+      renderStoryData(story);
+      document.getElementById('forge-btn').disabled = true;
+      window.__recovery = (async () => {
+        await runMedicalQualityGate(story, story.required_concepts);
+        if (redesign) await repairCurrentPalaceWithMedicalEvidence({redesignVisuals: true});
+        else await rebuildImagePromptsForStory(story);
+      })().finally(() => { document.getElementById('forge-btn').disabled = false; });
+    }, {story: source.story, redesign});
+  } else {
+    await page.click('#forge-btn');
+  }
 
   const started = Date.now();
   let status = {};
@@ -181,8 +205,8 @@ try {
     }));
     await fs.writeFile(path.join(outDir, 'live_status.json'), JSON.stringify(status, null, 2), 'utf8');
 
-    const terminalError = /ERROR|[✗]/i.test(`${status.storyStatus} ${status.promptStatus}`);
-    if (status.prompt2Len > 1000 || terminalError) break;
+    const terminalError = /ERROR|failed|[✗]/i.test(`${status.storyStatus} ${status.promptStatus}`);
+    if ((status.prompt2Len > 0 && !status.forgeBtnDisabled) || terminalError) break;
   }
 
   await page.screenshot({ path: path.join(outDir, '02_forge_after.png'), fullPage: true });
@@ -195,6 +219,7 @@ try {
     const resultImg = document.getElementById('gen-img-result-el');
     return {
       _format: 'mnemorized-forge-bundle-v1',
+      run_kind: window.__recovery ? 'development_recovery_not_fresh_first_pass' : 'fresh_forge_generation',
       exported_at: new Date().toISOString(),
       topic,
       model: typeof CLAUDE_MODEL !== 'undefined' ? CLAUDE_MODEL : '',
@@ -205,6 +230,8 @@ try {
         prompt2: currentPromptData?.prompt2 || document.getElementById('prompt-copy-2')?.value || '',
       },
       quality_gate: qualityResultEl?.innerText?.trim() || '',
+      quality_gate_data: currentQualityGateData || null,
+      visual_preflight: window.MnemorizedVisualPreflight?.getReport() || null,
       generated_images: {
         image_1: (img1?.src && img1.src.startsWith('data:')) ? img1.src : null,
         image_2: (img2?.src && img2.src.startsWith('data:')) ? img2.src : null,

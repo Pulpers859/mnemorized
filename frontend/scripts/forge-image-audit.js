@@ -340,7 +340,7 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
     const p2panel = document.getElementById('img-prompt-2');
     const basePrompt2 = p2el ? p2el.value : '';
 
-    if (btn) { btn.disabled = true; btn.textContent = 'Auto-forging…'; }
+    if (btn) { btn.disabled = true; btn.textContent = 'Reviewing...'; }
     if (auditBtn) auditBtn.disabled = true;
 
     let best = null; // { score, decision, result }
@@ -360,6 +360,14 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
 
         if (result.decision === 'PASS') break;
         if (attempt === maxRepairs) break;
+
+        // A pixel repair cannot bypass the source-bound pre-render contract.
+        // Keep the real failure visible rather than silently reusing approval
+        // for a prompt that this audit is about to change.
+        if (window.MnemorizedVisualPreflight) {
+          setAuditMessage('<div class="audit-summary"><div class="audit-copy">Image needs repair. Rework the flagged visuals through Forge and rebuild their pre-render review before another render.</div></div>');
+          break;
+        }
 
         // Feed the repair note back into prompt 2 and re-render.
         if (p2el) {
@@ -393,7 +401,7 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
           const div = document.createElement('div');
           div.className = 'audit-line';
           div.style.marginTop = '8px';
-          div.textContent = `Auto-retry: ${note}`;
+          div.textContent = `Image review: ${note}`;
           el.querySelector('.audit-summary')?.appendChild(div);
         }
       }
@@ -401,7 +409,7 @@ REPAIR: <one or two sentences on the single highest-impact fix, or none>`;
       if (p2el) { p2el.value = basePrompt2; if (p2panel) p2panel.textContent = basePrompt2; }
       setAuditMessage(`<div class="audit-summary audit-fail"><div class="audit-copy">Auto-retry failed: ${(window.escapeHtml || (s => s))(error.message)}</div></div>`);
     } finally {
-      if (btn) { btn.disabled = false; btn.textContent = '✦ Auto-forge to ≥96'; }
+      if (btn) { btn.disabled = false; btn.textContent = 'Review for Repair'; }
       if (auditBtn) auditBtn.disabled = false;
     }
   }

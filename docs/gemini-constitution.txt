@@ -7,6 +7,17 @@ runtime. Edit HERE — never maintain inline copies in Python code.
 Last updated after Forge-first stress-test correction (19 failure modes,
 visual encoding hierarchy + metaphor library + no-grid plate guard).
 
+INTERPRETATION PRIORITY (2026-10-15): historical examples below are observations,
+not permission to override current rules. Exact clinical numbers stay in narration
+and cards. Visible writing is restricted to necessary short mnemonic names on
+their own objects; generic labels and explanatory wall plaques are not repairs.
+Zero names is valid when shapes carry every hook. Prefer positive surface rules,
+flowing complete scene prose, and large static relationships. The 600-word cap is
+a ceiling, not a target to pad. A shorter complete scene is valid. Pre-render
+review has no image score; only independent inspection of actual pixels can earn
+a canonical image grade. Shared objects are not automatically a defect when their
+relationships remain distinguishable. Risk heuristics are not calibrated laws.
+
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
 ═══════════════════════════════════════════════════════════════════════════
@@ -866,3 +877,21 @@ FIELD FINDINGS - 2026-10-15 (full eight-unit CO lesson; real pixels)
     a reference and passed. This is one observed comparison, not proof that fresh
     context always wins. Nine renders and extensive source-grounded repairs were
     needed overall. Never describe this as first-attempt or general one-shot success.
+
+FIELD FINDINGS - 2026-10-15 (fresh-topic pre-render pilot; NO new pixels)
+
+38. THE CRITIC ALSO NEEDS CALIBRATION. A real pericarditis review miscounted three
+    grouped objects plus a separate fourth, treated a single-word label as
+    multi-word, and predicted text leakage from review text not sent to the image
+    compiler. Check criticism against exact input and the real compiler boundary.
+    Historical failure patterns are risk evidence, not automatic prohibitions or
+    observed pixel defects. Clinical facts require sources; invented mnemonic names
+    do not have to appear in a textbook. A strict review can still be wrong.
+
+39. KEEP FIRST-PASS FAILURES IN THE DENOMINATOR. The frozen three-topic pilot had
+    zero end-to-end passes; a separate one-topic follow-up also blocked before
+    rendering. No image-quality percentage exists for either. A later source-filter
+    correction recovered relevant continuation pages by separating lesson-format
+    words from the medical subject. Text repair, source recovery and passing software
+    tests are not evidence of a successful first image. Keep recovery runs separate
+    and preserve original failed packets, exact hashes, and independent audits.

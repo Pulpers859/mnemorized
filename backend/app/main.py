@@ -1217,6 +1217,11 @@ def _quality_gate_tokenize(text: str) -> set[str]:
 
 
 _TOPIC_SCOPE_STOPWORDS = {
+    # Learner/output instructions are not medical concepts. Requiring these as
+    # lexical overlap discarded valid continuation pages for a one-word topic.
+    "introductory", "introduction", "lesson", "lessons", "student", "students",
+    "medical", "medicine", "anchor", "anchors",
+    "learning", "learner", "learn", "teaching", "teach", "board",
     "acute",
     "care",
     "diagnosis",
@@ -1237,7 +1242,10 @@ def _topic_relevant_medical_rows(
     min_similarity: float,
 ) -> list[dict[str, Any]]:
     """Keep citations that match the named lesson, not only its broad concepts."""
-    topic_tokens = _quality_gate_tokenize(topic) - _TOPIC_SCOPE_STOPWORDS
+    subject = re.sub(r"\b(?:one|two|three|four|five|six|seven|eight|nine|ten|\d+)[ -]+(?:teaching[ -]+)?anchors?\b", "", topic, flags=re.IGNORECASE)
+    topic_tokens = _quality_gate_tokenize(subject) - _TOPIC_SCOPE_STOPWORDS
+    if not topic_tokens:
+        return []
     required_overlap = 2 if len(topic_tokens) >= 2 else 1
     relevant: list[dict[str, Any]] = []
     for row in rows:
@@ -1246,7 +1254,7 @@ def _topic_relevant_medical_rows(
             for key in ("title", "section_title", "chunk_text")
         )
         overlap = topic_tokens & _quality_gate_tokenize(searchable)
-        topic_match = not topic_tokens or len(overlap) >= required_overlap
+        topic_match = len(overlap) >= required_overlap
         similarity = float(row.get("similarity") or 0)
         keyword_rank = float(row.get("keyword_rank") or 0)
         if topic_match and (similarity >= min_similarity or keyword_rank >= 0.05):
@@ -3046,6 +3054,13 @@ async def proxy_anthropic_messages(
     # ── Evidence-first generation: inject source material into system prompt ──
     evidence_topic = unquote(request.headers.get("x-evidence-topic", "")).strip()
     evidence_requested = request.headers.get("x-evidence-grounding") == "true"
+    visual_preflight = request.headers.get("x-visual-preflight") == "true"
+    if visual_preflight:
+        constitution = _load_gemini_constitution()
+        if not evidence_requested or not payload.system or not constitution:
+            _release_quota_reservation(request, user)
+            raise HTTPException(status_code=503, detail="Visual preflight requires source grounding and the canonical Constitution.")
+        payload.system += "\n\nCANONICAL VISUAL CONSTITUTION (pre-render review, not an image grade):\n" + constitution
     if evidence_requested and (not evidence_topic or not payload.system):
         _release_quota_reservation(request, user)
         raise HTTPException(status_code=400, detail="Grounded generation requires a topic and system instructions.")
