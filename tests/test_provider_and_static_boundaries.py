@@ -868,12 +868,14 @@ def test_forge_gates_image_prompt_length_before_generation() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
 
-    # Explicit length gate runs before spending an image request, and demo prompts
-    # are clamped the same way the live pipeline clamps.
+    # Explicit length gate runs before spending an image request. Both generation
+    # and demo construction surface guard failures instead of truncating content.
     assert "function gateImagePrompts" in pipeline
     assert "gateImagePrompts(" in pipeline
-    assert "const demoP1 = clampImagePrompt(demoP1Raw);" in pipeline
-    assert "const demoP2 = clampImagePrompt(demoP2Raw);" in pipeline
+    assert "demoP1 = clampImagePrompt(demoP1Raw);" in pipeline
+    assert "demoP2 = clampImagePrompt(demoP2Raw);" in pipeline
+    assert "Image prompt validation blocked" in pipeline
+    assert "Demo prompt validation blocked" in pipeline
 
 
 def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
@@ -898,7 +900,7 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     assert "function buildTextAllowlistFence" in pipeline
     assert "function ensureTextAllowlistFence" in pipeline
     assert "RENDERABLE TEXT ALLOWLIST" in pipeline
-    assert "digits 1 through" in pipeline
+    assert "the entire illustration is text-free" in pipeline
 
     # Every prompt path applies the fence: the deterministic composer appends it,
     # and the server-side Gemini director output is wrapped so it can't skip it.
@@ -909,7 +911,7 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     # (only short mnemonic names may appear, each at most once) — both are generator
     # invariants, not per-image hand repairs.
     assert "each rendered EXACTLY ONCE" in pipeline
-    assert "each appearing at most once" in pipeline
+    assert "Every described interaction appears once" in pipeline
 
     # NO PRECISION TEXT: the generator forbids drawing numbers/doses/formulas as text
     # (a drawn number is a flashcard, not a mnemonic — exact values are spoken/carded).
@@ -922,10 +924,11 @@ def test_image_prompt_generator_is_unnumbered_and_fenced() -> None:
     assert "function stripPrecisionTokens" in pipeline
     assert "stripPrecisionTokens(condenseForImage" in pipeline
 
-    # Per-anchor word cap is generous enough to keep a multi-part anchor plus its
-    # quoted labels intact — the old 32-word cap truncated rich anchors mid-clause,
-    # dropping sub-cues and the labels the fence still demanded (they then garbled).
-    assert "concise ? 24 : 48" in pipeline
+    # Source visuals survive intact. Oversized prompts fail instead of silently
+    # dropping trailing cues or the allowlist (executable coverage in builder tests).
+    assert "concise ? 24 : 48" not in pipeline
+    assert "IMAGE_PROMPT_MAX_WORDS = 600" in pipeline
+    assert "no anchors were dropped" in pipeline
 
 
 def test_qa_sweep_fixes_are_in_place() -> None:
@@ -945,7 +948,8 @@ def test_qa_sweep_fixes_are_in_place() -> None:
     # Demo mode warns even for short real topics; failed prompt rebuild clears the
     # stale prompt fields so generation can't run against them.
     assert "normalized.length >= 3" in pipeline
-    assert "silently illustrate from the stale pre-repair prompts" in pipeline
+    rebuild = pipeline.split("async function rebuildImagePromptsForStory", 1)[1].split("async function repairStoryVisualFormat", 1)[0]
+    assert "invalidateImagePrompts();" in rebuild.split("catch (error)", 1)[1]
 
     # Loading a saved palace clears any stale generated image left in the DOM.
     assert "Generated image bytes are not part of the saved snapshot" in auth
@@ -1147,6 +1151,26 @@ def test_forge_wires_medical_quality_gate_after_story_generation() -> None:
     assert "window.MnemorizedMedicalApi" in shared
 
 
+def test_stage_one_source_review_precedes_scene_context_and_fails_closed() -> None:
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
+    planning = pipeline.split("const ctxTxt = parseProviderContent(ctxRaw, 'Clinical Context');", 1)[1]
+    planning, failure = planning.split("} catch(e) {", 1)
+    parsed_at = planning.index("coreConcepts = core.split")
+    reviewed_at = planning.index("coreConcepts = await reviewMedicalCoverageContract(topic, coreConcepts);")
+    context_at = planning.index("clinicalContext =")
+    assert parsed_at < reviewed_at < context_at
+    assert "if (evidenceAvailable) {" in planning[parsed_at:reviewed_at]
+    assert "${coreConcepts.join('\\n')}" in planning[context_at:]
+    assert "${core}" not in planning[context_at:]
+    assert "${logic}" in planning[context_at:]
+    assert "${blueprintSuffix}" in planning[context_at:]
+    failure = failure.split("// ── STAGE 2:", 1)[0]
+    assert "Clinical planning failed" in failure
+    assert "btn.disabled = false" in failure
+    assert "return;" in failure
+
+
 def test_forge_pipeline_uses_sanctioned_visual_metaphor_library() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
@@ -1155,12 +1179,13 @@ def test_forge_pipeline_uses_sanctioned_visual_metaphor_library() -> None:
     assert "VISUAL_METAPHOR_LIBRARY" in pipeline
     assert "banana bunch = potassium" in pipeline
     assert "box of baking soda (household carton) = bicarbonate" in pipeline
-    assert "${VISUAL_METAPHOR_LIBRARY}" in pipeline
+    compact = pipeline.split("const compactStorySystem = `", 1)[1].split("`;", 1)[0]
+    assert "${VISUAL_METAPHOR_LIBRARY}" in compact
+    assert "system: compactStorySystem" in pipeline
     # Pure visual metaphor must be the top encoding tier, ahead of the last-resort text label.
-    assert "PURE VISUAL METAPHOR (strongest" in pipeline
-    # A sanctioned metaphor must override scene-theme coherence (else the model swaps it for a
-    # theme-matching labeled prop, as observed on the watermill re-run).
-    assert "METAPHOR BEATS THEME" in pipeline
+    assert "pure visual metaphor first, then metaphor with a short mnemonic name" in compact
+    assert "then a name only when no stronger hook exists" in compact
+    assert "Use these sanctioned associations when relevant to the source facts" in compact
     # The old over-broad originality rule that suppressed sanctioned metaphors must be gone.
     assert "every scene and symbol must be original" not in pipeline
     assert "do not reuse known commercial mnemonic symbols" not in pipeline
@@ -1230,30 +1255,29 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
 
-    assert "VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT" in pipeline
-    assert "ENCODING HIERARCHY" in pipeline
-    assert "PURE VISUAL METAPHOR (strongest" in pipeline
-    assert "SOUND-ALIKE" in pipeline
-    assert "LOOK-ALIKE" in pipeline
-    assert "FUNCTIONAL ANALOGY" in pipeline
-    assert "CONTRAST/THRESHOLD" in pipeline
-    assert "SPATIAL" in pipeline
-    assert "LABELED TEXT (weakest — LAST RESORT, NAMES ONLY)" in pipeline
-    assert "SILHOUETTE TEST" in pipeline
-    assert "CHARACTER DESIGN (encouraged)" in pipeline
-    assert "OBJECT INTERACTION = CLINICAL RELATIONSHIP" in pipeline
-    assert "The setting is a spatial memory map, not a backdrop." in pipeline
-    assert "Contact, blocking, containment, distance, scale, elevation, and sequence" in pipeline
-    assert "one coherent static map with uncluttered anchor zones" in pipeline
-    assert "Plain checklists, generic posters, ordinary clipboards" in pipeline
-    assert "silhouette test" in pipeline
-    assert "HOOK:" in pipeline
-    assert "do not reuse named scenes, recurring characters, or fixed fact→symbol maps" in pipeline.lower()
-    assert "Use visual-mnemonic design principles only; do not copy named scenes" in auth
+    # Check the active compact writer, not headings left in an unused full prompt.
+    compact = pipeline.split("const compactStorySystem = `", 1)[1].split("`;", 1)[0]
+    assert "VISUAL ENCODING HIERARCHY" in compact
+    assert "pure visual metaphor first" in compact
+    assert "HOOK: sound-alike, look-alike, functional, contrast, or spatial" in compact
+    assert "Every hook must pass the silhouette test" in compact
+    assert "one main object/character interaction, one location phrase" in compact
+    assert "single coherent room with large distinct objects" in compact
+    assert "Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props" in compact
+    assert "VISUAL is max 24 words" in compact
+    assert "ANCHOR is the clinical fact only" in compact
+    assert "preserve every distinct number, range, angle, duration, threshold, and exception" in compact
+    assert "Preserve source qualifiers and uncertainty" in compact
+    assert "NEVER draw numbers, doses, units, thresholds, or formulas" in compact
+    assert "spoken in NARRATION and recorded in ANCHOR" in compact
+    assert "Never encode an exact value with a clock face" in compact
+    assert "No proprietary mnemonic scenes, characters, symbols, or layouts" in compact
+    assert "${clinicalContext}" in compact
+    assert "No proprietary mnemonic scenes or symbols" in auth
     assert "missing HOOK; visual cue quality may degrade" in auth
     assert "HOOK should start with sound-alike, look-alike, functional, contrast, or spatial" in auth
-    # The Stage-2 STORY prompt still structures anchors with HOOK:/ENCODES: labels
-    # (above) — but the IMAGE anchor lines no longer inject that meta-text, because
+    # The story schema retains HOOK/NARRATION/VISUAL/ANCHOR fields, but the image
+    # anchor lines no longer inject explanatory meta-text, because
     # "Hook:"/"Encodes:" and the "invisible design guidance" plea leaked into renders.
     # It is structurally removed; see test_image_prompt_generator_is_unnumbered_and_fenced.
     assert "Hook: ${trimWords(v.hook" not in pipeline
@@ -1263,8 +1287,6 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "Design the room as a clear spatial memory map" in pipeline
     assert "Setting must be a phonetic pun" not in pipeline
     assert "MUST be a PHONETIC PUN" not in pipeline
-    assert "SHAPE DIVERSITY RULE" in pipeline
-    assert "PRECISION-VALUE RULE" in pipeline
     assert "PRECISION TEXT EXCEPTION" not in pipeline
     assert "ANCHOR LEGIBILITY RULE" in pipeline
     assert "EXACT LABEL RULE" in pipeline
@@ -1274,7 +1296,7 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "NO film grain, NO paper texture noise" in pipeline
 
 
-def test_forge_uses_advisor_tool_for_creative_stages() -> None:
+def test_forge_uses_direct_compact_requests_for_generation_and_repair() -> None:
     root = Path(__file__).resolve().parents[1]
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
@@ -1284,11 +1306,22 @@ def test_forge_uses_advisor_tool_for_creative_stages() -> None:
     assert "advisor_20260301" in state
     assert "ADVISOR_BETA" in state
     assert "function withAdvisor" in state
-    assert "withAdvisor(" in pipeline, "Stage 2 story generation should use advisor"
-    assert "withAdvisor(" in auth, "Repair prompt should use advisor"
+    # Advisor support remains available, but normal planning, writing, and repair
+    # must not depend on the timed-out full/advisor path before trying compact.
+    assert "withAdvisor(" not in pipeline
+    assert "withAdvisor(" not in auth
+    assert re.search(r"const ctxRes = await claudeFetch\(\{\s+model: CLAUDE_MODEL,\s+max_tokens: 2600,", pipeline)
+    attempts = pipeline.split("const storyAttempts = [];", 1)[1].split("let storyValidation", 1)[0]
+    assert "max_tokens: 6144" in attempts
+    assert "system: compactStorySystem" in attempts
+    assert "storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'compact'));" in attempts
+    assert "'dense-compact-strict' : 'compact-strict'" in attempts
+    assert "'dense-visual-hard-gate' : 'visual-hard-gate'" in attempts
+    assert attempts.count("storyAttempts.push(") == 3
+    assert re.search(r"const res = await claudeFetch\(\{\s+model: options\.expertReview \? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,\s+max_tokens: 6144,", auth)
 
 
-def test_forge_parses_text_after_advisor_tool_blocks() -> None:
+def test_forge_parses_text_blocks_and_rejects_empty_provider_output() -> None:
     root = Path(__file__).resolve().parents[1]
     auth = (root / "frontend" / "scripts" / "forge-auth.js").read_text(encoding="utf-8")
     pipeline = (root / "frontend" / "scripts" / "forge-pipeline.js").read_text(encoding="utf-8")
@@ -1300,8 +1333,14 @@ def test_forge_parses_text_after_advisor_tool_blocks() -> None:
     assert "provider response hit the max token limit" in auth
     assert "ctxRaw.content?.[0]?.text" not in pipeline
     assert "data.content?.[0]?.text" not in upload
-    assert "max_tokens: 8192" in pipeline
-    assert "max_tokens: 8192" in auth
+    # Shared parsing is still necessary even without advisor calls: providers may
+    # return multiple/non-text blocks or stop before emitting usable text.
+    assert "parseProviderContent(ctxRaw, 'Clinical Context')" in pipeline
+    assert "parseProviderContent(raw, context)" in pipeline
+    assert "parseAPIResponse(raw, 'Scene Narrative')" in pipeline
+    assert "parseProviderContent(raw, 'Medical Repair')" in auth
+    assert "parseProviderContent(data, 'Document Sections')" in upload
+    assert "parseProviderContent(data, 'Concept Extraction')" in upload
 
 
 def test_visual_mnemonic_prompt_contract_is_documented_for_future_agents() -> None:

@@ -542,8 +542,11 @@ def _gemini_prompt_director_user_prompt(payload: GeminiPromptDirectorPayload) ->
         f"ANCHORS TO PRESERVE ({len(payload.anchors)}):\n"
         + "\n\n".join(anchors)
         + "\n\nBuild Prompt 1 and Prompt 2 for direct submission to Gemini image generation. "
-        "Prompt 2 must include all anchors, their zones, their exact medically essential labels or numbers, "
-        "and the anti-meta-text boundary. Prompt 1 must contain only the empty spatial foundation."
+        "Prompt 2 must preserve every supplied visual anchor and its spatial relationship in flowing scene prose. "
+        "Use 400-600 words for a full scene. Exact clinical numbers, doses, thresholds, and formulas stay in "
+        "narration and flashcards; depict their supplied visual hooks without written values. "
+        "Only source-required short mnemonic names may appear on objects; finish with their explicit allowlist. "
+        "Prompt 1 must contain only the empty spatial foundation."
     )
 
 
@@ -3042,12 +3045,14 @@ async def proxy_anthropic_messages(
 
     # ── Evidence-first generation: inject source material into system prompt ──
     evidence_topic = unquote(request.headers.get("x-evidence-topic", "")).strip()
-    if (
-        request.headers.get("x-evidence-grounding") == "true"
-        and evidence_topic
-        and active_settings.medical_knowledge_configured
-        and payload.system
-    ):
+    evidence_requested = request.headers.get("x-evidence-grounding") == "true"
+    if evidence_requested and (not evidence_topic or not payload.system):
+        _release_quota_reservation(request, user)
+        raise HTTPException(status_code=400, detail="Grounded generation requires a topic and system instructions.")
+    if evidence_requested and not active_settings.medical_knowledge_configured:
+        _release_quota_reservation(request, user)
+        raise HTTPException(status_code=503, detail="Medical source retrieval is not configured.")
+    if evidence_requested:
         try:
             rows, _ev_usage = await _retrieve_medical_context(
                 request=request,
@@ -3063,24 +3068,27 @@ async def proxy_anthropic_messages(
             )
             if relevant:
                 evidence_lines = []
+                remaining_evidence_chars = 36000
                 for i, row in enumerate(relevant, 1):
+                    if remaining_evidence_chars <= 0:
+                        break
                     src = row.get("title") or row.get("source_key") or "Medical source"
                     ps = row.get("page_start") or "?"
                     pe = row.get("page_end") or ps
                     page_ref = f"p{ps}" if ps == pe else f"p{ps}-{pe}"
                     section = row.get("section_title") or ""
                     section_label = f" — {section}" if section else ""
-                    chunk = str(row.get("chunk_text") or "")[:1500]
+                    chunk = str(row.get("chunk_text") or "")[:min(12000, remaining_evidence_chars)]
+                    remaining_evidence_chars -= len(chunk)
                     evidence_lines.append(
                         f"[{i}] {src} ({page_ref}{section_label}):\n{chunk}"
                     )
                 evidence_block = (
                     "\n\nSOURCE EVIDENCE — The following excerpts are from the student's "
                     "verified medical reference material. Derive your core concepts "
-                    "primarily from these facts. Use the same terminology, thresholds, "
-                    "and clinical details that appear in the source. You may supplement "
-                    "with critical safety facts from your training knowledge, but the "
-                    "source material is the primary authority.\n\n"
+                    "from these facts. Preserve the terminology, qualifiers, thresholds, "
+                    "and clinical details that appear in the source. Identify missing source "
+                    "coverage explicitly instead of filling it from training knowledge.\n\n"
                     + "\n\n".join(evidence_lines)
                 )
                 payload.system = payload.system + evidence_block
@@ -3088,8 +3096,15 @@ async def proxy_anthropic_messages(
                     "Evidence grounding: injected %d source excerpts for topic '%s' (request %s)",
                     len(relevant), evidence_topic[:60], request_id,
                 )
+            else:
+                raise HTTPException(status_code=503, detail="No relevant medical source evidence was found for this lesson.")
+        except HTTPException:
+            _release_quota_reservation(request, user)
+            raise
         except Exception as exc:
-            logger.warning("Evidence grounding retrieval failed (non-fatal): %s", exc)
+            _release_quota_reservation(request, user)
+            logger.warning("Evidence grounding retrieval failed: %s", type(exc).__name__)
+            raise HTTPException(status_code=502, detail="Medical source retrieval failed. Please retry before generating the lesson.") from exc
 
     body = payload.model_dump(exclude_none=True)
     body_betas: list[str] = body.pop("betas", None) or []

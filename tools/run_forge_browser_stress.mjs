@@ -94,6 +94,7 @@ try {
 
   const consoleLog = [];
   const networkCaptureTasks = [];
+  const providerExchanges = [];
   let qualityGateExchange = null;
   page.on('console', msg => {
     consoleLog.push({ ts: new Date().toISOString(), type: msg.type(), text: msg.text() });
@@ -102,6 +103,23 @@ try {
     consoleLog.push({ ts: new Date().toISOString(), type: 'pageerror', text: err.message });
   });
   page.on('response', response => {
+    if (response.url().endsWith('/api/anthropic/messages')) {
+      networkCaptureTasks.push((async () => {
+        const request = response.request();
+        let requestBody = null;
+        let responseBody = null;
+        try { requestBody = request.postDataJSON(); } catch { /* no JSON body */ }
+        try { responseBody = await response.json(); } catch { /* non-JSON failure */ }
+        const exchange = {
+          captured_at: new Date().toISOString(),
+          status: response.status(),
+          request: requestBody,
+          response: responseBody,
+        };
+        providerExchanges.push(exchange);
+        await fs.writeFile(path.join(outDir, '07_provider_exchanges.json'), JSON.stringify(providerExchanges, null, 2), 'utf8');
+      })());
+    }
     if (!response.url().includes('/api/medical-knowledge/quality-check')) return;
     networkCaptureTasks.push((async () => {
       const request = response.request();

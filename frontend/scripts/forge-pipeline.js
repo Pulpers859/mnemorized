@@ -45,7 +45,7 @@ const ANTI_META_TEXT = 'TEXT RULES: Every wall, the floor, the ceiling, and all 
   'each one belongs to — printed on the object itself, a sign, a bottle, a banner, or a chalkboard, and ' +
   'sitting directly on that object. Nothing is written in the empty air or space around the objects.';
 
-const NO_PRECISION_TEXT_RULE = 'PRECISION VALUES LIVE ONLY IN NARRATION AND FLASHCARDS. Every depicted surface is blank and unmarked. ' +
+const NO_PRECISION_TEXT_RULE = 'PRECISION VALUES LIVE ONLY IN NARRATION AND FLASHCARDS. Surfaces stay blank except for source-required mnemonic names on their own objects. ' +
   'Encode thresholds as objects crossing a physical boundary, relative values as obvious size contrast, and small counts as oversized countable objects (at most five). ' +
   'Time cues use an unmarked hourglass. Clock faces, dials, gauges, and requested hand positions are replaced by these shape-first interactions. ' +
   'The illustration contains mnemonic shapes and actions while exact numbers, doses, units, lab values, percentages, and formulas remain spoken study facts.';
@@ -93,6 +93,7 @@ const ZONE_KEYWORDS = [
 ];
 
 const IMAGE_PROMPT_MAX_CHARS = 7800;
+const IMAGE_PROMPT_MAX_WORDS = 600;
 
 function extractZone(visual, fallback) {
   for (const [re, zone] of ZONE_KEYWORDS) {
@@ -109,17 +110,8 @@ function assignZones(voLines) {
 }
 
 function condenseForImage(visual) {
-  let s = visual;
-  s = s.replace(/[↑↓]/g, '');
-  s = s.replace(/(^|[\s(:])"([^"]{25,})"/g, (_, prefix, inner) => {
-    if (/[=×+\-±<>≤≥÷/]|(?:\d)/.test(inner) && inner.length <= 70) return prefix + '"' + inner + '"';
-    const parts = inner.split(/[\/,;]+/).map(p => p.trim()).filter(Boolean);
-    if (parts.length > 2) return prefix + '"' + parts.slice(0, 2).join(' / ') + ' …"';
-    return prefix + '"' + inner.substring(0, 24) + '…"';
-  });
-  s = s.replace(/\s*(?:with checklist|with tags|stamped|carved|labeled)[:\s]+("[^"]*"(?:\s*(?:and|,)\s*"[^"]*")*)/gi,
-    (match) => match.length > 60 ? match.substring(0, 55) + '…' : match);
-  return s;
+  // Whitespace cleanup only: shortening a visual can delete its load-bearing cue.
+  return String(visual || '').replace(/\s+/g, ' ').trim();
 }
 
 function trimWords(text, maxWords) {
@@ -128,32 +120,32 @@ function trimWords(text, maxWords) {
   return words.slice(0, maxWords).join(' ') + '...';
 }
 
-// Emit UNNUMBERED, visual-only anchor lines. We deliberately drop the "Anchor N:"
-// index, the "Hook:" cue, and the "Encodes:" medical prose:
-//  - "Anchor N:" numbering leaks into the render as floating digit captions
-//    (Constitution field finding #7 — capped plate_2 iter1/iter2 at 85 via gate G3).
-//  - "Encodes:" is paragraph-length medical prose the image model must never render.
-// The tested precision numbers/formulas survive inside `visual` as quoted tokens,
-// which the closing allowlist fence (buildTextAllowlistFence) whitelists explicitly.
-// Per-anchor word budget. The old 32-word cap silently truncated rich anchors
-// mid-clause, dropping trailing sub-cues (e.g. one of a 5-part toxidrome) AND the
-// quoted precision labels the closing fence still demanded — so the model rendered
-// those labels blind and garbled them, and dropped "no text here" guidance. A
-// generous cap (with clampImagePrompt as the hard char backstop and the concise
-// fallback for overflow) keeps a multi-part anchor and its labels intact.
-// Defense-in-depth for the NO-PRECISION-TEXT rule: even if an anchor visual (legacy
-// script, or a non-compliant upstream) still spells a number/dose/formula as a quoted
-// label to render, strip it from the drawn prompt so the model is never TOLD to draw a
-// value. Only quoted PRECISION tokens are removed (and a dangling "reads/labeled" verb);
-// quoted NAMES ("Pred") and unquoted shape hooks ("three prongs", "figure-8") are kept.
+// Quoted precision text belongs in narration/cards, not on the drawn object.
+function isPrecisionLabel(text) {
+  return /[0-9=×+±<>≤≥÷%/]|\b(?:mL|kg|mg|mcg|mmol|mEq|mOsm|bpm|hr|min)\b/i.test(text);
+}
+
 function stripPrecisionTokens(text) {
-  const isPrecision = (t) =>
-    /[0-9=×+\-±<>≤≥÷%]|\b(?:mL|kg|mg|mcg|mmol|mEq|mOsm|bpm|hr|min|U\/)\b/i.test(t);
   return String(text || '')
-    .replace(/\b(?:reads?|reading|labell?ed|marked|stamped|shows?|says?|displays?|engraved|etched|inscribed|printed)\s+["“”]([^"“”\n]{1,40})["“”]/gi,
-      (m, tok) => (isPrecision(tok) ? '' : m))
-    .replace(/["“”]([^"“”\n]{1,40})["“”]/g, (m, tok) => (isPrecision(tok) ? '' : m))
+    .replace(/\b(?:reads?|reading|labell?ed|marked|stamped|shows?|says?|displays?|engraved|etched|inscribed|printed)\s+["“”]([^"“”\n]+)["“”]/gi,
+      (m, tok) => (isPrecisionLabel(tok) ? '' : m))
+    .replace(/["“”]([^"“”\n]+)["“”]/g, (m, tok) => (isPrecisionLabel(tok) ? '' : m))
     .replace(/\s{2,}/g, ' ').replace(/\s+([.,;])/g, '$1').trim();
+}
+
+function imageAnchorVisual(anchor, index) {
+  const visual = stripPrecisionTokens(condenseForImage(anchor.visual))
+    .replace(/\bfigure-8(?=\s+(?:knot|loop)\b)/gi, (notation, offset, source) => {
+      const written = /\b(?:reads?|reading|labell?ed|marked|stamped|says?|displays?|engraved|etched|inscribed|printed|written|text|caption)\b[^.;]*$/i.test(source.slice(0, offset));
+      return written ? notation : 'figure-eight';
+    })
+    .replace(/[.\s]+$/, '').trim();
+  if (!visual) throw new Error(`Image anchor ${index + 1} has no drawable visual. Repair it through Forge.`);
+  // Do not guess how to translate a precision value into a new clinical hook.
+  if (/[0-9↑↓=<>≤≥%]/.test(visual)) {
+    throw new Error(`Image anchor ${index + 1} still contains numeric or symbolic instructions. Repair its VISUAL through Forge; keep exact values in narration and cards.`);
+  }
+  return visual;
 }
 
 // Zone -> natural prose lead-in phrase, so placement still guides the composition WITHOUT
@@ -179,127 +171,110 @@ function zoneLeadIn(zone) {
 // Compose the anchors as ONE flowing paragraph of scene prose, never an annotated list.
 // Placement rides in a natural lead-in phrase; if the visual already opens with its own
 // placement word, the lead-in is skipped to avoid double-placement.
-function buildImageAnchorLines(anchors, concise = false) {
-  return anchors.map(v => {
-    const visual = trimWords(stripPrecisionTokens(condenseForImage(v.visual)), concise ? 24 : 48)
-      .replace(/[.\s]+$/, '').trim();
-    if (!visual) return '';
+function buildImageAnchorLines(anchors) {
+  if (!anchors.length) throw new Error('Image prompts require the complete Forge anchor list.');
+  return anchors.map((v, index) => {
+    const visual = imageAnchorVisual(v, index);
     const lead = zoneLeadIn(v.zone);
     const alreadyPlaced = /^(on |at |in |against |just |directly |off |toward |above |below |behind |beside |near |far |left|right|center|foreground|background|upstage|downstage|stage-)/i.test(visual);
     if (lead && !alreadyPlaced) {
       return `${lead}, ${visual.charAt(0).toLowerCase()}${visual.slice(1)}.`;
     }
     return `${visual}.`;
-  }).filter(Boolean).join(' ');
+  }).join(' ');
 }
 
-// Deterministically split the anchor visuals' "quoted" tokens into precision
-// (numbers/doses/units/formulas) vs ordinary (short mnemonic names/words). Precision
-// tokens are NOT renderable text — a drawn number is a flashcard, not a mnemonic, so
-// exact values live in the narration + flashcards, never in the picture. Only the
-// ordinary short names are allowed to appear; the precision list is returned solely so
-// the fence can explicitly forbid those exact strings. Nothing is guessed.
+// A quoted word is not automatically a mnemonic name. Require source naming or
+// phonetic-hook evidence; ambiguous text needs a Forge repair, not an invented hook.
 function extractRenderableLabels(anchors) {
   const precision = [];
   const ordinary = [];
   const seen = new Set();
-  const isPrecision = (t) =>
-    /[0-9=×+\-±<>≤≥÷%]|\b(?:mL|kg|mg|mcg|mmol|mEq|mOsm|bpm|hr|min|U\/)\b/i.test(t);
-  (anchors || []).forEach(v => {
+  (anchors || []).forEach((v, index) => {
     const src = String(v.visual || '');
-    const re = /["“”]([^"“”\n]{1,40})["“”]/g;
+    const re = /["“”]([^"“”\n]+)["“”]/g;
     let m;
     while ((m = re.exec(src)) !== null) {
       const tok = m[1].trim();
       if (!tok) continue;
-      const key = tok.toLowerCase();
+      const isPrecision = isPrecisionLabel(tok);
+      const nameHook = /\b(?:sound[- ]alike|phonetic|mnemonic name|acronym)\b/i.test(v.hook || '');
+      const explicitlyNamed = /\b(?:named|called|name(?:d)?\s+(?:tag|label)\s+(?:reads?|says?))\s*$/i.test(src.slice(0, m.index));
+      if (!isPrecision && (!/^[\p{L}][\p{L} '\-]*$/u.test(tok) || tok.split(/\s+/).length > 3 || !(nameHook || explicitlyNamed))) {
+        throw new Error(`Image anchor ${index + 1} has text that is not an explicit short mnemonic name. Repair its VISUAL through Forge.`);
+      }
+      const key = tok;
       if (seen.has(key)) continue;
       seen.add(key);
-      (isPrecision(tok) ? precision : ordinary).push(tok);
+      (isPrecision ? precision : ordinary).push(tok);
     }
   });
-  // Ordinary short names only are renderable; precision is surfaced for the ban list.
-  return { precision: precision.slice(0, 6), ordinary: ordinary.slice(0, 12) };
+  return { precision, ordinary };
 }
 
-// Build the closing hard-whitelist fence: the exact list of renderable text plus
-// an explicit ban on index numbers / list digits (the leak class from finding #7)
-// and any floating meta-text. This is always appended as the LITERAL LAST LINE of
-// the anchor prompt, so whichever builder wrote the body, the guarantee holds.
+// Keep this marker for the image-audit repair inserter. The fence is always last.
 function buildTextAllowlistFence(anchors) {
-  const n = (anchors || []).length;
   const { ordinary } = extractRenderableLabels(anchors);
-  const list = ordinary.length
-    ? `The ONLY text allowed is this whitelist of short mnemonic names, each appearing at most once, ` +
-      `rendered legibly on its own object: ${ordinary.join(', ')}.`
-    : `This scene has NO required labels — render no visible text at all.`;
-  return `RENDERABLE TEXT ALLOWLIST — treat this as a hard whitelist. ` +
-    `Every wall, the floor, the ceiling, the beams, and all empty space stay completely blank and unmarked, and each allowed word sits directly on its own object. ${list} ` +
-    `Do NOT render any numbers, digits, doses, units, thresholds, lab values, percentages, or formulas as text anywhere in the image — ` +
-    `those exact facts belong in the narration and flashcards, not the picture. ` +
-    `Do NOT render any index numbers, list numbers, bullet numbers, or the digits 1 through ${n || 10} ` +
-    `as captions, tags, or labels anywhere in the image. ` +
-    `No other text, no floating captions, no zone labels, no anchor descriptions, ` +
-    `no speech bubbles, no directional words, no title, and no legend anywhere in the image.`;
+  return 'RENDERABLE TEXT ALLOWLIST: ' + (ordinary.length
+    ? `Only these source-required mnemonic names appear, spelled exactly on their own objects: ${ordinary.join(', ')}. All other surfaces and empty space stay blank and unmarked.`
+    : 'Every surface and all empty space stay blank and unmarked; the entire illustration is text-free.');
 }
 
 // Guarantee the deterministic fence is the last thing in a prompt no matter which
 // builder authored the body (local composer, Claude fallback, or the server-side
-// Gemini prompt director). Idempotent: a body that already carries our fence marker
-// is returned unchanged so no path double-fences.
+// Gemini prompt director). Replace stale or incomplete fences instead of trusting
+// the mere presence of the marker.
 function ensureTextAllowlistFence(prompt, anchors) {
-  const text = String(prompt || '');
-  if (text.includes('RENDERABLE TEXT ALLOWLIST')) return text;
-  return text.replace(/\s+$/, '') + '\n\n' + buildTextAllowlistFence(anchors);
+  const text = String(prompt || '').split('RENDERABLE TEXT ALLOWLIST')[0].trim();
+  return text + '\n\n' + buildTextAllowlistFence(anchors);
 }
 
-function composeImagePrompt2(sceneDesc, assigned, concise = false) {
-  const n = assigned.length;
-  return SKETCHY_STYLE + '\n\n' + trimWords(sceneDesc, concise ? 45 : 70) +
-    ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
-    `${ANTI_META_TEXT}\n\n` +
-    `SCENE OBJECT RULE: Do NOT label or name any part of the room itself (walls, floor, ceiling, beams, furniture). ` +
-    `Background surfaces are unlabeled.\n\n` +
-    `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
-    `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-    `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
-    `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-    `${ANCHOR_LEGIBILITY_RULE} ` +
-    `Text labels are secondary and optional — if present, maximum 3 words per ordinary mnemonic name label. ` +
-    `${NO_PRECISION_TEXT_RULE} ` +
-    `${EXACT_LABEL_RULE} ` +
-    `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
-    `Weave ALL of them into ONE flowing scene, written as continuous prose describing a single wide shot — a narrator walking the room, never a bulleted or tagged list:\n\n` +
-    buildImageAnchorLines(assigned, concise) + '\n\n' +
-    `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
-    `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-    `Maintain same lighting, color palette, and atmosphere.\n\n` +
+function composeImagePrompt2(sceneDesc, assigned) {
+  return 'Hand-drawn flat marker cartoon, wide 16:9 single coherent scene, varied ink outlines, vivid contrasting colors and even lighting. ' +
+    'The eye follows the source placements across the room and through foreground and background. ' +
+    'Every described interaction appears once, with distinct silhouettes, generous spacing and readable scale.\n\n' +
+    condenseForImage(sceneDesc) + '\n\n' + buildImageAnchorLines(assigned) + '\n\n' +
+    'Shapes and physical interactions carry the hooks; exact values remain in narration and flashcards.\n\n' +
     buildTextAllowlistFence(assigned);
 }
 
 function clampImagePrompt(prompt, maxChars = IMAGE_PROMPT_MAX_CHARS) {
   const text = String(prompt || '').trim();
-  if (text.length <= maxChars) return text;
-  return text.slice(0, maxChars - 180).replace(/\s+\S*$/, '') +
-    '\n\nFINAL HARD LIMIT: preserve all anchors above; do not add extra labels or checklist text.';
+  if (text.length > maxChars) {
+    throw new Error('Image prompt exceeds the character budget. Rebuild through Forge; anchors and the text allowlist cannot be truncated.');
+  }
+  return text;
 }
 
-function normalizeImagePromptPair(pair) {
+function normalizeImagePromptPair(pair, assigned) {
+  let normalized = { ...pair };
+  if (assigned) {
+    normalized.prompt2 = ensureTextAllowlistFence(normalized.prompt2, assigned);
+    const body = condenseForImage(normalized.prompt2).toLowerCase();
+    const missingVisual = assigned.some((v, index) => !body.includes(imageAnchorVisual(v, index).toLowerCase()));
+    if (missingVisual || normalized.prompt1.length > IMAGE_PROMPT_MAX_CHARS ||
+        normalized.prompt2.length > IMAGE_PROMPT_MAX_CHARS ||
+        normalized.prompt2.split(/\s+/).length > IMAGE_PROMPT_MAX_WORDS) {
+      // Provider paraphrases cannot prove full source coverage. Recompose from
+      // every original visual rather than trusting a partial or oversized body.
+      normalized = { ...normalized, ...composeImagePromptPair(normalized.scene_description, assigned) };
+    }
+  }
+  if (String(normalized.prompt2 || '').trim().split(/\s+/).length > IMAGE_PROMPT_MAX_WORDS) {
+    throw new Error('Full-scene image prompt exceeds 600 words with all anchors intact. Repair the source VISUAL fields through Forge; no anchors were dropped.');
+  }
   return {
-    ...pair,
-    prompt1: clampImagePrompt(pair.prompt1),
-    prompt2: clampImagePrompt(pair.prompt2),
+    ...normalized,
+    prompt1: clampImagePrompt(normalized.prompt1),
+    prompt2: clampImagePrompt(normalized.prompt2),
   };
 }
 
 function composeImagePromptPair(sceneDesc, assigned) {
-  const prompt1 = SKETCHY_STYLE_ROOM + '\n\n' + trimWords(sceneDesc, 55) + ', aspect ratio 16:9, flat 2D cartoon';
-  let prompt2 = composeImagePrompt2(sceneDesc, assigned, false);
-  if (prompt2.length > IMAGE_PROMPT_MAX_CHARS) {
-    prompt2 = composeImagePrompt2(sceneDesc, assigned, true);
-  }
-
-  return normalizeImagePromptPair({ prompt1, prompt2, scene_description: sceneDesc, director: 'local' });
+  const room = condenseForImage(sceneDesc);
+  const prompt1 = 'Hand-drawn flat marker cartoon, wide 16:9 empty room foundation. Bare architecture, blank unmarked surfaces and open floor space. ' + room;
+  const prompt2 = composeImagePrompt2(room, assigned);
+  return normalizeImagePromptPair({ prompt1, prompt2, scene_description: room, director: 'local' });
 }
 
 async function buildClaudeImagePromptPair(topic, storyData, assigned, stage) {
@@ -307,10 +282,11 @@ async function buildClaudeImagePromptPair(topic, storyData, assigned, stage) {
   const ipSystem = 'You write scene descriptions for Gemini image generation. ' +
     'Output ONLY the spatial layout and atmosphere — surfaces, materials, lighting, camera angle. ' +
     'Dense, comma-separated descriptive phrases. Do NOT include any style instructions or rendering directives. ' +
-    'CRITICAL: Describe the ROOM/SPACE only — walls, floor, ceiling, general surfaces. ' +
-    'Do NOT name or list specific objects (no "anvil in center", "tongs hanging from beam", "bellows on wall"). ' +
+    'CRITICAL: Describe architecture only: one continuous room with an open, undivided floor, walls, ceiling, doorways and windows. Use fewer than 60 words. ' +
+    'No divided bays, booths, panels, grids, painted zone lines, checklist walls or numbered stations. ' +
+    'Do NOT invent or list anchor props, furniture, tools, people or characters. ' +
     'The anchor objects are added separately — your job is ONLY the empty room that they will be placed into. ' +
-    'Design the room as a clear spatial memory map with open, uncluttered zones for anchors.';
+    'Design the room as a clear spatial memory map using natural depth and open space, not drawn boundaries or compartments.';
 
   const p1UserMsg = `Write a scene description for a memory palace illustration. Output ONLY the scene/room — no objects, no style directives.
 
@@ -320,12 +296,13 @@ ATMOSPHERE: ${storyData.opening}
 TOTAL ANCHORS TO FIT: ${n}
 
 Requirements:
-- 40-60 words maximum — room/space description ONLY
-- Describe ONLY: walls, floor, ceiling, doorways, windows, general surfaces and their materials
+- 40-59 words — architecture ONLY; always fewer than 60 words
+- One continuous room with an open, undivided floor; describe only walls, floor, ceiling, doorways, windows and their materials
+- No divided bays, booths, panels, grids, painted zone lines, checklist walls or numbered stations
 - Do NOT name any specific objects, furniture, or tools — those are added separately as medical anchors
 - Flat-friendly materials: wood, paper, brick, chalkboard, cork, cardboard, fabric, stone, ceramic — NO glass, chrome, screens, or modern clinical equipment
 - NO people or characters
-- Wide establishing shot, spacious enough for ${n} objects in distinct uncluttered zones, aspect ratio 16:9`;
+- Wide establishing shot, aspect ratio 16:9, spacious enough for ${n} future anchors within the same continuous space; their positions come from the supplied visuals, not invented partitions`;
 
   const p1Res = await claudeFetch({
     model: CLAUDE_MODEL,
@@ -374,7 +351,7 @@ async function buildGeminiImagePromptPair(topic, storyData, assigned, mode, stag
     scene_description: data.scene_description || '',
     director: 'gemini',
     model: data.model || 'gemini',
-  });
+  }, assigned);
 }
 
 function shouldFallbackFromGeminiDirector(error) {
@@ -675,9 +652,21 @@ function getSelectVal(selectId, customFieldId) {
 
 // ── Image generation ─────────────────────────────────────────────
 
-// Final safety gate before spending a paid image request: guarantee both prompts
-// are non-empty and within the model-safe character budget. Returns clamped
-// prompts and whether anything had to be trimmed.
+function invalidateImagePrompts() {
+  currentPromptData = { prompt1: '', prompt2: '' };
+  ['img-prompt-1', 'img-prompt-2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '';
+  });
+  ['prompt-copy-1', 'prompt-copy-2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  delete window.__mnemorizedAntigravityPrompts;
+}
+
+// Validate length before spending a request. Only surrounding whitespace may
+// be trimmed; anchor content and the allowlist must never be truncated.
 function gateImagePrompts(rawP1, rawP2) {
   const clampedP1 = rawP1 ? clampImagePrompt(rawP1) : '';
   const clampedP2 = rawP2 ? clampImagePrompt(rawP2) : '';
@@ -712,10 +701,23 @@ function handoffToAntigravity(prompts) {
 }
 
 async function generateImages() {
-  const gate = gateImagePrompts(
-    document.getElementById('prompt-copy-1')?.value,
-    document.getElementById('prompt-copy-2')?.value
-  );
+  let gate;
+  try {
+    gate = gateImagePrompts(
+      document.getElementById('prompt-copy-1')?.value,
+      document.getElementById('prompt-copy-2')?.value
+    );
+  } catch (error) {
+    delete window.__mnemorizedAntigravityPrompts;
+    setStatus('prompt', 'Image prompt validation blocked', 'error');
+    setStageDetail('prompt', error.message);
+    showBody('prompt');
+    const status = document.getElementById('gen-img-status');
+    if (status) status.textContent = error.message;
+    const btn = document.getElementById('generate-images-btn');
+    if (btn) { btn.disabled = false; btn.innerHTML = '✦ Generate Images'; }
+    return;
+  }
   const p1 = gate.p1;
   const p2 = gate.p2;
   if (!p1 && !p2) { alert('Forge a palace first to generate image prompts.'); return; }
@@ -725,7 +727,7 @@ async function generateImages() {
     // durable prompt panels instead.)
     if (p1) { document.getElementById('prompt-copy-1').value = p1; document.getElementById('img-prompt-1').textContent = p1; }
     if (p2) { document.getElementById('prompt-copy-2').value = p2; document.getElementById('img-prompt-2').textContent = p2; }
-    console.warn('[Mnemorized] Image prompt exceeded the safe length budget and was trimmed before sending to Gemini.');
+    console.info('[Mnemorized] Surrounding image-prompt whitespace was removed before generation.');
   }
 
   // Render-target fork: Antigravity mode never calls the Gemini API. Branch before
@@ -986,17 +988,8 @@ async function rebuildImagePromptsForStory(storyData) {
       `Illustration handoff rebuilt with ${n} repaired anchors using ${pair.director === 'gemini' ? 'Gemini constitution director' : 'fallback prompt composer'}.`
     );
   } catch (error) {
+    invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
-    // Blank the visible/copy prompt fields too, so "Generate Images" cannot
-    // silently illustrate from the stale pre-repair prompts still on screen.
-    ['img-prompt-1', 'img-prompt-2'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.textContent = '';
-    });
-    ['prompt-copy-1', 'prompt-copy-2'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.value = '';
-    });
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
     setStageDetail('prompt', 'The repaired script was kept, but image prompts must be rebuilt before generating — click Forge again or re-run the prompt step.');
   }
@@ -1064,7 +1057,7 @@ async function runPipeline() {
   }
 
   currentStoryData = null;
-  currentPromptData = { prompt1: '', prompt2: '' };
+  invalidateImagePrompts();
   currentQualityGateData = null;
   window.MnemorizedGuided?.reset?.();
   refreshAuthUI();
@@ -1128,34 +1121,47 @@ async function runPipeline() {
 
     const n = D.voLines.length;
     const assigned = assignZones(D.voLines);
+    let demoP1;
+    let demoP2;
+    try {
+      const demoP1Raw = SKETCHY_STYLE_ROOM + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
 
-    const demoP1Raw = SKETCHY_STYLE_ROOM + '\n\n' + D.prompt1_sample + ', aspect ratio 16:9, flat 2D cartoon';
+      const demoP2Raw = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
+        ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
+        `${ANTI_META_TEXT}\n\n` +
+        `SCENE OBJECT RULE: Do NOT label or name any part of the room itself. ` +
+        `Background surfaces are unlabeled.\n\n` +
+        `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
+        `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
+        `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
+        `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
+        `${ANCHOR_LEGIBILITY_RULE} ` +
+        `Text labels are secondary and optional — if present, maximum 3 words per ordinary mnemonic name label. ` +
+        `${NO_PRECISION_TEXT_RULE} ` +
+        `${EXACT_LABEL_RULE} ` +
+        `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
+        `Weave ALL of them into ONE flowing scene, written as continuous prose describing a single wide shot — a narrator walking the room, never a bulleted or tagged list:\n\n` +
+        buildImageAnchorLines(assigned) + '\n\n' +
+        `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
+        `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
+        `Maintain same lighting, color palette, and atmosphere.\n\n` +
+        buildTextAllowlistFence(assigned);
 
-    const demoP2Raw = SKETCHY_STYLE + '\n\n' + D.prompt1_sample +
-      ', aspect ratio 16:9, flat 2D cartoon.\n\n' +
-      `${ANTI_META_TEXT}\n\n` +
-      `SCENE OBJECT RULE: Do NOT label or name any part of the room itself. ` +
-      `Background surfaces are unlabeled.\n\n` +
-      `Add ALL ${n} of the following medical mnemonic anchors to the scene. ` +
-      `Anchors may be objects, characters/figures, or interactive elements — they are VISUAL MNEMONICS, not labeled props. ` +
-      `Preserve clear spatial hierarchy: left/center/right/foreground/background zones must stay readable and uncluttered. ` +
-      `Each anchor should be recognizable by its SHAPE and SILHOUETTE first. ` +
-      `${ANCHOR_LEGIBILITY_RULE} ` +
-      `Text labels are secondary and optional — if present, maximum 3 words per ordinary mnemonic name label. ` +
-      `${NO_PRECISION_TEXT_RULE} ` +
-      `${EXACT_LABEL_RULE} ` +
-      `SCENE TEXT BUDGET: at most 12 short mnemonic name labels in the ENTIRE image, and ZERO numeric/dose/threshold/formula text. Character names count. ` +
-      `Weave ALL of them into ONE flowing scene, written as continuous prose describing a single wide shot — a narrator walking the room, never a bulleted or tagged list:\n\n` +
-      buildImageAnchorLines(assigned) + '\n\n' +
-      `All ${n} anchors must be present, visually distinct, and each rendered EXACTLY ONCE — do not duplicate, mirror, or repeat any anchor object or figure anywhere else in the scene. ` +
-      `Do NOT add labels to room surfaces, walls, beams, or background objects. ` +
-      `Maintain same lighting, color palette, and atmosphere.\n\n` +
-      buildTextAllowlistFence(assigned);
-
-    // Clamp the same way the live pipeline does so the demo can't display or copy
-    // a prompt longer than the model-safe budget.
-    const demoP1 = clampImagePrompt(demoP1Raw);
-    const demoP2 = clampImagePrompt(demoP2Raw);
+      demoP1 = clampImagePrompt(demoP1Raw);
+      demoP2 = clampImagePrompt(demoP2Raw);
+    } catch (error) {
+      invalidateImagePrompts();
+      setCurrentPalaceData({
+        scene_title: D.scene_title, opening: D.opening,
+        voLines: D.voLines, review_script: D.review_script
+      }, '', '');
+      showBody('prompt');
+      setStatus('prompt', 'Demo prompt validation blocked', 'error');
+      setStageDetail('prompt', `The unchanged demo script is available for review, but its image prompt failed validation: ${error.message}`);
+      btn.disabled = false;
+      btn.innerHTML = '✦ FORGE PALACE';
+      return;
+    }
 
     showBody('prompt');
     if (isOperatorMode()) operatorPanel.classList.add('visible');
@@ -1219,188 +1225,64 @@ async function runPipeline() {
     'x-evidence-topic': encodeHeaderValue(topic),
   } : {};
   try {
-    const ctxRes = await claudeFetch(withAdvisor({
+    const ctxRes = await claudeFetch({
         model: CLAUDE_MODEL,
-        max_tokens: 1200,
-        system: `You are a senior clinical educator and board exam question writer designing original visual mnemonic memory scenes. Extract the essential teaching points for a silhouette-first mnemonic scene. Be EXHAUSTIVE — if a concept is commonly tested on USMLE, COMLEX, shelf exams, or in-training exams, it MUST be included.
+        max_tokens: 2600,
+        system: `You are a senior clinical educator and board exam question writer designing original visual mnemonic memory scenes. Extract the essential teaching points for the requested learner and lesson scope. Prioritize recognition, decisions, and safety pitfalls. Cover the requested scope comprehensively without expanding an introductory lesson into an entire chapter.
 
-COMPLETENESS CHECK: Before finalizing, verify you have not omitted any major category. For example:
+COMPLETENESS CHECK: Before finalizing, verify the relevant categories within the requested scope. For example:
 - For scoring systems: every sub-item and its specific scoring range
 - For interpretation algorithms: every step in the systematic approach
 - For drug classes: mechanism, indications, contraindications, key side effects, monitoring
 - For pathophysiology: etiology, pathogenesis, clinical features, diagnosis, management, complications
 - For procedures/protocols: indications, contraindications, steps, complications, alternatives
 
-When SOURCE EVIDENCE is provided below, derive your core concepts primarily from that material. Use the exact terminology, thresholds, and clinical details from the source. You may supplement with critical safety facts from your own knowledge, but prioritize source-grounded facts.
+When SOURCE EVIDENCE is provided below, derive your core concepts from that material. Preserve its terminology, qualifiers, thresholds, and clinical details. Identify any missing source coverage explicitly instead of supplying facts from memory.
 ${lessonBlueprintText ? `\n${lessonBlueprintText}\n\nStay inside this blueprint's scope: cover every MUST category, and do NOT expand into the out-of-scope areas unless the topic clearly demands it.\n` : ''}
 Output ONLY these two XML tags, nothing else:
 
-<core_concepts>The 8-12 most important, data-backed clinical facts that MUST be encoded — aim for comprehensive board-level coverage with ZERO important omissions. One per line. Include: diagnostic criteria, key thresholds/numbers, mechanism, first-line management steps, critical safety checks, common pitfalls, and resolution/disposition criteria. EVERY specific number, threshold, dose, duration, angle, and scoring range must be EXACT per current guidelines — no approximations, no rounding, no merging different values into one. If the topic has a well-known systematic approach (e.g. EKG interpretation steps, trauma primary survey), cover EVERY step — do not skip any.</core_concepts>
-<scene_logic>How to spatially arrange these concepts in a single illustrated scene — how the eye moves left-to-right and foreground-to-background. 8-10 anchors need distinct zones across left, center, right, foreground, and background areas.</scene_logic>`,
-        messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ${lessonSpec?.learner || 'ED/ICU physician'} — needs precise, high-yield anchors.` }]
-      }), 'stage1-clinical-context', evidenceHeaders);
+<core_concepts>Use the requested anchor count when specified, otherwise 8-12 concise teaching units. One per line, at most 45 words each. Cover essential recognition, diagnostic pitfalls, immediate treatment, escalation, and disposition when relevant. Each unit teaches one coherent decision or relationship. Preserve source qualifiers, uncertainty, ranges, and thresholds exactly; do not turn approximate evidence into false precision. Omit out-of-scope molecular detail and epidemiology. Do not omit essential safety steps.</core_concepts>
+<scene_logic>In 60-100 words, describe one coherent room and its left-to-right reading path. Use physical object interactions only. Keep exact facts in core_concepts; the room plan has blank surfaces, unmarked props, and no text panels, written numbers, checklists, diagrams, or speech bubbles. The scene writer will invent the final hooks.</scene_logic>`,
+        messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ${lessonSpec?.learner || 'Use the learner level in the clinical topic; otherwise medical student'} — needs precise, high-yield anchors.` }]
+      }, 'stage1-clinical-context', evidenceHeaders);
     setStatus('story', '✦ Analyzing topic…', 'running');
     setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
     const ctxRaw = await ctxRes.json();
+    if (!ctxRes.ok || ctxRaw.stop_reason === 'max_tokens') {
+      throw new Error(ctxRaw.error?.message || 'Clinical planning did not finish. Retry the lesson before creating its scene.');
+    }
     const ctxTxt = parseProviderContent(ctxRaw, 'Clinical Context');
     const core   = extractXmlTag(ctxTxt, 'core_concepts');
     const logic  = extractXmlTag(ctxTxt, 'scene_logic');
-    if (core || logic) {
+    if (!core || !logic) throw new Error('Clinical planning returned an incomplete fact map. Retry the lesson.');
+    if (core && logic) {
+      coreConcepts = core.split('\n').map(l => l.replace(/^[-•*\d.)\s]+/, '').trim()).filter(Boolean);
+      if (evidenceAvailable) {
+        setStageDetail('story', 'Independently reviewing the clinical coverage contract against source evidence.');
+        coreConcepts = await reviewMedicalCoverageContract(topic, coreConcepts);
+      }
       const blueprintSuffix = lessonBlueprintText ? `\n\n${lessonBlueprintText}` : '';
-      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${core}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
-      coreConcepts = core.split('\n').map(l => l.replace(/^[-•*\d.)\s]+/, '').trim()).filter(Boolean).slice(0, 12);
+      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${coreConcepts.join('\n')}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
     }
   } catch(e) {
-    console.warn('Clinical context extraction failed (non-fatal):', e.message);
+    console.warn('Clinical context extraction failed:', e.message);
+    setStatus('story', '✗ Clinical planning failed', 'error');
+    setStageDetail('story', e.message);
+    showDebug('CLINICAL PLANNING ERROR', e.message);
+    btn.disabled = false;
+    btn.innerHTML = '✦ FORGE PALACE';
+    return;
   }
 
   // ── STAGE 2: Voiceover Script ─────────────────────
   setStatus('story', '✦ Writing scene…', 'running');
   setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
-  const storySystem = `You are writing narration for an original medical visual mnemonic memory palace. The scene is a single static illustration — there is no animation or movement. The narrator is an unseen voice pointing things out directly to a medical student viewer. There is no narrator or tour-guide character — but MNEMONIC CHARACTERS (figures whose names, shapes, or actions encode medical facts) are encouraged. Characters should be the concepts themselves, not guides explaining them.
-
-SCENE SETTING — YOU CHOOSE:
-- Strongly prefer an ORIGINAL phonetic pun or sound-alike for a key term in the medical topic, but do not force a bad pun. If no clean pun exists, choose a thematic setting whose physical layout teaches the topic.
-- Do NOT reuse named scenes, recurring characters, or fixed fact→symbol maps from existing commercial visual mnemonic products (that is the only IP line). Invent fresh SCENES and CHARACTER NAMES — but the sanctioned universal metaphors (banana = potassium, etc.) are Mnemorized's own approved vocabulary and should still be used freely.
-- Made of materials that render flat: wood, paper, brick, chalkboard, fabric, cork, cardboard, stone, ceramic
-- BEST settings: bars, pubs, workshops, kitchens, old shops, speakeasies, market stalls, barber shops, diners, courtrooms, train stations
-- AVOID: glass, chrome, metal, screens, modern clinical equipment, sci-fi technology, holographic displays — these fight the flat hand-drawn style
-- The setting is a spatial memory map, not a backdrop. Each anchor occupies a memorable zone. Anchors should mostly fit the environment — but a SANCTIONED metaphor (banana = potassium, baking-soda box = bicarbonate, etc.) is placed even when it is out of place in the theme; do not sacrifice a strong universal cue just to keep the scene thematically tidy.
-
-NARRATION RULES — follow these exactly:
-1. Direct the viewer's attention to each element — use phrases like "notice", "take a look at", "you'll see", "over here", "right here"
-2. Name the visual element plainly as it appears in the static image
-3. Explicitly state the mnemonic link — "this is here to help you remember...", "get it? [word] for [concept]?"
-4. Immediately teach the clinical fact tied to that anchor — be specific and medically accurate
-5. Conversational, friendly, slightly enthusiastic tone — like a peer tutor, not a movie narrator
-6. NEVER describe movement, characters doing actions dynamically, or things happening — the image is frozen
-7. NEVER use cinematic or dramatic language — no "surges", "crashes", "races", "battles"
-8. Short punchy sentences — written for spoken audio, natural rhythm, easy to follow
-
-CLINICAL ACCURACY — NON-NEGOTIABLE:
-- Every number, threshold, dose, duration, and scoring range MUST be correct per current guidelines
-- When combining related sub-items into one anchor, preserve EVERY specific number for EACH sub-item — do not merge or average them
-- Example: if arm drift is tested at 90° for 10 seconds and leg drift is tested at 30° for 5 seconds, BOTH specific angles AND durations must appear separately — do NOT say "10 seconds" for both
-- When in doubt about a specific number, use the most conservative/standard value from UpToDate or major society guidelines
-- Double-check: scoring ranges, time thresholds, dose units, anatomical specifics, and classification cutoffs
-- WHERE EXACT VALUES LIVE: the IMAGE never prints numbers/doses/units/thresholds/formulas. Every exact value is stated in NARRATION (spoken aloud) and recorded in ANCHOR (the flashcard). The VISUAL only carries the hook; the precise figure is heard and read, not drawn — this is how Picmonic/Sketchy handle doses (symbol in the sketch, number in the narration + fact list).
-
-COMPLETENESS — NON-NEGOTIABLE:
-- Before writing anchors, mentally enumerate EVERY major category, classification, or step in the topic
-- If the topic is a scoring system, EVERY item must be covered (group related items but do not skip any)
-- If the topic is a stepwise process (e.g. EKG interpretation, ACLS algorithm), EVERY step must appear — do not skip steps even if they seem "obvious"
-- If the topic has a classification system (e.g. types of heart block), include ALL types including the most severe/dangerous one
-- Common omission errors to avoid: skipping complete/3rd-degree heart block when covering AV blocks, omitting the most severe classification tier, forgetting disposition/resolution criteria, leaving out common exceptions to rules
-- After writing all anchors, review them against the topic and ask: "Is there a major testable fact or category I missed?" If yes, add another anchor.
-
-VISUAL MNEMONIC DESIGN — THIS IS THE HEART OF THE PRODUCT:
-These principles are inspired by visual mnemonic education. The goal: a student recalls the medical fact from the SHAPE, IDENTITY, RELATIONSHIP, and POSITION of the cue even with ALL text removed. Originality applies to SCENES, CHARACTER NAMES, LAYOUTS, and phonetic puns — do NOT copy proprietary curated symbol systems (named scenes, recurring characters, or fixed fact→symbol maps from commercial mnemonic products). It does NOT mean avoiding common-knowledge associations: the SANCTIONED metaphors below are Mnemorized's own approved vocabulary and MUST be used (banana = potassium is global medical culture, not proprietary). Never fall back to a bare text label when a sanctioned metaphor or a shape/function analogy exists.
-
-SANCTIONED VISUAL METAPHOR LIBRARY — fixed, approved, common-knowledge cues. USE THESE FIRST whenever the concept appears, and keep them consistent across every topic (banana = potassium everywhere). They are always preferred over a text label:
-${VISUAL_METAPHOR_LIBRARY}
-
-ENCODING HIERARCHY — try each level in order, use the FIRST that fits. Only drop to LABELED TEXT after genuinely failing levels 1-6:
-1. PURE VISUAL METAPHOR (strongest — no text needed): use an instantly-recognizable object from the SANCTIONED library above (or an equally universal common-knowledge association) so the anchor reads by silhouette alone. banana bunch = potassium, salt sack/shaker = sodium/saline, household box of baking soda = bicarbonate, golden honey/sugar cubes = glucose, padlock = restricted/hold, skull = toxicity. Oversize the object. Reach for this FIRST for any electrolyte, ion, drug, fluid, or hazard that has a library entry — a barrel merely STAMPED "NaCl" or "K+" is a failure when a salt sack or banana bunch conveys it.
-   METAPHOR BEATS THEME: a sanctioned metaphor ALWAYS wins over scene-theme coherence. If the setting is a medieval mill and the fact is potassium, still draw a giant bunch of BANANAS; if it is bicarbonate, draw a household BAKING-SODA BOX — even though those objects are "out of place" in that setting. An incongruous, oddly-placed object is MORE memorable (the bizarreness effect), not less. NEVER swap a sanctioned metaphor for a theme-matching generic prop (barrel, cart, crate, sack) plus a text label. Do NOT render a drug or electrolyte as a "barrel labelled INSULIN / NaHCO3 / K+" — that is the exact failure this rule exists to stop.
-2. SOUND-ALIKE: Object or character NAME sounds like the medical term. Invent a fresh phonetic pun (puns and character names are where originality applies — do not reuse a proprietary product's named character). Clean, obvious puns are powerful.
-3. LOOK-ALIKE: Object SHAPE mirrors a number, symbol, organ, or process. Fork with 3 prongs → triad. Cracked wall → inhibition. Y-shaped branch → antibody. A figure-8 knot → chromosome 8.
-4. FUNCTIONAL ANALOGY: Object BEHAVIOR mirrors the clinical mechanism. Bellows pushing air → bronchodilator. Cork blocking pipe → antagonist. Overflowing bucket → excess/toxicity. Key in lock → agonist. Guard blocking door → immune defense.
-5. CONTRAST/THRESHOLD: Two OPPOSING objects encode a decision point. Big vs small, open vs locked, hot vs cold, thumbs-up shelf vs thumbs-down shelf, short rope vs long rope.
-6. SPATIAL: POSITION encodes meaning. Escalation goes up (stairs, shelves). Sequence goes left-to-right. Danger is isolated behind barriers. Exit/door = discharge criteria. Basement = last-resort therapy.
-7. LABELED TEXT (weakest — LAST RESORT, NAMES ONLY): a sign or tag with a 1-3 word sound-alike NAME. If you resort to this, the anchor is weak — go back and try levels 1-6 harder. This tier is for NAMES only: numbers, doses, units, thresholds, and formulas are NEVER a text tier — they are either encoded as a shape/count hook (level 3) or omitted from the image and spoken. NEVER label a generic barrel/wall/crate when a sanctioned metaphor exists.
-
-CHARACTER DESIGN (encouraged):
-- Mnemonic characters are figures whose NAME, APPEARANCE, or ACTION encodes a concept — they are NOT narrators
-- A character's name should SOUND LIKE the medical term (e.g., a bartender named "Pred" for prednisone)
-- Clothing, size, color, and held objects encode properties (a tiny character = low dose, a giant = high dose)
-- A character's action encodes mechanism: blocking a door = antagonist, pouring liquid = secretion, smashing a wall = bactericidal
-- Every character must have a distinctive SILHOUETTE — recognizable by shape alone even as a black shadow
-
-SILHOUETTE TEST: If you turned every anchor into a black shadow with no text visible, could the student still identify what it represents? If no → the visual encoding is too weak. Go back to the encoding hierarchy.
-
-OBJECT INTERACTION = CLINICAL RELATIONSHIP:
-- Objects touching/connected = synergy or combination therapy
-- Object blocking another = inhibition/antagonism
-- Object chained to another = required co-administration
-- Objects on opposite sides of a barrier = contraindication
-- Progressive size increase = dose escalation or worsening severity
-- Two objects on a tilting scale = risk-benefit or threshold decision
-- Object in a cage/trap = monitoring requirement or boxed warning
-- Contact, blocking, containment, distance, scale, elevation, and sequence should show why facts relate to each other.
-- The final image should read as one coherent static map with uncluttered anchor zones, not scattered props.
-- Every anchor must be large enough to identify at normal 1024px image size. No anchor may become tiny shelf clutter. If a shelf or wall contains multiple anchors, stagger them vertically and give each one enough empty space and scale to read by shape.
-
-SHAPE DIVERSITY RULE: No two anchors may share the same base shape. If you have one jar, no other anchor can be a jar. If you have one character standing, the next character must sit, crouch, or be a completely different body type. Check your anchor list at the end — if two silhouettes would look the same, redesign one.
-
-PRECISION-VALUE RULE (numbers are NOT drawn as text): a rendered number, dose, unit, threshold, lab value, or formula is a flashcard, not a mnemonic — black out all text and the picture must still cue every fact. So the EXACT value goes in NARRATION (spoken) and ANCHOR (the flashcard), never printed in the VISUAL. In the image you have two options only: (a) ENCODE the number as a visual hook — a shape look-alike (a fork's 3 prongs = a triad; a figure-8 knot = chromosome 8) or a small countable quantity of oversized objects (≤ ~5) — or (b) OMIT it from the image entirely and let the narration carry it. A compound value like "0.1 U/kg/hr" or "15-20 mL/kg/hr" is NOT cleanly encodable — do not try to draw it; encode the CONCEPT with a hook (an insulin-dripping ladle, an overflowing fluid barrel) and state the exact rate in NARRATION + ANCHOR. Never write the digits on a plaque, dial, gauge, or chalkboard.
-
-LARGE NUMBER RULE: Do NOT encode numbers greater than ~5 by asking for exact repeated object counts (generators cannot draw exactly 30 soldiers or 90 items) AND do NOT fall back to stamping the number as text. Use ONE strong oversized object whose scale/action signals "a lot / high / escalating," and put the exact number in NARRATION + ANCHOR.
-
-HOOK/VISUAL CONSISTENCY RULE: An anchor's VISUAL must pass the cover-the-text test on its own — its shape/identity/interaction carries the memory. If an anchor "needs" a printed number or formula to be understood, its hook is too weak: redesign the hook, and move the exact value to NARRATION + ANCHOR.
-
-SCENE TEXT BUDGET: The ENTIRE scene should have at most 12 short mnemonic name labels (sound-alike character/object names, 1-3 words each) and ZERO numeric/dose/threshold/formula text. Prioritize: sound-alike character names > optional flavor labels. Exact numbers never count against this budget because they never appear in the image.
-
-EXACT LABEL RULE: If a visual specifies a short label, copy it exactly. Do not invent alternate spellings, abbreviations, or nonsense words. Sound-alike character names must appear exactly when the name carries the mnemonic. If exact text would be too small or uncertain, replace it with a larger physical symbol instead of misspelling it.
-
-WHAT TO AVOID:
-- Plain checklists, generic posters, ordinary clipboards, labeled bottles — these fail the silhouette test
-- Any anchor whose ONLY mnemonic value is text printed on it
-- Medical equipment used literally (stethoscope for "auscultation" is lazy — use a giant ear trumpet or a character with comically oversized ears)
-- Long text strings on any surface — the image generator cannot reliably render more than 3-4 words per label
-- Multiple jars, bottles, or containers that would look identical as silhouettes — each anchor needs a unique shape
-
-VISUAL DESCRIPTION RULES:
-- MAXIMUM 30 WORDS per visual description
-- Aim for at most ONE visible text element per anchor, and it may only be a short sound-alike NAME (1-3 words). Numbers, doses, units, thresholds, and formulas are NOT text elements you may draw — they are spoken/carded.
-- Do not cram a list of labels into one visual. If an anchor needs several facts, encode them all with shape/scale/position/action/count; reserve text only for one short mnemonic name, and never for a numeric value.
-- If the VISUAL starts turning into a label list, simplify it into one stronger object interaction.
-- Describe the mnemonic device, its encoding strategy, and its position — text labels are OPTIONAL (1-3 words max if present)
-- VISUAL must describe only what should be drawn. Do not include meta commentary such as "no text labels", "single text element", or "two text elements".
-- The visual MUST work even if all text were removed — shape and identity carry the memory
-- Do NOT describe: era-specific aesthetics, materials, atmospheric details, lighting effects
-- Do NOT use: holographic, translucent, glowing, 3D, projection, transparent, neon-lit, LED
-- GOOD: "Giant ant character inspecting three overflowing buckets at center workbench" (ant = Anthonisen, 3 buckets = triad criteria, overflowing = sputum)
-- GOOD: "Two bellows — small one pumping fast, large one pumping slow — hanging from ceiling hooks" (dual bronchodilator therapy, size = relative dosing)
-- BAD: "Clipboard labeled 'ANTHONISEN' with checklist: 'DYSPNEA / SPUTUM / PURULENCE'" (text-dependent, fails silhouette test, too many words for image generator)
-
-ANCHOR FIELD RULES:
-- ANCHOR is the clinical fact only. No "get it", no mnemonic explanation, no scene description, no teaching aside.
-- Keep ANCHOR to one crisp sentence under 35 words.
-- Put memory-scene explanation in NARRATION, not in ANCHOR.
-
-ABSURDITY LEVEL: ${chaos}/10 — dial how strange the visual anchors are, not how dramatic the narration is.
-
-${clinicalContext}
-
-Respond using ONLY these XML tags in order. Write freely inside — no JSON:
-Do not include <thinking>, markdown, analysis, planning notes, headings, or commentary outside these XML tags.
-
-<scene_title>Short evocative title for the memory scene</scene_title>
-
-<opening>2-3 sentences introducing the scene. Set the location and overall vibe conversationally — like "Our scene today takes place at..." or "Welcome to...". Do not describe action or movement.</opening>
-
-For each memory anchor output one <vo_line> block. Aim for 8-10 anchors total — cover the topic comprehensively at board-exam level with dense, original visual mnemonics. Do not stop at 5-6 if there are more high-yield facts to encode.
-
-GROUPING RULE: If a topic has many sub-items (e.g. a scoring system with 15 items, a drug class with 12 side effects), combine closely related sub-items into a SINGLE anchor with one visual element that encodes 2-3 facts together. For example: a scoring scale's "questions" and "commands" sub-items can share one visual station; motor arm and motor leg can share one stopwatch display; language and articulation can share one communication desk. This keeps the total anchor count at 8-10 while still covering every testable fact. Each visual should encode MORE information, not less — denser per anchor, fewer total anchors.
-
-CRITICAL: When grouping sub-items, do NOT lose specificity. If two sub-items have DIFFERENT numbers (different scoring ranges, time limits, angles, doses), the NARRATION and ANCHOR must state BOTH distinct values separately — never collapse them into one number. The VISUAL encodes the two as DISTINCT hooks (e.g. a short stub vs a long pole, a nearly-empty vs a brimming vessel) so they read apart by shape — it does NOT print "10 SEC" and "5 SEC"; those exact values are spoken and carded, not drawn.
-ANCHOR COUNT HARD STOP: Never output more than 10 <vo_line> blocks. If you find an 11th fact, merge it into the closest existing anchor before responding.
-<vo_line>
-HOOK: [sound-alike | look-alike | functional | contrast | spatial] — one sentence: what encodes what and why
-NARRATION: [2-4 sentences. Direct viewer attention → name the element → explain the mnemonic link explicitly ("get it? X sounds like Y" or "notice how the shape of X looks like Y") → teach the clinical fact. Natural spoken rhythm. No dramatic language. No movement descriptions.]
-VISUAL: [MAXIMUM 30 WORDS. Mnemonic device + encoding strategy + position. Text labels optional (1-3 words max). No era styling, materials, lighting.]
-ANCHOR: [Clinical fact only. One crisp line under 35 words. No mnemonic wording, no "get it", no scene description.]
-</vo_line>
-
-<review_script>
-Rapid-fire recall. One line per anchor. Format: "When you see [image element] — remember [clinical fact]"
-</review_script>`;
 
   const storyUser = `Create an original visual mnemonic memory palace narration script for: ${topic}
 Tone: ${tone}
 Absurdity: ${chaos}/10
-TARGET: 8-10 anchors covering this topic comprehensively at board-exam level. Do NOT omit any major category, step, or classification tier.
+TARGET: Respect the requested learner, scope, and anchor count. Otherwise use 8-10 anchors. Cover the essential decisions and safety pitfalls within that scope.
 
 SETTING: Prefer an ORIGINAL setting name that is a clean phonetic pun or sound-alike for a key term in the topic. If that would be awkward, use a thematic setting whose spatial layout teaches the topic. Use hand-drawable materials (wood, brick, paper, chalkboard, fabric, stone, ceramic) — NOT modern clinical spaces.
 
@@ -1429,7 +1311,14 @@ Visual mnemonic rules:
 - Avoid the words labeled, reads, showing, shows, sign, chalkboard, ribbon, stamped, or plaque unless that single word describes the only text-bearing surface in the anchor.
 - Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
 - VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
+- Draw one memorable cue for each coherent teaching unit; supporting lists and qualifiers remain in narration. A referral decision needs a clear decision hook, not a separate drawn item for every referral criterion.
+- ANCHOR is the clinical fact only. NARRATION points to the exact visible object, explains the memory link, and teaches its source-supported fact.
+- Use a single coherent room with large distinct objects. The opening describes that room in plain language; omit meta-instructions and diagram layouts.
+- Use strong shape or functional associations before sound-alike names. Preserve source qualifiers and uncertainty in every medical statement.
 - No proprietary mnemonic scenes, characters, symbols, or layouts.
+
+VISUAL ENCODING HIERARCHY: pure visual metaphor first, then metaphor with a short mnemonic name, then a name only when no stronger hook exists. Every hook must pass the silhouette test. Prefer a simple object interaction over an annotated list or a generic labeled prop. Use these sanctioned associations when relevant to the source facts:
+${VISUAL_METAPHOR_LIBRARY}
 
 ${clinicalContext}
 
@@ -1459,24 +1348,15 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
         }]
       }
     });
-    if (!denseProtocol) {
-      storyAttempts.push({
-        label: 'advisor-full',
-        body: withAdvisor({
-          model: CLAUDE_MODEL,
-          max_tokens: 8192,
-          system: storySystem,
-          messages: [{ role: 'user', content: storyUser }]
-        })
-      });
-    }
-    storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'timeout-compact-fallback'));
+    // Start with the bounded writer; the large advisor request repeatedly timed
+    // out before reaching this same recovery path in real student runs.
+    storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'compact'));
     storyAttempts.push(compactBody(
-      denseProtocol ? 'dense-compact-strict' : 'timeout-compact-strict-fallback',
+      denseProtocol ? 'dense-compact-strict' : 'compact-strict',
       'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, an exact-value clock/dial/gauge, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, physical thresholds, scale, position, containment, blocking, and contrast. Exact numbers and formulas remain only in NARRATION and ANCHOR.'
     ));
     storyAttempts.push(compactBody(
-      denseProtocol ? 'dense-visual-hard-gate' : 'timeout-visual-hard-gate-fallback',
+      denseProtocol ? 'dense-visual-hard-gate' : 'visual-hard-gate',
       'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no exact-value clocks, dials, gauges, or precision plaques; no more than one quoted mnemonic name per anchor; no more than one text-bearing object per anchor; no checklist ribbons, logbook rows, or multi-label signs. Preserve all essential medical facts by moving exact values into NARRATION and ANCHOR, while the VISUAL uses one strong shape-first object interaction.'
     ));
 
@@ -1496,7 +1376,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
 
       let res;
       try {
-        res = await claudeFetch(requestBody, `stage2-story-script-${attempt.label}`);
+        res = await claudeFetch(requestBody, `stage2-story-script-${attempt.label}`, evidenceHeaders);
       } catch(fetchErr) {
         lastStoryError = new Error(fetchErr.message || 'Could not reach the provider proxy.');
         if (attemptIndex < storyAttempts.length - 1) continue;
@@ -1629,6 +1509,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');
     setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
     console.error('Image prompt error:', e);
+    invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
     btn.disabled = false;
     btn.innerHTML = '✦ FORGE PALACE';

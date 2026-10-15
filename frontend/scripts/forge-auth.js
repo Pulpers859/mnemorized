@@ -444,7 +444,59 @@ function renderQualityGateResult(result) {
     </div>`;
 }
 
-async function repairCurrentPalaceWithMedicalEvidence() {
+async function reviewMedicalCoverageContract(topic, concepts, feedback = '') {
+  if (!concepts?.length) throw new Error('A source-review contract requires the original lesson scope.');
+  const response = await claudeFetch({
+    model: CLAUDE_MODEL,
+    max_tokens: 2600,
+    system: `You independently verify a clinical coverage contract against the supplied SOURCE EVIDENCE. You do not see or grade the generated scene. Preserve the same teaching domains, order, and number of units; correct unsupported certainty, missing qualifiers, unsafe generalization, and factual errors. The old contract is an unapproved model draft, not medical authority. Use only the source evidence and explicitly attribute textbook-specific recommendations. Do not add new scope or epidemiology excluded by the learner. Return ONLY <core_concepts> with one corrected unit per line, at most 55 words per unit. If any unit cannot be supported, return <source_gap> with the missing coverage instead. No visual or scene instructions.`,
+    messages: [{role: 'user', content: `Learner request: ${topic}\nOriginal coverage units:\n${concepts.map((c, i) => `${i + 1}. ${c}`).join('\n')}\nIndependent reviewer feedback:\n${feedback}`}],
+  }, 'medical-contract-source-review', {
+    'x-evidence-grounding': 'true',
+    'x-evidence-topic': encodeHeaderValue(topic),
+  });
+  const raw = await response.json();
+  if (!response.ok || raw.stop_reason === 'max_tokens') throw new Error('Clinical contract source review did not complete.');
+  const text = parseProviderContent(raw, 'Clinical Contract Review');
+  if (extractXmlTag(text, 'source_gap')) throw new Error('Clinical contract has a source coverage gap; review retrieval before continuing.');
+  const corrected = extractXmlTag(text, 'core_concepts').split('\n')
+    .map(line => line.replace(/^[-\u2022*\d.)\s]+/, '').trim()).filter(Boolean);
+  if (corrected.length !== concepts.length) throw new Error('Clinical contract source review changed the coverage-unit count.');
+  return corrected;
+}
+
+async function repairMedicalTextFields(story, topic, targets, feedback, expertReview = false) {
+  const selected = targets.map(target => {
+    const owner = target.anchor == null ? story : story.voLines.find(line => line.n === target.anchor);
+    const allowed = target.anchor == null ? ['review_script'] : ['hook', 'narration', 'anchor'];
+    if (!owner || !allowed.includes(target.field)) throw new Error('Invalid clinical text repair target.');
+    return { ...target, text: owner[target.field] };
+  });
+  const response = await claudeFetch({
+    model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
+    max_tokens: 2600,
+    system: 'Repair only the specified clinical text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, visual references, clinical scope, source qualifiers and uncertainty. No new facts or visual props. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
+    messages: [{role: 'user', content: `Topic: ${topic}\nFeedback: ${feedback}\nTargets: ${JSON.stringify(selected)}\nReviewed coverage: ${JSON.stringify(story.required_concepts || [])}`}],
+  }, 'medical-targeted-text-repair', {
+    'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic),
+  });
+  const raw = await response.json();
+  if (!response.ok || raw.stop_reason === 'max_tokens') throw new Error('Targeted medical repair did not complete.');
+  const result = JSON.parse(parseProviderContent(raw, 'Targeted Medical Repair'));
+  if (!Array.isArray(result.repairs) || result.repairs.length !== selected.length) throw new Error('Targeted repair did not return every requested field.');
+  const updated = JSON.parse(JSON.stringify(story));
+  result.repairs.forEach((repair, index) => {
+    if (repair.target !== index || typeof repair.text !== 'string' || !repair.text.trim()) throw new Error('Invalid targeted repair response.');
+    const target = selected[index];
+    const owner = target.anchor == null ? updated : updated.voLines.find(line => line.n === target.anchor);
+    owner[target.field] = repair.text.trim();
+  });
+  const validation = validateStoryData(updated);
+  if (validation.fatal.length) throw new Error(`Targeted repair failed validation: ${validation.fatal.join(' ')}`);
+  return updated;
+}
+
+async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
   if (!currentStoryData) {
     renderQualityGateMessage('Generate a palace script before running repair.', 'error');
     return;
@@ -479,11 +531,18 @@ async function repairCurrentPalaceWithMedicalEvidence() {
       return `[${index + 1}] ${item.source_title || item.source_key || 'Medical source'} ${page}: ${item.excerpt || ''}`;
     }).join('\n');
     const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ');
+    let originalContract = currentStoryData.required_concepts?.length
+      ? [...currentStoryData.required_concepts]
+      : (currentQualityGateData?.required_concept_coverage || []).map(item => item.concept).filter(Boolean);
+    originalContract = await reviewMedicalCoverageContract(topic, originalContract, repairFocus);
+    const scriptForRepair = options.redesignVisuals
+      ? { teaching_units: currentStoryData.voLines.map(item => ({ n: item.n, anchor: item.anchor })), required_scope: originalContract }
+      : currentStoryData;
 
-    const res = await claudeFetch(withAdvisor({
-      model: CLAUDE_MODEL,
-      max_tokens: 8192,
-      system: `You repair medical memory-palace scripts using private reference evidence. Preserve the scene's strongest ideas, but fix missing or weak medical coverage. Use the evidence excerpts only as support; do not quote long source passages. Return ONLY XML tags in the same schema: <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Keep 8-10 anchors unless the topic truly needs fewer. Each <vo_line> must contain HOOK, NARRATION, VISUAL, and ANCHOR fields. HOOK states the encoding strategy (sound-alike, look-alike, functional, contrast, or spatial) and why the visual encodes the fact. Anchors should pass the silhouette test — recognizable by shape alone without reading text. Use visual-mnemonic design principles only; do not copy named scenes, recurring characters, or proprietary symbols from existing commercial mnemonic products.`,
+    const res = await claudeFetch({
+      model: options.expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
+      max_tokens: 6144,
+      system: `You repair medical memory-palace scripts using private reference evidence. The current script is an UNAPPROVED draft, not a template to copy. Every explicit repair-focus criticism is mandatory. A criticized visual must be replaced with a different, stronger visual strategy; deleting its label is not a repair of an arbitrary prop. Preserve clinical scope and accurate facts, not defective wording or props. Use source evidence only and retain uncertainty. Use the requested anchor count, otherwise 8-10. Return only <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Inside each vo_line use plain uppercase HOOK:, NARRATION:, VISUAL:, ANCHOR: labels, never nested tags. VISUAL is at most 24 words and describes one large recognizable interaction. Exact values stay in narration and anchor fields, never on clocks, dials, gauges or plaques. Use functional or shape associations before names. Keep any strongest existing hooks that were NOT criticized. No proprietary mnemonic scenes or symbols.\n\nVISUAL ENCODING HIERARCHY: pure visual metaphor, then metaphor plus a short mnemonic name; no generic prop as an arbitrary stand-in.\n${typeof VISUAL_METAPHOR_LIBRARY !== 'undefined' ? VISUAL_METAPHOR_LIBRARY : ''}`,
       messages: [{
         role: 'user',
         content: `Clinical topic: ${topic}
@@ -495,16 +554,35 @@ Private evidence excerpts and citations:
 ${evidence || 'No evidence excerpts returned.'}
 
 Current script JSON:
-${JSON.stringify(currentStoryData, null, 2)}
+${JSON.stringify(scriptForRepair, null, 2)}
 
 Repair requirements:
-- Preserve the scene title and setting if they still work.
-- Keep strong existing anchors when medically sound.
+- ${options.redesignVisuals ? 'REDESIGN MODE: Invent a new setting and all new visual hooks from the source-grounded teaching units. Old props were intentionally withheld because that encoding strategy failed. Preserve the clinical scope, not prior visual choices.' : 'Preserve the scene title and setting if they still work.'}
+- Keep an existing anchor only when both medically sound and visually strong. Explicit repair-focus criticism overrides preservation of the old scene.
 - Rewrite or add anchors for any missing/weak repair-focus concepts.
-- Maintain concise visual descriptions and specific board-level medical facts.
-- Return XML only.`
+- Preserve the requested lesson scope and all essential teaching units.
+- Use only supplied source evidence for medical claims; retain uncertainty and qualifiers.
+- Each VISUAL is at most 24 words: one recognizable object interaction and one location. Exact values remain in NARRATION and ANCHOR.
+- One visual cue may retrieve a coherent decision whose supporting criteria remain in narration. Do not draw an inventory of every supporting fact or use arbitrary object counts to encode large values.
+- Surfaces are blank unless a short mnemonic name is necessary. Replace text panels, numeric devices, faint marks, and tiny details with large physical interactions.
+- The opening describes the room itself; explanations and teaching notes belong in narration.
+- Keep narration focused on this introductory scope; do not append extra workup or epidemiology.
+- Recheck every repair-focus item before returning; replace every visual specifically criticized as weak.
+- Return this exact format, using plain uppercase field labels inside each vo_line, NOT nested XML fields or Markdown fences:
+<scene_title>Title</scene_title>
+<opening>Room architecture only, at most 60 words.</opening>
+<vo_line>
+HOOK: strategy and association
+NARRATION: source-grounded teaching linked to this visible cue
+VISUAL: at most 24 words
+ANCHOR: clinical teaching unit
+</vo_line>
+Repeat vo_line for each required anchor, then <review_script>Brief complete review</review_script>.`
       }]
-    }));
+    }, 'medical-evidence-repair', {
+      'x-evidence-grounding': 'true',
+      'x-evidence-topic': encodeHeaderValue(topic),
+    });
 
     if (!res.ok) {
       throw new Error(`Repair provider call failed (HTTP ${res.status}).`);
@@ -516,15 +594,23 @@ Repair requirements:
     if (repairedValidation.fatal.length) {
       throw new Error(`Repair response failed story validation: ${repairedValidation.fatal.join(' ')}`);
     }
+    if (raw.stop_reason === 'max_tokens') throw new Error('Repair output was truncated. Retry before using this lesson.');
+    repairedStory.required_concepts = originalContract;
 
     currentQualityGateData = null;
     currentStoryData = repairedStory;
     renderStoryData(repairedStory);
     setStatus('story', '✓ Repaired', 'done');
-    await runMedicalQualityGate(repairedStory);
+    const repairedGate = await runMedicalQualityGate(repairedStory, originalContract.length ? originalContract : null);
+    if (!repairedGate || repairedGate.evidence_status === 'no_relevant_source' || repairedGate.verdict === 'needs_repair') {
+      currentPromptData = { prompt1: '', prompt2: '' };
+      renderPromptData('', '');
+      throw new Error('The repaired script still needs a successful evidence check before image generation.');
+    }
 
     if (typeof rebuildImagePromptsForStory === 'function') {
       await rebuildImagePromptsForStory(repairedStory);
+      if (!currentPromptData.prompt2) throw new Error('The repaired script needs a valid image-prompt rebuild.');
     } else {
       currentPromptData = { prompt1: '', prompt2: '' };
       setStatus('prompt', 'Rebuild prompts needed', '');
@@ -536,7 +622,7 @@ Repair requirements:
     setLibraryStatus(`Medical repair complete. Review the updated script, then save a new version.${warningSuffix}`, 'success');
   } catch (error) {
     setStatus('quality', 'Repair failed', 'error');
-    setStageDetail('quality', 'Repair did not complete. The prior script is still visible for review.');
+    setStageDetail('quality', 'Repair did not complete. The current script remains available for review, not publication.');
     renderQualityGateMessage(`Medical repair failed: ${error.message}`, 'error');
   } finally {
     const repairBtn = document.getElementById('repair-quality-btn');
@@ -548,6 +634,7 @@ Repair requirements:
 }
 
 async function runMedicalQualityGate(storyData = currentStoryData, clinicalConcepts = null) {
+  if (storyData && clinicalConcepts?.length) storyData.required_concepts = [...clinicalConcepts];
   currentQualityGateData = null;
   if (!storyData) {
     setStatus('quality', 'Waiting...', '');
@@ -579,7 +666,7 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
     const result = await MnemorizedMedicalApi.qualityCheck(getMedicalAuthToken(), {
       topic: document.getElementById('topic').value.trim(),
       generation_outputs: { story: storyData },
-      required_concepts: (clinicalConcepts && clinicalConcepts.length) ? clinicalConcepts : getQualityGateConcepts(storyData),
+      required_concepts: storyData.required_concepts?.length ? storyData.required_concepts : getQualityGateConcepts(storyData),
       max_evidence_chunks: 6,
     });
     currentQualityGateData = result;
@@ -588,10 +675,12 @@ async function runMedicalQualityGate(storyData = currentStoryData, clinicalConce
       ? 'No source match'
       : (result.verdict === 'needs_repair' ? 'Needs review' : 'Evidence checked');
     setStatus('quality', statusLabel, result.verdict === 'needs_repair' ? 'error' : 'done');
+    return result;
   } catch (error) {
     setStatus('quality', 'Check failed', 'error');
     setStageDetail('quality', 'The script is still available, but the evidence check did not finish.');
     renderQualityGateMessage(`Medical quality check failed: ${error.message}`, 'error');
+    return null;
   }
 }
 

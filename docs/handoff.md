@@ -199,6 +199,37 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-14 - Full CO student lesson: clinical clearance, image quota wait
+**Prepared:** A fresh Forge-first carbon-monoxide introduction with all eight teaching
+units, independently reviewed against retrieved Tintinalli pages 83-85. Rejected
+multiple drafts rather than accepting the lexical gate's apparent pass. Fixed source
+excerpt truncation, silent incomplete planning, independent source review of the
+coverage contract, compact-first writing, complete nontruncated image prompts,
+repair schema/preservation, stale visible prompts, and error recovery. Added optional
+expert/redesign repair and narrowly targeted clinical-text repair functions.
+
+**Verified:** compileall, 130 pytest tests, and HTTP 200 smoke for `/`, `/forge`,
+`/library`, `/api/health`. Real source retrieval and Anthropic generation/repairs ran.
+The final eight-unit lesson passed independent source review; exact image prompt,
+narrations, contract, evidence and failed trials are saved under
+`Troubleshooting Prompts/co_student_2026-10-14/`. The final bundle is
+`final/03_forge_bundle.json`; its visuals are unchanged from the submitted image prompt.
+
+**Not yet verified:** NO image or image score. Antigravity's native image tool returned
+429 with reset `2026-10-15T05:03:46Z`; the task remains active awaiting that reset.
+Gemini API text-director credits also returned 402, so Claude fallback composed the
+image prompt. This is a scoped textbook lesson, not a comprehensive current-guideline
+protocol. Default Sonnet one-shot clinical/visual reliability is NOT established.
+The unchanged legacy demo now reports its invalid precision-text prompt safely instead
+of leaving the Forge button disabled; its medical content was not hand-rewritten.
+
+**Next:** Resume the saved Antigravity chat/image task after quota reset, independently
+inspect/score all eight anchors under the canonical rubric, repair through Forge as
+needed, and record the actual final result. Do not reuse older three-anchor plates or
+call this task complete based on source/software checks alone.
+
+---
+
 ### 2026-10-14 — Source-grounded random EM visual loop + precision-device hardening
 **Done (this commit):** Ran three new random topics through the real Forge browser
 pipeline, captured the structured medical quality-gate exchanges, exported Forge

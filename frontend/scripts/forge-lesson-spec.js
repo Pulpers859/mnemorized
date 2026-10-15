@@ -215,7 +215,7 @@ function buildAnchorContract(spec, coreConcepts) {
   };
   (spec?.mustEncode || []).forEach(push);
   (coreConcepts || []).forEach(push);
-  return contract.slice(0, 16);
+  return contract.slice(0, 40);
 }
 
 if (typeof window !== 'undefined') {

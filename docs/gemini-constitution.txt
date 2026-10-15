@@ -42,7 +42,8 @@ WHAT GEMINI CANNOT RENDER — 21 confirmed failure modes
    FIX: Describe each figure with at most 2 spatial constraints.
 
 6. CLOCK HAND POSITIONS: "hands frozen at one o'clock" is silently ignored.
-   FIX: Use text plaques ("1 HR") instead of clock hand angles.
+   FIX: Use an unmarked hourglass or a physical threshold. Exact times remain in
+   narration and flashcards, never on a written plaque or clock face.
 
 7. AMBIGUOUS MOTION VERBS: "crossing the line" may render as approaching.
    FIX: Use completed-state language: "has crossed the line," "boot planted past the line."
@@ -129,8 +130,8 @@ WHAT GEMINI CANNOT RENDER — 21 confirmed failure modes
     especially chemical abbreviations like CaCl, can render as CaCI, CACL, or
     all-caps variants. The learner usually understands the cue, but exact
     letterform is not reliable enough for catalog-grade precision.
-    FIX: Prefer full-word precision labels such as "chloride 1g" when space
-    allows, or use a non-text chloride cue attached to the calcium object. If
+   FIX: Prefer a non-text chloride cue attached to the calcium object. Exact
+   doses remain in narration and flashcards. If
     the abbreviation must appear, audit it manually and do not call the image a
     clean pass if the letterform is ambiguous.
 
@@ -791,3 +792,29 @@ generated the content + composed the prompt; AG-rendered; REAL-PIXEL graded = 60
     values remain in narration and flashcards. For 1-3-anchor plates, prefer zero visible text when
     object interactions still carry the hooks; concise all-visual prompts outperformed the raw
     1,000-word fallback plate prompt.
+
+FIELD FINDINGS - 2026-10-14 (full eight-unit CO student lesson; PRE-RENDER)
+
+29. A SOURCE MATCH IS NOT CLINICAL ENTAILMENT. The real Forge run passed its lexical
+    gate while overstating COHb interpretation, transfer acceptance and follow-up.
+    Source injection had cut each page after 1,500 characters, and a truncated
+    clinical-planning response had silently continued. Preserve bounded full source
+    excerpts, stop on incomplete planning, and independently review the coverage
+    contract before scene writing. Correct the contract as well as narration: a stale
+    incorrect requirement can reintroduce an already-rejected claim during repair.
+
+30. REPAIR PRESERVATION CAN PRESERVE THE FAILURE. Repeated whole-scene repairs kept
+    arbitrary props and introduced new wording errors. For failed encoding strategies,
+    redesign from source-reviewed teaching units without showing the failed props.
+    For final clinical wording nits, regenerate only explicitly selected text fields,
+    preserve every other field, and independently verify the changes. Never let an
+    oxygen cue become a fluid-resuscitation cue merely to fit a metaphor library.
+
+31. FULL-SCENE COMPACTNESS MUST NOT DROP ANCHORS. The production builder now retains
+    every complete VISUAL and the closing text fence, or fails visibly rather than
+    truncating either. Exact-value text stays in narration/cards. Room composition
+    requests continuous architecture, not divided bays or checklist walls. Failed
+    builds invalidate prior visible prompts so the previous lesson cannot be rendered
+    accidentally. The eight-unit CO packet is clinically cleared but its first render
+    was blocked by Antigravity quota. These are source/prompt/software findings, NOT
+    pixel-validation evidence or a claim of one-shot image reliability.
