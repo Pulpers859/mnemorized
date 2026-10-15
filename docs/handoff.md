@@ -199,6 +199,34 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-15 - Background and coordinate-layering comparison
+**Done:** Patrick asked to test layered rendering against the existing whole-scene
+image. Froze the real eight-anchor pericarditis v9 bundle. AG generated one background
+and eight separate groups through the supported native chat lane. Two duplicate/corrupt
+groups were regenerated separately (eleven native calls total). Deterministic local
+compositing used masks, aspect-preserving placement, and a separately logged grounding
+revision. No app defaults or medical content were changed for this experiment.
+
+**Verified:** Two independent full-image/source audits: baseline 79/75, initial layered
+75/79, final layered 89/96. Lower final score is 89 REPAIR, not a clean pass. Both found
+all eight final cues versus seven baseline. Seven compositor tests passed; hashes prove
+only two source assets changed and the background/six other assets were preserved.
+All artifacts, original failures, revisions and audits are under
+`Troubleshooting Prompts/layered_comparison_2026-10-15/`. Durable findings are in
+`docs/layered-rendering-experiment.md`.
+
+**Limits:** Native outputs were RGB PNG, requiring chroma-key cleanup. Shared camera,
+support geometry and edge coherence were not guaranteed. One adaptive unequal-cost
+trial does not prove reliability. Frozen source/association defects remain; the favorable
+96 is pixel-only and does not approve the lesson. Auditor A corrected an earlier
+baseline metaphor deduction; this is disclosed, not counted as a renderer improvement.
+
+**Next:** Keep layering as an experimental targeted-repair route; validate common camera,
+contact points and alpha on a source-approved fresh lesson before default integration.
+Earlier app/preflight changes remain intentionally uncommitted, with unresolved review
+findings around cancellation, scene-evidence attribution and harness termination. This
+documentation commit does not claim those earlier changes complete. Main server stopped.
+
 ### 2026-10-15 - GitHub CLI route verified; interrupted review work preserved
 **GitHub:** Patrick supplied the current shared sync runbook and pointed to
 Transform_clean. Verified `Pulpers859` CLI/keyring authentication and the configured
