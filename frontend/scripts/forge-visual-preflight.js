@@ -80,12 +80,16 @@
       value.clinical_findings.forEach(finding => {
         if (!finding || typeof finding.issue !== 'string' || !finding.issue.trim()) fail('clinical finding needs a concrete issue.');
         if (value.clinical_status === 'needs_repair') {
+          const owner = finding.n === null ? story : story.voLines.find(line => line.n === finding.n);
           const fieldValid = finding.n === null ? finding.field === 'review_script'
             : story.voLines.some(line => line.n === finding.n) && ['anchor', 'narration'].includes(finding.field);
           if (!fieldValid || !Array.isArray(finding.source_refs) || !finding.source_refs.length ||
               finding.source_refs.some(ref => !evidence.some(e => e.source_key === ref.source_key && e.page_start === ref.page_start))) {
             fail('clinical repair lacks a valid field and retrieved source reference.');
           }
+          if (typeof finding.quote !== 'string' || !finding.quote.trim() ||
+              (finding.quote.trim().split(/\s+/).length < 4 && finding.quote !== owner[finding.field]) ||
+              !owner[finding.field].includes(finding.quote)) fail('clinical finding lacks an exact quote from the current target field.');
         }
       });
       // Source/clinical failure returns early: do not spend the response budget
@@ -93,10 +97,16 @@
       return value;
     }
     if (!Array.isArray(value.anchors) || value.anchors.length !== story.voLines.length) fail('not every anchor was reviewed.');
+    const rowsById = new Map(value.anchors.map(row => [row?.n, row]));
+    if (rowsById.size !== story.voLines.length || story.voLines.some(line => !rowsById.has(line.n))) {
+      fail('anchor IDs must cover the lesson exactly once.');
+    }
+    value.anchors = story.voLines.map(line => rowsById.get(line.n));
     value.anchors.forEach((row, index) => {
       const line = story.voLines[index];
       if (row.n !== line.n || !['ready', 'repair'].includes(row.status) ||
           typeof row.why !== 'string' || !row.why.trim() || !Array.isArray(row.risks)) fail(`anchor ${line.n} is malformed.`);
+      if (row.repair_scope != null && !['visual', 'redesign'].includes(row.repair_scope)) fail(`anchor ${line.n} has an invalid repair scope.`);
       row.risks = row.risks.map(risk => {
         const text = typeof risk === 'string' ? risk : risk?.risk;
         if (typeof text !== 'string' || !text.trim()) fail(`anchor ${line.n} has a malformed risk.`);
@@ -105,10 +115,10 @@
       if (row.status === 'ready' && row.risks.length) {
         row.reported_status = 'ready'; row.status = 'repair';
       }
-      if (row.status === 'ready') {
-        if (typeof row.relationship_quote !== 'string' || row.relationship_quote.trim().split(/\s+/).length < 3 ||
-            !line.visual.includes(row.relationship_quote)) fail(`anchor ${line.n} cites a relationship absent from its VISUAL.`);
-      } else if (!row.risks.length) fail(`anchor ${line.n} needs a concrete repair reason.`);
+      if (row.status === 'repair' && !['visual', 'redesign'].includes(row.repair_scope)) fail(`anchor ${line.n} needs a valid repair scope.`);
+      if (typeof row.relationship_quote !== 'string' || row.relationship_quote.trim().split(/\s+/).length < 3 ||
+          !line.visual.includes(row.relationship_quote)) fail(`anchor ${line.n} cites a relationship absent from its VISUAL.`);
+      if (row.status === 'repair' && !row.risks.length) fail(`anchor ${line.n} needs a concrete repair reason.`);
       if (value.clinical_status === 'supported') {
         if (!Array.isArray(row.source_refs) || !row.source_refs.length) fail(`anchor ${line.n} lacks source attribution.`);
         for (const ref of row.source_refs) {
@@ -124,8 +134,24 @@
     }
     if ((value.scene.status === 'ready') !== (value.scene.issues.length === 0)) fail('contradictory scene disposition.');
     value.scene.issues.forEach(issue => {
+      if (!['visual', 'opening', 'association'].includes(issue?.field)) fail('scene issue has an invalid or missing field.');
       if (!issue || typeof issue.reason !== 'string' || !issue.reason.trim() || !Array.isArray(issue.anchors) ||
           !issue.anchors.length || issue.anchors.some(n => !story.voLines.some(line => line.n === n))) fail('scene issue lacks valid affected anchors.');
+      if (!Array.isArray(issue.evidence) || !issue.evidence.length) fail('scene issue lacks exact-text evidence.');
+      const supported = new Set();
+      let wholeScene = false;
+      issue.evidence.forEach(item => {
+        if (!item || !['visual', 'hook', 'review_script', 'opening'].includes(item.field)) fail('scene evidence has an invalid field.');
+        const globalField = ['opening', 'review_script'].includes(item.field);
+        const owner = globalField ? story : story.voLines.find(line => line.n === item.n);
+        if (globalField ? item.n !== null : !owner || !issue.anchors.includes(item.n)) fail('scene evidence has invalid anchor attribution.');
+        if (typeof item.quote !== 'string' || !item.quote.trim() ||
+            typeof owner[item.field] !== 'string' || !owner[item.field].includes(item.quote)) fail('scene evidence quote is absent from its attributed field.');
+        if (!globalField) supported.add(item.n);
+        if ((item.field === 'opening' && issue.field === 'opening') ||
+            (item.field === 'review_script' && issue.field === 'association')) wholeScene = true;
+      });
+      if (!wholeScene && issue.anchors.some(n => !supported.has(n))) fail('scene evidence does not support every affected anchor.');
     });
     return value;
   }
@@ -135,18 +161,23 @@ Clinical: verify every anchor fact, narration, review script, and required cover
 Visual: for EVERY anchor identify the exact words that make its load-bearing relationship visible. Quote them verbatim from VISUAL. A named object or the HOOK's explanation alone does not establish a visible action. Inspect completed states, actor/object ownership, supported props, separate silhouettes, contact of modifiers with their target, and preservation of multi-person states. A clue may retrieve a coherent decision with supporting values in narration; do not demand one drawn prop per fact. Do not reject valid symbolic hooks for not being literal medical procedures. Reject medically misleading implications.
 Scene: the exact opening is compiled with every VISUAL. It must describe only one continuous room's architecture, without new props, characters, medical explanations, or competing instructions. Check all anchors together for duplicate/confusable silhouettes, same-color fusion, conflicting locations, overcrowded small cues, competing actions/held items, and contradictory states. Only require repair for a concrete conflict or missing load-bearing relationship; density/complexity alone is not a calibrated rejection threshold. Do not add micro-poses, label inventories, grids, or tiny apparatus parts. A functioning static object-state or simple relation is sufficient; every anchor need not have a human actor. Clinical or narration changes must be flagged, never disguised as a visual-only repair.
 Compiler boundary and review discipline: ONLY opening and VISUAL strings reach the deterministic image compiler. HOOK, narration and review_script are learning text, not image instructions. A mismatch between learning text and VISUAL is a recall-consistency defect, not text leakage from an uncompiled field. Count every explicitly described object before alleging a count mismatch, including separate objects beside a group. Mnemonic names are original associations; the clinical fact requires a textbook citation, not the invented name. A single word is not a multi-word label. Shared walls or countertops alone do not establish collision: identify the particular overlapping objects, contradictory states or indistinguishable roles. Historical failure modes describe risks, not proof of inevitable failure. Do not assert a predicted pixel defect as an observed fact. Before returning, remove any criticism contradicted by the actual supplied text; retain concrete, unresolved defects.
+Repair scope: use repair_scope:"visual" only when moving, enlarging or clarifying existing cue identities can resolve a defect without changing HOOK, narration, review_script or opening. Use repair_scope:"redesign" when a new association or a new static strategy is needed. Scene issues specify field:"visual", "opening" or "association". Opening or association defects require full redesign, not a visual-only patch. For each anchor compare the object identities and meaningful counts in HOOK and review_script with VISUAL BEFORE assessing layout. A different object, a missing named cue, or an incompatible meaningful count is an association defect even when the clinical fact remains accurate. Check every repaired VISUAL against the exact HOOK, narration and review_script: unchanged learning text does not make a substituted prop faithful. A common noun or one broad region shared by different objects is not sufficient to establish confusion. Distinct positions such as centre and far-left are not a collision. If alleging a scene conflict, quote the conflicting phrases in reason; do not attribute shapes or damage states to objects whose VISUAL never specifies them.
+External audit observations are unapproved feedback, not evidence or clearance. Verify each applicable observation against the current draft and sources; a changed setting does not resolve the same rejected association. Structural risks marked blocking are deterministic format failures: do not declare forbidden text permitted. If learning text depends on a forbidden label, route to redesign; only remove it in a visual patch when all learning associations remain intact. Distinguish a shared object explicitly referenced with 'the same' or a definite reference from an additional object; shared use alone is not a duplication defect. Source references must identify pages actually supporting the associated claim, including continuation pages when needed.
+Every needs_repair clinical finding MUST include quote: an exact current-field excerpt of at least four words (or the entire field if shorter) demonstrating the alleged defect. Never quote the historical audit as if it were current lesson text. A review_script finding always uses n:null. Check current words and their meaning before claiming a qualifier, route or segment is missing; omit resolved findings and requests merely to verify already-correct phrasing. Historical observations may all be resolved. The actual current lesson at the end of the request is the sole review target.
 JSON shape:
-{"clinical_status":"supported|needs_repair|source_gap","clinical_findings":[],"anchors":[{"n":1,"status":"ready|repair","relationship_quote":"exact VISUAL substring","why":"specific judgment","source_refs":[{"source_key":"retrieved key","page_start":1}],"risks":[]}],"scene":{"status":"ready|repair","issues":[{"anchors":[1,2],"reason":"specific collision and required correction"}]}}
-Clinical failure example schema: {"clinical_status":"needs_repair","clinical_findings":[{"n":1,"field":"narration","issue":"specific factual correction","source_refs":[{"source_key":"retrieved key","page_start":1}]}],"anchors":[],"scene":null}.
-COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words; each risk <=18 words, at most two per anchor; each scene reason <=25 words. Quote the shortest sufficient VISUAL span, not the whole narration. At most four scene issues; combine related conflicts. Target <=2200 output tokens for the complete review. Preserve every anchor row when clinically supported. Ready rows have no unresolved risks. A supported clinical review has no clinical_findings. Scene ready has no issues. Do not claim evidence you cannot inspect.`;
+{"clinical_status":"supported|needs_repair|source_gap","clinical_findings":[],"anchors":[{"n":1,"status":"ready|repair","repair_scope":"visual|redesign","relationship_quote":"copy the entire exact VISUAL string","why":"specific judgment","source_refs":[{"source_key":"retrieved key","page_start":1}],"risks":[]}],"scene":{"status":"ready|repair","issues":[{"anchors":[1,2],"field":"visual|opening|association","reason":"specific collision and required correction","evidence":[{"n":1,"field":"visual","quote":"exact substring from anchor 1 VISUAL"},{"n":2,"field":"visual","quote":"exact substring from anchor 2 VISUAL"}]}]}}
+Required routing and evidence: every anchor needing repair MUST specify repair_scope:"visual" or "redesign", including any row marked ready that still lists risks. Every scene issue MUST specify field:"visual", "opening" or "association" and a nonempty evidence array. Each evidence item has n:number|null, field:"visual"|"hook"|"review_script"|"opening", and a nonempty verbatim quote from that exact field. For visual/hook, n must identify an affected anchor and the quote must come from that anchor, not another. For opening/review_script, n MUST be null. Support EVERY affected anchor with attributed evidence unless the issue concerns opening (with opening evidence) or the whole review_script (with review_script evidence). Quote the shortest sufficient exact substring; do not paraphrase, merge spans, or use reason prose instead of evidence.
+Clinical failure example schema: {"clinical_status":"needs_repair","clinical_findings":[{"n":1,"field":"narration","quote":"exact affected current field words","issue":"specific factual correction","source_refs":[{"source_key":"retrieved key","page_start":1}]}],"anchors":[],"scene":null}.
+COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words; each risk <=18 words, at most two per anchor. Risks are STRINGS only, never objects: ["concrete defect"]. Each scene reason <=25 words. Copy each entire VISUAL verbatim into relationship_quote, preserving punctuation and pronouns; do not paraphrase or join separated spans. At most four scene issues; combine related conflicts. Target <=2400 output tokens. Preserve every anchor row when clinically supported. Ready rows have no unresolved risks. A supported clinical review has no clinical_findings. Scene ready has no issues. Do not claim evidence you cannot inspect.`;
 
-  async function review(topic, story, gate, signals, round) {
+  async function review(topic, story, gate, signals, round, expertReview, externalFeedback) {
     const response = await claudeFetch({
-      model: CLAUDE_MODEL,
+      model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
       max_tokens: 5000,
       system: REVIEW_SYSTEM,
       messages: [{role: 'user', content: JSON.stringify({
-        learner_request: topic, lesson: story, citations: gate.evidence, structural_risks: signals.risks,
+        external_audit_observations: externalFeedback || '',
+        learner_request: topic, citations: gate.evidence, structural_risks: signals.risks, lesson: story,
       })}],
     }, `visual-preflight-review-${round}`, {
       'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic),
@@ -164,28 +195,46 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
     return JSON.stringify(copy);
   }
 
-  async function prepare(topic, original, gate) {
+  async function prepare(topic, original, gate, options = {}) {
     reset();
     const run = epoch;
-    const active = () => { if (run !== epoch) throw new Error('Visual preflight was superseded by a newer lesson.'); };
+    const active = () => {
+      if (run !== epoch || (typeof options.isCurrent === 'function' && !options.isCurrent())) {
+        throw new Error('Visual preflight was superseded by a newer lesson.');
+      }
+    };
     const local = {version: VERSION, status: 'reviewing', created_at: new Date().toISOString(),
       review_kind: 'AI source/visual risk review, not pixel certification', attempts: [], repair_count: 0,
-      clinical_attempts: [], clinical_repair_count: 0, visual_repair_requests: 0, repair_failures: []};
+      clinical_attempts: [], clinical_repair_count: 0, visual_repair_requests: 0, repair_failures: [],
+      expert_review: !!options.expertReview};
     report = local;
     try {
+      if (options.externalFeedback != null && (typeof options.externalFeedback !== 'string' || options.externalFeedback.length > 20000)) {
+        throw new Error('External audit feedback must be text of at most 20,000 characters.');
+      }
+      active();
       requireEvidence(original, gate);
+      if (options.allowedRepairUnits != null && (!Array.isArray(options.allowedRepairUnits) ||
+          !options.allowedRepairUnits.length || options.allowedRepairUnits.some(n => !original.voLines.some(line => line.n === n)))) {
+        throw new Error('Preflight repair scope must contain existing anchor IDs.');
+      }
+      if (options.externalFeedback) local.external_feedback_sha256 = await hash(options.externalFeedback);
       let story = clone(original);
       let locked = clinicalKey(story);
       local.input_story_sha256 = await hash(key(topic, story));
       local.original_story_sha256 = local.input_story_sha256;
       active();
       for (let round = 0; round <= MAX_REPAIRS; round++) {
+        active();
         const signals = inspect(story);
         if (signals.errors.length) throw new Error(signals.errors.join(' '));
         setStageDetail('prompt', `Pre-render review ${round + 1}: checking source fidelity and all ${story.voLines.length} visual relationships.`);
-        let result = await review(topic, story, gate, signals, round);
+        let result = await review(topic, story, gate, signals, round, options.expertReview, options.externalFeedback);
         active();
         if (result.clinical_status === 'needs_repair' && round === 0 && local.clinical_repair_count === 0) {
+          if (options.allowedRepairUnits && result.clinical_findings.some(f => f.n !== null && !options.allowedRepairUnits.includes(f.n))) {
+            throw new Error('Clinical findings exceed the selected anchor repair scope.');
+          }
           const targets = [];
           result.clinical_findings.forEach(f => {
             const target = {anchor: f.n, field: f.field};
@@ -194,7 +243,7 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
           const before = clone(story);
           local.clinical_failure = {review: clone(result), targets: clone(targets)};
           const repaired = await repairMedicalTextFields(story, topic, targets,
-            `Apply only these source-supported factual corrections, preserving all other wording and every visual association: ${JSON.stringify(result.clinical_findings)}`, false);
+            `Apply only these source-supported factual corrections, preserving all other wording and every visual association: ${JSON.stringify(result.clinical_findings)}`, !!options.expertReview);
           active();
           const expected = clone(before);
           targets.forEach(t => {
@@ -217,7 +266,7 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
           gate = await runMedicalQualityGate(story, story.required_concepts);
           active();
           requireEvidence(story, gate);
-          result = await review(topic, story, gate, inspect(story), 'clinical-recheck');
+          result = await review(topic, story, gate, inspect(story), 'clinical-recheck', options.expertReview, options.externalFeedback);
           active();
         }
         const storyHash = await hash(key(topic, story));
@@ -225,6 +274,10 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
         local.attempts.push({round, story_sha256: storyHash, signals, review: result});
         if (result.clinical_status !== 'supported') {
           throw new Error(`Source review ${result.clinical_status}: ${result.clinical_findings.map(f => f.issue).join(' ')}`);
+        }
+        if (result.anchors.some(row => row.status === 'repair' && row.repair_scope === 'redesign') ||
+            result.scene.issues.some(issue => ['opening', 'association'].includes(issue.field))) {
+          throw new Error('Visual encoding requires full Forge redesign; visual-only patches cannot change its opening or teaching associations.');
         }
         const affected = new Set(result.anchors.filter(row => row.status === 'repair').map(row => row.n));
         signals.risks.filter(risk => risk.blocking).forEach(risk => affected.add(risk.n));
@@ -236,13 +289,17 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
           return {story, report: clone(local)};
         }
         if (round === MAX_REPAIRS || local.visual_repair_requests >= MAX_REPAIRS) throw new Error('Visual preflight repair budget exhausted. Redesign the flagged encoding through Forge before rendering.');
+        if (options.allowedRepairUnits && [...affected].some(n => !options.allowedRepairUnits.includes(n))) {
+          throw new Error('Visual findings exceed the selected anchor repair scope.');
+        }
         const targets = [...affected].sort((a, b) => a - b).map(n => ({anchor: n, field: 'visual'}));
-        const feedback = `Independent preflight: ${JSON.stringify(result)}\nDeterministic format checks: ${JSON.stringify(signals.risks.filter(r => r.blocking))}\nComplete lesson for relation/ownership context: ${JSON.stringify(story)}\nChange only selected VISUAL fields. Aim for 18 words each, never over 24. Preserve the existing HOOK and narration associations. If that is impossible, retain the visual for an explicit redesign instead of inventing a different clinical meaning.`;
+        const feedback = `Independent preflight: ${JSON.stringify(result)}\nDeterministic format checks: ${JSON.stringify(signals.risks.filter(r => r.blocking))}\nChange only selected VISUAL fields. Aim for 18 words each, never over 24. Preserve the existing HOOK and narration associations. If that is impossible, retain the visual for an explicit redesign instead of inventing a different clinical meaning.`;
         let next, formatFailure = '';
         while (!next && local.visual_repair_requests < MAX_REPAIRS) {
+          active();
           local.visual_repair_requests++;
           try {
-            next = await repairMedicalTextFields(story, topic, targets, feedback + formatFailure, false);
+            next = await repairMedicalTextFields(story, topic, targets, feedback + formatFailure, !!options.expertReview);
           } catch (error) {
             active();
             if (!String(error.message).startsWith('Targeted repair failed validation:')) throw error;

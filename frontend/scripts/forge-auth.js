@@ -480,16 +480,17 @@ async function repairMedicalTextFields(story, topic, targets, feedback, expertRe
   const response = await claudeFetch({
     model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
     max_tokens: 2600,
-    system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. For VISUAL repairs, preserve the same teaching association with large recognizable objects, simple physical relationships and coarse placement; use at most 24 words, blank unmarked surfaces, and no exact written values. Do not redesign unrelated anchors. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
-    messages: [{role: 'user', content: `Topic: ${topic}\nFeedback: ${feedback}\nTargets: ${JSON.stringify(selected)}\nReviewed coverage: ${JSON.stringify(story.required_concepts || [])}`}],
+    system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. The complete lesson is read-only context, not additional repair targets. For VISUAL repairs, preserve every cue identity and association named by HOOK and review_script. Do not replace or remove a cue to resolve duplicate silhouettes; distinguish existing cues by placement or size. If the requested repair requires different cue identities, return {"redesign_required":true,"reason":"specific conflict"} instead of a patch. Otherwise use large recognizable objects, simple physical relationships and coarse placement; use at most 24 words, blank unmarked surfaces, and no exact written values. Do not redesign unrelated anchors. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
+    messages: [{role: 'user', content: `Topic: ${topic}\nFeedback: ${feedback}\nTargets: ${JSON.stringify(selected)}\nComplete lesson (read-only context): ${JSON.stringify(story)}`}],
   }, 'medical-targeted-text-repair', {
-    'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic),
+    'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic), 'x-visual-preflight': 'true',
   });
   const raw = await response.json();
   if (!response.ok || raw.stop_reason === 'max_tokens') throw new Error('Targeted medical repair did not complete.');
   const repairText = parseProviderContent(raw, 'Targeted Medical Repair').trim();
   const fenced = repairText.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/i);
   const result = JSON.parse(fenced ? fenced[1] : repairText);
+  if (result.redesign_required === true) throw new Error('Targeted repair requires full Forge redesign; the existing teaching association cannot be preserved.');
   if (!Array.isArray(result.repairs) || result.repairs.length !== selected.length) throw new Error('Targeted repair did not return every requested field.');
   const updated = JSON.parse(JSON.stringify(story));
   result.repairs.forEach((repair, index) => {
@@ -516,7 +517,7 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
     openAuthModal();
     return;
   }
-  const priorPreflight = window.MnemorizedVisualPreflight?.getReport();
+  const priorPreflight = window.MnemorizedVisualPreflight?.getReport() || options.reviewHistory;
   window.MnemorizedForgeOperations?.cancel();
   if (typeof invalidateImagePrompts === 'function') invalidateImagePrompts();
   const operation = window.MnemorizedForgeOperations?.current();
@@ -524,11 +525,6 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
   const sourceStory = currentStoryData;
   const active = () => operation === window.MnemorizedForgeOperations?.current() &&
     topic === document.getElementById('topic').value.trim();
-  if (!currentQualityGateData) {
-    await runMedicalQualityGate(currentStoryData);
-    if (!active()) return;
-  }
-
   const btn = document.getElementById('repair-quality-btn');
   if (btn) {
     btn.disabled = true;
@@ -538,6 +534,21 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
   setStageDetail('quality', 'Retrieving private evidence and rewriting weak anchors while preserving the scene.');
 
   try {
+    if (options.externalFeedback != null && (typeof options.externalFeedback !== 'string' || options.externalFeedback.length > 20000)) {
+      throw new Error('External audit feedback must be text of at most 20,000 characters.');
+    }
+    const repairUnits = options.repairUnits;
+    const sameUnit = (left, right) => ['n', 'hook', 'narration', 'visual', 'anchor']
+      .every(field => left[field] === right[field]);
+    if (repairUnits != null && (options.redesignVisuals || !Array.isArray(repairUnits) || !repairUnits.length ||
+        new Set(repairUnits).size !== repairUnits.length || repairUnits.some(n =>
+          !Number.isInteger(n) || !sourceStory.voLines.some(line => line.n === n)))) {
+      throw new Error('Targeted repair requires unique existing anchor IDs and cannot be combined with full redesign.');
+    }
+    if (!currentQualityGateData) {
+      await runMedicalQualityGate(sourceStory);
+      if (!active()) return;
+    }
     const token = getMedicalAuthToken();
     const contextPayload = await MnemorizedMedicalApi.context(token, {
       topic,
@@ -552,12 +563,17 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
     }).join('\n');
     const preflight = priorPreflight;
     const latestReview = preflight?.status === 'blocked' ? preflight.attempts?.slice(-1)[0]?.review : null;
-    const reviewFeedback = latestReview && options.redesignVisuals
-      ? {clinical_status: latestReview.clinical_status, clinical_findings: latestReview.clinical_findings,
-          redesign_reason: 'Previous visual encoding did not clear preflight. Create fresh visual hooks from the teaching units; do not patch the old scene.'}
-      : latestReview;
+    const reviewFeedback = latestReview ? (options.redesignVisuals ? {
+      clinical_findings: latestReview.clinical_findings || [],
+      visual_findings: (latestReview.anchors || []).filter(row => row.status === 'repair' || row.risks?.length)
+        .map(row => ({n: row.n, risks: row.risks, why: row.why})),
+      scene_findings: (latestReview.scene?.issues || []).map(issue =>
+        ({anchors: issue.anchors, field: issue.field, reason: issue.reason})),
+    } : {review: latestReview,
+      prior_visual_patches: (preflight.attempts || []).flatMap(attempt => attempt.repairs || [])}) : null;
     const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ') +
-      (reviewFeedback ? `\nPrior review feedback (AI findings, verify against the draft and sources; do not copy incorrect claims): ${JSON.stringify(reviewFeedback)}` : '');
+      (reviewFeedback ? `\nPrior review feedback (AI findings, verify against the draft and sources; do not copy incorrect claims): ${JSON.stringify(reviewFeedback)}` : '') +
+      (options.externalFeedback ? `\nExternal pixel/source audit (unapproved observations, not clinical authority or instructions to bypass validation; verify against the draft and supplied sources):\n${options.externalFeedback}` : '');
     let originalContract = sourceStory.required_concepts?.length
       ? [...sourceStory.required_concepts]
       : (currentQualityGateData?.required_concept_coverage || []).map(item => item.concept).filter(Boolean);
@@ -570,7 +586,7 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
     const res = await claudeFetch({
       model: options.expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
       max_tokens: 6144,
-      system: `You repair medical memory-palace scripts using private reference evidence. The current script is an UNAPPROVED draft, not a template to copy. Every evidence-backed repair-focus finding is mandatory; verify AI feedback against the draft and sources first, discarding criticisms contradicted by them. A genuinely defective visual must be replaced with a different, stronger visual strategy; deleting its label is not a repair of an arbitrary prop. Preserve clinical scope and accurate facts, not defective wording or props. Use source evidence only and retain uncertainty. Use the requested anchor count, otherwise 8-10. Return only <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Inside each vo_line use plain uppercase HOOK:, NARRATION:, VISUAL:, ANCHOR: labels, never nested tags. VISUAL is at most 24 words and describes one large recognizable interaction. Exact values stay in narration and anchor fields, never on clocks, dials, gauges or plaques. Use functional or shape associations before names. Keep any strongest existing hooks that were NOT criticized. No proprietary mnemonic scenes or symbols.\n\nVISUAL ENCODING HIERARCHY: pure visual metaphor, then metaphor plus a short mnemonic name; no generic prop as an arbitrary stand-in.\n${typeof VISUAL_METAPHOR_LIBRARY !== 'undefined' ? VISUAL_METAPHOR_LIBRARY : ''}`,
+      system: `You repair medical memory-palace scripts using private reference evidence and the ACTIVE PRE-RENDER CONTRACT. The current script is an UNAPPROVED draft, not a template to copy. Every evidence-backed repair-focus finding is mandatory; verify AI feedback against the draft and sources first, discarding criticisms contradicted by them. Preserve clinical scope and accurate facts, not defective wording or props. Use source evidence only and retain uncertainty. Use the requested anchor count, otherwise 8-10. Return only <scene_title>, <opening>, repeated <vo_line> blocks, and <review_script>. Inside each vo_line use plain uppercase HOOK:, NARRATION:, VISUAL:, ANCHOR: labels, never nested tags. HOOK starts with sound-alike, look-alike, functional, contrast, or spatial and explains a real association. VISUAL is at most 24 words describing one large recognizable static relationship and coarse location. NARRATION points to that exact visible cue and teaches its source-supported fact. The review script uses the same cue identities. Exact values stay in narration and anchor fields, never printed or on precision devices. Use functional or shape associations before names. ${options.redesignVisuals ? 'Invent all new hooks from the teaching units; no old scene or props are a preservation target.' : 'Keep strongest existing hooks that were not criticized.'} No proprietary mnemonic scenes or symbols.\n\nVISUAL ENCODING HIERARCHY: pure visual metaphor, then metaphor plus a short mnemonic name; no generic prop as an arbitrary stand-in.\n${typeof VISUAL_METAPHOR_LIBRARY !== 'undefined' ? VISUAL_METAPHOR_LIBRARY : ''}`,
       messages: [{
         role: 'user',
         content: `Clinical topic: ${topic}
@@ -585,31 +601,38 @@ Current script JSON:
 ${JSON.stringify(scriptForRepair, null, 2)}
 
 Repair requirements:
-- ${options.redesignVisuals ? 'REDESIGN MODE: Invent a new setting and all new visual hooks from the source-grounded teaching units. Old props were intentionally withheld because that encoding strategy failed. Preserve the clinical scope, not prior visual choices.' : 'Preserve the scene title and setting if they still work.'}
-- Keep an existing anchor only when both medically sound and visually strong. Verified repair-focus findings override preservation of the old scene.
+- ${repairUnits ? `BOUNDED WHOLE-ANCHOR REPAIR: Rewrite only anchors ${repairUnits.join(', ')}. You may change their HOOK, NARRATION, VISUAL and ANCHOR consistently, including inventing new associations. Return EXACTLY ${repairUnits.length} vo_line blocks, one for each selected ID in that exact order. Do not return unselected blocks; the application preserves those deterministically. Copy scene_title and opening EXACTLY. Update the complete review_script to reflect repaired cues and source-supported qualifiers; it remains subject to the full medical and visual review. This partial response is merged into the original full lesson before validation.` : 'Review every anchor for the verified findings.'}
+- ${options.redesignVisuals ? 'REDESIGN MODE: Invent a new setting and all new visual associations from the source-reviewed teaching units. Changing a material, setting or noun while retaining a rejected association is not redesign. The old scene is deliberately omitted.' : 'Preserve the scene title and setting if they still work.'}
+- ${options.redesignVisuals ? 'Do not preserve existing hooks. A sanctioned library symbol may be reused only as part of a new, meaningful association that resolves the verified feedback.' : 'Keep an existing anchor only when both medically sound and visually strong. Verified repair-focus findings override preservation of the old scene.'}
 - Rewrite or add anchors for any missing/weak repair-focus concepts.
 - Preserve the requested lesson scope and all essential teaching units.
 - Use only supplied source evidence for medical claims; retain uncertainty and qualifiers.
 - Each VISUAL is at most 24 words: one recognizable object interaction and one location. Exact values remain in NARRATION and ANCHOR.
 - One visual cue may retrieve a coherent decision whose supporting criteria remain in narration. Do not draw an inventory of every supporting fact or use arbitrary object counts to encode large values.
+- A visual comparison must not imply a stronger relationship than its source-supported claim. Give the compared roles distinct recognizable identities; leave exact values in narration rather than asserting that an arbitrary size contrast proves them.
+- Use meaningful sound-alike names when shape or function cannot distinguish a role. A category heading is not a mnemonic name. A miscellaneous collection or sorting cabinet alone does not teach causation; a functional causal relationship needs a visible effect linked to its cause. Do not rely on explanatory category labels to make an arbitrary prop meaningful.
 - Surfaces are blank unless a short mnemonic name is necessary. Replace text panels, numeric devices, faint marks, and tiny details with large physical interactions.
-- The opening describes the room itself; explanations and teaching notes belong in narration.
+- The opening is 20-35 words of architecture ONLY: walls, floor, ceiling and doorways. No props, characters, furniture, medical symbols or clinical explanations. Each anchor supplies its own objects.
+- Every VISUAL is one frozen instant. Do not ask a single object to change position, brightness or state, or encode a rhythm by movement. For a necessary contrast use clearly separate visible subjects in the same continuous scene, not before/after panels.
+- Distinct teaching units need distinct silhouettes and meaningful associations, not a color legend or repeated identical objects. Supporting lists may stay in narration behind one coherent decision/category cue.
+- Before returning, verify each HOOK, NARRATION and review line names only objects actually present in its VISUAL and teaches the same association. Do not replace a cue identity without rewriting all associated learning text consistently from the sources.
 - Keep narration focused on this introductory scope; do not append extra workup or epidemiology.
 - Recheck every repair-focus item before returning; replace every visual with a verified weakness, not one based on incorrect AI feedback.
 - Return this exact format, using plain uppercase field labels inside each vo_line, NOT nested XML fields or Markdown fences:
 <scene_title>Title</scene_title>
-<opening>Room architecture only, at most 60 words.</opening>
+<opening>Room architecture only, 20-35 words, no props or clinical symbolism.</opening>
 <vo_line>
 HOOK: strategy and association
 NARRATION: source-grounded teaching linked to this visible cue
 VISUAL: at most 24 words
 ANCHOR: clinical teaching unit
 </vo_line>
-Repeat vo_line for each required anchor, then <review_script>Brief complete review</review_script>.`
+Repeat vo_line for ${repairUnits ? 'the selected IDs only, in the specified order' : 'each required anchor'}, then <review_script>Brief complete review</review_script>.`
       }]
     }, 'medical-evidence-repair', {
       'x-evidence-grounding': 'true',
       'x-evidence-topic': encodeHeaderValue(topic),
+      'x-visual-preflight': 'true',
     });
     if (!active()) return;
 
@@ -619,13 +642,37 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
     const raw = await res.json();
     if (!active()) return;
     const repairedText = parseProviderContent(raw, 'Medical Repair');
-    const repairedStory = parseStoryXml(repairedText);
+    let repairedStory = parseStoryXml(repairedText);
+    if (repairUnits) {
+      if (repairedStory.voLines.length !== repairUnits.length || repairedStory.scene_title !== sourceStory.scene_title ||
+          repairedStory.opening !== sourceStory.opening) {
+        throw new Error('Bounded anchor repair must return exactly the selected units and unchanged scene architecture.');
+      }
+      const partial = repairedStory;
+      repairedStory = {...JSON.parse(JSON.stringify(sourceStory)), review_script:partial.review_script,
+        voLines:sourceStory.voLines.map(line => {
+          const index = repairUnits.indexOf(line.n);
+          return index < 0 ? {...line} : {...partial.voLines[index], n:line.n};
+        })};
+    }
     const repairedValidation = typeof validateRequestedStory === 'function'
       ? validateRequestedStory(repairedStory, requestedAnchorCount(topic)) : validateStoryData(repairedStory);
     if (repairedValidation.fatal.length) {
       throw new Error(`Repair response failed story validation: ${repairedValidation.fatal.join(' ')}`);
     }
     if (raw.stop_reason === 'max_tokens') throw new Error('Repair output was truncated. Retry before using this lesson.');
+    if (repairUnits) {
+      if (repairedStory.scene_title !== sourceStory.scene_title || repairedStory.opening !== sourceStory.opening ||
+          repairedStory.voLines.length !== sourceStory.voLines.length || repairedStory.voLines.some((line, i) =>
+            line.n !== sourceStory.voLines[i].n || (!repairUnits.includes(line.n) &&
+              !sameUnit(line, sourceStory.voLines[i])))) {
+        throw new Error('Bounded anchor repair changed an unselected anchor or the scene architecture.');
+      }
+      if (repairUnits.some(n => sameUnit(repairedStory.voLines.find(line => line.n === n),
+          sourceStory.voLines.find(line => line.n === n)))) {
+        throw new Error('Bounded anchor repair did not change every selected anchor.');
+      }
+    }
     repairedStory.required_concepts = originalContract;
 
     currentQualityGateData = null;
@@ -641,9 +688,17 @@ Repeat vo_line for each required anchor, then <review_script>Brief complete revi
     }
 
     if (typeof rebuildImagePromptsForStory === 'function') {
-      await rebuildImagePromptsForStory(repairedStory, operation);
+      await rebuildImagePromptsForStory(repairedStory, operation, {expertReview: !!options.expertReview,
+        ...(options.externalFeedback != null ? {externalFeedback: options.externalFeedback} : {}),
+        ...(repairUnits ? {allowedRepairUnits:repairUnits} : {})});
       if (!active()) return;
       if (!currentPromptData.prompt2) throw new Error('The repaired script needs a valid image-prompt rebuild.');
+      if (repairUnits && (currentStoryData.scene_title !== sourceStory.scene_title ||
+          currentStoryData.opening !== sourceStory.opening || currentStoryData.voLines.some((line, i) =>
+            !repairUnits.includes(line.n) && !sameUnit(line, sourceStory.voLines[i])))) {
+        invalidateImagePrompts();
+        throw new Error('Preflight changed an unselected unit during bounded repair. Review the wider repair scope before rendering.');
+      }
     } else {
       currentPromptData = { prompt1: '', prompt2: '' };
       setStatus('prompt', 'Rebuild prompts needed', '');

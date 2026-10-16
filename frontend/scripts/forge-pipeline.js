@@ -10,6 +10,8 @@ let imageRequest = 0;
 window.MnemorizedForgeOperations = {current: () => forgeOperation, cancel() {
   forgeOperation++;
   window.MnemorizedVisualPreflight?.reset();
+  const button = document.getElementById('forge-btn');
+  if (button) { button.disabled = false; button.innerHTML = '✦ FORGE PALACE'; }
 }};
 
 const SKETCHY_STYLE = 'Hand-drawn 2D cartoon illustration drawn with Micron pens and Copic markers on paper then scanned. ' +
@@ -405,11 +407,15 @@ async function buildImagePromptPair(topic, storyData, mode, geminiStage, claudeS
   return fallback;
 }
 
-async function prepareImagePromptPair(topic, storyData) {
+async function prepareImagePromptPair(topic, storyData, options = {}) {
   if (!window.MnemorizedVisualPreflight) throw new Error('Visual preflight module did not load. Refresh Forge.');
   const operation = forgeOperation;
   const originalKey = JSON.stringify(storyData);
-  const prepared = await window.MnemorizedVisualPreflight.prepare(topic, storyData, currentQualityGateData);
+  const isCurrent = () => operation === forgeOperation &&
+    document.getElementById('topic').value.trim() === topic && JSON.stringify(storyData) === originalKey &&
+    (typeof options.isCurrent !== 'function' || options.isCurrent());
+  const prepared = await window.MnemorizedVisualPreflight.prepare(topic, storyData, currentQualityGateData,
+    {...options, isCurrent});
   if (operation !== forgeOperation) throw new Error('Preflight operation superseded.');
   if (document.getElementById('topic').value.trim() !== topic || JSON.stringify(storyData) !== originalKey) {
     window.MnemorizedVisualPreflight.reset();
@@ -422,6 +428,10 @@ async function prepareImagePromptPair(topic, storyData) {
   pair.story = prepared.story;
   await window.MnemorizedVisualPreflight.bind(topic, prepared.story, pair);
   if (operation !== forgeOperation) throw new Error('Preflight operation superseded.');
+  if (!isCurrent()) {
+    window.MnemorizedVisualPreflight.reset();
+    throw new Error('Lesson changed during prompt binding. Rebuild the current lesson.');
+  }
   return pair;
 }
 
@@ -1048,7 +1058,7 @@ function downloadForgeBundle() {
   URL.revokeObjectURL(a.href);
 }
 
-async function rebuildImagePromptsForStory(storyData, operationToken = null) {
+async function rebuildImagePromptsForStory(storyData, operationToken = null, options = {}) {
   if (!storyData?.voLines?.length) {
     setStatus('prompt', 'No repaired story', 'error');
     setStageDetail('prompt', 'Image prompts could not be rebuilt because the repaired script has no anchors.');
@@ -1058,14 +1068,15 @@ async function rebuildImagePromptsForStory(storyData, operationToken = null) {
   const topic = document.getElementById('topic')?.value?.trim() || 'medical topic';
   const operation = operationToken ?? ++forgeOperation;
   if (operation !== forgeOperation) return;
+  const active = () => operation === forgeOperation && topic === document.getElementById('topic').value.trim();
   const n = storyData.voLines.length;
 
   setStatus('prompt', 'Rebuilding image prompts...', 'running');
   setStageDetail('prompt', 'Rebuilding constitution-guided illustration prompts from the repaired anchor script.');
 
   try {
-    const pair = await prepareImagePromptPair(topic, storyData);
-    if (operation !== forgeOperation) return;
+    const pair = await prepareImagePromptPair(topic, storyData, options);
+    if (!active()) return;
     renderImagePromptPair(
       storyData,
       pair,
@@ -1073,7 +1084,7 @@ async function rebuildImagePromptsForStory(storyData, operationToken = null) {
       `All ${n} anchors passed pre-render risk review. Pixel quality remains unverified until an independent image audit.`
     );
   } catch (error) {
-    if (operation !== forgeOperation) return;
+    if (!active()) return;
     invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
     setStatus('prompt', `Prompt rebuild failed: ${error.message}`, 'error');
@@ -1086,6 +1097,9 @@ async function rebuildImagePromptsForStory(storyData, operationToken = null) {
 async function repairStoryVisualFormat(xmlText, validation, options = {}) {
   const errors = (validation?.fatal || []).join('\n- ');
   if (!xmlText || !errors) return '';
+  const active = () => options.operation === forgeOperation &&
+    options.topic === document.getElementById('topic').value.trim();
+  if (!active()) return '';
   // When the only remaining fatals are VISUALs over the hard word cap, escalate to
   // a focused length-repair: a general repair pass often leaves a dense anchor one
   // or two words over, and a single word-count fatal must not abort a complete scene.
@@ -1112,8 +1126,13 @@ Rules for every VISUAL:
       content: `Fix these validation errors:\n- ${errors}${lengthDirective}\n\nOriginal XML:\n${xmlText}`
     }]
   };
-  const res = await claudeFetch(body, 'stage2-story-visual-micro-repair');
+  const res = await claudeFetch(body, 'stage2-story-visual-micro-repair', options.evidenceAvailable ? {
+    'x-evidence-grounding': 'true',
+    'x-evidence-topic': encodeHeaderValue(options.topic),
+    'x-visual-preflight': 'true',
+  } : {});
   const rawText = await res.text().catch(() => '(could not read body)');
+  if (!active()) return '';
   const box = document.getElementById('debug-box');
   if (box) {
     box.style.display = 'block';
@@ -1146,6 +1165,7 @@ async function runPipeline() {
 
   currentStoryData = null;
   const operation = ++forgeOperation;
+  const currentRun = () => operation === forgeOperation && topic === document.getElementById('topic').value.trim();
   window.MnemorizedVisualPreflight?.reset();
   invalidateImagePrompts();
   currentQualityGateData = null;
@@ -1164,6 +1184,8 @@ async function runPipeline() {
   btn.disabled = true;
   btn.innerHTML = '<span class="spin"></span> MNEMORIZING…';
 
+  try {
+
   document.getElementById('pipeline').classList.add('visible');
   setStatus('story', 'Waiting…', '');
   setStatus('quality', 'Waiting…', '');
@@ -1179,6 +1201,7 @@ async function runPipeline() {
     setStatus('story', '✦ Writing scene…', 'running');
     setStageDetail('story', 'Demo mode is loading the sample DKA palace without contacting AI providers.');
     await demoDelay(1800);
+    if (!currentRun()) return;
 
     showBody('story');
     document.getElementById('story-header').innerHTML =
@@ -1200,14 +1223,17 @@ async function runPipeline() {
     setStatus('story', '✓ Complete', 'done');
     setStageDetail('story', `${D.voLines.length} sample anchors generated with a rapid review script.`);
     await demoDelay(800);
+    if (!currentRun()) return;
     setStatus('quality', 'Demo skipped', 'done');
     setStageDetail('quality', 'Demo mode skips private medical retrieval and provider calls.');
     renderQualityGateMessage('Demo mode uses built-in sample content, so private medical retrieval is skipped.', 'success');
     await demoDelay(400);
+    if (!currentRun()) return;
 
     setStatus('prompt', '✦ Building image prompts…', 'running');
     setStageDetail('prompt', 'Preparing illustration handoff prompts from the sample scene.');
     await demoDelay(1200);
+    if (!currentRun()) return;
 
     const n = D.voLines.length;
     const assigned = assignZones(D.voLines);
@@ -1335,9 +1361,11 @@ Output ONLY these two XML tags, nothing else:
 <scene_logic>In 60-100 words, describe one coherent room and its left-to-right reading path. Use physical object interactions only. Keep exact facts in core_concepts; the room plan has blank surfaces, unmarked props, and no text panels, written numbers, checklists, diagrams, or speech bubbles. The scene writer will invent the final hooks.</scene_logic>`,
         messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ${lessonSpec?.learner || 'Use the learner level in the clinical topic; otherwise medical student'} — needs precise, high-yield anchors.` }]
       }, 'stage1-clinical-context', evidenceHeaders);
+    if (!currentRun()) return;
     setStatus('story', '✦ Analyzing topic…', 'running');
     setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
     const ctxRaw = await ctxRes.json();
+    if (!currentRun()) return;
     if (!ctxRes.ok || ctxRaw.stop_reason === 'max_tokens') {
       throw new Error(ctxRaw.error?.message || 'Clinical planning did not finish. Retry the lesson before creating its scene.');
     }
@@ -1350,12 +1378,13 @@ Output ONLY these two XML tags, nothing else:
       if (evidenceAvailable) {
         setStageDetail('story', 'Independently reviewing the clinical coverage contract against source evidence.');
         coreConcepts = await reviewMedicalCoverageContract(topic, coreConcepts);
+        if (!currentRun()) return;
       }
       const blueprintSuffix = lessonBlueprintText ? `\n\n${lessonBlueprintText}` : '';
       clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${coreConcepts.join('\n')}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
     }
   } catch(e) {
-    if (operation !== forgeOperation) return;
+    if (!currentRun()) return;
     console.warn('Clinical context extraction failed:', e.message);
     setStatus('story', '✗ Clinical planning failed', 'error');
     setStageDetail('story', e.message);
@@ -1366,7 +1395,7 @@ Output ONLY these two XML tags, nothing else:
   }
 
   // ── STAGE 2: Voiceover Script ─────────────────────
-  if (operation !== forgeOperation) return;
+  if (!currentRun()) return;
   setStatus('story', '✦ Writing scene…', 'running');
   setStageDetail('story', 'Writing narration, visual anchors, encoded facts, and the rapid review script.');
 
@@ -1458,6 +1487,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     let lastStoryError = null;
 
     for (let attemptIndex = 0; attemptIndex < storyAttempts.length; attemptIndex += 1) {
+      if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
       const attempt = storyAttempts[attemptIndex];
       const requestBody = attempt.body;
       showDebug(`STORY REQUEST (${attempt.label})`, JSON.stringify({
@@ -1470,7 +1500,9 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
 
       let res;
       try {
-        res = await claudeFetch(requestBody, `stage2-story-script-${attempt.label}`, evidenceHeaders);
+        res = await claudeFetch(requestBody, `stage2-story-script-${attempt.label}`, {
+          ...evidenceHeaders, ...(evidenceAvailable ? {'x-visual-preflight': 'true'} : {}),
+        });
       } catch(fetchErr) {
         lastStoryError = new Error(fetchErr.message || 'Could not reach the provider proxy.');
         if (attemptIndex < storyAttempts.length - 1) continue;
@@ -1478,6 +1510,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       }
 
       const rawText = await res.text().catch(() => '(could not read body)');
+      if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
       showDebug(`STORY RESPONSE (${attempt.label}) — HTTP ${res.status}`, rawText.slice(0, 2000));
 
       if (!res.ok) {
@@ -1521,8 +1554,10 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
           const MAX_MICRO_REPAIRS = 3;
           let repairInput = txt;
           for (let repairPass = 0; repairPass < MAX_MICRO_REPAIRS; repairPass++) {
+            if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
             const lengthOnly = storyValidation.fatal.every(m => /visual is \d+ words;/i.test(m));
-            const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly });
+            const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly, topic, operation, evidenceAvailable });
+            if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
             if (!repairedText) break;
             storyData = parseStoryXml(repairedText);
             storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));
@@ -1555,7 +1590,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       showDebug('STORY VALIDATION WARNINGS', storyValidation.warnings);
     }
 
-    if (operation !== forgeOperation) return;
+    if (!currentRun()) return;
     renderStoryData(storyData);
 
     setStatus('story', '✓ Complete', 'done');
@@ -1570,7 +1605,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
       : coreConcepts;
     await runMedicalQualityGate(storyData, anchorContract);
   } catch(e) {
-    if (operation !== forgeOperation) return;
+    if (!currentRun()) return;
     const box = document.getElementById('debug-box');
     const prev = box.textContent;
     box.style.display = 'block';
@@ -1582,14 +1617,14 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
   }
 
   // ── STAGE 3: Image prompts ────────────────────────
-  if (operation !== forgeOperation) return;
+  if (!currentRun()) return;
   setStatus('prompt', '✦ Building image prompts…', 'running');
   setStageDetail('prompt', 'Preparing constitution-guided illustration prompts from the generated anchor script.');
 
   try {
     const n = storyData.voLines.length;
     const pair = await prepareImagePromptPair(topic, storyData);
-    if (operation !== forgeOperation) return;
+    if (!currentRun()) return;
     renderImagePromptPair(
       storyData,
       pair,
@@ -1598,7 +1633,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     );
 
   } catch(e) {
-    if (operation !== forgeOperation) return;
+    if (!currentRun()) return;
     setStatus('prompt', `✦ PROMPT ERROR ── ${e.message}`, 'error');
     showBody('prompt');
     setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
@@ -1616,6 +1651,12 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
 
   btn.disabled = false;
   btn.innerHTML = '✦ FORGE PALACE';
+  } finally {
+    if (operation === forgeOperation) {
+      btn.disabled = false;
+      btn.innerHTML = '✦ FORGE PALACE';
+    }
+  }
 }
 
 // ── PWA service worker registration ──────────────────────────────

@@ -442,6 +442,19 @@ def _load_gemini_constitution() -> str:
     return constitution[:60000]
 
 
+def _load_visual_preflight_contract() -> str:
+    constitution = _load_gemini_constitution()
+    start = "BEGIN ACTIVE PRE-RENDER CONTRACT"
+    end = "END ACTIVE PRE-RENDER CONTRACT"
+    if constitution.count(start) != 1 or constitution.count(end) != 1:
+        return ""
+    prefix, _, remainder = constitution.partition(start)
+    contract, _, _ = remainder.partition(end)
+    if end in prefix or not contract.strip():
+        return ""
+    return contract.strip()
+
+
 def _gemini_text_from_response(payload: dict[str, Any]) -> str:
     candidates = payload.get("candidates", [])
     if not candidates:
@@ -3056,7 +3069,7 @@ async def proxy_anthropic_messages(
     evidence_requested = request.headers.get("x-evidence-grounding") == "true"
     visual_preflight = request.headers.get("x-visual-preflight") == "true"
     if visual_preflight:
-        constitution = _load_gemini_constitution()
+        constitution = _load_visual_preflight_contract()
         if not evidence_requested or not payload.system or not constitution:
             _release_quota_reservation(request, user)
             raise HTTPException(status_code=503, detail="Visual preflight requires source grounding and the canonical Constitution.")

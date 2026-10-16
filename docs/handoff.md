@@ -199,6 +199,34 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-16 - Source-grounded recovery and preflight reliability
+**Done:** Hardened current-topic/operation cancellation across live/demo generation,
+micro-repair, rebuild and preflight; old completions cannot alter or unlock a newer
+run. Source/scene findings require attributed current-field evidence. Preflight uses
+the marked active Constitution contract, not the historical findings archive. Expert
+recovery preserves source qualifiers, filters obsolete redesign context, and can
+repair selected whole anchors with deterministic preservation of unselected units.
+Review records join by unique anchor ID rather than provider array order. Resume-only
+review accepts independent feedback without another full lesson rewrite.
+
+**Verified:** Compileall, 568 pytest passes / 1 skip, and HTTP 200 smoke checks for
+home, Forge, library and health. Desktop/mobile provider-free UI checks had no
+overflow/errors, correctly blocked stale approvals, and sent zero paid requests.
+Real expert Forge recovery v18 cleared all eight preflight rows with four matched
+citations. Independent source review accepted the major association repairs but
+found one remaining oral-anticoagulant qualifier missing in rapid review; v19 is
+repairing that through the production source-grounded review/field-repair path.
+
+**Known risks / NOT verified:** No new complete medical image has been generated in
+this recovery yet. AG has generated an empty background only. Software tests,
+lexical evidence matches, critic clearance and source approval are not pixel scores.
+All packets are under `Troubleshooting Prompts/pericarditis_production_2026-10-16/`.
+This is expert development recovery, not default-model or held-out one-shot evidence.
+
+**Next:** Complete the source-qualified recovery, build its QA pack, render the full
+eight-unit scene in AG using the native background reference, and independently
+audit every anchor with the canonical rubric. Lower reviewer score governs.
+
 ### 2026-10-15 - Background and coordinate-layering comparison
 **Done:** Patrick asked to test layered rendering against the existing whole-scene
 image. Froze the real eight-anchor pericarditis v9 bundle. AG generated one background

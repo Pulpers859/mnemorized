@@ -18,6 +18,64 @@ review has no image score; only independent inspection of actual pixels can earn
 a canonical image grade. Shared objects are not automatically a defect when their
 relationships remain distinguishable. Risk heuristics are not calibrated laws.
 
+BEGIN ACTIVE PRE-RENDER CONTRACT
+This is the complete active Constitution contract for source-grounded scene writing,
+repair and pre-render review. Historical renderer observations below this block are
+research notes, not extra rejection rules. Actual images still require the complete
+canonical pixel rubric and independent inspection. No pre-render image score exists.
+
+SOURCE AND SCOPE: Clinical claims, qualifications, actions, and requested coverage
+must be supported by retrieved private source passages. Do not fill source gaps
+with training knowledge. A lexical match or a citation identifier does not prove
+entailment. Preserve textbook attribution and uncertainty. Do not expand a concise
+lesson into exhaustive textbook coverage. Never drop a required teaching unit to
+make the picture simpler. Original mnemonic names need not occur in the textbook.
+
+ONE STATIC SCENE: The opening contains architecture only, with no teaching objects,
+characters, labels, clinical interpretation or competing layout instructions.
+Every VISUAL specifies a drawable state at one instant. A before/after contrast
+needs distinct visible subjects in the same continuous scene, not one object
+changing position, intensity, rhythm, or state over time. No panels, grids or bays.
+An internal object grid, such as a calendar, is not a segmented scene.
+
+RECALL ASSOCIATIONS: Each teaching unit needs a recognizable shape, functional
+relationship, contrast, spatial arrangement or meaningful sound-alike hook.
+Arbitrary color legends and undifferentiated repeated props do not establish
+distinct meanings. Supporting lists and exact values can remain in narration;
+a cue need not draw every supporting fact. HOOK, NARRATION, VISUAL and review text
+must refer to the same objects and associations. A visual-only patch may move,
+enlarge or clarify an existing object, but must not substitute a different cue
+identity or remove an association while its learning text remains locked.
+If a new hook or a changed opening is required, request full Forge redesign.
+
+DRAWABILITY: Prefer large distinct silhouettes and simple stable relationships.
+Specify contact when contact is necessary to the taught action, not universally.
+A magnifier hovering above an object can depict inspection; objects may share a
+wall or table. Diagnose a concrete ambiguity or contradiction, not proximity alone.
+Do not add hand choreography, tiny apparatus features, or extra label inventories.
+Use coarse placement without claiming that any position word guarantees failure.
+A comparison cue must distinguish the compared roles without implying a stronger
+relationship than the source supports. A generic height contrast does not prove a
+specific numerical ratio. Exact values can stay in narration behind an honest recall
+cue. Relative surface changes need a visible common reference surface. Separate
+assets must preserve their contact with the scene, not introduce disconnected room
+fragments; coordinate accuracy alone does not establish physical integration.
+
+TEXT: Surfaces are blank except necessary short mnemonic names on their own objects.
+No clinical numbers, doses, units, formulas, captions, directions or meta-labels
+are printed. Small countable groups and clear shape/size contrasts can be cues;
+exact values remain in narration/cards. A spoken value is not printed image text.
+
+REVIEW DISCIPLINE: Only opening and VISUAL are compiled into the image prompt.
+The other fields are used to check recall consistency and clinical fidelity.
+Count all explicitly described objects, including objects beside a group. Quote
+actual input without paraphrase. Do not invent missing relationships or sources.
+An unsupported prediction from a past failure is not an observed pixel defect.
+Identify real unresolved problems; do not invent criticism to appear rigorous.
+Blocking concerns must name the affected anchor or scene field and the concrete
+contradiction, missing association, unsupported claim or drawing requirement.
+END ACTIVE PRE-RENDER CONTRACT
+
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
 ═══════════════════════════════════════════════════════════════════════════

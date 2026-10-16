@@ -9,6 +9,55 @@ from backend.app import main as app_main
 from test_provider_and_static_boundaries import FakeProviderClient, make_settings
 
 
+CONTRACT_START = 'BEGIN ACTIVE PRE-RENDER CONTRACT'
+CONTRACT_END = 'END ACTIVE PRE-RENDER CONTRACT'
+ACTIVE_CONTRACT = 'CANONICAL_PREFLIGHT_SENTINEL\nPreserve source qualifiers.'
+CANONICAL_CONSTITUTION = (
+    f'HISTORICAL_PREFIX_SENTINEL\n{CONTRACT_START}\n\n'
+    f'{ACTIVE_CONTRACT}\n\n{CONTRACT_END}\nHISTORICAL_SUFFIX_SENTINEL'
+)
+INVALID_CONSTITUTIONS = [
+    pytest.param('', id='missing-file-content'),
+    pytest.param('Historical rules only.', id='missing-both-markers'),
+    pytest.param(f'Rules\n{CONTRACT_END}', id='missing-start'),
+    pytest.param(f'{CONTRACT_START}\nRules', id='missing-end'),
+    pytest.param(f'{CONTRACT_END}\nRules\n{CONTRACT_START}', id='reversed'),
+    pytest.param(f'{CONTRACT_START}{CONTRACT_END}', id='empty'),
+    pytest.param(f'{CONTRACT_START}\n \t\r\n{CONTRACT_END}', id='whitespace-only'),
+    pytest.param(f'{CONTRACT_START}\n{CANONICAL_CONSTITUTION}', id='duplicate-start'),
+    pytest.param(f'{CANONICAL_CONSTITUTION}\n{CONTRACT_END}', id='duplicate-end'),
+    pytest.param(CANONICAL_CONSTITUTION * 2, id='duplicate-block'),
+    pytest.param(CANONICAL_CONSTITUTION.lower(), id='nonexact-markers'),
+]
+
+
+@pytest.fixture(autouse=True)
+def isolate_rate_limiter(monkeypatch):
+    monkeypatch.setattr(app_main.app.state, 'rate_limiter', None, raising=False)
+
+
+def test_visual_preflight_contract_extracts_only_trimmed_active_rules(monkeypatch):
+    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: CANONICAL_CONSTITUTION)
+    assert app_main._load_visual_preflight_contract() == ACTIVE_CONTRACT
+
+
+@pytest.mark.parametrize('constitution', INVALID_CONSTITUTIONS)
+def test_visual_preflight_contract_rejects_invalid_boundaries(monkeypatch, constitution):
+    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: constitution)
+    assert app_main._load_visual_preflight_contract() == ''
+
+
+def test_active_contract_extraction_preserves_full_image_director_constitution(monkeypatch, tmp_path):
+    path = tmp_path / 'constitution.txt'
+    path.write_text(CANONICAL_CONSTITUTION, encoding='utf-8')
+    monkeypatch.setattr(app_main, 'GEMINI_CONSTITUTION_PATH', path)
+
+    assert app_main._load_visual_preflight_contract() == ACTIVE_CONTRACT
+    assert app_main._load_gemini_constitution() == CANONICAL_CONSTITUTION
+    assert CANONICAL_CONSTITUTION in app_main._gemini_prompt_director_system_prompt()
+    assert path.read_text(encoding='utf-8') == CANONICAL_CONSTITUTION
+
+
 def test_learner_instructions_do_not_discard_topic_continuation_pages():
     rows = [
         {'title': 'Reference', 'chunk_text': 'Pericarditis diagnostic features.', 'similarity': 0.65},
@@ -54,11 +103,13 @@ def test_requested_grounding_preserves_late_source_details_or_blocks_provider(
         supabase_service_role_key='service',
     )
     provider = FakeProviderClient([httpx.Response(200, json={'content': [{'type': 'text', 'text': 'ok'}], 'usage': {}})])
+    source_text = 'Sample topic ' + ('Background details. ' * 500) + 'LATE_SOURCE_QUALIFIER'
+    releases = []
 
     async def retrieve(**kwargs: Any):
         return ([{
             'title': 'Sample topic', 'section_title': 'Sample topic',
-            'chunk_text': 'Sample topic ' + ('Background details. ' * 100) + 'LATE_SOURCE_QUALIFIER',
+            'chunk_text': source_text,
             'similarity': 0.9, 'page_start': 4, 'page_end': 4,
         }] if source_available else []), {}
 
@@ -66,7 +117,8 @@ def test_requested_grounding_preserves_late_source_details_or_blocks_provider(
     monkeypatch.setattr(app_main, '_get_http_client', lambda request: (provider, False))
     monkeypatch.setattr(app_main, '_retrieve_medical_context', retrieve)
     monkeypatch.setattr(app_main, '_schedule_usage_event', lambda **kwargs: None)
-    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: 'CANONICAL_PREFLIGHT_SENTINEL')
+    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: CANONICAL_CONSTITUTION)
+    monkeypatch.setattr(app_main, '_release_quota_reservation', lambda *args: releases.append(True))
     response = TestClient(app_main.app).post(
         '/api/anthropic/messages',
         headers={'x-evidence-grounding': 'true', 'x-evidence-topic': 'Sample topic',
@@ -77,11 +129,18 @@ def test_requested_grounding_preserves_late_source_details_or_blocks_provider(
 
     if source_available:
         assert response.status_code == 200
-        assert 'LATE_SOURCE_QUALIFIER' in provider.calls[0]['json']['system']
-        assert ('CANONICAL_PREFLIGHT_SENTINEL' in provider.calls[0]['json']['system']) == visual_preflight
+        assert len(provider.calls) == 1
+        system = provider.calls[0]['json']['system']
+        assert source_text in system
+        assert (ACTIVE_CONTRACT in system) == visual_preflight
+        assert 'HISTORICAL_PREFIX_SENTINEL' not in system
+        assert 'HISTORICAL_SUFFIX_SENTINEL' not in system
+        assert CONTRACT_START not in system
+        assert CONTRACT_END not in system
     else:
         assert response.status_code == 503
         assert provider.calls == []
+        assert releases == [True]
 
 
 @pytest.mark.parametrize('missing', ['configuration', 'topic', 'system'])
@@ -106,19 +165,59 @@ def test_requested_grounding_cannot_silently_skip_prerequisites(monkeypatch, tmp
     assert provider.calls == []
 
 
-@pytest.mark.parametrize('missing', ['constitution', 'grounding'])
+@pytest.mark.parametrize('missing', ['constitution', 'grounding', 'system'])
 def test_visual_preflight_fails_closed_without_constitution_or_grounding(monkeypatch, tmp_path, missing):
     settings = make_settings(tmp_path, anthropic_api_key='test-key')
     provider = FakeProviderClient([])
     releases = []
     monkeypatch.setattr(app_main, '_get_runtime_settings', lambda request: settings)
     monkeypatch.setattr(app_main, '_get_http_client', lambda request: (provider, False))
-    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: '' if missing == 'constitution' else 'RULES')
+    monkeypatch.setattr(app_main, '_load_gemini_constitution',
+                        lambda: '' if missing == 'constitution' else CANONICAL_CONSTITUTION)
     monkeypatch.setattr(app_main, '_release_quota_reservation', lambda *args: releases.append(True))
     response = TestClient(app_main.app).post('/api/anthropic/messages',
         headers={'x-visual-preflight': 'true', 'x-evidence-grounding': 'false' if missing == 'grounding' else 'true'},
-        json={'model': 'claude-test', 'max_tokens': 100, 'system': 'Review.',
+        json={'model': 'claude-test', 'max_tokens': 100, 'system': '' if missing == 'system' else 'Review.',
               'messages': [{'role': 'user', 'content': 'Review.'}]})
     assert response.status_code == 503
     assert provider.calls == []
     assert releases == [True]
+
+
+@pytest.mark.parametrize('constitution', INVALID_CONSTITUTIONS)
+def test_invalid_preflight_contract_releases_quota_before_retrieval_or_provider(
+    monkeypatch, tmp_path, constitution,
+):
+    settings = make_settings(
+        tmp_path, anthropic_api_key='test-key', openai_api_key='test-key',
+        supabase_url='https://project.supabase.co', supabase_anon_key='anon',
+        supabase_service_role_key='service',
+    )
+    provider = FakeProviderClient([])
+    quota_events = []
+
+    def reserve(request, user, summary):
+        quota_events.append('reserve')
+        return True, summary
+
+    async def unexpected_retrieval(**kwargs):
+        pytest.fail('Invalid preflight contracts must block before source retrieval.')
+
+    monkeypatch.setattr(app_main, '_get_runtime_settings', lambda request: settings)
+    monkeypatch.setattr(app_main, '_get_http_client', lambda request: (provider, False))
+    monkeypatch.setattr(app_main, '_load_gemini_constitution', lambda: constitution)
+    monkeypatch.setattr(app_main, '_retrieve_medical_context', unexpected_retrieval)
+    monkeypatch.setattr(app_main, '_reserve_quota_if_needed', reserve)
+    monkeypatch.setattr(app_main, '_release_quota_reservation', lambda *args: quota_events.append('release'))
+
+    response = TestClient(app_main.app).post(
+        '/api/anthropic/messages',
+        headers={'x-visual-preflight': 'true', 'x-evidence-grounding': 'true',
+                 'x-evidence-topic': 'Sample topic'},
+        json={'model': 'claude-test', 'max_tokens': 100, 'system': 'Review.',
+              'messages': [{'role': 'user', 'content': 'Review.'}]},
+    )
+
+    assert response.status_code == 503
+    assert provider.calls == []
+    assert quota_events == ['reserve', 'release']

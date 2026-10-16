@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 
 async function loadPlaywright() {
   try {
@@ -45,7 +46,20 @@ const { chromium } = await loadPlaywright();
 const topic = argValue('--topic');
 const resumeBundlePath = argValue('--resume-bundle');
 const redesign = process.argv.includes('--redesign');
-if (redesign && !resumeBundlePath) throw new Error('--redesign requires a real exported --resume-bundle.');
+const repair = process.argv.includes('--repair');
+const expertReview = process.argv.includes('--expert-review');
+const feedbackPath = argValue('--feedback-file');
+const repairUnitsArg = argValue('--repair-units');
+if (process.argv.includes('--repair-units') && !repairUnitsArg.trim()) throw new Error('--repair-units needs a nonempty anchor selection.');
+const repairUnits = repairUnitsArg ? repairUnitsArg.split(',').map(Number) : undefined;
+if (repairUnits && (!repair || redesign || !/^\d+(?:,\d+)*$/.test(repairUnitsArg))) {
+  throw new Error('--repair-units requires --repair and comma-separated existing anchor IDs.');
+}
+if (redesign && repair) throw new Error('Choose --redesign or --repair, not both.');
+if ((redesign || repair) && !resumeBundlePath) throw new Error('Repair/redesign requires a real exported --resume-bundle.');
+if ((expertReview || feedbackPath) && !resumeBundlePath) throw new Error('Expert review/audit feedback requires a real exported --resume-bundle.');
+const externalFeedback = feedbackPath ? await fs.readFile(feedbackPath, 'utf8') : '';
+if (externalFeedback.length > 20000) throw new Error('Audit feedback exceeds the Forge 20,000-character limit.');
 if (!topic.trim()) {
   throw new Error('Usage: node tools/run_forge_browser_stress.mjs --topic "<topic>" [--base-url http://127.0.0.1:8000] [--out-dir "..."]');
 }
@@ -165,22 +179,30 @@ try {
   if (resumeBundlePath) {
     const source = JSON.parse(await fs.readFile(resumeBundlePath, 'utf8'));
     if (source.topic !== topic || !source.story?.voLines?.length) throw new Error('Recovery requires the exact topic and full saved Forge story.');
+    if (repairUnits && (new Set(repairUnits).size !== repairUnits.length ||
+        repairUnits.some(n => !source.story.voLines.some(line => line.n === n)))) {
+      throw new Error('Repair units must be unique IDs in the saved Forge story.');
+    }
     await fs.writeFile(path.join(outDir, 'recovery_provenance.json'), JSON.stringify({
       run_kind: 'development_recovery_not_fresh_first_pass', source_bundle: path.resolve(resumeBundlePath),
       source_exported_at: source.exported_at,
-      recovery_action: redesign ? 'forge_evidence_backed_redesign' : 'gate_and_preflight_rebuild',
+      recovery_action: redesign ? 'forge_evidence_backed_redesign' : repair ? 'forge_evidence_backed_repair' : 'gate_and_preflight_rebuild',
+      expert_review: expertReview,
+      repair_units: repairUnits || null,
+      feedback_file: feedbackPath ? path.resolve(feedbackPath) : null,
+      feedback_sha256: externalFeedback ? createHash('sha256').update(externalFeedback).digest('hex') : null,
     }, null, 2));
-    await page.evaluate(({story, redesign}) => {
+    await page.evaluate(({story, redesign, repair, expertReview, reviewHistory, externalFeedback, repairUnits}) => {
       document.getElementById('pipeline').classList.add('visible');
       currentStoryData = story;
       renderStoryData(story);
       document.getElementById('forge-btn').disabled = true;
       window.__recovery = (async () => {
         await runMedicalQualityGate(story, story.required_concepts);
-        if (redesign) await repairCurrentPalaceWithMedicalEvidence({redesignVisuals: true});
-        else await rebuildImagePromptsForStory(story);
+        if (redesign || repair) await repairCurrentPalaceWithMedicalEvidence({redesignVisuals: redesign, expertReview, reviewHistory, externalFeedback, repairUnits});
+        else await rebuildImagePromptsForStory(story, null, {expertReview, externalFeedback});
       })().finally(() => { document.getElementById('forge-btn').disabled = false; });
-    }, {story: source.story, redesign});
+    }, {story: source.story, redesign, repair, expertReview, reviewHistory: source.visual_preflight, externalFeedback, repairUnits});
   } else {
     await page.click('#forge-btn');
   }
@@ -205,7 +227,8 @@ try {
     }));
     await fs.writeFile(path.join(outDir, 'live_status.json'), JSON.stringify(status, null, 2), 'utf8');
 
-    const terminalError = /ERROR|failed|[✗]/i.test(`${status.storyStatus} ${status.promptStatus}`);
+    const terminalError = /ERROR|failed|[✗]/i.test(`${status.storyStatus} ${status.promptStatus}`) ||
+      (!status.forgeBtnDisabled && /ERROR|failed|[✗]/i.test(status.qualityStatus));
     if ((status.prompt2Len > 0 && !status.forgeBtnDisabled) || terminalError) break;
   }
 
