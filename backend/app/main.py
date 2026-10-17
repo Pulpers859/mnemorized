@@ -135,6 +135,7 @@ class MessagePayload(BaseModel):
     temperature: float | None = Field(default=None, ge=0, le=1)
     top_p: float | None = Field(default=None, ge=0, le=1)
     tools: list[dict[str, Any]] | None = None
+    tool_choice: dict[str, Any] | None = None
     betas: list[str] | None = None
 
 

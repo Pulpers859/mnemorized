@@ -137,6 +137,13 @@ if (input.pipeline || input.integration) {
     vm.runInContext(source.slice(imageStart, imageEnd), context);
   }
 }
+if (input.field_repair) {
+  const auth = fs.readFileSync('frontend/scripts/forge-auth.js', 'utf8');
+  const start = auth.indexOf('async function repairMedicalTextFields(');
+  const end = auth.indexOf('\nasync function repairCurrentPalaceWithMedicalEvidence(', start);
+  vm.runInContext('function validateStoryData() {return {fatal:[]};} function imageAnchorVisual() {}', context);
+  vm.runInContext(auth.slice(start,end), context);
+}
 Promise.resolve(vm.runInContext(input.expression, context)).then(
   result => process.stdout.write(JSON.stringify(result)),
   error => {console.error(error); process.exitCode = 1;}
@@ -144,14 +151,38 @@ Promise.resolve(vm.runInContext(input.expression, context)).then(
 """
 
 
-def evaluate(expression, data=None, *, pipeline=False, integration=False):
+def evaluate(expression, data=None, *, pipeline=False, integration=False, field_repair=False):
     result = subprocess.run(
         [NODE, "-e", RUNNER], cwd=ROOT,
         input=json.dumps({"expression": expression, "data": data, "pipeline": pipeline,
-                          "integration": integration}),
+                          "integration": integration, "field_repair": field_repair}),
         text=True, encoding="utf-8", capture_output=True, check=True, timeout=20,
     )
     return json.loads(result.stdout)
+
+
+def test_actual_structured_field_helper_retries_overlength_through_preflight():
+    result = evaluate("""(async () => {
+      const normalFetch=claudeFetch;
+      let patches=0;
+      claudeFetch=async (body,...args) => {
+        if(!body.tools)return normalFetch(body,...args);
+        patches++;
+        return {ok:true,json:async()=>({stop_reason:'tool_use',content:[{
+          type:'tool_use',name:'submit_field_repairs',input:{status:'repaired',reason:'',repairs:[{
+            target:0,text:patches===1 ? Array(25).fill('large').join(' ') : 'A blue vase rests on a broad stand with clear spacing.'
+          }]}
+        }]})};
+      };
+      replies.push({repair:true},{});
+      const prepared=await api.prepare(topic,story,gate);
+      return {patches,report:api.getReport(),visual:prepared.story.voLines[0].visual};
+    })()""", field_repair=True)
+    assert result['patches'] == 2
+    assert result['report']['status'] == 'ready'
+    assert len(result['report']['repair_failures']) == 1
+    assert '24-word' in result['report']['repair_failures'][0]['error']
+    assert result['visual'].endswith('clear spacing.')
 
 
 @pytest.mark.parametrize("mutation", [

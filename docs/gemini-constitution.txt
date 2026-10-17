@@ -79,6 +79,13 @@ Blocking concerns must name the affected anchor or scene field and the concrete
 contradiction, missing association, unsupported claim or drawing requirement.
 END ACTIVE PRE-RENDER CONTRACT
 
+2026-10-17 STRUCTURED-REPAIR OBSERVATION (development evidence, not a pixel rule):
+Strict tool output removed prose/JSON parsing from three captured field-repair
+checks. Schema validity did not prove useful shortening or spatial preservation:
+one earlier-draft compaction omitted explicit alcove clearance and floor support.
+Keep those drafts unapproved pending full review; never trade load-bearing scene
+constraints for a word budget or infer image quality from transport success.
+
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
 ═══════════════════════════════════════════════════════════════════════════

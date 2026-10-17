@@ -99,7 +99,10 @@ vm.runInContext(source.slice(start, end), context);
         assert data['error']
 
 
-@pytest.mark.parametrize('mode', ['valid', 'visual', 'unsafe_visual', 'bad_target', 'bad_response', 'redesign'])
+@pytest.mark.parametrize('mode', ['valid', 'visual', 'unsafe_visual', 'bad_target', 'bad_response', 'redesign',
+    'prose', 'truncated', 'wrong_tool', 'multiple_tools', 'empty_text', 'long_visual', 'long_review',
+    'duplicate_target', 'empty_targets', 'extra_field', 'bad_redesign', 'exact_visual',
+    'null_block', 'null_input', 'missing_content', 'string_target', 'unknown_target'])
 def test_targeted_text_repair_preserves_other_fields(mode):
     node = shutil.which('node')
     if not node:
@@ -113,12 +116,18 @@ const mode = process.argv[1];
 const story = {scene_title:'Fixture', voLines:[{n:1, hook:'Old hook', narration:'Keep narration', anchor:'Keep fact', visual:'Keep visual'}], review_script:'Old review', required_concepts:['Keep scope']};
 let calls = 0, request = null;
 const context = vm.createContext({window: {}, story,
-  targets: [{anchor:1, field: mode === 'bad_target' ? 'scene_title' : mode.includes('visual') ? 'visual' : 'hook'}, {field:'review_script'}],
+  targets: mode === 'empty_targets' ? [] : [{anchor:1, field: mode === 'bad_target' ? 'scene_title' : mode.includes('visual') ? 'visual' : 'hook'}, mode === 'duplicate_target' ? {anchor:1,field:'hook'} : {field:'review_script'}],
   CLAUDE_MODEL:'test', CLAUDE_ADVISOR_MODEL:'expert-test', encodeHeaderValue:encodeURIComponent,
   parseProviderContent:raw=>raw.text, validateStoryData:()=>({fatal:[]}),
-  claudeFetch:async(body)=>{calls++; request=body; return {ok:true,json:async()=>({stop_reason:'end_turn',text:JSON.stringify(mode === 'redesign' ? {redesign_required:true,reason:'Cue identity must change.'} : {repairs:[
-    {target:0,text:mode === 'unsafe_visual' ? 'A ruler marked 12 cm.' : 'Corrected hook'}, {target:mode === 'bad_response' ? 0 : 1,text:'Corrected review'}
-  ]})})};}
+  claudeFetch:async(body)=>{calls++; request=body;
+    const input = mode.includes('redesign') ? {status:'redesign_required',reason:'Cue identity must change.',repairs:mode === 'bad_redesign' ? [{target:0,text:'Changed'}] : []} :
+      {status:'repaired',reason:'',repairs:[
+        {target:mode === 'string_target'?'0':mode === 'unknown_target'?99:0,text:mode === 'unsafe_visual' ? 'A ruler marked 12 cm.' : mode === 'empty_text' ? '  ' : mode === 'long_visual' ? Array(25).fill('prop').join(' ') : mode === 'exact_visual' ? Array(24).fill('prop').join(' ') : 'Corrected hook'},
+        {target:mode === 'bad_response' ? 0 : 1,text:mode === 'long_review' ? Array(60).fill('Review').join(' ') : 'Corrected review'}]};
+    if(mode === 'extra_field')input.unrequested='bad';
+    const call={type:'tool_use',name:mode === 'wrong_tool'?'other':'submit_field_repairs',input:mode === 'null_input'?null:input};
+    return {ok:true,json:async()=>({stop_reason:mode === 'truncated'?'max_tokens':mode === 'prose'?'end_turn':'tool_use',
+      content:mode === 'missing_content'?undefined:mode === 'null_block'?[null,call]:mode === 'prose'?[{type:'text',text:JSON.stringify(input)}]:mode === 'multiple_tools'?[call,call]:[{type:'text',text:'Explanatory preamble'},call]})};}
 });
 const pipeline = fs.readFileSync('frontend/scripts/forge-pipeline.js', 'utf8');
 vm.runInContext(pipeline.slice(0, pipeline.indexOf('function renderImagePromptPair(')),context);
@@ -136,24 +145,28 @@ vm.runInContext(source.slice(start,end),context);
     assert data['story']['voLines'][0]['hook'] == 'Old hook'
     assert data['story']['review_script'] == 'Old review'
     if data['calls']:
+        assert data['request']['tool_choice'] == {'type': 'tool', 'name': 'submit_field_repairs', 'disable_parallel_tool_use': True}
+        assert data['request']['tools'][0]['strict'] is True
         request_context = json.loads(data['request']['messages'][0]['content'])
         assert list(request_context) == ['topic', 'lesson_read_only', 'targets', 'repair_instructions']
         assert request_context['repair_instructions'] == 'Fix terms'
         context = json.dumps(request_context['lesson_read_only'])
         assert json.loads(context) == data['story']
-    if mode in ('valid', 'visual'):
+    if mode in ('valid', 'visual', 'long_review', 'exact_visual'):
         line = data['result']['voLines'][0]
-        assert line == {'n': 1, 'hook': 'Old hook' if mode == 'visual' else 'Corrected hook',
+        assert line == {'n': 1, 'hook': 'Old hook' if mode in ('visual', 'exact_visual') else 'Corrected hook',
                         'narration': 'Keep narration', 'anchor': 'Keep fact',
-                        'visual': 'Corrected hook' if mode == 'visual' else 'Keep visual'}
+                        'visual': ' '.join(['prop'] * 24) if mode == 'exact_visual' else 'Corrected hook' if mode == 'visual' else 'Keep visual'}
         assert data['result']['required_concepts'] == ['Keep scope']
-        assert data['result']['review_script'] == 'Corrected review'
+        assert data['result']['review_script'] == (' '.join(['Review'] * 60) if mode == 'long_review' else 'Corrected review')
     else:
         assert data['error']
-    if mode == 'bad_target':
+    if mode in ('bad_target', 'duplicate_target', 'empty_targets'):
         assert data['calls'] == 0
     if mode == 'redesign':
         assert 'requires full Forge redesign' in data['error']
+    if mode == 'long_visual':
+        assert data['error'].startswith('Targeted repair failed validation:')
 
 
 @pytest.mark.parametrize('mode', ['active', 'ungrounded', 'stale_topic', 'stale_operation', 'late_topic', 'late_operation'])

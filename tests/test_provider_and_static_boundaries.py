@@ -670,9 +670,11 @@ def test_oversized_api_request_rejected_before_provider_call(
     assert provider.calls == []
 
 
+@pytest.mark.parametrize("forced", [False, True])
 def test_advisor_tool_fields_pass_through_proxy(
     monkeypatch: pytest.MonkeyPatch,
     tmp_path: Path,
+    forced: bool,
 ) -> None:
     settings = make_settings(tmp_path, anthropic_api_key="anthropic-key")
     monkeypatch.setattr(app_main, "_get_runtime_settings", lambda request: settings)
@@ -681,13 +683,20 @@ def test_advisor_tool_fields_pass_through_proxy(
     monkeypatch.setattr(app_main, "_get_http_client", lambda request: (provider, False))
     client = TestClient(app_main.app)
 
+    tools = ([{"name": "submit_field_repairs", "strict": True, "input_schema": {
+        "type": "object", "properties": {}, "additionalProperties": False}}] if forced else
+        [{"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-4-8"}])
+    choice = ({"type": "tool", "name": "submit_field_repairs", "disable_parallel_tool_use": True}
+              if forced else {"type": "auto", "disable_parallel_tool_use": True})
+
     response = client.post(
         "/api/anthropic/messages",
         json={
             "model": "claude-sonnet-4-6",
             "max_tokens": 100,
             "messages": [{"role": "user", "content": "test"}],
-            "tools": [{"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-4-8"}],
+            "tools": tools,
+            "tool_choice": choice,
             "betas": ["advisor-tool-2026-03-01"],
         },
     )
@@ -695,7 +704,8 @@ def test_advisor_tool_fields_pass_through_proxy(
     assert response.status_code == 200
     assert len(provider.calls) == 1
     sent_body = provider.calls[0].get("json", {})
-    assert sent_body["tools"] == [{"type": "advisor_20260301", "name": "advisor", "model": "claude-opus-4-8"}]
+    assert sent_body["tools"] == tools
+    assert sent_body["tool_choice"] == choice
     assert "betas" not in sent_body
 
 

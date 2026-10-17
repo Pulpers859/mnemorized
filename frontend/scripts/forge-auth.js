@@ -471,16 +471,30 @@ async function reviewMedicalCoverageContract(topic, concepts, feedback = '') {
 }
 
 async function repairMedicalTextFields(story, topic, targets, feedback, expertReview = false) {
+  if (!Array.isArray(targets) || !targets.length || targets.length > 40 ||
+      typeof feedback !== 'string' || feedback.length > 20000) throw new Error('Invalid targeted repair request.');
+  const targetKeys = new Set();
   const selected = targets.map(target => {
+    if (!target || typeof target !== 'object') throw new Error('Invalid clinical text repair target.');
     const owner = target.anchor == null ? story : story.voLines.find(line => line.n === target.anchor);
     const allowed = target.anchor == null ? ['review_script'] : ['hook', 'narration', 'anchor', 'visual'];
-    if (!owner || !allowed.includes(target.field)) throw new Error('Invalid clinical text repair target.');
-    return { ...target, text: owner[target.field] };
+    const key = `${target.anchor ?? 'scene'}:${target.field}`;
+    if (!owner || !allowed.includes(target.field) || targetKeys.has(key)) throw new Error('Invalid clinical text repair target.');
+    targetKeys.add(key);
+    return { ...target, text: owner[target.field], ...(target.field === 'visual' ? {max_words:24} : {}) };
   });
   const response = await claudeFetch({
     model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
     max_tokens: 2600,
-    system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. The complete lesson is read-only context, not additional repair targets. For VISUAL repairs, preserve every cue identity and association named by HOOK and review_script. Do not replace or remove a cue to resolve duplicate silhouettes; distinguish existing cues by placement or size. If the requested repair requires different cue identities, return {"redesign_required":true,"reason":"specific conflict"} instead of a patch. Otherwise use large recognizable objects, simple physical relationships and coarse placement; use at most 24 words, blank unmarked surfaces, and no exact written values. Do not redesign unrelated anchors. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
+    system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. The complete lesson is read-only context, not additional repair targets. For VISUAL repairs, preserve every cue identity and association named by HOOK and review_script. Do not replace or remove a cue to resolve duplicate silhouettes; distinguish existing cues by placement or size. If the requested repair requires different cue identities, submit status redesign_required, a specific reason, and an empty repairs array instead of a patch. VISUAL replacements must contain at most 24 whitespace-separated words, large recognizable objects, simple physical relationships, coarse placement, blank unmarked surfaces, and no exact written values. That word limit applies only to VISUAL, not clinical narration or review. Do not redesign unrelated anchors. Submit the result using submit_field_repairs: status repaired, empty reason, and exactly one entry per target in original order with its zero-based target index. No explanatory prose is needed.',
+    tools: [{name:'submit_field_repairs', strict:true,
+      description:'Submit complete replacement text for the explicitly selected lesson fields. This returns data only; it does not execute code or approve the lesson. Preserve all unselected content. If the association cannot be preserved, request redesign instead of returning patches.',
+      input_schema:{type:'object', additionalProperties:false,
+        properties:{status:{type:'string', enum:['repaired','redesign_required']}, reason:{type:'string'},
+          repairs:{type:'array', items:{type:'object', additionalProperties:false,
+            properties:{target:{type:'integer', enum:selected.map((_,i)=>i)}, text:{type:'string'}}, required:['target','text']}}},
+        required:['status','reason','repairs']}}],
+    tool_choice:{type:'tool', name:'submit_field_repairs', disable_parallel_tool_use:true},
     messages: [{role: 'user', content: JSON.stringify({
       topic, lesson_read_only: story, targets: selected, repair_instructions: feedback,
     })}],
@@ -488,16 +502,26 @@ async function repairMedicalTextFields(story, topic, targets, feedback, expertRe
     'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic), 'x-visual-preflight': 'true',
   });
   const raw = await response.json();
-  if (!response.ok || raw.stop_reason === 'max_tokens') throw new Error('Targeted medical repair did not complete.');
-  const repairText = parseProviderContent(raw, 'Targeted Medical Repair').trim();
-  const fenced = repairText.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/i);
-  const result = JSON.parse(fenced ? fenced[1] : repairText);
-  if (result.redesign_required === true) throw new Error('Targeted repair requires full Forge redesign; the existing teaching association cannot be preserved.');
+  if (!response.ok || raw.stop_reason !== 'tool_use') throw new Error('Targeted medical repair did not complete with a structured response.');
+  if (!Array.isArray(raw.content) || raw.content.some(block => !block || typeof block !== 'object')) throw new Error('Invalid targeted repair content.');
+  const calls = raw.content.filter(block => block.type === 'tool_use');
+  if (calls.length !== 1 || calls[0].name !== 'submit_field_repairs') throw new Error('Invalid targeted repair tool response.');
+  const result = calls[0].input;
+  if (!result || typeof result !== 'object' || Array.isArray(result) ||
+      Object.keys(result).some(key => !['status','reason','repairs'].includes(key)) ||
+      typeof result.reason !== 'string') throw new Error('Invalid targeted repair response.');
+  if (result.status === 'redesign_required') {
+    if (!result.reason.trim() || !Array.isArray(result.repairs) || result.repairs.length) throw new Error('Invalid targeted redesign response.');
+    throw new Error('Targeted repair requires full Forge redesign; the existing teaching association cannot be preserved.');
+  }
+  if (result.status !== 'repaired' || result.reason !== '') throw new Error('Invalid targeted repair status.');
   if (!Array.isArray(result.repairs) || result.repairs.length !== selected.length) throw new Error('Targeted repair did not return every requested field.');
   const updated = JSON.parse(JSON.stringify(story));
   result.repairs.forEach((repair, index) => {
-    if (repair.target !== index || typeof repair.text !== 'string' || !repair.text.trim()) throw new Error('Invalid targeted repair response.');
+    if (!repair || typeof repair !== 'object' || Object.keys(repair).some(key => !['target','text'].includes(key)) ||
+        repair.target !== index || typeof repair.text !== 'string' || !repair.text.trim()) throw new Error('Invalid targeted repair response.');
     const target = selected[index];
+    if (target.field === 'visual' && repair.text.trim().split(/\s+/).length > 24) throw new Error('Targeted repair failed validation: VISUAL exceeds the 24-word budget.');
     const owner = target.anchor == null ? updated : updated.voLines.find(line => line.n === target.anchor);
     owner[target.field] = repair.text.trim();
   });

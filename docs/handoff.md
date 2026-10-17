@@ -199,6 +199,31 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-17 - Strict structured field repairs with independent checkpoints
+**Done:** Replaced free-text JSON parsing in targeted field repair with one strict
+custom tool response. Backend forwards tool_choice; pinned models unchanged.
+Local validators enforce exact targets/status/keys, nonempty fields, explicit
+redesign refusal and a VISUAL-only 24-word cap. Empty/duplicate targets fail before
+paid work. Cache tag bumped. Independent Euler review caught a retry-classification
+regression; fixed and covered through the actual helper and bounded preflight loop.
+Final independent code review found no unresolved material issue.
+**Validation:** compileall,589pytestpasses/1skip, four HTTP200 route smoke checks,
+actual browser/provider structured checks, and independent semantic delta audits.
+These checks do not establish fresh-topic image quality or deployment health.
+
+**Live evidence:** Five provider calls total; two early tool responses lost full
+artifacts to a harness URL-path bug, three subsequent calls fully captured under
+`Troubleshooting Prompts/structured_repair_2026-10-17/`. Default/expert v29 checks
+prove transport only (punctuation-only/no-op). A default v21 regression shortened
+three existing Forge VISUALs from23/27/22 to18/20/18 words with other fields exact.
+Hume independently verified outputs but found lost alcove-clearance/floor-support
+constraints. That draft remains unapproved; no fresh gate/image was run. This is
+NOT a new randomized topic trial or one-shot quality result.
+
+**Next:** Spatial-constraint preservation remains an observed semantic risk; do
+not equate schema success with safe compaction. Finish a prospectively frozen
+fresh-topic cohort before making any first-image reliability claim.
+
 ### 2026-10-17 - Complete pericarditis image passes both independent audits
 **Final outcome:** The second full eight-unit reference-conditioned image scored
 100/PASS from both independent AI auditors under the unchanged canonical rubric.

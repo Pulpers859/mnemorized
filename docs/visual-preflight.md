@@ -97,6 +97,28 @@ source findings are checked there against the newly reviewed complete contract.
 Targeted field repair sends structured read-only lesson context, then selected
 targets, then repair instructions. This ordering and field-only application are
 tested; observed concision reliability is not established by those tests.
+Targeted field repair now requests a single strict `submit_field_repairs` tool
+response instead of parsing prose as JSON. The proxy forwards `tool_choice`.
+Local validation still enforces exact ordered target indices, allowed keys,
+nonempty replacements, explicit redesign refusal, and a 24-word limit on VISUAL
+only. Invalid output never mutates the input lesson. Overlength patches enter
+the existing bounded format-retry budget, not an unbounded retry or truncation.
+No free-text extraction fallback exists. This uses Anthropic's documented
+[custom tool schema and forced selection](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools);
+model compatibility must be rechecked if the pinned models change.
+The default and expert models each accepted one captured live three-field check
+on an existing Forge lesson on 2026-10-17. Two preceding calls were logged as
+successful tool responses but lost their full artifacts to a harness path error.
+The captured pair made only a punctuation edit and a no-op; they do not prove
+useful concision. A fifth call used the earlier v21 Forge draft and shortened
+the selected visuals from 23/27/22 to 18/20/18 words, with unselected fields exact.
+Independent semantic audit found retained core associations but omitted alcove
+clearance and sac floor support; that draft is not evidence of complete spatial
+constraint preservation and remains unapproved. Do not promote it to an image run.
+These five paid calls are development transport checks, not fresh-topic trials,
+clinical approval, image scores, or a measured reliability rate. Independent
+delta review and exact preservation checks remain necessary after structured
+output: schema conformance cannot establish semantic correctness.
 The critic also receives external observations to verify against the new draft;
 their presence does not grant approval. Full redesign gives the writer only the
 source-reviewed clinical teaching units and unresolved findings, omitting the full
