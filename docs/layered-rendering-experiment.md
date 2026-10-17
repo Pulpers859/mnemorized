@@ -2,6 +2,11 @@
 
 Date: 2026-10-15. Status: experimental; app defaults unchanged.
 
+Follow-up: the separate [reference-conditioned full-scene trial](reference-conditioned-rendering-experiment.md)
+reached100/100from both auditors after two complete renders plus one background.
+Its source-corrected lesson and associations differ from this frozen pilot, so it
+does not revise the scores below or establish a controlled superiority comparison.
+
 ## Question
 
 Can an empty background plus separately generated mnemonic interaction groups,

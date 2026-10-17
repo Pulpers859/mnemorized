@@ -199,6 +199,30 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-17 - Complete pericarditis image passes both independent audits
+**Final outcome:** The second full eight-unit reference-conditioned image scored
+100/PASS from both independent AI auditors under the unchanged canonical rubric.
+All eight groups are identifiable at native and normal1024wide size; no hard gates.
+Main verified pixels, hashes, category arithmetic and both per-unit ledgers. First
+image remains75/75REPAIR. Source-qualified v29 story retained all clinical scope.
+
+**Evidence:** Packet `Troubleshooting Prompts/pericarditis_production_2026-10-16/`;
+`image_lab/fullscene_iter2.png`, `audit_iter2_A.md`, `audit_iter2_B.md`, source-review
+reports, QA export and machine-checked `final_lesson_manifest.json`. Durable method,
+results, limits and cost accounting: `docs/reference-conditioned-rendering-experiment.md`.
+
+**Limits:** Three native image calls (one background/two full scenes), plus44captured
+completed Anthropic responses across this packet's text/source/repair trials. Several
+format/length failures and forensic draft restoration were required; this is NOT a
+one-shot/default-model success or current-guideline certification. No renderer default
+was changed. Generic treatment/ratio cues still require narration. The earlier layered
+pilot remains89conservative; different content/effort prevents a superiority claim.
+
+**Software:** Latest code has570pytestpasses/1skip, compile, route smoke, desktop/
+mobile UI checks and independent static review. All app changes pushed onmain.
+**Next:** Reduce structured-response/repair waste, then run a frozen fresh-topic
+first-image cohort. Do not use another polished recovery as one-shot evidence.
+
 ### 2026-10-17 - Structured field-repair request and retained failed trials
 **Done:** Field repair now serializes read-only lesson, selected targets and repair
 instructions as structured JSON, with repair instructions last. Euler found no
