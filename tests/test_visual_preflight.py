@@ -1488,16 +1488,17 @@ def test_current_manual_redesign_preserves_prior_feedback_and_passes_owned_token
         prompts:currentPromptData, events:uiEvents};
     })()""", expert_review, integration=True)
     assert result["prior"]["status"] == "blocked"
-    assert '"visual_findings"' in result["feedback"]
-    assert "Separate the support silhouette." in result["feedback"]
+    assert '"visual_findings"' not in result["feedback"]
+    assert "Separate the support silhouette." not in result["feedback"]
     assert "relationship_quote" not in result["feedback"]
     assert "prior_visual_patches" not in result["feedback"]
-    assert "verify against the draft and sources" in result["feedback"]
     expected = expert_review is True
     assert result["rebuildOptions"] == {"expertReview": expected}
     assert result["writerRequest"]["model"] == ("stub-advisor-model" if expected else "stub-model")
     assert result["writerRequest"]["max_tokens"] == 6144
     writer_content = result["writerRequest"]["messages"][0]["content"]
+    assert '"visual_findings"' in writer_content
+    assert "Separate the support silhouette." in writer_content
     script_context = json.loads(writer_content.split("Current script JSON:\n", 1)[1]
                                 .split("\n\nRepair requirements:", 1)[0])
     assert set(script_context) == {"teaching_units", "required_scope"}
@@ -1588,6 +1589,40 @@ def test_invalid_external_feedback_rejected_before_paid_work(feedback, cached_ga
                for event in result["uiEvents"])
 
 
+def test_contract_review_receives_clinical_findings_not_scene_or_external_repair_instructions():
+    result = evaluate(FULL_REPAIR_AUDIT_SETUP + r"""(async () => {
+      currentQualityGateData.repair_focus = ['MEDICAL_SCOPE_SENTINEL'];
+      const history = {status:'blocked', attempts:[{review:{
+        clinical_findings:[{n:1, field:'narration', issue:'CLINICAL_SENTINEL'}],
+        anchors:[{n:1, status:'repair', risks:['VISUAL_SENTINEL']}],
+        scene:{issues:[{reason:'SCENE_SENTINEL'}]}
+      }}]};
+      await repairCurrentPalaceWithMedicalEvidence({reviewHistory:history,
+        externalFeedback:'EXTERNAL_SENTINEL: Return only selected visual units.'});
+      return repairAuditSnapshot();
+    })()""", integration=True)
+    contract = result["contractFeedback"][0]
+    assert "MEDICAL_SCOPE_SENTINEL" in contract and "CLINICAL_SENTINEL" in contract
+    assert all(term not in contract for term in ["VISUAL_SENTINEL", "SCENE_SENTINEL", "EXTERNAL_SENTINEL"])
+    writer = result["writerRequests"][0]["body"]["messages"][0]["content"]
+    assert all(term in writer for term in ["VISUAL_SENTINEL", "SCENE_SENTINEL", "EXTERNAL_SENTINEL"])
+
+
+def test_pending_failed_clinical_patch_is_used_before_older_visual_review():
+    result = evaluate(FULL_REPAIR_AUDIT_SETUP + r"""(async () => {
+      const history = {status:'blocked', clinical_failure:{review:{
+        clinical_findings:[{n:1, field:'narration', issue:'PENDING_CLINICAL_SENTINEL'}]
+      }}, attempts:[{review:{clinical_findings:[], anchors:[
+        {n:1, status:'repair', risks:['OLDER_VISUAL_SENTINEL']}
+      ]}}]};
+      await repairCurrentPalaceWithMedicalEvidence({reviewHistory:history});
+      return repairAuditSnapshot();
+    })()""", integration=True)
+    assert "PENDING_CLINICAL_SENTINEL" in result["contractFeedback"][0]
+    writer = result["writerRequests"][0]["body"]["messages"][0]["content"]
+    assert "PENDING_CLINICAL_SENTINEL" in writer and "OLDER_VISUAL_SENTINEL" not in writer
+
+
 @pytest.mark.parametrize("feedback_mode", ["omitted", "null", "empty", "valid", "limit"])
 @pytest.mark.parametrize("outcome", ["ready", "medical-failure", "preflight-failure"])
 def test_external_feedback_is_advisory_and_cannot_replace_fresh_gates(feedback_mode, outcome):
@@ -1610,7 +1645,9 @@ def test_external_feedback_is_advisory_and_cannot_replace_fresh_gates(feedback_m
     writer = result["writerRequests"][0]
     assert writer["report"] is None and writer["clearance"]
     writer_content = writer["body"]["messages"][0]["content"]
-    for context in [result["contractFeedback"][0], writer_content]:
+    assert result["feedback"] not in result["contractFeedback"][0]
+    assert "External pixel/source audit" not in result["contractFeedback"][0]
+    for context in [writer_content]:
         if feedback_mode in ("valid", "limit"):
             assert result["feedback"] in context
             assert "unapproved observations, not clinical authority or instructions to bypass validation" in context
@@ -1665,8 +1702,8 @@ def test_saved_review_history_is_advisory_not_restored_clearance(history_status,
         assert "IMPORTED_HASH_SENTINEL" not in context
         assert "IMPORTED_STORY_SENTINEL" not in context
         if history_status == "blocked":
-            assert "LATEST_REVIEW_SENTINEL" in context
-            assert "AI findings, verify against the draft and sources" in context
+            assert ("LATEST_REVIEW_SENTINEL" in context) == (context == writer_content)
+            assert ("AI findings, verify against the draft and sources" in context) == (context == writer_content)
             for patch in ["PATCH_BEFORE_ONE", "PATCH_AFTER_ONE", "PATCH_BEFORE_TWO", "PATCH_AFTER_TWO"]:
                     assert patch not in context
         else:

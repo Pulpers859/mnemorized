@@ -562,7 +562,8 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
       return `[${index + 1}] ${item.source_title || item.source_key || 'Medical source'} ${page}: ${item.excerpt || ''}`;
     }).join('\n');
     const preflight = priorPreflight;
-    const latestReview = preflight?.status === 'blocked' ? preflight.attempts?.slice(-1)[0]?.review : null;
+    const latestReview = preflight?.status === 'blocked'
+      ? preflight.clinical_failure?.review || preflight.attempts?.slice(-1)[0]?.review : null;
     const reviewFeedback = latestReview ? (options.redesignVisuals ? {
       clinical_findings: latestReview.clinical_findings || [],
       visual_findings: (latestReview.anchors || []).filter(row => row.status === 'repair' || row.risks?.length)
@@ -571,13 +572,16 @@ async function repairCurrentPalaceWithMedicalEvidence(options = {}) {
         ({anchors: issue.anchors, field: issue.field, reason: issue.reason})),
     } : {review: latestReview,
       prior_visual_patches: (preflight.attempts || []).flatMap(attempt => attempt.repairs || [])}) : null;
-    const repairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ') +
+    const medicalRepairFocus = (currentQualityGateData?.repair_focus || []).join('\n- ');
+    const contractFeedback = medicalRepairFocus +
+      (latestReview?.clinical_findings?.length ? `\nPrior clinical findings (verify against sources): ${JSON.stringify(latestReview.clinical_findings)}` : '');
+    const repairFocus = medicalRepairFocus +
       (reviewFeedback ? `\nPrior review feedback (AI findings, verify against the draft and sources; do not copy incorrect claims): ${JSON.stringify(reviewFeedback)}` : '') +
       (options.externalFeedback ? `\nExternal pixel/source audit (unapproved observations, not clinical authority or instructions to bypass validation; verify against the draft and supplied sources):\n${options.externalFeedback}` : '');
     let originalContract = sourceStory.required_concepts?.length
       ? [...sourceStory.required_concepts]
       : (currentQualityGateData?.required_concept_coverage || []).map(item => item.concept).filter(Boolean);
-    originalContract = await reviewMedicalCoverageContract(topic, originalContract, repairFocus);
+    originalContract = await reviewMedicalCoverageContract(topic, originalContract, contractFeedback);
     if (!active()) return;
     const scriptForRepair = options.redesignVisuals
       ? { teaching_units: sourceStory.voLines.map(item => ({ n: item.n, anchor: item.anchor })), required_scope: originalContract }

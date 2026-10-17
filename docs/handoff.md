@@ -199,6 +199,29 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-17 - Pixel feedback isolated from the clinical contract
+**Done:** The full eight-unit v19 pericarditis scene rendered through AG's supported
+native lane with the empty background as reference. Both independent audits scored
+75/REPAIR: two bands contradicted the three-count cue; fluid-target/lens separation
+also failed one auditor. Source approval did not conceal the pixel failure. A later
+repair exposed raw visual/selected-unit feedback leaking into clinical contract
+review. Contract review now receives only medical focus and prior clinical findings;
+writer and whole-lesson critic retain full audit feedback and fresh source gates.
+Pending failed clinical-patch findings now take precedence over older visual reviews
+on retry. Constitution clarifies distinct inspectable targets and meaningful counts.
+
+**Verified:** 570 pytest passes / 1 skip, compileall and all four route smoke checks.
+Euler independently reviewed both new routing fixes. Failed v20 contract review was
+blocked before the writer; v21 then completed a bounded source-grounded repair of
+units2,4,5. A visual-only concision trial (v22) exceeded the original prompt-length
+budget and was not rendered. Further budget-checked production field repair is v23.
+
+**Limits:** First full hybrid render remains a failure, not one-shot success. No
+second image score exists at this entry. Actual packets and independent reports are
+under `Troubleshooting Prompts/pericarditis_production_2026-10-16/`. No renderer
+default or rubric was relaxed. Continue through real Forge, QA export and full-image
+independent audits; do not stop at the passing software tests.
+
 ### 2026-10-16 - Source-grounded recovery and preflight reliability
 **Done:** Hardened current-topic/operation cancellation across live/demo generation,
 micro-repair, rebuild and preflight; old completions cannot alter or unlock a newer

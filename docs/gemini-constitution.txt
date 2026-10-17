@@ -52,6 +52,9 @@ DRAWABILITY: Prefer large distinct silhouettes and simple stable relationships.
 Specify contact when contact is necessary to the taught action, not universally.
 A magnifier hovering above an object can depict inspection; objects may share a
 wall or table. Diagnose a concrete ambiguity or contradiction, not proximity alone.
+The inspected target must remain a distinct recognizable object; coloring a lens
+does not establish the target inside it. Keep meaningful small-count elements
+visually separate; only inspection of actual pixels establishes the rendered count.
 Do not add hand choreography, tiny apparatus features, or extra label inventories.
 Use coarse placement without claiming that any position word guarantees failure.
 A comparison cue must distinguish the compared roles without implying a stronger

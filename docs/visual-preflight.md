@@ -90,6 +90,10 @@ ID, with exact-once coverage required, rather than depending on response order.
 Clinical repair findings must quote the current target field exactly (at least four
 words, or the complete field if shorter); historical audit quotes cannot authorize
 a repair against a revised lesson. These checks establish attribution, not entailment.
+Clinical contract re-review receives only medical gate focus and prior clinical
+findings, never selected-visual-unit instructions or raw external layout feedback.
+The scene writer and whole-lesson critic still receive the full independent audit;
+source findings are checked there against the newly reviewed complete contract.
 The critic also receives external observations to verify against the new draft;
 their presence does not grant approval. Full redesign gives the writer only the
 source-reviewed clinical teaching units and unresolved findings, omitting the full
