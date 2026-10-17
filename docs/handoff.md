@@ -199,6 +199,22 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-17 - Structured field-repair request and retained failed trials
+**Done:** Field repair now serializes read-only lesson, selected targets and repair
+instructions as structured JSON, with repair instructions last. Euler found no
+actionable issue in the bounded delta. 570 tests / 1 skip, compile, smoke and both
+UI viewports pass. This does not establish improved model concision: several live
+field calls still failed local length/format requirements and were retained.
+
+**Current recovery:** v29 cleared fresh source and preflight gates at 256 words /
+1626 characters, versus the first full image prompt's 262 / 1670. All non-VISUAL
+content is exactly source-approved v21; selected VISUALs2,4,5 are exact generated
+text restored from a real format-failed Forge response. This is explicit forensic
+draft recovery, not a successful default field call or held-out first-pass result.
+The original strict-parser failure stays failed; no parser or rubric was weakened.
+v27 was independently measured longer and NOT rendered, correcting main's earlier
+informal estimate. Source/association delta review precedes the next full AG render.
+
 ### 2026-10-17 - Pixel feedback isolated from the clinical contract
 **Done:** The full eight-unit v19 pericarditis scene rendered through AG's supported
 native lane with the empty background as reference. Both independent audits scored

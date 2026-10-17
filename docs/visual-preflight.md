@@ -94,6 +94,9 @@ Clinical contract re-review receives only medical gate focus and prior clinical
 findings, never selected-visual-unit instructions or raw external layout feedback.
 The scene writer and whole-lesson critic still receive the full independent audit;
 source findings are checked there against the newly reviewed complete contract.
+Targeted field repair sends structured read-only lesson context, then selected
+targets, then repair instructions. This ordering and field-only application are
+tested; observed concision reliability is not established by those tests.
 The critic also receives external observations to verify against the new draft;
 their presence does not grant approval. Full redesign gives the writer only the
 source-reviewed clinical teaching units and unresolved findings, omitting the full

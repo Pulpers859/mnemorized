@@ -136,7 +136,10 @@ vm.runInContext(source.slice(start,end),context);
     assert data['story']['voLines'][0]['hook'] == 'Old hook'
     assert data['story']['review_script'] == 'Old review'
     if data['calls']:
-        context = data['request']['messages'][0]['content'].split('Complete lesson (read-only context): ', 1)[1]
+        request_context = json.loads(data['request']['messages'][0]['content'])
+        assert list(request_context) == ['topic', 'lesson_read_only', 'targets', 'repair_instructions']
+        assert request_context['repair_instructions'] == 'Fix terms'
+        context = json.dumps(request_context['lesson_read_only'])
         assert json.loads(context) == data['story']
     if mode in ('valid', 'visual'):
         line = data['result']['voLines'][0]

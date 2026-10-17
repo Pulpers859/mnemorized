@@ -481,7 +481,9 @@ async function repairMedicalTextFields(story, topic, targets, feedback, expertRe
     model: expertReview ? CLAUDE_ADVISOR_MODEL : CLAUDE_MODEL,
     max_tokens: 2600,
     system: 'Repair only the specified memory-palace text fields using SOURCE EVIDENCE. Apply the independent feedback precisely; preserve all other wording, clinical scope, source qualifiers and uncertainty. No new clinical facts. The complete lesson is read-only context, not additional repair targets. For VISUAL repairs, preserve every cue identity and association named by HOOK and review_script. Do not replace or remove a cue to resolve duplicate silhouettes; distinguish existing cues by placement or size. If the requested repair requires different cue identities, return {"redesign_required":true,"reason":"specific conflict"} instead of a patch. Otherwise use large recognizable objects, simple physical relationships and coarse placement; use at most 24 words, blank unmarked surfaces, and no exact written values. Do not redesign unrelated anchors. Return only JSON: {"repairs":[{"target":0,"text":"complete replacement field"}]}, one entry per target in original order. Do not output Markdown.',
-    messages: [{role: 'user', content: `Topic: ${topic}\nFeedback: ${feedback}\nTargets: ${JSON.stringify(selected)}\nComplete lesson (read-only context): ${JSON.stringify(story)}`}],
+    messages: [{role: 'user', content: JSON.stringify({
+      topic, lesson_read_only: story, targets: selected, repair_instructions: feedback,
+    })}],
   }, 'medical-targeted-text-repair', {
     'x-evidence-grounding': 'true', 'x-evidence-topic': encodeHeaderValue(topic), 'x-visual-preflight': 'true',
   });
