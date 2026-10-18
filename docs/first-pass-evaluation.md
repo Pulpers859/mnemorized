@@ -327,6 +327,24 @@ do not update the original ledger. Preserve the baseline alongside any later coh
 
 ## Offline Tests
 
+### 2026-10-17 Prospective Cohort: 0/3 Before Rendering
+
+The frozen cohort at `Troubleshooting Prompts/fresh_cohort_2026-10-17/ledger.sqlite3`
+selected esophageal rupture, acute bacterial meningitis and neuroleptic malignant
+syndrome from a recorded randomized pool after reviewing saved topic history.
+Fingerprint `70a76da17314e3615639d7aac8b7355d0a5a910007183e823b1b91596b380061`.
+All three remain terminally blocked, end-to-end0/3, no images and a null conditional
+first-image rate. Esophageal rupture exhausted bounded visual repair; meningitis
+returned corrected units plus a gap for a removed claim; NMS retrieved an incidental
+mention instead of an already-ingested detailed passage. No rubric was changed.
+
+Focused-query diagnostics found the NMS section in psychosocial page23. A narrow
+retrieval fix removes only a complete trailing app-format lesson suffix from both
+embedding and hybrid search queries, leaving clinical requirements intact. Contract
+instructions now distinguish resolved corrections from remaining unsupported scope;
+the parser still blocks every returned source_gap. These changes require a new
+prospective cohort. Exposed-topic expert recoveries remain diagnostic, not replacements.
+
 ```powershell
 python -B -m unittest discover -s tests -p test_first_pass_evaluation.py -v
 ```

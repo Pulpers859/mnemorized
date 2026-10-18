@@ -93,6 +93,9 @@ vm.runInContext(source.slice(start, end), context);
     assert data['sent']['headers']['x-evidence-grounding'] == 'true'
     assert data['sent']['stage'] == 'medical-contract-source-review'
     assert 'generated scene' in data['sent']['body']['system']
+    assert 'A unit is unresolved only when its requested teaching coverage cannot be supported after correction' in data['sent']['body']['system']
+    assert 'do not emit <source_gap> for the superseded claim' in data['sent']['body']['system']
+    assert 'Return <source_gap> with the remaining unsupported requested coverage only when a unit remains unresolved' in data['sent']['body']['system']
     if mode == 'valid':
         assert data['result'] == ['Corrected A', 'Corrected B']
     else:

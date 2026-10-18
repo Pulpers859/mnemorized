@@ -1365,6 +1365,17 @@ async def _create_openai_embedding(
         raise HTTPException(status_code=502, detail="OpenAI embeddings returned an unexpected payload.") from exc
 
 
+def _medical_retrieval_query(topic: str) -> str:
+    """Remove only the complete trailing lesson-format suffix, never clinical scope."""
+    suffix = (
+        r"\s*:\s*an?\s+(?:introductory\s+)?(?:emergency\s+medicine\s+)?"
+        r"lesson\s+for\s+an?\s+(?:medical\s+students?|residents?)\s*,\s*"
+        r"(?:one|two|three|four|five|six|seven|eight|nine|ten|\d+)\s+anchors?\.?\s*$"
+    )
+    subject = re.sub(suffix, "", topic, flags=re.IGNORECASE).strip()
+    return subject or topic
+
+
 async def _retrieve_medical_context(
     *,
     request: Request,
@@ -1381,10 +1392,11 @@ async def _retrieve_medical_context(
             ),
         )
 
+    retrieval_query = _medical_retrieval_query(query_text)
     embedding, usage = await _create_openai_embedding(
         request=request,
         settings=settings,
-        text=query_text,
+        text=retrieval_query,
     )
     response = await _supabase_rest_request(
         request=request,
@@ -1394,7 +1406,7 @@ async def _retrieve_medical_context(
         path="/rest/v1/rpc/match_medical_knowledge_chunks",
         json_body={
             "p_query_embedding": _serialize_vector(embedding),
-            "p_query_text": query_text,
+            "p_query_text": retrieval_query,
             "p_match_count": max(1, min(max_chunks, 12)),
             "p_min_similarity": 0.12,
         },

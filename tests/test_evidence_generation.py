@@ -1,4 +1,6 @@
 from pathlib import Path
+import asyncio
+from types import SimpleNamespace
 from typing import Any
 
 import httpx
@@ -67,6 +69,39 @@ def test_learner_instructions_do_not_discard_topic_continuation_pages():
     topic = 'Acute pericarditis: an introductory emergency medicine lesson for a medical student, eight anchors.'
     actual = app_main._topic_relevant_medical_rows(rows, topic, min_similarity=0.45)
     assert actual == rows[:2]
+
+
+@pytest.mark.parametrize('topic,expected', [
+    ('Neuroleptic malignant syndrome: an introductory emergency medicine lesson for a medical student, eight anchors.', 'Neuroleptic malignant syndrome'),
+    ('Acute bacterial meningitis: an introductory emergency medicine lesson for a medical student, eight anchors.', 'Acute bacterial meningitis'),
+    ('Shock: a lesson for a resident, 8 anchors.', 'Shock'),
+    ('Topic: diabetic ketoacidosis\nMust include potassium before insulin.', 'Topic: diabetic ketoacidosis\nMust include potassium before insulin.'),
+    ('Shock: an introductory emergency medicine lesson for a medical student, eight anchors. Include reassessment.', 'Shock: an introductory emergency medicine lesson for a medical student, eight anchors. Include reassessment.'),
+    ('Acute angle-closure glaucoma diagnosis and treatment', 'Acute angle-closure glaucoma diagnosis and treatment'),
+    (': a lesson for a resident, 8 anchors.', ': a lesson for a resident, 8 anchors.'),
+])
+def test_retrieval_strips_only_complete_trailing_format_suffix(topic, expected):
+    assert app_main._medical_retrieval_query(topic) == expected
+
+
+def test_embedding_and_hybrid_search_share_the_same_clinical_query(monkeypatch):
+    observed = {}
+
+    async def embedding(**kwargs):
+        observed['embedding'] = kwargs['text']
+        return [0.1, 0.2], {'tokens': 2}
+
+    async def retrieve(**kwargs):
+        observed['hybrid'] = kwargs['json_body']['p_query_text']
+        return httpx.Response(200, json=[])
+
+    monkeypatch.setattr(app_main, '_create_openai_embedding', embedding)
+    monkeypatch.setattr(app_main, '_supabase_rest_request', retrieve)
+    topic = 'Neuroleptic malignant syndrome: an introductory emergency medicine lesson for a medical student, eight anchors.'
+    rows, usage = asyncio.run(app_main._retrieve_medical_context(request=object(),
+        settings=SimpleNamespace(medical_knowledge_configured=True), query_text=topic, max_chunks=6))
+    assert observed == {'embedding': 'Neuroleptic malignant syndrome', 'hybrid': 'Neuroleptic malignant syndrome'}
+    assert rows == [] and usage == {'tokens': 2}
 
 
 def test_learner_filter_keeps_multiword_clinical_matching_strict():
