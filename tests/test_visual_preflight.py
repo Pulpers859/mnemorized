@@ -73,11 +73,12 @@ async function claudeFetch(body, stage, headers) {
   const source = JSON.parse(body.messages[0].content).lesson;
   const reply = replies.length ? replies.shift() : {};
   if (reply.throw) throw new Error(reply.throw);
+  const result = reply.result || makeReview(source, reply.repair);
   return {ok: reply.status == null || reply.status === 200, status: reply.status || 200,
     text: async () => 'Stub provider failure',
-    json: async () => ({stop_reason: reply.stop || 'end_turn',
-      text: reply.text === undefined
-        ? JSON.stringify(reply.result || makeReview(source, reply.repair)) : reply.text})};
+    json: async () => reply.response || (reply.text === undefined
+      ? {stop_reason: reply.stop || 'tool_use', content:[{type:'tool_use', name:'submit_visual_preflight_review', input:result}]}
+      : {stop_reason: reply.stop || 'end_turn', content:[{type:'text', text:reply.text}]})};
 }
 async function repairMedicalTextFields(source, requestedTopic, targets, feedback, expertReview) {
   events.push(targets.every(target => target.field === 'visual') ? 'visual-repair' : 'clinical-repair');
@@ -166,7 +167,7 @@ def test_actual_structured_field_helper_retries_overlength_through_preflight():
       const normalFetch=claudeFetch;
       let patches=0;
       claudeFetch=async (body,...args) => {
-        if(!body.tools)return normalFetch(body,...args);
+        if(!body.tools || body.tools[0].name === 'submit_visual_preflight_review')return normalFetch(body,...args);
         if(body.tools[0].name === 'submit_visual_preservation') {
           return {ok:true,json:async()=>({stop_reason:'tool_use',content:[{type:'tool_use',name:'submit_visual_preservation',input:{targets:[{target:0,constraints:[{
             before_quote:story.voLines[0].visual,after_quote:'A blue vase rests on a broad stand with clear spacing.',
@@ -485,6 +486,83 @@ def test_source_gap_early_return_never_routes_to_repair():
     assert result["checks"] == 0 and result["calls"] == 1
 
 
+def test_read_only_required_concepts_defect_stays_an_explicit_source_gap():
+    result = evaluate("""(async () => {
+      replies.push({result:{clinical_status:'source_gap',
+        clinical_findings:[{issue:'The required_concepts contract asserts ondansetron is safe, but the retrieved evidence does not support that claim.'}],
+        anchors:[], scene:null}});
+      const error = await rejected(() => api.prepare(topic, story, gate));
+      return {error, report:api.getReport(), repairs:repairs.length,
+        system:requests[0].body.system,
+        findingSchema:requests[0].body.tools[0].input_schema.properties.clinical_findings.items};
+    })()""")
+    assert "Source review source_gap" in result["error"]
+    assert "required_concepts contract asserts ondansetron is safe" in result["error"]
+    assert result["repairs"] == 0
+    assert result["report"]["status"] == "blocked"
+    assert "not an editable anchor field" in result["system"]
+    assert any("issue" in variant["properties"] and "n" not in variant["properties"]
+               for variant in result["findingSchema"]["anyOf"])
+
+
+def test_review_uses_forced_strict_tool_with_request_derived_evidence_and_anchor_enums():
+    result = evaluate("""(async () => {
+      await api.prepare(topic, story, gate);
+      const request = requests[0].body, tool = request.tools[0];
+      const finding = tool.input_schema.properties.clinical_findings.items;
+      return {toolCount:request.tools.length, toolName:tool.name, strict:tool.strict,
+        choice:request.tool_choice, noTextFormat:!request.response_format,
+        schema:tool.input_schema, finding};
+    })()""")
+    assert result["toolCount"] == 1
+    assert result["toolName"] == "submit_visual_preflight_review"
+    assert result["strict"] is True
+    assert result["choice"] == {"type": "tool", "name": "submit_visual_preflight_review",
+                                "disable_parallel_tool_use": True}
+    assert result["noTextFormat"]
+    assert result["schema"]["additionalProperties"] is False
+    assert "oneOf" not in json.dumps(result["schema"])
+    def walk(value):
+        if isinstance(value, dict):
+            yield value
+            for child in value.values():
+                yield from walk(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from walk(child)
+    schema_nodes = list(walk(result["schema"]))
+    assert all("maxItems" not in node for node in schema_nodes)
+    assert all(node.get("minItems", 1) in (0, 1) for node in schema_nodes)
+    assert all(not any(isinstance(option, (dict, list)) for option in node.get("enum", []))
+               for node in schema_nodes)
+    finding_variants = result["finding"]["anyOf"]
+    scoped = [variant for variant in finding_variants if "source_refs" in variant["properties"]]
+    assert len(scoped) == 2
+    assert scoped[0]["properties"]["n"]["enum"] == [1, 2]
+    assert scoped[0]["properties"]["field"]["enum"] == ["anchor", "narration"]
+    assert scoped[1]["properties"]["n"] == {"type": "null"}
+    assert scoped[1]["properties"]["field"]["enum"] == ["review_script"]
+    source_refs = result["schema"]["properties"]["anchors"]["items"]["properties"]["source_refs"]["items"]
+    assert source_refs["properties"]["source_key"]["enum"] == ["workshop-reference"]
+    assert source_refs["properties"]["page_start"]["enum"] == [1]
+
+
+@pytest.mark.parametrize(("response", "message"), [
+    ({"stop_reason": "tool_use", "content": [{"type": "tool_use", "name": "other_tool", "input": {}}]}, "wrong tool"),
+    ({"stop_reason": "tool_use", "content": [{"type": "text", "text": "{}"}]}, "omitted the required review tool"),
+    ({"stop_reason": "tool_use", "content": [
+        {"type": "tool_use", "name": "submit_visual_preflight_review", "input": {}},
+        {"type": "tool_use", "name": "submit_visual_preflight_review", "input": {}}]}, "multiple review tool calls"),
+    ({"stop_reason": "max_tokens", "content": []}, "truncated"),
+])
+def test_review_rejects_wrong_missing_multiple_or_truncated_tool_response(response, message):
+    result = evaluate("""(async () => {
+      replies.push({response:input});
+      return await rejected(() => api.prepare(topic, story, gate));
+    })()""", response)
+    assert message in result
+
+
 @pytest.mark.parametrize("reply", [{"status": 402}, {"status": 503},
                                     {"throw": "Network unavailable"},
                                     {"stop": "max_tokens"}, {"text": "not JSON"},
@@ -666,16 +744,11 @@ def test_invalidation_retains_blocked_report_and_revokes_ready_binding():
     assert result["report"]["status"] == "stale"
 
 
-@pytest.mark.parametrize("format_name, accepted", [
-    ("plain", True),
-    ("fenced", True),
-    ("leading_commentary", False),
-    ("trailing_commentary", False),
-    ("fenced_commentary", False),
-    ("two_fences", False),
-    ("broken_fenced_json", False),
+@pytest.mark.parametrize("format_name", [
+    "plain", "fenced", "leading_commentary", "trailing_commentary",
+    "fenced_commentary", "two_fences", "broken_fenced_json",
 ])
-def test_review_json_fence_is_only_unwrapped_as_a_complete_outer_envelope(format_name, accepted):
+def test_review_text_is_never_used_as_a_tool_response_fallback(format_name):
     result = evaluate(r"""(async () => {
       const json = JSON.stringify(makeReview());
       const fenced = '```json\n' + json + '\n```';
@@ -692,8 +765,8 @@ def test_review_json_fence_is_only_unwrapped_as_a_complete_outer_envelope(format
       const error = await rejected(() => api.prepare(topic, story, gate));
       return {error, report:api.getReport(), calls:requests.length, repairs:repairs.length};
     })()""", format_name)
-    assert (result["error"] is None) is accepted
-    assert result["report"]["status"] == ("ready" if accepted else "blocked")
+    assert "required review tool call" in result["error"]
+    assert result["report"]["status"] == "blocked"
     assert result["calls"] == 1
     assert result["repairs"] == 0
 

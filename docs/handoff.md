@@ -199,6 +199,38 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-18 - Live full-scene development recoveries; no cold-run pass
+**Done:** Pre-render critic now uses a forced strict tool response, with existing
+local source-pair, quote, attribution and scope validation retained. Unsupported
+read-only coverage contracts route to source-gap rather than invalid field edits.
+Real provider compatibility required anyOf/scalar enums, not oneOf/object enums.
+The image compiler no longer adds a fallback zone when an explicit scene location
+occurs later in a VISUAL; scene terms exclude anatomical left/right contact.
+Independent small-agent review added the ceiling case. VISUAL text is preserved.
+
+**Verified:** 632 pytest passes/1 skip, compileall and four HTTP200 route checks.
+An earlier focused run had one native Node access-violation exit, not an assertion
+failure; isolated and full reruns passed. Three actual strict-review rebuilds
+returned ready, but one later glaucoma review failed attribution and stayed blocked
+until a successful new review. Schema validity is not semantic clearance.
+
+**Actual image evidence:** Two frozen randomized cohorts remain terminal 0/6
+end-to-end, blocked before images; do not relabel development recoveries as cold
+passes. Expert recoveries produced full eight-unit images for esophageal rupture,
+serotonin syndrome and acute angle-closure glaucoma. First stricter independent
+scores: 71,93,55 respectively. Esophageal iteration2 scores70/70: lower barrel
+missing and three backup prongs instead of two. Source/preflight readiness did not
+predict a pass. Serotonin iteration2 is saved and being independently audited;
+glaucoma's revised association/source checks cleared, with final concision pending.
+Artifacts and true sources are under `Troubleshooting Prompts/fresh_cohort_2026-10-17/`
+and `Troubleshooting Prompts/fresh_cohort_v2_2026-10-17/`. No final publication pass
+or one-shot reliability claim exists at this checkpoint. Native JPEG bytes are
+preserved even where target filenames end in .png. AG does not grade itself.
+
+**Next:** Continue actual image iterations and source deltas to three strict
+independent full-scene passes; retain every failure. Current esophageal recovery9,
+serotonin recovery5/image iteration2, glaucoma recovery8 concision trial.
+
 ### 2026-10-17 - Before/after preservation guard and independent live regression
 **Done:** Changed targeted VISUAL patches now receive a separate strict-tool AI
 comparison against the complete original/proposed lesson before returning. Exact

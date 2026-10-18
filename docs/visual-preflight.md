@@ -106,6 +106,24 @@ the existing bounded format-retry budget, not an unbounded retry or truncation.
 No free-text extraction fallback exists. This uses Anthropic's documented
 [custom tool schema and forced selection](https://platform.claude.com/docs/en/agents-and-tools/tool-use/define-tools);
 model compatibility must be rechecked if the pinned models change.
+The whole-lesson preflight critic also uses one forced strict
+`submit_visual_preflight_review` response. Existing local `validateReview` checks
+remain authoritative for exact current-field quotes, IDs, source pairs, scope and
+clinical disposition. Unsupported read-only coverage contracts must report
+`source_gap`; they are not permission to auto-patch `required_concepts` through a
+clinical narration repair. Supported scalar source enums constrain output; local
+checks still verify the actual source-key/page pair. Wrong/missing/multiple tools,
+unexpected text and truncation fail closed without free-text extraction.
+
+Raw-schema compatibility follows the provider's
+[documented limits](https://platform.claude.com/docs/en/build-with-claude/structured-outputs):
+`anyOf`, scalar enums and `minItems:1` are supported; `oneOf`, object-valued enums
+and `maxItems` are not. Three development rebuilds initially returned400 while
+this transport was being integrated; their drafts and responses are retained.
+After correction, real expert review-only calls for three saved full lessons
+returned200/tool_use and ready preflights. This proves observed compatibility,
+not source entailment or image quality. The two frozen cohorts remain0/6 before
+image generation; these subsequent expert recoveries never replace those results.
 The default and expert models each accepted one captured live three-field check
 on an existing Forge lesson on 2026-10-17. Two preceding calls were logged as
 successful tool responses but lost their full artifacts to a harness path error.

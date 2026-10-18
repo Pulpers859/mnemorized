@@ -158,10 +158,32 @@ def test_long_visual_tail_survives_old_word_caps():
     assert result.endswith("tiny unique finial.")
 
 
-def test_existing_indoor_location_does_not_gain_conflicting_fallback_zone():
-    visual = "Indoors at the kiln, a worker holds a ceramic bowl"
+@pytest.mark.parametrize("visual", [
+    "Indoors at the kiln, a worker holds a ceramic bowl",
+    "Outdoors beside the kiln, a worker holds a ceramic bowl",
+])
+def test_existing_indoor_or_outdoor_location_does_not_gain_fallback_zone(visual):
     result = evaluate("buildImageAnchorLines(input)", [{"visual": visual, "zone": "FOREGROUND LEFT"}])
     assert result == visual + "."
+
+
+@pytest.mark.parametrize("visual", [
+    "An alarm bell rings beside the doorway, all in the far room",
+    "A giant pipe runs near the left wall",
+    "A red lantern hangs in the floor center",
+    "A blue cart sits in the center corridor",
+    "A lamp hangs from the ceiling",
+])
+def test_scene_placement_at_end_of_visual_does_not_gain_fallback_zone(visual):
+    result = evaluate("buildImageAnchorLines(input)", [{"visual": visual, "zone": "FOREGROUND LEFT"}])
+    assert result == visual + "."
+    assert "foreground" not in result.lower()
+
+
+def test_anatomical_left_and_object_contact_do_not_count_as_scene_placement():
+    visual = "a giant hand with a tube resting on the left arm and a band on the wrist"
+    result = evaluate("buildImageAnchorLines(input)", [{"visual": visual, "zone": "FOREGROUND LEFT"}])
+    assert result == "In the foreground at left, " + visual + "."
 
 
 def test_oversized_source_fails_without_mutating_or_dropping_anchors():

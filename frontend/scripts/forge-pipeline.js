@@ -197,7 +197,8 @@ function buildImageAnchorLines(anchors) {
   return anchors.map((v, index) => {
     const visual = imageAnchorVisual(v, index);
     const lead = zoneLeadIn(v.zone);
-    const alreadyPlaced = /^(on |at |in |indoors\b|outdoors\b|against |just |directly |off |toward |above |below |behind |beside |near |far |left|right|center|foreground|background|upstage|downstage|stage-)/i.test(visual);
+    const alreadyPlaced = /^(?:indoors\b|outdoors\b|upstage\b|downstage\b|stage-)/i.test(visual) ||
+      /\b(?:(?:on|at|in|against|just|directly|off|toward|above|below|behind|beside|near|far|left|right|center|along|by|from)\s+(?:(?:the|a|an)\s+)?(?:(?:far|back|front|left|right|center|middle|near|side)\s+)*(?:wall|floor|ceiling|corner|doorway|alcove|room|corridor|foreground|background|stage)|(?:mid|middle|center|centre)[ -]+corridor|floor[ -]+(?:center|centre|left|right)|foreground|background)\b/i.test(visual);
     if (lead && !alreadyPlaced) {
       return `${lead}, ${visual.charAt(0).toLowerCase()}${visual.slice(1)}.`;
     }
