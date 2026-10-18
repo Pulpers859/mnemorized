@@ -119,6 +119,40 @@ These five paid calls are development transport checks, not fresh-topic trials,
 clinical approval, image scores, or a measured reliability rate. Independent
 delta review and exact preservation checks remain necessary after structured
 output: schema conformance cannot establish semantic correctness.
+
+Changed VISUAL fields now receive a separate before/after AI review before the
+targeted helper returns a candidate. It sees both complete lessons, the exact
+changed pairs, and the original repair instructions, not the writer's rationale.
+It inventories identity, count, contact, support, placement, clearance and target
+ownership. A changed constraint needs a specific quoted authorization; generic
+shortening is not permission. Exact source/proposal quote checks and full original
+word-position coverage reject cherry-picked positive inventories. Textual coverage
+is attribution only: an AI can still misinterpret a fully quoted relationship.
+
+A valid lost-constraint finding blocks even when the inventory is incomplete;
+the preflight ledger marks `evidence_coverage_complete:false` in that case.
+Incomplete evidence can never clear a patch. Invalid reviews and lost constraints
+do not enter the shorter-format retry loop. The source story remains immutable.
+No-op visuals and clinical-only field edits skip this additional request. Each
+changed-visual patch adds at most one review request, using the selected default
+or expert model; this is a separate AI task, not model-diverse certification.
+Superseded operations cannot dispatch that review or deliver its results. Full
+source/preflight gates and eventual independent pixel audits still remain required.
+Rejected-patch findings are retained in the preflight ledger. Subsequent ordinary
+repairs receive only lost-constraint quotes still present in the current original,
+explicitly described as advisory retention requirements, not current-story defects.
+They never enter clinical contract review or full-redesign old-prop context.
+
+The 2026-10-17 historical regression retained four trial packets under
+`Troubleshooting Prompts/preservation_2026-10-17/`: early malformed evidence and
+overlength writes failed closed; the final default-model trial rejected both the
+known lossy patch and a new lossy patch. One expert-model writer/reviewer pair
+produced 22/24/21-word replacements independently checked against the original
+constraints with all unselected fields exact. A reviewer initially overflagged a
+redundant intensity word; semantic-equivalence guidance was clarified prospectively.
+All 11 captured paid responses (180,058 input / 6,524 output tokens, excluding
+retrieval and independent agents) are development regression evidence, not a
+fresh-topic first-pass rate, default-model success, image approval, or cost saving.
 The critic also receives external observations to verify against the new draft;
 their presence does not grant approval. Full redesign gives the writer only the
 source-reviewed clinical teaching units and unresolved findings, omitting the full

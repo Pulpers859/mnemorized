@@ -167,6 +167,11 @@ def test_actual_structured_field_helper_retries_overlength_through_preflight():
       let patches=0;
       claudeFetch=async (body,...args) => {
         if(!body.tools)return normalFetch(body,...args);
+        if(body.tools[0].name === 'submit_visual_preservation') {
+          return {ok:true,json:async()=>({stop_reason:'tool_use',content:[{type:'tool_use',name:'submit_visual_preservation',input:{targets:[{target:0,constraints:[{
+            before_quote:story.voLines[0].visual,after_quote:'A blue vase rests on a broad stand with clear spacing.',
+            status:'preserved',instruction_quote:'',reason:'The vase retains support.'}]}]}}]})};
+        }
         patches++;
         return {ok:true,json:async()=>({stop_reason:'tool_use',content:[{
           type:'tool_use',name:'submit_field_repairs',input:{status:'repaired',reason:'',repairs:[{
@@ -1601,6 +1606,25 @@ function repairAuditSnapshot() {
       currentPromptData.prompt1, currentPromptData.prompt2))};
 }
 """
+
+
+@pytest.mark.parametrize("mode", ["repair", "redesign", "stale"])
+def test_preservation_losses_reach_writer_only_as_current_constraint_advice(mode):
+    result = evaluate(FULL_REPAIR_AUDIT_SETUP + r"""(async () => {
+      const originalGetReport=api.getReport;
+      api.getReport=()=>({status:'blocked',attempts:[],visual_preservation_reviews:[{
+        pairs:[{target:0,anchor:1}],review:{targets:[{target:0,constraints:[{
+          status:'lost',before_quote:input === 'stale' ? 'Not in this visual' : story.voLines[0].visual,
+          reason:'PRESERVATION_SENTINEL'}]}]}}]});
+      await repairCurrentPalaceWithMedicalEvidence({redesignVisuals:input === 'redesign'});
+      api.getReport=originalGetReport;
+      return repairAuditSnapshot();
+    })()""", mode, integration=True)
+    writer = result['writerRequests'][0]['body']['messages'][0]['content']
+    assert ('PRESERVATION_SENTINEL' in writer) == (mode == 'repair')
+    if mode == 'repair':
+        assert 'not defects in the current original' in writer
+    assert 'PRESERVATION_SENTINEL' not in result['contractFeedback'][0]
 
 
 @pytest.mark.parametrize("feedback", [False, 7, [], {}, "x" * 20001],

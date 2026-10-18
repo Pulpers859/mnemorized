@@ -199,6 +199,40 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-17 - Before/after preservation guard and independent live regression
+**Done:** Changed targeted VISUAL patches now receive a separate strict-tool AI
+comparison against the complete original/proposed lesson before returning. Exact
+target/quote checks and original-word evidence coverage reject cherry-picked
+positive inventories. Valid lost constraints block even with incomplete inventory;
+the ledger marks that explicitly. No-op/clinical-only edits skip the added call.
+Cancellation guards prevent stale follow-up calls and ledger delivery. Lost/invalid
+semantic reviews do not enter the shorter-format retry loop. Original input remains
+immutable. Current-quote-matching loss findings reach later scene repairs only as
+advisory retention requirements, never clinical contract review or full redesign.
+
+**Independent review:** Euler's partial-inventory finding and test gaps were fixed.
+Hume implemented only disjoint offline tests, then hit a Codex usage limit. Euler
+completed final code and exact semantic-delta audits: no unresolved material issue.
+**Validation:** compileall,611pytestpasses/1skip, four HTTP200 route smoke checks,
+real browser/provider repair/review exchanges and independent code/semantic audits.
+No fresh-topic image or deployment-health claim follows from these checks.
+
+**Live outcome:** Packet `Troubleshooting Prompts/preservation_2026-10-17/` retains
+11 responses across four development trials (180058 input/6524 output tokens,
+excluding retrieval/agents). Early malformed/overlength output failed closed.
+The known historical lossy patch and a fresh default-model lossy patch were blocked.
+One expert writer/reviewer pair preserved the original concrete relationships in
+22/24/21-word fields; Euler independently verified the actual strings and exact
+preservation of all other content. Semantic-equivalence guidance was clarified
+after a reviewer overflagged a redundant intensifier. Expert draft stays unapproved:
+no fresh medical gate/preflight/image was run; these are historical Forge-fixture
+regressions, NOT new randomized-topic or first-image reliability evidence.
+
+**Next:** Freeze the current pipeline for new full-topic first-image trials. Keep
+default-model failures, expert recovery effort and stricter independent pixel
+scores separate. The added AI comparison costs a request per changed-visual patch;
+neither net cost savings nor semantic infallibility has been established.
+
 ### 2026-10-17 - Strict structured field repairs with independent checkpoints
 **Done:** Replaced free-text JSON parsing in targeted field repair with one strict
 custom tool response. Backend forwards tool_choice; pinned models unchanged.

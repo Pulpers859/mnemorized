@@ -205,7 +205,7 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
     };
     const local = {version: VERSION, status: 'reviewing', created_at: new Date().toISOString(),
       review_kind: 'AI source/visual risk review, not pixel certification', attempts: [], repair_count: 0,
-      clinical_attempts: [], clinical_repair_count: 0, visual_repair_requests: 0, repair_failures: [],
+      clinical_attempts: [], clinical_repair_count: 0, visual_repair_requests: 0, repair_failures: [], visual_preservation_reviews: [],
       expert_review: !!options.expertReview};
     report = local;
     try {
@@ -243,7 +243,7 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
           const before = clone(story);
           local.clinical_failure = {review: clone(result), targets: clone(targets)};
           const repaired = await repairMedicalTextFields(story, topic, targets,
-            `Apply only these source-supported factual corrections, preserving all other wording and every visual association: ${JSON.stringify(result.clinical_findings)}`, !!options.expertReview);
+            `Apply only these source-supported factual corrections, preserving all other wording and every visual association: ${JSON.stringify(result.clinical_findings)}`, !!options.expertReview, {assertActive:active});
           active();
           const expected = clone(before);
           targets.forEach(t => {
@@ -299,7 +299,8 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
           active();
           local.visual_repair_requests++;
           try {
-            next = await repairMedicalTextFields(story, topic, targets, feedback + formatFailure, !!options.expertReview);
+            next = await repairMedicalTextFields(story, topic, targets, feedback + formatFailure, !!options.expertReview,
+              {assertActive:active, onPreservationReview:value=>local.visual_preservation_reviews.push(clone(value))});
           } catch (error) {
             active();
             if (!String(error.message).startsWith('Targeted repair failed validation:')) throw error;

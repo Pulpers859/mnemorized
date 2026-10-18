@@ -119,7 +119,13 @@ const context = vm.createContext({window: {}, story,
   targets: mode === 'empty_targets' ? [] : [{anchor:1, field: mode === 'bad_target' ? 'scene_title' : mode.includes('visual') ? 'visual' : 'hook'}, mode === 'duplicate_target' ? {anchor:1,field:'hook'} : {field:'review_script'}],
   CLAUDE_MODEL:'test', CLAUDE_ADVISOR_MODEL:'expert-test', encodeHeaderValue:encodeURIComponent,
   parseProviderContent:raw=>raw.text, validateStoryData:()=>({fatal:[]}),
-  claudeFetch:async(body)=>{calls++; request=body;
+  claudeFetch:async(body)=>{
+    if(body.tools[0].name === 'submit_visual_preservation') {
+      const pairs=JSON.parse(body.messages[0].content).pairs;
+      return {ok:true,json:async()=>({stop_reason:'tool_use',content:[{type:'tool_use',name:'submit_visual_preservation',input:{targets:pairs.map(pair=>({target:pair.target,constraints:[{
+        before_quote:pair.before,after_quote:pair.after,status:'preserved',instruction_quote:'',reason:'Fixture semantic review'}]}))}}]})};
+    }
+    calls++; request=body;
     const input = mode.includes('redesign') ? {status:'redesign_required',reason:'Cue identity must change.',repairs:mode === 'bad_redesign' ? [{target:0,text:'Changed'}] : []} :
       {status:'repaired',reason:'',repairs:[
         {target:mode === 'string_target'?'0':mode === 'unknown_target'?99:0,text:mode === 'unsafe_visual' ? 'A ruler marked 12 cm.' : mode === 'empty_text' ? '  ' : mode === 'long_visual' ? Array(25).fill('prop').join(' ') : mode === 'exact_visual' ? Array(24).fill('prop').join(' ') : 'Corrected hook'},
