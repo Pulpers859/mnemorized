@@ -231,6 +231,33 @@ preserved even where target filenames end in .png. AG does not grade itself.
 independent full-scene passes; retain every failure. Current esophageal recovery9,
 serotonin recovery5/image iteration2, glaucoma recovery8 concision trial.
 
+**Later same-session checkpoint:** Serotonin iteration2 independently100/100 PASS,
+all8; first93 remains. Glaucoma iteration2 independently79/97, stricter79 REPAIR,
+because completed through-opening is unidentifiable to the stricter reviewer.
+Esophageal iteration3 independently55/55, missing target contacts and bubble
+texture despite restored barrel/two flags. Actual next renders: esophageal4 from
+recovery14, glaucoma3 from recovery12. Source delta clearances saved separately.
+Esophageal's current user topic adds the source term perforation: a real new gate
+then returns GI30/CV3. Captured diagnosis shows short-query GI30 still lexically
+matches but fails both similarity/keyword-rank alternatives; no threshold relaxed.
+This query change is development recovery, never a retroactive cold-run success.
+Removed a duplicate compiler surfaceRule, leaving the complete final text fence
+and every VISUAL unchanged; independent review found no unique constraint lost.
+This avoids shortening load-bearing cues merely to meet prior repair budgets.
+
+**Validation follow-up:** Default Node24.14/Python3.14 runs intermittently exited
+with Windows0xC0000005, including one Python shutdown crash after all tests passed.
+An independently checked process-local PATH selecting the already installed
+Node24.19 completed632passes/1skip and all four HTTP200 smoke routes with exit0.
+No assertion was suppressed or environment persisted. Root cause remains unknown;
+local event logs also show unrelated native-process access violations. Targeted
+builder/static-boundary suite101passes also exited0 on the default runtime.
+
+**Image checkpoint:** Glaucoma iteration3 independently100/100 PASS, all8.
+Esophageal iteration4 independently100/79; stricter79 REPAIR: central pump reads
+as a plumbing fitting. Recovery15 targets this unit only for imageattempt5.
+Passing topics so far: serotonin and glaucoma; one-shot success remains unproven.
+
 ### 2026-10-17 - Before/after preservation guard and independent live regression
 **Done:** Changed targeted VISUAL patches now receive a separate strict-tool AI
 comparison against the complete original/proposed lesson before returning. Exact

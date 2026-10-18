@@ -146,7 +146,8 @@ def test_full_scene_is_compact_and_preserves_every_visual():
     for anchor in source:
         assert anchor["visual"].lower() in prompt.lower()
     assert prompt.endswith("the entire illustration is text-free.")
-    assert "Clothing and device surfaces stay plain and unmarked." in prompt
+    assert "Every surface and all empty space stay blank and unmarked" in prompt
+    assert prompt.count("RENDERABLE TEXT ALLOWLIST") == 1
     assert "..." not in prompt
     assert "\n- " not in prompt
 
@@ -209,7 +210,7 @@ def test_source_names_have_exact_allowlist_and_precision_text_is_removed():
     assert 'named "Reed"' in result
     assert "spelled exactly on their own objects: Reed." in result
     assert "All other surfaces and empty space stay blank" in result
-    assert "Clothing and device surfaces follow the final text allowlist." in result
+    assert result.count("RENDERABLE TEXT ALLOWLIST") == 1
     assert "Clothing and device surfaces stay plain and unmarked." not in result
     assert "Every surface" not in result
     assert "12 cm" not in result

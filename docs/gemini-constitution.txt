@@ -106,6 +106,17 @@ recognizable; shared use alone was not counted as a defect. Preserve this failed
 image and first scores when redesigning its cue through Forge. Do not solve the
 failure by adding labels or silently omitting the missing teaching relationship.
 
+2026-10-18 FOLLOW-UP DEVELOPMENT OBSERVATIONS (not new rubric rules):
+Serotonin's repaired full image scored100/100 independently after replacing an
+arbitrary clock association and grounding its bottle/funnel assembly. Esophageal
+iterations2/3 scored70/70 and55/55: default three-prong shape, missing barrel,
+wrong inspected/punctured target and absent bubble texture each survived script
+review in different images. Glaucoma iteration2 scored79/97; stricter79 governs
+because a glowing outline did not clearly establish a completed through-opening.
+Do not infer successful relationships from prompt wording or a lenient peer.
+Removing duplicated compiler surface prose preserves the final text fence and
+all anchor VISUALs, but its effect on rendering reliability remains unproven.
+
 ═══════════════════════════════════════════════════════════════════════════
 WHAT GEMINI CAN RENDER RELIABLY
 ═══════════════════════════════════════════════════════════════════════════

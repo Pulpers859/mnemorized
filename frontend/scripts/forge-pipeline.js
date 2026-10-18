@@ -252,12 +252,8 @@ function ensureTextAllowlistFence(prompt, anchors) {
 }
 
 function composeImagePrompt2(sceneDesc, assigned) {
-  const surfaceRule = extractRenderableLabels(assigned).ordinary.length
-    ? 'Clothing and device surfaces follow the final text allowlist.'
-    : 'Clothing and device surfaces stay plain and unmarked.';
   return 'Hand-drawn flat marker cartoon, wide 16:9 single coherent scene, varied ink outlines, vivid contrasting colors and even lighting. ' +
-    'Grounded objects, uncluttered spatial hierarchy. Every described interaction appears once with distinct silhouettes. ' +
-    surfaceRule + '\n\n' +
+    'Grounded objects, uncluttered spatial hierarchy. Every described interaction appears once with distinct silhouettes.\n\n' +
     condenseForImage(sceneDesc) + '\n\n' + buildImageAnchorLines(assigned) + '\n\n' +
     'Shapes and physical interactions carry the hooks; exact values remain in narration and flashcards.\n\n' +
     buildTextAllowlistFence(assigned);
