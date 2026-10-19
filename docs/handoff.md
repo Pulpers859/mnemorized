@@ -199,6 +199,34 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Sound-bridge workshop 2; unchanged strict criteria
+Patrick requested another bounded run. Saved plan max60 attempts,20 per lane,
+prior terms excluded,no quota,no paid calls or extra delta batch. Three AI lanes
+stopped at26 distinct new terms rather than padding:anatomy10,signs8,lab8.
+Independent AI reviewer screened all11 shortlisted terms:4 retained,7 held.
+Other15 were rejected by proposal lanes,not independently re-adjudicated.
+Added only balloon,lens,iron,tapeworm to offline primary catalog (now76 entries:
+58 candidates,17 legacy_unverified,one restricted). Three are shared-headword
+polysemous cues; tapeworm is a constructed compound rebus. No medication cue
+survived. No changes to earlier decisions,first workshop JSON or production JS.
+
+New durable bank/guide:docs/sound-bridge-workshop-2.json and .md. Raw plan,
+incremental proposals,eligibility checks and independent review:
+Troubleshooting Prompts/sound_bridge_workshop2_2026-10-19/.
+All26 terms checked against baseline concepts/aliases,earlier103-term workshop,
+and initial24-term wordplay packet; no conflicts. Extended tests across both
+banks:unique terms,combined retained-only catalog membership,exclusion/bounds
+checks,and held/rejected exclusion. Source checks limited to headwords/sounds
+and scope in Collins,NCI and MedlinePlus; no clinical lesson facts imported.
+
+No human specialist signoff,images,naming/recall trial or reliability gain claimed.
+Zero Anthropic/provider/render calls; future$6 benchmark allowance untouched.
+Existing2 unrelated Forge edits remain unstaged. Fetch still fails on the known
+Codex checkpoint ref; authenticated GitHub API matched remote main/local HEAD.
+Validation:catalog76 valid; focused109 passed,one skipped; final full suite741
+passed,two skipped,149 subtests passed (51.61s). Prior workshop JSON unchanged.
+These are offline integrity/regression checks,not image or learning validation.
+
 ### 2026-10-19 - Sound-bridge workshop; honest yield below requested 50
 Earlier proposal agents disappeared without saving files. Patrick asked about
 status; main corrected the earlier unsupported running claim and restarted with

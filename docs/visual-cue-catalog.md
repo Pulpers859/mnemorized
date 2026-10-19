@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`docs/visual-cue-catalog.json` is the structured source of truth for **offline design candidates**, not a source of medical facts. It currently contains 72 entries: 54 candidates, 17 unverified legacy mappings, and one restricted mapping. No entry has measured recall evidence. No new entry is automatically injected into Forge.
+`docs/visual-cue-catalog.json` is the structured source of truth for **offline design candidates**, not a source of medical facts. It currently contains 76 entries: 58 candidates, 17 unverified legacy mappings, and one restricted mapping. No entry has measured recall evidence. No new entry is automatically injected into Forge.
 
 Keep three questions separate: Is the lesson medically sourced? Does the image depict the specified cue? Can a learner recover the intended concept later? A successful render answers only the second question. This catalog cannot replace Forge retrieval, the medical gate, an independent pixel audit, or learner testing.
 
@@ -53,6 +53,8 @@ python -m pytest tests/test_visual_cue_catalog.py
 Search uses literal token overlap, not clinical reasoning or semantic retrieval. It returns at most eight entries, always with an unvalidated-design caveat. It never fills missing concepts or calls an AI provider. A matching result is not an endorsement or a clinical recommendation.
 
 ## Review And Admission
+
+[Workshop 2](sound-bridge-workshop-2.md) reviewed 26 entirely new terms with unchanged criteria: four untested candidates retained, seven held, 15 rejected. Only balloon, lens, iron and tapeworm were added. No follow-on delta batch or previous-term repair was used. Full data: `docs/sound-bridge-workshop-2.json`.
 
 The follow-on [sound-bridge workshop](sound-bridge-workshop.md) covered 103 distinct terms/headwords in 104 attempts and added only 11 untested candidates after independent review. Sixteen are held outside this catalog; 76 distinct terms were rejected. This is not 50 new usable sound bridges. The full structured workshop/rejection bank is `docs/sound-bridge-workshop.json`.
 

@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "usage": "SECOND OFFLINE WORKSHOP ONLY. Untested editorial candidates, not medical authority or validated learning aids. No automatic production injection. Held/rejected terms are not usable cue recommendations. Raw proposal pronunciation text predates main-agent source checks; see guide.",
+  "maximum_attempts": 60,
+  "baseline_catalog_commit": "9d78dba35b333b54e7d57ed7ae44032af5aa739a",
+  "excluded_terms": [
+    "absent protective barrier",
+    "acarbose",
+    "acid",
+    "acidity",
+    "alert",
+    "anatomical location",
+    "antrum",
+    "arch",
+    "aspirin",
+    "ataxia",
+    "benzocaine",
+    "bicarbonate",
+    "blocked flow",
+    "blocked passage",
+    "blood sugar",
+    "body region",
+    "branching",
+    "break",
+    "bridge",
+    "buspirone",
+    "ca2+",
+    "caffeine",
+    "calcium",
+    "cannula",
+    "cardiac pumping",
+    "carpal",
+    "catheter",
+    "cetirizine",
+    "chills",
+    "cholera",
+    "clock mental status",
+    "clock tower as generic neurological cue",
+    "clock tower brain",
+    "clonidine",
+    "coccyx",
+    "cold",
+    "colic",
+    "colon",
+    "comedo",
+    "completed connection",
+    "completed through-opening",
+    "compression",
+    "conduction",
+    "cone",
+    "connection",
+    "convergence",
+    "cooling",
+    "corn",
+    "cornea",
+    "costal",
+    "cramp",
+    "cranium",
+    "croup",
+    "crown",
+    "deficient quantity",
+    "deficit",
+    "depleted",
+    "diarrhea",
+    "diffuse",
+    "diffuse distribution",
+    "dilation",
+    "disconnected pathway",
+    "disconnection",
+    "distributed",
+    "doxepin",
+    "doxycycline",
+    "duct",
+    "duration",
+    "eczema",
+    "electrical conduction",
+    "entrapment",
+    "entrapped",
+    "examination",
+    "excess",
+    "excess quantity",
+    "expanded lumen",
+    "exposed",
+    "fast",
+    "fentanyl",
+    "ferritin",
+    "fever",
+    "filtered material",
+    "filtering",
+    "filtration",
+    "flu",
+    "fluconazole",
+    "fluid",
+    "fluoxetine",
+    "focal cluster",
+    "forceps",
+    "globe",
+    "glucose",
+    "gout",
+    "gradual",
+    "hamate",
+    "hco3",
+    "heart pump",
+    "heat",
+    "high blood sugar",
+    "high ca2+",
+    "high calcium",
+    "high calcium cue",
+    "high glucose",
+    "high glucose cue",
+    "high k+",
+    "high magnesium",
+    "high magnesium cue",
+    "high mg2+",
+    "high na+",
+    "high potassium",
+    "high potassium cue",
+    "high sodium",
+    "high sodium cue",
+    "hot",
+    "hypercalcemia",
+    "hyperglycemia",
+    "hyperkalemia",
+    "hypermagnesemia",
+    "hypernatremia",
+    "hypocalcemia",
+    "hypoglycemia",
+    "hypokalemia",
+    "hypomagnesemia",
+    "hyponatremia",
+    "ileitis",
+    "ileum",
+    "incus",
+    "inside a boundary",
+    "inspection",
+    "inspection of a target",
+    "insulin",
+    "interruption",
+    "iris",
+    "jaundice",
+    "joined pathway",
+    "k+",
+    "ketamine",
+    "ketone",
+    "lancet",
+    "larynx",
+    "leak",
+    "lethal danger",
+    "lidocaine",
+    "lisinopril",
+    "localized",
+    "localized concentration",
+    "loss through breach",
+    "low blood sugar",
+    "low ca2+",
+    "low calcium",
+    "low calcium cue",
+    "low glucose",
+    "low glucose cue",
+    "low k+",
+    "low magnesium",
+    "low magnesium cue",
+    "low mg2+",
+    "low na+",
+    "low ph",
+    "low potassium",
+    "low potassium cue",
+    "low sodium",
+    "low sodium cue",
+    "lumen",
+    "lungs",
+    "magnesium",
+    "malaise",
+    "malleus",
+    "material rupture",
+    "measles",
+    "melatonin",
+    "melena",
+    "metformin",
+    "methadone",
+    "mg2+",
+    "muscle",
+    "na+",
+    "nail",
+    "naproxen",
+    "narrowing",
+    "navel",
+    "nitrate",
+    "nitrite",
+    "obstruction",
+    "organ",
+    "outside a boundary",
+    "overflow",
+    "pain",
+    "palate",
+    "palm",
+    "parallel paths",
+    "paroxetine",
+    "patella",
+    "patent opening",
+    "pelvis",
+    "penicillin",
+    "pica",
+    "pinched passage",
+    "pons",
+    "potassium",
+    "procaine",
+    "proline",
+    "protected",
+    "protection",
+    "protective barrier",
+    "protective role",
+    "ptosis",
+    "purine",
+    "pylorus",
+    "rabies",
+    "rales",
+    "ramipril",
+    "raphe",
+    "rapid",
+    "respiration",
+    "restricted access",
+    "restriction",
+    "retention",
+    "rickets",
+    "rigor",
+    "rod",
+    "root",
+    "rupture",
+    "sacrum",
+    "scabies",
+    "scalpel",
+    "seizure",
+    "selective retention",
+    "sella",
+    "serial connection",
+    "sertraline",
+    "shielded",
+    "sinus",
+    "slow",
+    "slow or gradual",
+    "socket",
+    "sodium",
+    "split",
+    "statin",
+    "stenosis concept",
+    "stent",
+    "stridor",
+    "suture",
+    "syncope",
+    "syringe",
+    "talus",
+    "tarsal",
+    "temple",
+    "terbinafine",
+    "tetanus",
+    "thorax",
+    "through opening",
+    "thrush",
+    "thymine",
+    "tibia",
+    "tic",
+    "time window",
+    "too little",
+    "too much",
+    "toxicity",
+    "toxicity or danger",
+    "trachea",
+    "tramadol",
+    "trapped",
+    "trocar",
+    "unprotected",
+    "uracil",
+    "urgent attention",
+    "warfarin",
+    "water",
+    "water or fluid identity",
+    "wheal",
+    "withheld access"
+  ],
+  "attempt_count": 26,
+  "unique_term_count": 26,
+  "decision_counts": {
+    "retain_candidate": 4,
+    "hold": 7,
+    "reject": 15
+  },
+  "sources": [
+    {
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/tapeworm",
+      "scope": "Target pronunciation and word parts only, not endorsement of cue or medical lesson grounding."
+    },
+    {
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/lens",
+      "scope": "Headword and shared object/anatomy senses only."
+    },
+    {
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/iron",
+      "scope": "Headword and shared appliance/element senses only."
+    },
+    {
+      "url": "https://www.collinsdictionary.com/us/dictionary/english/balloon",
+      "scope": "Familiar object headword/pronunciation only."
+    },
+    {
+      "url": "https://medlineplus.gov/angioplasty.html",
+      "scope": "Medical use of the balloon headword only; no procedural facts or treatment instructions imported."
+    }
+  ],
+  "entries": [
+    {
+      "term": "vein",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Vane/vein is a plausible complete homophone without missing stress, but the specified rooftop object may be named weathercock, arrow, wind indicator, or weather vane rather than vane. This is the same exact-noun dependency that held socket/outlet and rod/pole previously. No label-free naming evidence resolves it. No exact stale target or object duplicate found; a possible bird-shaped vane must not inherit an existing bird cue. Only vein identity is proposed, not any vessel property or subtype.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "vein",
+          "objects": [
+            "rooftop weather vane"
+          ],
+          "spoken_bridge": "vane -> vein",
+          "pronunciation_caveat": "Provisional, not source-checked: vane and vein are expected whole-word homophones in ordinary English.",
+          "recognition_risk": "A viewer may say weathercock, arrow, or wind indicator instead of vane; no label may supply the missing name.",
+          "confusable_terms": [
+            "vain",
+            "artery"
+          ],
+          "verdict": "shortlist",
+          "reason": "Whole-word homophone, not a constructed rebus. One familiar drawable object can supply the complete sound without edits, conditional on unprompted vane naming. Encodes only the anatomical headword, not vessel subtype or function."
+        }
+      ]
+    },
+    {
+      "term": "sole",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "sole",
+          "objects": [
+            "detached shoe sole"
+          ],
+          "spoken_bridge": "sole -> sole",
+          "pronunciation_caveat": "Provisional, not source-checked: the shoe-part and anatomical headword are expected to have identical pronunciation.",
+          "recognition_risk": "The detached part may be called an insole, insert, tread, or shoe bottom; recognizability without the complete shoe is untested.",
+          "confusable_terms": [
+            "soul",
+            "insole"
+          ],
+          "verdict": "reject",
+          "reason": "Shared-headword homonym/polysemy, not a rebus. Exact sound alone is insufficient: the isolated object has several plausible names, and a whole shoe would further favor shoe over sole."
+        }
+      ]
+    },
+    {
+      "term": "cuff",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "cuff",
+          "objects": [
+            "shirt sleeve cuff"
+          ],
+          "spoken_bridge": "cuff -> cuff",
+          "pronunciation_caveat": "Provisional, not source-checked: clothing and medical-device senses are expected to share the complete spoken headword.",
+          "recognition_risk": "A cropped cuff can look like a fabric band or bracelet; a larger depiction may be named sleeve or shirt instead.",
+          "confusable_terms": [
+            "rotator cuff",
+            "sleeve"
+          ],
+          "verdict": "reject",
+          "reason": "Shared-headword homonym/polysemy, not a rebus. Object naming is unstable, and cuff alone does not distinguish device identity from an anatomical compound. No modifier is silently supplied."
+        }
+      ]
+    },
+    {
+      "term": "drain",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Complete headword has no phonetic repair, but a static floor fixture can be named grate, cover, or hole instead of drain. Assuming an unseen draining action would violate the criterion. Mesh/grate appearance may overlap the prior nitrate grate or catalog filtration/retention cues; this is a predicted collision, not an observed failure. Retain the previous strict naming standard rather than accepting a caption. No particular device or procedure is recoverable.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "drain",
+          "objects": [
+            "household floor drain"
+          ],
+          "spoken_bridge": "drain -> drain",
+          "pronunciation_caveat": "Provisional, not source-checked: household fixture and clinical-device headword are expected to sound identical.",
+          "recognition_risk": "The fixture may be called grate, cover, or hole; a visible drain opening must be recognizable without depicting an action.",
+          "confusable_terms": [
+            "drainage",
+            "tube"
+          ],
+          "verdict": "shortlist",
+          "reason": "Shared-headword homonym/polysemy, not a constructed rebus. A familiar household drain offers the whole spoken headword without sound edits. Device category only; no procedural instruction or physiological claim. Naming reliability remains untested."
+        }
+      ]
+    },
+    {
+      "term": "balloon",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "A party balloon is plausibly a familiar self-identifying object supplying the complete headword and stress without a label or sound edit, analogous to the previous globe/cone standard. Only balloon is retained, not a longer device or procedure name. No exact stale target/object mapping found. Possible semantic overlap with catalog dilation must not turn an identity cue into a sourced physiological or device claim. Naming, rendering and recovery remain untested.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "balloon",
+          "objects": [
+            "party balloon"
+          ],
+          "spoken_bridge": "balloon -> balloon",
+          "pronunciation_caveat": "Provisional, not source-checked: party-object and medical-device headword are expected to share pronunciation and stress.",
+          "recognition_risk": "Usually a familiar silhouette, but balloon alone cannot recover a particular named device or procedure; no such modifier is claimed.",
+          "confusable_terms": [
+            "balloon pump",
+            "balloon dilator"
+          ],
+          "verdict": "shortlist",
+          "reason": "Shared-headword homonym/polysemy, not a constructed rebus. One familiar object can supply the entire device headword without phonetic repair. Only balloon identity is proposed; it does not encode a compound name or device purpose."
+        }
+      ]
+    },
+    {
+      "term": "lens",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "The specified detached camera lens plausibly retains lens as its ordinary headword, without sound repairs or required branding. Camera/zoom/attachment are untested alternatives, but the complete object is less subtype-dependent than a temple building or electrical outlet. This decision applies to the saved camera lens, not an invented substitute glass disc. Catalog magnifying-glass inspection is a concrete optical-family interference risk, not an exact duplicate. Lesson scope must supply the intended sense; no anatomical structure or function is asserted here.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "lens",
+          "objects": [
+            "detached camera lens"
+          ],
+          "spoken_bridge": "lens -> lens",
+          "pronunciation_caveat": "Provisional, not source-checked: optical-object and anatomical senses are expected to share the complete spoken form.",
+          "recognition_risk": "A detached camera lens may be named zoom, camera attachment, or camera; a glass disc alone would be less reliably named lens. No logo or writing may resolve the name.",
+          "confusable_terms": [
+            "lentil",
+            "contact lens"
+          ],
+          "verdict": "shortlist",
+          "reason": "Shared-headword homonym/polysemy, not a constructed rebus. A familiar camera lens can supply the complete anatomical headword without sound edits. The ordinary object and anatomical sense are related, so this is not evidence of an unrelated-word pun or of anatomical recall."
+        }
+      ]
+    },
+    {
+      "term": "trunk",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "trunk",
+          "objects": [
+            "closed travel trunk"
+          ],
+          "spoken_bridge": "trunk -> trunk",
+          "pronunciation_caveat": "Provisional, not source-checked: luggage and anatomical headword are expected to have identical pronunciation.",
+          "recognition_risk": "The object may be named chest, suitcase, or storage box; choosing a vintage form to force trunk naming may reduce familiarity.",
+          "confusable_terms": [
+            "torso",
+            "nerve trunk"
+          ],
+          "verdict": "reject",
+          "reason": "Shared-headword homonym, not a rebus. The whole sound would match, but competing everyday object names are too strong to shortlist on an offline silhouette assumption. Anatomical sense also remains unspecified."
+        }
+      ]
+    },
+    {
+      "term": "canal",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "canal",
+          "objects": [
+            "canal with towpath"
+          ],
+          "spoken_bridge": "canal -> canal",
+          "pronunciation_caveat": "Provisional, not source-checked: landscape and anatomical headword are expected to share pronunciation, including final stress.",
+          "recognition_risk": "A static landscape can be named river, channel, ditch, or stream. Distinguishing a canal may require context, extra structures, or labels beyond the proposed principal object.",
+          "confusable_terms": [
+            "channel",
+            "canaliculus"
+          ],
+          "verdict": "reject",
+          "reason": "Shared-headword homonym/polysemy, not a constructed rebus. Complete sound match does not overcome unreliable object naming. No particular anatomical canal or clinical meaning is recoverable from the landscape alone."
+        }
+      ]
+    },
+    {
+      "term": "bursa",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "bursa",
+          "objects": [
+            "spiky plant burr",
+            "hand saw"
+          ],
+          "spoken_bridge": "burr + saw -> bursa (attempted)",
+          "pronunciation_caveat": "Provisional, not source-checked: burr-saw is expected to retain a full second vowel where bursa has a weak ending; rhoticity also changes the first component across accents. Saw-to-suh is an explicit vowel alteration, not an exact match.",
+          "recognition_risk": "The burr may be called a seed, seedpod, or thistle; saw naming is more likely but does not repair the first object's ambiguity.",
+          "confusable_terms": [
+            "bursitis",
+            "bursae"
+          ],
+          "verdict": "reject",
+          "reason": "Constructed rebus, not a homophone or homonym. Reject for the explicit terminal vowel mismatch and unstable burr naming. A coached weakening of saw cannot establish unprompted whole-headword recovery."
+        }
+      ]
+    },
+    {
+      "term": "urethra",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "urethra",
+          "objects": [
+            "ewe",
+            "wreath"
+          ],
+          "spoken_bridge": "ewe + wreath -> urethra (attempted)",
+          "pronunciation_caveat": "Provisional, not source-checked: ewe-wreath is expected to differ from urethra in the stressed vowel and omit the final weak vowel; an object named ewe may instead be pronounced as the generic sheep name by a viewer.",
+          "recognition_risk": "An ordinary sheep image does not reliably specify ewe rather than sheep or ram. The circular decoration may be called garland instead of wreath.",
+          "confusable_terms": [
+            "ureter",
+            "urethral"
+          ],
+          "verdict": "reject",
+          "reason": "Constructed rebus, not a whole-word homophone or homonym. Reject for the stressed-vowel change, missing ending, and ewe naming requirement. No sound is supplied by hidden text or an inferred grammatical ending."
+        }
+      ]
+    },
+    {
+      "term": "mole",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Exact shared sound does not establish that the organism will be named mole rather than mouse, shrew, rodent, or animal. This matches the previous holds for mussel and tick, rather than treating the provided animal name as recognition evidence. No exact prior target/object collision found; prior small-animal proposals make a generic silhouette especially insufficient. The intended clinical sense is not encoded and remains main's scope-check responsibility.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "mole",
+          "objects": [
+            "mole animal"
+          ],
+          "spoken_bridge": "mole -> mole",
+          "pronunciation_caveat": "Provisional shared whole-word pronunciation; no pronunciation source checked.",
+          "recognition_risk": "A drawing may elicit mouse, shrew or rodent rather than mole. The animal sense may persist instead of the intended clinical headword.",
+          "confusable_terms": [
+            "nevus",
+            "milia"
+          ],
+          "verdict": "shortlist",
+          "reason": "Whole-word homonym, not a constructed rebus. Familiar animal identity offers an exact headword route if unprompted naming succeeds; clinical sense requires independently established context. No causal or diagnostic claim."
+        }
+      ]
+    },
+    {
+      "term": "stye",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "stye",
+          "objects": [
+            "pigsty"
+          ],
+          "spoken_bridge": "sty -> stye",
+          "pronunciation_caveat": "Provisional whole-word homophone under the assumed English forms; no pronunciation source checked.",
+          "recognition_risk": "The enclosure may be named pen, barn or pigsty rather than sty. No readable sign or added animal is assumed to supply the name.",
+          "confusable_terms": [
+            "chalazion",
+            "hordeolum"
+          ],
+          "verdict": "reject",
+          "reason": "Whole-word homophone, not a rebus, but the exact required object name sty is insufficiently secure. Recovering pigsty requires removing a spoken syllable. Clinical identity alone does not rescue that naming failure."
+        }
+      ]
+    },
+    {
+      "term": "hives",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "The whole plural sound can match, but bee boxes, nests, and beehives are plausible unprompted names. Plural naming must arise naturally; a two-object count is not proof of plural-word recovery, consistent with the previous pons/pawns hold. Hive imagery can evoke the bees already used for rabies and rejected scabies; no transmission or cause follows. No exact stale target or hive-object mapping found. Hold for noun/plural recovery and cross-cue discrimination, not merely because the target is generic.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "hives",
+          "objects": [
+            "two beehives"
+          ],
+          "spoken_bridge": "hives -> hives",
+          "pronunciation_caveat": "Provisional shared spoken form with the final voiced plural retained; no pronunciation source checked.",
+          "recognition_risk": "May be named beehives, bee boxes or nests, adding sounds or changing the headword. Plural recognition and clinical-sense recovery are untested.",
+          "confusable_terms": [
+            "urticaria",
+            "vesicles"
+          ],
+          "verdict": "shortlist",
+          "reason": "Whole-word homonym, not a constructed rebus. Two familiar hive objects can support the actual plural headword without a written label. This is one new target, not separate singular/plural entries; no implication about insects causing the clinical finding."
+        }
+      ]
+    },
+    {
+      "term": "cataract",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "cataract",
+          "objects": [
+            "waterfall"
+          ],
+          "spoken_bridge": "cataract -> cataract",
+          "pronunciation_caveat": "Provisional same-word pronunciation across senses; no pronunciation source checked.",
+          "recognition_risk": "The familiar image name is waterfall or falls; cataract is unlikely to be the unprompted object name for many learners.",
+          "confusable_terms": [
+            "glaucoma",
+            "keratitis"
+          ],
+          "verdict": "reject",
+          "reason": "Shared-headword homonym route, not a rebus. Exact sound identity depends on teaching an uncommon name for a familiar object, which fails the familiar-object naming criterion. No clinical analogy is asserted."
+        }
+      ]
+    },
+    {
+      "term": "wheeze",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "wheeze",
+          "objects": [
+            "wedge of cheese"
+          ],
+          "spoken_bridge": "cheese -> wheeze",
+          "pronunciation_caveat": "Provisional forms share an ending but require replacement of the initial consonant sequence; no pronunciation source checked.",
+          "recognition_risk": "Cheese is recognizable but does not specify the target initial sounds; a wedge can also elicit wedge or food.",
+          "confusable_terms": [
+            "rhonchus",
+            "stertor"
+          ],
+          "verdict": "reject",
+          "reason": "Attempted single-object phonetic substitution, neither a whole-word homophone nor homonym and not a complete rebus. It supplies only a rhyme and requires an unsupported consonant edit."
+        }
+      ]
+    },
+    {
+      "term": "shingles",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Full sound and plural are preserved only if overlapping roofing pieces are independently called shingles, rather than tiles, slates, roofing, or roof. Material and audience vocabulary cannot be presumed, just as socket/outlet was not presumed in workshop one. Isolated pieces may weaken rather than prove the required name. No exact stale target/object mapping found. No clinical appearance or diagnosis can be inferred from the roof objects.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "shingles",
+          "objects": [
+            "two overlapping roofing shingles"
+          ],
+          "spoken_bridge": "shingles -> shingles",
+          "pronunciation_caveat": "Provisional shared whole-word pronunciation including the final plural sound; no pronunciation source checked.",
+          "recognition_risk": "May elicit roof tiles, slates or roofing instead of shingles. Material and regional vocabulary may dominate naming; clinical-sense recovery remains untested.",
+          "confusable_terms": [
+            "herpes zoster",
+            "varicella"
+          ],
+          "verdict": "shortlist",
+          "reason": "Whole-word homonym, not a constructed rebus. Familiar overlapping roofing pieces can supply the full clinical headword if independently named shingles. This is one target, not a plural variant counted separately. No claim about clinical appearance or causation."
+        }
+      ]
+    },
+    {
+      "term": "bunion",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "bunion",
+          "objects": [
+            "bread bun",
+            "onion"
+          ],
+          "spoken_bridge": "bun + onion -> bunion",
+          "pronunciation_caveat": "Provisional comparison: bun plus onion introduces an extra vowel/nasal sequence at the join; bunion cannot be assumed to follow from natural fluent speech. No pronunciation source checked.",
+          "recognition_risk": "Bun may be called roll; whole onion recognition is plausible but cannot resolve the surplus spoken material or ordering.",
+          "confusable_terms": [
+            "bunionette",
+            "hallux valgus"
+          ],
+          "verdict": "reject",
+          "reason": "Constructed rebus attempt, neither homophone nor homonym. Familiar props do not compensate for deleting or merging sounds from bun plus onion to recover the whole target."
+        }
+      ]
+    },
+    {
+      "term": "polyp",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "polyp",
+          "objects": [
+            "freestanding pole",
+            "lip"
+          ],
+          "spoken_bridge": "pole + lip -> polyp",
+          "pronunciation_caveat": "Provisional comparison requires a major first-vowel change and removal or merger of a consonant at the join; no pronunciation source checked.",
+          "recognition_risk": "Pole could be post, and an isolated lip is both an anatomical object outside this lane's intended cue scope and poorly nameable without facial context.",
+          "confusable_terms": [
+            "papule",
+            "papilloma"
+          ],
+          "verdict": "reject",
+          "reason": "Constructed rebus attempt, neither homophone nor homonym. It fails phonetic fidelity and the non-anatomical familiar-object constraint; it is not rescued with extra props or a revised attempt."
+        }
+      ]
+    },
+    {
+      "term": "iron",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "A clothes iron is a familiar appliance plausibly yielding iron or a modifier plus iron; the whole spoken headword is retained without phonetic edits. A steamer response remains a test risk, not evidence that a caption is required. Regional pronunciation does not inherently break a shared word spoken by the same learner. No exact stale target/object mapping found. Ferritin and catalog heat cues are semantic neighbors only; no lab value, material composition, or clinical relationship is supplied. Scope and recovery remain unverified.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "iron",
+          "objects": [
+            "clothes iron"
+          ],
+          "spoken_bridge": "iron -> iron",
+          "pronunciation_caveat": "PROVISIONAL: object and lab headword are expected to share the speaker's pronunciation; syllabification and rhotic realization vary. Not dictionary-checked.",
+          "recognition_risk": "The appliance may be named clothes iron, steam iron, or steamer. The object alone does not identify the intended lab sense.",
+          "confusable_terms": [
+            "ironing",
+            "iron studies",
+            "ferric"
+          ],
+          "verdict": "shortlist",
+          "reason": "HOMONYM / shared-word cue, not a constructed rebus or an etymological claim. A familiar appliance can supply the complete headword without sound deletion or a label. Requires independent naming and whole-term recovery screening; not admitted or validated."
+        }
+      ]
+    },
+    {
+      "term": "lead",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "lead",
+          "objects": [
+            "pencil"
+          ],
+          "spoken_bridge": "pencil lead -> lead (intended LED)",
+          "pronunciation_caveat": "PROVISIONAL: the intended headword and colloquial pencil-lead sense are expected to use LED, not LEED. Not dictionary-checked.",
+          "recognition_risk": "An unlabeled pencil is overwhelmingly available as pencil; a visible core can be named graphite or tip rather than lead.",
+          "confusable_terms": [
+            "lead (LEED)",
+            "graphite"
+          ],
+          "verdict": "reject",
+          "reason": "HOMONYM / shared-word proposal, not a constructed rebus. Recovering the desired object name requires selecting a hidden component and a particular colloquial noun. No claim about pencil composition is encoded."
+        }
+      ]
+    },
+    {
+      "term": "urea",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "urea",
+          "objects": [
+            "ewe",
+            "rhea"
+          ],
+          "spoken_bridge": "ewe + rhea -> yoo + ree-uh",
+          "pronunciation_caveat": "PROVISIONAL: target is tentatively yoo-REE-uh; the initial vowel sequence and stress may differ from the two independently named objects. Not dictionary-checked.",
+          "recognition_risk": "A ewe is usually named sheep without sex-identifying context; a rhea is unfamiliar and may be named ostrich or emu.",
+          "confusable_terms": [
+            "urease",
+            "urine"
+          ],
+          "verdict": "reject",
+          "reason": "CONSTRUCTED REBUS. Even a potentially close spoken sequence cannot overcome two unreliable object names, including an unfamiliar principal object. No substitutions or repairs attempted."
+        }
+      ]
+    },
+    {
+      "term": "iodine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "iodine",
+          "objects": [
+            "eye",
+            "dinner plate"
+          ],
+          "spoken_bridge": "eye + dine -> eye-dine",
+          "pronunciation_caveat": "PROVISIONAL: tentative target EYE-uh-dine contains a middle vowel absent from eye-dine; terminal pronunciation may vary. Not dictionary-checked.",
+          "recognition_risk": "The plate supplies plate or food, not the verb dine; an eye is also a literal anatomical object, which is not being proposed as the target term.",
+          "confusable_terms": [
+            "iodide",
+            "iodate"
+          ],
+          "verdict": "reject",
+          "reason": "CONSTRUCTED REBUS. Missing middle vowel and dependence on an inferred action both fail. The proposed target is a lab headword, not an anatomy proposal. No repaired alternative retained."
+        }
+      ]
+    },
+    {
+      "term": "barium",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected this attempt; not independently re-adjudicated or promoted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "barium",
+          "objects": [
+            "bear",
+            "rum bottle"
+          ],
+          "spoken_bridge": "bear + rum -> bear-rum",
+          "pronunciation_caveat": "PROVISIONAL: tentative target BAIR-ee-um is not bear-rum; the pair inserts an R and omits the middle EE syllable. Not dictionary-checked.",
+          "recognition_risk": "An unlabeled bottle cannot reliably specify rum rather than another drink.",
+          "confusable_terms": [
+            "beryllium",
+            "boron"
+          ],
+          "verdict": "reject",
+          "reason": "CONSTRUCTED REBUS. Fails complete sound coverage and label-free object naming. No consonant is silently removed and no missing syllable is excused."
+        }
+      ]
+    },
+    {
+      "term": "tapeworm",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "The saved tape roll plus worm plausibly supplies both complete ordinary object names in order without deleting consonants, changing major vowels, or losing stressed material. Sticky/adhesive tape retains tape; roll or caterpillar responses remain untested risks. No exact prior target/object duplicate found. The shared worm component must be discriminated against hookworm and whipworm using the first object, not a suffix-only response. This is spelling/word-part assembly, not evidence of cause, transmission, morphology, taxonomy, novelty, or recall benefit.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "tapeworm",
+          "objects": [
+            "roll of adhesive tape",
+            "worm"
+          ],
+          "spoken_bridge": "tape + worm -> tapeworm",
+          "pronunciation_caveat": "PROVISIONAL: tentative TAYP-wurm preserves both complete object names in order; compound stress and the speaker's worm vowel need verification. Not dictionary-checked.",
+          "recognition_risk": "The roll may be named adhesive, roll, or sticky tape; the worm may be named caterpillar or snake. A visibly separate pair still needs uncoached left-to-right recovery testing.",
+          "confusable_terms": [
+            "hookworm",
+            "whipworm",
+            "roundworm"
+          ],
+          "verdict": "shortlist",
+          "reason": "CONSTRUCTED COMPOUND REBUS, not a homophone or homonym. Both full word parts have familiar drawable referents, with no omitted consonant or syllable under the provisional reading. Identity only: tape is not a proposed cause, source, transmission vehicle, or biological description. Distinct headword, not a plural or synonym variant. Independent screening remains required."
+        }
+      ]
+    },
+    {
+      "term": "hookworm",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Hook plus worm covers the full compound without a necessary sound repair, but the familiar hook/worm pairing can instead elicit bait or fishing, and the worm can be named bait rather than worm. The exact component sequence is therefore not established by familiarity alone. Fishing imagery also overlaps the previous rod cue, while worm is shared with the other two current compounds. No exact stale target mapping found. Hold for uncoached object naming, complete-compound recovery and distractor discrimination; do not infer any biological claim.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "hookworm",
+          "objects": [
+            "fishing hook",
+            "worm"
+          ],
+          "spoken_bridge": "hook + worm -> hookworm",
+          "pronunciation_caveat": "PROVISIONAL: tentative HOOK-wurm preserves both complete object names; hook vowel, worm vowel, and compound stress require verification. Not dictionary-checked.",
+          "recognition_risk": "The hook may be named fishhook and the worm bait. Their familiar real-world pairing could evoke fishing rather than the whole target headword; composition and unprompted naming are untested.",
+          "confusable_terms": [
+            "tapeworm",
+            "whipworm",
+            "roundworm"
+          ],
+          "verdict": "shortlist",
+          "reason": "CONSTRUCTED COMPOUND REBUS, not a homophone or homonym. Two familiar objects supply the complete provisional sound sequence. Identity only: neither a fishing association nor a hook asserts cause, transmission, anatomy, or taxonomy. The fishing/bait intrusion is unresolved, not evidence of a pass. Distinct headword rather than a synonym variant; independent screening remains required."
+        }
+      ]
+    },
+    {
+      "term": "whipworm",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whip plus worm can preserve the full sound sequence; WH/W variation alone is not a defect when both component and target are spoken consistently by the learner. The blocking issue is whip versus rope/cord/lash naming and worm versus caterpillar/snake, not a missing stressed syllable. Rope appearance also risks overlap with the previous sinus noose or sertraline rope proposals; all current worm compounds need first-object discrimination. No exact stale target mapping found. No corrective prop, inferred whipping action, or biological interpretation is added.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "lab-drugs",
+          "term": "whipworm",
+          "objects": [
+            "whip",
+            "worm"
+          ],
+          "spoken_bridge": "whip + worm -> whipworm",
+          "pronunciation_caveat": "PROVISIONAL: tentative WHIP-wurm preserves both full object names; speakers may distinguish WH from W, and compound stress needs verification. Not dictionary-checked.",
+          "recognition_risk": "A whip may be named rope, cord, or lash; the worm may be named caterpillar or snake. A handle and visible lash may help object identity but have not been rendered or tested.",
+          "confusable_terms": [
+            "hookworm",
+            "tapeworm",
+            "roundworm"
+          ],
+          "verdict": "shortlist",
+          "reason": "CONSTRUCTED COMPOUND REBUS, not a homophone or homonym. Both complete word parts are drawable without labels, named faces, or an inferred action. Identity only: whip supplies a noun sound, not an act, cause, biological shape claim, or taxonomic claim. Distinct headword rather than a synonym variant; independent screening remains required."
+        }
+      ]
+    }
+  ],
+  "exclusion_scope": "Frozen plan baseline plus a final cross-check against the earlier 24-term initial wordplay packet. Additional check found zero conflicts and changed no proposal or decision."
+}

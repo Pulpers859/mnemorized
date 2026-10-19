@@ -2633,6 +2633,176 @@
         "render_audits": [],
         "recall_studies": []
       }
+    },
+    {
+      "id": "phonetic-balloon",
+      "concept": "balloon",
+      "aliases": [
+        "balloon"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "party balloon"
+      ],
+      "bridge": "balloon -> balloon",
+      "applicable_to": [
+        "Complete target headword only after its exact medical sense is independently sourced and scoped by Forge.",
+        "Confirm unprompted object naming, spoken recovery and collision discrimination for this learner; not universally recognizable."
+      ],
+      "not_for": [
+        "A party balloon is plausibly a familiar self-identifying object supplying the complete headword and stress without a label or sound edit, analogous to the previous globe/cone standard. Only balloon is retained, not a longer device or procedure name. No exact stale target/object mapping found. Possible semantic overlap with catalog dilation must not turn an identity cue into a sourced physiological or device claim. Naming, rendering and recovery remain untested.",
+        "Usually a familiar silhouette, but balloon alone cannot recover a particular named device or procedure; no such modifier is claimed.",
+        "Source checks establish a spoken headword/sense, not cue effectiveness. Raw proposal pronunciation was provisional; no image, naming or recall trial has been performed.",
+        "Do not supply missing modifiers, drug identities, anatomical details, causation, transmission, device purpose, physiological state, treatment, dose or procedure.",
+        "Do not infer clinical knowledge from a correct word-part answer. Independently proposed generic vocabulary may overlap other mnemonics; novelty unverified."
+      ],
+      "signature": "Require each primary object to be nameable without text and the full target to be recovered without coaching; this is untested. party balloon.",
+      "collision_tags": [
+        "balloon pump",
+        "balloon dilator",
+        "dilated-passage"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop-2.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/balloon",
+          "https://medlineplus.gov/angioplasty.html"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-lens",
+      "concept": "lens",
+      "aliases": [
+        "lens"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "detached camera lens"
+      ],
+      "bridge": "lens -> lens",
+      "applicable_to": [
+        "Complete target headword only after its exact medical sense is independently sourced and scoped by Forge.",
+        "Confirm unprompted object naming, spoken recovery and collision discrimination for this learner; not universally recognizable."
+      ],
+      "not_for": [
+        "The specified detached camera lens plausibly retains lens as its ordinary headword, without sound repairs or required branding. Camera/zoom/attachment are untested alternatives, but the complete object is less subtype-dependent than a temple building or electrical outlet. This decision applies to the saved camera lens, not an invented substitute glass disc. Catalog magnifying-glass inspection is a concrete optical-family interference risk, not an exact duplicate. Lesson scope must supply the intended sense; no anatomical structure or function is asserted here.",
+        "A detached camera lens may be named zoom, camera attachment, or camera; a glass disc alone would be less reliably named lens. No logo or writing may resolve the name.",
+        "Source checks establish a spoken headword/sense, not cue effectiveness. Raw proposal pronunciation was provisional; no image, naming or recall trial has been performed.",
+        "Do not supply missing modifiers, drug identities, anatomical details, causation, transmission, device purpose, physiological state, treatment, dose or procedure.",
+        "Do not infer clinical knowledge from a correct word-part answer. Independently proposed generic vocabulary may overlap other mnemonics; novelty unverified."
+      ],
+      "signature": "Require each primary object to be nameable without text and the full target to be recovered without coaching; this is untested. detached camera lens.",
+      "collision_tags": [
+        "lentil",
+        "contact lens",
+        "supported-inspection",
+        "magnifying-glass"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop-2.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/lens"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-iron",
+      "concept": "iron",
+      "aliases": [
+        "iron"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "clothes iron"
+      ],
+      "bridge": "iron -> iron",
+      "applicable_to": [
+        "Complete target headword only after its exact medical sense is independently sourced and scoped by Forge.",
+        "Confirm unprompted object naming, spoken recovery and collision discrimination for this learner; not universally recognizable."
+      ],
+      "not_for": [
+        "A clothes iron is a familiar appliance plausibly yielding iron or a modifier plus iron; the whole spoken headword is retained without phonetic edits. A steamer response remains a test risk, not evidence that a caption is required. Regional pronunciation does not inherently break a shared word spoken by the same learner. No exact stale target/object mapping found. Ferritin and catalog heat cues are semantic neighbors only; no lab value, material composition, or clinical relationship is supplied. Scope and recovery remain unverified.",
+        "The appliance may be named clothes iron, steam iron, or steamer. The object alone does not identify the intended lab sense.",
+        "Source checks establish a spoken headword/sense, not cue effectiveness. Raw proposal pronunciation was provisional; no image, naming or recall trial has been performed.",
+        "Do not supply missing modifiers, drug identities, anatomical details, causation, transmission, device purpose, physiological state, treatment, dose or procedure.",
+        "Do not infer clinical knowledge from a correct word-part answer. Independently proposed generic vocabulary may overlap other mnemonics; novelty unverified."
+      ],
+      "signature": "Require each primary object to be nameable without text and the full target to be recovered without coaching; this is untested. clothes iron.",
+      "collision_tags": [
+        "ironing",
+        "iron studies",
+        "ferric",
+        "hot-flame",
+        "ferritin"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop-2.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/iron"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-tapeworm",
+      "concept": "tapeworm",
+      "aliases": [
+        "tapeworm"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "roll of adhesive tape",
+        "worm"
+      ],
+      "bridge": "tape + worm -> tapeworm",
+      "applicable_to": [
+        "Complete target headword only after its exact medical sense is independently sourced and scoped by Forge.",
+        "Confirm unprompted object naming, spoken recovery and collision discrimination for this learner; not universally recognizable."
+      ],
+      "not_for": [
+        "The saved tape roll plus worm plausibly supplies both complete ordinary object names in order without deleting consonants, changing major vowels, or losing stressed material. Sticky/adhesive tape retains tape; roll or caterpillar responses remain untested risks. No exact prior target/object duplicate found. The shared worm component must be discriminated against hookworm and whipworm using the first object, not a suffix-only response. This is spelling/word-part assembly, not evidence of cause, transmission, morphology, taxonomy, novelty, or recall benefit.",
+        "The roll may be named adhesive, roll, or sticky tape; the worm may be named caterpillar or snake. A visibly separate pair still needs uncoached left-to-right recovery testing.",
+        "Source checks establish a spoken headword/sense, not cue effectiveness. Raw proposal pronunciation was provisional; no image, naming or recall trial has been performed.",
+        "Do not supply missing modifiers, drug identities, anatomical details, causation, transmission, device purpose, physiological state, treatment, dose or procedure.",
+        "Do not infer clinical knowledge from a correct word-part answer. Independently proposed generic vocabulary may overlap other mnemonics; novelty unverified."
+      ],
+      "signature": "Require each primary object to be nameable without text and the full target to be recovered without coaching; this is untested. roll of adhesive tape + worm.",
+      "collision_tags": [
+        "hookworm",
+        "whipworm",
+        "roundworm",
+        "worm-compounds"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop-2.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/tapeworm"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
     }
   ]
 }
