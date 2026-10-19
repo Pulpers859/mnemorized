@@ -199,6 +199,15 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - User calibration: useful category cues, not exhaustive specificity
+PPE was already retained; simplified to familiar hazmat suit with optional shield
+exaggeration. Retained orange baking-soda box for bicarbonate and bellows as broad
+positive-pressure support recall cue (not mode discrimination). Chapter 2 now has
+12 new candidates, 1 reuse, 3 holds. Original review preserved in report; these two
+decision changes were not independently re-audited or empirically tested.
+Updated catalog guidance: hypothetical alternatives alone do not veto familiar
+cues; match specificity to what is actually taught. No paid calls or renders.
+
 ### 2026-10-19 - Chapter 2 vocabulary/cue review only
 **Done:** Added Chapter 2 Prehospital Equipment candidate bank/report and ledger
 link. Sixteen terms: ten new untested designs, one reused magnesium cue, five

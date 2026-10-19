@@ -55,6 +55,11 @@ Search uses literal token overlap, not clinical reasoning or semantic retrieval.
 ## Review And Admission
 
 General cue discovery is not restricted to exact phonetic object assembly.
+Match specificity to the intended recall target: familiar category cues,
+packaging associations and broad mechanism metaphors need not distinguish every
+related medical concept. A hypothetical alternate reading is not itself a veto.
+Require finer discrimination when the lesson actually teaches that distinction;
+record cue scope rather than silently claiming specificity the image lacks.
 The [broadened Chapter 1 audit](chapter-1-broadened-cue-audit.md) also considers
 phrase play, double meanings, physical actions and character relationships.
 Judge learned recovery and competing interpretations after teaching the bridge;

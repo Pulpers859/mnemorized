@@ -2,14 +2,14 @@
 
 ## Result
 
-Reviewed **16 selected terms**: ten newly recorded untested candidates, one
-reused candidate (magnesium/magnet), and five holds. This is not exhaustive
-coverage, ten proven mnemonics, or evidence of image-generation success.
+Reviewed **16 selected terms**: twelve newly recorded untested candidates, one
+reused candidate (magnesium/magnet), and three holds after user calibration.
+This is not exhaustive coverage or evidence of image-generation success.
 Method: `chapter-1-broadened-cue-audit.md`. Data: `chapter-2-cue-audit.json`.
 
 | Term | Page | Candidate | Decision / Main Collision |
 | --- | --- | --- | --- |
-| Personal protective equipment | 4 | Person in a shield-shaped protective suit | Retain: protection/category cue; may read as armor or superhero |
+| Personal protective equipment | 4 | Person in a familiar hazmat suit; optional shield-shaped exaggeration | Retain: familiar protective-clothing category cue; was never held |
 | Bag-valve mask | 5 | Large bag, visible valve and face mask joined together | Retain: literal component assembly, not wordplay; valve may look like a connector |
 | Suction | 5 | Vacuum nozzle gathering crumbs at its opening | Retain: inward-draw action; distinguish from blowing or spilling |
 | Endotracheal intubation | 5 | Tube inside a transparent windpipe model | Retain: location/word-part cue; windpipe identity may be ambiguous |
@@ -21,8 +21,8 @@ Method: `chapter-1-broadened-cue-audit.md`. Data: `chapter-2-cue-audit.json`.
 | Bronchospasm | 9 | Bronco squeezing a branching air hose narrow | Retain: bronco/broncho plus squeeze; asthma or generic obstruction competes |
 | Magnesium | 9 | Horseshoe magnet | Reuse existing candidate; not a new discovery |
 | Two-way radio | 4 | Two people using radios | Hold: conversation, not a distinctive two-way hook |
-| Continuous positive airway pressure | 6 | Bellows holding an air passage open | Hold: does not distinguish continuous pressure from cycling or bilevel support |
-| Sodium bicarbonate | 9 | Unlabeled baking-soda box and powder | Hold: indistinguishable from salt, sugar or flour |
+| Continuous positive airway pressure | 6 | Bellows holding an air passage open | Retain: broad positive-pressure support cue, not a CPAP-versus-bilevel discriminator |
+| Sodium bicarbonate | 9 | Familiar orange baking-soda box and powder | Retain: culturally familiar packaging/contents cue; not anonymous powder alone |
 | Epinephrine | 9 | No clear economical bridge proposed | Hold: generic emergency imagery does not identify the drug |
 | Lidocaine | 9 | Lid plus cane | Hold: missing sound material; target already considered in workshop 1 |
 
@@ -48,11 +48,29 @@ splints and pelvic stabilizers have exact heading matches (the traction discussi
 also uses singular device wording). Term presence does not validate clinical
 mechanisms, currency, importance or chapter completeness.
 
-The reviewer challenged every proposal and agreed with the final ten retain /
-one reuse / five hold decisions. Cautions include static suction direction,
+The reviewer challenged every initial proposal and agreed with the initial ten
+retain / one reuse / five hold decisions. Cautions include static suction direction,
 cradle versus display stand, ice versus cooling, and the nonunique nitro bridge.
 This was an AI conceptual/source review, not a credentialed clinician review,
 blinded cue test or empirical image audit. No numerical grade was assigned.
+
+### Subsequent User Calibration
+
+Patrick correctly identified excessive specificity requirements. PPE was already
+retained, but the presentation overstated hypothetical confusion. A stereotypical
+hazmat suit is a suitable category cue; elaborate shield imagery is optional.
+Sodium bicarbonate is now retained using the familiar orange baking-soda box,
+not merely an arbitrary box of powder. CPAP's bellows is retained at the broader
+positive-pressure support/NIPPV recall level requested by the user, not as a
+complete mode-specific representation. This does not assert equivalence of modes
+or verify a clinical mechanism. The two revised decisions are main/user
+calibration, not a retroactive claim that the independent reviewer approved them.
+
+General rule: match cue specificity to the lesson's recall target. Familiar
+category associations and culturally learned packaging are useful ingredients.
+A merely imaginable alternative is not sufficient grounds to hold a candidate.
+Require finer discrimination only when that distinction is actually being taught.
+Useful associations need not be unique standalone identifiers across all medicine.
 
 ## Boundaries And Next Step
 

@@ -156,9 +156,10 @@
       "record": "docs/chapter-2-cue-audit.json",
       "report": "docs/chapter-2-cue-audit.md",
       "selected_terms": 16,
-      "new_candidates": 10,
+      "new_candidates": 12,
       "reused_candidates": 1,
-      "holds": 5,
+      "holds": 3,
+      "user_calibration": "PPE retained throughout; orange baking-soda box and family-level bellows cue retained after user clarification. Original independent review covered the initial decisions, not these revisions.",
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false

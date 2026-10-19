@@ -17,7 +17,7 @@ def test_chapter_two_bank_is_bounded_and_explicitly_untested():
     entries = bank["entries"]
     assert len(entries) == len({e["term"].casefold() for e in entries}) == 16
     assert Counter(e["decision"] for e in entries) == {
-        "retain_candidate": 10, "reuse_candidate": 1, "hold": 5,
+        "retain_candidate": 12, "reuse_candidate": 1, "hold": 3,
     }
     for entry in entries:
         assert entry["tested"] is False

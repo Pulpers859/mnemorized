@@ -49,8 +49,10 @@ count as completed reviews and were not used here.
 ## Chapter 2: Prehospital Equipment
 
 [Chapter 2 review](chapter-2-cue-audit.md): sixteen selected terms from actual
-pages 3-9, independently source-checked and conceptually challenged. Ten new
-untested candidates, one reused candidate, five holds. Structured chapter bank:
+pages 3-9, independently source-checked and conceptually challenged. After user
+calibration: twelve new untested candidates, one reused candidate, three holds.
+The independent review covered the initial decisions; revisions are disclosed.
+Structured chapter bank:
 `docs/chapter-2-cue-audit.json`. No source files or full chapter text committed.
 
 ## Next
