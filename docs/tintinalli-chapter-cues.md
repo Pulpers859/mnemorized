@@ -76,9 +76,16 @@ source-checked and conceptually reviewed. Structured bank:
 five reuses, one hold. Independent source/conceptual review; no empirical recall
 or image validation. Bank: `docs/chapter-5-cue-audit.json`.
 
+## Chapter 6: Natural Disasters
+
+[Chapter 6 review](chapter-6-cue-audit.md): eighteen terms from PDF7-12 / printed
+25-30; thirteen newly recorded untested candidates, four reuses, one hold.
+Bank: `docs/chapter-6-cue-audit.json`. No empirical validation or production
+admission.
+
 ## Next
 
-Chapter 6, **Natural Disasters**, is not started for cue review. Do not move
+Chapter 7, **Bomb, Blast, and Crush Injuries**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

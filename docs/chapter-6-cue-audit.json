@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "chapter_id": "6",
+  "title": "Natural Disasters",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Disaster Management.pdf",
+    "sha256": "9820446fab820addfcf4a3024439cc12aacba6279be29ed47e84361ca2ac4e82",
+    "pdf_pages": [7, 8, 9, 10, 11, 12],
+    "printed_pages": [25, 26, 27, 28, 29, 30],
+    "printed_page_offset": 18,
+    "boundary": "Actual Natural Disasters title lower right PDF7/printed25 through references upper left PDF12/printed30, before actual Bomb, Blast, and Crush Injuries title. Other chapters on these shared pages excluded.",
+    "verification": "Selected vocabulary and chapter boundaries only; not clinical recommendations or current practice validation."
+  },
+  "scope": "Eighteen selected terms, not exhaustive chapter coverage. Offline candidate vocabulary, not medical anchors or image prompts. Newly recorded does not mean novel invention.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "source_wording_notes": {
+    "vectorborne disease": "Source also uses vectorborne illnesses; disease occurs in Table6-2 and vectorborne infectious diseases in body on printed27.",
+    "amputation": "Source has limb amputation on printed26.",
+    "crush injuries": "Plural source wording; reuses singular Chapter5 crush injury cue.",
+    "blood banks": "Plural source wording; reuses singular Chapter5 blood bank cue."
+  },
+  "entries": [
+    {"term":"vectorborne disease","pdf_page":9,"page":27,"source_match":"body","kind":"double_meaning","cue":"Mosquito riding a bold mathematical vector arrow.","cue_scope":"Vector carrier name/category bridge","decision":"retain_candidate","prior":"new_chapter_record","reason":"A familiar biological carrier rides a mathematical vector. Mosquito is an exemplar, not the only vector or a disease-specific identifier.","tested":false},
+    {"term":"airborne droplet transmission","pdf_page":9,"page":27,"source_match":"body","kind":"phrase_action","cue":"Winged droplets travelling through the air between two mannequin faces.","cue_scope":"Air plus droplet movement","decision":"retain_candidate","prior":"new_chapter_record","reason":"Visual phrase assembly mirrors source wording. Not a modern aerosol/droplet classification, particle size, distance or isolation recommendation.","tested":false},
+    {"term":"waterborne disease","pdf_page":10,"page":28,"source_match":"body","kind":"carrier_metaphor","cue":"Recognizable cartoon microbes riding a tiny boat on water.","cue_scope":"Water as the carrier","decision":"retain_candidate","prior":"new_chapter_record","reason":"Boat and water make borne/carried memorable. Not a pathogen, route-specific diagnosis or claim that any water is infectious.","tested":false},
+    {"term":"malnutrition","pdf_page":9,"page":27,"source_match":"body","kind":"familiar_state","cue":"Gaunt study mannequin reaching into an empty lunchbox.","cue_scope":"Inadequate nourishment category","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar deprivation cue, not diagnostic appearance, a comprehensive definition or a statement that all malnutrition causes thinness.","tested":false},
+    {"term":"medication refill","pdf_page":9,"page":27,"source_match":"body","kind":"literal_action","cue":"Empty medicine bottle visibly being refilled.","cue_scope":"Refill task identity","decision":"retain_candidate","prior":"new_chapter_record","reason":"Simple action is more useful than a forced pun. Does not encode the medicine, quantity, substitution or prescribing decision.","tested":false},
+    {"term":"hypertension","pdf_page":9,"page":27,"source_match":"body","kind":"pressure_metaphor","cue":"Taut vessel model under a pressure gauge whose needle points high.","cue_scope":"High pressure category","decision":"retain_candidate","prior":"new_chapter_record","reason":"High pressure and tension provide a learned cue. Not a diagnostic measurement, pressure threshold or literal complete mechanism.","tested":false},
+    {"term":"external fixators","pdf_page":10,"page":28,"source_match":"body","kind":"familiar_device","cue":"Outside scaffold visibly connected to and bracing a broken-bone model across its gap.","cue_scope":"External support/fixation identity","decision":"retain_candidate","prior":"new_chapter_record","reason":"External support relation is recognizable without a strained phonetic construction. Not device anatomy, placement or treatment selection.","tested":false},
+    {"term":"tsunami lung","pdf_page":11,"page":29,"source_match":"body","kind":"phrase_composition","cue":"Small tsunami wave entering a lung silhouette.","cue_scope":"Tsunami plus lung name cue","decision":"retain_candidate","prior":"new_chapter_record","reason":"Compact source-phrase association, not a diagnostic image, complete pathophysiology or equivalence to every drowning-related lung injury.","tested":false},
+    {"term":"carbon monoxide poisoning","pdf_page":11,"page":29,"source_match":"body","kind":"exposure_context","cue":"Portable generator with exhaust trapped inside an enclosed miniature room.","cue_scope":"Source-linked exposure reminder","decision":"retain_candidate","prior":"new_chapter_record","reason":"Generator is explicitly discussed in this source. Contextual learned cue, not unique gas identification or a diagnosis. Draw exhaust context without depicting carbon monoxide itself as visible colored gas.","tested":false},
+    {"term":"nonunion","pdf_page":8,"page":26,"source_match":"body","kind":"double_meaning","cue":"Two separated bone-end characters with wedding rings turn away from each other, arms folded, with a clear gap between them.","cue_scope":"Failure of union name bridge","decision":"retain_candidate","prior":"new_chapter_record","reason":"Marriage union gives a double meaning; visibly turned-away postures express refusal rather than relying on narration. Not a healing timeline, imaging criterion or proof that any separated fracture is nonunion.","tested":false},
+    {"term":"amputation","pdf_page":8,"page":26,"source_match":"body","kind":"familiar_state","cue":"Detachable study-mannequin limb removed and set apart from its body.","cue_scope":"Limb removal identity","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar visual category avoids forcing an amp sound fragment. Not a procedure, indication or claim that removal is always traumatic.","tested":false},
+    {"term":"drowning","pdf_page":11,"page":29,"source_match":"body","kind":"familiar_situation","cue":"Submerged mannequin reaching toward the water surface.","cue_scope":"Drowning danger situation","decision":"retain_candidate","prior":"new_chapter_record","reason":"Useful learned situational cue, not a diagnosis or assertion that drowning always looks like visible struggling.","tested":false},
+    {"term":"inhalational injury","pdf_page":8,"page":26,"source_match":"table","kind":"direction_and_damage","cue":"Soot-darkened damaged airway model with airflow visibly directed inward.","cue_scope":"Inhalation plus injury category","decision":"retain_candidate","prior":"new_chapter_record","reason":"Inward airflow and damage carry the association. Smoke is one exemplar, not all inhalational injuries, and visible soot is not a required diagnostic sign.","tested":false},
+    {"term":"renal failure","pdf_page":8,"page":26,"source_match":"table","kind":"identity_and_failure","cue":"Kidney-shaped factory with conspicuously broken gears.","cue_scope":"Kidney plus failure metaphor","decision":"reuse_candidate","prior":"docs/chapter-5-cue-audit.json","reason":"Reuse established candidate rather than remap kidney failure. Not mechanism or diagnostic criteria.","tested":false},
+    {"term":"crush injuries","pdf_page":10,"page":28,"source_match":"body","kind":"physical_state","cue":"Limb mannequin compressed in a large vise.","cue_scope":"Crushing injury category","decision":"reuse_candidate","prior":"docs/chapter-5-cue-audit.json","reason":"Reuse Chapter5 compression cue; no duration, syndrome definition or treatment.","tested":false},
+    {"term":"surge capacity","pdf_page":10,"page":28,"source_match":"body","kind":"spatial_capacity","cue":"Additional open care spaces facing a wave of arrivals.","cue_scope":"Extra room/resources for increased demand","decision":"reuse_candidate","prior":"docs/chapter-1-broadened-cue-audit.md","reason":"Capacity remains visible, not merely a crowd. Reuse rather than new discovery.","tested":false},
+    {"term":"blood banks","pdf_page":8,"page":26,"source_match":"body","kind":"double_meaning","cue":"Bank vault holding recognizable blood bags.","cue_scope":"Blood plus bank identity","decision":"reuse_candidate","prior":"docs/chapter-5-cue-audit.json","reason":"Established vault cue, not storage, supply or transfusion instructions.","tested":false},
+    {"term":"sulfonylureas","pdf_page":9,"page":27,"source_match":"table","kind":"unresolved","cue":null,"cue_scope":"Drug-class name","decision":"hold","prior":"new_chapter_record","reason":"No economical bridge proposed; sofa/onion fragments would require too much sound repair. Hold is not proof that a useful bridge cannot exist.","tested":false}
+  ],
+  "table_locations": {"inhalational injury":"Table6-1","renal failure":"Table6-2","sulfonylureas":"Table6-3"},
+  "evidence": {"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend": {"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0}
+}

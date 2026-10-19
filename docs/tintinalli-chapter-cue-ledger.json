@@ -201,11 +201,24 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "6",
+      "title": "Natural Disasters",
+      "record": "docs/chapter-6-cue-audit.json",
+      "report": "docs/chapter-6-cue-audit.md",
+      "selected_terms": 18,
+      "new_candidates": 13,
+      "reused_candidates": 4,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
   "next_chapter": {
-    "chapter_id": "6",
-    "title": "Natural Disasters",
+    "chapter_id": "7",
+    "title": "Bomb, Blast, and Crush Injuries",
     "status": "not_started_for_cue_review"
   },
   "spend": {

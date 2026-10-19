@@ -199,6 +199,19 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapter 6 Natural Disasters candidate bank
+**Done:** Eighteen selected terms:13 newly recorded untested candidates,4reuses,
+1hold. Vector-arrow mosquito, waterborne boat, nonunion wedding/bone characters,
+external scaffold and familiar actions retained. Sulfonylureas held, not forced.
+**Verified:** Same Disaster Management source hash; PDF7-12=printed25-30;
+main visually verified shared title boundaries. Independent AI source/concept
+review supported all term pages; main integrated visible posture and scaffold
+connection improvements. No rendered, clinical or learning-effectiveness proof.
+**Limits:** No paid calls or images; $6 allowance untouched; catalog76 unchanged.
+Unrelated Forge edits preserved. Fetch failed on existing Codex checkpoint ref;
+GitHub auth works, push requires remote API verification. Next Chapter7 Bomb,
+Blast, and Crush Injuries, not reviewed beyond boundary/title identification.
+
 ### 2026-10-19 - Chapter 5 Disaster Preparedness candidate bank
 **Done:** Eighteen source-grounded terms:12 newly recorded untested candidates,
 5reuses,1hold. Blood vault/bank, crossed matches, push/pack and rice-in/ricin
