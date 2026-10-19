@@ -199,6 +199,19 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapter 3 Air Medical Transport candidate bank
+**Done:** Sixteen terms, fourteen retained untested chapter compositions and two
+holds; broad category, familiar state and wordplay cues accepted. Flail/treasure
+chest and boy/judge are name bridges, not clinical explanations. Ledger/index
+updated; Chapter 4 Mass Gatherings next, not started.
+**Verified:** Source hash, all term/page matches (9 prose,7 table), visual boundary
+inspection pages9/13, independent AI source and conceptual review. Focused data
+tests and catalog validation; no clinical claim, image or learner validation.
+**Limits:** Some generic grammar reused; not fourteen novel inventions. No paid
+calls or renders, $6 budget untouched, canonical catalog76 unchanged. Initial
+extraction exposed later chapter text but it was excluded. Unrelated Forge edits
+preserved. Known fetch checkpoint error persists; remote API verifies push SHA.
+
 ### 2026-10-19 - User calibration: useful category cues, not exhaustive specificity
 PPE was already retained; simplified to familiar hazmat suit with optional shield
 exaggeration. Retained orange baking-soda box for bicarbonate and bellows as broad

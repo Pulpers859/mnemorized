@@ -163,11 +163,23 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+    "chapter_id": "3",
+    "title": "Air Medical Transport",
+    "record": "docs/chapter-3-cue-audit.json",
+    "report": "docs/chapter-3-cue-audit.md",
+    "selected_terms": 16,
+    "retained_candidates": 14,
+    "holds": 2,
+    "independent_source_and_conceptual_review": true,
+    "exhaustive_vocabulary_review": false,
+    "empirical_validation": false
     }
   ],
   "next_chapter": {
-    "chapter_id": "3",
-    "title": "Air Medical Transport",
+    "chapter_id": "4",
+    "title": "Mass Gatherings",
     "status": "not_started_for_cue_review"
   },
   "spend": {

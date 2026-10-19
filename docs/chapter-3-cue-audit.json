@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "chapter_id": "3",
+  "title": "Air Medical Transport",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Prehospital Care.pdf",
+    "sha256": "856A9EB4746909447C9BD2FD0ABB4D3463669D0234796503828939E9CA67A642",
+    "pdf_pages": [9, 10, 11, 12, 13],
+    "printed_pages": [9, 10, 11, 12, 13],
+    "boundary": "Actual Air Medical Transport title block in right column of page 9 through references in left column of page 13, before actual Mass Gatherings title. Exclude Chapter 2 above starting title and Chapter 4 right column/below ending title.",
+    "verification": "Vocabulary occurrence and boundaries only, not current clinical recommendations or mechanistic entailment."
+  },
+  "scope": "Sixteen selected terms. Broad learned associations, not exhaustive chapter coverage, source-derived medical narration, generator prompts or claims of novelty.",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "table_locations": {
+    "flail chest": "Table 3-2, thoracic injury",
+    "hemothorax": "Table 3-2, thoracic injury",
+    "limb ischemia": "Table 3-2, orthopedic injuries",
+    "cardiac tamponade": "Table 3-3, cardiac",
+    "aortic dissection": "Table 3-3, critically ill medical or surgical patients",
+    "spinal cord compression": "Table 3-3, neurologic",
+    "status epilepticus": "Table 3-3, neurologic"
+  },
+  "production_admitted": false,
+  "entries": [
+    {"term": "rotor-wing", "page": 9, "source_match": "body", "kind": "familiar_identity", "cue": "Helicopter with an oversized recognizable rotor.", "cue_scope": "Aircraft category", "decision": "retain_candidate", "reason": "The familiar aircraft silhouette is enough; a new pun is unnecessary. Rotor emphasis reinforces the category. No aircraft performance or transport-selection claim.", "tested": false},
+    {"term": "fixed-wing", "page": 9, "source_match": "body", "kind": "literal_and_wordplay", "cue": "Airplane wings visibly fixed in place by exaggerated bolts.", "cue_scope": "Aircraft category and fixed wordplay", "decision": "retain_candidate", "reason": "Ordinary airplane silhouette plus fixed/fastened meaning. Bolts are playful emphasis, not an aircraft construction diagram or implication that helicopter blades are unsecured.", "tested": false},
+    {"term": "motion sickness", "page": 10, "source_match": "body", "kind": "familiar_situation", "cue": "Queasy passenger with a sick bag in a tilted aircraft cabin.", "cue_scope": "Motion-related nausea category", "decision": "retain_candidate", "reason": "Familiar travel situation needs no exact phonetic bridge. Tilt and context convey motion without demanding every viewer exclude all other nausea causes. Not a diagnosis or treatment cue.", "tested": false},
+    {"term": "hypoxemia", "page": 11, "source_match": "body", "kind": "identity_and_state", "cue": "Blood-drop character beside a nearly empty oxygen tank.", "cue_scope": "Blood plus low-oxygen recall metaphor", "decision": "retain_candidate", "reason": "Blood identity gives context while scarce oxygen supplies the low-state cue. Tank quantity is a metaphor, not an arterial measurement, cause, saturation value or oxygen-treatment instruction.", "tested": false},
+    {"term": "dehydration", "page": 11, "source_match": "body", "kind": "familiar_state", "cue": "Dry shriveled sponge beside an almost empty water bottle.", "cue_scope": "Water depletion", "decision": "retain_candidate", "reason": "Dryness and depleted water are familiar rather than arbitrary. Does not diagnose dehydration from appearance or specify fluid treatment. No need for a uniquely medical-looking sponge.", "tested": false},
+    {"term": "Boyle's law", "page": 11, "source_match": "body", "kind": "sound_and_double_meaning", "cue": "Boy wearing a judge's wig beside a large balloon.", "cue_scope": "Name cue only: boy/Boyle plus law/judge; balloon supplies gas context", "decision": "retain_candidate", "reason": "Near-sound name and familiar legal role; not an exact homophone or a complete representation of the physical law. Avoid boiling imagery that could misleadingly suggest a temperature-change law.", "tested": false},
+    {"term": "gas embolism", "page": 11, "source_match": "body", "kind": "literal_relationship", "cue": "Large gas bubble lodged in a transparent branching vessel model.", "cue_scope": "Intravascular gas/obstruction family", "decision": "retain_candidate", "reason": "Simple bubble-in-vessel relation can support learned recall without depicting every qualifier. Does not encode cerebral or arterial modifiers, source of gas, indication or treatment.", "tested": false},
+    {"term": "pneumothoraces", "page": 11, "source_match": "body", "kind": "spatial_relationship", "cue": "Air balloon in the space between a lung model and a transparent chest shell.", "cue_scope": "Pneumothorax family, not plural count or subtype", "decision": "retain_candidate", "reason": "Air outside lung within chest is the intended spatial metaphor. Balloon is not a literal foreign body or treatment; do not require plural object counts merely because the source term is plural. Anatomical lesson claims need separate source checking.", "tested": false},
+    {"term": "flail chest", "page": 12, "source_match": "table", "kind": "double_meaning", "cue": "Medieval flail resting against a large treasure chest.", "cue_scope": "Term identity: flail plus chest", "decision": "retain_candidate", "reason": "Two familiar objects recover the phrase without anatomical detail. Does not encode injury mechanism, rib criteria, physiology or treatment; treasure-chest meaning is an intentional bridge, not confusion.", "tested": false},
+    {"term": "hemothorax", "page": 12, "source_match": "table", "kind": "identity_and_location", "cue": "Transparent chest shell with conspicuous red liquid surrounding a lung model.", "cue_scope": "Blood-in-chest relationship metaphor", "decision": "retain_candidate", "reason": "Color is anchored by recognizable blood-like liquid and chest context rather than an arbitrary color legend. Not a volume threshold, detailed diagnostic illustration or procedural guide.", "tested": false},
+    {"term": "cardiac tamponade", "page": 12, "source_match": "table", "kind": "constraint_relationship", "cue": "Heart character squeezed in a tight transparent fluid-filled pouch.", "cue_scope": "Heart plus surrounding fluid/constraint concept", "decision": "retain_candidate", "reason": "A useful conceptual relationship without needing every diagnostic sign. Does not say all fluid collections cause tamponade or encode a clinical threshold, etiology or drainage procedure.", "tested": false},
+    {"term": "aortic dissection", "page": 12, "source_match": "table", "kind": "literal_state", "cue": "Aorta model with its wall visibly peeling into separate layers.", "cue_scope": "Wall-layer separation concept", "decision": "retain_candidate", "reason": "Ordinary structural depiction can be useful; no forced pun required. Use layered separation rather than a vessel cut cleanly in half. No classification, propagation, rupture or treatment claim.", "tested": false},
+    {"term": "spinal cord compression", "page": 12, "source_match": "table", "kind": "physical_relationship", "cue": "Spinal cord model visibly squeezed by a broad clamp.", "cue_scope": "Cord plus compression concept", "decision": "retain_candidate", "reason": "Anatomical identity plus a familiar squeeze. Reuses the catalog's generic compression grammar but is a newly recorded chapter composition, not a new primitive. Clamp is metaphorical, not a treatment or assertion of a particular cause.", "tested": false},
+    {"term": "limb ischemia", "page": 12, "source_match": "table", "kind": "supply_relationship", "cue": "Limb model downstream of a closed red supply tap and visibly depleted supply tube.", "cue_scope": "Reduced-supply concept in a limb", "decision": "retain_candidate", "reason": "Simple supply metaphor, not a unique name cipher. The closed tap illustrates one recall relationship, not a claim that every ischemic state has a complete arterial blockage. No pulse criteria or therapy encoded.", "tested": false},
+    {"term": "status epilepticus", "page": 12, "source_match": "table", "kind": "sound_and_character", "cue": "A statue with a conspicuous cartoon shaking pose.", "cue_scope": "Provisional status/statue name bridge plus broad seizure association", "decision": "hold", "reason": "Potentially teachable, but this particular statue/shaking proposal needs a clearer learned bridge before retention. Not rejected merely for lacking a duration threshold. Do not equate all seizures, tremor or all status presentations with visible shaking.", "tested": false},
+    {"term": "cricothyrotomy", "page": 10, "source_match": "body", "kind": "partial_sound", "cue": "Cricket beside a neck model.", "cue_scope": "Partial crico/cricket sound ingredient", "decision": "hold", "reason": "Cricket supplies only a weak opening fragment; the neck prop adds little to recover the remainder. Keep as an ingredient idea, not a useful complete bridge yet. No improvised cutting or procedure depiction.", "tested": false}
+  ],
+  "evidence": {"render_audits": [], "recall_studies": [], "clinical_claim_validation": []},
+  "spend": {"anthropic_calls": 0, "other_paid_provider_calls": 0, "image_renders": 0}
+}

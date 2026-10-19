@@ -43,3 +43,32 @@ def test_chapter_two_ledger_link_and_reused_cue():
     assert [e["term"] for e in reused] == ["magnesium"]
     catalog = json.loads((ROOT / "docs/visual-cue-catalog.json").read_text())
     assert "magnesium-magnet" in {e["id"] for e in catalog["entries"]}
+
+
+def test_chapter_three_bank_and_ledger_are_consistent():
+    bank = json.loads((ROOT / "docs/chapter-3-cue-audit.json").read_text())
+    ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
+    record = next(r for r in ledger["subsequent_chapter_reviews"]
+                  if r["chapter_id"] == "3")
+    entries = bank["entries"]
+    assert bank["chapter_id"] == "3"
+    assert bank["source"]["pdf_pages"] == list(range(9, 14))
+    assert len(entries) == len({e["term"] for e in entries}) == 16
+    assert Counter(e["decision"] for e in entries) == {
+        "retain_candidate": 14, "hold": 2,
+    }
+    assert record["retained_candidates"] == 14 and record["holds"] == 2
+    assert (ROOT / record["record"]).is_file()
+    assert (ROOT / record["report"]).is_file()
+    assert int(ledger["next_chapter"]["chapter_id"]) >= 4
+    for entry in entries:
+        assert entry["tested"] is False
+        assert entry["page"] in bank["source"]["pdf_pages"]
+        assert entry["cue_scope"].strip() and entry["reason"].strip()
+        assert entry["source_match"] in {"body", "table"}
+    assert set(bank["table_locations"]) == {
+        e["term"] for e in entries if e["source_match"] == "table"
+    }
+    assert bank["production_admitted"] is False
+    assert all(not v for v in bank["evidence"].values())
+    assert all(v == 0 for v in bank["spend"].values())

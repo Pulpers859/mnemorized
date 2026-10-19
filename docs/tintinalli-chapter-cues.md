@@ -55,9 +55,16 @@ The independent review covered the initial decisions; revisions are disclosed.
 Structured chapter bank:
 `docs/chapter-2-cue-audit.json`. No source files or full chapter text committed.
 
+## Chapter 3: Air Medical Transport
+
+[Chapter 3 review](chapter-3-cue-audit.md): sixteen terms from pages 9-13,
+fourteen untested chapter candidates and two holds. Independent source and
+conceptual review completed. Nine body matches and seven table matches.
+Structured record: `docs/chapter-3-cue-audit.json`.
+
 ## Next
 
-Chapter 3, **Air Medical Transport**, is not started for cue review. Do not move
+Chapter 4, **Mass Gatherings**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
