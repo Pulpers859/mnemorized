@@ -2189,6 +2189,450 @@
         "render_audits": [],
         "recall_studies": []
       }
+    },
+    {
+      "id": "phonetic-organ",
+      "concept": "organ",
+      "aliases": [
+        "organ"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "oar",
+        "gun"
+      ],
+      "bridge": "oar + gun -> organ",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Target OR-gun checked against NCI; oar+gun remains an untested near-sound with second-vowel reduction and naming caveats.",
+        "Oar may be called paddle; gun may be called pistol. The bridge cannot identify a specific organ.",
+        "Close full sequence; oar/paddle and gun/pistol naming remain untested; generic term only.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. oar + gun.",
+      "collision_tags": [
+        "organ musical instrument",
+        "organs"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/organ"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-palate",
+      "concept": "palate",
+      "aliases": [
+        "palate"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "wooden shipping pallet"
+      ],
+      "bridge": "pallet -> palate",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Target PAL-et checked against NCI; the pallet comparison remains an untested whole-word homophone proposal.",
+        "Pallet may be called wooden platform; the sound also collides with palette and does not specify hard or soft palate.",
+        "Whole-word homophone; platform is an alternative object name and anatomical subtype is not encoded.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. wooden shipping pallet.",
+      "collision_tags": [
+        "palpate",
+        "palette",
+        "pallet"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/palate"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-palm",
+      "concept": "palm",
+      "aliases": [
+        "palm"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "palm tree"
+      ],
+      "bridge": "palm tree -> palm",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Collins lists both shared-word senses with corresponding spoken forms; the tree-to-anatomy identity bridge is untested.",
+        "Viewer may say coconut tree or tropical tree. No specific hand structure beyond palm can be recovered.",
+        "Whole-word homonym; tropical/coconut tree naming and anatomical sense require learned context.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. palm tree.",
+      "collision_tags": [
+        "palmar",
+        "palm tree"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/palm"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-rabies",
+      "concept": "rabies",
+      "aliases": [
+        "rabies"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "ray fish",
+        "bees"
+      ],
+      "bridge": "ray + bees -> rabies",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Target RAY-beez checked against NCI; ray+bees remains an untested constructed sound bridge.",
+        "Ray may be called stingray or manta; bees may be called wasps. Plural insects do not require an exact count.",
+        "Close full sequence; ray/stingray and bees/wasps identification must be tested; no transmission claim.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. ray fish + bees.",
+      "collision_tags": [
+        "scabies"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/rabies"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-wheal",
+      "concept": "wheal",
+      "aliases": [
+        "wheal"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "wheel"
+      ],
+      "bridge": "wheel -> wheal",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Target spoken form checked against Collins; wheel comparison is an untested whole-word homophone proposal, not a skin depiction.",
+        "Wheel may be named tire or steering wheel depending on its depiction.",
+        "Whole-word homophone; wheel/tire naming depends on depiction; no skin finding is depicted.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. wheel.",
+      "collision_tags": [
+        "weal",
+        "welt"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/wheal"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-corn",
+      "concept": "corn",
+      "aliases": [
+        "corn"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "ear of corn"
+      ],
+      "bridge": "corn -> corn (medical noun)",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Collins lists both shared-word senses with corresponding spoken forms; the food-to-medical identity bridge is untested.",
+        "Object may be called maize or corn on the cob; food interpretation dominates without a previously learned association.",
+        "Whole-word homonym; maize naming and food-domain intrusion must be tested; no dietary cause.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. ear of corn.",
+      "collision_tags": [
+        "callus",
+        "corn as food"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/corn"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-globe",
+      "concept": "globe",
+      "aliases": [
+        "globe"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "terrestrial globe on a stand"
+      ],
+      "bridge": "world globe -> anatomical globe",
+      "applicable_to": [
+        "Learned term identity only, after the exact target concept and scope are independently grounded by Forge.",
+        "Confirm target pronunciation and unprompted object naming for the learner; not a universally recognized cue."
+      ],
+      "not_for": [
+        "Headword/object pronunciation checked against Collins; medical globe usage is present in the ABEM EM Model. The learned identity bridge is untested.",
+        "Viewer may name Earth or world rather than globe.",
+        "Whole-word homonym; world/Earth are alternate names; anatomical sense requires prior scope.",
+        "Not a clinical finding, anatomy definition, mechanism, disease cause, treatment, route, dose or severity indicator.",
+        "Not spontaneous recognition, verified recall benefit or guaranteed novelty; independently proposed generic vocabulary can overlap existing mnemonics."
+      ],
+      "signature": "Require all primary objects to be independently nameable without labels; this has not been tested. Recover the full term, not merely a sound fragment. terrestrial globe on a stand.",
+      "collision_tags": [
+        "globe of the eye",
+        "global"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/globe",
+          "https://www.abem.org/wp-content/uploads/2024/07/2022-EM-Model-for-Website.pdf"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-crown",
+      "concept": "crown",
+      "aliases": [
+        "crown"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "royal crown"
+      ],
+      "bridge": "crown headpiece -> dental crown",
+      "applicable_to": [
+        "Learned shared-headword identity only, after exact target sense is independently grounded and scoped by Forge.",
+        "Confirm unprompted object naming and full-term recovery for the learner; not universal recognition."
+      ],
+      "not_for": [
+        "A whole-word homonym, not a syllabic rebus.",
+        "Crown may be named tiara; medical subtype is not encoded.",
+        "Exact shared headword and recognizable crown; tiara naming and dental/head scope remain untested.",
+        "Does not encode a longer anatomical term, diagnosis, clinical mechanism, disease cause, procedure, treatment, dose or severity.",
+        "No image/recall evidence or verified novelty; independently proposed common vocabulary can overlap other mnemonic systems."
+      ],
+      "signature": "Require independently nameable primary objects without labels; not yet tested. royal crown.",
+      "collision_tags": [
+        "dental crown",
+        "crown of head"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/crown"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-bridge",
+      "concept": "bridge",
+      "aliases": [
+        "bridge"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "arched footbridge"
+      ],
+      "bridge": "bridge structure -> dental bridge",
+      "applicable_to": [
+        "Learned shared-headword identity only, after exact target sense is independently grounded and scoped by Forge.",
+        "Confirm unprompted object naming and full-term recovery for the learner; not universal recognition."
+      ],
+      "not_for": [
+        "A whole-word homonym; exact spoken headword is shared.",
+        "Viewer may say footbridge or overpass; no dental materials or procedure are depicted.",
+        "Exact shared headword and recognizable structure; overpass naming and arch collision remain untested. Arch is held.",
+        "Does not encode a longer anatomical term, diagnosis, clinical mechanism, disease cause, procedure, treatment, dose or severity.",
+        "No image/recall evidence or verified novelty; independently proposed common vocabulary can overlap other mnemonic systems."
+      ],
+      "signature": "Require independently nameable primary objects without labels; not yet tested. arched footbridge.",
+      "collision_tags": [
+        "dental bridge",
+        "bridge of nose",
+        "arch"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/bridge"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-nail",
+      "concept": "nail",
+      "aliases": [
+        "nail"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "hardware nail"
+      ],
+      "bridge": "metal nail -> anatomical nail",
+      "applicable_to": [
+        "Learned shared-headword identity only, after exact target sense is independently grounded and scoped by Forge.",
+        "Confirm unprompted object naming and full-term recovery for the learner; not universal recognition."
+      ],
+      "not_for": [
+        "A whole-word homonym; exact spoken headword is shared.",
+        "Nail can be called pin or spike; finger/toe specificity is absent.",
+        "Exact shared headword and familiar hardware object; pin/spike confusion and anatomical scope remain untested.",
+        "Does not encode a longer anatomical term, diagnosis, clinical mechanism, disease cause, procedure, treatment, dose or severity.",
+        "No image/recall evidence or verified novelty; independently proposed common vocabulary can overlap other mnemonic systems."
+      ],
+      "signature": "Require independently nameable primary objects without labels; not yet tested. hardware nail.",
+      "collision_tags": [
+        "fingernail",
+        "toenail"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/nail"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-cone",
+      "concept": "cone",
+      "aliases": [
+        "cone"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "traffic cone"
+      ],
+      "bridge": "traffic cone -> anatomical cone term",
+      "applicable_to": [
+        "Learned shared-headword identity only, after exact target sense is independently grounded and scoped by Forge.",
+        "Confirm unprompted object naming and full-term recovery for the learner; not universal recognition."
+      ],
+      "not_for": [
+        "A whole-word homonym; no sound repair.",
+        "Traffic cone is usually named cone, but the term's retinal/anatomical scope is not encoded.",
+        "Exact shared headword and familiar traffic cone; anatomical scope and rod discrimination remain untested.",
+        "Does not encode a longer anatomical term, diagnosis, clinical mechanism, disease cause, procedure, treatment, dose or severity.",
+        "No image/recall evidence or verified novelty; independently proposed common vocabulary can overlap other mnemonic systems."
+      ],
+      "signature": "Require independently nameable primary objects without labels; not yet tested. traffic cone.",
+      "collision_tags": [
+        "retinal cone",
+        "rod"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/sound-bridge-workshop.md",
+          "https://www.collinsdictionary.com/us/dictionary/english/cone"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
     }
   ]
 }

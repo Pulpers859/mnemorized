@@ -199,6 +199,40 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Sound-bridge workshop; honest yield below requested 50
+Earlier proposal agents disappeared without saving files. Patrick asked about
+status; main corrected the earlier unsupported running claim and restarted with
+incremental saved batches. Three AI proposal lanes then saved88 attempts; main
+added8, then a final bounded8-headword homonym batch, totaling104 attempts over
+103 distinct terms/headwords (duct duplicated). Independent AI reviewer screened
+all32 shortlist attempts:11 provisional admits,16 holds,5 rejects.
+Other raw attempts were rejected by their proposal lanes,
+not all independently re-adjudicated. No credentialed human expert is implied.
+
+Added durable docs/sound-bridge-workshop.json plus a readable guide with all
+103 terms, proposed cues, decisions, risks and limits. Only11 new candidates entered
+the offline cue catalog:organ,palate,palm,rabies,wheal,corn,globe,crown,bridge,nail,
+cone. They include2 constructed rebuses,2 homophones,7 homonyms; do NOT claim50
+new sound bridges. Total catalog72 entries:54 candidates,17 legacy_unverified,
+one restricted. Final homonym delta did not change earlier decisions.
+Held/rejected ideas remain OUT of ordinary catalog search. No new medication
+bridge survived this bounded review; that is not proof that none can be found.
+
+Resources:local Tintinalli manifest topic tags and public ABEM EM Model for broad
+curriculum orientation,not measured session frequency or PDF ingestion. Selected
+NCI target pronunciations and Collins headwords were checked; not the whole bank.
+Source verification does not establish cue recognition or learning effectiveness.
+No proprietary mnemonic catalogs/scenes/characters imported; novelty unverified.
+
+Full raw packet: Troubleshooting Prompts/sound_bridge_workshop_2026-10-19/.
+No Anthropic/provider/image calls, no benchmark or learner trial; $6 cap untouched.
+Nothing is automatically injected into Forge. Existing2 unrelated Forge edits
+remain unstaged. Fetch still fails on the recorded Codex checkpoint-ref problem;
+remote main was checked through authenticated GitHub API instead.
+Final validation:catalog schema/path72 valid; focused104 passed,one skipped;
+full suite736 passed,two skipped,149 subtests passed (48.13s). These checks prove
+data/tool consistency only,not pronunciation accuracy,recall or image reliability.
+
 ### 2026-10-19 - Offline evidence-tagged cue catalog expansion
 Patrick requested a larger cue bank with language/wordplay expert input.
 Added docs/visual-cue-catalog.json (61 entries:43 candidates,17 unverified legacy,

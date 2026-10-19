@@ -1,0 +1,2650 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "usage": "OFFLINE WORKSHOP ONLY. A rejected or held word is not a usable mnemonic. Term identity only; no clinical authority, production injection, object-recognition, recall or image evidence. AI reviewers are not human specialists.",
+  "attempt_count": 104,
+  "unique_term_count": 103,
+  "decision_counts": {
+    "retain_candidate": 11,
+    "hold": 16,
+    "reject": 76
+  },
+  "sources": [
+    {
+      "url": "https://www.abem.org/resources/em-model/",
+      "scope": "General curriculum orientation only, not measured frequency or an endorsement of cues."
+    },
+    {
+      "path": "tools/tintinalli_manifest.json",
+      "scope": "Local topic/tag orientation only, not chapter ingestion or sourced medical content."
+    },
+    {
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms",
+      "scope": "Selected target pronunciation checks only; not every word checked. See workshop guide."
+    }
+  ],
+  "entries": [
+    {
+      "term": "ileum",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "ileum",
+          "objects": [
+            "eye",
+            "loom"
+          ],
+          "spoken_bridge": "eye + loom -> ileum",
+          "pronunciation_caveat": "Correction: the initial batch incorrectly proposed EYE-lee-um. User reports verified NCI IH-lee-um; no source was independently opened in this offline lane. Eye + loom therefore also mismatches the stressed vowel. Remaining bridge judgments are provisional.",
+          "recognition_risk": "A loom may be called a weaving frame; the objects cannot distinguish ileum from ilium.",
+          "confusable_terms": [
+            "ilium"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. A whole-term homophone collision prevents anatomy discrimination, even if the bridge is learned."
+        }
+      ]
+    },
+    {
+      "term": "sacrum",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "sacrum",
+          "objects": [
+            "sack",
+            "rum bottle"
+          ],
+          "spoken_bridge": "sack + rum -> sacrum",
+          "pronunciation_caveat": "Provisional: SACK-rum is near SAY-krum but changes the stressed vowel; regional pronunciations need checking.",
+          "recognition_risk": "An unlabeled rum bottle is visually indistinguishable from many other liquor bottles.",
+          "confusable_terms": [
+            "sacral",
+            "sacrum"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Rum identity depends on a label or prior convention, violating the object-identification constraint."
+        }
+      ]
+    },
+    {
+      "term": "tibia",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "tibia",
+          "objects": [
+            "teacup",
+            "bee"
+          ],
+          "spoken_bridge": "tea + bee -> tibia",
+          "pronunciation_caveat": "Provisional: TEE-bee needs the final weak vowel in TIB-ee-uh and changes the first vowel.",
+          "recognition_risk": "A teacup may mean cup or coffee; bee may be named wasp.",
+          "confusable_terms": [
+            "fibula",
+            "tibial"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Too much stressed-vowel change plus an absent syllable for a defensible first shortlist."
+        }
+      ]
+    },
+    {
+      "term": "colon",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Adjacent L merging, second-vowel alteration and coal/lawn naming remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "colon",
+          "objects": [
+            "coal",
+            "lawn"
+          ],
+          "spoken_bridge": "coal + lawn -> colon",
+          "pronunciation_caveat": "User reports verified NCI KOH-lun; no source was independently opened in this offline lane. Provisional bridge judgment: COAL-lawn must reduce its second vowel and merge adjacent L sounds; accent dependent.",
+          "recognition_risk": "Coal may be named charcoal or rock, and lawn may be named grass.",
+          "confusable_terms": [
+            "colonic",
+            "colon punctuation mark"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Two drawable everyday referents cover the whole word with a limited weak-vowel adjustment; object naming remains a test requirement."
+        }
+      ]
+    },
+    {
+      "term": "trachea",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Final weak syllable is absent; target pronunciation, tray/platter naming and reading order need testing.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "trachea",
+          "objects": [
+            "tray",
+            "key"
+          ],
+          "spoken_bridge": "tray + key -> trachea",
+          "pronunciation_caveat": "Provisional: TRAY-key needs a terminal weak vowel for TRAY-kee-uh; alternate pronunciations may weaken the bridge.",
+          "recognition_risk": "Tray may be called a platter; key is comparatively distinctive.",
+          "confusable_terms": [
+            "tracheal",
+            "tracheostomy"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Familiar objects preserve the main whole-word sound sequence, with one explicitly disclosed weak-vowel omission."
+        }
+      ]
+    },
+    {
+      "term": "cornea",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "cornea",
+          "objects": [
+            "corn cob",
+            "ear"
+          ],
+          "spoken_bridge": "corn + ear -> cornea",
+          "pronunciation_caveat": "Provisional: corn-ear versus KOR-nee-uh requires vowel redistribution and may introduce an unwanted final R.",
+          "recognition_risk": "Corn and ear can collapse into the single phrase ear of corn, losing the intended two-part reading.",
+          "confusable_terms": [
+            "corneal",
+            "coronal"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Accent sensitivity and object-phrase ambiguity compound an already strained whole-word bridge."
+        }
+      ]
+    },
+    {
+      "term": "iris",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Rice-to-riss requires a vowel change, not just weakening; literal eye anatomy can dominate.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "iris",
+          "objects": [
+            "eye",
+            "rice"
+          ],
+          "spoken_bridge": "eye + rice -> iris",
+          "pronunciation_caveat": "Provisional: EYE-rice must weaken the second vowel to EYE-riss.",
+          "recognition_risk": "Rice may resemble other grains; an eye may prompt literal eye anatomy instead of the sound bridge.",
+          "confusable_terms": [
+            "iris flower",
+            "irides"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Simple visible objects approximate the complete term with a disclosed vowel adjustment; no specific anatomical claim is encoded."
+        }
+      ]
+    },
+    {
+      "term": "thorax",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "thorax",
+          "objects": [
+            "thorn",
+            "axe"
+          ],
+          "spoken_bridge": "thorn + axe -> thorax",
+          "pronunciation_caveat": "Provisional: THORN-axe needs deletion of N and reduction of the second vowel toward THOR-aks.",
+          "recognition_risk": "A thorn can be mistaken for a spike or splinter.",
+          "confusable_terms": [
+            "thoracic"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Consonant deletion and weak thorn recognition make this less defensible than its written resemblance suggests."
+        }
+      ]
+    },
+    {
+      "term": "organ",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Close full sequence; oar/paddle and gun/pistol naming remain untested; generic term only.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "organ",
+          "objects": [
+            "oar",
+            "gun"
+          ],
+          "spoken_bridge": "oar + gun -> organ",
+          "pronunciation_caveat": "Provisional: OR-gun approximates OR-gun with a reduced second vowel; accent and consonant joining need testing.",
+          "recognition_risk": "Oar may be called paddle; gun may be called pistol. The bridge cannot identify a specific organ.",
+          "confusable_terms": [
+            "organ musical instrument",
+            "organs"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Two recognizable objects span the whole generic anatomical term without an action or written label."
+        }
+      ]
+    },
+    {
+      "term": "palate",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whole-word homophone; platform is an alternative object name and anatomical subtype is not encoded.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "palate",
+          "objects": [
+            "wooden shipping pallet"
+          ],
+          "spoken_bridge": "pallet -> palate",
+          "pronunciation_caveat": "Provisional: pallet and palate are expected near-homophones in common English pronunciations; verify for each target accent.",
+          "recognition_risk": "Pallet may be called wooden platform; the sound also collides with palette and does not specify hard or soft palate.",
+          "confusable_terms": [
+            "palpate",
+            "palette",
+            "pallet"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. One familiar drawable object supplies the complete spoken form; no anatomical subtype is implied."
+        }
+      ]
+    },
+    {
+      "term": "muscle",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Strong sound but mussel/clam/oyster identification is unresolved; avoid rejected measles reuse.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "muscle",
+          "objects": [
+            "mussel"
+          ],
+          "spoken_bridge": "mussel -> muscle",
+          "pronunciation_caveat": "Provisional: expected whole-word homophone in common English pronunciations; not independently dictionary-checked here.",
+          "recognition_risk": "Mussel may instead be identified as clam, oyster, or generic shellfish.",
+          "confusable_terms": [
+            "mucosal",
+            "mussel"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Strong whole-term sound match, conditional on unprompted identification of the shellfish."
+        }
+      ]
+    },
+    {
+      "term": "palm",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whole-word homonym; tropical/coconut tree naming and anatomical sense require learned context.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "palm",
+          "objects": [
+            "palm tree"
+          ],
+          "spoken_bridge": "palm tree -> palm",
+          "pronunciation_caveat": "Provisional: the shared word palm preserves the whole anatomical term; this is a homonym cue, not a syllabic rebus.",
+          "recognition_risk": "Viewer may say coconut tree or tropical tree. No specific hand structure beyond palm can be recovered.",
+          "confusable_terms": [
+            "palmar",
+            "palm tree"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Familiar nonmedical referent shares the full spoken anatomical word; main integration should distinguish homonym cues from constructed sound bridges."
+        }
+      ]
+    },
+    {
+      "term": "temple",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Temple/shrine/pagoda/building identification cannot be assumed from architecture.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "temple",
+          "objects": [
+            "temple building"
+          ],
+          "spoken_bridge": "temple building -> temple",
+          "pronunciation_caveat": "Provisional: the shared word temple preserves the whole anatomical term; this is a homonym cue, not a syllabic rebus.",
+          "recognition_risk": "Building may be called shrine, pagoda, church, or monument. Architecture does not guarantee the intended name.",
+          "confusable_terms": [
+            "temporal",
+            "temple religious building"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Whole-word identity is strong but object identification is substantially uncertain; needs a strict naming test."
+        }
+      ]
+    },
+    {
+      "term": "sinus",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "N merging, vowel change, sign/rope naming and distressing noose imagery remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "sinus",
+          "objects": [
+            "road sign",
+            "noose"
+          ],
+          "spoken_bridge": "sign + noose -> sinus",
+          "pronunciation_caveat": "Provisional: SIGN-noose needs merging of adjacent N sounds and reduction of OO toward the weak vowel in SIGH-nus.",
+          "recognition_risk": "An unlabeled sign can be recognized by its conventional shape but may be called stop sign; noose may be called rope or loop. The anatomical site remains unspecified.",
+          "confusable_terms": [
+            "sinuses",
+            "sinusitis"
+          ],
+          "verdict": "shortlist",
+          "reason": "Untested, independently proposed offline wordplay. Two visible referents approximate the complete word without sign lettering; naming ambiguity, sound reduction, and potentially distressing imagery require screening."
+        }
+      ]
+    },
+    {
+      "term": "catheter",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "catheter",
+          "objects": [
+            "cat",
+            "theater building"
+          ],
+          "spoken_bridge": "cat + theater -> catheter",
+          "pronunciation_caveat": "Provisional: cat-theater adds vowels and changes consonant timing relative to KATH-uh-ter.",
+          "recognition_risk": "A theater exterior may be called cinema or building and may require signage to identify.",
+          "confusable_terms": [
+            "catheterization"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. The complete device name is not preserved cleanly and theater identity is unreliable without labels."
+        }
+      ]
+    },
+    {
+      "term": "cannula",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "cannula",
+          "objects": [
+            "can",
+            "noodle"
+          ],
+          "spoken_bridge": "can + noodle -> cannula",
+          "pronunciation_caveat": "Provisional: can-noodle introduces D and a different ending compared with CAN-yoo-luh or CAN-uh-luh.",
+          "recognition_risk": "A noodle may be named pasta or spaghetti; naming changes destroy the attempted bridge.",
+          "confusable_terms": [
+            "cannulation",
+            "canal"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Excess consonant and vowel repairs are required for the whole device term."
+        }
+      ]
+    },
+    {
+      "term": "trocar",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "trocar",
+          "objects": [
+            "truck",
+            "car"
+          ],
+          "spoken_bridge": "truck + car -> trocar",
+          "pronunciation_caveat": "Provisional: TRUCK-car differs from TROH-kar in the stressed vowel and adds a K at the join.",
+          "recognition_risk": "Vehicle identities are familiar, but the combination can simply read as traffic.",
+          "confusable_terms": [
+            "trochanter"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Familiar objects do not compensate for the stressed-syllable mismatch and extra consonant."
+        }
+      ]
+    },
+    {
+      "term": "lancet",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "lancet",
+          "objects": [
+            "lance",
+            "net"
+          ],
+          "spoken_bridge": "lance + net -> lancet",
+          "pronunciation_caveat": "Provisional: lance-net retains an unwanted N and a full second vowel compared with LAN-sit.",
+          "recognition_risk": "Lance may be called spear; net may be called mesh.",
+          "confusable_terms": [
+            "lance",
+            "lancing"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Both object naming and consonant deletion are too fragile for a defensible shortlist."
+        }
+      ]
+    },
+    {
+      "term": "forceps",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "forceps",
+          "objects": [
+            "fork",
+            "steps"
+          ],
+          "spoken_bridge": "fork + steps -> forceps",
+          "pronunciation_caveat": "Provisional: fork-steps introduces K and T relative to FOR-seps.",
+          "recognition_risk": "Steps may be named stairs, breaking the intended sequence.",
+          "confusable_terms": [
+            "forceps delivery"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Multiple consonant deletions turn a visual resemblance into an unreliable spoken bridge."
+        }
+      ]
+    },
+    {
+      "term": "syringe",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "syringe",
+          "objects": [
+            "sea",
+            "ring"
+          ],
+          "spoken_bridge": "sea + ring -> syringe",
+          "pronunciation_caveat": "Provisional: sea-ring changes the first vowel and stress and lacks the final J sound in suh-RINJ.",
+          "recognition_risk": "Sea may be called ocean or water and is a setting rather than a discrete familiar object.",
+          "confusable_terms": [
+            "syrinx"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Fails both the bounded-object constraint and the whole-term sound match."
+        }
+      ]
+    },
+    {
+      "term": "stent",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "stent",
+          "objects": [
+            "tent"
+          ],
+          "spoken_bridge": "tent -> stent",
+          "pronunciation_caveat": "Provisional: tent entirely omits the initial S in stent.",
+          "recognition_risk": "Tent is familiar but cannot visibly supply the missing consonant without a label or another device.",
+          "confusable_terms": [
+            "tent",
+            "stint"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. A recognizable object alone does not encode the complete device term."
+        }
+      ]
+    },
+    {
+      "term": "scalpel",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "scalpel",
+          "objects": [
+            "scallop",
+            "pail"
+          ],
+          "spoken_bridge": "scallop + pail -> scalpel",
+          "pronunciation_caveat": "Provisional: scallop-pail adds a syllable and requires several vowel changes compared with SKAL-pul.",
+          "recognition_risk": "Scallop may be called shell; pail may be called bucket.",
+          "confusable_terms": [
+            "scalp",
+            "scapula"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Excess sound compression and unstable object names make this a written pun rather than a robust visual bridge."
+        }
+      ]
+    },
+    {
+      "term": "pelvis",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "pelvis",
+          "objects": [
+            "pail",
+            "vase"
+          ],
+          "spoken_bridge": "pail + vase -> pelvis",
+          "pronunciation_caveat": "Provisional: pail-vase differs from PEL-vis in both vowels; vase also varies substantially by accent.",
+          "recognition_risk": "Pail may be called bucket and vase may be called jar.",
+          "confusable_terms": [
+            "pelvic",
+            "renal pelvis"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Two stressed-vowel changes and object naming instability exceed a defensible near-sound match."
+        }
+      ]
+    },
+    {
+      "term": "patella",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "patella",
+          "objects": [
+            "pot",
+            "bank teller"
+          ],
+          "spoken_bridge": "pot + teller -> patella",
+          "pronunciation_caveat": "Provisional: pot-teller needs stress and vowel adjustments and a nonrhotic ending to approach puh-TEL-uh.",
+          "recognition_risk": "A bank teller is a role, not a self-identifying object; identification needs context, action, or signage.",
+          "confusable_terms": [
+            "patellar"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Violates the familiar-object constraint and depends heavily on accent."
+        }
+      ]
+    },
+    {
+      "term": "cranium",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "cranium",
+          "objects": [
+            "crane",
+            "yam"
+          ],
+          "spoken_bridge": "crane + yam -> cranium",
+          "pronunciation_caveat": "Provisional: crane-yam compresses and redistributes vowels relative to CRAY-nee-um.",
+          "recognition_risk": "Crane can be a bird or machine; yam may be called sweet potato or potato.",
+          "confusable_terms": [
+            "cranial"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. The final sound sequence is strained and yam identification is too unstable."
+        }
+      ]
+    },
+    {
+      "term": "larynx",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "larynx",
+          "objects": [
+            "lair",
+            "lynx"
+          ],
+          "spoken_bridge": "lair + lynx -> larynx",
+          "pronunciation_caveat": "Provisional: lair-lynx introduces a second L and a fuller vowel than LAIR-inks; pronunciation variants need checking.",
+          "recognition_risk": "A lair is likely named cave or den; a lynx may be called bobcat or cat.",
+          "confusable_terms": [
+            "pharynx"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Both object names are uncertain and the whole-term sound requires consonant deletion."
+        }
+      ]
+    },
+    {
+      "term": "incus",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "incus",
+          "objects": [
+            "ink bottle",
+            "bus"
+          ],
+          "spoken_bridge": "ink + bus -> incus",
+          "pronunciation_caveat": "Provisional: ink-bus adds B relative to ING-kus and alters the second vowel.",
+          "recognition_risk": "An unlabeled ink bottle may be called paint or medicine; bus is comparatively distinctive.",
+          "confusable_terms": [
+            "uncus"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Extra consonant and uncertain ink identity weaken the attempted whole anatomical term."
+        }
+      ]
+    },
+    {
+      "term": "coccyx",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "coccyx",
+          "objects": [
+            "rooster",
+            "socks"
+          ],
+          "spoken_bridge": "cock + socks -> coccyx",
+          "pronunciation_caveat": "Provisional: cock-socks must reduce its second vowel toward KOK-siks.",
+          "recognition_risk": "The required name cock is less likely than rooster or chicken; socks may be named stockings.",
+          "confusable_terms": [
+            "coccygeal"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Apparently close sounds depend on a nonpreferred object name, so unprompted recovery is doubtful."
+        }
+      ]
+    },
+    {
+      "term": "duct",
+      "decision": "reject",
+      "independent_shortlist_review": true,
+      "decision_reason": "Duck lacks the final T; repeat of an already rejected attempt is not new evidence.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "duct",
+          "objects": [
+            "duck"
+          ],
+          "spoken_bridge": "duck -> duct",
+          "pronunciation_caveat": "Provisional: duck lacks the final T in duct; casual consonant reduction is not assumed reliable.",
+          "recognition_risk": "Duck is familiar but cannot identify a particular anatomical duct or supply the missing consonant.",
+          "confusable_terms": [
+            "duck",
+            "ductal"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Preserved as a tempting near-match rejected for incomplete whole-term encoding."
+        },
+        {
+          "lane": "main",
+          "term": "duct",
+          "objects": [
+            "duck"
+          ],
+          "spoken_bridge": "duck -> duct",
+          "pronunciation_caveat": "Duck supplies the full stressed syllable but lacks the final T of duct.",
+          "recognition_risk": "Duck may be named bird; identity does not specify a duct's location.",
+          "confusable_terms": [
+            "ducts",
+            "duck"
+          ],
+          "verdict": "shortlist",
+          "reason": "Single familiar object with one explicitly missing final consonant; identity only."
+        }
+      ]
+    },
+    {
+      "term": "navel",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "anatomy",
+          "term": "navel",
+          "objects": [
+            "naval ship"
+          ],
+          "spoken_bridge": "naval -> navel",
+          "pronunciation_caveat": "Provisional: naval and navel are expected whole-word homophones in common English pronunciations.",
+          "recognition_risk": "The object is named ship, warship, or battleship; naval is an inferred adjective rather than the object's spontaneous name.",
+          "confusable_terms": [
+            "naval",
+            "umbilicus"
+          ],
+          "verdict": "reject",
+          "reason": "Untested, independently proposed offline wordplay. Sound match is promising but the drawable object does not directly yield the required spoken word."
+        }
+      ]
+    },
+    {
+      "term": "tic",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Tick/bug/spider discrimination and literal tick-disease intrusion remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "tic",
+          "objects": [
+            "tick"
+          ],
+          "spoken_bridge": "tick -> tic",
+          "pronunciation_caveat": "Provisional: likely homophone for ordinary English pronunciations; untested.",
+          "recognition_risk": "A tiny tick may be named insect or confused with a spider.",
+          "confusable_terms": [
+            "tick bite",
+            "tics"
+          ],
+          "verdict": "shortlist",
+          "reason": "One familiar drawable object gives the whole spoken term. Untested; no symptom depiction or recall evidence implied."
+        }
+      ]
+    },
+    {
+      "term": "gout",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "gout",
+          "objects": [
+            "goat"
+          ],
+          "spoken_bridge": "goat -> gout",
+          "pronunciation_caveat": "Provisional: GOHT versus GOWT requires a substantial diphthong change; untested.",
+          "recognition_risk": "Goat identity may be clear while the intended word remains unrecoverable.",
+          "confusable_terms": [
+            "goiter"
+          ],
+          "verdict": "reject",
+          "reason": "A familiar object does not rescue the central vowel mismatch. Retained as an untested failed attempt."
+        }
+      ]
+    },
+    {
+      "term": "syncope",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Weak middle vowel is absent; pea naming and reading order need uncoached recovery testing.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "syncope",
+          "objects": [
+            "sink",
+            "pea"
+          ],
+          "spoken_bridge": "sink + pea -> syncope",
+          "pronunciation_caveat": "Provisional: sink-pea approximates SING-kuh-pee only after inserting a weak middle vowel and softening the consonant junction; untested.",
+          "recognition_risk": "Pea may be named seed; object order is not self-evident.",
+          "confusable_terms": [
+            "syncopy",
+            "presyncope"
+          ],
+          "verdict": "shortlist",
+          "reason": "Two familiar objects preserve most of the whole term's sound. Borderline candidate pending spoken and unprompted identification tests; untested."
+        }
+      ]
+    },
+    {
+      "term": "diarrhea",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "diarrhea",
+          "objects": [
+            "diary"
+          ],
+          "spoken_bridge": "diary -> diarrhea",
+          "pronunciation_caveat": "Provisional: dye-uh-ree needs an extra final uh to approximate dye-uh-REE-uh; stress also shifts. Untested.",
+          "recognition_risk": "A diary without writing may be named notebook or book instead.",
+          "confusable_terms": [
+            "diuresis"
+          ],
+          "verdict": "reject",
+          "reason": "Sound is promising but diary identity cannot reliably be distinguished from a generic book without labels. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "jaundice",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "jaundice",
+          "objects": [
+            "jaw",
+            "dice"
+          ],
+          "spoken_bridge": "jaw + dice -> jaundice",
+          "pronunciation_caveat": "Provisional: jaw-dice lacks the n and changes DICE to diss; untested.",
+          "recognition_risk": "Jaw can be named skull; dice may cue unrelated gambling words.",
+          "confusable_terms": [
+            "jaundiced"
+          ],
+          "verdict": "reject",
+          "reason": "Two sound repairs plus uncertain object naming make whole-term recovery too fragile. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "malaise",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "malaise",
+          "objects": [
+            "mail",
+            "lace"
+          ],
+          "spoken_bridge": "mail + lace -> malaise",
+          "pronunciation_caveat": "Provisional: mail-lace versus muh-LAYZ changes the opening vowel, consonant junction, stress and final voicing; untested.",
+          "recognition_risk": "Mail may be named envelope; lace may be named fabric.",
+          "confusable_terms": [
+            "melena"
+          ],
+          "verdict": "reject",
+          "reason": "Too many sound and naming substitutions for a defensible whole-term bridge. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "measles",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "measles",
+          "objects": [
+            "mussels"
+          ],
+          "spoken_bridge": "mussels -> measles",
+          "pronunciation_caveat": "Provisional: MUS-uhlz versus MEE-zuhlz changes the stressed vowel and consonant voicing; untested.",
+          "recognition_risk": "Mussels may be named clams or shells.",
+          "confusable_terms": [
+            "mumps"
+          ],
+          "verdict": "reject",
+          "reason": "Neither object naming nor the central sound is sufficiently stable. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "croup",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "croup",
+          "objects": [
+            "crow",
+            "hoop"
+          ],
+          "spoken_bridge": "crow + hoop -> croup",
+          "pronunciation_caveat": "Provisional: crow-hoop needs contraction, loss of h and a vowel change to yield KROOP; untested.",
+          "recognition_risk": "Crow may be named raven; hoop may be named ring.",
+          "confusable_terms": [
+            "cough"
+          ],
+          "verdict": "reject",
+          "reason": "The pair does not naturally say the whole term. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "rabies",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Close full sequence; ray/stingray and bees/wasps identification must be tested; no transmission claim.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "rabies",
+          "objects": [
+            "ray fish",
+            "bees"
+          ],
+          "spoken_bridge": "ray + bees -> rabies",
+          "pronunciation_caveat": "Provisional: RAY-beez appears close to the whole English term; untested and not dictionary-verified.",
+          "recognition_risk": "Ray may be called stingray or manta; bees may be called wasps. Plural insects do not require an exact count.",
+          "confusable_terms": [
+            "scabies"
+          ],
+          "verdict": "shortlist",
+          "reason": "Two familiar drawable object types provide a near-homophonic whole-term bridge. Pure identity cue, not a claim about disease transmission; untested."
+        }
+      ]
+    },
+    {
+      "term": "pica",
+      "decision": "reject",
+      "independent_shortlist_review": true,
+      "decision_reason": "Unwanted rhotic R and final-vowel alteration; non-rhotic speech alone does not make a match.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "pica",
+          "objects": [
+            "pie",
+            "car"
+          ],
+          "spoken_bridge": "pie + car -> pica",
+          "pronunciation_caveat": "Provisional: PIE-kuh is approximated by pie-car principally in non-rhotic speech; rhotic car adds r and the final vowel is too strong. Untested.",
+          "recognition_risk": "Pie can be named tart; the pair has no intrinsic reading order.",
+          "confusable_terms": [
+            "petechiae",
+            "PICA abbreviation"
+          ],
+          "verdict": "shortlist",
+          "reason": "Familiar two-object pair with a plausible accent-limited whole-term bridge. Borderline: reject for learners whose spoken forms do not converge. Untested."
+        }
+      ]
+    },
+    {
+      "term": "wheal",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whole-word homophone; wheel/tire naming depends on depiction; no skin finding is depicted.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "wheal",
+          "objects": [
+            "wheel"
+          ],
+          "spoken_bridge": "wheel -> wheal",
+          "pronunciation_caveat": "Provisional: likely homophone in ordinary English; untested and not dictionary-verified.",
+          "recognition_risk": "Wheel may be named tire or steering wheel depending on its depiction.",
+          "confusable_terms": [
+            "weal",
+            "welt"
+          ],
+          "verdict": "shortlist",
+          "reason": "Single familiar object supplies the whole spoken term without labels or action. Does not encode skin findings or distinguish spelling; untested."
+        }
+      ]
+    },
+    {
+      "term": "corn",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whole-word homonym; maize naming and food-domain intrusion must be tested; no dietary cause.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "corn",
+          "objects": [
+            "ear of corn"
+          ],
+          "spoken_bridge": "corn -> corn (medical noun)",
+          "pronunciation_caveat": "Provisional: same spoken word in the intended medical and food senses; untested.",
+          "recognition_risk": "Object may be called maize or corn on the cob; food interpretation dominates without a previously learned association.",
+          "confusable_terms": [
+            "callus",
+            "corn as food"
+          ],
+          "verdict": "shortlist",
+          "reason": "Whole-term homonym represented by one familiar object. Identity-only candidate, not a causal, dietary or diagnostic association; untested."
+        }
+      ]
+    },
+    {
+      "term": "pain",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "pain",
+          "objects": [
+            "glass pane"
+          ],
+          "spoken_bridge": "pane -> pain",
+          "pronunciation_caveat": "Provisional: likely homophone in ordinary English; untested.",
+          "recognition_risk": "Unlabeled glass is more likely named window, glass or sheet than pane.",
+          "confusable_terms": [
+            "pains"
+          ],
+          "verdict": "reject",
+          "reason": "Sound fits, but recovery depends on a particular object name that a label-free picture cannot establish reliably. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "flu",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "flu",
+          "objects": [
+            "chimney flue"
+          ],
+          "spoken_bridge": "flue -> flu",
+          "pronunciation_caveat": "Provisional: likely homophone in ordinary English; untested.",
+          "recognition_risk": "Visible structure will usually be called chimney or pipe; the flue itself may be internal.",
+          "confusable_terms": [
+            "influenza",
+            "fluke"
+          ],
+          "verdict": "reject",
+          "reason": "Strong spoken match but poor independently drawable and nameable object identity. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "thrush",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "thrush",
+          "objects": [
+            "thrush bird"
+          ],
+          "spoken_bridge": "thrush -> thrush (medical noun)",
+          "pronunciation_caveat": "Provisional: identical word across the intended senses; untested.",
+          "recognition_risk": "Most viewers may identify only bird rather than the exact species.",
+          "confusable_terms": [
+            "thrush as bird",
+            "oral candidiasis"
+          ],
+          "verdict": "reject",
+          "reason": "Requires species-level naming that is not plausibly familiar enough for this workshop. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "cramp",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "cramp",
+          "objects": [
+            "clamp"
+          ],
+          "spoken_bridge": "clamp -> cramp",
+          "pronunciation_caveat": "Provisional: changes l to r in the opening cluster; not a homophone in the intended English pronunciation. Untested.",
+          "recognition_risk": "Clamp may be called vise or clip.",
+          "confusable_terms": [
+            "cramps",
+            "contracture"
+          ],
+          "verdict": "reject",
+          "reason": "The defining opening consonant and the object name are both unstable. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "rickets",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "rickets",
+          "objects": [
+            "rackets"
+          ],
+          "spoken_bridge": "rackets -> rickets",
+          "pronunciation_caveat": "Provisional: RAK-its versus RIK-its changes the stressed vowel; untested.",
+          "recognition_risk": "Objects may be called tennis rackets, introducing another spoken word; plural does not require an exact count.",
+          "confusable_terms": [
+            "rickettsial disease"
+          ],
+          "verdict": "reject",
+          "reason": "Drawable and familiar, but relies on replacing the stressed vowel and can collide with a distinct medical word family. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "tetanus",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "tetanus",
+          "objects": [
+            "tea",
+            "tennis racket"
+          ],
+          "spoken_bridge": "tea + tennis -> tetanus",
+          "pronunciation_caveat": "Provisional: tea-tennis differs from TET-uh-nus in vowel placement, consonant grouping and stress; untested.",
+          "recognition_risk": "A racket is not naturally named tennis; tea may be named cup.",
+          "confusable_terms": [
+            "tetany"
+          ],
+          "verdict": "reject",
+          "reason": "Depends on a sport rather than the visible object name and still fails the whole-term sound. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "ptosis",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "ptosis",
+          "objects": [
+            "toe",
+            "seashell"
+          ],
+          "spoken_bridge": "toe + seas -> ptosis",
+          "pronunciation_caveat": "Provisional: TOH-sis is not toe-seez, and shell contributes an unaccounted syllable; untested.",
+          "recognition_risk": "Seas is an environment inferred from a shell, not the object name.",
+          "confusable_terms": [
+            "miosis"
+          ],
+          "verdict": "reject",
+          "reason": "Requires an association hop and sound repair, not direct object-to-whole-term recovery. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "stridor",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "stridor",
+          "objects": [
+            "straw",
+            "door"
+          ],
+          "spoken_bridge": "straw + door -> stridor",
+          "pronunciation_caveat": "Provisional: straw-door differs from STRY-dor in the stressed vowel; accent-dependent final syllable also varies. Untested.",
+          "recognition_risk": "Straw may mean drinking straw or dried stalks; either leaves the vowel mismatch.",
+          "confusable_terms": [
+            "stertor"
+          ],
+          "verdict": "reject",
+          "reason": "The stressed sound is not preserved closely enough; respiratory-term discrimination is untested. Failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "scabies",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "scabies",
+          "objects": [
+            "skate",
+            "bees"
+          ],
+          "spoken_bridge": "skate + bees -> scabies",
+          "pronunciation_caveat": "Provisional: skate-bees needs removal of t to become SKAY-beez; untested.",
+          "recognition_risk": "Skate may be named roller skate or ice skate; bees may be named wasps.",
+          "confusable_terms": [
+            "rabies"
+          ],
+          "verdict": "reject",
+          "reason": "Deleting a salient consonant and suppressing likely object-name modifiers makes this weaker than the retained rabies pair. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "cholera",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "cholera",
+          "objects": [
+            "collar"
+          ],
+          "spoken_bridge": "collar -> cholera",
+          "pronunciation_caveat": "Provisional: collar lacks the final uh of KOL-er-uh; accent-dependent vowels and rhoticity also matter. Untested.",
+          "recognition_risk": "A detached collar may be named necklace or strap; a shirt collar may be named shirt.",
+          "confusable_terms": [
+            "colic",
+            "choleric"
+          ],
+          "verdict": "reject",
+          "reason": "Incomplete whole-term sound and weak isolated object identity. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "colic",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "colic",
+          "objects": [
+            "coal",
+            "leek"
+          ],
+          "spoken_bridge": "coal + leek -> colic",
+          "pronunciation_caveat": "Provisional: coal-leek changes both vowels relative to KOL-ik in common English pronunciations; untested.",
+          "recognition_risk": "Coal may be named rock and leek may be named onion.",
+          "confusable_terms": [
+            "colitis",
+            "cholera"
+          ],
+          "verdict": "reject",
+          "reason": "Multiple vowel repairs and two naming uncertainties overwhelm the bridge. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "eczema",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "eczema",
+          "objects": [
+            "eggs",
+            "hammer"
+          ],
+          "spoken_bridge": "eggs + hammer -> eczema",
+          "pronunciation_caveat": "Provisional: eggs-hammer does not converge reliably on either EG-zuh-muh or EK-suh-muh; untested.",
+          "recognition_risk": "The entire hammer ending introduces sounds that must be discarded.",
+          "confusable_terms": [
+            "exanthem"
+          ],
+          "verdict": "reject",
+          "reason": "Would require aggressive compression and dialect selection rather than a defensible whole-term bridge. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "melena",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "melena",
+          "objects": [
+            "melon"
+          ],
+          "spoken_bridge": "melon -> melena",
+          "pronunciation_caveat": "Provisional: MEL-un differs from muh-LEE-nuh in stress, vowels and final syllable; untested.",
+          "recognition_risk": "Melon may be named cantaloupe or watermelon.",
+          "confusable_terms": [
+            "malaise",
+            "melanoma"
+          ],
+          "verdict": "reject",
+          "reason": "Visual familiarity cannot compensate for poor whole-word phonetic correspondence. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "seizure",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "seizure",
+          "objects": [
+            "sea",
+            "jar"
+          ],
+          "spoken_bridge": "sea + jar -> seizure",
+          "pronunciation_caveat": "Provisional: see-jar differs from SEE-zher in the consonant and final vowel; untested.",
+          "recognition_risk": "Sea is scenery, not a bounded familiar object, and may be called ocean or water.",
+          "confusable_terms": [
+            "seizures",
+            "syncope"
+          ],
+          "verdict": "reject",
+          "reason": "Fails the object constraint as well as a close spoken match. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "chills",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "chills",
+          "objects": [
+            "chili peppers"
+          ],
+          "spoken_bridge": "chilies -> chills",
+          "pronunciation_caveat": "Provisional: CHIL-eez requires dropping a vowel and changing the final vowel-consonant sequence to chilz; untested.",
+          "recognition_risk": "Peppers may be named peppers rather than chilies; plural has no exact-count requirement.",
+          "confusable_terms": [
+            "rigors"
+          ],
+          "verdict": "reject",
+          "reason": "Requires a preferred regional noun and syllable deletion. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "fever",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "signs",
+          "term": "fever",
+          "objects": [
+            "beaver"
+          ],
+          "spoken_bridge": "beaver -> fever",
+          "pronunciation_caveat": "Provisional: BEE-ver changes the initial consonant to FEE-ver; untested.",
+          "recognition_risk": "Beaver may be named otter if its distinctive tail is unclear.",
+          "confusable_terms": [
+            "febrile"
+          ],
+          "verdict": "reject",
+          "reason": "Simple rhyme is not a sufficiently discriminating whole-term sound bridge. Untested failed attempt retained."
+        }
+      ]
+    },
+    {
+      "term": "tramadol",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Weak linking vowel is absent and tram/train/streetcar naming is audience-dependent.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "tramadol",
+          "objects": [
+            "tram",
+            "doll"
+          ],
+          "spoken_bridge": "tram + doll",
+          "pronunciation_caveat": "Provisional: TRAM-uh-dol needs an unstressed linking vowel absent from tram-doll; final vowel varies by accent.",
+          "recognition_risk": "Untested. A tram may be named train or streetcar, losing the bridge.",
+          "confusable_terms": [
+            "trazodone"
+          ],
+          "verdict": "shortlist",
+          "reason": "Two familiar drawable objects retain most of the whole drug name; identity only, not a mechanism or indication cue. Independently proposed, not catalog-derived."
+        }
+      ]
+    },
+    {
+      "term": "caffeine",
+      "decision": "reject",
+      "independent_shortlist_review": true,
+      "decision_reason": "Extra L in some accents plus vowel/stress repairs make the proposed sequence unreliable.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "caffeine",
+          "objects": [
+            "calf",
+            "fin"
+          ],
+          "spoken_bridge": "calf + fin",
+          "pronunciation_caveat": "Provisional: calf-fin approximates KAF-een only with an appropriate calf vowel and lengthening fin to feen; other accents weaken it.",
+          "recognition_risk": "Untested. Calf can be named cow; a detached fin can be named flipper.",
+          "confusable_terms": [
+            "codeine"
+          ],
+          "verdict": "shortlist",
+          "reason": "Compact whole-name near-sound worth testing, with explicit accent and object-naming risks. No pharmacologic meaning is asserted."
+        }
+      ]
+    },
+    {
+      "term": "warfarin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "warfarin",
+          "objects": [
+            "wharf",
+            "fern"
+          ],
+          "spoken_bridge": "wharf + fern",
+          "pronunciation_caveat": "Provisional: WAR-fuh-rin versus wharf-fern compresses an unstressed vowel and changes consonant grouping; accent-dependent.",
+          "recognition_risk": "Untested. Wharf is likely to be named dock or pier, and fern may be named plant.",
+          "confusable_terms": [
+            "heparin"
+          ],
+          "verdict": "reject",
+          "reason": "Whole-name resemblance is plausible on paper but depends on two fragile object names and compression."
+        }
+      ]
+    },
+    {
+      "term": "aspirin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "aspirin",
+          "objects": [
+            "asp",
+            "ring"
+          ],
+          "spoken_bridge": "asp + ring",
+          "pronunciation_caveat": "Provisional: AS-puh-rin loses the weak vowel in asp-ring and changes the ending from n to ng.",
+          "recognition_risk": "Untested. An asp is visually only a snake without a species label.",
+          "confusable_terms": [
+            "asparagine"
+          ],
+          "verdict": "reject",
+          "reason": "The required asp identification is not reliably visible; sound similarity cannot rescue it."
+        }
+      ]
+    },
+    {
+      "term": "penicillin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "penicillin",
+          "objects": [
+            "pencil",
+            "hen"
+          ],
+          "spoken_bridge": "pencil + hen",
+          "pronunciation_caveat": "Provisional: PEN-sil-hen does not preserve pen-ih-SIL-in stress, and inserts an h.",
+          "recognition_risk": "Untested. Familiar objects, but their natural spoken names do not recover the complete drug name cleanly.",
+          "confusable_terms": [
+            "penicillamine"
+          ],
+          "verdict": "reject",
+          "reason": "Orthographic resemblance exceeds the spoken resemblance; requires coached respelling."
+        }
+      ]
+    },
+    {
+      "term": "insulin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "insulin",
+          "objects": [
+            "inn",
+            "seal"
+          ],
+          "spoken_bridge": "inn + seal",
+          "pronunciation_caveat": "Provisional: inn-seal omits the final syllable of IN-suh-lin and changes the middle vowel.",
+          "recognition_risk": "Untested. An inn cannot be distinguished from a house or hotel without text.",
+          "confusable_terms": [
+            "inulin"
+          ],
+          "verdict": "reject",
+          "reason": "Does not encode the whole term and depends on an unlabelled building subtype."
+        }
+      ]
+    },
+    {
+      "term": "ketamine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "ketamine",
+          "objects": [
+            "kettle",
+            "mine entrance"
+          ],
+          "spoken_bridge": "kettle + mine",
+          "pronunciation_caveat": "Provisional: KET-ul-mine adds an l and usually changes the final vowel relative to KET-uh-meen.",
+          "recognition_risk": "Untested. Mine entrance may be named cave or tunnel.",
+          "confusable_terms": [
+            "ketotifen"
+          ],
+          "verdict": "reject",
+          "reason": "Several sound repairs plus ambiguous object naming make this too coached."
+        }
+      ]
+    },
+    {
+      "term": "melatonin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "melatonin",
+          "objects": [
+            "melon",
+            "tin can"
+          ],
+          "spoken_bridge": "melon + tin",
+          "pronunciation_caveat": "Provisional: melon-tin drops the stressed TOH syllable of mel-uh-TOH-nin and alters the ending.",
+          "recognition_risk": "Untested. Tin is ordinarily named can; melon type also changes naming.",
+          "confusable_terms": [
+            "melanin"
+          ],
+          "verdict": "reject",
+          "reason": "Missing a central syllable fails whole-term recovery even though both objects are drawable."
+        }
+      ]
+    },
+    {
+      "term": "acarbose",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Initial article is not pictured; bow/ribbon naming and ending pronunciation remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "acarbose",
+          "objects": [
+            "car",
+            "bows"
+          ],
+          "spoken_bridge": "a car + bows",
+          "pronunciation_caveat": "Provisional: uh-KAR-bohs is close to a-car-bows when bows means ribbon bows; final s versus z remains imperfect.",
+          "recognition_risk": "Untested. Ribbon bows may be named ribbons; bow has alternative pronunciations and meanings.",
+          "confusable_terms": [
+            "ribose",
+            "sucralose"
+          ],
+          "verdict": "shortlist",
+          "reason": "Two familiar objects cover the whole name with a natural article and one ending mismatch. Independently proposed identity cue only."
+        }
+      ]
+    },
+    {
+      "term": "fentanyl",
+      "decision": "reject",
+      "independent_shortlist_review": true,
+      "decision_reason": "Multiple vowel substitutions and tunnel naming do not establish full medication identity.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "fentanyl",
+          "objects": [
+            "fan",
+            "tunnel"
+          ],
+          "spoken_bridge": "fan + tunnel",
+          "pronunciation_caveat": "Provisional: FAN-tun-ul approximates FEN-tuh-nil with vowel changes; accents that strongly distinguish fan and fen weaken it.",
+          "recognition_risk": "Untested. Tunnel may be named cave or pipe; the bridge can be heard as fan tunnel without retrieving a drug name.",
+          "confusable_terms": [
+            "sufentanil",
+            "alfentanil"
+          ],
+          "verdict": "shortlist",
+          "reason": "The whole-name consonant sequence is approximately preserved with two familiar objects. Retain for testing only; related drug names require discrimination."
+        }
+      ]
+    },
+    {
+      "term": "doxepin",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Weak linking vowel is absent; docks/piers, plurality and pin/needle naming remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "doxepin",
+          "objects": [
+            "docks",
+            "pin"
+          ],
+          "spoken_bridge": "docks + pin",
+          "pronunciation_caveat": "Provisional: DOK-suh-pin needs an unstressed linking vowel between docks and pin; the vowel in docks varies by accent.",
+          "recognition_risk": "Untested. Several docks can be named piers, and plurality may not be spontaneously verbalized. A pin can be named needle.",
+          "confusable_terms": [
+            "doxycycline",
+            "doxazosin"
+          ],
+          "verdict": "shortlist",
+          "reason": "Compact whole-name near-sound with only a weak linking vowel missing, but object naming makes this a lower-confidence shortlist item."
+        }
+      ]
+    },
+    {
+      "term": "ramipril",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "ramipril",
+          "objects": [
+            "ram",
+            "pearl"
+          ],
+          "spoken_bridge": "ram + pearl",
+          "pronunciation_caveat": "Provisional: RAM-ih-pril is not ram-pearl; the linking vowel is lost and pril is reordered into pearl.",
+          "recognition_risk": "Untested. A pearl may be named bead; a ram may be named sheep.",
+          "confusable_terms": [
+            "enalapril",
+            "lisinopril"
+          ],
+          "verdict": "reject",
+          "reason": "Requires consonant-vowel reordering as well as fragile object naming; not a simple sound bridge."
+        }
+      ]
+    },
+    {
+      "term": "lisinopril",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "lisinopril",
+          "objects": [
+            "lice",
+            "pearl"
+          ],
+          "spoken_bridge": "lice + pearl",
+          "pronunciation_caveat": "Provisional: lice-pearl omits the middle of lye-SIN-oh-pril and changes the final syllable.",
+          "recognition_risk": "Untested. Lice resemble generic insects at a useful image scale; pearl resembles bead.",
+          "confusable_terms": [
+            "ramipril",
+            "enalapril"
+          ],
+          "verdict": "reject",
+          "reason": "Encodes fragments rather than the whole drug name and needs species-level identification."
+        }
+      ]
+    },
+    {
+      "term": "metformin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "metformin",
+          "objects": [
+            "mat",
+            "foreman"
+          ],
+          "spoken_bridge": "mat + foreman",
+          "pronunciation_caveat": "Provisional: mat-foreman differs from met-FOR-min in the initial and final vowels and may shift stress.",
+          "recognition_risk": "Untested. An unlabelled person cannot reliably be identified as a foreman rather than another worker.",
+          "confusable_terms": [
+            "metoprolol"
+          ],
+          "verdict": "reject",
+          "reason": "Even a potentially recognizable spoken approximation depends on an occupational identity that the objects cannot establish."
+        }
+      ]
+    },
+    {
+      "term": "terbinafine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "terbinafine",
+          "objects": [
+            "turbine",
+            "fin"
+          ],
+          "spoken_bridge": "turbine + fin",
+          "pronunciation_caveat": "Provisional: TUR-bine-fin versus TER-bin-uh-feen changes the turbine vowel, omits a weak vowel and shortens feen; turbine itself has pronunciation variation.",
+          "recognition_risk": "Untested. Turbine is likely to be named fan or engine; fin can be named flipper.",
+          "confusable_terms": [
+            "terbutaline"
+          ],
+          "verdict": "reject",
+          "reason": "Too many pronunciation repairs and uncertain object names for a defensible simple bridge."
+        }
+      ]
+    },
+    {
+      "term": "fluconazole",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "fluconazole",
+          "objects": [
+            "flute",
+            "nozzle"
+          ],
+          "spoken_bridge": "flute + nozzle",
+          "pronunciation_caveat": "Provisional: flute-nozzle drops the KOH syllable of floo-KOH-nuh-zole, inserts t and changes the ending.",
+          "recognition_risk": "Untested. Nozzle may be named hose, spout or sprayer.",
+          "confusable_terms": [
+            "itraconazole",
+            "voriconazole"
+          ],
+          "verdict": "reject",
+          "reason": "A whole central syllable is missing; shared ending resemblance is not whole-drug identity."
+        }
+      ]
+    },
+    {
+      "term": "doxycycline",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "doxycycline",
+          "objects": [
+            "docks",
+            "bicycle"
+          ],
+          "spoken_bridge": "docks + bicycle",
+          "pronunciation_caveat": "Provisional: docks-bicycle adds bi and does not preserve dok-see-SYE-kleen or its ending.",
+          "recognition_risk": "Untested. A bicycle is usually named bike, which collapses the already weak bridge.",
+          "confusable_terms": [
+            "doxepin",
+            "tetracycline",
+            "minocycline"
+          ],
+          "verdict": "reject",
+          "reason": "Written cycle resemblance masks poor spoken coverage and a missing ending."
+        }
+      ]
+    },
+    {
+      "term": "fluoxetine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "fluoxetine",
+          "objects": [
+            "flute",
+            "ox"
+          ],
+          "spoken_bridge": "flute + ox",
+          "pronunciation_caveat": "Provisional: flute-ox inserts t and omits the ending of floo-OK-suh-teen.",
+          "recognition_risk": "Untested. An ox may be named bull or cow.",
+          "confusable_terms": [
+            "fluvoxamine",
+            "paroxetine"
+          ],
+          "verdict": "reject",
+          "reason": "Only the beginning is approximately represented; not a whole-term cue."
+        }
+      ]
+    },
+    {
+      "term": "paroxetine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "paroxetine",
+          "objects": [
+            "parrot",
+            "ox"
+          ],
+          "spoken_bridge": "parrot + ox",
+          "pronunciation_caveat": "Provisional: parrot-ox adds a t and omits the ending of puh-ROK-suh-teen, with a stress mismatch.",
+          "recognition_risk": "Untested. Ox may be named bull; the pair suggests unrelated animal names rather than a unique drug name.",
+          "confusable_terms": [
+            "fluoxetine"
+          ],
+          "verdict": "reject",
+          "reason": "Fragmentary resemblance is not enough to recover the full drug name."
+        }
+      ]
+    },
+    {
+      "term": "cetirizine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "cetirizine",
+          "objects": [
+            "sitter",
+            "raisin"
+          ],
+          "spoken_bridge": "sitter + raisin",
+          "pronunciation_caveat": "Provisional: sitter-raisin differs from seh-TIR-ih-zeen in vowels, stress and syllable grouping.",
+          "recognition_risk": "Untested. A person cannot be reliably identified as a sitter without contextual explanation; raisin may be named dried fruit.",
+          "confusable_terms": [
+            "levocetirizine"
+          ],
+          "verdict": "reject",
+          "reason": "The role is not visually self-identifying, and the sound requires several repairs."
+        }
+      ]
+    },
+    {
+      "term": "lidocaine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "lidocaine",
+          "objects": [
+            "lid",
+            "cane"
+          ],
+          "spoken_bridge": "lid + cane",
+          "pronunciation_caveat": "Provisional: lid-cane differs from LYE-doh-kayn by the first vowel and the missing oh syllable.",
+          "recognition_risk": "Untested. A lid may be named cap; a cane can be named walking stick.",
+          "confusable_terms": [
+            "benzocaine",
+            "procaine",
+            "bupivacaine"
+          ],
+          "verdict": "reject",
+          "reason": "Attractive spelling resemblance, but the spoken bridge loses a whole syllable and the distinctive initial vowel."
+        }
+      ]
+    },
+    {
+      "term": "benzocaine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "benzocaine",
+          "objects": [
+            "bench",
+            "cane"
+          ],
+          "spoken_bridge": "bench + cane",
+          "pronunciation_caveat": "Provisional: bench-cane replaces z with ch and drops oh from BEN-zoh-kayn.",
+          "recognition_risk": "Untested. Familiar objects, but their spoken names do not preserve the distinctive drug-name stem.",
+          "confusable_terms": [
+            "lidocaine",
+            "procaine"
+          ],
+          "verdict": "reject",
+          "reason": "Too much of the stem is altered; cane alone cannot distinguish the full drug identity."
+        }
+      ]
+    },
+    {
+      "term": "procaine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "procaine",
+          "objects": [
+            "crow",
+            "cane"
+          ],
+          "spoken_bridge": "crow + cane",
+          "pronunciation_caveat": "Provisional: crow-cane is close to PROH-kayn except for the initial k versus p, which is not an accent reduction.",
+          "recognition_risk": "Untested. Crow may be named raven; cane may be named walking stick.",
+          "confusable_terms": [
+            "cocaine",
+            "lidocaine",
+            "benzocaine"
+          ],
+          "verdict": "reject",
+          "reason": "Replacing the identity-bearing initial consonant and relying on bird naming is too weak despite a short bridge."
+        }
+      ]
+    },
+    {
+      "term": "methadone",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "methadone",
+          "objects": [
+            "moth",
+            "dome"
+          ],
+          "spoken_bridge": "moth + dome",
+          "pronunciation_caveat": "Provisional: moth-dome changes the first vowel, drops the linking vowel and changes final n to m relative to METH-uh-dohn.",
+          "recognition_risk": "Untested. Moth may be named butterfly; dome can be named roof.",
+          "confusable_terms": [
+            "methotrexate"
+          ],
+          "verdict": "reject",
+          "reason": "Multiple phonetic repairs accumulate on top of ambiguous object identification."
+        }
+      ]
+    },
+    {
+      "term": "clonidine",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "clonidine",
+          "objects": [
+            "clone",
+            "diner"
+          ],
+          "spoken_bridge": "clone + diner",
+          "pronunciation_caveat": "Provisional: clone-diner changes the middle vowel and adds a final r relative to KLOH-nih-deen.",
+          "recognition_risk": "Untested. Clone identity cannot be established by a single unlabelled person; diner can mean a person or a restaurant.",
+          "confusable_terms": [
+            "clonazepam"
+          ],
+          "verdict": "reject",
+          "reason": "The first object is not visually self-identifying, and fixing it would require extra objects or explanatory context."
+        }
+      ]
+    },
+    {
+      "term": "sertraline",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "sertraline",
+          "objects": [
+            "shirt",
+            "line of rope"
+          ],
+          "spoken_bridge": "shirt + line",
+          "pronunciation_caveat": "Provisional: shirt-line differs from SER-truh-leen in the initial consonant, a missing vowel and the final diphthong.",
+          "recognition_risk": "Untested. Rope is usually named rope, not line; shirt may be named top.",
+          "confusable_terms": [
+            "cetirizine"
+          ],
+          "verdict": "reject",
+          "reason": "Both object naming and the pronunciation need coaching; not a reliable whole-name bridge."
+        }
+      ]
+    },
+    {
+      "term": "statin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "statin",
+          "objects": [
+            "stag",
+            "tin can"
+          ],
+          "spoken_bridge": "stag + tin",
+          "pronunciation_caveat": "Provisional: stag-tin inserts g and another t relative to STAT-in; merging them is not a natural weak-vowel reduction.",
+          "recognition_risk": "Untested. Stag may be named deer and tin may be named can.",
+          "confusable_terms": [
+            "nystatin",
+            "somatostatin"
+          ],
+          "verdict": "reject",
+          "reason": "Whole class-name recovery depends on unnatural consonant deletion and two optional object names."
+        }
+      ]
+    },
+    {
+      "term": "nitrite",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "nitrite",
+          "objects": [
+            "knight",
+            "kite"
+          ],
+          "spoken_bridge": "knight + kite",
+          "pronunciation_caveat": "Provisional: knight-kite changes the r-bearing ending of NY-trite to kite; it is not a homophone.",
+          "recognition_risk": "Untested. Knight can be named soldier; the sound does not distinguish nitrite from nitrate well enough.",
+          "confusable_terms": [
+            "nitrate"
+          ],
+          "verdict": "reject",
+          "reason": "A short pair is not sufficient when it loses the consonant needed for identity and leaves a close distractor unresolved."
+        }
+      ]
+    },
+    {
+      "term": "naproxen",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "naproxen",
+          "objects": [
+            "gnat",
+            "oxen"
+          ],
+          "spoken_bridge": "gnat + oxen",
+          "pronunciation_caveat": "Provisional: nat-OK-sun does not preserve nuh-PROK-sun; the pr cluster is missing and the stress moves.",
+          "recognition_risk": "Untested. Gnat is difficult to distinguish from other small insects, and oxen may be named cows.",
+          "confusable_terms": [
+            "naltrexone"
+          ],
+          "verdict": "reject",
+          "reason": "Loses a distinctive consonant cluster and requires precise animal naming without labels."
+        }
+      ]
+    },
+    {
+      "term": "buspirone",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "drugs",
+          "term": "buspirone",
+          "objects": [
+            "bus",
+            "pier"
+          ],
+          "spoken_bridge": "bus + pier",
+          "pronunciation_caveat": "Provisional: bus-pier omits the final own sound of BYOO-spih-rohn and changes the opening vowel.",
+          "recognition_risk": "Untested. Pier may be named dock; familiar objects do not recover the full drug name.",
+          "confusable_terms": [
+            "bupropion"
+          ],
+          "verdict": "reject",
+          "reason": "Incomplete whole-name coverage; adding a third object to repair the ending would exceed this workshop's object limit."
+        }
+      ]
+    },
+    {
+      "term": "antrum",
+      "decision": "reject",
+      "independent_shortlist_review": true,
+      "decision_reason": "Ant+drum fixes rum-bottle naming but still requires an unencoded D deletion.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "antrum",
+          "objects": [
+            "ant",
+            "drum"
+          ],
+          "spoken_bridge": "ant + drum -> antrum",
+          "pronunciation_caveat": "ANT-drum requires deleting the D at the consonant junction to approach AN-trum; not an exact homophone.",
+          "recognition_risk": "Ant may be named insect; drum is comparatively recognizable.",
+          "confusable_terms": [
+            "atrium",
+            "antral"
+          ],
+          "verdict": "shortlist",
+          "reason": "Reworks the previously withheld ant+rum attempt without a label-dependent liquor bottle. Still requires spoken testing."
+        }
+      ]
+    },
+    {
+      "term": "pons",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Actual learner-specific pronunciation convergence, pawn naming and plurality are unverified.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "pons",
+          "objects": [
+            "chess pawns"
+          ],
+          "spoken_bridge": "pawns -> pons",
+          "pronunciation_caveat": "Accent-conditioned: pawns and pons converge only for some speakers; do not impose a vowel merger.",
+          "recognition_risk": "Chess pieces may be named pieces rather than pawns.",
+          "confusable_terms": [
+            "pons",
+            "pawn"
+          ],
+          "verdict": "shortlist",
+          "reason": "A compact near-homophone worth pronunciation and naming checks; not universally matched."
+        }
+      ]
+    },
+    {
+      "term": "globe",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Whole-word homonym; world/Earth are alternate names; anatomical sense requires prior scope.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "globe",
+          "objects": [
+            "terrestrial globe on a stand"
+          ],
+          "spoken_bridge": "world globe -> anatomical globe",
+          "pronunciation_caveat": "Whole-word homonym, not a syllabic rebus.",
+          "recognition_risk": "Viewer may name Earth or world rather than globe.",
+          "confusable_terms": [
+            "globe of the eye",
+            "global"
+          ],
+          "verdict": "shortlist",
+          "reason": "Familiar object with identical spoken headword. Learned identity only; no anatomy or injury is encoded."
+        }
+      ]
+    },
+    {
+      "term": "lumen",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "lumen",
+          "objects": [
+            "weaving loom",
+            "hen"
+          ],
+          "spoken_bridge": "loom + hen -> lumen",
+          "pronunciation_caveat": "LOOM-hen needs H deletion and second-vowel reduction to approach LOO-men.",
+          "recognition_risk": "Loom may be named weaving frame, hen chicken; both names are unstable.",
+          "confusable_terms": [
+            "lumens",
+            "luminance"
+          ],
+          "verdict": "reject",
+          "reason": "Two naming dependencies plus sound editing; not robust enough for admission."
+        }
+      ]
+    },
+    {
+      "term": "ferritin",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "ferritin",
+          "objects": [
+            "ferret",
+            "tin can"
+          ],
+          "spoken_bridge": "ferret + tin -> ferritin",
+          "pronunciation_caveat": "Adjacent T sounds must merge; exact vowel and stress alignment remains unverified.",
+          "recognition_risk": "Ferret may be named weasel, tin can just can; material is not visually certified.",
+          "confusable_terms": [
+            "ferric",
+            "ferritin"
+          ],
+          "verdict": "reject",
+          "reason": "Spoken promise does not overcome two uncertain object names."
+        }
+      ]
+    },
+    {
+      "term": "ketone",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "ketone",
+          "objects": [
+            "key",
+            "stone"
+          ],
+          "spoken_bridge": "key + stone -> ketone",
+          "pronunciation_caveat": "KEY-stone requires deleting S to approach KEE-tone.",
+          "recognition_risk": "Stone may be named rock; key+stone may suggest keystone instead of ketone.",
+          "confusable_terms": [
+            "keystone",
+            "ketones"
+          ],
+          "verdict": "reject",
+          "reason": "Existing compound keystone competes strongly with the desired term."
+        }
+      ]
+    },
+    {
+      "term": "nitrate",
+      "decision": "reject",
+      "independent_shortlist_review": false,
+      "decision_reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "main",
+          "term": "nitrate",
+          "objects": [
+            "knight",
+            "metal grate"
+          ],
+          "spoken_bridge": "knight + grate -> nitrate",
+          "pronunciation_caveat": "KNIGHT-grate requires deleting G at the junction; not exact.",
+          "recognition_risk": "Knight may be named armor, grate grill; confusable with nitrite.",
+          "confusable_terms": [
+            "nitrite",
+            "nitrates"
+          ],
+          "verdict": "reject",
+          "reason": "Sound and naming edits plus medically consequential near-name collision."
+        }
+      ]
+    },
+    {
+      "term": "crown",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Exact shared headword and recognizable crown; tiara naming and dental/head scope remain untested.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "crown",
+          "objects": [
+            "royal crown"
+          ],
+          "spoken_bridge": "crown headpiece -> dental crown",
+          "pronunciation_caveat": "A whole-word homonym, not a syllabic rebus.",
+          "recognition_risk": "Crown may be named tiara; medical subtype is not encoded.",
+          "confusable_terms": [
+            "dental crown",
+            "crown of head"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "bridge",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Exact shared headword and recognizable structure; overpass naming and arch collision remain untested. Arch is held.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "bridge",
+          "objects": [
+            "arched footbridge"
+          ],
+          "spoken_bridge": "bridge structure -> dental bridge",
+          "pronunciation_caveat": "A whole-word homonym; exact spoken headword is shared.",
+          "recognition_risk": "Viewer may say footbridge or overpass; no dental materials or procedure are depicted.",
+          "confusable_terms": [
+            "dental bridge",
+            "bridge of nose"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "nail",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Exact shared headword and familiar hardware object; pin/spike confusion and anatomical scope remain untested.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "nail",
+          "objects": [
+            "hardware nail"
+          ],
+          "spoken_bridge": "metal nail -> anatomical nail",
+          "pronunciation_caveat": "A whole-word homonym; exact spoken headword is shared.",
+          "recognition_risk": "Nail can be called pin or spike; finger/toe specificity is absent.",
+          "confusable_terms": [
+            "fingernail",
+            "toenail"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "root",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Plural roots, tree/branch naming and singular-headword recovery remain unresolved.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "root",
+          "objects": [
+            "exposed tree roots"
+          ],
+          "spoken_bridge": "tree root -> medical root term",
+          "pronunciation_caveat": "A whole-word homonym; no sound repair.",
+          "recognition_risk": "Tree roots must be recognized as roots, not branches; nerve versus tooth scope is not encoded.",
+          "confusable_terms": [
+            "nerve root",
+            "tooth root"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "socket",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "US outlet/plug/receptacle naming may remove the intended headword; anatomical site is unspecified.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "socket",
+          "objects": [
+            "wall electrical socket"
+          ],
+          "spoken_bridge": "electrical socket -> anatomical socket",
+          "pronunciation_caveat": "A whole-word homonym; no sound repair.",
+          "recognition_risk": "US learners may say outlet, which breaks the bridge; no anatomy site is implied.",
+          "confusable_terms": [
+            "eye socket",
+            "tooth socket"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "arch",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Gateway/doorway/bridge naming and direct collision with the arched bridge cue require blind discrimination.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "arch",
+          "objects": [
+            "freestanding stone arch"
+          ],
+          "spoken_bridge": "architectural arch -> anatomical arch",
+          "pronunciation_caveat": "A whole-word homonym; no sound repair.",
+          "recognition_risk": "Viewer may name gateway or bridge; no aortic, dental or foot subtype is encoded.",
+          "confusable_terms": [
+            "aortic arch",
+            "dental arch",
+            "foot arch"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "cone",
+      "decision": "retain_candidate",
+      "independent_shortlist_review": true,
+      "decision_reason": "Exact shared headword and familiar traffic cone; anatomical scope and rod discrimination remain untested.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "cone",
+          "objects": [
+            "traffic cone"
+          ],
+          "spoken_bridge": "traffic cone -> anatomical cone term",
+          "pronunciation_caveat": "A whole-word homonym; no sound repair.",
+          "recognition_risk": "Traffic cone is usually named cone, but the term's retinal/anatomical scope is not encoded.",
+          "confusable_terms": [
+            "retinal cone",
+            "rod"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    },
+    {
+      "term": "rod",
+      "decision": "hold",
+      "independent_shortlist_review": true,
+      "decision_reason": "Fishing pole/pole may replace rod; target anatomical sense is not recovered by the object alone.",
+      "tested": false,
+      "attempts": [
+        {
+          "lane": "homonym_delta",
+          "term": "rod",
+          "objects": [
+            "fishing rod"
+          ],
+          "spoken_bridge": "fishing rod -> anatomical rod term",
+          "pronunciation_caveat": "A whole-word homonym; no sound repair.",
+          "recognition_risk": "Viewer may name pole, which breaks the bridge; no retinal structure or function is encoded.",
+          "confusable_terms": [
+            "retinal rod",
+            "cone"
+          ],
+          "verdict": "shortlist",
+          "reason": "Additional common whole-word homonym proposal, not a novel constructed rebus; source scope and object naming must be tested."
+        }
+      ]
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`docs/visual-cue-catalog.json` is the structured source of truth for **offline design candidates**, not a source of medical facts. It currently contains 61 entries: 43 candidates, 17 unverified legacy mappings, and one restricted mapping. No entry has measured recall evidence. No new entry is automatically injected into Forge.
+`docs/visual-cue-catalog.json` is the structured source of truth for **offline design candidates**, not a source of medical facts. It currently contains 72 entries: 54 candidates, 17 unverified legacy mappings, and one restricted mapping. No entry has measured recall evidence. No new entry is automatically injected into Forge.
 
 Keep three questions separate: Is the lesson medically sourced? Does the image depict the specified cue? Can a learner recover the intended concept later? A successful render answers only the second question. This catalog cannot replace Forge retrieval, the medical gate, an independent pixel audit, or learner testing.
 
@@ -53,6 +53,8 @@ python -m pytest tests/test_visual_cue_catalog.py
 Search uses literal token overlap, not clinical reasoning or semantic retrieval. It returns at most eight entries, always with an unvalidated-design caveat. It never fills missing concepts or calls an AI provider. A matching result is not an endorsement or a clinical recommendation.
 
 ## Review And Admission
+
+The follow-on [sound-bridge workshop](sound-bridge-workshop.md) covered 103 distinct terms/headwords in 104 attempts and added only 11 untested candidates after independent review. Sixteen are held outside this catalog; 76 distinct terms were rejected. This is not 50 new usable sound bridges. The full structured workshop/rejection bank is `docs/sound-bridge-workshop.json`.
 
 The October 19, 2026 review used AI language/wordplay, visual-composition and software-validation reviewers, not human medical specialists. The wordplay lane proposed 24 items, rejected 17 itself, and provisionally retained seven. Main curation admitted only four of those seven as untested candidates: carpal, ataxia, rales and suture. Antrum, tarsal and rigor were withheld because object naming or sound reduction was too fragile. A separate 36-item composition proposal set was screened; many arbitrary ingredient/state combinations were not added. More proposals do not equal more useful cues.
 
