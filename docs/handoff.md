@@ -199,6 +199,32 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Actual Tintinalli chapter review; ONE CHAPTER at a time
+Patrick redirected the proposed broad source pass to one chapter at a time.
+Stopped Chapter5-10 and11-21 agents; their early local partial artifacts are
+cancelled/notused,not completed progress. Finished only Chapter1 Emergency
+Medical Services using actual Tintin_Prehospital Care.pdf pages1-3.
+Important boundary:page3's runningheader saysChapter2,butCh1continues through
+leftcolumn/upperright toreferences beforeactualPrehospitalEquipment title.
+Text+visual checks and independent AI audit confirm that boundary.
+
+Ten selected terms screen complete:9 bodymatches,one chapter-title-onlymatch
+(EmergencyMedicalServices). Zero association proposals/admissions underunchanged
+strictcriteria. Not exhaustive vocabulary orproofno mnemonicpossible.
+No PDFs/fulltextcommitted; only shortterms,sourceSHA,page refs,screen reasons
+in docs/tintinalli-chapter-cue-ledger.json and readable tintinalli-chapter-cues.md.
+Rawplan/supersededplan,local sourceaudit and boundaryPNG under
+Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-19/.
+Chapter2 PrehospitalEquipment is next/notstarted forcue review; don'tbatchahead.
+No provider/API/render calls; $6 benchmarkcap untouched; primarycatalog76 unchanged.
+Existingtwo unrelatedForgeeditsleftuntouched. Gitfetchknowncheckpoint error;
+remote main matchedlocalHEAD throughauthenticatedGitHubAPI atstart.
+Validation:all10 term occurrences checked against actualchapter boundaries;
+independent sourceaudit confirms9body+1title. Ledgerintegrity checkpassed;
+focusedcatalog/workshoptests109passed,1skipped. Primarycatalogschema76valid.
+No fullsuite/browser/provider/image/recall validation performed for this docs-only
+chapter record. Do not present offline tests as mnemonic-effectiveness evidence.
+
 ### 2026-10-19 - Sound-bridge workshop 2; unchanged strict criteria
 Patrick requested another bounded run. Saved plan max60 attempts,20 per lane,
 prior terms excluded,no quota,no paid calls or extra delta batch. Three AI lanes

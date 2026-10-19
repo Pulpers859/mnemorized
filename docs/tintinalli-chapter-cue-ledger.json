@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "mode": "one_chapter_at_a_time",
+  "scope": "Selected source-grounded vocabulary only; not clinical lesson content, treatment guidance, a production Forge run, or exhaustive mnemonic possibility testing.",
+  "chapters": [
+    {
+      "chapter_id": "1",
+      "title": "Emergency Medical Services",
+      "status": "selected_terms_screened",
+      "source": {
+        "file": "Tintin_Prehospital Care.pdf",
+        "sha256": "856A9EB4746909447C9BD2FD0ABB4D3463669D0234796503828939E9CA67A642",
+        "pdf_pages": [
+          1,
+          2,
+          3
+        ],
+        "printed_pages": [
+          1,
+          2,
+          3
+        ],
+        "boundary": "Chapter1 continues onto page3 despite Chapter2 running header. Stop before actual Prehospital Equipment body heading; do not include Chapter2 body."
+      },
+      "coverage": {
+        "selected_terms": 10,
+        "source_occurrences_verified": 10,
+        "exhaustive_vocabulary_review": false,
+        "clinical_facts_validated": false,
+        "association_proposals": 0,
+        "retained_associations": 0,
+        "independent_review_complete": true,
+        "body_occurrences_verified": 9,
+        "chapter_title_occurrences_verified": 1,
+        "review_limit": "Ten selected terms, not exhaustive vocabulary or proof that no bridge exists."
+      },
+      "terms": [
+        {
+          "term": "Emergency Medical Services",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "evidence_short": "Emergency Medical Services",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "chapter_title_only",
+          "strict_prose_body_verified": false,
+          "screen_reason": "No obvious one/two-object full-phrase sound or shared-headword bridge; EMS abbreviation recovery would not recover the selected full term."
+        },
+        {
+          "term": "paramedic",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "evidence_short": "paramedic",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious familiar object pair preserves the complete word without phonetic repair or reliance on identifying a professional role."
+        },
+        {
+          "term": "defibrillation",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "evidence_short": "defibrillation",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious one/two familiar objects supply the full spoken word without missing syllables or sound substitutions."
+        },
+        {
+          "term": "hemorrhage control",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "evidence_short": "hemorrhage control",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-phrase object bridge; a depiction of managing bleeding would be a clinical/action association, not the required wordplay."
+        },
+        {
+          "term": "online medical control",
+          "pdf_page": 1,
+          "printed_page": 1,
+          "evidence_short": "online medical control",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body_across_line_break",
+          "strict_prose_body_verified": true,
+          "screen_reason": "A familiar object representing control would leave online medical unencoded; no obvious complete one/two-object bridge."
+        },
+        {
+          "term": "naloxone",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "evidence_short": "naloxone",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-word match from one/two familiar object names without hidden vowel, consonant, or syllable repairs."
+        },
+        {
+          "term": "opioid overdose",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "evidence_short": "opioid overdose",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-phrase object bridge; drug-related imagery alone would be an association and would not recover both words."
+        },
+        {
+          "term": "cardiac arrest",
+          "pdf_page": 2,
+          "printed_page": 2,
+          "evidence_short": "cardiac arrest",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-phrase sound/shared-headword bridge. Semantic heart or law-enforcement associations would not supply the selected phrase as object names."
+        },
+        {
+          "term": "mutual aid",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "evidence_short": "MUTUAL AID",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body_and_section_heading",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-phrase object pair without sound repair; aid alone is insufficient and helping would require an action."
+        },
+        {
+          "term": "surge capacity",
+          "pdf_page": 3,
+          "printed_page": 3,
+          "evidence_short": "surge capacity",
+          "status": "source_verified_no_viable_bridge_proposed",
+          "proposal": null,
+          "source_match": "body",
+          "strict_prose_body_verified": true,
+          "screen_reason": "No obvious full-phrase object bridge. Imagery implying increased demand or available space would be conceptual rather than full-word recovery."
+        }
+      ]
+    }
+  ],
+  "next_chapter": {
+    "chapter_id": "2",
+    "title": "Prehospital Equipment",
+    "status": "not_started_for_cue_review"
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "image_renders": 0
+  },
+  "notes": [
+    "Other chapter lanes were stopped at the user's scope change. Their partial artifacts are not review progress or inputs to this result.",
+    "Only short term evidence and source metadata are tracked; PDFs, full extracted text and screenshots stay local/ignored.",
+    "No production cue catalog changes. Zero proposals is a bounded editorial outcome, not proof that no useful mnemonic can exist."
+  ]
+}
