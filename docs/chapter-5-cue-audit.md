@@ -51,7 +51,9 @@ metaphor, or exhaustive chapter coverage.
 
 Independent AI reviewer Planck checked the source hash, page offset, title-block
 boundaries and all eighteen proposals, including the corrected tabletop wording.
-It supported 12 new retain / five reuse / one hold. Useful cautions retained:
+It supported 12 new retain / five reuse / one hold. Its final draft check also
+clarified that tabletop tokens must be visibly sorted through the tree, not
+merely placed beside it; integrated. Useful cautions retained:
 make the simulated-makeup context obvious, show actual available space for surge
 capacity, and preserve the IN relationship for ricin. These are practical design
 checks, not demands for universal standalone specificity. The reviewer performed
