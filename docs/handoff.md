@@ -199,6 +199,37 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Offline reset; $6 task-wide Anthropic pilot ceiling
+Patrick rejected single-example perfection loops and approved a $6 TOTAL
+Anthropic budget for a future bounded benchmark, not per topic or permission
+to refill/retry. No new Anthropic calls made in this reset. Prior credit-balance
+failure remains unresolved; no paid probe was used. Existing footer/cache edits
+from the interrupted prior session remain uncommitted and unchanged here.
+
+AGENTS.md and both Antigravity skill copies now require explicit shared budgets,
+pre-dispatch reservations, frozen first-pass trials, no topic repairs/hook-reset
+loopholes, and no automatic additional cohorts. This is operational policy,
+NOT a claim that a runtime spending gate has been implemented.
+
+Offline packet: Troubleshooting Prompts/offline_reset_2026-10-19/. PLAN.md records
+the $6 approval, a proposed paired3-topic/6-render pilot, cost-envelope math,
+required enforcement and stop rules. Candidate implementation, calibration,
+guard tests, final freeze/topic draw and live benchmark are NOT complete.
+A bounded independent agent compared saved79-vs100 disputes; rubric_findings.md
+proposes prospective identity/relationship/viewing criteria without regrading
+old images or changing the canonical rubric. Library review found scope ambiguity,
+unsupported blanket proven/universal claims and manually duplicated catalogs.
+library_findings.md proposes scoped evidence-tagged cue retrieval, not mass expansion.
+
+Official standard/global Sonnet4.6 pricing was checked against Anthropic's pricing
+documentation for planning ($3/M input,$15/M output); billing configuration and
+final post-injection token bounds still require verification before any spend.
+No Opus escalation is included in the proposed cost envelope. Codex-account and
+Antigravity credits are distinct from the approved Anthropic dollars.
+
+Git refresh encountered a bad refs/codex/turn-diffs/checkpoints object. Do not
+delete unrelated Codex metadata or claim successful refresh without evidence.
+
 ### 2026-10-18 - Live full-scene development recoveries; no cold-run pass
 **Done:** Pre-render critic now uses a forced strict tool response, with existing
 local source-pair, quote, attribution and scope validation retained. Unsupported

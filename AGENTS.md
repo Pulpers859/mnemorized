@@ -53,6 +53,23 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Treat `docs/gemini-constitution.txt` as mandatory for image-generation prompt repair. If a fallback path or Gemini web run did not fully use the Constitution, say so explicitly in the saved run notes and final response.
 - Be clear about what was validated locally and what still needs browser/provider-key testing.
 
+## Research Spend And First-Pass Benchmarks
+
+- Never pursue a single perfect example as a substitute for held-out reliability.
+- Paid research requires an explicit task-wide budget and a saved call/render plan.
+  Agents share that budget; delegation does not create another allowance. No paid
+  calls during offline analysis, and no automatic refill, model upgrade or new cohort.
+- Before live work, enforce admission/reservation against the final provider request,
+  including injected source text, tool schemas and maximum output. Unknown pricing,
+  usage or an unenforceable cap blocks spending; an estimated counter is not a hard cap.
+- A first-pass benchmark allows one initial image per predeclared topic/arm, no
+  topic-specific repairs or hook-reset loopholes. Source, format and budget failures
+  remain in the denominator. Freeze code, models, source policy, contracts and rubric.
+- Preserve first results and auditor disagreements. Calibrate criteria on old artifacts
+  before held-out trials; never relax criteria or negotiate scores to force a pass.
+- Stop after the planned cohort and report quality, failures, spend and uncertainty.
+  Further development or another cohort needs a new explicit scope/budget.
+
 ## Skill-First Workflow
 
 - At the start of a fresh session, use `.claude/skills/mnemorized-handoff/SKILL.md` or `.agents/skills/mnemorized-handoff/SKILL.md` unless the task is already deep in one known file.

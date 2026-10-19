@@ -15,6 +15,11 @@ Operational checklist. Sources of truth: `ANTIGRAVITY.md` (workflow), `docs/gemi
 
 ## The loop
 
+For reliability benchmarks, the AGENTS.md research-spend policy overrides the
+repair loop below: one initial full-scene render per frozen topic/arm, zero repair
+renders, shared task-wide spending cap, and no automatic new cohort. The generic
+five-attempt limit is not permission to spend or a substitute for first-pass results.
+
 1. Write `01_image_prompt.txt` (from a real Forge bundle export — hand-authored prompts must be labeled `renderer_experiment`).
 2. AG generates and saves the image. AG does not audit itself.
 3. Audit externally against `02_audit_prompt.txt`.
