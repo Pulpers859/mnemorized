@@ -72,3 +72,30 @@ def test_chapter_three_bank_and_ledger_are_consistent():
     assert bank["production_admitted"] is False
     assert all(not v for v in bank["evidence"].values())
     assert all(v == 0 for v in bank["spend"].values())
+
+
+def test_chapter_four_bank_and_reuse_are_consistent():
+    bank = json.loads((ROOT / "docs/chapter-4-cue-audit.json").read_text())
+    ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
+    record = next(r for r in ledger["subsequent_chapter_reviews"]
+                  if r["chapter_id"] == "4")
+    entries = bank["entries"]
+    assert bank["source"]["pdf_pages"] == list(range(13, 19))
+    assert len(entries) == len({e["term"] for e in entries}) == 16
+    assert Counter(e["decision"] for e in entries) == {
+        "retain_candidate": 13, "reuse_candidate": 2, "hold": 1,
+    }
+    assert record["new_candidates"] == 13 and record["holds"] == 1
+    assert record["reused_candidates"] == 2
+    assert (ROOT / record["report"]).is_file()
+    assert (ROOT / record["record"]).is_file()
+    assert int(ledger["next_chapter"]["chapter_id"]) >= 5
+    for entry in entries:
+        assert entry["tested"] is False
+        assert entry["page"] in bank["source"]["pdf_pages"]
+        assert entry["cue_scope"].strip() and entry["reason"].strip()
+        if entry["decision"] == "reuse_candidate":
+            assert (ROOT / entry["prior"]).is_file()
+    assert bank["production_admitted"] is False
+    assert all(not v for v in bank["evidence"].values())
+    assert all(v == 0 for v in bank["spend"].values())

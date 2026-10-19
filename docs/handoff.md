@@ -199,6 +199,18 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapter 4 Mass Gatherings candidate bank
+**Done:** Sixteen terms:13 new untested chapter candidates,2 reuses,1 hold.
+Doctor/director, ant/acid, astronaut/space blanket and parrot/repeater retained
+alongside useful literal/category cues. Cardiac arrest and nitro cues reused.
+**Verified:** Source hash, pages13-18 boundaries, all16 term/page matches
+(8 prose/heading,8 table), independent AI source/conceptual review and focused
+data checks. No clinical, legal, image, pronunciation or recall validation.
+**Limits:** No paid calls or renders; $6 benchmark untouched; canonical76 catalog
+unchanged. Existing unrelated Forge edits preserved. Fetch checkpoint failure
+persists; remote API used to verify push SHA.
+**Next:** Chapter5 Disaster Preparedness, title verified in TOC only, not started.
+
 ### 2026-10-19 - Chapter 3 Air Medical Transport candidate bank
 **Done:** Sixteen terms, fourteen retained untested chapter compositions and two
 holds; broad category, familiar state and wordplay cues accepted. Flail/treasure

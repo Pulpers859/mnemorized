@@ -175,11 +175,24 @@
     "independent_source_and_conceptual_review": true,
     "exhaustive_vocabulary_review": false,
     "empirical_validation": false
+    },
+    {
+      "chapter_id": "4",
+      "title": "Mass Gatherings",
+      "record": "docs/chapter-4-cue-audit.json",
+      "report": "docs/chapter-4-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 13,
+      "reused_candidates": 2,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
   "next_chapter": {
-    "chapter_id": "4",
-    "title": "Mass Gatherings",
+    "chapter_id": "5",
+    "title": "Disaster Preparedness",
     "status": "not_started_for_cue_review"
   },
   "spend": {

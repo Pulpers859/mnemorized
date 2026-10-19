@@ -62,9 +62,16 @@ fourteen untested chapter candidates and two holds. Independent source and
 conceptual review completed. Nine body matches and seven table matches.
 Structured record: `docs/chapter-3-cue-audit.json`.
 
+## Chapter 4: Mass Gatherings
+
+[Chapter 4 review](chapter-4-cue-audit.md): sixteen selected terms from pages13-18,
+thirteen newly recorded untested candidates, two reuses, one hold. Independently
+source-checked and conceptually reviewed. Structured bank:
+`docs/chapter-4-cue-audit.json`. No empirical learning or rendering validation.
+
 ## Next
 
-Chapter 4, **Mass Gatherings**, is not started for cue review. Do not move
+Chapter 5, **Disaster Preparedness**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
