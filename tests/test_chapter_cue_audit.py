@@ -4,8 +4,44 @@ from collections import Counter
 import json
 from pathlib import Path
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+@pytest.mark.parametrize("chapter,start,end", [(8, 17, 23), (9, 23, 29), (10, 29, 34)])
+def test_later_disaster_chapter_banks_are_consistent(chapter, start, end):
+    ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
+    record = next(r for r in ledger["subsequent_chapter_reviews"]
+                  if r["chapter_id"] == str(chapter))
+    bank = json.loads((ROOT / record["record"]).read_text())
+    assert bank["chapter_id"] == str(chapter)
+    assert (ROOT / record["report"]).is_file()
+    assert bank["source"]["pdf_pages"] == list(range(start, end + 1))
+    assert bank["source"]["printed_pages"] == list(range(start + 18, end + 19))
+    assert len(bank["source"]["sha256"]) == 64
+    entries = bank["entries"]
+    assert len(entries) == len({e["term"].casefold() for e in entries}) == record["selected_terms"]
+    decisions = Counter(e["decision"] for e in entries)
+    assert decisions["retain_candidate"] == record["new_candidates"]
+    assert decisions["reuse_candidate"] == record["reused_candidates"]
+    assert decisions["hold"] == record["holds"]
+    assert set(decisions) <= {"retain_candidate", "reuse_candidate", "hold"}
+    for entry in entries:
+        assert entry["page"] == entry["pdf_page"] + bank["source"]["printed_page_offset"]
+        assert entry["pdf_page"] in bank["source"]["pdf_pages"]
+        assert entry["tested"] is False
+        assert entry["cue_scope"].strip() and entry["reason"].strip()
+        assert entry["source_match"] in {"body", "table", "heading_and_body", "heading"}
+        if entry["decision"] != "hold":
+            assert entry["cue"].strip()
+        if entry["decision"] == "reuse_candidate":
+            assert (ROOT / entry["prior"].split("#")[0]).is_file()
+    assert int(ledger["next_chapter"]["chapter_id"]) >= chapter + 1
+    assert bank["production_admitted"] is False
+    assert all(not v for v in bank["evidence"].values())
+    assert all(v == 0 for v in bank["spend"].values())
 
 
 def test_chapter_two_bank_is_bounded_and_explicitly_untested():

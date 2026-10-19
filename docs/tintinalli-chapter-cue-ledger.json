@@ -228,11 +228,50 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "8",
+      "title": "Chemical Disasters",
+      "record": "docs/chapter-8-cue-audit.json",
+      "report": "docs/chapter-8-cue-audit.md",
+      "selected_terms": 18,
+      "new_candidates": 12,
+      "reused_candidates": 4,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "9",
+      "title": "Bioterrorism",
+      "record": "docs/chapter-9-cue-audit.json",
+      "report": "docs/chapter-9-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 10,
+      "reused_candidates": 4,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "10",
+      "title": "Radiation Injuries",
+      "record": "docs/chapter-10-cue-audit.json",
+      "report": "docs/chapter-10-cue-audit.md",
+      "selected_terms": 18,
+      "new_candidates": 13,
+      "reused_candidates": 4,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
   "next_chapter": {
-    "chapter_id": "8",
-    "title": "Chemical Disasters",
+    "chapter_id": "11",
+    "title": "Sudden Cardiac Death",
     "status": "not_started_for_cue_review"
   },
   "spend": {

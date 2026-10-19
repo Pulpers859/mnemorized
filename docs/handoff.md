@@ -199,6 +199,24 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapters8-10 offline cue review batch
+**Done:** User requested next several chapters; bounded scope to8-10.
+Chapter8:18terms/12new/4reuse/2hold; Chapter9:16/10/4/2;
+Chapter10:18/13/4/1. Total52terms,35new compositions,12reuses,5holds.
+**Review:** Main authored8, separate AI reviewed source/concepts. Disjoint
+workers authored9/10; main independently verified all term/page matches and
+visual boundaries and reviewed cue decisions. Sulfur eggs reused; blue-color
+collision between methylene/Prussian documented, not uniquely identifying.
+**Validation:** Focused chapter/workshop/catalog tests119passed/1skipped;
+catalog validator valid76; diff check clean. No backend/browser/provider trial.
+**Limits:** All untested, no production admission, catalog76 unchanged, zero
+paid calls/images, $6 benchmark untouched. No current clinical validation.
+Source PDF/hash same;8 PDF17-23,9 PDF23-29,10 PDF29-34, printed offset18.
+Next11 Sudden Cardiac Death (TOC only), source review not started. Corrected
+old Chapter7 camera-lens workshop reference filename during provenance check.
+Unrelated Forge edits preserved; fetch checkpoint failure persists, auth works;
+use remote SHA API and ancestry checks for push verification.
+
 ### 2026-10-19 - User sulfur cue and Chapter7 vocabulary review
 **Done:** Retained Patrick's rotten-eggs/stink cue for sulfonylureas as learned
 sulfur/sulfon partial-name bridge, not drug odor, chemistry or allergy advice.

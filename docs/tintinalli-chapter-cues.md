@@ -91,9 +91,23 @@ admission.
 source/concept review completed; no image or recall validation. Bank:
 `docs/chapter-7-cue-audit.json`.
 
+## Chapters 8-10: Disaster Management Continued
+
+| Chapter | Selected | New Candidates | Reuses | Holds | Review |
+|---|---:|---:|---:|---:|---|
+| 8 Chemical Disasters | 18 | 12 | 4 | 2 | [Review](chapter-8-cue-audit.md) |
+| 9 Bioterrorism | 16 | 10 | 4 | 2 | [Review](chapter-9-cue-audit.md) |
+| 10 Radiation Injuries | 18 | 13 | 4 | 1 | [Review](chapter-10-cue-audit.md) |
+
+Fifty-two selected terms total, including35 newly recorded candidate
+compositions,12 whole-cue reuses and5 holds. New compositions can share familiar
+primitives, including the user's sulfur eggs; this is not35 unique inventions.
+Separate AI source/concept review completed for each chapter. No clinical,
+image-readability or recall validation. Structured banks are linked in each report.
+
 ## Next
 
-Chapter 8, **Chemical Disasters**, is not started for cue review. Do not move
+Chapter 11, **Sudden Cardiac Death**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
