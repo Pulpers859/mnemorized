@@ -46,9 +46,16 @@ PDFs and full extracted source text are not committed. Broader lanes dispatched
 before the user's one-chapter limit were stopped; their partial artifacts do not
 count as completed reviews and were not used here.
 
+## Chapter 2: Prehospital Equipment
+
+[Chapter 2 review](chapter-2-cue-audit.md): sixteen selected terms from actual
+pages 3-9, independently source-checked and conceptually challenged. Ten new
+untested candidates, one reused candidate, five holds. Structured chapter bank:
+`docs/chapter-2-cue-audit.json`. No source files or full chapter text committed.
+
 ## Next
 
-Chapter 2, **Prehospital Equipment**, is not started for cue review. Do not move
+Chapter 3, **Air Medical Transport**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

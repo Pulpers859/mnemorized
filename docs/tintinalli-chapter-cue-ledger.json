@@ -148,9 +148,25 @@
       ]
     }
   ],
+  "subsequent_chapter_reviews": [
+    {
+      "chapter_id": "2",
+      "title": "Prehospital Equipment",
+      "status": "selected_terms_screened_broadened_method",
+      "record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 10,
+      "reused_candidates": 1,
+      "holds": 5,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    }
+  ],
   "next_chapter": {
-    "chapter_id": "2",
-    "title": "Prehospital Equipment",
+    "chapter_id": "3",
+    "title": "Air Medical Transport",
     "status": "not_started_for_cue_review"
   },
   "spend": {

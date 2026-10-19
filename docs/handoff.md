@@ -199,6 +199,20 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapter 2 vocabulary/cue review only
+**Done:** Added Chapter 2 Prehospital Equipment candidate bank/report and ledger
+link. Sixteen terms: ten new untested designs, one reused magnesium cue, five
+holds. Broader method preserved; no production catalog or Forge changes.
+**Verified:** Actual PDF pages 3-9, SHA256, all sixteen term/page matches; main
+visual boundary inspection plus independent AI source/conceptual review. Focused
+data/catalog tests and diff checks run. No clinical-fact or learner validation.
+**Limits:** Chapter 3 remains unstarted; source text incidentally extracted from
+page 10 was excluded. No paid provider calls/renders; $6 benchmark untouched.
+Fetch continues to fail on known checkpoint ref; remote API used for SHA checks.
+Existing unrelated Forge modifications preserved and excluded from commit.
+**Next:** Chapter 3 Air Medical Transport when requested; retained designs still
+require cue recognition, discrimination and recall checks before production use.
+
 ### 2026-10-19 - Broadened Chapter 1 cue re-audit after user correction
 **Done:** Added `docs/chapter-1-broadened-cue-audit.md`: same ten source-verified
 terms, six conditional candidates and four holds. Expanded discovery beyond
