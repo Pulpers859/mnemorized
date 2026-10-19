@@ -199,6 +199,21 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Broadened Chapter 1 cue re-audit after user correction
+**Done:** Added `docs/chapter-1-broadened-cue-audit.md`: same ten source-verified
+terms, six conditional candidates and four holds. Expanded discovery beyond
+exact sound assembly to phrase play, double meanings, actions and relationships.
+Preserved original zero-proposal ledger and independent-review disagreements.
+Updated chapter guide and catalog guide; canonical 76-entry JSON is unchanged.
+**Verified:** Independent AI conceptual challenge, focused catalog/workshop tests,
+and diff hygiene. No new PDF/source, medical-claim, rendering or recall validation.
+**Limits:** No production changes, Forge run, paid calls or images; $6 benchmark
+budget untouched. Existing unrelated Forge edits preserved. Fetch still fails on
+the known Codex checkpoint ref; do not claim a successful fetch.
+**Next:** Test selected candidate recoverability against distractors before
+production use; Chapter 2 remains unstarted. Do not resume phonetic-only filtering
+as a veto on all conceptual mnemonic vocabulary.
+
 ### 2026-10-19 - Actual Tintinalli chapter review; ONE CHAPTER at a time
 Patrick redirected the proposed broad source pass to one chapter at a time.
 Stopped Chapter5-10 and11-21 agents; their early local partial artifacts are

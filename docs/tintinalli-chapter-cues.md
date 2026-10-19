@@ -5,7 +5,11 @@ not clinical lesson generation or a claim of validated mnemonic effectiveness.
 
 ## Chapter 1: Emergency Medical Services
 
-**Selected-term review complete: 10 terms, zero proposed or admitted bridges.**
+**Historical sound-only review: 10 terms, zero proposed or admitted bridges.**
+The subsequent [broadened Chapter 1 audit](chapter-1-broadened-cue-audit.md)
+reopens these same terms using phrase play, actions, relationships and characters.
+Its candidate decisions supersede the old filter for general cue discovery;
+the original structured ledger is preserved as historical evidence.
 Main and independent AI reviewers found no obvious one/two-object association
 meeting the existing strict wordplay criteria for these selected terms. This is
 not an exhaustive vocabulary search or proof that a useful bridge is impossible.

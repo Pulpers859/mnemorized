@@ -54,6 +54,15 @@ Search uses literal token overlap, not clinical reasoning or semantic retrieval.
 
 ## Review And Admission
 
+General cue discovery is not restricted to exact phonetic object assembly.
+The [broadened Chapter 1 audit](chapter-1-broadened-cue-audit.md) also considers
+phrase play, double meanings, physical actions and character relationships.
+Judge learned recovery and competing interpretations after teaching the bridge;
+untrained guessing of the complete medical term is not a universal admission
+requirement. Object identification remains useful diagnostic evidence, not an
+automatic veto of a teachable conceptual cue. This chapter candidate bank is
+separate from the canonical catalog and does not change its 76-entry count.
+
 [Workshop 2](sound-bridge-workshop-2.md) reviewed 26 entirely new terms with unchanged criteria: four untested candidates retained, seven held, 15 rejected. Only balloon, lens, iron and tapeworm were added. No follow-on delta batch or previous-term repair was used. Full data: `docs/sound-bridge-workshop-2.json`.
 
 The follow-on [sound-bridge workshop](sound-bridge-workshop.md) covered 103 distinct terms/headwords in 104 attempts and added only 11 untested candidates after independent review. Sixteen are held outside this catalog; 76 distinct terms were rejected. This is not 50 new usable sound bridges. The full structured workshop/rejection bank is `docs/sound-bridge-workshop.json`.
@@ -62,7 +71,7 @@ The October 19, 2026 review used AI language/wordplay, visual-composition and so
 
 The raw proposals and rejection rationales are retained locally in `Troubleshooting Prompts/cue_catalog_2026-10-19/`; that ignored experiment folder is not required to validate the tracked catalog. Pronunciation judgments are provisional, not a pronunciation dictionary. Independently proposed mappings can overlap common existing mnemonics; originality has not been legally or exhaustively verified.
 
-Before production admission, require unprompted object identification, term/state discrimination against plausible distractors, source-scoped applicability, collision checks across lessons, independent first-render auditing, and delayed learner recall. Record failures as well as successes. Freeze any selected subset before a paid benchmark; do not change mappings midway or claim first-pass reliability from repaired examples.
+Before production admission, assess recognizable objects and relationships, term/state discrimination against plausible distractors after teaching, source-scoped applicability, collision checks across lessons, independent first-render auditing, and delayed learner recall. Do not coach retrieval during the test or treat a taught explanation as evidence of recall. Record failures as well as successes. Freeze any selected subset before a paid benchmark; do not change mappings midway or claim first-pass reliability from repaired examples.
 
 ## Research Boundaries
 
