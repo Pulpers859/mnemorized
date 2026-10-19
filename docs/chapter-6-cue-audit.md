@@ -2,8 +2,8 @@
 
 ## Scope and Evidence
 
-Eighteen selected vocabulary terms: **13 newly recorded candidates, four
-reuses, one hold**. Not exhaustive coverage and not a clinical lesson or image
+Eighteen selected vocabulary terms: **14 newly recorded candidates, four
+reuses, no holds**, after the user's sulfonylureas addition. Not exhaustive coverage and not a clinical lesson or image
 prompt. These are editorial proposals, not proven recall aids.
 
 Source: purchased `Tintin_Disaster Management.pdf`, SHA256
@@ -41,7 +41,7 @@ Pages below are printed pages; subtract18 for the PDF page.
 | Crush injuries | 28 | Vise compressing limb mannequin | Reuse Chapter5 |
 | Surge capacity | 28 | Extra open care spaces facing wave of arrivals | Reuse Chapter1 |
 | Blood banks | 26 | Vault containing blood bags | Reuse Chapter5 |
-| Sulfonylureas | 27 | No economical bridge proposed | Hold |
+| Sulfonylureas | 27 | Pile of cracked rotten eggs with stink lines | Retain, user example |
 
 Three terms are table-sourced: inhalational injury in Table6-1, renal failure
 in Table6-2, sulfonylureas in Table6-3. Remaining matches are chapter prose.
@@ -82,3 +82,15 @@ benchmark allowance is untouched. Local boundary images and notes remain under
 `Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-19/chapter06/`.
 
 Next requested chapter: **7, Bomb, Blast, and Crush Injuries**. Not reviewed here.
+
+## User Addition After Initial Review
+
+The original run retained13 and held sulfonylureas. Patrick then proposed rotten
+eggs through their familiar sulfur association. Retained as a partial learned
+bridge to sulfon-, not a full-word sound match. This corrects the overly narrow
+assumption that no whole-word pun means no useful cue. Stink lines make the
+rotten state visually apparent. This is not a claim about the drug's odor,
+chemistry, allergy cross-reactivity or clinical effect. Other sulfur-related
+terms can share the primitive; resolve those by lesson context rather than
+rejecting the association. Original review findings above remain historical;
+the new candidate is user-originated and still untested.

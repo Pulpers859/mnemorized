@@ -208,8 +208,22 @@
       "record": "docs/chapter-6-cue-audit.json",
       "report": "docs/chapter-6-cue-audit.md",
       "selected_terms": 18,
-      "new_candidates": 13,
+      "new_candidates": 14,
       "reused_candidates": 4,
+      "holds": 0,
+      "user_calibration": "Original13/4/1 result revised after user supplied rotten eggs as sulfur/sulfon partial-name bridge for sulfonylureas; retained, untested.",
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "7",
+      "title": "Bomb, Blast, and Crush Injuries",
+      "record": "docs/chapter-7-cue-audit.json",
+      "report": "docs/chapter-7-cue-audit.md",
+      "selected_terms": 20,
+      "new_candidates": 14,
+      "reused_candidates": 5,
       "holds": 1,
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
@@ -217,8 +231,8 @@
     }
   ],
   "next_chapter": {
-    "chapter_id": "7",
-    "title": "Bomb, Blast, and Crush Injuries",
+    "chapter_id": "8",
+    "title": "Chemical Disasters",
     "status": "not_started_for_cue_review"
   },
   "spend": {

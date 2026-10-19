@@ -79,13 +79,21 @@ or image validation. Bank: `docs/chapter-5-cue-audit.json`.
 ## Chapter 6: Natural Disasters
 
 [Chapter 6 review](chapter-6-cue-audit.md): eighteen terms from PDF7-12 / printed
-25-30; thirteen newly recorded untested candidates, four reuses, one hold.
+25-30; fourteen newly recorded untested candidates, four reuses, no holds after
+Patrick supplied rotten eggs as the sulfur/sulfon bridge for sulfonylureas.
 Bank: `docs/chapter-6-cue-audit.json`. No empirical validation or production
 admission.
 
+## Chapter 7: Bomb, Blast, and Crush Injuries
+
+[Chapter 7 review](chapter-7-cue-audit.md): twenty terms from PDF12-17 / printed
+30-35; fourteen newly recorded candidates, five reuses, one hold. Independent AI
+source/concept review completed; no image or recall validation. Bank:
+`docs/chapter-7-cue-audit.json`.
+
 ## Next
 
-Chapter 7, **Bomb, Blast, and Crush Injuries**, is not started for cue review. Do not move
+Chapter 8, **Chemical Disasters**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

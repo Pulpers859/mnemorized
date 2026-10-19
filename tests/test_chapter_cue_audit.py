@@ -111,10 +111,13 @@ def test_chapter_six_bank_and_ledger_are_consistent():
     entries = bank["entries"]
     assert len(entries) == len({e["term"] for e in entries}) == 18
     assert Counter(e["decision"] for e in entries) == {
-        "retain_candidate": 13, "reuse_candidate": 4, "hold": 1,
+        "retain_candidate": 14, "reuse_candidate": 4,
     }
-    assert record["new_candidates"] == 13 and record["reused_candidates"] == 4
-    assert record["holds"] == 1
+    assert record["new_candidates"] == 14 and record["reused_candidates"] == 4
+    assert record["holds"] == 0
+    sulfur = next(e for e in entries if e["term"] == "sulfonylureas")
+    assert sulfur["prior"] == "user_example"
+    assert sulfur["decision"] == "retain_candidate" and "eggs" in sulfur["cue"]
     assert (ROOT / record["record"]).is_file()
     assert (ROOT / record["report"]).is_file()
     for entry in entries:
@@ -129,6 +132,36 @@ def test_chapter_six_bank_and_ledger_are_consistent():
         e["term"] for e in entries if e["source_match"] == "table"
     }
     assert int(ledger["next_chapter"]["chapter_id"]) >= 7
+    assert bank["production_admitted"] is False
+    assert all(not v for v in bank["evidence"].values())
+    assert all(v == 0 for v in bank["spend"].values())
+
+
+def test_chapter_seven_bank_and_reuse_are_consistent():
+    bank = json.loads((ROOT / "docs/chapter-7-cue-audit.json").read_text())
+    ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
+    record = next(r for r in ledger["subsequent_chapter_reviews"]
+                  if r["chapter_id"] == "7")
+    assert bank["source"]["pdf_pages"] == list(range(12, 18))
+    assert bank["source"]["printed_pages"] == list(range(30, 36))
+    entries = bank["entries"]
+    assert len(entries) == len({e["term"] for e in entries}) == 20
+    assert Counter(e["decision"] for e in entries) == {
+        "retain_candidate": 14, "reuse_candidate": 5, "hold": 1,
+    }
+    assert record["new_candidates"] == 14 and record["reused_candidates"] == 5
+    assert record["holds"] == 1
+    assert (ROOT / record["record"]).is_file()
+    assert (ROOT / record["report"]).is_file()
+    for entry in entries:
+        assert entry["page"] == entry["pdf_page"] + bank["source"]["printed_page_offset"]
+        assert entry["pdf_page"] in bank["source"]["pdf_pages"]
+        assert entry["tested"] is False
+        assert entry["cue_scope"].strip() and entry["reason"].strip()
+        assert entry["source_match"] in {"body", "heading_and_body"}
+        if entry["decision"] == "reuse_candidate":
+            assert (ROOT / entry["prior"].split("#")[0]).is_file()
+    assert int(ledger["next_chapter"]["chapter_id"]) >= 8
     assert bank["production_admitted"] is False
     assert all(not v for v in bank["evidence"].values())
     assert all(v == 0 for v in bank["spend"].values())

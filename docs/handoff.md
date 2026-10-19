@@ -199,6 +199,19 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - User sulfur cue and Chapter7 vocabulary review
+**Done:** Retained Patrick's rotten-eggs/stink cue for sulfonylureas as learned
+sulfur/sulfon partial-name bridge, not drug odor, chemistry or allergy advice.
+Chapter6 counts now14new/4reuse/0hold; original13/4/1 historical entry preserved.
+Chapter7 twenty terms:14new compositions,5reuses,1hold (tranexamic acid).
+**Verified:** Main visual title boundaries PDF12-17/printed30-35; same source
+hash; independent AI source/concept review verified20 term/page matches and
+supported user cue. Integrated readable lens/retina/skin/volume refinements.
+**Limits:** No clinical, render or recall validation; zero paid calls/images;
+catalog76 and $6 allowance unchanged. Unrelated Forge edits preserved. Fetch
+still fails existing checkpoint ref, authenticated GitHub API/push verification
+used. Next Chapter8 Chemical Disasters; adjacent boundary text excluded.
+
 ### 2026-10-19 - Chapter 6 Natural Disasters candidate bank
 **Done:** Eighteen selected terms:13 newly recorded untested candidates,4reuses,
 1hold. Vector-arrow mosquito, waterborne boat, nonunion wedding/bone characters,
