@@ -69,9 +69,16 @@ thirteen newly recorded untested candidates, two reuses, one hold. Independently
 source-checked and conceptually reviewed. Structured bank:
 `docs/chapter-4-cue-audit.json`. No empirical learning or rendering validation.
 
+## Chapter 5: Disaster Preparedness
+
+[Chapter 5 review](chapter-5-cue-audit.md): eighteen terms from PDF1-7 / printed
+19-25 of `Tintin_Disaster Management.pdf`; twelve newly recorded candidates,
+five reuses, one hold. Independent source/conceptual review; no empirical recall
+or image validation. Bank: `docs/chapter-5-cue-audit.json`.
+
 ## Next
 
-Chapter 5, **Disaster Preparedness**, is not started for cue review. Do not move
+Chapter 6, **Natural Disasters**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

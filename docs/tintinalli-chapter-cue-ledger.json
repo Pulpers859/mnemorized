@@ -188,11 +188,24 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "5",
+      "title": "Disaster Preparedness",
+      "record": "docs/chapter-5-cue-audit.json",
+      "report": "docs/chapter-5-cue-audit.md",
+      "selected_terms": 18,
+      "new_candidates": 12,
+      "reused_candidates": 5,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
   "next_chapter": {
-    "chapter_id": "5",
-    "title": "Disaster Preparedness",
+    "chapter_id": "6",
+    "title": "Natural Disasters",
     "status": "not_started_for_cue_review"
   },
   "spend": {

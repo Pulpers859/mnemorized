@@ -199,6 +199,19 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Chapter 5 Disaster Preparedness candidate bank
+**Done:** Eighteen source-grounded terms:12 newly recorded untested candidates,
+5reuses,1hold. Blood vault/bank, crossed matches, push/pack and rice-in/ricin
+name bridges retained alongside familiar category cues. Phosgene held, no forced
+fragment. Same learned tree/PPE/overflow vocabulary reused.
+**Verified:** Disaster Management source hash, PDF1-7=printed19-25, visual title
+boundaries,18 term/page matches, independent AI source/conceptual review and
+focused data tests. Source prose/heading only; no clinical or efficacy validation.
+**Limits:** No paid calls, images or recall tests; $6 allowance untouched.
+Canonical catalog76 unchanged. Unrelated Forge edits preserved. Fetch checkpoint
+error persists; remote API verifies Git push SHA. Chapter6 text exposed during
+boundary extraction excluded. Next: Chapter6 Natural Disasters, not started.
+
 ### 2026-10-19 - Chapter 4 Mass Gatherings candidate bank
 **Done:** Sixteen terms:13 new untested chapter candidates,2 reuses,1 hold.
 Doctor/director, ant/acid, astronaut/space blanket and parrot/repeater retained
