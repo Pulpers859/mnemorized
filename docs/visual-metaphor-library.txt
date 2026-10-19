@@ -1,6 +1,10 @@
 VISUAL METAPHOR LIBRARY
 =======================
-Central catalog of proven visual metaphors for Mnemorized prompt generation.
+Legacy visual vocabulary for Mnemorized prompt generation; not a proven catalog.
+Per-entry effectiveness and cross-topic consistency have not been established.
+Structured OFFLINE candidates and collision/exclusion notes now live in
+docs/visual-cue-catalog.json; see docs/visual-cue-catalog.md for admission rules.
+The new candidate catalog is NOT automatically injected into production prompts.
 Referenced by gemini-constitution.txt (Visual Encoding Hierarchy).
 Metaphors must be consistent across all topics — if banana = potassium here,
 it means potassium everywhere. Add new entries after stress-test validation.
@@ -117,5 +121,5 @@ USAGE RULES
    unambiguous in context. If a viewer might confuse it, add a small
    hybrid label.
 4. New metaphors should be stress-tested before adding to this library.
-5. Cultural universality matters — prefer metaphors that work across
-   backgrounds (banana = potassium is global medical culture).
+5. Familiarity varies across learners and cultures. Do not claim a mapping is
+   universal; test object recognition and the learned association separately.

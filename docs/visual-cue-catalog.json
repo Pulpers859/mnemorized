@@ -1,0 +1,2194 @@
+{
+  "schema_version": 1,
+  "usage": "OFFLINE DESIGN CATALOG ONLY. Mnemonic candidates are not clinical evidence or validated recall aids. No production prompt injection or image generation is enabled by this file. Clinical facts must come through Forge source retrieval. Evidence is per-entry and context-specific; empty evidence means untested. Generic designs may independently overlap common vocabulary; no proprietary scenes or signature character systems were imported.",
+  "sources": [
+    {
+      "id": "sketchy-method",
+      "url": "https://www.sketchy.com/blog/how-to-remember-tough-mcat-topics",
+      "purpose": "General design principles only; no concrete symbols or scenes reused."
+    },
+    {
+      "id": "picmonic-method",
+      "url": "https://www.picmonic.com/about",
+      "purpose": "General pairing of imagery, narration and retrieval practice; not evidence for our entries."
+    },
+    {
+      "id": "pixorize-method",
+      "url": "https://blog.pixorize.com/2021/06/14/how-to-study-complex-material-online-helpful-tips-for-medical-students/",
+      "purpose": "Public description of visual mnemonics only; main site returned403; no catalog scraped."
+    },
+    {
+      "id": "mnemonic-study-2014",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24868180/",
+      "purpose": "Study of another audiovisual system, not validation of Mnemorized, individual cues or image-generation reliability."
+    }
+  ],
+  "entries": [
+    {
+      "id": "potassium-bananas",
+      "concept": "Potassium",
+      "aliases": [
+        "potassium",
+        "K+"
+      ],
+      "kind": "identity",
+      "objects": [
+        "banana bunch"
+      ],
+      "bridge": "Recognizable fruit supplies a stable ingredient cue; it does not show a laboratory result.",
+      "applicable_to": [
+        "Potassium",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a dietary cause, dietary instruction or treatment recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Recognizable fruit supplies a stable ingredient cue; it does not show a laboratory result.",
+      "collision_tags": [
+        "banana-bunch"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "sodium-salt",
+      "concept": "Sodium",
+      "aliases": [
+        "sodium",
+        "Na+"
+      ],
+      "kind": "identity",
+      "objects": [
+        "salt crystals"
+      ],
+      "bridge": "A familiar salt ingredient cues sodium identity, not concentration by itself.",
+      "applicable_to": [
+        "Sodium",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not equate serum sodium with volume status or automatically with normal saline.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A familiar salt ingredient cues sodium identity, not concentration by itself.",
+      "collision_tags": [
+        "salt-crystals"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "glucose-sugar",
+      "concept": "Glucose",
+      "aliases": [
+        "glucose",
+        "blood sugar"
+      ],
+      "kind": "identity",
+      "objects": [
+        "sugar cubes"
+      ],
+      "bridge": "Sugar cues the glucose concept without printed chemical notation.",
+      "applicable_to": [
+        "Glucose",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a glucose dose, dietary cause or treatment instruction.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Sugar cues the glucose concept without printed chemical notation.",
+      "collision_tags": [
+        "sugar-cubes"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "acid-lemon",
+      "concept": "Acidity",
+      "aliases": [
+        "acid",
+        "acidity",
+        "low pH"
+      ],
+      "kind": "identity",
+      "objects": [
+        "lemon"
+      ],
+      "bridge": "Sour fruit is an assigned acidity cue.",
+      "applicable_to": [
+        "Acidity",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Cannot diagnose an acid-base disorder or encode its numeric pH.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Sour fruit is an assigned acidity cue.",
+      "collision_tags": [
+        "lemon"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "calcium-bone",
+      "concept": "Calcium",
+      "aliases": [
+        "calcium",
+        "Ca2+"
+      ],
+      "kind": "identity",
+      "objects": [
+        "bone"
+      ],
+      "bridge": "Bone supplies a familiar calcium ingredient association.",
+      "applicable_to": [
+        "Calcium",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "A broken bone does not establish low calcium or a fracture diagnosis.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Bone supplies a familiar calcium ingredient association.",
+      "collision_tags": [
+        "bone"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "magnesium-magnet",
+      "concept": "Magnesium",
+      "aliases": [
+        "magnesium",
+        "Mg2+"
+      ],
+      "kind": "identity",
+      "objects": [
+        "horseshoe magnet"
+      ],
+      "bridge": "The shared mag- sound supplies a short phonetic bridge.",
+      "applicable_to": [
+        "Magnesium",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not evidence that magnesium attracts metal or that a patient needs replacement.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The shared mag- sound supplies a short phonetic bridge.",
+      "collision_tags": [
+        "horseshoe-magnet"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "bicarbonate-soda",
+      "concept": "Bicarbonate",
+      "aliases": [
+        "bicarbonate",
+        "HCO3"
+      ],
+      "kind": "identity",
+      "objects": [
+        "household baking-soda carton"
+      ],
+      "bridge": "A familiar bicarbonate-containing household object supplies identity.",
+      "applicable_to": [
+        "Bicarbonate",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not permission to administer household baking soda; never print a formula or dose.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "An unlabelled carton is not identifiable as baking soda; reject if a printed product label is needed."
+      ],
+      "signature": "A familiar bicarbonate-containing household object supplies identity.",
+      "collision_tags": [
+        "household-baking-soda-carton"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "water-pitcher",
+      "concept": "Water or fluid identity",
+      "aliases": [
+        "water",
+        "fluid"
+      ],
+      "kind": "identity",
+      "objects": [
+        "clear water pitcher"
+      ],
+      "bridge": "Visible water supplies a literal fluid ingredient cue.",
+      "applicable_to": [
+        "Water or fluid identity",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Cannot infer intravascular volume, tonicity, fluid choice or infusion rate.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Visible water supplies a literal fluid ingredient cue.",
+      "collision_tags": [
+        "clear-water-pitcher"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "respiration-bellows",
+      "concept": "Respiration",
+      "aliases": [
+        "respiration",
+        "lungs"
+      ],
+      "kind": "identity",
+      "objects": [
+        "bellows"
+      ],
+      "bridge": "Bellows suggest air movement through their familiar function.",
+      "applicable_to": [
+        "Respiration",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not anatomical lung location, disease severity or ventilation settings.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Bellows suggest air movement through their familiar function.",
+      "collision_tags": [
+        "bellows"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "cardiac-pump",
+      "concept": "Cardiac pumping",
+      "aliases": [
+        "cardiac pumping",
+        "heart pump"
+      ],
+      "kind": "identity",
+      "objects": [
+        "mechanical pump"
+      ],
+      "bridge": "The shared pumping function supplies an assigned cardiac role.",
+      "applicable_to": [
+        "Cardiac pumping",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not extend this to chest pain of any cause, or treat a pipe elbow as a pump.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The shared pumping function supplies an assigned cardiac role.",
+      "collision_tags": [
+        "mechanical-pump"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "filtration-sieve",
+      "concept": "Filtration",
+      "aliases": [
+        "filtration",
+        "filtering"
+      ],
+      "kind": "identity",
+      "objects": [
+        "sieve"
+      ],
+      "bridge": "A visible mesh separates retained material from material that passes.",
+      "applicable_to": [
+        "Filtration",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a renal diagnosis, a filtration rate or a treatment indication.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A visible mesh separates retained material from material that passes.",
+      "collision_tags": [
+        "sieve"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "conduction-cable",
+      "concept": "Electrical conduction",
+      "aliases": [
+        "electrical conduction",
+        "conduction"
+      ],
+      "kind": "identity",
+      "objects": [
+        "insulated cable"
+      ],
+      "bridge": "A cable provides a familiar electrical pathway.",
+      "applicable_to": [
+        "Electrical conduction",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a conduction diagnosis, ECG pattern or pacing recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A cable provides a familiar electrical pathway.",
+      "collision_tags": [
+        "insulated-cable"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "toxicity-skull",
+      "concept": "Toxicity or danger",
+      "aliases": [
+        "toxicity",
+        "lethal danger"
+      ],
+      "kind": "identity",
+      "objects": [
+        "skull-and-crossbones tag"
+      ],
+      "bridge": "A familiar hazard symbol cues danger.",
+      "applicable_to": [
+        "Toxicity or danger",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Does not establish lethality, dose or poisoning mechanism without source support.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A familiar hazard symbol cues danger.",
+      "collision_tags": [
+        "skull-and-crossbones-tag"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "protection-shield",
+      "concept": "Protection",
+      "aliases": [
+        "protection",
+        "protective role"
+      ],
+      "kind": "identity",
+      "objects": [
+        "shield"
+      ],
+      "bridge": "A shield's protective function is immediately recognizable.",
+      "applicable_to": [
+        "Protection",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not proof of complete prevention, prophylaxis indication or efficacy.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A shield's protective function is immediately recognizable.",
+      "collision_tags": [
+        "shield"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "duration-hourglass",
+      "concept": "Duration",
+      "aliases": [
+        "duration",
+        "time window"
+      ],
+      "kind": "identity",
+      "objects": [
+        "unmarked hourglass"
+      ],
+      "bridge": "An hourglass cues passage of time.",
+      "applicable_to": [
+        "Duration",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Never infer exact minutes, hours or a cutoff from sand level.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "An hourglass cues passage of time.",
+      "collision_tags": [
+        "unmarked-hourglass"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "slow-tortoise",
+      "concept": "Slow or gradual",
+      "aliases": [
+        "slow",
+        "gradual"
+      ],
+      "kind": "identity",
+      "objects": [
+        "tortoise"
+      ],
+      "bridge": "The familiar slow-animal association supplies pace.",
+      "applicable_to": [
+        "Slow or gradual",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a specific correction rate or a recommendation to delay care.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The familiar slow-animal association supplies pace.",
+      "collision_tags": [
+        "tortoise"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "rapid-hare",
+      "concept": "Rapid",
+      "aliases": [
+        "rapid",
+        "fast"
+      ],
+      "kind": "identity",
+      "objects": [
+        "hare"
+      ],
+      "bridge": "A familiar fast-animal contrast supplies pace.",
+      "applicable_to": [
+        "Rapid",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a dose, heart-rate value or urgency classification by itself.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A familiar fast-animal contrast supplies pace.",
+      "collision_tags": [
+        "hare"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "cold-ice",
+      "concept": "Cold",
+      "aliases": [
+        "cold",
+        "cooling"
+      ],
+      "kind": "identity",
+      "objects": [
+        "ice block"
+      ],
+      "bridge": "Ice supplies an obvious cold-state association.",
+      "applicable_to": [
+        "Cold",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a temperature value or an indication for therapeutic cooling.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Ice supplies an obvious cold-state association.",
+      "collision_tags": [
+        "ice-block"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "hot-flame",
+      "concept": "Heat",
+      "aliases": [
+        "heat",
+        "hot"
+      ],
+      "kind": "identity",
+      "objects": [
+        "flame"
+      ],
+      "bridge": "A flame supplies an obvious heat association.",
+      "applicable_to": [
+        "Heat",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not collapse fever, inflammation and hyperthermia into the same diagnosis.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A flame supplies an obvious heat association.",
+      "collision_tags": [
+        "flame"
+      ],
+      "status": "legacy_unverified",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-metaphor-library.txt"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "anatomic-host",
+      "concept": "Anatomical location",
+      "aliases": [
+        "anatomical location",
+        "body region"
+      ],
+      "kind": "identity",
+      "objects": [
+        "anatomical mannequin"
+      ],
+      "bridge": "An actual anatomical host makes named body regions identifiable.",
+      "applicable_to": [
+        "Anatomical location",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not label room heights or machine parts as anatomy; damage is not literal pathology unless sourced.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "An actual anatomical host makes named body regions identifiable.",
+      "collision_tags": [
+        "anatomical-mannequin"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "excess-overflow",
+      "concept": "Excess quantity",
+      "aliases": [
+        "excess",
+        "overflow",
+        "too much"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "container",
+        "ingredient tokens"
+      ],
+      "bridge": "Ingredient tokens visibly exceed the container's rim.",
+      "applicable_to": [
+        "Excess quantity",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a concentration, pressure or severity threshold without a separately grounded concept.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Ingredient tokens visibly exceed the container's rim.",
+      "collision_tags": [
+        "container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "deficit-nearly-empty",
+      "concept": "Deficient quantity",
+      "aliases": [
+        "deficit",
+        "depleted",
+        "too little"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "transparent container",
+        "ingredient tokens"
+      ],
+      "bridge": "A visibly near-empty container supplies a low-quantity state.",
+      "applicable_to": [
+        "Deficient quantity",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not confuse a normal small dose with deficiency; requires a separately grounded ingredient cue.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A visibly near-empty container supplies a low-quantity state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "restriction-padlock",
+      "concept": "Restricted access",
+      "aliases": [
+        "restriction",
+        "withheld access"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "gate",
+        "padlock"
+      ],
+      "bridge": "A closed lock visibly blocks access to the gate.",
+      "applicable_to": [
+        "Restricted access",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not automatically a clinical contraindication or a permanent prohibition.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A closed lock visibly blocks access to the gate.",
+      "collision_tags": [
+        "gate"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "obstruction-plug",
+      "concept": "Blocked passage",
+      "aliases": [
+        "obstruction",
+        "blocked flow"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "pipe",
+        "plug"
+      ],
+      "bridge": "The plug is visibly seated in the pipe mouth.",
+      "applicable_to": [
+        "Blocked passage",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Contact must be visible; a nearby plug is not obstruction. Does not identify the affected vessel.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The plug is visibly seated in the pipe mouth.",
+      "collision_tags": [
+        "pipe"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "narrowed-passage",
+      "concept": "Narrowing",
+      "aliases": [
+        "narrowing",
+        "stenosis concept"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "continuous tube"
+      ],
+      "bridge": "A narrowed segment contrasts with the same tube's wider reference segment.",
+      "applicable_to": [
+        "Narrowing",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not an exact lumen size, pressure gradient or severity grade.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A narrowed segment contrasts with the same tube's wider reference segment.",
+      "collision_tags": [
+        "continuous-tube"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "dilated-passage",
+      "concept": "Dilation",
+      "aliases": [
+        "dilation",
+        "expanded lumen"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "continuous tube"
+      ],
+      "bridge": "An expanded segment has a visible common reference in the same tube.",
+      "applicable_to": [
+        "Dilation",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not proof of an aneurysm, chamber strain or exact diameter.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "An expanded segment has a visible common reference in the same tube.",
+      "collision_tags": [
+        "continuous-tube"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "leaking-container",
+      "concept": "Leak",
+      "aliases": [
+        "leak",
+        "loss through breach"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "container",
+        "liquid"
+      ],
+      "bridge": "Liquid passes through a visible side-wall breach, not just over the rim.",
+      "applicable_to": [
+        "Leak",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not confuse leakage with overflow or imply a clinical rupture location from generic plumbing.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Liquid passes through a visible side-wall breach, not just over the rim.",
+      "collision_tags": [
+        "container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "ruptured-material",
+      "concept": "Material rupture",
+      "aliases": [
+        "rupture",
+        "split",
+        "break"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "split material specimen"
+      ],
+      "bridge": "A visible full-thickness gap distinguishes broken material from a painted mark.",
+      "applicable_to": [
+        "Material rupture",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not reuse cracks as a default synonym for edema, pressure or pain without an explicit host and meaning.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A visible full-thickness gap distinguishes broken material from a painted mark.",
+      "collision_tags": [
+        "split-material-specimen"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "compressed-tube",
+      "concept": "Compression",
+      "aliases": [
+        "compression",
+        "pinched passage"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "tube",
+        "clamp"
+      ],
+      "bridge": "A clamp visibly contacts and narrows the tube.",
+      "applicable_to": [
+        "Compression",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "A hovering clamp is insufficient; this is not a clinical procedure demonstration.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A clamp visibly contacts and narrows the tube.",
+      "collision_tags": [
+        "tube"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "disconnected-path",
+      "concept": "Disconnected pathway",
+      "aliases": [
+        "disconnection",
+        "interruption"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "cable with separated ends"
+      ],
+      "bridge": "A visible gap interrupts a previously continuous physical path.",
+      "applicable_to": [
+        "Disconnected pathway",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a specific arrhythmia or a recommendation to disconnect equipment.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A visible gap interrupts a previously continuous physical path.",
+      "collision_tags": [
+        "cable-with-separated-ends"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "connected-path",
+      "concept": "Completed connection",
+      "aliases": [
+        "connection",
+        "joined pathway"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "plug",
+        "socket"
+      ],
+      "bridge": "The plug is visibly seated in its socket.",
+      "applicable_to": [
+        "Completed connection",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Proximity is not connection; does not establish clinical causality.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The plug is visibly seated in its socket.",
+      "collision_tags": [
+        "plug"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "retained-at-mesh",
+      "concept": "Selective retention",
+      "aliases": [
+        "retention",
+        "filtered material"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "sieve",
+        "large tokens"
+      ],
+      "bridge": "Tokens are visibly retained against the mesh rather than merely near it.",
+      "applicable_to": [
+        "Selective retention",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Cannot encode molecular selectivity or clearance rates without additional source teaching.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Tokens are visibly retained against the mesh rather than merely near it.",
+      "collision_tags": [
+        "sieve"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "captured-token",
+      "concept": "Entrapment",
+      "aliases": [
+        "trapped",
+        "entrapped"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "closed cage",
+        "token"
+      ],
+      "bridge": "The token is visibly inside a closed cage.",
+      "applicable_to": [
+        "Entrapment",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a specific entrapment syndrome or proof of irreversibility.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The token is visibly inside a closed cage.",
+      "collision_tags": [
+        "closed-cage"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "protected-target",
+      "concept": "Protective barrier",
+      "aliases": [
+        "protected",
+        "shielded"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "shield",
+        "projectile"
+      ],
+      "bridge": "A projectile stops on the shield's outer face.",
+      "applicable_to": [
+        "Protective barrier",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Does not guarantee complete protection or prove a therapy works.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A projectile stops on the shield's outer face.",
+      "collision_tags": [
+        "shield"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "exposed-target",
+      "concept": "Absent protective barrier",
+      "aliases": [
+        "unprotected",
+        "exposed"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "broken shield",
+        "target"
+      ],
+      "bridge": "A clear gap leaves the target exposed.",
+      "applicable_to": [
+        "Absent protective barrier",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a diagnosis of immune deficiency or an instruction to remove protection.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A clear gap leaves the target exposed.",
+      "collision_tags": [
+        "broken-shield"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "diffuse-distribution",
+      "concept": "Diffuse distribution",
+      "aliases": [
+        "diffuse",
+        "distributed"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "broad surface",
+        "many identical tokens"
+      ],
+      "bridge": "Tokens are visibly spread across the same surface.",
+      "applicable_to": [
+        "Diffuse distribution",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not a lesion count, disease severity or evidence of dissemination by itself.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Tokens are visibly spread across the same surface.",
+      "collision_tags": [
+        "broad-surface"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "localized-cluster",
+      "concept": "Localized concentration",
+      "aliases": [
+        "localized",
+        "focal cluster"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "broad surface",
+        "token cluster"
+      ],
+      "bridge": "A clustered group occupies one clearly bounded region on a shared surface.",
+      "applicable_to": [
+        "Localized concentration",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not exact anatomy or a diagnostic focal sign without a defined host.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A clustered group occupies one clearly bounded region on a shared surface.",
+      "collision_tags": [
+        "broad-surface"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "completed-opening",
+      "concept": "Completed through-opening",
+      "aliases": [
+        "through opening",
+        "patent opening"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "thick panel"
+      ],
+      "bridge": "An open bore shows the far side through the panel thickness.",
+      "applicable_to": [
+        "Completed through-opening",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "A glowing outline or surface engraving is not a through-opening; not an assigned procedure or modality.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "An open bore shows the far side through the panel thickness.",
+      "collision_tags": [
+        "thick-panel"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "supported-inspection",
+      "concept": "Inspection of a target",
+      "aliases": [
+        "inspection",
+        "examination"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "magnifying glass",
+        "target object"
+      ],
+      "bridge": "The target remains recognizable inside the lens.",
+      "applicable_to": [
+        "Inspection of a target",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "A lens showing wall texture does not prove target inspection; cannot identify a specific diagnostic modality.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "The target remains recognizable inside the lens.",
+      "collision_tags": [
+        "magnifying-glass"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "alert-bell",
+      "concept": "Alert",
+      "aliases": [
+        "alert",
+        "urgent attention"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "alarm bell"
+      ],
+      "bridge": "A recognizable bell cues calling attention.",
+      "applicable_to": [
+        "Alert",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Does not establish an exact time-to-treatment, consultation priority or audible sound in a still image.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A recognizable bell cues calling attention.",
+      "collision_tags": [
+        "alarm-bell"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "potassium-excess",
+      "concept": "high potassium cue",
+      "aliases": [
+        "hyperkalemia",
+        "high potassium",
+        "high K+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "bananas"
+      ],
+      "bridge": "bananas visibly overflow the rim: ingredient identity plus excess state.",
+      "applicable_to": [
+        "high potassium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hyperkalemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "bananas visibly overflow the rim: ingredient identity plus excess state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "user_example",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "potassium-deficit",
+      "concept": "low potassium cue",
+      "aliases": [
+        "hypokalemia",
+        "low potassium",
+        "low K+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "bananas"
+      ],
+      "bridge": "Only a few bananas remain in a large transparent container: ingredient identity plus depleted state.",
+      "applicable_to": [
+        "low potassium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypokalemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "Sparse contents can mean a small serving or dose; require an explicit learned capacity/reference, never infer laboratory deficiency from quantity alone."
+      ],
+      "signature": "Only a few bananas remain in a large transparent container: ingredient identity plus depleted state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "sodium-excess",
+      "concept": "high sodium cue",
+      "aliases": [
+        "hypernatremia",
+        "high sodium",
+        "high Na+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "salt crystals"
+      ],
+      "bridge": "salt crystals visibly overflow the rim: ingredient identity plus excess state.",
+      "applicable_to": [
+        "high sodium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypernatremia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "salt crystals visibly overflow the rim: ingredient identity plus excess state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "sodium-deficit",
+      "concept": "low sodium cue",
+      "aliases": [
+        "hyponatremia",
+        "low sodium",
+        "low Na+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "salt crystals"
+      ],
+      "bridge": "Only a few salt crystals remain in a large transparent container: ingredient identity plus depleted state.",
+      "applicable_to": [
+        "low sodium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hyponatremia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "Sparse contents can mean a small serving or dose; require an explicit learned capacity/reference, never infer laboratory deficiency from quantity alone."
+      ],
+      "signature": "Only a few salt crystals remain in a large transparent container: ingredient identity plus depleted state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "glucose-excess",
+      "concept": "high glucose cue",
+      "aliases": [
+        "hyperglycemia",
+        "high glucose",
+        "high blood sugar"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "sugar cubes"
+      ],
+      "bridge": "sugar cubes visibly overflow the rim: ingredient identity plus excess state.",
+      "applicable_to": [
+        "high glucose cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hyperglycemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "sugar cubes visibly overflow the rim: ingredient identity plus excess state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "glucose-deficit",
+      "concept": "low glucose cue",
+      "aliases": [
+        "hypoglycemia",
+        "low glucose",
+        "low blood sugar"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "sugar cubes"
+      ],
+      "bridge": "Only a few sugar cubes remain in a large transparent container: ingredient identity plus depleted state.",
+      "applicable_to": [
+        "low glucose cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypoglycemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "Sparse contents can mean a small serving or dose; require an explicit learned capacity/reference, never infer laboratory deficiency from quantity alone."
+      ],
+      "signature": "Only a few sugar cubes remain in a large transparent container: ingredient identity plus depleted state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "magnesium-excess",
+      "concept": "high magnesium cue",
+      "aliases": [
+        "hypermagnesemia",
+        "high magnesium",
+        "high Mg2+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "horseshoe magnets"
+      ],
+      "bridge": "horseshoe magnets visibly overflow the rim: ingredient identity plus excess state.",
+      "applicable_to": [
+        "high magnesium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypermagnesemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "horseshoe magnets visibly overflow the rim: ingredient identity plus excess state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "magnesium-deficit",
+      "concept": "low magnesium cue",
+      "aliases": [
+        "hypomagnesemia",
+        "low magnesium",
+        "low Mg2+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "horseshoe magnets"
+      ],
+      "bridge": "Only a few horseshoe magnets remain in a large transparent container: ingredient identity plus depleted state.",
+      "applicable_to": [
+        "low magnesium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypomagnesemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "Sparse contents can mean a small serving or dose; require an explicit learned capacity/reference, never infer laboratory deficiency from quantity alone."
+      ],
+      "signature": "Only a few horseshoe magnets remain in a large transparent container: ingredient identity plus depleted state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "calcium-excess",
+      "concept": "high calcium cue",
+      "aliases": [
+        "hypercalcemia",
+        "high calcium",
+        "high Ca2+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "bone-shaped tokens"
+      ],
+      "bridge": "bone-shaped tokens visibly overflow the rim: ingredient identity plus excess state.",
+      "applicable_to": [
+        "high calcium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypercalcemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "bone-shaped tokens visibly overflow the rim: ingredient identity plus excess state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "calcium-deficit",
+      "concept": "low calcium cue",
+      "aliases": [
+        "hypocalcemia",
+        "low calcium",
+        "low Ca2+"
+      ],
+      "kind": "composition",
+      "objects": [
+        "transparent container",
+        "bone-shaped tokens"
+      ],
+      "bridge": "Only a few bone-shaped tokens remain in a large transparent container: ingredient identity plus depleted state.",
+      "applicable_to": [
+        "low calcium cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Not dietary advice, a cause of hypocalcemia, a threshold, a replacement dose or a management recommendation.",
+        "Medical evidence, treatment selection or a dose instruction.",
+        "Sparse contents can mean a small serving or dose; require an explicit learned capacity/reference, never infer laboratory deficiency from quantity alone."
+      ],
+      "signature": "Only a few bone-shaped tokens remain in a large transparent container: ingredient identity plus depleted state.",
+      "collision_tags": [
+        "transparent-container"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "clock-tower-neurology",
+      "concept": "Clock tower as generic neurological cue",
+      "aliases": [
+        "clock tower brain",
+        "clock mental status"
+      ],
+      "kind": "identity",
+      "objects": [
+        "clock tower"
+      ],
+      "bridge": "A historical catalog assigned clock machinery to neurological concepts.",
+      "applicable_to": [
+        "Clock tower as generic neurological cue",
+        "Only after this concept is independently grounded in the lesson sources."
+      ],
+      "not_for": [
+        "Do not substitute timekeeping machinery for an identifiable cognitive or neurological association.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A historical catalog assigned clock machinery to neurological concepts.",
+      "collision_tags": [
+        "clock-tower"
+      ],
+      "status": "restricted",
+      "provenance": {
+        "origin": "legacy",
+        "references": [
+          "docs/visual-cue-evidence.md"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-carpal",
+      "concept": "carpal",
+      "aliases": [
+        "carpal"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "toy car",
+        "pail"
+      ],
+      "bridge": "CAR + PAIL preserves the CAR-P-L sound skeleton of CAR-pul.",
+      "applicable_to": [
+        "Term identity only after independent source grounding and learner-specific pronunciation confirmation."
+      ],
+      "not_for": [
+        "PAIL must reduce to an unstressed pul; do not teach CAR-pale as the term pronunciation.",
+        "Not an anatomical location, clinical sign definition, mechanism, treatment or dose.",
+        "Potential confusions: carpel, carotid, tarsal.",
+        "Independently proposed; originality and proprietary overlap have not been verified."
+      ],
+      "signature": "Teach the spoken bridge first, then check unprompted naming of every pictured object. Reject if labels or an extra explanation are needed.",
+      "collision_tags": [
+        "carpel",
+        "carotid",
+        "tarsal"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/visual-cue-catalog.md"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-ataxia",
+      "concept": "ataxia",
+      "aliases": [
+        "ataxia"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "toy taxi"
+      ],
+      "bridge": "The spoken phrase a TAXI plus final uh closely follows uh-TAK-see-uh.",
+      "applicable_to": [
+        "Term identity only after independent source grounding and learner-specific pronunciation confirmation."
+      ],
+      "not_for": [
+        "The object encodes TAXI, not the unstressed initial and final vowels. Preserve the term's four-syllable rhythm when teaching the bridge.",
+        "Not an anatomical location, clinical sign definition, mechanism, treatment or dose.",
+        "Potential confusions: apraxia, aphasia, ataxic.",
+        "Independently proposed; originality and proprietary overlap have not been verified."
+      ],
+      "signature": "Teach the spoken bridge first, then check unprompted naming of every pictured object. Reject if labels or an extra explanation are needed.",
+      "collision_tags": [
+        "apraxia",
+        "aphasia",
+        "ataxic"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/visual-cue-catalog.md"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-rales",
+      "concept": "rales",
+      "aliases": [
+        "rales"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "railway rails"
+      ],
+      "bridge": "RAILS is a homophone of the RAYLZ pronunciation of rales.",
+      "applicable_to": [
+        "Term identity only after independent source grounding and learner-specific pronunciation confirmation."
+      ],
+      "not_for": [
+        "Does not fit the RAHLZ pronunciation. Use only after confirming the learner's target pronunciation; rails must not be depicted as blocked pipes or iron mesh.",
+        "Not an anatomical location, clinical sign definition, mechanism, treatment or dose.",
+        "Potential confusions: rhonchi, rale.",
+        "Independently proposed; originality and proprietary overlap have not been verified."
+      ],
+      "signature": "Teach the spoken bridge first, then check unprompted naming of every pictured object. Reject if labels or an extra explanation are needed.",
+      "collision_tags": [
+        "rhonchi",
+        "rale"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/visual-cue-catalog.md"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "phonetic-suture",
+      "concept": "suture",
+      "aliases": [
+        "suture"
+      ],
+      "kind": "phonetic",
+      "objects": [
+        "business suit",
+        "chair"
+      ],
+      "bridge": "SUIT + CHAIR compresses toward SOO-cher.",
+      "applicable_to": [
+        "Term identity only after independent source grounding and learner-specific pronunciation confirmation."
+      ],
+      "not_for": [
+        "The t in suit must merge into ch, and chair must reduce to cher. Some speakers use a different first-syllable onset.",
+        "Not an anatomical location, clinical sign definition, mechanism, treatment or dose.",
+        "Potential confusions: sutural, stricture.",
+        "Independently proposed; originality and proprietary overlap have not been verified."
+      ],
+      "signature": "Teach the spoken bridge first, then check unprompted naming of every pictured object. Reject if labels or an extra explanation are needed.",
+      "collision_tags": [
+        "sutural",
+        "stricture"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": [
+          "docs/visual-cue-catalog.md"
+        ]
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "branching-path",
+      "concept": "Branching",
+      "aliases": [
+        "branching"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "single forked tube"
+      ],
+      "bridge": "One continuous stem visibly divides into two separate open limbs.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Not a specific airway, vessel or decision algorithm without source-grounded scope.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A shared stem and separated branches must be visible together with independently established direction/context; reject an ambiguous undirected Y.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "converging-path",
+      "concept": "Convergence",
+      "aliases": [
+        "convergence"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "single Y-shaped tube"
+      ],
+      "bridge": "Two distinct limbs join one shared outlet.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Not a biochemical combination, causal interaction or flow direction inferred from shape alone.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Use a clearly established orientation; a symmetric Y without context cannot distinguish convergence from branching.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "serial-connection",
+      "concept": "Serial connection",
+      "aliases": [
+        "serial connection"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "two connected chambers"
+      ],
+      "bridge": "One chamber joins the other through a single shared connector.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Connection does not establish temporal order, drug sequence or a treatment algorithm.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "A single continuous route links both chambers with no bypass.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "parallel-paths",
+      "concept": "Parallel paths",
+      "aliases": [
+        "parallel paths"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "two-lane conduit"
+      ],
+      "bridge": "Two separated routes connect the same integral inlet and outlet.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Not treatment equivalence, redundancy, concurrent therapy or equal flow.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Show both common endpoints and the separated middle routes.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "inside-boundary",
+      "concept": "Inside a boundary",
+      "aliases": [
+        "inside a boundary"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "token",
+        "transparent enclosure"
+      ],
+      "bridge": "The token lies wholly inside an intact visible enclosure.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Not intracellular location, entrapment or sequestration unless the lesson explicitly supports that relationship.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "All sides of the boundary and the contained token remain visible.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    },
+    {
+      "id": "outside-boundary",
+      "concept": "Outside a boundary",
+      "aliases": [
+        "outside a boundary"
+      ],
+      "kind": "relationship",
+      "objects": [
+        "token",
+        "transparent enclosure"
+      ],
+      "bridge": "The token lies wholly outside an intact visible enclosure.",
+      "applicable_to": [
+        "Only a relationship independently specified by the source-grounded lesson."
+      ],
+      "not_for": [
+        "Not active exclusion, rejection, contraindication or impaired transport.",
+        "Medical evidence, treatment selection or a dose instruction."
+      ],
+      "signature": "Interior remains empty and exterior token is not hidden behind the enclosure.",
+      "collision_tags": [
+        "orientation-dependent",
+        "boundary-relationship"
+      ],
+      "status": "candidate",
+      "provenance": {
+        "origin": "original_design",
+        "references": []
+      },
+      "evidence": {
+        "render_audits": [],
+        "recall_studies": []
+      }
+    }
+  ]
+}

@@ -199,6 +199,41 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Offline evidence-tagged cue catalog expansion
+Patrick requested a larger cue bank with language/wordplay expert input.
+Added docs/visual-cue-catalog.json (61 entries:43 candidates,17 unverified legacy,
+one restricted), its readable guide, and a durable clock-hook failure summary.
+Every entry has scope, exclusions, visible signature, collisions, provenance and
+separate render/recall evidence. No entry has validated recall evidence.
+The candidate catalog is OFFLINE ONLY and not automatically injected into Forge.
+
+AI wordplay reviewer proposed24 entries (17 rejected,seven provisional); main
+admitted only carpal,ataxia,rales,suture as untested sound bridges. A separate
+36-item composition proposal set was screened, not bulk admitted. Independent
+review caught false bicarbonate legacy attribution and branching/convergence
+ambiguity; corrected both. No human specialist or clinical signoff is implied.
+Public Sketchy/Picmonic/Pixorize descriptions informed general principles only;
+no proprietary scenes,character systems or course catalogs imported.
+
+Added tools/visual_cue_catalog.py with strict offline schema/reference validation
+and bounded literal search. It rejects unsafe/missing/wrong-case local paths,
+does not infer medical applicability, excludes restricted cues by default, and
+always returns an unvalidated-design caveat. Validation is NOT evidence relevance.
+Canonical tests run against a docs-only snapshot without ignored run artifacts.
+Focused tests99 passed,one skipped (Windows symlink privileges); schema61 valid.
+Final full suite731 passed,two skipped,149 subtests passed; tool compile passed.
+No browser/provider/image/recall validation was performed for this catalog.
+
+Raw proposals/rejections and review notes:
+Troubleshooting Prompts/cue_catalog_2026-10-19/.
+No Anthropic/provider/image calls made; future $6 benchmark cap untouched.
+No new one-shot image or learning-effectiveness result is claimed. Next step is
+small frozen candidate selection plus recognition/discrimination checks before
+the separately budgeted first-pass trial, not unlimited library growth.
+Pre-existing forge.html/cache and forge-pipeline.js/footer edits left unstaged.
+Remote main was verified against local HEAD through authenticated GitHub API;
+fetch still has the previously recorded unrelated checkpoint-ref problem.
+
 ### 2026-10-19 - Offline reset; $6 task-wide Anthropic pilot ceiling
 Patrick rejected single-example perfection loops and approved a $6 TOTAL
 Anthropic budget for a future bounded benchmark, not per topic or permission
