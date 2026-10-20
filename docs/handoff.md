@@ -199,6 +199,31 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-20 - Resumed Chapters20-25 with emphasis screen
+**Done:** Resumed interrupted AI drafting lanes after Codex usage-limit interruption,
+not an Anthropic funding error. Added explicit bold/semibold, heading, highlighted
+annotation and meaningful table-keyword screening per user request. No annotations
+found in relevant source ranges; printed emphasis handled separately.275 term
+records:137 new candidate compositions/78 reuses/60 holds;262 linked keyword items
+include2 cross-bank referrals.20=33/11/8/14;21=55/28/11/16;22=48/37/7/4;
+23=44/34/9/1;24=54/12/31/11;25=41/15/12/14 (terms/new/reuse/hold).
+Main separately checked source locations, actual chapter boundaries, cue scope and
+same-batch reuse. Word-sharing normalizations documented, not falsely called exact
+contiguous quotations. Main-proposed vase-in-press and cyan-eyed eye challenged
+by drafter; detached paddles/bolt separately challenged by another AI reviewer.
+Not credentialed human, clinical or empirical validation. Older pending notes are
+superseded by dated main-integration sections, not rewritten as independent work.
+Persistent register now94 hold occurrences/70 distinct terms; historical holds and
+cyanide revision retained. Chapter1 defibrillation hold remains flagged with later
+retentions. Earlier1-19 samples have NOT had emphasis-screen backfill.
+**Validation:** Full pytest775passed/2skipped/149subtests; focused
+cue/keyword/hold/catalog tests143passed/1skipped; hold
+snapshot current and canonical catalog valid76entries, unchanged. No paid calls,
+clinical lessons, Forge runs or images; $6 benchmark allowance untouched.
+**Next:** Chapter26 Post-Cardiac Arrest Syndrome, not started. Fetch previously
+failed on a malformed local Codex checkpoint ref; no credential retries or ref
+deletion. Preserve unrelated Forge HTML/pipeline edits outside this batch.
+
 ### 2026-10-19 - Repeated batches14-16 and17-19
 **Done:** Two further chapter-bounded runs.14=16terms/8new/4reuse/4hold;
 15=17/9/6/2;16=13/10/3/0;17=16/6/9/1;18=16/6/8/2;19=12/7/1/4.

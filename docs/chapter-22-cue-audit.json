@@ -1,0 +1,494 @@
+{
+  "schema_version": 1,
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked vocabulary/page locations, chapter boundaries, source emphasis spot-checks and cue scope/reuse. Original author-pending statements below are chronological draft notes superseded by this review. No clinical, human expert, recall or render validation.", "highlight_annotations_found": 0, "normalizations": "Line-wrap hyphens, beta and punctuation normalized. Chapter23 wet surface expands wet or conducting surface; Chapter25 calcium gluconate expands Calcium chloride or gluconate; blood volume also appears as blood and plasma volume. Shared-word expansions are not contiguous quotations.", "family_collision_warning": "Qualify co-occurring family cues such as atrial/ventricular fibrillation, calcium salts or gangrene subtypes; family reuse is not exact subtype discrimination.", "counts": {"selected_terms": 48, "new_candidates": 37, "reused_candidates": 7, "holds": 4}, "keyword_items": 48},
+  "chapter_id": "22",
+  "title": "Basic Cardiopulmonary Resuscitation",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [1,2,3,4,5,6],
+    "printed_pages": [143,144,145,146,147,148],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter22 title at upper left PDF1/printed143 below section banner, through REFERENCES notice at lower right PDF6/printed148. Actual Chapter23 title begins PDF7/printed149; running headers are not boundaries.",
+    "verification": "Author verified purchased-file hash, extracted vocabulary locations and visually inspected full boundary-page rasterizations PDF1 and PDF6. This is author source checking only; independent main audit remains pending. Source matches establish vocabulary locations, not clinical or recall validity."
+  },
+  "scope": "48 offline vocabulary entries: 37 retained candidates, 7 reuses and 4 holds after main integration on 2026-10-20. Typography/key-term screen included; not exhaustive concepts, clinical teaching, measured recall or image prompts.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "Offline PyMuPDF 1.27.2.3 span/font screen of actual chapter bounds; inspected Bold, Semibold and Black font families and bold flags, lexical nouns/phrases within emphasized body statements, and meaningful table labels. Evidence strings give actual font, point size and source-span bounding box (PDF points); wrapped words/separators normalized only when visibly supported. Full-page raster spot checks PDF2/3/5/6/7/8/10/11, with all 11 page rasters saved locally. No PDF annotations on any assigned page; colored publisher headings/table shading are typography, not user highlights. Unformatted table trials are labeled separately, not falsely called bold. This is not exhaustive extraction of all key medical concepts, a salience ranking, or clinical/recall validation; expanded entries await main's independent keyword audit.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotation types on PDF1-6: zero annotations of any kind, including highlights."
+    },
+    "items": [
+      {
+        "term": "cardiopulmonary resuscitation",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "black chapter title; MyriadPro-BlackSemiCn 17pt bbox [115,139.6,284.6,160.8]; lexical selection from span",
+        "entry_term": "cardiopulmonary resuscitation"
+      },
+      {
+        "term": "Chain of Survival",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "bold named body term; MinionPro-Bold 9pt bbox [163.9,256.3,233.2,268.7]; lexical selection from span",
+        "entry_term": "Chain of Survival"
+      },
+      {
+        "term": "circulation",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "semibold step heading; lexical noun only; MyriadPro-SemiboldCond 11pt bbox [338.1,154.4,416.5,167.6]; lexical selection from span",
+        "entry_term": "circulation"
+      },
+      {
+        "term": "closed chest cardiac massage",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "bold body; MinionPro-Bold 9pt bbox [352.5,356.6,465.6,369.1]; lexical selection from span",
+        "entry_term": "closed chest cardiac massage"
+      },
+      {
+        "term": "cardiac pump theory",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "bold body; MinionPro-Bold 9pt bbox [485.7,366.6,563.8,379.1]; lexical selection from span",
+        "entry_term": "cardiac pump theory"
+      },
+      {
+        "term": "thoracic pump theory",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "bold body; MinionPro-Bold 9pt bbox [498.7,406.6,582,419.1]; lexical selection from span",
+        "entry_term": "thoracic pump theory"
+      },
+      {
+        "term": "abdominal pump theory",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "bold body split across adjacent line into pump theory; MinionPro-Bold 9pt bbox [541.3,436.6,584,449.1]; lexical selection from span",
+        "entry_term": "abdominal pump theory"
+      },
+      {
+        "term": "sternum",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "lexical noun within bold numeric instruction; MinionPro-Bold 9pt bbox [390.2,669.6,583.9,682.1]; lexical selection from span",
+        "entry_term": "sternum"
+      },
+      {
+        "term": "intubated",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "lexical adjective within bold instruction; MinionPro-Bold 9pt bbox [324,709.6,584,722.1]; lexical selection from span",
+        "entry_term": "intubated"
+      },
+      {
+        "term": "ventilation",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-3 row label; plural normalized; MyriadPro-Cond 9pt bbox [306,123.8,339.3,134.5]; lexical selection from span | MyriadPro-Cond 9pt bbox [392,167.8,539.1,178.5]; lexical selection from span",
+        "entry_term": "ventilation"
+      },
+      {
+        "term": "open chest cardiac compressions",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "bold subheading; MyriadPro-Bold 9pt bbox [300,249.9,437.4,261]; lexical selection from span",
+        "entry_term": "open chest cardiac compressions"
+      },
+      {
+        "term": "upper airway",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun phrase within bold instruction; MinionPro-Bold 9pt bbox [380.8,621,519.2,633.5]; lexical selection from span",
+        "entry_term": "upper airway"
+      },
+      {
+        "term": "oropharynx",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun within bold body sentence; MinionPro-Bold 9pt bbox [300,721,559.9,733.5]; lexical selection from span",
+        "entry_term": "oropharynx"
+      },
+      {
+        "term": "tongue",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun within bold body sentence; MinionPro-Bold 9pt bbox [300,721,559.9,733.5]; lexical selection from span",
+        "entry_term": "tongue"
+      },
+      {
+        "term": "epiglottis",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun within bold body sentence; MinionPro-Bold 9pt bbox [300,731,400.6,743.5]; lexical selection from span",
+        "entry_term": "epiglottis"
+      },
+      {
+        "term": "head tilt-chin lift",
+        "pdf_page": 3,
+        "page": 145,
+        "emphasis": "bold subheading and bold body; PDF separator glyph normalized to hyphen; MyriadPro-Bold 9pt bbox [54,557.8,177.3,569]; lexical selection from span | MinionPro-Bold 9pt bbox [242.6,557.5,314,570]; lexical selection from span",
+        "entry_term": "head tilt-chin lift"
+      },
+      {
+        "term": "opioid overdose",
+        "pdf_page": 3,
+        "page": 145,
+        "emphasis": "bold subheading; uncertainty modifier not imported; MyriadPro-Bold 9pt bbox [324,405,439.3,416.2]; lexical selection from span",
+        "entry_term": "opioid overdose"
+      },
+      {
+        "term": "mouth-to-mouth ventilation",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "bold subheading; MinionPro-Bold 9pt bbox [30,332.1,289.9,344.6]; lexical selection from span | MyriadPro-Bold 9pt bbox [300,306.2,415.5,317.4]; lexical selection from span",
+        "entry_term": "mouth-to-mouth ventilation"
+      },
+      {
+        "term": "mouth-to-nose ventilation",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "bold subheading; MyriadPro-Bold 9pt bbox [300,389.2,411.2,400.4]; lexical selection from span",
+        "entry_term": "mouth-to-nose ventilation"
+      },
+      {
+        "term": "stoma",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical headword from bold ventilation subheading; MyriadPro-Bold 9pt bbox [300,442.2,484.7,453.4]; lexical selection from span",
+        "entry_term": "stoma"
+      },
+      {
+        "term": "tracheostomy",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical headword from bold ventilation subheading; MyriadPro-Bold 9pt bbox [300,442.2,484.7,453.4]; lexical selection from span",
+        "entry_term": "tracheostomy"
+      },
+      {
+        "term": "mouth-to-mask ventilation",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "bold subheading; MyriadPro-Bold 9pt bbox [300,485.2,413.5,496.4]; lexical selection from span",
+        "entry_term": "mouth-to-mask ventilation"
+      },
+      {
+        "term": "Heimlich maneuver",
+        "pdf_page": 5,
+        "page": 147,
+        "emphasis": "bold named body term and semibold subheading; MinionPro-Bold 9pt bbox [54,359.9,132.5,372.4]; lexical selection from span | MinionPro-Bold 9pt bbox [73.2,530.4,151.6,542.9]; lexical selection from span",
+        "entry_term": "Heimlich maneuver"
+      },
+      {
+        "term": "chest thrusts",
+        "pdf_page": 5,
+        "page": 147,
+        "emphasis": "semibold subheading and split bold body term; MyriadPro-SemiboldCond 11pt bbox [338.1,437.5,396.7,450.7]; lexical selection from span",
+        "entry_term": "chest thrusts"
+      },
+      {
+        "term": "recovery position",
+        "pdf_page": 6,
+        "page": 148,
+        "emphasis": "bold body term; MinionPro-Bold 9pt bbox [384.4,574.3,449.9,586.8]; lexical selection from span",
+        "entry_term": "recovery position"
+      },
+      {
+        "term": "advance directives",
+        "pdf_page": 6,
+        "page": 148,
+        "emphasis": "lexical noun phrase within bold body instruction; MinionPro-Bold 9pt bbox [300,658.3,552.8,670.8]; lexical selection from span",
+        "entry_term": "advance directives"
+      },
+      {
+        "term": "emergency response system",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-1 meaningful row label spanning next line; MyriadPro-Cond 9pt bbox [36,78.8,112.1,89.5]; lexical selection from span",
+        "entry_term": "emergency response system"
+      },
+      {
+        "term": "advanced life support",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-1 meaningful row label; MyriadPro-Cond 9pt bbox [36,181.8,109.8,192.5]; lexical selection from span",
+        "entry_term": "advanced life support"
+      },
+      {
+        "term": "postarrest care",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-1 meaningful row label; MyriadPro-Cond 9pt bbox [36,191.8,76.9,202.5]; lexical selection from span",
+        "entry_term": "postarrest care"
+      },
+      {
+        "term": "automatic external defibrillator",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-2 meaningful equipment noun in step row; MyriadPro-Cond 9pt bbox [36,333.8,132.6,344.5]; lexical selection from span",
+        "entry_term": "automatic external defibrillator"
+      },
+      {
+        "term": "chest compressions",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "bold body lexical phrase; MinionPro-Bold 9pt bbox [480.3,216.5,560,229]; lexical selection from span",
+        "entry_term": "chest compressions"
+      },
+      {
+        "term": "recoil",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-3 lexical word within instruction; MyriadPro-Cond 9pt bbox [392,79.1,553.9,89.7]; lexical selection from span",
+        "entry_term": "recoil"
+      },
+      {
+        "term": "airway obstruction",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "bold body lexical phrase; MinionPro-Bold 9pt bbox [400.8,711,559.9,723.5]; lexical selection from span",
+        "entry_term": "airway obstruction"
+      },
+      {
+        "term": "jaw thrust",
+        "pdf_page": 3,
+        "page": 145,
+        "emphasis": "bold body and subheading; MyriadPro-Bold 9pt bbox [54,670.8,141.7,682]; lexical selection from span | MinionPro-Bold 9pt bbox [161.2,670.5,199.7,683]; lexical selection from span",
+        "entry_term": "jaw thrust"
+      },
+      {
+        "term": "finger sweep",
+        "pdf_page": 6,
+        "page": 148,
+        "emphasis": "bold body and semibold subheading; MyriadPro-SemiboldCond 11pt bbox [44.1,427.6,98.8,440.8]; lexical selection from span | MinionPro-Bold 9pt bbox [48.8,443.3,99.1,455.8]; lexical selection from span",
+        "entry_term": "finger sweep"
+      },
+      {
+        "term": "rescue breathing",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "bold subheading; MyriadPro-Bold 9pt bbox [30,282.4,102.3,293.6]; lexical selection from span",
+        "entry_term": "rescue breathing"
+      },
+      {
+        "term": "cardiac arrest",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical phrase within bold body sentence; MinionPro-Bold 9pt bbox [30,342.1,288,354.6]; lexical selection from span",
+        "entry_term": "cardiac arrest"
+      },
+      {
+        "term": "oxygen",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical noun within bold numeric instruction; MinionPro-Bold 9pt bbox [30,612.1,288,624.6]; lexical selection from span",
+        "entry_term": "oxygen"
+      },
+      {
+        "term": "foreign body",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical phrase from black heading; MyriadPro-BlackSemiCn 12pt bbox [300.1,609.2,460,624.1]; lexical selection from span",
+        "entry_term": "foreign body"
+      },
+      {
+        "term": "cardiac compressions",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "semibold heading; family alias; MyriadPro-SemiboldCond 11pt bbox [338.1,290.9,534.6,304.1]; lexical selection from span",
+        "entry_term": "chest compressions"
+      },
+      {
+        "term": "closed chest compressions",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "unformatted Table22-3 meaningful row label; family alias; MyriadPro-Cond 9pt bbox [306,55.1,379,65.8]; lexical selection from span | MinionPro-Regular 9pt bbox [300,349.9,501.4,362]; lexical selection from span",
+        "entry_term": "closed chest cardiac massage"
+      },
+      {
+        "term": "CPR",
+        "pdf_page": 1,
+        "page": 143,
+        "emphasis": "black heading; abbreviation alias; MyriadPro-BlackSemiCn 12pt bbox [54.1,579.5,161.4,594.5]; lexical selection from span",
+        "entry_term": "cardiopulmonary resuscitation"
+      },
+      {
+        "term": "defibrillate",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "semibold step-heading verb; vocabulary family referral only, main owns decision; MyriadPro-SemiboldCond 11pt bbox [314.1,390.3,445.2,403.5]; lexical selection from span",
+        "entry_term": "docs/chapter-23-cue-audit.json#defibrillation"
+      },
+      {
+        "term": "occlusion",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun within bold body sentence; MinionPro-Bold 9pt bbox [300,721,559.9,733.5]; lexical selection from span",
+        "entry_term": "occlusion"
+      },
+      {
+        "term": "laxity",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical noun within bold body sentence; MinionPro-Bold 9pt bbox [300,731,400.6,743.5]; lexical selection from span",
+        "entry_term": "laxity"
+      },
+      {
+        "term": "unconscious",
+        "pdf_page": 2,
+        "page": 144,
+        "emphasis": "lexical adjective within bold body sentence; MinionPro-Bold 9pt bbox [300,721,559.9,733.5]; lexical selection from span",
+        "entry_term": "unconscious"
+      },
+      {
+        "term": "inspiratory time",
+        "pdf_page": 4,
+        "page": 146,
+        "emphasis": "lexical phrase within bold timing instruction; MinionPro-Bold 9pt bbox [90,582.1,289.9,594.6]; lexical selection from span",
+        "entry_term": "inspiratory time"
+      },
+      {
+        "term": "blind finger sweep",
+        "pdf_page": 3,
+        "page": 145,
+        "emphasis": "bold lexical phrase; finger-sweep family alias, blind qualifier not encoded; MinionPro-Bold 9pt bbox [54,494.5,313.9,507]; lexical selection from span",
+        "entry_term": "finger sweep"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "description": "Author names and chapter/section numbers",
+        "pdf_page": 1,
+        "reason": "Semibold author credits and numbering are metadata, not vocabulary targets."
+      },
+      {
+        "description": "INTRODUCTION; step sequence, recognition and call-for-help wrappers",
+        "pdf_page": 1,
+        "reason": "Organizational headings or ordinary command wording. CPR, circulation and compression nouns screened separately."
+      },
+      {
+        "description": "Compression depth/rate and ventilation ratio/rate prescriptions",
+        "pdf_page": 1,
+        "reason": "Numeric instructions and whole guideline clauses excluded; sternum, intubated and ventilation extracted separately."
+      },
+      {
+        "description": "Running headers, table numbers, Links in Chain, Comment/Comments and CPR Steps",
+        "pdf_page": 2,
+        "reason": "Repeated metadata or structural column labels; meaningful medical row labels screened separately."
+      },
+      {
+        "description": "Table numeric depth/rate/ratio cells and effect/survival claims",
+        "pdf_page": 2,
+        "reason": "Not vocabulary targets; named chain, CPR, recoil, ventilation and service/device terms screened separately."
+      },
+      {
+        "description": "Bold airway-assessment and obstruction-cause sentences as complete statements",
+        "pdf_page": 2,
+        "reason": "No full statement promoted or held; upper airway, airway obstruction, oropharynx, tongue and epiglottis extracted."
+      },
+      {
+        "description": "Running header, figure references, A/B panel labels and caption numbering",
+        "pdf_page": 3,
+        "reason": "Source navigation and illustration formatting, not lexical targets."
+      },
+      {
+        "description": "Bold finger-sweep caution as complete statement",
+        "pdf_page": 3,
+        "reason": "Clinical recommendation excluded; finger sweep and airway obstruction linked independently."
+      },
+      {
+        "description": "Bold rescue-breathing effectiveness and ventilation-volume/timing statements",
+        "pdf_page": 4,
+        "reason": "Full clinical claims and numerical prescriptions excluded; cardiac arrest, ventilation and oxygen screened separately."
+      },
+      {
+        "description": "Delivery of rescue breaths during CPR (table title)",
+        "pdf_page": 4,
+        "reason": "Instructional wrapper; rescue breathing, ventilation and CPR already linked, not an additional full-sentence candidate."
+      },
+      {
+        "description": "Blind-sweep recommendation as a complete statement; running header and figure numbers",
+        "pdf_page": 5,
+        "reason": "Instruction/formatting excluded; Heimlich maneuver, chest thrusts and finger sweep screened separately."
+      },
+      {
+        "description": "Mechanical-devices heading; complications, termination and ethics headings; REFERENCES",
+        "pdf_page": 6,
+        "reason": "Section containers rather than extra vocabulary compositions; chest-compression/CPR families linked; existing piston/band entries preserved. Not exhaustive screening of unformatted body concepts."
+      },
+      {
+        "description": "Advance-directive instruction as a complete statement",
+        "pdf_page": 6,
+        "reason": "Whole clinical/decision statement excluded; advance directives extracted as a lexical phrase."
+      }
+    ]
+  },
+  "production_admitted": false,
+  "source_wording_notes": {
+    "chest compressions": "Exact plural in introductory sequence on printed143; generic toy chest wordplay does not reproduce the source technique figures.",
+    "recoil": "Exact word in sequence item on printed143, split from complete by a line wrap; selected headword only.",
+    "dentures": "Exact body word printed145; no fit or handling advice imported.",
+    "oxygen": "Standalone body word in Supplemental oxygen on printed146; identity only, not oxygenation or a delivery claim.",
+    "bag-valve-mask": "Exact hyphenated component of bag-valve-mask ventilation on printed146; reuses Chapter2 bag-valve mask family despite punctuation variation.",
+    "piston": "Headword in Mechanical piston devices on printed148; generic engine object, not the named medical devices."
+  },
+  "entries": [
+    {"term":"cardiac arrest","pdf_page":2,"page":144,"source_match":"body","kind":"double_meaning","cue":"Heart character visibly wearing handcuffs.","cue_scope":"Heart plus arrest","decision":"reuse_candidate","prior":"docs/chapter-18-cue-audit.json#cardiac arrest","reason":"Same established Chapter1/11/18 family; no physiology, procedure or outcome encoded.","tested":false},
+    {"term":"chest compressions","pdf_page":1,"page":143,"source_match":"body","kind":"double_meaning_and_action","cue":"Toy treasure chest visibly squeezed between the jaws of a broad clamp.","cue_scope":"Chest plus compression word association","decision":"retain_candidate","prior":"docs/visual-cue-catalog.json#compressed-tube","reason":"New composition using existing compression grammar and familiar chest double meaning. Toy chest replaces tube; not a torso, hand-position diagram, depth, rate or mechanical explanation.","tested":false},
+    {"term":"recoil","pdf_page":1,"page":143,"source_match":"body","kind":"familiar_action","cue":"Coil spring visibly springing back from a compressed position.","cue_scope":"Recoil action","decision":"retain_candidate","prior":"docs/chapter-13-cue-audit.json#viscoelastic","reason":"New spring composition sharing the earlier elastic/recoil action, not a new motion primitive. Still-image action recognition is untested; no chest behavior or required recoil criterion specified.","tested":false},
+    {"term":"airway obstruction","pdf_page":2,"page":144,"source_match":"body","kind":"identity_and_obstruction","cue":"Freestanding windpipe teaching model with a conspicuous cork blocking its opening.","cue_scope":"Airway identity plus blocked passage","decision":"retain_candidate","prior":"docs/visual-cue-catalog.json#obstruction-plug","reason":"New composition reusing plug/contact grammar and the Chapter2 windpipe-model ingredient. Category cue, not a patient, cause inventory, anatomical precision or removal technique.","tested":false},
+    {"term":"suction","pdf_page":3,"page":145,"source_match":"body","kind":"physical_action","cue":"Vacuum nozzle with loose crumbs visibly gathered at its opening.","cue_scope":"Familiar inward-draw association","decision":"reuse_candidate","prior":"docs/chapter-2-cue-audit.json#suction","reason":"Same suction cue; cleaning/vacuum ambiguity remains teachable context, not a clinical use or setting.","tested":false},
+    {"term":"foreign body","pdf_page":3,"page":145,"source_match":"body","kind":"double_meaning","cue":"Small unmistakably extraterrestrial toy figure standing alone on a display base.","cue_scope":"Foreign plus body learned wordplay","decision":"retain_candidate","prior":"docs/chapter-22-cue-audit.json#airway obstruction","reason":"New familiar alien-body association, distinct from the reused obstruction primitive. Foreign/alien language is an informal learned bridge, not exact synonymy or a claim about actual objects, patients or nationalities.","tested":false},
+    {"term":"dentures","pdf_page":3,"page":145,"source_match":"body","kind":"familiar_object","cue":"Recognizable removable set of false teeth on a tabletop.","cue_scope":"Dentures object category","decision":"retain_candidate","prior":"docs/chapter-22-cue-audit.json","reason":"New chapter record of familiar object, not a claim of inventing false-teeth imagery. No fit, patient handling or airway-management claim.","tested":false},
+    {"term":"jaw thrust","pdf_page":3,"page":145,"source_match":"body","kind":"literal_name_action","cue":"Detached toy lower-jaw model thrust forward on a tabletop, with a short motion streak.","cue_scope":"Jaw plus thrust name association","decision":"retain_candidate","prior":"docs/chapter-22-cue-audit.json#dentures","reason":"New object/action composition, not a procedure illustration: no head, neck, rescuer, hand placement or positioning. Direction/action ambiguity and jaw identification need learned context.","tested":false},
+    {"term":"rescue breathing","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"shared_primitive_name_composition","cue":"Life ring beside recognizable bellows.","cue_scope":"Rescue token plus established respiration token","decision":"retain_candidate","prior":"docs/visual-cue-catalog.json#respiration-bellows","reason":"New composition of familiar rescue object and reused bellows primitive. Not mouth-to-mouth technique, equipment equivalence, sequence or benefit.","tested":false},
+    {"term":"oxygen","pdf_page":4,"page":146,"source_match":"body","kind":"familiar_identity_token","cue":"Recognizable oxygen cylinder standing alone.","cue_scope":"Oxygen identity token","decision":"retain_candidate","prior":"docs/chapter-7-cue-audit.json#hyperbaric oxygen therapy","reason":"New standalone headword record reusing the established oxygen-cylinder primitive also in Chapter13 oxygen debt. Cylinder identity needs learned context; no pressure chamber, low-state metaphor, dose, delivery or benefit. Chapter21 bank was not present during this check; main should reconcile that parallel lane.","tested":false},
+    {"term":"bag-valve-mask","pdf_page":4,"page":146,"source_match":"body","kind":"literal_assembly","cue":"Large recognizable bag connected through a conspicuous valve to a face mask.","cue_scope":"Bag plus valve plus mask name components","decision":"reuse_candidate","prior":"docs/chapter-2-cue-audit.json#bag-valve mask","reason":"Same word family despite hyphenation. Existing valve-recognition uncertainty retained; no patient, assembly instructions, breaths or settings.","tested":false},
+    {"term":"finger sweep","pdf_page":6,"page":148,"source_match":"heading_and_body","kind":"double_meaning_action","cue":"Oversized toy index finger sweeping tabletop crumbs with a tiny broom.","cue_scope":"Finger plus sweep word action","decision":"retain_candidate","prior":"docs/chapter-2-cue-audit.json#suction","reason":"New sweep composition; crumbs are a shared generic ingredient, not a new debris primitive. No mouth, throat, victim or removal instructions; not a recommendation to perform the named maneuver.","tested":false},
+    {"term":"piston","pdf_page":6,"page":148,"source_match":"body","kind":"familiar_object","cue":"Recognizable engine piston and short connecting rod displayed alone.","cue_scope":"Piston object category","decision":"retain_candidate","prior":"docs/chapter-22-cue-audit.json","reason":"New chapter record using common mechanical object, not a medical device design, mechanism, performance comparison or instruction.","tested":false},
+    {"term":"load-distributing band","pdf_page":6,"page":148,"source_match":"body","kind":"literal_phrase_composition","cue":"Broad fabric band supporting a small crate across its width.","cue_scope":"Band carrying a spread load","decision":"retain_candidate","prior":"docs/chapter-22-cue-audit.json#piston","reason":"New familiar load/band relationship, not a second piston cue or a depiction of a chest device. Could retrieve carrying strap; specific term recovery needs taught context. No force, anatomy or device efficacy claim.","tested":false},
+    {"term":"cardiopulmonary resuscitation","pdf_page":1,"page":143,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Heart token and bellows beside a life ring.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned cardiac/pulmonary plus rescue family; not a sequence, intervention equivalence or outcome. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"Chain of Survival","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Linked metal chain beside a life ring.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar chain plus survival/rescue association; not the guideline links or their order. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"circulation","pdf_page":1,"page":143,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Freestanding circular loop of tubing beside a heart token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned circulation family, not flow direction, anatomy or physiological explanation. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"closed chest cardiac massage","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Closed toy treasure chest beside a heart-shaped massage cushion.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Closed/chest double meaning plus familiar massage category. Not chest technique, force or effect. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"cardiac pump theory","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Heart token, detached hand pump and thought-cloud token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned cardiac/pump/theory composition; detached symbols do not depict the theory or assert its mechanism. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"thoracic pump theory","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Freestanding rib-cage model, detached hand pump and thought-cloud token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Thorax recognition needs learning; same pump/theory family with a qualifier, not a physiological model. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"abdominal pump theory","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Belly-shaped mannequin token, detached hand pump and thought-cloud token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Abdominal qualifier must be learned; no compressions, fluid movement or theory explanation. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"sternum","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached recognizable breastbone study model.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Anatomical identity token needs teaching; no technique, compression target, depth or rate. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"intubated","pdf_page":1,"page":143,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Tube visibly inside a transparent freestanding windpipe model.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/chapter-2-cue-audit.json#endotracheal intubation","reason":"Reuses endotracheal-intubation family at an inflected headword; not a claim about all intubation, placement or management. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"ventilation","pdf_page":2,"page":144,"source_match":"table","kind":"learned_category_or_name_composition","cue":"Recognizable bellows standing alone.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#respiration-bellows","reason":"Reuses the breathing/bellows family, not device equivalence, volumes or a delivery route. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"open chest cardiac compressions","pdf_page":2,"page":144,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Open toy treasure chest squeezed by a broad clamp.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Open/closed toy chest qualifier distinguishes the word composition, not surgical technique or benefit. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"upper airway","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Freestanding windpipe-model token with an upward-pointing marker.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/chapter-22-cue-audit.json#airway obstruction","reason":"Airway family with learned upper qualifier; not a precise anatomical extent or instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"oropharynx","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached mouth-shaped token beside a freestanding throat-model token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned mouth/throat root-family composition under the broad partial-association standard; exact pharynx identity needs taught context. Not a precise anatomical extent, obstruction mechanism or clinical diagram. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"tongue","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached recognizable toy tongue on a display base.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar object/category identity only; no obstruction, position or treatment. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"epiglottis","pdf_page":2,"page":144,"source_match":"body","kind":"attempted_association","cue":"Small detached hinged flap on a display base.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"hold","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Attempted familiar flap association has no established epiglottis identity in this composition. A clearly learned anatomical token may improve it; no physiology or function is inferred. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"head tilt-chin lift","pdf_page":3,"page":145,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Detached toy head tilted beside a separate chin-shaped token on a tiny lifting platform.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar tilt/lift actions plus named parts; not a connected patient setup, hand placement, angle or maneuver instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"opioid overdose","pdf_page":3,"page":145,"source_match":"heading_and_body","kind":"attempted_association","cue":"Overflowing medicine cup.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"hold","prior":"docs/chapter-1-cue-audit.json#opioid overdose","reason":"Preserves Chapter1 unresolved attempt: visible excess lacks an opioid-family identity. Generic excess is useful, but no better opioid bridge established here. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"mouth-to-mouth ventilation","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Two detached mouth-shaped tokens beside bellows, with no contact.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned mouth/mouth plus ventilation name; no person, breath delivery or technique. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"mouth-to-nose ventilation","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Detached mouth-shaped and nose-shaped tokens beside bellows.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Name-component composition only; no airway route, patient contact or clinical use. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"stoma","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Conspicuous round opening in a freestanding teaching tile.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned stoma/opening family association; generic opening is accepted as a taught partial cue, not a unique anatomical identity or depiction of a surgical opening, site or procedure. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"tracheostomy","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Freestanding windpipe model with a conspicuous round opening token alongside it.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned trachea plus opening word-family composition, not an incision, route, location standard or procedure depiction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"mouth-to-mask ventilation","pdf_page":4,"page":146,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Detached mouth-shaped token and face mask beside bellows.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar name components; no patient contact, seal, assembly or delivery claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"Heimlich maneuver","pdf_page":5,"page":147,"source_match":"heading_and_body","kind":"attempted_association","cue":"Generic embracing toy arms around a cushion.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"hold","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Attempted familiar embrace/pressure association does not yet give a useful Heimlich-name bridge without recreating a clinical maneuver. Hold is about this weak cue, not an isolated-procedure requirement. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"chest thrusts","pdf_page":5,"page":147,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Toy treasure chest thrust forward on an empty tabletop, with short motion streaks.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Chest double meaning and familiar thrust action; no patient, force, technique or obstruction effect. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"recovery position","pdf_page":6,"page":148,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Freestanding study mannequin resting on its side beside a pillow.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar recovery/rest posture category requires learned name association. No exact limb arrangement, patient indication, protection or safety recommendation. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"advance directives","pdf_page":6,"page":148,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Signed document token beside a conspicuous forward arrow.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned advance plus directive/document association; not legal advice, validity criteria or a treatment decision. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"emergency response system","pdf_page":2,"page":144,"source_match":"table","kind":"learned_category_or_name_composition","cue":"Emergency telephone linked to a dispatch headset.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar emergency-communication category, not a phone number, activation sequence or service guarantee. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"advanced life support","pdf_page":2,"page":144,"source_match":"table","kind":"attempted_association","cue":"Life ring raised on a tall stand.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"hold","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Attempted advanced/high plus support/rescue composition has a weak arbitrary advanced qualifier; needs a more learnable family bridge, not guideline content. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"postarrest care","pdf_page":2,"page":144,"source_match":"table","kind":"learned_category_or_name_composition","cue":"Handcuffed heart token followed by a freestanding care-package token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned post/after plus established arrest and care family. No patient before/after state, recovery outcome or treatment sequence. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"automatic external defibrillator","pdf_page":2,"page":144,"source_match":"table","kind":"learned_category_or_name_composition","cue":"Recognizable closed AED case with unattached pad pair and a small gear token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar AED device category with learned automatic qualifier. No operation, placement, mode or benefit; not a resolution of the main-owned defibrillation decision. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"occlusion","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Conspicuous cork blocking the opening of a freestanding tube.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#obstruction-plug","reason":"Reuses the obstruction/plug family at the occlusion headword. No cause, anatomy, severity or removal claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"laxity","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Loose elastic band hanging slack between two pegs.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar slack/loose category learned as laxity; not a statement about tissue behavior, degree or airway effects. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"unconscious","pdf_page":2,"page":144,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Unresponsive-looking generic toy figure with closed eyes beside a dimmed awareness-lamp token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Broad learned lack-of-awareness family only; closed eyes are not proof of unconsciousness, sleep equivalence, a diagnostic sign or an assessment instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"inspiratory time","pdf_page":4,"page":146,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Bellows with an inward-pointing token beside an unnumbered clock.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned inspiration/inward-breath plus time composition; no timing value, delivery technique, flow diagram or benefit. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false}
+  ],
+  "evidence": {"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend": {"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0}
+}

@@ -1,0 +1,918 @@
+{
+  "schema_version": 1,
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked vocabulary/page locations, chapter boundaries, source emphasis spot-checks and cue scope/reuse. Original author-pending statements below are chronological draft notes superseded by this review. No clinical, human expert, recall or render validation.", "highlight_annotations_found": 0, "normalizations": "Line-wrap hyphens, beta and punctuation normalized. Chapter23 wet surface expands wet or conducting surface; Chapter25 calcium gluconate expands Calcium chloride or gluconate; blood volume also appears as blood and plasma volume. Shared-word expansions are not contiguous quotations.", "family_collision_warning": "Qualify co-occurring family cues such as atrial/ventricular fibrillation, calcium salts or gangrene subtypes; family reuse is not exact subtype discrimination.", "counts": {"selected_terms": 41, "new_candidates": 15, "reused_candidates": 12, "holds": 14}, "keyword_items": 35},
+  "chapter_id": "25",
+  "title": "Resuscitation in Pregnancy",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "printed_pages": [
+      164,
+      165,
+      166,
+      167,
+      168,
+      169
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter25 title lower-left PDF22/printed164 below Chapter24 REFERENCES notice; lower-right continuation is Chapter25. Full-width Box2/Figure2 above belongs to24. Ends with left-column REFERENCES notice PDF27/printed169 above actual Chapter26 title; right-column Figure26-1 and continuation belong to26, excluded. Running headers are not boundaries.",
+    "verification": "Author verified hash, title/reference boundaries and original14 locations; actual font spans/annotation check support keyword_screen expansion. Added terms/page matches checked separately; no Chapter26 content admitted. Main independent audit of additions pending; no clinical, empirical or independent approval claimed."
+  },
+  "scope": "41 offline vocabulary entries: 15 retained candidates, 12 reuses and 14 holds after main integration on 2026-10-20. Typography/key-term screen included; not exhaustive concepts, clinical teaching, measured recall or image prompts.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "source_wording_notes": {
+    "pregnancy": "Word in actual title printed164; not merely the page header on printed165.",
+    "placenta": "Exact unqualified body word left column printed166, distinguished from placental and uteroplacental substring matches.",
+    "left lateral tilt": "Complete phrase in Table25-1 printed165; body also contains wrapped occurrences. Phrase selected as vocabulary only, not patient-positioning advice.",
+    "intubation": "Standalone subsection heading in right column printed167, as well as body; earlier bank's endotracheal intubation cue reused at broader headword scope.",
+    "magnesium sulfate": "Wrapped drug-name cell in Table25-4 printed168. Name cell only; other table columns not encoded.",
+    "eclampsia": "Exact standalone word in Table25-4 printed168, not only a substring of preeclampsia. Lamp is a partial learned name reminder, not exact pronunciation equivalence.",
+    "blood volume": "Exact MyriadPro-Cond 9pt Table25-1 parameter label PDF23/printed165. Also trialed as shared-word expansion of bold blood and plasma volume on PDF24/printed166; not claimed contiguous there.",
+    "calcium gluconate": "Shared-name expansion from regular Table25-4 Calcium chloride or gluconate cell PDF26/printed168; calcium headword is shared, not repeated contiguously with gluconate."
+  },
+  "entries": [
+    {
+      "term": "pregnancy",
+      "pdf_page": 22,
+      "page": 164,
+      "source_match": "chapter_title",
+      "kind": "familiar_category",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Broad pregnancy category token",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#pregnancy",
+      "reason": "Newly recorded familiar category in the bounded banks/catalog/workshops checked, not a new human-model primitive. Appearance is a mnemonic convention, not proof of pregnancy, gestational age, body-size criterion or a claim about every pregnant person's appearance.",
+      "tested": false
+    },
+    {
+      "term": "uterus",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "body",
+      "kind": "familiar_anatomic_object",
+      "cue": "Freestanding simplified uterus teaching model.",
+      "cue_scope": "Learned anatomical object identity",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#uterus",
+      "reason": "Newly recorded target using the familiar teaching-model category. Recognition needs prior anatomy familiarity; no detailed anatomical accuracy, size, state, function or intervention is supplied.",
+      "tested": false
+    },
+    {
+      "term": "placenta",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "partial_name_object",
+      "cue": "A familiar woven dining placemat beneath an ordinary plate.",
+      "cue_scope": "Place/plac partial learned name reminder within a placenta lesson",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#placenta",
+      "reason": "New placemat/name association of ordinary objects. Only the opening fragment is cued; placenta ending and recovery require taught context. Not a pronunciation equivalence, tissue depiction or claim that a placenta resembles a placemat.",
+      "tested": false
+    },
+    {
+      "term": "diaphragm",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "double_meaning",
+      "cue": "Recognizable camera aperture diaphragm shown as overlapping iris blades.",
+      "cue_scope": "Camera diaphragm shared-name reminder",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#diaphragm",
+      "reason": "Newly recorded double meaning, not a novel camera ingredient. Learner must know the camera part's name; it may otherwise be called shutter or aperture. No analogy about breathing mechanics or anatomical equivalence is asserted.",
+      "tested": false
+    },
+    {
+      "term": "umbilicus",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "body",
+      "kind": "familiar_anatomic_landmark",
+      "cue": "Simple study torso with a conspicuous belly button.",
+      "cue_scope": "Familiar belly-button synonym for the learned headword",
+      "decision": "retain_candidate",
+      "prior": "docs/sound-bridge-workshop.json#navel",
+      "reason": "New literal target record, not revival or resolution of the rejected naval-ship/navel sound attempt. Belly button supplies a familiar anatomical synonym; not a procedural landmark, gestational measure or instruction involving the abdomen.",
+      "tested": false
+    },
+    {
+      "term": "supine",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "body",
+      "kind": "familiar_position",
+      "cue": "Study mannequin lying flat on its back, face upward.",
+      "cue_scope": "Learned face-up position vocabulary",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#supine",
+      "reason": "Newly recorded simple position token; no added equipment or sound fragments. Not a recommendation for any patient, a resuscitation setup or a statement about positional effects.",
+      "tested": false
+    },
+    {
+      "term": "left lateral tilt",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "table",
+      "kind": "familiar_position_relationship",
+      "cue": "A toy torso with an unmistakable left hand tilts toward its own left side on a plain tabletop.",
+      "cue_scope": "Left plus side plus tilt vocabulary",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#left lateral tilt",
+      "reason": "New familiar directional relationship, not a copied source figure or a positioning demonstration. Viewer-left versus subject-left remains a recognition risk; no angle, wedge placement, clinical use or benefit is encoded.",
+      "tested": false
+    },
+    {
+      "term": "hypovolemia",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "body",
+      "kind": "quantity_metaphor",
+      "cue": "Nearly empty transparent reservoir connected in a closed circulation loop, with red liquid low at its bottom.",
+      "cue_scope": "Established low-volume family token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypovolemia",
+      "reason": "Same Chapter7/13 family. No cause, volume criterion, pregnancy effect or fluid recommendation imported.",
+      "tested": false
+    },
+    {
+      "term": "intubation",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "heading_and_body",
+      "kind": "literal_location",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Existing intubation family token within an identified airway context",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Reuse at the broader selected headword, not a new cue or an assertion that all intubation is endotracheal. No insertion route, depth, confirmation, technique or patient-specific recommendation.",
+      "tested": false
+    },
+    {
+      "term": "hemorrhage",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "familiar_leak_metaphor",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Established bleeding category reminder",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Same red-fluid leak, without a control clamp. No site, amount, cause, obstetric association or intervention inferred from the table.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary embolism",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "location_and_obstruction",
+      "cue": "Plug lodged inside a vessel visibly running through a lung model, not an airway.",
+      "cue_scope": "Established pulmonary embolism family cue",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#pulmonary embolism",
+      "reason": "Reuses established learned category without adding material or origin qualifiers. Not a diagnostic illustration, pregnancy-risk statement or clinical mechanism lesson.",
+      "tested": false
+    },
+    {
+      "term": "magnesium sulfate",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "shared_primitive_name_composition",
+      "cue": "Horseshoe magnet beside cracked rotten eggs with exaggerated stink lines.",
+      "cue_scope": "Magnesium/magnet plus sulfur/rotten-eggs partial learned name reminder",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-19-cue-audit.json#magnesium sulfate",
+      "reason": "Exact Chapter19 composition with two existing user primitives, not a new combination. Sulfate ending is not fully encoded. No claim about magnetism, smell, chemical equivalence or a medication use; source table's other columns excluded.",
+      "tested": false
+    },
+    {
+      "term": "eclampsia",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "partial_name_object",
+      "cue": "A familiar freestanding table lamp with a conspicuous lampshade.",
+      "cue_scope": "Lamp/lamp-s partial learned name reminder within an eclampsia lesson",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#eclampsia",
+      "reason": "Newly recorded partial-name object, not exact full-name phonetics. Lamp alone does not encode the opening or ending, distinguish preeclampsia, or identify a diagnosis without lesson context. No clinical sign, mechanism or management implied; recall untested.",
+      "tested": false
+    },
+    {
+      "term": "aortocaval compression",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Compound name",
+      "decision": "hold",
+      "prior": "docs/visual-cue-catalog.json#compressed-tube",
+      "reason": "Existing compression grammar is available, but this bounded pass offers no economical aortocaval name reminder. No full syllable-coverage requirement imposed; hold records absence of a proposal, not impossibility. No physiological diagram substituted for vocabulary.",
+      "tested": false
+    },
+    {
+      "term": "tachypnea",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "familiar_speed_category",
+      "cue": "Recognizable bellows with conspicuous speed streaks.",
+      "cue_scope": "Fast-breathing learned category",
+      "decision": "retain_candidate",
+      "prior": "docs/visual-cue-catalog.json#respiration-bellows",
+      "reason": "New speed/bellows composition using the established respiration ingredient; not a rate value, physical demonstration or claim about pregnancy. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "blood volume",
+      "pdf_page": 23,
+      "page": 165,
+      "source_match": "table",
+      "kind": "quantity_category",
+      "cue": "A transparent reservoir containing red liquid, shown without a high or low modifier.",
+      "cue_scope": "Blood token plus volume/container category",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypovolemia",
+      "reason": "New neutral headword record reuses reservoir/red-fluid ingredients without the low-state modifier of hypovolemia. No bodily distribution or amount asserted. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "plasma volume",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "partial_name_object",
+      "cue": "A familiar plasma television with a conspicuous sound-volume knob.",
+      "cue_scope": "Plasma television plus volume double meaning",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#plasma volume",
+      "reason": "New familiar-object wordplay. Plasma-screen identity can be hard to distinguish from another TV; needs taught context. Not the material identity of blood plasma or a body-volume model. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "phenylephrine",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-20-cue-audit.json#phenylephrine",
+      "reason": "Preserves Chapter20 hold. A fin-like opening fragment was considered but not selected as an economical taught name reminder; no receptor/effect shorthand substituted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "ephedrine",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-25-cue-audit.json#ephedrine",
+      "reason": "Tried a feather as a partial learned sound/name fragment; the bridge is weak and object naming does not give a selected ephedrine reminder in this pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "sepsis",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-25-cue-audit.json#sepsis",
+      "reason": "Tried a septic tank as a related-word object. Unmarked tank identity is uncertain here, so no selected candidate; this does not rule out a useful learned septic/sepsis bridge. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "pyelonephritis",
+      "pdf_page": 24,
+      "page": 166,
+      "source_match": "body",
+      "kind": "partial_name_object",
+      "cue": "An ordinary pie beside a kidney-shaped teaching token.",
+      "cue_scope": "Pie/pye opening fragment plus nephro/kidney name-family token",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#pyelonephritis",
+      "reason": "New partial learned name composition, not a complete sound rebus. The ending and full-name recovery need context; pie is wordplay, not a dietary cause or a depiction of infection. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "pneumonia",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-25-cue-audit.json#pneumonia",
+      "reason": "Tried new-moon/moon wordplay. A new moon is not a distinctive visible object and a generic moon does not yet provide a selected pneumonia reminder here; not a blanket ban on partial learned bridges. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "influenza",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "body",
+      "kind": "partial_name_object",
+      "cue": "Recognizable brick chimney with its flue opening conspicuous.",
+      "cue_scope": "Flue/flu learned sound bridge to the shortened influenza name",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#influenza",
+      "reason": "New familiar chimney-part association. Learners may name chimney rather than flue; shortened name and whole-term recovery need teaching, with no claim of isolated uniqueness. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "Mallampati class III",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "body",
+      "kind": "partial_name_object",
+      "cue": "A recognizable shopping mall.",
+      "cue_scope": "Mall opening-name reminder within an already identified Mallampati class III topic",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#Mallampati class III",
+      "reason": "New partial learned name association; class and III are supplied by context, not encoded or inferred from a mouth diagram. Mall architecture and naming may be audience-dependent. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "stroke",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "double_meaning",
+      "cue": "A familiar paintbrush leaving one conspicuous brushstroke.",
+      "cue_scope": "Stroke shared-word reminder",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#stroke",
+      "reason": "New double-meaning record; paint motion is not a brain event, vascular mechanism or anatomical diagram. Untested vocabulary association only; no clinical relationships, mechanisms, thresholds or instructions encoded.",
+      "tested": false
+    },
+    {
+      "term": "trauma",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "familiar_injury_category",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Established generic injury-category token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "Reuses established trauma family. Same newly screened Chapter24 candidate, not a second new composition. Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "hypothermia",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "heading",
+      "kind": "familiar_cold_category",
+      "cue": "Shivering study mannequin beside a conspicuous block of ice.",
+      "cue_scope": "Established cold-category token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypothermia",
+      "reason": "Reuses established hypothermia family. Within Chapter25 boundary above references, not Chapter26 text. Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "extracorporeal membrane oxygenation",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#extracorporeal membrane oxygenation",
+      "reason": "Same Chapter24 attempted outside-body oxygen-cylinder staging; membrane-name recovery remains insufficiently clear for selection. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "defibrillation",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "heading",
+      "kind": "familiar_equipment_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Learned electrical-defibrillator family cue, not procedure-mode discrimination",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#defibrillation",
+      "reason": "Recognizable equipment plus electrical token supports a learned family cue under the broad PPE/bellows standard. Paddles must not resemble irons; bolt stays secondary. No patient, application, ECG transition, dose, restart or outcome claim. Shared cardioversion use limits specificity, not eligibility. No rendered recognition evidence; historical Chapter1 hold is not automatically resolved.",
+      "tested": false
+    },
+    {
+      "term": "cardiac arrest",
+      "pdf_page": 25,
+      "page": 167,
+      "source_match": "heading",
+      "kind": "double_meaning",
+      "cue": "Heart character visibly wearing handcuffs.",
+      "cue_scope": "Established heart/arrest token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#cardiac arrest",
+      "reason": "Reuses established cardiac arrest family. Pregnancy context is supplied by topic, not a new combined scene. Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "epinephrine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-2-cue-audit.json#epinephrine",
+      "reason": "Earlier unresolved drug-name hold preserved; no economical improved name association selected. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-19-cue-audit.json#lidocaine",
+      "reason": "Earlier hold and lid/cane attempt remain historical, not silently promoted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "atropine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#atropine",
+      "reason": "Same new Chapter24 pine-tree fragment attempt remains unselected; no effect-based identity substituted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "sodium bicarbonate",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "familiar_identity",
+      "cue": "Familiar orange baking-soda box with a small heap of white powder; no brand logo or answer label needed.",
+      "cue_scope": "Established familiar bicarbonate identity",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#sodium bicarbonate",
+      "reason": "Reuses established sodium bicarbonate family.  Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "calcium chloride",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "learned_category_identity",
+      "cue": "Recognizable bone-shaped teaching token.",
+      "cue_scope": "Calcium-family partial reminder within identified calcium-chloride topic",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#calcium",
+      "reason": "Reuses established calcium family. Bone token does not encode chloride or distinguish calcium preparations; specific name needs taught context. Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "calcium gluconate",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "learned_category_identity",
+      "cue": "Recognizable bone-shaped teaching token.",
+      "cue_scope": "Calcium-family partial reminder within identified calcium-gluconate topic",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#calcium",
+      "reason": "Reuses established calcium family. Bone token does not encode gluconate or distinguish preparations; source shares calcium headword, not a claim of interchangeability. Not a medical fact, drug effect, formulation, diagnostic criterion or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "dopamine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-20-cue-audit.json#dopamine",
+      "reason": "Preserves Chapter20 hold and unresolved dough-fragment name-family ambiguity; no improved selected bridge. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "dobutamine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-20-cue-audit.json#dobutamine",
+      "reason": "Preserves Chapter20 hold; similar dough fragments were considered but do not yet supply a useful distinction in this pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "norepinephrine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-20-cue-audit.json#norepinephrine",
+      "reason": "Preserves Chapter20 hold: adding a no sign to an unresolved epinephrine token does not supply selected name identity. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "amiodarone",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-19-cue-audit.json#amiodarone",
+      "reason": "Preserves established Chapter11/18/19 hold; no economical improved name association selected. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    },
+    {
+      "term": "adenosine",
+      "pdf_page": 26,
+      "page": 168,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Name reminder not selected",
+      "decision": "hold",
+      "prior": "docs/chapter-19-cue-audit.json#adenosine",
+      "reason": "Preserves Chapter4/19 unresolved name hold. No new retained partial fragment in this bounded pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
+      "tested": false
+    }
+  ],
+  "table_locations": {
+    "left lateral tilt": "Table25-1",
+    "hemorrhage": "Table25-3",
+    "pulmonary embolism": "Table25-3",
+    "magnesium sulfate": "Table25-4",
+    "eclampsia": "Table25-4",
+    "stroke": "Table25-3",
+    "trauma": "Table25-3",
+    "sodium bicarbonate": "Table25-4",
+    "calcium chloride": "Table25-4",
+    "calcium gluconate": "Table25-4",
+    "epinephrine": "Table25-4",
+    "lidocaine": "Table25-4",
+    "atropine": "Table25-4",
+    "dopamine": "Table25-4",
+    "dobutamine": "Table25-4",
+    "norepinephrine": "Table25-4",
+    "amiodarone": "Table25-4",
+    "adenosine": "Table25-4",
+    "blood volume": "Table25-1"
+  },
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "PyMuPDF span/font/size/flags screen across PDF22-27 actual Chapter25 regions: lower PDF22 beneath actual title and references through left-column PDF27 REFERENCES, excluding all Chapter26 title/right-column content. Reviewed bold flag16 and Bold/Semibold/Black fonts, extracted lexical words from emphasized body sentences, inspected named table labels including selected regular-font drug-name cells separately. Font inventory includes MinionPro-Bold 9pt, MyriadPro-BlackSemiCn 12/15/17pt and MyriadPro-SemiboldCond 9pt. Previously viewed boundaries plus source rasters PDF24/25/26 visually checked. Items record actual typography; not all table words or all key concepts are claimed covered. Newly added proposals await main independent audit; no independent approval claimed.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated annotations on PDF22-27: no annotations of any type, so zero Highlight annotations. This does not establish absence of flattened/background highlighting."
+    },
+    "items": [
+      {
+        "term": "tachypnea",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body span lexical word within emphasized sentence",
+        "entry_term": "tachypnea"
+      },
+      {
+        "term": "blood volume",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body shared phrase blood and plasma volume; blood volume expanded, exact unformatted label separately PDF23 Table25-1.",
+        "entry_term": "blood volume"
+      },
+      {
+        "term": "plasma volume",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body span lexical phrase within emphasized sentence",
+        "entry_term": "plasma volume"
+      },
+      {
+        "term": "phenylephrine",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "phenylephrine"
+      },
+      {
+        "term": "ephedrine",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "ephedrine"
+      },
+      {
+        "term": "sepsis",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "sepsis"
+      },
+      {
+        "term": "pyelonephritis",
+        "pdf_page": 24,
+        "page": 166,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "pyelonephritis"
+      },
+      {
+        "term": "pneumonia",
+        "pdf_page": 25,
+        "page": 167,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "pneumonia"
+      },
+      {
+        "term": "influenza",
+        "pdf_page": 25,
+        "page": 167,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "influenza"
+      },
+      {
+        "term": "Mallampati class III",
+        "pdf_page": 25,
+        "page": 167,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "Mallampati class III"
+      },
+      {
+        "term": "stroke",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "MyriadPro-SemiboldCond 9pt Table25-3 row label; percentage excluded",
+        "entry_term": "stroke"
+      },
+      {
+        "term": "trauma",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "MyriadPro-SemiboldCond 9pt Table25-3 row label",
+        "entry_term": "trauma"
+      },
+      {
+        "term": "hypothermia",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading lexical word in Chapter25 left-column heading",
+        "entry_term": "hypothermia"
+      },
+      {
+        "term": "extracorporeal membrane oxygenation",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading Chapter25 left-column heading",
+        "entry_term": "extracorporeal membrane oxygenation"
+      },
+      {
+        "term": "defibrillation",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading combined heading",
+        "entry_term": "defibrillation"
+      },
+      {
+        "term": "cardiac arrest",
+        "pdf_page": 25,
+        "page": 167,
+        "emphasis": "MyriadPro-BlackSemiCn 15pt CARDIAC ARREST IN PREGNANCY heading",
+        "entry_term": "cardiac arrest"
+      },
+      {
+        "term": "epinephrine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "epinephrine"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "atropine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "atropine"
+      },
+      {
+        "term": "sodium bicarbonate",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold wrapped two-line cell",
+        "entry_term": "sodium bicarbonate"
+      },
+      {
+        "term": "calcium chloride",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold shared chloride or gluconate cell",
+        "entry_term": "calcium chloride"
+      },
+      {
+        "term": "calcium gluconate",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold expanded shared Calcium chloride or gluconate cell",
+        "entry_term": "calcium gluconate"
+      },
+      {
+        "term": "dopamine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "dopamine"
+      },
+      {
+        "term": "dobutamine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "dobutamine"
+      },
+      {
+        "term": "norepinephrine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "norepinephrine"
+      },
+      {
+        "term": "amiodarone",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "amiodarone"
+      },
+      {
+        "term": "adenosine",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold",
+        "entry_term": "adenosine"
+      },
+      {
+        "term": "pregnancy",
+        "pdf_page": 22,
+        "page": 164,
+        "emphasis": "MyriadPro-BlackSemiCn 17pt actual chapter title",
+        "entry_term": "pregnancy"
+      },
+      {
+        "term": "intubation",
+        "pdf_page": 25,
+        "page": 167,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "intubation"
+      },
+      {
+        "term": "pulmonary embolism",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "MyriadPro-SemiboldCond 9pt Table25-3 row label; percentage excluded",
+        "entry_term": "pulmonary embolism"
+      },
+      {
+        "term": "magnesium sulfate",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 drug-name cell; not bold wrapped cell",
+        "entry_term": "magnesium sulfate"
+      },
+      {
+        "term": "eclampsia",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-4 lexical word, not just preeclampsia substring",
+        "entry_term": "eclampsia"
+      },
+      {
+        "term": "hemorrhage",
+        "pdf_page": 26,
+        "page": 168,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-3 lexical row, percentage excluded",
+        "entry_term": "hemorrhage"
+      },
+      {
+        "term": "left lateral tilt",
+        "pdf_page": 23,
+        "page": 165,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-1 lexical phrase, not bold",
+        "entry_term": "left lateral tilt"
+      },
+      {
+        "term": "diaphragm",
+        "pdf_page": 23,
+        "page": 165,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table25-1 parameter label Diaphragm elevation",
+        "entry_term": "diaphragm"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "description": "Chapter24 Box2/Figure2/title material above Chapter25 title on shared PDF22",
+        "pdf_page": 22,
+        "reason": "Outside actual Chapter25 boundary, despite sharing page."
+      },
+      {
+        "description": "Authors, chapter-number badge, running headers, page numbers, figure/caption numbers, reference pointers",
+        "pdf_page": 23,
+        "reason": "Attribution/navigation/formatting, not vocabulary cue trials."
+      },
+      {
+        "description": "Physiology/Cardiovascular Changes headings and Table25-1 System / Parameters / Comment columns",
+        "pdf_page": 23,
+        "reason": "Broad organizational categories and scaffolding; selected lexical body/parameter words are recorded, not whole physiologic statements."
+      },
+      {
+        "description": "Bold full tachypnea caution and volume-increase instruction",
+        "pdf_page": 24,
+        "reason": "Extracted tachypnea, blood volume and plasma volume only; numeric instructions and clinical assertions excluded rather than held."
+      },
+      {
+        "description": "Resuscitation Steps / Respiratory and Pulmonary Changes headings",
+        "pdf_page": 24,
+        "reason": "Broad procedure/organization headings, not copied as clinical instruction or made whole-clause holds."
+      },
+      {
+        "description": "Anatomic Changes Affecting Intubation / Airway in Pregnancy headings",
+        "pdf_page": 25,
+        "reason": "Extracted intubation and pregnancy headwords; no anatomy/airway-management statement or procedure sequence retained."
+      },
+      {
+        "description": "Table25-2 title and bullet scaffolding",
+        "pdf_page": 25,
+        "reason": "Selected named bold body topics pyelonephritis/pneumonia/influenza receive explicit trials; not claiming every unformatted infection-list item or all clinical key concepts screened exhaustively."
+      },
+      {
+        "description": "Table25-3 Obstetric complications / Other grouping labels and percentages",
+        "pdf_page": 26,
+        "reason": "Organizational grouping or numeric prevalence, not discrete cue targets. Pulmonary embolism, stroke, trauma and sepsis lexical words tried independently."
+      },
+      {
+        "description": "Table25-4 Drug / Indications / Pregnancy Risk Category column headings and clinical cell sentences",
+        "pdf_page": 26,
+        "reason": "Table scaffolding and clinical claims excluded; selected drug names tried independently without indication, dose, risk category or guideline endorsement. Vasopressin family reconciliation remains main-owned and not altered here."
+      },
+      {
+        "description": "Chapter26 actual title, figure/right-column content and bold return-of-spontaneous-circulation phrase",
+        "pdf_page": 27,
+        "reason": "Outside Chapter25. Only left-column Chapter25 hypothermia/ECMO heading above REFERENCES is screened on this shared page."
+      }
+    ]
+  }
+}

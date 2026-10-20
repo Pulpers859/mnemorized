@@ -151,9 +151,42 @@ Holding the same word in two chapters preserves both occurrences; a later
 retention elsewhere does not silently close an older hold. Workshop-only holds
 and rejections remain in their separate sound-bridge records.
 
+## Chapters 20-25: Emphasis And Key-Term Screen
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [20 Vasopressors and Inotropes](chapter-20-cue-audit.md) | 33 | 11 | 8 | 14 |
+| [21 Hyperbaric Oxygen Therapy](chapter-21-cue-audit.md) | 55 | 28 | 11 | 16 |
+| [22 Basic CPR](chapter-22-cue-audit.md) | 48 | 37 | 7 | 4 |
+| [23 Defibrillation and Cardioversion](chapter-23-cue-audit.md) | 44 | 34 | 9 | 1 |
+| [24 Cardiac Resuscitation](chapter-24-cue-audit.md) | 54 | 12 | 31 | 11 |
+| [25 Resuscitation in Pregnancy](chapter-25-cue-audit.md) | 41 | 15 | 12 | 14 |
+
+Total275 term records:137 new candidate compositions,78 reuses,60 holds.
+The expanded screen links262 keyword occurrences, including two explicit
+cross-chapter referrals. Bold/semibold headings, lexical terms inside emphasized
+sentences and meaningful table labels were tried. No highlight annotations were
+present; flattened/printed emphasis was checked through fonts and visual spots.
+This is not exhaustive concept coverage. Chapters1-19 have not been retroactively
+screened to this expanded standard.
+
+Three AI drafting lanes were resumed after interruption; main separately checked
+source vocabulary, chapter boundaries, cue scope and reuse. These are AI reviews,
+not credentialed human expert or empirical recall validation. Shared wording was
+expanded explicitly: wet or conducting surface; Calcium chloride or gluconate;
+blood and plasma volume. No source medical statements were converted to lessons.
+
+Examples include vase IN press for vasopressin, cyan-eyed mannequin eye for
+cyanide, and lumber plank with puncture for lumbar puncture. Partial sound/name
+bridges require teaching; no pronunciation or recall success is asserted.
+Detached defibrillator paddles plus secondary lightning bolt were independently
+challenged as a family cue. Chapter1's older hold remains visible, flagged with
+later retention rather than silently erased. Separate hold register:94 chapter
+occurrences/70 distinct terms, with explicit historical resolutions preserved.
+
 ## Next
 
-Chapter 20, **Pharmacology of Vasopressors and Inotropes**, is not started for cue review. Do not move
+Chapter 26, **Post-Cardiac Arrest Syndrome**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

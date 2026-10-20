@@ -165,16 +165,16 @@
       "empirical_validation": false
     },
     {
-    "chapter_id": "3",
-    "title": "Air Medical Transport",
-    "record": "docs/chapter-3-cue-audit.json",
-    "report": "docs/chapter-3-cue-audit.md",
-    "selected_terms": 16,
-    "retained_candidates": 14,
-    "holds": 2,
-    "independent_source_and_conceptual_review": true,
-    "exhaustive_vocabulary_review": false,
-    "empirical_validation": false
+      "chapter_id": "3",
+      "title": "Air Medical Transport",
+      "record": "docs/chapter-3-cue-audit.json",
+      "report": "docs/chapter-3-cue-audit.md",
+      "selected_terms": 16,
+      "retained_candidates": 14,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     },
     {
       "chapter_id": "4",
@@ -384,6 +384,90 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "20",
+      "title": "Pharmacology of Vasopressors and Inotropes",
+      "record": "docs/chapter-20-cue-audit.json",
+      "report": "docs/chapter-20-cue-audit.md",
+      "selected_terms": 33,
+      "new_candidates": 11,
+      "reused_candidates": 8,
+      "holds": 14,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 31
+    },
+    {
+      "chapter_id": "21",
+      "title": "Hyperbaric Oxygen Therapy",
+      "record": "docs/chapter-21-cue-audit.json",
+      "report": "docs/chapter-21-cue-audit.md",
+      "selected_terms": 55,
+      "new_candidates": 28,
+      "reused_candidates": 11,
+      "holds": 16,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 52
+    },
+    {
+      "chapter_id": "22",
+      "title": "Basic Cardiopulmonary Resuscitation",
+      "record": "docs/chapter-22-cue-audit.json",
+      "report": "docs/chapter-22-cue-audit.md",
+      "selected_terms": 48,
+      "new_candidates": 37,
+      "reused_candidates": 7,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 48
+    },
+    {
+      "chapter_id": "23",
+      "title": "Defibrillation and Electrical Cardioversion",
+      "record": "docs/chapter-23-cue-audit.json",
+      "report": "docs/chapter-23-cue-audit.md",
+      "selected_terms": 44,
+      "new_candidates": 34,
+      "reused_candidates": 9,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 42
+    },
+    {
+      "chapter_id": "24",
+      "title": "Cardiac Resuscitation",
+      "record": "docs/chapter-24-cue-audit.json",
+      "report": "docs/chapter-24-cue-audit.md",
+      "selected_terms": 54,
+      "new_candidates": 12,
+      "reused_candidates": 31,
+      "holds": 11,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 54
+    },
+    {
+      "chapter_id": "25",
+      "title": "Resuscitation in Pregnancy",
+      "record": "docs/chapter-25-cue-audit.json",
+      "report": "docs/chapter-25-cue-audit.md",
+      "selected_terms": 41,
+      "new_candidates": 15,
+      "reused_candidates": 12,
+      "holds": 14,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 35
     }
   ],
   "hold_register": {
@@ -393,8 +477,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "20",
-    "title": "Pharmacology of Vasopressors and Inotropes",
+    "chapter_id": "26",
+    "title": "Post-Cardiac Arrest Syndrome",
     "status": "not_started_for_cue_review"
   },
   "spend": {

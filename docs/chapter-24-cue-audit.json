@@ -1,0 +1,1214 @@
+{
+  "schema_version": 1,
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked vocabulary/page locations, chapter boundaries, source emphasis spot-checks and cue scope/reuse. Original author-pending statements below are chronological draft notes superseded by this review. No clinical, human expert, recall or render validation.", "highlight_annotations_found": 0, "normalizations": "Line-wrap hyphens, beta and punctuation normalized. Chapter23 wet surface expands wet or conducting surface; Chapter25 calcium gluconate expands Calcium chloride or gluconate; blood volume also appears as blood and plasma volume. Shared-word expansions are not contiguous quotations.", "family_collision_warning": "Qualify co-occurring family cues such as atrial/ventricular fibrillation, calcium salts or gangrene subtypes; family reuse is not exact subtype discrimination.", "counts": {"selected_terms": 54, "new_candidates": 12, "reused_candidates": 31, "holds": 11}, "keyword_items": 54},
+  "chapter_id": "24",
+  "title": "Cardiac Resuscitation",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "printed_pages": [
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter24 title right column PDF11/printed153 below Chapter23 REFERENCES notice; left column and upper-right continuation above title excluded. Ends after full-width Box2/Figure2 and REFERENCES notice PDF22/printed164, above actual Chapter25 title lower left; lower-right Chapter25 continuation excluded. Running headers are not boundaries.",
+    "verification": "Author verified hash/boundaries and original15 locations; emphasized-keyword expansion uses actual source span fonts and annotation inspection recorded in keyword_screen. All added page matches checked separately. Main independent audit of additions remains pending; no clinical, empirical or independent approval claimed."
+  },
+  "scope": "54 offline vocabulary entries: 12 retained candidates, 31 reuses and 11 holds after main integration on 2026-10-20. Typography/key-term screen included; not exhaustive concepts, clinical teaching, measured recall or image prompts.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "source_wording_notes": {
+    "oxygen": "Unqualified oxygen in right-column body printed153, below actual Chapter24 title; not the oxygenation heading substring.",
+    "capnography": "Word selected from shared OXYGENATION AND CAPNOGRAPHY heading printed153.",
+    "ventricular fibrillation": "Body occurrence right column printed154, not Chapter23 occurrences on shared printed153.",
+    "magnesium": "Unqualified MAGNESIUM heading and body printed159; no sulfate qualifier added.",
+    "torsades de pointes": "Body phrase right column printed154; no rhythm interpretation imported."
+  },
+  "entries": [
+    {
+      "term": "cardiac arrest",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "double_meaning",
+      "cue": "Heart character visibly wearing handcuffs.",
+      "cue_scope": "Heart plus arrest",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#cardiac arrest",
+      "reason": "Preserves established Chapter1/11/18 double meaning. Not physiology, a diagnosis or an action sequence.",
+      "tested": false
+    },
+    {
+      "term": "chest compressions",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "heading",
+      "kind": "double_meaning_action",
+      "cue": "Toy treasure chest visibly squeezed between the jaws of a broad clamp.",
+      "cue_scope": "Chest double meaning plus compression action",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#chest compressions",
+      "reason": "Reuses the same-batch Chapter22 composition after main identified the duplicate and author checked that bank. Not a body demonstration, equipment recommendation, hand position or technique.",
+      "tested": false
+    },
+    {
+      "term": "capnography",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "heading",
+      "kind": "learned_partial_name_bridge",
+      "cue": "Familiar ship captain pointing to a simple line graph on a chart.",
+      "cue_scope": "Cap'n plus graph partial learned name bridge",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Same captain/graph family, not a clinical waveform, gas measurement or interpretation instruction. Name recovery remains untested.",
+      "tested": false
+    },
+    {
+      "term": "oxygen",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "familiar_identity",
+      "cue": "Recognizable oxygen cylinder standing alone.",
+      "cue_scope": "Established oxygen identity primitive",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#oxygen",
+      "reason": "Reuses Chapter22 standalone headword, whose cylinder ingredient already appears in Chapter7 and Chapter13. No pressure chamber or debt modifier. Cylinder identity needs learned context; no contents verification, delivery setup or clinical instruction.",
+      "tested": false
+    },
+    {
+      "term": "asystole",
+      "pdf_page": 12,
+      "page": 154,
+      "source_match": "body",
+      "kind": "familiar_schematic",
+      "cue": "Schematic flat trace beside a still heart token.",
+      "cue_scope": "Established absent-activity category token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#asystole",
+      "reason": "Preserves prior category cue without turning a display into proof of diagnosis or a monitor-checking instruction.",
+      "tested": false
+    },
+    {
+      "term": "ventricular fibrillation",
+      "pdf_page": 12,
+      "page": 154,
+      "source_match": "body",
+      "kind": "learned_root_object",
+      "cue": "A loose fringe of fine fibers beside a heart token.",
+      "cue_scope": "Fibril/fiber partial reminder within an already identified ventricular-fibrillation lesson",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#atrial fibrillation",
+      "reason": "Family reuse of the identical existing fibrillation fiber/heart cue, not a new composition or discovery. Does not encode ventricular location or distinguish atrial from ventricular contexts; taught topic supplies that qualifier. Not muscle behavior or a rhythm trace.",
+      "tested": false
+    },
+    {
+      "term": "torsades de pointes",
+      "pdf_page": 12,
+      "page": 154,
+      "source_match": "body",
+      "kind": "partial_name_action_bridge",
+      "cue": "Ribbon visibly twisted around recognizable ballet pointe shoes.",
+      "cue_scope": "Twist plus pointes learned name association",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#torsades de pointes",
+      "reason": "Same economical name bridge, not waveform morphology, mechanism or treatment.",
+      "tested": false
+    },
+    {
+      "term": "sodium bicarbonate",
+      "pdf_page": 16,
+      "page": 158,
+      "source_match": "body",
+      "kind": "familiar_identity",
+      "cue": "Familiar orange baking-soda box with a small heap of white powder; no brand logo or answer label needed.",
+      "cue_scope": "Established household bicarbonate name association",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#sodium bicarbonate",
+      "reason": "Preserves user-calibrated complete familiar object rather than anonymous powder. Packaging familiarity is audience-dependent; no medicinal formulation, household-use permission or clinical use implied.",
+      "tested": false
+    },
+    {
+      "term": "magnesium",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "heading_and_body",
+      "kind": "partial_name_object",
+      "cue": "Familiar horseshoe magnet.",
+      "cue_scope": "Magnesium/magnet learned name fragment",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#magnesium-magnet",
+      "reason": "Same magnesium primitive used by Chapter19; sulfur/rotten eggs deliberately absent because sulfate is not the selected headword. No magnetic property or drug action asserted.",
+      "tested": false
+    },
+    {
+      "term": "hypothermia",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "familiar_cold_category",
+      "cue": "Shivering study mannequin beside a conspicuous block of ice.",
+      "cue_scope": "Established body-cold category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypothermia",
+      "reason": "Same learned cold token, not a temperature criterion, required clinical sign or cooling instruction.",
+      "tested": false
+    },
+    {
+      "term": "defibrillation",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "heading",
+      "kind": "familiar_equipment_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Learned electrical-defibrillator family cue, not procedure-mode discrimination",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#defibrillation",
+      "reason": "Recognizable equipment plus electrical token supports a learned family cue under the broad PPE/bellows standard. Paddles must not resemble irons; bolt stays secondary. No patient, application, ECG transition, dose, restart or outcome claim. Shared cardioversion use limits specificity, not eligibility. No rendered recognition evidence; historical Chapter1 hold is not automatically resolved.",
+      "tested": false
+    },
+    {
+      "term": "epinephrine",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Drug name",
+      "decision": "hold",
+      "prior": "docs/chapter-2-cue-audit.json#epinephrine",
+      "reason": "Existing hold unchanged; no economical improved name association proposed and no drug effect substituted for identity.",
+      "tested": false
+    },
+    {
+      "term": "amiodarone",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Drug name",
+      "decision": "hold",
+      "prior": "docs/chapter-19-cue-audit.json#amiodarone",
+      "reason": "Preserves Chapter11/18/19 hold without forced sound fragments or clinical-property shortcuts.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Drug name",
+      "decision": "hold",
+      "prior": "docs/chapter-19-cue-audit.json#lidocaine",
+      "reason": "Earlier lid/cane rejection remains historical, not silently promoted. No improved proposal in this bounded selection.",
+      "tested": false
+    },
+    {
+      "term": "vasopressin",
+      "pdf_page": 11,
+      "page": 153,
+      "source_match": "body",
+      "kind": "partial_name_objects_and_relation",
+      "cue": "Recognizable flower vase positioned in the open jaws of a workshop press, intact.",
+      "cue_scope": "Vase/press/in learned name reminder within an identified vasopressin lesson",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#vasopressin",
+      "reason": "Reuses the same-batch candidate after main reconciliation instead of counting a second discovery. Learned vocabulary only, not mechanism, protocol or outcome; recall remains untested.",
+      "tested": false
+    },
+    {
+      "term": "extracorporeal membrane oxygenation",
+      "pdf_page": 12,
+      "page": 154,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#extracorporeal membrane oxygenation",
+      "reason": "Tried oxygen-cylinder plus outside-body staging; it leaves the membrane-name bridge insufficiently clear in this pass. Existing oxygen primitive remains available. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "Chain of Survival",
+      "pdf_page": 12,
+      "page": 154,
+      "source_match": "heading",
+      "kind": "learned_category_or_name_composition",
+      "cue": "Linked metal chain beside a life ring.",
+      "cue_scope": "Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#Chain of Survival",
+      "reason": "Reuses the same-batch candidate after main reconciliation instead of counting a second discovery. Learned vocabulary only, not mechanism, protocol or outcome; recall remains untested.",
+      "tested": false
+    },
+    {
+      "term": "Primary Survey",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A magnifying glass inspecting a clipboard with one large tally mark.",
+      "cue_scope": "First plus examination/survey category",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#Primary Survey",
+      "reason": "New learned first/survey composition; tally is ordinal vocabulary, not a clinical measurement. Shares clipboard/glass staging with Secondary Survey. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "Secondary Survey",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "The same magnifying glass and clipboard with two large tally marks.",
+      "cue_scope": "Second plus examination/survey category",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#Secondary Survey",
+      "reason": "New contrast composition sharing the Primary Survey ingredients; no second-stage tasks, timing or protocol sequence supplied. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "vascular access",
+      "pdf_page": 15,
+      "page": 157,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A transparent vessel teaching model with a conspicuous doorway.",
+      "cue_scope": "Vessel plus access word association",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#vascular access",
+      "reason": "New familiar entrance relationship. Doorway is wordplay, not a puncture site, device or route. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "pulseless electrical activity",
+      "pdf_page": 14,
+      "page": 156,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#pulseless electrical activity",
+      "reason": "Tried an electrical plug with a missing pulse token; the missing token is not legible enough to retain. No clinical trace substituted. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "ventricular tachycardia",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "heading",
+      "kind": "familiar_speed_category",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Fast-heart family in an identified ventricular context",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#ventricular tachycardia",
+      "reason": "Reuses the established ventricular tachycardia cue or explicitly selected ingredient. Cue does not encode ventricular or pulse qualifier. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "bradycardia",
+      "pdf_page": 16,
+      "page": 158,
+      "source_match": "body",
+      "kind": "familiar_speed_category",
+      "cue": "Heart character riding a familiar slow snail.",
+      "cue_scope": "Slow-heart family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#bradycardia",
+      "reason": "Reuses the established bradycardia cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "beta-blockers",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "heading_and_body",
+      "kind": "partial_sound_and_barrier",
+      "cue": "Recognizable betta fish facing a conspicuous stop barrier.",
+      "cue_scope": "Established beta/block family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-19-cue-audit.json#beta-blockers",
+      "reason": "Reuses the established beta-blockers cue or explicitly selected ingredient. Betta naming/pronunciation remains audience-dependent. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "atropine",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "heading_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#atropine",
+      "reason": "Tried a pine tree as an ending-name fragment, but did not select a useful taught association in this pass. Drug effects are not an identity substitute. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "calcium",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_identity",
+      "cue": "Recognizable bone-shaped teaching token.",
+      "cue_scope": "Calcium identity token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#calcium",
+      "reason": "Reuses the established calcium cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hypomagnesemia",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "identity_and_deficit",
+      "cue": "Only a few horseshoe magnets remain in a large transparent container.",
+      "cue_scope": "Established magnesium-deficit family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-17-cue-audit.json#hypomagnesemia",
+      "reason": "Reuses the established hypomagnesemia cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hypocalcemia",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "identity_and_deficit",
+      "cue": "Only a few bone-shaped tokens remain in a large transparent container.",
+      "cue_scope": "Established calcium-deficit family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-17-cue-audit.json#hypocalcemia",
+      "reason": "Reuses the established hypocalcemia cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "QTc prolongation",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "letter_name_sound_bridge",
+      "cue": "A very long pool cue beside a cup of tea.",
+      "cue_scope": "Long cue/tea Q/T family within a QTc-prolongation context",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#long QT syndrome",
+      "reason": "Reuses Chapter18 long-QT cue without claiming a new composition. Source c subscript is retained in the headword and supplied by learned context, not encoded in the objects. No interval definition, correction formula, value or clinical relationship asserted.",
+      "tested": false
+    },
+    {
+      "term": "hypovolemia",
+      "pdf_page": 19,
+      "page": 161,
+      "source_match": "heading_and_body",
+      "kind": "quantity_metaphor",
+      "cue": "Nearly empty transparent reservoir connected in a closed circulation loop, with red liquid low at its bottom.",
+      "cue_scope": "Established low-volume family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypovolemia",
+      "reason": "Reuses the established hypovolemia cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hemorrhage",
+      "pdf_page": 19,
+      "page": 161,
+      "source_match": "heading_and_body",
+      "kind": "familiar_leak_metaphor",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Established bleeding token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Reuses the established hemorrhage cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hypoxia",
+      "pdf_page": 19,
+      "page": 161,
+      "source_match": "heading_and_body",
+      "kind": "identity_and_deficit",
+      "cue": "A nearly empty oxygen cylinder.",
+      "cue_scope": "Low-oxygen learned family reminder",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#hypoxemia",
+      "reason": "New headword record reuses the low-cylinder ingredient from hypoxemia, without its blood-drop qualifier. Not a statement equating the two terms, measuring tissue oxygen or recommending oxygen. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "acidosis",
+      "pdf_page": 19,
+      "page": 161,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_identity",
+      "cue": "Conspicuous lemon used as the learned acid token.",
+      "cue_scope": "Established acid-family token",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#acidosis",
+      "reason": "Reuses the established acidosis cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hyperkalemia",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "identity_and_excess",
+      "cue": "Bananas overflowing a container.",
+      "cue_scope": "Established potassium-excess family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#hyperkalemia",
+      "reason": "Reuses the established hyperkalemia cue or explicitly selected ingredient. Source also spells hyperkalemia in bold on PDF19. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "hypokalemia",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "identity_and_deficit",
+      "cue": "Nearly empty transparent container holding only a few banana tokens.",
+      "cue_scope": "Established potassium-deficit family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#hypokalemia",
+      "reason": "Reuses the established hypokalemia cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "cardiac tamponade",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "constraint_relationship",
+      "cue": "Heart character squeezed in a tight transparent fluid-filled pouch.",
+      "cue_scope": "Established heart-constraint family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-12-cue-audit.json#cardiac tamponade",
+      "reason": "Reuses the established cardiac tamponade cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "tension pneumothorax",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#tension pneumothorax",
+      "reason": "Tried the established thoracic-air cue with taut fabric for tension. The added tension prop is ambiguous, so this modifier-specific candidate is held rather than silently dropping tension. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "coronary thrombosis",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "partial_name_and_obstruction",
+      "cue": "A crown beside a plug lodged in a transparent vessel model.",
+      "cue_scope": "Crown/coronary partial name bridge plus established obstruction token",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#pulmonary embolism",
+      "reason": "New lexical composition; crown is a learned partial association and does not show coronary anatomy or a thrombus mechanism. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary embolism",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading_and_body",
+      "kind": "location_and_obstruction",
+      "cue": "Plug lodged inside a vessel visibly running through a lung model, not an airway.",
+      "cue_scope": "Established pulmonary-vessel plug family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#pulmonary embolism",
+      "reason": "Reuses the established pulmonary embolism cue or explicitly selected ingredient.  Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "targeted temperature management",
+      "pdf_page": 21,
+      "page": 163,
+      "source_match": "heading_and_body",
+      "kind": "familiar_name_composition",
+      "cue": "A thermometer centered on an archery target.",
+      "cue_scope": "Target plus temperature headwords",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#targeted temperature management",
+      "reason": "New target/thermometer word composition; management is supplied by learned topic context, not a cooling method or a desired value. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "glycemic control",
+      "pdf_page": 21,
+      "page": 163,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A familiar sugar bowl beside a game controller.",
+      "cue_scope": "Sugar/glycemic learned category plus control wordplay",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#glycemic control",
+      "reason": "New familiar-object composition. Does not establish a glucose level, dietary claim, control target or treatment. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "neurologic assessment",
+      "pdf_page": 21,
+      "page": 163,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A generic brain teaching token beside an inspection magnifier.",
+      "cue_scope": "Neurologic category plus assessment/examination token",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#neurologic assessment",
+      "reason": "New learned brain/inspection composition, not an examination maneuver, prognostic test or anatomical completeness claim. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "selective aortic arch perfusion",
+      "pdf_page": 22,
+      "page": 164,
+      "source_match": "box_title",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#selective aortic arch perfusion",
+      "reason": "Tried a model arch with an ordinary pouring jug; selection and perfusion-name recovery remain too vague in this bounded pass. No source figure or vascular procedure copied. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "airway",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "figure_label",
+      "kind": "identity_and_obstruction",
+      "cue": "Freestanding windpipe teaching model, without a cork or blockage.",
+      "cue_scope": "Airway identity ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#airway obstruction",
+      "reason": "Reuses the established airway obstruction cue or explicitly selected ingredient. Drops the cork/obstruction modifier; retains only freestanding windpipe. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "breathing",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "figure_label",
+      "kind": "shared_primitive_name_composition",
+      "cue": "Recognizable bellows standing alone.",
+      "cue_scope": "Respiration ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#rescue breathing",
+      "reason": "Reuses the established rescue breathing cue or explicitly selected ingredient. Drops life ring/rescue qualifier; bellows is vocabulary, not breathing mechanics. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "circulation",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_name_composition",
+      "cue": "Freestanding circular loop of tubing beside a heart token.",
+      "cue_scope": "Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#circulation",
+      "reason": "Reuses the same-batch candidate after main reconciliation instead of counting a second discovery. Learned vocabulary only, not mechanism, protocol or outcome; recall remains untested.",
+      "tested": false
+    },
+    {
+      "term": "drug overdose",
+      "pdf_page": 20,
+      "page": 162,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A familiar medicine container overflowing with generic pill tokens.",
+      "cue_scope": "Drug category plus excess quantity metaphor",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#drug overdose",
+      "reason": "New lexical excess composition, not a dose threshold, specific drug identity, toxicity test or ingestion instruction. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "cardiac glycoside toxicity",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#cardiac glycoside toxicity",
+      "reason": "Tried a heart token with generic sticky sweets and a warning mark. Glycoside naming remains ambiguous and the pile does not earn retention. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "cocaine toxicity",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#cocaine toxicity",
+      "reason": "Tried a soda-can/coke name fragment with a warning mark. Household drink versus drug-name ambiguity is unresolved; no causal or clinical claim retained. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "sodium channel blockade",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "literal_class_name_composition",
+      "cue": "Salt shaker beside a tabletop water-channel model whose opening is stopped by a barrier.",
+      "cue_scope": "Established sodium/channel/block family, headword variant",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-19-cue-audit.json#sodium channel blockers",
+      "reason": "Reuses the established sodium channel blockers cue or explicitly selected ingredient. Blockade versus blockers is supplied by context, not a drug-action model. Vocabulary association only; no source clinical relationship, diagnosis, threshold, mechanism or intervention encoded.",
+      "tested": false
+    },
+    {
+      "term": "advanced cardiac life support",
+      "pdf_page": 13,
+      "page": 155,
+      "source_match": "heading",
+      "kind": "familiar_name_composition",
+      "cue": "A heart token resting in a life ring.",
+      "cue_scope": "Heart plus life-support category word association",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#rescue breathing",
+      "reason": "New broad familiar composition, not an algorithm, credential, protocol or exhaustive name rebus. Untested vocabulary only, not physiology, a diagnostic demonstration or instructions.",
+      "tested": false
+    },
+    {
+      "term": "ROSC",
+      "pdf_page": 15,
+      "page": 157,
+      "source_match": "body",
+      "kind": "partial_spoken_acronym_object",
+      "cue": "A familiar rose flower.",
+      "cue_scope": "Rose/ROSC partial learned spoken-name reminder within an identified ROSC topic",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#ROSC",
+      "reason": "Author reconsidered the initial returning-arrow/heart hold after the user proposed a rose. Rose can supply a familiar partial opening-sound association when the learner says ROSC as rosk; not exact homophony (rose commonly ends voiced z, rosk ends sk). Learners who spell R-O-S-C aloud need separate teaching. Flower alone can collide with ROS, rose/ros-names and other rose cues. Does not expand the acronym, encode return/spontaneity/circulation, assert a clinical outcome or uniquely identify a term without context. Initial rejected returning-arrow attempt remains documented here; this was a draft screen decision, not deletion of an older shared hold.",
+      "tested": false
+    },
+    {
+      "term": "Cardiac Arrest Sonographic Assessment",
+      "pdf_page": 17,
+      "page": 159,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Lexical name reminder not established",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#Cardiac Arrest Sonographic Assessment",
+      "reason": "Tried a handcuffed heart beside a sonar display; assessment and sonographic identity remain an untested compound rather than an economical selected cue. No assessment protocol or sonographic findings encoded. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
+      "tested": false
+    },
+    {
+      "term": "trauma",
+      "pdf_page": 19,
+      "page": 161,
+      "source_match": "body",
+      "kind": "familiar_injury_category",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad learned injury-category token",
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "New generic damage-category record, not an injury mechanism, specific event, anatomical finding or proof of trauma. Familiar damage needs taught vocabulary context; not claimed uniquely diagnostic.",
+      "tested": false
+    }
+  ],
+  "table_locations": {},
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "PyMuPDF span-font/size/flags inspection on every PDF11-22 page; bold flag16 and named Bold/Semibold/Black fonts reviewed, plus meaningful table/diagram labels and lexical words extracted from emphasized sentences. Boundary clipping excludes PDF11 left column/upper-right Chapter23 and PDF22 lower Chapter25. Source raster spot-checks PDF17/19/20 plus previously viewed boundaries. Items describe actual fonts, not inferred medical importance; table labels explicitly distinguished from bold. Repeated headwords are deduplicated by cue target. Greek beta and shared hyper-/hypokalemia suffix normalized; line-end hyphens joined. This is a typography-led editorial screen, not exhaustive all key concepts or all table cells, and not clinical validation. Additions and aliases await main independent audit.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotations on PDF11-22; no annotations of any type found. Flattened/background highlighting is not proved absent by annotation enumeration."
+    },
+    "items": [
+      {
+        "term": "extracorporeal membrane oxygenation",
+        "pdf_page": 12,
+        "page": 154,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "extracorporeal membrane oxygenation"
+      },
+      {
+        "term": "Chain of Survival",
+        "pdf_page": 12,
+        "page": 154,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "Chain of Survival"
+      },
+      {
+        "term": "Primary Survey",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "MinionPro-Bold 9pt body span split across two lines; also MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "Primary Survey"
+      },
+      {
+        "term": "Secondary Survey",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "Secondary Survey"
+      },
+      {
+        "term": "vascular access",
+        "pdf_page": 15,
+        "page": 157,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "vascular access"
+      },
+      {
+        "term": "pulseless electrical activity",
+        "pdf_page": 14,
+        "page": 156,
+        "emphasis": "MinionPro-Bold 9pt body span split pulseless electri-/cal activity (PEA)",
+        "entry_term": "pulseless electrical activity"
+      },
+      {
+        "term": "ventricular tachycardia",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading joined heading with pulseless qualifier",
+        "entry_term": "ventricular tachycardia"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 16,
+        "page": 158,
+        "emphasis": "MinionPro-Bold 9pt body span lexical word within emphasized clinical sentence",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "beta-blockers",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading; source Greek beta normalized to word beta",
+        "entry_term": "beta-blockers"
+      },
+      {
+        "term": "atropine",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-Bold 9pt run-in label and MinionPro-Bold 9pt body span",
+        "entry_term": "atropine"
+      },
+      {
+        "term": "calcium",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-Bold 9pt run-in label and MinionPro-Bold 9pt body span",
+        "entry_term": "calcium"
+      },
+      {
+        "term": "hypomagnesemia",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical word in emphasized sentence",
+        "entry_term": "hypomagnesemia"
+      },
+      {
+        "term": "hypocalcemia",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical word in emphasized sentence",
+        "entry_term": "hypocalcemia"
+      },
+      {
+        "term": "QTc prolongation",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt QT and prolongation; intervening subscript c is MinionPro-Regular 5.25pt.",
+        "entry_term": "QTc prolongation"
+      },
+      {
+        "term": "hypovolemia",
+        "pdf_page": 19,
+        "page": 161,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span differential list",
+        "entry_term": "hypovolemia"
+      },
+      {
+        "term": "hemorrhage",
+        "pdf_page": 19,
+        "page": 161,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span differential list (hem-/orrhage wrap)",
+        "entry_term": "hemorrhage"
+      },
+      {
+        "term": "hypoxia",
+        "pdf_page": 19,
+        "page": 161,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span differential list",
+        "entry_term": "hypoxia"
+      },
+      {
+        "term": "acidosis",
+        "pdf_page": 19,
+        "page": 161,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading within HYDROGEN ION (ACIDOSIS), also bold differential list",
+        "entry_term": "acidosis"
+      },
+      {
+        "term": "hyperkalemia",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading shared HYPER- OR HYPOKALEMIA heading; expanded shared suffix",
+        "entry_term": "hyperkalemia"
+      },
+      {
+        "term": "hypokalemia",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading shared HYPER- OR HYPOKALEMIA heading",
+        "entry_term": "hypokalemia"
+      },
+      {
+        "term": "cardiac tamponade",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "cardiac tamponade"
+      },
+      {
+        "term": "tension pneumothorax",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "tension pneumothorax"
+      },
+      {
+        "term": "coronary thrombosis",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "coronary thrombosis"
+      },
+      {
+        "term": "pulmonary embolism",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading parenthetic term in THROMBOSIS (PULMONARY EMBOLISM)",
+        "entry_term": "pulmonary embolism"
+      },
+      {
+        "term": "targeted temperature management",
+        "pdf_page": 21,
+        "page": 163,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading two-line heading",
+        "entry_term": "targeted temperature management"
+      },
+      {
+        "term": "glycemic control",
+        "pdf_page": 21,
+        "page": 163,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "glycemic control"
+      },
+      {
+        "term": "neurologic assessment",
+        "pdf_page": 21,
+        "page": 163,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "neurologic assessment"
+      },
+      {
+        "term": "selective aortic arch perfusion",
+        "pdf_page": 22,
+        "page": 164,
+        "emphasis": "MyriadPro-SemiboldCond 9pt Box2 title",
+        "entry_term": "selective aortic arch perfusion"
+      },
+      {
+        "term": "airway",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "HelveticaLTStd-Bold 8pt diagram label A Airway",
+        "entry_term": "airway"
+      },
+      {
+        "term": "breathing",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "HelveticaLTStd-Bold 8pt diagram label B Breathing",
+        "entry_term": "breathing"
+      },
+      {
+        "term": "circulation",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "HelveticaLTStd-Bold 8pt diagram label C Circulation",
+        "entry_term": "circulation"
+      },
+      {
+        "term": "drug overdose",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading parenthetic headword in TABLETS (DRUG OVERDOSE)",
+        "entry_term": "drug overdose"
+      },
+      {
+        "term": "cardiac glycoside toxicity",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical phrase in emphasized sentence",
+        "entry_term": "cardiac glycoside toxicity"
+      },
+      {
+        "term": "cocaine toxicity",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical phrase in emphasized sentence",
+        "entry_term": "cocaine toxicity"
+      },
+      {
+        "term": "sodium channel blockade",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical phrase in emphasized sentence",
+        "entry_term": "sodium channel blockade"
+      },
+      {
+        "term": "advanced cardiac life support",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "MyriadPro-BlackSemiCn 15pt two-line ACLS heading",
+        "entry_term": "advanced cardiac life support"
+      },
+      {
+        "term": "ROSC",
+        "pdf_page": 15,
+        "page": 157,
+        "emphasis": "MinionPro-Bold 9pt body span acronym ROSC",
+        "entry_term": "ROSC"
+      },
+      {
+        "term": "Cardiac Arrest Sonographic Assessment",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span full lexical name",
+        "entry_term": "Cardiac Arrest Sonographic Assessment"
+      },
+      {
+        "term": "chest compressions",
+        "pdf_page": 11,
+        "page": 153,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "chest compressions"
+      },
+      {
+        "term": "defibrillation",
+        "pdf_page": 11,
+        "page": 153,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "defibrillation"
+      },
+      {
+        "term": "capnography",
+        "pdf_page": 11,
+        "page": 153,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading shared OXYGENATION AND CAPNOGRAPHY heading",
+        "entry_term": "capnography"
+      },
+      {
+        "term": "asystole",
+        "pdf_page": 14,
+        "page": 156,
+        "emphasis": "MinionPro-Bold 9pt body span",
+        "entry_term": "asystole"
+      },
+      {
+        "term": "ventricular fibrillation",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading expanded VF also bold PDF14",
+        "entry_term": "ventricular fibrillation"
+      },
+      {
+        "term": "epinephrine",
+        "pdf_page": 16,
+        "page": 158,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span",
+        "entry_term": "epinephrine"
+      },
+      {
+        "term": "amiodarone",
+        "pdf_page": 16,
+        "page": 158,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span",
+        "entry_term": "amiodarone"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 16,
+        "page": 158,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading (LIGNOCAINE) and MinionPro-Bold 9pt body span",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "magnesium",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading and MinionPro-Bold 9pt body span",
+        "entry_term": "magnesium"
+      },
+      {
+        "term": "sodium bicarbonate",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-Bold 9pt run-in label",
+        "entry_term": "sodium bicarbonate"
+      },
+      {
+        "term": "vasopressin",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MyriadPro-Bold 9pt run-in label; reconciliation remains main-owned",
+        "entry_term": "vasopressin"
+      },
+      {
+        "term": "torsades de pointes",
+        "pdf_page": 17,
+        "page": 159,
+        "emphasis": "MinionPro-Bold 9pt body span lexical phrase",
+        "entry_term": "torsades de pointes"
+      },
+      {
+        "term": "hypothermia",
+        "pdf_page": 20,
+        "page": 162,
+        "emphasis": "MyriadPro-SemiboldCond 11pt heading",
+        "entry_term": "hypothermia"
+      },
+      {
+        "term": "cardiac arrest",
+        "pdf_page": 13,
+        "page": 155,
+        "emphasis": "HelveticaLTStd-Bold 8pt diagram title",
+        "entry_term": "cardiac arrest"
+      },
+      {
+        "term": "oxygen",
+        "pdf_page": 15,
+        "page": 157,
+        "emphasis": "Unformatted MyriadPro-Cond 9pt Table24-1 lexical label; not bold",
+        "entry_term": "oxygen"
+      },
+      {
+        "term": "trauma",
+        "pdf_page": 19,
+        "page": 161,
+        "emphasis": "MinionPro-Bold 9pt lexical word in H/T differential list",
+        "entry_term": "trauma"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "description": "Running chapter/section headers, page numbers, chapter-number badges, authors and figure/caption numbering throughout PDF11-22",
+        "pdf_page": 11,
+        "reason": "Navigation, attribution and formatting, not lexical cue targets; shared-page Chapter23 excluded above/beside actual title."
+      },
+      {
+        "description": "Introduction, Epidemiology, Drugs, Social Media and Education, Post-ROSC Care",
+        "pdf_page": 12,
+        "reason": "Broad organizational/care headings screened but not additional discrete medical vocabulary in this pass; no full care clause held."
+      },
+      {
+        "description": "Bold Chain-of-Survival component sentence",
+        "pdf_page": 12,
+        "reason": "Only lexical Chain of Survival/cardiac-arrest and defibrillation family targets retained; sequence and clinical recommendations excluded."
+      },
+      {
+        "description": "Bold shock-delivery instruction and dose/time strings in algorithm artwork",
+        "pdf_page": 14,
+        "reason": "Action clauses and numeric instructions are not term candidates; VF/VT, asystole, PEA and chest-compression words screened separately."
+      },
+      {
+        "description": "Table24-1 Component and Function / Detailed Components headings",
+        "pdf_page": 15,
+        "reason": "Table structure; medical airway/breathing/circulation words screened separately without their instructions."
+      },
+      {
+        "description": "Bold medication-use statements",
+        "pdf_page": 16,
+        "reason": "Extracted named lexical drug/rhythm words only; treatment assertions, qualifiers, doses and whole statements not copied or made holds."
+      },
+      {
+        "description": "Bold magnesium/calcium/bicarbonate indication and recommendation sentences",
+        "pdf_page": 17,
+        "reason": "Lexical deficiency, QT, toxicity and blockade words tried; clinical relationships and numeric instructions excluded."
+      },
+      {
+        "description": "Common Cardiac Arrest Algorithms / Differential Diagnoses headings and H/T mnemonic letters",
+        "pdf_page": 19,
+        "reason": "Workflow umbrellas and list lettering, not new names; underlying lexical conditions each tried."
+      },
+      {
+        "description": "Hemodynamic Management, Oxygenation and Ventilation, Advanced Resuscitation Techniques",
+        "pdf_page": 20,
+        "reason": "Broad care headings are not reproduced as protocols; oxygen/breathing/circulation family vocabulary supplies bounded ingredient trials."
+      },
+      {
+        "description": "Table1 indications/contraindications column labels and Box/figure identifiers",
+        "pdf_page": 21,
+        "reason": "Generic organizational labels and criteria columns excluded; ECMO lexical name screened, no eligibility thresholds imported."
+      },
+      {
+        "description": "Chapter24 references notice and lower Chapter25 title/authors",
+        "pdf_page": 22,
+        "reason": "Reference navigation or outside actual Chapter24 boundary; not Chapter24 term candidates."
+      }
+    ]
+  }
+}

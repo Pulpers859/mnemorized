@@ -15,6 +15,8 @@ ROOT = Path(__file__).resolve().parents[1]
     (11, 1, 5, 52), (12, 5, 11, 52), (13, 11, 16, 52),
     (14, 16, 21, 52), (15, 21, 26, 52), (16, 26, 29, 52),
     (17, 29, 47, 52), (18, 47, 71, 52), (19, 71, 81, 52),
+    (20, 81, 85, 52), (21, 85, 89, 52), (22, 1, 6, 142),
+    (23, 7, 11, 142), (24, 11, 22, 142), (25, 22, 27, 142),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
@@ -26,6 +28,12 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     assert bank["source"]["pdf_pages"] == list(range(start, end + 1))
     assert bank["source"]["printed_pages"] == list(range(start + offset, end + offset + 1))
     assert len(bank["source"]["sha256"]) == 64
+    source_files = {
+        18: ("Tintin_Disaster Management.pdf", "9820446fab820addfcf4a3024439cc12aacba6279be29ed47e84361ca2ac4e82"),
+        52: ("Tintin_Resuscitation.pdf", "d644c7ff121f44da8684b9c5cb3e0e69c5b66aa391dd5bcb9d5e4789023c3b69"),
+        142: ("Tintin_Resuscitation Procedures.pdf", "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689"),
+    }
+    assert (bank["source"]["file"], bank["source"]["sha256"].lower()) == source_files[offset]
     entries = bank["entries"]
     assert len(entries) == len({e["term"].casefold() for e in entries}) == record["selected_terms"]
     decisions = Counter(e["decision"] for e in entries)
@@ -38,7 +46,7 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
         assert entry["pdf_page"] in bank["source"]["pdf_pages"]
         assert entry["tested"] is False
         assert entry["cue_scope"].strip() and entry["reason"].strip()
-        assert entry["source_match"] in {"body", "table", "heading_and_body", "heading", "table_and_body"}
+        assert entry["source_match"] in {"body", "table", "heading_and_body", "heading", "table_and_body", "chapter_title", "box_title", "figure_label"}
         if entry["decision"] != "hold":
             assert entry["cue"].strip()
         if entry["decision"] == "reuse_candidate":

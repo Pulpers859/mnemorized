@@ -61,6 +61,16 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
   `tests/test_chapter_cue_holds.py`. Record explicit resolutions in the source
   bank's `resolved_holds`; do not erase an older hold merely because another
   chapter retained the term. Keep historical reasons for later reconsideration.
+- Chapter cue scans must explicitly try meaningful bolded, highlighted and
+  heading/table key terms, not only a short convenient selection. Check actual
+  chapter regions and PDF typography/highlight annotations. Save a
+  `keyword_screen` mapping tried terms to entries (candidate/reuse/hold), plus
+  reasons for excluding formatting, full clinical statements and numeric
+  instructions after extracting their meaningful lexical headwords. Do not
+  use a whole-sentence exclusion to skip a medical term inside it.
+  Record typography-extraction limits honestly; this is not
+  proof of exhaustive chapter or clinical coverage. All holds still join the
+  revisit register. Earlier chapter samples are not retroactively complete.
 
 - Never pursue a single perfect example as a substitute for held-out reliability.
 - Paid research requires an explicit task-wide budget and a saved call/render plan.

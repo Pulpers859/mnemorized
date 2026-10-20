@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked vocabulary/page locations, chapter boundaries, source emphasis spot-checks and cue scope/reuse. Original author-pending statements below are chronological draft notes superseded by this review. No clinical, human expert, recall or render validation.", "highlight_annotations_found": 0, "normalizations": "Line-wrap hyphens, beta and punctuation normalized. Chapter23 wet surface expands wet or conducting surface; Chapter25 calcium gluconate expands Calcium chloride or gluconate; blood volume also appears as blood and plasma volume. Shared-word expansions are not contiguous quotations.", "family_collision_warning": "Qualify co-occurring family cues such as atrial/ventricular fibrillation, calcium salts or gangrene subtypes; family reuse is not exact subtype discrimination.", "counts": {"selected_terms": 44, "new_candidates": 34, "reused_candidates": 9, "holds": 1}, "keyword_items": 42},
+  "chapter_id": "23",
+  "title": "Defibrillation and Electrical Cardioversion",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [7,8,9,10,11],
+    "printed_pages": [149,150,151,152,153],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter23 title upper left PDF7/printed149. Ends PDF11/printed153 after left-column continuation, Figure23-8 and acknowledgments continuing at upper right, then right-column REFERENCES and online-list notice above actual Chapter24 Cardiac Resuscitation title. Below that title in right column is excluded; left-column Chapter23 material is retained despite Chapter24 running header.",
+    "verification": "Author checked hash, selected term/page text and full boundary-page rasterizations PDF7 and PDF11. Independent main audit remains pending. Vocabulary location only, not clinical facts, current guidance or cue effectiveness."
+  },
+  "scope": "44 offline vocabulary entries: 34 retained candidates, 9 reuses and 1 holds after main integration on 2026-10-20. Typography/key-term screen included; not exhaustive concepts, clinical teaching, measured recall or image prompts.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "Offline PyMuPDF 1.27.2.3 span/font screen of actual chapter bounds; inspected Bold, Semibold and Black font families and bold flags, lexical nouns/phrases within emphasized body statements, and meaningful table labels. Evidence strings give actual font, point size and source-span bounding box (PDF points); wrapped words/separators normalized only when visibly supported. Full-page raster spot checks PDF2/3/5/6/7/8/10/11, with all 11 page rasters saved locally. No PDF annotations on any assigned page; colored publisher headings/table shading are typography, not user highlights. Unformatted table trials are labeled separately, not falsely called bold. This is not exhaustive extraction of all key medical concepts, a salience ranking, or clinical/recall validation; expanded entries await main's independent keyword audit.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotation types on PDF7-11: zero annotations of any kind, including highlights. Chapter23 boundary enforced on PDF11."
+    },
+    "items": [
+      {
+        "term": "manual defibrillators",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold named equipment; MinionPro-Bold 9pt bbox [333,121.9,413.9,134.3]; lexical selection from span",
+        "entry_term": "manual defibrillators"
+      },
+      {
+        "term": "automated external defibrillators",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold named equipment; MinionPro-Bold 9pt bbox [333,151.9,460.4,164.3]; lexical selection from span",
+        "entry_term": "automated external defibrillators"
+      },
+      {
+        "term": "cradles",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold named equipment; MinionPro-Bold 9pt bbox [491.4,211.9,518.1,224.3]; lexical selection from span",
+        "entry_term": "cradles"
+      },
+      {
+        "term": "conductive gel",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold named material; MinionPro-Bold 9pt bbox [507,271.9,559.5,284.3]; lexical selection from span",
+        "entry_term": "conductive gel"
+      },
+      {
+        "term": "gel pads",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold named material split to next line pads; MinionPro-Bold 9pt bbox [571.4,271.9,583.9,284.3]; lexical selection from span",
+        "entry_term": "gel pads"
+      },
+      {
+        "term": "metallic objects",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold body phrase split to next line; MinionPro-Bold 9pt bbox [257.6,519,290,531.4]; lexical selection from span",
+        "entry_term": "metallic objects"
+      },
+      {
+        "term": "jewelry",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold body term; MinionPro-Bold 9pt bbox [30,529,89.9,541.4]; lexical selection from span",
+        "entry_term": "jewelry"
+      },
+      {
+        "term": "medication patches",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold body term; MinionPro-Bold 9pt bbox [102.5,529,175.6,541.4]; lexical selection from span",
+        "entry_term": "medication patches"
+      },
+      {
+        "term": "chest hair",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold body term; MinionPro-Bold 9pt bbox [72.1,539,108.6,551.4]; lexical selection from span",
+        "entry_term": "chest hair"
+      },
+      {
+        "term": "conducting surface",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "lexical phrase within bold body; MinionPro-Bold 9pt bbox [106.9,559,205.3,571.4]; lexical selection from span",
+        "entry_term": "conducting surface"
+      },
+      {
+        "term": "anteroapical position",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold named position; MinionPro-Bold 9pt bbox [38.4,648,127.2,660.4]; lexical selection from span",
+        "entry_term": "anteroapical position"
+      },
+      {
+        "term": "anteroposterior position",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold named position; MinionPro-Bold 9pt bbox [308.4,246,409.1,258.4]; lexical selection from span",
+        "entry_term": "anteroposterior position"
+      },
+      {
+        "term": "anesthesia",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "lexical noun from black heading; MyriadPro-BlackSemiCn 12pt bbox [54.1,289.5,296.1,304.4]; lexical selection from span",
+        "entry_term": "anesthesia"
+      },
+      {
+        "term": "procedural monitoring",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "lexical phrase from black heading; MyriadPro-BlackSemiCn 12pt bbox [54.1,289.5,296.1,304.4]; lexical selection from span",
+        "entry_term": "procedural monitoring"
+      },
+      {
+        "term": "rhythm monitoring electrodes",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "bold named equipment within step; MinionPro-Bold 9pt bbox [170.9,545.7,285.9,558.2]; lexical selection from span",
+        "entry_term": "rhythm monitoring electrodes"
+      },
+      {
+        "term": "energy level",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "bold lexical phrase within step; MinionPro-Bold 9pt bbox [148.2,647.7,192.5,660.2]; lexical selection from span",
+        "entry_term": "energy level"
+      },
+      {
+        "term": "unsynchronized",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "bold timing adjective; MinionPro-Bold 9pt bbox [189,730.7,249.7,743.2]; lexical selection from span",
+        "entry_term": "unsynchronized"
+      },
+      {
+        "term": "charge",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "bold electrical headword within step; MinionPro-Bold 9pt bbox [486.4,289.8,511.3,302.2]; lexical selection from span | MinionPro-Bold 9pt bbox [465.9,589.8,543.9,602.2]; lexical selection from span",
+        "entry_term": "charge"
+      },
+      {
+        "term": "shock",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "lexical noun extracted from bold operation phrase; MinionPro-Bold 9pt bbox [399.6,365.1,465.5,377.5]; lexical selection from span | MinionPro-Bold 9pt bbox [336.4,694.8,404.4,707.2]; lexical selection from span",
+        "entry_term": "shock"
+      },
+      {
+        "term": "wide irregular",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "bold lexical modifier pair within step; MinionPro-Bold 9pt bbox [123.2,245.8,177.4,258.3]; lexical selection from span",
+        "entry_term": "wide irregular"
+      },
+      {
+        "term": "overdrive pacing",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "bold named term; MinionPro-Bold 9pt bbox [75,403.8,137.9,416.3]; lexical selection from span",
+        "entry_term": "overdrive pacing"
+      },
+      {
+        "term": "cardiac arrest",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "bold named term within step; MinionPro-Bold 9pt bbox [131.1,416.8,183.1,429.3]; lexical selection from span",
+        "entry_term": "cardiac arrest"
+      },
+      {
+        "term": "internal defibrillation",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "semibold named subheading; MyriadPro-SemiboldCond 11pt bbox [44.1,662.6,144.4,675.8]; lexical selection from span",
+        "entry_term": "internal defibrillation"
+      },
+      {
+        "term": "pediatric defibrillation",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "semibold named subheading; MyriadPro-SemiboldCond 11pt bbox [314.1,304,416.4,317.1]; lexical selection from span",
+        "entry_term": "pediatric defibrillation"
+      },
+      {
+        "term": "hands-on defibrillation",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "semibold named subheading; MyriadPro-SemiboldCond 11pt bbox [314.1,713,417.5,726.1]; lexical selection from span",
+        "entry_term": "hands-on defibrillation"
+      },
+      {
+        "term": "double sequential defibrillation",
+        "pdf_page": 11,
+        "page": 153,
+        "emphasis": "semibold named subheading; left column retained; MyriadPro-SemiboldCond 11pt bbox [68.1,587.4,209.2,600.6]; lexical selection from span",
+        "entry_term": "double sequential defibrillation"
+      },
+      {
+        "term": "wet surface",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "lexical phrase from coordinated bold body wording; MinionPro-Bold 9pt bbox [106.9,559,205.3,571.4]; lexical selection from span",
+        "entry_term": "wet surface"
+      },
+      {
+        "term": "skin preparation",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "lexical phrase from black heading; MyriadPro-BlackSemiCn 12pt bbox [30.1,467.2,283.2,482.2]; lexical selection from span",
+        "entry_term": "skin preparation"
+      },
+      {
+        "term": "high-performance CPR",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "lexical phrase from black heading; MyriadPro-BlackSemiCn 12pt bbox [300.1,510.9,541.9,525.9]; lexical selection from span",
+        "entry_term": "high-performance CPR"
+      },
+      {
+        "term": "defibrillation",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold opening headword and black title; decision reserved to main; MyriadPro-BlackSemiCn 17pt bbox [115,36.8,314.5,58]; lexical selection from span | MinionPro-Bold 9pt bbox [54,156.5,106.1,169]; lexical selection from span",
+        "entry_term": "defibrillation"
+      },
+      {
+        "term": "electrical cardioversion",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold opening headword and black title; MinionPro-Bold 9pt bbox [63,206.5,153.7,219]; lexical selection from span",
+        "entry_term": "electrical cardioversion"
+      },
+      {
+        "term": "monophasic",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold body headword; MinionPro-Bold 9pt bbox [133,462.5,178.9,475]; lexical selection from span",
+        "entry_term": "monophasic"
+      },
+      {
+        "term": "biphasic",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold body headword; MinionPro-Bold 9pt bbox [191,462.5,222.3,475]; lexical selection from span",
+        "entry_term": "biphasic"
+      },
+      {
+        "term": "manual paddles",
+        "pdf_page": 7,
+        "page": 149,
+        "emphasis": "bold equipment phrase; paddles-family alias; MinionPro-Bold 9pt bbox [376.9,211.9,437.2,224.3]; lexical selection from span",
+        "entry_term": "paddles"
+      },
+      {
+        "term": "adhesive pads",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "bold body headword; MinionPro-Bold 9pt bbox [30,246,83.9,258.4]; lexical selection from span",
+        "entry_term": "adhesive pads"
+      },
+      {
+        "term": "oxygen",
+        "pdf_page": 8,
+        "page": 150,
+        "emphasis": "lexical noun within bold body phrase; MinionPro-Bold 9pt bbox [102.7,589,193.2,601.4]; lexical selection from span",
+        "entry_term": "oxygen"
+      },
+      {
+        "term": "synchronized",
+        "pdf_page": 10,
+        "page": 152,
+        "emphasis": "bold body adjective and semibold subheading; MyriadPro-SemiboldCond 11pt bbox [44.1,98.1,215.4,111.3]; lexical selection from span | MinionPro-Bold 9pt bbox [165,182.8,215.6,195.3]; lexical selection from span | MinionPro-Bold 9pt bbox [188.9,426.8,249.7,439.3]; lexical selection from span",
+        "entry_term": "synchronized"
+      },
+      {
+        "term": "defibrillation pads",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "bold named equipment within step; pads-family alias; MinionPro-Bold 9pt bbox [454.1,504.6,521.2,517]; lexical selection from span",
+        "entry_term": "adhesive pads"
+      },
+      {
+        "term": "manual defibrillation",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "semibold subheading; manual equipment-family alias, not a new procedure decision; MyriadPro-SemiboldCond 11pt bbox [68.1,507,163.9,520.2]; lexical selection from span",
+        "entry_term": "manual defibrillators"
+      },
+      {
+        "term": "automated external defibrillation",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "semibold subheading; device-family alias, not a new procedure decision; MyriadPro-SemiboldCond 11pt bbox [338.1,443.3,487.5,456.5]; lexical selection from span",
+        "entry_term": "automated external defibrillators"
+      },
+      {
+        "term": "rhythm",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "lexical noun from bold operation phrase split across lines; MinionPro-Bold 9pt bbox [69,611.7,111.4,624.2]; lexical selection from span",
+        "entry_term": "rhythm"
+      },
+      {
+        "term": "CPR",
+        "pdf_page": 9,
+        "page": 151,
+        "emphasis": "lexical abbreviation within bold operation statement; cross-chapter family link only; MinionPro-Bold 9pt bbox [267.2,522.7,314,535.2]; lexical selection from span | MinionPro-Bold 9pt bbox [537.2,459,584,471.4]; lexical selection from span",
+        "entry_term": "docs/chapter-22-cue-audit.json#cardiopulmonary resuscitation"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "description": "Authors, chapter number, running header, figure numbers and A/B labels",
+        "pdf_page": 7,
+        "reason": "Metadata and navigation, not vocabulary targets."
+      },
+      {
+        "description": "PURPOSE OF PROCEDURE; PATIENT SELECTION; EQUIPMENT; Safety",
+        "pdf_page": 7,
+        "reason": "Organizational or generic caution labels, not extra medical lexical targets; named equipment and material nouns screened separately."
+      },
+      {
+        "description": "Scene-is-safe and direct-sources instruction wording; placement wrapper",
+        "pdf_page": 8,
+        "reason": "Ordinary caution/command wording not full-clause candidates; oxygen, materials and named positions extracted separately."
+      },
+      {
+        "description": "Running header, figure references and caption/panel numbering",
+        "pdf_page": 8,
+        "reason": "Formatting rather than lexical targets."
+      },
+      {
+        "description": "STEP-BY-STEP TECHNIQUE; CPR-continuation/resumption commands; turn on; analyze; stand clear; deliver",
+        "pdf_page": 9,
+        "reason": "Ordinary operation verbs and whole instructions excluded; rhythm-monitoring electrodes, energy level, timing adjective, charge, pads and shock extracted separately."
+      },
+      {
+        "description": "Running header, figure references and caption/panel numbering",
+        "pdf_page": 9,
+        "reason": "Formatting rather than lexical targets."
+      },
+      {
+        "description": "Reassess, successfully, increase, immediately; numerical energy prescriptions",
+        "pdf_page": 10,
+        "reason": "Ordinary operations/results and doses excluded; energy level and other lexical terms screened separately."
+      },
+      {
+        "description": "RISKS AND PRECAUTIONS; SPECIAL SITUATIONS",
+        "pdf_page": 10,
+        "reason": "Organizational headings, not medical term phrases; named subheadings screened separately."
+      },
+      {
+        "description": "Running header, figure references and caption/panel numbering",
+        "pdf_page": 10,
+        "reason": "Formatting rather than lexical targets."
+      },
+      {
+        "description": "Chapter24 running header; author acknowledgments; REFERENCES and online-list notice",
+        "pdf_page": 11,
+        "reason": "Not Chapter23 lexical terms; left-column named Chapter23 subheading is screened."
+      },
+      {
+        "description": "Actual Chapter24 title and all right-column material below it",
+        "pdf_page": 11,
+        "reason": "Outside Chapter23 boundary at right-column y=165.9pt; excluded even though same PDF page."
+      }
+    ]
+  },
+  "production_admitted": false,
+  "source_wording_notes": {
+    "electrical cardioversion": "Exact full phrase in opening prose printed149, also represented in chapter title.",
+    "ventricular tachycardia": "Exact unqualified phrase in opening prose printed149; other instances have additional qualifiers not imported here.",
+    "atrial fibrillation": "Opening patient-selection paragraph printed149 wraps fibrilla- / tion; discretionary line-end hyphen joined for term match.",
+    "synchronized": "Exact standalone adjective in opening prose printed149; not inferred from unsynchronized occurrences elsewhere.",
+    "monophasic": "Exact adjective in equipment prose printed149; headword only, not waveform instruction.",
+    "biphasic": "Exact adjective in same equipment prose printed149.",
+    "paddles": "Exact equipment prose headword printed149; detached equipment identity checked visually in Figure23-3, without copying handling/placement scenes.",
+    "adhesive pads": "Exact opening prose words printed150; selected occurrence is not a running header or caption.",
+    "oxygen": "Exact standalone equipment-list word printed151, not oxygenation.",
+    "metronome": "Exact headword in metronome beats printed152, above synchronized-cardioversion heading; no tempo value selected."
+  },
+  "entries": [
+    {
+      "term": "defibrillation",
+      "pdf_page": 7,
+      "page": 149,
+      "source_match": "heading_and_body",
+      "kind": "familiar_equipment_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Learned electrical-defibrillator family cue, not procedure-mode discrimination",
+      "decision": "retain_candidate",
+      "prior": "Main proposal separately challenged by an independent AI reviewer; historical Chapter1 hold preserved.",
+      "reason": "Recognizable equipment plus electrical token supports a learned family cue under the broad PPE/bellows standard. Paddles must not resemble irons; bolt stays secondary. No patient, application, ECG transition, dose, restart or outcome claim. Shared cardioversion use limits specificity, not eligibility. No rendered recognition evidence; historical Chapter1 hold is not automatically resolved.",
+      "tested": false
+    },
+    {"term":"electrical cardioversion","pdf_page":7,"page":149,"source_match":"heading_and_body","kind":"unresolved","cue":null,"cue_scope":"Procedure name","decision":"hold","prior":"docs/chapter-1-cue-audit.json#defibrillation","reason":"New unresolved target, linked to existing electrical-procedure collision rather than a prior exact-term hold. Generic spark plus heart does not offer a clearer learned name association in this pass. Synchronized token below is vocabulary, not a mechanism-based substitute for procedure identity.","tested":false},
+    {"term":"ventricular fibrillation","pdf_page":7,"page":149,"source_match":"body","kind":"learned_root_object","cue":"A loose fringe of fine fibers beside a heart token.","cue_scope":"Fibril/fiber family reminder within an identified ventricular-fibrillation lesson","decision":"reuse_candidate","prior":"docs/chapter-18-cue-audit.json#atrial fibrillation","reason":"Explicit reuse of existing fibrillation family cue, not a new ventricular primitive. Ventricular qualifier is supplied by learned context, not encoded in fibers. Does not distinguish atrial/ventricular location or depict physiology, rhythm traces or therapy. If both atrial and ventricular fibrillation appear in one lesson, add explicit distinct learned qualifiers; identical fiber-plus-heart props do not distinguish the terms.","tested":false},
+    {"term":"ventricular tachycardia","pdf_page":7,"page":149,"source_match":"body","kind":"familiar_speed_category","cue":"Heart character sprinting with conspicuous speed streaks.","cue_scope":"Fast-heart family reminder within an identified ventricular-tachycardia lesson","decision":"reuse_candidate","prior":"docs/chapter-18-cue-audit.json#tachycardia","reason":"Reuses Chapter13/18 family, not a new ventricular composition. Does not encode ventricular origin, pulse status, subtype, rate, ECG or treatment; specificity comes from learned lesson context.","tested":false},
+    {"term":"atrial flutter","pdf_page":7,"page":149,"source_match":"body","kind":"shared_word_action","cue":"Conspicuously fluttering cloth pennant beside a heart token.","cue_scope":"Flutter headword within an identified atrial-rhythm lesson","decision":"reuse_candidate","prior":"docs/chapter-18-cue-audit.json#atrial flutter","reason":"Same established heart/flutter family; atrial qualifier requires context. No physiological animation, rhythm morphology or effect encoded.","tested":false},
+    {"term":"atrial fibrillation","pdf_page":7,"page":149,"source_match":"body","kind":"learned_root_object","cue":"A loose fringe of fine fibers beside a heart token.","cue_scope":"Fiber/fibril root reminder within an atrial-fibrillation lesson","decision":"reuse_candidate","prior":"docs/chapter-18-cue-audit.json#atrial fibrillation","reason":"Same cue as prior bank and ventricular-family row here, intentionally not distinguished by arbitrary new props. Learned context supplies qualifier; not a clinical distinction or mechanism. If both atrial and ventricular fibrillation appear in one lesson, add explicit distinct learned qualifiers; identical fiber-plus-heart props do not distinguish the terms.","tested":false},
+    {"term":"synchronized","pdf_page":7,"page":149,"source_match":"body","kind":"familiar_timing_relationship","cue":"Two matching metronomes with their pendulums aligned in the same position and matching motion marks.","cue_scope":"Together-in-time category","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#metronome","reason":"New relationship composition using the familiar metronome object, not two new primitives. Still image may only suggest alignment; synchrony needs learned interpretation. No ECG, triggering point, timing parameter or procedure sequence.","tested":false},
+    {"term":"monophasic","pdf_page":7,"page":149,"source_match":"body","kind":"learned_prefix_category","cue":"Single moon-phase teaching tile showing a crescent, standing alone.","cue_scope":"Mono/one plus familiar phase token","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#biphasic","reason":"New paired category composition, not an electrical waveform. Moon-phase recognition and mapping phase to this headword require teaching; no direction of current, energy, efficacy or device recommendation encoded.","tested":false},
+    {"term":"biphasic","pdf_page":7,"page":149,"source_match":"body","kind":"learned_prefix_category","cue":"Two adjacent moon-phase teaching tiles, one crescent and one full moon.","cue_scope":"Bi/two plus same phase token","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#monophasic","reason":"New contrast composition reusing moon-phase tile, not a second phase primitive. Generic one/two-phase naming reminder, not a claim of astronomical analogy to electricity, two shocks, current direction, timing or benefit.","tested":false},
+    {"term":"paddles","pdf_page":7,"page":149,"source_match":"body","kind":"familiar_equipment_category","cue":"Pair of recognizable detached handheld defibrillator paddles on an otherwise empty surface.","cue_scope":"Paddles equipment-name category in an identified chapter context","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#adhesive pads","reason":"New equipment record, no claim of inventing device imagery. Source figure checked for identity only. No patient, hand grip, contact, placement, sparks or treatment-effect scene; equipment is not promoted as a resolution of the defibrillation hold.","tested":false},
+    {"term":"adhesive pads","pdf_page":8,"page":150,"source_match":"body","kind":"familiar_object_and_property","cue":"Flat adhesive pad with a release backing visibly peeled at one corner, resting unattached.","cue_scope":"Pad plus sticking/backing category","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#paddles","reason":"New familiar-object record; no whole-term match located in checked prior inventories. Context supplies medical equipment identity. No body, pad position, connection, relative advantage, contact standard or handling instruction.","tested":false},
+    {"term":"oxygen","pdf_page":9,"page":151,"source_match":"body","kind":"familiar_identity_token","cue":"Recognizable oxygen cylinder standing alone.","cue_scope":"Oxygen identity token","decision":"reuse_candidate","prior":"docs/chapter-22-cue-audit.json#oxygen","reason":"Same standalone record and Chapter7/13 oxygen primitive. No dose, chamber, flow, hazard, efficacy or delivery instruction. Chapter21 reconciliation remains for main because its bank was unavailable during this pass.","tested":false},
+    {"term":"pulse oximetry","pdf_page":9,"page":151,"source_match":"body","kind":"familiar_device_category","cue":"Recognizable finger-clip pulse oximeter with an unnumbered display.","cue_scope":"Familiar device/category association","decision":"reuse_candidate","prior":"docs/chapter-16-cue-audit.json#pulse oximetry","reason":"Preserves established device cue without numbers, placement instructions, interpretation or clinical recommendation.","tested":false},
+    {"term":"metronome","pdf_page":10,"page":152,"source_match":"body","kind":"familiar_object","cue":"Recognizable mechanical metronome with pendulum and no readable scale.","cue_scope":"Metronome object identity","decision":"retain_candidate","prior":"docs/chapter-23-cue-audit.json#synchronized","reason":"New familiar-object record reused within synchronization composition. No tempo, compression cadence, target value or device-performance claim.","tested":false},
+    {"term":"manual defibrillators","pdf_page":7,"page":149,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Recognizable manual defibrillator console beside detached paddles.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar equipment-family identity; manual/model specificity requires learning, not operation or procedure discrimination. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"automated external defibrillators","pdf_page":7,"page":149,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Recognizable closed AED case with unattached pad pair and a small gear token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/chapter-22-cue-audit.json#automatic external defibrillator","reason":"Same learned AED category as Chapter22 automatic wording; no device operation or benefit. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"cradles","pdf_page":7,"page":149,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Pair of empty molded equipment docks beside a small toy cradle.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar cradle/docking word-family bridge; equipment context required, no storage or handling instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"conductive gel","pdf_page":7,"page":149,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Clear gel blob beside a detached lightning-bolt token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned gel/electrical family; no actual current, contact, efficacy, quantity or application claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"gel pads","pdf_page":7,"page":149,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Unattached soft pad beside a clear gel blob.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar material/object composition distinct from peeled adhesive backing; not interchangeability or use. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"metallic objects","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Recognizable polished metal key and spoon on an empty surface.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar material/category cue; not a clinical hazard, removal or preparation instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"jewelry","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached necklace and ring on a display surface.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar object category only; no patient or instruction to remove. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"medication patches","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Unattached patch with peeled backing beside a medicine-bottle token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned medication plus patch, not a drug identity, dose, application or removal instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"chest hair","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Toy treasure chest bearing a conspicuous tuft of hair.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar chest double meaning plus hair; not a patient, shaving recommendation or preparation. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"conducting surface","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached metal tabletop tile beside a lightning-bolt token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned electrical-conducting surface category, not a demonstration, safety claim or use condition. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"anteroapical position","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Freestanding front-view mannequin token beside a detached cone with its apex conspicuous.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned anterior/front plus apical/apex name components, with a conspicuous front qualifier rather than relying on a cone's orientation. Not a placement diagram or anatomical target. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"anteroposterior position","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Paired freestanding front-view and back-view mannequin tokens.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar front/back relationship learned as antero/posterior; no pad positions, body contacts or efficacy comparison. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"anesthesia","pdf_page":9,"page":151,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Sleep mask beside a freestanding sensory-mute symbol.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Broad learned anesthesia family, not equivalence to sleep, anesthesia depth, drug or clinical recommendation. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"procedural monitoring","pdf_page":9,"page":151,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Blank bedside monitor beside a conspicuous watchful-eye token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar monitoring category; procedural qualifier supplied by context, no readings or adequacy claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"rhythm monitoring electrodes","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Unattached wired electrode discs beside a blank monitor and metronome.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned electrodes/monitor/rhythm components; not connections, rhythm morphology or procedure steps. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"energy level","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Battery icon with an unnumbered level bar.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar energy/level metaphor, not a shock dose, setting, calibration or battery-equivalence claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"unsynchronized","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Two metronomes with pendulums pointing in visibly different directions.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Contrast to paired aligned metronomes; still image only suggests lack of synchrony. No ECG, triggering or delivery rule. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"charge","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached battery and lightning-bolt tokens.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar electrical-charge category; no button press, numerical setting, readiness or shock-delivery claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"shock","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Detached conspicuous lightning-bolt token on an empty surface.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Broad learned electrical-shock family only, not a defibrillation procedure cue, patient injury, delivery or outcome. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"wide irregular","pdf_page":10,"page":152,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Broad rectangular tokens spaced in an obviously uneven row.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar width plus irregular-spacing reminder; needs learned rhythm context. Not an ECG, diagnostic criterion or treatment instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"overdrive pacing","pdf_page":10,"page":152,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Gearshift token beside a pair of shoes taking visibly paced steps.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar overdrive-gear plus pacing word-action bridge; no speed threshold, electrical mechanism or therapeutic action. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"cardiac arrest","pdf_page":10,"page":152,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Heart character visibly wearing handcuffs.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/chapter-22-cue-audit.json#cardiac arrest","reason":"Reuses established arrest/heart family without a depicted outcome or action sequence. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"internal defibrillation","pdf_page":10,"page":152,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Detached recognizable paddles sitting inside an open transparent display box.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned internal/inside qualifier plus device family, not intrathoracic anatomy, operation or mode discrimination. Does not resolve the main-owned base-term decision. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"pediatric defibrillation","pdf_page":10,"page":152,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Detached recognizable paddles beside a child-size shoe token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned pediatric/child family qualifier; no patient, device sizing, dose, placement or use. Base-term decision remains main-owned. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"hands-on defibrillation","pdf_page":10,"page":152,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Oversized detached toy hand resting on an unattached paddle-pair token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar hands-on relation plus learned equipment family; ordinary handling overlap does not invalidate the partial word cue. No patient, body contact, operation, electrical discharge or procedural/safety claim; base-term decision remains main-owned. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"double sequential defibrillation","pdf_page":11,"page":153,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Two detached paddle-pair tokens separated by a short next-arrow token.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned double/two plus sequential/next name components; not a patient, successive shocks, simultaneous operation, energy or outcome claim. Does not change base-term decision. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"wet surface","pdf_page":8,"page":150,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Flat tabletop tile with a conspicuous puddle on it.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Familiar wet-surface category only; no patient, equipment contact, electrical demonstration or safety instruction. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"skin preparation","pdf_page":8,"page":150,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Freestanding skin teaching tile beside an unused cleaning cloth.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Learned skin/preparation family; not a product, asepsis standard, preparation sequence or treatment advice. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"high-performance CPR","pdf_page":10,"page":152,"source_match":"heading_and_body","kind":"learned_category_or_name_composition","cue":"Heart token, bellows and life ring beside a trophy.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"retain_candidate","prior":"new_chapter_keyword_screen_record; familiar ingredients, not an originality claim","reason":"Previously proposed CPR family plus familiar performance/achievement token. High-performance qualifier is learned and untested, not a quality criterion or outcome claim. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false},
+    {"term":"rhythm","pdf_page":9,"page":151,"source_match":"body","kind":"learned_category_or_name_composition","cue":"Recognizable mechanical metronome with no readable scale.","cue_scope":"Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.","decision":"reuse_candidate","prior":"docs/chapter-23-cue-audit.json#metronome","reason":"Reuses the familiar metronome rhythm family as a partial word cue, not an ECG, rhythm diagnosis, cadence or therapeutic timing. Expanded on 2026-10-20; independent main keyword audit pending.","tested":false}
+  ],
+  "evidence": {"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend": {"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0}
+}

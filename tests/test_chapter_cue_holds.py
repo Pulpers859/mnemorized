@@ -12,6 +12,9 @@ def test_saved_hold_register_is_current_and_covers_all_banks():
     for path, expected in output_texts(register).items():
         assert (ROOT / path).read_text(encoding="utf-8") == expected
     assert register["chapters_checked"] == [str(i) for i in range(1, len(register["chapters_checked"]) + 1)]
+    ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
+    reviewed_ids = {r["chapter_id"] for r in ledger["chapters"] + ledger["subsequent_chapter_reviews"]}
+    assert set(register["chapters_checked"]) == reviewed_ids
     assert {e["term"] for e in register["active_holds"] if e["chapter_id"] == "1"} == {
         "Emergency Medical Services", "defibrillation", "naloxone", "opioid overdose",
     }
