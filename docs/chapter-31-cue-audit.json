@@ -1,0 +1,3587 @@
+{
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded vocabulary/page and keyword location within actual chapter regions, reviewed every cue and resolved reuse target, inspected rendered boundary pages52/58/59/69/70/74 and the raster-only palmar arterial arches label on68. Reuse JSON chains checked without cycle or held target; legacy non-fragment references terminate traversal. Author-pending notes below are chronological and superseded. AI review only, not human-expert, clinical, legal, recall or rendering validation.", "highlight_annotations_found": 0, "normalizations": "Case/wrap/punctuation joins and explicit source aliases only; raster-only palmar arterial arches visually verified, not claimed extractable text. Full-width Table32-3 abbreviation note belongs32; its arterial oxygen saturation phrase is verified in full-width text, not a clipped column. Device/model name aliases do not adjudicate clinical equivalence.", "counts": {"selected_terms": 150, "new_candidates": 68, "reused_candidates": 53, "holds": 29}, "keyword_items": 184},
+  "schema_version": 1,
+  "chapter_id": "31",
+  "title": "Vascular Access",
+  "review_date": "2026-10-20",
+  "keyword_screen_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ],
+    "printed_pages": [
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter31 title upper left PDF59; entire pages59-69 belong31 through REFERENCES at right y673 on69. Actual Chapter32 title upper left70 excluded.",
+    "verification": "Computed matching SHA256. Rendered PDF59-70; visually inspected all-page contact sheet plus full-resolution pages59,67,68,69. Extracted text/font spans/coordinates across59-69 and checked annotations on every page: none. Source59 opening and69 references boundaries visually confirmed;70 Chapter32 title on contact sheet excluded. Main independent integration pending."
+  },
+  "scope": "Author-completed bounded offline vocabulary screen. Priority: actual chapter/section/subheadings, table31-1 through31-14 meaningful equipment and named-condition headwords, principal named-vessel figure labels, and lexical headwords from bold sentences. Not every unformatted body word, every procedural table verb/comment, or every ancillary anatomy/ultrasound raster label. No clinical teaching, narration, prompts, provider calls or mnemonic images.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 150,
+    "new_candidates": 68,
+    "reused_candidates": 53,
+    "holds": 29
+  },
+  "entries": [
+    {
+      "term": "vascular access",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "chapter_title",
+      "kind": "existing_family",
+      "cue": "A transparent vessel teaching model with a conspicuous doorway.",
+      "cue_scope": "Broad access vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#vascular access",
+      "reason": "Existing access doorway; not a route.",
+      "tested": false
+    },
+    {
+      "term": "peripheral venous access",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane standing at the outer edge of a circular platform beside an open doorway.",
+      "cue_scope": "Peripheral + vein + access word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar vane/vein partial-name bridge; naming dependency acknowledged, not standalone anatomy.",
+      "tested": false
+    },
+    {
+      "term": "catheter",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "reason": "Uses catheter prop ingredient only; strips Aintree tree; old cat/theater rejection is not a device ban.",
+      "tested": false
+    },
+    {
+      "term": "flow rates",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A flowing ribbon beside a metronome.",
+      "cue_scope": "Flow + rate vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal flow and pace ingredients; no formula, size comparison or infusion teaching.",
+      "tested": false
+    },
+    {
+      "term": "vasopressors",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A large workshop vise visibly pressing a flexible tube.",
+      "cue_scope": "Vasopressor family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-12-cue-audit.json#vasopressors",
+      "reason": "Existing vise/press family; sentence instruction excluded.",
+      "tested": false
+    },
+    {
+      "term": "personal protective equipment",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A person in a familiar hazmat-style protective suit.",
+      "cue_scope": "Protective clothing category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#personal protective equipment",
+      "reason": "Calibration explicitly permits familiar category recognition.",
+      "tested": false
+    },
+    {
+      "term": "gloves",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A recognizable stretchy rubber examination glove.",
+      "cue_scope": "Glove equipment category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#latex",
+      "reason": "Reuse only glove prop; no material specification inferred.",
+      "tested": false
+    },
+    {
+      "term": "face shield",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone transparent face shield.",
+      "cue_scope": "Face-shield device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary equipment recognition; no protection rating.",
+      "tested": false
+    },
+    {
+      "term": "tourniquet",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable detached tourniquet with strap and winding handle.",
+      "cue_scope": "Device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar device permitted; no body placement or tightening action.",
+      "tested": false
+    },
+    {
+      "term": "alcohol swabs",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar sealed square swab packet beside an unfolded wipe.",
+      "cue_scope": "Swab category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Recognizable packaging ingredient; does not distinguish chemistry.",
+      "tested": false
+    },
+    {
+      "term": "povidone-iodine",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "Eye beside a dinner plate, or an anonymous antiseptic bottle.",
+      "cue_scope": "Unresolved named-product vocabulary",
+      "decision": "hold",
+      "prior": "docs/sound-bridge-workshop-2.json#iodine",
+      "reason": "Plate does not clearly supply dine; anonymous bottle supplies no economical name hook. A labeled bottle would just show answer.",
+      "tested": false
+    },
+    {
+      "term": "tubing",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "Tubing category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "reason": "Existing standalone tubing, no connection instructions.",
+      "tested": false
+    },
+    {
+      "term": "gauze",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A folded square of recognizable open-weave gauze.",
+      "cue_scope": "Broad gauze supply category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main selected31 gauze as shared-batch retained root;30 gauze dressing will reuse31. Texture-dependent supply cue; dimensions and placement omitted.",
+      "tested": false
+    },
+    {
+      "term": "tape",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary roll of adhesive tape, without a worm.",
+      "cue_scope": "Tape ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-tapeworm",
+      "reason": "Reuses tape ingredient only; strips unrelated worm.",
+      "tested": false
+    },
+    {
+      "term": "sterile transparent dressing",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar transparent adhesive dressing in a sealed peel-open packet.",
+      "cue_scope": "Dressing supply category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Packaging cues broad sterile-supply category, not proof of sterility.",
+      "tested": false
+    },
+    {
+      "term": "vein",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar rooftop weather vane with broad directional arrow.",
+      "cue_scope": "Vein headword only",
+      "decision": "retain_candidate",
+      "prior": "docs/sound-bridge-workshop-2.json#vein",
+      "reason": "Vane/vein homophone accepted conditionally under chapter2; weather-vane naming remains untested.",
+      "tested": false
+    },
+    {
+      "term": "nitroglycerin",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Cartoon dynamite stick as a learned nitro token.",
+      "cue_scope": "Partial nitro name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#nitroglycerin",
+      "reason": "Existing learned token, no formulation or effects.",
+      "tested": false
+    },
+    {
+      "term": "ischemia",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A closed red supply tap beside a visibly depleted supply tube.",
+      "cue_scope": "Broad ischemia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#cardiac ischemia",
+      "reason": "Same already stripped supply ingredient; no heart or limb qualifier imported.",
+      "tested": false
+    },
+    {
+      "term": "catheter hub",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached catheter prop beside a prominent bicycle wheel hub.",
+      "cue_scope": "Hub headword with catheter context",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar hub double meaning; not a connection demonstration.",
+      "tested": false
+    },
+    {
+      "term": "cephalic vein",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane hanging beside a small ceiling panel.",
+      "cue_scope": "Approximate cephalic/ceiling fragment plus vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial-name bridge only; ceiling pronunciation differs and must be taught.",
+      "tested": false
+    },
+    {
+      "term": "basilic vein",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A potted basil plant beside a weather vane.",
+      "cue_scope": "Basil name fragment plus vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar basil fragment, not full-name phonetics or anatomy.",
+      "tested": false
+    },
+    {
+      "term": "vena mediana cubiti",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A weather vane beside a median road strip and a cube.",
+      "cue_scope": "Unresolved Latin label",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Several weak ingredients create a cumbersome phrase; no economical selected cue.",
+      "tested": false
+    },
+    {
+      "term": "median antebrachial vein",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A weather vane on a road median beside an arm model.",
+      "cue_scope": "Unresolved full vein name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Median ingredient plausible but antebrachial portion remains unsupported; retained simpler vein family not enough for this selected full label.",
+      "tested": false
+    },
+    {
+      "term": "lateral antebrachial cutaneous nerve",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "An arm-shaped model beside a branching wire.",
+      "cue_scope": "Unresolved long label",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic anatomy props do not yet supply economical named-family recovery; not rejected merely for lacking every syllable.",
+      "tested": false
+    },
+    {
+      "term": "medial antebrachial cutaneous nerve",
+      "pdf_page": 59,
+      "page": 201,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A branching wire beside a center-marked arm token.",
+      "cue_scope": "Unresolved long label",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Positional ingredient plausible, but a useful economical label bridge is not yet selected.",
+      "tested": false
+    },
+    {
+      "term": "catheter removal",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached catheter toy being lifted out of its empty storage tray.",
+      "cue_scope": "Removal action vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday removal action only; no patient, timing or treatment.",
+      "tested": false
+    },
+    {
+      "term": "US-guided peripheral access",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "heading",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable ultrasound console beside an outer-edge doorway token.",
+      "cue_scope": "Ultrasound + peripheral access family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar device plus positional ingredient; no imaging findings or guidance procedure.",
+      "tested": false
+    },
+    {
+      "term": "hematoma",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A red puddle beside a tomato.",
+      "cue_scope": "Unresolved vocabulary",
+      "decision": "hold",
+      "prior": "docs/chapter-28-cue-audit.json#hematoma",
+      "reason": "Tomato tail is weak and puddle nonspecific; prior hold preserved.",
+      "tested": false
+    },
+    {
+      "term": "pain",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain expression ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Remove mute symbol from analgesia; retain expression only.",
+      "tested": false
+    },
+    {
+      "term": "extravasation",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An extra vase spilling water onto a display mat.",
+      "cue_scope": "Extra + vase partial-name wordplay",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar word fragments and spill action; does not depict a medical mechanism.",
+      "tested": false
+    },
+    {
+      "term": "phlebitis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A fleet of tiny boats beside a flame token.",
+      "cue_scope": "Unresolved name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Fleet/phleb is a weak sound bridge; ordinary flame supplies only broad inflammation.",
+      "tested": false
+    },
+    {
+      "term": "inflammation",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A small theatrical flame token, without a waterfall.",
+      "cue_scope": "Broad inflammation ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#inflammatory cascades",
+      "reason": "Strips irrelevant cascade; vocabulary metaphor, not findings.",
+      "tested": false
+    },
+    {
+      "term": "cellulitis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy prison cell beside a small theatrical flame token.",
+      "cue_scope": "Cell + inflammation partial-name association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar partial name with existing flame ingredient; not a skin finding or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "Staphylococcus epidermidis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A staff beside an outer-shell token.",
+      "cue_scope": "Unresolved full name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Staff fragment feasible, but shell token does not supply useful economical species bridge.",
+      "tested": false
+    },
+    {
+      "term": "Staphylococcus aureus",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A walking staff beside a pile of gold coins.",
+      "cue_scope": "Staff fragment + aur/gold learned-name cue",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial-name association, not organism appearance, properties or clinical linkage.",
+      "tested": false
+    },
+    {
+      "term": "Candida",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar wrapped candy.",
+      "cue_scope": "Candy/Candida partial-name vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Short familiar name fragment; no organism traits.",
+      "tested": false
+    },
+    {
+      "term": "neurovascular injury",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A cracked wire beside a vessel token.",
+      "cue_scope": "Unresolved compound",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Broad injury cues are available but this compound remains cumbersome without a clearer joint identity.",
+      "tested": false
+    },
+    {
+      "term": "bacteremia",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A cartoon bacterium holding an ordinary blood-drop study token.",
+      "cue_scope": "Bacterium + blood-word ingredient",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned lexical composition only; not a clinical representation.",
+      "tested": false
+    },
+    {
+      "term": "sepsis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A septic tank toy.",
+      "cue_scope": "Unresolved name cue",
+      "decision": "hold",
+      "prior": "docs/chapter-29B-cue-audit.json#sepsis",
+      "reason": "Tank name fragment is plausible but tank identity is poorly recoverable without labels; no selected revision.",
+      "tested": false
+    },
+    {
+      "term": "deep vein thrombosis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane at the bottom of a deep toy well beside a detached plug token.",
+      "cue_scope": "Deep + vein + plug family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "New lexical composition using existing plug primitive; not a depiction of disease.",
+      "tested": false
+    },
+    {
+      "term": "tissue necrosis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A paper tissue beside a broken toy.",
+      "cue_scope": "Unresolved vocabulary",
+      "decision": "hold",
+      "prior": "docs/chapter-21-cue-audit.json#necrotizing soft tissue infections",
+      "reason": "Tissue pun economical but broken prop does not supply a useful necrosis name cue; prior held family remains open.",
+      "tested": false
+    },
+    {
+      "term": "central venous access",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane standing at the center of a circular platform beside a doorway.",
+      "cue_scope": "Central + vein + access vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Contrasts peripheral platform-edge ingredient without showing anatomy or procedure.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary artery catheter",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "reason": "Strips unrelated tree; pulmonary/artery qualifiers not independently encoded.",
+      "tested": false
+    },
+    {
+      "term": "transvenous pacemaker",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A lead runner setting the pace beside a heart-shaped token.",
+      "cue_scope": "Broad pacemaker family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "No transvenous route discriminator.",
+      "tested": false
+    },
+    {
+      "term": "hemodialysis",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A blood-drop study token beside a familiar sieve.",
+      "cue_scope": "Hemo + filtration category association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Existing sieve primitive in a new word composition; no treatment operation.",
+      "tested": false
+    },
+    {
+      "term": "central venous pressure",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane and an unnumbered pressure gauge at the center of a round platform.",
+      "cue_scope": "Central + vein + pressure vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Word ingredients only, no measurement or physiologic claim.",
+      "tested": false
+    },
+    {
+      "term": "congestive heart failure",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A heart-shaped toy with a visibly broken crank.",
+      "cue_scope": "Broad cardiac-failure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#cardiac failure",
+      "reason": "Congestive qualifier omitted; no congestion facts inferred.",
+      "tested": false
+    },
+    {
+      "term": "pericardial effusion",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A heart token beside a water pitcher.",
+      "cue_scope": "Unresolved full phrase",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Familiar ingredients lack a useful economical pericardial name hook; no fluid-location teaching.",
+      "tested": false
+    },
+    {
+      "term": "sclerosing medications",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A rigid board beside a generic medicine bottle.",
+      "cue_scope": "Unresolved drug category",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Rigid supplies broad sclerosis association, but generic bottle is insufficient for this category without taught context.",
+      "tested": false
+    },
+    {
+      "term": "cytotoxic chemotherapeutic agents",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A cell token beside a skull warning token.",
+      "cue_scope": "Unresolved full category",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Plausible cytotoxic ingredient but chemotherapy component has no economical selected hook; no drug effects asserted.",
+      "tested": false
+    },
+    {
+      "term": "external jugular vein",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy jug outside a clear display box beside a weather vane.",
+      "cue_scope": "External + jug fragment + vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial-name wordplay and external position, not vascular anatomy.",
+      "tested": false
+    },
+    {
+      "term": "internal jugular vein",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy jug inside a clear display box beside a weather vane.",
+      "cue_scope": "Internal + jug fragment + vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Companion learned-name cue; no internal vessel relation.",
+      "tested": false
+    },
+    {
+      "term": "pneumothorax",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Air balloon outside a lung but inside a transparent chest shell.",
+      "cue_scope": "Established vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#pneumothorax",
+      "reason": "Prior prop reused unchanged; no new clinical teaching.",
+      "tested": false
+    },
+    {
+      "term": "arterial puncture",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy artery token beside a hole-punched sheet of card.",
+      "cue_scope": "Artery + puncture word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday punch action, not an access demonstration.",
+      "tested": false
+    },
+    {
+      "term": "malpositioning",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A puzzle piece visibly sitting in the wrong-shaped recess.",
+      "cue_scope": "Wrong-position concept",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar mismatch action; no catheter position judgment.",
+      "tested": false
+    },
+    {
+      "term": "catheter-associated infection",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A detached catheter prop beside a generic germ.",
+      "cue_scope": "Unresolved infection qualifier",
+      "decision": "hold",
+      "prior": "docs/chapter-29A-cue-audit.json#infection",
+      "reason": "Catheter category available; generic germ remains unspecific for infection, prior hold not erased.",
+      "tested": false
+    },
+    {
+      "term": "thrombosis",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A plug lodged inside a transparent vessel model, without a lung or crown.",
+      "cue_scope": "Broad clot/plug family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#thromboembolism",
+      "reason": "Reuses broad plug ingredient, not distinction between thrombosis and embolization.",
+      "tested": false
+    },
+    {
+      "term": "chylothorax",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A chili pepper beside a toy treasure chest.",
+      "cue_scope": "Unresolved partial-name cue",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Chili/chylo fragment not enough to select confidently; chest supplies only thorax family.",
+      "tested": false
+    },
+    {
+      "term": "hydrothorax",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A water pitcher beside a closed toy treasure chest.",
+      "cue_scope": "Hydro + thorax/chest word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar component wordplay only; no fluid compartment claim.",
+      "tested": false
+    },
+    {
+      "term": "hydromediastinum",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A water pitcher beside a median road strip.",
+      "cue_scope": "Unresolved full name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Hydro/median fragments feasible but awkward full target remains unsupported.",
+      "tested": false
+    },
+    {
+      "term": "air emboli",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A large gas bubble lodged in a transparent branching vessel model.",
+      "cue_scope": "Existing gas/air embolism family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#gas embolism",
+      "reason": "Plural and air/gas vocabulary normalization, no new claim.",
+      "tested": false
+    },
+    {
+      "term": "perforation",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#completed-opening",
+      "reason": "Catalog opening family, no anatomic location imported.",
+      "tested": false
+    },
+    {
+      "term": "hemothorax",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A transparent chest shell with red liquid surrounding a lung model.",
+      "cue_scope": "Established vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#hemothorax",
+      "reason": "Prior prop only; no procedural consequence.",
+      "tested": false
+    },
+    {
+      "term": "tamponade",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A heart character squeezed in a tight transparent fluid-filled pouch.",
+      "cue_scope": "Broad tamponade family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#cardiac tamponade",
+      "reason": "Existing cue only, no pressure teaching.",
+      "tested": false
+    },
+    {
+      "term": "airway compromise",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A plug seated across the mouth of a freestanding transparent pipe.",
+      "cue_scope": "Broad obstruction ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#obstruction-plug",
+      "reason": "Broad category, not every form of compromise.",
+      "tested": false
+    },
+    {
+      "term": "sterile drape",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A folded sheet in a sealed peel-open supply packet.",
+      "cue_scope": "Drape supply category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar supply packaging, not proof of sterility or an instruction.",
+      "tested": false
+    },
+    {
+      "term": "chlorhexidine",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A chlorine-pool tub beside a hexagon.",
+      "cue_scope": "Unresolved name cue",
+      "decision": "hold",
+      "prior": "docs/chapter-29B-cue-audit.json#chlorhexidine",
+      "reason": "Chlor/hex fragments possible but combination is cumbersome and misleading as product identity; prior hold preserved.",
+      "tested": false
+    },
+    {
+      "term": "syringes",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "cue_scope": "Syringe category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#syringes",
+      "reason": "Prior category cue; rejected sea/ring rebus not reused.",
+      "tested": false
+    },
+    {
+      "term": "normal saline",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary salt shaker beside a clear-water pitcher.",
+      "cue_scope": "Saline family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#saline",
+      "reason": "No concentration, recipe or clinical use.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Partial-name cue",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "reason": "Later retained lid/cane partial cue reused; earlier held full-sound attempts remain open in their banks.",
+      "tested": false
+    },
+    {
+      "term": "introducer needle",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached needle training prop beside a host presenting a newcomer.",
+      "cue_scope": "Introducer action + needle category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar introduce action, no insertion or dimensions.",
+      "tested": false
+    },
+    {
+      "term": "guidewire",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A tour guide holding a loose coil of wire.",
+      "cue_scope": "Guide + wire wordplay",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main selected31 guide/wire wordplay as shared-batch retained root;30 will reuse31. Detached ordinary props, no wire manipulation.",
+      "tested": false
+    },
+    {
+      "term": "scalpel",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A standalone recognizable scalpel training prop, unused on a plain display base.",
+      "cue_scope": "Broad device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#scalpel",
+      "reason": "Same-batch30 already retains familiar instrument; no duplicate discovery.",
+      "tested": false
+    },
+    {
+      "term": "venodilator",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached familiar dilator training prop on a plain display base.",
+      "cue_scope": "Broad dilator device category; veno qualifier contextual",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#dilator",
+      "reason": "Same-batch30 retained device; no independent veno discriminator or dilation action.",
+      "tested": false
+    },
+    {
+      "term": "multilumen catheter",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "reason": "Omitted single/multiple-lumen discriminator disclosed.",
+      "tested": false
+    },
+    {
+      "term": "silk suture",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A business suit draped on a chair.",
+      "cue_scope": "Suture headword only",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Existing suit/chair bridge; silk material and sizes not encoded.",
+      "tested": false
+    },
+    {
+      "term": "needle driver",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached needle prop beside a toy car driver.",
+      "cue_scope": "Needle + driver lexical association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar driver double meaning; no use demonstration.",
+      "tested": false
+    },
+    {
+      "term": "preprocedure checklist",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "heading",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary clipboard checklist beside a starting-line flag.",
+      "cue_scope": "Checklist/pre vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar checklist action; none of the clinical checklist reproduced.",
+      "tested": false
+    },
+    {
+      "term": "Seldinger technique",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A toy shopkeeper behind a counter ringing a bell.",
+      "cue_scope": "Sell/ding partial name only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#Seldinger technique",
+      "reason": "Same-batch30 name cue reused precisely; no guidewire method or steps.",
+      "tested": false
+    },
+    {
+      "term": "central approach",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy doorway at the center of a plain round platform.",
+      "cue_scope": "Central positional vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Simple positional cue, no anatomic approach.",
+      "tested": false
+    },
+    {
+      "term": "posterior approach",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy doorway at the rear of a freestanding model house.",
+      "cue_scope": "Posterior/rear vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday rear position, no insertion route.",
+      "tested": false
+    },
+    {
+      "term": "anterior approach",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy doorway on the front face of a model house.",
+      "cue_scope": "Anterior/front vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Companion front-position ingredient, not a procedure.",
+      "tested": false
+    },
+    {
+      "term": "subclavian vein",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy submarine beside a clavicle study token and a weather vane.",
+      "cue_scope": "Sub + clavicle fragment + vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar word ingredients only; no vessel location claim.",
+      "tested": false
+    },
+    {
+      "term": "infraclavicular approach",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A clavicle-shaped token on a shelf above a small doorway.",
+      "cue_scope": "Infra/below + clavicle vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Word-part display, not anatomical landmarks or needle trajectory.",
+      "tested": false
+    },
+    {
+      "term": "supraclavicular approach",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A small doorway on a shelf above a clavicle-shaped token.",
+      "cue_scope": "Supra/above + clavicle vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Companion word-part display, not access technique.",
+      "tested": false
+    },
+    {
+      "term": "femoral vein",
+      "pdf_page": 65,
+      "page": 207,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone femur-shaped study token beside a weather vane.",
+      "cue_scope": "Femur/femoral fragment + vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Name association, not anatomical course.",
+      "tested": false
+    },
+    {
+      "term": "NAVEL",
+      "pdf_page": 65,
+      "page": 207,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary toy mannequin with its navel marked by a small plain ring.",
+      "cue_scope": "NAVEL lexical token only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal familiar navel supplies acronym name; expansion and anatomical order deliberately not encoded.",
+      "tested": false
+    },
+    {
+      "term": "surface anatomy approach",
+      "pdf_page": 65,
+      "page": 207,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A freestanding anatomical mannequin study model.",
+      "cue_scope": "Broad anatomy category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#anatomic-host",
+      "reason": "Existing anatomical host only, not surface landmarks or procedural approach.",
+      "tested": false
+    },
+    {
+      "term": "US-guided approach",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A recognizable ultrasound console beside a plain doorway.",
+      "cue_scope": "Broad ultrasound access family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#US-guided peripheral access",
+      "reason": "Uses different retained target; peripheral edge omitted.",
+      "tested": false
+    },
+    {
+      "term": "venous cutdown",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane beside a ribbon cut and laid down on a tabletop.",
+      "cue_scope": "Vein + cut + down word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday craft action only; no incision or patient.",
+      "tested": false
+    },
+    {
+      "term": "IO vascular access",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "A transparent vessel teaching model with a conspicuous doorway.",
+      "cue_scope": "Broad vascular access family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#vascular access",
+      "reason": "IO qualifier not independently encoded; source spells IO in heading.",
+      "tested": false
+    },
+    {
+      "term": "EZ-IO",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable standalone handheld IO drill training prop.",
+      "cue_scope": "Familiar IO drill category, not exclusive brand identification",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar device permitted under calibration; no trademark uniqueness or use instructions.",
+      "tested": false
+    },
+    {
+      "term": "arterial access",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "A toy artery teaching token beside an open doorway.",
+      "cue_scope": "Arterial access vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#arterial access",
+      "reason": "Existing category, no access site or method.",
+      "tested": false
+    },
+    {
+      "term": "radial artery",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy wheel with conspicuous radial spokes beside an artery study token.",
+      "cue_scope": "Radial/spoke name association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Common radial geometry; not a map of a body artery.",
+      "tested": false
+    },
+    {
+      "term": "radial pulse",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A radial-spoked toy wheel beside a pulse-shaped zigzag token.",
+      "cue_scope": "Radial + pulse lexical ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No palpation instruction or waveform interpretation.",
+      "tested": false
+    },
+    {
+      "term": "ulnar artery compression test",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "An ulna-shaped token beside a clamp and a quiz card.",
+      "cue_scope": "Unresolved full test vocabulary",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ulna and compression ingredients plausible but selected phrase is unwieldy; no test maneuver encoded.",
+      "tested": false
+    },
+    {
+      "term": "Allen test",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar Allen key beside a blank quiz card.",
+      "cue_scope": "Allen + test wordplay",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar tool name and quiz; not the named clinical maneuver.",
+      "tested": false
+    },
+    {
+      "term": "collateral circulation",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Two parallel toy race tracks sharing one start and finish.",
+      "cue_scope": "Broad collateral/alternative-route association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday alternative-route concept, no physiologic prediction.",
+      "tested": false
+    },
+    {
+      "term": "manual IO venous access",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A transparent vessel teaching model with a conspicuous doorway.",
+      "cue_scope": "Broad vascular-access category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#vascular access",
+      "reason": "Manual and IO not independently encoded; no procedure steps.",
+      "tested": false
+    },
+    {
+      "term": "stylet",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached familiar stylet training prop.",
+      "cue_scope": "Broad learned stylet device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#stylets",
+      "reason": "Singular/plural normalized; existing29A familiar device family. Intubating/malleable qualifiers omitted for this broader reuse; no shaping or use.",
+      "tested": false
+    },
+    {
+      "term": "periosteum",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A pear beside a bone-shaped token.",
+      "cue_scope": "Unresolved name fragment",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Pear/peri fragment is weak and bone token too broad for useful recovery; no selected cue.",
+      "tested": false
+    },
+    {
+      "term": "physeal plate",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A dinner plate beside a toy bone.",
+      "cue_scope": "Unresolved full term",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Plate is clear but physeal has no useful selected ingredient; not a growth or injury fact.",
+      "tested": false
+    },
+    {
+      "term": "marrow cavity",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A vegetable marrow beside an empty hollow toy block.",
+      "cue_scope": "Marrow homonym + cavity",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar vegetable name is regional and untested; no anatomy teaching.",
+      "tested": false
+    },
+    {
+      "term": "arterial blood gas",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A single blood-drop-shaped party balloon.",
+      "attempted_cue": "An artery token beside a blood-drop token and an air balloon.",
+      "cue_scope": "Blood + gas integrated metaphor; arterial qualifier supplied by source context",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main creative challenge accepted: one coherent blood-drop balloon replaces three disconnected props. Not a measurement, collection instruction or unique arterial identifier.",
+      "tested": false
+    },
+    {
+      "term": "acid-base",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A lemon beside a bar of soap.",
+      "cue_scope": "Existing acid/base ingredients in a new lexical pair",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Uses chapter15 acid and alkali ingredients; no balance calculation, status or therapy.",
+      "tested": false
+    },
+    {
+      "term": "oxygen saturations",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.",
+      "cue_scope": "Oxygen saturation vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "reason": "Plural normalized; no saturation reading or oxygenation claim.",
+      "tested": false
+    },
+    {
+      "term": "carbon dioxide",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A charcoal token standing alone, without a detector or tide wave.",
+      "cue_scope": "Partial carbon identity only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#carbon dioxide detector",
+      "reason": "Strips detector and tide; dioxide qualifier not independently encoded.",
+      "tested": false
+    },
+    {
+      "term": "respiratory failure",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Recognizable bellows with a visibly broken handle.",
+      "cue_scope": "Existing failure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#respiratory failure",
+      "reason": "Prior vocabulary association only.",
+      "tested": false
+    },
+    {
+      "term": "blood pressure",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An artery-shaped toy beside an unnumbered pressure gauge, without a scowling face.",
+      "cue_scope": "Broad pressure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#mean arterial pressure",
+      "reason": "Strips mean/scowling ingredient; no measurement or threshold.",
+      "tested": false
+    },
+    {
+      "term": "intracranial hemorrhages",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached skull study token beside a freestanding leaking red-liquid pipe.",
+      "cue_scope": "Intracranial/skull + hemorrhage word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Composition of known skull/bleeding ingredients; not a depiction inside a skull or a clinical claim.",
+      "tested": false
+    },
+    {
+      "term": "aortic dissections",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An aorta model with its wall visibly peeling into separate layers.",
+      "cue_scope": "Existing dissection vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#aortic dissection",
+      "reason": "Plural normalized; no clinical interpretation.",
+      "tested": false
+    },
+    {
+      "term": "abdominal aortic aneurysms",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar household battery standing alone.",
+      "attempted_cue": "A belly-shaped token beside a bulging tube.",
+      "cue_scope": "Learned AAA initial-letter/name association only; source supplies expanded term",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main creative challenge accepted: AAA/battery is a familiar taught name fragment. Unlabeled battery does not visually distinguish AAA from other battery types; no size, type specifications or clinical morphology encoded.",
+      "tested": false
+    },
+    {
+      "term": "angiocatheter",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "reason": "Angio qualifier omitted; stripped tree, no device use.",
+      "tested": false
+    },
+    {
+      "term": "integral-guidewire arterial catheter",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "reason": "Integral guidewire and artery qualifiers omitted; not unique device identification.",
+      "tested": false
+    },
+    {
+      "term": "nylon suture",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A business suit draped on a chair.",
+      "cue_scope": "Suture headword only",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Existing sound family, nylon and dimensions omitted.",
+      "tested": false
+    },
+    {
+      "term": "pressure bag",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone bag-shaped training prop beside an unnumbered pressure gauge.",
+      "cue_scope": "Pressure + bag device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar equipment category, no use, fill or pressure value.",
+      "tested": false
+    },
+    {
+      "term": "transducer",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable detached monitoring transducer training prop.",
+      "cue_scope": "Learned device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Category recognition allowed; not a claim to identify subtype without training.",
+      "tested": false
+    },
+    {
+      "term": "flushing system",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A recognizable toilet with a visible swirling flush.",
+      "cue_scope": "Flushing action ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#flushing",
+      "reason": "Uses flush wordplay only; no equipment plumbing or fluid administration.",
+      "tested": false
+    },
+    {
+      "term": "artery cannulation",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A toy artery teaching token beside an open doorway.",
+      "cue_scope": "Broad arterial-access family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#arterial access",
+      "reason": "Broad access family, no cannulation technique.",
+      "tested": false
+    },
+    {
+      "term": "direct pressure",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A pointing arrow aimed straight at an unnumbered pressure gauge.",
+      "cue_scope": "Direct + pressure vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No body contact, timing or amount.",
+      "tested": false
+    },
+    {
+      "term": "arterial vasospasm",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An artery-shaped toy beside a vase visibly scrunched by a clamp.",
+      "cue_scope": "Artery + vase/spasm partial-name ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Squeeze borrowed as word ingredient only; not vascular physiology.",
+      "tested": false
+    },
+    {
+      "term": "pseudoaneurysm",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A theatrical false nose beside a bulging tube.",
+      "cue_scope": "Unresolved name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Pseudo/false ingredient possible; no useful economical aneurysm hook selected.",
+      "tested": false
+    },
+    {
+      "term": "arteriovenous fistula",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An artery token and weather vane beside a clenched toy fist.",
+      "cue_scope": "Arterio + vein + fist partial-name vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar lexical components, not an artery-vein connection demonstration.",
+      "tested": false
+    },
+    {
+      "term": "infection",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A generic cartoon germ.",
+      "cue_scope": "Unresolved infection vocabulary",
+      "decision": "hold",
+      "prior": "docs/chapter-29A-cue-audit.json#infection",
+      "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained.",
+      "tested": false
+    },
+    {
+      "term": "limb ischemia",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A limb model beside a closed red supply tap and depleted supply tube.",
+      "cue_scope": "Existing limb-ischemia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#limb ischemia",
+      "reason": "Uses explicit limb qualifier only for limb source term.",
+      "tested": false
+    },
+    {
+      "term": "embolization",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A plug lodged inside a transparent vessel model, without a lung or crown.",
+      "cue_scope": "Broad plug/embolism family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#thromboembolism",
+      "reason": "Does not discriminate movement, thrombosis or embolization mechanism.",
+      "tested": false
+    },
+    {
+      "term": "neuropathy",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A branching wire beside a cracked path tile.",
+      "cue_scope": "Unresolved name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Neuro/wire and path fragments feasible but combination is not yet economical; no nerve-damage fact.",
+      "tested": false
+    },
+    {
+      "term": "artery laceration",
+      "pdf_page": 69,
+      "page": 211,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached artery-shaped toy beside a torn strip of fabric.",
+      "cue_scope": "Artery + tear vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday tear supplies broad laceration concept, not injury illustration.",
+      "tested": false
+    },
+    {
+      "term": "inguinal ligament",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy iguana beside a loose ribbon tied like a ligament study token.",
+      "cue_scope": "Approximate inguinal/iguana name fragment",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial-name association only; spelling/sound imperfect and untested, no anatomical placement.",
+      "tested": false
+    },
+    {
+      "term": "vascular injury",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Vascular qualifier not independently encoded; no damage mechanism.",
+      "tested": false
+    },
+    {
+      "term": "hemorrhage",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Established hemorrhage vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Prior vocabulary prop, no causal relationship or clinical instruction.",
+      "tested": false
+    },
+    {
+      "term": "retroperitoneal space",
+      "pdf_page": 66,
+      "page": 208,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A retro-styled record player beside an empty display compartment.",
+      "cue_scope": "Retro + space fragments; peritoneal qualifier contextual",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Economical partial-name cue, not full anatomy; compartment is not a body space diagram.",
+      "tested": false
+    },
+    {
+      "term": "ulnar artery",
+      "pdf_page": 67,
+      "page": 209,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached ulna teaching-model token beside a toy artery token.",
+      "cue_scope": "Ulna/ulnar learned-name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Name resemblance, no vessel course or test.",
+      "tested": false
+    },
+    {
+      "term": "stopcock",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached familiar three-way stopcock training prop on a display base.",
+      "cue_scope": "Broad stopcock device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#three-way stopcocks",
+      "reason": "Plural/way qualifier stripped from scope; no port position or fluid flow.",
+      "tested": false
+    },
+    {
+      "term": "chest radiograph",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached chest-shaped study token beside a plain radiograph-film frame.",
+      "cue_scope": "Established radiograph family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#chest radiograph",
+      "reason": "No film findings, confirmation instruction or timing.",
+      "tested": false
+    },
+    {
+      "term": "premature ventricular contractions",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy ventriloquist dummy squeezing a concertina before a starting flag.",
+      "cue_scope": "Early + ventricular/ventriloquist fragment + contraction",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned approximate name composition only; pronunciation and economy uncertain, not a rhythm tracing.",
+      "tested": false
+    },
+    {
+      "term": "dysrhythmias",
+      "pdf_page": 62,
+      "page": 204,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Two metronomes with pendulums pointing in visibly different directions.",
+      "cue_scope": "Broad disordered rhythm metaphor",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#dyssynchrony",
+      "reason": "Reuses mismatched timing family; no cardiac diagnosis or equivalence asserted.",
+      "tested": false
+    },
+    {
+      "term": "aorta",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A detached recognizable aorta teaching-model token.",
+      "cue_scope": "Learned named-anatomy category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Category recognition, no course or function.",
+      "tested": false
+    },
+    {
+      "term": "inferior vena cava",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A weather vane at the bottom of a toy cave.",
+      "cue_scope": "Unresolved full named-vessel cue",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Inferior/vane/cave fragments plausible, but cumbersome compound not selected; no anatomy relation.",
+      "tested": false
+    },
+    {
+      "term": "external iliac vein",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A weather vane outside a box beside an iliac study token.",
+      "cue_scope": "Unresolved named-vessel cue",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "External and vein cues are economical, iliac ingredient depends on recognition not yet developed.",
+      "tested": false
+    },
+    {
+      "term": "femoral artery",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A detached femur study token beside a toy artery token.",
+      "cue_scope": "Femur/femoral name fragment",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned word identity, not anatomical placement.",
+      "tested": false
+    },
+    {
+      "term": "femoral nerve",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A detached femur study token beside a loose branching cable.",
+      "cue_scope": "Femur fragment + broad nerve/cable family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No anatomic relationship between tokens.",
+      "tested": false
+    },
+    {
+      "term": "greater saphenous vein",
+      "pdf_page": 61,
+      "page": 203,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A large safe beside a weather vane.",
+      "cue_scope": "Unresolved saphenous name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Safe/saph fragment possible but not a useful selected family; greater adjective alone is not enough.",
+      "tested": false
+    },
+    {
+      "term": "carotid artery",
+      "pdf_page": 60,
+      "page": 202,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A carrot beside a toy artery token.",
+      "cue_scope": "Carotid/carrot approximate name fragment",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Economical partial-name wordplay, no neck anatomy.",
+      "tested": false
+    },
+    {
+      "term": "subclavian artery",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A toy submarine beside a clavicle study token and an artery token.",
+      "cue_scope": "Sub + clavicle + artery ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Vein cue is not reused wholesale; artery replaces vein name token, no location claim.",
+      "tested": false
+    },
+    {
+      "term": "axillary vein",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A toy axe beside a weather vane.",
+      "cue_scope": "Axillary/axe fragment + vein",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial name, not anatomical course.",
+      "tested": false
+    },
+    {
+      "term": "brachial plexus",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "An arm study token beside a braided cable.",
+      "cue_scope": "Unresolved named-anatomy family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Plex/braid useful ingredient, but full name lacks an economical selected cue.",
+      "tested": false
+    },
+    {
+      "term": "clavicle",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "A detached clavicle teaching-model token on a display base.",
+      "cue_scope": "Learned anatomy category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#clavicle",
+      "reason": "Same-batch30 existing model token, no landmarks.",
+      "tested": false
+    },
+    {
+      "term": "sternocleidomastoid muscle",
+      "pdf_page": 64,
+      "page": 206,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "attempted_cue": "A stern toy face beside a mast and a muscle-shaped token.",
+      "cue_scope": "Unresolved long name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Stern/mast fragments possible but compound not economical; no insertion landmarks.",
+      "tested": false
+    },
+    {
+      "term": "palmar arterial arches",
+      "pdf_page": 68,
+      "page": 210,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A palm-tree toy beside two small arch-shaped blocks and an artery token.",
+      "cue_scope": "Palm/palmar + arch lexical ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Existing palm-tree primitive in a new composition; no vessel diagram.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Bounded lexical screen of PDF59-69 actual two-column chapter regions. Read extracted text for all chapter pages, inspected fonts/spans including MinionPro-Bold sentence headwords, MyriadPro-BlackSemiCn and SemiboldCond headings/table titles, regular/italic table vocabulary and principal named-vessel figure labels. Rendered all pages and visually inspected contact sheet, with full-page59/67/68/69 inspection. Each item states its actual emphasis; regular table/body/figure wording is not called bold. Repeated headings/aliases map to one entry. Generic instructions, numbers and labels excluded only after meaningful lexical headwords were tried. Not exhaustive every anatomy/raster label or unformatted body term.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated annots on every PDF59-69; none of any type, including Highlight. No claim that flattened publisher highlights are absent. Source has red headings and shaded table/title bars."
+    },
+    "items": [
+      {
+        "term": "vascular access",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Actual chapter title, MyriadPro-BlackSemiCn; visually red",
+        "entry_term": "vascular access"
+      },
+      {
+        "term": "peripheral venous access",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Red BlackSemiCn section heading and technique heading",
+        "entry_term": "peripheral venous access"
+      },
+      {
+        "term": "catheter",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment noun; also headword in bold flow-rate sentence",
+        "entry_term": "catheter"
+      },
+      {
+        "term": "flow rates",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "MinionPro-Bold flow-rate sentence lexical headword",
+        "entry_term": "flow rates"
+      },
+      {
+        "term": "vasopressors",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "MinionPro-Bold peripheral-access sentence lexical headword",
+        "entry_term": "vasopressors"
+      },
+      {
+        "term": "personal protective equipment",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular text in table31-1, not bold",
+        "entry_term": "personal protective equipment"
+      },
+      {
+        "term": "gloves",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 parenthetical equipment noun",
+        "entry_term": "gloves"
+      },
+      {
+        "term": "face shield",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 parenthetical equipment noun",
+        "entry_term": "face shield"
+      },
+      {
+        "term": "tourniquet",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment noun and table31-2 repeated step noun",
+        "entry_term": "tourniquet"
+      },
+      {
+        "term": "alcohol swabs",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment phrase",
+        "entry_term": "alcohol swabs"
+      },
+      {
+        "term": "povidone-iodine",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment name",
+        "entry_term": "povidone-iodine"
+      },
+      {
+        "term": "tubing",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment noun",
+        "entry_term": "tubing"
+      },
+      {
+        "term": "gauze",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment noun",
+        "entry_term": "gauze"
+      },
+      {
+        "term": "tape",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment noun",
+        "entry_term": "tape"
+      },
+      {
+        "term": "sterile transparent dressing",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-1 equipment phrase",
+        "entry_term": "sterile transparent dressing"
+      },
+      {
+        "term": "vein",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-2 repeated lexical headword; figure31-1 label family",
+        "entry_term": "vein"
+      },
+      {
+        "term": "nitroglycerin",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-2 comment headword",
+        "entry_term": "nitroglycerin"
+      },
+      {
+        "term": "ischemia",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-2 comment headword",
+        "entry_term": "ischemia"
+      },
+      {
+        "term": "catheter hub",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular table31-2 lexical noun phrase",
+        "entry_term": "catheter hub"
+      },
+      {
+        "term": "cephalic vein",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 labels, not bold",
+        "entry_term": "cephalic vein"
+      },
+      {
+        "term": "basilic vein",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 label, not bold",
+        "entry_term": "basilic vein"
+      },
+      {
+        "term": "vena mediana cubiti",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 label; source Latin wording",
+        "entry_term": "vena mediana cubiti"
+      },
+      {
+        "term": "median antebrachial vein",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 wrapped label",
+        "entry_term": "median antebrachial vein"
+      },
+      {
+        "term": "lateral antebrachial cutaneous nerve",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 wrapped label",
+        "entry_term": "lateral antebrachial cutaneous nerve"
+      },
+      {
+        "term": "medial antebrachial cutaneous nerve",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 wrapped label",
+        "entry_term": "medial antebrachial cutaneous nerve"
+      },
+      {
+        "term": "catheter removal",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "MinionPro-Bold sentence lexical headwords",
+        "entry_term": "catheter removal"
+      },
+      {
+        "term": "US-guided peripheral access",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "US-guided peripheral access"
+      },
+      {
+        "term": "hematoma",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row headword",
+        "entry_term": "hematoma"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row lexical headword",
+        "entry_term": "pain"
+      },
+      {
+        "term": "extravasation",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row headword",
+        "entry_term": "extravasation"
+      },
+      {
+        "term": "phlebitis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row headword",
+        "entry_term": "phlebitis"
+      },
+      {
+        "term": "inflammation",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 parenthetical headword",
+        "entry_term": "inflammation"
+      },
+      {
+        "term": "cellulitis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row headword",
+        "entry_term": "cellulitis"
+      },
+      {
+        "term": "Staphylococcus epidermidis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Italic organism name in table31-3 comment, not bold",
+        "entry_term": "Staphylococcus epidermidis"
+      },
+      {
+        "term": "Staphylococcus aureus",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Italic organism name in table31-3 comment, not bold",
+        "entry_term": "Staphylococcus aureus"
+      },
+      {
+        "term": "Candida",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Italic organism name in table31-3 comment, not bold",
+        "entry_term": "Candida"
+      },
+      {
+        "term": "neurovascular injury",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row phrase",
+        "entry_term": "neurovascular injury"
+      },
+      {
+        "term": "bacteremia",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 slash-separated row headword",
+        "entry_term": "bacteremia"
+      },
+      {
+        "term": "sepsis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 slash-separated row headword",
+        "entry_term": "sepsis"
+      },
+      {
+        "term": "deep vein thrombosis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row phrase",
+        "entry_term": "deep vein thrombosis"
+      },
+      {
+        "term": "tissue necrosis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-3 row phrase",
+        "entry_term": "tissue necrosis"
+      },
+      {
+        "term": "central venous access",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Red BlackSemiCn section heading; semibold table31-4 title uses catheterization",
+        "entry_term": "central venous access"
+      },
+      {
+        "term": "pulmonary artery catheter",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical phrase",
+        "entry_term": "pulmonary artery catheter"
+      },
+      {
+        "term": "transvenous pacemaker",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical phrase",
+        "entry_term": "transvenous pacemaker"
+      },
+      {
+        "term": "hemodialysis",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical headword",
+        "entry_term": "hemodialysis"
+      },
+      {
+        "term": "central venous pressure",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical phrase",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "congestive heart failure",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 parenthetical phrase",
+        "entry_term": "congestive heart failure"
+      },
+      {
+        "term": "pericardial effusion",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 parenthetical phrase",
+        "entry_term": "pericardial effusion"
+      },
+      {
+        "term": "sclerosing medications",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical phrase",
+        "entry_term": "sclerosing medications"
+      },
+      {
+        "term": "cytotoxic chemotherapeutic agents",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular table31-4 lexical phrase",
+        "entry_term": "cytotoxic chemotherapeutic agents"
+      },
+      {
+        "term": "external jugular vein",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Red BlackSemiCn heading; figure31-3 label also PDF60",
+        "entry_term": "external jugular vein"
+      },
+      {
+        "term": "internal jugular vein",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Red BlackSemiCn heading; table31-9 title repeats PDF63",
+        "entry_term": "internal jugular vein"
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "pneumothorax"
+      },
+      {
+        "term": "arterial puncture",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "arterial puncture"
+      },
+      {
+        "term": "malpositioning",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "malpositioning"
+      },
+      {
+        "term": "catheter-associated infection",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "catheter-associated infection"
+      },
+      {
+        "term": "thrombosis",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "thrombosis"
+      },
+      {
+        "term": "chylothorax",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "chylothorax"
+      },
+      {
+        "term": "hydrothorax",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 slash-separated bullet headword",
+        "entry_term": "hydrothorax"
+      },
+      {
+        "term": "hydromediastinum",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 slash-separated bullet headword",
+        "entry_term": "hydromediastinum"
+      },
+      {
+        "term": "air emboli",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "air emboli"
+      },
+      {
+        "term": "perforation",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet headword",
+        "entry_term": "perforation"
+      },
+      {
+        "term": "hemothorax",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 parenthetical headword",
+        "entry_term": "hemothorax"
+      },
+      {
+        "term": "tamponade",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 parenthetical headword",
+        "entry_term": "tamponade"
+      },
+      {
+        "term": "airway compromise",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-5 bullet",
+        "entry_term": "airway compromise"
+      },
+      {
+        "term": "sterile drape",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment noun",
+        "entry_term": "sterile drape"
+      },
+      {
+        "term": "chlorhexidine",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 parenthetical equipment name",
+        "entry_term": "chlorhexidine"
+      },
+      {
+        "term": "syringes",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment noun",
+        "entry_term": "syringes"
+      },
+      {
+        "term": "normal saline",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment phrase",
+        "entry_term": "normal saline"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment name",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "introducer needle",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment phrase",
+        "entry_term": "introducer needle"
+      },
+      {
+        "term": "guidewire",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment noun",
+        "entry_term": "guidewire"
+      },
+      {
+        "term": "scalpel",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment noun",
+        "entry_term": "scalpel"
+      },
+      {
+        "term": "venodilator",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment noun",
+        "entry_term": "venodilator"
+      },
+      {
+        "term": "multilumen catheter",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment phrase; source Single- or multilumen catheter",
+        "entry_term": "multilumen catheter"
+      },
+      {
+        "term": "silk suture",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment phrase",
+        "entry_term": "silk suture"
+      },
+      {
+        "term": "needle driver",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular table31-6 equipment phrase",
+        "entry_term": "needle driver"
+      },
+      {
+        "term": "preprocedure checklist",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Semibold table31-7 title lexical phrase",
+        "entry_term": "preprocedure checklist"
+      },
+      {
+        "term": "Seldinger technique",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Semibold table31-8 title; figure31-5 caption repeats PDF63",
+        "entry_term": "Seldinger technique"
+      },
+      {
+        "term": "central approach",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Red semibold subheading below table31-8",
+        "entry_term": "central approach"
+      },
+      {
+        "term": "posterior approach",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Red semibold subheading below table31-8",
+        "entry_term": "posterior approach"
+      },
+      {
+        "term": "anterior approach",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Red semibold subheading upper left",
+        "entry_term": "anterior approach"
+      },
+      {
+        "term": "subclavian vein",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Red BlackSemiCn section heading",
+        "entry_term": "subclavian vein"
+      },
+      {
+        "term": "infraclavicular approach",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Red semibold right-column subheading",
+        "entry_term": "infraclavicular approach"
+      },
+      {
+        "term": "supraclavicular approach",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Red semibold right-column subheading",
+        "entry_term": "supraclavicular approach"
+      },
+      {
+        "term": "femoral vein",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "femoral vein"
+      },
+      {
+        "term": "NAVEL",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "MinionPro-Bold acronym",
+        "entry_term": "NAVEL"
+      },
+      {
+        "term": "surface anatomy approach",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "Red semibold subheading",
+        "entry_term": "surface anatomy approach"
+      },
+      {
+        "term": "US-guided approach",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Red semibold left-column subheading",
+        "entry_term": "US-guided approach"
+      },
+      {
+        "term": "venous cutdown",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "venous cutdown"
+      },
+      {
+        "term": "IO vascular access",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "IO vascular access"
+      },
+      {
+        "term": "EZ-IO",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Regular branded name in body; figure31-16 visible device label PDF67",
+        "entry_term": "EZ-IO"
+      },
+      {
+        "term": "arterial access",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Red BlackSemiCn section heading; table31-12 repeats PDF68",
+        "entry_term": "arterial access"
+      },
+      {
+        "term": "radial artery",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Red BlackSemiCn RADIAL ARTERY ANATOMY heading lexical phrase",
+        "entry_term": "radial artery"
+      },
+      {
+        "term": "radial pulse",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold sentence lexical phrase",
+        "entry_term": "radial pulse"
+      },
+      {
+        "term": "ulnar artery compression test",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold sentence lexical phrase; shared radial and ulnar artery compression test",
+        "entry_term": "ulnar artery compression test"
+      },
+      {
+        "term": "Allen test",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold sentence explicit test name",
+        "entry_term": "Allen test"
+      },
+      {
+        "term": "collateral circulation",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold sentence lexical phrase",
+        "entry_term": "collateral circulation"
+      },
+      {
+        "term": "manual IO venous access",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Semibold table31-10 title lexical phrase",
+        "entry_term": "manual IO venous access"
+      },
+      {
+        "term": "stylet",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-10 lexical equipment headword",
+        "entry_term": "stylet"
+      },
+      {
+        "term": "periosteum",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-10 lexical headword",
+        "entry_term": "periosteum"
+      },
+      {
+        "term": "physeal plate",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-10 lexical phrase",
+        "entry_term": "physeal plate"
+      },
+      {
+        "term": "marrow cavity",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-10 lexical phrase",
+        "entry_term": "marrow cavity"
+      },
+      {
+        "term": "arterial blood gas",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical phrase",
+        "entry_term": "arterial blood gas"
+      },
+      {
+        "term": "acid-base",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical compound",
+        "entry_term": "acid-base"
+      },
+      {
+        "term": "oxygen saturations",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical phrase",
+        "entry_term": "oxygen saturations"
+      },
+      {
+        "term": "carbon dioxide",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical phrase",
+        "entry_term": "carbon dioxide"
+      },
+      {
+        "term": "respiratory failure",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical phrase",
+        "entry_term": "respiratory failure"
+      },
+      {
+        "term": "blood pressure",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 lexical phrase",
+        "entry_term": "blood pressure"
+      },
+      {
+        "term": "intracranial hemorrhages",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 wrapped lexical phrase",
+        "entry_term": "intracranial hemorrhages"
+      },
+      {
+        "term": "aortic dissections",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 parenthetical lexical phrase",
+        "entry_term": "aortic dissections"
+      },
+      {
+        "term": "abdominal aortic aneurysms",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular table31-11 parenthetical lexical phrase",
+        "entry_term": "abdominal aortic aneurysms"
+      },
+      {
+        "term": "angiocatheter",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 equipment name and table31-13 noun",
+        "entry_term": "angiocatheter"
+      },
+      {
+        "term": "integral-guidewire arterial catheter",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 wrapped equipment phrase",
+        "entry_term": "integral-guidewire arterial catheter"
+      },
+      {
+        "term": "nylon suture",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 equipment phrase",
+        "entry_term": "nylon suture"
+      },
+      {
+        "term": "pressure bag",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 parenthetical equipment noun",
+        "entry_term": "pressure bag"
+      },
+      {
+        "term": "transducer",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 parenthetical equipment noun; table31-13 repeats",
+        "entry_term": "transducer"
+      },
+      {
+        "term": "flushing system",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-12 parenthetical equipment phrase",
+        "entry_term": "flushing system"
+      },
+      {
+        "term": "artery cannulation",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Semibold table31-13 title lexical phrase",
+        "entry_term": "artery cannulation"
+      },
+      {
+        "term": "direct pressure",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "MinionPro-Bold lower-right sentence lexical phrase",
+        "entry_term": "direct pressure"
+      },
+      {
+        "term": "arterial vasospasm",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 bullet",
+        "entry_term": "arterial vasospasm"
+      },
+      {
+        "term": "pseudoaneurysm",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 bullet headword",
+        "entry_term": "pseudoaneurysm"
+      },
+      {
+        "term": "arteriovenous fistula",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 bullet",
+        "entry_term": "arteriovenous fistula"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 bullet",
+        "entry_term": "infection"
+      },
+      {
+        "term": "limb ischemia",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 bullet",
+        "entry_term": "limb ischemia"
+      },
+      {
+        "term": "embolization",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 slash-separated bullet headword",
+        "entry_term": "embolization"
+      },
+      {
+        "term": "neuropathy",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 slash-separated bullet headword",
+        "entry_term": "neuropathy"
+      },
+      {
+        "term": "artery laceration",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 slash-separated bullet phrase",
+        "entry_term": "artery laceration"
+      },
+      {
+        "term": "inguinal ligament",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "MinionPro-Bold upper-left sentence lexical phrase",
+        "entry_term": "inguinal ligament"
+      },
+      {
+        "term": "vascular injury",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "MinionPro-Bold upper-left sentence lexical phrase, wrapped vascular",
+        "entry_term": "vascular injury"
+      },
+      {
+        "term": "hemorrhage",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "MinionPro-Bold upper-left sentence headword; regular table31-14 repeat PDF69",
+        "entry_term": "hemorrhage"
+      },
+      {
+        "term": "retroperitoneal space",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "MinionPro-Bold upper-left sentence lexical phrase",
+        "entry_term": "retroperitoneal space"
+      },
+      {
+        "term": "ulnar artery",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold shared radial/ulnar test sentence lexical headword; figure31-19 label PDF68",
+        "entry_term": "ulnar artery"
+      },
+      {
+        "term": "stopcock",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular table31-13 comment equipment noun",
+        "entry_term": "stopcock"
+      },
+      {
+        "term": "chest radiograph",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Regular table31-8 comment lexical phrase",
+        "entry_term": "chest radiograph"
+      },
+      {
+        "term": "premature ventricular contractions",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Regular table31-8 comment lexical phrase",
+        "entry_term": "premature ventricular contractions"
+      },
+      {
+        "term": "dysrhythmias",
+        "pdf_page": 62,
+        "page": 204,
+        "emphasis": "Regular table31-8 comment lexical headword",
+        "entry_term": "dysrhythmias"
+      },
+      {
+        "term": "aorta",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 label, not bold",
+        "entry_term": "aorta"
+      },
+      {
+        "term": "inferior vena cava",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 wrapped label",
+        "entry_term": "inferior vena cava"
+      },
+      {
+        "term": "external iliac vein",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 wrapped label",
+        "entry_term": "external iliac vein"
+      },
+      {
+        "term": "femoral artery",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 label",
+        "entry_term": "femoral artery"
+      },
+      {
+        "term": "femoral nerve",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 label",
+        "entry_term": "femoral nerve"
+      },
+      {
+        "term": "greater saphenous vein",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Regular figure31-4 wrapped label",
+        "entry_term": "greater saphenous vein"
+      },
+      {
+        "term": "carotid artery",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular figure31-3 label",
+        "entry_term": "carotid artery"
+      },
+      {
+        "term": "subclavian artery",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Regular figure31-10 label",
+        "entry_term": "subclavian artery"
+      },
+      {
+        "term": "axillary vein",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Regular figure31-10 label",
+        "entry_term": "axillary vein"
+      },
+      {
+        "term": "brachial plexus",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Regular figure31-10 label",
+        "entry_term": "brachial plexus"
+      },
+      {
+        "term": "clavicle",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Regular figure31-10 label",
+        "entry_term": "clavicle"
+      },
+      {
+        "term": "sternocleidomastoid muscle",
+        "pdf_page": 64,
+        "page": 206,
+        "emphasis": "Regular figure31-10 wrapped label",
+        "entry_term": "sternocleidomastoid muscle"
+      },
+      {
+        "term": "palmar arterial arches",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Regular figure31-19 embedded-raster label, visually verified exactly as Palmar arterial arches; not extractable text",
+        "entry_term": "palmar arterial arches"
+      },
+      {
+        "term": "accessory cephalic vein",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular figure31-1 label",
+        "entry_term": "cephalic vein",
+        "normalization": "Accessory qualifier contextual; mapped family, not separate discovery."
+      },
+      {
+        "term": "peripheral IV line placement",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Semibold table31-1 title",
+        "entry_term": "peripheral venous access",
+        "normalization": "IV/peripheral access family."
+      },
+      {
+        "term": "peripheral IV line insertion",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Semibold table31-2 title",
+        "entry_term": "peripheral venous access",
+        "normalization": "Insertion phrase screened at access vocabulary level; steps excluded."
+      },
+      {
+        "term": "catheter-over-needle",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Regular figure31-2 caption phrase",
+        "entry_term": "catheter",
+        "normalization": "Catheter family only; over-needle relation not encoded."
+      },
+      {
+        "term": "US technique for central venous access",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "central venous access",
+        "normalization": "Central access vocabulary; no technique encoded."
+      },
+      {
+        "term": "central venous catheterization",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Semibold table31-4 title and regular body phrase",
+        "entry_term": "central venous access",
+        "normalization": "Access family only; not procedure instruction."
+      },
+      {
+        "term": "complications of peripheral venous access",
+        "pdf_page": 60,
+        "page": 202,
+        "emphasis": "Semibold table31-3 title",
+        "entry_term": "peripheral venous access",
+        "normalization": "Medical row headwords separately attempted."
+      },
+      {
+        "term": "complications of central venous catheterization",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Semibold table31-5 title",
+        "entry_term": "central venous access",
+        "normalization": "Medical bullet headwords separately attempted."
+      },
+      {
+        "term": "materials for central venous catheterization",
+        "pdf_page": 61,
+        "page": 203,
+        "emphasis": "Semibold table31-6 title",
+        "entry_term": "central venous access",
+        "normalization": "Equipment headwords separately attempted."
+      },
+      {
+        "term": "summary of approaches to internal jugular vein catheterization",
+        "pdf_page": 63,
+        "page": 205,
+        "emphasis": "Semibold table31-9 title",
+        "entry_term": "internal jugular vein",
+        "normalization": "Approach names separately tried."
+      },
+      {
+        "term": "central",
+        "pdf_page": 63,
+        "page": 205,
+        "emphasis": "Regular table31-9 row label",
+        "entry_term": "central approach"
+      },
+      {
+        "term": "posterior",
+        "pdf_page": 63,
+        "page": 205,
+        "emphasis": "Regular table31-9 row label",
+        "entry_term": "posterior approach"
+      },
+      {
+        "term": "anterior",
+        "pdf_page": 63,
+        "page": 205,
+        "emphasis": "Regular table31-9 row label",
+        "entry_term": "anterior approach"
+      },
+      {
+        "term": "internal jugular vein",
+        "pdf_page": 63,
+        "page": 205,
+        "emphasis": "Regular figure31-6 caption phrase",
+        "entry_term": "internal jugular vein",
+        "normalization": "Repeated name, no ultrasound findings."
+      },
+      {
+        "term": "subclavian vein",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "Regular figure31-11 caption phrase",
+        "entry_term": "subclavian vein",
+        "normalization": "Repeated name; image labels do not establish technique."
+      },
+      {
+        "term": "infraclavicular approach",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "Regular figure31-12 caption phrase",
+        "entry_term": "infraclavicular approach"
+      },
+      {
+        "term": "supraclavicular approach",
+        "pdf_page": 65,
+        "page": 207,
+        "emphasis": "Regular figure31-13 caption phrase",
+        "entry_term": "supraclavicular approach"
+      },
+      {
+        "term": "femoral vein",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Regular figure31-15 caption phrase",
+        "entry_term": "femoral vein",
+        "normalization": "No sonographic comparison or limb position encoded."
+      },
+      {
+        "term": "technique for IO access",
+        "pdf_page": 66,
+        "page": 208,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "IO vascular access",
+        "normalization": "Heading mapped to access family."
+      },
+      {
+        "term": "IO drill device",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Regular figure31-16 caption phrase; branded drill visually inspected",
+        "entry_term": "EZ-IO",
+        "normalization": "Broad category only, not brand identity."
+      },
+      {
+        "term": "indications for arterial catheter placement",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Semibold table31-11 title",
+        "entry_term": "arterial access",
+        "normalization": "Lexical table phrase, not indications."
+      },
+      {
+        "term": "alternative arterial sites",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "arterial access",
+        "normalization": "Broad access family; sites not selected from generic body paragraph."
+      },
+      {
+        "term": "radial and ulnar artery compression test",
+        "pdf_page": 67,
+        "page": 209,
+        "emphasis": "MinionPro-Bold shared-name sentence phrase",
+        "entry_term": "ulnar artery compression test",
+        "normalization": "Shared phrase supplies radial/ulnar test headword, no test steps."
+      },
+      {
+        "term": "materials for arterial access",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Semibold table31-12 title",
+        "entry_term": "arterial access"
+      },
+      {
+        "term": "technique for arterial access",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Red BlackSemiCn heading",
+        "entry_term": "arterial access"
+      },
+      {
+        "term": "US-guided arterial access",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "Red semibold heading",
+        "entry_term": "arterial access",
+        "normalization": "US modifier contextual; no imaging traits."
+      },
+      {
+        "term": "direct angiocatheter technique",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular figure31-21 caption phrase",
+        "entry_term": "angiocatheter",
+        "normalization": "Technique words not encoded."
+      },
+      {
+        "term": "integral-guidewire technique",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular figure31-22 caption phrase",
+        "entry_term": "integral-guidewire arterial catheter",
+        "normalization": "Device family only."
+      },
+      {
+        "term": "complications of arterial access and cannulation",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Semibold table31-14 title",
+        "entry_term": "arterial access",
+        "normalization": "Medical bullet headwords separately attempted."
+      },
+      {
+        "term": "nerve damage",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 slash-separated bullet phrase",
+        "entry_term": "neuropathy",
+        "normalization": "Mapped to unresolved same-row name family, not a newly inferred fact."
+      },
+      {
+        "term": "thrombosis",
+        "pdf_page": 69,
+        "page": 211,
+        "emphasis": "Regular table31-14 slash-separated bullet headword",
+        "entry_term": "thrombosis"
+      },
+      {
+        "term": "catheter removal",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "MinionPro-Bold lower-right sentence lexical phrase",
+        "entry_term": "catheter removal",
+        "normalization": "Repeated bold headword, timing excluded."
+      },
+      {
+        "term": "femoral site",
+        "pdf_page": 68,
+        "page": 210,
+        "emphasis": "MinionPro-Bold lower-right sentence lexical phrase",
+        "entry_term": "femoral vein",
+        "normalization": "Broad femoral name ingredient only, not a prescribed site."
+      },
+      {
+        "term": "pressure bag",
+        "pdf_page": 59,
+        "page": 201,
+        "emphasis": "Regular introductory body phrase, not bold; later equipment noun table31-12 PDF68",
+        "entry_term": "pressure bag",
+        "normalization": "Optional cross-location mapping, not claim of early bold emphasis."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 59,
+        "description": "Author byline, chapter numeral, running header, INTRODUCTION; figure/table numbers and letter markers.",
+        "reason": "Bibliographic/layout identifiers, not vocabulary candidates."
+      },
+      {
+        "pdf_page": 59,
+        "description": "Bold maximal-flow sentence; size adjectives and comparative statement.",
+        "reason": "Flow rates and catheter screened. Numeric/comparative instructions and generic shorter/wide adjectives not separate terms or source facts."
+      },
+      {
+        "pdf_page": 59,
+        "description": "Bold peripheral-access sentence and table31-2 numbered imperative steps.",
+        "reason": "Peripheral venous access, vasopressors, catheter/hub, vein, tourniquet, nitroglycerin and ischemia screened. Security, angle, sequence and method prose excluded; not whole-sentence exclusion of headwords."
+      },
+      {
+        "pdf_page": 60,
+        "description": "Bold complication-treatment sentence and figure31-2 A-D procedural sequence.",
+        "reason": "Catheter removal/catheter vocabulary screened; treatment statement and insertion sequence not retained."
+      },
+      {
+        "pdf_page": 61,
+        "description": "Table31-6 gauges, volumes, blade/suture numbers; table31-7 before/during/after prompts, times and all-staff instructions.",
+        "reason": "Equipment and checklist lexical headwords screened; quantities and operational prompts are not separate cues."
+      },
+      {
+        "pdf_page": 62,
+        "description": "Table31-8 numbered procedure, body directions, angles/depths and confirmation clauses.",
+        "reason": "Seldinger, equipment, premature ventricular contractions, dysrhythmias and chest radiograph screened; no procedure, route or clinical consequence encoded."
+      },
+      {
+        "pdf_page": 63,
+        "description": "Table31-9 numeric depths and direction-of-aim instructions; figure31-5 lettered sequence; raster CA/IJ labels.",
+        "reason": "Named jugular, carotid and approach families screened; letters, numeric instructions and abbreviations do not add candidate counts."
+      },
+      {
+        "pdf_page": 64,
+        "description": "Figure31-9/10 caption letters, cross-section relationship wording; approach-method prose.",
+        "reason": "Selected named-vessel and approach vocabulary screened; no anatomic relationship or trajectory taught."
+      },
+      {
+        "pdf_page": 65,
+        "description": "Figure31-11 raster machine readouts and SUBCL/IJ abbreviations, figure31-12/13/14 technique clauses.",
+        "reason": "Named vessel/approach families and NAVEL token screened; abbreviations map to names rather than duplicate trials. NAVEL expansion/order deliberately not reproduced."
+      },
+      {
+        "pdf_page": 66,
+        "description": "Bold upper-left caution sentence; figure31-15 comparison and rotation clauses.",
+        "reason": "Inguinal ligament, vascular injury, hemorrhage and retroperitoneal space screened separately; location, causal and safety instruction prose excluded."
+      },
+      {
+        "pdf_page": 67,
+        "description": "Bold radial/ulnar sentence, table31-10 numbered/action prose, table31-11 status/range clauses.",
+        "reason": "Radial pulse, radial/ulnar artery test, collateral circulation and Allen test screened; no maneuver, measurement, threshold or causal teaching."
+      },
+      {
+        "pdf_page": 68,
+        "description": "Bold lower-right removal/pressure sentence, semibold table31-13 safety clause, zeroing/alignment comments and sizes.",
+        "reason": "Catheter removal, direct pressure, femoral name, catheter/transducer and equipment headwords screened; directions, durations, settings and nonclinical direct-line wording are not new term trials."
+      },
+      {
+        "pdf_page": 69,
+        "description": "Figure31-20/21/22 angle labels, A-C markers, procedure/copyright clauses; REFERENCES notice.",
+        "reason": "Catheter, guidewire and radial artery families screened; procedural/numeric/bibliographic text excluded."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Searched prior1-29A/B bank entry names and relevant cues, catalog concepts/IDs and both workshops. Main final same-batch30 reconciliation:31 scalpel/Seldinger/dilator/clavicle/stopcock reuse30;31 guidewire and gauze remain retained roots for30 reuses; tape remains catalog-rooted in31 for30 to reuse. Stylet reuses29A#stylets with subtype modifiers stripped.31 central venous pressure retained for32. Exact path#term or catalog#id used. Within-bank US-guided approach targets a different retain_candidate only.",
+    "limits": "Main owns final30/32 edits and cross-bank integration. A retained composition is not a novel primitive. Historical holds remain open except explicitly local31 changes."
+  },
+  "resolved_holds": [
+    {
+      "term": "vein",
+      "resolution": "Local31 reconsideration: retain taught vane/vein candidate under chapter2 calibration. Earlier workshop hold remains open; no prior-bank edit or empirical resolution.",
+      "prior": "docs/sound-bridge-workshop-2.json#vein",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Rooftop weather vane",
+          "reason": "Earlier workshop exact-noun dependency: weathercock/arrow names compete.",
+          "scope": "Historical prior hold, still open."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "Familiar rooftop weather vane",
+          "reason": "Useful homophone can be learned without unique blind naming; regional naming uncertainty disclosed.",
+          "scope": "Local31 only; entry never locally held."
+        }
+      ],
+      "earlier_hold_remains_open": true,
+      "scope": "local_reconsideration_not_prior_hold_resolution"
+    },
+    {
+      "term": "lidocaine",
+      "resolution": "Reuse later29A retained partial-name family, not resolution of older full-sound holds.",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Lid plus cane",
+          "reason": "Earlier2/19/24/25 and workshop full-sound attempt rejected missing sounds.",
+          "scope": "Historical prior decisions unchanged."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Lid balanced on walking cane",
+          "reason": "Later29A retains under partial-name calibration;31 reuses precisely.",
+          "scope": "Local31 only."
+        }
+      ],
+      "earlier_hold_remains_open": true,
+      "scope": "reuse_later_candidate_not_prior_hold_resolution"
+    },
+    {
+      "term": "catheter",
+      "resolution": "Literal category reuse, not resurrection of rejected cat/theater sound rebus. Earlier26 central-venous-catheter hold remains open.",
+      "prior": "docs/sound-bridge-workshop.json#catheter",
+      "history": [
+        {
+          "decision": "reject",
+          "attempt": "Cat plus theater",
+          "reason": "Sound editing and theater naming dependency.",
+          "scope": "Historical workshop rejection unchanged."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Detached catheter prop from29A Aintree record, tree omitted",
+          "reason": "Category/device recognition allowed by chapter2.",
+          "scope": "Local31."
+        }
+      ],
+      "earlier_hold_remains_open": true,
+      "scope": "different_cue_type_not_prior_hold_resolution",
+      "prior_hold": "docs/chapter-26-cue-audit.json#central venous catheter"
+    },
+    {
+      "term": "arterial blood gas",
+      "resolution": "Local31 hold changed to retain_candidate after main creative challenge; original attempted idea preserved. No prior-bank hold resolved.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "An artery token beside a blood-drop token and an air balloon.",
+          "reason": "Three generic props make an awkward phrase; no measurement cue selected.",
+          "scope": "Historical early31 attempt."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A single blood-drop-shaped party balloon.",
+          "reason": "Main creative challenge accepted: one coherent blood-drop balloon replaces three disconnected props. Not a measurement, collection instruction or unique arterial identifier.",
+          "scope": "Current local31 candidate, untested."
+        }
+      ],
+      "scope": "local_hold_to_candidate",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "abdominal aortic aneurysms",
+      "resolution": "Local31 hold changed to retain_candidate after main creative challenge; original attempted idea preserved. No prior-bank hold resolved.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A belly-shaped token beside a bulging tube.",
+          "reason": "Bulging supplies a broad concept, but no economical named-family cue selected; no anatomy assertion.",
+          "scope": "Historical early31 attempt."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A familiar household battery standing alone.",
+          "reason": "Main creative challenge accepted: AAA/battery is a familiar taught name fragment. Unlabeled battery does not visually distinguish AAA from other battery types; no size, type specifications or clinical morphology encoded.",
+          "scope": "Current local31 candidate, untested."
+        }
+      ],
+      "scope": "local_hold_to_candidate",
+      "earlier_hold_remains_open": false
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author-completed bounded offline screen; main independent integration review, tests/register/ledger and Git pending. Not exhaustive chapter or clinical coverage.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/batch30-32/chapter31/",
+  "coverage_limits": [
+    "No attempt to enumerate every unformatted narrative word or all ancillary anatomy labels (for example muscles, bones and joint landmarks not part of selected vessel-name screen).",
+    "Inline bold xrefs are formatting, not independent medical terms. No page annotations found does not exclude flattened publisher highlights; colored heading bars and table shading are visible layout, not asserted user highlights.",
+    "Latin labels and long compounds are allowed holds after an actual attempted association; no full-syllable or unique-blind-diagnosis standard imposed.",
+    "All candidates are untested. Device/category recognition, regional object names, learned partial-name pronunciation and recall require testing. Source-page match is not clinical, recall or renderer validation."
+  ],
+  "source_wording_notes": {
+    "normalization": "Case/whitespace and line-wrap hyphens normalized; brand trademark glyph omitted from EZ-IO; shared-name ulnar compression-test wording is lexical extraction, not a new test name.",
+    "modifiers": "Broader reuses explicitly omit pulmonary/artery, material, lumen and IO qualifiers; cardiac/limb, cascade, Aintree/tree, detector/tide and mute-symbol modifiers removed when irrelevant.",
+    "figure_scope": "Selected named-vessel labels checked in vector text where extractable; palmar arterial arches is visually verified raster label. Ultrasound abbreviations mapped to names, not clinical interpretation.",
+    "palmar_arterial_arches": "Exact figure31-19 embedded-raster label visually verified on PDF68. Not an extractable-text match, not a paraphrase or normalization. Entry source_match figure_label denotes visual presence.",
+    "historical_attempts": "arterial blood gas and abdominal aortic aneurysms retain their original attempted_cue fields as historical failed proposals; current selected cue is in cue and hold-to-candidate history in resolved_holds."
+  },
+  "reconciliation_history": [
+    {
+      "term": "same-batch family reconciliation",
+      "resolution": "Main final batch rooting supersedes provisional new-to-reuse choices: scalpel/Seldinger/dilator rooted30; guidewire and gauze rooted31. No local hold deleted.",
+      "history": [
+        {
+          "decision": "retain_candidate",
+          "attempt": "31 scalpel/gauze literal props, guide+wire, vane+dilation and seller/ringer",
+          "reason": "30 expansion not yet read during early draft.",
+          "scope": "Historical early31 proposals."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "30 scalpel, gauze dressing, guidewire, dilator and Seldinger exact retained families; stylet changed to29A#stylets after main correction",
+          "reason": "Avoid duplicate discoveries across shared batch.",
+          "scope": "Current31 entries."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "31 tour guide holding wire;31 folded open-weave gauze",
+          "reason": "Main final reconciliation selected31 retained roots;30 will reuse31, avoiding mutual reuse cycles. Stylet remains29A reuse.",
+          "scope": "Current31 guidewire/gauze; other reconciled reuses unchanged."
+        }
+      ],
+      "scope": "candidate_to_reuse_reconciliation"
+    }
+  ]
+}

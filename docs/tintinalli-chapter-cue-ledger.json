@@ -538,6 +538,48 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 86
+    },
+    {
+      "chapter_id": "30",
+      "title": "Surgical Airways",
+      "record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "selected_terms": 93,
+      "new_candidates": 32,
+      "reused_candidates": 46,
+      "holds": 15,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 107
+    },
+    {
+      "chapter_id": "31",
+      "title": "Vascular Access",
+      "record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "selected_terms": 150,
+      "new_candidates": 68,
+      "reused_candidates": 53,
+      "holds": 29,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 184
+    },
+    {
+      "chapter_id": "32",
+      "title": "Hemodynamic Monitoring",
+      "record": "docs/chapter-32-cue-audit.json",
+      "report": "docs/chapter-32-cue-audit.md",
+      "selected_terms": 91,
+      "new_candidates": 41,
+      "reused_candidates": 48,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 113
     }
   ],
   "hold_register": {
@@ -547,8 +589,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "30",
-    "title": "Surgical Airways",
+    "chapter_id": "33",
+    "title": "Cardiac Pacing and Implanted Defibrillation",
     "status": "not_started_for_cue_review"
   },
   "spend": {

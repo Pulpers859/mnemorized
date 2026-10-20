@@ -199,6 +199,36 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-20 - Chapters30-32 vocabulary batch and reviewer revival
+**Done:** Three AI drafting lanes; main independently checked every recorded
+vocabulary/page and keyword location, all cues and resolved reuse targets.
+30=93 terms/32 new/46 reuse/15 hold;31=150/68/53/29;
+32=91/41/48/2. Total334 trials/141 new/147 reuse/46 hold;
+404 distinct keyword term/page mappings after merging four duplicate same-page
+records without losing emphasis notes. Rendered boundaries52/58/59/69/70/74
+verified; palmar arterial arches68 verified inside embedded raster. Full-width
+Table32-3 and right-top continuation included;33 lower-right74 excluded.
+No assigned-page annotations; printed typography checked separately. Not
+exhaustive vocabulary, clinical/source-entailment, human-expert or recall proof.
+**Reconciliation:** Scalpel/Seldinger root30; guidewire/gauze root31. ECG/lactic
+acidosis reuse older records. Modern JSON reuse chains checked without cycles
+or held targets; legacy non-fragment links terminate traversal. Generic label-T
+removed from lactate cue. ABG/AAA, seize/seizure and mitochondrion-model main
+proposals independently challenged/accepted with context limitations. Nine local
+decision histories retained, older holds/rejections unchanged. Batch-level31
+reconciliation history moved outside term-specific resolved_holds.
+**Holds:**239 active chapter occurrences/191 distinct terms;24 decision-history
+records. Fixed exporter to preserve explicit attempted_cue; regression added.
+**Interruption:** Revived31 reviewer after Codex usage limit; not Anthropic
+funding. Saved drafts preserved; no paid calls or image/Forge runs. $6 allowance
+untouched; canonical catalog unchanged76. Preserve unrelated Forge edits.
+**Validation:** Focused176passed/1skipped; hold register current; catalog valid76.
+Full suite808passed/2skipped/149subtests passed; staged whitespace check clean.
+No browser/provider/recall/render validation.
+**Next:**33 Cardiac Pacing and Implanted Defibrillation, actual title right74.
+Earlier1-19 expanded emphasis backfill still outstanding. Preexisting malformed
+Codex checkpoint ref still prevents fetch; no ref deletion or auth retries.
+
 ### 2026-10-20 - Split source chapters29A/29B vocabulary review
 **Done:** Two disjoint drafting agents plus main independent source/cue review.
 29A=184 terms/59 new/82 reuse/43 hold;29B=71/30/29/12.

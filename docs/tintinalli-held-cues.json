@@ -31,10 +31,13 @@
     "27",
     "28",
     "29A",
-    "29B"
+    "29B",
+    "30",
+    "31",
+    "32"
   ],
-  "active_hold_occurrences": 193,
-  "unique_held_terms": 153,
+  "active_hold_occurrences": 239,
+  "unique_held_terms": 191,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -116,7 +119,8 @@
       "attempted_cue": "Lid plus walking cane.",
       "reason": "Repeated target, not new. Lid-cane loses spoken material and may retrieve lid or cane rather than the drug. The broadened framework does not automatically rehabilitate a weak particular sound bridge.",
       "retained_in_other_chapters": [
-        "29A"
+        "29A",
+        "31"
       ]
     },
     {
@@ -393,7 +397,8 @@
       "attempted_cue": null,
       "reason": "Existing hold preserved. Historical lid plus cane attempt lost name material; no improved proposal here and no revival of that workshop rebus.",
       "retained_in_other_chapters": [
-        "29A"
+        "29A",
+        "31"
       ]
     },
     {
@@ -548,7 +553,9 @@
       "report": "docs/chapter-20-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried heart token in a traffic jam for congestion; adding a failed vehicle to recover failure overcomplicates this attempt. No clinical state or diagnosis inferred from traffic metaphor; keep unresolved rather than force it.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "31"
+      ]
     },
     {
       "chapter_id": "20",
@@ -835,7 +842,8 @@
       "attempted_cue": null,
       "reason": "Earlier lid/cane rejection remains historical, not silently promoted. No improved proposal in this bounded selection.",
       "retained_in_other_chapters": [
-        "29A"
+        "29A",
+        "31"
       ]
     },
     {
@@ -880,7 +888,9 @@
       "report": "docs/chapter-24-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried the established thoracic-air cue with taut fabric for tension. The added tension prop is ambiguous, so this modifier-specific candidate is held rather than silently dropping tension. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "32"
+      ]
     },
     {
       "chapter_id": "24",
@@ -1013,7 +1023,8 @@
       "attempted_cue": null,
       "reason": "Earlier hold and lid/cane attempt remain historical, not silently promoted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": [
-        "29A"
+        "29A",
+        "31"
       ]
     },
     {
@@ -1565,7 +1576,8 @@
       "attempted_cue": null,
       "reason": "Tried an outward arrow ending at a pressure gauge. It is a possible partial name aid, but the end qualifier adds unclear pictogram syntax; no selected proposal here and no physiological timing lesson substituted.",
       "retained_in_other_chapters": [
-        "29B"
+        "29B",
+        "32"
       ]
     },
     {
@@ -1665,7 +1677,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a freestanding larynx study model and the historical lair/lynx bridge; no economical chosen shape or partial-name proposal in this pass. Literal teaching models are allowed; hold is specific to unselected proposals, not the old sound rejection alone.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "30"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2172,6 +2186,512 @@
       "attempted_cue": null,
       "reason": "Tried a pea balanced beside an H-shaped block; relies on a visible letter and has no selected nonletter bridge. Numeric directive excluded only after this lexical trial.",
       "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "cricothyrotomy",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried cricket beside a neck teaching token again; the pairing remains unappealing, not forbidden by a full-syllable rule. No cutting depiction substituted. Later28/29A spelling-family holds remain unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "hyoid-mental distance",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a toy hyoid beside a thinking-face token and ruler. Mental/thinking distracts from this name; unappealing composition, not a ban on partial names. Hyoid model separately tried from Figure30-2.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "thyroid-to-mouth distance",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried detached thyroid and mouth tokens beside a ruler; the relational arrangement looked like an exam diagram rather than a useful compact name reminder. No distances or measurement instruction retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "epiglottitis",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Reconsidered epaulette/glitter partial-name attempt; still cluttered and not selected. No old hold erased and no symptom depiction substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "peritonsillar abscess",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Reconsidered pears around tassels with abs/cess fragment; no economical appealing arrangement selected. Historical hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "hypopharyngeal",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried low-positioned detached throat token again; the positioning was visually weak as a name reminder here. Not demanding full-name or unique anatomy recovery; prior hold stays open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "hematoma",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Reconsidered red hat on a mat; naming repair still made this proposal unattractive. No clinical appearance or mechanism substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "hemoptysis",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a hemmed cloth beside a toy pit for hemo/pty; object naming and sound bridge were unappealing. No clinical manifestation used to rescue the cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "stridor",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Reconsidered straw/door and a striding toy beside a door. Straw mismatch remains; striding silhouette could read as walking, so no chosen composition. Partial-name standard allowed; old sound rejection preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "hematemesis",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried hemmed fabric beside a theatrical nemesis mask; the second object's identity was awkward and not selected. No symptom scene substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "dysphagia",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried disc beside a page; page/phag is a strained bridge in this particular attempt. A different learned category remains possible; no clinical meaning encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "sucking wound",
+      "printed_page": 194,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried vacuum nozzle beside torn cloth; the combination looked like cleaning a rag rather than a useful taught phrase reminder. No wound appearance or care scene substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "percutaneous cricothyrotomy",
+      "printed_page": 198,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a pearl and cricket beside a teaching token; added opening-name props did not improve the existing unselected cricket family. No puncture depiction substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "needle cricothyrotomy",
+      "printed_page": 198,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried unused needle prop beside cricket; not an appealing combined name bridge here. Literal device alternatives remain permitted; no puncture or technique scene.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "30",
+      "chapter_title": "Surgical Airways",
+      "term": "insufflation control",
+      "printed_page": 199,
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried ordinary control knob beside an inflating party balloon; insufflation naming was not improved by this composition and it could imply a mechanism. Regulator category separately retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "povidone-iodine",
+      "printed_page": 201,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "Eye beside a dinner plate, or an anonymous antiseptic bottle.",
+      "reason": "Plate does not clearly supply dine; anonymous bottle supplies no economical name hook. A labeled bottle would just show answer.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "vena mediana cubiti",
+      "printed_page": 201,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A weather vane beside a median road strip and a cube.",
+      "reason": "Several weak ingredients create a cumbersome phrase; no economical selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "median antebrachial vein",
+      "printed_page": 201,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A weather vane on a road median beside an arm model.",
+      "reason": "Median ingredient plausible but antebrachial portion remains unsupported; retained simpler vein family not enough for this selected full label.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "lateral antebrachial cutaneous nerve",
+      "printed_page": 201,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "An arm-shaped model beside a branching wire.",
+      "reason": "Generic anatomy props do not yet supply economical named-family recovery; not rejected merely for lacking every syllable.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "medial antebrachial cutaneous nerve",
+      "printed_page": 201,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A branching wire beside a center-marked arm token.",
+      "reason": "Positional ingredient plausible, but a useful economical label bridge is not yet selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "hematoma",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A red puddle beside a tomato.",
+      "reason": "Tomato tail is weak and puddle nonspecific; prior hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "phlebitis",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A fleet of tiny boats beside a flame token.",
+      "reason": "Fleet/phleb is a weak sound bridge; ordinary flame supplies only broad inflammation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "Staphylococcus epidermidis",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A staff beside an outer-shell token.",
+      "reason": "Staff fragment feasible, but shell token does not supply useful economical species bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "neurovascular injury",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A cracked wire beside a vessel token.",
+      "reason": "Broad injury cues are available but this compound remains cumbersome without a clearer joint identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "sepsis",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A septic tank toy.",
+      "reason": "Tank name fragment is plausible but tank identity is poorly recoverable without labels; no selected revision.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "tissue necrosis",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A paper tissue beside a broken toy.",
+      "reason": "Tissue pun economical but broken prop does not supply a useful necrosis name cue; prior held family remains open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "pericardial effusion",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A heart token beside a water pitcher.",
+      "reason": "Familiar ingredients lack a useful economical pericardial name hook; no fluid-location teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "sclerosing medications",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A rigid board beside a generic medicine bottle.",
+      "reason": "Rigid supplies broad sclerosis association, but generic bottle is insufficient for this category without taught context.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "cytotoxic chemotherapeutic agents",
+      "printed_page": 202,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A cell token beside a skull warning token.",
+      "reason": "Plausible cytotoxic ingredient but chemotherapy component has no economical selected hook; no drug effects asserted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "catheter-associated infection",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A detached catheter prop beside a generic germ.",
+      "reason": "Catheter category available; generic germ remains unspecific for infection, prior hold not erased.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "chylothorax",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A chili pepper beside a toy treasure chest.",
+      "reason": "Chili/chylo fragment not enough to select confidently; chest supplies only thorax family.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "hydromediastinum",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A water pitcher beside a median road strip.",
+      "reason": "Hydro/median fragments feasible but awkward full target remains unsupported.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "chlorhexidine",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A chlorine-pool tub beside a hexagon.",
+      "reason": "Chlor/hex fragments possible but combination is cumbersome and misleading as product identity; prior hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "ulnar artery compression test",
+      "printed_page": 209,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "An ulna-shaped token beside a clamp and a quiz card.",
+      "reason": "Ulna and compression ingredients plausible but selected phrase is unwieldy; no test maneuver encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "periosteum",
+      "printed_page": 209,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A pear beside a bone-shaped token.",
+      "reason": "Pear/peri fragment is weak and bone token too broad for useful recovery; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "physeal plate",
+      "printed_page": 209,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A dinner plate beside a toy bone.",
+      "reason": "Plate is clear but physeal has no useful selected ingredient; not a growth or injury fact.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "pseudoaneurysm",
+      "printed_page": 211,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A theatrical false nose beside a bulging tube.",
+      "reason": "Pseudo/false ingredient possible; no useful economical aneurysm hook selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "infection",
+      "printed_page": 211,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A generic cartoon germ.",
+      "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "neuropathy",
+      "printed_page": 211,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A branching wire beside a cracked path tile.",
+      "reason": "Neuro/wire and path fragments feasible but combination is not yet economical; no nerve-damage fact.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "inferior vena cava",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A weather vane at the bottom of a toy cave.",
+      "reason": "Inferior/vane/cave fragments plausible, but cumbersome compound not selected; no anatomy relation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "external iliac vein",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A weather vane outside a box beside an iliac study token.",
+      "reason": "External and vein cues are economical, iliac ingredient depends on recognition not yet developed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "greater saphenous vein",
+      "printed_page": 203,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A large safe beside a weather vane.",
+      "reason": "Safe/saph fragment possible but not a useful selected family; greater adjective alone is not enough.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "brachial plexus",
+      "printed_page": 206,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "An arm study token beside a braided cable.",
+      "reason": "Plex/braid useful ingredient, but full name lacks an economical selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "31",
+      "chapter_title": "Vascular Access",
+      "term": "sternocleidomastoid muscle",
+      "printed_page": 206,
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "attempted_cue": "A stern toy face beside a mast and a muscle-shaped token.",
+      "reason": "Stern/mast fragments possible but compound not economical; no insertion landmarks.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "32",
+      "chapter_title": "Hemodynamic Monitoring",
+      "term": "pericardial disease",
+      "printed_page": 213,
+      "source_record": "docs/chapter-32-cue-audit.json",
+      "report": "docs/chapter-32-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Attempted heart token inside a perimeter fence with an unwell mask. Hold: fence adds generic enclosure but weakly recovers pericardial; not held merely for lack of diagnostic uniqueness.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "32",
+      "chapter_title": "Hemodynamic Monitoring",
+      "term": "pharmacologic paralysis",
+      "printed_page": 216,
+      "source_record": "docs/chapter-32-cue-audit.json",
+      "report": "docs/chapter-32-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Attempted a medicine-bottle toy beside a motionless figure. Hold: motionless still image gives weak paralysis recall beyond generic rest; pharmacologic modifier does not repair it.",
+      "retained_in_other_chapters": []
     }
   ],
   "resolved_holds": [
@@ -2294,6 +2814,78 @@
       "report": "docs/chapter-29B-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "LOCAL29B reconsideration only, not resolution of the earlier Chapter28 hold, which remains OPEN. The29B entry was initially retain_candidate, never a local hold transition. This history documents considering the older held expanded-name pictogram before selecting a new PEEP abbreviation/partial-name cue. No empirical testing or prior-bank edit."
+    },
+    {
+      "chapter_id": "30",
+      "term": "larynx",
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "LOCAL30 reconsideration only. New30 trial was selected as retain_candidate at learned-model category scope; no earlier bank or workshop decision edited or adjudicated. Chapter29A hold remains OPEN and the workshop sound attempt remains rejected."
+    },
+    {
+      "chapter_id": "30",
+      "term": "scalpel",
+      "source_record": "docs/chapter-30-cue-audit.json",
+      "report": "docs/chapter-30-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local30 category selection, not reversal of earlier rejected sound attempt; no local hold removed."
+    },
+    {
+      "chapter_id": "31",
+      "term": "vein",
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local31 reconsideration: retain taught vane/vein candidate under chapter2 calibration. Earlier workshop hold remains open; no prior-bank edit or empirical resolution."
+    },
+    {
+      "chapter_id": "31",
+      "term": "lidocaine",
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reuse later29A retained partial-name family, not resolution of older full-sound holds."
+    },
+    {
+      "chapter_id": "31",
+      "term": "catheter",
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Literal category reuse, not resurrection of rejected cat/theater sound rebus. Earlier26 central-venous-catheter hold remains open."
+    },
+    {
+      "chapter_id": "31",
+      "term": "arterial blood gas",
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local31 hold changed to retain_candidate after main creative challenge; original attempted idea preserved. No prior-bank hold resolved."
+    },
+    {
+      "chapter_id": "31",
+      "term": "abdominal aortic aneurysms",
+      "source_record": "docs/chapter-31-cue-audit.json",
+      "report": "docs/chapter-31-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local31 hold changed to retain_candidate after main creative challenge; original attempted idea preserved. No prior-bank hold resolved."
+    },
+    {
+      "chapter_id": "32",
+      "term": "seizure",
+      "source_record": "docs/chapter-32-cue-audit.json",
+      "report": "docs/chapter-32-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local Chapter32 hold reconsidered during main-author challenge; retained untested alternative. Older banks/workshop decisions are unchanged and remain available for revisit."
+    },
+    {
+      "chapter_id": "32",
+      "term": "mitochondria defect",
+      "source_record": "docs/chapter-32-cue-audit.json",
+      "report": "docs/chapter-32-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local Chapter32 hold reconsidered during main-author challenge; retained untested alternative. Older banks/workshop decisions are unchanged and remain available for revisit."
     }
   ]
 }

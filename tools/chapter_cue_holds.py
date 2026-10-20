@@ -55,7 +55,8 @@ def build_register(root: Path = ROOT) -> dict:
                 "chapter_id": str(chapter), "chapter_title": bank["title"],
                 "term": entry["term"], "printed_page": entry["page"],
                 "source_record": source, "report": report,
-                "attempted_cue": entry.get("cue"), "reason": entry["reason"],
+                "attempted_cue": entry.get("attempted_cue") or entry.get("cue"),
+                "reason": entry["reason"],
             })
         for history in bank.get("resolved_holds", []):
             term = history["term"]

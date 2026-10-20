@@ -1,0 +1,2142 @@
+{
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded vocabulary/page and keyword location within actual chapter regions, reviewed every cue and resolved reuse target, inspected rendered boundary pages52/58/59/69/70/74 and the raster-only palmar arterial arches label on68. Reuse JSON chains checked without cycle or held target; legacy non-fragment references terminate traversal. Author-pending notes below are chronological and superseded. AI review only, not human-expert, clinical, legal, recall or rendering validation.", "highlight_annotations_found": 0, "normalizations": "Case/wrap/punctuation joins and explicit source aliases only; raster-only palmar arterial arches visually verified, not claimed extractable text. Full-width Table32-3 abbreviation note belongs32; its arterial oxygen saturation phrase is verified in full-width text, not a clipped column. Device/model name aliases do not adjudicate clinical equivalence.", "counts": {"selected_terms": 91, "new_candidates": 41, "reused_candidates": 48, "holds": 2}, "keyword_items": 113},
+  "schema_version": 1,
+  "chapter_id": "32",
+  "title": "Hemodynamic Monitoring",
+  "review_date": "2026-10-20",
+  "keyword_screen_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      70,
+      71,
+      72,
+      73,
+      74
+    ],
+    "printed_pages": [
+      212,
+      213,
+      214,
+      215,
+      216
+    ],
+    "printed_page_offset": 142,
+    "boundary": "PDF70 actual Chapter32 title left y36.8; all columns70-73. PDF74 full-width top Table32-3, whole left column, and right continuation through final bold lactate conclusion y374.3 belong32. REFERENCES right y395.6 closes chapter. Exclude Chapter33 actual title right y477.8 and everything below it; do not truncate32 at top of right column.",
+    "verification": "Computed matching SHA256; rendered and visually inspected all five pages; extracted font spans and coordinates and enumerated annotations70-74 (none). Main independent integration pending."
+  },
+  "scope": "Bounded offline vocabulary screening of meaningful heading, table, figure and emphasized lexical terms; not exhaustive body-word or clinical coverage. No clinical teaching, narration, image prompts, Forge or paid work.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 91,
+    "new_candidates": 41,
+    "reused_candidates": 48,
+    "holds": 2
+  },
+  "source_wording_notes": {
+    "normalization": "Case, whitespace and line-wrap joins normalized. Lexical headwords may be selected from longer headings, captions or emphasized sentences; these are not quotations of whole statements. Table vocabulary is not falsely labeled body bold. Table32-3 source prints mitochondria defect; the familiar prop cue may use singular mitochondrion without changing the recorded source term. Mean arterial blood pressure is the boxed formula headword, not a clinical formula taught here.",
+    "boundaries": "PDF74 right-top conclusion belongs32, not33. No Chapter33 vocabulary admitted.",
+    "venous family variation": "Chapter31 central venous pressure uses weather-vane wordplay and is reused exactly. Earlier Chapter28 venous-return family remains a literal vein teaching token plus return arrow. These are explicitly different learned ingredients, not competing new claims about anatomy.",
+    "device hold history": "Chapter26 central venous catheter and earlier workshop catheter attempts remain held/rejected in their original banks. Chapter32 reuses Chapter31 broad catheter category (ultimately29A detached catheter ingredient), not the older failed sound attempt. No historical hold deleted or globally resolved."
+  },
+  "entries": [
+    {
+      "term": "hemodynamic monitoring",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "chapter_title",
+      "kind": "learned_name_or_category",
+      "cue": "Blank bedside monitor beside a conspicuous watchful-eye token.",
+      "cue_scope": "Broad monitoring category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "reason": "Reuse existing broad monitoring family; hemodynamic qualifier not separately encoded.",
+      "tested": false
+    },
+    {
+      "term": "arterial blood pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An artery teaching token beside an unnumbered pressure gauge.",
+      "cue_scope": "Broad arterial-pressure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#mean arterial pressure",
+      "reason": "Reuse artery/pressure ingredients only, remove scowling mean modifier; no mean qualifier, formula or clinical value.",
+      "tested": false
+    },
+    {
+      "term": "mean arterial blood pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Scowling toy artery character beside an unnumbered pressure gauge.",
+      "cue_scope": "Mean arterial pressure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#mean arterial pressure",
+      "reason": "Same mean/pressure family; formula not encoded.",
+      "tested": false
+    },
+    {
+      "term": "systolic pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "body",
+      "kind": "partial_name_wordplay",
+      "cue": "A sister doll beside an unnumbered pressure gauge.",
+      "cue_scope": "Systolic partial-name recall",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Sister/sys partial bridge permitted; no phase or physiology depicted.",
+      "tested": false
+    },
+    {
+      "term": "diastolic pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "body",
+      "kind": "partial_name_wordplay",
+      "cue": "A diamond beside an unnumbered pressure gauge.",
+      "cue_scope": "Diastolic partial-name recall",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Diamond/dia partial bridge; no full-syllable claim.",
+      "tested": false
+    },
+    {
+      "term": "pulse pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pulse-shaped trace token beside an unnumbered pressure gauge.",
+      "cue_scope": "Pulse pressure vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal learned word association, not a formula.",
+      "tested": false
+    },
+    {
+      "term": "palpation",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "heading_and_body",
+      "kind": "action",
+      "cue": "A detached toy hand gently feeling the surface of a closed mystery bag.",
+      "cue_scope": "Palpation action category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar feeling action; no examination technique.",
+      "tested": false
+    },
+    {
+      "term": "sphygmomanometry",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable blood-pressure cuff with squeeze bulb and dial.",
+      "cue_scope": "Blood-pressure cuff device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#sphygmomanometer",
+      "reason": "Procedure name recalled through familiar device; not a pronunciation trial.",
+      "tested": false
+    },
+    {
+      "term": "oscillometry",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "heading_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A swinging pendulum beside an unnumbered meter.",
+      "cue_scope": "Oscillation/meter word parts",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar oscillation action and meter; no measurement algorithm.",
+      "tested": false
+    },
+    {
+      "term": "central venous pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane and an unnumbered pressure gauge at the center of a round platform.",
+      "cue_scope": "Central venous pressure vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#central venous pressure",
+      "reason": "Same-batch31 retained exact term, vane/vein plus center/pressure; not a new parallel vein-model composition. Chapter31 author draft pending main review.",
+      "tested": false
+    },
+    {
+      "term": "cardiac output",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Heart token beside an outward-opening exit doorway.",
+      "cue_scope": "Cardiac output vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#cardiac output",
+      "reason": "Existing heart/exit family.",
+      "tested": false
+    },
+    {
+      "term": "ultrasonography",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#ultrasonography",
+      "reason": "Existing standalone device; no scanning technique.",
+      "tested": false
+    },
+    {
+      "term": "lactate",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar milk bottle standing alone.",
+      "cue_scope": "Learned lact partial-name ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#lactic acidosis",
+      "reason": "Reuse milk/lact ingredient only; strip acidity lemon and forced letter-T. Not lactose equals lactate or a chemical, source, dietary or metabolic claim.",
+      "tested": false
+    },
+    {
+      "term": "blood pressure",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable blood-pressure cuff with squeeze bulb and dial.",
+      "cue_scope": "Blood-pressure device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#sphygmomanometer",
+      "reason": "Device-family cue, not a physiological claim.",
+      "tested": false
+    },
+    {
+      "term": "intra-arterial catheterization",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Same-batch31 broad catheter category, already reusing29A's detached catheter ingredient without tree/Aintree identity. No route or placement encoded; older holds stay open.",
+      "tested": false
+    },
+    {
+      "term": "jugular venous pulsation",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy jug beside a vein teaching token and a pulse-shaped trace.",
+      "cue_scope": "Jug/jugular partial-name plus venous-pulse vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "New lexical composition; not an examination or anatomy diagram.",
+      "tested": false
+    },
+    {
+      "term": "transthoracic echocardiography",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Broad ultrasound device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#ultrasonography",
+      "reason": "Broad device category, not transthoracic-route or imaging-view discrimination.",
+      "tested": false
+    },
+    {
+      "term": "pulse contour analysis",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A pulse-shaped trace cut from a familiar contour-map sheet.",
+      "cue_scope": "Pulse/contour lexical composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned trace and contour association; no analysis procedure.",
+      "tested": false
+    },
+    {
+      "term": "central venous oxygen saturation",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, unconnected.",
+      "cue_scope": "Oxygen-saturation family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "reason": "Central/venous qualifiers not separately encoded; no clinical value.",
+      "tested": false
+    },
+    {
+      "term": "central venous catheterization",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Same-batch31 broad catheter category, already reusing29A's detached catheter ingredient without tree/Aintree identity. No route or placement encoded; older holds stay open.",
+      "tested": false
+    },
+    {
+      "term": "blood sampling",
+      "pdf_page": 70,
+      "page": 212,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A small freestanding sample vial holding red liquid beside a separate red-liquid drop token.",
+      "cue_scope": "Sampling category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar sample-vial association; no collection technique.",
+      "tested": false
+    },
+    {
+      "term": "optimally damped",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary shock absorber beside a winner's rosette.",
+      "cue_scope": "Optimal/damper vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar damping device and optimal badge; no waveform judgment.",
+      "tested": false
+    },
+    {
+      "term": "underdamped",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary shock absorber sitting under a low shelf.",
+      "cue_scope": "Under/damper partial-word cue",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal under-position and damper; no trace-to-diagnosis claim.",
+      "tested": false
+    },
+    {
+      "term": "overdamped",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary shock absorber sitting over a high shelf.",
+      "cue_scope": "Over/damper partial-word cue",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal over-position and damper; no trace-to-diagnosis claim.",
+      "tested": false
+    },
+    {
+      "term": "square wave flush test",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A square-framed toy ocean wave beside a detached familiar flush handle.",
+      "cue_scope": "Square/wave/flush vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal lexical assembly, not device testing instructions.",
+      "tested": false
+    },
+    {
+      "term": "central venous blood volume",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A transparent reservoir containing red liquid without a high/low modifier.",
+      "cue_scope": "Blood-volume family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#blood volume",
+      "reason": "Reuse broad reservoir; central/venous qualifiers not separately encoded.",
+      "tested": false
+    },
+    {
+      "term": "venous return",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A vein teaching token beside a familiar curved return arrow.",
+      "cue_scope": "Venous-return vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#venous return",
+      "reason": "Same retained return-arrow family.",
+      "tested": false
+    },
+    {
+      "term": "total blood volume",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A transparent reservoir containing red liquid without a high/low modifier.",
+      "cue_scope": "Blood-volume family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#blood volume",
+      "reason": "Total qualifier not separately encoded.",
+      "tested": false
+    },
+    {
+      "term": "compliance of the central compartment",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A flexible storage compartment bowing like a compliant performer.",
+      "cue_scope": "Compartment/compliance vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Flexible/bowing learned compliance family composed with compartment; no clinical mechanics.",
+      "tested": false
+    },
+    {
+      "term": "vascular tone",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A vessel teaching token beside a familiar tuning fork.",
+      "cue_scope": "Vascular/tone word association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar tone cue, no muscle or pressure mechanism.",
+      "tested": false
+    },
+    {
+      "term": "right ventricular compliance",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A heart-shaped toy flexibly bowing like a compliant performer.",
+      "cue_scope": "Broad cardiac compliance vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Organ modifier adapted from lung-compliance family; new composition, no mechanics.",
+      "tested": false
+    },
+    {
+      "term": "myocardial disease",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A heart-shaped study token wearing a theatrical unwell-expression mask.",
+      "cue_scope": "Broad heart-disease vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Category association only; no disease-specific assertion.",
+      "tested": false
+    },
+    {
+      "term": "pericardial disease",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Pericardial lexical identity",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Attempted heart token inside a perimeter fence with an unwell mask. Hold: fence adds generic enclosure but weakly recovers pericardial; not held merely for lack of diagnostic uniqueness.",
+      "tested": false
+    },
+    {
+      "term": "tamponade",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Heart character squeezed in a tight transparent fluid-filled pouch.",
+      "cue_scope": "Cardiac tamponade family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#cardiac tamponade",
+      "reason": "Existing taught vocabulary token; no new mechanism claim.",
+      "tested": false
+    },
+    {
+      "term": "tricuspid valve disease",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy valve wearing a three-pointed crown and an unwell-expression mask.",
+      "cue_scope": "Tri/cusp/valve vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Visible three points support lexical recall only; no anatomical cusp teaching.",
+      "tested": false
+    },
+    {
+      "term": "stenosis",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Narrowing family",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#narrowed-passage",
+      "reason": "Use existing narrowing token at broad word-meaning scope.",
+      "tested": false
+    },
+    {
+      "term": "regurgitation",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy jug pouring liquid back into the pitcher it came from.",
+      "cue_scope": "Broad return-flow word meaning",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar return action, not valve function or a patient scene.",
+      "tested": false
+    },
+    {
+      "term": "dysrhythmia",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Two metronomes with pendulums pointing in visibly different directions.",
+      "cue_scope": "Broad disrupted-rhythm family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#dyssynchrony",
+      "reason": "Existing discordant-metronome family; no rhythm subtype identification.",
+      "tested": false
+    },
+    {
+      "term": "junctional rhythm",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Drummer at a conspicuous road junction.",
+      "cue_scope": "Junctional-rhythm name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#junctional rhythm",
+      "reason": "Same retained junction/drummer family.",
+      "tested": false
+    },
+    {
+      "term": "atrial fibrillation",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A loose fringe of fine fibers beside a heart token.",
+      "cue_scope": "Broad fibrillation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#atrial fibrillation",
+      "reason": "Existing fibers/heart cue; not atrial versus ventricular discrimination.",
+      "tested": false
+    },
+    {
+      "term": "atrioventricular dissociation",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Two familiar heart-chamber teaching tokens visibly separated by a wide gap.",
+      "cue_scope": "Broad chamber dissociation vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Separation word meaning; no conduction or ECG facts.",
+      "tested": false
+    },
+    {
+      "term": "reference level of transducer",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar pressure-transducer training prop beside a carpenter's level.",
+      "cue_scope": "Transducer/level category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Device plus familiar level; no correct reference position.",
+      "tested": false
+    },
+    {
+      "term": "positioning of patient",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An unattached study mannequin standing on a movable display base.",
+      "cue_scope": "Positioning action category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Generic movable display; no patient position prescribed.",
+      "tested": false
+    },
+    {
+      "term": "intrathoracic pressure",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pressure-gauge token inside a toy treasure chest.",
+      "cue_scope": "Intrathoracic-pressure partial-word cue",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#intrathoracic pressure",
+      "reason": "Existing chest/gauge family.",
+      "tested": false
+    },
+    {
+      "term": "respiratory changes",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar bellows beside a two-way change-arrow token.",
+      "cue_scope": "Broad respiration/change vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Change symbol without direction, values or physiological relationship.",
+      "tested": false
+    },
+    {
+      "term": "intermittent positive-pressure ventilation",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Bellows holding an air passage open.",
+      "cue_scope": "Broad positive-pressure support family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#continuous positive airway pressure",
+      "reason": "Reuse calibrated broad family only; intermittent versus continuous not encoded.",
+      "tested": false
+    },
+    {
+      "term": "positive end-expiratory pressure",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pressure gauge peeping around the end of a curtain.",
+      "cue_scope": "PEEP partial-name cue",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#positive end-expiratory pressure",
+      "reason": "Reuse retained29B PEEP; historical28 expanded-name hold remains open.",
+      "tested": false
+    },
+    {
+      "term": "tension pneumothorax",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Air balloon outside a lung but inside a transparent chest shell.",
+      "cue_scope": "Broad pneumothorax family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "reason": "Existing broad family only; tension qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "diastolic compliance",
+      "pdf_page": 71,
+      "page": 213,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A diamond beside a flexible toy bowing like a compliant performer.",
+      "cue_scope": "Dia/compliance lexical composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Adapts learned compliance ingredient; not a volume/pressure relationship.",
+      "tested": false
+    },
+    {
+      "term": "sternal angle",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A toy stern-facing schoolmaster beside a familiar angle ruler.",
+      "cue_scope": "Stern/angle partial-word association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Lexical association only, not anatomic location or angle value.",
+      "tested": false
+    },
+    {
+      "term": "systole",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A sister doll standing alone.",
+      "cue_scope": "Sys partial-name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#systolic pressure",
+      "reason": "Reuse sister ingredient only; omit pressure gauge.",
+      "tested": false
+    },
+    {
+      "term": "diastole",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A diamond standing alone.",
+      "cue_scope": "Dia partial-name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#diastolic pressure",
+      "reason": "Reuse diamond ingredient only; omit pressure gauge.",
+      "tested": false
+    },
+    {
+      "term": "ECG",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable ECG machine beside a short strip of generic stylized waveform.",
+      "cue_scope": "ECG device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#ECG",
+      "reason": "Exact older retained family; no waveform interpretation.",
+      "tested": false
+    },
+    {
+      "term": "fluid responsiveness",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A clear water pitcher beside a ringing response bell.",
+      "cue_scope": "Fluid/response lexical composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "A response signal is vocabulary wordplay, not a physiological result.",
+      "tested": false
+    },
+    {
+      "term": "volume responsiveness",
+      "pdf_page": 72,
+      "page": 214,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A clear water pitcher beside a ringing response bell.",
+      "cue_scope": "Broad fluid/volume response vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#fluid responsiveness",
+      "reason": "Existing local pitcher/bell family; no metric or response prediction.",
+      "tested": false
+    },
+    {
+      "term": "preload",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A small cargo crate waiting just before a toy loading ramp.",
+      "cue_scope": "Pre/load lexical composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar pre-loading context, not a cardiac-mechanics statement.",
+      "tested": false
+    },
+    {
+      "term": "stroke volume",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A paintbrush stroke beside a transparent measuring pitcher with no scale.",
+      "cue_scope": "Stroke/volume word composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Brushstroke and volume vessel; no numeric or clinical relationship.",
+      "tested": false
+    },
+    {
+      "term": "organ oxygenation",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pipe-organ miniature beside a recognizable oxygen cylinder.",
+      "cue_scope": "Organ/oxygen vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Organ double meaning and established oxygen ingredient, no mechanism.",
+      "tested": false
+    },
+    {
+      "term": "perfusion",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar perfume bottle standing alone.",
+      "cue_scope": "Perfu partial-name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#reperfusion",
+      "reason": "Reuse perfume ingredient only; strip refill/re- action.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary artery catheterization",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Same-batch31 broad catheter category, already reusing29A's detached catheter ingredient without tree/Aintree identity. No route or placement encoded; older holds stay open.",
+      "tested": false
+    },
+    {
+      "term": "thermodilution",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy thermometer beside an ordinary watercolor palette with a visibly diluted pale paint puddle.",
+      "cue_scope": "Thermo/dilution lexical composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar thermometer and dilution action; no cardiac output procedure.",
+      "tested": false
+    },
+    {
+      "term": "pulse pressure variation",
+      "pdf_page": 73,
+      "page": 215,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A pulse-shaped trace and an unnumbered pressure gauge beside a change-arrow token.",
+      "cue_scope": "Pulse/pressure/variation vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "New variation composition; no trace threshold or interpretation.",
+      "tested": false
+    },
+    {
+      "term": "hypoxia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly empty oxygen cylinder.",
+      "cue_scope": "Hypoxia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#hypoxia",
+      "reason": "Existing cylinder quantity cue.",
+      "tested": false
+    },
+    {
+      "term": "suctioning",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Vacuum nozzle with loose crumbs visibly gathered at its opening.",
+      "cue_scope": "Suction action family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#suction",
+      "reason": "Inflection normalized, same inward-draw action.",
+      "tested": false
+    },
+    {
+      "term": "anemia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly empty pouch containing a few red-cell study tokens.",
+      "cue_scope": "Broad red-cell deficiency family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#exceptional blood loss anemia",
+      "reason": "Strip spilling/blood-loss action; no etiology imported.",
+      "tested": false
+    },
+    {
+      "term": "hemorrhage",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Hemorrhage vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Existing red-fluid leak family.",
+      "tested": false
+    },
+    {
+      "term": "cardiac dysfunction",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar heart-shaped toy with a broken crank.",
+      "cue_scope": "Broad cardiac failure/dysfunction category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#cardiac failure",
+      "reason": "Existing broken-crank heart token.",
+      "tested": false
+    },
+    {
+      "term": "hypovolemia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Nearly empty transparent reservoir connected in a closed circulation loop, with red liquid low at its bottom.",
+      "cue_scope": "Hypovolemia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#hypovolemia",
+      "reason": "Same existing low-reservoir family.",
+      "tested": false
+    },
+    {
+      "term": "shock",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Detached conspicuous lightning-bolt token on an empty surface.",
+      "cue_scope": "Learned shock vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#shock",
+      "reason": "Word association only; not electrical cause or shock subtype.",
+      "tested": false
+    },
+    {
+      "term": "arrhythmia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Two metronomes with pendulums pointing in visibly different directions.",
+      "cue_scope": "Broad disrupted-rhythm family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#dyssynchrony",
+      "reason": "Reuse discordant-metronome family; no subtype encoded.",
+      "tested": false
+    },
+    {
+      "term": "exercise",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Exercise category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar equipment association only.",
+      "tested": false
+    },
+    {
+      "term": "pain",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain-expression category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Reuse expression mask only; strip mute symbol that encoded analgesia.",
+      "tested": false
+    },
+    {
+      "term": "hyperthermia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A large theatrical flame token beside a smaller matching flame.",
+      "cue_scope": "Broad heat/excess vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Existing heat and excess primitives composed; no temperature threshold.",
+      "tested": false
+    },
+    {
+      "term": "shivering",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A bundled toy figure visibly trembling with motion marks.",
+      "cue_scope": "Shivering action family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#shivering",
+      "reason": "Same trembling-figure cue.",
+      "tested": false
+    },
+    {
+      "term": "seizure",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "An oversized toy claw conspicuously seizing a small loose toy object.",
+      "cue_scope": "Seizure lexical recall",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Seize/seizure ordinary action bridge accepted at taught partial-name scope. No patient manifestation, diagnostic specificity or blind-unique requirement.",
+      "tested": false
+    },
+    {
+      "term": "hyperoxia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Oversized oxygen-cylinder study token beside a smaller matching token.",
+      "cue_scope": "Hyperoxygenation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#hyperoxygenation",
+      "reason": "Same existing quantity/oxygen family.",
+      "tested": false
+    },
+    {
+      "term": "erythrocytosis",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An overflowing pouch of familiar red-cell study tokens.",
+      "cue_scope": "Red-cell abundance vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad abundance category, not a count, cause or diagnostic criterion.",
+      "tested": false
+    },
+    {
+      "term": "hyperdynamic state",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy dynamo with exaggerated energetic motion marks.",
+      "cue_scope": "Dynamic partial-name/action vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Dynamo/dynamic association only; no cardiac measurement.",
+      "tested": false
+    },
+    {
+      "term": "hypothermia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Shivering study mannequin beside a conspicuous block of ice.",
+      "cue_scope": "Hypothermia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypothermia",
+      "reason": "Same existing cold/figure association.",
+      "tested": false
+    },
+    {
+      "term": "anesthesia",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Anesthesia vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#anesthesia",
+      "reason": "Same retained category token.",
+      "tested": false
+    },
+    {
+      "term": "pharmacologic paralysis",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Paralysis vocabulary",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Attempted a medicine-bottle toy beside a motionless figure. Hold: motionless still image gives weak paralysis recall beyond generic rest; pharmacologic modifier does not repair it.",
+      "tested": false
+    },
+    {
+      "term": "arteriovenous shunting",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An artery teaching token and a vein teaching token linked by a toy railway shunt track.",
+      "cue_scope": "Artery/vein/shunt lexical assembly",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar railway shunt word meaning; no physiologic route or flow claim.",
+      "tested": false
+    },
+    {
+      "term": "mitochondria defect",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached recognizable mitochondrion teaching-model prop with a conspicuous broken-off piece.",
+      "cue_scope": "Mitochondria lexical identity",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar learned model category plus defect/broken piece is a plausible category cue; no mitochondrial function or biochemistry encoded. Recognition depends on prior model familiarity.",
+      "tested": false
+    },
+    {
+      "term": "terminal shock",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Detached conspicuous lightning-bolt token on an empty surface.",
+      "cue_scope": "Broad learned shock vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#shock",
+      "reason": "Reuse broad shock only; terminal qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "oxygen delivery",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable oxygen cylinder riding alone on a toy delivery trolley.",
+      "cue_scope": "Oxygen/delivery word association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Object and ordinary delivery context; no physiological pathway.",
+      "tested": false
+    },
+    {
+      "term": "oxygen consumption",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An oxygen-cylinder character beside an empty plate and a detached toy fork.",
+      "cue_scope": "Oxygen/consumption word association",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cartoon consumption word meaning; not an instruction or patient mechanism.",
+      "tested": false
+    },
+    {
+      "term": "hemoglobin",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A red-liquid drop token wearing a globe-shaped hat.",
+      "cue_scope": "Hemo/globin partial-name recall",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Hemo learned red association plus globe/globin partial sound; not a protein depiction.",
+      "tested": false
+    },
+    {
+      "term": "lactic acidosis",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar milk bottle beside a conspicuous lemon, neither pouring into nor changing the other.",
+      "cue_scope": "Lactic/acidity lexical family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#lactic acidosis",
+      "reason": "Exact older retained family; lact is partial-name association, not lactose/lactate identity, chemistry, dietary cause or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "hypoperfusion",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly empty familiar perfume bottle.",
+      "cue_scope": "Hypo/perfu partial-name recall",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Low amount plus perfume/perfu; no circulation mechanism or clinical inference.",
+      "tested": false
+    },
+    {
+      "term": "fraction of inspired oxygen",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A fraction pie token beside an oxygen cylinder and an inward arrow.",
+      "cue_scope": "Fraction/inspired-oxygen vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#fraction of inspired oxygen",
+      "reason": "Existing retained family from Table32-3 expanded abbreviations line; no values or measurement claims. Arterial versus central-venous distinction not encoded by broad saturation family.",
+      "tested": false
+    },
+    {
+      "term": "arterial oxygen saturation",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.",
+      "cue_scope": "Broad oxygen-saturation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "reason": "Existing retained family from Table32-3 expanded abbreviations line; no values or measurement claims. Arterial versus central-venous distinction not encoded by broad saturation family.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Read actual two-column source regions, inspect page rasters70-74, extract font spans (MinionPro-Bold/It; MyriadPro-BlackSemiCn/SemiboldCond; Helvetica figure labels), and enumerate annotations. Try meaningful lexical headwords in headings, Tables32-1/2/3, figure labels/captions, boxed formula and both bold lactate sentences; do not copy clinical claims or expand all unformatted body words. Source_match describes lexical presence, emphasis separately describes actual typography.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "No annotations of any type on PDF70-74. Raster inspection also performed; zero annotations does not exclude flattened publisher color/emphasis."
+    },
+    "items": [
+      {
+        "term": "hemodynamic monitoring",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Actual title, MyriadPro-BlackSemiCn.",
+        "entry_term": "hemodynamic monitoring"
+      },
+      {
+        "term": "arterial blood pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red section heading MyriadPro-BlackSemiCn and regular body.",
+        "entry_term": "arterial blood pressure"
+      },
+      {
+        "term": "mean arterial blood pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "MinionPro-Bold lexical headword inside boxed formula.",
+        "entry_term": "mean arterial blood pressure"
+      },
+      {
+        "term": "systolic pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "MinionPro-It definition term in right column.",
+        "entry_term": "systolic pressure"
+      },
+      {
+        "term": "diastolic pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "MinionPro-It definition term in right column.",
+        "entry_term": "diastolic pressure"
+      },
+      {
+        "term": "pulse pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "MinionPro-Bold headword in boxed formula; also regular body.",
+        "entry_term": "pulse pressure"
+      },
+      {
+        "term": "palpation",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red subsection heading MyriadPro-SemiboldCond.",
+        "entry_term": "palpation"
+      },
+      {
+        "term": "sphygmomanometry",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red subsection heading and ordinary Table32-1 method cell.",
+        "entry_term": "sphygmomanometry"
+      },
+      {
+        "term": "oscillometry",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red subsection heading and ordinary Table32-1 method cell.",
+        "entry_term": "oscillometry"
+      },
+      {
+        "term": "central venous pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 cell; heading repeats PDF71.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "cardiac output",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 cell; red heading repeats PDF72.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "ultrasonography",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell; red heading repeats PDF72.",
+        "entry_term": "ultrasonography"
+      },
+      {
+        "term": "lactate",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 cell; red LACTATE heading repeats PDF74.",
+        "entry_term": "lactate"
+      },
+      {
+        "term": "blood pressure",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 first cell; regular body. Also: Red OPTIMAL BLOOD PRESSURE subsection, MyriadPro-SemiboldCond; lexical headword.",
+        "entry_term": "blood pressure"
+      },
+      {
+        "term": "intra-arterial catheterization",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell.",
+        "entry_term": "intra-arterial catheterization"
+      },
+      {
+        "term": "jugular venous pulsation",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell; red subsection repeats72.",
+        "entry_term": "jugular venous pulsation"
+      },
+      {
+        "term": "transthoracic echocardiography",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell; red subsection repeats73.",
+        "entry_term": "transthoracic echocardiography"
+      },
+      {
+        "term": "pulse contour analysis",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell; red subsection repeats73.",
+        "entry_term": "pulse contour analysis"
+      },
+      {
+        "term": "central venous oxygen saturation",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 cell; red subsection repeats74.",
+        "entry_term": "central venous oxygen saturation"
+      },
+      {
+        "term": "central venous catheterization",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell.",
+        "entry_term": "central venous catheterization"
+      },
+      {
+        "term": "blood sampling",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Ordinary Table32-1 method cell.",
+        "entry_term": "blood sampling"
+      },
+      {
+        "term": "optimally damped",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "HelveticaLTStd-Bold figure32-1 label.",
+        "entry_term": "optimally damped"
+      },
+      {
+        "term": "underdamped",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "HelveticaLTStd-Bold figure32-1 label.",
+        "entry_term": "underdamped"
+      },
+      {
+        "term": "overdamped",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "HelveticaLTStd-Bold figure32-1 label.",
+        "entry_term": "overdamped"
+      },
+      {
+        "term": "square wave flush test",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary figure32-1 caption; regular body, not body-bold.",
+        "entry_term": "square wave flush test"
+      },
+      {
+        "term": "central venous blood volume",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "central venous blood volume"
+      },
+      {
+        "term": "venous return",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "venous return"
+      },
+      {
+        "term": "total blood volume",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "total blood volume"
+      },
+      {
+        "term": "compliance of the central compartment",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "compliance of the central compartment"
+      },
+      {
+        "term": "vascular tone",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "vascular tone"
+      },
+      {
+        "term": "right ventricular compliance",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "right ventricular compliance"
+      },
+      {
+        "term": "myocardial disease",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "myocardial disease"
+      },
+      {
+        "term": "pericardial disease",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "pericardial disease"
+      },
+      {
+        "term": "tamponade",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "tamponade"
+      },
+      {
+        "term": "tricuspid valve disease",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "tricuspid valve disease"
+      },
+      {
+        "term": "stenosis",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "stenosis"
+      },
+      {
+        "term": "regurgitation",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "regurgitation"
+      },
+      {
+        "term": "dysrhythmia",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "dysrhythmia"
+      },
+      {
+        "term": "junctional rhythm",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "junctional rhythm"
+      },
+      {
+        "term": "atrial fibrillation",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "atrial fibrillation"
+      },
+      {
+        "term": "atrioventricular dissociation",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "atrioventricular dissociation"
+      },
+      {
+        "term": "reference level of transducer",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "reference level of transducer"
+      },
+      {
+        "term": "positioning of patient",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "positioning of patient"
+      },
+      {
+        "term": "intrathoracic pressure",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "MyriadPro-SemiboldCond Table32-2 row-group label.",
+        "entry_term": "intrathoracic pressure"
+      },
+      {
+        "term": "respiratory changes",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "respiratory changes"
+      },
+      {
+        "term": "intermittent positive-pressure ventilation",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "intermittent positive-pressure ventilation"
+      },
+      {
+        "term": "positive end-expiratory pressure",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "positive end-expiratory pressure"
+      },
+      {
+        "term": "tension pneumothorax",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item.",
+        "entry_term": "tension pneumothorax"
+      },
+      {
+        "term": "diastolic compliance",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "HelveticaLTStd-Roman labels normal/abnormal diastolic compliance in figure32-2.",
+        "entry_term": "diastolic compliance"
+      },
+      {
+        "term": "sternal angle",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "HelveticaLTStd-Roman figure32-3 label.",
+        "entry_term": "sternal angle"
+      },
+      {
+        "term": "systole",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "HelveticaLTStd-Roman figure32-4 label.",
+        "entry_term": "systole"
+      },
+      {
+        "term": "diastole",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "HelveticaLTStd-Roman figure32-4 label.",
+        "entry_term": "diastole"
+      },
+      {
+        "term": "ECG",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "HelveticaLTStd-Roman figure32-4 label.",
+        "entry_term": "ECG"
+      },
+      {
+        "term": "fluid responsiveness",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red subsection MyriadPro-SemiboldCond headword; regular body.",
+        "entry_term": "fluid responsiveness"
+      },
+      {
+        "term": "volume responsiveness",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red subsection MyriadPro-SemiboldCond headword; repeats73.",
+        "entry_term": "volume responsiveness"
+      },
+      {
+        "term": "preload",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "HelveticaLTStd-Roman figure32-5 axis label.",
+        "entry_term": "preload"
+      },
+      {
+        "term": "stroke volume",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Regular body in pulse-contour subsection, selected as immediate heading-family vocabulary, not bold.",
+        "entry_term": "stroke volume"
+      },
+      {
+        "term": "organ oxygenation",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "MyriadPro-BlackSemiCn red ORGAN OXYGENATION AND PERFUSION MONITORING lexical headword.",
+        "entry_term": "organ oxygenation"
+      },
+      {
+        "term": "perfusion",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "MyriadPro-BlackSemiCn red ORGAN OXYGENATION AND PERFUSION MONITORING lexical headword.",
+        "entry_term": "perfusion"
+      },
+      {
+        "term": "pulmonary artery catheterization",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Regular body immediately under red INVASIVE CO MEASUREMENT; not body-bold.",
+        "entry_term": "pulmonary artery catheterization"
+      },
+      {
+        "term": "thermodilution",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Regular body immediately under red INVASIVE CO MEASUREMENT; not bold.",
+        "entry_term": "thermodilution"
+      },
+      {
+        "term": "pulse pressure variation",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Ordinary figure32-6 caption headword and regular body.",
+        "entry_term": "pulse pressure variation"
+      },
+      {
+        "term": "hypoxia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hypoxia"
+      },
+      {
+        "term": "suctioning",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "suctioning"
+      },
+      {
+        "term": "anemia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "anemia"
+      },
+      {
+        "term": "hemorrhage",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hemorrhage"
+      },
+      {
+        "term": "cardiac dysfunction",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "cardiac dysfunction"
+      },
+      {
+        "term": "hypovolemia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hypovolemia"
+      },
+      {
+        "term": "shock",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "shock"
+      },
+      {
+        "term": "arrhythmia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "arrhythmia"
+      },
+      {
+        "term": "exercise",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "exercise"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "pain"
+      },
+      {
+        "term": "hyperthermia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hyperthermia"
+      },
+      {
+        "term": "shivering",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "shivering"
+      },
+      {
+        "term": "seizure",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "seizure"
+      },
+      {
+        "term": "hyperoxia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hyperoxia"
+      },
+      {
+        "term": "erythrocytosis",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "erythrocytosis"
+      },
+      {
+        "term": "hyperdynamic state",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hyperdynamic state"
+      },
+      {
+        "term": "hypothermia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "hypothermia"
+      },
+      {
+        "term": "anesthesia",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "anesthesia"
+      },
+      {
+        "term": "pharmacologic paralysis",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "pharmacologic paralysis"
+      },
+      {
+        "term": "arteriovenous shunting",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "arteriovenous shunting"
+      },
+      {
+        "term": "mitochondria defect",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell; source singular defect.",
+        "entry_term": "mitochondria defect"
+      },
+      {
+        "term": "terminal shock",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 cell.",
+        "entry_term": "terminal shock"
+      },
+      {
+        "term": "oxygen delivery",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 note headword; regular left body.",
+        "entry_term": "oxygen delivery"
+      },
+      {
+        "term": "oxygen consumption",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 note headword; regular left body.",
+        "entry_term": "oxygen consumption"
+      },
+      {
+        "term": "hemoglobin",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 abbreviations line.",
+        "entry_term": "hemoglobin"
+      },
+      {
+        "term": "lactic acidosis",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "MinionPro-Bold lexical headword in left y721 and right y364 conclusions; full clinical sentences excluded. Also: MinionPro-Bold right-column conclusion y364.3-374.3, same lexical headword as bold left conclusion.",
+        "entry_term": "lactic acidosis"
+      },
+      {
+        "term": "hypoperfusion",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Regular right-top continuation y174.6; not bold.",
+        "entry_term": "hypoperfusion"
+      },
+      {
+        "term": "noninvasive blood pressure measurement",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red MyriadPro-BlackSemiCn section heading; broad blood-pressure headword mapped, noninvasive modifier not encoded.",
+        "entry_term": "blood pressure"
+      },
+      {
+        "term": "invasive blood pressure measurement",
+        "pdf_page": 70,
+        "page": 212,
+        "emphasis": "Red MyriadPro-BlackSemiCn section heading; broad blood-pressure headword mapped, invasive modifier not encoded.",
+        "entry_term": "blood pressure"
+      },
+      {
+        "term": "central venous pressure monitoring",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Red MyriadPro-BlackSemiCn section heading; pressure lexical family.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "optimal central venous pressure",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection; optimal qualifier is not a target value.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "noninvasive CVP measurement",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-BlackSemiCn section heading; CVP abbreviation mapped to expanded family.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "jugular venous pulsation",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection repeat.",
+        "entry_term": "jugular venous pulsation"
+      },
+      {
+        "term": "ultrasonography",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection repeat.",
+        "entry_term": "ultrasonography"
+      },
+      {
+        "term": "invasive central venous pressure measurement",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-BlackSemiCn two-line section; broad CVP family, no procedure.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "cardiac output monitoring",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-BlackSemiCn section heading.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "optimal cardiac output",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection lexical headword, no optimal target encoded.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "volume responsiveness in spontaneously breathing patients",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Red MyriadPro-SemiboldCond two-line subsection; volume-responsiveness headword.",
+        "entry_term": "volume responsiveness"
+      },
+      {
+        "term": "volume responsiveness in mechanically ventilated patients",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Red MyriadPro-SemiboldCond two-line subsection; volume-responsiveness headword.",
+        "entry_term": "volume responsiveness"
+      },
+      {
+        "term": "noninvasive cardiac output measurement",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Red MyriadPro-BlackSemiCn section; broad output headword.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "transthoracic echocardiography",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection repeat.",
+        "entry_term": "transthoracic echocardiography"
+      },
+      {
+        "term": "pulse contour analysis",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection repeat.",
+        "entry_term": "pulse contour analysis"
+      },
+      {
+        "term": "invasive CO measurement",
+        "pdf_page": 73,
+        "page": 215,
+        "emphasis": "Red MyriadPro-BlackSemiCn section; CO abbreviation mapped to output family.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "central venous oxygen saturation",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Red MyriadPro-SemiboldCond subsection; also Table32-3 semibold title and low/high column labels.",
+        "entry_term": "central venous oxygen saturation"
+      },
+      {
+        "term": "clinical use of central venous oxygen saturation",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "MyriadPro-Bold run-in heading, lexical saturation family selected without clinical claims.",
+        "entry_term": "central venous oxygen saturation"
+      },
+      {
+        "term": "lactate",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Red MyriadPro-SemiboldCond LACTATE subsection repeat.",
+        "entry_term": "lactate"
+      },
+      {
+        "term": "cardiac output",
+        "pdf_page": 71,
+        "page": 213,
+        "emphasis": "Ordinary Table32-2 list item, not bold body.",
+        "entry_term": "cardiac output"
+      },
+      {
+        "term": "central venous pressure",
+        "pdf_page": 72,
+        "page": 214,
+        "emphasis": "Ordinary figure32-4 caption plus HelveticaLTStd-Roman CVP label; expanded name and acronym mapped.",
+        "entry_term": "central venous pressure"
+      },
+      {
+        "term": "fraction of inspired oxygen",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 expanded abbreviations line, not bold body.",
+        "entry_term": "fraction of inspired oxygen"
+      },
+      {
+        "term": "arterial oxygen saturation",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 expanded abbreviations line, not bold body.",
+        "entry_term": "arterial oxygen saturation"
+      },
+      {
+        "term": "cardiac output",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "Ordinary Table32-3 expanded CO abbreviation, not bold body.",
+        "entry_term": "cardiac output"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 70,
+        "description": "INTRODUCTION, chapter number, running section header, author names, table/figure numbers, Formula 1 label.",
+        "reason": "Structural navigation or attribution, not vocabulary targets; hemodynamic title and boxed formula lexical headwords screened separately."
+      },
+      {
+        "pdf_page": 70,
+        "description": "Boxed formula arithmetic, numerical constants, units and blood-pressure target ranges in ordinary body.",
+        "reason": "No equations, numeric instructions or clinical teaching. Mean arterial blood pressure, diastolic blood pressure and pulse pressure headwords are mapped; arithmetic is not retained."
+      },
+      {
+        "pdf_page": 71,
+        "description": "Figure32-1 numerical oscillation counts and interpretive sentences; figure32-2 axis numbers and A-D point labels.",
+        "reason": "Numeric/clinical relationships and plot coordinates excluded after screening damping labels, diastolic compliance and relevant pressure/volume terms."
+      },
+      {
+        "pdf_page": 71,
+        "description": "Table32-2 Contributors title and grouping prose; no separate entries for Values or Contributors.",
+        "reason": "Generic table scaffolding, not domain lexical targets; all meaningful table row-group and list-item terms mapped."
+      },
+      {
+        "pdf_page": 72,
+        "description": "Figure32-3 numerical angle/distance labels; figure32-4 P/R/T/a/c/v/x/y plotting letters.",
+        "reason": "Numbers and isolated plot notation not vocabulary cues. Sternal angle, ECG, systole, diastole and CVP terms screened; caption pathophysiologic explanations and every unformatted caption disease term not expanded."
+      },
+      {
+        "pdf_page": 73,
+        "description": "Figure32-5 A-D, delta symbols, numerical changes; figure32-6 PPmax/PPmin/PA/PAW algebra and reproduced-source credit.",
+        "reason": "Graph notation, formulas, values and attribution excluded; preload, cardiac output and pulse pressure variation screened. No relationship or response threshold taught."
+      },
+      {
+        "pdf_page": 74,
+        "description": "Bold full left and right concluding lactate sentences.",
+        "reason": "Clinical propositions not reproduced as teaching. Meaningful lactic acidosis lexical headword extracted from BOTH emphasized sentences; generic outcome/alarming/emergency physician wording not extra medical term entries."
+      },
+      {
+        "pdf_page": 74,
+        "description": "Italic venous, higher and trends; Table32-3 low/high numeric thresholds, oxygen delivery/consumption abbreviations and equation-style units.",
+        "reason": "Comparative emphasis and measurement notation, not independent medical vocabulary. Central venous oxygen saturation, oxygen delivery and oxygen consumption headwords mapped separately."
+      },
+      {
+        "pdf_page": 74,
+        "description": "REFERENCES and online-reference notice; actual Chapter33 title right y477.8 and material below it.",
+        "reason": "References are non-content scaffolding; Chapter33 is outside assigned chapter. Full-width Table32-3 and right-top32 continuation are retained in source ownership."
+      },
+      {
+        "pdf_page": 70,
+        "description": "Hemodynamic Variable and Method of Measurement table column captions; optimal, invasive/noninvasive and monitoring/measurement qualifiers in repeated headings.",
+        "reason": "Generic scaffolding or scope qualifiers, not separate vocabulary trials. Meaningful pressure/output/device headwords are mapped, and qualifiers not encoded are disclosed."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Searched chapter1-29A/B banks, catalog and both workshops; checked retained exact terms again before final counts. Reconciled same-batch31 draft (78 entries at check): central venous pressure reuses31 exact vane/center/gauge family, and catheter variants reuse31#catheter without route qualifiers. ECG reuses26; lactate strips lemon from15 lactic-acidosis family; lactic acidosis reuses15 exactly. Within-bank systole/diastole and volume responsiveness point only to different retain_candidate entries.",
+    "limits": "Prior sound-workshop rejection is not a prohibition on familiar device categories. Reuse only an existing retained/reused family; strip irrelevant narrower modifiers. No empirical testing."
+  },
+  "resolved_holds": [
+    {
+      "term": "seizure",
+      "resolution": "Local Chapter32 hold reconsidered during main-author challenge; retained untested alternative. Older banks/workshop decisions are unchanged and remain available for revisit.",
+      "scope": "local_reconsideration_not_prior_hold_resolution",
+      "earlier_hold_remains_open": true,
+      "prior": "docs/chapter-29A-cue-audit.json#seizures",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A hand seizing a loose object.",
+          "reason": "Initial local hold over-weighted ordinary grasping ambiguity and older workshop rejection.",
+          "scope": "Initial Chapter32 draft"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "An oversized toy claw conspicuously seizing a small loose toy object.",
+          "reason": "Seize/seizure ordinary action bridge accepted at taught partial-name scope. No patient manifestation, diagnostic specificity or blind-unique requirement.",
+          "scope": "Chapter32 local revision; not empirical validation"
+        }
+      ]
+    },
+    {
+      "term": "mitochondria defect",
+      "resolution": "Local Chapter32 hold reconsidered during main-author challenge; retained untested alternative. Older banks/workshop decisions are unchanged and remain available for revisit.",
+      "scope": "local_reconsideration_not_prior_hold_resolution",
+      "prior": "new_chapter_record",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A mitten beside a broken toy.",
+          "reason": "Initial local hold found mitten/mitochondria sound bridge weak; no category-model alternative had yet been tried.",
+          "scope": "Initial Chapter32 draft"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A detached recognizable mitochondrion teaching-model prop with a conspicuous broken-off piece.",
+          "reason": "Familiar learned model category plus defect/broken piece is a plausible category cue; no mitochondrial function or biochemistry encoded. Recognition depends on prior model familiarity.",
+          "scope": "Chapter32 local revision; not empirical validation"
+        }
+      ]
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author-completed bounded vocabulary draft; main independent source/conceptual integration, tests, ledger/register/index/handoff and Git pending.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/batch30-32/chapter32/"
+}

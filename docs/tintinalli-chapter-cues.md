@@ -240,9 +240,44 @@ regression tests. The prior integer29 next-chapter placeholder is retired.
 Within-bank reuse is permitted only to a different retained candidate, preventing
 self-reference or a within-bank reuse chain. Production catalog unchanged.
 
+## Chapters 30-32: Three-Chapter Vocabulary Batch
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [30 Surgical Airways](chapter-30-cue-audit.md) | 93 | 32 | 46 | 15 |
+| [31 Vascular Access](chapter-31-cue-audit.md) | 150 | 68 | 53 | 29 |
+| [32 Hemodynamic Monitoring](chapter-32-cue-audit.md) | 91 | 41 | 48 | 2 |
+
+334 term trials: 141 newly recorded candidate compositions, 147 reuses and
+46 holds. 404 distinct term/page keyword mappings include aliases and repeated
+headings; duplicate same-page mappings were merged while preserving emphasis
+notes. Three AI drafting lanes plus main independent source/cue integration.
+Chapter31's interrupted reviewer was revived after a Codex usage limit.
+
+Every recorded vocabulary/page and keyword location was checked, including the
+raster-only palmar arterial arches label. Chapter32's full-width table and
+right-top conclusion were included, with Chapter33 excluded. No PDF annotations
+found; printed typography and boundaries separately inspected. This is a bounded
+lexical screen, not exhaustive vocabulary, source entailment or clinical coverage.
+
+Examples: hoarseness/horse; dysphonia/disc plus phone; vein/weather vane;
+basilic vein/basil plant plus vane; Seldinger/shopkeeper ringing a bell.
+Familiar learned model/device and ordinary-action cues remain eligible. Context
+supplies omitted qualifiers; visible props do not establish drug, disease,
+measurement or treatment facts. Source wording and recall remain distinct.
+
+Same-batch roots reconcile scalpel/Seldinger to30 and guidewire/gauze to31;
+ECG and lactic acidosis reuse older records. Resolved JSON reuse chains have no
+cycles or held targets; legacy non-fragment links terminate traversal. Nine
+preserved local decision histories do not erase older holds or sound rejections.
+Separate register: 239 active hold occurrences, 191 distinct terms. The exporter
+now preserves explicit `attempted_cue` fields instead of displaying no attempt.
+Canonical catalog remains unchanged and all chapter candidates are untested.
+
 ## Next
 
-**Chapter 30, Surgical Airways**, is next, not started for cue review. Do not move
+**Chapter 33, Cardiac Pacing and Implanted Defibrillation**, is next, not started
+for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

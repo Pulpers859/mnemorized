@@ -83,3 +83,17 @@ def test_duplicate_split_chapter_ids_are_not_merged(tmp_path):
         (docs / filename).write_text(json.dumps(bank))
     with pytest.raises(ValueError, match="Duplicate chapter ID"):
         build_register(tmp_path)
+
+
+def test_separate_attempted_cue_is_preserved_for_a_held_term(tmp_path):
+    docs = tmp_path / "docs"
+    docs.mkdir()
+    (docs / "chapter-1-cue-audit.md").write_text("Example")
+    (docs / "chapter-1-cue-audit.json").write_text(json.dumps({
+        "chapter_id": "1", "title": "Example", "entries": [
+            {"term": "word", "page": 1, "decision": "hold", "cue": None,
+             "attempted_cue": "A distinct attempted composition", "reason": "Revisit"},
+        ],
+    }))
+    register = build_register(tmp_path)
+    assert register["active_holds"][0]["attempted_cue"] == "A distinct attempted composition"
