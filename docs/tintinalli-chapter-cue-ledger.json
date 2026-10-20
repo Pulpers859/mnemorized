@@ -510,6 +510,34 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 107
+    },
+    {
+      "chapter_id": "29A",
+      "title": "Tracheal Intubation",
+      "record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "selected_terms": 184,
+      "new_candidates": 59,
+      "reused_candidates": 82,
+      "holds": 43,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 196
+    },
+    {
+      "chapter_id": "29B",
+      "title": "Mechanical Ventilation",
+      "record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "selected_terms": 71,
+      "new_candidates": 30,
+      "reused_candidates": 29,
+      "holds": 12,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 86
     }
   ],
   "hold_register": {
@@ -519,10 +547,9 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "29",
-    "title": "Tracheal Intubation (source chapter 29A)",
-    "status": "not_started_for_cue_review",
-    "note": "Integer ledger identifier preserves current schema; actual source chapter is 29A, followed by 29B Mechanical Ventilation. Do not skip 29B when reviewing the split chapter."
+    "chapter_id": "30",
+    "title": "Surgical Airways",
+    "status": "not_started_for_cue_review"
   },
   "spend": {
     "anthropic_calls": 0,
@@ -531,6 +558,7 @@
   "notes": [
     "Other chapter lanes were stopped at the user's scope change. Their partial artifacts are not review progress or inputs to this result.",
     "Only short term evidence and source metadata are tracked; PDFs, full extracted text and screenshots stay local/ignored.",
-    "No production cue catalog changes. Zero proposals is a bounded editorial outcome, not proof that no useful mnemonic can exist."
+    "No production cue catalog changes. Zero proposals is a bounded editorial outcome, not proof that no useful mnemonic can exist.",
+    "Chapter IDs preserve source suffixes:29A Tracheal Intubation and29B Mechanical Ventilation are distinct records. Hold-register tooling naturally orders split IDs; the earlier integer29 next-chapter placeholder is retired."
   ]
 }

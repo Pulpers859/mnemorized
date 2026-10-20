@@ -199,6 +199,35 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-20 - Split source chapters29A/29B vocabulary review
+**Done:** Two disjoint drafting agents plus main independent source/cue review.
+29A=184 terms/59 new/82 reuse/43 hold;29B=71/30/29/12.
+Total255 trials,89 new candidate compositions,111 reuses,55 holds;
+282 keyword mappings include aliases/repeated emphasized words, not additional
+discoveries. Main independently checked every entry/keyword source location,
+all cues and reuse targets, visually inspected boundaries37/48/51/52 and raster
+Insp. Hold label. Five29A source normalizations documented explicitly. Dropped
+unneeded tidal/cascade/limb modifiers from broader reuses; repaired incomplete
+leak/opening cue descriptions. Lid/cane, Midas/lamb, sawing-logs and saturated-
+sponge/oxygen proposals challenged/accepted by drafters. No empirical validation.
+**IDs:** Preserve source29A and29B as actual string IDs, not integer29 alias.
+Hold-register tool naturally orders numeric/suffix IDs, rejects malformed IDs,
+and preserves split holds separately. Added ordering/duplicate/invalid-ID tests.
+Within-bank reuse must target a different retained candidate, not itself or a
+within-bank chain. Previous integer29 next-chapter note is superseded.
+**Holds:**193 active occurrences/153 distinct terms;15 resolution histories,
+including four new local reconsideration records. Older chapter/workshop holds
+remain, including28 PEEP. All candidates untested and outside canonical catalog.
+**Validation:** Focused tests166passed/1skipped; hold register current; canonical
+catalog valid76 unchanged. Full suite798passed/2skipped/149subtests passed.
+Staged diff whitespace checked before commit. Zero paid calls/images;
+no Forge, current-clinical-guidance, human-expert, recall or image validation.
+$6 benchmark budget untouched. No assigned-page PDF annotations; fonts/visual
+checks separately assessed printed emphasis, not exhaustive chapter coverage.
+**Next:**30 Surgical Airways, actual title PDF52. Earlier1-19 expanded emphasis
+backfill still outstanding. Fetch checkpoint-ref issue persists; no deletion or
+auth retries. Preserve unrelated Forge HTML/pipeline edits.
+
 ### 2026-10-20 - Chapters26-28 emphasized vocabulary continuation
 **Done:** Two disjoint AI drafting lanes plus main independent integration.
 26=63terms/24new/21reuse/18hold;27=42/29/6/7;28=98/51/28/19.

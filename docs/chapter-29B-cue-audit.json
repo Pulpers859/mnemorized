@@ -1,0 +1,1789 @@
+{
+  "main_integration_review": {
+    "date": "2026-10-20",
+    "source_and_conceptual_review": true,
+    "scope": "Main independently checked every recorded term/page and keyword location within actual chapter regions, visually reviewed boundary pages37/48/51/52, checked the raster-only Insp. Hold label, reviewed every cue and resolved reuse target. Author-pending notes below are chronological and superseded here. AI review only, not clinical, human-expert, legal, recall or rendering validation.",
+    "highlight_annotations_found": 0,
+    "normalizations": "29A explicitly expands Sellick or cricoid maneuver and shared intragastric/intraocular/intracranial pressure headword; joins in-line wrap; derives communication from Communicate; corrects source heading ASSICIATED. 29B Insp. Hold is visually verified within embedded raster, not extractable text. Case/wrap/trademark normalizations are not all contiguous source quotations.",
+    "counts": {
+      "selected_terms": 71,
+      "new_candidates": 30,
+      "reused_candidates": 29,
+      "holds": 12
+    },
+    "keyword_items": 86
+  },
+  "schema_version": 1,
+  "chapter_id": "29B",
+  "title": "Mechanical Ventilation",
+  "review_date": "2026-10-20",
+  "keyword_screen_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "printed_pages": [
+      190,
+      191,
+      192,
+      193
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual29B title PDF48 left y273; left below title, ENTIRE right column including Table29B-1 above title, and full-width bottom Figure29B-1. Top-left29A through REFERENCES excluded. PDF49-51 belong29B; PDF51 REFERENCES starts y687. PDF52 starts30 Surgical Airways and is excluded. Runningheads not ownership.",
+    "verification": "Author computed matching SHA256; inspected font spans and all four full-page rasters plus PDF52 boundary. Zero annotations on48-51. Main provided independent PDF48 ownership clarification; independent per-entry integration review pending."
+  },
+  "scope": "Offline vocabulary-only editorial screen of emphasized headings, tables, figure labels and selected body names; no quota, no every-body-word or exhaustive clinical coverage claim.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 71,
+    "new_candidates": 30,
+    "reused_candidates": 29,
+    "holds": 12
+  },
+  "source_wording_notes": {
+    "normalization": "Case, line-wrap hyphens, spacing and abbreviated figure labels normalized. No source instructions, numeric settings, clinical relationships or narrative copied.",
+    "source_match": "heading_and_body means actual heading and prose; table_and_body means actual table and prose; figure_label includes text embedded in Figure29B-6 flowchart. Figure labels are vocabulary only, not algorithm transcription.",
+    "PEEP": "Accepted peep/PEEP partial-name wordplay is a LOCAL29B reconsideration only. Chapter28's expanded-name arrow/gauge hold remains OPEN, not resolved or adjudicated here. Expansion must be taught; no mode or physiological claim.",
+    "pulmonary compliance": "Entry uses source-exact lung compliance from Figure29B-3 caption49; reuses Chapter28 pulmonary-compliance family. Earlier author draft used pulmonary compliance at48, which was not source-exact; corrected before final handoff.",
+    "supplementary": "Regular-body terms are labeled supplementary, not falsely emphasized; priority remains meaningful headings/table labels/figure labels.",
+    "abbreviated label": "Insp. Hold is the visually verified raster-only abbreviated Figure29B-1 monitor label, not extractable PDF text or a contiguous expanded phrase. Source location relies on raster inspection, not normalizer proof.",
+    "cardiac failure": "Chapter20 congestive-heart-failure traffic-jam hold remains unresolved. This chapter's unqualified cardiac-failure broken-heart category is narrower lexical composition without congestion and does not silently resolve that earlier hold.",
+    "generic category limits": "Nodules reuses Chapter28 masses clay-lump family rather than counting another new category. Obstructive-lung cue drops COPD hourglass; thromboembolism cue drops pulmonary-embolism lung modifier, disclosed explicitly."
+  },
+  "entries": [
+    {
+      "term": "mechanical ventilation",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "chapter_title",
+      "kind": "existing_family",
+      "cue": "Familiar desk fan with a conspicuous hand crank.",
+      "cue_scope": "Mechanical ventilation name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#mechanical ventilation",
+      "reason": "Exact existing cue; no apparatus operation or support relationship.",
+      "tested": false
+    },
+    {
+      "term": "volume targeted",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A sound-volume knob beside an archery target.",
+      "cue_scope": "Volume-targeted name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Volume double meaning and target noun; no ventilator control relationship.",
+      "tested": false
+    },
+    {
+      "term": "acute respiratory distress syndrome",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A sharp acute-angle token beside familiar bellows wearing a theatrical distress flag.",
+      "cue_scope": "ARDS name fragment only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Acute/angle and distress flag with existing breathing ingredient; syndrome not encoded. Learned partial phrase, not disease recognition.",
+      "tested": false
+    },
+    {
+      "term": "bilateral opacities",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Two matching opaque frosted-glass panes standing side by side.",
+      "cue_scope": "Bilateral/opacities lexical category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar opaque material plus paired sides; not an imaging appearance or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "lung collapse",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A lung-shaped paper token folded flat beside a collapsed toy tent.",
+      "cue_scope": "Collapse name family with lung token",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar collapse category; no anatomical mechanism or source relation retained.",
+      "tested": false
+    },
+    {
+      "term": "nodules",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A cluster of ordinary clay lumps.",
+      "cue_scope": "Broad lump/mass category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#masses",
+      "reason": "Reuses Chapter28 ordinary clay-lump family at broad nodule-category scope. No site, diagnostic appearance, size or equivalence of clinical entities.",
+      "tested": false
+    },
+    {
+      "term": "respiratory failure",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable bellows with a visibly broken handle.",
+      "cue_scope": "Broad respiratory-failure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#Type 1 respiratory failure",
+      "reason": "Reuses Chapter28 broken-bellows ingredient, without typewriter or numeral; broad failure-name family only, not type discrimination.",
+      "tested": false
+    },
+    {
+      "term": "cardiac failure",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar heart-shaped toy with a broken crank.",
+      "cue_scope": "Broad cardiac-failure name category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Failure/broken familiar action with heart token; no disease mechanism or clinical finding.",
+      "tested": false
+    },
+    {
+      "term": "volume overload",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An overloaded trolley carrying large sound-volume knobs.",
+      "cue_scope": "Volume-overload partial name",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Volume double meaning plus overloaded object; no fluid balance, disease or treatment claim.",
+      "tested": false
+    },
+    {
+      "term": "fraction of inspired oxygen",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A fraction pie token beside an oxygen cylinder and an inward arrow.",
+      "cue_scope": "FiO2 expanded name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned name ingredients only; no fraction value, oxygen-delivery relationship or calculation.",
+      "tested": false
+    },
+    {
+      "term": "partial pressure of arterial oxygen",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "PaO2 expanded name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried part of a pie with gauge, artery token and oxygen cylinder; too crowded for a useful economical cue. No numeric rule retained.",
+      "tested": false
+    },
+    {
+      "term": "positive end-expiratory pressure",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pressure gauge peeping around the end of a curtain.",
+      "cue_scope": "PEEP abbreviation/partial-name cue only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Peep/PEEP is compact familiar wordplay. Expansion supplied by taught context, not recovery of every word; no pressure timing or mode equivalence. Reconsiders Chapter28's arrow/gauge syntax hold rather than inheriting it.",
+      "tested": false
+    },
+    {
+      "term": "peak pressure",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A pressure gauge perched on a mountain peak.",
+      "cue_scope": "Peak-pressure lexical pairing",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Peak is a familiar double meaning; no waveform interpretation, measurement or limits.",
+      "tested": false
+    },
+    {
+      "term": "plateau pressure",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A pressure gauge resting on a broad flat-topped plateau.",
+      "cue_scope": "Plateau-pressure lexical pairing",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar landform token with gauge; no physiological relationship or waveform reading.",
+      "tested": false
+    },
+    {
+      "term": "Insp. Hold",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An inward arrow held in a familiar clamp.",
+      "cue_scope": "Inspiratory/hold partial name",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Exact abbreviated figure label; inward arrow and ordinary holding action supply a learned partial name, not a pause maneuver or physiological timing.",
+      "tested": false
+    },
+    {
+      "term": "volume waveform",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A sound-volume knob beside a toy ocean wave.",
+      "cue_scope": "Volume-waveform partial name",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar double meanings, not a trace shape or measurement lesson.",
+      "tested": false
+    },
+    {
+      "term": "tidal volume",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A small seaside tide washing into a clear water pitcher.",
+      "cue_scope": "Tidal-volume name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#tidal volume",
+      "reason": "Exact prior cue; no volume setting.",
+      "tested": false
+    },
+    {
+      "term": "lung compliance",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "A lung-shaped toy flexibly bowing like a compliant performer.",
+      "cue_scope": "Pulmonary-compliance name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#pulmonary compliance",
+      "reason": "Caption's actual lung-compliance wording reuses Chapter28 pulmonary-compliance cue; no waveform interpretation or system-components claim.",
+      "tested": false
+    },
+    {
+      "term": "pressure targeted",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pressure gauge beside an archery target.",
+      "cue_scope": "Pressure-targeted name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Target double meaning, not control mechanics.",
+      "tested": false
+    },
+    {
+      "term": "pressure support ventilation",
+      "pdf_page": 51,
+      "page": 193,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "Bellows holding an air passage open.",
+      "cue_scope": "Broad positive-pressure support/NIPPV family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#continuous positive airway pressure",
+      "reason": "Chapter2 calibration permits the broad support family, not PSV/CPAP equivalence or mode distinction.",
+      "tested": false
+    },
+    {
+      "term": "synchronous intermittent mandatory ventilation",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Two matching metronomes with their pendulums aligned in the same position and matching motion marks.",
+      "cue_scope": "Synchronous name ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#synchronized",
+      "reason": "Uses existing synchronization token; other modifiers supplied by taught context. Partial-name cue, not a complete mode identifier.",
+      "tested": false
+    },
+    {
+      "term": "respiratory rate",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Bellows beside a familiar metronome.",
+      "cue_scope": "Respiratory-rate name category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Existing breathing and cadence ingredients combined; no numeric rate or timing instruction.",
+      "tested": false
+    },
+    {
+      "term": "minute ventilation",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A desk fan beside an analog clock with its minute hand conspicuous.",
+      "cue_scope": "Minute-ventilation name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#minute ventilation",
+      "reason": "Existing cue without unit, calculation or target.",
+      "tested": false
+    },
+    {
+      "term": "hyperoxia",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Oversized oxygen-cylinder study token beside a smaller matching token.",
+      "cue_scope": "Broad oxygen-excess name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#hyperoxygenation",
+      "reason": "Reuses familiar excess/oxygen ingredient at calibrated family scope; words not asserted clinically interchangeable.",
+      "tested": false
+    },
+    {
+      "term": "sedation",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Sedation vocabulary category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Existing cue; no desired depth or adjustment recommendation.",
+      "tested": false
+    },
+    {
+      "term": "intubated",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Intubation name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Existing taught device/anatomy category, no placement instruction.",
+      "tested": false
+    },
+    {
+      "term": "ventilator",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Familiar desk fan with a conspicuous hand crank.",
+      "cue_scope": "Mechanical-ventilation/ventilator name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#mechanical ventilation",
+      "reason": "Learned family association, not depiction of actual medical ventilator hardware.",
+      "tested": false
+    },
+    {
+      "term": "obstructive lung disease",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "A blocked lung-shaped teaching token, without the hourglass.",
+      "cue_scope": "Broad obstructive-lung name family without chronic modifier",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#chronic obstructive pulmonary disease",
+      "reason": "Reuses blocked lung ingredient only; hourglass omitted in this chapter's actual cue scope below. No synonymy with COPD.",
+      "tested": false
+    },
+    {
+      "term": "dynamic hyperinflation",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An oversized party balloon with lively motion marks.",
+      "cue_scope": "Dynamic/inflation name category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar inflated object and dynamic motion; no lung shape, air trapping mechanism or causal link.",
+      "tested": false
+    },
+    {
+      "term": "hypercapnia",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "Familiar bread-and-pasta basket visibly overflowing.",
+      "cue_scope": "Broad hypercarbia/hypercapnia name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#hypercarbia",
+      "reason": "Existing partial carb/excess cue; not exact phonetic capnia, dietary advice or blood-gas definition.",
+      "tested": false
+    },
+    {
+      "term": "air trapping",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "A breeze-swirl token inside an ordinary closed cage.",
+      "cue_scope": "Air/gas trapping name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#air trapping",
+      "reason": "Table says gas trapping; body says air trapping. Name-family use only, not physiological equivalence claim.",
+      "tested": false
+    },
+    {
+      "term": "auto-PEEP",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy automobile with a small face peeping from its window.",
+      "cue_scope": "Auto-PEEP partial-name cue",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Auto/car plus peep wordplay; no pressure value, waveform, maneuver or cause.",
+      "tested": false
+    },
+    {
+      "term": "severe hypoxia",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "heading",
+      "kind": "existing_family",
+      "cue": "A nearly empty oxygen cylinder.",
+      "cue_scope": "Hypoxia family; severity not encoded",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#hypoxia",
+      "reason": "Reuses existing broad family; severe supplied by context without severity criteria.",
+      "tested": false
+    },
+    {
+      "term": "hypoxemia",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Blood-drop character beside a nearly empty oxygen tank.",
+      "cue_scope": "Hypoxemia name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#hypoxemia",
+      "reason": "Existing cue; source heading slash split from hypoxia, no conflation.",
+      "tested": false
+    },
+    {
+      "term": "trauma",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Trauma category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "Existing familiar injury category; no injury mechanism or care.",
+      "tested": false
+    },
+    {
+      "term": "ventilator care bundle",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "The existing hand-cranked fan token tied beside a small bundle of ordinary sticks.",
+      "cue_scope": "Care-bundle/ventilator partial phrase",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Bundle familiar noun; care omitted at taught phrase scope. No contents, algorithm or actions encoded.",
+      "tested": false
+    },
+    {
+      "term": "analgesia",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+      "cue_scope": "Analgesia learned category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Pain/silence is a category reminder, not a drug action, drug recommendation or effect promise.",
+      "tested": false
+    },
+    {
+      "term": "agitation",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A washing-machine agitator with obvious shaking motion marks.",
+      "cue_scope": "Agitation familiar action/category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary agitation action, not depiction of patient behavior or severity.",
+      "tested": false
+    },
+    {
+      "term": "dyssynchrony",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Two metronomes with pendulums pointing in visibly different directions.",
+      "cue_scope": "Broad out-of-sync name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#unsynchronized",
+      "reason": "Existing action token; no patient-ventilator relationship or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "Richmond Agitation-Sedation Scale",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy gentleman wearing a monocle and carrying a bulging coin purse, beside a plain balance scale.",
+      "cue_scope": "Richmond/scale partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Rich/Richmond partial name has visible monocle and coin-purse wealth markers, not just an adjective. Rich-man/Richmond is approximate, not whole-name recovery; agitation/sedation supplied by context. No score or assessment method.",
+      "tested": false
+    },
+    {
+      "term": "benzodiazepine",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Benzodiazepine drug-class name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a familiar Benz car beside a zipper; diazepine remainder had no appealing economical bridge in this pass. Not a drug effect scene.",
+      "tested": false
+    },
+    {
+      "term": "delirium",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Delirium name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a deli counter with a spinning toy; spinning adds an arbitrary symptom-like suggestion rather than a useful name bridge. No selected cue.",
+      "tested": false
+    },
+    {
+      "term": "asthma",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Asthma name",
+      "decision": "hold",
+      "prior": "docs/chapter-28-cue-audit.json#asthma",
+      "reason": "Preserves earlier asterisk/moth sound attempt; considered familiar inhaler category, but did not select it as an asthma-specific name cue in this pass. Broader category cues are allowed, not banned.",
+      "tested": false
+    },
+    {
+      "term": "pneumonia",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Pneumonia name",
+      "decision": "hold",
+      "prior": "docs/chapter-25-cue-audit.json#pneumonia",
+      "reason": "Preserves new-moon attempt lacking a visible new-moon token; considered generic moon but no improved selected partial-name bridge. Not held for inability to diagnose from an image.",
+      "tested": false
+    },
+    {
+      "term": "sepsis",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Sepsis name",
+      "decision": "hold",
+      "prior": "docs/chapter-20-cue-audit.json#sepsis",
+      "reason": "Preserves generic germ/septic-family attempt; considered septic-tank partial cue, but no useful taught-name bridge selected here. Not a claim that category cues must be unique.",
+      "tested": false
+    },
+    {
+      "term": "pancreatitis",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A cooking pan beside a theatrical flame token.",
+      "cue_scope": "Pancreatitis partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Pan partial name plus established inflammation ingredient; not a pancreas drawing, etiology or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "bronchospasm",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A bronco squeezing a branching air hose visibly narrow.",
+      "cue_scope": "Bronchospasm partial-name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bronchospasm",
+      "reason": "Existing cue; no waveform interpretation or equivalence with asthma.",
+      "tested": false
+    },
+    {
+      "term": "dead space",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "An empty unused room cordoned off from a busy neighboring room.",
+      "cue_scope": "Dead-space lexical category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#physiologic dead space",
+      "reason": "Existing everyday-language category, not lung anatomy or ratio.",
+      "tested": false
+    },
+    {
+      "term": "barotrauma",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Damaged generic teaching model inside a transparent pressure chamber with a high gauge.",
+      "cue_scope": "Barotrauma name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#barotrauma",
+      "reason": "Existing cue without cause/setting relationship.",
+      "tested": false
+    },
+    {
+      "term": "pneumothorax",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Air balloon outside a lung but inside a transparent chest shell.",
+      "cue_scope": "Pneumothorax learned name category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#pneumothorax",
+      "reason": "Existing cue; no diagnosis, pressure pattern or treatment.",
+      "tested": false
+    },
+    {
+      "term": "hypotension",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "Hypotension lexical category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Existing category token; no value, maneuver or response.",
+      "tested": false
+    },
+    {
+      "term": "respiratory acidosis",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Recognizable bellows beside a conspicuous lemon.",
+      "cue_scope": "Respiratory-acidosis name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#respiratory acidosis",
+      "reason": "Existing lexical cue; no pH threshold or ventilator action.",
+      "tested": false
+    },
+    {
+      "term": "neuromuscular blockade",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Neuromuscular-blockade name",
+      "decision": "hold",
+      "prior": "docs/chapter-26-cue-audit.json#neuromuscular blockade",
+      "reason": "Preserves blocked cable plus flexed-arm attempt. Considered muscle toy beside a barricade; no appealing economical bridge for the full learned name selected. Familiar partial categories remain permissible.",
+      "tested": false
+    },
+    {
+      "term": "prone positioning",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding toy mannequin lying face down on a plain display plinth.",
+      "cue_scope": "Prone familiar position category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Static taught position only; no patient positioning action, benefit or technique.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary vasodilators",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A lung-shaped token beside a visibly widening vase.",
+      "cue_scope": "Pulmonary/vasodilator partial name",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Vase/vaso and widening word fragment are taught name ingredients only; no vessels, drug effect or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "extracorporeal membrane oxygenation",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "ECMO name",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#extracorporeal membrane oxygenation",
+      "reason": "Preserves outside-body membrane/oxygen collection as cluttered. Considered an echoing microphone for ECMO; uncertain acronym sound without a compact selected name bridge. No circuit or treatment depicted.",
+      "tested": false
+    },
+    {
+      "term": "chlorhexidine",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Chlorhexidine name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried chlorine-pool toy beside a hexagon; partial chlorine/hex is possible but the remaining composition felt forced. No oral-care instruction or antimicrobial effect.",
+      "tested": false
+    },
+    {
+      "term": "proton pump inhibitor",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A proton-model toy beside a familiar pump and a stop-sign token.",
+      "cue_scope": "Proton-pump-inhibitor name",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal learned name ingredients; no biological pump or drug effect relationship.",
+      "tested": false
+    },
+    {
+      "term": "H2 blocker",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "H2-blocker name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried two H-shaped toy blocks against a barricade. Without legible letters the H2 distinction is poor; no appealing nonletter alternative selected, not a ban on category cues.",
+      "tested": false
+    },
+    {
+      "term": "thromboembolism",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A plug lodged inside a transparent vessel model, without a lung modifier.",
+      "cue_scope": "Broad vessel-plug embolism ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#pulmonary embolism",
+      "reason": "Drops lung modifier in actual chapter cue below. Does not encode thrombus composition, site, prevention or treatment.",
+      "tested": false
+    },
+    {
+      "term": "volume control ventilation",
+      "pdf_page": 51,
+      "page": 193,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "A sound-volume knob beside an archery target.",
+      "cue_scope": "Volume-targeted/control name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#volume targeted",
+      "reason": "Figure29B-6 mode label linked to this bank's earlier retained family; no control variable relationship.",
+      "tested": false
+    },
+    {
+      "term": "paralysis",
+      "pdf_page": 51,
+      "page": 193,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Paralysis lexical name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a pair of motionless toy legs for para/legs; strained sound and unwanted body-function teaching. Existing neuromuscular-blockade hold considered, not falsely a reusable target.",
+      "tested": false
+    },
+    {
+      "term": "pressure waveform",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A pressure gauge beside an ordinary wave-shaped toy.",
+      "cue_scope": "Pressure/waveform partial-name pairing",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Gauge plus wave double meaning, not tracing, diagnosis or graph interpretation.",
+      "tested": false
+    },
+    {
+      "term": "inspiratory flow",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An inward arrow beside an ordinary flowing ribbon.",
+      "cue_scope": "Inspiratory/flow name fragments",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar inward and flowing action tokens only; no physiological direction, device settings or waveform.",
+      "tested": false
+    },
+    {
+      "term": "expiratory flow",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An outward arrow beside an ordinary flowing ribbon.",
+      "cue_scope": "Expiratory/flow name fragments",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Paired lexical cue with inward-flow proposal, not depiction of physiology or technique.",
+      "tested": false
+    },
+    {
+      "term": "end-expiratory hold",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An outward arrow at the end of a ribbon, held by a familiar clamp.",
+      "cue_scope": "End/expiratory/hold partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar end and holding tokens with outward-name ingredient; not a maneuver, timing demonstration or measurement.",
+      "tested": false
+    },
+    {
+      "term": "pH",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "pH lexical abbreviation",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a pea balanced beside an H-shaped block; relies on a visible letter and has no selected nonletter bridge. Numeric directive excluded only after this lexical trial.",
+      "tested": false
+    },
+    {
+      "term": "inspiratory time",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Bellows with an inward-pointing token beside an unnumbered clock.",
+      "cue_scope": "Inspiratory-time name",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#inspiratory time",
+      "reason": "Existing name composition, no timing value, technique or source relationship.",
+      "tested": false
+    },
+    {
+      "term": "ideal body weight",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy mannequin beside a weighing scale bearing an idealized gold-star token.",
+      "cue_scope": "Ideal/body/weight partial lexical phrase",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary ideal/weight/body ingredients, not a calculation, physical ideal or dosing rule. Gold star is a learned ideal token only.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary hypertension",
+      "pdf_page": 50,
+      "page": 192,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Taut vessel model under a pressure gauge whose needle points high.",
+      "cue_scope": "Broad hypertension family; pulmonary qualifier not encoded",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#hypertension",
+      "reason": "Existing high-pressure vessel category, with pulmonary supplied by taught context. No lung finding, threshold or table relationship.",
+      "tested": false
+    },
+    {
+      "term": "oxygen saturation",
+      "pdf_page": 49,
+      "page": 191,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.",
+      "cue_scope": "Oxygen/saturation lexical pairing only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Saturated sponge is a familiar everyday saturation category beside the existing oxygen token. Learned wordplay only, not a physiological measurement, oxygen quantity, sensor reading, mechanism or clinical target.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "PyMuPDF1.27.2.3 span/font/size/coordinate inspection, annotation enumeration and full-page raster inspection on48-51; boundary raster52 also checked. BlackSemiCn headings, SemiboldCond titles/subheads/table directives, MinionPro-It phrases and HelveticaLTStd-Bold figure labels examined. Meaningful lexical headwords separated from emphasized instructions, numerical targets and algorithm branches. Table regular-font clinical nouns tried selectively; no arbitrary quantity target.",
+    "pdf_annotations_checked": true,
+    "highlight_annotations_found": 0,
+    "annotation_counts_by_pdf_page": {
+      "48": 0,
+      "49": 0,
+      "50": 0,
+      "51": 0
+    },
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Zero PDF annotations on48-51. This does not exclude flattened/publisher highlighting. Raster inspection found publisher-colored headings, shaded tables and colored flowchart cells, not reader highlight annotations."
+    },
+    "typography_limits": "Fonts/layout are evidence of typographic emphasis, not medical salience. Figure screenshots contain small rasterized monitor labels not all exposed as text spans; meaningful peak/plateau/PEEP/flow labels visually checked. Not exhaustive body-word or clinical-concept coverage.",
+    "items": [
+      {
+        "term": "mechanical ventilation",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "mechanical ventilation",
+        "emphasis": "Actual chapter title, printed display-heading emphasis."
+      },
+      {
+        "term": "volume targeted",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "volume targeted",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "acute respiratory distress syndrome",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "acute respiratory distress syndrome",
+        "emphasis": "Meaningful table and body vocabulary; not asserted entirely bold."
+      },
+      {
+        "term": "bilateral opacities",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "bilateral opacities",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "lung collapse",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "lung collapse",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "nodules",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "nodules",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "respiratory failure",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "respiratory failure",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "cardiac failure",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "cardiac failure",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "volume overload",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "volume overload",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "fraction of inspired oxygen",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "fraction of inspired oxygen",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "partial pressure of arterial oxygen",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "partial pressure of arterial oxygen",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "positive end-expiratory pressure",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "positive end-expiratory pressure",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "peak pressure",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "peak pressure",
+        "emphasis": "Figure or embedded-monitor label vocabulary; not a clinical trace interpretation."
+      },
+      {
+        "term": "plateau pressure",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "plateau pressure",
+        "emphasis": "Figure or embedded-monitor label vocabulary; not a clinical trace interpretation."
+      },
+      {
+        "term": "Insp. Hold",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "Insp. Hold",
+        "emphasis": "Figure29B-1 raster-only abbreviated monitor label; visually verified, not extractable PDF text. Main independently verified crop48."
+      },
+      {
+        "term": "volume waveform",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "volume waveform",
+        "emphasis": "Figure or embedded-monitor label vocabulary; not a clinical trace interpretation."
+      },
+      {
+        "term": "tidal volume",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "tidal volume",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "lung compliance",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "lung compliance",
+        "emphasis": "Figure29B-3 caption lexical phrase; regular caption text"
+      },
+      {
+        "term": "pressure targeted",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "pressure targeted",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "pressure support ventilation",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "pressure support ventilation",
+        "emphasis": "HelveticaLTStd-Bold Figure29B-6 mode label; shorter pressure-support name also in body49"
+      },
+      {
+        "term": "synchronous intermittent mandatory ventilation",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "synchronous intermittent mandatory ventilation",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "respiratory rate",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "respiratory rate",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "minute ventilation",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "minute ventilation",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "hyperoxia",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "hyperoxia",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "sedation",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "intubated",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "intubated",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "ventilator",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "ventilator",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "obstructive lung disease",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "obstructive lung disease",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "dynamic hyperinflation",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "dynamic hyperinflation",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "hypercapnia",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "hypercapnia",
+        "emphasis": "Meaningful table and body vocabulary; not asserted entirely bold."
+      },
+      {
+        "term": "air trapping",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "air trapping",
+        "emphasis": "Meaningful table and body vocabulary; not asserted entirely bold."
+      },
+      {
+        "term": "auto-PEEP",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "auto-PEEP",
+        "emphasis": "Meaningful table and body vocabulary; not asserted entirely bold."
+      },
+      {
+        "term": "severe hypoxia",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "severe hypoxia",
+        "emphasis": "Named printed heading vocabulary."
+      },
+      {
+        "term": "hypoxemia",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "hypoxemia",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "trauma",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "trauma",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "ventilator care bundle",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "ventilator care bundle",
+        "emphasis": "Named printed heading and body vocabulary; not every occurrence asserted bold."
+      },
+      {
+        "term": "analgesia",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "analgesia",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "agitation",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "agitation",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "dyssynchrony",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "dyssynchrony",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "Richmond Agitation-Sedation Scale",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "Richmond Agitation-Sedation Scale",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "benzodiazepine",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "benzodiazepine",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "delirium",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "delirium",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "asthma",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "asthma",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "pneumonia",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "pneumonia",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "sepsis",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "sepsis",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "pancreatitis",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "pancreatitis",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "bronchospasm",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "bronchospasm",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "dead space",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "dead space",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "barotrauma",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "barotrauma",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "pneumothorax",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "hypotension",
+        "emphasis": "Meaningful table and body vocabulary; not asserted entirely bold."
+      },
+      {
+        "term": "respiratory acidosis",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "respiratory acidosis",
+        "emphasis": "Meaningful table vocabulary; regular table labels are not asserted bold."
+      },
+      {
+        "term": "neuromuscular blockade",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "neuromuscular blockade",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "prone positioning",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "prone positioning",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "pulmonary vasodilators",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "pulmonary vasodilators",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "extracorporeal membrane oxygenation",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "extracorporeal membrane oxygenation",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "chlorhexidine",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "chlorhexidine",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "proton pump inhibitor",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "proton pump inhibitor",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "H2 blocker",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "H2 blocker",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "thromboembolism",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "thromboembolism",
+        "emphasis": "Supplementary body vocabulary; not claimed bold or highlighted."
+      },
+      {
+        "term": "volume control ventilation",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "volume control ventilation",
+        "emphasis": "Figure or embedded-monitor label vocabulary; not a clinical trace interpretation."
+      },
+      {
+        "term": "paralysis",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "paralysis",
+        "emphasis": "Figure or embedded-monitor label vocabulary; not a clinical trace interpretation."
+      },
+      {
+        "term": "pressure waveform",
+        "pdf_page": 49,
+        "page": 191,
+        "emphasis": "Figure29B-2/3 caption lexical phrase",
+        "entry_term": "pressure waveform"
+      },
+      {
+        "term": "inspiratory flow",
+        "pdf_page": 48,
+        "page": 190,
+        "emphasis": "Volume-targeted body phrase; Figure29B-1 abbreviated Start Insp. Flow label",
+        "entry_term": "inspiratory flow"
+      },
+      {
+        "term": "expiratory flow",
+        "pdf_page": 50,
+        "page": 192,
+        "emphasis": "Table29B-4 sentence headword; Figure29B-4 Continued Exp. Flow label",
+        "entry_term": "expiratory flow"
+      },
+      {
+        "term": "end-expiratory hold",
+        "pdf_page": 50,
+        "page": 192,
+        "emphasis": "Figure29B-4 abbreviated End Exp. Hold label; adjacent caption expanded name",
+        "entry_term": "end-expiratory hold"
+      },
+      {
+        "term": "pH",
+        "pdf_page": 50,
+        "page": 192,
+        "emphasis": "Table29B-4 bold pH directive headword",
+        "entry_term": "pH"
+      },
+      {
+        "term": "volume control",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "volume targeted",
+        "emphasis": "Repeated source name/abbreviation alias. Body mode name and Figure29B-1 title; family link, not control-physics equivalence."
+      },
+      {
+        "term": "pressure control",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "pressure targeted",
+        "emphasis": "Repeated source name/abbreviation alias. Body mode name and Table29B-3 column; family link only."
+      },
+      {
+        "term": "ARDS",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "acute respiratory distress syndrome",
+        "emphasis": "Repeated source name/abbreviation alias. Abbreviation used in body; expanded-name target on48."
+      },
+      {
+        "term": "PEEP",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "positive end-expiratory pressure",
+        "emphasis": "Repeated source name/abbreviation alias. Table29B-1 and Figure29B-1 abbreviation, with expansion in table note; retained partial-name proposal located49."
+      },
+      {
+        "term": "FiO2",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "fraction of inspired oxygen",
+        "emphasis": "Repeated source name/abbreviation alias. Table29B-2 split subscript abbreviation normalized; numerical matrix excluded."
+      },
+      {
+        "term": "PaO2",
+        "pdf_page": 48,
+        "page": 190,
+        "entry_term": "partial pressure of arterial oxygen",
+        "emphasis": "Repeated source name/abbreviation alias. Table29B-1 split subscript abbreviation normalized; expansion held."
+      },
+      {
+        "term": "gas trapping",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "air trapping",
+        "emphasis": "Repeated source name/abbreviation alias. Table29B-4 row label; broad air/gas name family, no physiological definition."
+      },
+      {
+        "term": "hypoxia",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "severe hypoxia",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-6 bold question lexical headword; reuse cue does not encode severe."
+      },
+      {
+        "term": "plateau",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "plateau pressure",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-2/3 abbreviated monitor label; full phrase separately recorded48."
+      },
+      {
+        "term": "End Exp. Hold",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "end-expiratory hold",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-4 monitor label; expanded lexical phrase in adjacent caption."
+      },
+      {
+        "term": "auto-positive end-expiratory pressure",
+        "pdf_page": 50,
+        "page": 192,
+        "entry_term": "auto-PEEP",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-4 caption expansion; no setting or pressure-difference statement."
+      },
+      {
+        "term": "sedated",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "sedation",
+        "emphasis": "Repeated source name/abbreviation alias. Italic clinical question adjective normalized to name family; question not copied."
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "sedation",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-6 adjustment clause lexical headword, mapped to existing entry49."
+      },
+      {
+        "term": "lung compliance",
+        "pdf_page": 51,
+        "page": 193,
+        "entry_term": "lung compliance",
+        "emphasis": "Repeated source name/abbreviation alias. Figure29B-5 caption repeat; trace comparison and numeric values excluded."
+      },
+      {
+        "term": "pressure support",
+        "pdf_page": 49,
+        "page": 191,
+        "entry_term": "pressure support ventilation",
+        "emphasis": "Repeated source name/abbreviation alias. Body short mode name and Table29B-3 context; exact expanded Figure29B-6 label is entry source51."
+      },
+      {
+        "term": "inspiratory time",
+        "pdf_page": 50,
+        "page": 192,
+        "emphasis": "Table29B-4 cell headword; shorter mode discussion49",
+        "entry_term": "inspiratory time"
+      },
+      {
+        "term": "ideal body weight",
+        "pdf_page": 49,
+        "page": 191,
+        "emphasis": "Table29B-3 shared line-wrap lexical phrase, not its numeric setting",
+        "entry_term": "ideal body weight"
+      },
+      {
+        "term": "pulmonary hypertension",
+        "pdf_page": 50,
+        "page": 192,
+        "emphasis": "Table29B-4 explanatory cell lexical headword",
+        "entry_term": "pulmonary hypertension"
+      },
+      {
+        "term": "oxygen saturation",
+        "pdf_page": 49,
+        "page": 191,
+        "emphasis": "Regular-body lexical phrase beside a bold numeric target; the words themselves are not bold. Numeric instruction excluded after extracting this headword.",
+        "entry_term": "oxygen saturation"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 48,
+        "description": "Top-left29A text, hypotension-associated-with-intubation heading and REFERENCES",
+        "reason": "Outside29B despite page sharing. Entire right column belongs29B and was included."
+      },
+      {
+        "pdf_page": 48,
+        "description": "Author names, chapter badges, table/figure numbers, source bibliography, Berlin attribution and mild/moderate/severe numeric bands",
+        "reason": "Attribution/navigation or measurement scaffolding, not independent vocabulary discoveries. Acute respiratory distress syndrome, oxygen expansion and actual table headwords tried separately."
+      },
+      {
+        "pdf_page": 48,
+        "description": "Table29B-1 onset/timing clauses and numerical oxygen/pressure criteria",
+        "reason": "Lexical respiratory failure, lung collapse, opacities, nodules, cardiac failure, volume overload, inspired oxygen and arterial-oxygen pressure separated; no definition, threshold or diagnostic rule retained."
+      },
+      {
+        "pdf_page": 49,
+        "description": "Table29B-2 high/low setting pairs and numerical matrix",
+        "reason": "PEEP and fraction-of-inspired-oxygen names tried; rows/columns are numerical control instructions, not extra vocabulary entries."
+      },
+      {
+        "pdf_page": 49,
+        "description": "Bold oxygen-saturation target and italic adjustment/sedation question",
+        "reason": "Oxygen saturation (regular words beside bold numeric target), hyperoxia, ventilator, sedation and intubated lexical headwords tried. No numerical target, adjustment choice or clinical question retained."
+      },
+      {
+        "pdf_page": 49,
+        "description": "Table29B-3 mode/control-variable/measure-dependent-variable scaffolding and settings",
+        "reason": "Volume and pressure targeted/control, peak/plateau pressures, tidal volume, respiratory rate, PEEP and inspired oxygen tried. Organizational labels and numeric device settings not separately counted."
+      },
+      {
+        "pdf_page": 50,
+        "description": "Table29B-4 bold start-rate, tolerate-pH and check-auto-PEEP directives",
+        "reason": "Respiratory rate, hypercapnia, respiratory acidosis, gas/air trapping and auto-PEEP headwords separated. Instructions, values and maneuvers excluded after headword trials."
+      },
+      {
+        "pdf_page": 50,
+        "description": "Care-bundle full clinical clauses, recommendation sequences and durations",
+        "reason": "Ventilator-care-bundle, sedation, intubation, chlorhexidine, proton pump inhibitor, H2 blocker and thromboembolism names tried; no care protocol, benefit or schedule retained."
+      },
+      {
+        "pdf_page": 51,
+        "description": "Figure29B-6 conditional branches, yes/no labels, numeric settings, increase/decrease/keep instructions",
+        "reason": "Volume-control ventilation, pressure support, plateau pressure, hypoxia, auto-PEEP, sedation and paralysis lexical targets independently tried or linked. Do not transcribe decision tree."
+      },
+      {
+        "pdf_page": 51,
+        "description": "REFERENCES and end-of-chapter navigation",
+        "reason": "Not vocabulary. Chapter ends here; no PDF52 Surgical Airways terms admitted."
+      }
+    ],
+    "aliases": [
+      {
+        "term": "volume control",
+        "pdf_page": 48,
+        "entry_term": "volume targeted",
+        "normalization": "Body mode name and Figure29B-1 title; family link, not control-physics equivalence."
+      },
+      {
+        "term": "pressure control",
+        "pdf_page": 49,
+        "entry_term": "pressure targeted",
+        "normalization": "Body mode name and Table29B-3 column; family link only."
+      },
+      {
+        "term": "ARDS",
+        "pdf_page": 50,
+        "entry_term": "acute respiratory distress syndrome",
+        "normalization": "Abbreviation used in body; expanded-name target on48."
+      },
+      {
+        "term": "PEEP",
+        "pdf_page": 48,
+        "entry_term": "positive end-expiratory pressure",
+        "normalization": "Table29B-1 and Figure29B-1 abbreviation, with expansion in table note; retained partial-name proposal located49."
+      },
+      {
+        "term": "FiO2",
+        "pdf_page": 49,
+        "entry_term": "fraction of inspired oxygen",
+        "normalization": "Table29B-2 split subscript abbreviation normalized; numerical matrix excluded."
+      },
+      {
+        "term": "PaO2",
+        "pdf_page": 48,
+        "entry_term": "partial pressure of arterial oxygen",
+        "normalization": "Table29B-1 split subscript abbreviation normalized; expansion held."
+      },
+      {
+        "term": "gas trapping",
+        "pdf_page": 50,
+        "entry_term": "air trapping",
+        "normalization": "Table29B-4 row label; broad air/gas name family, no physiological definition."
+      },
+      {
+        "term": "hypoxia",
+        "pdf_page": 51,
+        "entry_term": "severe hypoxia",
+        "normalization": "Figure29B-6 bold question lexical headword; reuse cue does not encode severe."
+      },
+      {
+        "term": "plateau",
+        "pdf_page": 49,
+        "entry_term": "plateau pressure",
+        "normalization": "Figure29B-2/3 abbreviated monitor label; full phrase separately recorded48."
+      },
+      {
+        "term": "End Exp. Hold",
+        "pdf_page": 50,
+        "entry_term": "end-expiratory hold",
+        "normalization": "Figure29B-4 monitor label; expanded lexical phrase in adjacent caption."
+      },
+      {
+        "term": "auto-positive end-expiratory pressure",
+        "pdf_page": 50,
+        "entry_term": "auto-PEEP",
+        "normalization": "Figure29B-4 caption expansion; no setting or pressure-difference statement."
+      },
+      {
+        "term": "sedated",
+        "pdf_page": 49,
+        "entry_term": "sedation",
+        "normalization": "Italic clinical question adjective normalized to name family; question not copied."
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 51,
+        "entry_term": "sedation",
+        "normalization": "Figure29B-6 adjustment clause lexical headword, mapped to existing entry49."
+      },
+      {
+        "term": "lung compliance",
+        "pdf_page": 51,
+        "entry_term": "lung compliance",
+        "normalization": "Figure29B-5 caption repeat; trace comparison and numeric values excluded."
+      },
+      {
+        "term": "pressure support",
+        "pdf_page": 49,
+        "entry_term": "pressure support ventilation",
+        "normalization": "Body short mode name and Table29B-3 context; exact expanded Figure29B-6 label is entry source51."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Read all chapter1-28 bank entry names and relevant cue/decision records, catalog concepts/IDs/statuses, and both workshop term decisions. Reconciled available same-batch29A draft (52 trials): overlapping intubated/sedation target older retained2/26, trauma targets24; no29A new candidate is counted again here. Every reuse_candidate has a precise retained/reused target, including one within-bank volume-mode family.",
+    "limits": "Family ingredients disclose omitted qualifiers; new composition is not a new primitive. Earlier sound-attempt rejection does not forbid literal devices, familiar categories or learned partial-name cues."
+  },
+  "resolved_holds": [
+    {
+      "term": "positive end-expiratory pressure",
+      "resolution": "LOCAL29B reconsideration only, not resolution of the earlier Chapter28 hold, which remains OPEN. The29B entry was initially retain_candidate, never a local hold transition. This history documents considering the older held expanded-name pictogram before selecting a new PEEP abbreviation/partial-name cue. No empirical testing or prior-bank edit.",
+      "prior": "docs/chapter-28-cue-audit.json#positive end-expiratory pressure",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Outward arrow ending at pressure gauge",
+          "reason": "Chapter28 judged end-qualifier pictogram syntax unclear.",
+          "scope": "Historical Chapter28 hold; still open."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "Pressure gauge peeping around curtain end",
+          "reason": "Peep/PEEP familiar partial-name wordplay accepted under Chapter2 calibration; expansion supplied by context, not all-syllable recovery.",
+          "scope": "Local29B newly proposed candidate only."
+        }
+      ],
+      "scope": "local_reconsideration_not_prior_hold_resolution",
+      "earlier_hold_remains_open": true
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author draft completed; main independent source/conceptual review, integration counts/register/tests and Git pending.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/29batch/"
+}

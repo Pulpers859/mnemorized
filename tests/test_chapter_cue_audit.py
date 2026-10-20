@@ -6,6 +6,8 @@ from pathlib import Path
 
 import pytest
 
+from tools.chapter_cue_holds import chapter_sort_key
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -18,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
     (20, 81, 85, 52), (21, 85, 89, 52), (22, 1, 6, 142),
     (23, 7, 11, 142), (24, 11, 22, 142), (25, 22, 27, 142),
     (26, 27, 29, 142), (27, 30, 31, 142), (28, 31, 37, 142),
+    ("29A", 37, 48, 142), ("29B", 48, 51, 142),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
@@ -52,7 +55,7 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
             assert entry["cue"].strip()
         if entry["decision"] == "reuse_candidate":
             assert (ROOT / entry["prior"].split("#")[0]).is_file()
-    assert int(ledger["next_chapter"]["chapter_id"]) >= chapter + 1
+    assert chapter_sort_key(ledger["next_chapter"]["chapter_id"]) > chapter_sort_key(str(chapter))
     assert bank["production_admitted"] is False
     assert all(not v for v in bank["evidence"].values())
     assert all(v == 0 for v in bank["spend"].values())

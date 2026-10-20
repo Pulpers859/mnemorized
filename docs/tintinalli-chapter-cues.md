@@ -210,11 +210,39 @@ sedation and inflammatory-family cues reuse Chapter26 rather than inflate new
 counts. Seven draft-hold resolutions preserve their initial attempts/reasons in
 the structured banks and separate register; older chapter/workshop holds remain.
 
+## Chapters 29A-29B: Split-Chapter Vocabulary Batch
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [29A Tracheal Intubation](chapter-29A-cue-audit.md) | 184 | 59 | 82 | 43 |
+| [29B Mechanical Ventilation](chapter-29B-cue-audit.md) | 71 | 30 | 29 | 12 |
+
+255 term trials: 89 new candidate compositions, 111 reuses and 55 holds.
+282 keyword mappings include repeated emphasized terms and explicit aliases,
+without counting those as additional discoveries. Two disjoint AI drafting
+lanes; main independently checked every recorded source/keyword location,
+cue and resolved reuse target. PDF37 and PDF48 mixed-column ownership was
+visually verified; 29B's embedded-raster Insp. Hold label was separately inspected.
+Shared-word expansions, spelling normalization and communication/Communicate
+word-form normalization are explicit. No source clinical rules were encoded.
+No PDF annotations were found; printed typography was separately inspected.
+
+Examples: lidocaine/lid on walking cane; midazolam/Midas with lamb;
+snoring/sleeping toy beside saw and log; peak pressure/gauge on mountain peak;
+PEEP/gauge peeping around a curtain. Main proposals were challenged by AI
+drafters, not validated by credentialed humans or recall trials. Holds remain
+editorial choices, not proof that a term has no useful mnemonic. Four explicit
+reconsideration histories preserve prior reasons; older chapter/workshop holds
+remain. Separate register: 193 active chapter occurrences, 153 distinct terms.
+
+Tooling now preserves actual source IDs 29A and 29B, with natural ordering and
+regression tests. The prior integer29 next-chapter placeholder is retired.
+Within-bank reuse is permitted only to a different retained candidate, preventing
+self-reference or a within-bank reuse chain. Production catalog unchanged.
+
 ## Next
 
-**Tracheal Intubation (source Chapter29A)** is next, not started for cue review.
-The ledger uses integer29 for compatibility; the subsequent29B Mechanical
-Ventilation must not be skipped. Do not move
+**Chapter 30, Surgical Airways**, is next, not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

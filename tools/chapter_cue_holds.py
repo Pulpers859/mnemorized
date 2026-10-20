@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,13 +14,23 @@ MD_PATH = Path("docs/tintinalli-held-cues.md")
 DECISIONS = {"hold", "retain_candidate", "reuse_candidate"}
 
 
+def chapter_sort_key(chapter: str) -> tuple[int, str]:
+    """Preserve split source IDs such as 29A and 29B in textbook order."""
+    match = re.fullmatch(r"([1-9][0-9]*)([A-Z]?)", str(chapter))
+    if not match:
+        raise ValueError(f"Invalid chapter ID: {chapter!r}")
+    return int(match[1]), match[2]
+
+
 def build_register(root: Path = ROOT) -> dict:
     banks = []
     for path in (root / "docs").glob("chapter-*-cue-audit.json"):
         # Chapter IDs, not file ordering, determine the register order.
         bank = json.loads(path.read_text(encoding="utf-8"))
-        banks.append((int(bank["chapter_id"]), path, bank))
-    banks.sort(key=lambda item: item[0])
+        chapter = str(bank["chapter_id"])
+        chapter_sort_key(chapter)
+        banks.append((chapter, path, bank))
+    banks.sort(key=lambda item: chapter_sort_key(item[0]))
     ids = [item[0] for item in banks]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate chapter ID in current cue banks")

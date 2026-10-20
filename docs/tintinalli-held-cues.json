@@ -29,10 +29,12 @@
     "25",
     "26",
     "27",
-    "28"
+    "28",
+    "29A",
+    "29B"
   ],
-  "active_hold_occurrences": 138,
-  "unique_held_terms": 111,
+  "active_hold_occurrences": 193,
+  "unique_held_terms": 153,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -113,7 +115,9 @@
       "report": "docs/chapter-2-cue-audit.md",
       "attempted_cue": "Lid plus walking cane.",
       "reason": "Repeated target, not new. Lid-cane loses spoken material and may retrieve lid or cane rather than the drug. The broadened framework does not automatically rehabilitate a weak particular sound bridge.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "29A"
+      ]
     },
     {
       "chapter_id": "3",
@@ -388,7 +392,9 @@
       "report": "docs/chapter-19-cue-audit.md",
       "attempted_cue": null,
       "reason": "Existing hold preserved. Historical lid plus cane attempt lost name material; no improved proposal here and no revival of that workshop rebus.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "29A"
+      ]
     },
     {
       "chapter_id": "19",
@@ -828,7 +834,9 @@
       "report": "docs/chapter-24-cue-audit.md",
       "attempted_cue": null,
       "reason": "Earlier lid/cane rejection remains historical, not silently promoted. No improved proposal in this bounded selection.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "29A"
+      ]
     },
     {
       "chapter_id": "24",
@@ -1004,7 +1012,9 @@
       "report": "docs/chapter-25-cue-audit.md",
       "attempted_cue": null,
       "reason": "Earlier hold and lid/cane attempt remain historical, not silently promoted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "29A"
+      ]
     },
     {
       "chapter_id": "25",
@@ -1554,6 +1564,613 @@
       "report": "docs/chapter-28-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried an outward arrow ending at a pressure gauge. It is a possible partial name aid, but the end qualifier adds unclear pictogram syntax; no selected proposal here and no physiological timing lesson substituted.",
+      "retained_in_other_chapters": [
+        "29B"
+      ]
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "tracheal suction catheters",
+      "printed_page": 179,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a detached flexible suction-catheter coil; could not yet choose a sufficiently useful appearance distinct from ordinary tubing for this lexical trial. Historical catheter sound rejection is not a ban on literal devices; this specific proposal remains unselected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "cricothyroidotomy",
+      "printed_page": 179,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a cricket beside a toy thyroid and doorway; the cluttered name bridge was not worth retaining. Partial names allowed; this particular attempt remains weak. Earlier holds preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "obesity",
+      "printed_page": 181,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a broad belt around a featureless mannequin; not selected because the belt alone offers a poor learned name reminder in this pass. Same term remains held in Chapter28; no demand for unique diagnostic imagery.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "sleep apnea",
+      "printed_page": 181,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a sleeping toy beside a paused bellows; the pause needs explanation and was not selected here. No breathing instruction or diagnostic pattern encoded; earlier sound/category proposals not assumed validated.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "high arched palate",
+      "printed_page": 181,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tall arch over a painter palette; the combined metaphor felt cumbersome, so held. Existing catalog palate/shipping-pallet alternative also considered; modifier composition not selected. Hold does not prohibit familiar category cues.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "angioedema",
+      "printed_page": 181,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an angel beside a swollen sponge; angle/name repair and generic swelling made this attempt unappealing. Earlier holds remain; no diagnostic scene proposed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "apneic oxygenation",
+      "printed_page": 181,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a paused bellows beside an oxygen cylinder; the apneic modifier still needs too much explanation, so held. No physiological mechanism or instruction; broad oxygen ingredient alone was considered but not chosen as this trial's reminder.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "secretions",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried clear droplets in a tray; too little lexical personality for this trial, so not selected. Not rejected for diagnostic ambiguity; a more appealing learned category token may work later.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "larynx",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a freestanding larynx study model and the historical lair/lynx bridge; no economical chosen shape or partial-name proposal in this pass. Literal teaching models are allowed; hold is specific to unselected proposals, not the old sound rejection alone.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "epiglottis",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a detached hinged study flap; without a selected learned context it remained a weak reminder here. Historical Chapter22 hold preserved; not a ban on familiar anatomical categories.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "arytenoids",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tiny arrow and toy antenna; the name bridge was too forced to keep. No forced full syllables; attempted partial reminder was not useful enough.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Murphy eye",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an eye-shaped token beside a generic surname badge; Murphy was not conveyed economically, so held. A detached device-category alternative was considered but not selected; no aperture function taught.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Sellick maneuver",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a market stall selling a lollipop; sell/lick was too awkward to choose. Shared maneuver noun explicitly expanded, not claimed contiguous wording.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Cormack-Lehane",
+      "printed_page": 182,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a cork beside a toy lane; the compound surname bridge remained cumbersome, so held. No grade images or thresholds retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "pulmonary perfusion",
+      "printed_page": 184,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a lung-shaped token beside an ordinary watering can; the perfusion reminder was not compelling enough in this pass. No diagnosis or physiology claim attached to cue rejection.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "epinephrine",
+      "printed_page": 184,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an epic book beside a generic ring; neither full nor partial name reminder felt economical. Earlier holds preserved. Generic vial considered but not chosen as a useful learned-name category.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "aspiration",
+      "printed_page": 185,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "hypopharynx",
+      "printed_page": 185,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a low-positioned throat token; hypo alone did not make the full learned location memorable enough here. Not demanding full-syllable recovery; this partial reminder was unappealing.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Trendelenburg position",
+      "printed_page": 185,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a toy trend graph beside a castle; the multi-part name joke was not useful enough to retain. Position and hemodynamic use not represented.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "atropine",
+      "printed_page": 185,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a trophy beside a pinecone; the partial-name reminder still felt awkward, so held. Earlier holds preserved; no medication identity from unlabeled vial or therapeutic use implied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "fentanyl",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried fence beside a small nail instead of historical fan/tunnel; this replacement also needed excessive sound coaching, so held. Earlier rejected sound attempt remains rejected; no medication-effect imagery.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "asthma",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a familiar inhaler as a broad category reminder; held because the medication-device association was not the desired lexical-name reminder here. Familiar categories are allowed; not claiming inhalers diagnose asthma or excluding later learned category proposals.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "albuterol",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an owl beside a toy bull; the name reminder felt forced, so held. Short lexical screen only, no drug comparison.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Etomidate",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a calendar date beside an ordinary oat; the opening-name reminder was too contrived to keep. No full-name requirement; this attempted fragment did not earn selection.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "neuromuscular blocking agents",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a toy neuron beside a muscle-shaped block and padlock; the three-part scene was cumbersome and not selected. Chapter26 blockade hold remains; literal/category proposals remain allowed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "myoclonic jerking",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a toy marionette with a jerky zigzag string; the category was not a useful name reminder yet, so held. Myoclonus regular-body variant normalized; no drug adverse-effect statement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "seizures",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a clamp seizing a block; the seize/seizure reminder was not attractive enough here. An ordinary action cue was tried, not a patient manifestation or diagnosis.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "anticonvulsant",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a padded clamp around a jittery toy; it risked an instruction-like scene and was not chosen. No mechanism, seizure intervention or drug-specific claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "cortisol",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a cork beside a sun token; the name fragment was too awkward to retain. No hormone/drug-effect relationship encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "apnea",
+      "printed_page": 186,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a paused bellows alone; held as a weak chosen name reminder, not because category cues must be diagnostic. Related sleep/apneic proposals remain separately recorded; no duration or management.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Vecuronium bromide",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a vector arrow beside a broom; the vec/brom fragment composition was too contrived to select. Table short form is explicitly linked; not a drug-class or effect claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Succinylcholine",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a small suction cup beside a coil; succinyl/choline still needed too much coaching for this proposal. Partial names allowed; no generic vial was chosen and no medication warning retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "myopathies",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a muscle-shaped token beside a path; the myo/path wordplay was too schematic to choose. Plural normalized at family scope; no condition or medication teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "myasthenia gravis",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tiny muscle beside a heavy gravity ball; the name bridge remained too cumbersome. No symptom, contraindication or effect relationship.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "fasciculations",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tiny fan of strings on a toy; the fascination/fascicle bridge did not feel economical. No patient movement pattern or drug effect.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "malignant hyperthermia",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a menacing theater mask beside a high thermometer; malignant modifier did not yet yield an appealing lexical cue. No diagnostic pattern, temperature threshold or treatment.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "pseudocholinesterase deficiency",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a disguise mustache beside an almost empty toy coil basket; the pseudo/cholinesterase reminder was too cluttered. No enzyme mechanism or drug-effect claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "denervation injury",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a disconnected toy nerve cable; the denervation name reminder was not selected in this pass. Literal cable-category cues are allowed; historical hold not invented, no timing/risk relation retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "infection",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "hepatorenal dysfunction",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a liver/kidney-shaped pair of broken toy gears; compound lexical composition felt too bulky to select. No drug-clearance or recovery-time statement retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "C-MAC Video Laryngoscope",
+      "printed_page": 187,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a sea wave beside a toy Macintosh apple; C/sea plus MAC was too cumbersome, so held. Literal generic video-laryngoscope category considered but not selected as this brand reminder.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "Ambu Airscope",
+      "printed_page": 188,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an air-filled toy balloon beside an inspection scope; Ambu component did not gain a useful reminder, so held. Source prints Airscope; no silent external spelling correction or manufacturer substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29A",
+      "chapter_title": "Tracheal Intubation",
+      "term": "phenylephrine",
+      "printed_page": 190,
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a toy fin beside an ordinary ring; this opening-name attempt was not appealing enough to keep. Historical Chapter20/25 holds preserved; no vasopressor choice or clinical benefit.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "partial pressure of arterial oxygen",
+      "printed_page": 190,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried part of a pie with gauge, artery token and oxygen cylinder; too crowded for a useful economical cue. No numeric rule retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "benzodiazepine",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a familiar Benz car beside a zipper; diazepine remainder had no appealing economical bridge in this pass. Not a drug effect scene.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "delirium",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a deli counter with a spinning toy; spinning adds an arbitrary symptom-like suggestion rather than a useful name bridge. No selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "asthma",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves earlier asterisk/moth sound attempt; considered familiar inhaler category, but did not select it as an asthma-specific name cue in this pass. Broader category cues are allowed, not banned.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "pneumonia",
+      "printed_page": 190,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves new-moon attempt lacking a visible new-moon token; considered generic moon but no improved selected partial-name bridge. Not held for inability to diagnose from an image.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "sepsis",
+      "printed_page": 190,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves generic germ/septic-family attempt; considered septic-tank partial cue, but no useful taught-name bridge selected here. Not a claim that category cues must be unique.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "neuromuscular blockade",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves blocked cable plus flexed-arm attempt. Considered muscle toy beside a barricade; no appealing economical bridge for the full learned name selected. Familiar partial categories remain permissible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "extracorporeal membrane oxygenation",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves outside-body membrane/oxygen collection as cluttered. Considered an echoing microphone for ECMO; uncertain acronym sound without a compact selected name bridge. No circuit or treatment depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "chlorhexidine",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried chlorine-pool toy beside a hexagon; partial chlorine/hex is possible but the remaining composition felt forced. No oral-care instruction or antimicrobial effect.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "H2 blocker",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried two H-shaped toy blocks against a barricade. Without legible letters the H2 distinction is poor; no appealing nonletter alternative selected, not a ban on category cues.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "paralysis",
+      "printed_page": 193,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a pair of motionless toy legs for para/legs; strained sound and unwanted body-function teaching. Existing neuromuscular-blockade hold considered, not falsely a reusable target.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "29B",
+      "chapter_title": "Mechanical Ventilation",
+      "term": "pH",
+      "printed_page": 192,
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a pea balanced beside an H-shaped block; relies on a visible letter and has no selected nonletter bridge. Numeric directive excluded only after this lexical trial.",
       "retained_in_other_chapters": []
     }
   ],
@@ -1645,6 +2262,38 @@
       "report": "docs/chapter-28-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "Chapter28 draft hold resolved to retain_candidate after main proposed a recognizable forceps device family. Original gills/forceps attempt remains unselected; historical fork/steps forceps sound attempt remains rejected. Drafter challenged generic forceps as a Magill-subtype identifier and accepted only broad familiar forceps-family scope, with Magill supplied by taught context and no procedural use; main accepted the revised scope. Historical workshop forceps rejection remains unresolved. No empirical test; tested:false; production_admitted:false."
+    },
+    {
+      "chapter_id": "29A",
+      "term": "analgesia",
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local29A draft hold changed to reuse_candidate after main proposed same-batch29B category cue; author accepted pain-expression mask plus mute as a useful familiar pain/silence reminder. No drug-effect or image evidence claim."
+    },
+    {
+      "chapter_id": "29A",
+      "term": "lidocaine",
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local29A hold changed to retain_candidate at partial learned-name scope after main creativity challenge. Two ordinary props are economical; missing syllables alone is inconsistent with rock/roc calibration. Does not revoke or alter earlier workshop or Chapter2/19/24/25 holds."
+    },
+    {
+      "chapter_id": "29A",
+      "term": "midazolam",
+      "source_record": "docs/chapter-29A-cue-audit.json",
+      "report": "docs/chapter-29A-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local29A hold changed to retain_candidate after main proposed public-domain Midas/lamb; author checked banks/workshops for retained exact prior and accepted a provisional taught-name fragment, not automatic recognition or pronunciation."
+    },
+    {
+      "chapter_id": "29B",
+      "term": "positive end-expiratory pressure",
+      "source_record": "docs/chapter-29B-cue-audit.json",
+      "report": "docs/chapter-29B-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "LOCAL29B reconsideration only, not resolution of the earlier Chapter28 hold, which remains OPEN. The29B entry was initially retain_candidate, never a local hold transition. This history documents considering the older held expanded-name pictogram before selecting a new PEEP abbreviation/partial-name cue. No empirical testing or prior-bank edit."
     }
   ]
 }

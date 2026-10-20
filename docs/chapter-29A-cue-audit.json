@@ -1,0 +1,4017 @@
+{
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded term/page and keyword location within actual chapter regions, visually reviewed boundary pages37/48/51/52, checked the raster-only Insp. Hold label, reviewed every cue and resolved reuse target. Author-pending notes below are chronological and superseded here. AI review only, not clinical, human-expert, legal, recall or rendering validation.", "highlight_annotations_found": 0, "normalizations": "29A explicitly expands Sellick or cricoid maneuver and shared intragastric/intraocular/intracranial pressure headword; joins in-line wrap; derives communication from Communicate; corrects source heading ASSICIATED. 29B Insp. Hold is visually verified within embedded raster, not extractable text. Case/wrap/trademark normalizations are not all contiguous source quotations.", "counts": {"selected_terms": 184, "new_candidates": 59, "reused_candidates": 82, "holds": 43}, "keyword_items": 196},
+  "schema_version": 1,
+  "chapter_id": "29A",
+  "title": "Tracheal Intubation",
+  "review_date": "2026-10-20",
+  "keyword_screen_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48
+    ],
+    "printed_pages": [
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Starts PDF37 actual title left y376.5; full right Table29A-1 and continuation also belong29A. PDF38-47 belong29A. Ends PDF48 left above REFERENCES y203; entire right Table29B-1/continuation and full-width bottom Figure29B-1 belong29B and are excluded, as is left below REFERENCES.",
+    "verification": "Author computed matching SHA256, rendered and inspected all twelve pages, extracted spans/fonts/coordinates and enumerated annotations. Main independent review pending."
+  },
+  "scope": "184 bounded offline vocabulary trials, prioritizing meaningful headings, bold/italic names and table vocabulary. Not exhaustive every body word, every table comment or clinical coverage. No teaching, clinical narration, source full text, prompts or provider work.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 184,
+    "new_candidates": 59,
+    "reused_candidates": 82,
+    "holds": 43
+  },
+  "source_wording_notes": {
+    "normalization": "Case, whitespace, wrap hyphens, possessives and trademark glyphs normalized; plural equipment names preserve source wording. Category cue scopes explicitly narrower than some full terms.",
+    "PDF48 heading": "Source prints HYPOTENSION ASSICIATED WITH INTUBATION; associated is an editorial spelling normalization if used.",
+    "Mallampati": "Prior class-III record supplies a shopping-mall ingredient only; no patio ingredient, numeral, score or grade.",
+    "Sellick maneuver": "Expanded shared noun from Sellick or cricoid maneuver on PDF40; not a contiguous quote.",
+    "in-line stabilization of the cervical spine": "Source PDF40 wraps in- / line. Editorial in-line joins the wrap while preserving a lexical hyphen; not a raw contiguous extraction.",
+    "intragastric pressure": "Expanded shared headword from intragastric, intraocular, and intracranial pressure in Table29A-10 PDF45; not a contiguous quote.",
+    "communication": "Editorial noun derived from Communicate/communicate on PDF47; not a literal source quote.",
+    "hypotension associated with intubation": "PDF48 source heading prints ASSICIATED. Associated is an explicitly normalized spelling, not a literal quote.",
+    "source-match labels": "Labels describe lexical presence, not emphasis: e.g. video laryngoscopes first occurs as a table term PDF37 and later bold PDF45. Extra keyword items map repeated headings/aliases without increasing entry counts."
+  },
+  "entries": [
+    {
+      "term": "tracheal intubation",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "chapter_title",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Same taught tube/windpipe family; no placement instructions.",
+      "tested": false
+    },
+    {
+      "term": "oxygen",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable oxygen cylinder standing alone.",
+      "cue_scope": "oxygen",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#oxygen",
+      "reason": "Existing cylinder identity, not a supply or use instruction.",
+      "tested": false
+    },
+    {
+      "term": "tubing",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "reason": "Existing loose tubing category.",
+      "tested": false
+    },
+    {
+      "term": "Ambu bag",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Large recognizable bag connected through a conspicuous valve to a face mask.",
+      "cue_scope": "Broad bag-valve-mask device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bag-valve mask",
+      "reason": "Taught broad device family, not a manufacturer identifier.",
+      "tested": false
+    },
+    {
+      "term": "Mask with valve",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A plain standalone clear face mask.",
+      "cue_scope": "Broad face-mask family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#simple facemask",
+      "reason": "Uses existing mask ingredient only; valve and dimensions not independently encoded.",
+      "tested": false
+    },
+    {
+      "term": "oropharyngeal airways",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone familiar curved oral-airway training prop.",
+      "cue_scope": "oropharyngeal airway device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#oropharyngeal airway",
+      "reason": "Plural normalized; familiar standalone device, not placement.",
+      "tested": false
+    },
+    {
+      "term": "nasopharyngeal airways",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone familiar nasal-airway training prop.",
+      "cue_scope": "nasopharyngeal airway device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#nasopharyngeal airway",
+      "reason": "Plural normalized; familiar standalone device, not placement.",
+      "tested": false
+    },
+    {
+      "term": "Yankauer",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable detached rigid Yankauer suction tip.",
+      "cue_scope": "Familiar suction-device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No full-name sound puzzle needed for learned device recognition; no suction route or use encoded.",
+      "tested": false
+    },
+    {
+      "term": "tracheal suction catheters",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "tracheal suction catheters",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a detached flexible suction-catheter coil; could not yet choose a sufficiently useful appearance distinct from ordinary tubing for this lexical trial. Historical catheter sound rejection is not a ban on literal devices; this specific proposal remains unselected.",
+      "tested": false
+    },
+    {
+      "term": "nasogastric suction connection tubing",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "Broad tubing category only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "reason": "Existing tubing ingredient; nasogastric route and connection purpose supplied by taught context, not illustrated.",
+      "tested": false
+    },
+    {
+      "term": "suction",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Vacuum nozzle with loose crumbs visibly gathered at its opening.",
+      "cue_scope": "suction",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#suction",
+      "reason": "Existing vacuum-nozzle action cue.",
+      "tested": false
+    },
+    {
+      "term": "pulse oximetry",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable finger-clip pulse oximeter with an unnumbered display.",
+      "cue_scope": "pulse oximetry device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#pulse oximetry",
+      "reason": "Existing familiar clip device, no readings.",
+      "tested": false
+    },
+    {
+      "term": "carbon dioxide detector",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Charcoal beside a familiar handheld detector.",
+      "cue_scope": "Carbon-dioxide detector family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#end-tidal carbon dioxide detector",
+      "reason": "Reuses only charcoal/detector ingredients; tide ingredient omitted because end-tidal is absent, no measurement rule.",
+      "tested": false
+    },
+    {
+      "term": "endotracheal tubes",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "endotracheal tube family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#endotracheal tube",
+      "reason": "Plural normalization; no dimensions or placement.",
+      "tested": false
+    },
+    {
+      "term": "laryngoscope blades and handles",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar laryngoscope handle beside a loose blade.",
+      "cue_scope": "Learned laryngoscope equipment category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal equipment-category token; no patient, anatomy or operating steps.",
+      "tested": false
+    },
+    {
+      "term": "syringes",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "cue_scope": "Generic syringe device",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#syringes",
+      "reason": "Reuses accepted familiar device; rejected historical sound attempt remains rejected.",
+      "tested": false
+    },
+    {
+      "term": "Magill forceps",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable detached forceps training prop.",
+      "cue_scope": "Broad forceps family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#Magill forceps",
+      "reason": "Magill subtype supplied by taught context; historical sound rejection unchanged.",
+      "tested": false
+    },
+    {
+      "term": "stylets",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar malleable intubating-stylet training prop.",
+      "cue_scope": "Learned stylet device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal familiar equipment recognition without insertion or shaping instruction.",
+      "tested": false
+    },
+    {
+      "term": "tongue blade",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy tongue token beside an ordinary blade-shaped spatula.",
+      "cue_scope": "tongue blade",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tongue blade",
+      "reason": "Existing vocabulary composition.",
+      "tested": false
+    },
+    {
+      "term": "gum elastic bougie",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Chewing gum stretching beside a bougie candle.",
+      "cue_scope": "gum elastic bougie",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#gum elastic bougie",
+      "reason": "Existing gum/candle partial-name reminder, not use instructions.",
+      "tested": false
+    },
+    {
+      "term": "water-soluble lubricant",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A water pitcher beside a familiar lubricant squeeze bottle.",
+      "cue_scope": "water-soluble lubricant",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#water-soluble lubricant",
+      "reason": "Existing familiar water/lubricant composition, no formulation claim.",
+      "tested": false
+    },
+    {
+      "term": "anesthetic jelly",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Anesthesia/jelly learned name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#anesthetic jelly",
+      "reason": "Existing broad ingredient cue; not a drug or route specification.",
+      "tested": false
+    },
+    {
+      "term": "video laryngoscopes",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar video-laryngoscope training device with an unmarked screen.",
+      "cue_scope": "Learned video-laryngoscope device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Screen is a familiar category distinction, not image findings or brand specificity.",
+      "tested": false
+    },
+    {
+      "term": "laryngeal mask airway",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone laryngeal-mask training prop.",
+      "cue_scope": "laryngeal-mask device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#laryngeal mask airway",
+      "reason": "Existing category token.",
+      "tested": false
+    },
+    {
+      "term": "intubating laryngeal mask airway",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone laryngeal-mask training device beside a loose tube token.",
+      "cue_scope": "Intubating laryngeal-mask device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#intubating laryngeal mask airway",
+      "reason": "Existing category composition, not conversion instructions.",
+      "tested": false
+    },
+    {
+      "term": "i-gel",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An eye-shaped toy beside a pot of hair gel.",
+      "cue_scope": "i-gel",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#i-gel",
+      "reason": "Existing learned name cue; trademark glyph omitted.",
+      "tested": false
+    },
+    {
+      "term": "King LT",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A royal crown perched on a loose tube token.",
+      "cue_scope": "King tube name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#King laryngeal tube",
+      "reason": "Source abbreviation matched existing name; no model comparison.",
+      "tested": false
+    },
+    {
+      "term": "cricothyroidotomy",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "cricothyroidotomy",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a cricket beside a toy thyroid and doorway; the cluttered name bridge was not worth retaining. Partial names allowed; this particular attempt remains weak. Earlier holds preserved.",
+      "tested": false
+    },
+    {
+      "term": "sedation",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "sedation vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Existing drowsy-toy/armchair cue, no drug effect claim.",
+      "tested": false
+    },
+    {
+      "term": "rapid-sequence intubation",
+      "pdf_page": 37,
+      "page": 179,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A fast toy train of linked carriages beside a loose tube token.",
+      "cue_scope": "Rapid-sequence name plus intubation family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Rapid/sequence ordinary-word composition; no agents, timing or clinical sequence encoded.",
+      "tested": false
+    },
+    {
+      "term": "difficult intubation",
+      "pdf_page": 38,
+      "page": 180,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Difficulty supplied by taught context, not a predictor or failure definition.",
+      "tested": false
+    },
+    {
+      "term": "difficult laryngoscopy",
+      "pdf_page": 38,
+      "page": 180,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A lariat beside a familiar inspection scope.",
+      "cue_scope": "Broad laryngoscopy name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#direct laryngoscopy",
+      "reason": "Existing lariat/scope partial name; difficulty and method not independently encoded.",
+      "tested": false
+    },
+    {
+      "term": "obesity",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "obesity",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a broad belt around a featureless mannequin; not selected because the belt alone offers a poor learned name reminder in this pass. Same term remains held in Chapter28; no demand for unique diagnostic imagery.",
+      "tested": false
+    },
+    {
+      "term": "facial hair",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached theatrical beard on a display stand.",
+      "cue_scope": "facial hair",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar literal category, no patient or predictor relationship.",
+      "tested": false
+    },
+    {
+      "term": "edentulous anatomy",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An empty toy denture stand with its tooth-shaped sockets visible.",
+      "cue_scope": "Broad toothless vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#no teeth",
+      "reason": "Existing empty-denture token; anatomy adjective supplied by learned context.",
+      "tested": false
+    },
+    {
+      "term": "snoring",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A sleeping toy beside a saw and log.",
+      "cue_scope": "Snoring idiom family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Accepted main's sawing-logs idiom as an economical visible learned association; audience-dependent and untested, no audio implied.",
+      "tested": false
+    },
+    {
+      "term": "sleep apnea",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "sleep apnea",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a sleeping toy beside a paused bellows; the pause needs explanation and was not selected here. No breathing instruction or diagnostic pattern encoded; earlier sound/category proposals not assumed validated.",
+      "tested": false
+    },
+    {
+      "term": "short neck",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding toy neck model with an exaggerated short silhouette.",
+      "cue_scope": "short neck vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal modifier/category composition, not an anatomical criterion.",
+      "tested": false
+    },
+    {
+      "term": "limited neck mobility",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy neck joint with a visible padlock.",
+      "cue_scope": "Restricted neck-motion vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar restriction token; no positioning or stabilization advice.",
+      "tested": false
+    },
+    {
+      "term": "small or large chin",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Two freestanding chin-shaped study tokens, one small and one oversized.",
+      "cue_scope": "chin size vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal size contrast only; no measurement or airway prediction.",
+      "tested": false
+    },
+    {
+      "term": "prominent incisors",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Detached model front teeth protruding from a toy display base.",
+      "cue_scope": "Incisor vocabulary family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Taught anatomy/category cue; no risk relationship or exam demonstration.",
+      "tested": false
+    },
+    {
+      "term": "high arched palate",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "high arched palate",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a tall arch over a painter palette; the combined metaphor felt cumbersome, so held. Existing catalog palate/shipping-pallet alternative also considered; modifier composition not selected. Hold does not prohibit familiar category cues.",
+      "tested": false
+    },
+    {
+      "term": "facial or airway trauma",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad trauma family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "Existing cracked model, location modifiers from context only.",
+      "tested": false
+    },
+    {
+      "term": "head and neck tumors",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Several clay lumps beside a freestanding toy neck model.",
+      "cue_scope": "Broad neck-mass vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#neck masses",
+      "reason": "Reuses clay-lump ingredient; no assertion that all masses are tumors and no histology encoded.",
+      "tested": false
+    },
+    {
+      "term": "angioedema",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "angioedema",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an angel beside a swollen sponge; angle/name repair and generic swelling made this attempt unappealing. Earlier holds remain; no diagnostic scene proposed.",
+      "tested": false
+    },
+    {
+      "term": "Ludwig's angina",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar Beethoven bust beside an engine.",
+      "cue_scope": "Ludwig angina name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#Ludwig angina",
+      "reason": "Possessive normalized; existing Beethoven/engine partial-name cue.",
+      "tested": false
+    },
+    {
+      "term": "inflammation",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Small theatrical flame token.",
+      "cue_scope": "Inflammation name-family ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#inflammatory",
+      "reason": "Uses theatrical flame only, not cascade/waterfall and not the historical held inflammatory-responses proposal.",
+      "tested": false
+    },
+    {
+      "term": "airway burns",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Charred cloth mannequin beside a flame token.",
+      "cue_scope": "Broad burn family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#acute thermal burn injury",
+      "reason": "Existing charred-cloth/flame cue, not injury appearance or a risk prediction.",
+      "tested": false
+    },
+    {
+      "term": "orotracheal intubation",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Existing learned tube/windpipe token, oral route supplied by context rather than depicted placement.",
+      "tested": false
+    },
+    {
+      "term": "preoxygenation",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable oxygen cylinder beside a familiar starting-line flag.",
+      "cue_scope": "Preoxygenation name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Pre/before vocabulary composition, no administration sequence, concentration or time.",
+      "tested": false
+    },
+    {
+      "term": "apneic oxygenation",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "apneic oxygenation",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a paused bellows beside an oxygen cylinder; the apneic modifier still needs too much explanation, so held. No physiological mechanism or instruction; broad oxygen ingredient alone was considered but not chosen as this trial's reminder.",
+      "tested": false
+    },
+    {
+      "term": "Mallampati criteria",
+      "pdf_page": 39,
+      "page": 181,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable shopping mall.",
+      "cue_scope": "Mallampati name-family ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#Mallampati class III",
+      "reason": "Reuse the shopping-mall ingredient only; no class-III numeral, score, grading or assessment teaching.",
+      "tested": false
+    },
+    {
+      "term": "oropharynx",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Detached mouth-shaped token beside a freestanding throat-model token.",
+      "cue_scope": "oropharynx",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#oropharynx",
+      "reason": "Existing detached mouth/throat tokens; no clearing instruction.",
+      "tested": false
+    },
+    {
+      "term": "dentures",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable removable set of false teeth on a tabletop.",
+      "cue_scope": "dentures",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#dentures",
+      "reason": "Existing familiar detached device.",
+      "tested": false
+    },
+    {
+      "term": "blood",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "Broad blood vocabulary token",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar fluid-category association, no sampling or condition depicted.",
+      "tested": false
+    },
+    {
+      "term": "secretions",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "secretions",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried clear droplets in a tray; too little lexical personality for this trial, so not selected. Not rejected for diagnostic ambiguity; a more appealing learned category token may work later.",
+      "tested": false
+    },
+    {
+      "term": "vomitus",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar everyday category, not a patient scene or aspiration finding.",
+      "tested": false
+    },
+    {
+      "term": "mouth",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached mouth-shaped study token.",
+      "cue_scope": "Mouth ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#oropharynx",
+      "reason": "Existing detached mouth-shaped token only, omit throat model; no examination scene.",
+      "tested": false
+    },
+    {
+      "term": "larynx",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "larynx",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a freestanding larynx study model and the historical lair/lynx bridge; no economical chosen shape or partial-name proposal in this pass. Literal teaching models are allowed; hold is specific to unselected proposals, not the old sound rejection alone.",
+      "tested": false
+    },
+    {
+      "term": "epiglottis",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "epiglottis",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a detached hinged study flap; without a selected learned context it remained a weak reminder here. Historical Chapter22 hold preserved; not a ban on familiar anatomical categories.",
+      "tested": false
+    },
+    {
+      "term": "vocal cords",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A pair of ordinary cords beside a familiar microphone.",
+      "cue_scope": "vocal cords name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Vocal/cords ordinary-word composition, not a laryngeal diagram or exam.",
+      "tested": false
+    },
+    {
+      "term": "arytenoids",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "arytenoids",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a tiny arrow and toy antenna; the name bridge was too forced to keep. No forced full syllables; attempted partial reminder was not useful enough.",
+      "tested": false
+    },
+    {
+      "term": "Macintosh blade",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An apple beside a loose laryngoscope blade token.",
+      "cue_scope": "Macintosh opening-name plus blade family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar Macintosh/apple name association; not manufacturer, anatomy or blade-use teaching.",
+      "tested": false
+    },
+    {
+      "term": "Miller blade",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar flour mill beside a loose laryngoscope blade token.",
+      "cue_scope": "Miller opening-name plus blade family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Miller/mill partial-name association; no blade placement or comparative performance.",
+      "tested": false
+    },
+    {
+      "term": "Murphy eye",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Murphy eye",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an eye-shaped token beside a generic surname badge; Murphy was not conveyed economically, so held. A detached device-category alternative was considered but not selected; no aperture function taught.",
+      "tested": false
+    },
+    {
+      "term": "carina",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A small toy car beside an ordinary key ring.",
+      "cue_scope": "Carina opening-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Car is an allowed partial-name bridge; key ring is optional sound support, not a bronchial location cue.",
+      "tested": false
+    },
+    {
+      "term": "balloon",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "party balloon",
+      "cue_scope": "balloon",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-balloon",
+      "reason": "Existing familiar balloon object, no cuff inflation instructions.",
+      "tested": false
+    },
+    {
+      "term": "cuff",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached shirt cuff.",
+      "cue_scope": "Cuff ordinary-word reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar homonym, no tube pressure or inflation state.",
+      "tested": false
+    },
+    {
+      "term": "BURP maneuver",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy character beside an empty fizzy-drink bottle with a hand resting on its own belly.",
+      "cue_scope": "BURP ordinary-word reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar burp association, not the expanded maneuver, patient contact or directional pressure instruction.",
+      "tested": false
+    },
+    {
+      "term": "Sellick maneuver",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Sellick name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a market stall selling a lollipop; sell/lick was too awkward to choose. Shared maneuver noun explicitly expanded, not claimed contiguous wording.",
+      "tested": false
+    },
+    {
+      "term": "cricoid maneuver",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached ring-shaped cricoid teaching-model token.",
+      "cue_scope": "Cricoid anatomical-name family only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar taught anatomy category; no neck contact, pressure or maneuver technique. Sellick synonym remains separate hold.",
+      "tested": false
+    },
+    {
+      "term": "in-line stabilization of the cervical spine",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding spine model enclosed in a clear ice block: frozen in place.",
+      "cue_scope": "Broad spinal-stabilization vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#spinal immobilization",
+      "reason": "Existing immobilization token, not hand placement, cervical injury management or efficacy claim.",
+      "tested": false
+    },
+    {
+      "term": "Cormack-Lehane",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Cormack-Lehane name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a cork beside a toy lane; the compound surname bridge remained cumbersome, so held. No grade images or thresholds retained.",
+      "tested": false
+    },
+    {
+      "term": "glottis",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached glottic-opening teaching-model token on a stand.",
+      "cue_scope": "Taught glottis anatomy category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal familiar study model allowed; no view grading or procedure.",
+      "tested": false
+    },
+    {
+      "term": "capnometry",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar ship captain holding an ordinary measuring tape.",
+      "cue_scope": "capnometry",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#capnometry",
+      "reason": "Existing captain/measuring-tape name cue, no reading interpretation.",
+      "tested": false
+    },
+    {
+      "term": "capnography",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar ship captain pointing to a simple line graph on a chart.",
+      "cue_scope": "capnography",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Existing captain/graph cue, no trace or diagnostic pattern.",
+      "tested": false
+    },
+    {
+      "term": "chest radiograph",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached chest-shaped study token beside a plain radiograph-film frame.",
+      "cue_scope": "Chest-radiograph vocabulary family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal film/category token, no findings, confirmation claims or diagnostic image.",
+      "tested": false
+    },
+    {
+      "term": "trachea",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding windpipe teaching model.",
+      "cue_scope": "Windpipe-model ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Keep freestanding windpipe teaching model, omit inserted tube; no placement or equivalence claim.",
+      "tested": false
+    },
+    {
+      "term": "esophagus",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Taught esophagus anatomy category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar learned anatomical model, no intubation image or placement assertion.",
+      "tested": false
+    },
+    {
+      "term": "tube displacement",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A loose toy tube beside an empty tube-shaped slot.",
+      "cue_scope": "Tube-displacement word family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary displaced-object reminder, not a patient event or corrective instruction.",
+      "tested": false
+    },
+    {
+      "term": "false-negative reading",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A minus-sign stamp beside a visibly crooked check-mark stamp.",
+      "cue_scope": "False-negative vocabulary label",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned error-category pictogram, not a test-performance statement or numerical finding.",
+      "tested": false
+    },
+    {
+      "term": "false-positive reading",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A plus-sign stamp beside a visibly crooked check-mark stamp.",
+      "cue_scope": "False-positive vocabulary label",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Paired error-category pictogram; teaching required, no false-result causes encoded.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary perfusion",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "pulmonary perfusion",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a lung-shaped token beside an ordinary watering can; the perfusion reminder was not compelling enough in this pass. No diagnosis or physiology claim attached to cue rejection.",
+      "tested": false
+    },
+    {
+      "term": "cardiac arrest",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Heart character visibly wearing handcuffs.",
+      "cue_scope": "cardiac arrest vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-1-cue-audit.json#cardiac arrest",
+      "reason": "Existing family cue; no management advice.",
+      "tested": false
+    },
+    {
+      "term": "chest compressions",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Toy treasure chest visibly squeezed between the jaws of a broad clamp.",
+      "cue_scope": "chest-compression ordinary-word family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#chest compressions",
+      "reason": "Toy-chest/clamp cue only, not compression technique.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary embolism",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Plug lodged inside a vessel visibly running through a lung model, not an airway.",
+      "cue_scope": "pulmonary embolism vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#pulmonary embolism",
+      "reason": "Existing taught category, no causal link to detector results encoded.",
+      "tested": false
+    },
+    {
+      "term": "shock",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Detached conspicuous lightning-bolt token on an empty surface.",
+      "cue_scope": "Shock word-family reminder only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#shock",
+      "reason": "Existing lightning-bolt token used only as ordinary-word reminder, not electrical/physiologic equivalence.",
+      "tested": false
+    },
+    {
+      "term": "tube obstruction",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding windpipe teaching model with a conspicuous cork blocking its opening.",
+      "cue_scope": "Broad obstruction ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#airway obstruction",
+      "reason": "Existing cork/blockage ingredient with toy tube context; no explanation of detector behavior.",
+      "tested": false
+    },
+    {
+      "term": "foreign body",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Small unmistakably extraterrestrial toy figure standing alone on a display base.",
+      "cue_scope": "foreign body vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "reason": "Existing extraterrestrial toy token.",
+      "tested": false
+    },
+    {
+      "term": "carbonated beverage",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar soda bottle with conspicuous bubbles.",
+      "cue_scope": "carbonated beverage",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar packaging/category only; no ingestion or false-reading relationship.",
+      "tested": false
+    },
+    {
+      "term": "heated humidifier",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone humidifier beside a small warmth token.",
+      "cue_scope": "Humidifier device family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned device/category composition; no temperature, use or readings.",
+      "tested": false
+    },
+    {
+      "term": "nebulizer",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable detached nebulizer cup and loose tubing.",
+      "cue_scope": "Familiar nebulizer device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No patient, medication or administration setup.",
+      "tested": false
+    },
+    {
+      "term": "epinephrine",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "epinephrine",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an epic book beside a generic ring; neither full nor partial name reminder felt economical. Earlier holds preserved. Generic vial considered but not chosen as a useful learned-name category.",
+      "tested": false
+    },
+    {
+      "term": "ultrasonography",
+      "pdf_page": 42,
+      "page": 184,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound device/name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal learned device cue, no ultrasound findings or confirmation rule.",
+      "tested": false
+    },
+    {
+      "term": "ETT misplacement",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad ETT/intubation family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Misplacement supplied by taught context; no incorrect anatomical path depicted or equivalence asserted.",
+      "tested": false
+    },
+    {
+      "term": "ETT dislodgement",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A loose toy tube beside an empty tube-shaped slot.",
+      "cue_scope": "Tube-displacement word family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#tube displacement",
+      "reason": "Same ordinary displaced-object cue within this bank, no new primitive.",
+      "tested": false
+    },
+    {
+      "term": "mainstem intubation",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy tree with one conspicuous main stem beside a loose tube token.",
+      "cue_scope": "Mainstem word-family reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary stem/name token, not bronchial anatomy or a misplaced tube diagram.",
+      "tested": false
+    },
+    {
+      "term": "oxygen desaturation",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly empty oxygen cylinder.",
+      "cue_scope": "Broad low-oxygen vocabulary family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#hypoxia",
+      "reason": "Related learned oxygen-deficit ingredient, not equivalence of saturation and hypoxia or a numeric threshold.",
+      "tested": false
+    },
+    {
+      "term": "hypotension",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "hypotension vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Existing low-gauge vessel cue, no condition, drug or care relationship.",
+      "tested": false
+    },
+    {
+      "term": "bradycardia",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Heart character riding a familiar slow snail.",
+      "cue_scope": "bradycardia vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#bradycardia",
+      "reason": "Existing heart/slow-token family.",
+      "tested": false
+    },
+    {
+      "term": "aspiration",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "aspiration",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible.",
+      "tested": false
+    },
+    {
+      "term": "injury",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "Existing dented study token, no injury mechanism or subtype.",
+      "tested": false
+    },
+    {
+      "term": "hypopharynx",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "hypopharynx",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a low-positioned throat token; hypo alone did not make the full learned location memorable enough here. Not demanding full-syllable recovery; this partial reminder was unappealing.",
+      "tested": false
+    },
+    {
+      "term": "pneumothorax",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "cue_scope": "pneumothorax vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "reason": "Existing taught category cue; no complication relationship.",
+      "tested": false
+    },
+    {
+      "term": "gastric/visceral perforation",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A thick freestanding panel with an open bore visibly passing through its full thickness.",
+      "cue_scope": "Broad perforation/opening ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#completed-opening",
+      "reason": "Generic open bore through a panel; gastric/visceral context supplied by lesson, no organ damage scene.",
+      "tested": false
+    },
+    {
+      "term": "ETT cuff leak",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary container with liquid visibly leaking through a side-wall breach, not over its rim.",
+      "cue_scope": "Leak ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#leaking-container",
+      "reason": "Existing side-wall leak cue; ETT/cuff supplied by context, no pressure or correction instruction.",
+      "tested": false
+    },
+    {
+      "term": "hyperventilation",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An oversized bellows beside a small matching bellows.",
+      "cue_scope": "Hyper/ventilation learned name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Size contrast is an ordinary hyper/name modifier, not measured ventilation or a treatment instruction.",
+      "tested": false
+    },
+    {
+      "term": "CPR",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Heart token and bellows beside a life ring.",
+      "cue_scope": "CPR name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#cardiopulmonary resuscitation",
+      "reason": "Existing vocabulary cue; no action sequence.",
+      "tested": false
+    },
+    {
+      "term": "failed intubation",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Failure modifier taught by context, not a success/failure image or procedural instruction.",
+      "tested": false
+    },
+    {
+      "term": "Trendelenburg position",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Trendelenburg name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a toy trend graph beside a castle; the multi-part name joke was not useful enough to retain. Position and hemodynamic use not represented.",
+      "tested": false
+    },
+    {
+      "term": "atropine",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "atropine",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a trophy beside a pinecone; the partial-name reminder still felt awkward, so held. Earlier holds preserved; no medication identity from unlabeled vial or therapeutic use implied.",
+      "tested": false
+    },
+    {
+      "term": "vasopressors",
+      "pdf_page": 43,
+      "page": 185,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A large workshop vise visibly pressing a flexible tube.",
+      "cue_scope": "vasopressor vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-12-cue-audit.json#vasopressors",
+      "reason": "Existing word-family cue, no selection, effect or dose.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Lidocaine partial learned-name reminder only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Accepted main's economical lid/cane composition after challenging its incomplete syllables: omissions alone are not a fair rejection under rock/roc calibration. Not a pronunciation model or independent drug identifier. Earlier workshop and chapter holds remain unchanged; local resolution recorded.",
+      "tested": false
+    },
+    {
+      "term": "fentanyl",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "fentanyl",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried fence beside a small nail instead of historical fan/tunnel; this replacement also needed excessive sound coaching, so held. Earlier rejected sound attempt remains rejected; no medication-effect imagery.",
+      "tested": false
+    },
+    {
+      "term": "intracranial pressure",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached skull teaching model beside a plain pressure gauge.",
+      "cue_scope": "Intracranial-pressure name/category family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal location/name ingredient; no pressure values, measurement, pathology or clinical instruction.",
+      "tested": false
+    },
+    {
+      "term": "bronchospasm",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A bronco squeezing a branching air hose visibly narrow.",
+      "cue_scope": "bronchospasm vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bronchospasm",
+      "reason": "Existing bronco/hose cue, no indication relationship.",
+      "tested": false
+    },
+    {
+      "term": "asthma",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "asthma",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a familiar inhaler as a broad category reminder; held because the medication-device association was not the desired lexical-name reminder here. Familiar categories are allowed; not claiming inhalers diagnose asthma or excluding later learned category proposals.",
+      "tested": false
+    },
+    {
+      "term": "albuterol",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "albuterol",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an owl beside a toy bull; the name reminder felt forced, so held. Short lexical screen only, no drug comparison.",
+      "tested": false
+    },
+    {
+      "term": "cardiac ischemia",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A closed red supply tap beside a visibly depleted supply tube.",
+      "cue_scope": "Broad ischemia ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#ischemia",
+      "reason": "Reuses only closed-supply-tap/depleted-tube ingredients; omit prior limb modifier. Cardiac context is supplied by lesson, not an anatomical or drug-indication claim.",
+      "tested": false
+    },
+    {
+      "term": "aortic dissection",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Aorta model with its wall visibly peeling into separate layers.",
+      "cue_scope": "aortic dissection vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#aortic dissection",
+      "reason": "Existing category cue, no drug relationship.",
+      "tested": false
+    },
+    {
+      "term": "respiratory depression",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A drooping bellows beside a familiar depressed-face theater mask.",
+      "cue_scope": "Respiratory-depression name family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary depressed/name metaphor, not ventilation performance or a drug effect.",
+      "tested": false
+    },
+    {
+      "term": "chest wall rigidity",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A treasure chest beside a brick wall.",
+      "cue_scope": "Chest-wall ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#chest wall",
+      "reason": "Keep treasure chest/brick wall; rigidity supplied by context, no drug-effect or mechanism claim.",
+      "tested": false
+    },
+    {
+      "term": "induction agents",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar induction cooktop beside an ordinary unmarked vial token.",
+      "cue_scope": "Induction ordinary-word reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cooktop name association only, not heating drugs, pharmacology or sequence teaching.",
+      "tested": false
+    },
+    {
+      "term": "Etomidate",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Etomidate",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a calendar date beside an ordinary oat; the opening-name reminder was too contrived to keep. No full-name requirement; this attempted fragment did not earn selection.",
+      "tested": false
+    },
+    {
+      "term": "Propofol",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar stage prop beside a folded sheet of foil.",
+      "cue_scope": "Propofol partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Prop/foil approximate learned sound play, not a formulation, effect or complete pronunciation model.",
+      "tested": false
+    },
+    {
+      "term": "Ketamine",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar kettle standing alone.",
+      "cue_scope": "Ketamine opening-name reminder only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "New kettle-only partial-name proposal, not revival of rejected kettle/mine full-name claim; no drug effect or formulation.",
+      "tested": false
+    },
+    {
+      "term": "barbiturates",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar barbell beside a tiny turret.",
+      "cue_scope": "Barbiturate partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Bar/turret partial-name ingredients; no classification, drug effects or full-syllable demand.",
+      "tested": false
+    },
+    {
+      "term": "midazolam",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A gold-touch mythic king cradling a lamb.",
+      "cue_scope": "Midazolam Midas/lamb partial learned-name reminder only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Accepted main's public-domain Midas/lamb proposal after checking prior banks/workshops: no retained exact prior found. Gold king needs a taught Midas association and sound/stress is approximate, not a full pronunciation model. Original middle/lamb hold preserved locally. No proprietary scene or medication-effect claim.",
+      "tested": false
+    },
+    {
+      "term": "neuromuscular blocking agents",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "heading_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Neuromuscular-blocker name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a toy neuron beside a muscle-shaped block and padlock; the three-part scene was cumbersome and not selected. Chapter26 blockade hold remains; literal/category proposals remain allowed.",
+      "tested": false
+    },
+    {
+      "term": "depolarizing",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A striped pole pulled out of a toy display socket.",
+      "cue_scope": "Depolarizing partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "De/pole ordinary-word composition, no membrane potential or drug mechanism.",
+      "tested": false
+    },
+    {
+      "term": "nondepolarizing",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A striped pole firmly fixed in a toy display socket beside a crossed-out removal hook.",
+      "cue_scope": "Nondepolarizing partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Paired non/de/pole token with no electrical physiology; learned negation composition needs testing.",
+      "tested": false
+    },
+    {
+      "term": "myoclonic jerking",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "myoclonic jerking",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a toy marionette with a jerky zigzag string; the category was not a useful name reminder yet, so held. Myoclonus regular-body variant normalized; no drug adverse-effect statement.",
+      "tested": false
+    },
+    {
+      "term": "seizures",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "seizure name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a clamp seizing a block; the seize/seizure reminder was not attractive enough here. An ordinary action cue was tried, not a patient manifestation or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "vomiting",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomitus",
+      "reason": "Same cartoon bucket/splatter vocabulary token; no drug relation.",
+      "tested": false
+    },
+    {
+      "term": "intraocular pressure",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An eye-shaped study model beside a plain pressure gauge.",
+      "cue_scope": "Intraocular-pressure name/category family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "No values, pressure change, disease or drug-effect relationship.",
+      "tested": false
+    },
+    {
+      "term": "analgesia",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+      "cue_scope": "Analgesia learned category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Accepted same-batch29B pain-expression mask plus mute symbol as a familiar pain/silence category. No drug effect or promise; original eraser/pain-token hold retained in resolved_holds.",
+      "tested": false
+    },
+    {
+      "term": "antiemetic",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Conspicuous stop barrier across a recognizable vomiting bucket.",
+      "cue_scope": "Antiemetic name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#antiemetics",
+      "reason": "Existing category cue, no drug-effect relation.",
+      "tested": false
+    },
+    {
+      "term": "anticonvulsant",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "anticonvulsant",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a padded clamp around a jittery toy; it risked an instruction-like scene and was not chosen. No mechanism, seizure intervention or drug-specific claim.",
+      "tested": false
+    },
+    {
+      "term": "cortisol",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "cortisol",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a cork beside a sun token; the name fragment was too awkward to retain. No hormone/drug-effect relationship encoded.",
+      "tested": false
+    },
+    {
+      "term": "apnea",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "apnea",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a paused bellows alone; held as a weak chosen name reminder, not because category cues must be diagnostic. Related sleep/apneic proposals remain separately recorded; no duration or management.",
+      "tested": false
+    },
+    {
+      "term": "bronchodilator",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar bronco toy standing alone.",
+      "cue_scope": "Broncho opening-name ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bronchospasm",
+      "reason": "Use bronco ingredient only, omit squeezed hose; not reuse of bronchospasm physiology or assertion of equivalent meanings.",
+      "tested": false
+    },
+    {
+      "term": "amnesia",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary photo album with visibly blank photo windows.",
+      "cue_scope": "Amnesia learned memory-category reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad culturally learned memory association, not a patient or medication effect.",
+      "tested": false
+    },
+    {
+      "term": "emergence phenomenon",
+      "pdf_page": 44,
+      "page": 186,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy figure emerging through a stage curtain.",
+      "cue_scope": "Emergence opening-word reminder only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary action token, not a behavioral finding or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "Rocuronium",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A small rock standing alone on a display base.",
+      "cue_scope": "Rocuronium opening-name reminder only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Rock/roc is an economical partial name; not full medication identification without taught context.",
+      "tested": false
+    },
+    {
+      "term": "Vecuronium bromide",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vecuronium bromide",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a vector arrow beside a broom; the vec/brom fragment composition was too contrived to select. Table short form is explicitly linked; not a drug-class or effect claim.",
+      "tested": false
+    },
+    {
+      "term": "Succinylcholine",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Succinylcholine",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a small suction cup beside a coil; succinyl/choline still needed too much coaching for this proposal. Partial names allowed; no generic vial was chosen and no medication warning retained.",
+      "tested": false
+    },
+    {
+      "term": "Sugammadex",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar sugar bowl beside an ordinary deck of cards.",
+      "cue_scope": "Sugammadex partial-name reminder",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Sugar/deck approximate learned fragments, not drug composition or reversal mechanism.",
+      "tested": false
+    },
+    {
+      "term": "hyperkalemia",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Bananas overflowing a container.",
+      "cue_scope": "hyperkalemia vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#hyperkalemia",
+      "reason": "Existing overflowing-bananas learned family, no contraindication or lab threshold.",
+      "tested": false
+    },
+    {
+      "term": "renal failure",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Kidney-shaped factory with conspicuously broken gears.",
+      "cue_scope": "renal-failure vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#renal failure",
+      "reason": "Existing broken-kidney-factory cue; no medication relationship.",
+      "tested": false
+    },
+    {
+      "term": "myopathies",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "myopathy name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a muscle-shaped token beside a path; the myo/path wordplay was too schematic to choose. Plural normalized at family scope; no condition or medication teaching.",
+      "tested": false
+    },
+    {
+      "term": "myasthenia gravis",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "myasthenia gravis",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a tiny muscle beside a heavy gravity ball; the name bridge remained too cumbersome. No symptom, contraindication or effect relationship.",
+      "tested": false
+    },
+    {
+      "term": "fasciculations",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "fasciculation name family",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a tiny fan of strings on a toy; the fascination/fascicle bridge did not feel economical. No patient movement pattern or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "intragastric pressure",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached stomach-shaped model beside a plain pressure gauge.",
+      "cue_scope": "Intragastric-pressure name/category family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Same gauge family with taught location token, not a new primitive or a change in pressure.",
+      "tested": false
+    },
+    {
+      "term": "masseter spasm",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding jaw-muscle study token beside a tightly coiled spring.",
+      "cue_scope": "Masseter/spasm learned category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Model supplies taught muscle category; spring ordinary spasm reminder, no patient effect.",
+      "tested": false
+    },
+    {
+      "term": "malignant hyperthermia",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "malignant hyperthermia",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a menacing theater mask beside a high thermometer; malignant modifier did not yet yield an appealing lexical cue. No diagnostic pattern, temperature threshold or treatment.",
+      "tested": false
+    },
+    {
+      "term": "pseudocholinesterase deficiency",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "pseudocholinesterase deficiency",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a disguise mustache beside an almost empty toy coil basket; the pseudo/cholinesterase reminder was too cluttered. No enzyme mechanism or drug-effect claim.",
+      "tested": false
+    },
+    {
+      "term": "burns",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Charred cloth mannequin beside a flame token.",
+      "cue_scope": "Broad burn vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#acute thermal burn injury",
+      "reason": "Existing burn token, no age-of-injury criterion.",
+      "tested": false
+    },
+    {
+      "term": "denervation injury",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "denervation vocabulary",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a disconnected toy nerve cable; the denervation name reminder was not selected in this pass. Literal cable-category cues are allowed; historical hold not invented, no timing/risk relation retained.",
+      "tested": false
+    },
+    {
+      "term": "crush injuries",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Limb mannequin compressed in a large vise.",
+      "cue_scope": "Crush-injury vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#crush injury",
+      "reason": "Existing crushed-object cue; no timing or medication link.",
+      "tested": false
+    },
+    {
+      "term": "infection",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "infection",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible.",
+      "tested": false
+    },
+    {
+      "term": "tachycardia",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "tachycardia vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#tachycardia",
+      "reason": "Existing family cue, no drug relation or onset time.",
+      "tested": false
+    },
+    {
+      "term": "hepatorenal dysfunction",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "hepatorenal dysfunction",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a liver/kidney-shaped pair of broken toy gears; compound lexical composition felt too bulky to select. No drug-clearance or recovery-time statement retained.",
+      "tested": false
+    },
+    {
+      "term": "GlideScope Video Laryngoscope",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy glider beside a detached video-laryngoscope training prop.",
+      "cue_scope": "GlideScope opening-name plus device family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "New name composition, not manufacturer imagery, clinical technique or performance comparison.",
+      "tested": false
+    },
+    {
+      "term": "C-MAC Video Laryngoscope",
+      "pdf_page": 45,
+      "page": 187,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "C-MAC name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a sea wave beside a toy Macintosh apple; C/sea plus MAC was too cumbersome, so held. Literal generic video-laryngoscope category considered but not selected as this brand reminder.",
+      "tested": false
+    },
+    {
+      "term": "flexible fiberoptic laryngoscopy",
+      "pdf_page": 46,
+      "page": 188,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar bundle of flexible optical fibers beside an inspection scope.",
+      "cue_scope": "Flexible fiberoptic scope family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#fiberoptic bronchoscope",
+      "reason": "Reuses optical-fiber/scope ingredients only and drops bronco; no route, method claim or equivalence with bronchoscopy. Draft composition reclassified reuse, not a new primitive.",
+      "tested": false
+    },
+    {
+      "term": "Ambu Airscope",
+      "pdf_page": 46,
+      "page": 188,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Ambu Airscope name",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an air-filled toy balloon beside an inspection scope; Ambu component did not gain a useful reminder, so held. Source prints Airscope; no silent external spelling correction or manufacturer substitution.",
+      "tested": false
+    },
+    {
+      "term": "bite block",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar mouth-bite-block training prop.",
+      "cue_scope": "Learned bite-block device family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal equipment category, no placement or airway use.",
+      "tested": false
+    },
+    {
+      "term": "Aintree catheter",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy tree beside a detached hollow catheter training prop.",
+      "cue_scope": "Aintree opening-name plus catheter family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Tree is a partial name; literal device category allowed despite rejected earlier catheter sound attempts. No route or use.",
+      "tested": false
+    },
+    {
+      "term": "blind nasotracheal intubation",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A blindfold draped beside a detached toy nose and a loose tube token.",
+      "cue_scope": "Blind/nasal/intubation name-family composition",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary name ingredients only; no insertion, anatomy path or technique.",
+      "tested": false
+    },
+    {
+      "term": "occiput",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached occipital-bone teaching-model token.",
+      "cue_scope": "Taught occiput anatomy category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar taught anatomical category, not a direction of tube movement.",
+      "tested": false
+    },
+    {
+      "term": "inspiration",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A bellows beside an inward-pointing token.",
+      "cue_scope": "Inspiration name-family ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#inspiratory time",
+      "reason": "Keep bellows/inward token, omit clock and timing; no procedure synchronization.",
+      "tested": false
+    },
+    {
+      "term": "anticipated intubation difficulty",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "heading",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Anticipated/difficulty modifiers from lesson context; no prediction or management rule.",
+      "tested": false
+    },
+    {
+      "term": "unanticipated intubation difficulty",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "heading",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Same intubation family, not a distinct new primitive or failed-airway algorithm.",
+      "tested": false
+    },
+    {
+      "term": "communication",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Two toy figures using a familiar tin-can-and-string telephone.",
+      "cue_scope": "communication vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-27-cue-audit.json#communication",
+      "reason": "Existing familiar communication cue; no clinical plan or number of steps.",
+      "tested": false
+    },
+    {
+      "term": "airway techniques",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding windpipe teaching model, without a cork or blockage.",
+      "cue_scope": "Broad airway-name ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#airway",
+      "reason": "Technique modifier supplied by taught context; no sequence/change recommendation.",
+      "tested": false
+    },
+    {
+      "term": "medications",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary unmarked medicine bottle beside a pill-shaped study token.",
+      "cue_scope": "Broad medication category only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar category, not a drug identity, administration, washout or efficacy statement.",
+      "tested": false
+    },
+    {
+      "term": "noninvasive airway measures",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding windpipe teaching model, without a cork or blockage.",
+      "cue_scope": "Broad airway vocabulary family only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#airway",
+      "reason": "Noninvasive/measures from taught context, no recommendation or inferred method.",
+      "tested": false
+    },
+    {
+      "term": "hypotension associated with intubation",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "Hypotension vocabulary ingredient only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Editorial associated spelling normalization; no causal or temporal relationship encoded in cue.",
+      "tested": false
+    },
+    {
+      "term": "phenylephrine",
+      "pdf_page": 48,
+      "page": 190,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "phenylephrine",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a toy fin beside an ordinary ring; this opening-name attempt was not appealing enough to keep. Historical Chapter20/25 holds preserved; no vasopressor choice or clinical benefit.",
+      "tested": false
+    },
+    {
+      "term": "tube insertion depth",
+      "pdf_page": 40,
+      "page": 182,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A loose toy tube beside an unnumbered depth ruler.",
+      "cue_scope": "Depth vocabulary ingredient only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary depth/measurement token, not a tube insertion diagram, number, anatomical landmark or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "intratracheal tube positioning",
+      "pdf_page": 41,
+      "page": 183,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Broad intubation/tube vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Existing learned tube/windpipe family, no confirmation methods or claim of infallibility.",
+      "tested": false
+    },
+    {
+      "term": "calm",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A peacefully reclining toy in a rocking chair.",
+      "cue_scope": "Calm ordinary-language category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar demeanor cue only, not a patient or clinical recommendation.",
+      "tested": false
+    },
+    {
+      "term": "help",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Two ambulance teams reciprocally helping each other.",
+      "cue_scope": "Help/aid vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-1-cue-audit.json#mutual aid",
+      "reason": "Existing reciprocally helping-team cue; no emergency instruction.",
+      "tested": false
+    },
+    {
+      "term": "plan",
+      "pdf_page": 47,
+      "page": 189,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar rolled blueprint beside an unmarked pencil.",
+      "cue_scope": "Plan ordinary-language category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Generic planning object, no algorithm, steps or treatment sequence.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author enumerated PDF37-48 spans, fonts, bounding boxes and annotations; visually inspected all twelve full-page rasters. Checked MinionPro-Bold/BoldIt/It and Myriad heading/table families plus publisher-shaded tables, not merely bold body names. Tried equipment rows, named complication/agent terms, meaningful headings and lexical headwords inside full emphasized sentences. Mapped repeated/expanded variants to entries. Excluded prose relationships, numbers, navigation and generic organizational wording only after extracting meaningful lexical heads. This is a substantial bounded screen, not proof of every table comment/body word or exhaustive clinical coverage; no OCR or empirical salience ranking.",
+    "items": [
+      {
+        "term": "tracheal intubation",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "actual chapter title",
+        "entry_term": "tracheal intubation"
+      },
+      {
+        "term": "oxygen",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "oxygen"
+      },
+      {
+        "term": "tubing",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "tubing"
+      },
+      {
+        "term": "Ambu bag",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "Ambu bag"
+      },
+      {
+        "term": "Mask with valve",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "Mask with valve"
+      },
+      {
+        "term": "oropharyngeal airways",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "oropharyngeal airways"
+      },
+      {
+        "term": "nasopharyngeal airways",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "nasopharyngeal airways"
+      },
+      {
+        "term": "Yankauer",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 suction-catheter row",
+        "entry_term": "Yankauer"
+      },
+      {
+        "term": "tracheal suction catheters",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "tracheal suction catheters"
+      },
+      {
+        "term": "nasogastric suction connection tubing",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "nasogastric suction connection tubing"
+      },
+      {
+        "term": "suction",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "suction"
+      },
+      {
+        "term": "pulse oximetry",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "pulse oximetry"
+      },
+      {
+        "term": "carbon dioxide detector",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "carbon dioxide detector"
+      },
+      {
+        "term": "endotracheal tubes",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "endotracheal tubes"
+      },
+      {
+        "term": "laryngoscope blades and handles",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "laryngoscope blades and handles"
+      },
+      {
+        "term": "syringes",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "syringes"
+      },
+      {
+        "term": "Magill forceps",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "Magill forceps"
+      },
+      {
+        "term": "stylets",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "stylets"
+      },
+      {
+        "term": "tongue blade",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "tongue blade"
+      },
+      {
+        "term": "gum elastic bougie",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 parenthetical equipment name; later bold PDF40",
+        "entry_term": "gum elastic bougie"
+      },
+      {
+        "term": "water-soluble lubricant",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "water-soluble lubricant"
+      },
+      {
+        "term": "anesthetic jelly",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row",
+        "entry_term": "anesthetic jelly"
+      },
+      {
+        "term": "video laryngoscopes",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 equipment row; bold PDF45",
+        "entry_term": "video laryngoscopes"
+      },
+      {
+        "term": "laryngeal mask airway",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 rescue-device row",
+        "entry_term": "laryngeal mask airway"
+      },
+      {
+        "term": "intubating laryngeal mask airway",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 rescue-device row",
+        "entry_term": "intubating laryngeal mask airway"
+      },
+      {
+        "term": "i-gel",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 rescue-device row",
+        "entry_term": "i-gel"
+      },
+      {
+        "term": "King LT",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 rescue-device row",
+        "entry_term": "King LT"
+      },
+      {
+        "term": "cricothyroidotomy",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 surgical-kit row",
+        "entry_term": "cricothyroidotomy"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 medication row",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "rapid-sequence intubation",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 medication row; heading/bold PDF43",
+        "entry_term": "rapid-sequence intubation"
+      },
+      {
+        "term": "difficult intubation",
+        "pdf_page": 38,
+        "page": 180,
+        "emphasis": "italic lexical phrase",
+        "entry_term": "difficult intubation"
+      },
+      {
+        "term": "difficult laryngoscopy",
+        "pdf_page": 38,
+        "page": 180,
+        "emphasis": "italic lexical phrase",
+        "entry_term": "difficult laryngoscopy"
+      },
+      {
+        "term": "obesity",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "obesity"
+      },
+      {
+        "term": "facial hair",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "facial hair"
+      },
+      {
+        "term": "edentulous anatomy",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "edentulous anatomy"
+      },
+      {
+        "term": "snoring",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 snoring/sleep-apnea row",
+        "entry_term": "snoring"
+      },
+      {
+        "term": "sleep apnea",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 snoring/sleep-apnea row",
+        "entry_term": "sleep apnea"
+      },
+      {
+        "term": "short neck",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "short neck"
+      },
+      {
+        "term": "limited neck mobility",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "limited neck mobility"
+      },
+      {
+        "term": "small or large chin",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "small or large chin"
+      },
+      {
+        "term": "prominent incisors",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "prominent incisors"
+      },
+      {
+        "term": "high arched palate",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "high arched palate"
+      },
+      {
+        "term": "facial or airway trauma",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "facial or airway trauma"
+      },
+      {
+        "term": "head and neck tumors",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "head and neck tumors"
+      },
+      {
+        "term": "angioedema",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "angioedema"
+      },
+      {
+        "term": "Ludwig's angina",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 row",
+        "entry_term": "Ludwig's angina"
+      },
+      {
+        "term": "inflammation",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 airway-inflammation row",
+        "entry_term": "inflammation"
+      },
+      {
+        "term": "airway burns",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Table29A-2 parenthetical lexical example",
+        "entry_term": "airway burns"
+      },
+      {
+        "term": "orotracheal intubation",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "section heading",
+        "entry_term": "orotracheal intubation"
+      },
+      {
+        "term": "preoxygenation",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "subheading",
+        "entry_term": "preoxygenation"
+      },
+      {
+        "term": "apneic oxygenation",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "bold lexical phrase",
+        "entry_term": "apneic oxygenation"
+      },
+      {
+        "term": "Mallampati criteria",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "bold lexical name; Figure29A-5 caption score",
+        "entry_term": "Mallampati criteria"
+      },
+      {
+        "term": "oropharynx",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 lexical headword in step",
+        "entry_term": "oropharynx"
+      },
+      {
+        "term": "dentures",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment headword",
+        "entry_term": "dentures"
+      },
+      {
+        "term": "blood",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment headword",
+        "entry_term": "blood"
+      },
+      {
+        "term": "secretions",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment headword",
+        "entry_term": "secretions"
+      },
+      {
+        "term": "vomitus",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment headword",
+        "entry_term": "vomitus"
+      },
+      {
+        "term": "mouth",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 step headword",
+        "entry_term": "mouth"
+      },
+      {
+        "term": "larynx",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 step headword",
+        "entry_term": "larynx"
+      },
+      {
+        "term": "epiglottis",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 step headword",
+        "entry_term": "epiglottis"
+      },
+      {
+        "term": "vocal cords",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 step headword",
+        "entry_term": "vocal cords"
+      },
+      {
+        "term": "arytenoids",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 parenthetical step headword",
+        "entry_term": "arytenoids"
+      },
+      {
+        "term": "Macintosh blade",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment and bold body",
+        "entry_term": "Macintosh blade"
+      },
+      {
+        "term": "Miller blade",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment and bold body",
+        "entry_term": "Miller blade"
+      },
+      {
+        "term": "Murphy eye",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment and regular body",
+        "entry_term": "Murphy eye"
+      },
+      {
+        "term": "carina",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment headword",
+        "entry_term": "carina"
+      },
+      {
+        "term": "balloon",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 step headword",
+        "entry_term": "balloon"
+      },
+      {
+        "term": "cuff",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment and bold insertion-depth sentence headword",
+        "entry_term": "cuff"
+      },
+      {
+        "term": "BURP maneuver",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 comment and bold body",
+        "entry_term": "BURP maneuver"
+      },
+      {
+        "term": "Sellick maneuver",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "shared-name expansion from bold Sellick or cricoid maneuver",
+        "entry_term": "Sellick maneuver"
+      },
+      {
+        "term": "cricoid maneuver",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "bold shared-name phrase",
+        "entry_term": "cricoid maneuver"
+      },
+      {
+        "term": "in-line stabilization of the cervical spine",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "bold phrase across line wrap",
+        "entry_term": "in-line stabilization of the cervical spine"
+      },
+      {
+        "term": "Cormack-Lehane",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "regular lexical name; Figure29A-8 caption PDF41",
+        "entry_term": "Cormack-Lehane"
+      },
+      {
+        "term": "glottis",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "regular body supplementary anatomy name",
+        "entry_term": "glottis"
+      },
+      {
+        "term": "capnometry",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-6 setup-row lexical headword",
+        "entry_term": "capnometry"
+      },
+      {
+        "term": "capnography",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "Table29A-3 confirmation comment",
+        "entry_term": "capnography"
+      },
+      {
+        "term": "chest radiograph",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "headword from full bold warning sentence",
+        "entry_term": "chest radiograph"
+      },
+      {
+        "term": "trachea",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "headword from full bold warning sentence",
+        "entry_term": "trachea"
+      },
+      {
+        "term": "esophagus",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "headword from full bold warning sentence",
+        "entry_term": "esophagus"
+      },
+      {
+        "term": "tube displacement",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "headword from full bold warning sentence",
+        "entry_term": "tube displacement"
+      },
+      {
+        "term": "false-negative reading",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 category heading",
+        "entry_term": "false-negative reading"
+      },
+      {
+        "term": "false-positive reading",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 category heading",
+        "entry_term": "false-positive reading"
+      },
+      {
+        "term": "pulmonary perfusion",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 low-perfusion row headword",
+        "entry_term": "pulmonary perfusion"
+      },
+      {
+        "term": "cardiac arrest",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "cardiac arrest"
+      },
+      {
+        "term": "chest compressions",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "chest compressions"
+      },
+      {
+        "term": "pulmonary embolism",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "pulmonary embolism"
+      },
+      {
+        "term": "shock",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "shock"
+      },
+      {
+        "term": "tube obstruction",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "tube obstruction"
+      },
+      {
+        "term": "foreign body",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 parenthetical row headword",
+        "entry_term": "foreign body"
+      },
+      {
+        "term": "carbonated beverage",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "carbonated beverage"
+      },
+      {
+        "term": "heated humidifier",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "heated humidifier"
+      },
+      {
+        "term": "nebulizer",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword",
+        "entry_term": "nebulizer"
+      },
+      {
+        "term": "epinephrine",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "Table29A-4 row headword; Table29A-5 corrective-action headword PDF43",
+        "entry_term": "epinephrine"
+      },
+      {
+        "term": "ultrasonography",
+        "pdf_page": 42,
+        "page": 184,
+        "emphasis": "regular lexical word and Figure29A-11 caption",
+        "entry_term": "ultrasonography"
+      },
+      {
+        "term": "ETT misplacement",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "ETT misplacement"
+      },
+      {
+        "term": "ETT dislodgement",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "ETT dislodgement"
+      },
+      {
+        "term": "mainstem intubation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "mainstem intubation"
+      },
+      {
+        "term": "oxygen desaturation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "oxygen desaturation"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 row; bold peri-intubation hypotension",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "aspiration",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "aspiration"
+      },
+      {
+        "term": "injury",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 oropharynx/hypopharynx and vocal-cord injury headword",
+        "entry_term": "injury"
+      },
+      {
+        "term": "hypopharynx",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 injury row headword",
+        "entry_term": "hypopharynx"
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "pneumothorax"
+      },
+      {
+        "term": "gastric/visceral perforation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "gastric/visceral perforation"
+      },
+      {
+        "term": "ETT cuff leak",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "ETT cuff leak"
+      },
+      {
+        "term": "hyperventilation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 complication row",
+        "entry_term": "hyperventilation"
+      },
+      {
+        "term": "CPR",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 interruption-row headword",
+        "entry_term": "CPR"
+      },
+      {
+        "term": "failed intubation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 final complication row",
+        "entry_term": "failed intubation"
+      },
+      {
+        "term": "Trendelenburg position",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 corrective-action lexical name",
+        "entry_term": "Trendelenburg position"
+      },
+      {
+        "term": "atropine",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 corrective-action headword",
+        "entry_term": "atropine"
+      },
+      {
+        "term": "vasopressors",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "Table29A-5 pressors headword; regular body vasopressors",
+        "entry_term": "vasopressors"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 agent name",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "fentanyl",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 agent name",
+        "entry_term": "fentanyl"
+      },
+      {
+        "term": "intracranial pressure",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 ICP expansion footnote; Table29A-8 label",
+        "entry_term": "intracranial pressure"
+      },
+      {
+        "term": "bronchospasm",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 indication headword",
+        "entry_term": "bronchospasm"
+      },
+      {
+        "term": "asthma",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 indication headword",
+        "entry_term": "asthma"
+      },
+      {
+        "term": "albuterol",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 precaution headword",
+        "entry_term": "albuterol"
+      },
+      {
+        "term": "cardiac ischemia",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 indication headword",
+        "entry_term": "cardiac ischemia"
+      },
+      {
+        "term": "aortic dissection",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 indication headword",
+        "entry_term": "aortic dissection"
+      },
+      {
+        "term": "respiratory depression",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 precaution headword",
+        "entry_term": "respiratory depression"
+      },
+      {
+        "term": "chest wall rigidity",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-7 precaution headword",
+        "entry_term": "chest wall rigidity"
+      },
+      {
+        "term": "induction agents",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "subheading and Table29A-8 title headword",
+        "entry_term": "induction agents"
+      },
+      {
+        "term": "Etomidate",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold drug name and Table29A-8 row",
+        "entry_term": "Etomidate"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold drug name and Table29A-8 row",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold drug name and Table29A-8 row",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "barbiturates",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold lexical class name",
+        "entry_term": "barbiturates"
+      },
+      {
+        "term": "midazolam",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold lexical name",
+        "entry_term": "midazolam"
+      },
+      {
+        "term": "neuromuscular blocking agents",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "subheading headword; Table29A-9 title PDF45",
+        "entry_term": "neuromuscular blocking agents"
+      },
+      {
+        "term": "depolarizing",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold lexical modifier",
+        "entry_term": "depolarizing"
+      },
+      {
+        "term": "nondepolarizing",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "bold lexical modifier; bold PDF45",
+        "entry_term": "nondepolarizing"
+      },
+      {
+        "term": "myoclonic jerking",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "myoclonic jerking"
+      },
+      {
+        "term": "seizures",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "seizures"
+      },
+      {
+        "term": "vomiting",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "vomiting"
+      },
+      {
+        "term": "intraocular pressure",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 benefit headword",
+        "entry_term": "intraocular pressure"
+      },
+      {
+        "term": "analgesia",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 label",
+        "entry_term": "analgesia"
+      },
+      {
+        "term": "antiemetic",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 label",
+        "entry_term": "antiemetic"
+      },
+      {
+        "term": "anticonvulsant",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 label",
+        "entry_term": "anticonvulsant"
+      },
+      {
+        "term": "cortisol",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "cortisol"
+      },
+      {
+        "term": "apnea",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "apnea"
+      },
+      {
+        "term": "bronchodilator",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 label",
+        "entry_term": "bronchodilator"
+      },
+      {
+        "term": "amnesia",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 label",
+        "entry_term": "amnesia"
+      },
+      {
+        "term": "emergence phenomenon",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "Table29A-8 caveat headword",
+        "entry_term": "emergence phenomenon"
+      },
+      {
+        "term": "Rocuronium",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-9 agent and bold body",
+        "entry_term": "Rocuronium"
+      },
+      {
+        "term": "Vecuronium bromide",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "bold drug name; Table29A-9 Vecuronium",
+        "entry_term": "Vecuronium bromide"
+      },
+      {
+        "term": "Succinylcholine",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-9 row; bold body and full bold warning",
+        "entry_term": "Succinylcholine"
+      },
+      {
+        "term": "Sugammadex",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "bold drug name",
+        "entry_term": "Sugammadex"
+      },
+      {
+        "term": "hyperkalemia",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "bold warning headword; Table29A-10 row",
+        "entry_term": "hyperkalemia"
+      },
+      {
+        "term": "renal failure",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "headword from full bold warning",
+        "entry_term": "renal failure"
+      },
+      {
+        "term": "myopathies",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "full bold warning and Table29A-10 final bold row",
+        "entry_term": "myopathies"
+      },
+      {
+        "term": "myasthenia gravis",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "full bold warning and Table29A-10 row",
+        "entry_term": "myasthenia gravis"
+      },
+      {
+        "term": "fasciculations",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 complication headword",
+        "entry_term": "fasciculations"
+      },
+      {
+        "term": "intragastric pressure",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 pressure-row headword",
+        "entry_term": "intragastric pressure"
+      },
+      {
+        "term": "masseter spasm",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 complication headword",
+        "entry_term": "masseter spasm"
+      },
+      {
+        "term": "malignant hyperthermia",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 complication headword",
+        "entry_term": "malignant hyperthermia"
+      },
+      {
+        "term": "pseudocholinesterase deficiency",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 complication-row headword",
+        "entry_term": "pseudocholinesterase deficiency"
+      },
+      {
+        "term": "burns",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 contraindication row",
+        "entry_term": "burns"
+      },
+      {
+        "term": "denervation injury",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 contraindication row",
+        "entry_term": "denervation injury"
+      },
+      {
+        "term": "crush injuries",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 contraindication row",
+        "entry_term": "crush injuries"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-10 severe-infection row headword",
+        "entry_term": "infection"
+      },
+      {
+        "term": "tachycardia",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-9 comments headword",
+        "entry_term": "tachycardia"
+      },
+      {
+        "term": "hepatorenal dysfunction",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-9 comments headword",
+        "entry_term": "hepatorenal dysfunction"
+      },
+      {
+        "term": "GlideScope Video Laryngoscope",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "bold device brand/name; Figure29A-13 PDF46",
+        "entry_term": "GlideScope Video Laryngoscope"
+      },
+      {
+        "term": "C-MAC Video Laryngoscope",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "bold device brand/name; Figure29A-13 PDF46",
+        "entry_term": "C-MAC Video Laryngoscope"
+      },
+      {
+        "term": "flexible fiberoptic laryngoscopy",
+        "pdf_page": 46,
+        "page": 188,
+        "emphasis": "section heading",
+        "entry_term": "flexible fiberoptic laryngoscopy"
+      },
+      {
+        "term": "Ambu Airscope",
+        "pdf_page": 46,
+        "page": 188,
+        "emphasis": "Figure29A-14 parenthetical caption device name",
+        "entry_term": "Ambu Airscope"
+      },
+      {
+        "term": "bite block",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "Figure29A-15 caption",
+        "entry_term": "bite block"
+      },
+      {
+        "term": "Aintree catheter",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "regular device-name adjunct paragraph",
+        "entry_term": "Aintree catheter"
+      },
+      {
+        "term": "blind nasotracheal intubation",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "section heading",
+        "entry_term": "blind nasotracheal intubation"
+      },
+      {
+        "term": "occiput",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword within italic directional sentence",
+        "entry_term": "occiput"
+      },
+      {
+        "term": "inspiration",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from italic initiation (upswing) of inspiration",
+        "entry_term": "inspiration"
+      },
+      {
+        "term": "anticipated intubation difficulty",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "subheading",
+        "entry_term": "anticipated intubation difficulty"
+      },
+      {
+        "term": "unanticipated intubation difficulty",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "subheading",
+        "entry_term": "unanticipated intubation difficulty"
+      },
+      {
+        "term": "communication",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from bold Plan and communicate the next two steps",
+        "entry_term": "communication"
+      },
+      {
+        "term": "airway techniques",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headwords from bold Alter airway techniques with each attempt",
+        "entry_term": "airway techniques"
+      },
+      {
+        "term": "medications",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from bold Let RSI medications wear off",
+        "entry_term": "medications"
+      },
+      {
+        "term": "noninvasive airway measures",
+        "pdf_page": 48,
+        "page": 190,
+        "emphasis": "headwords from bold Use noninvasive airway measures",
+        "entry_term": "noninvasive airway measures"
+      },
+      {
+        "term": "hypotension associated with intubation",
+        "pdf_page": 48,
+        "page": 190,
+        "emphasis": "subheading prints HYPOTENSION ASSICIATED WITH INTUBATION",
+        "entry_term": "hypotension associated with intubation"
+      },
+      {
+        "term": "phenylephrine",
+        "pdf_page": 48,
+        "page": 190,
+        "emphasis": "regular lexical name in last29A paragraph",
+        "entry_term": "phenylephrine"
+      },
+      {
+        "term": "tube insertion depth",
+        "pdf_page": 40,
+        "page": 182,
+        "emphasis": "lexical headwords from full bold numeric depth sentence",
+        "entry_term": "tube insertion depth"
+      },
+      {
+        "term": "intratracheal tube positioning",
+        "pdf_page": 41,
+        "page": 183,
+        "emphasis": "lexical phrase from full bold confirmation sentence",
+        "entry_term": "intratracheal tube positioning"
+      },
+      {
+        "term": "calm",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from bold Stay calm",
+        "entry_term": "calm"
+      },
+      {
+        "term": "help",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from bold Call for help",
+        "entry_term": "help"
+      },
+      {
+        "term": "plan",
+        "pdf_page": 47,
+        "page": 189,
+        "emphasis": "headword from bold Plan and communicate the next two steps",
+        "entry_term": "plan"
+      },
+      {
+        "term": "intubating stylet",
+        "pdf_page": 37,
+        "page": 179,
+        "emphasis": "Table29A-1 parenthetical gum elastic bougie; family mapping",
+        "entry_term": "gum elastic bougie"
+      },
+      {
+        "term": "rapid-sequence intubation",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "section heading and bold name",
+        "entry_term": "rapid-sequence intubation"
+      },
+      {
+        "term": "peri-intubation hypotension",
+        "pdf_page": 43,
+        "page": 185,
+        "emphasis": "bold warning headword; peri modifier supplied by context",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "paralytic",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "subheading and Table29A-9 title modifier; same named class",
+        "entry_term": "neuromuscular blocking agents"
+      },
+      {
+        "term": "Vecuronium",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "Table29A-9 short drug-name variant",
+        "entry_term": "Vecuronium bromide"
+      },
+      {
+        "term": "myoclonus",
+        "pdf_page": 44,
+        "page": 186,
+        "emphasis": "regular body variant linked to Table29A-8 myoclonic jerking",
+        "entry_term": "myoclonic jerking"
+      },
+      {
+        "term": "video laryngoscopy",
+        "pdf_page": 45,
+        "page": 187,
+        "emphasis": "section heading; bold video laryngoscopes device-name family",
+        "entry_term": "video laryngoscopes"
+      },
+      {
+        "term": "Macintosh blade",
+        "pdf_page": 41,
+        "page": 183,
+        "emphasis": "Figure29A-7 caption name",
+        "entry_term": "Macintosh blade"
+      },
+      {
+        "term": "Miller blade",
+        "pdf_page": 41,
+        "page": 183,
+        "emphasis": "Figure29A-7 caption name",
+        "entry_term": "Miller blade"
+      },
+      {
+        "term": "gum elastic bougie",
+        "pdf_page": 41,
+        "page": 183,
+        "emphasis": "Figure29A-9 caption and PDF40 bold device name",
+        "entry_term": "gum elastic bougie"
+      },
+      {
+        "term": "Mallampati score",
+        "pdf_page": 39,
+        "page": 181,
+        "emphasis": "Figure29A-5 caption name-family alias, not score equivalence",
+        "entry_term": "Mallampati criteria"
+      },
+      {
+        "term": "Cormack-Lehane",
+        "pdf_page": 41,
+        "page": 183,
+        "emphasis": "Figure29A-8 caption name",
+        "entry_term": "Cormack-Lehane"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 37,
+        "description": "Left column above actual29A title y376.5",
+        "reason": "Chapter28 continuation and references, excluded regardless of runninghead."
+      },
+      {
+        "pdf_page": 48,
+        "description": "Left REFERENCES and below; entire right Table29B-1/continuation; full-width bottom Figure29B-1",
+        "reason": "Not29A. Right column belongs29B even above its left-column title y273."
+      },
+      {
+        "pdf_page": 37,
+        "description": "Authors, runningheads, chapter badge, publisher/manufacturer addresses, sizes and figure numbers",
+        "reason": "Attribution, navigation or numeric specifications; meaningful device headwords separately tried."
+      },
+      {
+        "pdf_page": 38,
+        "description": "Figure29A-1/2/3 position captions, patient height values and full positioning clauses",
+        "reason": "Extracted difficult intubation/laryngoscopy from italic body. Figure panel letters, measurements, patient-position instructions and attribution are not new vocabulary cues."
+      },
+      {
+        "pdf_page": 39,
+        "description": "Table29A-2 factor statements and Figure29A-5 class numerals; preoxygenation numbers",
+        "reason": "Tried named factor headwords including snoring, sleep apnea, chin/incisors/palate, injury, masses, angioedema, Ludwig name and inflammation/burns. Kept no prediction, scale grades, delivery fractions, flow or oxygenation recommendations."
+      },
+      {
+        "pdf_page": 40,
+        "description": "Table29A-3 steps/comments and full bold numeric insertion-depth statement",
+        "reason": "Extracted named equipment/anatomy headwords, Macintosh/Miller, BURP, Sellick/cricoid, stabilization and insertion depth. Excluded operating steps, hand/direction/size/depth/pressure instructions, ordinary accessory commentary and step numbers; not a claim every unformatted comment word was tried."
+      },
+      {
+        "pdf_page": 41,
+        "description": "Full bold confirmation warning and figure panel/grade labels",
+        "reason": "Intratracheal tube positioning extracted as a vocabulary trial. No multi-method confirmation requirement, infallibility claim, grade rubric, insertion action or image finding retained."
+      },
+      {
+        "pdf_page": 42,
+        "description": "Table29A-4 false-result clauses and full bold chest-radiograph/tube-displacement warnings",
+        "reason": "Tried false-negative/positive, perfusion, arrest/compressions, embolism/shock, obstruction/foreign body, beverage/humidifier/nebulizer/epinephrine and bold warning headwords including trachea/esophagus. Excluded causal relationships, number of breaths, radiographic claims and care instructions, not the lexical heads inside them."
+      },
+      {
+        "pdf_page": 43,
+        "description": "Table29A-5 preventive/corrective clinical clauses, numbers and interruption/failure wording",
+        "reason": "Tried complication-row lexical headwords plus Trendelenburg, atropine/epinephrine/pressors and CPR. Removed action sequences, positioning/advice, quantitative rates and generic corrective verbs. Ordinary unformatted accessories in comments not exhaustively screened."
+      },
+      {
+        "pdf_page": 44,
+        "description": "Table29A-6/7/8 steps, doses, onset/duration columns and benefit/caveat relationship arrows",
+        "reason": "Tried agent names, induction/blocker classes, monitoring names, pressure terms and meaningful benefit/caveat headwords including analgesia, seizure/myoclonic jerking, emesis, apnea, amnesia and emergence. No drug-effect linkage, dose, indication, administration sequence or inequality retained. Generic headings such as Agent/Benefits/Caveats are organization, not additional lexical trials."
+      },
+      {
+        "pdf_page": 45,
+        "description": "Table29A-9/10 drug comparison, complication/contraindication clauses; full bold succinylcholine warning",
+        "reason": "Extracted drug names, hyperkalemia, renal failure, myopathies, myasthenia, pressure headwords, fasciculations, masseter spasm, malignant hyperthermia, enzyme deficiency, burns/denervation/crush/infection. Excluded dose/onset/recovery values, age-of-injury criteria, arrows, physiology and all prescribing relationships."
+      },
+      {
+        "pdf_page": 46,
+        "description": "Figure29A-13/14 caption device demonstrations, brand attributions and full FFL patient-selection clauses",
+        "reason": "Tried named video/fiberoptic devices and section heading; no pictured anatomical view, patient suitability or procedure instructions retained. Publisher/source attribution is not a new vocabulary cue."
+      },
+      {
+        "pdf_page": 47,
+        "description": "Italic movement/breath-timing clauses and full bold difficulty-management imperatives",
+        "reason": "Extracted occiput/inspiration; headings, calm/help/plan/communication/airway techniques/medications tried. Excluded straight-back direction, rotation/depth values, upswing timing, next-two-steps algorithm, alterations and washout recommendations, not the terms inside these clauses."
+      },
+      {
+        "pdf_page": 48,
+        "description": "Full bold noninvasive-airway imperative and final hypotension-management paragraph",
+        "reason": "Extracted noninvasive airway measures and normalized hypotension heading, with phenylephrine supplementary trial. Epinephrine/syringe/vasopressor families already tried earlier. No fluids, pressor choices, bolus timing or hypotension-prevention claim retained."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "No annotations of any type on PDF37-48. Does not exclude flattened highlighting; publisher red headings, gray table backgrounds and pale square subhead markers inspected visually, not counted as annotation highlights."
+    }
+  },
+  "reuse_check": {
+    "scope": "Searched chapter1-28 banks, chapter1 broadened, catalog and both sound workshops; explicit retained/nonheld reuse targets resolve, including same-bank29A and later same-batch29B analgesia. Fiberoptic reuse uses only existing fiber/scope ingredients. Historical rejected sound attempts do not ban broader category or explicitly bounded partial-name proposals; local hold resolutions preserve history.",
+    "limits": "Offline editorial name/category associations, not distinct primitive claims or proof against every possible collision."
+  },
+  "resolved_holds": [
+    {
+      "term": "analgesia",
+      "resolution": "Local29A draft hold changed to reuse_candidate after main proposed same-batch29B category cue; author accepted pain-expression mask plus mute as a useful familiar pain/silence reminder. No drug-effect or image evidence claim.",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Ordinary eraser beside a generic pain token.",
+          "reason": "Initially found too abstract and no selected alternative."
+        },
+        {
+          "decision": "reuse_candidate",
+          "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+          "reason": "Useful learned category after concrete proposal; accepted despite possible ambiguity."
+        }
+      ],
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "resolution": "Local29A hold changed to retain_candidate at partial learned-name scope after main creativity challenge. Two ordinary props are economical; missing syllables alone is inconsistent with rock/roc calibration. Does not revoke or alter earlier workshop or Chapter2/19/24/25 holds.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Lid and walking cane.",
+          "reason": "Initially dismissed as awkward, carrying forward prior incomplete-spoken-material concern."
+        },
+        {
+          "decision": "retain_candidate",
+          "cue": "An ordinary container lid balanced on a familiar walking cane.",
+          "reason": "Learned partial-name reminder only, not pronunciation accuracy or independent drug identification."
+        }
+      ],
+      "historical_records": [
+        "docs/sound-bridge-workshop.json#lidocaine",
+        "docs/chapter-2-cue-audit.json#lidocaine",
+        "docs/chapter-19-cue-audit.json#lidocaine",
+        "docs/chapter-24-cue-audit.json#lidocaine",
+        "docs/chapter-25-cue-audit.json#lidocaine"
+      ],
+      "tested": false
+    },
+    {
+      "term": "midazolam",
+      "resolution": "Local29A hold changed to retain_candidate after main proposed public-domain Midas/lamb; author checked banks/workshops for retained exact prior and accepted a provisional taught-name fragment, not automatic recognition or pronunciation.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Middle-sized toy beside a lamb.",
+          "reason": "Middle/lamb fragment felt unappealing."
+        },
+        {
+          "decision": "retain_candidate",
+          "cue": "A gold-touch mythic king cradling a lamb.",
+          "reason": "Midas/lamb learned partial name; king identity and approximate sound remain untested audience limits."
+        }
+      ],
+      "tested": false
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author finalized offline draft after main source/cue feedback and local integrity checks. Main independent integration review remains main-owned and is not asserted by this draft; no clinical, image or recall validation.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/29batch/",
+  "draft_decision_history": [
+    {
+      "term": "snoring",
+      "initial": "retain_candidate",
+      "attempted_idea": "Sleeping toy making a buzzing snore, an audio-only description.",
+      "current": "retain_candidate",
+      "reason": "Main proposed visible saw/log idiom; author accepted as a culturally learned visual reminder, not sound evidence."
+    },
+    {
+      "term": "flexible fiberoptic laryngoscopy",
+      "initial": "retain_candidate",
+      "attempted_idea": "Flexible optical fibers beside inspection scope.",
+      "current": "reuse_candidate",
+      "reason": "Author caught existing28 fiber/scope ingredients; reuse drops bronco, no cross-method equivalence."
+    },
+    {
+      "term": "carbon dioxide detector",
+      "initial": "reuse_candidate",
+      "current": "reuse_candidate",
+      "reason": "Main requested dropping prior tide ingredient; cue now charcoal/detector only."
+    },
+    {
+      "term": "cardiac ischemia",
+      "initial": "reuse_candidate",
+      "current": "reuse_candidate",
+      "reason": "Main requested dropping prior limb modifier; generic closed tap/depleted tube only."
+    }
+  ]
+}
