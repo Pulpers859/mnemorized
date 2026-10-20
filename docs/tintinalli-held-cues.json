@@ -14,10 +14,16 @@
     "10",
     "11",
     "12",
-    "13"
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
   ],
-  "active_hold_occurrences": 21,
-  "unique_held_terms": 20,
+  "active_hold_occurrences": 34,
+  "unique_held_terms": 27,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -248,6 +254,149 @@
       "report": "docs/chapter-13-cue-audit.md",
       "attempted_cue": null,
       "reason": "Carries forward the prior hold. Acid-family lemon alone would not add a useful medication-name association beyond the retained broad acid token; no forced train/exam/acid syllable chain proposed. Hold is provisional, not proof that no useful bridge exists.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "14",
+      "chapter_title": "Allergy and Anaphylaxis",
+      "term": "anaphylaxis",
+      "printed_page": 68,
+      "source_record": "docs/chapter-14-cue-audit.json",
+      "report": "docs/chapter-14-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical name cue proposed in this pass; generic emergency props would add little vocabulary identity. Not held merely for lacking a unique diagnosis cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "14",
+      "chapter_title": "Allergy and Anaphylaxis",
+      "term": "histamine",
+      "printed_page": 68,
+      "source_record": "docs/chapter-14-cue-audit.json",
+      "report": "docs/chapter-14-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No simple association proposed; avoid manufacturing a hiss/tea/mine syllable puzzle or borrowing a drug-effect story.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "14",
+      "chapter_title": "Allergy and Anaphylaxis",
+      "term": "angioedema",
+      "printed_page": 71,
+      "source_record": "docs/chapter-14-cue-audit.json",
+      "report": "docs/chapter-14-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical name association proposed; avoid a forced angel/edema rebus or an authored clinical swelling lesson.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "14",
+      "chapter_title": "Allergy and Anaphylaxis",
+      "term": "epinephrine",
+      "printed_page": 69,
+      "source_record": "docs/chapter-14-cue-audit.json",
+      "report": "docs/chapter-14-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves prior unresolved status; no effect-based identity shortcut or forced new rebus proposed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "15",
+      "chapter_title": "Acid-Base Disorders",
+      "term": "ketoacidosis",
+      "printed_page": 76,
+      "source_record": "docs/chapter-15-cue-audit.json",
+      "report": "docs/chapter-15-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical keto-name cue proposed. Do not force key/toe syllables or imply that a familiar diet image establishes the clinical target. Source subtype modifiers are not silently merged into a new lesson.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "15",
+      "chapter_title": "Acid-Base Disorders",
+      "term": "osmolal gap",
+      "printed_page": 76,
+      "source_record": "docs/chapter-15-cue-audit.json",
+      "report": "docs/chapter-15-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "A gap alone supplies only the generic shared word and would collapse into the anion-gap cue without an osmolal identity ingredient. No strong simple ingredient proposed; no equation or toxicology shortcut authored.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "17",
+      "chapter_title": "Fluids and Electrolytes",
+      "term": "osmolality",
+      "printed_page": 82,
+      "source_record": "docs/chapter-17-cue-audit.json",
+      "report": "docs/chapter-17-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical association proposed in this pass. Do not force an unfamiliar name or mole/syllable puzzle, or substitute a clinical calculation. Provisional hold, not evidence that no useful cue exists.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "18",
+      "chapter_title": "Cardiac Rhythm Disturbances",
+      "term": "Brugada syndrome",
+      "printed_page": 120,
+      "source_record": "docs/chapter-18-cue-audit.json",
+      "report": "docs/chapter-18-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Prior hold preserved. No economical improved name bridge identified; disconnected fragments are not promoted merely to fill this bank.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "18",
+      "chapter_title": "Cardiac Rhythm Disturbances",
+      "term": "amiodarone",
+      "printed_page": 101,
+      "source_record": "docs/chapter-18-cue-audit.json",
+      "report": "docs/chapter-18-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Prior hold preserved with no improved economical association. No effect, mechanism, dose or generic drug prop substituted as drug identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "19",
+      "chapter_title": "Pharmacology of Antiarrhythmics and Antihypertensives",
+      "term": "adenosine",
+      "printed_page": 123,
+      "source_record": "docs/chapter-19-cue-audit.json",
+      "report": "docs/chapter-19-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Existing hold preserved; no economical improved association in this bounded pass. Do not use generic drug imagery or fabricate syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "19",
+      "chapter_title": "Pharmacology of Antiarrhythmics and Antihypertensives",
+      "term": "lidocaine",
+      "printed_page": 123,
+      "source_record": "docs/chapter-19-cue-audit.json",
+      "report": "docs/chapter-19-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Existing hold preserved. Historical lid plus cane attempt lost name material; no improved proposal here and no revival of that workshop rebus.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "19",
+      "chapter_title": "Pharmacology of Antiarrhythmics and Antihypertensives",
+      "term": "amiodarone",
+      "printed_page": 123,
+      "source_record": "docs/chapter-19-cue-audit.json",
+      "report": "docs/chapter-19-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Same unresolved Chapter11 hold, also carried into Chapter18. No strong economical name association proposed and no clinical property substituted for identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "19",
+      "chapter_title": "Pharmacology of Antiarrhythmics and Antihypertensives",
+      "term": "clonidine",
+      "printed_page": 132,
+      "source_record": "docs/chapter-19-cue-audit.json",
+      "report": "docs/chapter-19-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Prior workshop clone plus diner rejection preserved, not promoted or relabeled as a successful partial bridge. No improved economical proposal; this chapter records an unresolved target for later reconsideration.",
       "retained_in_other_chapters": []
     }
   ],

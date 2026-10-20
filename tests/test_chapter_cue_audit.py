@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 @pytest.mark.parametrize("chapter,start,end,offset", [
     (8, 17, 23, 18), (9, 23, 29, 18), (10, 29, 34, 18),
     (11, 1, 5, 52), (12, 5, 11, 52), (13, 11, 16, 52),
+    (14, 16, 21, 52), (15, 21, 26, 52), (16, 26, 29, 52),
+    (17, 29, 47, 52), (18, 47, 71, 52), (19, 71, 81, 52),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
@@ -36,7 +38,7 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
         assert entry["pdf_page"] in bank["source"]["pdf_pages"]
         assert entry["tested"] is False
         assert entry["cue_scope"].strip() and entry["reason"].strip()
-        assert entry["source_match"] in {"body", "table", "heading_and_body", "heading"}
+        assert entry["source_match"] in {"body", "table", "heading_and_body", "heading", "table_and_body"}
         if entry["decision"] != "hold":
             assert entry["cue"].strip()
         if entry["decision"] == "reuse_candidate":

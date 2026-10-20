@@ -117,6 +117,28 @@ Fifty selected terms,27new compositions,19reuses,4hold occurrences. Crystalloid
 was independently proposed twice; integration counts the second as reuse.
 Source and conceptual review are separate from empirical recall/render testing.
 
+## Chapters 14-19: Two Further Batches
+
+| Chapter | Selected | New Candidates | Reuses | Holds | Review |
+|---|---:|---:|---:|---:|---|
+| 14 Allergy and Anaphylaxis | 16 | 8 | 4 | 4 | [Review](chapter-14-cue-audit.md) |
+| 15 Acid-Base Disorders | 17 | 9 | 6 | 2 | [Review](chapter-15-cue-audit.md) |
+| 16 Blood Gases, Pulse Oximetry, and Capnography | 13 | 10 | 3 | 0 | [Review](chapter-16-cue-audit.md) |
+| 17 Fluids and Electrolytes | 16 | 6 | 9 | 1 | [Review](chapter-17-cue-audit.md) |
+| 18 Cardiac Rhythm Disturbances | 16 | 6 | 8 | 2 | [Review](chapter-18-cue-audit.md) |
+| 19 Pharmacology of Antiarrhythmics and Antihypertensives | 12 | 7 | 1 | 4 | [Review](chapter-19-cue-audit.md) |
+
+Batch14-16:46selected/27new/13reuse/6hold. Batch17-19:44selected/19new/18reuse/
+7hold. Combined90selected terms,46new candidate compositions,31reuses,13hold
+occurrences. New means newly recorded composition, not novel invention or
+validated recall. Main separately checked drafter source matches, actual title
+boundaries, cue economy and reuse. Main-proposed glue gun, excess-carb basket,
+slow-snail heart and white-wolf parking variants were challenged by the drafters.
+They are not user-originated, credentialed-human or empirically tested designs.
+Longer chapters17/18 were sampled for selected terms, not exhaustively covered.
+Holds were synchronized to the separate register; repeats remain separate
+chapter occurrences. No new production-catalog admission.
+
 ## Held-Cue Revisit Register
 
 [All chapter holds](tintinalli-held-cues.md) are kept separately, with attempted
@@ -131,7 +153,7 @@ and rejections remain in their separate sound-bridge records.
 
 ## Next
 
-Chapter 14, **Allergy and Anaphylaxis**, is not started for cue review. Do not move
+Chapter 20, **Pharmacology of Vasopressors and Inotropes**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

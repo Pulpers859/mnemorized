@@ -306,6 +306,84 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "14",
+      "title": "Allergy and Anaphylaxis",
+      "record": "docs/chapter-14-cue-audit.json",
+      "report": "docs/chapter-14-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 8,
+      "reused_candidates": 4,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "15",
+      "title": "Acid-Base Disorders",
+      "record": "docs/chapter-15-cue-audit.json",
+      "report": "docs/chapter-15-cue-audit.md",
+      "selected_terms": 17,
+      "new_candidates": 9,
+      "reused_candidates": 6,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "16",
+      "title": "Blood Gases, Pulse Oximetry, and Capnography",
+      "record": "docs/chapter-16-cue-audit.json",
+      "report": "docs/chapter-16-cue-audit.md",
+      "selected_terms": 13,
+      "new_candidates": 10,
+      "reused_candidates": 3,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "17",
+      "title": "Fluids and Electrolytes",
+      "record": "docs/chapter-17-cue-audit.json",
+      "report": "docs/chapter-17-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 6,
+      "reused_candidates": 9,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "18",
+      "title": "Cardiac Rhythm Disturbances",
+      "record": "docs/chapter-18-cue-audit.json",
+      "report": "docs/chapter-18-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 6,
+      "reused_candidates": 8,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "19",
+      "title": "Pharmacology of Antiarrhythmics and Antihypertensives",
+      "record": "docs/chapter-19-cue-audit.json",
+      "report": "docs/chapter-19-cue-audit.md",
+      "selected_terms": 12,
+      "new_candidates": 7,
+      "reused_candidates": 1,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
   "hold_register": {
@@ -315,8 +393,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "14",
-    "title": "Allergy and Anaphylaxis",
+    "chapter_id": "20",
+    "title": "Pharmacology of Vasopressors and Inotropes",
     "status": "not_started_for_cue_review"
   },
   "spend": {

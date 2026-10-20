@@ -199,6 +199,26 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Repeated batches14-16 and17-19
+**Done:** Two further chapter-bounded runs.14=16terms/8new/4reuse/4hold;
+15=17/9/6/2;16=13/10/3/0;17=16/6/9/1;18=16/6/8/2;19=12/7/1/4.
+Combined90terms/46new compositions/31reuses/13hold occurrences, not90novel
+terms or comprehensive coverage. Long17/18 sampled for selected vocabulary.
+**Review:** Three disjoint drafters, main independently checked all90 term/page
+matches, source types, actual rendered boundaries and cues/reuse. Main-proposed
+glue-gun/glucagon and excess-carb/hypercarbia separately challenged; main snail
+and wolf-parking refinements challenged by drafter, not user-originated.
+Long-QT18 source corrected to Table18-27; Greek beta19 normalized. Existing
+holds not silently resolved. Register now34chapter holds/27unique terms,3resolved.
+**Validation:**131focused tests passed/1skipped; hold register current; catalog
+valid76; diff clean. No clinical, image-recognition or recall validation, no
+backend/browser/provider run. Zero paid API calls/renders; $6 untouched.
+**Source:** Same Resuscitation hash and +52offset; boundaries PDF16/21/26/29/
+47/71/81 visually checked by main. No full text or PDFs committed. Canonical
+catalog unchanged. Next20 Pharmacology of Vasopressors and Inotropes, title-only.
+Preserve unrelated Forge edits. Fetch checkpoint failure persists; verify push
+using authenticated remote API SHA/ancestry. Continue refreshing hold register.
+
 ### 2026-10-19 - Persistent hold register and Chapters11-13
 **Done:** User explicitly requested separate list of every held chapter word.
 Added generated docs/tintinalli-held-cues.json/.md and offline stdlib builder

@@ -4,8 +4,8 @@ Generated from current structured chapter banks; do not edit this snapshot by ha
 Update the chapter decision, then run `python tools/chapter_cue_holds.py --write`.
 `--check` detects stale snapshots; focused tests enforce this on future batches.
 
-Active: **21 chapter holds / 20 unique terms**.
-Chapters checked: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13.
+Active: **34 chapter holds / 27 unique terms**.
+Chapters checked: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19.
 
 A hold means revisit the proposal, not that the term cannot have a good cue.
 The reasons are preserved editorial judgments, not new clinical or learning evidence.
@@ -38,6 +38,19 @@ sound-bridge banks; this register covers all reviewed chapter banks.
 | 11 / 56 | amiodarone | None proposed | No strong economical association proposed. No drug effect used as an unsourced identity shortcut. | [Review](chapter-11-cue-audit.md) |
 | 12 / 58 | lusitropy | None proposed | No economical familiar cue proposed in this bounded pass. Do not assemble loose/seat/rope syllable puzzles or turn a source explanation into a clinical lesson. Hold is not a claim that a useful association cannot be learned. | [Review](chapter-12-cue-audit.md) |
 | 13 / 67 | tranexamic acid | None proposed | Carries forward the prior hold. Acid-family lemon alone would not add a useful medication-name association beyond the retained broad acid token; no forced train/exam/acid syllable chain proposed. Hold is provisional, not proof that no useful bridge exists. | [Review](chapter-13-cue-audit.md) |
+| 14 / 68 | anaphylaxis | None proposed | No economical name cue proposed in this pass; generic emergency props would add little vocabulary identity. Not held merely for lacking a unique diagnosis cue. | [Review](chapter-14-cue-audit.md) |
+| 14 / 68 | histamine | None proposed | No simple association proposed; avoid manufacturing a hiss/tea/mine syllable puzzle or borrowing a drug-effect story. | [Review](chapter-14-cue-audit.md) |
+| 14 / 71 | angioedema | None proposed | No economical name association proposed; avoid a forced angel/edema rebus or an authored clinical swelling lesson. | [Review](chapter-14-cue-audit.md) |
+| 14 / 69 | epinephrine | None proposed | Preserves prior unresolved status; no effect-based identity shortcut or forced new rebus proposed. | [Review](chapter-14-cue-audit.md) |
+| 15 / 76 | ketoacidosis | None proposed | No economical keto-name cue proposed. Do not force key/toe syllables or imply that a familiar diet image establishes the clinical target. Source subtype modifiers are not silently merged into a new lesson. | [Review](chapter-15-cue-audit.md) |
+| 15 / 76 | osmolal gap | None proposed | A gap alone supplies only the generic shared word and would collapse into the anion-gap cue without an osmolal identity ingredient. No strong simple ingredient proposed; no equation or toxicology shortcut authored. | [Review](chapter-15-cue-audit.md) |
+| 17 / 82 | osmolality | None proposed | No economical association proposed in this pass. Do not force an unfamiliar name or mole/syllable puzzle, or substitute a clinical calculation. Provisional hold, not evidence that no useful cue exists. | [Review](chapter-17-cue-audit.md) |
+| 18 / 120 | Brugada syndrome | None proposed | Prior hold preserved. No economical improved name bridge identified; disconnected fragments are not promoted merely to fill this bank. | [Review](chapter-18-cue-audit.md) |
+| 18 / 101 | amiodarone | None proposed | Prior hold preserved with no improved economical association. No effect, mechanism, dose or generic drug prop substituted as drug identity. | [Review](chapter-18-cue-audit.md) |
+| 19 / 123 | adenosine | None proposed | Existing hold preserved; no economical improved association in this bounded pass. Do not use generic drug imagery or fabricate syllables. | [Review](chapter-19-cue-audit.md) |
+| 19 / 123 | lidocaine | None proposed | Existing hold preserved. Historical lid plus cane attempt lost name material; no improved proposal here and no revival of that workshop rebus. | [Review](chapter-19-cue-audit.md) |
+| 19 / 123 | amiodarone | None proposed | Same unresolved Chapter11 hold, also carried into Chapter18. No strong economical name association proposed and no clinical property substituted for identity. | [Review](chapter-19-cue-audit.md) |
+| 19 / 132 | clonidine | None proposed | Prior workshop clone plus diner rejection preserved, not promoted or relabeled as a successful partial bridge. No improved economical proposal; this chapter records an unresolved target for later reconsideration. | [Review](chapter-19-cue-audit.md) |
 
 ## Resolved Holds
 
