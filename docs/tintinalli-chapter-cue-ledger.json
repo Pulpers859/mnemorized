@@ -468,6 +468,48 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 35
+    },
+    {
+      "chapter_id": "26",
+      "title": "Post-Cardiac Arrest Syndrome",
+      "record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "selected_terms": 63,
+      "new_candidates": 24,
+      "reused_candidates": 21,
+      "holds": 18,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 63
+    },
+    {
+      "chapter_id": "27",
+      "title": "Ethical Issues of Resuscitation",
+      "record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "selected_terms": 42,
+      "new_candidates": 29,
+      "reused_candidates": 6,
+      "holds": 7,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 42
+    },
+    {
+      "chapter_id": "28",
+      "title": "Noninvasive Airway Management and Supraglottic Airways",
+      "record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "selected_terms": 98,
+      "new_candidates": 51,
+      "reused_candidates": 28,
+      "holds": 19,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 107
     }
   ],
   "hold_register": {
@@ -477,9 +519,10 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "26",
-    "title": "Post-Cardiac Arrest Syndrome",
-    "status": "not_started_for_cue_review"
+    "chapter_id": "29",
+    "title": "Tracheal Intubation (source chapter 29A)",
+    "status": "not_started_for_cue_review",
+    "note": "Integer ledger identifier preserves current schema; actual source chapter is 29A, followed by 29B Mechanical Ventilation. Do not skip 29B when reviewing the split chapter."
   },
   "spend": {
     "anthropic_calls": 0,

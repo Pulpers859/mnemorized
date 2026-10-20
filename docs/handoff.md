@@ -199,6 +199,34 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-20 - Chapters26-28 emphasized vocabulary continuation
+**Done:** Two disjoint AI drafting lanes plus main independent integration.
+26=63terms/24new/21reuse/18hold;27=42/29/6/7;28=98/51/28/19.
+Combined203 term trials:104 newly recorded candidate compositions,55 reuses,
+44 holds;212 linked keyword items include9 explicit aliases. No claim of novel
+invention, exhaustive vocabulary or clinical coverage. Main checked every entry
+and keyword location within actual chapter regions, rendered mixed-page
+boundaries, all cues and resolved reuse targets. Source hash unchanged, +142
+printed offset. Chapter28 excludes entire Table29A-1 on PDF37 right column.
+No assigned-page PDF annotations; fonts and visual checks separately reviewed
+printed emphasis. Shared-word and trademark normalizations explicit.
+**Revisions:** Main-proposed hippo/oath gesture, ECG equipment and four familiar
+device-category cues independently challenged/accepted by drafters. Inflammatory
+family and sedation reused from same-batch26; older holds remain. Seven draft
+hold resolutions preserve initial attempts/reasons. Register now138 active hold
+occurrences/111 unique terms,11 explicit resolutions including prior history.
+Candidates remain untested and outside the unchanged76-entry production catalog.
+**Validation:** Focused cue/keyword/hold/workshop/catalog tests152passed/1skipped;
+hold snapshot current; canonical catalog valid76. Full suite784passed/2skipped,
+149subtests passed. Staged diff whitespace checked before commit.
+No Forge runs, images, clinical/legal or human-expert validation. Zero paid API
+calls/renders; separate $6 benchmark budget untouched.
+**Next:** Tracheal Intubation, actual source chapter29A (PDF37). Ledger uses
+integer29 for current schema compatibility; do NOT skip subsequent29B Mechanical
+Ventilation. Earlier1-19 still lack expanded emphasis-screen backfill. Fetch again
+failed on preexisting malformed local Codex checkpoint ref; no ref deletion or
+credential retry. Preserve unrelated Forge HTML/pipeline changes.
+
 ### 2026-10-20 - Resumed Chapters20-25 with emphasis screen
 **Done:** Resumed interrupted AI drafting lanes after Codex usage-limit interruption,
 not an Anthropic funding error. Added explicit bold/semibold, heading, highlighted

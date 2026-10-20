@@ -9,7 +9,37 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("chapter", range(20, 26))
+@pytest.mark.parametrize("chapter", range(26, 29))
+def test_new_batch_reuses_resolve_to_retained_entries(chapter):
+    bank_path = ROOT / f"docs/chapter-{chapter}-cue-audit.json"
+    bank = json.loads(bank_path.read_text())
+    review = bank["main_integration_review"]
+    assert review["source_and_conceptual_review"] is True
+    assert review["date"] and review["scope"].strip()
+    counts = review["counts"]
+    assert counts["selected_terms"] == len(bank["entries"])
+    for decision, key in [("retain_candidate", "new_candidates"),
+                          ("reuse_candidate", "reused_candidates"), ("hold", "holds")]:
+        assert counts[key] == sum(e["decision"] == decision for e in bank["entries"])
+    assert review["keyword_items"] == len(bank["keyword_screen"]["items"])
+    for entry in bank["entries"]:
+        if entry["decision"] != "reuse_candidate":
+            continue
+        record, fragment = entry["prior"].split("#", 1)
+        path = (ROOT / record).resolve()
+        assert path.parent == ROOT / "docs"
+        assert path != bank_path
+        referenced = json.loads(path.read_text())
+        targets = [e for e in referenced["entries"]
+                   if fragment.casefold() in {
+                       str(e.get("term", "")).casefold(),
+                       str(e.get("id", "")).casefold(),
+                   }]
+        assert len(targets) == 1, entry["prior"]
+        assert targets[0].get("decision") != "hold"
+
+
+@pytest.mark.parametrize("chapter", range(20, 29))
 def test_emphasized_keywords_have_explicit_cue_attempts(chapter):
     bank = json.loads((ROOT / f"docs/chapter-{chapter}-cue-audit.json").read_text())
     screen = bank["keyword_screen"]

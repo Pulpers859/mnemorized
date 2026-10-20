@@ -1,0 +1,1438 @@
+{
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded term and keyword page location within actual chapter regions, visually reviewed mixed-page boundaries, spot-checked typography, and reviewed every cue and reuse target. Draft-pending notes below are historical and superseded by this section. AI review, not clinical, legal, human-expert, empirical recall or image validation.", "highlight_annotations_found": 0, "normalizations": "Joined line-wrap hyphens and title punctuation; omitted trademark glyph in Shiley. Explicit shared-word expansions: patient and family wishes; spiritual, psychosocial, and educational support; recovery of organs for transplantation; Disrupted or Distorted airway. Not all are contiguous quotations.", "counts": {"selected_terms": 63, "new_candidates": 24, "reused_candidates": 21, "holds": 18}, "keyword_items": 63},
+  "schema_version": 1,
+  "chapter_id": "26",
+  "title": "Post-Cardiac Arrest Syndrome",
+  "review_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      27,
+      28,
+      29
+    ],
+    "printed_pages": [
+      169,
+      170,
+      171
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual title PDF27 lower left y406.4, after Chapter25 references. Right-column Figure26-1 and continuation on PDF27 are Chapter26, including material above title height. Ends right-column REFERENCES/online notice PDF29 y697.6-743; actual Chapter27 title PDF30 upper left y36.8. Running headers are not boundaries.",
+    "verification": "Author verified SHA256, font spans, all page annotation inventories and full-page rasters PDF27-31. Vocabulary locations only; main independent draft review pending."
+  },
+  "scope": "Offline vocabulary workshop, not clinical teaching, facts, narration, prompts or empirical validation.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 63,
+    "new_candidates": 24,
+    "reused_candidates": 21,
+    "holds": 18
+  },
+  "source_wording_notes": {
+    "post-cardiac arrest syndrome": "Title dash normalized to ASCII hyphen; line wraps joined; original title capitalized. Not a contiguous lowercase quotation.",
+    "return of spontaneous circulation": "Wrapped MinionPro-Bold phrase PDF27 y700.5/710.5 and heading. Source Table26-1 note explicitly expands ROSC; rose is a reused acronym bridge, not a cue for every expansion word.",
+    "reactive oxygen species": "Figure26-1 uses Reactive oxygen species (ROS). ROS is not ROSC; same rose attempt was held, not a new retained synonym.",
+    "Glasgow Coma Scale": "Expansion in Table26-1 abbreviation note. GCS motor score and its threshold are not encoded.",
+    "saline": "Lexical headword extracted from chilled saline / normal saline; descriptors and clinical quantities not retained.",
+    "QT interval": "Extracted from Prolongation of QT interval; long family justified only by the source row's explicit modifier. Not the QTc spelling in body.",
+    "capnometry": "Exact Table26-2 headword; not silently changed to capnography. Captain/tape composition distinguished from captain/graph prior.",
+    "skin injury": "Split from Skin injury/ulceration from surface cooling, with ulceration separately tried.",
+    "PTT prolongation": "Extracted from Coagulopathy with PTT prolongation; separate name trials, no clinical relationship."
+  },
+  "entries": [
+    {
+      "term": "post-cardiac arrest syndrome",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "chapter_title",
+      "kind": "learned_vocabulary_association",
+      "cue": "Handcuffed heart token followed by a freestanding care-package token.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#postarrest care",
+      "reason": "Scoped family reuse, not a new syndrome cue: post/arrest only, with care-package context. Syndrome qualifier is learned, not a symptom pattern.",
+      "tested": false
+    },
+    {
+      "term": "ischemia-reperfusion injury",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/chapter-21-cue-audit.json#ischemia-reperfusion injury",
+      "reason": "Tried closed/reopened supply tap plus damaged token, as before; sequence risks substituting a mechanism lesson. Preserve earlier hold; no compact name proposal selected.",
+      "tested": false
+    },
+    {
+      "term": "return of spontaneous circulation",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "heading_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar rose flower.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#ROSC",
+      "reason": "Expanded-name alias of the source's ROSC abbreviation, reusing rose/rosk spoken-acronym bridge. Needs acronym teaching; does not encode expansion or clinical recovery. ROS collision noted.",
+      "tested": false
+    },
+    {
+      "term": "ischemia",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Limb model downstream of a closed red supply tap and visibly depleted supply tube.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#ischemia",
+      "reason": "Existing ischemia family; limb is a learned token, not a location claim. Figure arrows and relationships are not retained.",
+      "tested": false
+    },
+    {
+      "term": "reperfusion",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Familiar perfume bottle being refilled from another perfume bottle.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Re/refill plus perf/perfume partial learned name play. Not exact pronunciation or a bodily-flow model; ending supplied by context.",
+      "tested": false
+    },
+    {
+      "term": "reactive oxygen species",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/chapter-24-cue-audit.json#ROSC",
+      "reason": "Tried rose cluster for ROS. In this chapter it collides directly with the existing ROSC rose and offers no useful chosen contrast; not a demand for universal standalone identity.",
+      "tested": false
+    },
+    {
+      "term": "inflammatory cascades",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Small theatrical flame token beside a cascading waterfall ornament.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Inflame/cascade learned wordplay, not real inflammation, heat, tissue injury or a biological causal diagram. Prior inflammatory-responses hold remains unchanged.",
+      "tested": false
+    },
+    {
+      "term": "mitochondrial dysfunction",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a torn mitten as mito opening plus broken-function reminder. Mitt/name bridge felt weak here; no selected economical composition, not a claim that partial names are invalid.",
+      "tested": false
+    },
+    {
+      "term": "blood vessel instability",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Toy boat carrying a red-liquid token rocks precariously on a small seesaw.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Vessel double meaning plus instability action; red token supplies learned blood context. Not an anatomical or hemodynamic diagram.",
+      "tested": false
+    },
+    {
+      "term": "cell death",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "An ordinary battery cell with a familiar empty-charge icon.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Dead battery/cell familiar language supplies a learned category reminder. Does not depict a biological cell or death pathway.",
+      "tested": false
+    },
+    {
+      "term": "brain swelling",
+      "pdf_page": 27,
+      "page": 169,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Puffy inflated brain-shaped toy.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad brain/puffy-state association; appearance is a mnemonic convention, not a clinical finding or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "neurologic reflexes",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried brain token facing a mirror for reflex/reflection. Mirror mainly names reflection; no chosen useful reflex reminder. Did not substitute an examination maneuver.",
+      "tested": false
+    },
+    {
+      "term": "neurologic examination",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A generic brain teaching token beside an inspection magnifier.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#neurologic assessment",
+      "reason": "Examination/assessment family reuse, not a new composition. No maneuver, outcome, timing or prognostic statement.",
+      "tested": false
+    },
+    {
+      "term": "anoxic brain injury",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an ox beside a brain token as anoxic opening fragment. Ox reads ox rather than anoxic without a useful selected bridge; no oxygen-deprivation lesson substituted.",
+      "tested": false
+    },
+    {
+      "term": "targeted temperature management",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "heading_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A thermometer centered on an archery target.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#targeted temperature management",
+      "reason": "Exact target/temperature family; management remains lesson context. No value, device setting, recommendation or claimed benefit.",
+      "tested": false
+    },
+    {
+      "term": "therapeutic hypothermia",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "Shivering study mannequin beside a conspicuous block of ice.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hypothermia",
+      "reason": "Broader hypothermia family reuse at a qualified source name. Therapeutic qualifier is not visually encoded; this is not an instruction to cool anyone.",
+      "tested": false
+    },
+    {
+      "term": "coma",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "An oversized ordinary punctuation comma.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Comma/coma learned near-name bridge; pronunciation differs by speaker. Not a depiction of unconsciousness or diagnostic status.",
+      "tested": false
+    },
+    {
+      "term": "DNR",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a stop-sign document, but it collapses DNR with neighboring DNI and other directives. No selected name/acronym bridge; no treatment decision or order invented.",
+      "tested": false
+    },
+    {
+      "term": "DNI",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried stop-sign beside the existing tube token. That risks encoding an intervention prohibition as the cue rather than a neutral name reminder; no selected alternative.",
+      "tested": false
+    },
+    {
+      "term": "Glasgow Coma Scale",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Glass punctuation comma resting on an ordinary balance scale.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Glass/Glasgow opening fragment plus comma/coma and literal scale. Compact taught name play, not the instrument, its scoring, components or thresholds.",
+      "tested": false
+    },
+    {
+      "term": "pregnancy",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#pregnancy",
+      "reason": "Same familiar category; no table eligibility rule or claim about every pregnant person's appearance.",
+      "tested": false
+    },
+    {
+      "term": "warfarin",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/sound-bridge-workshop.json#warfarin",
+      "reason": "Reconsidered toy warship as war opening. Prior workshop rejected its attempt; no economical improved bridge selected here. Drug effects do not substitute for a name.",
+      "tested": false
+    },
+    {
+      "term": "heparin",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar heap of ordinary metal rings.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Heap/ring partial learned name bridge, not exact full-name phonetics. Neither drug material nor clinical function is implied.",
+      "tested": false
+    },
+    {
+      "term": "long QT syndrome",
+      "pdf_page": 28,
+      "page": 170,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Very long pool cue beside a cup of tea.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#long QT syndrome",
+      "reason": "Same long cue/tea name family; syndrome is context, not a tracing, criterion or eligibility statement.",
+      "tested": false
+    },
+    {
+      "term": "cooling",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A conspicuous block of ice.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#cold-ice",
+      "reason": "Existing cold/cooling category ingredient at broader action-word scope, not a new cooling method.",
+      "tested": false
+    },
+    {
+      "term": "rewarming",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "An ordinary mug returned to a familiar mug warmer.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Re/again plus warming household action. No patient, temperature or clinical time course.",
+      "tested": false
+    },
+    {
+      "term": "shivering",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A bundled toy figure visibly trembling with motion marks.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar action/category reminder. Shares cold-family ingredients but targets the action, not a newly counted hypothermia cue or a cause.",
+      "tested": false
+    },
+    {
+      "term": "hypotension",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "figure_label",
+      "kind": "learned_vocabulary_association",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Exact low-pressure family; no measurement, cause, target or associated intervention.",
+      "tested": false
+    },
+    {
+      "term": "ice packs",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar reusable ice pack with visible frozen contents.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal familiar object, not placement, indication or use instructions.",
+      "tested": false
+    },
+    {
+      "term": "saline",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Ordinary salt shaker beside a clear-water pitcher.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Salt/water learned category composition, not a formulation, concentration or preparation instruction. Existing sodium/water ingredients are not new primitives.",
+      "tested": false
+    },
+    {
+      "term": "cooling blankets",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Folded blanket beside a theatrical ice token.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Blanket plus established cold ingredient; vocabulary association, not equipment specifications or instructions.",
+      "tested": false
+    },
+    {
+      "term": "vests",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar sleeveless vest on a clothing stand.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Lexical object extracted from cooling clothing list. Cooling modifier is context; no claim an ordinary vest is a clinical device.",
+      "tested": false
+    },
+    {
+      "term": "leg wraps",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A freestanding toy leg encircled by a cloth wrap.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal learned object relationship, no patient, wrapping sequence or equipment specifications.",
+      "tested": false
+    },
+    {
+      "term": "cooling helmet",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Familiar helmet beside an ice-shaped token.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Helmet plus cold ingredient. A vocabulary composition, not a design or procedure.",
+      "tested": false
+    },
+    {
+      "term": "intravascular cooling",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried ice token inside a toy vessel. Too easily reads as placing ice inside a vessel; no selected neutral name bridge. The cooling headword is separately retained.",
+      "tested": false
+    },
+    {
+      "term": "intubation",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#intubation",
+      "reason": "Existing intubation family in airway context; not route, placement, depth or confirmation.",
+      "tested": false
+    },
+    {
+      "term": "mechanical ventilation",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Familiar desk fan with a conspicuous hand crank.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#mechanical ventilation",
+      "reason": "Same mechanical/fan composition. No patient connection, ventilator model, mode, setting or physiological equivalence.",
+      "tested": false
+    },
+    {
+      "term": "ECG",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "familiar_device_category",
+      "cue": "Recognizable ECG machine beside a short strip of generic stylized waveform.",
+      "cue_scope": "Broad learned ECG equipment category; no diagnostic trace or interpretation",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main proposed recognizable ECG equipment with a short generic waveform strip; drafter independently accepted at broad taught category scope. No exact letter recovery required. No diagnostic rhythm, numbers, patient attachment or interpretation. Recognition remains untested; original blank-monitor hold preserved in resolved_holds.",
+      "tested": false
+    },
+    {
+      "term": "cardiac monitoring",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Blank bedside monitor beside a conspicuous watchful-eye token.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "reason": "Scoped procedural-monitoring family reuse; cardiac qualifier is supplied by lesson context rather than encoded. No readings, adequacy claim or rhythm interpretation.",
+      "tested": false
+    },
+    {
+      "term": "pulse oximetry",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Recognizable finger-clip pulse oximeter with an unnumbered display.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#pulse oximetry",
+      "reason": "Exact familiar device category without placement, interpretation or accuracy claims.",
+      "tested": false
+    },
+    {
+      "term": "capnometry",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Familiar ship captain holding an ordinary measuring tape.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cap'n plus metry/measure variant changes the graph in the established capnography composition. New target composition, not a new captain primitive or a gas measurement claim.",
+      "tested": false
+    },
+    {
+      "term": "sedation",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar drowsiness category, not a depth, required appearance, medication, administration or clinical equivalence to sleep.",
+      "tested": false
+    },
+    {
+      "term": "neuromuscular blockade",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried blocked cable beside a flexed-arm token. Too many generic ingredients without a selected economical name reminder; no action or mechanism lesson substituted.",
+      "tested": false
+    },
+    {
+      "term": "central venous catheter",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/sound-bridge-workshop.json#catheter",
+      "reason": "Tried ordinary catheter model as a learned equipment category rather than rejected cat/heater sound chain. No selected subtype reminder; a future familiar-device proposal remains possible.",
+      "tested": false
+    },
+    {
+      "term": "arterial access",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy artery teaching token beside an open doorway.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Arterial category plus access/open entrance learned metaphor. Not a vessel-entry demonstration or a location instruction.",
+      "tested": false
+    },
+    {
+      "term": "bladder catheter",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/sound-bridge-workshop.json#catheter",
+      "reason": "Tried balloon reservoir plus tube model. Not selected because this attempt reads as an ungated device arrangement; earlier sound-chain rejection is not a ban on familiar-device cues.",
+      "tested": false
+    },
+    {
+      "term": "esophageal probe",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried ordinary probe beside a food-pipe teaching token. No economical selected name composition here; no route or placement diagram supplied.",
+      "tested": false
+    },
+    {
+      "term": "mean arterial pressure",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Scowling toy artery character beside an unnumbered pressure gauge.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Mean/scowling double meaning plus artery/gauge name ingredients. No mathematical mean, measured value or clinical target.",
+      "tested": false
+    },
+    {
+      "term": "electrolytes",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Familiar electric light bulbs.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Electro/lights partial learned sound reminder; not full pronunciation or a chemical category demonstration.",
+      "tested": false
+    },
+    {
+      "term": "fever",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Theatrical flame token beside a study mannequin.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#hot-flame",
+      "reason": "Broad hot-state category variant reuses flame ingredient, not the rejected fever sound attempt. No required symptom, value or heating instruction.",
+      "tested": false
+    },
+    {
+      "term": "bradycardia",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Heart character riding a familiar slow snail.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#bradycardia",
+      "reason": "Exact slow-heart family, no rate or consequence.",
+      "tested": false
+    },
+    {
+      "term": "QT interval",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Very long pool cue beside a cup of tea.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#long QT syndrome",
+      "reason": "Scoped long-QT family for source Prolongation of QT interval. Not an unqualified neutral interval cue: long qualifier comes from this row, not a syndrome assertion.",
+      "tested": false
+    },
+    {
+      "term": "coagulopathy",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried cog wheel as coag opening fragment. Useful ingredient considered, but no selected short bridge to this target; no clotting function substituted.",
+      "tested": false
+    },
+    {
+      "term": "PTT prolongation",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried pea plus two teas on a long tray. Letter rebus felt prop-heavy for the benefit here; no useful selected learned reminder or laboratory interpretation.",
+      "tested": false
+    },
+    {
+      "term": "hypokalemia",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Nearly empty transparent container holding only a few banana tokens.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#hypokalemia",
+      "reason": "Same depleted-potassium family; no cooling relationship, serum value or dietary cause.",
+      "tested": false
+    },
+    {
+      "term": "hyperkalemia",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Bananas overflowing a container.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#potassium-excess",
+      "reason": "Exact excess family, no rewarming relationship, serum value or dietary cause.",
+      "tested": false
+    },
+    {
+      "term": "nonsustained ventricular tachycardia",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#ventricular tachycardia",
+      "reason": "Broader fast-heart family reused within this named lesson. Nonsustained and ventricular qualifiers require learned context; no new subtype discrimination or rhythm criteria.",
+      "tested": false
+    },
+    {
+      "term": "bleeding",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Bleeding/hemorrhage broad family reuse. Significant qualifier in source is not quantified or encoded; no causal relationship.",
+      "tested": false
+    },
+    {
+      "term": "skin injury",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried torn leather swatch as skin/injury wordplay. Leather/skin bridge not selected here; no clinical lesion or source cooling relationship illustrated.",
+      "tested": false
+    },
+    {
+      "term": "ulceration",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried pitted ordinary sponge for familiar surface damage. No useful selected ulcer-name reminder in this pass; no diagnostic appearance claimed.",
+      "tested": false
+    },
+    {
+      "term": "children",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "Recognizable child-sized toy figures.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar age-category token; not an age cutoff, eligibility statement or population outcome.",
+      "tested": false
+    },
+    {
+      "term": "prehospital",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "heading_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "Toy ambulance outside the gate of a hospital model.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Pre/before-hospital learned location/category association. No transport or treatment recommendation.",
+      "tested": false
+    },
+    {
+      "term": "cardiac catheterization laboratory",
+      "pdf_page": 29,
+      "page": 171,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "decision": "hold",
+      "prior": "docs/sound-bridge-workshop.json#catheter",
+      "reason": "Tried toy heart on generic laboratory bench with catheter model. Too generic a lab setup for a chosen compact vocabulary reminder; no procedure diagram or clinical advice.",
+      "tested": false
+    }
+  ],
+  "table_locations": {
+    "coma": "Table26-1",
+    "DNR": "Table26-1",
+    "DNI": "Table26-1",
+    "Glasgow Coma Scale": "Table26-1",
+    "pregnancy": "Table26-1",
+    "warfarin": "Table26-1",
+    "heparin": "Table26-1",
+    "long QT syndrome": "Table26-1",
+    "ice packs": "Table26-2",
+    "saline": "Table26-2",
+    "cooling blankets": "Table26-2",
+    "vests": "Table26-2",
+    "leg wraps": "Table26-2",
+    "cooling helmet": "Table26-2",
+    "intravascular cooling": "Table26-2",
+    "intubation": "Table26-2",
+    "mechanical ventilation": "Table26-2",
+    "ECG": "Table26-2",
+    "cardiac monitoring": "Table26-2",
+    "pulse oximetry": "Table26-2",
+    "capnometry": "Table26-2",
+    "sedation": "Table26-2",
+    "neuromuscular blockade": "Table26-2",
+    "central venous catheter": "Table26-2",
+    "arterial access": "Table26-2",
+    "bladder catheter": "Table26-2",
+    "esophageal probe": "Table26-2",
+    "mean arterial pressure": "Table26-2",
+    "electrolytes": "Table26-2",
+    "fever": "Table26-2",
+    "bradycardia": "Table26-3",
+    "QT interval": "Table26-3",
+    "coagulopathy": "Table26-3",
+    "PTT prolongation": "Table26-3",
+    "hypokalemia": "Table26-3",
+    "hyperkalemia": "Table26-3",
+    "nonsustained ventricular tachycardia": "Table26-3",
+    "bleeding": "Table26-3",
+    "skin injury": "Table26-3",
+    "ulceration": "Table26-3"
+  },
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "Offline PyMuPDF 1.27.2.3 span/font inspection of bounded chapter pages plus full-page raster inspection. Checked Bold, Semibold, Black and regular figure/table text. All meaningful named heading/bold/table lexical headwords selected in this bounded screen receive an entry; omitted organizational modifiers and unexpanded descriptive lists are explicit below. Figure words are not claimed bold. Table cells use regular MyriadPro-Cond 9pt; headings use semibold/black. No source text dump saved. Typography does not establish salience or exhaustive chapter/concept coverage.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotation types on PDF27-31: none of any kind. Publisher heading color, table shading and diagram fills are not user highlight annotations."
+    },
+    "items": [
+      {
+        "term": "post-cardiac arrest syndrome",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-BlackSemiCn 17pt actual title, PDF27 bbox [115,406.4,259.3,446.6]",
+        "entry_term": "post-cardiac arrest syndrome"
+      },
+      {
+        "term": "ischemia-reperfusion injury",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "ischemia-reperfusion injury"
+      },
+      {
+        "term": "return of spontaneous circulation",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MinionPro-Bold 9pt lexical selection from emphasized body span; source sentences not retained",
+        "entry_term": "return of spontaneous circulation"
+      },
+      {
+        "term": "ischemia",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "ischemia"
+      },
+      {
+        "term": "reperfusion",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "reperfusion"
+      },
+      {
+        "term": "reactive oxygen species",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "reactive oxygen species"
+      },
+      {
+        "term": "inflammatory cascades",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "inflammatory cascades"
+      },
+      {
+        "term": "mitochondrial dysfunction",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "mitochondrial dysfunction"
+      },
+      {
+        "term": "blood vessel instability",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "blood vessel instability"
+      },
+      {
+        "term": "cell death",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "cell death"
+      },
+      {
+        "term": "brain swelling",
+        "pdf_page": 27,
+        "page": 169,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "brain swelling"
+      },
+      {
+        "term": "neurologic reflexes",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MinionPro-Bold 9pt lexical selection from emphasized body span; source sentences not retained",
+        "entry_term": "neurologic reflexes"
+      },
+      {
+        "term": "neurologic examination",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MinionPro-Bold 9pt lexical selection from emphasized body span; source sentences not retained",
+        "entry_term": "neurologic examination"
+      },
+      {
+        "term": "anoxic brain injury",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "anoxic brain injury"
+      },
+      {
+        "term": "targeted temperature management",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MinionPro-Bold 9pt lexical selection from emphasized body span; source sentences not retained",
+        "entry_term": "targeted temperature management"
+      },
+      {
+        "term": "therapeutic hypothermia",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-BlackSemiCn 12pt heading",
+        "entry_term": "therapeutic hypothermia"
+      },
+      {
+        "term": "coma",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "coma"
+      },
+      {
+        "term": "DNR",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "DNR"
+      },
+      {
+        "term": "DNI",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "DNI"
+      },
+      {
+        "term": "Glasgow Coma Scale",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "Glasgow Coma Scale"
+      },
+      {
+        "term": "pregnancy",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "pregnancy"
+      },
+      {
+        "term": "warfarin",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "warfarin"
+      },
+      {
+        "term": "heparin",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "heparin"
+      },
+      {
+        "term": "long QT syndrome",
+        "pdf_page": 28,
+        "page": 170,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "long QT syndrome"
+      },
+      {
+        "term": "cooling",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "cooling"
+      },
+      {
+        "term": "rewarming",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "rewarming"
+      },
+      {
+        "term": "shivering",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "shivering"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Regular diagram labels; inspected visually, not claimed bold",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "ice packs",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "ice packs"
+      },
+      {
+        "term": "saline",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "saline"
+      },
+      {
+        "term": "cooling blankets",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "cooling blankets"
+      },
+      {
+        "term": "vests",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "vests"
+      },
+      {
+        "term": "leg wraps",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "leg wraps"
+      },
+      {
+        "term": "cooling helmet",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "cooling helmet"
+      },
+      {
+        "term": "intravascular cooling",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "intravascular cooling"
+      },
+      {
+        "term": "intubation",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "intubation"
+      },
+      {
+        "term": "mechanical ventilation",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "mechanical ventilation"
+      },
+      {
+        "term": "ECG",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "ECG"
+      },
+      {
+        "term": "cardiac monitoring",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "cardiac monitoring"
+      },
+      {
+        "term": "pulse oximetry",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "pulse oximetry"
+      },
+      {
+        "term": "capnometry",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "capnometry"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "neuromuscular blockade",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "neuromuscular blockade"
+      },
+      {
+        "term": "central venous catheter",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "central venous catheter"
+      },
+      {
+        "term": "arterial access",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "arterial access"
+      },
+      {
+        "term": "bladder catheter",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "bladder catheter"
+      },
+      {
+        "term": "esophageal probe",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "esophageal probe"
+      },
+      {
+        "term": "mean arterial pressure",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "mean arterial pressure"
+      },
+      {
+        "term": "electrolytes",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "electrolytes"
+      },
+      {
+        "term": "fever",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "fever"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "QT interval",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "QT interval"
+      },
+      {
+        "term": "coagulopathy",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "coagulopathy"
+      },
+      {
+        "term": "PTT prolongation",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "PTT prolongation"
+      },
+      {
+        "term": "hypokalemia",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "hypokalemia"
+      },
+      {
+        "term": "hyperkalemia",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "hyperkalemia"
+      },
+      {
+        "term": "nonsustained ventricular tachycardia",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "nonsustained ventricular tachycardia"
+      },
+      {
+        "term": "bleeding",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "bleeding"
+      },
+      {
+        "term": "skin injury",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "skin injury"
+      },
+      {
+        "term": "ulceration",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary (abbreviation-note text is smaller); not bold",
+        "entry_term": "ulceration"
+      },
+      {
+        "term": "children",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Bold 9pt named subsection",
+        "entry_term": "children"
+      },
+      {
+        "term": "prehospital",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Bold 9pt named subsection",
+        "entry_term": "prehospital"
+      },
+      {
+        "term": "cardiac catheterization laboratory",
+        "pdf_page": 29,
+        "page": 171,
+        "emphasis": "MyriadPro-Bold 9pt named subsection",
+        "entry_term": "cardiac catheterization laboratory"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 27,
+        "description": "Chapter25 text/heading/references above y406 in left column",
+        "reason": "Outside Chapter26. Right-column Figure26-1 belongs to26 despite appearing above its left-column title."
+      },
+      {
+        "pdf_page": 27,
+        "description": "Introduction/epidemiology; cellular responses; organ-system effects; pathophysiology scaffolding",
+        "reason": "Organizational modifiers not extra cue targets. Extracted cardiac-arrest syndrome, ischemia-reperfusion injury and return-of-spontaneous-circulation vocabulary; figure labels tried separately. No mechanism arrows or body assertions retained."
+      },
+      {
+        "pdf_page": 28,
+        "description": "Bold neurologic-outcome and continued-care statements",
+        "reason": "Extracted neurologic reflexes, neurologic examination and cardiac-arrest/ROSC family headwords; numeric interval and prognostic or care assertions excluded, not whole-clause holds."
+      },
+      {
+        "pdf_page": 28,
+        "description": "Clinical features / diagnosis / inclusion and exclusion criteria / practical considerations",
+        "reason": "Scaffolding excluded after anoxic brain injury, ROSC and temperature-management headwords were tried. Inclusion/exclusion labels and status qualifiers are not clinical rules in this bank."
+      },
+      {
+        "pdf_page": 28,
+        "description": "Table26-1 sentences, numeric age/score criteria and state qualifiers",
+        "reason": "Extracted coma, DNR, DNI, Glasgow Coma Scale, pregnancy, warfarin, heparin, long QT and ROSC. Adult, awake/alert, traumatic etiology and vegetative-state descriptive wording not separately expanded in this bounded table screen; no claim all body vocabulary was screened."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Figure26-2 arrows, time/temperature axes and phases as a clinical sequence",
+        "reason": "Extracted cooling, rewarming, shivering and hypotension; maintenance/time/phase are organizing words. Sedation, monitoring and access lexical headwords separately tried from table. No curve, procedure sequence or numerical values retained."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Table26-2 imperative sentences, numerical values and site/route instructions",
+        "reason": "Extracted cooling equipment, saline, intubation, mechanical ventilation, ECG, monitoring, oximetry, capnometry, sedation, blockade, access, catheter/probe, pressure, electrolytes and fever. Axilla/neck/groin location list and generic surface adjective are not separately expanded here; not erased as whole-sentence exclusions."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Table26-3 frequency columns and clinical modifiers",
+        "reason": "Extracted bradycardia, QT interval, coagulopathy, PTT prolongation, potassium terms, shivering, ventricular tachycardia, bleeding, skin injury and ulceration. More/less-common, significant, during-cooling/rewarming and from-surface-cooling are not vocabulary claims."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Bold prehospital recommendation and special-consideration headings",
+        "reason": "Extracted prehospital, children, targeted temperature management and cardiac catheterization laboratory. Recommendation and application/considerations scaffolding excluded."
+      },
+      {
+        "pdf_page": 29,
+        "description": "References notice, authors, page/running heads, chapter/table/figure numbers and citation superscripts",
+        "reason": "Attribution/navigation, not vocabulary. Actual Chapter27 title is on PDF30, not inferred from running heads."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Existing chapter1-25 JSON banks, visual-cue catalog and both sound-bridge workshops inspected/search-checked. Precise reuse targets resolve to retained/reused chapter entries or existing non-held catalog IDs; holds are references only, not resolved reuse targets.",
+    "limits": "Shared checkout may change concurrently. No catalog admission, earlier hold resolution, global duplicate proof or independent review claimed.",
+    "family_collision_warning": "ROSC rose and ROS overlap; ROS trial held locally. Qualified hypothermia, QT and ventricular-tachycardia entries deliberately reuse broader learned families and do not discriminate qualifiers. Fever uses hot-state ingredient, not diagnostic equivalence."
+  },
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/chapters26-27/",
+  "resolved_holds": [
+    {
+      "term": "ECG",
+      "date": "2026-10-20",
+      "initial_decision": "hold",
+      "attempted_cue": "Blank monitor",
+      "initial_reason": "Tried a blank monitor as familiar equipment category. It offers little chosen ECG-specific learned reminder here; no trace interpretation substituted. Category cues remain allowed.",
+      "resolution": "Main proposed recognizable ECG machine plus short generic waveform strip. Drafter independently challenged/accepted as a broad learned equipment-category cue; no diagnostic rhythm, numbers, interpretation or empirical recognition validation. Earlier blank-monitor reason preserved."
+    }
+  ]
+}

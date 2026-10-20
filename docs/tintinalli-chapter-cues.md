@@ -184,9 +184,37 @@ challenged as a family cue. Chapter1's older hold remains visible, flagged with
 later retention rather than silently erased. Separate hold register:94 chapter
 occurrences/70 distinct terms, with explicit historical resolutions preserved.
 
+## Chapters 26-28: Next Emphasized-Term Batch
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [26 Post-Cardiac Arrest Syndrome](chapter-26-cue-audit.md) | 63 | 24 | 21 | 18 |
+| [27 Ethical Issues of Resuscitation](chapter-27-cue-audit.md) | 42 | 29 | 6 | 7 |
+| [28 Noninvasive Airway Management and Supraglottic Airways](chapter-28-cue-audit.md) | 98 | 51 | 28 | 19 |
+
+203 term trials and212 linked keyword items (including9 aliases):104 new candidate compositions,
+55 reuses and44 holds. Two disjoint AI drafting lanes; main independently
+checked every recorded term/page, keyword location, cue and reuse target.
+Chapter28's adjacent Table29A-1 was excluded despite appearing above the next
+chapter's title. Shared-headword expansions and trademark normalization are
+explicit, not presented as exact contiguous quotations. No PDF annotations found;
+typography and visual checks separately covered printed emphasis. This remains
+a bounded editorial screen, not exhaustive vocabulary or clinical coverage.
+
+Examples: electrolyte/electric lights; capnometry/captain with measuring tape;
+i-gel/eye plus hair gel; Hippocratic Oath/hippo taking an oath. Main proposals
+were challenged by AI drafters. Familiar ECG, nasal cannula, reservoir-mask,
+syringe and forceps-category candidates were reconsidered separately from failed
+sound bridges. Generic forceps does not identify a Magill subtype. Same-batch
+sedation and inflammatory-family cues reuse Chapter26 rather than inflate new
+counts. Seven draft-hold resolutions preserve their initial attempts/reasons in
+the structured banks and separate register; older chapter/workshop holds remain.
+
 ## Next
 
-Chapter 26, **Post-Cardiac Arrest Syndrome**, is not started for cue review. Do not move
+**Tracheal Intubation (source Chapter29A)** is next, not started for cue review.
+The ledger uses integer29 for compatibility; the subsequent29B Mechanical
+Ventilation must not be skipped. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

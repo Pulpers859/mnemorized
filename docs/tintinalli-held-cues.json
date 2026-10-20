@@ -26,10 +26,13 @@
     "22",
     "23",
     "24",
-    "25"
+    "25",
+    "26",
+    "27",
+    "28"
   ],
-  "active_hold_occurrences": 94,
-  "unique_held_terms": 70,
+  "active_hold_occurrences": 138,
+  "unique_held_terms": 111,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -1068,6 +1071,490 @@
       "attempted_cue": null,
       "reason": "Preserves Chapter4/19 unresolved name hold. No new retained partial fragment in this bounded pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "ischemia-reperfusion injury",
+      "printed_page": 169,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried closed/reopened supply tap plus damaged token, as before; sequence risks substituting a mechanism lesson. Preserve earlier hold; no compact name proposal selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "reactive oxygen species",
+      "printed_page": 169,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried rose cluster for ROS. In this chapter it collides directly with the existing ROSC rose and offers no useful chosen contrast; not a demand for universal standalone identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "mitochondrial dysfunction",
+      "printed_page": 169,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a torn mitten as mito opening plus broken-function reminder. Mitt/name bridge felt weak here; no selected economical composition, not a claim that partial names are invalid.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "neurologic reflexes",
+      "printed_page": 170,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried brain token facing a mirror for reflex/reflection. Mirror mainly names reflection; no chosen useful reflex reminder. Did not substitute an examination maneuver.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "anoxic brain injury",
+      "printed_page": 170,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an ox beside a brain token as anoxic opening fragment. Ox reads ox rather than anoxic without a useful selected bridge; no oxygen-deprivation lesson substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "DNR",
+      "printed_page": 170,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a stop-sign document, but it collapses DNR with neighboring DNI and other directives. No selected name/acronym bridge; no treatment decision or order invented.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "DNI",
+      "printed_page": 170,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried stop-sign beside the existing tube token. That risks encoding an intervention prohibition as the cue rather than a neutral name reminder; no selected alternative.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "warfarin",
+      "printed_page": 170,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Reconsidered toy warship as war opening. Prior workshop rejected its attempt; no economical improved bridge selected here. Drug effects do not substitute for a name.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "intravascular cooling",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried ice token inside a toy vessel. Too easily reads as placing ice inside a vessel; no selected neutral name bridge. The cooling headword is separately retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "neuromuscular blockade",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried blocked cable beside a flexed-arm token. Too many generic ingredients without a selected economical name reminder; no action or mechanism lesson substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "central venous catheter",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried ordinary catheter model as a learned equipment category rather than rejected cat/heater sound chain. No selected subtype reminder; a future familiar-device proposal remains possible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "bladder catheter",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried balloon reservoir plus tube model. Not selected because this attempt reads as an ungated device arrangement; earlier sound-chain rejection is not a ban on familiar-device cues.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "esophageal probe",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried ordinary probe beside a food-pipe teaching token. No economical selected name composition here; no route or placement diagram supplied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "coagulopathy",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried cog wheel as coag opening fragment. Useful ingredient considered, but no selected short bridge to this target; no clotting function substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "PTT prolongation",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried pea plus two teas on a long tray. Letter rebus felt prop-heavy for the benefit here; no useful selected learned reminder or laboratory interpretation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "skin injury",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried torn leather swatch as skin/injury wordplay. Leather/skin bridge not selected here; no clinical lesion or source cooling relationship illustrated.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "ulceration",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried pitted ordinary sponge for familiar surface damage. No useful selected ulcer-name reminder in this pass; no diagnostic appearance claimed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "26",
+      "chapter_title": "Post-Cardiac Arrest Syndrome",
+      "term": "cardiac catheterization laboratory",
+      "printed_page": 171,
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried toy heart on generic laboratory bench with catheter model. Too generic a lab setup for a chosen compact vocabulary reminder; no procedure diagram or clinical advice.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "nonbeneficial interventions",
+      "printed_page": 172,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an empty gift box as no-benefit reminder. It does not give a selected useful intervention-name bridge here; no assessment of real treatment value substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "suicide attempts",
+      "printed_page": 172,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a neutral unfinished-attempt token, which conveyed only attempt and no useful selected name/category reminder. No injury depiction, method or treatment response supplied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "Do Not Attempt Resuscitation orders",
+      "printed_page": 173,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried no-sign beside a life ring and document. It reads like a care prohibition rather than neutral vocabulary; no selected name reminder. Distinct wording preserved, not silently equated to DNR.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "durable powers of attorney",
+      "printed_page": 173,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a sturdy briefcase beside a weightlifting lawyer toy. Prop-heavy and weak durable/powers combination; no chosen economical bridge or legal powers asserted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "organ transplantation",
+      "printed_page": 173,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried musical organ beside a replanted pot plant. Existing organ sound ingredient is available, but this combination was not selected; no biological transfer depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "postmortem procedures",
+      "printed_page": 173,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried postbox beside a memorial token and tool kit. Too many weakly connected props in this pass; no selected concise name reminder or procedure advice.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "27",
+      "chapter_title": "Ethical Issues of Resuscitation",
+      "term": "psychosocial support",
+      "printed_page": 173,
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried head token beside a social group under a support beam. Generic prop cluster not selected; no clinical-support plan or advice substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "micrognathia",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tiny garden gnome for micro/gn-; the gnathia bridge is too strained for selection in this pass. Partial cues are allowed, but this proposal was not useful enough.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "adenoids",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried adding toy blocks for add/adenoid. Generic adding gives no appealing name reminder here; not a prohibition on partial names.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "peritonsillar abscess",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried tassels surrounded by pears and an abs/cess fragment. Clutter outweighed the partial-name benefit; no clinical abscess depiction substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "pretracheal abscess",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tray before an abs/cess prop. The second prop was not resolved economically; tray is not being promoted as resolution of the workshop trachea hold.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "epiglottitis",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an epaulette and glitter for epi/glott. No appealing economical composition selected; Chapter22 epiglottis hold remains untouched.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "laryngitis",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a lariat with an inflammation flame. Lariat/laryng is weak and the pairing felt forced; no symptom-based clinical lesson substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "respiratory syncytial virus",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried bellows and a synchronized swimming pair for respiratory/sync-. The virus/name remainder lacks an economical proposal in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "retropharyngeal abscess",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried retro record-player plus a fairy/name fragment. Abscess was not economically integrated; avoiding a crowded rebus, not demanding every syllable.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "cystic fibrosis",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a cyst-like pouch with fibers. Pouch identity is vague and feels like an invented pathology lesson; no selected vocabulary composition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "angioedema",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves Chapter14 hold: angel plus puffiness was considered but not selected there; no improved economical bridge selected here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "hematoma",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a red hat and mat for hema/toma; word repairs made this unattractive. No clinical swelling/bleeding mechanism substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "obesity",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an oversized toy as a size/category reminder. Toy size alone is an unappealing target bridge; no body stereotype or clinical criterion supplied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "suction catheter",
+      "printed_page": 174,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves workshop cat plus theater rejected attempt for catheter. Added vacuum nozzle for suction was considered, but a three-prop rebus felt clumsy; no new alternative selected. Suction itself remains a reused candidate.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "atelectatic alveoli",
+      "printed_page": 176,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a tiled attic and a cluster of tiny balloons. The attic/atelectatic bridge is labored; no invented collapse diagram substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "asthma",
+      "printed_page": 177,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an asterisk and a moth for asth/ma, but this is a strained multi-repair bridge. Bronchospasm's existing bronco cue was considered, not silently equated with asthma.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "pneumonia",
+      "printed_page": 177,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Preserves Chapter25 hold: new-moon idea lacks a useful visible new-moon object. Generic moon considered, but no improved selected bridge here; no blind-diagnosis requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "Shiley esophageal tracheal airway",
+      "printed_page": 178,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a shy face peeking from behind a tube. Shy/Shiley is possible partial wordplay, but generic shyness is not an appealing economical selection here; not a device-use lesson.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "cricothyroidotomy",
+      "printed_page": 179,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried a cricket beside a thyroid-shaped toy. Crico/cricket opening is possible but the added model and ending are not economical here; no anatomical cut or operative lesson substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "28",
+      "chapter_title": "Noninvasive Airway Management and Supraglottic Airways",
+      "term": "positive end-expiratory pressure",
+      "printed_page": 176,
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Tried an outward arrow ending at a pressure gauge. It is a possible partial name aid, but the end qualifier adds unclear pictogram syntax; no selected proposal here and no physiological timing lesson substituted.",
+      "retained_in_other_chapters": []
     }
   ],
   "resolved_holds": [
@@ -1102,6 +1589,62 @@
       "report": "docs/chapter-21-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "2026-10-20 author challenge accepted main-proposed cyan-eyed mannequin eye as an untested learned partial-name candidate. Original 2026-10-19 hold rejected cyan color alone as nonspecific and not a chemical appearance clue; that historical reason is preserved. New proposal adds familiar eye/eyed name material rather than demanding full syllable coverage. Audience cyan naming and contextual recall uncertain; main independent audit and shared hold-register integration pending."
+    },
+    {
+      "chapter_id": "26",
+      "term": "ECG",
+      "source_record": "docs/chapter-26-cue-audit.json",
+      "report": "docs/chapter-26-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main proposed recognizable ECG machine plus short generic waveform strip. Drafter independently challenged/accepted as a broad learned equipment-category cue; no diagnostic rhythm, numbers, interpretation or empirical recognition validation. Earlier blank-monitor reason preserved."
+    },
+    {
+      "chapter_id": "27",
+      "term": "Hippocratic Oath",
+      "source_record": "docs/chapter-27-cue-audit.json",
+      "report": "docs/chapter-27-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main proposed recognizable hippo with raised forepaw in an oath-taking gesture. Author challenged gesture ambiguity and accepted the partial-name plus familiar-action candidate under Chapter2 calibration; initial demand for more Hippocratic specificity was too strict. Scroll removed. Current retain_candidate remains untested and not production admitted. Historical reason preserved, not silently erased."
+    },
+    {
+      "chapter_id": "28",
+      "term": "inflammatory",
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Chapter28 draft hold resolved to reuse_candidate after main proposed Chapter26 inflammatory-cascades flame ingredient. Original attempted flame-alone idea was held for lack of a distinct adjectival target. Drafter challenged the cascade modifier and accepted only the existing theatrical flame ingredient, without waterfall/cascade; main accepted the revised scope. Prior: docs/chapter-26-cue-audit.json#inflammatory cascades. Chapter21 inflammatory-responses hold remains historical and unresolved. No empirical test; tested:false; production_admitted:false."
+    },
+    {
+      "chapter_id": "28",
+      "term": "nasal cannulae",
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Chapter28 draft hold resolved to retain_candidate after main proposed detached recognizable twin-prong nasal cannula with loose tubing. Original can/noodle sound attempt and initial lack of a selected literal alternative remain recorded. Drafter challenged whether historical sound rejection should constrain literal categories, then accepted familiar taught-device recognition without flow, placement or use; main accepted the revised scope. Workshop cannula sound-attempt rejection remains unresolved. No empirical test; tested:false; production_admitted:false."
+    },
+    {
+      "chapter_id": "28",
+      "term": "non-rebreather mask",
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Chapter28 draft hold resolved to retain_candidate after main proposed a recognizable standalone reservoir-bag mask. Original mask/no-return-arrow attempt remains unselected for awkward pictogram syntax. Drafter challenged subtype specificity and accepted only familiar learned device/reservoir-mask category scope, without valve operation, concentration, flow or use; main accepted the revised scope. No empirical test; tested:false; production_admitted:false."
+    },
+    {
+      "chapter_id": "28",
+      "term": "syringes",
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Chapter28 draft hold resolved to retain_candidate after main proposed a generic unmarked needle-free syringe. Original sea/ring sound attempt remains rejected for sound/naming repairs. Drafter challenged transfer of that sound rejection to a familiar physical device, then accepted broad device-category scope without patient, injection, markings or volume; main accepted the revised scope. Historical workshop syringe sound-attempt rejection remains unresolved. No empirical test; tested:false; production_admitted:false."
+    },
+    {
+      "chapter_id": "28",
+      "term": "Magill forceps",
+      "source_record": "docs/chapter-28-cue-audit.json",
+      "report": "docs/chapter-28-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Chapter28 draft hold resolved to retain_candidate after main proposed a recognizable forceps device family. Original gills/forceps attempt remains unselected; historical fork/steps forceps sound attempt remains rejected. Drafter challenged generic forceps as a Magill-subtype identifier and accepted only broad familiar forceps-family scope, with Magill supplied by taught context and no procedural use; main accepted the revised scope. Historical workshop forceps rejection remains unresolved. No empirical test; tested:false; production_admitted:false."
     }
   ]
 }

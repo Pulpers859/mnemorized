@@ -1,0 +1,1000 @@
+{
+  "main_integration_review": {"date": "2026-10-20", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded term and keyword page location within actual chapter regions, visually reviewed mixed-page boundaries, spot-checked typography, and reviewed every cue and reuse target. Draft-pending notes below are historical and superseded by this section. AI review, not clinical, legal, human-expert, empirical recall or image validation.", "highlight_annotations_found": 0, "normalizations": "Joined line-wrap hyphens and title punctuation; omitted trademark glyph in Shiley. Explicit shared-word expansions: patient and family wishes; spiritual, psychosocial, and educational support; recovery of organs for transplantation; Disrupted or Distorted airway. Not all are contiguous quotations.", "counts": {"selected_terms": 42, "new_candidates": 29, "reused_candidates": 6, "holds": 7}, "keyword_items": 42},
+  "schema_version": 1,
+  "chapter_id": "27",
+  "title": "Ethical Issues of Resuscitation",
+  "review_date": "2026-10-20",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      30,
+      31
+    ],
+    "printed_pages": [
+      172,
+      173
+    ],
+    "printed_page_offset": 142,
+    "boundary": "Actual Chapter27 title PDF30 upper left y36.8; upper-right Table27-1 belongs to27. Continues PDF31 throughout left column including Table27-2, plus upper-right Table27-3 and REFERENCES/online notice y170-204. Ends before actual Chapter28 title right column y255.7. Chapter28 running head does not change these bounds.",
+    "verification": "Author verified SHA256, actual title/reference boundaries, font spans and full-page rasters PDF27-31. All assigned-page annotations enumerated; none. Main independent draft review pending; source locations only, not legal/clinical or recall validation."
+  },
+  "scope": "Offline vocabulary-only workshop, not clinical teaching, facts, legal advice, narration or image prompts.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 42,
+    "new_candidates": 29,
+    "reused_candidates": 6,
+    "holds": 7
+  },
+  "source_wording_notes": {
+    "nonmaleficence": "Joined line-end non- / maleficence in MinionPro-It 9pt PDF30; not a spelling correction.",
+    "respect for the law": "Wrapped italic phrase, including the law on next line. Terminal punctuation omitted.",
+    "patient wishes": "Lexical selection from bold patient and family wishes and Table27-3 patient wishes. Not claimed as a contiguous quotation from the bold paragraph.",
+    "cardiac resuscitation": "Lexical selection from CARDIAC RESUSCITATION AND OUTCOMES heading; outcomes wrapper excluded.",
+    "advance directive": "Exact singular bold body phrase PDF30 y491; prior chapter bank uses plural. Source Table27-2 plural also screened.",
+    "automated external defibrillator": "Exact singular Table27-1 phrase with AED abbreviation; prior chapter23 target is plural. No automatic/automated identity claim about devices beyond learned category scope.",
+    "CPR": "Literal source acronym in bold paragraph; prior expanded-name family. No clinical expansion lesson in this bank.",
+    "Do Not Attempt Resuscitation orders": "Exact named order wording in Table27-2 with line-wrap joined. Not silently normalized to DNR or DNI.",
+    "surrogates": "Exact plural in Table27-2 and body; Table27-3 has surrogate consent. Broad stand-in vocabulary is not a legal role definition.",
+    "end of life": "Title headword from Table27-2 Ethical Issues at the End of Life; EOL appears in table body.",
+    "psychosocial support": "Shared support headword extracted from spiritual, psychosocial, and educational support. Not a contiguous source phrase.",
+    "organ transplantation": "Lexical normalization from recovery of organs for transplantation; singular organ plus transplantation are not a contiguous quotation.",
+    "postmortem procedures": "Exact Table27-2 phrase; no procedure content retained."
+  },
+  "entries": [
+    {
+      "term": "medical ethics",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A balance scale beside a generic medical bag.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar ethics/medicine category composition. Not an ethical ruling, professional standard or clinical instruction.",
+      "tested": false
+    },
+    {
+      "term": "Hippocratic Oath",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "partial_name_and_familiar_gesture",
+      "cue": "Recognizable hippopotamus character with one forepaw raised in a familiar oath-taking gesture.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main proposed hippo plus raised-paw oath gesture; author challenged wave/high-five ambiguity and accepted a compact learned partial-name/action composition. Hippo supplies the opening, not the full name; oath gesture needs taught context. No oath wording, professional standard or clinical content. Initial scroll attempt and hold reason preserved in resolved_holds; no empirical validation.",
+      "tested": false
+    },
+    {
+      "term": "beneficence",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy character giving an ordinary gift to another character.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar doing-good category association within a taught ethics topic. Not a claim about an intervention's benefit or how a real decision should be made.",
+      "tested": false
+    },
+    {
+      "term": "nonmaleficence",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy character sets down a threatening hammer instead of striking another toy.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad refrain-from-harm familiar action. Not a complete phonetic rebus, clinical demonstration or decision rule.",
+      "tested": false
+    },
+    {
+      "term": "autonomy",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A lone toy driver choosing a branch in a toy road.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Self-direction category reminder with auto/car partial-name support. No capacity judgment, rights claim or patient instruction.",
+      "tested": false
+    },
+    {
+      "term": "confidentiality",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "An ordinary sealed envelope inside a locked document box.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar confidential-document category. Not a legal security standard, consent exception or privacy guarantee.",
+      "tested": false
+    },
+    {
+      "term": "honesty",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy character returning a found wallet to its owner.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar honest-action category reminder. No clinical or legal conduct advice asserted.",
+      "tested": false
+    },
+    {
+      "term": "distributive justice",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A balance scale beside toy hands distributing identical tokens.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Distribution plus justice's familiar scales; not a claim that equal shares define justice or any allocation policy.",
+      "tested": false
+    },
+    {
+      "term": "respect for the law",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy character politely tipping its hat toward a judge's gavel.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Respect action plus familiar law token. Not an applicable law, hierarchy of duties or legal recommendation.",
+      "tested": false
+    },
+    {
+      "term": "cardiac resuscitation",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "Heart token beside a familiar life ring.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#cardiopulmonary resuscitation",
+      "reason": "Scoped resuscitation-category variant; heart narrows lesson context but does not depict a procedure. Prior broader rescue/CPR family is not a new primitive.",
+      "tested": false
+    },
+    {
+      "term": "futility",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy figure trying to water a plastic flower with an empty watering can.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar ineffective-effort category association; not a patient comparison, clinical prognosis or definition of medical futility.",
+      "tested": false
+    },
+    {
+      "term": "nonbeneficial interventions",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried an empty gift box as no-benefit reminder. It does not give a selected useful intervention-name bridge here; no assessment of real treatment value substituted.",
+      "tested": false
+    },
+    {
+      "term": "advance directive",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "Signed document token beside a conspicuous forward arrow.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#advance directives",
+      "reason": "Singular/plural family reuse; no legal form, validity requirement, order or treatment choice.",
+      "tested": false
+    },
+    {
+      "term": "professional judgment",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A generic professional's briefcase beside a judge's gavel.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Professional plus judgment name-category composition. Not a medical judgment or a claim of authority.",
+      "tested": false
+    },
+    {
+      "term": "patient wishes",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "table_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A freestanding toy patient character blowing out a birthday candle.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Wish/birthday familiar action, with taught patient context. Does not invent anyone's wishes or depict a resuscitation choice.",
+      "tested": false
+    },
+    {
+      "term": "emergency physician",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "Generic doctor toy carrying a bag beside a familiar alarm-bell token.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad emergency/physician category. Not a required professional appearance, specialty credential or authority rule.",
+      "tested": false
+    },
+    {
+      "term": "CPR",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "Heart token and bellows beside a life ring.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#cardiopulmonary resuscitation",
+      "reason": "Explicit acronym-family reuse; vocabulary category only. No maneuvers, equipment setup or success outcome.",
+      "tested": false
+    },
+    {
+      "term": "termination",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar finish-line flag at the end of a toy track.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ending category reminder extracted from termination of resuscitative efforts. No criterion or instruction for ending care.",
+      "tested": false
+    },
+    {
+      "term": "automated external defibrillator",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Recognizable closed AED case with unattached pad pair and a small gear token.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#automated external defibrillators",
+      "reason": "Singular equipment-category variant; no placement, interpretation, shock instruction or table criterion.",
+      "tested": false
+    },
+    {
+      "term": "return of spontaneous circulation",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar rose flower.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#ROSC",
+      "reason": "Expanded-name alias of the established spoken-acronym bridge. No return, spontaneity, circulation mechanism or termination rule is encoded.",
+      "tested": false
+    },
+    {
+      "term": "family presence",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A small family group standing together beside an empty chair.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar present-together category. Family composition is illustrative, not a required structure or a clinical-presence recommendation.",
+      "tested": false
+    },
+    {
+      "term": "suicide attempts",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a neutral unfinished-attempt token, which conveyed only attempt and no useful selected name/category reminder. No injury depiction, method or treatment response supplied.",
+      "tested": false
+    },
+    {
+      "term": "deceased patients",
+      "pdf_page": 30,
+      "page": 172,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A plain memorial gravestone beside a generic patient-name card token without text.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad death/memorial category in the named topic, not a sign of death, assessment, procedural permission or statement about patients.",
+      "tested": false
+    },
+    {
+      "term": "informed consent",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A magnifier over an ordinary document being signed.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Information/inspection plus familiar agreement action. Not a valid consent form, legal test or claim that signature alone establishes consent.",
+      "tested": false
+    },
+    {
+      "term": "resuscitation research",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar life ring beside a magnifier and an ordinary laboratory flask.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Resuscitation/rescue plus research category. No trial design, biological claim, approval requirement or research permission.",
+      "tested": false
+    },
+    {
+      "term": "waiver of consent",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy hand waving beside a folded document.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Wave/waiver partial-name bridge with document context. Consent qualifier is taught, not a legal waiver or authorization.",
+      "tested": false
+    },
+    {
+      "term": "surrogates",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table_and_body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A stand-in actor stepping into another actor's empty place on a toy stage.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar substitute/stand-in category. No decision-maker authority, qualification or legal rule.",
+      "tested": false
+    },
+    {
+      "term": "institutional review board",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "A wooden board under a large inspection magnifier beside a generic building token.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Review/inspect plus literal board; building supplies institutional context. Not a membership, approval or research requirement.",
+      "tested": false
+    },
+    {
+      "term": "communication",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "body",
+      "kind": "learned_vocabulary_association",
+      "cue": "Two toy figures using a familiar tin-can-and-string telephone.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar communication action/category; no script, counseling advice or promise of effective communication.",
+      "tested": false
+    },
+    {
+      "term": "counseling",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "Two toy figures seated face-to-face, one visibly listening.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar conversational-support category. Not a counseling method, clinical encounter or recommendation.",
+      "tested": false
+    },
+    {
+      "term": "survivors",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "heading",
+      "kind": "learned_vocabulary_association",
+      "cue": "A toy castaway safely seated on a life raft.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar survivor category; no survival estimate, resuscitation outcome or prediction.",
+      "tested": false
+    },
+    {
+      "term": "end of life",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "An hourglass with its upper bulb empty beside a closed storybook.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "End/finished duration metaphor, using established hourglass ingredient; not a prognosis, remaining-life estimate or care instruction.",
+      "tested": false
+    },
+    {
+      "term": "advance care planning",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "Signed document token beside a conspicuous forward arrow.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#advance directives",
+      "reason": "Broader advance-document/planning family reuse; does not claim planning is identical to a directive. Care/planning qualifiers need topic context.",
+      "tested": false
+    },
+    {
+      "term": "Do Not Attempt Resuscitation orders",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried no-sign beside a life ring and document. It reads like a care prohibition rather than neutral vocabulary; no selected name reminder. Distinct wording preserved, not silently equated to DNR.",
+      "tested": false
+    },
+    {
+      "term": "living wills",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A smiling animated document character waving its paper arms.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Living document/will learned double meaning. Not a legally valid will or a claim that documents are alive; wills qualifier supplied by context.",
+      "tested": false
+    },
+    {
+      "term": "durable powers of attorney",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried a sturdy briefcase beside a weightlifting lawyer toy. Prop-heavy and weak durable/powers combination; no chosen economical bridge or legal powers asserted.",
+      "tested": false
+    },
+    {
+      "term": "compassion",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "One toy character gently comforting another with a hug.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar compassionate-action category; no clinical technique or assertion that every person wants this gesture.",
+      "tested": false
+    },
+    {
+      "term": "privacy",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A closed privacy curtain around an empty chair.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar private-space category. Not a legal standard, data-security claim or assurance of confidentiality.",
+      "tested": false
+    },
+    {
+      "term": "organ transplantation",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "docs/visual-cue-catalog.json#phonetic-organ",
+      "reason": "Tried musical organ beside a replanted pot plant. Existing organ sound ingredient is available, but this combination was not selected; no biological transfer depiction.",
+      "tested": false
+    },
+    {
+      "term": "postmortem procedures",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried postbox beside a memorial token and tool kit. Too many weakly connected props in this pass; no selected concise name reminder or procedure advice.",
+      "tested": false
+    },
+    {
+      "term": "prognosis",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "learned_vocabulary_association",
+      "cue": "A familiar fortune teller's crystal ball.",
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad forecast/prediction category metaphor in a taught prognosis topic. Not medical evidence, a prognosis method or a claim that prognostication is fortune telling.",
+      "tested": false
+    },
+    {
+      "term": "psychosocial support",
+      "pdf_page": 31,
+      "page": 173,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Learned vocabulary only; omitted name fragments and qualifiers require topic context.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Tried head token beside a social group under a support beam. Generic prop cluster not selected; no clinical-support plan or advice substituted.",
+      "tested": false
+    }
+  ],
+  "table_locations": {
+    "automated external defibrillator": "Table27-1",
+    "return of spontaneous circulation": "Table27-1",
+    "termination": "Table27-1",
+    "end of life": "Table27-2",
+    "advance care planning": "Table27-2",
+    "advance directive": "Table27-2 (plural); bold singular on PDF30",
+    "Do Not Attempt Resuscitation orders": "Table27-2",
+    "living wills": "Table27-2",
+    "durable powers of attorney": "Table27-2",
+    "compassion": "Table27-2",
+    "privacy": "Table27-2",
+    "organ transplantation": "Table27-2 lexical normalization",
+    "postmortem procedures": "Table27-2",
+    "patient wishes": "Table27-3; also bold paragraph lexical selection",
+    "prognosis": "Table27-3",
+    "psychosocial support": "Table27-3 lexical expansion"
+  },
+  "keyword_screen_date": "2026-10-20",
+  "keyword_screen": {
+    "method": "Offline PyMuPDF 1.27.2.3 font-span check plus full-page visual inspection. Screened Black/Semibold headings, bold advance directive and lexical headwords in bold authority paragraph; also italic ethics list, all three tables and meaningful regular body names. JSON items map each tried term to a decision. Regular table/body selections are not falsely called bold. Exclusions identify meaningful lexical headwords extracted before excluding policy/clinical statements. Not exhaustive every-word or concept coverage, salience measurement or a legal/clinical review.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "No annotations of any kind on PDF30-31 (also none on27-29). Publisher red headings and shaded tables are not user highlights."
+    },
+    "items": [
+      {
+        "term": "medical ethics",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "medical ethics"
+      },
+      {
+        "term": "Hippocratic Oath",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Regular 9pt body lexical selection; not claimed bold",
+        "entry_term": "Hippocratic Oath"
+      },
+      {
+        "term": "beneficence",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "beneficence"
+      },
+      {
+        "term": "nonmaleficence",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "nonmaleficence"
+      },
+      {
+        "term": "autonomy",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "autonomy"
+      },
+      {
+        "term": "confidentiality",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "confidentiality"
+      },
+      {
+        "term": "honesty",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "honesty"
+      },
+      {
+        "term": "distributive justice",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "distributive justice"
+      },
+      {
+        "term": "respect for the law",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-It 9pt, PDF30 y190.7-233.0 principles list; not bold",
+        "entry_term": "respect for the law"
+      },
+      {
+        "term": "cardiac resuscitation",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "cardiac resuscitation"
+      },
+      {
+        "term": "futility",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "futility"
+      },
+      {
+        "term": "nonbeneficial interventions",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "nonbeneficial interventions"
+      },
+      {
+        "term": "advance directive",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Bold 9pt named body word/lexical selection, PDF30; statement not retained",
+        "entry_term": "advance directive"
+      },
+      {
+        "term": "professional judgment",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Bold 9pt named body word/lexical selection, PDF30; statement not retained",
+        "entry_term": "professional judgment"
+      },
+      {
+        "term": "patient wishes",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Bold 9pt named body word/lexical selection, PDF30; statement not retained",
+        "entry_term": "patient wishes"
+      },
+      {
+        "term": "emergency physician",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Bold 9pt named body word/lexical selection, PDF30; statement not retained",
+        "entry_term": "emergency physician"
+      },
+      {
+        "term": "CPR",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MinionPro-Bold 9pt named body word/lexical selection, PDF30; statement not retained",
+        "entry_term": "CPR"
+      },
+      {
+        "term": "termination",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "Regular MinionPro body and MyriadPro-Cond table lexical selection; not bold",
+        "entry_term": "termination"
+      },
+      {
+        "term": "automated external defibrillator",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "automated external defibrillator"
+      },
+      {
+        "term": "return of spontaneous circulation",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "return of spontaneous circulation"
+      },
+      {
+        "term": "family presence",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "family presence"
+      },
+      {
+        "term": "suicide attempts",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "suicide attempts"
+      },
+      {
+        "term": "deceased patients",
+        "pdf_page": 30,
+        "page": 172,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "deceased patients"
+      },
+      {
+        "term": "informed consent",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "Regular MinionPro body and MyriadPro-Cond table lexical selection; not bold",
+        "entry_term": "informed consent"
+      },
+      {
+        "term": "resuscitation research",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "resuscitation research"
+      },
+      {
+        "term": "waiver of consent",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "Regular MinionPro body and MyriadPro-Cond table lexical selection; not bold",
+        "entry_term": "waiver of consent"
+      },
+      {
+        "term": "surrogates",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "Regular MinionPro body and MyriadPro-Cond table lexical selection; not bold",
+        "entry_term": "surrogates"
+      },
+      {
+        "term": "institutional review board",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MinionPro-Regular 9pt body lexical selection; not claimed bold",
+        "entry_term": "institutional review board"
+      },
+      {
+        "term": "communication",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "Regular MinionPro body and MyriadPro-Cond table lexical selection; not bold",
+        "entry_term": "communication"
+      },
+      {
+        "term": "counseling",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "counseling"
+      },
+      {
+        "term": "survivors",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "BlackSemiCn 12pt or SemiboldCond 11pt named heading; full wrapper reduced to term",
+        "entry_term": "survivors"
+      },
+      {
+        "term": "end of life",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-SemiboldCond 9pt table title PDF31 y416.5-437.2",
+        "entry_term": "end of life"
+      },
+      {
+        "term": "advance care planning",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "advance care planning"
+      },
+      {
+        "term": "Do Not Attempt Resuscitation orders",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "Do Not Attempt Resuscitation orders"
+      },
+      {
+        "term": "living wills",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "living wills"
+      },
+      {
+        "term": "durable powers of attorney",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "durable powers of attorney"
+      },
+      {
+        "term": "compassion",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "compassion"
+      },
+      {
+        "term": "privacy",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "privacy"
+      },
+      {
+        "term": "organ transplantation",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "organ transplantation"
+      },
+      {
+        "term": "postmortem procedures",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "postmortem procedures"
+      },
+      {
+        "term": "prognosis",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "prognosis"
+      },
+      {
+        "term": "psychosocial support",
+        "pdf_page": 31,
+        "page": 173,
+        "emphasis": "MyriadPro-Cond 9pt regular table vocabulary; not bold",
+        "entry_term": "psychosocial support"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 30,
+        "description": "General principles / outcomes / special situations organizational headings",
+        "reason": "Extracted medical ethics, cardiac resuscitation, futility, nonbeneficial interventions and named special-situation vocabulary; broad section labels are scaffolding, not extra targets."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Italic moral-life phrase, Latin maxim and principles list",
+        "reason": "Tried beneficence, nonmaleficence, autonomy, confidentiality, honesty, distributive justice and respect for the law separately. Full moral-life phrase and primum non nocere are not expanded as independent Latin-name trials; not clinical assertions or full-clause holds."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Named associations, code titles, dates, survival statistics and references",
+        "reason": "Hippocratic Oath tried as a named cultural object. AMA/ACEP/EMS organization names and publication titles are attribution, not a new cue cohort. No guideline, numerical outcome or legal claim retained."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Bold decision/authority paragraph",
+        "reason": "Extracted CPR, patient wishes, emergency physician and professional judgment; resuscitation, benefit/nonbeneficial and family vocabulary covered separately. Likelihood, research-results framing, provide/limit/withhold decisions and the authority statement are not copied. Patient wishes is a shared-word selection from patient and family wishes, not claimed contiguous."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Termination-of-efforts heading and Table27-1 conditional list",
+        "reason": "Extracted termination, automated external defibrillator, cardiac-resuscitation and ROSC vocabulary. Witnessed/shockable/provider/transport condition wording and conjunctions not independently expanded; no termination conditions retained."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Family-presence / suicide-attempt / deceased-patient heading wrappers",
+        "reason": "Extracted family presence, suicide attempts and deceased patients. During/after/recently and generic procedures wrappers are not clinical rules or separate targets."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Research and communication/counseling paragraphs",
+        "reason": "Extracted research, informed consent, waiver, surrogates, review board, communication, counseling and survivors. Study safety/benefit, public opinion and regulatory-application statements not encoded; not every unformatted noun expanded."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Table27-2 policy title, sentences and institutional scaffolding",
+        "reason": "Extracted end of life, advance care planning/directives, named orders, living wills, durable powers of attorney, compassion, privacy, surrogates, informed consent, organ transplantation and postmortem procedures. Generic needs/goals/values, culture/religion modifiers and institutional policy wrappers not independently expanded; no policy recommendations retained."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Table27-3 advice bullets and broad support modifiers",
+        "reason": "Extracted wishes, communication, family presence, prognosis, research, consent/waiver, psychosocial support and termination. Spiritual/educational modifiers not independently expanded; no care advice or action list retained."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Running CHAPTER28 header and content below actual title y255.7 in right column",
+        "reason": "Header does not remove Chapter27 left-column continuation/Table27-2 or upper-right Table27-3/references. Actual Chapter28 title and all following right-column content excluded."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Author/chapter badge/page numbers/table labels/citation superscripts",
+        "reason": "Attribution/navigation excluded. Source labels identify locations, not additional vocabulary."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Chapter1-25 JSON banks, catalog and both sound workshops checked. Precise chapter path#term references for all reuses; only retained/reused targets accepted.",
+    "limits": "No earlier hold resolved, no catalog admission, global originality or independent review claimed. Ethical category associations are learned vocabulary, not decisions or ethical definitions."
+  },
+  "resolved_holds": [
+    {
+      "term": "Hippocratic Oath",
+      "date": "2026-10-20",
+      "initial_decision": "hold",
+      "attempted_cue": "Hippopotamus holding an oath scroll.",
+      "initial_reason": "Tried a hippopotamus holding an oath scroll as hippo opening. Not selected: hippo mainly supplies Hippo rather than Hippocratic and scroll is generic. Partial names remain allowed; no oath text encoded.",
+      "resolution": "Main proposed recognizable hippo with raised forepaw in an oath-taking gesture. Author challenged gesture ambiguity and accepted the partial-name plus familiar-action candidate under Chapter2 calibration; initial demand for more Hippocratic specificity was too strict. Scroll removed. Current retain_candidate remains untested and not production admitted. Historical reason preserved, not silently erased."
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-20/chapters26-27/"
+}
