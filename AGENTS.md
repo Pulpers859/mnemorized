@@ -55,6 +55,13 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Research Spend And First-Pass Benchmarks
 
+- For chapter cue workshops, preserve every current hold in the separate
+  `docs/tintinalli-held-cues.md` / `.json` register. After each batch or decision
+  change, run `python tools/chapter_cue_holds.py --write`, then `--check` and
+  `tests/test_chapter_cue_holds.py`. Record explicit resolutions in the source
+  bank's `resolved_holds`; do not erase an older hold merely because another
+  chapter retained the term. Keep historical reasons for later reconsideration.
+
 - Never pursue a single perfect example as a substitute for held-out reliability.
 - Paid research requires an explicit task-wide budget and a saved call/render plan.
   Agents share that budget; delegation does not create another allowance. No paid

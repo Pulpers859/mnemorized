@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "chapter_id": "11",
+  "title": "Sudden Cardiac Death",
+  "review_date": "2026-10-19",
+  "source": {
+    "file": "Tintin_Resuscitation.pdf",
+    "sha256": "d644c7ff121f44da8684b9c5cb3e0e69c5b66aa391dd5bcb9d5e4789023c3b69",
+    "pdf_pages": [1, 2, 3, 4, 5],
+    "printed_pages": [53, 54, 55, 56, 57],
+    "printed_page_offset": 52,
+    "boundary": "Actual Sudden Cardiac Death title PDF1/printed53 through left column and REFERENCES notice top right PDF5/printed57 above actual Chapter12 title. Running header is not a boundary.",
+    "verification": "Main visually checked title boundaries and hash; separate AI reviewer verified all16 term/page matches. Vocabulary occurrence, not clinical/current-guideline or learning-effectiveness validation."
+  },
+  "scope": "Sixteen selected vocabulary terms, not exhaustive chapter coverage. Offline candidate associations, not clinical anchors, narration or image-generation prompts. New compositions are not claims of novel invention.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "source_wording_notes": {
+    "cardiac pacemaker": "Selected from Cardiac Pacemaker and Conducting System Disease heading on printed54; cue targets native pace-setting role, not implanted device.",
+    "channelopathy": "Explicit singular quoted word in body on printed54.",
+    "bundle branch block": "Source specifies left or right bundle branch block; generic headword retained without side qualifier."
+  },
+  "entries": [
+    {"term":"sick sinus syndrome","pdf_page":2,"page":54,"source_match":"body","kind":"partial_name_character","cue":"Sick-looking sine-wave character holding a thermometer prop, separate from any clinical monitor.","cue_scope":"Sick plus sine/sinus learned name bridge","decision":"retain_candidate","prior":"new_chapter_record","reason":"Playful partial sound bridge. Illness props are wordplay, not a fever symptom or actual ECG-waveform claim.","tested":false},
+    {"term":"channelopathy","pdf_page":2,"page":54,"source_match":"body","kind":"damaged_name_object","cue":"Visibly cracked water-channel model alongside a heart token.","cue_scope":"Damaged channel plus cardiac context","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar channel/damage metaphor, not a molecular ion-channel illustration or mechanism.","tested":false},
+    {"term":"bundle branch block","pdf_page":1,"page":53,"source_match":"body","kind":"literal_phrase_composition","cue":"Tied bundle of tree branches visibly stopped at a barrier.","cue_scope":"Bundle plus branch plus block","decision":"retain_candidate","prior":"new_chapter_record","reason":"Economical phrase objects/action. No cardiac conduction route, side qualifier, ECG pattern or diagnostic criterion.","tested":false},
+    {"term":"long QT syndrome","pdf_page":3,"page":55,"source_match":"heading_and_body","kind":"letter_name_sound_bridge","cue":"Very long pool cue beside a cup of tea.","cue_scope":"Long plus cue/tea for Q/T","decision":"retain_candidate","prior":"new_chapter_record","reason":"Learned letter-name bridge. Match staging with short-QT cue, change cue length only; not an ECG interval, threshold or syndrome diagnostic model.","tested":false},
+    {"term":"short QT syndrome","pdf_page":4,"page":56,"source_match":"heading_and_body","kind":"letter_name_sound_bridge","cue":"Very short pool cue beside a cup of tea, staged identically to the long-cue version.","cue_scope":"Short plus cue/tea for Q/T","decision":"retain_candidate","prior":"New contrast composition paired with long QT in this bank.","reason":"Length contrast should remain visually obvious. No clinical interval, calculation, cause or threshold encoded.","tested":false},
+    {"term":"torsades de pointes","pdf_page":3,"page":55,"source_match":"body","kind":"partial_name_action_bridge","cue":"Ribbon visibly twisted around recognizable ballet pointe shoes.","cue_scope":"Twist plus pointes name association","decision":"retain_candidate","prior":"new_chapter_record","reason":"Learned name composition, not ECG morphology, mechanism or treatment.","tested":false},
+    {"term":"cardiac pacemaker","pdf_page":2,"page":54,"source_match":"heading","kind":"role_metaphor","cue":"Lead runner visibly setting the pace for other runners beside a heart token.","cue_scope":"Native cardiac pace-setting role","decision":"retain_candidate","prior":"new_chapter_record","reason":"Pace-setter metaphor, not an implanted-device picture, placement or treatment recommendation.","tested":false},
+    {"term":"ejection fraction","pdf_page":1,"page":53,"source_match":"body","kind":"phrase_action","cue":"One recognizable pie-chart slice being ejected from a heart-shaped cartoon launcher.","cue_scope":"Ejection plus fraction name reminder","decision":"retain_candidate","prior":"new_chapter_record","reason":"Slice, not whole pie, supplies fraction. Not quantitative heart function, a percentage, measurement method or normal value.","tested":false},
+    {"term":"asystole","pdf_page":4,"page":56,"source_match":"body","kind":"familiar_schematic","cue":"Schematic flat trace beside a still heart token.","cue_scope":"Learned absent-activity category token","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar category cue, not monitor interpretation, confirmation of diagnosis, management or a claim that any flat display proves asystole.","tested":false},
+    {"term":"pulmonary embolism","pdf_page":5,"page":57,"source_match":"table","kind":"location_and_obstruction","cue":"Plug lodged inside a vessel visibly running through a lung model, not an airway.","cue_scope":"Pulmonary vessel obstruction family","decision":"retain_candidate","prior":"New generic composition related to Chapter7 pulmonary fat embolism; no fat qualifier reused.","reason":"Learned location/obstruction cue, not a diagnostic illustration or an assertion that all emboli have the same material or origin.","tested":false},
+    {"term":"cardiac arrest","pdf_page":1,"page":53,"source_match":"body","kind":"double_meaning","cue":"Heart character visibly wearing handcuffs.","cue_scope":"Heart plus arrest","decision":"reuse_candidate","prior":"docs/chapter-1-broadened-cue-audit.md","reason":"Established user candidate reused, not physiology or treatment.","tested":false},
+    {"term":"hypertension","pdf_page":2,"page":54,"source_match":"table","kind":"pressure_metaphor","cue":"Taut vessel model under a pressure gauge whose needle points high.","cue_scope":"High pressure category","decision":"reuse_candidate","prior":"docs/chapter-6-cue-audit.json","reason":"Existing category token, no pressure value or clinical criterion.","tested":false},
+    {"term":"hypovolemia","pdf_page":5,"page":57,"source_match":"table","kind":"quantity_metaphor","cue":"Nearly empty transparent reservoir connected in a closed circulation loop, with red liquid low at its bottom.","cue_scope":"Low circulating-volume reminder","decision":"reuse_candidate","prior":"docs/chapter-7-cue-audit.json","reason":"Preserves existing low-volume cue, not diagnosis or fluid management.","tested":false},
+    {"term":"hyperkalemia","pdf_page":5,"page":57,"source_match":"table","kind":"identity_and_excess","cue":"Bananas overflowing a container.","cue_scope":"Potassium plus excess","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#potassium-excess","reason":"User-inspired shared candidate, not dietary causation or a serum value.","tested":false},
+    {"term":"Brugada syndrome","pdf_page":3,"page":55,"source_match":"heading_and_body","kind":"unresolved","cue":null,"cue_scope":"Syndrome name","decision":"hold","prior":"new_chapter_record","reason":"No economical name bridge proposed in this pass. Preserve for later rather than force disconnected fragments.","tested":false},
+    {"term":"amiodarone","pdf_page":4,"page":56,"source_match":"body","kind":"unresolved","cue":null,"cue_scope":"Drug name","decision":"hold","prior":"new_chapter_record","reason":"No strong economical association proposed. No drug effect used as an unsourced identity shortcut.","tested":false}
+  ],
+  "table_locations": {"pulmonary embolism":"Table11-4","hypertension":"Table11-1","hypovolemia":"Table11-4","hyperkalemia":"Table11-4"},
+  "evidence": {"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend": {"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0}
+}

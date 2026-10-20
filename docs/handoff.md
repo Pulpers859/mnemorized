@@ -199,6 +199,27 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-19 - Persistent hold register and Chapters11-13
+**Done:** User explicitly requested separate list of every held chapter word.
+Added generated docs/tintinalli-held-cues.json/.md and offline stdlib builder
+tools/chapter_cue_holds.py --write/--check with stale-snapshot tests. Chapter1
+current broadened decisions transcribed to structured JSON without new review;
+original strict ledger preserved. Explicit resolved history for CPAP, bicarbonate,
+sulfonylureas;21active chapter holds/20unique terms through13,3resolved holds.
+**Batch:**11=16terms/10new/4reuse/2hold;12=17/9/7/1;13=17/8/8/1.
+Total50terms/27new/19reuse/4holds (tranexamic repeats prior Chapter7 hold).
+**Review:** Separate AI source/cue review for11; main independently checked
+worker12/13 source matches, visual boundaries and cues. Crystalloid13 changed
+to reuse12, not duplicate discovery. Capillary-refill action made single-state.
+**Limits:** Zero paid calls/renders, $6 benchmark untouched, catalog76 unchanged,
+all cues untested/no production admission. No clinical guideline endorsement.
+Resuscitation PDF hash d644c7ff121f44da8684b9c5cb3e0e69c5b66aa391dd5bcb9d5e4789023c3b69;
+PDF+52 printed. Next14 Allergy and Anaphylaxis, title only, not reviewed.
+**Validation:**125focused tests passed/1skipped; hold register current; catalog
+validator valid76; diff check clean. No full backend/browser/provider trial.
+Preserve unrelated Forge edits. Fetch checkpoint failure persists; verify Git
+push through authenticated API/ancestry. Refresh hold register each batch.
+
 ### 2026-10-19 - Chapters8-10 offline cue review batch
 **Done:** User requested next several chapters; bounded scope to8-10.
 Chapter8:18terms/12new/4reuse/2hold; Chapter9:16/10/4/2;

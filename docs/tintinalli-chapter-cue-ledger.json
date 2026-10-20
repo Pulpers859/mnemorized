@@ -267,11 +267,56 @@
       "independent_source_and_conceptual_review": true,
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false
+    },
+    {
+      "chapter_id": "11",
+      "title": "Sudden Cardiac Death",
+      "record": "docs/chapter-11-cue-audit.json",
+      "report": "docs/chapter-11-cue-audit.md",
+      "selected_terms": 16,
+      "new_candidates": 10,
+      "reused_candidates": 4,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "12",
+      "title": "Approach to Nontraumatic Shock",
+      "record": "docs/chapter-12-cue-audit.json",
+      "report": "docs/chapter-12-cue-audit.md",
+      "selected_terms": 17,
+      "new_candidates": 9,
+      "reused_candidates": 7,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
+    },
+    {
+      "chapter_id": "13",
+      "title": "Approach to Traumatic Shock",
+      "record": "docs/chapter-13-cue-audit.json",
+      "report": "docs/chapter-13-cue-audit.md",
+      "selected_terms": 17,
+      "new_candidates": 8,
+      "reused_candidates": 8,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false
     }
   ],
+  "hold_register": {
+    "record": "docs/tintinalli-held-cues.json",
+    "report": "docs/tintinalli-held-cues.md",
+    "refresh": "python tools/chapter_cue_holds.py --write",
+    "verify": "python tools/chapter_cue_holds.py --check"
+  },
   "next_chapter": {
-    "chapter_id": "11",
-    "title": "Sudden Cardiac Death",
+    "chapter_id": "14",
+    "title": "Allergy and Anaphylaxis",
     "status": "not_started_for_cue_review"
   },
   "spend": {

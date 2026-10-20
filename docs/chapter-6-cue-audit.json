@@ -16,6 +16,9 @@
   "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
   "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
   "production_admitted": false,
+  "resolved_holds": [
+    {"term":"sulfonylureas","resolution":"User supplied rotten eggs as the sulfur/sulfon partial-name bridge; retained without a whole-word sound puzzle. Still untested, not a drug-odor claim."}
+  ],
   "source_wording_notes": {
     "vectorborne disease": "Source also uses vectorborne illnesses; disease occurs in Table6-2 and vectorborne infectious diseases in body on printed27.",
     "amputation": "Source has limb amputation on printed26.",

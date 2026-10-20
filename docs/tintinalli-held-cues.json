@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "scope": "Current chapter holds, not rejected sound-workshop terms or exhaustive textbook vocabulary. Historical resolutions are explicit, never inferred from another chapter.",
+  "chapters_checked": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13"
+  ],
+  "active_hold_occurrences": 21,
+  "unique_held_terms": 20,
+  "active_holds": [
+    {
+      "chapter_id": "1",
+      "chapter_title": "Emergency Medical Services",
+      "term": "Emergency Medical Services",
+      "printed_page": 1,
+      "source_record": "docs/chapter-1-cue-audit.json",
+      "report": "docs/chapter-1-broadened-cue-audit.md",
+      "attempted_cue": "Ambulance crew responding to an emergency.",
+      "reason": "Existing review held this scene as insufficiently distinguishing versus ambulance transport or paramedic. Printing EMS was not accepted as a visual bridge; revisit rather than force a rebus.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "1",
+      "chapter_title": "Emergency Medical Services",
+      "term": "defibrillation",
+      "printed_page": 1,
+      "source_record": "docs/chapter-1-cue-audit.json",
+      "report": "docs/chapter-1-broadened-cue-audit.md",
+      "attempted_cue": "Defibrillator with conspicuous electrical discharge.",
+      "reason": "Existing review found generic electrical imagery insufficiently distinguishing from cardioversion or electrical injury. Keep the ingredient available; a future improved proposal may resolve this hold.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "1",
+      "chapter_title": "Emergency Medical Services",
+      "term": "naloxone",
+      "printed_page": 2,
+      "source_record": "docs/chapter-1-cue-audit.json",
+      "report": "docs/chapter-1-broadened-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No sufficiently clear name-specific cue in existing review. Generic lock/key or rescue props did not distinguish the drug; do not force a syllable puzzle.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "1",
+      "chapter_title": "Emergency Medical Services",
+      "term": "opioid overdose",
+      "printed_page": 2,
+      "source_record": "docs/chapter-1-cue-audit.json",
+      "report": "docs/chapter-1-broadened-cue-audit.md",
+      "attempted_cue": "Overflowing medicine cup.",
+      "reason": "Excess quantity lacks opioid identity. Generic overflow remains a reusable ingredient but not a complete opioid-overdose association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "2",
+      "chapter_title": "Prehospital Equipment",
+      "term": "two-way radio",
+      "printed_page": 4,
+      "source_record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "attempted_cue": "Two radio users, one listening and one speaking.",
+      "reason": "A still image shows a conversation but not both directions; could mean dispatch or online medical control. No useful distinguishing mnemonic yet.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "2",
+      "chapter_title": "Prehospital Equipment",
+      "term": "epinephrine",
+      "printed_page": 9,
+      "source_record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No clear economical bridge proposed in this bounded pass. Generic emergency imagery does not distinguish the drug. Do not force sound fragments.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "2",
+      "chapter_title": "Prehospital Equipment",
+      "term": "lidocaine",
+      "printed_page": 9,
+      "source_record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "attempted_cue": "Lid plus walking cane.",
+      "reason": "Repeated target, not new. Lid-cane loses spoken material and may retrieve lid or cane rather than the drug. The broadened framework does not automatically rehabilitate a weak particular sound bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "3",
+      "chapter_title": "Air Medical Transport",
+      "term": "status epilepticus",
+      "printed_page": 12,
+      "source_record": "docs/chapter-3-cue-audit.json",
+      "report": "docs/chapter-3-cue-audit.md",
+      "attempted_cue": "A statue with a conspicuous cartoon shaking pose.",
+      "reason": "Potentially teachable, but this particular statue/shaking proposal needs a clearer learned bridge before retention. Not rejected merely for lacking a duration threshold. Do not equate all seizures, tremor or all status presentations with visible shaking.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "3",
+      "chapter_title": "Air Medical Transport",
+      "term": "cricothyrotomy",
+      "printed_page": 10,
+      "source_record": "docs/chapter-3-cue-audit.json",
+      "report": "docs/chapter-3-cue-audit.md",
+      "attempted_cue": "Cricket beside a neck model.",
+      "reason": "Cricket supplies only a weak opening fragment; the neck prop adds little to recover the remainder. Keep as an ingredient idea, not a useful complete bridge yet. No improvised cutting or procedure depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "4",
+      "chapter_title": "Mass Gatherings",
+      "term": "adenosine",
+      "printed_page": 16,
+      "source_record": "docs/chapter-4-cue-audit.json",
+      "report": "docs/chapter-4-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No convincing proposal in this bounded pass. Do not fabricate syllable fragments or substitute generic medication imagery simply to increase yield.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "5",
+      "chapter_title": "Disaster Preparedness",
+      "term": "phosgene",
+      "printed_page": 25,
+      "source_record": "docs/chapter-5-cue-audit.json",
+      "report": "docs/chapter-5-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No convincing association proposed in this bounded pass. Do not fill the slot with generic gas imagery or forced sound fragments.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "7",
+      "chapter_title": "Bomb, Blast, and Crush Injuries",
+      "term": "tranexamic acid",
+      "printed_page": 33,
+      "source_record": "docs/chapter-7-cue-audit.json",
+      "report": "docs/chapter-7-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical bridge proposed. Train/axe/acid assembly needs excess sound repair and object count; no forced quota. Hold does not prove no useful association exists.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "8",
+      "chapter_title": "Chemical Disasters",
+      "term": "hydroxocobalamin",
+      "printed_page": 40,
+      "source_record": "docs/chapter-8-cue-audit.json",
+      "report": "docs/chapter-8-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical bridge proposed; do not force a long syllable assembly. Not proof that no good cue exists.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "8",
+      "chapter_title": "Chemical Disasters",
+      "term": "pralidoxime",
+      "printed_page": 40,
+      "source_record": "docs/chapter-8-cue-audit.json",
+      "report": "docs/chapter-8-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No strong economical association proposed; no padding with disconnected fragments.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "9",
+      "chapter_title": "Bioterrorism",
+      "term": "tularemia",
+      "printed_page": 43,
+      "source_record": "docs/chapter-9-cue-audit.json",
+      "report": "docs/chapter-9-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical association proposed in this pass. No syllable pile or unsourced disease-to-animal link added. This is not a requirement for full-syllable encoding or proof that a useful partial cue cannot exist.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "9",
+      "chapter_title": "Bioterrorism",
+      "term": "doxycycline",
+      "printed_page": 45,
+      "source_record": "docs/chapter-9-cue-audit.json",
+      "report": "docs/chapter-9-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Previously rejected docks plus bicycle assembly is not revived or silently reclassified as reuse. No improved economical partial association proposed in this pass. Broad calibration permits partial cues, but does not obligate retaining this particular attempt. No treatment association admitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "10",
+      "chapter_title": "Radiation Injuries",
+      "term": "Becquerel",
+      "printed_page": 48,
+      "source_record": "docs/chapter-10-cue-audit.json",
+      "report": "docs/chapter-10-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical familiar bridge proposed in this bounded review. Do not force beak/rail syllable repairs merely to fill the unit-name slot. Hold is not a claim that no useful association exists.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "11",
+      "chapter_title": "Sudden Cardiac Death",
+      "term": "Brugada syndrome",
+      "printed_page": 55,
+      "source_record": "docs/chapter-11-cue-audit.json",
+      "report": "docs/chapter-11-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical name bridge proposed in this pass. Preserve for later rather than force disconnected fragments.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "11",
+      "chapter_title": "Sudden Cardiac Death",
+      "term": "amiodarone",
+      "printed_page": 56,
+      "source_record": "docs/chapter-11-cue-audit.json",
+      "report": "docs/chapter-11-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No strong economical association proposed. No drug effect used as an unsourced identity shortcut.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "12",
+      "chapter_title": "Approach to Nontraumatic Shock",
+      "term": "lusitropy",
+      "printed_page": 58,
+      "source_record": "docs/chapter-12-cue-audit.json",
+      "report": "docs/chapter-12-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical familiar cue proposed in this bounded pass. Do not assemble loose/seat/rope syllable puzzles or turn a source explanation into a clinical lesson. Hold is not a claim that a useful association cannot be learned.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "13",
+      "chapter_title": "Approach to Traumatic Shock",
+      "term": "tranexamic acid",
+      "printed_page": 67,
+      "source_record": "docs/chapter-13-cue-audit.json",
+      "report": "docs/chapter-13-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Carries forward the prior hold. Acid-family lemon alone would not add a useful medication-name association beyond the retained broad acid token; no forced train/exam/acid syllable chain proposed. Hold is provisional, not proof that no useful bridge exists.",
+      "retained_in_other_chapters": []
+    }
+  ],
+  "resolved_holds": [
+    {
+      "chapter_id": "2",
+      "term": "continuous positive airway pressure",
+      "source_record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "User retained bellows as a broad positive-pressure/NIPPV family cue; not required to distinguish CPAP from bilevel. See subsequent user calibration in chapter report."
+    },
+    {
+      "chapter_id": "2",
+      "term": "sodium bicarbonate",
+      "source_record": "docs/chapter-2-cue-audit.json",
+      "report": "docs/chapter-2-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "User retained familiar orange baking-soda box and powder rather than judging anonymous powder in isolation. Still untested."
+    },
+    {
+      "chapter_id": "6",
+      "term": "sulfonylureas",
+      "source_record": "docs/chapter-6-cue-audit.json",
+      "report": "docs/chapter-6-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "User supplied rotten eggs as the sulfur/sulfon partial-name bridge; retained without a whole-word sound puzzle. Still untested, not a drug-odor claim."
+    }
+  ]
+}

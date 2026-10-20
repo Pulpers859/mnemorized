@@ -10,8 +10,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("chapter,start,end", [(8, 17, 23), (9, 23, 29), (10, 29, 34)])
-def test_later_disaster_chapter_banks_are_consistent(chapter, start, end):
+@pytest.mark.parametrize("chapter,start,end,offset", [
+    (8, 17, 23, 18), (9, 23, 29, 18), (10, 29, 34, 18),
+    (11, 1, 5, 52), (12, 5, 11, 52), (13, 11, 16, 52),
+])
+def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
     record = next(r for r in ledger["subsequent_chapter_reviews"]
                   if r["chapter_id"] == str(chapter))
@@ -19,7 +22,7 @@ def test_later_disaster_chapter_banks_are_consistent(chapter, start, end):
     assert bank["chapter_id"] == str(chapter)
     assert (ROOT / record["report"]).is_file()
     assert bank["source"]["pdf_pages"] == list(range(start, end + 1))
-    assert bank["source"]["printed_pages"] == list(range(start + 18, end + 19))
+    assert bank["source"]["printed_pages"] == list(range(start + offset, end + offset + 1))
     assert len(bank["source"]["sha256"]) == 64
     entries = bank["entries"]
     assert len(entries) == len({e["term"].casefold() for e in entries}) == record["selected_terms"]

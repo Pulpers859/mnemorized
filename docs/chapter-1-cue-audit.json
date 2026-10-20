@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "chapter_id": "1",
+  "title": "Emergency Medical Services",
+  "report": "docs/chapter-1-broadened-cue-audit.md",
+  "scope": "Structured transcription of the existing broadened review for hold-register maintenance, not new source or clinical validation. Original sound-only ledger remains historical.",
+  "source": {
+    "file": "Tintin_Prehospital Care.pdf",
+    "sha256": "856A9EB4746909447C9BD2FD0ABB4D3463669D0234796503828939E9CA67A642",
+    "pdf_pages": [1, 2, 3],
+    "printed_pages": [1, 2, 3]
+  },
+  "production_admitted": false,
+  "entries": [
+    {"term":"Emergency Medical Services","page":1,"decision":"hold","cue":"Ambulance crew responding to an emergency.","reason":"Existing review held this scene as insufficiently distinguishing versus ambulance transport or paramedic. Printing EMS was not accepted as a visual bridge; revisit rather than force a rebus.","tested":false},
+    {"term":"paramedic","page":1,"decision":"retain_candidate","cue":"Pair of medics.","reason":"Existing broadened review retained user phrase bridge; untested.","tested":false},
+    {"term":"defibrillation","page":1,"decision":"hold","cue":"Defibrillator with conspicuous electrical discharge.","reason":"Existing review found generic electrical imagery insufficiently distinguishing from cardioversion or electrical injury. Keep the ingredient available; a future improved proposal may resolve this hold.","tested":false},
+    {"term":"hemorrhage control","page":1,"decision":"retain_candidate","cue":"Clamp closes a leaking red-fluid pipe.","reason":"Existing user-inspired flow-control metaphor; not a technique or treatment claim.","tested":false},
+    {"term":"online medical control","page":1,"decision":"retain_candidate","cue":"Physician at radio console communicating with ambulance crew.","reason":"Existing professional relationship candidate; untested.","tested":false},
+    {"term":"naloxone","page":2,"decision":"hold","cue":null,"reason":"No sufficiently clear name-specific cue in existing review. Generic lock/key or rescue props did not distinguish the drug; do not force a syllable puzzle.","tested":false},
+    {"term":"opioid overdose","page":2,"decision":"hold","cue":"Overflowing medicine cup.","reason":"Excess quantity lacks opioid identity. Generic overflow remains a reusable ingredient but not a complete opioid-overdose association.","tested":false},
+    {"term":"cardiac arrest","page":2,"decision":"retain_candidate","cue":"Heart character visibly wearing handcuffs.","reason":"Existing user double-meaning candidate, not physiological or treatment teaching.","tested":false},
+    {"term":"mutual aid","page":3,"decision":"retain_candidate","cue":"Two ambulance teams reciprocally helping each other.","reason":"Existing reciprocal-help candidate; not administrative rules.","tested":false},
+    {"term":"surge capacity","page":3,"decision":"retain_candidate","cue":"Extra open treatment spaces facing arrivals.","reason":"Existing capacity/demand metaphor; no numerical capacity claim.","tested":false}
+  ],
+  "evidence": {"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend": {"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0}
+}

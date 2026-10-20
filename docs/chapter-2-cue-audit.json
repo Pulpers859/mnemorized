@@ -14,6 +14,10 @@
   },
   "scope": "Sixteen selected terms, not exhaustive chapter vocabulary. Offline candidate bank, not clinical narration or an image prompt. Repeated library/workshop terms are identified, not counted as new discoveries.",
   "production_admitted": false,
+  "resolved_holds": [
+    {"term":"continuous positive airway pressure","resolution":"User retained bellows as a broad positive-pressure/NIPPV family cue; not required to distinguish CPAP from bilevel. See subsequent user calibration in chapter report."},
+    {"term":"sodium bicarbonate","resolution":"User retained familiar orange baking-soda box and powder rather than judging anonymous powder in isolation. Still untested."}
+  ],
   "entries": [
     {"term": "two-way radio", "page": 4, "source_match": "body", "kind": "relationship", "cue": "Two radio users, one listening and one speaking.", "decision": "hold", "prior": "not_previously_reviewed_in_checked_banks", "reason": "A still image shows a conversation but not both directions; could mean dispatch or online medical control. No useful distinguishing mnemonic yet.", "tested": false},
     {"term": "personal protective equipment", "page": 4, "source_match": "heading_and_body", "kind": "conceptual", "cue": "A person in a familiar hazmat-style protective suit; a shield-shaped suit is an optional exaggeration.", "decision": "retain_candidate", "prior": "not_previously_reviewed_in_checked_banks", "reason": "Familiar protective clothing is an adequate PPE category cue. Hazmat recognition is useful, not a reason to reject the broader category. Not a specification of required equipment or protection level.", "tested": false},

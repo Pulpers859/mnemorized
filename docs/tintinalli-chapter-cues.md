@@ -105,9 +105,33 @@ primitives, including the user's sulfur eggs; this is not35 unique inventions.
 Separate AI source/concept review completed for each chapter. No clinical,
 image-readability or recall validation. Structured banks are linked in each report.
 
+## Chapters 11-13: Resuscitation
+
+| Chapter | Selected | New Candidates | Reuses | Holds | Review |
+|---|---:|---:|---:|---:|---|
+| 11 Sudden Cardiac Death | 16 | 10 | 4 | 2 | [Review](chapter-11-cue-audit.md) |
+| 12 Approach to Nontraumatic Shock | 17 | 9 | 7 | 1 | [Review](chapter-12-cue-audit.md) |
+| 13 Approach to Traumatic Shock | 17 | 8 | 8 | 1 | [Review](chapter-13-cue-audit.md) |
+
+Fifty selected terms,27new compositions,19reuses,4hold occurrences. Crystalloid
+was independently proposed twice; integration counts the second as reuse.
+Source and conceptual review are separate from empirical recall/render testing.
+
+## Held-Cue Revisit Register
+
+[All chapter holds](tintinalli-held-cues.md) are kept separately, with attempted
+cue, reason, source chapter/page and review link. [Structured snapshot](tintinalli-held-cues.json)
+is reproducible with `python tools/chapter_cue_holds.py --write`; `--check` and
+tests catch stale snapshots. Refresh after every chapter batch or decision change.
+Chapter1's existing broadened review now has a structured mirror, not new source
+review. Resolved CPAP, bicarbonate and sulfonylureas holds retain their history.
+Holding the same word in two chapters preserves both occurrences; a later
+retention elsewhere does not silently close an older hold. Workshop-only holds
+and rejections remain in their separate sound-bridge records.
+
 ## Next
 
-Chapter 11, **Sudden Cardiac Death**, is not started for cue review. Do not move
+Chapter 14, **Allergy and Anaphylaxis**, is not started for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget

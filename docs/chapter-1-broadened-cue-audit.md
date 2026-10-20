@@ -45,6 +45,10 @@ Source validity, render fidelity and learner recall remain separate judgments.
 
 ## Candidate Review
 
+Current structured decisions are mirrored in `chapter-1-cue-audit.json` for the
+cross-chapter held-cue register. Update both when revisiting a decision; the
+original sound-only ledger remains historical.
+
 | Term / Page | Proposed Cue And Bridge | Decision | Main Limitation / Discrimination Target |
 | --- | --- | --- | --- |
 | Emergency Medical Services / 1, title | Ambulance crew responding to an emergency; familiar occupational scene | Hold | Useful context, but not a distinctive retrieval hook versus ambulance transport or paramedic. Do not invent a contrived rebus just to fill this slot. |
