@@ -37,10 +37,13 @@
     "32",
     "33",
     "34",
-    "35"
+    "35",
+    "36",
+    "37",
+    "38"
   ],
-  "active_hold_occurrences": 315,
-  "unique_held_terms": 259,
+  "active_hold_occurrences": 434,
+  "unique_held_terms": 360,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -126,7 +129,9 @@
         "31",
         "33",
         "34",
-        "35"
+        "35",
+        "36",
+        "37"
       ]
     },
     {
@@ -407,7 +412,9 @@
         "31",
         "33",
         "34",
-        "35"
+        "35",
+        "36",
+        "37"
       ]
     },
     {
@@ -430,7 +437,9 @@
       "report": "docs/chapter-19-cue-audit.md",
       "attempted_cue": null,
       "reason": "Prior workshop clone plus diner rejection preserved, not promoted or relabeled as a successful partial bridge. No improved economical proposal; this chapter records an unresolved target for later reconsideration.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "36"
+      ]
     },
     {
       "chapter_id": "20",
@@ -857,7 +866,9 @@
         "31",
         "33",
         "34",
-        "35"
+        "35",
+        "36",
+        "37"
       ]
     },
     {
@@ -1041,7 +1052,9 @@
         "31",
         "33",
         "34",
-        "35"
+        "35",
+        "36",
+        "37"
       ]
     },
     {
@@ -1548,7 +1561,9 @@
       "report": "docs/chapter-28-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried an asterisk and a moth for asth/ma, but this is a strained multi-repair bridge. Bronchospasm's existing bronco cue was considered, not silently equated with asthma.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "37"
+      ]
     },
     {
       "chapter_id": "28",
@@ -1785,7 +1800,8 @@
       "attempted_cue": null,
       "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible.",
       "retained_in_other_chapters": [
-        "33"
+        "33",
+        "37"
       ]
     },
     {
@@ -1831,7 +1847,8 @@
       "attempted_cue": null,
       "reason": "Tried fence beside a small nail instead of historical fan/tunnel; this replacement also needed excessive sound coaching, so held. Earlier rejected sound attempt remains rejected; no medication-effect imagery.",
       "retained_in_other_chapters": [
-        "35"
+        "35",
+        "37"
       ]
     },
     {
@@ -1843,7 +1860,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a familiar inhaler as a broad category reminder; held because the medication-device association was not the desired lexical-name reminder here. Familiar categories are allowed; not claiming inhalers diagnose asthma or excluding later learned category proposals.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "37"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -1931,7 +1950,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a paused bellows alone; held as a weak chosen name reminder, not because category cues must be diagnostic. Related sleep/apneic proposals remain separately recorded; no duration or management.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "37"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2118,7 +2139,9 @@
       "report": "docs/chapter-29B-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves earlier asterisk/moth sound attempt; considered familiar inhaler category, but did not select it as an asthma-specific name cue in this pass. Broader category cues are allowed, not banned.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "37"
+      ]
     },
     {
       "chapter_id": "29B",
@@ -3473,7 +3496,9 @@
       "report": "docs/chapter-35-cue-audit.md",
       "attempted_cue": "A toy toilet blocked by a padlock.",
       "reason": "Locked toilet implies denied access rather than the term; no physiological blockage or management teaching substituted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "38"
+      ]
     },
     {
       "chapter_id": "35",
@@ -3550,6 +3575,1315 @@
       "report": "docs/chapter-35-cue-audit.md",
       "attempted_cue": "A detached toy control box with loose electrode pads.",
       "reason": "Plain control box/pads could represent many devices; no recognizable specific category chosen without labels or a procedure.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "lipid solubility",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A sugar cube dissolving in a glass beside an oil drop.",
+      "reason": "Checked existing water-dissolving cue; changing the liquid to oil would visually invent a property, while a separate oil drop is a weak bridge. No useful nonmechanistic version selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "epinephrine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "An epic toy knight beside a frying pan.",
+      "reason": "Epic is not a stable visible object and knight/frying composition is labored. Earlier holds remain open; no adrenaline effect used to rescue the name.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "bupivacaine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy buoy beside a walking cane.",
+      "reason": "Buoy is an uncertain bu-pi bridge and cane adds only a common ending; no persuasive economical candidate selected. Partial wordplay itself is allowed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "levobupivacaine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A lever beside a toy buoy and walking cane.",
+      "reason": "Adding a lever to the unresolved bupivacaine attempt compounds a weak prop stack; not held merely for incomplete syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "mepivacaine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy pointing to itself beside a pea and walking cane.",
+      "reason": "Coached self-pointing plus common suffix feels cumbersome; no easy selected bridge in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "chloroprocaine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A pool-chlorine container beside a toy professional athlete holding a cane.",
+      "reason": "Chlorine container without a label is not sufficiently familiar to distinguish from generic cleaning products; combined stack not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "diphenhydramine",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy diver beside a fan and mine entrance.",
+      "reason": "Three unrelated props require too much coaching; not held because every syllable is absent.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "benzyl alcohol",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy bench beside an unmarked alcohol bottle.",
+      "reason": "Bottle identity is ambiguous and bench already proposed for benzocaine; no economical useful bridge chosen. No beverage/medical substitution implied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "transthecal",
+      "printed_page": 240,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy train beside a theater curtain.",
+      "reason": "Train/theater composition does not offer an easy thecal bridge in this pass; no medical explanation used to rescue it.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "sural nerve block",
+      "printed_page": 244,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy sewer grate beside a branching nerve token.",
+      "reason": "Sewer is a plausible rough fragment but the grate is read as drain rather than sewer and the association feels coached; no simple useful candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "supratrochlear",
+      "printed_page": 244,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A trophy above a toy clear window.",
+      "reason": "Trophy/clear requires awkward syllable prompting and trophy is not a stable trochlear fragment; no procedure-based substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "peripheral nerve stimulator",
+      "printed_page": 246,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A detached control box with a wire and loose electrodes.",
+      "reason": "Not a reliably recognizable standalone category without labels or a technique demonstration; ordinary box/electrodes could mean several devices. Specificity limit, not a ban on familiar devices.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "cardiovascular collapse",
+      "printed_page": 236,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A heart token beside a collapsed toy tower.",
+      "reason": "Tower collapse risks suggesting a physical heart event and provides no useful broad systemic category here. Headword screened instead of excluding the full bold clause.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "mucosa",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A plain open-mouth teaching model.",
+      "reason": "Mouth model alone does not offer a useful lining reminder in this draft and could mean teeth or oral cavity. No uniquely diagnostic requirement, but a better broad lining cue is still needed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "eutectic mixture",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy ewe beside a mixing bowl.",
+      "reason": "Ewe and bowl leave the distinctive tectic part weakly bridged; no readily familiar economical category selected. No formulation or physical chemistry claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "EMLA",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy emu beside a llama.",
+      "reason": "Emu naming and emu/llama combination are less familiar and overcoached for this acronym. Not rejected for incomplete spelling; constituent drugs are independently screened.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "liposome-encapsulated",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy pair of lips inside a clear capsule-shaped display.",
+      "reason": "Lips/capsule composition is forced and could imply actual formulation geometry. Named anesthetics in these rows are independently screened; not a whole-row exclusion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "LMX4",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy X-shaped frame beside a toy numeral four.",
+      "reason": "X/four gives a letter-number puzzle rather than a familiar useful LMX identity; lidocaine row constituent separately attempted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "LMX5",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy X-shaped frame beside a toy numeral five.",
+      "reason": "Same unresolved letter-number identity problem as LMX4, not a new retained fragment or clinical strength instruction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "maximum dose",
+      "printed_page": 237,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "An anonymous pill token beneath an upper-stop bar.",
+      "reason": "Pill plus stop bar could be misread as an administration ceiling or medication prohibition, without a useful general dose identity. No source number retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "adverse reactions",
+      "printed_page": 238,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy actor recoiling beside a frowning theatrical mask.",
+      "reason": "Recoiling and frown are weakly generic, not a useful selected reaction-category reminder. Drug/allergy conclusions deliberately not depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "loss of consciousness",
+      "printed_page": 238,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy searching for a missing thought-cloud token.",
+      "reason": "Missing thought token reads as forgetting rather than consciousness. No useful broad cue selected; graph relationship and numeric thresholds excluded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "visual and auditory disturbances",
+      "printed_page": 238,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A pair of toy glasses and headphones beside a toppled barrier.",
+      "reason": "Three props leave disturbance vague and can imply equipment malfunction, not a useful selected sensory category. No clinical consequence encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "hyperechoic",
+      "printed_page": 239,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "An oversized toy echo horn.",
+      "reason": "Echo is not easily visible in a horn prop and would imply sound rather than the image term; no clinical image interpretation authored.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "lateral cutaneous",
+      "printed_page": 246,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy ladder beside a plain skin teaching model.",
+      "reason": "Ladder is a weak lateral fragment and skin alone does not make a useful combined cue here; no nerve branch location or blocked territory depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "midaxillary line",
+      "printed_page": 246,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A toy axe on the middle of a plain line.",
+      "reason": "Axe fragment exists in31 axillary vein, but axe-on-line is too weakly organized to select here; no surface-landmark teaching substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "36",
+      "chapter_title": "Local and Regional Anesthesia",
+      "term": "extensor hallucis longus",
+      "printed_page": 243,
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "attempted_cue": "A long toy hall beside an extending telescope.",
+      "reason": "Hall model is not a familiar standalone prop and this stack is overcoached; not rejected for absent syllables. Caption headword explicitly attempted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Procedural Sedation and Analgesia in Adults",
+      "printed_page": 248,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "Drowsy adult figurine beside a tray and pain mask.",
+      "reason": "Full-title stack not selected; components tried separately.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "consciousness",
+      "printed_page": 248,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy head with a glowing bulb.",
+      "reason": "Bulb suggests ideas or alertness; no helpful selected consciousness cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "painful stimuli",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A pain mask beside a flashing lamp.",
+      "reason": "Loose composition not selected; no stimulus or threshold teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "American Society of Anesthesiologists (ASA) Classification System",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A society meeting beside a blank sorting cabinet.",
+      "reason": "Generic meeting/sorting does not supply organization identity or grading rules.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "systemic disease",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A linked toy system beside a damaged token.",
+      "reason": "Generic system/damage composition not selected; severity omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "obesity",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A wide-bodied neutral study mannequin.",
+      "reason": "Silhouette not a helpful selected association; prior28/29A holds preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Pneumonia",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A lung token wearing a scarf.",
+      "reason": "Scarf adds no useful name bridge without symptom teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Sepsis",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy septic tank.",
+      "reason": "Septic fragment attempted; tank naming bridge not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "disseminated intravascular coagulation",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "Scattered corks inside clear tubing.",
+      "reason": "No economical selected name association; not a clotting diagram.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "ischemic bowel",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A bowel token beside an empty fuel can.",
+      "reason": "Fuel risks implied mechanism and adds no clean name bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "organ system dysfunction",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A pipe organ with a broken key.",
+      "reason": "Organ fragment familiar but dysfunction pairing not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Moribund",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A bundle of wilted flowers.",
+      "reason": "Mori/bundle split indirect and weak; no prognosis claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "brain dead",
+      "printed_page": 249,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A brain token beside a skull warning.",
+      "reason": "Warning token blurs clinical determination; no chosen association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "anatomic dead space",
+      "printed_page": 251,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A skeleton beside an empty display space.",
+      "reason": "Dead/space assembly not economical; no gas-exchange definition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "alveolar gas",
+      "printed_page": 251,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A grape-cluster token beside a gas cylinder.",
+      "reason": "Alveolar bridge not selected without added anatomy teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Etomidate",
+      "printed_page": 251,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A date fruit beside a metronome.",
+      "reason": "Date familiar but metronome adds no useful bridge; earlier29A hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Remifentanil",
+      "printed_page": 252,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A ram beside an electric fan.",
+      "reason": "Ram/remi weak, fan repeats fentanyl without helpful added identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Methohexital",
+      "printed_page": 252,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A hexagonal tile beside an exit sign.",
+      "reason": "Hex/exit attempted; no economical family selected, not an every-syllable requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Aldrete Score",
+      "printed_page": 252,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "An alder tree beside an unnumbered scoreboard.",
+      "reason": "Alder identity needs specialized naming; no scoring criteria.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "ventilatory effort",
+      "printed_page": 253,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "Bellows beside a straining toy weightlifter.",
+      "reason": "Effort association plausible but two-part category not selected; no preservation or drug effect.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "hypersympathetic state",
+      "printed_page": 253,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "An oversized toy comforting another toy.",
+      "reason": "Sympathy pun attempted but does not provide a useful selected sympathetic family; no autonomic facts.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "coronary artery disease",
+      "printed_page": 253,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A crown beside an artery token and a damaged gear.",
+      "reason": "Crown/coronary fragment familiar but stack not economical; no avoidance or disease teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "bronchorrhea",
+      "printed_page": 253,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy bronco beside a runny tap.",
+      "reason": "Bronco fragment possible but tap is generic; no useful selected combined association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "cardioversion",
+      "printed_page": 254,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A heart token beside a turning arrow.",
+      "reason": "Turn/version fragment plausible but not selected as a name cue; no rhythm or procedure teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "synthetic opioids",
+      "printed_page": 255,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy factory producing anonymous pill tokens.",
+      "reason": "Generic factory/pills lacks a helpful opioid association; synthetic qualifier not a mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Sufentanil",
+      "printed_page": 255,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy chef beside an electric fan.",
+      "reason": "Sou/chef fragment weak and fan repeats family; no economical bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "sympatholysis",
+      "printed_page": 255,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "Two sympathetic toy figures with a cut ribbon between them.",
+      "reason": "Sympathy/lysis assembly requires too much coaching; no chosen association or autonomic claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "baroreflex-mediated parasympathetic activation",
+      "printed_page": 255,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A barometer beside a reflex hammer and a parachute toy.",
+      "reason": "Baro/reflex/para attempted; prop stack not economical, no pathway claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "parasympathetic activation",
+      "printed_page": 255,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A parachute beside a toy power switch.",
+      "reason": "Para fragment and switch plausible but sympathetic part lacks useful selected bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "benzodiazepine",
+      "printed_page": 256,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy luxury sedan beside a zipper.",
+      "reason": "Benz/zip fragments attempted; no economical association selected, prior29B hold remains.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Lean body weight",
+      "printed_page": 256,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A mannequin leaning beside a weighing scale.",
+      "reason": "Lean/leaning pun attempted but may obscure intended family; no composition or dose claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Body mass index",
+      "printed_page": 256,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A mannequin beside a book index and scale.",
+      "reason": "Body/index ingredients familiar but three props not economical; no calculation encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "comorbid conditions",
+      "printed_page": 256,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "Two damaged toy tokens paired together.",
+      "reason": "Co/paired plausible but morbid/condition identity weak; no selected association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Phenylephrine",
+      "printed_page": 257,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy fin beside a leaf.",
+      "reason": "Fin/leaf fragment attempted, not an economical selected name; older20/25/29A holds unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "Epinephrine",
+      "printed_page": 257,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy epic book beside a leaf.",
+      "reason": "Epi/leaf attempted but weak; familiar autoinjector category considered, not selected; older holds unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "naloxone",
+      "printed_page": 257,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A nail beside an ox figurine.",
+      "reason": "Nail/ox fragments attempted, no useful economical family selected; older chapter1 hold unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "complications",
+      "printed_page": 257,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A tangled toy puzzle.",
+      "reason": "Complicated/tangled generic association not selected; no complication inventory implied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "awareness",
+      "printed_page": 248,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "An open eye beside a toy light bulb.",
+      "reason": "Plausible noticing convention, but eye/bulb pairing not selected as an economical word association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "myoclonus",
+      "printed_page": 251,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "A toy muscle beside a clone doll.",
+      "reason": "Myo/clone fragments attempted; no clean economical selected association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "37",
+      "chapter_title": "Procedural Sedation and Analgesia in Adults",
+      "term": "adrenal suppression",
+      "printed_page": 251,
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "attempted_cue": "An adrenal teaching token under a closed lid.",
+      "reason": "Lid/suppression composition may imply a mechanism and adrenal prop needs teaching; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "allodynia",
+      "printed_page": 259,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy aloe plant beside a small dinosaur.",
+      "reason": "Aloe/dino is an awkward sound stack and does not offer a familiar economical cue in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "nonneuropathic pain",
+      "printed_page": 259,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A nerve-wire token behind a crossed-circle token beside a pain mask.",
+      "reason": "Negation plus broad anatomy does not establish this exclusion category economically; not a statement about individual pain.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "HIV-related neuropathy",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A hive prop beside a nerve-wire token.",
+      "reason": "Hive is a weak acronym sound bridge and adds no robust familiar category; no patient stereotype.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Human Immunodeficiency Virus-Related Pain",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A cracked shield beside a generic virus model and pain mask.",
+      "reason": "Generic immunity imagery is not a recognizable specific-name cue; avoid implying a diagnostic appearance.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Postherpetic Neuralgia",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A fence post beside a toy pet and pain mask.",
+      "reason": "Same uneconomical post/pet stack as earlier35; no improved familiar name bridge selected. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#postherpetic neuralgia.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Sciatica",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy skier beside an attic window.",
+      "reason": "Ski/attic is an awkward prop stack rather than a useful familiar partial-name association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Complex Regional Pain Syndrome",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A jigsaw map region beside a pain mask.",
+      "reason": "Complex/region can be drawn but the map puzzle does not yield a useful economical syndrome-name cue; no type distinction or clinical inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "reflex sympathetic dystrophy",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A reflex hammer beside a drooping trophy.",
+      "reason": "Hammer/trophy would omit most of the name and lean on an obscure association, not a useful partial-name cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "causalgia",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy cow beside an algae patch.",
+      "reason": "Cow/algae is an obscure sound combination; no simple candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "cognitive dysfunction",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A tangled thought-cloud token.",
+      "reason": "Abstract thought token gives no clear economical vocabulary bridge and could stigmatize cognition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "dysesthesias",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A tangled wire beside a sensory dial.",
+      "reason": "Generic altered-sensation model insufficiently recognizable as this word; no forced object stack.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Functional dyspepsia",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy disk beside a pepper shaker.",
+      "reason": "Disk/pepper is a weak sound combination; no useful familiar category selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Gastroparesis",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy stomach beside a parking sign.",
+      "reason": "Parked stomach is not a strong familiar name cue and risks teaching a physiologic mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Centrally mediated abdominal pain syndrome",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A centered belly token beside a pain mask.",
+      "reason": "Centering a prop does not express mediated and can be mistaken for localization; broad abdomen family alone not selected as this phrase.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "narcotic bowel syndrome",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An unmarked medicine bottle beside an intestinal model.",
+      "reason": "Generic medicine/bowel objects neither distinguish narcotic category nor provide an economical syndrome-name cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "irritable bowel syndrome",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An intestinal model beside a ringing alarm.",
+      "reason": "Alarm is a broad irritation metaphor but not a familiar economical syndrome token; avoid an angry patient caricature.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "ulcerative colitis",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An intestinal model beside a crater prop.",
+      "reason": "Crater association implies a tissue finding and does not provide an economical familiar word cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Endometriosis",
+      "printed_page": 262,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy metro train at the end of its track.",
+      "reason": "End/metro is concrete but too stretched as a familiar partial-name bridge; no useful candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Post-pelvic inflammatory disease pain",
+      "printed_page": 262,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A fence post beside a pelvic teaching model and flame token.",
+      "reason": "Long phrase produces a prop stack rather than an economical name association; no causal sequence or diagnostic stereotype.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "interstitial cystitis",
+      "printed_page": 262,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A bladder teaching model inside a lattice.",
+      "reason": "Lattice/interstitial is not a strong everyday bridge, and placement risks implying anatomy or pathology.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "opioids",
+      "printed_page": 262,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A poppy flower beside an unmarked medicine bottle.",
+      "reason": "Poppy does not establish a useful broad class token here and could imply shared botanical origin; no clinical recommendation copied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "mentally impaired",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A thought-cloud token with a missing piece.",
+      "reason": "Missing-piece metaphor stigmatizes cognition and lacks a clear respectful category cue; no human caricature.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "diclofenac",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy discus beside a flowing stream.",
+      "reason": "Earlier35 discus/flow attempt remains weak; no economical familiar bridge selected. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#diclofenac.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "sodium valproate",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A salt shaker beside a toy valve.",
+      "reason": "Sodium/salt is familiar but valve/valproate adds a weak bridge; no useful compact candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "duloxetine",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "Two toy locks beside a tin.",
+      "reason": "Same earlier35 locks/tin stack; no improvement over a cumbersome sound composition. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#duloxetine.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "pregabalin",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy character at a party holding a balloon.",
+      "reason": "Earlier35 party/balloon association is not improved; pre-gala fragment remains weak, not rejected for missing every syllable. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#pregabalin.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "linaclotide",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A clothesline with a clock hanging from it.",
+      "reason": "Line/clock is stretched and does not supply an economical familiar partial-name association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "lorazepam",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A familiar lore-story book beside a zipper.",
+      "reason": "Lore/zip is a stretched two-object bridge without a sufficiently familiar name association selected here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "lubiprostone",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An oil can beside a stone.",
+      "reason": "Lube/stone misses the recognizable middle and is not a useful compact family selected here; incompleteness alone is not the rejection.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "ondansetron",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy dancer sitting on a throne.",
+      "reason": "Same earlier35 dance/throne proposal is stretched and cumbersome; no selected familiar bridge. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#ondansetron.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "psyllium",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy seal beside a small lily.",
+      "reason": "Seal/lily is a weak two-object sound stack; no economical association selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "quetiapine",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A familiar kettle beside a pine branch.",
+      "reason": "Kettle/pine sound is stretched for quetiapine and adds a kettle collision with ketamine/ketorolac/ketoprofen; no economical familiar alternative selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "NSAIDs",
+      "printed_page": 260,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy knight with a first-aid box.",
+      "reason": "Earlier35 knight/aid attempt still lacks an economical class association; no expanded mechanism teaching. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#NSAIDs.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "H2 blockers",
+      "printed_page": 261,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "Two blocks beside a hydrogen atom model.",
+      "reason": "Hydrogen/two is an abstract letter-number representation rather than an economical familiar class token; earlier29B H2 blocker hold unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "onabotulinumtoxinA",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy boat beside a bottle.",
+      "reason": "Boat/bottle provides only a weak fragment of a long name without an economical taught bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "bisphosphonates",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "Two phosphorus atom-model balls.",
+      "reason": "Abstract atom/count imagery is not a useful familiar class-name cue here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Helicobacter pylori",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy helicopter beside a pillar.",
+      "reason": "Helico/pillar is a plausible but stretched object stack without a selected simple organism-name cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "levonorgestrel",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A level tool beside a toy jester.",
+      "reason": "Level/jester leaves an obscure stack rather than an economical familiar partial-name cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "pentosan polysulfate sodium",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A pen beside salt and a pile of sulfur props.",
+      "reason": "Three unrelated props are a forced compound-name stack, no useful familiar cue selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "benzodiazepines",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy bench beside a zipper.",
+      "reason": "Bench/zipper remains a weak class-name fragment; earlier29B singular benzodiazepine hold unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "antidepressant therapy",
+      "printed_page": 264,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A crossed-out sad theatrical mask.",
+      "reason": "Effect-looking emotional icon risks a clinical inference and does not give a specific economical class token; earlier35 antidepressants hold unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "drug-seeking behavior",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy detective inspecting a medicine bottle.",
+      "reason": "Search/medicine prop is nonspecific and risks equating routine medication questions with a behavioral diagnosis; earlier35 hold unchanged. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#drug-seeking behavior.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "aberrant drug-related behavior",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A medicine-bottle token on a crooked path.",
+      "reason": "Crooked path moralizes behavior and has no respectful specific category bridge; hold without a patient caricature.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "controlled substances",
+      "printed_page": 263,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An unmarked medicine bottle inside a locked cabinet.",
+      "reason": "Cabinet suggests storage/security, not a specific legal class; no categorization or clinical/legal assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "illicit drug use",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "An unmarked medicine bottle beside a crossed-circle token.",
+      "reason": "Prohibition symbol would be a legal judgment rather than a specific neutral vocabulary cue; no person depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Factitious illness",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A toy theater mask beside a blank medical chart.",
+      "reason": "Theater/illness metaphor risks stigmatizing genuine illness and is not a reliable name association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "abusive",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A jagged speech-balloon prop.",
+      "reason": "Graphic speech shape is vague and risks attaching a stereotype to a patient; no behavioral diagnostic token.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Lost prescription",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A blank prescription pad beside a question-mark prop.",
+      "reason": "Question mark does not clearly express lost, and no patient or fraud characterization is appropriate.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Factitious hematuria",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A theatrical mask beside a red-tinted urine-sample prop.",
+      "reason": "Mask risks stigmatizing genuine symptoms; no falsification act or diagnostic appearance selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Self-mutilation",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No non-stigmatizing economical cue selected; do not render self-injury actions, methods or a stereotyped person.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "Factitious injury",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A theater mask beside a dented mannequin token.",
+      "reason": "Mask/injury composition risks moralizing symptoms and is not a useful neutral vocabulary cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "38",
+      "chapter_title": "Chronic Pain",
+      "term": "bupivacaine",
+      "printed_page": 265,
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "attempted_cue": "A buoy beside a walking cane.",
+      "reason": "Buoy/cane is a partial-name possibility but too close to the established lidocaine cane family without a useful simple discriminator.",
       "retained_in_other_chapters": []
     }
   ],
@@ -3817,6 +5151,246 @@
       "report": "docs/chapter-35-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "Local35 selects new nap/rock association; older gnat/oxen rejection remains unchanged."
+    },
+    {
+      "chapter_id": "36",
+      "term": "clonidine",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Retain reduced clone-only fragment under broad partial-name calibration."
+    },
+    {
+      "chapter_id": "36",
+      "term": "saphenous nerve block",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Retain reduced safe-only fragment, not older greater-saphenous-vein stack."
+    },
+    {
+      "chapter_id": "36",
+      "term": "hematoma block",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local36 hold changed to familiar blood-collection category after main challenge."
+    },
+    {
+      "chapter_id": "36",
+      "term": "contaminated wound",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local36 hold changed to familiar damaged-skin model after main challenge."
+    },
+    {
+      "chapter_id": "36",
+      "term": "open fracture",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local36 hold changed to familiar broken-bone teaching category after main challenge."
+    },
+    {
+      "chapter_id": "36",
+      "term": "tongue numbness",
+      "source_record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local36 hold changed to main-authorized same-batch38 sensory-mute family reuse."
+    },
+    {
+      "chapter_id": "37",
+      "term": "General anesthesia",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 hold changed to reuse of retained23 anesthesia family after main first65 feedback."
+    },
+    {
+      "chapter_id": "37",
+      "term": "End-Tidal CO2",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 hold changed to retained28 tide/charcoal family, detector omitted."
+    },
+    {
+      "chapter_id": "37",
+      "term": "diabetes",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local37 device-category hold reconsidered under user calibration."
+    },
+    {
+      "chapter_id": "37",
+      "term": "asthma",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local37 selects familiar inhaler category; older holds remain open."
+    },
+    {
+      "chapter_id": "37",
+      "term": "cardiac dysfunction",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check."
+    },
+    {
+      "chapter_id": "37",
+      "term": "mental status",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check."
+    },
+    {
+      "chapter_id": "37",
+      "term": "Dexmedetomidine",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check."
+    },
+    {
+      "chapter_id": "37",
+      "term": "apnea",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local37 pause-bellows hold reconsidered after main challenge under familiar-action/category calibration; prior29A remains open."
+    },
+    {
+      "chapter_id": "37",
+      "term": "allergies",
+      "source_record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local37 sneeze-mask hold changed to retained14 sensitivity-family reuse after main final feedback."
+    },
+    {
+      "chapter_id": "38",
+      "term": "muscle",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged."
+    },
+    {
+      "chapter_id": "38",
+      "term": "tramadol",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged."
+    },
+    {
+      "chapter_id": "38",
+      "term": "ketamine",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged."
+    },
+    {
+      "chapter_id": "38",
+      "term": "hyperalgesia",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "muscle atrophy",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "Painful Diabetic Neuropathy",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "hyperesthesia",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "Functional heartburn",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "epigastric pain syndrome",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "cannabinoid hyperemesis syndrome",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "Inflammatory bowel disease",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "diarrhea",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "constipation",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "hydroxyzine",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "38",
+      "term": "goserelin",
+      "source_record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
     }
   ]
 }

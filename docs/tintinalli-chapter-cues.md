@@ -306,9 +306,46 @@ decision histories preserve earlier attempts; older holds/rejections are not
 silently closed. Separate register:315 active occurrences/259 distinct terms,
 33 decision-history records. Canonical catalog remains76, unchanged.
 
-## Next
+## Chapters 36-38: Anesthesia, Sedation And Chronic Pain
 
-**Chapter 36, Local and Regional Anesthesia**, is next, not started
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [36 Local and Regional Anesthesia](chapter-36-cue-audit.md) | 115 | 39 | 49 | 27 |
+| [37 Procedural Sedation and Analgesia in Adults](chapter-37-cue-audit.md) | 139 | 32 | 67 | 40 |
+| [38 Chronic Pain](chapter-38-cue-audit.md) | 144 | 49 | 43 | 52 |
+
+398 term trials: 120 newly recorded candidate compositions, 159 reuses and
+119 holds. 604 unique term/page keyword mappings include emphasized lexical
+heads, regular named table rows, figure labels and explicit aliases. Three AI
+drafting lanes plus main independent source/cue integration; interrupted36/37
+reviewers were revived from checkpoints after a Codex usage limit. No Anthropic
+funding problem, paid provider call or mnemonic-image render occurred.
+
+Main checked every recorded term/page, keyword location, cue/attempt and actual
+reuse ingredients/targets. Mixed-column boundaries8/20 and full-width Figure36-20
+were included;38 ends on nonblank38. All source pages' annotation lists contain
+zero annotations; publisher typography inspected separately. This is bounded
+lexical review, not exhaustive clinical coverage or clinical entailment.
+
+Examples: esters/Easter egg, amides/maid, peroneal/pear plus knee, Bier block/beer
+mug plus block, clonidine/clones, fibromyalgia/fiber plus muscle model,
+citalopram/city plus pram, and goserelin/goose plus reel. Familiar category cues
+also remain eligible: glucose meter, open-fracture model, amplified-pain mask,
+blocked toilet. These are taught candidates, not unique blind identifiers,
+clinical definitions, drug effects or proven sound/recall successes.
+
+Old vessel, cuff, finger, ear, spinal-cord, radiograph, fluid, duration and
+bag-valve families were reused, not counted again. Kettle, fan, deck/dex and
+spinning-top fragments collide across names: lesson co-occurrence will require
+disambiguating context and tests. Resolved JSON reuse paths have no cycles or
+held targets; legacy non-fragment links terminate traversal. Earlier held
+records remain unchanged, with30 added decision histories. Separate register:
+434 active hold occurrences/360 distinct terms/63 decision-history records.
+Canonical catalog remains76, unchanged. All chapter candidates remain untested.
+
+## Next Chapter
+
+**Chapter 39, Wound Evaluation**, is next, not started
 for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial

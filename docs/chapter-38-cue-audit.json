@@ -1,0 +1,4004 @@
+{
+  "main_integration_review": {"date": "2026-10-21", "source_and_conceptual_review": true, "scope": "Main independently checked all144 recorded term/page locations,233 keyword mappings, all cues/attempts and actual reuse ingredients/targets. Boundary rasters31/38 and actual full-width table regions checked. AI review only, not clinical, credentialed-human, recall or rendering validation. Historical author-pending notes below are superseded.", "highlight_annotations_found": 0, "normalizations": "Actual heading word orders and full table-row variants explicitly map to partial families; not fabricated contiguous quotes. Stolen/prescription qualifiers in the full row are omitted, not encoded by the pill bottle. Local-only resolution flags distinguished from actual older holds.", "counts": {"selected_terms": 144, "new_candidates": 49, "reused_candidates": 43, "holds": 52}, "keyword_items": 233},
+  "schema_version": 1,
+  "chapter_id": "38",
+  "title": "Chronic Pain",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Analgesia_Anesthesia_Procedural Sedation.pdf",
+    "sha256": "dc0444f631bf8c0dc22c3a6d67cfce06f8e3945c6e019bb0a7b892c4b1e841fb",
+    "pdf_pages": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "printed_pages": [
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266
+    ],
+    "printed_page_offset": 228,
+    "boundary": "Actual Chapter38 title PDF31 x115 y36.8; both columns and full-width Tables38-1 through38-11 on PDF31-37. PDF37 left/right body origins x54/324; do not use even-page x30/300 splits. PDF38 both columns through final right-column REFERENCES y332.6 and publisher line below; PDF38 is not blank. No adjacent chapter content included.",
+    "verification": "Author computed matching SHA256, extracted all font spans/coordinates, enumerated annotations and visually inspected all eight page rasters. Zero annotations. Main integration review remains main-owned."
+  },
+  "scope": "Offline vocabulary cue workshop only; no medical narration, diagnosis, prescribing, Forge, API/provider calls or mnemonic-image generation.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 144,
+    "new_candidates": 49,
+    "reused_candidates": 43,
+    "holds": 52
+  },
+  "entries": [
+    {
+      "term": "Chronic Pain",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "chapter_title",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Reuse pain-mask ingredient only; remove mute/relief qualifier. Chronic duration not encoded.",
+      "tested": false
+    },
+    {
+      "term": "hyperalgesia",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression mask beside an oversized megaphone.",
+      "cue_scope": "Pain/amplification name association only; no measurement, mechanism or diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Main challenge accepted: reuse pain-mask ingredient, remove mute/relief modifier and add familiar amplification prop. Full-name and blind decoding not required.",
+      "tested": false,
+      "attempted_cue": "A pain-expression mask beside an oversized megaphone."
+    },
+    {
+      "term": "allodynia",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Aloe/dino is an awkward sound stack and does not offer a familiar economical cue in this pass.",
+      "tested": false,
+      "attempted_cue": "A toy aloe plant beside a small dinosaur."
+    },
+    {
+      "term": "trigger points",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy trigger beside a large map-pin point.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar trigger/point objects, not a depiction of stimulation or a clinical examination.",
+      "tested": false
+    },
+    {
+      "term": "referred pain",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Reuse only broad pain-mask family; remove relief qualifier. Referred not encoded; no distribution or causation claim.",
+      "tested": false
+    },
+    {
+      "term": "muscle",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy prop accepted; no patient, injury or diagnosis. Earlier sound-workshop muscle hold used a different strict phonetic criterion and remains historical.",
+      "tested": false
+    },
+    {
+      "term": "Medication Overuse Headache",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy head beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#headache",
+      "reason": "Reuse head/pain family; medication-overuse qualifier not encoded or diagnosed. No pill-hoarding caricature.",
+      "tested": false
+    },
+    {
+      "term": "Myofascial headache",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy head beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#headache",
+      "reason": "Head/pain family only; myofascial distinction not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Chronic tension headache",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy head beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#headache",
+      "reason": "Head/pain family only; chronic and tension not encoded.",
+      "tested": false
+    },
+    {
+      "term": "neck",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached neck teaching-model segment on a stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy prop; modifiers not encoded, no syndrome distinction.",
+      "tested": false
+    },
+    {
+      "term": "back",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "The back surface of a freestanding torso mannequin.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy category; chronic/myofascial qualifiers removed.",
+      "tested": false
+    },
+    {
+      "term": "tenderness",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy hand gently touching a squishy tender peach.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#tenderness",
+      "reason": "Reuse existing gentle-touch/tender-peach association, not a pain examination.",
+      "tested": false
+    },
+    {
+      "term": "muscle atrophy",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A small detached muscle model beside a larger detached muscle model.",
+      "cue_scope": "Broad muscle/atrophy vocabulary contrast only.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#muscle",
+      "reason": "Main challenge accepted: size contrast is a useful taught association; no temporal sequence, clinical measurement, growth/atrophy diagnosis or complete blind decoding asserted. Reuse retained local anatomy root.",
+      "tested": false,
+      "attempted_cue": "A tiny muscle model beside a larger muscle model."
+    },
+    {
+      "term": "range of motion",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding articulated toy joint with a broad curved motion arrow.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar model/motion category only; no joint limits, angle or exercise instruction.",
+      "tested": false
+    },
+    {
+      "term": "nonneuropathic pain",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Negation plus broad anatomy does not establish this exclusion category economically; not a statement about individual pain.",
+      "tested": false,
+      "attempted_cue": "A nerve-wire token behind a crossed-circle token beside a pain mask."
+    },
+    {
+      "term": "neuropathic pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached nerve-wire teaching token beside the familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-8-cue-audit.json#nerve agents",
+      "reason": "Reuse nerve-wire ingredient only; remove secret-agent modifier. Add established pain mask; no lesion or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "Painful Diabetic Neuropathy",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached nerve-wire teaching token beside the familiar pain-expression mask.",
+      "cue_scope": "Broad nerve/pain family; diabetes qualifier omitted.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#diabetic neuropathic pain",
+      "reason": "Main challenge accepted: exact older retained family found. Remove sugar-cube proposal, reuse nerve/pain ingredients only; no diabetic mechanism or clinical equivalence claimed.",
+      "tested": false,
+      "attempted_cue": "A sugar cube beside a nerve-wire token and pain mask."
+    },
+    {
+      "term": "Phantom Limb Pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A translucent theatrical phantom costume beside a detached mannequin limb.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar phantom/limb association only; no amputation mechanism or sensory claim. Pain qualifier not separately encoded.",
+      "tested": false
+    },
+    {
+      "term": "Trigeminal Neuralgia",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar triangle-shaped gemstone beside the pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#trigeminal neuralgia",
+      "reason": "Reuse triangle-gem plus pain mask; broad partial-name cue, no trigeminal anatomy or pain distribution.",
+      "tested": false
+    },
+    {
+      "term": "HIV-related neuropathy",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Hive is a weak acronym sound bridge and adds no robust familiar category; no patient stereotype.",
+      "tested": false,
+      "attempted_cue": "A hive prop beside a nerve-wire token."
+    },
+    {
+      "term": "Human Immunodeficiency Virus-Related Pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic immunity imagery is not a recognizable specific-name cue; avoid implying a diagnostic appearance.",
+      "tested": false,
+      "attempted_cue": "A cracked shield beside a generic virus model and pain mask."
+    },
+    {
+      "term": "Postherpetic Neuralgia",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Same uneconomical post/pet stack as earlier35; no improved familiar name bridge selected. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#postherpetic neuralgia.",
+      "tested": false,
+      "attempted_cue": "A fence post beside a toy pet and pain mask."
+    },
+    {
+      "term": "Fibromyalgia",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A spool of familiar fiber yarn beside a detached muscle model.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Fiber/myo family is a taught partial-name association; no tissue pathology or symptom assertion.",
+      "tested": false
+    },
+    {
+      "term": "chronic widespread pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Pain-mask ingredient only; remove mute. Chronic/widespread not encoded and no fibromyalgia equivalence claimed.",
+      "tested": false
+    },
+    {
+      "term": "Poststroke pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar paintbrush leaving one conspicuous brushstroke.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#stroke",
+      "reason": "Reuse paintbrush/stroke ingredient only; post and pain qualifiers not encoded; no disease mechanism.",
+      "tested": false
+    },
+    {
+      "term": "Sciatica",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ski/attic is an awkward prop stack rather than a useful familiar partial-name association.",
+      "tested": false,
+      "attempted_cue": "A toy skier beside an attic window."
+    },
+    {
+      "term": "Complex Regional Pain Syndrome",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Complex/region can be drawn but the map puzzle does not yield a useful economical syndrome-name cue; no type distinction or clinical inference.",
+      "tested": false,
+      "attempted_cue": "A jigsaw map region beside a pain mask."
+    },
+    {
+      "term": "reflex sympathetic dystrophy",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Hammer/trophy would omit most of the name and lean on an obscure association, not a useful partial-name cue.",
+      "tested": false,
+      "attempted_cue": "A reflex hammer beside a drooping trophy."
+    },
+    {
+      "term": "causalgia",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "partial_name_wordplay",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Cow/algae is an obscure sound combination; no simple candidate selected.",
+      "tested": false,
+      "attempted_cue": "A toy cow beside an algae patch."
+    },
+    {
+      "term": "paresthesias",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Tiny pins and needles floating around a study-mannequin hand with tingling marks, without puncturing it.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#paresthesias",
+      "reason": "Reuse existing pins/needles study-hand association only; not a disease discriminator.",
+      "tested": false
+    },
+    {
+      "term": "edema",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A puffy bundle of familiar tissue paper.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#edema",
+      "reason": "Reuse retained family exactly; no chronology or syndrome implication.",
+      "tested": false
+    },
+    {
+      "term": "burning",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Small theatrical flame token.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#inflammation",
+      "reason": "Reuse theatrical-flame ingredient only, not an actual injury or patient sensation claim.",
+      "tested": false
+    },
+    {
+      "term": "stabbing",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "A toy stage dagger held over a detached foam block.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar action vocabulary with inert props, no patient or injury instructions.",
+      "tested": false
+    },
+    {
+      "term": "squeezing",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "A toy hand squeezing a soft sponge.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar action only; not a clinical description linked to a disorder.",
+      "tested": false
+    },
+    {
+      "term": "tearing",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "A torn sheet of craft paper with separated ragged edges.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar physical action vocabulary, no anatomical damage.",
+      "tested": false
+    },
+    {
+      "term": "stiffness",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A rigid articulated toy hinge that cannot bend.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad familiar stiffness association, not a depiction of a patient.",
+      "tested": false
+    },
+    {
+      "term": "fatigue",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly depleted toy battery beside a resting clockwork toy.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar low-energy metaphor without characterizing people or diagnosing fatigue.",
+      "tested": false
+    },
+    {
+      "term": "cognitive dysfunction",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Abstract thought token gives no clear economical vocabulary bridge and could stigmatize cognition.",
+      "tested": false,
+      "attempted_cue": "A tangled thought-cloud token."
+    },
+    {
+      "term": "sleep disturbance",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy bed beside a ringing alarm clock.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar sleep/interruption category only, no cause or treatment.",
+      "tested": false
+    },
+    {
+      "term": "numbness",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached sensory-mute icon beside a mannequin hand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad learned sensation-off category only; no specific deficit distribution.",
+      "tested": false
+    },
+    {
+      "term": "hyperesthesia",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Oversized alarm bell visibly ringing after a feather barely touches its trigger.",
+      "cue_scope": "Broad sensitivity name family only, not clinical equivalence.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#hypersensitivity",
+      "reason": "Main challenge accepted: existing sensitivity family is an asset, not a reason for hold. Reuse alarm/feather ingredient without requiring a distinct icon; no assertion that the terms are clinically interchangeable.",
+      "tested": false,
+      "attempted_cue": "A feather touching an oversized sensory dial."
+    },
+    {
+      "term": "dysesthesias",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic altered-sensation model insufficiently recognizable as this word; no forced object stack.",
+      "tested": false,
+      "attempted_cue": "A tangled wire beside a sensory dial."
+    },
+    {
+      "term": "dermatome",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A freestanding segmented skin teaching chart without labels.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy-chart category accepted without clinical sensory maps or diagnostic claims.",
+      "tested": false
+    },
+    {
+      "term": "pelvic",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached pelvic-bone teaching model on a stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy prop for pelvic/pelvis family, not a diagnostic localization.",
+      "tested": false
+    },
+    {
+      "term": "abdominal pain",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Reuse belly plus pain family without original abdominal-pump/thought modifiers. No clinical localization claim.",
+      "tested": false
+    },
+    {
+      "term": "esophagus",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#esophagus",
+      "reason": "Reuse detached teaching-model tube only, no passage or pathology claim.",
+      "tested": false
+    },
+    {
+      "term": "stomach",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached stomach teaching model on a display stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy prop only.",
+      "tested": false
+    },
+    {
+      "term": "bowel",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached coiled intestinal teaching model.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy category, no motility or disease assertion.",
+      "tested": false
+    },
+    {
+      "term": "Functional heartburn",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A heart-shaped token beside a theatrical flame.",
+      "cue_scope": "Heart/burn word ingredients only; functional qualifier omitted.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#inflammation",
+      "reason": "Main challenge accepted: heart/flame is familiar partial-name vocabulary, not a claim that the heart burns or an organ-localization/physiology lesson. Reuse flame ingredient without cascade.",
+      "tested": false,
+      "attempted_cue": "A heart-shaped token beside a theatrical flame."
+    },
+    {
+      "term": "Reflux hypersensitivity",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Oversized alarm bell visibly ringing after a feather barely touches its trigger.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#hypersensitivity",
+      "reason": "Reuse hypersensitivity alarm/feather family only; reflux qualifier not encoded, no mechanism claim.",
+      "tested": false
+    },
+    {
+      "term": "Functional dyspepsia",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Disk/pepper is a weak sound combination; no useful familiar category selected.",
+      "tested": false,
+      "attempted_cue": "A toy disk beside a pepper shaker."
+    },
+    {
+      "term": "epigastric pain syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An upper-belly teaching-model token beside a familiar pain-expression mask.",
+      "cue_scope": "Epi/gastric/pain word family only; syndrome and diagnostic localization omitted.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Main challenge accepted: upper-belly/pain is a familiar name-family association, not a finding in a patient. Reuse belly/pain ingredients; original pump/thought modifiers remain absent.",
+      "tested": false,
+      "attempted_cue": "A belly teaching token with an upper-position arrow beside a pain mask."
+    },
+    {
+      "term": "Cyclic vomiting syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A circular arrow beside a detached toy bucket with cartoon splatter.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar cycle/bucket family only, no recurrence criteria, duration or diagnostic pattern encoded.",
+      "tested": false
+    },
+    {
+      "term": "Gastroparesis",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Parked stomach is not a strong familiar name cue and risks teaching a physiologic mechanism.",
+      "tested": false,
+      "attempted_cue": "A toy stomach beside a parking sign."
+    },
+    {
+      "term": "cannabinoid hyperemesis syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached cannabis-leaf teaching token beside a toy vomiting bucket with cartoon splatter.",
+      "cue_scope": "Cannabinoid/emesis name ingredients only; hyper and syndrome not encoded.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#cannabis",
+      "reason": "Main challenge accepted: reuse retained local cannabis-leaf root and established bucket ingredient as a taught partial-name composition. No causal arrow, use action, symptom chronology, mechanism or diagnostic rule.",
+      "tested": false,
+      "attempted_cue": "A cannabis-leaf teaching token beside a splatter bucket."
+    },
+    {
+      "term": "Centrally mediated abdominal pain syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Centering a prop does not express mediated and can be mistaken for localization; broad abdomen family alone not selected as this phrase.",
+      "tested": false,
+      "attempted_cue": "A centered belly token beside a pain mask."
+    },
+    {
+      "term": "functional abdominal pain syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Broad abdomen/pain family only; functional qualifier stripped, not a synonym claim beyond the printed former-name annotation.",
+      "tested": false
+    },
+    {
+      "term": "narcotic bowel syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic medicine/bowel objects neither distinguish narcotic category nor provide an economical syndrome-name cue.",
+      "tested": false,
+      "attempted_cue": "An unmarked medicine bottle beside an intestinal model."
+    },
+    {
+      "term": "irritable bowel syndrome",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Alarm is a broad irritation metaphor but not a familiar economical syndrome token; avoid an angry patient caricature.",
+      "tested": false,
+      "attempted_cue": "An intestinal model beside a ringing alarm."
+    },
+    {
+      "term": "Inflammatory bowel disease",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A theatrical flame beside a detached intestinal teaching model.",
+      "cue_scope": "Inflammatory/bowel name ingredients only; disease qualifier not separately encoded.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#inflammation",
+      "reason": "Main challenge accepted: reuse familiar flame family with bowel anatomy prop. This is a name association, not a pathology diagram or an assertion about mechanism, symptoms or diagnosis.",
+      "tested": false,
+      "attempted_cue": "A theatrical flame beside an intestinal teaching model."
+    },
+    {
+      "term": "Crohn's disease",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar crown standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Crown/Crohn partial-name association allowed, no disease mechanism or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "ulcerative colitis",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Crater association implies a tissue finding and does not provide an economical familiar word cue.",
+      "tested": false,
+      "attempted_cue": "An intestinal model beside a crater prop."
+    },
+    {
+      "term": "diarrhea",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy toilet beside a rapid-flow arrow.",
+      "cue_scope": "Broad diarrhea vocabulary association only.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main challenge accepted: familiar rapid-flow toilet category is a taught partial association, not a diagnostic test or claim of unique blind decoding. Earlier strict sound-workshop rejection unchanged.",
+      "tested": false,
+      "attempted_cue": "A toilet with a rapid-flow arrow."
+    },
+    {
+      "term": "constipation",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy toilet visibly blocked by a padlock.",
+      "cue_scope": "Broad constipation vocabulary association only.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main challenge accepted under broad category calibration: familiar blocked-toilet association is sufficient for a taught vocabulary candidate. No physiology, severity or treatment instruction; earlier35 hold remains historical.",
+      "tested": false,
+      "attempted_cue": "A toy toilet blocked by a padlock."
+    },
+    {
+      "term": "Endometriosis",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "End/metro is concrete but too stretched as a familiar partial-name bridge; no useful candidate selected.",
+      "tested": false,
+      "attempted_cue": "A toy metro train at the end of its track."
+    },
+    {
+      "term": "Post-pelvic inflammatory disease pain",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Long phrase produces a prop stack rather than an economical name association; no causal sequence or diagnostic stereotype.",
+      "tested": false,
+      "attempted_cue": "A fence post beside a pelvic teaching model and flame token."
+    },
+    {
+      "term": "interstitial cystitis",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Lattice/interstitial is not a strong everyday bridge, and placement risks implying anatomy or pathology.",
+      "tested": false,
+      "attempted_cue": "A bladder teaching model inside a lattice."
+    },
+    {
+      "term": "bladder pain syndrome",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached bladder teaching model beside a pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy/pain family; no diagnostic criteria, causes or equivalence beyond source alias.",
+      "tested": false
+    },
+    {
+      "term": "opioids",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Poppy does not establish a useful broad class token here and could imply shared botanical origin; no clinical recommendation copied.",
+      "tested": false,
+      "attempted_cue": "A poppy flower beside an unmarked medicine bottle."
+    },
+    {
+      "term": "cannabis",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar cannabis-leaf botanical teaching model.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar botanical category prop, no ingestion, recommendation, benefit or harm depicted.",
+      "tested": false
+    },
+    {
+      "term": "the elderly",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar gray-haired older-adult figurine.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#the elderly",
+      "reason": "Use neutral older-adult figurine only, no frailty or cognitive stereotype.",
+      "tested": false
+    },
+    {
+      "term": "mentally impaired",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Missing-piece metaphor stigmatizes cognition and lacks a clear respectful category cue; no human caricature.",
+      "tested": false,
+      "attempted_cue": "A thought-cloud token with a missing piece."
+    },
+    {
+      "term": "amitriptyline",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy traveler tripping over a loose cord beside a suitcase.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#amitriptyline",
+      "reason": "Reuse traveler/trip/suitcase partial-name family; no dosing or medication effect.",
+      "tested": false
+    },
+    {
+      "term": "celecoxib",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar celebratory party hat beside a toy ox.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cele/cox partial-name association accepted as familiar ingredients; not whole-name recovery or drug equivalence.",
+      "tested": false
+    },
+    {
+      "term": "diclofenac",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Earlier35 discus/flow attempt remains weak; no economical familiar bridge selected. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#diclofenac.",
+      "tested": false,
+      "attempted_cue": "A toy discus beside a flowing stream."
+    },
+    {
+      "term": "prednisone",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar toy predatory dinosaur standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Pred/predator partial-name category is simple and teachable; no full-name, pronunciation, efficacy or patient-characterization claim.",
+      "tested": false
+    },
+    {
+      "term": "sodium valproate",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Sodium/salt is familiar but valve/valproate adds a weak bridge; no useful compact candidate selected.",
+      "tested": false,
+      "attempted_cue": "A salt shaker beside a toy valve."
+    },
+    {
+      "term": "topiramate",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar spinning top standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Top fragment is familiar and economical; remaining syllables and specificity not claimed.",
+      "tested": false
+    },
+    {
+      "term": "capsaicin",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar chili-pepper-shaped toy.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#capsaicin",
+      "reason": "Reuse chili-pepper-shaped toy as learned name/category only, no heat or effect claim.",
+      "tested": false
+    },
+    {
+      "term": "carbamazepine",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy car inside a simple maze.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#carbamazepine",
+      "reason": "Reuse car-in-maze partial-name family; no class, effect or dose.",
+      "tested": false
+    },
+    {
+      "term": "duloxetine",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Same earlier35 locks/tin stack; no improvement over a cumbersome sound composition. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#duloxetine.",
+      "tested": false,
+      "attempted_cue": "Two toy locks beside a tin."
+    },
+    {
+      "term": "gabapentin",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pen standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#gabapentin",
+      "reason": "Reuse familiar pen fragment only, not a complete drug-name discriminator.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine patch",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "reason": "Reuse lid+cane root only; patch/formulation qualifier intentionally not encoded. Older lidocaine holds/rejection unchanged.",
+      "tested": false
+    },
+    {
+      "term": "oxcarbazepine",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy ox beside a toy car inside a simple maze.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#oxcarbazepine",
+      "reason": "Reuse ox/car/maze proposal exactly; scope remains partial-name, not medication equivalence.",
+      "tested": false
+    },
+    {
+      "term": "pregabalin",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Earlier35 party/balloon association is not improved; pre-gala fragment remains weak, not rejected for missing every syllable. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#pregabalin.",
+      "tested": false,
+      "attempted_cue": "A toy character at a party holding a balloon."
+    },
+    {
+      "term": "tramadol",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy tram carrying a doll.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#tramadol",
+      "reason": "Reuse tram carrying doll. Earlier strict sound-workshop hold remains historical; no efficacy or timing claim.",
+      "tested": false
+    },
+    {
+      "term": "citalopram",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar city skyline beside a toy pram.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "City/pram is a simple partial-name association; no complete phonetic recovery claimed.",
+      "tested": false
+    },
+    {
+      "term": "dicyclomine",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A pair of toy dice beside a bicycle.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Dice/cycle partial-name association with familiar objects; suffix not encoded.",
+      "tested": false
+    },
+    {
+      "term": "haloperidol",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A halo over an ordinary toy doll.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Halo/doll is a familiar partial-name association; no human behavioral stereotype or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "ketorolac",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A kettle beside a familiar padlock.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#ketorolac",
+      "reason": "Reuse kettle+padlock. Kettle collides with ketamine/ketoprofen family; lock is a taught qualifier, not unique blind identification.",
+      "tested": false
+    },
+    {
+      "term": "linaclotide",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Line/clock is stretched and does not supply an economical familiar partial-name association.",
+      "tested": false,
+      "attempted_cue": "A clothesline with a clock hanging from it."
+    },
+    {
+      "term": "lorazepam",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Lore/zip is a stretched two-object bridge without a sufficiently familiar name association selected here.",
+      "tested": false,
+      "attempted_cue": "A familiar lore-story book beside a zipper."
+    },
+    {
+      "term": "lubiprostone",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Lube/stone misses the recognizable middle and is not a useful compact family selected here; incompleteness alone is not the rejection.",
+      "tested": false,
+      "attempted_cue": "An oil can beside a stone."
+    },
+    {
+      "term": "ondansetron",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Same earlier35 dance/throne proposal is stretched and cumbersome; no selected familiar bridge. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#ondansetron.",
+      "tested": false,
+      "attempted_cue": "A toy dancer sitting on a throne."
+    },
+    {
+      "term": "polyethylene glycol",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar polyethylene plastic shopping bag standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar material category for polyethylene fragment only; glycol and formulation not encoded. No product contents or treatment assertion.",
+      "tested": false
+    },
+    {
+      "term": "progesterone",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar stage jester standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Jester/gest partial-name fragment, no hormones or clinical effects.",
+      "tested": false
+    },
+    {
+      "term": "psyllium",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Seal/lily is a weak two-object sound stack; no economical association selected.",
+      "tested": false,
+      "attempted_cue": "A toy seal beside a small lily."
+    },
+    {
+      "term": "quetiapine",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Kettle/pine sound is stretched for quetiapine and adds a kettle collision with ketamine/ketorolac/ketoprofen; no economical familiar alternative selected.",
+      "tested": false,
+      "attempted_cue": "A familiar kettle beside a pine branch."
+    },
+    {
+      "term": "hydroxyzine",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "partial_name_wordplay",
+      "cue": "A water-droplet ornament beside a familiar toy xylophone.",
+      "cue_scope": "Hydro/xy partial-name association only.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main challenge accepted: two familiar ingredients are economical enough for a taught fragment. No suffix completeness, unique recovery, drug-class or effect claim. Recognition and recall remain untested.",
+      "tested": false,
+      "attempted_cue": "A water droplet beside a toy xylophone."
+    },
+    {
+      "term": "ketamine",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar kettle standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Ketamine",
+      "reason": "Reuse kettle alone; collisions with ketorolac, ketoprofen and quetiapine explicit. No medication equivalence or unique name decoding.",
+      "tested": false
+    },
+    {
+      "term": "NSAIDs",
+      "pdf_page": 32,
+      "page": 260,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Earlier35 knight/aid attempt still lacks an economical class association; no expanded mechanism teaching. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#NSAIDs.",
+      "tested": false,
+      "attempted_cue": "A toy knight with a first-aid box."
+    },
+    {
+      "term": "proton pump inhibitor",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A proton-model toy beside a familiar pump and a stop-sign token.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#proton pump inhibitor",
+      "reason": "Reuse proton-model/pump/stop family; no medical mechanism or treatment relationship copied.",
+      "tested": false
+    },
+    {
+      "term": "H2 blockers",
+      "pdf_page": 33,
+      "page": 261,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Hydrogen/two is an abstract letter-number representation rather than an economical familiar class token; earlier29B H2 blocker hold unchanged.",
+      "tested": false,
+      "attempted_cue": "Two blocks beside a hydrogen atom model."
+    },
+    {
+      "term": "onabotulinumtoxinA",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Boat/bottle provides only a weak fragment of a long name without an economical taught bridge.",
+      "tested": false,
+      "attempted_cue": "A toy boat beside a bottle."
+    },
+    {
+      "term": "mirror therapy",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar freestanding mirror.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar object ingredient only; therapy qualifier and treatment efficacy intentionally not depicted.",
+      "tested": false
+    },
+    {
+      "term": "dry needling",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached dry needle training prop beside an empty droplet outline.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Device/action category only, no patient, insertion or technique instruction.",
+      "tested": false
+    },
+    {
+      "term": "exercise",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#exercise",
+      "reason": "Reuse familiar dumbbell only; no regimen, effect or endorsement.",
+      "tested": false
+    },
+    {
+      "term": "Spinal cord pain",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached spinal-cord teaching model on a stand.",
+      "cue_scope": "Spinal-cord anatomy ingredient only; pain qualifier omitted.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#spinal cord compression",
+      "reason": "Main challenge found earlier spinal-cord model: reuse anatomy ingredient and explicitly remove broad compression clamp. Not a new anatomy primitive or an assertion of compression/lesion.",
+      "tested": false
+    },
+    {
+      "term": "bisphosphonates",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Abstract atom/count imagery is not a useful familiar class-name cue here.",
+      "tested": false,
+      "attempted_cue": "Two phosphorus atom-model balls."
+    },
+    {
+      "term": "Helicobacter pylori",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Helico/pillar is a plausible but stretched object stack without a selected simple organism-name cue.",
+      "tested": false,
+      "attempted_cue": "A toy helicopter beside a pillar."
+    },
+    {
+      "term": "levonorgestrel",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Level/jester leaves an obscure stack rather than an economical familiar partial-name cue.",
+      "tested": false,
+      "attempted_cue": "A level tool beside a toy jester."
+    },
+    {
+      "term": "goserelin",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar toy goose beside a reel.",
+      "cue_scope": "Goose/reel partial-name association only.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Main challenge accepted: two familiar props supply a personal taught name association without complete syllable coverage or blind decoding. Pronunciation/recognition still untested; not a drug effect.",
+      "tested": false,
+      "attempted_cue": "A goose beside a reel."
+    },
+    {
+      "term": "intrauterine system",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar T-shaped intrauterine-device teaching prop.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Recognizable device category only; no insertion, placement, dose or therapeutic assertion.",
+      "tested": false
+    },
+    {
+      "term": "pentosan polysulfate sodium",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Three unrelated props are a forced compound-name stack, no useful familiar cue selected.",
+      "tested": false,
+      "attempted_cue": "A pen beside salt and a pile of sulfur props."
+    },
+    {
+      "term": "benzodiazepines",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Bench/zipper remains a weak class-name fragment; earlier29B singular benzodiazepine hold unchanged.",
+      "tested": false,
+      "attempted_cue": "A toy bench beside a zipper."
+    },
+    {
+      "term": "antidepressant therapy",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Effect-looking emotional icon risks a clinical inference and does not give a specific economical class token; earlier35 antidepressants hold unchanged.",
+      "tested": false,
+      "attempted_cue": "A crossed-out sad theatrical mask."
+    },
+    {
+      "term": "antiemetics",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Conspicuous stop barrier across a recognizable vomiting bucket.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#antiemetics",
+      "reason": "Reuse stop-barrier/vomiting-bucket association as vocabulary only; no therapy recommendation.",
+      "tested": false
+    },
+    {
+      "term": "normal saline",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Ordinary salt shaker beside a clear-water pitcher.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#saline",
+      "reason": "Salt-shaker/pitcher family only; no concentration or hydration instruction.",
+      "tested": false
+    },
+    {
+      "term": "dextrose",
+      "pdf_page": 36,
+      "page": 264,
+      "source_match": "table",
+      "kind": "partial_name_wordplay",
+      "cue": "A familiar deck of cards beside a rose.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Deck/rose familiar partial-name association only; no fluid contents or administration.",
+      "tested": false
+    },
+    {
+      "term": "drug-seeking behavior",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Search/medicine prop is nonspecific and risks equating routine medication questions with a behavioral diagnosis; earlier35 hold unchanged. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#drug-seeking behavior.",
+      "tested": false,
+      "attempted_cue": "A toy detective inspecting a medicine bottle."
+    },
+    {
+      "term": "aberrant drug-related behavior",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Crooked path moralizes behavior and has no respectful specific category bridge; hold without a patient caricature.",
+      "tested": false,
+      "attempted_cue": "A medicine-bottle token on a crooked path."
+    },
+    {
+      "term": "prescriptions",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A blank prescription-pad prop beside a pen.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar document category; no medicine names, instructions or assumption of fraudulent conduct.",
+      "tested": false
+    },
+    {
+      "term": "aliases",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Two different blank name-badge props joined by a small link.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar multiple-name association only; no patient or illegal-behavior depiction.",
+      "tested": false
+    },
+    {
+      "term": "controlled substances",
+      "pdf_page": 35,
+      "page": 263,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Cabinet suggests storage/security, not a specific legal class; no categorization or clinical/legal assertion.",
+      "tested": false,
+      "attempted_cue": "An unmarked medicine bottle inside a locked cabinet."
+    },
+    {
+      "term": "illicit drug use",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Prohibition symbol would be a legal judgment rather than a specific neutral vocabulary cue; no person depicted.",
+      "tested": false,
+      "attempted_cue": "An unmarked medicine bottle beside a crossed-circle token."
+    },
+    {
+      "term": "Factitious illness",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Theater/illness metaphor risks stigmatizing genuine illness and is not a reliable name association.",
+      "tested": false,
+      "attempted_cue": "A toy theater mask beside a blank medical chart."
+    },
+    {
+      "term": "conceals",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "A toy hand sliding a blank card beneath an opaque folder.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Neutral concealment action only; no patient or medical inference.",
+      "tested": false
+    },
+    {
+      "term": "abusive",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Graphic speech shape is vague and risks attaching a stereotype to a patient; no behavioral diagnostic token.",
+      "tested": false,
+      "attempted_cue": "A jagged speech-balloon prop."
+    },
+    {
+      "term": "forges/alters prescriptions",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "action",
+      "cue": "A blank prescription pad beside an eraser and pencil.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Stationery/alteration vocabulary only, not a forgery method or inference about a person.",
+      "tested": false
+    },
+    {
+      "term": "Lost prescription",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Question mark does not clearly express lost, and no patient or fraud characterization is appropriate.",
+      "tested": false,
+      "attempted_cue": "A blank prescription pad beside a question-mark prop."
+    },
+    {
+      "term": "pill bottle",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar unmarked pill bottle.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar object category only; stolen qualifier not encoded, no inference of dishonesty.",
+      "tested": false
+    },
+    {
+      "term": "surgery",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar setting category; impending qualifier stripped, no patient or procedure instructions.",
+      "tested": false
+    },
+    {
+      "term": "records",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A stack of blank chart folders.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Neutral record-document category only, not suspiciousness or diagnostic classification.",
+      "tested": false
+    },
+    {
+      "term": "radiographs",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A plain radiograph-film frame standing alone.",
+      "cue_scope": "Broad radiograph-film ingredient only; chest qualifier removed.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#chest radiograph",
+      "reason": "Main prior-family check accepted: reuse actual retained film-frame ingredient and remove chest-shaped study token. No findings, interpretation or fraud implication; not a new category discovery.",
+      "tested": false
+    },
+    {
+      "term": "Factitious hematuria",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Mask risks stigmatizing genuine symptoms; no falsification act or diagnostic appearance selected.",
+      "tested": false,
+      "attempted_cue": "A theatrical mask beside a red-tinted urine-sample prop."
+    },
+    {
+      "term": "kidney stones",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached kidney teaching model beside ordinary pebbles.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anatomy/stone vocabulary; not diagnostic findings or a falsification technique.",
+      "tested": false
+    },
+    {
+      "term": "Self-mutilation",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "No non-stigmatizing economical cue selected; do not render self-injury actions, methods or a stereotyped person.",
+      "tested": false,
+      "attempted_cue": null
+    },
+    {
+      "term": "Dental pain",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached tooth teaching model beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar dental/pain vocabulary only; no patient, diagnosis or alleged motivation.",
+      "tested": false
+    },
+    {
+      "term": "Factitious injury",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Mask/injury composition risks moralizing symptoms and is not a useful neutral vocabulary cue.",
+      "tested": false,
+      "attempted_cue": "A theater mask beside a dented mannequin token."
+    },
+    {
+      "term": "bupivacaine",
+      "pdf_page": 37,
+      "page": 265,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Buoy/cane is a partial-name possibility but too close to the established lidocaine cane family without a useful simple discriminator.",
+      "tested": false,
+      "attempted_cue": "A buoy beside a walking cane."
+    },
+    {
+      "term": "counseling",
+      "pdf_page": 38,
+      "page": 266,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Two toy figures seated face-to-face, one visibly listening.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-27-cue-audit.json#counseling",
+      "reason": "Reuse listening-conversation category only; no treatment recommendation or patient stereotype.",
+      "tested": false
+    },
+    {
+      "term": "legal issues",
+      "pdf_page": 38,
+      "page": 266,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar courthouse gavel standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar legal-category association only; no laws or current prescribing guidance.",
+      "tested": false
+    },
+    {
+      "term": "prescription drug monitoring programs",
+      "pdf_page": 34,
+      "page": 262,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A blank prescription-pad prop beside a freestanding computer monitor.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Prescription/monitor word ingredients only; no access instructions, efficacy claim or patient classification.",
+      "tested": false
+    },
+    {
+      "term": "headache",
+      "pdf_page": 31,
+      "page": 259,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy head beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#headache",
+      "reason": "Reuse detached head/pain-mask ingredient only, no migraine or overuse distinction.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Bounded full-chapter page/column scan using fitz span fonts, coordinates and all eight rendered rasters. Meaningful bold/heading headwords, every bold drug-name head in Table38-7/8/9 footnotes, named regular table rows and selected regular symptom/anatomy/action/device/comment heads explicitly tried. Qualifiers stripped only with entry notes. No numbered figures or figure labels present in this chapter. Items unique by casefold term plus PDF page. Some normalized headword families, aliases and representative descriptors; not every generic body word, every table-comment word or exhaustive clinical coverage.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotations on PDF31-38; none found. Flattened publisher highlighting cannot be ruled out. Red headings and table shading are publisher layout, not asserted user highlight annotations."
+    },
+    "items": [
+      {
+        "term": "Chronic Pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Actual chapter title MyriadPro-BlackSemiCn x115 y36.8 and section heading; not the running header.",
+        "entry_term": "Chronic Pain"
+      },
+      {
+        "term": "hyperalgesia",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "MinionPro-Bold lexical headword x179 y505.5.",
+        "entry_term": "hyperalgesia"
+      },
+      {
+        "term": "allodynia",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "MinionPro-Bold headword PDF31 x190 y515.5; regular Table38-2 vocabulary PDF32.",
+        "entry_term": "allodynia"
+      },
+      {
+        "term": "allodynia",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MinionPro-Bold headword PDF31 x190 y515.5; regular Table38-2 vocabulary PDF32.",
+        "entry_term": "allodynia"
+      },
+      {
+        "term": "trigger points",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Bold trigger-point clause PDF31 x324 y393-413; regular Table38-1 terminology.",
+        "entry_term": "trigger points"
+      },
+      {
+        "term": "referred pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Lexical headword within MinionPro-Bold trigger-point clause x324 y403.3.",
+        "entry_term": "referred pain"
+      },
+      {
+        "term": "muscle",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Muscle lexical headword inside bold trigger-point clause PDF31; regular muscle descriptors Table38-2.",
+        "entry_term": "muscle"
+      },
+      {
+        "term": "muscle",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Muscle lexical headword inside bold trigger-point clause PDF31; regular muscle descriptors Table38-2.",
+        "entry_term": "muscle"
+      },
+      {
+        "term": "Medication Overuse Headache",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "MyriadPro-Bold subsection PDF31; regular disorder rows Table38-1 and Table38-7.",
+        "entry_term": "Medication Overuse Headache"
+      },
+      {
+        "term": "Medication Overuse Headache",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-Bold subsection PDF31; regular disorder rows Table38-1 and Table38-7.",
+        "entry_term": "Medication Overuse Headache"
+      },
+      {
+        "term": "Myofascial headache",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular Table38-1 disorder row; not bold.",
+        "entry_term": "Myofascial headache"
+      },
+      {
+        "term": "Chronic tension headache",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular Table38-1 disorder row.",
+        "entry_term": "Chronic tension headache"
+      },
+      {
+        "term": "neck",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Lexical anatomy head from Table38-1 Myofascial neck pain / Chronic neck pain.",
+        "entry_term": "neck"
+      },
+      {
+        "term": "back",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Lexical anatomy head from Table38-1 Chronic back pain / Myofascial back pain syndrome.",
+        "entry_term": "back"
+      },
+      {
+        "term": "tenderness",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular Table38-1 signs; lexical counterpart to bold tender portions clause.",
+        "entry_term": "tenderness"
+      },
+      {
+        "term": "muscle atrophy",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular Table38-1/2 sign headword.",
+        "entry_term": "muscle atrophy"
+      },
+      {
+        "term": "muscle atrophy",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-1/2 sign headword.",
+        "entry_term": "muscle atrophy"
+      },
+      {
+        "term": "range of motion",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Table38-1 abbreviation expansion ROM = range of motion.",
+        "entry_term": "range of motion"
+      },
+      {
+        "term": "nonneuropathic pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Table38-1 title; treatment heading PDF34 and Table38-7 title PDF35; normalized noun family.",
+        "entry_term": "nonneuropathic pain"
+      },
+      {
+        "term": "nonneuropathic pain",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Table38-1 title; treatment heading PDF34 and Table38-7 title PDF35; normalized noun family.",
+        "entry_term": "nonneuropathic pain"
+      },
+      {
+        "term": "Nonneuropathic Chronic Pain Syndromes",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Actual source heading/row form; maps to the explicitly scoped entry family. Chronic/combined pelvic qualifiers not encoded. Not asserted as a literal contiguous occurrence of the shortened entry name.",
+        "entry_term": "nonneuropathic pain"
+      },
+      {
+        "term": "neuropathic pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Table38-2 and Table38-8 titles; PDF35 treatment heading. Noun family from Neuropathic Pain Syndromes.",
+        "entry_term": "neuropathic pain"
+      },
+      {
+        "term": "neuropathic pain",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Table38-2 and Table38-8 titles; PDF35 treatment heading. Noun family from Neuropathic Pain Syndromes.",
+        "entry_term": "neuropathic pain"
+      },
+      {
+        "term": "Neuropathic Chronic Pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Actual source heading/row form; maps to the explicitly scoped entry family. Chronic/combined pelvic qualifiers not encoded. Not asserted as a literal contiguous occurrence of the shortened entry name.",
+        "entry_term": "neuropathic pain"
+      },
+      {
+        "term": "Painful Diabetic Neuropathy",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Painful Diabetic Neuropathy"
+      },
+      {
+        "term": "Painful Diabetic Neuropathy",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Painful Diabetic Neuropathy"
+      },
+      {
+        "term": "Phantom Limb Pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32; Table38-2 and Table38-8 rows.",
+        "entry_term": "Phantom Limb Pain"
+      },
+      {
+        "term": "Phantom Limb Pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32; Table38-2 and Table38-8 rows.",
+        "entry_term": "Phantom Limb Pain"
+      },
+      {
+        "term": "Trigeminal Neuralgia",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32; Table38-2 and Table38-8 rows.",
+        "entry_term": "Trigeminal Neuralgia"
+      },
+      {
+        "term": "Trigeminal Neuralgia",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32; Table38-2 and Table38-8 rows.",
+        "entry_term": "Trigeminal Neuralgia"
+      },
+      {
+        "term": "HIV-related neuropathy",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 and Table38-8 rows; full Human Immunodeficiency Virus-Related Pain subsection PDF32 mapped separately.",
+        "entry_term": "HIV-related neuropathy"
+      },
+      {
+        "term": "HIV-related neuropathy",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-2 and Table38-8 rows; full Human Immunodeficiency Virus-Related Pain subsection PDF32 mapped separately.",
+        "entry_term": "HIV-related neuropathy"
+      },
+      {
+        "term": "Human Immunodeficiency Virus-Related Pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection x300 y531.8; source dash normalized to ASCII.",
+        "entry_term": "Human Immunodeficiency Virus-Related Pain"
+      },
+      {
+        "term": "Postherpetic Neuralgia",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Postherpetic Neuralgia"
+      },
+      {
+        "term": "Postherpetic Neuralgia",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Postherpetic Neuralgia"
+      },
+      {
+        "term": "Fibromyalgia",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Fibromyalgia"
+      },
+      {
+        "term": "Fibromyalgia",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32, Table38-2 and Table38-8 rows.",
+        "entry_term": "Fibromyalgia"
+      },
+      {
+        "term": "chronic widespread pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 disorder row and body.",
+        "entry_term": "chronic widespread pain"
+      },
+      {
+        "term": "Poststroke pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 and Table38-8 disorder rows.",
+        "entry_term": "Poststroke pain"
+      },
+      {
+        "term": "Poststroke pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-2 and Table38-8 disorder rows.",
+        "entry_term": "Poststroke pain"
+      },
+      {
+        "term": "Sciatica",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 row Sciatica (neurogenic back pain) and body.",
+        "entry_term": "Sciatica"
+      },
+      {
+        "term": "Complex Regional Pain Syndrome",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "MyriadPro-Bold subsection PDF32 and regular Table38-2 / Table38-8 rows; types I/II merged into name family.",
+        "entry_term": "Complex Regional Pain Syndrome"
+      },
+      {
+        "term": "Complex Regional Pain Syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-Bold subsection PDF32 and regular Table38-2 / Table38-8 rows; types I/II merged into name family.",
+        "entry_term": "Complex Regional Pain Syndrome"
+      },
+      {
+        "term": "reflex sympathetic dystrophy",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-8 parenthetical disorder alias.",
+        "entry_term": "reflex sympathetic dystrophy"
+      },
+      {
+        "term": "causalgia",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-8 parenthetical alias.",
+        "entry_term": "causalgia"
+      },
+      {
+        "term": "paresthesias",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 HIV-related neuropathy symptom cell.",
+        "entry_term": "paresthesias"
+      },
+      {
+        "term": "edema",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 signs and body.",
+        "entry_term": "edema"
+      },
+      {
+        "term": "burning",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom descriptor, repeated across rows.",
+        "entry_term": "burning"
+      },
+      {
+        "term": "stabbing",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom descriptor.",
+        "entry_term": "stabbing"
+      },
+      {
+        "term": "squeezing",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 phantom-limb descriptor.",
+        "entry_term": "squeezing"
+      },
+      {
+        "term": "tearing",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom descriptor.",
+        "entry_term": "tearing"
+      },
+      {
+        "term": "stiffness",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 fibromyalgia symptom cell.",
+        "entry_term": "stiffness"
+      },
+      {
+        "term": "fatigue",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom cell and body.",
+        "entry_term": "fatigue"
+      },
+      {
+        "term": "cognitive dysfunction",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom cell, not bold.",
+        "entry_term": "cognitive dysfunction"
+      },
+      {
+        "term": "sleep disturbance",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom cell.",
+        "entry_term": "sleep disturbance"
+      },
+      {
+        "term": "numbness",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2 symptom cells and body.",
+        "entry_term": "numbness"
+      },
+      {
+        "term": "hyperesthesia",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular body under Painful Diabetic Neuropathy and Postherpetic Neuralgia.",
+        "entry_term": "hyperesthesia"
+      },
+      {
+        "term": "dysesthesias",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Painful Diabetic Neuropathy body.",
+        "entry_term": "dysesthesias"
+      },
+      {
+        "term": "dermatome",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular Table38-2/body anatomy term.",
+        "entry_term": "dermatome"
+      },
+      {
+        "term": "pelvic",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Lexical anatomy head from chronic abdominal/pelvic subsection headings; source pelvic is the adjective.",
+        "entry_term": "pelvic"
+      },
+      {
+        "term": "pelvic",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Lexical anatomy head from chronic abdominal/pelvic subsection headings; source pelvic is the adjective.",
+        "entry_term": "pelvic"
+      },
+      {
+        "term": "pelvic",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Lexical anatomy head from chronic abdominal/pelvic subsection headings; source pelvic is the adjective.",
+        "entry_term": "pelvic"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Abdominal/pelvic headings PDF32/34/35; Tables38-3/4/9 vocabulary.",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Abdominal/pelvic headings PDF32/34/35; Tables38-3/4/9 vocabulary.",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Abdominal/pelvic headings PDF32/34/35; Tables38-3/4/9 vocabulary.",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "Chronic Abdominal and Pelvic Pain Syndromes",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Actual source heading/row form; maps to the explicitly scoped entry family. Chronic/combined pelvic qualifiers not encoded. Not asserted as a literal contiguous occurrence of the shortened entry name.",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Abdominal/pelvic headings PDF32/34/35; Tables38-3/4/9 vocabulary.",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "esophagus",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical anatomy head from Table38-3 title and bold subsection.",
+        "entry_term": "esophagus"
+      },
+      {
+        "term": "stomach",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical anatomy head from Table38-3 title and bold subsection.",
+        "entry_term": "stomach"
+      },
+      {
+        "term": "bowel",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical anatomy head from bold bowel subsection PDF33, Table38-4 title and bold syndrome names PDF34.",
+        "entry_term": "bowel"
+      },
+      {
+        "term": "bowel",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Lexical anatomy head from bold bowel subsection PDF33, Table38-4 title and bold syndrome names PDF34.",
+        "entry_term": "bowel"
+      },
+      {
+        "term": "Functional heartburn",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular disorder row Table38-3 and Table38-9.",
+        "entry_term": "Functional heartburn"
+      },
+      {
+        "term": "Functional heartburn",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular disorder row Table38-3 and Table38-9.",
+        "entry_term": "Functional heartburn"
+      },
+      {
+        "term": "Reflux hypersensitivity",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-3 and Table38-9 disorder rows.",
+        "entry_term": "Reflux hypersensitivity"
+      },
+      {
+        "term": "Reflux hypersensitivity",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-3 and Table38-9 disorder rows.",
+        "entry_term": "Reflux hypersensitivity"
+      },
+      {
+        "term": "Functional dyspepsia",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical disorder head from Table38-3 and Table38-9 Functional dyspepsia with epigastric pain syndrome.",
+        "entry_term": "Functional dyspepsia"
+      },
+      {
+        "term": "Functional dyspepsia",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Lexical disorder head from Table38-3 and Table38-9 Functional dyspepsia with epigastric pain syndrome.",
+        "entry_term": "Functional dyspepsia"
+      },
+      {
+        "term": "epigastric pain syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical disorder head from Table38-3 and Table38-9 row.",
+        "entry_term": "epigastric pain syndrome"
+      },
+      {
+        "term": "epigastric pain syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Lexical disorder head from Table38-3 and Table38-9 row.",
+        "entry_term": "epigastric pain syndrome"
+      },
+      {
+        "term": "Cyclic vomiting syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-3 and Table38-9 rows; with pain qualifier stripped.",
+        "entry_term": "Cyclic vomiting syndrome"
+      },
+      {
+        "term": "Cyclic vomiting syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-3 and Table38-9 rows; with pain qualifier stripped.",
+        "entry_term": "Cyclic vomiting syndrome"
+      },
+      {
+        "term": "Gastroparesis",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Lexical disorder head Table38-3 Gastroparesis with pain and Table38-9 Gastroparesis-related pain and vomiting.",
+        "entry_term": "Gastroparesis"
+      },
+      {
+        "term": "Gastroparesis",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Lexical disorder head Table38-3 Gastroparesis with pain and Table38-9 Gastroparesis-related pain and vomiting.",
+        "entry_term": "Gastroparesis"
+      },
+      {
+        "term": "cannabinoid hyperemesis syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "MinionPro-Bold PDF33 x403 y353.8 plus Table38-3 and Table38-9 rows.",
+        "entry_term": "cannabinoid hyperemesis syndrome"
+      },
+      {
+        "term": "cannabinoid hyperemesis syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MinionPro-Bold PDF33 x403 y353.8 plus Table38-3 and Table38-9 rows.",
+        "entry_term": "cannabinoid hyperemesis syndrome"
+      },
+      {
+        "term": "Centrally mediated abdominal pain syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4 and Table38-9 disorder rows.",
+        "entry_term": "Centrally mediated abdominal pain syndrome"
+      },
+      {
+        "term": "Centrally mediated abdominal pain syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4 and Table38-9 disorder rows.",
+        "entry_term": "Centrally mediated abdominal pain syndrome"
+      },
+      {
+        "term": "functional abdominal pain syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4 and Table38-9 parenthetical former name.",
+        "entry_term": "functional abdominal pain syndrome"
+      },
+      {
+        "term": "functional abdominal pain syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4 and Table38-9 parenthetical former name.",
+        "entry_term": "functional abdominal pain syndrome"
+      },
+      {
+        "term": "narcotic bowel syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4/9 row and MinionPro-Bold PDF34 x98 y238.3.",
+        "entry_term": "narcotic bowel syndrome"
+      },
+      {
+        "term": "narcotic bowel syndrome",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Regular Table38-4/9 row and MinionPro-Bold PDF34 x98 y238.3.",
+        "entry_term": "narcotic bowel syndrome"
+      },
+      {
+        "term": "narcotic bowel syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4/9 row and MinionPro-Bold PDF34 x98 y238.3.",
+        "entry_term": "narcotic bowel syndrome"
+      },
+      {
+        "term": "irritable bowel syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Table38-4/9 row; MinionPro-Bold PDF34 x152 y298.3.",
+        "entry_term": "irritable bowel syndrome"
+      },
+      {
+        "term": "irritable bowel syndrome",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Table38-4/9 row; MinionPro-Bold PDF34 x152 y298.3.",
+        "entry_term": "irritable bowel syndrome"
+      },
+      {
+        "term": "irritable bowel syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Table38-4/9 row; MinionPro-Bold PDF34 x152 y298.3.",
+        "entry_term": "irritable bowel syndrome"
+      },
+      {
+        "term": "Inflammatory bowel disease",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4 and Table38-9 row.",
+        "entry_term": "Inflammatory bowel disease"
+      },
+      {
+        "term": "Inflammatory bowel disease",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4 and Table38-9 row.",
+        "entry_term": "Inflammatory bowel disease"
+      },
+      {
+        "term": "Crohn's disease",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4/9 row; source curly apostrophe normalized.",
+        "entry_term": "Crohn's disease"
+      },
+      {
+        "term": "Crohn's disease",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4/9 row; source curly apostrophe normalized.",
+        "entry_term": "Crohn's disease"
+      },
+      {
+        "term": "ulcerative colitis",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-4/9 row.",
+        "entry_term": "ulcerative colitis"
+      },
+      {
+        "term": "ulcerative colitis",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-4/9 row.",
+        "entry_term": "ulcerative colitis"
+      },
+      {
+        "term": "diarrhea",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Table38-4/9 IBS diarrhea-predominant qualifier and symptom cells.",
+        "entry_term": "diarrhea"
+      },
+      {
+        "term": "diarrhea",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Table38-4/9 IBS diarrhea-predominant qualifier and symptom cells.",
+        "entry_term": "diarrhea"
+      },
+      {
+        "term": "constipation",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Table38-4/9 IBS constipation-predominant qualifier and management head.",
+        "entry_term": "constipation"
+      },
+      {
+        "term": "constipation",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Table38-4/9 IBS constipation-predominant qualifier and management head.",
+        "entry_term": "constipation"
+      },
+      {
+        "term": "Endometriosis",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Table38-5/9 disorder row and MinionPro-Bold PDF34 x104 y403.3.",
+        "entry_term": "Endometriosis"
+      },
+      {
+        "term": "Endometriosis",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Table38-5/9 disorder row and MinionPro-Bold PDF34 x104 y403.3.",
+        "entry_term": "Endometriosis"
+      },
+      {
+        "term": "Post-pelvic inflammatory disease pain",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "MinionPro-Bold PDF34 x88 y413.3 and Table38-5/9 row; post/pelvic dash normalized.",
+        "entry_term": "Post-pelvic inflammatory disease pain"
+      },
+      {
+        "term": "Post-pelvic inflammatory disease chronic pelvic pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Actual source heading/row form; maps to the explicitly scoped entry family. Chronic/combined pelvic qualifiers not encoded. Not asserted as a literal contiguous occurrence of the shortened entry name.",
+        "entry_term": "Post-pelvic inflammatory disease pain"
+      },
+      {
+        "term": "interstitial cystitis",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "MinionPro-Bold split intersti-/tial cystitis PDF34 x257 y413.3 to x30 y423.3; Table38-5/9 row.",
+        "entry_term": "interstitial cystitis"
+      },
+      {
+        "term": "interstitial cystitis",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MinionPro-Bold split intersti-/tial cystitis PDF34 x257 y413.3 to x30 y423.3; Table38-5/9 row.",
+        "entry_term": "interstitial cystitis"
+      },
+      {
+        "term": "bladder pain syndrome",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "MinionPro-Bold PDF34 x78 y423.3 and Table38-5/9 row.",
+        "entry_term": "bladder pain syndrome"
+      },
+      {
+        "term": "bladder pain syndrome",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MinionPro-Bold PDF34 x78 y423.3 and Table38-5/9 row.",
+        "entry_term": "bladder pain syndrome"
+      },
+      {
+        "term": "opioids",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Lexical headword of bold no-opioids clause PDF34 and opioid treatment heading; Table38-6 and Table38-10/11 vocabulary.",
+        "entry_term": "opioids"
+      },
+      {
+        "term": "opioids",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Lexical headword of bold no-opioids clause PDF34 and opioid treatment heading; Table38-6 and Table38-10/11 vocabulary.",
+        "entry_term": "opioids"
+      },
+      {
+        "term": "opioids",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical headword of bold no-opioids clause PDF34 and opioid treatment heading; Table38-6 and Table38-10/11 vocabulary.",
+        "entry_term": "opioids"
+      },
+      {
+        "term": "cannabis",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Cannabis for chronic pain subsection heading.",
+        "entry_term": "cannabis"
+      },
+      {
+        "term": "the elderly",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Lexical category from treatment heading elderly and mentally impaired.",
+        "entry_term": "the elderly"
+      },
+      {
+        "term": "mentally impaired",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Lexical category from MyriadPro-SemiboldCond treatment heading.",
+        "entry_term": "mentally impaired"
+      },
+      {
+        "term": "amitriptyline",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword in Table38-7 and Table38-9 dosing footnotes; regular treatment cells.",
+        "entry_term": "amitriptyline"
+      },
+      {
+        "term": "amitriptyline",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond drug headword in Table38-7 and Table38-9 dosing footnotes; regular treatment cells.",
+        "entry_term": "amitriptyline"
+      },
+      {
+        "term": "celecoxib",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7 footnote and regular cell.",
+        "entry_term": "celecoxib"
+      },
+      {
+        "term": "diclofenac",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7 footnote and regular cell.",
+        "entry_term": "diclofenac"
+      },
+      {
+        "term": "prednisone",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7/8 dosing footnotes and regular cells.",
+        "entry_term": "prednisone"
+      },
+      {
+        "term": "prednisone",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7/8 dosing footnotes and regular cells.",
+        "entry_term": "prednisone"
+      },
+      {
+        "term": "sodium valproate",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7 dosing footnote and regular cell.",
+        "entry_term": "sodium valproate"
+      },
+      {
+        "term": "topiramate",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "MyriadPro-SemiboldCond drug headword Table38-7 dosing footnote and regular cell.",
+        "entry_term": "topiramate"
+      },
+      {
+        "term": "capsaicin",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing headword PDF36.",
+        "entry_term": "capsaicin"
+      },
+      {
+        "term": "capsaicin",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing headword PDF36.",
+        "entry_term": "capsaicin"
+      },
+      {
+        "term": "carbamazepine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-8 footnote and regular treatment cell.",
+        "entry_term": "carbamazepine"
+      },
+      {
+        "term": "duloxetine",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8/9 footnotes PDF36.",
+        "entry_term": "duloxetine"
+      },
+      {
+        "term": "duloxetine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8/9 footnotes PDF36.",
+        "entry_term": "duloxetine"
+      },
+      {
+        "term": "gabapentin",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8/9 footnotes PDF36.",
+        "entry_term": "gabapentin"
+      },
+      {
+        "term": "gabapentin",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8/9 footnotes PDF36.",
+        "entry_term": "gabapentin"
+      },
+      {
+        "term": "lidocaine patch",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-8 footnote headword and regular cell.",
+        "entry_term": "lidocaine patch"
+      },
+      {
+        "term": "oxcarbazepine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-8 dosing footnote and regular treatment cell.",
+        "entry_term": "oxcarbazepine"
+      },
+      {
+        "term": "pregabalin",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing headword PDF36.",
+        "entry_term": "pregabalin"
+      },
+      {
+        "term": "pregabalin",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing headword PDF36.",
+        "entry_term": "pregabalin"
+      },
+      {
+        "term": "tramadol",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing footnote PDF36.",
+        "entry_term": "tramadol"
+      },
+      {
+        "term": "tramadol",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35; MyriadPro-SemiboldCond Table38-8 dosing footnote PDF36.",
+        "entry_term": "tramadol"
+      },
+      {
+        "term": "citalopram",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "citalopram"
+      },
+      {
+        "term": "dicyclomine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cells.",
+        "entry_term": "dicyclomine"
+      },
+      {
+        "term": "haloperidol",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "haloperidol"
+      },
+      {
+        "term": "ketorolac",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "ketorolac"
+      },
+      {
+        "term": "linaclotide",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "linaclotide"
+      },
+      {
+        "term": "lorazepam",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "lorazepam"
+      },
+      {
+        "term": "lubiprostone",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "lubiprostone"
+      },
+      {
+        "term": "ondansetron",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "ondansetron"
+      },
+      {
+        "term": "polyethylene glycol",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "polyethylene glycol"
+      },
+      {
+        "term": "progesterone",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "progesterone"
+      },
+      {
+        "term": "psyllium",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "psyllium"
+      },
+      {
+        "term": "quetiapine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "quetiapine"
+      },
+      {
+        "term": "hydroxyzine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "MyriadPro-SemiboldCond Table38-9 dosing footnote and regular cell.",
+        "entry_term": "hydroxyzine"
+      },
+      {
+        "term": "ketamine",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35 and regular Table38-8 referral cells PDF36.",
+        "entry_term": "ketamine"
+      },
+      {
+        "term": "ketamine",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35 and regular Table38-8 referral cells PDF36.",
+        "entry_term": "ketamine"
+      },
+      {
+        "term": "NSAIDs",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular body PDF32/35 and Table38-7/9 cells.",
+        "entry_term": "NSAIDs"
+      },
+      {
+        "term": "NSAIDs",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF32/35 and Table38-7/9 cells.",
+        "entry_term": "NSAIDs"
+      },
+      {
+        "term": "NSAIDs",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF32/35 and Table38-7/9 cells.",
+        "entry_term": "NSAIDs"
+      },
+      {
+        "term": "proton pump inhibitor",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-3 symptom cell plural and Table38-9 management cell singular.",
+        "entry_term": "proton pump inhibitor"
+      },
+      {
+        "term": "proton pump inhibitor",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-3 symptom cell plural and Table38-9 management cell singular.",
+        "entry_term": "proton pump inhibitor"
+      },
+      {
+        "term": "H2 blockers",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular Table38-3 and Table38-9 cells.",
+        "entry_term": "H2 blockers"
+      },
+      {
+        "term": "H2 blockers",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-3 and Table38-9 cells.",
+        "entry_term": "H2 blockers"
+      },
+      {
+        "term": "onabotulinumtoxinA",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular Table38-7 referral cells and body.",
+        "entry_term": "onabotulinumtoxinA"
+      },
+      {
+        "term": "mirror therapy",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF35 and regular Table38-8 cell PDF36.",
+        "entry_term": "mirror therapy"
+      },
+      {
+        "term": "mirror therapy",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular body PDF35 and regular Table38-8 cell PDF36.",
+        "entry_term": "mirror therapy"
+      },
+      {
+        "term": "dry needling",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular Table38-7 referral cell.",
+        "entry_term": "dry needling"
+      },
+      {
+        "term": "exercise",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular Table38-7/8 referral cells.",
+        "entry_term": "exercise"
+      },
+      {
+        "term": "exercise",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-7/8 referral cells.",
+        "entry_term": "exercise"
+      },
+      {
+        "term": "Spinal cord pain",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-8 disorder row.",
+        "entry_term": "Spinal cord pain"
+      },
+      {
+        "term": "bisphosphonates",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-8 secondary treatment cell.",
+        "entry_term": "bisphosphonates"
+      },
+      {
+        "term": "Helicobacter pylori",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Italic regular Table38-9 secondary management cell.",
+        "entry_term": "Helicobacter pylori"
+      },
+      {
+        "term": "levonorgestrel",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 endometriosis management cell, releasing qualifier stripped.",
+        "entry_term": "levonorgestrel"
+      },
+      {
+        "term": "goserelin",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 endometriosis management cell.",
+        "entry_term": "goserelin"
+      },
+      {
+        "term": "intrauterine system",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 secondary management device family.",
+        "entry_term": "intrauterine system"
+      },
+      {
+        "term": "pentosan polysulfate sodium",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 management cell.",
+        "entry_term": "pentosan polysulfate sodium"
+      },
+      {
+        "term": "benzodiazepines",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 cell and PDF37 body.",
+        "entry_term": "benzodiazepines"
+      },
+      {
+        "term": "benzodiazepines",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-9 cell and PDF37 body.",
+        "entry_term": "benzodiazepines"
+      },
+      {
+        "term": "antidepressant therapy",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 narcotic-bowel management cell.",
+        "entry_term": "antidepressant therapy"
+      },
+      {
+        "term": "antiemetics",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 management cells.",
+        "entry_term": "antiemetics"
+      },
+      {
+        "term": "normal saline",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 cell, numeric concentration excluded.",
+        "entry_term": "normal saline"
+      },
+      {
+        "term": "dextrose",
+        "pdf_page": 36,
+        "page": 264,
+        "emphasis": "Regular Table38-9 cyclic-vomiting cell.",
+        "entry_term": "dextrose"
+      },
+      {
+        "term": "drug-seeking behavior",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "MinionPro-BoldIt PDF37 x91.9 y384.2; regular diagnostic discussion PDF38.",
+        "entry_term": "drug-seeking behavior"
+      },
+      {
+        "term": "drug-seeking behavior",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "MinionPro-BoldIt PDF37 x91.9 y384.2; regular diagnostic discussion PDF38.",
+        "entry_term": "drug-seeking behavior"
+      },
+      {
+        "term": "aberrant drug-related behavior",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Section heading and MinionPro-BoldIt wrapped behav-/ior PDF37; Table38-10 title plural; PDF38 diagnosis body.",
+        "entry_term": "aberrant drug-related behavior"
+      },
+      {
+        "term": "aberrant drug-related behavior",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Section heading and MinionPro-BoldIt wrapped behav-/ior PDF37; Table38-10 title plural; PDF38 diagnosis body.",
+        "entry_term": "aberrant drug-related behavior"
+      },
+      {
+        "term": "prescriptions",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Table38-6 title/body; Table38-10/11 rows and PDF38 text. Lexical head from forges/alters and lost prescription.",
+        "entry_term": "prescriptions"
+      },
+      {
+        "term": "prescriptions",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Table38-6 title/body; Table38-10/11 rows and PDF38 text. Lexical head from forges/alters and lost prescription.",
+        "entry_term": "prescriptions"
+      },
+      {
+        "term": "prescriptions",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Table38-6 title/body; Table38-10/11 rows and PDF38 text. Lexical head from forges/alters and lost prescription.",
+        "entry_term": "prescriptions"
+      },
+      {
+        "term": "aliases",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-10 uses aliases row and PDF38 legal discussion.",
+        "entry_term": "aliases"
+      },
+      {
+        "term": "aliases",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Regular Table38-10 uses aliases row and PDF38 legal discussion.",
+        "entry_term": "aliases"
+      },
+      {
+        "term": "controlled substances",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular Table38-6, Table38-10 sells controlled substances row and PDF38 legal text.",
+        "entry_term": "controlled substances"
+      },
+      {
+        "term": "controlled substances",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-6, Table38-10 sells controlled substances row and PDF38 legal text.",
+        "entry_term": "controlled substances"
+      },
+      {
+        "term": "controlled substances",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Regular Table38-6, Table38-10 sells controlled substances row and PDF38 legal text.",
+        "entry_term": "controlled substances"
+      },
+      {
+        "term": "illicit drug use",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-10 row.",
+        "entry_term": "illicit drug use"
+      },
+      {
+        "term": "Factitious illness",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-10 row and body.",
+        "entry_term": "Factitious illness"
+      },
+      {
+        "term": "conceals",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical action from Table38-10 conceals multiple physicians / multiple ED visits.",
+        "entry_term": "conceals"
+      },
+      {
+        "term": "abusive",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical head from Table38-10 Abusive when refused.",
+        "entry_term": "abusive"
+      },
+      {
+        "term": "forges/alters prescriptions",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-10 first row, slash preserved.",
+        "entry_term": "forges/alters prescriptions"
+      },
+      {
+        "term": "Lost prescription",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 technique row.",
+        "entry_term": "Lost prescription"
+      },
+      {
+        "term": "pill bottle",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical object from Table38-11 Stolen prescription or pill bottle row.",
+        "entry_term": "pill bottle"
+      },
+      {
+        "term": "surgery",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical head from Table38-11 Impending surgery row.",
+        "entry_term": "surgery"
+      },
+      {
+        "term": "records",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Table38-11 Carries own records and radiographs; PDF38 medical-record discussion.",
+        "entry_term": "records"
+      },
+      {
+        "term": "records",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Table38-11 Carries own records and radiographs; PDF38 medical-record discussion.",
+        "entry_term": "records"
+      },
+      {
+        "term": "radiographs",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical head from Table38-11 Carries own records and radiographs.",
+        "entry_term": "radiographs"
+      },
+      {
+        "term": "Factitious hematuria",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical phrase from Table38-11 Factitious hematuria with complaint of kidney stones.",
+        "entry_term": "Factitious hematuria"
+      },
+      {
+        "term": "kidney stones",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Lexical head from Table38-11 factitious-hematuria row; factitious qualifier not applied to standalone head.",
+        "entry_term": "kidney stones"
+      },
+      {
+        "term": "Self-mutilation",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 row, source wording retained only as vocabulary.",
+        "entry_term": "Self-mutilation"
+      },
+      {
+        "term": "Dental pain",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 row.",
+        "entry_term": "Dental pain"
+      },
+      {
+        "term": "Factitious injury",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 row.",
+        "entry_term": "Factitious injury"
+      },
+      {
+        "term": "bupivacaine",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 management cells.",
+        "entry_term": "bupivacaine"
+      },
+      {
+        "term": "counseling",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Regular treatment/disposition headword drug counseling; source modifier stripped.",
+        "entry_term": "counseling"
+      },
+      {
+        "term": "legal issues",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Lexical heading Special considerations: legal issues.",
+        "entry_term": "legal issues"
+      },
+      {
+        "term": "prescription drug monitoring programs",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Regular body PDF34/38 and Table38-6 PDF35.",
+        "entry_term": "prescription drug monitoring programs"
+      },
+      {
+        "term": "prescription drug monitoring programs",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular body PDF34/38 and Table38-6 PDF35.",
+        "entry_term": "prescription drug monitoring programs"
+      },
+      {
+        "term": "prescription drug monitoring programs",
+        "pdf_page": 38,
+        "page": 266,
+        "emphasis": "Regular body PDF34/38 and Table38-6 PDF35.",
+        "entry_term": "prescription drug monitoring programs"
+      },
+      {
+        "term": "headache",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular Table38-1 headache-family rows and body.",
+        "entry_term": "headache"
+      },
+      {
+        "term": "Myofascial neck pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "neck"
+      },
+      {
+        "term": "Chronic neck pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "neck"
+      },
+      {
+        "term": "Chronic back pain",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "back"
+      },
+      {
+        "term": "Myofascial back pain syndrome",
+        "pdf_page": 31,
+        "page": 259,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "back"
+      },
+      {
+        "term": "Myofascial pain syndromes",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "muscle"
+      },
+      {
+        "term": "Chronic migraine headache",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "headache"
+      },
+      {
+        "term": "Fibromyalgia and chronic widespread pain",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Fibromyalgia"
+      },
+      {
+        "term": "Complex regional pain syndrome type I",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Complex Regional Pain Syndrome"
+      },
+      {
+        "term": "Complex regional pain syndrome type II",
+        "pdf_page": 32,
+        "page": 260,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Complex Regional Pain Syndrome"
+      },
+      {
+        "term": "Functional dyspepsia with epigastric pain syndrome",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Functional dyspepsia"
+      },
+      {
+        "term": "Gastroparesis with pain",
+        "pdf_page": 33,
+        "page": 261,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Gastroparesis"
+      },
+      {
+        "term": "Interstitial cystitis/bladder pain syndrome",
+        "pdf_page": 34,
+        "page": 262,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "interstitial cystitis"
+      },
+      {
+        "term": "trigger point injections",
+        "pdf_page": 35,
+        "page": 263,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "trigger points"
+      },
+      {
+        "term": "Carries own records and radiographs",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "records"
+      },
+      {
+        "term": "Impending surgery",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "surgery"
+      },
+      {
+        "term": "Stolen prescription or pill bottle",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular Table38-11 whole row; pill-bottle lexical object mapped to its entry. Stolen/prescription qualifiers omitted, not encoded or inferred; no patient stereotype or falsification technique.",
+        "entry_term": "pill bottle"
+      },
+      {
+        "term": "Factitious hematuria with complaint of kidney stones",
+        "pdf_page": 37,
+        "page": 265,
+        "emphasis": "Regular table row or comment; full source form mapped to explicitly scoped family. Modifiers outside that family are not encoded; not a clinical equivalence.",
+        "entry_term": "Factitious hematuria"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 31,
+        "description": "Running header, chapter number, author name, epidemiology/pathophysiology/clinical-features organizing labels; Table38-1 column headers and repeated numeric prevalence/duration.",
+        "reason": "Bibliographic/layout and generic organization are not cue targets. Chronic Pain, trigger points, referred pain, muscle, hyperalgesia/allodynia and named row families separately tried. No duration, percentage or clinical statement copied."
+      },
+      {
+        "pdf_page": 32,
+        "description": "Table38-2 full symptom/sign sentences, numeric fibromyalgia criteria, type I/II numerals, timing; body diagnostic assertions.",
+        "reason": "Disorder names, representative sensory/action headwords and anatomy separately tried. No clinical criteria or numeric instructions retained. Generic body nouns and every cell adjective not exhaustively inventoried."
+      },
+      {
+        "pdf_page": 33,
+        "description": "Table38-3/4 complete criteria, week/month counts, comparative assertions, diagnostic correlations; numeric/nonlexical footnote markers.",
+        "reason": "Named disorders and their lexical heads are separately tried; instructions and clinical thresholds are excluded, not used to avoid disorder words. Regular alarm-sign lists not exhaustive lexical inventory."
+      },
+      {
+        "pdf_page": 34,
+        "description": "Complete bold sentence Opioids are not recommended for the ED treatment of chronic pain; diagnosis/treatment organizer headings; Table38-5 complete diagnostic sentences.",
+        "reason": "Opioids and Chronic Pain separately tried; recommendation and ED-treatment assertion not copied as medical teaching. Endometriosis, post-pelvic inflammatory disease pain, interstitial cystitis and bladder pain syndrome explicitly mapped; organizing diagnosis/treatment labels excluded."
+      },
+      {
+        "pdf_page": 35,
+        "description": "Table38-6 full prescribing recommendations, organizations, durations and quantities; Table38-7 footnote dose/frequency/taper numbers.",
+        "reason": "Meaningful opioids, prescriptions, controlled substances, prescription drug monitoring programs and drug-name heads explicitly tried. Every bold Table38-7 drug-name head mapped separately. No clinical recommendation, prescribing rule or dose retained; not every incidental regular-font brand/body word inventoried."
+      },
+      {
+        "pdf_page": 36,
+        "description": "Tables38-8/9 full treatment statements, doses, frequency/titration quantities, referral asterisks and repeated column labels.",
+        "reason": "Every bold drug-name head in both footnotes explicitly tried, including lidocaine patch, plus regular disorder/device/selected class heads. Not teaching pairings, dosing, efficacy or chronology. Generic management/referral verbs and every regular comment noun not exhaustively inventoried."
+      },
+      {
+        "pdf_page": 37,
+        "description": "Generic disposition/introduction/clinical-features headings, Table38-10 full behavioral claims and Table38-11 patient characterizations, falsification techniques and management instructions.",
+        "reason": "Named behavioral vocabulary given neutral trials/holds; lexical prescriptions, aliases, controlled substances, conceals, abusive, surgery, records, radiographs, kidney stones, dental pain and bupivacaine separately tried. No clinical suspicion rules, character stereotypes, injury methods or forgery instructions retained; source claim is not endorsed."
+      },
+      {
+        "pdf_page": 38,
+        "description": "Diagnosis/treatment/disposition organizers, complete legal assertions, references heading and publisher URL.",
+        "reason": "Drug-seeking and aberrant drug-related behavior, records, prescriptions, aliases, controlled substances, counseling, monitoring programs and legal issues separately tried. Legal assertions are historical source prose, not verified current law, and are not taught here. PDF38 is not blank; read through right-column REFERENCES y332.6 and final publisher line."
+      }
+    ]
+  },
+  "resolved_holds": [
+    {
+      "term": "muscle",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "mussel | mussel -> muscle",
+          "reason": "Strong sound but mussel/clam/oyster identification is unresolved; avoid rejected measles reuse.",
+          "scope": "docs/sound-bridge-workshop.json#muscle"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A detached familiar skeletal-muscle teaching model on a stand.",
+          "reason": "Familiar anatomy prop accepted; no patient, injury or diagnosis. Earlier sound-workshop muscle hold used a different strict phonetic criterion and remains historical.",
+          "scope": "Current Chapter38 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "tramadol",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "tram, doll | tram + doll",
+          "reason": "Weak linking vowel is absent and tram/train/streetcar naming is audience-dependent.",
+          "scope": "docs/sound-bridge-workshop.json#tramadol"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A toy tram carrying a doll.",
+          "reason": "Reuse tram carrying doll. Earlier strict sound-workshop hold remains historical; no efficacy or timing claim.",
+          "scope": "Current Chapter38 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "ketamine",
+      "resolution": "Local Chapter38 selects the recorded familiar category/partial-name association; historical records unchanged.",
+      "history": [
+        {
+          "decision": "reject",
+          "attempt": "kettle, mine entrance | kettle + mine",
+          "reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+          "scope": "docs/sound-bridge-workshop.json#ketamine"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar kettle standing alone.",
+          "reason": "Reuse kettle alone; collisions with ketorolac, ketoprofen and quetiapine explicit. No medication equivalence or unique name decoding.",
+          "scope": "Current Chapter38 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "hyperalgesia",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A pain-expression mask beside an oversized megaphone.",
+          "reason": "Loudness plus pain is an available broad association but does not provide an economical learned name bridge selected here.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar pain-expression mask beside an oversized megaphone.",
+          "reason": "Main challenge accepted: reuse pain-mask ingredient, remove mute/relief modifier and add familiar amplification prop. Full-name and blind decoding not required.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "muscle atrophy",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A tiny muscle model beside a larger muscle model.",
+          "reason": "Size contrast is a plausible category association but too ambiguous between growth and atrophy without a taught convention.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A small detached muscle model beside a larger detached muscle model.",
+          "reason": "Main challenge accepted: size contrast is a useful taught association; no temporal sequence, clinical measurement, growth/atrophy diagnosis or complete blind decoding asserted. Reuse retained local anatomy root.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "Painful Diabetic Neuropathy",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A sugar cube beside a nerve-wire token and pain mask.",
+          "reason": "Sugar prop risks oversimplifying diabetes and the three-prop stack supplies no useful economical name cue.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A detached nerve-wire teaching token beside the familiar pain-expression mask.",
+          "reason": "Main challenge accepted: exact older retained family found. Remove sugar-cube proposal, reuse nerve/pain ingredients only; no diabetic mechanism or clinical equivalence claimed.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "hyperesthesia",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A feather touching an oversized sensory dial.",
+          "reason": "Dial and feather lack a clear name bridge distinct from existing hypersensitivity family; broad learned cue not selected.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Oversized alarm bell visibly ringing after a feather barely touches its trigger.",
+          "reason": "Main challenge accepted: existing sensitivity family is an asset, not a reason for hold. Reuse alarm/feather ingredient without requiring a distinct icon; no assertion that the terms are clinically interchangeable.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "Functional heartburn",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A heart-shaped token beside a theatrical flame.",
+          "reason": "Literal heart/flame risks misleading organ localization and does not encode functional qualifier; no selected cue.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A heart-shaped token beside a theatrical flame.",
+          "reason": "Main challenge accepted: heart/flame is familiar partial-name vocabulary, not a claim that the heart burns or an organ-localization/physiology lesson. Reuse flame ingredient without cascade.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "epigastric pain syndrome",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A belly teaching token with an upper-position arrow beside a pain mask.",
+          "reason": "Anatomical pointer could look like clinical localization; does not economically cue the exact vocabulary.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "An upper-belly teaching-model token beside a familiar pain-expression mask.",
+          "reason": "Main challenge accepted: upper-belly/pain is a familiar name-family association, not a finding in a patient. Reuse belly/pain ingredients; original pump/thought modifiers remain absent.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_candidate",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "cannabinoid hyperemesis syndrome",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A cannabis-leaf teaching token beside a splatter bucket.",
+          "reason": "Two ingredients are recognizable but could imply a causal symptom lesson, and the long syndrome name has no selected economical vocabulary bridge.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A detached cannabis-leaf teaching token beside a toy vomiting bucket with cartoon splatter.",
+          "reason": "Main challenge accepted: reuse retained local cannabis-leaf root and established bucket ingredient as a taught partial-name composition. No causal arrow, use action, symptom chronology, mechanism or diagnostic rule.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "Inflammatory bowel disease",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A theatrical flame beside an intestinal teaching model.",
+          "reason": "Concrete broad ingredients but disease-level composition could teach pathophysiology rather than aid a specific name; no selected candidate.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A theatrical flame beside a detached intestinal teaching model.",
+          "reason": "Main challenge accepted: reuse familiar flame family with bowel anatomy prop. This is a name association, not a pathology diagram or an assertion about mechanism, symptoms or diagnosis.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "diarrhea",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A toilet with a rapid-flow arrow.",
+          "reason": "Broad plumbing metaphor does not give a clear economical name cue; earlier sound-workshop rejection remains unchanged. Earlier held/rejected records remain unchanged: docs/sound-bridge-workshop.json#diarrhea.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "reject",
+          "attempt": "diary | diary -> diarrhea",
+          "reason": "Proposal lane rejected the attempt; not promoted or separately independently re-adjudicated.",
+          "scope": "docs/sound-bridge-workshop.json#diarrhea"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A toy toilet beside a rapid-flow arrow.",
+          "reason": "Main challenge accepted: familiar rapid-flow toilet category is a taught partial association, not a diagnostic test or claim of unique blind decoding. Earlier strict sound-workshop rejection unchanged.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "constipation",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A toy toilet blocked by a padlock.",
+          "reason": "Same blocked-toilet attempt as earlier35, not selected as a recognizable word cue. Earlier held/rejected records remain unchanged: docs/chapter-35-cue-audit.json#constipation.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "hold",
+          "attempt": "A toy toilet blocked by a padlock.",
+          "reason": "Locked toilet implies denied access rather than the term; no physiological blockage or management teaching substituted.",
+          "scope": "docs/chapter-35-cue-audit.json#constipation"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A toy toilet visibly blocked by a padlock.",
+          "reason": "Main challenge accepted under broad category calibration: familiar blocked-toilet association is sufficient for a taught vocabulary candidate. No physiology, severity or treatment instruction; earlier35 hold remains historical.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "hydroxyzine",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A water droplet beside a toy xylophone.",
+          "reason": "Hydro/xylo is plausible but not selected as an economical familiar bridge to this name.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A water-droplet ornament beside a familiar toy xylophone.",
+          "reason": "Main challenge accepted: two familiar ingredients are economical enough for a taught fragment. No suffix completeness, unique recovery, drug-class or effect claim. Recognition and recall remain untested.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "goserelin",
+      "resolution": "Main challenge reconsidered under familiar category/partial-name calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A goose beside a reel.",
+          "reason": "Goose/reel offers a sound fragment but object recognition and sound bridge are uncertain; no useful simple candidate selected.",
+          "scope": "Chapter38 initial author draft, reconsidered after main challenge."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "A familiar toy goose beside a reel.",
+          "reason": "Main challenge accepted: two familiar props supply a personal taught name association without complete syllable coverage or blind decoding. Pronunciation/recognition still untested; not a drug effect.",
+          "scope": "Chapter38 current bounded author draft."
+        }
+      ],
+      "scope": "local_hold_to_candidate",
+      "earlier_hold_remains_open": false
+    }
+  ],
+  "source_wording_notes": {
+    "normalization": "Case, whitespace, apostrophe and dash normalization; source wraps joined. Entry pelvic uses a pelvic-bone prop for adjective/anatomy family. Full table-row aliases explicitly map to scoped family entries; modifiers outside scope are not encoded. Drug formulation and chronicity qualifiers stripped when not encoded, never silently treated as clinical equivalence.",
+    "ket_family": "Kettle retained for ketamine; ketorolac adds lock; existing ketoprofen family shares kettle. Held quetiapine kettle/pine attempt also collides. Shared kettle alone cannot identify these names; contextual qualifiers and eventual recognition/recall testing required. No drug equivalence or production admission.",
+    "behavioral": "Source behavioral/illicit/factitious words screened as vocabulary, not endorsed characterizations or diagnostic rules. No dishonest-patient caricature, substance-use stereotype, forged prescription method or self-injury action selected.",
+    "history": "Older chapter1-35 banks, visual catalog and both sound workshops searched, with exact retained-root references checked; earlier holds/rejections remain unchanged. No batch pseudo-term in resolved_holds."
+  },
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author bounded draft complete; independent main integration review, ledger/hold register/index/shared tests/handoff and Git remain main-owned. No main_integration_review is asserted.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch36-38/chapter38/",
+  "coverage_limits": [
+    "Vocabulary attempts only, no exhaustive lexical/clinical coverage claim or credentialed-human review.",
+    "Typography and raster scan cannot prove flattened highlights absent; font labels alone do not identify every meaningful keyword.",
+    "Familiar category props and partial names are untested learned associations, not unique blind decoders or every-syllable claims.",
+    "No pronunciation, recognition, recall, clinical, provider or mnemonic-render validation. All tested false, evidence empty, production admission false and spend zero."
+  ]
+}

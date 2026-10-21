@@ -622,6 +622,48 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 165
+    },
+    {
+      "chapter_id": "36",
+      "title": "Local and Regional Anesthesia",
+      "record": "docs/chapter-36-cue-audit.json",
+      "report": "docs/chapter-36-cue-audit.md",
+      "selected_terms": 115,
+      "new_candidates": 39,
+      "reused_candidates": 49,
+      "holds": 27,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 171
+    },
+    {
+      "chapter_id": "37",
+      "title": "Procedural Sedation and Analgesia in Adults",
+      "record": "docs/chapter-37-cue-audit.json",
+      "report": "docs/chapter-37-cue-audit.md",
+      "selected_terms": 139,
+      "new_candidates": 32,
+      "reused_candidates": 67,
+      "holds": 40,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 200
+    },
+    {
+      "chapter_id": "38",
+      "title": "Chronic Pain",
+      "record": "docs/chapter-38-cue-audit.json",
+      "report": "docs/chapter-38-cue-audit.md",
+      "selected_terms": 144,
+      "new_candidates": 49,
+      "reused_candidates": 43,
+      "holds": 52,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 233
     }
   ],
   "hold_register": {
@@ -631,8 +673,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "36",
-    "title": "Local and Regional Anesthesia",
+    "chapter_id": "39",
+    "title": "Wound Evaluation",
     "status": "not_started_for_cue_review"
   },
   "spend": {

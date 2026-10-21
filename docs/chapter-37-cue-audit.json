@@ -1,0 +1,3586 @@
+{
+  "main_integration_review": {"date": "2026-10-21", "source_and_conceptual_review": true, "scope": "Main independently checked all139 recorded vocabulary/page locations,200 keyword mappings, all cue/attempt compositions and actual reuse ingredients/targets. Mixed right-column20 and full-width tables included. Added missing bold-headword trials before final review. AI review only, not clinical, credentialed-human, recall or rendering validation. Author-pending notes below are superseded.", "highlight_annotations_found": 0, "normalizations": "Explicit shortened adjective/heading aliases and whitespace/punctuation joins, not invented literal quotes. Bare Dissociative22 distinguished from expanded sedation21. Kettle/fan/deck family collisions and omitted qualifiers require taught context and testing.", "counts": {"selected_terms": 139, "new_candidates": 32, "reused_candidates": 67, "holds": 40}, "keyword_items": 200},
+  "schema_version": 1,
+  "chapter_id": "37",
+  "title": "Procedural Sedation and Analgesia in Adults",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Analgesia_Anesthesia_Procedural Sedation.pdf",
+    "sha256": "dc0444f631bf8c0dc22c3a6d67cfce06f8e3945c6e019bb0a7b892c4b1e841fb",
+    "pdf_pages": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "printed_pages": [
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258
+    ],
+    "printed_page_offset": 228,
+    "boundary": "PDF20 RIGHT from actual title y372.3 only; PDF21-30 chapter content including full-width tables; PDF30 right references y687 onward excluded. PDF31 entirely Chapter38 excluded.",
+    "verification": "Matching SHA256; fitz font spans/coordinates and annotations checked across all eleven pages (zero annotations); all eleven page rasters inspected in contact sheets. Main integration pending."
+  },
+  "scope": "Offline vocabulary associations only. No clinical narration, Forge, API/provider or mnemonic-image calls.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 139,
+    "new_candidates": 32,
+    "reused_candidates": 67,
+    "holds": 40
+  },
+  "entries": [
+    {
+      "term": "Procedural Sedation and Analgesia in Adults",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "chapter_title",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Full-title stack not selected; components tried separately.",
+      "tested": false,
+      "attempted_cue": "Drowsy adult figurine beside a tray and pain mask."
+    },
+    {
+      "term": "sedation",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad family only, no depth definition.",
+      "tested": false
+    },
+    {
+      "term": "analgesia",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Existing pain-mask/mute association only.",
+      "tested": false
+    },
+    {
+      "term": "anxiolysis",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An anxious theatrical mask beside a mute token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar anxiety-quieting association only.",
+      "tested": false
+    },
+    {
+      "term": "Minimal sedation",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad family; minimal qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Moderate sedation",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad family; moderate qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Dissociative sedation",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad family; dissociative qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Deep sedation",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad family; deep qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "General anesthesia",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#anesthesia",
+      "reason": "Reuse broad learned anesthesia family; general qualifier omitted. Not equivalence to sleep, sedation or a defined depth.",
+      "tested": false
+    },
+    {
+      "term": "consciousness",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Bulb suggests ideas or alertness; no helpful selected consciousness cue.",
+      "tested": false,
+      "attempted_cue": "A toy head with a glowing bulb."
+    },
+    {
+      "term": "motor response",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy motor answering a ringing telephone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar motor/respond action only.",
+      "tested": false
+    },
+    {
+      "term": "painful stimuli",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Loose composition not selected; no stimulus or threshold teaching.",
+      "tested": false,
+      "attempted_cue": "A pain mask beside a flashing lamp."
+    },
+    {
+      "term": "Responsiveness",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A figure answering a ringing telephone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar responding action only.",
+      "tested": false
+    },
+    {
+      "term": "Airway",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding windpipe teaching model, without cork or blockage.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#airway obstruction",
+      "reason": "Windpipe ingredient only; remove cork/blockage.",
+      "tested": false
+    },
+    {
+      "term": "Breathing",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizable bellows standing alone, without life ring.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#rescue breathing",
+      "reason": "Bellows ingredient only; remove life ring.",
+      "tested": false
+    },
+    {
+      "term": "Circulation",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding circular loop of tubing beside a heart token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#circulation",
+      "reason": "Exact circular-loop/heart family.",
+      "tested": false
+    },
+    {
+      "term": "American Society of Anesthesiologists (ASA) Classification System",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic meeting/sorting does not supply organization identity or grading rules.",
+      "tested": false,
+      "attempted_cue": "A society meeting beside a blank sorting cabinet."
+    },
+    {
+      "term": "systemic disease",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic system/damage composition not selected; severity omitted.",
+      "tested": false,
+      "attempted_cue": "A linked toy system beside a damaged token."
+    },
+    {
+      "term": "asthma",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone inhaler training prop.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned device/category only, no treatment instruction.",
+      "tested": false
+    },
+    {
+      "term": "pregnancy",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#pregnancy",
+      "reason": "Exact pregnant mannequin category.",
+      "tested": false
+    },
+    {
+      "term": "obesity",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Silhouette not a helpful selected association; prior28/29A holds preserved.",
+      "tested": false,
+      "attempted_cue": "A wide-bodied neutral study mannequin."
+    },
+    {
+      "term": "diabetes",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone glucose meter training prop.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar learned device/category association allowed; not unique disease identity, diagnosis, measurement or management instruction.",
+      "tested": false
+    },
+    {
+      "term": "Pneumonia",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Scarf adds no useful name bridge without symptom teaching.",
+      "tested": false,
+      "attempted_cue": "A lung token wearing a scarf."
+    },
+    {
+      "term": "renal disease",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached kidney-shaped teaching token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#renal failure",
+      "reason": "Kidney ingredient only; remove factory, broken gears and end-stage qualifier.",
+      "tested": false
+    },
+    {
+      "term": "Sepsis",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Septic fragment attempted; tank naming bridge not selected.",
+      "tested": false,
+      "attempted_cue": "A toy septic tank."
+    },
+    {
+      "term": "cardiac dysfunction",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar heart-shaped toy with a broken crank.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#cardiac failure",
+      "reason": "Reuse retained heart/broken-crank family; attempted composition already existed, not new.",
+      "tested": false
+    },
+    {
+      "term": "disseminated intravascular coagulation",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "No economical selected name association; not a clotting diagram.",
+      "tested": false,
+      "attempted_cue": "Scattered corks inside clear tubing."
+    },
+    {
+      "term": "trauma",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "reason": "Exact mannequin family, massive qualifier removed.",
+      "tested": false
+    },
+    {
+      "term": "intracranial hemorrhage",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached skull study token beside a freestanding leaking red-liquid pipe.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#intracranial hemorrhages",
+      "reason": "Singular/plural family; mass-effect qualifier omitted.",
+      "tested": false
+    },
+    {
+      "term": "ischemic bowel",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Fuel risks implied mechanism and adds no clean name bridge.",
+      "tested": false,
+      "attempted_cue": "A bowel token beside an empty fuel can."
+    },
+    {
+      "term": "organ system dysfunction",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Organ fragment familiar but dysfunction pairing not selected.",
+      "tested": false,
+      "attempted_cue": "A pipe organ with a broken key."
+    },
+    {
+      "term": "Moribund",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Mori/bundle split indirect and weak; no prognosis claim.",
+      "tested": false,
+      "attempted_cue": "A bundle of wilted flowers."
+    },
+    {
+      "term": "brain dead",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Warning token blurs clinical determination; no chosen association.",
+      "tested": false,
+      "attempted_cue": "A brain token beside a skull warning."
+    },
+    {
+      "term": "patient evaluation",
+      "pdf_page": 21,
+      "page": 249,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar evaluation category, no examination instruction.",
+      "tested": false
+    },
+    {
+      "term": "intoxicated",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A tipsy theatrical character holding a corked bottle.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned convention only, no diagnosis or timing advice.",
+      "tested": false
+    },
+    {
+      "term": "mental status",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy brain beside a simple blank status-indicator dial.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#mental status",
+      "reason": "Exact brain/status-dial family, no consciousness assessment.",
+      "tested": false
+    },
+    {
+      "term": "fasting",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An empty dinner plate with cutlery set aside.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar convention, no fasting duration or procedure advice.",
+      "tested": false
+    },
+    {
+      "term": "equipment and supplies",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An equipment trolley with a closed supply box.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Category only, not a required equipment inventory.",
+      "tested": false
+    },
+    {
+      "term": "monitoring",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Blank bedside monitor beside a conspicuous watchful-eye token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "reason": "Existing eye/blank-monitor association, no monitoring schedule.",
+      "tested": false
+    },
+    {
+      "term": "intervention",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A referee stepping between two toy players.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar intervening action, no patient maneuver.",
+      "tested": false
+    },
+    {
+      "term": "response",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A figure answering a ringing telephone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#Responsiveness",
+      "reason": "Same telephone-response composition; reuse different locally retained responsiveness root, no drug response measurement.",
+      "tested": false
+    },
+    {
+      "term": "Capnography",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar ship captain pointing to a simple line graph on a chart.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Exact captain/graph association, no trace interpretation.",
+      "tested": false
+    },
+    {
+      "term": "Heart Rate",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A heart token beside a metronome.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar heart/rate vocabulary only.",
+      "tested": false
+    },
+    {
+      "term": "Respiratory Rate",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Bellows beside a familiar metronome.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#respiratory rate",
+      "reason": "Exact bellows/metronome family.",
+      "tested": false
+    },
+    {
+      "term": "Blood Pressure",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An artery-shaped toy beside an unnumbered pressure gauge, without scowling face.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#mean arterial pressure",
+      "reason": "Artery/gauge ingredients only; remove mean scowl and any elevation.",
+      "tested": false
+    },
+    {
+      "term": "Oxygen Saturation",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "reason": "Exact unconnected oxygen/sponge family.",
+      "tested": false
+    },
+    {
+      "term": "End-Tidal CO2",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A tide wave beside charcoal.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#end-tidal carbon dioxide detector",
+      "reason": "Reuse existing tide/charcoal fragments; remove detector. End/di qualifiers not encoded; not a gas, measurement or concentration claim.",
+      "tested": false
+    },
+    {
+      "term": "capnogram",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "Familiar ship captain pointing to a simple line graph on a chart.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Broad capno captain/graph family only, not phases.",
+      "tested": false
+    },
+    {
+      "term": "exhalation",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary outward-pointing arrow token, without flowing ribbon.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#expiratory flow",
+      "reason": "Reuse outward-arrow ingredient, remove ribbon; same ingredient in30 exhalation, no respiratory mechanism.",
+      "tested": false
+    },
+    {
+      "term": "inhalation",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "Bellows beside an inward arrow.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar direction association only.",
+      "tested": false
+    },
+    {
+      "term": "anatomic dead space",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Dead/space assembly not economical; no gas-exchange definition.",
+      "tested": false,
+      "attempted_cue": "A skeleton beside an empty display space."
+    },
+    {
+      "term": "alveolar gas",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Alveolar bridge not selected without added anatomy teaching.",
+      "tested": false,
+      "attempted_cue": "A grape-cluster token beside a gas cylinder."
+    },
+    {
+      "term": "documenting",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A hand marking a blank clipboard.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar documenting action; no charting rules.",
+      "tested": false
+    },
+    {
+      "term": "Propofol",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar stage prop beside a folded sheet of foil.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Propofol",
+      "reason": "Exact stage-prop/foil family, no effects.",
+      "tested": false
+    },
+    {
+      "term": "Ketamine",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar kettle standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Ketamine",
+      "reason": "Exact kettle; shared ket fragments need context.",
+      "tested": false
+    },
+    {
+      "term": "Etomidate",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Date familiar but metronome adds no useful bridge; earlier29A hold preserved.",
+      "tested": false,
+      "attempted_cue": "A date fruit beside a metronome."
+    },
+    {
+      "term": "ketofol",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A kettle beside a folded foil sheet.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial ket/fol bridge, not preparation or equivalence; collisions require context.",
+      "tested": false
+    },
+    {
+      "term": "Midazolam",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A gold-touch mythic king cradling a lamb.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#midazolam",
+      "reason": "Exact Midas/lamb taught partial-name family.",
+      "tested": false
+    },
+    {
+      "term": "Fentanyl",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar electric fan standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#fentanyl",
+      "reason": "Later retained fan; earlier29A hold and fan/tunnel rejection unchanged.",
+      "tested": false
+    },
+    {
+      "term": "Alfentanil",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An elf beside an electric fan.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial elf/fen; fan collides with fentanyl family, context needed.",
+      "tested": false
+    },
+    {
+      "term": "Remifentanil",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ram/remi weak, fan repeats fentanyl without helpful added identity.",
+      "tested": false,
+      "attempted_cue": "A ram beside an electric fan."
+    },
+    {
+      "term": "Dexmedetomidine",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar deck of playing cards standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#dexamethasone",
+      "reason": "Reuse retained36 deck fragment; remove date. Shared dex fragment with dexamethasone, not unique identity, related drugs or equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Nitrous oxide",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar laughing theatrical mask.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#nitrous oxide",
+      "reason": "Learned laughing-mask nickname only, not drug-effect assertion.",
+      "tested": false
+    },
+    {
+      "term": "Methohexital",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Hex/exit attempted; no economical family selected, not an every-syllable requirement.",
+      "tested": false,
+      "attempted_cue": "A hexagonal tile beside an exit sign."
+    },
+    {
+      "term": "Aldrete Score",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Alder identity needs specialized naming; no scoring criteria.",
+      "tested": false,
+      "attempted_cue": "An alder tree beside an unnumbered scoreboard."
+    },
+    {
+      "term": "Dissociative",
+      "pdf_page": 22,
+      "page": 250,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Broad sedation family; bare row label not falsely expanded to exact phrase on22.",
+      "tested": false
+    },
+    {
+      "term": "hypovolemia",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Nearly empty transparent reservoir connected in a closed circulation loop, with red liquid low at its bottom.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#hypovolemia",
+      "reason": "Exact low-reservoir family; no correction or drug instruction.",
+      "tested": false
+    },
+    {
+      "term": "elderly",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar gray-haired older-adult figurine.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#the elderly",
+      "reason": "Reuse exact gray-haired older-adult category; no age threshold or vulnerability claim.",
+      "tested": false
+    },
+    {
+      "term": "soy",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar bowl of soybeans beside its soybean pod.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar food category, no formulation or allergy link.",
+      "tested": false
+    },
+    {
+      "term": "egg",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar chicken egg in an egg cup.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Food identity only, no formulation or allergy claim.",
+      "tested": false
+    },
+    {
+      "term": "allergies",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An alarm bell ringing as a feather touches its trigger.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#hypersensitivity",
+      "reason": "Reuse bell/feather learned sensitivity ingredient; remove oversized/exaggerated qualifier. Broad lexical family only, not equivalence of allergy/hypersensitivity, immune mechanism or reaction severity.",
+      "tested": false
+    },
+    {
+      "term": "Pain on Injection",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pain-expression mask beside a detached unmarked syringe.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar pain/device category; no injection, drug pairing or effect demonstrated.",
+      "tested": false
+    },
+    {
+      "term": "ventilatory effort",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Effort association plausible but two-part category not selected; no preservation or drug effect.",
+      "tested": false,
+      "attempted_cue": "Bellows beside a straining toy weightlifter."
+    },
+    {
+      "term": "apnea",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Freestanding bellows beside a familiar pause symbol.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad learned breathing/pause category under user calibration; static prop is a taught reminder, not proof of stopped breathing, diagnosis or a physiologic mechanism.",
+      "tested": false
+    },
+    {
+      "term": "Emergence reactions",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy character emerging from behind a curtain wearing a surprised mask.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar emerging/reacting actions, not psychiatric effects or recovery physiology.",
+      "tested": false
+    },
+    {
+      "term": "Anorexia",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy diner pushing away a full plate.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar appetite-category convention only, not diagnostic criteria or an eating-disorder equivalence.",
+      "tested": false
+    },
+    {
+      "term": "nausea",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar queasy-expression theatrical mask.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#nausea",
+      "reason": "Exact queasy-mask association.",
+      "tested": false
+    },
+    {
+      "term": "vomiting",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "reason": "Exact existing bucket/splatter association, no adverse-effect attribution.",
+      "tested": false
+    },
+    {
+      "term": "hypersympathetic state",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Sympathy pun attempted but does not provide a useful selected sympathetic family; no autonomic facts.",
+      "tested": false,
+      "attempted_cue": "An oversized toy comforting another toy."
+    },
+    {
+      "term": "Blood pressure elevations",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Taut vessel model under a pressure gauge whose needle points high.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-6-cue-audit.json#hypertension",
+      "reason": "High-gauge family only, not asserted equivalence of a transient elevation and a diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "coronary artery disease",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Crown/coronary fragment familiar but stack not economical; no avoidance or disease teaching.",
+      "tested": false,
+      "attempted_cue": "A crown beside an artery token and a damaged gear."
+    },
+    {
+      "term": "intraocular pressure",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An eye-shaped study model beside a plain pressure gauge.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#intraocular pressure",
+      "reason": "Exact eye/gauge family, no direction or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "hypersalivation",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Mannequin mouth with a conspicuous drool trail.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-8-cue-audit.json#salivation",
+      "reason": "Reuse drooling-mouth family; hyper qualifier deliberately omitted, no drug effect.",
+      "tested": false
+    },
+    {
+      "term": "bronchorrhea",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Bronco fragment possible but tap is generic; no useful selected combined association.",
+      "tested": false,
+      "attempted_cue": "A toy bronco beside a runny tap."
+    },
+    {
+      "term": "intracranial pressure",
+      "pdf_page": 25,
+      "page": 253,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached skull teaching model beside a plain pressure gauge.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#intracranial pressure",
+      "reason": "Exact skull/gauge family, no value or drug-effect assertion.",
+      "tested": false
+    },
+    {
+      "term": "hemodynamic effects",
+      "pdf_page": 26,
+      "page": 254,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable mechanical pump standing alone, without a heart-shaped identity token or monitor.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#hemodynamics",
+      "reason": "Existing plain mechanical-pump family only, no cardiac or vascular mechanism claim.",
+      "tested": false
+    },
+    {
+      "term": "duration of action",
+      "pdf_page": 26,
+      "page": 254,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Unmarked hourglass.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#duration of action",
+      "reason": "Reuse existing unmarked hourglass; action qualifier supplied by taught context, no pharmacologic time value.",
+      "tested": false
+    },
+    {
+      "term": "cardioversion",
+      "pdf_page": 26,
+      "page": 254,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Turn/version fragment plausible but not selected as a name cue; no rhythm or procedure teaching.",
+      "tested": false,
+      "attempted_cue": "A heart token beside a turning arrow."
+    },
+    {
+      "term": "synthetic opioids",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic factory/pills lacks a helpful opioid association; synthetic qualifier not a mechanism.",
+      "tested": false,
+      "attempted_cue": "A toy factory producing anonymous pill tokens."
+    },
+    {
+      "term": "Sufentanil",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Sou/chef fragment weak and fan repeats family; no economical bridge selected.",
+      "tested": false,
+      "attempted_cue": "A toy chef beside an electric fan."
+    },
+    {
+      "term": "hypertension",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Taut vessel model under a pressure gauge whose needle points high.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-6-cue-audit.json#hypertension",
+      "reason": "Exact taut-vessel/high-gauge family only.",
+      "tested": false
+    },
+    {
+      "term": "hypotension",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Exact vessel/low-gauge family only.",
+      "tested": false
+    },
+    {
+      "term": "bradycardia",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Heart character riding a familiar slow snail.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#bradycardia",
+      "reason": "Exact heart/snail family only.",
+      "tested": false
+    },
+    {
+      "term": "vasoconstriction",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached vessel-shaped toy encircled by a tightening toy belt.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal vessel/constrict category only; not an autonomic or drug mechanism diagram.",
+      "tested": false
+    },
+    {
+      "term": "sympatholysis",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Sympathy/lysis assembly requires too much coaching; no chosen association or autonomic claim.",
+      "tested": false,
+      "attempted_cue": "Two sympathetic toy figures with a cut ribbon between them."
+    },
+    {
+      "term": "baroreflex-mediated parasympathetic activation",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Baro/reflex/para attempted; prop stack not economical, no pathway claim.",
+      "tested": false,
+      "attempted_cue": "A barometer beside a reflex hammer and a parachute toy."
+    },
+    {
+      "term": "baroreflex",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar barometer beside a reflex-hammer training prop.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Taught baro/reflex word fragments only; no reflex arc or pressure-response claim.",
+      "tested": false
+    },
+    {
+      "term": "parasympathetic activation",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Para fragment and switch plausible but sympathetic part lacks useful selected bridge.",
+      "tested": false,
+      "attempted_cue": "A parachute beside a toy power switch."
+    },
+    {
+      "term": "Barbiturates",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar barbell beside a tiny turret.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#barbiturates",
+      "reason": "Exact barbell/turret partial-name family.",
+      "tested": false
+    },
+    {
+      "term": "benzodiazepine",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Benz/zip fragments attempted; no economical association selected, prior29B hold remains.",
+      "tested": false,
+      "attempted_cue": "A toy luxury sedan beside a zipper."
+    },
+    {
+      "term": "boluses",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A single large toy ball standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#bolus-dose administration",
+      "reason": "Reuse ball/bolus fragment; REMOVE delivery gate and action, no size/dose, route or timing instruction.",
+      "tested": false
+    },
+    {
+      "term": "Total body weight",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A complete study mannequin beside a weighing scale.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad whole-body/weighing association, no equation or dosing rule.",
+      "tested": false
+    },
+    {
+      "term": "Ideal body weight",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy mannequin beside a weighing scale bearing an idealized gold-star token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#ideal body weight",
+      "reason": "Exact mannequin/scale/gold-star family, no equation or ideal-health claim.",
+      "tested": false
+    },
+    {
+      "term": "Lean body weight",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Lean/leaning pun attempted but may obscure intended family; no composition or dose claim.",
+      "tested": false,
+      "attempted_cue": "A mannequin leaning beside a weighing scale."
+    },
+    {
+      "term": "Body mass index",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Body/index ingredients familiar but three props not economical; no calculation encoded.",
+      "tested": false,
+      "attempted_cue": "A mannequin beside a book index and scale."
+    },
+    {
+      "term": "underweight",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A weighing scale beneath a toy weight.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal under/weight wordplay only, not body-size judgement or threshold.",
+      "tested": false
+    },
+    {
+      "term": "comorbid conditions",
+      "pdf_page": 28,
+      "page": 256,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Co/paired plausible but morbid/condition identity weak; no selected association.",
+      "tested": false,
+      "attempted_cue": "Two damaged toy tokens paired together."
+    },
+    {
+      "term": "obstetrics",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar maternity teaching mannequin with a separate newborn doll.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned specialty/category only; no clinical procedure or advice.",
+      "tested": false
+    },
+    {
+      "term": "obstetrical anesthesia",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#anesthesia",
+      "reason": "Broad anesthesia family only, obstetrical qualifier omitted; not a recommendation.",
+      "tested": false
+    },
+    {
+      "term": "Rescue Medications",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A life ring beside a closed anonymous medicine case.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar rescue/medication category only, no drug contents or use instruction.",
+      "tested": false
+    },
+    {
+      "term": "Reversal Agents",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An anonymous toy pill-shaped character beside a U-turn arrow.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar reverse/agent vocabulary only, no antidote or efficacy claim.",
+      "tested": false
+    },
+    {
+      "term": "Phenylephrine",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Fin/leaf fragment attempted, not an economical selected name; older20/25/29A holds unchanged.",
+      "tested": false,
+      "attempted_cue": "A toy fin beside a leaf."
+    },
+    {
+      "term": "Epinephrine",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Epi/leaf attempted but weak; familiar autoinjector category considered, not selected; older holds unchanged.",
+      "tested": false,
+      "attempted_cue": "A toy epic book beside a leaf."
+    },
+    {
+      "term": "Push-dose pressors",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy hand pushing a freestanding press handle.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar push/press fragments only; dose omitted, no syringe, regimen or administration.",
+      "tested": false
+    },
+    {
+      "term": "Flumazenil",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A flute beside a toy maze.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Partial flu/maze association only, not complete decoding or a reversal-action claim.",
+      "tested": false
+    },
+    {
+      "term": "naloxone",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Nail/ox fragments attempted, no useful economical family selected; older chapter1 hold unchanged.",
+      "tested": false,
+      "attempted_cue": "A nail beside an ox figurine."
+    },
+    {
+      "term": "complications",
+      "pdf_page": 29,
+      "page": 257,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Complicated/tangled generic association not selected; no complication inventory implied.",
+      "tested": false,
+      "attempted_cue": "A tangled toy puzzle."
+    },
+    {
+      "term": "Agitation",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A washing-machine agitator with obvious shaking motion marks.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#agitation",
+      "reason": "Exact washing-machine agitator with motion marks.",
+      "tested": false
+    },
+    {
+      "term": "Aspiration",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "reason": "Exact syringe/beads inward association, no aspiration event or management.",
+      "tested": false
+    },
+    {
+      "term": "Hypoxia",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A nearly empty oxygen cylinder.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#hypoxia",
+      "reason": "Exact nearly empty oxygen-cylinder family.",
+      "tested": false
+    },
+    {
+      "term": "Intubation",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "Tube visibly inside a transparent freestanding windpipe model.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#endotracheal intubation",
+      "reason": "Existing tube/windpipe family; broad intubation category only, no technique.",
+      "tested": false
+    },
+    {
+      "term": "Laryngospasm",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A lariat squeezing a coiled spring.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#laryngospasm",
+      "reason": "Exact lariat/spring name association only.",
+      "tested": false
+    },
+    {
+      "term": "fluids",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A clear water pitcher standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#fluid responsiveness",
+      "reason": "Reuse pitcher ingredient; REMOVE ringing response bell, no fluid response or IV treatment claim.",
+      "tested": false
+    },
+    {
+      "term": "bag-valve mask",
+      "pdf_page": 30,
+      "page": 258,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "Large recognizable bag connected through a conspicuous valve to a face mask.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bag-valve mask",
+      "reason": "Exact retained bag/valve/mask category; no assembly, patient, technique or performance claim.",
+      "tested": false
+    },
+    {
+      "term": "hypnotic",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar swinging-pocket-watch prop held by a toy performer.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#hypnosis",
+      "reason": "Reuse swinging-pocket-watch stage convention as hypno word-family fragment only; not pharmacologic hypnosis, sleep or anesthesia equivalence.",
+      "tested": false
+    },
+    {
+      "term": "amnesia",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary photo album with visibly blank photo windows.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#amnesia",
+      "reason": "Exact blank-photo-album category, no medication effect.",
+      "tested": false
+    },
+    {
+      "term": "anxiety",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An anxious theatrical mask standing alone, without mute token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#anxiolysis",
+      "reason": "Anxious-mask ingredient only; remove mute/quieting modifier, not a disorder diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "awareness",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Plausible noticing convention, but eye/bulb pairing not selected as an economical word association.",
+      "tested": false,
+      "attempted_cue": "An open eye beside a toy light bulb."
+    },
+    {
+      "term": "comfort",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A comfortable armchair standing alone, without drowsy character.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#sedation",
+      "reason": "Armchair ingredient only, remove drowsy character; familiar comfort category not sedation equivalence.",
+      "tested": false
+    },
+    {
+      "term": "verbal stimuli",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "An empty speech-bubble token beside an attentive toy ear.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar speech category, no actual words or response test.",
+      "tested": false
+    },
+    {
+      "term": "tactile stimuli",
+      "pdf_page": 20,
+      "page": 248,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy hand touching a textured fabric swatch.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar tactile action/category only, no patient testing.",
+      "tested": false
+    },
+    {
+      "term": "Rigid Chest Syndrome",
+      "pdf_page": 27,
+      "page": 255,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar toy treasure chest standing alone, without brick wall.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#chest wall rigidity",
+      "reason": "Reuse chest ingredient from existing chest-wall family; remove wall. Rigid and syndrome qualifiers not encoded, not clinical equivalence or drug effect.",
+      "tested": false
+    },
+    {
+      "term": "respiratory depression",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A drooping bellows beside a familiar depressed-face theater mask.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#respiratory depression",
+      "reason": "Exact drooping-bellows/depressed-mask name family, not a drug effect.",
+      "tested": false
+    },
+    {
+      "term": "bronchospasm",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A bronco squeezing a branching air hose visibly narrow.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-2-cue-audit.json#bronchospasm",
+      "reason": "Exact bronco/squeezing-hose family; no mechanism, indication or therapy claim.",
+      "tested": false
+    },
+    {
+      "term": "myoclonus",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Myo/clone fragments attempted; no clean economical selected association.",
+      "tested": false,
+      "attempted_cue": "A toy muscle beside a clone doll."
+    },
+    {
+      "term": "adrenal suppression",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": null,
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Lid/suppression composition may imply a mechanism and adrenal prop needs teaching; not selected.",
+      "tested": false,
+      "attempted_cue": "An adrenal teaching token under a closed lid."
+    },
+    {
+      "term": "euphoria",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An exuberantly smiling theatrical mask surrounded by loose party confetti.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#euphoria",
+      "reason": "Exact exuberant-mask/confetti family, no drug effect prediction.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 23,
+      "page": 251,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "reason": "Exact lid/cane partial-name association liked by user.",
+      "tested": false
+    },
+    {
+      "term": "muscle relaxation",
+      "pdf_page": 24,
+      "page": 252,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A slack elastic band standing alone, without windpipe model.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#airway muscle relaxation",
+      "reason": "Reuse slack-band ingredient; remove airway qualifier/model, broad relaxation family only, no physiology or medication effect.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Bounded meaningful heading/table/figure and emphasized-clause lexical-head scan using fitz font names/coordinates and rendered pages. Regular cells/captions not falsely called bold. Case, whitespace and line-wrap joins normalized; unique term/page mappings. Not an exhaustive body-word or clinical coverage claim. Screen includes all bold intro20 medication-family adjectives and named lexical heads, all named Tables37-1 through37-6 rows with selected meaningful comment terms, Figure37-1 label/caption heads, and bold25/27 autonomic/pressure subheads. Bare table level labels and drug combination-cell constituents are explicitly mapped; abstract organizers and clinical statements are excluded only after lexical extraction.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "All annotations enumerated on PDF20-30: none. Flattened publisher highlighting cannot be excluded; colored headings/table shading are layout."
+    },
+    "items": [
+      {
+        "term": "Procedural Sedation and Analgesia in Adults",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Actual title",
+        "entry_term": "Procedural Sedation and Analgesia in Adults"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Title, bold clauses, headings and Tables37-1/3/4",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Title, bold clauses, headings and Tables37-1/3/4",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Title, bold clauses, headings and Tables37-1/3/4",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Title, bold clauses, headings and Tables37-1/3/4",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Title, bold clauses, headings and Tables37-1/3/4",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "analgesia",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Title, bold definition and Tables37-1/4",
+        "entry_term": "analgesia"
+      },
+      {
+        "term": "analgesia",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Title, bold definition and Tables37-1/4",
+        "entry_term": "analgesia"
+      },
+      {
+        "term": "analgesia",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Title, bold definition and Tables37-1/4",
+        "entry_term": "analgesia"
+      },
+      {
+        "term": "anxiolysis",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold minimal-sedation clause and Table37-1",
+        "entry_term": "anxiolysis"
+      },
+      {
+        "term": "anxiolysis",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold minimal-sedation clause and Table37-1",
+        "entry_term": "anxiolysis"
+      },
+      {
+        "term": "Minimal sedation",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold definition and Table37-1 row",
+        "entry_term": "Minimal sedation"
+      },
+      {
+        "term": "Minimal sedation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold definition and Table37-1 row",
+        "entry_term": "Minimal sedation"
+      },
+      {
+        "term": "Moderate sedation",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold definition and Table37-1 row",
+        "entry_term": "Moderate sedation"
+      },
+      {
+        "term": "Moderate sedation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold definition and Table37-1 row",
+        "entry_term": "Moderate sedation"
+      },
+      {
+        "term": "Dissociative sedation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold clause and Tables37-1/3",
+        "entry_term": "Dissociative sedation"
+      },
+      {
+        "term": "Deep sedation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold definition and Tables37-1/3",
+        "entry_term": "Deep sedation"
+      },
+      {
+        "term": "Deep sedation",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold definition and Tables37-1/3",
+        "entry_term": "Deep sedation"
+      },
+      {
+        "term": "General anesthesia",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold definition and Table37-1 row",
+        "entry_term": "General anesthesia"
+      },
+      {
+        "term": "consciousness",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold moderate/deep clauses and Table37-3 column",
+        "entry_term": "consciousness"
+      },
+      {
+        "term": "consciousness",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold moderate/deep clauses and Table37-3 column",
+        "entry_term": "consciousness"
+      },
+      {
+        "term": "consciousness",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold moderate/deep clauses and Table37-3 column",
+        "entry_term": "consciousness"
+      },
+      {
+        "term": "motor response",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold deep-sedation clause lexical head",
+        "entry_term": "motor response"
+      },
+      {
+        "term": "painful stimuli",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Bold deep-sedation clause lexical head",
+        "entry_term": "painful stimuli"
+      },
+      {
+        "term": "Responsiveness",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-1 column heading",
+        "entry_term": "Responsiveness"
+      },
+      {
+        "term": "Airway",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-1 column heading",
+        "entry_term": "Airway"
+      },
+      {
+        "term": "Breathing",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-1 column heading",
+        "entry_term": "Breathing"
+      },
+      {
+        "term": "Circulation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-1 column heading",
+        "entry_term": "Circulation"
+      },
+      {
+        "term": "American Society of Anesthesiologists (ASA) Classification System",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 title",
+        "entry_term": "American Society of Anesthesiologists (ASA) Classification System"
+      },
+      {
+        "term": "systemic disease",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary description cells",
+        "entry_term": "systemic disease"
+      },
+      {
+        "term": "asthma",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "asthma"
+      },
+      {
+        "term": "pregnancy",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example and heading",
+        "entry_term": "pregnancy"
+      },
+      {
+        "term": "pregnancy",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-2 ordinary example and heading",
+        "entry_term": "pregnancy"
+      },
+      {
+        "term": "obesity",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example and heading",
+        "entry_term": "obesity"
+      },
+      {
+        "term": "obesity",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-2 ordinary example and heading",
+        "entry_term": "obesity"
+      },
+      {
+        "term": "diabetes",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "diabetes"
+      },
+      {
+        "term": "Pneumonia",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "Pneumonia"
+      },
+      {
+        "term": "renal disease",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 end-stage renal disease example",
+        "entry_term": "renal disease"
+      },
+      {
+        "term": "Sepsis",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "Sepsis"
+      },
+      {
+        "term": "cardiac dysfunction",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "cardiac dysfunction"
+      },
+      {
+        "term": "disseminated intravascular coagulation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "disseminated intravascular coagulation"
+      },
+      {
+        "term": "trauma",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 massive trauma example",
+        "entry_term": "trauma"
+      },
+      {
+        "term": "intracranial hemorrhage",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "intracranial hemorrhage"
+      },
+      {
+        "term": "ischemic bowel",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "ischemic bowel"
+      },
+      {
+        "term": "organ system dysfunction",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary example cell",
+        "entry_term": "organ system dysfunction"
+      },
+      {
+        "term": "Moribund",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary description cell",
+        "entry_term": "Moribund"
+      },
+      {
+        "term": "brain dead",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "Table37-2 ordinary description cell",
+        "entry_term": "brain dead"
+      },
+      {
+        "term": "patient evaluation",
+        "pdf_page": 21,
+        "page": 249,
+        "emphasis": "PRE-SEDATION PATIENT EVALUATION heading lexical head",
+        "entry_term": "patient evaluation"
+      },
+      {
+        "term": "intoxicated",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold delay-PSA clause lexical head",
+        "entry_term": "intoxicated"
+      },
+      {
+        "term": "mental status",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold intoxication clause lexical head",
+        "entry_term": "mental status"
+      },
+      {
+        "term": "fasting",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold fasting-time clause lexical head",
+        "entry_term": "fasting"
+      },
+      {
+        "term": "equipment and supplies",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Preparation subsection heading",
+        "entry_term": "equipment and supplies"
+      },
+      {
+        "term": "monitoring",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Patient monitoring heading",
+        "entry_term": "monitoring"
+      },
+      {
+        "term": "intervention",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Heading and bold check-after-dose clause head",
+        "entry_term": "intervention"
+      },
+      {
+        "term": "response",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Bold check-after-dose clause lexical head",
+        "entry_term": "response"
+      },
+      {
+        "term": "Capnography",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "MyriadPro-Bold heading, Table37-3 and error heading",
+        "entry_term": "Capnography"
+      },
+      {
+        "term": "Capnography",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "MyriadPro-Bold heading, Table37-3 and error heading",
+        "entry_term": "Capnography"
+      },
+      {
+        "term": "Heart Rate",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 heading, Table37-4 comment and25 body",
+        "entry_term": "Heart Rate"
+      },
+      {
+        "term": "Heart Rate",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-3 heading, Table37-4 comment and25 body",
+        "entry_term": "Heart Rate"
+      },
+      {
+        "term": "Respiratory Rate",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 heading and documentation body",
+        "entry_term": "Respiratory Rate"
+      },
+      {
+        "term": "Respiratory Rate",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-3 heading and documentation body",
+        "entry_term": "Respiratory Rate"
+      },
+      {
+        "term": "Blood Pressure",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 heading and bold ketamine pressure clauses",
+        "entry_term": "Blood Pressure"
+      },
+      {
+        "term": "Blood Pressure",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-3 heading and bold ketamine pressure clauses",
+        "entry_term": "Blood Pressure"
+      },
+      {
+        "term": "Blood Pressure",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Table37-3 heading and bold ketamine pressure clauses",
+        "entry_term": "Blood Pressure"
+      },
+      {
+        "term": "Oxygen Saturation",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 heading and documentation body",
+        "entry_term": "Oxygen Saturation"
+      },
+      {
+        "term": "Oxygen Saturation",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-3 heading and documentation body",
+        "entry_term": "Oxygen Saturation"
+      },
+      {
+        "term": "End-Tidal CO2",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 column heading, subscript joined",
+        "entry_term": "End-Tidal CO2"
+      },
+      {
+        "term": "capnogram",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Figure37-1 ordinary caption",
+        "entry_term": "capnogram"
+      },
+      {
+        "term": "exhalation",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Figure37-1 Begin exhalation label and caption",
+        "entry_term": "exhalation"
+      },
+      {
+        "term": "inhalation",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Figure37-1 Begin inhalation label and caption",
+        "entry_term": "inhalation"
+      },
+      {
+        "term": "anatomic dead space",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Figure37-1 ordinary caption head",
+        "entry_term": "anatomic dead space"
+      },
+      {
+        "term": "alveolar gas",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Figure37-1 ordinary caption head",
+        "entry_term": "alveolar gas"
+      },
+      {
+        "term": "documenting",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "DOCUMENTING PSA heading lexical head",
+        "entry_term": "documenting"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 row, headings and bold29 name",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row, headings and bold29 name",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Table37-4 row, headings and bold29 name",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Table37-4 row, headings and bold29 name",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row, headings and bold29 name",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 row, headings, bold clauses and Table37-6 cell",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Table37-4 row, headings, bold clauses and Table37-6 cell",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Table37-4 row, headings, bold clauses and Table37-6 cell",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row, headings, bold clauses and Table37-6 cell",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "Ketamine",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-4 row, headings, bold clauses and Table37-6 cell",
+        "entry_term": "Ketamine"
+      },
+      {
+        "term": "Etomidate",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Etomidate"
+      },
+      {
+        "term": "Etomidate",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Etomidate"
+      },
+      {
+        "term": "Etomidate",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Etomidate"
+      },
+      {
+        "term": "ketofol",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 split keto-fol row and heading",
+        "entry_term": "ketofol"
+      },
+      {
+        "term": "ketofol",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Table37-4 split keto-fol row and heading",
+        "entry_term": "ketofol"
+      },
+      {
+        "term": "Midazolam",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Midazolam"
+      },
+      {
+        "term": "Midazolam",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Midazolam"
+      },
+      {
+        "term": "Midazolam",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-4 row, heading and Table37-6 cell",
+        "entry_term": "Midazolam"
+      },
+      {
+        "term": "Fentanyl",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row, bold27/29 names and Table37-6 cell",
+        "entry_term": "Fentanyl"
+      },
+      {
+        "term": "Fentanyl",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Table37-4 row, bold27/29 names and Table37-6 cell",
+        "entry_term": "Fentanyl"
+      },
+      {
+        "term": "Fentanyl",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row, bold27/29 names and Table37-6 cell",
+        "entry_term": "Fentanyl"
+      },
+      {
+        "term": "Fentanyl",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-4 row, bold27/29 names and Table37-6 cell",
+        "entry_term": "Fentanyl"
+      },
+      {
+        "term": "Alfentanil",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row and bold drug name",
+        "entry_term": "Alfentanil"
+      },
+      {
+        "term": "Alfentanil",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Table37-4 row and bold drug name",
+        "entry_term": "Alfentanil"
+      },
+      {
+        "term": "Remifentanil",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row and bold names",
+        "entry_term": "Remifentanil"
+      },
+      {
+        "term": "Remifentanil",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Table37-4 row and bold names",
+        "entry_term": "Remifentanil"
+      },
+      {
+        "term": "Remifentanil",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row and bold names",
+        "entry_term": "Remifentanil"
+      },
+      {
+        "term": "Dexmedetomidine",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row and MyriadPro-Bold heading",
+        "entry_term": "Dexmedetomidine"
+      },
+      {
+        "term": "Dexmedetomidine",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Table37-4 row and MyriadPro-Bold heading",
+        "entry_term": "Dexmedetomidine"
+      },
+      {
+        "term": "Nitrous oxide",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row, MyriadPro-Bold heading and bold29 name",
+        "entry_term": "Nitrous oxide"
+      },
+      {
+        "term": "Nitrous oxide",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Table37-4 row, MyriadPro-Bold heading and bold29 name",
+        "entry_term": "Nitrous oxide"
+      },
+      {
+        "term": "Nitrous oxide",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row, MyriadPro-Bold heading and bold29 name",
+        "entry_term": "Nitrous oxide"
+      },
+      {
+        "term": "Methohexital",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 row and bold drug names",
+        "entry_term": "Methohexital"
+      },
+      {
+        "term": "Methohexital",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-4 row and bold drug names",
+        "entry_term": "Methohexital"
+      },
+      {
+        "term": "Methohexital",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Table37-4 row and bold drug names",
+        "entry_term": "Methohexital"
+      },
+      {
+        "term": "Aldrete Score",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Completion section ordinary named assessment",
+        "entry_term": "Aldrete Score"
+      },
+      {
+        "term": "Dissociative",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 bare row label",
+        "entry_term": "Dissociative"
+      },
+      {
+        "term": "hypovolemia",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Bold correct-hypovolemia clause lexical head",
+        "entry_term": "hypovolemia"
+      },
+      {
+        "term": "elderly",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Bold dose clause and subsection heading",
+        "entry_term": "elderly"
+      },
+      {
+        "term": "elderly",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Bold dose clause and subsection heading",
+        "entry_term": "elderly"
+      },
+      {
+        "term": "soy",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MyriadPro-Bold soy/egg-allergies heading lexical head",
+        "entry_term": "soy"
+      },
+      {
+        "term": "egg",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MyriadPro-Bold soy/egg-allergies heading lexical head",
+        "entry_term": "egg"
+      },
+      {
+        "term": "allergies",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MyriadPro-Bold soy/egg-allergies heading lexical head",
+        "entry_term": "allergies"
+      },
+      {
+        "term": "Pain on Injection",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MyriadPro-Bold subsection heading",
+        "entry_term": "Pain on Injection"
+      },
+      {
+        "term": "ventilatory effort",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Bold ketamine preservation clause lexical head",
+        "entry_term": "ventilatory effort"
+      },
+      {
+        "term": "apnea",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Bold ketamine clause and Table37-6 row",
+        "entry_term": "apnea"
+      },
+      {
+        "term": "apnea",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Bold ketamine clause and Table37-6 row",
+        "entry_term": "apnea"
+      },
+      {
+        "term": "Emergence reactions",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MyriadPro-Bold heading and MinionPro-Bold lexical head",
+        "entry_term": "Emergence reactions"
+      },
+      {
+        "term": "Anorexia",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold anorexia/nausea/vomiting phrase",
+        "entry_term": "Anorexia"
+      },
+      {
+        "term": "nausea",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold anorexia/nausea/vomiting phrase",
+        "entry_term": "nausea"
+      },
+      {
+        "term": "vomiting",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold phrase and Table37-6 row",
+        "entry_term": "vomiting"
+      },
+      {
+        "term": "vomiting",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "MinionPro-Bold phrase and Table37-6 row",
+        "entry_term": "vomiting"
+      },
+      {
+        "term": "hypersympathetic state",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold lexical phrase",
+        "entry_term": "hypersympathetic state"
+      },
+      {
+        "term": "Blood pressure elevations",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold line-wrap lexical phrase",
+        "entry_term": "Blood pressure elevations"
+      },
+      {
+        "term": "coronary artery disease",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Bold ketamine-avoidance clause lexical head",
+        "entry_term": "coronary artery disease"
+      },
+      {
+        "term": "intraocular pressure",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold lexical phrase",
+        "entry_term": "intraocular pressure"
+      },
+      {
+        "term": "hypersalivation",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold lexical phrase",
+        "entry_term": "hypersalivation"
+      },
+      {
+        "term": "bronchorrhea",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold lexical phrase",
+        "entry_term": "bronchorrhea"
+      },
+      {
+        "term": "intracranial pressure",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "MinionPro-Bold phrase and ICP abbreviation",
+        "entry_term": "intracranial pressure"
+      },
+      {
+        "term": "hemodynamic effects",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Bold etomidate clause and bold dexmedetomidine clause lexical head",
+        "entry_term": "hemodynamic effects"
+      },
+      {
+        "term": "hemodynamic effects",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold etomidate clause and bold dexmedetomidine clause lexical head",
+        "entry_term": "hemodynamic effects"
+      },
+      {
+        "term": "duration of action",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Bold etomidate short-duration clause lexical head",
+        "entry_term": "duration of action"
+      },
+      {
+        "term": "cardioversion",
+        "pdf_page": 26,
+        "page": 254,
+        "emphasis": "Bold etomidate recommendation clause lexical head",
+        "entry_term": "cardioversion"
+      },
+      {
+        "term": "synthetic opioids",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Subsection heading",
+        "entry_term": "synthetic opioids"
+      },
+      {
+        "term": "Sufentanil",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "MinionPro-Bold drug name",
+        "entry_term": "Sufentanil"
+      },
+      {
+        "term": "hypertension",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause lexical head",
+        "entry_term": "hypertension"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause and Table37-6 row",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Bold hemodynamic-effects clause and Table37-6 row",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause and Table37-6 row",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Bold hemodynamic-effects clause and Table37-6 row",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "vasoconstriction",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause lexical head",
+        "entry_term": "vasoconstriction"
+      },
+      {
+        "term": "sympatholysis",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause lexical head",
+        "entry_term": "sympatholysis"
+      },
+      {
+        "term": "baroreflex-mediated parasympathetic activation",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Bold hemodynamic-effects clause complete lexical phrase",
+        "entry_term": "baroreflex-mediated parasympathetic activation"
+      },
+      {
+        "term": "baroreflex",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Lexical subhead extracted from bold mediated-activation clause",
+        "entry_term": "baroreflex"
+      },
+      {
+        "term": "parasympathetic activation",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "Lexical subhead extracted from bold mediated-activation clause",
+        "entry_term": "parasympathetic activation"
+      },
+      {
+        "term": "Barbiturates",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "MyriadPro-Bold heading",
+        "entry_term": "Barbiturates"
+      },
+      {
+        "term": "benzodiazepine",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Bold bolus-dose clause lexical head",
+        "entry_term": "benzodiazepine"
+      },
+      {
+        "term": "boluses",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Bold single-IV-boluses clause lexical head",
+        "entry_term": "boluses"
+      },
+      {
+        "term": "Total body weight",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-5 semibold named row and bold bolus-dose clause",
+        "entry_term": "Total body weight"
+      },
+      {
+        "term": "Ideal body weight",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-5 semibold named row",
+        "entry_term": "Ideal body weight"
+      },
+      {
+        "term": "Lean body weight",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-5 semibold named row",
+        "entry_term": "Lean body weight"
+      },
+      {
+        "term": "Body mass index",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Table37-5 semibold named row",
+        "entry_term": "Body mass index"
+      },
+      {
+        "term": "underweight",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Subsection heading",
+        "entry_term": "underweight"
+      },
+      {
+        "term": "comorbid conditions",
+        "pdf_page": 28,
+        "page": 256,
+        "emphasis": "Subsection heading",
+        "entry_term": "comorbid conditions"
+      },
+      {
+        "term": "obstetrics",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Bold consultation clause lexical head",
+        "entry_term": "obstetrics"
+      },
+      {
+        "term": "obstetrical anesthesia",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Bold consultation clause lexical head",
+        "entry_term": "obstetrical anesthesia"
+      },
+      {
+        "term": "Rescue Medications",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Major heading lexical head",
+        "entry_term": "Rescue Medications"
+      },
+      {
+        "term": "Reversal Agents",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Major heading lexical head",
+        "entry_term": "Reversal Agents"
+      },
+      {
+        "term": "Phenylephrine",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "MinionPro-Bold drug name",
+        "entry_term": "Phenylephrine"
+      },
+      {
+        "term": "Epinephrine",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "MinionPro-Bold drug name",
+        "entry_term": "Epinephrine"
+      },
+      {
+        "term": "Push-dose pressors",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "MinionPro-Bold lexical phrase",
+        "entry_term": "Push-dose pressors"
+      },
+      {
+        "term": "Flumazenil",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "MinionPro-Bold drug name",
+        "entry_term": "Flumazenil"
+      },
+      {
+        "term": "naloxone",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "MinionPro-Bold drug name",
+        "entry_term": "naloxone"
+      },
+      {
+        "term": "complications",
+        "pdf_page": 29,
+        "page": 257,
+        "emphasis": "Major heading COMPLICATIONS OF ED PSA lexical head",
+        "entry_term": "complications"
+      },
+      {
+        "term": "Agitation",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 semibold row",
+        "entry_term": "Agitation"
+      },
+      {
+        "term": "Aspiration",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 semibold row",
+        "entry_term": "Aspiration"
+      },
+      {
+        "term": "Hypoxia",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 semibold row",
+        "entry_term": "Hypoxia"
+      },
+      {
+        "term": "Intubation",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 semibold row",
+        "entry_term": "Intubation"
+      },
+      {
+        "term": "Laryngospasm",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 semibold row",
+        "entry_term": "Laryngospasm"
+      },
+      {
+        "term": "fluids",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "NOT OPTIMIZING FLUIDS heading lexical head",
+        "entry_term": "fluids"
+      },
+      {
+        "term": "bag-valve mask",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "AGGRESSIVE USE OF THE BAG-VALVE MASK heading lexical head",
+        "entry_term": "bag-valve mask"
+      },
+      {
+        "term": "hypnotic",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition lexical head",
+        "entry_term": "hypnotic"
+      },
+      {
+        "term": "amnesia",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition lexical head",
+        "entry_term": "amnesia"
+      },
+      {
+        "term": "anxiety",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition lexical head",
+        "entry_term": "anxiety"
+      },
+      {
+        "term": "awareness",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition lexical head",
+        "entry_term": "awareness"
+      },
+      {
+        "term": "comfort",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition lexical head",
+        "entry_term": "comfort"
+      },
+      {
+        "term": "verbal stimuli",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold minimal/moderate definitions lexical head",
+        "entry_term": "verbal stimuli"
+      },
+      {
+        "term": "tactile stimuli",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold moderate-sedation definition lexical head",
+        "entry_term": "tactile stimuli"
+      },
+      {
+        "term": "Rigid Chest Syndrome",
+        "pdf_page": 27,
+        "page": 255,
+        "emphasis": "MyriadPro-Bold inline heading",
+        "entry_term": "Rigid Chest Syndrome"
+      },
+      {
+        "term": "respiratory depression",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "respiratory depression"
+      },
+      {
+        "term": "respiratory depression",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "respiratory depression"
+      },
+      {
+        "term": "bronchospasm",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "bronchospasm"
+      },
+      {
+        "term": "myoclonus",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "myoclonus"
+      },
+      {
+        "term": "adrenal suppression",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "adrenal suppression"
+      },
+      {
+        "term": "euphoria",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "euphoria"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 23,
+        "page": 251,
+        "emphasis": "Table37-4 ordinary comment and pain-on-injection body",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 25,
+        "page": 253,
+        "emphasis": "Table37-4 ordinary comment and pain-on-injection body",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "muscle relaxation",
+        "pdf_page": 24,
+        "page": 252,
+        "emphasis": "Table37-4 ordinary comment lexical head",
+        "entry_term": "muscle relaxation"
+      },
+      {
+        "term": "anxiolytic",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition; explicit lexical adjective-to-family mapping, not clinical equivalence.",
+        "entry_term": "anxiolysis"
+      },
+      {
+        "term": "sedative",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition; explicit lexical adjective-to-family mapping, not clinical equivalence.",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "analgesic",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition; explicit lexical adjective-to-family mapping, not clinical equivalence.",
+        "entry_term": "analgesia"
+      },
+      {
+        "term": "dissociative",
+        "pdf_page": 20,
+        "page": 248,
+        "emphasis": "Bold introductory definition; explicit lexical adjective-to-family mapping, not clinical equivalence.",
+        "entry_term": "Dissociative sedation"
+      },
+      {
+        "term": "Propofol",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 ordinary drug-family cells, not bold row labels.",
+        "entry_term": "Propofol"
+      },
+      {
+        "term": "opioid",
+        "pdf_page": 30,
+        "page": 258,
+        "emphasis": "Table37-6 ordinary combination cells; explicit singular/plural family mapping, synthetic qualifier omitted; no medication relation or effect.",
+        "entry_term": "synthetic opioids"
+      },
+      {
+        "term": "Minimal",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 bare level row label; explicit shortened lexical label mapping, not a clinical depth definition.",
+        "entry_term": "Minimal sedation"
+      },
+      {
+        "term": "Moderate",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 bare level row label; explicit shortened lexical label mapping, not a clinical depth definition.",
+        "entry_term": "Moderate sedation"
+      },
+      {
+        "term": "Deep",
+        "pdf_page": 22,
+        "page": 250,
+        "emphasis": "Table37-3 bare level row label; explicit shortened lexical label mapping, not a clinical depth definition.",
+        "entry_term": "Deep sedation"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 20,
+        "description": "Author names, chapter-number badge, INTRODUCTION organizer, citation superscripts; definition/goals connective wording and numeric-free complete clinical definition.",
+        "reason": "Named medication-family adjectives, hypnotic, amnesia, anxiety, awareness, comfort and stimulus lexical heads mapped separately. Generic safety/diagnostic/therapeutic/goal/attenuate wording not independent cue targets; no full definition or clinical assertions encoded."
+      },
+      {
+        "pdf_page": 21,
+        "description": "CLINICAL APPROACH, PSA policies/guidelines and needs-assessment organizers; ASA class numerals, Healthy label, descriptive severity/response statements and table source footer.",
+        "reason": "Sedation levels, evaluation, organization title, column heads and meaningful condition/example names screened. Class numbers/severity, treatment and response claims excluded after extracting heads; no hierarchy rules or every generic descriptive word."
+      },
+      {
+        "pdf_page": 22,
+        "description": "Preparation/monitoring organizers; check-after-dose and delay/fasting clinical clauses; Table37-3 schedules, numbers, recommendation cells and citation links.",
+        "reason": "Equipment, monitoring, intervention, response, intoxicated, mental status, fasting and monitoring column names extracted separately. Generic medication/dose/time/check/appropriate wording not padded into discoveries; no instructions or numbers."
+      },
+      {
+        "pdf_page": 23,
+        "description": "Table37-4 dosage, onset/effective-action timing, ratios, units, advantage/disadvantage organizers; Figure37-1 axes, units, phase numerals and physiologic narrative.",
+        "reason": "All named drug rows and meaningful selected comment families screened; figure capnogram, inhalation/exhalation, alveolar gas and dead-space heads tried. No dose/time/ratio/phase-interpretation claims, every caption adjective or every table-comment word inventory."
+      },
+      {
+        "pdf_page": 24,
+        "description": "Table37-4 continued numeric administration/timing columns, formulation ratios, source footer; COMPLETION/AGENTS organizers and monitoring/discharge narrative.",
+        "reason": "Named rows, euphoria, muscle relaxation, respiratory-depression families and Aldrete Score tried. No dosing, procedural instructions, occupational exposure recommendations or exhaustive ordinary comment/procedure inventory."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Complete bold propofol correction/elderly-dosing and ketamine preservation/avoidance clauses, numeric quantities and references.",
+        "reason": "Hypovolemia, elderly, ventilatory effort, apnea, pressure/elevation, coronary artery disease, anorexia, nausea, vomiting, emergence, hypersympathetic state, ocular/cranial pressure, hypersalivation and bronchorrhea all explicitly tried. Clinical assertions/instructions omitted only after lexical extraction."
+      },
+      {
+        "pdf_page": 26,
+        "description": "Complete bold etomidate recommendation and shorter-duration/hemodynamic assertion; combination ratios and dosing text.",
+        "reason": "Etomidate, hemodynamic effects, duration of action and cardioversion lexical heads tried; no comparison, recommendation, duration number or formula encoded."
+      },
+      {
+        "pdf_page": 27,
+        "description": "LESS COMMONLY USED AGENTS organizer; complete bold dexmedetomidine effects/mechanism statement, dosing figures and citations.",
+        "reason": "Synthetic opioids, named bold drug names, Rigid Chest Syndrome and each meaningful hemodynamic/autonomic lexical head explicitly tried, including baroreflex and parasympathetic activation subheads. No drug-effect, pathway or every ordinary body-word inventory."
+      },
+      {
+        "pdf_page": 28,
+        "description": "DOSING CONSIDERATIONS IN SPECIAL POPULATIONS organizer; Table37-5 equations, sex labels, constants/units and entire bold bolus-dose proportionality instruction.",
+        "reason": "Obesity, elderly, underweight, comorbid conditions, barbiturates, benzodiazepine, boluses and all four named weight/index rows tried. No equation, dosing proportionality or body-composition threshold encoded."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Complete bold obstetric-consultation instruction, pregnancy drug-safety assertions, rescue-agent doses and generic complications narrative.",
+        "reason": "Pregnancy, obstetrics, obstetrical anesthesia, all bold drug names, rescue/reversal headings, push-dose pressors and complications explicitly tried; clinical recommendation/safety claims omitted, not used to skip lexical heads."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Table37-6 study counts, rates/percentages and COMMON ERRORS/CHOOSING WRONG DRUG/DOSE/NOT PREPARED organizers; complete clinical instructions under errors headings.",
+        "reason": "Every named adverse-event row and named drug-family cell mapped; capnography, fluids and bag-valve-mask heading heads extracted. Generic choosing/drug/dose/prepared/optimization/aggressive organizers are not independent medical vocabulary targets. No numeric or management teaching."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Acknowledgments and references right column at y687 onward; PDF31 wholly excluded.",
+        "reason": "Non-vocabulary credits and reference notice; next chapter out of assigned scope."
+      }
+    ]
+  },
+  "resolved_holds": [
+    {
+      "term": "General anesthesia",
+      "resolution": "Local37 hold changed to reuse of retained23 anesthesia family after main first65 feedback.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Military general beside drowsy chair.",
+          "reason": "Initial author unnecessarily required general qualifier.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Sleep mask and sensory-mute symbol.",
+          "reason": "Broad learned anesthesia family permitted, general qualifier omitted.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "End-Tidal CO2",
+      "resolution": "Local37 hold changed to retained28 tide/charcoal family, detector omitted.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Tide at beach end and carbon token.",
+          "reason": "Unfamiliar carbon token; prior retained detector family missed.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Tide wave beside charcoal.",
+          "reason": "Existing taught partial-name tokens; no end/di qualifier or gas fact.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "diabetes",
+      "resolution": "Local37 device-category hold reconsidered under user calibration.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "Glucose meter.",
+          "reason": "Initially overrequired unique disease identity.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "Standalone glucose meter training prop.",
+          "reason": "Familiar category allowed, no diagnosis or management claim.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_candidate",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "asthma",
+      "resolution": "Local37 selects familiar inhaler category; older holds remain open.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "28: asterisk plus moth;29A: familiar inhaler considered;29B: preserves asterisk/moth and considers inhaler.",
+          "reason": "28 held strained sound repair;29A/29B did not select inhaler for the lexical-name target then. These earlier records explicitly permit later broader category proposals and remain unchanged.",
+          "scope": "docs/chapter-28-cue-audit.json#asthma; docs/chapter-29A-cue-audit.json#asthma; docs/chapter-29B-cue-audit.json#asthma"
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "Standalone inhaler training prop.",
+          "reason": "Familiar category/device allowed; no drug, indication, treatment or diagnosis claim.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "cardiac dysfunction",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A toy heart beside a broken crank.",
+          "reason": "Initial draft missed existing retained family.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar heart-shaped toy with a broken crank.",
+          "reason": "Reuse retained heart/broken-crank family; attempted composition already existed, not new.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "mental status",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A head beside a blank status panel.",
+          "reason": "Initial draft missed existing retained family.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A toy brain beside a simple blank status-indicator dial.",
+          "reason": "Exact brain/status-dial family, no consciousness assessment.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "Dexmedetomidine",
+      "resolution": "Local37 hold changed to existing retained family after main exact-prior check.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A deck of playing cards beside a date fruit.",
+          "reason": "Initial draft missed existing retained family.",
+          "scope": "Initial37 draft."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar deck of playing cards standing alone.",
+          "reason": "Reuse retained36 deck fragment; remove date. Shared dex fragment with dexamethasone, not unique identity, related drugs or equivalence.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    },
+    {
+      "term": "apnea",
+      "resolution": "Local37 pause-bellows hold reconsidered after main challenge under familiar-action/category calibration; prior29A remains open.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a paused bellows alone; held as a weak chosen name reminder, not because category cues must be diagnostic. Related sleep/apneic proposals remain separately recorded; no duration or management.",
+          "scope": "docs/chapter-29A-cue-audit.json#apnea, unchanged"
+        },
+        {
+          "decision": "hold",
+          "attempt": "Motionless bellows beside a pause symbol.",
+          "reason": "Initial37 overrequired static motion proof.",
+          "scope": "Initial37 only."
+        },
+        {
+          "decision": "retain_candidate",
+          "attempt": "Freestanding bellows beside a familiar pause symbol.",
+          "reason": "Broad learned breathing/pause category under user calibration; static prop is a taught reminder, not proof of stopped breathing, diagnosis or a physiologic mechanism.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true
+    },
+    {
+      "term": "allergies",
+      "resolution": "Local37 sneeze-mask hold changed to retained14 sensitivity-family reuse after main final feedback.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A theatrical sneeze-mask token.",
+          "reason": "Initial sneeze-mask association not selected.",
+          "scope": "Initial37 only."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "An alarm bell ringing as a feather touches its trigger.",
+          "reason": "Reuse bell/feather learned sensitivity ingredient; remove oversized/exaggerated qualifier. Broad lexical family only, not equivalence of allergy/hypersensitivity, immune mechanism or reaction severity.",
+          "scope": "Current37 only."
+        }
+      ],
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false
+    }
+  ],
+  "source_wording_notes": {
+    "normalization": "Case, whitespace and wrap joins normalized; shortened lexical families explicitly scoped, not clinical equivalence.",
+    "ket_family": "Ketamine shares kettle with ketoprofen, ketorolac kettle/lock and ketofol. These are partial taught fragments, not unique drug identities or equivalence; later contextual disambiguation/testing needed.",
+    "history": "Older holds and rejections unchanged; later retained-root reuse does not resolve earlier holds.",
+    "nickname": "Nitrous oxide laughing mask is a learned nickname association only, not a drug-effect assertion.",
+    "location_corrections": "Dissociative sedation exact phrase is on21, not22 (Table37-3 has bare Dissociative; separately screened below). Heart Rate is not on25; Ketamine is not on27. Removed those preliminary mappings, not claimed as literal matches.",
+    "dex_family": "Deck/dex shared by dexamethasone and dexmedetomidine; retained36 dexamethasone inspected. No full-name discrimination, drug relation or equivalence. Main additionally identified38 dextrose sharing deck/dex; collision noted for integration, not an independently reviewed38 record here. Context/disambiguation still required. Ametop/topiramate top-family collision is outside this37 bank.",
+    "reuse_scan": "All available older chapter cue banks, visual-cue-catalog and both sound-workshop JSON files searched for exact normalized terms and relevant prior families. Saved prior-match-review.json records exact matches including older holds; explicit family references in entries record nonexact ingredient reuse. Search and AI judgment are not proof that every conceptual collision is discovered."
+  },
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author-completed bounded offline emphasized/key-term screen; main independent integration/source/cue review and shared validation remain pending and main-owned. Not credentialed human or clinical validation.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch36-38/chapter37/",
+  "coverage_limits": [
+    "Bounded key-term screen, not every generic body noun or exhaustive clinical coverage.",
+    "No clinical, pronunciation, recognition, recall or mnemonic-image validation.",
+    "Source-page rasters are inspection artifacts, not mnemonic render evidence."
+  ]
+}

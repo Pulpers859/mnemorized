@@ -199,6 +199,49 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-21 - Chapters36-38 vocabulary batch and reviewer recovery
+**Done:** Three disjoint AI chapter drafting lanes plus independent main
+source/cue integration.36=115terms/39new/49reuse/27hold;
+37=139/32/67/40;38=144/49/43/52. Total398terms/120new/159reuse/119hold;
+604 keyword term/page mappings. Reviewers36/37 hit a Codex usage limit and were
+revived from saved checkpoints at Patrick's request; both completed. No Anthropic
+funding error, API/provider call, image render or benchmark-budget spend.
+
+Main checked every recorded vocabulary/page, keyword mapping, cue/attempt and
+actual prior ingredient/target. Verified source hash, mixed-column boundaries8/20,
+full-width Figure36-20 and nonblank final38; all annotation lists8-38 empty.
+Wheal page corrected13, not12. Full-row/heading aliases and quote/line-wrap
+normalization are explicit, not invented contiguous quotes. Added missing bold
+hypnotic/amnesia and Rigid Chest Syndrome trials before final integration.
+
+Main challenged overly rigid holds under Patrick's broad learned-category rule:
+glucose meter, open-fracture model, amplified pain, toilet metaphors and simple
+word fragments may be candidates without unique diagnosis/full-name recovery.
+Old vessel/cuff/finger/ear, fluid/duration/bolus/bag-valve, spinal-cord and
+radiograph ingredients reused, not new-counted. Deck/dex, kettle, fan and
+spinning-top name collisions explicitly require later contextual discrimination.
+Resolved JSON reuse graph has no cycles/held targets; legacy non-fragment links
+terminate traversal.30 added histories preserve earlier attempts and holds.
+
+Separate held register refreshed/check-current:434 active occurrences/360 distinct
+terms/63 decision-history records. Canonical visual catalog remains76 unchanged.
+Data tests extended through38; five invalid figure source-type labels corrected
+to existing figure_label schema instead of weakening tests.
+
+**Verified:** focused194passed/1skipped; full pytest826passed/2skipped/
+149subtests; catalog validation76; deterministic hold register current;
+source-location diagnostic no remaining misses; diff whitespace checks clean.
+No server/browser/provider test required for this docs/data-only scope.
+**Known risks / NOT verified:** bounded lexical review, not exhaustive chapter or
+clinical coverage. AI review is not credentialed-human, pronunciation, object
+naming, recall or mnemonic-image validation. All tested:false, production false,
+evidence empty. Preexisting Forge HTML/pipeline one-line edits preserved unstaged.
+Fetch still fails on the existing malformed local Codex checkpoint ref; auth works
+and remote GitHub API matched starting HEAD61219cd before integration. No ref
+deletion or credential retries. Main owns final commit/push/remote-SHA proof.
+**Next:** Chapter39 Wound Evaluation, confirmed in supplied TOC and opening of
+Tintin_Wound Management.pdf, not yet cue-reviewed.
+
 ### 2026-10-21 - Chapters33-35 vocabulary review and source-PDF transition
 **Done:** Three disjoint AI drafting lanes; main checked every recorded word/page,
 keyword location, cue and resolved reuse reference.33=131terms/38new/75reuse/18hold;
