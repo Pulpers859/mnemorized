@@ -199,6 +199,56 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-21 - Chapters39-41 wound vocabulary batch
+**Done:** Three bounded AI chapter drafting lanes plus independent main
+source/cue integration.39=74terms/21new/48reuse/5hold;
+40=64/26/34/4;41=102/20/67/15. Total240terms/67new/149reuse/24hold;
+340 keyword term/page mappings. No paid-provider calls or mnemonic-image renders;
+$6 benchmark allowance untouched. All reviewers completed; no lost lane.
+
+New source Tintin_Wound Management.pdf,62pages,
+SHA256691e464e103295d5b27bf4173a60fa6a86e81261cdeb35f2c9b45411ea4c8119,
+printed offset266. Actual boundaries verified visually and by coordinates:
+39=1-3 upperleft3;40=lowerleft3+allright3 through fullwidthFigure40-5/upperleft6;
+41=lowerleft6+right6 below40figure through fullwidthFigure41-19/leftrefs19.
+Right6 Overview/Table41-1 precedes actualleft41title vertically; do not exclude
+it by horizontal title-height clipping. Adjacent42 lowerleft/right19 excluded.
+Annotations1-19 empty; typography and table/figure names checked separately.
+
+Main checked every recorded term/page, keyword mapping, cue/attempt and actual
+prior ingredient/target. CI and sutured use actual source forms; expansions
+explicit. Raney comes from body clips (Raney), not invented contiguous phrase.
+The one substring-check flag linear lacerations is an explicit shortened alias
+from linear, nonfacial lacerations, independently verified on raster14.
+Full clinical/numeric/procedural assertions excluded only after lexical heads.
+
+Shared closure, loupes, mattress, CT/MRI, scalp and infection roots reconciled;
+old sutures, forceps, foreign-body, skin, gut, sponge and material ingredients
+reused. Bloodless/control maps clamp/pipe, not leaking pipe alone. Familiar
+categories and economical partial-name ingredients retained without requiring
+unique blind decoding. Product/name fragments may collide: tetra, key, deck,
+butter, cap, suture and adhesive families need later contextual discrimination.
+No clinical material properties, procedure geometry or product equivalence claim.
+
+Seven added decision histories preserve all older holds/rejections. Separate
+register refreshed/check-current:458 active occurrences/379 distinct terms/
+70 histories. Explicit comparison proves all434 previous occurrences preserved.
+Resolved JSON reuse graph88nodes has no cycle/held target; legacy non-fragment
+links terminate traversal. Canonical visual catalog remains76, unchanged.
+
+**Verified:** focused203passed/1skipped; full pytest835passed/2skipped/
+149subtests; compileall backend; catalog valid76; deterministic held register
+current; whitespace check clean. No browser/server/provider generation test.
+**Known risks / NOT verified:** bounded lexical screen, not exhaustive chapter,
+clinical entailment, credentialed-human, pronunciation, naming, recall or
+mnemonic-image validation. All chapter entries untested/nonproduction; evidence
+empty. Preexisting one-line Forge HTML/pipeline edits preserved unstaged.
+Fetch failed once on existing malformed local Codex checkpoint ref; auth works,
+GitHub API matched starting HEAD2c59b2c. No ref deletion/credential retry loop.
+Main owns final commit/push and remote-SHA verification.
+**Next:**42 Face and Scalp Lacerations, actual title verified on19, not yet
+cue-reviewed. Continue with the same source/emphasis/reuse/hold workflow.
+
 ### 2026-10-21 - Chapters36-38 vocabulary batch and reviewer recovery
 **Done:** Three disjoint AI chapter drafting lanes plus independent main
 source/cue integration.36=115terms/39new/49reuse/27hold;

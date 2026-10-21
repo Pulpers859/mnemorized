@@ -40,10 +40,13 @@
     "35",
     "36",
     "37",
-    "38"
+    "38",
+    "39",
+    "40",
+    "41"
   ],
-  "active_hold_occurrences": 434,
-  "unique_held_terms": 360,
+  "active_hold_occurrences": 458,
+  "unique_held_terms": 379,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -131,7 +134,8 @@
         "34",
         "35",
         "36",
-        "37"
+        "37",
+        "40"
       ]
     },
     {
@@ -414,7 +418,8 @@
         "34",
         "35",
         "36",
-        "37"
+        "37",
+        "40"
       ]
     },
     {
@@ -868,7 +873,8 @@
         "34",
         "35",
         "36",
-        "37"
+        "37",
+        "40"
       ]
     },
     {
@@ -1054,7 +1060,8 @@
         "34",
         "35",
         "36",
-        "37"
+        "37",
+        "40"
       ]
     },
     {
@@ -2051,7 +2058,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "39"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2196,7 +2205,9 @@
       "report": "docs/chapter-29B-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried chlorine-pool toy beside a hexagon; partial chlorine/hex is possible but the remaining composition felt forced. No oral-care instruction or antimicrobial effect.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "40"
+      ]
     },
     {
       "chapter_id": "29B",
@@ -2594,7 +2605,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A chlorine-pool tub beside a hexagon.",
       "reason": "Chlor/hex fragments possible but combination is cumbersome and misleading as product identity; prior hold preserved.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "40"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2649,7 +2662,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A generic cartoon germ.",
       "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "39"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2847,7 +2862,9 @@
       "report": "docs/chapter-33-cue-audit.md",
       "attempted_cue": "A cartoon germ beside a broken toy shield.",
       "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "39"
+      ]
     },
     {
       "chapter_id": "33",
@@ -2979,7 +2996,9 @@
       "report": "docs/chapter-34-cue-audit.md",
       "attempted_cue": "A generic cartoon germ beside a doorway.",
       "reason": "Tried germ/entry; no useful infection-specific lexical hook selected. Existing rejected/held germ attempts remain historical; not a universal ban on category cues.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "39"
+      ]
     },
     {
       "chapter_id": "34",
@@ -4885,6 +4904,270 @@
       "attempted_cue": "A buoy beside a walking cane.",
       "reason": "Buoy/cane is a partial-name possibility but too close to the established lidocaine cane family without a useful simple discriminator.",
       "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "39",
+      "chapter_title": "Wound Evaluation",
+      "term": "antibiotics",
+      "printed_page": 267,
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "attempted_cue": "A toy aunt beside a small robot.",
+      "reason": "Tried older aunt/robot pairing; awkward two-prop sound route remains less useful than a familiar class object. Generic pill alone does not add a specific antibiotic association here; hold is not for omitted qualifiers.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "39",
+      "chapter_title": "Wound Evaluation",
+      "term": "symptoms",
+      "printed_page": 268,
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "attempted_cue": "A neutral mannequin holding a frowning theatrical mask.",
+      "reason": "A frowning mannequin is an expression rather than a useful symptom-category identity prop here. Headword tried separately; its specific listed symptoms also receive entries.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "39",
+      "chapter_title": "Wound Evaluation",
+      "term": "intentional or unintentional",
+      "printed_page": 268,
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "attempted_cue": "Two toy hands, one aiming a game piece and one dropping it accidentally.",
+      "reason": "A planned move versus a slipped piece needs a multi-frame narrative to distinguish intent, not merely a missing qualifier; no economical static cue retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "39",
+      "chapter_title": "Wound Evaluation",
+      "term": "self-inflicted",
+      "printed_page": 268,
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "attempted_cue": "A neutral mannequin looking at its reflection in a mirror.",
+      "reason": "Mirror plus mannequin does not establish the self-inflicted lexical sense without importing an event; no appropriate economical nonclinical attempt retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "39",
+      "chapter_title": "Wound Evaluation",
+      "term": "epinephrine",
+      "printed_page": 268,
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "attempted_cue": "A toy epic book beside a leaf.",
+      "reason": "Revisited actual epic-book/leaf attempt; weak fragment and arbitrary leaf still make this two-prop route awkward. Not held for failing every syllable; no familiar drug-specific object found in bounded pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "40",
+      "chapter_title": "Wound Preparation",
+      "term": "povidone-iodine",
+      "printed_page": 269,
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "attempted_cue": "A toy podium beside an eye-shaped dinner plate.",
+      "reason": "Revisited older31/34 attempts. Podium/eye/dine assembly still feels labored; anonymous bottle offers no chosen improvement. Not held for incomplete syllables or lack of diagnostic uniqueness. Older holds unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "40",
+      "chapter_title": "Wound Preparation",
+      "term": "QuickClot",
+      "printed_page": 270,
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "attempted_cue": "A toy clock beside a stopwatch.",
+      "reason": "Clock and stopwatch duplicate a weak time association rather than offering an appealing economical name reminder. No clotting effect used to substitute for a name; spelling recorded as source QuickClot.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "40",
+      "chapter_title": "Wound Preparation",
+      "term": "epinephrine",
+      "printed_page": 270,
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "attempted_cue": "A toy epic book beside a leaf.",
+      "reason": "Revisited37 attempt; epic status and epi/leaf bridge remain weak for this learner-facing proposal. Earlier holds unchanged; no effect, dose, indication or autoinjector use substituted for identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "40",
+      "chapter_title": "Wound Preparation",
+      "term": "galea aponeurotica",
+      "printed_page": 270,
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "attempted_cue": "A toy sailing ship in a gale beside a neuron model.",
+      "reason": "Storm plus neuron is an awkward stack and risks suggesting a neural anatomy identity. No appealing reduced association selected; familiar anatomy models in principle remain allowed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Ethilon",
+      "printed_page": 273,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A toy ether bottle beside a lion figurine.",
+      "reason": "Ether/lion assembly was not appealing in this bounded pass; no familiar simple brand fragment selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Surgipro",
+      "printed_page": 273,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A wave beside a sports trophy.",
+      "reason": "Surge/pro trophy trial not selected; no useful simple brand reminder chosen, not held for missing all syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Mersilene",
+      "printed_page": 273,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A toy sail beside a mercy-themed theater mask.",
+      "reason": "Mercy/sail scene was an awkward assembly and not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "fibroin",
+      "printed_page": 273,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A loose fiber beside a toy rowing boat.",
+      "reason": "Fiber/rowing trial not selected as a useful simple name reminder; no protein function substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Polyglycolic acid",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A singing toy beside a cola bottle.",
+      "reason": "Glee/cola trial was an awkward prop assembly; no simple learned name token selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Coated polyglactin 910",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "Two toy blocks clacking together.",
+      "reason": "Poly/glack clacking-block trial not selected; no useful concise name composition chosen. Coating and numeric designation are not cue facts.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Coated glycolide and lactide",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A singing toy beside a toy lake.",
+      "reason": "Glee/lake trial was not an appealing economical pair; no chemical composition or clinical property used as rescue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Polydioxanone",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A toy ox beside a blank anonymous mask.",
+      "reason": "Ox/anon trial was an unappealing stack in this pass; an ox fragment alone was considered but not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "PDS II",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No appealing ordinary category or acronym reminder selected; alphabet blocks alone would merely repeat the label.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Glycomer 631",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A glue pot beside a comb.",
+      "reason": "Glue/comb trial not selected; numeric designation not used to force a bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Biosyn",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A bicycle beside a sink.",
+      "reason": "Bio/bicycle plus sink felt labored; no appealing simple name token selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Maxon",
+      "printed_page": 274,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A toy axe standing alone.",
+      "reason": "Max/axe trial not selected as a useful economical reminder in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "wound edge eversion",
+      "printed_page": 276,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A detached shirt cuff turned inside out.",
+      "reason": "Inside-out cuff is an eligible ordinary action, but this chosen reminder was not appealing enough in this pass. Not rejected for absent clinical geometry.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Spillage into eyes",
+      "printed_page": 284,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A detached toy eye beside a tipped empty cup.",
+      "reason": "Spilled cup plus eye prop was not selected as an appealing isolated name cue; no patient or exposure scene.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "41",
+      "chapter_title": "Wound Closure",
+      "term": "Trendelenburg position",
+      "printed_page": 284,
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "attempted_cue": "A toy trend chart beside a castle.",
+      "reason": "Revisited trend/castle attempt but not selected; no useful economical name token chosen. Earlier29A hold unchanged; no positioning demonstration.",
+      "retained_in_other_chapters": []
     }
   ],
   "resolved_holds": [
@@ -5391,6 +5674,62 @@
       "report": "docs/chapter-38-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "Main challenge reconsidered under familiar category/partial-name calibration."
+    },
+    {
+      "chapter_id": "39",
+      "term": "infection",
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Retain older generic-germ attempt under broad learned-category calibration; not a diagnostic discriminator."
+    },
+    {
+      "chapter_id": "39",
+      "term": "tetanus",
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reuse older tetracaine tetra ingredient for weak tet- fragment only, removing cane; not a full-name rebus."
+    },
+    {
+      "chapter_id": "39",
+      "term": "trunk",
+      "source_record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Use direct torso anatomy model instead of rejected luggage homonym."
+    },
+    {
+      "chapter_id": "40",
+      "term": "Topical tranexamic acid",
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current40 selects a two-object partial-name composition; older tranexamic acid holds are not changed."
+    },
+    {
+      "chapter_id": "40",
+      "term": "chlorhexidine",
+      "source_record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current40 selects a single familiar hexagonal tile as taught partial fragment; older pool/hexagon holds remain unchanged."
+    },
+    {
+      "chapter_id": "41",
+      "term": "lacerations",
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local41 lace hold changed to established31 torn-fabric reuse after main prior-family evidence."
+    },
+    {
+      "chapter_id": "41",
+      "term": "Wound infection",
+      "source_record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local41 germ hold changed to actual retained39 broad-category reuse after main calibration; genuine older infection holds unchanged."
     }
   ]
 }

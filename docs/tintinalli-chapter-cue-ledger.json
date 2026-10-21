@@ -664,6 +664,48 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 233
+    },
+    {
+      "chapter_id": "39",
+      "title": "Wound Evaluation",
+      "record": "docs/chapter-39-cue-audit.json",
+      "report": "docs/chapter-39-cue-audit.md",
+      "selected_terms": 74,
+      "new_candidates": 21,
+      "reused_candidates": 48,
+      "holds": 5,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 119
+    },
+    {
+      "chapter_id": "40",
+      "title": "Wound Preparation",
+      "record": "docs/chapter-40-cue-audit.json",
+      "report": "docs/chapter-40-cue-audit.md",
+      "selected_terms": 64,
+      "new_candidates": 26,
+      "reused_candidates": 34,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 74
+    },
+    {
+      "chapter_id": "41",
+      "title": "Wound Closure",
+      "record": "docs/chapter-41-cue-audit.json",
+      "report": "docs/chapter-41-cue-audit.md",
+      "selected_terms": 102,
+      "new_candidates": 20,
+      "reused_candidates": 67,
+      "holds": 15,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 147
     }
   ],
   "hold_register": {
@@ -673,8 +715,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "39",
-    "title": "Wound Evaluation",
+    "chapter_id": "42",
+    "title": "Face and Scalp Lacerations",
     "status": "not_started_for_cue_review"
   },
   "spend": {

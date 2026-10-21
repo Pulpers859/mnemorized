@@ -1,0 +1,2570 @@
+{
+  "main_integration_review": {"date": "2026-10-21", "source_and_conceptual_review": true, "scope": "Main independently checked all102 recorded vocabulary/page locations,147 keyword mappings, all cues/attempts and actual prior ingredients/targets. Full-width Figure41-19 and mixed-column6/19 regions included. AI review only, not clinical, credentialed-human, recall or mnemonic-render validation. Historical author-pending notes below superseded.", "highlight_annotations_found": 0, "normalizations": "Linear lacerations is an explicit shortened alias from linear, nonfacial lacerations, visually verified on14, not a contiguous quote. Same-batch closure/loupe/mattress/scalp and old gut/sponge/material ingredients reused. Name fragments and adhesive/suture families are not subtype or product equivalence.", "counts": {"selected_terms": 102, "new_candidates": 20, "reused_candidates": 67, "holds": 15}, "keyword_items": 147},
+  "schema_version": 1,
+  "chapter_id": "41",
+  "title": "Wound Closure",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Wound Management.pdf",
+    "sha256": "691e464e103295d5b27bf4173a60fa6a86e81261cdeb35f2c9b45411ea4c8119",
+    "pdf_pages": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "printed_pages": [
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285
+    ],
+    "printed_page_offset": 266,
+    "boundary": "PDF6 left title y437 onward plus right Overview heading y247 (font bbox begins slightly above) and Table41-1 y333, below full-width Chapter40 figure/caption. PDF7-18 both columns/full-width tables and figures. PDF19 full-width top Figure41-19/caption through y202, then left REFERENCES y227-250 only. Exclude left Chapter42 title y309 onward and entire right body below top figure; running header says42 but top figure belongs41.",
+    "verification": "Matching SHA256 and 62-page count; all14 page rasters inspected, full font-span coordinates saved, zero annotations on PDF6-19."
+  },
+  "scope": "Offline vocabulary workshop only. No API/provider/image calls, Forge, medical narration or clinical teaching.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 102,
+    "new_candidates": 20,
+    "reused_candidates": 67,
+    "holds": 15
+  },
+  "entries": [
+    {
+      "term": "Wound Closure",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "chapter_title",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A loose zipper closing on a detached fabric swatch.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse actual retained39 zipper ingredient; wound identity comes from context, not a repair scene.",
+      "tested": false
+    },
+    {
+      "term": "primary closure",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached jacket zipper beside a first-place rosette.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse closing ingredient; primary is a name reminder, not immediacy or timing.",
+      "tested": false
+    },
+    {
+      "term": "Secondary wound closure",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached jacket zipper beside a second-place rosette.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse closing ingredient; secondary is lexical order only, not healing by a depicted process.",
+      "tested": false
+    },
+    {
+      "term": "delayed (or tertiary) closure",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached jacket zipper beside a familiar pause symbol.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse closing ingredient and a delay reminder; tertiary not encoded and no interval taught.",
+      "tested": false
+    },
+    {
+      "term": "Sutures",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Actual catalog suit/chair ingredients; material, placement and sizes omitted.",
+      "tested": false
+    },
+    {
+      "term": "Staples",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary desktop stapler standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar staple category, no skin or stapling demonstration.",
+      "tested": false
+    },
+    {
+      "term": "Tissue adhesives",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A flat adhesive pad with its release backing peeled at one corner, resting unattached.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#adhesive pads",
+      "reason": "Reuse pad/release-backing sticking ingredient; pad is a category reminder, not a claim that tissue adhesive is a pad.",
+      "tested": false
+    },
+    {
+      "term": "Adhesive tapes",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A roll of adhesive tape with one corner of its release backing peeled.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#adhesive pads",
+      "reason": "Reuse release-backing adhesive ingredient, change pad form to tape; no skin contact.",
+      "tested": false
+    },
+    {
+      "term": "Hair apposition",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Two detached locks of wig hair placed beside one another.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar hair/side-by-side name reminder; no twist, glue, wound or technique.",
+      "tested": false
+    },
+    {
+      "term": "tensile strength",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding rope pulled taut between two toy handles.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar tension/strength category only, no comparative strength or clinical loading.",
+      "tested": false
+    },
+    {
+      "term": "dehiscence",
+      "pdf_page": 6,
+      "page": 272,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached jacket zipper standing open.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse zipper ingredient as broad opening category; not wound diagnosis, outcome or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "lacerations",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached torn strip of fabric.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#artery laceration",
+      "reason": "Reuse established torn-fabric ingredient; remove artery. Linear, irregular and tension qualifiers are not encoded.",
+      "tested": false
+    },
+    {
+      "term": "keloid",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar polished metal key standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#metallic objects",
+      "reason": "Reuse actual23 key ingredient, remove spoon; key/kee initial fragment shared by many names. Not unique identity or a scar depiction.",
+      "tested": false
+    },
+    {
+      "term": "Nonabsorbable sutures",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse actual suture family. Nonabsorbable qualifier and strength retention not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Absorbable sutures",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse actual suture family; absorbability and time omitted, not conveyed by disappearing props.",
+      "tested": false
+    },
+    {
+      "term": "percutaneous sutures",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Extracted lexical name inside bold clinical statement; only suture headword encoded, no route or equivalence.",
+      "tested": false
+    },
+    {
+      "term": "skin",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding familiar skin cross-section teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Reuse skin model ingredient; remove intact/unbroken qualifier. No damage or size advice.",
+      "tested": false
+    },
+    {
+      "term": "surgical loupes",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached familiar pair of magnifying surgical loupes.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#surgical loupes",
+      "reason": "Reuse actual retained39 device; magnification, lens type and use omitted.",
+      "tested": false
+    },
+    {
+      "term": "skin hook",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached ordinary hook beside a freestanding skin teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Reuse skin-model ingredient; add familiar hook, no tissue handling shown.",
+      "tested": false
+    },
+    {
+      "term": "tissue forceps",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A recognizable detached forceps training prop.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#Magill forceps",
+      "reason": "Reuse actual forceps ingredient; remove Magill qualifier. Tooth shape and handling not encoded; historical fork/steps rejection is unchanged.",
+      "tested": false
+    },
+    {
+      "term": "needle",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached needle training prop standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#introducer needle",
+      "reason": "Reuse actual retained introducer-needle ingredient; remove host/introducer, no insertion.",
+      "tested": false
+    },
+    {
+      "term": "needle driver",
+      "pdf_page": 11,
+      "page": 277,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached needle prop beside a toy car driver.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#needle driver",
+      "reason": "Exact retained needle/driver ingredients, no loops or tool use.",
+      "tested": false
+    },
+    {
+      "term": "square knots",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding square frame beside an ordinary rope knot.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar square/knot lexical objects, no knot-tying sequence or count.",
+      "tested": false
+    },
+    {
+      "term": "dermis",
+      "pdf_page": 13,
+      "page": 279,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding familiar skin cross-section teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Reuse broad skin-model ingredient only, remove intact qualifier; dermal layer not uniquely identified.",
+      "tested": false
+    },
+    {
+      "term": "epidermis",
+      "pdf_page": 13,
+      "page": 279,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding familiar skin cross-section teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Reuse broad skin-model ingredient only; same learned skin family as dermis, no layer discriminator or needle-path assertion.",
+      "tested": false
+    },
+    {
+      "term": "Silk",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#silk suture",
+      "reason": "Actual prior silk-suture suit/chair family; material qualifier deliberately omitted, not represented by invented old fabric.",
+      "tested": false
+    },
+    {
+      "term": "Nylon",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#nylon suture",
+      "reason": "Actual prior nylon-suture suit/chair family; nylon material qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Polypropylene",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy propeller standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Prop/propylene approximate name fragment; poly and remaining sounds omitted. Prolene shares the prop/pro onset; not material identification.",
+      "tested": false
+    },
+    {
+      "term": "Polyester",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar Easter egg in a little nest.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#esters",
+      "reason": "Reuse actual Easter/ester sound ingredient; poly omitted, not a chemical class relationship.",
+      "tested": false
+    },
+    {
+      "term": "Polybutester",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar pat of butter standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Butter/butester approximate fragment; not every syllable, no material properties. Butyl shares the butter/but fragment below.",
+      "tested": false
+    },
+    {
+      "term": "Ethilon",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ether/lion assembly was not appealing in this bounded pass; no familiar simple brand fragment selected.",
+      "tested": false,
+      "attempted_cue": "A toy ether bottle beside a lion figurine."
+    },
+    {
+      "term": "Dermalon",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding familiar skin cross-section teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Derm/skin broad learned name fragment; remove intact qualifier, do not claim a layer, material or product depiction.",
+      "tested": false
+    },
+    {
+      "term": "Prolene",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy propeller standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#Polypropylene",
+      "reason": "Reuse prop fragment from retained Polypropylene; shared prop/pro onset only, not proof of chemistry or equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Surgipro",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Surge/pro trophy trial not selected; no useful simple brand reminder chosen, not held for missing all syllables.",
+      "tested": false,
+      "attempted_cue": "A wave beside a sports trophy."
+    },
+    {
+      "term": "Mersilene",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Mercy/sail scene was an awkward assembly and not selected.",
+      "tested": false,
+      "attempted_cue": "A toy sail beside a mercy-themed theater mask."
+    },
+    {
+      "term": "Ti-Cron",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar necktie beside a toy crown.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Tie/crown approximate name bridge; no timing, knot or material assertion.",
+      "tested": false
+    },
+    {
+      "term": "Novafil",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar starburst toy ornament.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Nova partial-name learned category; fil omitted, not a material property or proof of star recognition.",
+      "tested": false
+    },
+    {
+      "term": "Braided",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached ordinary braided cord.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar braid category; no assertion about which material has it or how to make it.",
+      "tested": false
+    },
+    {
+      "term": "monofilament",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "One detached familiar fishing-line filament on a spool.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar single-filament category, not measured strand count or device selection.",
+      "tested": false
+    },
+    {
+      "term": "Polyamide polymer",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar household maid character holding a feather duster.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#amides",
+      "reason": "Reuse maid/amide partial-name ingredient; poly/polymer omitted, no molecular relation asserted.",
+      "tested": false
+    },
+    {
+      "term": "fibroin",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Fiber/rowing trial not selected as a useful simple name reminder; no protein function substituted.",
+      "tested": false,
+      "attempted_cue": "A loose fiber beside a toy rowing boat."
+    },
+    {
+      "term": "hydrolysis",
+      "pdf_page": 7,
+      "page": 273,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached water droplet toy beside an ordinary pair of scissors.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad hydro/splitting learned vocabulary metaphor only; no molecular mechanism, degradation rate or material connection.",
+      "tested": false
+    },
+    {
+      "term": "Surgical gut",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached coiled intestinal teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#bowel",
+      "reason": "Reuse actual38 bowel model as broad gut-name ingredient; surgical qualifier omitted, not source origin or material composition.",
+      "tested": false
+    },
+    {
+      "term": "Chromic gut",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached coiled intestinal teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#bowel",
+      "reason": "Reuse actual38 bowel model directly; chromic qualifier not encoded, no coating or absorption assertion.",
+      "tested": false
+    },
+    {
+      "term": "Fast-absorbing gut",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached coiled intestinal teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#bowel",
+      "reason": "Reuse actual38 bowel model directly; rate and absorption not conveyed by a clinical effect or timing cue.",
+      "tested": false
+    },
+    {
+      "term": "Polyglycolic acid",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Glee/cola trial was an awkward prop assembly; no simple learned name token selected.",
+      "tested": false,
+      "attempted_cue": "A singing toy beside a cola bottle."
+    },
+    {
+      "term": "Dexon",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar deck of playing cards standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#dexamethasone",
+      "reason": "Reuse actual deck/dex fragment only; shares dex family with dexamethasone, dexmedetomidine and dextrose. Not identity or clinical equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Coated polyglactin 910",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Poly/glack clacking-block trial not selected; no useful concise name composition chosen. Coating and numeric designation are not cue facts.",
+      "tested": false,
+      "attempted_cue": "Two toy blocks clacking together."
+    },
+    {
+      "term": "Vicryl",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy vicar figure with a clerical collar standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Vicar/vic partial-name character; ryl omitted. Not unique recognition or any action.",
+      "tested": false
+    },
+    {
+      "term": "triclosan",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar tricycle standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Tri partial-name fragment only, also shared by tricyclic/tricuspid name families. Not antibacterial effect or chemistry.",
+      "tested": false
+    },
+    {
+      "term": "Vicryl PLUS",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy vicar figure with a clerical collar standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#Vicryl",
+      "reason": "Reuse vicar/vic ingredient; PLUS not encoded, no comparative property.",
+      "tested": false
+    },
+    {
+      "term": "Vicryl Rapide",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy vicar figure with a clerical collar standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#Vicryl",
+      "reason": "Reuse vicar/vic ingredient; Rapide not encoded and no speed assertion.",
+      "tested": false
+    },
+    {
+      "term": "Coated glycolide and lactide",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Glee/lake trial was not an appealing economical pair; no chemical composition or clinical property used as rescue.",
+      "tested": false,
+      "attempted_cue": "A singing toy beside a toy lake."
+    },
+    {
+      "term": "Polysorb",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary household sponge standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "reason": "Reuse actual sponge ingredient from oxygen-saturation cue; remove oxygen cylinder and saturation context. Sorb partial-name reminder, not product absorption.",
+      "tested": false
+    },
+    {
+      "term": "Polydioxanone",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ox/anon trial was an unappealing stack in this pass; an ox fragment alone was considered but not selected.",
+      "tested": false,
+      "attempted_cue": "A toy ox beside a blank anonymous mask."
+    },
+    {
+      "term": "PDS II",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "No appealing ordinary category or acronym reminder selected; alphabet blocks alone would merely repeat the label.",
+      "tested": false,
+      "attempted_cue": null
+    },
+    {
+      "term": "Poliglecaprone 25",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary cap standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cap approximate name fragment only; poly/gle/prone and number omitted. Shared cap fragment with caprolactone, not chemical equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Monocryl",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar monocle standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale",
+      "reason": "Reuse actual monocle ingredient from Richmond wealth cue; remove gentleman, purse and scale. Mono fragment only, shared with monofilament; no brand uniqueness.",
+      "tested": false
+    },
+    {
+      "term": "Monocryl PLUS",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar monocle standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale",
+      "reason": "Reuse actual monocle ingredient directly from older retained root, no local chain. PLUS omitted, no product comparison.",
+      "tested": false
+    },
+    {
+      "term": "Glycomer 631",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Glue/comb trial not selected; numeric designation not used to force a bridge.",
+      "tested": false,
+      "attempted_cue": "A glue pot beside a comb."
+    },
+    {
+      "term": "Biosyn",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Bio/bicycle plus sink felt labored; no appealing simple name token selected.",
+      "tested": false,
+      "attempted_cue": "A bicycle beside a sink."
+    },
+    {
+      "term": "Polyglyconate",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy cone standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Conate/cone approximate partial-name reminder; other sounds omitted. Shares con/cone with unrelated names, not a material or drug family claim.",
+      "tested": false
+    },
+    {
+      "term": "Maxon",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Max/axe trial not selected as a useful economical reminder in this pass.",
+      "tested": false,
+      "attempted_cue": "A toy axe standing alone."
+    },
+    {
+      "term": "Simple interrupted percutaneous sutures",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair and a familiar pause symbol.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse actual suit/chair and add lexical interruption; simple/percutaneous omitted. Pause not an instruction to interrupt treatment.",
+      "tested": false
+    },
+    {
+      "term": "Continuous (running) percutaneous sutures",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy runner carrying a business suit past an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse suit/chair with ordinary running action. No needle, path, continuity or technique shown.",
+      "tested": false
+    },
+    {
+      "term": "Buried dermal sutures",
+      "pdf_page": 10,
+      "page": 276,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair, with an unrelated toy treasure chest half hidden in sand.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse suit/chair and familiar buried-treasure name association; dermal qualifier omitted, no anatomy or placement.",
+      "tested": false
+    },
+    {
+      "term": "Continuous subcuticular sutures",
+      "pdf_page": 10,
+      "page": 276,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy runner carrying a business suit past an ordinary chair.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse actual suit/chair plus running alias from source continuous/running family; subcuticular omitted. No route or needle sequence.",
+      "tested": false
+    },
+    {
+      "term": "Vertical mattress sutures",
+      "pdf_page": 10,
+      "page": 276,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding ordinary mattress standing upright.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#horizontal mattress suture",
+      "reason": "Reuse actual40 mattress ingredient, rotate ordinary object upright; no needle, skin, stitch or clinical geometry.",
+      "tested": false
+    },
+    {
+      "term": "Horizontal mattress sutures",
+      "pdf_page": 11,
+      "page": 277,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary mattress lying flat on a display base.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#horizontal mattress suture",
+      "reason": "Reuse actual40 mattress ingredient; horizontal is everyday object orientation, not clinical stitch geometry.",
+      "tested": false
+    },
+    {
+      "term": "locking horizontal mattress suture",
+      "pdf_page": 11,
+      "page": 277,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary mattress beside a detached padlock.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#horizontal mattress suture",
+      "reason": "Reuse actual40 mattress ingredient and familiar lock; no stitch, loop path or locking action on tissue.",
+      "tested": false
+    },
+    {
+      "term": "shorthand vertical mattress suture",
+      "pdf_page": 13,
+      "page": 279,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary mattress beside a tiny toy hand.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#horizontal mattress suture",
+      "reason": "Reuse actual40 mattress; short/hand loose partial-name reminder, not technique shortcut or clinically meaningful size.",
+      "tested": false
+    },
+    {
+      "term": "Horizontal half-buried mattress sutures",
+      "pdf_page": 13,
+      "page": 279,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary mattress half hidden in a freestanding sandbox.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#horizontal mattress suture",
+      "reason": "Reuse actual40 mattress plus ordinary half-buried name association; no skin, stitch geometry or procedural demonstration.",
+      "tested": false
+    },
+    {
+      "term": "corner stitches",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A business suit beside an ordinary chair in the corner of an empty room.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-suture",
+      "reason": "Reuse suit/chair and ordinary corner location; not a wound corner or stitch configuration.",
+      "tested": false
+    },
+    {
+      "term": "stellate lacerations",
+      "pdf_page": 9,
+      "page": 275,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached torn strip of fabric beside a star-shaped toy.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#artery laceration",
+      "reason": "Reuse torn fabric, add ordinary star/stellate name association. Not an injury pattern or repair depiction.",
+      "tested": false
+    },
+    {
+      "term": "wound edge eversion",
+      "pdf_page": 10,
+      "page": 276,
+      "source_match": "figure_label",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Inside-out cuff is an eligible ordinary action, but this chosen reminder was not appealing enough in this pass. Not rejected for absent clinical geometry.",
+      "tested": false,
+      "attempted_cue": "A detached shirt cuff turned inside out."
+    },
+    {
+      "term": "depression",
+      "pdf_page": 14,
+      "page": 280,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar depressed-face theater mask standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#respiratory depression",
+      "reason": "Reuse actual depressed-mask ingredient from respiratory depression; remove bellows. Wound-edge qualifier not encoded; no force, cause or stapling advice.",
+      "tested": false
+    },
+    {
+      "term": "linear lacerations",
+      "pdf_page": 14,
+      "page": 280,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached torn strip of fabric beside an ordinary straight ruler.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#artery laceration",
+      "reason": "Reuse torn fabric and everyday line/ruler. Shortened alias extracted from linear, nonfacial lacerations, not a contiguous quotation; no clinical selection rule.",
+      "tested": false
+    },
+    {
+      "term": "nonfacial lacerations",
+      "pdf_page": 14,
+      "page": 280,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached torn strip of fabric.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#artery laceration",
+      "reason": "Reuse torn-fabric name ingredient; nonfacial qualifier not encoded, no anatomical exclusion or indication.",
+      "tested": false
+    },
+    {
+      "term": "Cyanoacrylate tissue adhesives",
+      "pdf_page": 16,
+      "page": 282,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A cyan-colored ordinary glue pot standing unattached.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Cyan/cyano fragment plus familiar adhesive category; remaining name not encoded and no application or chemical assertion.",
+      "tested": false
+    },
+    {
+      "term": "Octyl-Cyanoacrylate",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A cyan-colored glue pot beside a toy octopus.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#Cyanoacrylate tissue adhesives",
+      "reason": "Reuse cyan/glue ingredient and oct/octyl fragment; no carbon count, strength or product choice.",
+      "tested": false
+    },
+    {
+      "term": "Butyl-Cyanoacrylate",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A cyan-colored glue pot beside an ordinary pat of butter.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#Cyanoacrylate tissue adhesives",
+      "reason": "Reuse cyan/glue ingredient with butter/butyl fragment already used for Polybutester. Shared fragment, not equivalence or chemical relation.",
+      "tested": false
+    },
+    {
+      "term": "adhesive",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A flat adhesive pad with its release backing peeled at one corner, resting unattached.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#adhesive pads",
+      "reason": "Extracted inside bold full-width-crossing instruction; reuse sticking/backing category only, no coverage or distance.",
+      "tested": false
+    },
+    {
+      "term": "Steri-Strip S Surgical Skin Closure",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary roll of adhesive tape standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-tapeworm",
+      "reason": "Reuse actual tape ingredient; remove worm from catalog. Brand, sterility, S and device variant not encoded, no application.",
+      "tested": false
+    },
+    {
+      "term": "Runoff",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A drop of paint running off a detached toy board.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary runoff action/category only; no patient, adhesive use or avoidance advice.",
+      "tested": false
+    },
+    {
+      "term": "Spillage into eyes",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Spilled cup plus eye prop was not selected as an appealing isolated name cue; no patient or exposure scene.",
+      "tested": false,
+      "attempted_cue": "A detached toy eye beside a tipped empty cup."
+    },
+    {
+      "term": "Wound dehiscence",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached jacket zipper standing open.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse retained39 closure zipper root directly; opening category only, wound qualifier not encoded. No risk or outcome assertion.",
+      "tested": false
+    },
+    {
+      "term": "Wound infection",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual retained39 broad learned infection category; wound qualifier not encoded. No diagnosis or contamination equivalence; older infection holds remain open.",
+      "tested": false
+    },
+    {
+      "term": "Getting stuck to the wound",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary glove stuck to an unattached adhesive pad with a peeled backing.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#adhesive pads",
+      "reason": "Reuse sticking/backing pad ingredient and familiar stuck action; no patient, wound, technique or prevention advice.",
+      "tested": false
+    },
+    {
+      "term": "Trendelenburg position",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "hold",
+      "prior": "docs/chapter-29A-cue-audit.json#Trendelenburg position",
+      "reason": "Revisited trend/castle attempt but not selected; no useful economical name token chosen. Earlier29A hold unchanged; no positioning demonstration.",
+      "tested": false,
+      "attempted_cue": "A toy trend chart beside a castle."
+    },
+    {
+      "term": "petrolatum",
+      "pdf_page": 18,
+      "page": 284,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar petrol can standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#petrolatum-based ointment",
+      "reason": "Reuse actual40 petrol-can fragment; remaining name omitted, not chemical identity, fuel use or application.",
+      "tested": false
+    },
+    {
+      "term": "Scalp",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached hair-bearing scalp teaching-model cap on a stand.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#scalp",
+      "reason": "Reuse actual retained40 scalp model; no lesion, anatomical landmark, hair removal or repair.",
+      "tested": false
+    },
+    {
+      "term": "Face",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A plain toy face model standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#facial nerve blocks",
+      "reason": "Reuse actual face ingredient from facial-nerve-blocks cue, remove branching nerve wire; no nerve territory or procedure.",
+      "tested": false
+    },
+    {
+      "term": "Trunk",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached familiar torso teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#trunk",
+      "reason": "Reuse actual retained39 torso; earlier rejected luggage sense remains historical and unchanged.",
+      "tested": false
+    },
+    {
+      "term": "Extremities",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Detached toy arm and leg study tokens standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#extremity blocks",
+      "reason": "Reuse actual arm/leg ingredients from extremity blocks, remove cube and block context; no size recommendations.",
+      "tested": false
+    },
+    {
+      "term": "Digits",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached familiar toy index finger standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#finger sweep",
+      "reason": "Reuse actual finger ingredient from finger-sweep root; remove broom, crumbs and sweeping action. Finger/digit category only.",
+      "tested": false
+    },
+    {
+      "term": "collagen",
+      "pdf_page": 8,
+      "page": 274,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar college graduation cap standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#collagen",
+      "reason": "Reuse actual40 college/colla fragment; not protein function or material composition.",
+      "tested": false
+    },
+    {
+      "term": "Viscosity",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Thick putty stretched into a short strand between two detached toy hands.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#viscoelastic",
+      "reason": "Reuse actual retained13 putty ingredient; remove recoil/elasticity comparison. Broad viscous category, no material-specific property.",
+      "tested": false
+    },
+    {
+      "term": "Plasticizers",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar polyethylene plastic shopping bag standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#polyethylene glycol",
+      "reason": "Reuse actual38 plastic-bag ingredient; plastic fragment only, not softening function, contents or chemical identity.",
+      "tested": false
+    },
+    {
+      "term": "refrigeration",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy refrigerator standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Direct learned cold-storage category; no product storage requirement or temperature.",
+      "tested": false
+    },
+    {
+      "term": "Polymerization",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Detached toy building blocks linked in a simple chain.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar joining/chain learned category, not a chemical mechanism, setting time or action on tissue.",
+      "tested": false
+    },
+    {
+      "term": "Bursting strength",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding rope pulled taut between two toy handles.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#tensile strength",
+      "reason": "Reuse retained tension/strength ingredient; bursting distinction not encoded, no material strength comparison.",
+      "tested": false
+    },
+    {
+      "term": "Water resistance",
+      "pdf_page": 17,
+      "page": 283,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary umbrella shedding a few toy water drops.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar water/resistance category; no product waterproofing, moisture tolerance or clinical property assertion.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Column/full-width region and raster review of all14 pages, then font/coordinate inspection. Explicit lexical-head extraction from bold/italic clauses, headings, table names/attributes and figure captions; not a body-word census or exhaustive clinical coverage.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all page annotations PDF6-19 with PyMuPDF; none. Font emphasis is not a PDF highlight annotation."
+    },
+    "items": [
+      {
+        "term": "Wound Closure",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "chapter_title",
+        "entry_term": "Wound Closure"
+      },
+      {
+        "term": "primary closure",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "MinionPro-Bold introduction",
+        "entry_term": "primary closure"
+      },
+      {
+        "term": "Secondary wound closure",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "MinionPro-Bold introduction",
+        "entry_term": "Secondary wound closure"
+      },
+      {
+        "term": "delayed (or tertiary) closure",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "MinionPro-Bold introduction",
+        "entry_term": "delayed (or tertiary) closure"
+      },
+      {
+        "term": "Sutures",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 technique row; SUTURES heading PDF7",
+        "entry_term": "Sutures"
+      },
+      {
+        "term": "Staples",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 technique row; STAPLES heading PDF14",
+        "entry_term": "Staples"
+      },
+      {
+        "term": "Tissue adhesives",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 technique row",
+        "entry_term": "Tissue adhesives"
+      },
+      {
+        "term": "Adhesive tapes",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 technique row; heading PDF16",
+        "entry_term": "Adhesive tapes"
+      },
+      {
+        "term": "Hair apposition",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 technique row; heading PDF18; Figure41-19 PDF19",
+        "entry_term": "Hair apposition"
+      },
+      {
+        "term": "tensile strength",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 attribute; bold statements PDF7; Tables41-2/3 column heads",
+        "entry_term": "tensile strength"
+      },
+      {
+        "term": "dehiscence",
+        "pdf_page": 6,
+        "page": 272,
+        "emphasis": "Table41-1 dehiscence lexical head",
+        "entry_term": "dehiscence"
+      },
+      {
+        "term": "lacerations",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Italic clauses: linear low-tension, irregular low-tension and high-tension lacerations",
+        "entry_term": "lacerations"
+      },
+      {
+        "term": "keloid",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "MinionPro-Bold y338",
+        "entry_term": "keloid"
+      },
+      {
+        "term": "Nonabsorbable sutures",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "MinionPro-BoldIt split across lines plus Table41-2 title",
+        "entry_term": "Nonabsorbable sutures"
+      },
+      {
+        "term": "Absorbable sutures",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "MinionPro-BoldIt and Table41-3 title PDF8",
+        "entry_term": "Absorbable sutures"
+      },
+      {
+        "term": "percutaneous sutures",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Bold ED-use statement y238-248",
+        "entry_term": "percutaneous sutures"
+      },
+      {
+        "term": "skin",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Bold larger-diameter material statement y348-368",
+        "entry_term": "skin"
+      },
+      {
+        "term": "surgical loupes",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "MinionPro-Bold y468",
+        "entry_term": "surgical loupes"
+      },
+      {
+        "term": "skin hook",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Figure41-1 caption",
+        "entry_term": "skin hook"
+      },
+      {
+        "term": "tissue forceps",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Figure41-1 caption",
+        "entry_term": "tissue forceps"
+      },
+      {
+        "term": "needle",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Simple interrupted subsection; figure captions",
+        "entry_term": "needle"
+      },
+      {
+        "term": "needle driver",
+        "pdf_page": 11,
+        "page": 277,
+        "emphasis": "Figure41-4 caption",
+        "entry_term": "needle driver"
+      },
+      {
+        "term": "square knots",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "MinionPro-Bold y229-239",
+        "entry_term": "square knots"
+      },
+      {
+        "term": "dermis",
+        "pdf_page": 13,
+        "page": 279,
+        "emphasis": "Bold key-to-stitch statement y265-285",
+        "entry_term": "dermis"
+      },
+      {
+        "term": "epidermis",
+        "pdf_page": 13,
+        "page": 279,
+        "emphasis": "Bold key-to-stitch statement y265-285",
+        "entry_term": "epidermis"
+      },
+      {
+        "term": "Silk",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 first-column material name",
+        "entry_term": "Silk"
+      },
+      {
+        "term": "Nylon",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 first-column material name",
+        "entry_term": "Nylon"
+      },
+      {
+        "term": "Polypropylene",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 material row",
+        "entry_term": "Polypropylene"
+      },
+      {
+        "term": "Polyester",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 material row",
+        "entry_term": "Polyester"
+      },
+      {
+        "term": "Polybutester",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 material row; body PDF7",
+        "entry_term": "Polybutester"
+      },
+      {
+        "term": "Ethilon",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Ethilon"
+      },
+      {
+        "term": "Dermalon",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Dermalon"
+      },
+      {
+        "term": "Prolene",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Prolene"
+      },
+      {
+        "term": "Surgipro",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Surgipro"
+      },
+      {
+        "term": "Mersilene",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Mersilene"
+      },
+      {
+        "term": "Ti-Cron",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand, source uses Ti-Cron with typographic dash",
+        "entry_term": "Ti-Cron"
+      },
+      {
+        "term": "Novafil",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 parenthetical brand",
+        "entry_term": "Novafil"
+      },
+      {
+        "term": "Braided",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 Structure cells; Table41-3",
+        "entry_term": "Braided"
+      },
+      {
+        "term": "monofilament",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 Structure cells; Table41-3",
+        "entry_term": "monofilament"
+      },
+      {
+        "term": "Polyamide polymer",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 Raw Material cell",
+        "entry_term": "Polyamide polymer"
+      },
+      {
+        "term": "fibroin",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 Raw Material cell lexical head",
+        "entry_term": "fibroin"
+      },
+      {
+        "term": "hydrolysis",
+        "pdf_page": 7,
+        "page": 273,
+        "emphasis": "Table41-2 raw strength-profile lexical head; Table41-3 absorption column",
+        "entry_term": "hydrolysis"
+      },
+      {
+        "term": "Surgical gut",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Surgical gut"
+      },
+      {
+        "term": "Chromic gut",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Chromic gut"
+      },
+      {
+        "term": "Fast-absorbing gut",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Fast-absorbing gut"
+      },
+      {
+        "term": "Polyglycolic acid",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Polyglycolic acid"
+      },
+      {
+        "term": "Dexon",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Dexon"
+      },
+      {
+        "term": "Coated polyglactin 910",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Coated polyglactin 910"
+      },
+      {
+        "term": "Vicryl",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Vicryl"
+      },
+      {
+        "term": "triclosan",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 modified suture row and raw-material cell; body PDF7; Table41-3 modified rows and material cells",
+        "entry_term": "triclosan"
+      },
+      {
+        "term": "Vicryl PLUS",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Vicryl PLUS"
+      },
+      {
+        "term": "Vicryl Rapide",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Vicryl Rapide"
+      },
+      {
+        "term": "Coated glycolide and lactide",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Coated glycolide and lactide"
+      },
+      {
+        "term": "Polysorb",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Polysorb"
+      },
+      {
+        "term": "Polydioxanone",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Polydioxanone"
+      },
+      {
+        "term": "PDS II",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "PDS II"
+      },
+      {
+        "term": "Poliglecaprone 25",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row; body PDF7",
+        "entry_term": "Poliglecaprone 25"
+      },
+      {
+        "term": "Monocryl",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Monocryl"
+      },
+      {
+        "term": "Monocryl PLUS",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Monocryl PLUS"
+      },
+      {
+        "term": "Glycomer 631",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Glycomer 631"
+      },
+      {
+        "term": "Biosyn",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Biosyn"
+      },
+      {
+        "term": "Polyglyconate",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 suture row",
+        "entry_term": "Polyglyconate"
+      },
+      {
+        "term": "Maxon",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 parenthetical brand",
+        "entry_term": "Maxon"
+      },
+      {
+        "term": "Simple interrupted percutaneous sutures",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Semibold subsection heading; Figure41-2 PDF10",
+        "entry_term": "Simple interrupted percutaneous sutures"
+      },
+      {
+        "term": "Continuous (running) percutaneous sutures",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Semibold subsection heading; Figure41-4 PDF11",
+        "entry_term": "Continuous (running) percutaneous sutures"
+      },
+      {
+        "term": "Buried dermal sutures",
+        "pdf_page": 10,
+        "page": 276,
+        "emphasis": "Semibold heading; Figure41-5 PDF12",
+        "entry_term": "Buried dermal sutures"
+      },
+      {
+        "term": "Continuous subcuticular sutures",
+        "pdf_page": 10,
+        "page": 276,
+        "emphasis": "Semibold heading; Figure41-6 PDF12",
+        "entry_term": "Continuous subcuticular sutures"
+      },
+      {
+        "term": "Vertical mattress sutures",
+        "pdf_page": 10,
+        "page": 276,
+        "emphasis": "Semibold heading; Figure41-7 PDF13",
+        "entry_term": "Vertical mattress sutures"
+      },
+      {
+        "term": "Horizontal mattress sutures",
+        "pdf_page": 11,
+        "page": 277,
+        "emphasis": "Semibold heading; Figure41-9 PDF14",
+        "entry_term": "Horizontal mattress sutures"
+      },
+      {
+        "term": "locking horizontal mattress suture",
+        "pdf_page": 11,
+        "page": 277,
+        "emphasis": "MinionPro-Bold y717",
+        "entry_term": "locking horizontal mattress suture"
+      },
+      {
+        "term": "shorthand vertical mattress suture",
+        "pdf_page": 13,
+        "page": 279,
+        "emphasis": "Figure41-8 caption; body PDF11",
+        "entry_term": "shorthand vertical mattress suture"
+      },
+      {
+        "term": "Horizontal half-buried mattress sutures",
+        "pdf_page": 13,
+        "page": 279,
+        "emphasis": "Semibold heading; alternate word order Figure41-13 PDF15",
+        "entry_term": "Horizontal half-buried mattress sutures"
+      },
+      {
+        "term": "corner stitches",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Table41-5 Frequent Uses lexical name",
+        "entry_term": "corner stitches"
+      },
+      {
+        "term": "stellate lacerations",
+        "pdf_page": 9,
+        "page": 275,
+        "emphasis": "Table41-5 Frequent Uses; Figure41-13 caption PDF15",
+        "entry_term": "stellate lacerations"
+      },
+      {
+        "term": "wound edge eversion",
+        "pdf_page": 10,
+        "page": 276,
+        "emphasis": "Figure41-3 caption; Table41-5 attribute PDF9",
+        "entry_term": "wound edge eversion"
+      },
+      {
+        "term": "depression",
+        "pdf_page": 14,
+        "page": 280,
+        "emphasis": "Bold downward-pressure assertion y459-469 lexical head",
+        "entry_term": "depression"
+      },
+      {
+        "term": "linear lacerations",
+        "pdf_page": 14,
+        "page": 280,
+        "emphasis": "Bold linear/nonfacial clause y411-421; shortened lexical alias",
+        "entry_term": "linear lacerations"
+      },
+      {
+        "term": "nonfacial lacerations",
+        "pdf_page": 14,
+        "page": 280,
+        "emphasis": "Bold linear/nonfacial clause y411-421",
+        "entry_term": "nonfacial lacerations"
+      },
+      {
+        "term": "Cyanoacrylate tissue adhesives",
+        "pdf_page": 16,
+        "page": 282,
+        "emphasis": "Black heading; Figure41-17 caption PDF17",
+        "entry_term": "Cyanoacrylate tissue adhesives"
+      },
+      {
+        "term": "Octyl-Cyanoacrylate",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 column name; Figure41-17 caption",
+        "entry_term": "Octyl-Cyanoacrylate"
+      },
+      {
+        "term": "Butyl-Cyanoacrylate",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 column name; Figure41-17 caption",
+        "entry_term": "Butyl-Cyanoacrylate"
+      },
+      {
+        "term": "adhesive",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Bold y500 left continuing y270 right",
+        "entry_term": "adhesive"
+      },
+      {
+        "term": "Steri-Strip S Surgical Skin Closure",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Figure41-16 caption; body PDF16",
+        "entry_term": "Steri-Strip S Surgical Skin Closure"
+      },
+      {
+        "term": "Runoff",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Problem row",
+        "entry_term": "Runoff"
+      },
+      {
+        "term": "Spillage into eyes",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Problem row",
+        "entry_term": "Spillage into eyes"
+      },
+      {
+        "term": "Wound dehiscence",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Problem row",
+        "entry_term": "Wound dehiscence"
+      },
+      {
+        "term": "Wound infection",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Problem row",
+        "entry_term": "Wound infection"
+      },
+      {
+        "term": "Getting stuck to the wound",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Problem row lexical stuck action",
+        "entry_term": "Getting stuck to the wound"
+      },
+      {
+        "term": "Trendelenburg position",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Ways-to-Avoid cell lexical name, not advice",
+        "entry_term": "Trendelenburg position"
+      },
+      {
+        "term": "petrolatum",
+        "pdf_page": 18,
+        "page": 284,
+        "emphasis": "Table41-7 Ways-to-Avoid cell lexical head",
+        "entry_term": "petrolatum"
+      },
+      {
+        "term": "Scalp",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-4 Location row",
+        "entry_term": "Scalp"
+      },
+      {
+        "term": "Face",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-4 Location row",
+        "entry_term": "Face"
+      },
+      {
+        "term": "Trunk",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-4 Location row",
+        "entry_term": "Trunk"
+      },
+      {
+        "term": "Extremities",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-4 Location row",
+        "entry_term": "Extremities"
+      },
+      {
+        "term": "Digits",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-4 Location row",
+        "entry_term": "Digits"
+      },
+      {
+        "term": "collagen",
+        "pdf_page": 8,
+        "page": 274,
+        "emphasis": "Table41-3 Raw Material repeated lexical head",
+        "entry_term": "collagen"
+      },
+      {
+        "term": "Viscosity",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 row name",
+        "entry_term": "Viscosity"
+      },
+      {
+        "term": "Plasticizers",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 row-name lexical head",
+        "entry_term": "Plasticizers"
+      },
+      {
+        "term": "refrigeration",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 Need for refrigeration row lexical head",
+        "entry_term": "refrigeration"
+      },
+      {
+        "term": "Polymerization",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 Polymerization time row lexical head",
+        "entry_term": "Polymerization"
+      },
+      {
+        "term": "Bursting strength",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 row name",
+        "entry_term": "Bursting strength"
+      },
+      {
+        "term": "Water resistance",
+        "pdf_page": 17,
+        "page": 283,
+        "emphasis": "Table41-6 row name",
+        "entry_term": "Water resistance"
+      },
+      {
+        "term": "Wound Closure Techniques",
+        "pdf_page": 6,
+        "page": 272,
+        "entry_term": "Wound Closure",
+        "emphasis": "Semibold Table41-1 title; closure lexical head only"
+      },
+      {
+        "term": "Wound Closure Methods",
+        "pdf_page": 6,
+        "page": 272,
+        "entry_term": "Wound Closure",
+        "emphasis": "Black right-column Overview heading y246.5; not Chapter40"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 6,
+        "page": 272,
+        "entry_term": "Wound infection",
+        "emphasis": "Introduction and Table41-1 infection-rate lexical head",
+        "normalization": "Broad infection family, wound qualifier omitted; no rate or risk encoded."
+      },
+      {
+        "term": "SUTURES",
+        "pdf_page": 7,
+        "page": 273,
+        "entry_term": "Sutures",
+        "emphasis": "Black heading y377"
+      },
+      {
+        "term": "tensile strength",
+        "pdf_page": 7,
+        "page": 273,
+        "entry_term": "tensile strength",
+        "emphasis": "Bold strength-retention clauses y478 and118"
+      },
+      {
+        "term": "tension",
+        "pdf_page": 7,
+        "page": 273,
+        "entry_term": "tensile strength",
+        "emphasis": "Italic static/dynamic and little/high-tension laceration clauses",
+        "normalization": "Shared familiar tension/strength family; low/high and static/dynamic distinctions not encoded."
+      },
+      {
+        "term": "suture material",
+        "pdf_page": 7,
+        "page": 273,
+        "entry_term": "Sutures",
+        "emphasis": "Bold larger-diameter material clause y348-368",
+        "normalization": "Suture headword extracted; diameter, hole-size and recommendations excluded afterward."
+      },
+      {
+        "term": "tissues",
+        "pdf_page": 7,
+        "page": 273,
+        "entry_term": "skin",
+        "emphasis": "Bold larger-diameter material clause y358",
+        "normalization": "Broad skin/tissue teaching-model reminder, not a tissue-specific discriminator or damage claim."
+      },
+      {
+        "term": "Absorbable Sutures",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Absorbable sutures",
+        "emphasis": "Semibold Table41-3 title"
+      },
+      {
+        "term": "Coated polyglactin 910 with triclosan",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Coated polyglactin 910",
+        "emphasis": "Table41-3 full wrapped suture-row name",
+        "normalization": "Base name attempted as hold; triclosan independently attempted; coating/numeral not encoded."
+      },
+      {
+        "term": "Coated polyglactin 910 rapid absorption",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Coated polyglactin 910",
+        "emphasis": "Table41-3 full wrapped suture-row name",
+        "normalization": "Base name remains hold; rapid-absorption property not taught. Vicryl Rapide brand separately attempted."
+      },
+      {
+        "term": "Poliglecaprone 25 with triclosan",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Poliglecaprone 25",
+        "emphasis": "Table41-3 full wrapped suture-row name",
+        "normalization": "Cap fragment only; triclosan separately attempted, number and formulation omitted."
+      },
+      {
+        "term": "hydrolysis",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "hydrolysis",
+        "emphasis": "Table41-3 repeated Absorption Rate lexical head"
+      },
+      {
+        "term": "monofilament",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "monofilament",
+        "emphasis": "Table41-3 Structure cells"
+      },
+      {
+        "term": "Braided",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Braided",
+        "emphasis": "Table41-3 Structure cells"
+      },
+      {
+        "term": "Polyester polymer",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Polyester",
+        "emphasis": "Table41-3 Raw Material cell",
+        "normalization": "Easter/ester fragment only, not molecular structure."
+      },
+      {
+        "term": "Suture Size",
+        "pdf_page": 8,
+        "page": 274,
+        "entry_term": "Sutures",
+        "emphasis": "Semibold Table41-4 column name",
+        "normalization": "Suture headword only; all actual size values excluded."
+      },
+      {
+        "term": "Interrupted percutaneous",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Simple interrupted percutaneous sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Continuous percutaneous",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Continuous (running) percutaneous sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Deep dermal",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Buried dermal sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Continuous subcuticular",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Continuous subcuticular sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Vertical mattress",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Vertical mattress sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Horizontal mattress",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Horizontal mattress sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "Half-buried horizontal mattress",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "Horizontal half-buried mattress sutures",
+        "emphasis": "Table41-5 Suture Type row name",
+        "normalization": "Source row wording mapped to named heading/caption family, not a contiguous full-heading quotation."
+      },
+      {
+        "term": "wound edge eversion",
+        "pdf_page": 9,
+        "page": 275,
+        "entry_term": "wound edge eversion",
+        "emphasis": "Table41-5 Advantages lexical name"
+      },
+      {
+        "term": "simple interrupted percutaneous sutures",
+        "pdf_page": 10,
+        "page": 276,
+        "entry_term": "Simple interrupted percutaneous sutures",
+        "emphasis": "Figure41-2 caption"
+      },
+      {
+        "term": "Continuous or running percutaneous suture",
+        "pdf_page": 11,
+        "page": 277,
+        "entry_term": "Continuous (running) percutaneous sutures",
+        "emphasis": "Figure41-4 caption"
+      },
+      {
+        "term": "Buried dermal suture",
+        "pdf_page": 12,
+        "page": 278,
+        "entry_term": "Buried dermal sutures",
+        "emphasis": "Figure41-5 caption"
+      },
+      {
+        "term": "Continuous subcuticular sutures",
+        "pdf_page": 12,
+        "page": 278,
+        "entry_term": "Continuous subcuticular sutures",
+        "emphasis": "Figure41-6 caption"
+      },
+      {
+        "term": "Vertical mattress suture",
+        "pdf_page": 13,
+        "page": 279,
+        "entry_term": "Vertical mattress sutures",
+        "emphasis": "Figure41-7 caption"
+      },
+      {
+        "term": "needle",
+        "pdf_page": 13,
+        "page": 279,
+        "entry_term": "needle",
+        "emphasis": "Bold key-to-stitch clause y275"
+      },
+      {
+        "term": "suture",
+        "pdf_page": 13,
+        "page": 279,
+        "entry_term": "Sutures",
+        "emphasis": "Bold key-to-stitch clause y275"
+      },
+      {
+        "term": "Horizontal mattress suture",
+        "pdf_page": 14,
+        "page": 280,
+        "entry_term": "Horizontal mattress sutures",
+        "emphasis": "Figure41-9 caption; Figure41-10/11 lexical heads"
+      },
+      {
+        "term": "STAPLES",
+        "pdf_page": 14,
+        "page": 280,
+        "entry_term": "Staples",
+        "emphasis": "Black heading y349"
+      },
+      {
+        "term": "wound edges",
+        "pdf_page": 14,
+        "page": 280,
+        "entry_term": "skin",
+        "emphasis": "Bold depression assertion y469",
+        "normalization": "Broad skin/model ingredient, not wound state or result; depression separately attempted."
+      },
+      {
+        "term": "Half-buried horizontal mattress suture",
+        "pdf_page": 15,
+        "page": 281,
+        "entry_term": "Horizontal half-buried mattress sutures",
+        "emphasis": "Figure41-13 caption",
+        "normalization": "Source caption reverses heading word order; same lexical name, not a new technique."
+      },
+      {
+        "term": "staple closure",
+        "pdf_page": 15,
+        "page": 281,
+        "entry_term": "Staples",
+        "emphasis": "Figure41-14 caption"
+      },
+      {
+        "term": "ADHESIVE TAPES",
+        "pdf_page": 16,
+        "page": 282,
+        "entry_term": "Adhesive tapes",
+        "emphasis": "Black heading y77 and Figure41-15 caption"
+      },
+      {
+        "term": "tissue adhesives",
+        "pdf_page": 17,
+        "page": 283,
+        "entry_term": "Tissue adhesives",
+        "emphasis": "Figure41-17 caption"
+      },
+      {
+        "term": "wound edges",
+        "pdf_page": 17,
+        "page": 283,
+        "entry_term": "skin",
+        "emphasis": "Bold clause crossing left y500 to right y270",
+        "normalization": "Skin/model category only; adhesive head independently extracted, no distance encoded."
+      },
+      {
+        "term": "adhesive tape",
+        "pdf_page": 18,
+        "page": 284,
+        "entry_term": "Adhesive tapes",
+        "emphasis": "Italic phrase y346-356 and Figure41-18 caption"
+      },
+      {
+        "term": "HAIR APPOSITION",
+        "pdf_page": 18,
+        "page": 284,
+        "entry_term": "Hair apposition",
+        "emphasis": "Black heading y424"
+      },
+      {
+        "term": "Tissue Adhesives",
+        "pdf_page": 18,
+        "page": 284,
+        "entry_term": "Tissue adhesives",
+        "emphasis": "Semibold Table41-7 title"
+      },
+      {
+        "term": "hair apposition technique",
+        "pdf_page": 19,
+        "page": 285,
+        "entry_term": "Hair apposition",
+        "emphasis": "Figure41-19 full-width top caption"
+      },
+      {
+        "term": "tissue adhesive",
+        "pdf_page": 19,
+        "page": 285,
+        "entry_term": "Tissue adhesives",
+        "emphasis": "Figure41-19 caption lexical head; no application sequence"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 6,
+        "description": "Chapter40 figure/caption and left body/references above Chapter41 title; running headers throughout; Chapter42 below boundary on19.",
+        "reason": "Adjacent-chapter or pagination material, not Chapter41 vocabulary."
+      },
+      {
+        "pdf_page": 7,
+        "description": "Bold strength-retention days and ED-use/material-size assertions.",
+        "reason": "After extracting absorbable/nonabsorbable/percutaneous sutures, tensile strength and skin, omit numeric intervals, comparisons and recommendations; not standalone vocabulary cues."
+      },
+      {
+        "pdf_page": 9,
+        "description": "Bold number-of-knot-ties statement.",
+        "reason": "Square knots and sutures extracted first; do not encode tie counts, gauge relationships or tying instructions."
+      },
+      {
+        "pdf_page": 13,
+        "description": "Bold needle-path statement.",
+        "reason": "Dermis, epidermis, needle and sutures extracted first; exclude procedural relationship, not the lexical heads."
+      },
+      {
+        "pdf_page": 14,
+        "description": "Bold linear/nonfacial restriction and downward-pressure consequence.",
+        "reason": "Linear/nonfacial lacerations, skin/wound-edges and depression extracted first; omit restrictions, causal relationship and stapler use instructions."
+      },
+      {
+        "pdf_page": 17,
+        "description": "Bold adhesive-coverage distance instruction spanning both columns.",
+        "reason": "Adhesive and skin/wound-edges extracted first; omit extent, distance and application instructions."
+      },
+      {
+        "pdf_page": 8,
+        "description": "Table41-3/4 numeric profiles, size values, raw-polymer composition strings and generic column scaffolding.",
+        "reason": "Suture row names/brands, braid/monofilament, collagen, polyester, triclosan and hydrolysis lexical heads screened. Remaining composition/clinical-use statements are outside this bounded primary-name screen, not evidence of exhaustive terminology coverage; numbers/units and column labels such as Common ED Uses are not standalone name cues."
+      },
+      {
+        "pdf_page": 17,
+        "description": "Table41-6 numerical side-chain counts, comparative values, time intervals, cost and generic use comments.",
+        "reason": "Octyl/butyl cyanoacrylate, bursting strength, plasticizers, refrigeration, viscosity, water resistance and polymerization lexical names extracted first; no molecular, comparative, timing or storage assertion retained."
+      },
+      {
+        "pdf_page": 19,
+        "description": "Figure41-19 panel letters, step sequence, distances/angles in other captions and source-credit lines; REFERENCES boilerplate.",
+        "reason": "Figure name hair apposition and adhesive lexical head screened before omitting instructions/credits; no panel-by-panel procedure-word inventory."
+      }
+    ]
+  },
+  "resolved_holds": [
+    {
+      "term": "lacerations",
+      "resolution": "Local41 lace hold changed to established31 torn-fabric reuse after main prior-family evidence.",
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": false,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A detached strip of lace.",
+          "reason": "Initial41 draft did not select lace and missed the retained tear-family ingredient.",
+          "scope": "Initial41 only."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A detached torn strip of fabric.",
+          "reason": "Actual retained31 artery-laceration ingredient, artery removed.",
+          "scope": "Current41 only."
+        }
+      ]
+    },
+    {
+      "term": "Wound infection",
+      "resolution": "Local41 germ hold changed to actual retained39 broad-category reuse after main calibration; genuine older infection holds unchanged.",
+      "scope": "local_hold_to_reuse",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A generic toy germ standing alone.",
+          "reason": "Initial41 did not select germ; older29A/31/33/34 infection holds remained open.",
+          "scope": "Initial41 plus historical older infection holds, not altered."
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar cartoon germ study token standing alone.",
+          "reason": "Actual39 retained learned category, no diagnosis requirement.",
+          "scope": "Current41 only; older infection holds remain in their banks."
+        }
+      ]
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch39-41/chapter41/",
+  "review_status": "Author-completed bounded offline vocabulary screen; main integration markers, ledger, hold register, shared tests/handoff and Git remain main-owned. No main_integration_review set.",
+  "source_wording_notes": {
+    "normalization": "Case, dash and wrapped-line joins normalized. Linear lacerations is explicitly a shortened alias from linear, nonfacial lacerations, not contiguous source wording. Table row short forms and caption word-order variants explicitly map to named families.",
+    "reuse_scan": "All older1-38 banks, catalog names/aliases and both sound-workshop records searched for every current term; token searches and manual family searches are heuristic. Same-batch39/40 roots supplied by main and inspected before reuse. Exact hits/history saved in prior-search.json. No old cue ingredients invented.",
+    "collisions": "Suit/chair names a shared suture family; skin model does not discriminate dermis/epidermis/scalp. Deck/dex shared with dexamethasone/dexmedetomidine/dextrose; cap with caprolactone/other cap names; butter/but with Polybutester and Butyl; prop/pro with Polypropylene and Prolene; tri with tricyclic/tricuspid; mono with monocle and monofilament; cone/con with unrelated names. Cyan/glue alone does not distinguish octyl and butyl; added octopus/butter are untested fragments, not chemistry.",
+    "history": "Older holds/rejections remain historical. Only actual local41 hold-to-reuse changes are recorded in resolved_holds; local lacerations change has no invented older-hold flag, infection retains genuine older-hold history."
+  },
+  "coverage_limits": [
+    "New compositions and reused ingredients are untested, not novelty or recall claims.",
+    "Rasters are source inspection, not mnemonic image evidence.",
+    "Typography extraction joins wraps and lacks semantic emphasis classification; manual raster/region judgment is bounded, not exhaustive chapter or clinical coverage."
+  ]
+}

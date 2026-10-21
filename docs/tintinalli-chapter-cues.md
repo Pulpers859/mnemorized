@@ -343,9 +343,49 @@ records remain unchanged, with30 added decision histories. Separate register:
 434 active hold occurrences/360 distinct terms/63 decision-history records.
 Canonical catalog remains76, unchanged. All chapter candidates remain untested.
 
+## Chapters 39-41: Wound Evaluation, Preparation And Closure
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [39 Wound Evaluation](chapter-39-cue-audit.md) | 74 | 21 | 48 | 5 |
+| [40 Wound Preparation](chapter-40-cue-audit.md) | 64 | 26 | 34 | 4 |
+| [41 Wound Closure](chapter-41-cue-audit.md) | 102 | 20 | 67 | 15 |
+
+240 term trials: 67 newly recorded candidate compositions, 149 reuses and24
+holds.340 unique keyword term/page mappings include meaningful printed bold
+heads, named regular table rows and figure/caption words. Three bounded AI
+drafting lanes plus independent main source/cue integration. No exhaustive
+vocabulary, clinical entailment, human-expert, recall or image-reliability claim.
+
+New source Wound Management PDF hash and printed offset266 verified. Mixed
+columns3/6/19 and full-width Figures40-5/41-19 were inspected separately: the
+next chapter may occupy the right column above its actual left title. No
+annotations on1-19; printed typography was checked independently. Source-form
+CI, sutured and Raney are distinguished from taught expansions/inverted wording.
+Linear lacerations is an explicit shortened source-clause alias, visually checked.
+
+Examples: train plus exam booklet for tranexamic acid; rain cloud plus clip for
+Raney; pen plus rose for Penrose; a garden watering can for irrigation; a broom
+and loose scraps for debridement; a cyan glue pot for cyanoacrylate. Ordinary
+mattress, corner, running and buried word ingredients remain eligible without
+copying clinical stitch geometry or techniques. Partial-name/product cues are
+not complete identifiers, drug/material properties or product substitutions.
+
+Same-batch closure, loupes, mattress, CT/MRI, scalp and infection families were
+reconciled, alongside older sutures, forceps, foreign body, gut, sponge and skin
+roots. Bloodless/control keywords preserve clamp-on-pipe, not leak alone. Tetra,
+key, deck, butter, cap, adhesive and suture fragments can collide; actual lessons
+need contextual discrimination and empirical tests. Resolved JSON reuse paths
+have no cycles/held targets; legacy non-fragment links terminate traversal.
+
+All434 earlier hold occurrences preserved. Seven added decision histories keep
+reconsiderations explicit. Separate register:458 active occurrences/379 distinct
+terms/70 history records. Canonical catalog remains76, unchanged. All chapter
+candidates remain untested, nonproduction, evidence empty and spend zero.
+
 ## Next Chapter
 
-**Chapter 39, Wound Evaluation**, is next, not started
+**Chapter 42, Face and Scalp Lacerations**, is next, not started
 for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
