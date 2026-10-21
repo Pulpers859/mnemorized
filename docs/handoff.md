@@ -199,6 +199,36 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-21 - Chapters33-35 vocabulary review and source-PDF transition
+**Done:** Three disjoint AI drafting lanes; main checked every recorded word/page,
+keyword location, cue and resolved reuse reference.33=131terms/38new/75reuse/18hold;
+34=84/21/53/10;35=125/40/37/48. Total340terms/99new/165reuse/76hold;
+421 keyword term/page mappings, not421 novel words. Bounded emphasis/table/figure
+screen, not exhaustive vocabulary, clinical entailment or empirical recall proof.
+**Source:**33/34 Resuscitation Procedures hash unchanged, +142offset.34 includes
+final PDF86.35 Analgesia/Anesthesia/Procedural Sedation PDF1-8, +228offset,
+SHA256 dc0444f631bf8c0dc22c3a6d67cfce06f8e3945c6e019bb0a7b892c4b1e841fb.
+Mixed-column boundaries74/81/analgesia8 verified. Raster QRS/P-wave/atrial-pace/
+ventricular-pace labels78/79 visually checked. Drug-seeking conventional hyphen
+preserved across line wrap. No assigned-page annotations; printed emphasis checked.
+**Revisions:** Main's pear/cardigan, cool-tuber and mu/cow proposals challenged;
+partial-name/context limits explicit, no clinical procedures or medication effects
+encoded. Topic-only pacing reuse for transesophageal/epicardial corrected. Older
+esophagus, sick-sinus, pad, QT, agitation and rigidity families reconciled.35 ket-
+family collisions must be disambiguated before actual lesson use.34 hemodynamics
+uses verified12 pump ingredient;32 actual cue is monitor-only, not a red pump.
+**Holds:**315 active occurrences/259 distinct terms;33 decision-history records,
+including9 new local histories. Older chapter/workshop holds remain unchanged.
+Canonical catalog76 unchanged; zero paid calls/Forge/images; $6 allowance untouched.
+**Validation:** Focused185passed/1skipped; hold register current; catalog valid76.
+Full suite817passed/2skipped/149subtests passed; staged whitespace check clean.
+Resolved JSON reuse chains checked without cycles/held targets; legacy
+non-fragment links terminate traversal. No provider/browser, human-expert,
+recall or image validation.
+**Next:**36 Local and Regional Anesthesia, actual title right analgesiaPDF8.
+Earlier1-19 emphasis backfill outstanding. Preexisting checkpoint-ref fetch issue
+persists; no ref deletion/auth retry. Preserve unrelated Forge HTML/pipeline edits.
+
 ### 2026-10-20 - Chapters30-32 vocabulary batch and reviewer revival
 **Done:** Three AI drafting lanes; main independently checked every recorded
 vocabulary/page and keyword location, all cues and resolved reuse targets.

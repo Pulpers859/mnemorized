@@ -1,0 +1,2941 @@
+{
+  "main_integration_review": {"date": "2026-10-21", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded term/page, cue and keyword location within actual chapter regions, plus resolved reuse references. Actual mixed-column boundaries74/81/86 inspected. Raster QRS Complex, P Wave, Atrial Pace and Ventricular Pace labels on78/79 visually checked, not claimed extractable text. Author-pending notes below are historical and superseded. AI review only, not clinical, credentialed-human, recall or rendering validation.", "highlight_annotations_found": 0, "normalizations": "Case/wrap/punctuation and explicit lexical selections, not whole clinical propositions. Figure-label aliases and source device-name variants do not establish clinical equivalence. Pericardial partial-name family omits procedure/effusion suffixes and requires taught context.", "counts": {"selected_terms": 131, "new_candidates": 38, "reused_candidates": 75, "holds": 18}, "keyword_items": 156},
+  "schema_version": 1,
+  "chapter_id": "33",
+  "title": "Cardiac Pacing and Implanted Defibrillation",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Resuscitation Procedures.pdf",
+    "sha256": "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689",
+    "pdf_pages": [
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81
+    ],
+    "printed_pages": [
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223
+    ],
+    "printed_page_offset": 142,
+    "boundary": "PDF74 only right column from actual Chapter33 title y477.8 onward; excludes all left and right-top32. Entire75-80 including full-width tables/figures. PDF81 only top-left33 through REFERENCES y218.1 and notice y240.1; excludes entire right column (Table34-1, continuation and Figure34-1) and left actual Chapter34 title y293.9 onward.",
+    "verification": "Matching computed SHA256; rendered and visually inspected all eight pages; font spans/coordinates extracted; all page annotations enumerated: zero. Main independent review pending."
+  },
+  "scope": "Author-completed bounded offline vocabulary screen prioritizing meaningful headings, table/figure keyterms and emphasized lexical headwords. Not exhaustive body-word or clinical coverage. No clinical teaching, narration, prompts, Forge, providers or mnemonic images.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 131,
+    "new_candidates": 38,
+    "reused_candidates": 75,
+    "holds": 18
+  },
+  "entries": [
+    {
+      "term": "cardiac pacing",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "chapter_title",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Broad pacing family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Procedure via existing runner/heart device family; no mechanism.",
+      "tested": false
+    },
+    {
+      "term": "implanted defibrillation",
+      "pdf_page": 74,
+      "page": 216,
+      "source_match": "chapter_title",
+      "kind": "existing_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Broad defibrillation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#defibrillation",
+      "reason": "Implanted qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "bradycardia",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "Heart character riding a familiar slow snail.",
+      "cue_scope": "Bradycardia vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-18-cue-audit.json#bradycardia",
+      "reason": "Existing slow-heart family.",
+      "tested": false
+    },
+    {
+      "term": "AV block",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached heart token behind a conspicuous toy roadblock.",
+      "cue_scope": "Broad heart-block family",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "AV expansion is table footnote; category blocking, not anatomy.",
+      "tested": false
+    },
+    {
+      "term": "hypotension",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Vessel model under a pressure gauge whose needle points low.",
+      "cue_scope": "Hypotension family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-20-cue-audit.json#hypotension",
+      "reason": "Existing low-gauge family.",
+      "tested": false
+    },
+    {
+      "term": "angina",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary toy engine standing alone.",
+      "cue_scope": "Angina partial-name ingredient",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#Ludwig angina",
+      "reason": "Existing28 Ludwig angina engine ingredient without Beethoven.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary edema",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A puffy lung-shaped toy standing alone.",
+      "cue_scope": "Broad pulmonary-edema family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#cardiogenic pulmonary edema",
+      "reason": "Existing28 cardiogenic pulmonary edema ingredient without heart.",
+      "tested": false
+    },
+    {
+      "term": "sick sinus syndrome",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Sick-looking sine-wave character holding a thermometer prop, separate from any clinical monitor.",
+      "cue_scope": "Existing sick/sine partial-name vocabulary family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#sick sinus syndrome",
+      "reason": "Reuse11 exact retained sick-looking sine-wave/thermometer family, not a new sinus-model alternative. No cardiac waveform or clinical claim.",
+      "tested": false
+    },
+    {
+      "term": "asystole",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Schematic flat trace beside a still heart token.",
+      "cue_scope": "Asystole family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#asystole",
+      "reason": "Existing still-heart token.",
+      "tested": false
+    },
+    {
+      "term": "syncope",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Syncope name attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Workshop attempt depends on fragile pea naming and inserted middle vowel; no stronger economical alternative found.",
+      "tested": false,
+      "attempted_cue": "A sink beside a pea."
+    },
+    {
+      "term": "ventricular standstill",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy ventriloquist dummy standing motionless beside a stop sign.",
+      "cue_scope": "Ventricular partial name + standstill",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ventriloquist/ventricular partial bridge and ordinary standstill, not physiology.",
+      "tested": false
+    },
+    {
+      "term": "complete heart block",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached heart token behind a conspicuous toy roadblock.",
+      "cue_scope": "Broad heart-block family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#AV block",
+      "reason": "Complete qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "Mobitz type II AV block",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Mobitz name attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Mob/bits and number tokens make brittle rebus; broad block does not recall Mobitz.",
+      "tested": false,
+      "attempted_cue": "A mob of toy figures holding two bits beside a roadblock."
+    },
+    {
+      "term": "torsades de pointes",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Ribbon visibly twisted around recognizable ballet pointe shoes.",
+      "cue_scope": "Torsades name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#torsades de pointes",
+      "reason": "Existing twist/pointe-shoes family.",
+      "tested": false
+    },
+    {
+      "term": "overdrive pacing",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Gearshift token beside a pair of shoes taking visibly paced steps.",
+      "cue_scope": "Overdrive pacing",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#overdrive pacing",
+      "reason": "Existing gearshift/steps family.",
+      "tested": false
+    },
+    {
+      "term": "monomorphic ventricular tachycardia",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Broad tachycardia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#ventricular tachycardia",
+      "reason": "Morphology and chamber qualifiers unencoded.",
+      "tested": false
+    },
+    {
+      "term": "supraventricular tachycardia",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Broad tachycardia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#tachycardia",
+      "reason": "Supra/ventricular qualifiers unencoded.",
+      "tested": false
+    },
+    {
+      "term": "ventricular fibrillation",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A loose fringe of fine fibers beside a heart token.",
+      "cue_scope": "Broad fibrillation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#ventricular fibrillation",
+      "reason": "Existing fiber/heart family.",
+      "tested": false
+    },
+    {
+      "term": "cardioversion",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table_and_body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Cardio/version attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic conversion action does not improve held electrical-cardioversion bridge; no familiar separate device category found.",
+      "tested": false,
+      "attempted_cue": "A heart token turning over like a reversible card."
+    },
+    {
+      "term": "transcutaneous pacing",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Broad pacing family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Route unencoded.",
+      "tested": false
+    },
+    {
+      "term": "transvenous pacing",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Broad pacing family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Route unencoded; consistent with31 transvenous pacemaker.",
+      "tested": false
+    },
+    {
+      "term": "asynchronous pacing",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Two metronomes with pendulums pointing in visibly different directions.",
+      "cue_scope": "Asynchronous + pacing words",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#unsynchronized",
+      "reason": "Existing out-of-phase relationship, static heuristic only, no mode physiology.",
+      "tested": false
+    },
+    {
+      "term": "pulse generator",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy electric generator beside a generic pulse-shaped zigzag token.",
+      "cue_scope": "Pulse + generator vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar category props, not an electrical circuit diagram.",
+      "tested": false
+    },
+    {
+      "term": "electrodes",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "Unattached wired electrode discs standing alone.",
+      "cue_scope": "Electrode device category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#rhythm monitoring electrodes",
+      "reason": "Reuse23 rhythm monitoring electrodes, dropping monitor and metronome.",
+      "tested": false
+    },
+    {
+      "term": "pacing cables",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A loose coil of ordinary insulated electrical cable.",
+      "cue_scope": "Cable equipment family",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#conduction-cable",
+      "reason": "Existing cable prop only; no mechanism.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker pads",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Flat adhesive pad with a release backing visibly peeled at one corner, resting unattached.",
+      "cue_scope": "Broad adhesive pad device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#adhesive pads",
+      "reason": "Existing unattached adhesive pad; pacing qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "ECG monitor",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Recognizable ECG machine beside a short strip of generic stylized waveform.",
+      "cue_scope": "ECG device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#ECG",
+      "reason": "No tracing interpretation.",
+      "tested": false
+    },
+    {
+      "term": "transesophageal",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Broad pacemaker family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#esophagus",
+      "reason": "Esophagus word ingredient; trans modifier and pacing not encoded.",
+      "tested": false
+    },
+    {
+      "term": "esophagus",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Esophagus category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#esophagus",
+      "reason": "Existing teaching-model category.",
+      "tested": false
+    },
+    {
+      "term": "epicardial",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar detached heart-layer teaching model with its outer layer lifted like a removable jacket.",
+      "cue_scope": "Broad pacemaker family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#epicardium",
+      "reason": "Epicardium model category; adjective not a new discovery.",
+      "tested": false
+    },
+    {
+      "term": "epicardium",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar detached heart-layer teaching model with its outer layer lifted like a removable jacket.",
+      "cue_scope": "Epicardium learned model category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Requires prior learned model naming, not a layer-identification lesson.",
+      "tested": false
+    },
+    {
+      "term": "right ventricle",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A toy ventriloquist dummy beside a right-pointing arrow.",
+      "cue_scope": "Ventricle + right word ingredients",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#premature ventricular contractions",
+      "reason": "Reuse ventricular dummy only, drop concertina/early flag; ordinary right token.",
+      "tested": false
+    },
+    {
+      "term": "right atrium",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached recognizable atrium teaching-model token.",
+      "cue_scope": "Atrium + right word ingredients",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#atrium",
+      "reason": "Same atrium root plus right-arrow token, not a new model.",
+      "tested": false
+    },
+    {
+      "term": "clavicle",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached clavicle teaching-model token on a display base.",
+      "cue_scope": "Clavicle model family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#clavicle",
+      "reason": "Existing detached model prop.",
+      "tested": false
+    },
+    {
+      "term": "prepectoral region",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Prepectoral partial word attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Parcel/pectoral is weak and extra pre/front relation does not rescue naming; no economical familiar regional prop selected.",
+      "tested": false,
+      "attempted_cue": "A letter-delivery parcel in front of a chest-shaped toy."
+    },
+    {
+      "term": "internal jugular vein",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A toy jug inside a clear display box beside a weather vane.",
+      "cue_scope": "Internal jugular name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#internal jugular vein",
+      "reason": "Existing jug/inside/vane; no preferred route claim.",
+      "tested": false
+    },
+    {
+      "term": "catheter insertion",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Reuse31 catheter category only; insertion not encoded or depicted.",
+      "tested": false
+    },
+    {
+      "term": "permanent pacing",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Broad pacing family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Permanent qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker nomenclature",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pace-setting runner beside a blank name-tag-shaped token and a heart token.",
+      "cue_scope": "Pacing + naming vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Naming token recalls nomenclature broadly, no letter-code definitions.",
+      "tested": false
+    },
+    {
+      "term": "atrium",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached recognizable atrium teaching-model token.",
+      "cue_scope": "Atrium category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Prior model familiarity, no chamber coding.",
+      "tested": false
+    },
+    {
+      "term": "ventricle",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A toy ventriloquist dummy standing alone.",
+      "cue_scope": "Ventricle category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#premature ventricular contractions",
+      "reason": "Reuse ventricular partial-name dummy ingredient only; remove concertina and early flag.",
+      "tested": false
+    },
+    {
+      "term": "dual chamber",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "body",
+      "kind": "learned_name_or_category",
+      "cue": "Two detached room-shaped toy compartments standing side by side.",
+      "cue_scope": "Dual + chamber vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal two/chambers; no physiology.",
+      "tested": false
+    },
+    {
+      "term": "central catheter kit",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Kit and central qualifiers unencoded; no old held sound attempt reused.",
+      "tested": false
+    },
+    {
+      "term": "introducer sheath",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached familiar catheter-introducer sheath training prop.",
+      "cue_scope": "Introducer sheath device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Unused recognizable prop; no size comparison or insertion.",
+      "tested": false
+    },
+    {
+      "term": "transvenous cardiac pacing catheter",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Route and pacing qualifiers unencoded.",
+      "tested": false
+    },
+    {
+      "term": "battery",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table_and_body",
+      "kind": "existing_family",
+      "cue": "A familiar household battery standing alone.",
+      "cue_scope": "Battery object vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#abdominal aortic aneurysms",
+      "reason": "Existing31 abdominal aortic aneurysms uses same battery prop; object reuse, not new discovery.",
+      "tested": false
+    },
+    {
+      "term": "cardiac monitor",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Blank bedside monitor beside a conspicuous watchful-eye token.",
+      "cue_scope": "Broad monitoring family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "reason": "Existing monitor/eye; no settings.",
+      "tested": false
+    },
+    {
+      "term": "alligator clamps",
+      "pdf_page": 76,
+      "page": 218,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached pair of familiar alligator-clip electrical clamps.",
+      "cue_scope": "Alligator-clamp device category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Recognizable clamp subtype, no connection procedure.",
+      "tested": false
+    },
+    {
+      "term": "gown",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar standalone medical gown on a hanger.",
+      "cue_scope": "Offline gown vocabulary category or name ingredients only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Clothing category; no sterile technique.",
+      "tested": false
+    },
+    {
+      "term": "gloves",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A recognizable stretchy rubber examination glove.",
+      "cue_scope": "Offline gloves vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#gloves",
+      "reason": "Existing glove.",
+      "tested": false
+    },
+    {
+      "term": "mask",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A standalone surgical-style mask with ear loops.",
+      "cue_scope": "Offline mask vocabulary category or name ingredients only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Protective clothing, not airway-mask device or protection claim.",
+      "tested": false
+    },
+    {
+      "term": "US guidance",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Offline US guidance vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#ultrasonography",
+      "reason": "Device family only; no guidance technique.",
+      "tested": false
+    },
+    {
+      "term": "drape",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A folded sheet in a sealed peel-open supply packet.",
+      "cue_scope": "Offline drape vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#sterile drape",
+      "reason": "Existing packet.",
+      "tested": false
+    },
+    {
+      "term": "introducer catheter",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Offline introducer catheter vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Broad catheter, introducer unencoded.",
+      "tested": false
+    },
+    {
+      "term": "pulmonary artery catheters",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Offline pulmonary artery catheters vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#pulmonary artery catheter",
+      "reason": "Plural not new.",
+      "tested": false
+    },
+    {
+      "term": "saline",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Ordinary salt shaker beside a clear-water pitcher.",
+      "cue_scope": "Offline saline vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#saline",
+      "reason": "Salt/water, no volume.",
+      "tested": false
+    },
+    {
+      "term": "lidocaine",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Offline lidocaine vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "reason": "Later retained lid/cane; earlier history unchanged.",
+      "tested": false
+    },
+    {
+      "term": "periosteum",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline periosteum vocabulary category or name ingredients only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Pear/peri alone weak; no economical standalone category selected; earlier31 hold remains.",
+      "tested": false,
+      "attempted_cue": "A pear beside a bone model."
+    },
+    {
+      "term": "introducer needle",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached needle training prop beside a host presenting a newcomer.",
+      "cue_scope": "Offline introducer needle vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#introducer needle",
+      "reason": "Detached prop only.",
+      "tested": false
+    },
+    {
+      "term": "syringe",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "cue_scope": "Offline syringe vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#syringes",
+      "reason": "Singular variant.",
+      "tested": false
+    },
+    {
+      "term": "subcutaneous tissue",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A mannequin arm with a transparent skin-like cover, without air bubbles.",
+      "cue_scope": "Offline subcutaneous tissue vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#subcutaneous tissues",
+      "reason": "No air modifier.",
+      "tested": false
+    },
+    {
+      "term": "aspiration",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Inward-draw action at table scope, not airway aspiration or procedure; earlier29A airway hold unchanged.",
+      "tested": false
+    },
+    {
+      "term": "air embolism",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Large gas bubble lodged in a transparent branching vessel model.",
+      "cue_scope": "Offline air embolism vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#air embolism",
+      "reason": "Existing bubble/vessel.",
+      "tested": false
+    },
+    {
+      "term": "guidewire",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A tour guide holding a loose coil of wire.",
+      "cue_scope": "Offline guidewire vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#guidewire",
+      "reason": "Existing guide/wire.",
+      "tested": false
+    },
+    {
+      "term": "premature ventricular contractions",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A toy ventriloquist dummy squeezing a concertina before a starting flag.",
+      "cue_scope": "Offline premature ventricular contractions vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#premature ventricular contractions",
+      "reason": "Existing dummy/concertina/early flag.",
+      "tested": false
+    },
+    {
+      "term": "scalpel",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A standalone recognizable scalpel training prop, unused on a plain display base.",
+      "cue_scope": "Offline scalpel vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#scalpel",
+      "reason": "Unused prop.",
+      "tested": false
+    },
+    {
+      "term": "fluoroscopy",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A recognizable standalone fluoroscopy C-arm teaching-model prop.",
+      "cue_scope": "Offline fluoroscopy vocabulary category or name ingredients only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar device category, no positioning.",
+      "tested": false
+    },
+    {
+      "term": "QRS complex",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline QRS complex vocabulary category or name ingredients only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Text-only blocks restate code; waveform interpretation not attempted.",
+      "tested": false,
+      "attempted_cue": "Three toy letter blocks Q, R and S."
+    },
+    {
+      "term": "chest radiograph",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A detached chest-shaped study token beside a plain radiograph-film frame.",
+      "cue_scope": "Offline chest radiograph vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#chest radiograph",
+      "reason": "Existing frame/chest tokens.",
+      "tested": false
+    },
+    {
+      "term": "sterile transparent dressing",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar transparent adhesive dressing in a sealed peel-open packet.",
+      "cue_scope": "Offline sterile transparent dressing vocabulary category or name ingredients only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#sterile transparent dressing",
+      "reason": "Existing packet, no application.",
+      "tested": false
+    },
+    {
+      "term": "VVI",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "VVI code-name attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Letter-shape rebus depends on reading characters; generic pacer category cannot recover code. No mode definitions taught.",
+      "tested": false,
+      "attempted_cue": "A violin balanced on two V-shaped blocks."
+    },
+    {
+      "term": "DDD",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "DDD code-name attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Doors supply arbitrary initials, not an economical taught word association without text.",
+      "tested": false,
+      "attempted_cue": "Three toy doors."
+    },
+    {
+      "term": "countershock",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Broad defibrillation family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#defibrillation",
+      "reason": "Paddles/lightning device family, no placement or energy.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker syndrome",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Pacemaker-name family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Syndrome not separately encoded; no clinical presentation.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker malfunction",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pace-setting runner toy with a visibly broken wind-up key beside a heart token.",
+      "cue_scope": "Pacemaker + broken-function vocabulary",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Known pacing ingredients plus broken toy; no actual device fault diagram.",
+      "tested": false
+    },
+    {
+      "term": "failure to sense",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A detached eye-shaped toy covered by an opaque blindfold.",
+      "cue_scope": "Broad sensing-failure category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary failed sensory detection analogy, not electrical sensing mechanism.",
+      "tested": false
+    },
+    {
+      "term": "undersensing",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "A detached eye-shaped toy covered by an opaque blindfold.",
+      "cue_scope": "Broad sensing-failure family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#failure to sense",
+      "reason": "Printed heading alias; no physiological equivalence newly inferred.",
+      "tested": false
+    },
+    {
+      "term": "failure to pace",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A pair of pacing shoes with their soles stuck to a display base.",
+      "cue_scope": "Failure + paced-step action",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar stopped action, not a timing-mode demonstration.",
+      "tested": false
+    },
+    {
+      "term": "oversensing",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "An oversized detached toy ear beside a heap of mixed noisy toy instruments.",
+      "cue_scope": "Over + sensory detection analogy",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Learned excess/sensing association, not actual device sensing or physiology.",
+      "tested": false
+    },
+    {
+      "term": "failure to capture",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A small toy token outside an open empty cage.",
+      "cue_scope": "Broad failed-capture action",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Adapt catalog captured-token/entrapment cage ingredient with uncaptured relation, not ECG criteria.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker-associated tachycardia",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Broad tachycardia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#tachycardia",
+      "reason": "Pacemaker qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "pacemaker programming errors",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "heading_and_body",
+      "kind": "learned_name_or_category",
+      "cue": "A toy laptop displaying a simple crossed-out gear symbol beside a pace-setting runner and heart token.",
+      "cue_scope": "Programming error + pacemaker words",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar computer/error category, no actual software settings or code.",
+      "tested": false
+    },
+    {
+      "term": "implantable cardioverter-defibrillators",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "heading_and_body",
+      "kind": "existing_family",
+      "cue": "Pair of unmistakable detached defibrillator paddles with their handles visible beside a secondary lightning-bolt token, on an empty surface.",
+      "cue_scope": "Broad defibrillator category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#defibrillation",
+      "reason": "Implantable and cardioverter modifiers unencoded; no distinct ICD mechanism or appearance claimed.",
+      "tested": false
+    },
+    {
+      "term": "ST-segment elevations or depressions",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "body",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "ST-segment vocabulary attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Literal height is generic and ST relies on text; no waveform interpretation substituted.",
+      "tested": false,
+      "attempted_cue": "A staircase going up and down beside letter blocks S and T."
+    },
+    {
+      "term": "ischemia",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A closed red supply tap beside a visibly depleted supply tube.",
+      "cue_scope": "Ischemia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#ischemia",
+      "reason": "Existing closed supply-tap token.",
+      "tested": false
+    },
+    {
+      "term": "magnet",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "A familiar horseshoe magnet standing alone.",
+      "cue_scope": "Magnet object family",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#magnesium-magnet",
+      "reason": "Catalog magnesium-magnet prop reused as literal object, not drug identity or device action.",
+      "tested": false
+    },
+    {
+      "term": "infection",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline infection vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain.",
+      "tested": false,
+      "attempted_cue": "A cartoon germ beside a broken toy shield."
+    },
+    {
+      "term": "Staphylococcus aureus",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A walking staff beside a pile of gold coins.",
+      "cue_scope": "Offline Staphylococcus aureus vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#Staphylococcus aureus",
+      "reason": "Existing staff/gold.",
+      "tested": false
+    },
+    {
+      "term": "Staphylococcus epidermidis",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline Staphylococcus epidermidis vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Staff/skin suggests broad epidermal staphylococcus family but no economical epidermidis name bridge selected; earlier31 hold remains.",
+      "tested": false,
+      "attempted_cue": "A walking staff beside a skin teaching tile."
+    },
+    {
+      "term": "inflammation",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A small theatrical flame token, without a waterfall.",
+      "cue_scope": "Offline inflammation vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#inflammation",
+      "reason": "Existing theatrical flame, no waterfall.",
+      "tested": false
+    },
+    {
+      "term": "abscess",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline abscess vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Ab/chess distorted sound and fragile segmentation; no familiar category alternative selected.",
+      "tested": false,
+      "attempted_cue": "A toy abdomen beside a chess set."
+    },
+    {
+      "term": "pain",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Offline pain vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "reason": "Existing expression mask.",
+      "tested": false
+    },
+    {
+      "term": "tenderness",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy hand gently touching a squishy tender peach.",
+      "cue_scope": "Offline tenderness vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Broad tender/touch word association, not patient examination.",
+      "tested": false
+    },
+    {
+      "term": "redness",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar red paint swatch beside a small paintbrush.",
+      "cue_scope": "Offline redness vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Literal color category, not a skin diagnostic sign.",
+      "tested": false
+    },
+    {
+      "term": "erosion",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A sandstone toy block with a conspicuously worn-away corner.",
+      "cue_scope": "Offline erosion vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar eroded-material category; not device complication mechanism.",
+      "tested": false
+    },
+    {
+      "term": "infective endocarditis",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline infective endocarditis vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Generic infection/heart scene does not economically recall endocarditis; no clinical mechanism inferred.",
+      "tested": false,
+      "attempted_cue": "A cartoon germ inside a heart-shaped box."
+    },
+    {
+      "term": "sepsis",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline sepsis vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Sieve/pea does not support stable sepsis recovery; older holds unchanged.",
+      "tested": false,
+      "attempted_cue": "A sieve beside a pea."
+    },
+    {
+      "term": "thrombophlebitis",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline thrombophlebitis vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Plug/flea/bite is a fragile multi-part rebus; no economical complete name bridge selected.",
+      "tested": false,
+      "attempted_cue": "A plug beside a flea biting a toy."
+    },
+    {
+      "term": "venous obstruction",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane beside a blocked toy doorway.",
+      "cue_scope": "Offline venous obstruction vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Existing31 vein/vane ingredient plus blocked doorway; new composition, not vascular anatomy.",
+      "tested": false
+    },
+    {
+      "term": "thrombosis",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A plug lodged inside a transparent vessel model, without a lung or crown.",
+      "cue_scope": "Offline thrombosis vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#thrombosis",
+      "reason": "Existing plug ingredient.",
+      "tested": false
+    },
+    {
+      "term": "edema",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A puffy bundle of familiar tissue paper.",
+      "cue_scope": "Offline edema vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#tissue edema",
+      "reason": "Existing21 tissue edema puffy-tissue ingredient; no body region.",
+      "tested": false
+    },
+    {
+      "term": "heparin",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar heap of ordinary metal rings.",
+      "cue_scope": "Offline heparin vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#heparin",
+      "reason": "Existing heap/rings.",
+      "tested": false
+    },
+    {
+      "term": "warfarin",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline warfarin vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Workshop attempt relies on dock being called wharf and plant called fern; no better economical alternative selected.",
+      "tested": false,
+      "attempted_cue": "A wharf beside a fern."
+    },
+    {
+      "term": "pneumothorax",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "cue_scope": "Offline pneumothorax vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "reason": "Existing balloon/chest family.",
+      "tested": false
+    },
+    {
+      "term": "hemothorax",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Transparent chest shell with conspicuous red liquid surrounding a lung model.",
+      "cue_scope": "Offline hemothorax vocabulary only",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#hemothorax",
+      "reason": "Existing red-liquid/chest family.",
+      "tested": false
+    },
+    {
+      "term": "pneumomediastinum",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Offline pneumomediastinum vocabulary only",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "New/middle/stadium fragments lose too much name material; no simple familiar category selected.",
+      "tested": false,
+      "attempted_cue": "A new toy in the middle of a stadium."
+    },
+    {
+      "term": "orthostatic dizziness",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy figure rising upright beside a spinning toy carousel.",
+      "cue_scope": "Offline orthostatic dizziness vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Upright + dizzy word ingredients; no cause, symptom pattern or examination.",
+      "tested": false
+    },
+    {
+      "term": "exercise intolerance",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy exercise bicycle conspicuously rejected by a crossed-out approval stamp.",
+      "cue_scope": "Offline exercise intolerance vocabulary only",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Exercise + rejection word ingredients; no patient activity instruction.",
+      "tested": false
+    },
+    {
+      "term": "false sensing",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached eye-shaped toy beside a conspicuous crossed-out check mark.",
+      "cue_scope": "False + sensing word analogy",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary error/sensory category, not ICD signal analysis.",
+      "tested": false
+    },
+    {
+      "term": "rapid ventricular response",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Broad fast-heart family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#tachycardia",
+      "reason": "Fast response vocabulary only; ventricular qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "shivering",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A bundled toy figure visibly trembling with motion marks.",
+      "cue_scope": "Shivering action family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#shivering",
+      "reason": "Existing bundled trembling toy.",
+      "tested": false
+    },
+    {
+      "term": "diaphragmatic contraction",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached diaphragm teaching-model token beside a squeezed concertina.",
+      "cue_scope": "Diaphragm + contraction word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Model naming plus contract/squeeze analogy, not actual mechanism.",
+      "tested": false
+    },
+    {
+      "term": "vibrations",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar tuning fork with vibration motion marks.",
+      "cue_scope": "Vibration action category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary vibration, no signal-source teaching.",
+      "tested": false
+    },
+    {
+      "term": "pacer spikes",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A pace-setting runner and heart token beside a freestanding pointed toy spike.",
+      "cue_scope": "Pacer + spike words",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Not an ECG shape or interpretation.",
+      "tested": false
+    },
+    {
+      "term": "T waves",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar teacup beside a small wave-shaped toy.",
+      "cue_scope": "T/tea + wave name ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Letter homophone and literal wave; no waveform.",
+      "tested": false
+    },
+    {
+      "term": "lead fracture",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A loose insulated electrical cable with a conspicuously broken end.",
+      "cue_scope": "Broad lead/cable plus break",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#conduction-cable",
+      "reason": "Existing catalog cable prop, visible fracture state added; no device malfunction mechanism.",
+      "tested": false
+    },
+    {
+      "term": "migration",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy suitcase moving from one empty cubby to a neighboring one.",
+      "cue_scope": "Relocation action category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary moving-category cue, not implanted lead motion.",
+      "tested": false
+    },
+    {
+      "term": "unsustained tachyarrhythmia",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "Heart character sprinting with conspicuous speed streaks.",
+      "cue_scope": "Broad tachycardia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#tachycardia",
+      "reason": "Unsustained and arrhythmia distinctions unencoded.",
+      "tested": false
+    },
+    {
+      "term": "ICD-pacemaker interactions",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached defibrillator-paddle token and pace-setting runner/heart token exchanging a toy handshake.",
+      "cue_scope": "Device names + interaction category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Handshake is ordinary interaction metaphor, not an electrical relationship.",
+      "tested": false
+    },
+    {
+      "term": "component failure",
+      "pdf_page": 80,
+      "page": 222,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached toy gear with a visibly broken tooth.",
+      "cue_scope": "Broken component category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary broken-function cue, not cause identification.",
+      "tested": false
+    },
+    {
+      "term": "pacing catheter balloon",
+      "pdf_page": 77,
+      "page": 219,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "An ordinary balloon standing alone.",
+      "cue_scope": "Broad balloon component category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "reason": "Existing3 pneumothoraces balloon ingredient only, remove lung and chest; pacing/catheter qualifier not encoded.",
+      "tested": false
+    },
+    {
+      "term": "paddles",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "body",
+      "kind": "existing_family",
+      "cue": "Pair of recognizable detached handheld defibrillator paddles on an otherwise empty surface.",
+      "cue_scope": "Paddle equipment category",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#paddles",
+      "reason": "No distance or placement instruction.",
+      "tested": false
+    },
+    {
+      "term": "P wave",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A familiar pea beside a small wave-shaped toy.",
+      "cue_scope": "P/pea + wave word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Ordinary homophone and wave, no ECG morphology.",
+      "tested": false
+    },
+    {
+      "term": "intermittent capture",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "A token visibly inside a closed cage.",
+      "cue_scope": "Broad captured/entrapment vocabulary",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#captured-token",
+      "reason": "Reuse catalog captured-token; intermittent qualifier unencoded, no tracing analysis.",
+      "tested": false
+    },
+    {
+      "term": "pacer artifact",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "figure_label",
+      "kind": "learned_name_or_category",
+      "cue": "A pace-setting runner and heart token beside a familiar antique pottery artifact.",
+      "cue_scope": "Pacer + artifact words",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Everyday artifact category, not ECG artifact appearance.",
+      "tested": false
+    },
+    {
+      "term": "single-lead pacemaker",
+      "pdf_page": 78,
+      "page": 220,
+      "source_match": "figure_label",
+      "kind": "existing_family",
+      "cue": "Lead runner visibly setting the pace for other runners beside a heart token.",
+      "cue_scope": "Broad pacemaker family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Single-lead qualifier unencoded.",
+      "tested": false
+    },
+    {
+      "term": "mental status",
+      "pdf_page": 75,
+      "page": 217,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A toy brain beside a simple blank status-indicator dial.",
+      "cue_scope": "Mental + status words",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Generic status category only, not consciousness assessment.",
+      "tested": false
+    },
+    {
+      "term": "blood culture",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A detached blood-drop study token beside a familiar closed laboratory culture dish.",
+      "cue_scope": "Blood + culture laboratory category",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Prior dish recognition needed; no microbiology result or sampling method.",
+      "tested": false
+    },
+    {
+      "term": "antibiotics",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "unresolved",
+      "cue": null,
+      "cue_scope": "Antibiotic name attempt",
+      "decision": "hold",
+      "prior": "new_chapter_record",
+      "reason": "Aunt/robot does not stably recover antibiotic; anonymous pill would be too broad for class recall.",
+      "tested": false,
+      "attempted_cue": "A toy aunt beside a small robot."
+    },
+    {
+      "term": "analgesics",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "existing_family",
+      "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+      "cue_scope": "Broad analgesia family",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29B-cue-audit.json#analgesia",
+      "reason": "Existing pain-mask/mute category, noun variant not new.",
+      "tested": false
+    },
+    {
+      "term": "venous engorgement",
+      "pdf_page": 79,
+      "page": 221,
+      "source_match": "table",
+      "kind": "learned_name_or_category",
+      "cue": "A weather vane beside an overstuffed toy pouch.",
+      "cue_scope": "Vein + engorged word ingredients",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Known vane ingredient plus fullness category, not venous anatomy or patient sign.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Visual inspection of all PDF74-81 page rasters plus PyMuPDF font spans and coordinates within true chapter regions. BlackSemiCn chapter/section titles, SemiboldCond subheads and table titles, MyriadPro-Bold malfunction subheads and MinionPro-Bold body passages distinguished from Cond regular table cells and regular captions. Lexical headwords selected from clauses without importing instructions. Bounded scan completed across headings, Tables33-1 through33-7 and Figures33-1 through33-5. Raster-only waveform labels visually inspected; no ECG criteria imported. Headwords from bold sentences mapped separately from statements. Not every regular body word or plot label.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "No annotation objects on74-81; flattened highlights cannot be ruled out. Colored printed headings/table bands are layout, not user annotations."
+    },
+    "items": [
+      {
+        "term": "cardiac pacing",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "BlackSemiCn actual chapter title right y477.8.",
+        "entry_term": "cardiac pacing"
+      },
+      {
+        "term": "implanted defibrillation",
+        "pdf_page": 74,
+        "page": 216,
+        "emphasis": "BlackSemiCn actual chapter title right y496.8.",
+        "entry_term": "implanted defibrillation"
+      },
+      {
+        "term": "bradycardia",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular Cond indication; regular body, not bold.",
+        "entry_term": "bradycardia"
+      },
+      {
+        "term": "AV block",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular Cond indication headword.",
+        "entry_term": "AV block"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment lexical headword.",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "angina",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment lexical headword.",
+        "entry_term": "angina"
+      },
+      {
+        "term": "pulmonary edema",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment clause, wrap joined.",
+        "entry_term": "pulmonary edema"
+      },
+      {
+        "term": "sick sinus syndrome",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication headword; severe excluded.",
+        "entry_term": "sick sinus syndrome"
+      },
+      {
+        "term": "asystole",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication clause.",
+        "entry_term": "asystole"
+      },
+      {
+        "term": "syncope",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication clause.",
+        "entry_term": "syncope"
+      },
+      {
+        "term": "ventricular standstill",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication headword.",
+        "entry_term": "ventricular standstill"
+      },
+      {
+        "term": "complete heart block",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication clause.",
+        "entry_term": "complete heart block"
+      },
+      {
+        "term": "Mobitz type II AV block",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular named indication clause.",
+        "entry_term": "Mobitz type II AV block"
+      },
+      {
+        "term": "torsades de pointes",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular named indication.",
+        "entry_term": "torsades de pointes"
+      },
+      {
+        "term": "overdrive pacing",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular repeated comment rows merged.",
+        "entry_term": "overdrive pacing"
+      },
+      {
+        "term": "monomorphic ventricular tachycardia",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication; recurrent excluded.",
+        "entry_term": "monomorphic ventricular tachycardia"
+      },
+      {
+        "term": "supraventricular tachycardia",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular indication; unstable excluded.",
+        "entry_term": "supraventricular tachycardia"
+      },
+      {
+        "term": "ventricular fibrillation",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment clause.",
+        "entry_term": "ventricular fibrillation"
+      },
+      {
+        "term": "cardioversion",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment and regular right body.",
+        "entry_term": "cardioversion"
+      },
+      {
+        "term": "transcutaneous pacing",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "BlackSemiCn section heading y412.1; SemiboldCond Table33-3 title.",
+        "entry_term": "transcutaneous pacing"
+      },
+      {
+        "term": "transvenous pacing",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "BlackSemiCn right section heading y689.3; regular Table33-2 type cell.",
+        "entry_term": "transvenous pacing"
+      },
+      {
+        "term": "asynchronous pacing",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "MinionPro-Bold named phrase right y455.6.",
+        "entry_term": "asynchronous pacing"
+      },
+      {
+        "term": "pulse generator",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 SemiboldCond column head and regular33-3 cell; regular component list.",
+        "entry_term": "pulse generator"
+      },
+      {
+        "term": "electrodes",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 SemiboldCond Electrode Location lexical head; regular33-3 cell.",
+        "entry_term": "electrodes"
+      },
+      {
+        "term": "pacing cables",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-3 regular Cond equipment cell.",
+        "entry_term": "pacing cables"
+      },
+      {
+        "term": "pacemaker pads",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-3 regular Cond equipment cell.",
+        "entry_term": "pacemaker pads"
+      },
+      {
+        "term": "ECG monitor",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-3 regular Cond equipment cell.",
+        "entry_term": "ECG monitor"
+      },
+      {
+        "term": "transesophageal",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond pacemaker type cell.",
+        "entry_term": "transesophageal"
+      },
+      {
+        "term": "esophagus",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond electrode-location cell.",
+        "entry_term": "esophagus"
+      },
+      {
+        "term": "epicardial",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond pacemaker type and location cells.",
+        "entry_term": "epicardial"
+      },
+      {
+        "term": "epicardium",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond location cell.",
+        "entry_term": "epicardium"
+      },
+      {
+        "term": "right ventricle",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond location cell.",
+        "entry_term": "right ventricle"
+      },
+      {
+        "term": "right atrium",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular Cond location cell.",
+        "entry_term": "right atrium"
+      },
+      {
+        "term": "clavicle",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular location clause headword.",
+        "entry_term": "clavicle"
+      },
+      {
+        "term": "prepectoral region",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular location clause lexical head.",
+        "entry_term": "prepectoral region"
+      },
+      {
+        "term": "internal jugular vein",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "MinionPro-Bold insertion-site sentence left y472.5, right modifier dropped.",
+        "entry_term": "internal jugular vein"
+      },
+      {
+        "term": "catheter insertion",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "MinionPro-Bold sentence headword across y462.5-472.5.",
+        "entry_term": "catheter insertion"
+      },
+      {
+        "term": "permanent pacing",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "BlackSemiCn section heading right y479.7.",
+        "entry_term": "permanent pacing"
+      },
+      {
+        "term": "pacemaker nomenclature",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "SemiboldCond subsection heading right y685.0.",
+        "entry_term": "pacemaker nomenclature"
+      },
+      {
+        "term": "atrium",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "MinionPro-Bold nomenclature clause right y720.7; letter codes excluded.",
+        "entry_term": "atrium"
+      },
+      {
+        "term": "ventricle",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "MinionPro-Bold nomenclature clause right y730.7.",
+        "entry_term": "ventricle"
+      },
+      {
+        "term": "dual chamber",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "MinionPro-Bold nomenclature clause right y730.7.",
+        "entry_term": "dual chamber"
+      },
+      {
+        "term": "central catheter kit",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment cell.",
+        "entry_term": "central catheter kit"
+      },
+      {
+        "term": "introducer sheath",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment clause headword.",
+        "entry_term": "introducer sheath"
+      },
+      {
+        "term": "transvenous cardiac pacing catheter",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment cell; Flexible modifier dropped.",
+        "entry_term": "transvenous cardiac pacing catheter"
+      },
+      {
+        "term": "battery",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment cell and regular right body.",
+        "entry_term": "battery"
+      },
+      {
+        "term": "cardiac monitor",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment cell.",
+        "entry_term": "cardiac monitor"
+      },
+      {
+        "term": "alligator clamps",
+        "pdf_page": 76,
+        "page": 218,
+        "emphasis": "Table33-4 regular Cond equipment clause.",
+        "entry_term": "alligator clamps"
+      },
+      {
+        "term": "gown",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "gown"
+      },
+      {
+        "term": "gloves",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "gloves"
+      },
+      {
+        "term": "mask",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "mask"
+      },
+      {
+        "term": "US guidance",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "US guidance"
+      },
+      {
+        "term": "drape",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "drape"
+      },
+      {
+        "term": "introducer catheter",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "introducer catheter"
+      },
+      {
+        "term": "pulmonary artery catheters",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "pulmonary artery catheters"
+      },
+      {
+        "term": "saline",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "saline"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "periosteum",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "periosteum"
+      },
+      {
+        "term": "introducer needle",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "introducer needle"
+      },
+      {
+        "term": "syringe",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "syringe"
+      },
+      {
+        "term": "subcutaneous tissue",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "subcutaneous tissue"
+      },
+      {
+        "term": "aspiration",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "aspiration"
+      },
+      {
+        "term": "air embolism",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "air embolism"
+      },
+      {
+        "term": "guidewire",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "guidewire"
+      },
+      {
+        "term": "premature ventricular contractions",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "premature ventricular contractions"
+      },
+      {
+        "term": "scalpel",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "scalpel"
+      },
+      {
+        "term": "fluoroscopy",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "fluoroscopy"
+      },
+      {
+        "term": "QRS complex",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "QRS complex"
+      },
+      {
+        "term": "chest radiograph",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "chest radiograph"
+      },
+      {
+        "term": "sterile transparent dressing",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond equipment/comment lexical headword, not body bold.",
+        "entry_term": "sterile transparent dressing"
+      },
+      {
+        "term": "VVI",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold nomenclature code y265.8.",
+        "entry_term": "VVI"
+      },
+      {
+        "term": "DDD",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold nomenclature code y265.8.",
+        "entry_term": "DDD"
+      },
+      {
+        "term": "countershock",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold sentence y354.3.",
+        "entry_term": "countershock"
+      },
+      {
+        "term": "pacemaker syndrome",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MyriadPro-Bold subheading y306.6; Table33-6 regular category on79.",
+        "entry_term": "pacemaker syndrome"
+      },
+      {
+        "term": "pacemaker malfunction",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "SemiboldCond subsection right y313.7.",
+        "entry_term": "pacemaker malfunction"
+      },
+      {
+        "term": "failure to sense",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "MyriadPro-Bold subheading right y362.7.",
+        "entry_term": "failure to sense"
+      },
+      {
+        "term": "undersensing",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "MyriadPro-Bold parenthetical subheading right y362.7; regular Figure33-5 caption80.",
+        "entry_term": "undersensing"
+      },
+      {
+        "term": "failure to pace",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "MyriadPro-Bold subheading right y445.7.",
+        "entry_term": "failure to pace"
+      },
+      {
+        "term": "oversensing",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "MyriadPro-Bold parenthetical subheading right y445.7.",
+        "entry_term": "oversensing"
+      },
+      {
+        "term": "failure to capture",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "MyriadPro-Bold subheading right y528.7; regular Figure33-5 caption80.",
+        "entry_term": "failure to capture"
+      },
+      {
+        "term": "pacemaker-associated tachycardia",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "SemiboldCond subsection right y613.2; wrap joined.",
+        "entry_term": "pacemaker-associated tachycardia"
+      },
+      {
+        "term": "pacemaker programming errors",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "SemiboldCond subsection left y418.7.",
+        "entry_term": "pacemaker programming errors"
+      },
+      {
+        "term": "implantable cardioverter-defibrillators",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "BlackSemiCn section heading left y498.7; bold sentence right y532.4-542.4.",
+        "entry_term": "implantable cardioverter-defibrillators"
+      },
+      {
+        "term": "ST-segment elevations or depressions",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold sentence right y482.4; statement/timing excluded.",
+        "entry_term": "ST-segment elevations or depressions"
+      },
+      {
+        "term": "ischemia",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold sentence right y492.4.",
+        "entry_term": "ischemia"
+      },
+      {
+        "term": "magnet",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold sentence right y542.4 and552.4. MinionPro-Bold repeated sentences y542.4/552.4, emphasis merged.",
+        "entry_term": "magnet"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "infection"
+      },
+      {
+        "term": "Staphylococcus aureus",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "Staphylococcus aureus"
+      },
+      {
+        "term": "Staphylococcus epidermidis",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "Staphylococcus epidermidis"
+      },
+      {
+        "term": "inflammation",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "inflammation"
+      },
+      {
+        "term": "abscess",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "abscess"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "pain"
+      },
+      {
+        "term": "tenderness",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "tenderness"
+      },
+      {
+        "term": "redness",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "redness"
+      },
+      {
+        "term": "erosion",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "erosion"
+      },
+      {
+        "term": "infective endocarditis",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "infective endocarditis"
+      },
+      {
+        "term": "sepsis",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "sepsis"
+      },
+      {
+        "term": "thrombophlebitis",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "thrombophlebitis"
+      },
+      {
+        "term": "venous obstruction",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "venous obstruction"
+      },
+      {
+        "term": "thrombosis",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "thrombosis"
+      },
+      {
+        "term": "edema",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "edema"
+      },
+      {
+        "term": "heparin",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "heparin"
+      },
+      {
+        "term": "warfarin",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "warfarin"
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "pneumothorax"
+      },
+      {
+        "term": "hemothorax",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "hemothorax"
+      },
+      {
+        "term": "pneumomediastinum",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "pneumomediastinum"
+      },
+      {
+        "term": "orthostatic dizziness",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "orthostatic dizziness"
+      },
+      {
+        "term": "exercise intolerance",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond category/comment headword (organism names CondIt), not body bold.",
+        "entry_term": "exercise intolerance"
+      },
+      {
+        "term": "false sensing",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond first item.",
+        "entry_term": "false sensing"
+      },
+      {
+        "term": "rapid ventricular response",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond second clause.",
+        "entry_term": "rapid ventricular response"
+      },
+      {
+        "term": "shivering",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond muscular-activity parenthesis.",
+        "entry_term": "shivering"
+      },
+      {
+        "term": "diaphragmatic contraction",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond muscular-activity parenthesis.",
+        "entry_term": "diaphragmatic contraction"
+      },
+      {
+        "term": "vibrations",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond extraneous-source clause.",
+        "entry_term": "vibrations"
+      },
+      {
+        "term": "pacer spikes",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond extraneous-source clause.",
+        "entry_term": "pacer spikes"
+      },
+      {
+        "term": "T waves",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond double-counting clause.",
+        "entry_term": "T waves"
+      },
+      {
+        "term": "lead fracture",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond lead clause lexical headword.",
+        "entry_term": "lead fracture"
+      },
+      {
+        "term": "migration",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond lead clause lexical headword.",
+        "entry_term": "migration"
+      },
+      {
+        "term": "unsustained tachyarrhythmia",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond named item.",
+        "entry_term": "unsustained tachyarrhythmia"
+      },
+      {
+        "term": "ICD-pacemaker interactions",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond named item; source en dash normalized.",
+        "entry_term": "ICD-pacemaker interactions"
+      },
+      {
+        "term": "component failure",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular Cond final item.",
+        "entry_term": "component failure"
+      },
+      {
+        "term": "pacing catheter balloon",
+        "pdf_page": 77,
+        "page": 219,
+        "emphasis": "Table33-5 regular Cond step5 comment exact lexical phrase.",
+        "entry_term": "pacing catheter balloon"
+      },
+      {
+        "term": "paddles",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold distance sentence y364.3.",
+        "entry_term": "paddles"
+      },
+      {
+        "term": "atrium",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular location phrase right atrium; root entry on76.",
+        "entry_term": "atrium"
+      },
+      {
+        "term": "ventricle",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-2 regular location phrase right ventricle; root entry on76.",
+        "entry_term": "ventricle"
+      },
+      {
+        "term": "pads",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold countershock sentence y364.3 uses pads; lexical head mapped to device family.",
+        "entry_term": "pacemaker pads"
+      },
+      {
+        "term": "pulse generator",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "MinionPro-Bold countershock sentence y364.3.",
+        "entry_term": "pulse generator"
+      },
+      {
+        "term": "pacemaker syndrome",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond named complication.",
+        "entry_term": "pacemaker syndrome"
+      },
+      {
+        "term": "syncope",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular symptom clause; near-syncope is qualifier variant, same root.",
+        "entry_term": "syncope"
+      },
+      {
+        "term": "QRS complex",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "Raster Figure33-3 colored label visually verified; not extracted font text.",
+        "entry_term": "QRS complex"
+      },
+      {
+        "term": "QRS complex",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Raster Figure33-4 colored label visually verified; not extracted font text.",
+        "entry_term": "QRS complex"
+      },
+      {
+        "term": "P wave",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Raster Figure33-4 Developing P Wave label visually verified. Figure33-4 raster label Developing P Wave, visually verified; not extractable font text.",
+        "entry_term": "P wave"
+      },
+      {
+        "term": "undersensing",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Figure33-5 regular caption, not bold except panel marker.",
+        "entry_term": "undersensing"
+      },
+      {
+        "term": "oversensing",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Figure33-5 regular caption, not bold except panel marker.",
+        "entry_term": "oversensing"
+      },
+      {
+        "term": "failure to capture",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Figure33-5 regular caption, not bold except panel marker.",
+        "entry_term": "failure to capture"
+      },
+      {
+        "term": "supraventricular tachycardia",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular named clause.",
+        "entry_term": "supraventricular tachycardia"
+      },
+      {
+        "term": "QRS complex",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "Table33-7 regular double-counting clause.",
+        "entry_term": "QRS complex"
+      },
+      {
+        "term": "ECG",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold right y472.4 obtain a 12-lead ECG; numeric qualifier excluded.",
+        "entry_term": "ECG monitor"
+      },
+      {
+        "term": "ST-segment elevations",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold right y482.4; lexical part of paired elevations/depressions phrase.",
+        "entry_term": "ST-segment elevations or depressions"
+      },
+      {
+        "term": "defibrillation",
+        "pdf_page": 80,
+        "page": 222,
+        "emphasis": "MinionPro-Bold right y542.4, named lexical headword.",
+        "entry_term": "implanted defibrillation"
+      },
+      {
+        "term": "paddle",
+        "pdf_page": 81,
+        "page": 223,
+        "emphasis": "MinionPro-Bold top-left y58.3 paddle singular; plural variant not new.",
+        "entry_term": "paddles"
+      },
+      {
+        "term": "pad",
+        "pdf_page": 81,
+        "page": 223,
+        "emphasis": "MinionPro-Bold top-left y58.3 pad singular; mapped to retained device family.",
+        "entry_term": "pacemaker pads"
+      },
+      {
+        "term": "implantable cardioverter-defibrillator",
+        "pdf_page": 81,
+        "page": 223,
+        "emphasis": "MinionPro-Bold top-left y58.3-68.3 wrapped singular lexical headword.",
+        "entry_term": "implantable cardioverter-defibrillators"
+      },
+      {
+        "term": "pulse generator",
+        "pdf_page": 81,
+        "page": 223,
+        "emphasis": "MinionPro-Bold top-left y68.3 lexical headword.",
+        "entry_term": "pulse generator"
+      },
+      {
+        "term": "defibrillation",
+        "pdf_page": 81,
+        "page": 223,
+        "emphasis": "MinionPro-Bold top-left y48.3 lexical headword.",
+        "entry_term": "implanted defibrillation"
+      },
+      {
+        "term": "intermittent capture",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "Figure33-2 regular caption lexical phrase.",
+        "entry_term": "intermittent capture"
+      },
+      {
+        "term": "pacer artifact",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "Figure33-2 regular caption lexical phrase.",
+        "entry_term": "pacer artifact"
+      },
+      {
+        "term": "single-lead pacemaker",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "Figure33-3 regular caption lexical phrase.",
+        "entry_term": "single-lead pacemaker"
+      },
+      {
+        "term": "mental status",
+        "pdf_page": 75,
+        "page": 217,
+        "emphasis": "Table33-1 regular comment lexical headword from change in mental status.",
+        "entry_term": "mental status"
+      },
+      {
+        "term": "blood culture",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond infection-comment headword.",
+        "entry_term": "blood culture"
+      },
+      {
+        "term": "antibiotics",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond infection-comment drug-class headword.",
+        "entry_term": "antibiotics"
+      },
+      {
+        "term": "analgesics",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond infection-comment drug-class headword.",
+        "entry_term": "analgesics"
+      },
+      {
+        "term": "venous engorgement",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Table33-6 regular Cond thrombophlebitis-comment lexical phrase.",
+        "entry_term": "venous engorgement"
+      },
+      {
+        "term": "atrial pace",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Figure33-4 raster colored label visually verified; not font-extracted.",
+        "entry_term": "cardiac pacing"
+      },
+      {
+        "term": "ventricular pace",
+        "pdf_page": 78,
+        "page": 220,
+        "emphasis": "Figure33-3 raster colored label visually verified; not font-extracted.",
+        "entry_term": "cardiac pacing"
+      },
+      {
+        "term": "ventricular pace",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Figure33-4 raster colored label visually verified; not font-extracted.",
+        "entry_term": "cardiac pacing"
+      },
+      {
+        "term": "atrioventricular pacer spikes",
+        "pdf_page": 79,
+        "page": 221,
+        "emphasis": "Figure33-4 regular caption lexical phrase, not body bold.",
+        "entry_term": "pacer spikes"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 74,
+        "description": "All left32 and right-top32, references above actual33 title; chapter number, author names and generic PURPOSE/GENERAL EQUIPMENT headings.",
+        "reason": "Outside chapter or organizational scaffolding. Actual title cardiac pacing/implanted defibrillation mapped separately."
+      },
+      {
+        "pdf_page": 75,
+        "description": "Risks and Precautions, Equipment, Technique, Outcomes Assessment; table numbers, captions Indication/Comments and location labels External/Internal/Permanent; measurement limits and overdrive instructions.",
+        "reason": "Scaffolding, generic qualifiers or numeric/clinical statements. Named pacing types, indication and comment medical headwords are mapped separately; permanent pacing mapped on76."
+      },
+      {
+        "pdf_page": 76,
+        "description": "Full bold preferred insertion-site statement, code letters A/V/D and their definitions; table size comparison; directional Front/Back and panel letters in Figure33-1; reproduction credit.",
+        "reason": "Instruction/definition, location scaffolding or credit, not standalone vocabulary trials. Catheter insertion, internal jugular vein, atrium, ventricle, dual chamber and relevant equipment mapped separately; no numerical/site teaching retained."
+      },
+      {
+        "pdf_page": 77,
+        "description": "Table33-5 numbered step sequence, doses, gauge/volume/depth/rate/output values, positioning, hand dominance, grip, directional commands and temporal words.",
+        "reason": "Not vocabulary cues or clinical narration. Meaningful equipment/drug/anatomy/condition headwords extracted before excluding procedural sentences; not every generic verb, object part or body word."
+      },
+      {
+        "pdf_page": 78,
+        "description": "Nomenclature I/T/D letter tokens and code-definition clauses; countershock distance sentence; Figure33-2 letter markers P/A; trace lead/calibration markers and image-machine footer text.",
+        "reason": "Code definitions, measurement/instruction or plot scaffolding excluded after headwords; VVI/DDD, countershock, pads/paddles, pulse generator, intermittent capture and pacer artifact separately attempted. Not ECG teaching."
+      },
+      {
+        "pdf_page": 79,
+        "description": "Table33-6 rates, comparisons, diagnostic and treatment statements; local/upper-extremity/ipsilateral/right-upper-quadrant modifiers, skin color/adherence descriptions and generic device parts.",
+        "reason": "Full statements and qualifiers are not independent term trials. Infection/organisms, inflammation, abscess, pain/tenderness/redness, erosion, endocarditis/sepsis/culture, drug classes, venous obstruction/thrombosis/edema/engorgement, named chest complications and syndrome symptom headwords attempted. No every-noun inventory."
+      },
+      {
+        "pdf_page": 80,
+        "description": "Bold ECG/ST timing and magnet-placement/removal statements; ED EVALUATION; Table33-7 vague labels Muscular activity/Extraneous source and generic tapping/double-counting wording; figure panel letters.",
+        "reason": "Instruction/timing/scaffolding and generic descriptors excluded only after meaningful headword extraction: ECG, ST phrase, ischemia, ICD, magnet, defibrillation; table named conditions/actions/components and T-wave/QRS words mapped."
+      },
+      {
+        "pdf_page": 81,
+        "description": "Full bold defibrillation/paddle/pad/ICD pulse-generator placement statement; DISPOSITION AND FOLLOW-UP and references notice; entire right34 and left below actual34 title y293.9.",
+        "reason": "Meaningful bold device headwords mapped without placement instruction. Disposition and references are scaffolding; all Chapter34 content excluded regardless of vertical overlap."
+      }
+    ]
+  },
+  "reuse_check": {
+    "scope": "Search chapter1-32 banks, catalog and both sound workshops. Precise retained/reused pointers checked for selected entries; old sound rejection is not a category ban.",
+    "limits": "No empirical recovery testing. Main independent integration pending."
+  },
+  "resolved_holds": [],
+  "reconciliation_history": [
+    {
+      "date": "2026-10-21",
+      "note": "Early22/48-entry checkpoints superseded. Main author calibration integrated: esophagus/adhesive pads reused; asynchronous pacing uses23 unsynchronized metronomes; qualified chamber terms no duplicate model discoveries; ventricular terms reuse31 ventriloquist ingredient only; sinus explicitly word-pun; epicardial/transesophageal use corresponding lexical roots. No older holds deleted or globally resolved. Final exact-duplicate check changed sick sinus syndrome to11 retained sine-wave/thermometer family; proposed sinus model withdrawn, not a discovery."
+    }
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author-completed bounded scan and local structure/source-string checks. AI author review only, not credentialed human validation. Main independent source/conceptual integration, shared tests, register/ledger/index/handoff and Git pending.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch33-35/chapter33/",
+  "source_wording_notes": {
+    "normalization": "Case/whitespace and line-wrap joins normalized; meaningful lexical headwords selected from longer clauses. ICD-pacemaker source en dash normalized. Page81 singular paddle/pad/ICD forms map to existing plural device roots; page78 pads maps to pacemaker pads. Table cells are regular Cond, organism names CondIt, not falsely body bold.",
+    "raster_labels": "P wave and QRS complex labels and atrial/ventricular pace labels in Figures33-3/4 inspected visually. P wave is the only entry not found by normalized owned-region text search; it is a raster label, not an extraction match. ECG-machine lead/calibration tags are not vocabulary inventory.",
+    "reuse": "All selected reuse targets exist and are non-held. Same-bank aliases point only to different retained entries (complete heart block -> AV block; epicardial -> epicardium; right atrium -> atrium; undersensing -> failure to sense). Qualified ventricle names use31 ventriloquist dummy ingredient without concertina/flag. Device/model familiarity and partial-word recall untested. Broader reuses explicitly drop irrelevant modifiers.",
+    "history": "Earlier holds, rejected sound attempts and other banks are untouched. Aspiration here is table-context inward-draw action, not29A airway aspiration; different sense, not a resolved historical hold."
+  }
+}

@@ -34,10 +34,13 @@
     "29B",
     "30",
     "31",
-    "32"
+    "32",
+    "33",
+    "34",
+    "35"
   ],
-  "active_hold_occurrences": 239,
-  "unique_held_terms": 191,
+  "active_hold_occurrences": 315,
+  "unique_held_terms": 259,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -120,7 +123,10 @@
       "reason": "Repeated target, not new. Lid-cane loses spoken material and may retrieve lid or cane rather than the drug. The broadened framework does not automatically rehabilitate a weak particular sound bridge.",
       "retained_in_other_chapters": [
         "29A",
-        "31"
+        "31",
+        "33",
+        "34",
+        "35"
       ]
     },
     {
@@ -398,7 +404,10 @@
       "reason": "Existing hold preserved. Historical lid plus cane attempt lost name material; no improved proposal here and no revival of that workshop rebus.",
       "retained_in_other_chapters": [
         "29A",
-        "31"
+        "31",
+        "33",
+        "34",
+        "35"
       ]
     },
     {
@@ -566,7 +575,9 @@
       "report": "docs/chapter-20-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried moving pharmacy trolley as pharma/kinetic partial bridge; pharmacy recognition and motion alone are too broad in this pass. No drug-disposition lesson substituted for the name.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "35"
+      ]
     },
     {
       "chapter_id": "20",
@@ -843,7 +854,10 @@
       "reason": "Earlier lid/cane rejection remains historical, not silently promoted. No improved proposal in this bounded selection.",
       "retained_in_other_chapters": [
         "29A",
-        "31"
+        "31",
+        "33",
+        "34",
+        "35"
       ]
     },
     {
@@ -1024,7 +1038,10 @@
       "reason": "Earlier hold and lid/cane attempt remain historical, not silently promoted. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": [
         "29A",
-        "31"
+        "31",
+        "33",
+        "34",
+        "35"
       ]
     },
     {
@@ -1767,7 +1784,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "33"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -1811,7 +1830,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried fence beside a small nail instead of historical fan/tunnel; this replacement also needed excessive sound coaching, so held. Earlier rejected sound attempt remains rejected; no medication-effect imagery.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "35"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2482,7 +2503,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A heart token beside a water pitcher.",
       "reason": "Familiar ingredients lack a useful economical pericardial name hook; no fluid-location teaching.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "34"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2692,6 +2715,842 @@
       "attempted_cue": null,
       "reason": "Attempted a medicine-bottle toy beside a motionless figure. Hold: motionless still image gives weak paralysis recall beyond generic rest; pharmacologic modifier does not repair it.",
       "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "syncope",
+      "printed_page": 217,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A sink beside a pea.",
+      "reason": "Workshop attempt depends on fragile pea naming and inserted middle vowel; no stronger economical alternative found.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "Mobitz type II AV block",
+      "printed_page": 217,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A mob of toy figures holding two bits beside a roadblock.",
+      "reason": "Mob/bits and number tokens make brittle rebus; broad block does not recall Mobitz.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "cardioversion",
+      "printed_page": 217,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A heart token turning over like a reversible card.",
+      "reason": "Generic conversion action does not improve held electrical-cardioversion bridge; no familiar separate device category found.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "prepectoral region",
+      "printed_page": 217,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A letter-delivery parcel in front of a chest-shaped toy.",
+      "reason": "Parcel/pectoral is weak and extra pre/front relation does not rescue naming; no economical familiar regional prop selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "periosteum",
+      "printed_page": 219,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A pear beside a bone model.",
+      "reason": "Pear/peri alone weak; no economical standalone category selected; earlier31 hold remains.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "QRS complex",
+      "printed_page": 219,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "Three toy letter blocks Q, R and S.",
+      "reason": "Text-only blocks restate code; waveform interpretation not attempted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "VVI",
+      "printed_page": 220,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A violin balanced on two V-shaped blocks.",
+      "reason": "Letter-shape rebus depends on reading characters; generic pacer category cannot recover code. No mode definitions taught.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "DDD",
+      "printed_page": 220,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "Three toy doors.",
+      "reason": "Doors supply arbitrary initials, not an economical taught word association without text.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "ST-segment elevations or depressions",
+      "printed_page": 222,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A staircase going up and down beside letter blocks S and T.",
+      "reason": "Literal height is generic and ST relies on text; no waveform interpretation substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "infection",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A cartoon germ beside a broken toy shield.",
+      "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "Staphylococcus epidermidis",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A walking staff beside a skin teaching tile.",
+      "reason": "Staff/skin suggests broad epidermal staphylococcus family but no economical epidermidis name bridge selected; earlier31 hold remains.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "abscess",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A toy abdomen beside a chess set.",
+      "reason": "Ab/chess distorted sound and fragile segmentation; no familiar category alternative selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "infective endocarditis",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A cartoon germ inside a heart-shaped box.",
+      "reason": "Generic infection/heart scene does not economically recall endocarditis; no clinical mechanism inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "sepsis",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A sieve beside a pea.",
+      "reason": "Sieve/pea does not support stable sepsis recovery; older holds unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "thrombophlebitis",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A plug beside a flea biting a toy.",
+      "reason": "Plug/flea/bite is a fragile multi-part rebus; no economical complete name bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "warfarin",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A wharf beside a fern.",
+      "reason": "Workshop attempt relies on dock being called wharf and plant called fern; no better economical alternative selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "pneumomediastinum",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A new toy in the middle of a stadium.",
+      "reason": "New/middle/stadium fragments lose too much name material; no simple familiar category selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "33",
+      "chapter_title": "Cardiac Pacing and Implanted Defibrillation",
+      "term": "antibiotics",
+      "printed_page": 221,
+      "source_record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "attempted_cue": "A toy aunt beside a small robot.",
+      "reason": "Aunt/robot does not stably recover antibiotic; anonymous pill would be too broad for class recall.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "idiopathic",
+      "printed_page": 223,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "An ID badge beside a footpath tile.",
+      "reason": "Tried ID/path; awkward reading and the weak intervening material leave an unappealing hook. Not held merely for incomplete syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "myocardial infarction",
+      "printed_page": 223,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A greeting-card heart beside a broken fraction tile.",
+      "reason": "Tried card/fraction; fraction/infarction is strained and heart alone supplies only a broad category. No clinical depiction added to rescue the sound trial.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "uremia",
+      "printed_page": 223,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A urine specimen cup beside a microphone.",
+      "reason": "Tried urine/mic; little reason for microphone beyond forced name completion. No body-fluid or biochemical claim intended.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "infection",
+      "printed_page": 223,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A generic cartoon germ beside a doorway.",
+      "reason": "Tried germ/entry; no useful infection-specific lexical hook selected. Existing rejected/held germ attempts remain historical; not a universal ban on category cues.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "dyspnea",
+      "printed_page": 224,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A vinyl disc beside a toy knee.",
+      "reason": "Tried disc/knee; awkward pronunciation and an arbitrary prop pair make this attempt unappealing. No symptom performance used as a substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "QRS complexes",
+      "printed_page": 224,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "Three letter-shaped toy blocks beside a complicated knot.",
+      "reason": "Tried letter blocks/knot; just spelling the target and adding a generic complexity token supplies little useful association. No electrocardiographic teaching substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "xiphisternum",
+      "printed_page": 226,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A zipper beside a stern-faced toy character.",
+      "reason": "Tried zip/stern; unattractive assembly for this spelling, and no familiar standalone category prop selected. Not silently equated to another source term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "cartilage cage",
+      "printed_page": 226,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A shopping cart beside an empty toy cage.",
+      "reason": "Tried cart/cage; convenient objects but weak editorial appeal for cartilage. No actual thoracic anatomy assembled as a procedure aid.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "povidone-iodine",
+      "printed_page": 227,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A toy podium beside an eye-shaped dining plate.",
+      "reason": "Tried podium/eye-dine; remains a forced multi-prop assembly. Workshop iodine rejection is historical, not a ban on a better future category cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "34",
+      "chapter_title": "Pericardiocentesis",
+      "term": "ChloraPrep",
+      "printed_page": 227,
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "attempted_cue": "A chlorine-pool toy beside a prep-school cap.",
+      "reason": "Tried pool/prep; cumbersome and prep cap lacks a compelling familiar identity. No branded packaging familiarity presumed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "opioid receptors",
+      "printed_page": 229,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A poppy beside a toy satellite receiver.",
+      "reason": "Receiver is plausible for receptor but the poppy ingredient is not yet an established opioid-family token in the checked banks; this combined proposal remains too weakly specified for this bounded pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "addiction",
+      "printed_page": 230,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy character magnetically stuck to a medicine cabinet.",
+      "reason": "Attachment alone does not express addiction well and risks conflating the separately headed dependence term; no stigmatizing character selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "diminished cognitive function",
+      "printed_page": 230,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A dim lamp inside a thought-cloud token.",
+      "reason": "Dim lighting plus thought is vague and may suggest intelligence or consciousness instead; no candidate chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "drug-seeking behavior",
+      "printed_page": 230,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy detective inspecting an anonymous pill token.",
+      "reason": "Search action is drawable but insufficiently distinguishes this potentially stigmatizing phrase from routine medication checking; no clinical inference encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "opioid analgesics",
+      "printed_page": 231,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A poppy beside the existing pain-mask-and-mute token.",
+      "reason": "Pain relief ingredient exists but adding a poppy was not selected as an established opioid-class bridge; no claim that all class members share an origin.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "meperidine",
+      "printed_page": 231,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy diner pointing to itself beside a pear.",
+      "reason": "Three weakly linked actions/objects leave a cumbersome scene; no economical candidate selected, rather than requiring full-syllable matching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "buprenorphine",
+      "printed_page": 231,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy buoy beside a prune.",
+      "reason": "Objects make a fragment but no convincing easy bridge to this name selected; not a denial that incomplete cues can work.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "opioid agonists-antagonists",
+      "printed_page": 231,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "Two toy actors pulling the same prop in opposite directions beside a poppy.",
+      "reason": "Opposition is visible but neither pharmacologic category nor opioid qualifier has a settled family here; reject mechanism-looking tug-of-war imagery for this vocabulary-only pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "phenanthrene",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A fan beside a toy throne.",
+      "reason": "Fan/throne fragment is possible but no useful learned family selected; fan already proposed for fentanyl, so stacking another obscure sound composition adds little.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "histamine",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy historian holding a clock beside a mine entrance.",
+      "reason": "Historian not visually established by clock; mine/cave naming and prop sprawl remain weak. Earlier hold remains open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "monoamine oxidase inhibitor",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A monocle beside an ox and a padlock.",
+      "reason": "Three disconnected props obscure the useful class name; not selected as an economical vocabulary aid.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "serotonin syndrome",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A cereal bowl beside a toy tin.",
+      "reason": "Cereal/tin makes an awkward name fragment and does not provide a helpful syndrome hook in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "codeine-6-glucuronide",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A code-wheel padlock beside a glue bottle.",
+      "reason": "Code/glue ingredients leave an unwieldy name and omitted numeric identity; no useful specific-metabolite candidate selected and no numeric fact encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "morphine milligram equivalents",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A morphing toy beside balanced identical weights.",
+      "reason": "Generic balance cannot establish this specific name without an explanation; avoid turning table numbers into a conversion aid.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "acetaminophen",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "An ace playing card beside a tiny telephone.",
+      "reason": "Multi-prop sound assembly is strained and telephone does not make the name easier here; no unverified brand-package substitute selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "aspirin",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A familiar spiral spring.",
+      "reason": "New spring fragment avoids species-specific asp naming but did not yield a convincing simple bridge. Older asp/ring rejection remains intact.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "NSAIDs",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy knight holding a first-aid box.",
+      "reason": "Knight plus aid box feels like a new sentence to learn instead of a useful class hook; no numerical or clinical encoding.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "antidepressants",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A sad theater mask with a large crossed-circle token.",
+      "reason": "Crossing out sadness too readily reads as guaranteed emotional relief; no economical neutral class-name cue selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "anticonvulsants",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy claw held still beneath a crossed-circle token.",
+      "reason": "Claw could evoke retained seizure wordplay but a crossed/still claw is ambiguous about what is being negated. Historical hold retained; no effect claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "ondansetron",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy dancer sitting on a throne.",
+      "reason": "Action/position and throne naming create a strained assembly; no economical name candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "prochlorperazine",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A professional-looking toy painter beside a chlorine-pool float.",
+      "reason": "Professional identity and chlorine are not visible from those props; no useful supported family chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "promethazine",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A familiar Prometheus-style torch-bearing toy.",
+      "reason": "Torch-bearer does not identify that named figure without prior legend knowledge; no alternate economical cue selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "butorphanol",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A butter dish beside a lone toy character.",
+      "reason": "Lone character does not establish orphan; butter fragment alone was not selected as useful for this name.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "dezocine",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy desert diorama beside a cinema projector.",
+      "reason": "Desert/cinema is a cumbersome bridge with weak sound relation; source footnote status is not part of the cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "nalbuphine",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A large nail beside a toy buoy.",
+      "reason": "Nail/buoy does not produce a simple helpful name bridge in this pass; not held merely for missing syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "benzomorphan",
+      "printed_page": 233,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A park bench beside a morphing toy.",
+      "reason": "Bench is a weak benzo fragment; morph is available but did not rescue this class-name composition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "cyclic antidepressants",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A bicycle beside a crossed-out sad mask.",
+      "reason": "Cycle is familiar but the class ingredient remains unselected and could imply guaranteed emotional relief; no treatment claim accepted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "serotonin-norepinephrine reuptake inhibitors",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A cereal bowl beside a north-pointing toy compass and an upward arrow blocked by a gate.",
+      "reason": "Too many poorly linked fragments and the uptake graphic looks mechanistic; no economical vocabulary-only association selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "ibuprofen",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "An eyeball-shaped toy beside a buffet table.",
+      "reason": "Buffet fragment adds little to the name and a label-free pill would be anonymous; no candidate selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "duloxetine",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "Two toy locks beside a tin.",
+      "reason": "Duo/locks/tin takes a coached multi-part reading; no useful simple candidate chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "pregabalin",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy character at a party holding a balloon.",
+      "reason": "Neither pre nor gala is visible in a generic party; no economical partial-name bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "postherpetic neuralgia",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A fence post beside a toy pet and pain mask.",
+      "reason": "The pet fragment is too loosely related and adds prop sprawl; no economical specific name association selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "necrosis",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A wilted toy flower.",
+      "reason": "Wilted flower suggests temporary drooping rather than the term; historical tissue-necrosis hold remains open, no medical process inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "dystonic reactions",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy disc beside a tonic-water bottle.",
+      "reason": "Bottle needs an unverifiable contents label and disc/tonic is not a useful enough bridge; no patient movement or effect depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "hallucinations",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy character facing a transparent imaginary castle.",
+      "reason": "Transparent castle may be a real glass model or fantasy rather than the term; no specific memorable vocabulary bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "diclofenac",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy discus beside a flowing stream.",
+      "reason": "Two weak fragments make an arbitrary assembly; no useful candidate chosen for this bounded screen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "methyl salicylate",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy sail beside a late-running alarm clock.",
+      "reason": "Sail/late is a weak split that does not provide a useful methyl-salicylate family here; no product-brand guess selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "dependence",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy figure leaning on a support post.",
+      "reason": "Physical reliance on a post is too broad to help with the separately named drug-dependence term in this pass; no clinical definition encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "renal and hepatic dysfunction",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "Kidney and liver teaching tokens beside a broken toy crank.",
+      "reason": "Three props could work after teaching but no clean combined family selected here. Existing renal-failure cue remains available separately; historical combined hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "nonpharmacologic modalities",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A crossed-out anonymous pill beside a toolbox.",
+      "reason": "Generic negation and toolbox do not make a sufficiently helpful single association; specific techniques considered separately without encoding efficacy.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "constipation",
+      "printed_page": 236,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A toy toilet blocked by a padlock.",
+      "reason": "Locked toilet implies denied access rather than the term; no physiological blockage or management teaching substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "cardiovascular depression",
+      "printed_page": 232,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A drooping heart-shaped pump toy beside a sad theatrical mask.",
+      "reason": "Heart/sadness graphic could imply mood or heartbreak; no useful category bridge selected and no mechanistic weakening depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "GI irritation",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A detached stomach teaching token beside rough sandpaper.",
+      "reason": "Sandpaper could imply abrasion or a literal injury rather than irritation; no clean neutral word association selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "migraine",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A large grain of rice beside a toy head.",
+      "reason": "Grain is a fragment but the head prop makes an awkward composition, not a useful selected candidate.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "renal colic",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A kidney teaching token beside a collar.",
+      "reason": "Collar/colic bridge is weak and a kidney model alone does not supply the phrase; no symptom or mechanism invented.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "radicular low back pain",
+      "printed_page": 234,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A radish beside a toy backrest and pain mask.",
+      "reason": "Three-part prop assembly does not provide an economical radicular bridge in this pass; no anatomy or cause claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "biofeedback",
+      "printed_page": 235,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A leaf beside a toy feeding bowl and a return arrow.",
+      "reason": "Three loosely related props feel coached; no simple method-name cue selected or physiologic process taught.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "35",
+      "chapter_title": "Acute Pain Management",
+      "term": "transcutaneous electrical nerve stimulation",
+      "printed_page": 236,
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "attempted_cue": "A detached toy control box with loose electrode pads.",
+      "reason": "Plain control box/pads could represent many devices; no recognizable specific category chosen without labels or a procedure.",
+      "retained_in_other_chapters": []
     }
   ],
   "resolved_holds": [
@@ -2886,6 +3745,78 @@
       "report": "docs/chapter-32-cue-audit.md",
       "current_decision": "retain_candidate",
       "resolution": "Local Chapter32 hold reconsidered during main-author challenge; retained untested alternative. Older banks/workshop decisions are unchanged and remain available for revisit."
+    },
+    {
+      "chapter_id": "34",
+      "term": "pericardiocentesis",
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local Chapter34 initial hold reconsidered using main's pear/cardigan suggestion; retain untested broad pericardial root, not a full procedure-name discriminator."
+    },
+    {
+      "chapter_id": "34",
+      "term": "pericardial effusion",
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local Chapter34 hold reconsidered as reuse of retained pear/cardigan root; effusion remains contextual. Chapter31 hold is unchanged/open, not globally resolved."
+    },
+    {
+      "chapter_id": "34",
+      "term": "hemodynamics",
+      "source_record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local hold reconsidered after main's pump suggestion; reuse actual retained Chapter12 pump ingredient at broad taught name-family scope. No change to Chapter32."
+    },
+    {
+      "chapter_id": "35",
+      "term": "mu",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local35 hold changed to retain_candidate after main challenge under chapter2 calibration."
+    },
+    {
+      "chapter_id": "35",
+      "term": "QT interval",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local35 hold changed to reuse_candidate after main identified existing retained cue/tea family."
+    },
+    {
+      "chapter_id": "35",
+      "term": "agitation",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local35 hold changed to reuse_candidate after main found retained29B agitator family."
+    },
+    {
+      "chapter_id": "35",
+      "term": "tramadol",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local35 retains tram/doll as a taught partial-name candidate; older workshop hold is not globally resolved."
+    },
+    {
+      "chapter_id": "35",
+      "term": "fentanyl",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local35 selects fan alone as a partial-name candidate; older rejected fan/tunnel and held29A remain unchanged."
+    },
+    {
+      "chapter_id": "35",
+      "term": "naproxen",
+      "source_record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local35 selects new nap/rock association; older gnat/oxen rejection remains unchanged."
     }
   ]
 }

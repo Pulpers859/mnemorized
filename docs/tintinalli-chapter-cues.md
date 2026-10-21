@@ -274,9 +274,41 @@ Separate register: 239 active hold occurrences, 191 distinct terms. The exporter
 now preserves explicit `attempted_cue` fields instead of displaying no attempt.
 Canonical catalog remains unchanged and all chapter candidates are untested.
 
+## Chapters 33-35: Pacing, Pericardiocentesis And Pain Vocabulary
+
+| Chapter | Tried Terms | New Candidates | Reuses | Holds |
+|---|---:|---:|---:|---:|
+| [33 Cardiac Pacing and Implanted Defibrillation](chapter-33-cue-audit.md) | 131 | 38 | 75 | 18 |
+| [34 Pericardiocentesis](chapter-34-cue-audit.md) | 84 | 21 | 53 | 10 |
+| [35 Acute Pain Management](chapter-35-cue-audit.md) | 125 | 40 | 37 | 48 |
+
+340 term trials: 99 newly recorded candidate compositions, 165 reuses and
+76 holds. 421 keyword term/page mappings include meaningful emphasized names,
+table labels, figure labels and explicit aliases, not extra discoveries. Three
+AI drafting lanes plus main independent source/cue integration. No exhaustive
+vocabulary, source-entailment, clinical, credentialed-human or recall claim.
+
+Main verified all recorded term/page and keyword locations, including raster-only
+ECG labels on PDF78/79. Mixed-column boundaries exclude adjacent32/36 material.
+34 includes PDF86;35 starts the analgesia/anesthesia PDF with verified new hash
+and printed offset228. No annotations found; printed typography and rasters
+were checked separately. Drug-seeking hyphen join is explicitly normalized.
+
+Examples: pear wearing cardigan for the pericardial opening-name family; a cool
+potato tuber for tuberculosis; tram carrying doll for tramadol; cow/moo for mu.
+These learned partial-name candidates are not suffix discrimination, etymology,
+chemical origin, medication effects or measured pronunciation/recall success.
+Kettle-family drugs need qualifiers when co-occurring in an actual lesson.
+
+Topic-only cue reuses were corrected, and older esophagus, sick-sinus, pad, QT,
+agitation and rigidity families were reused rather than counted again. Nine local
+decision histories preserve earlier attempts; older holds/rejections are not
+silently closed. Separate register:315 active occurrences/259 distinct terms,
+33 decision-history records. Canonical catalog remains76, unchanged.
+
 ## Next
 
-**Chapter 33, Cardiac Pacing and Implanted Defibrillation**, is next, not started
+**Chapter 36, Local and Regional Anesthesia**, is next, not started
 for cue review. Do not move
 ahead until the next requested chapter run. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial

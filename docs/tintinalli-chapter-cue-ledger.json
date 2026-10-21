@@ -580,6 +580,48 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 113
+    },
+    {
+      "chapter_id": "33",
+      "title": "Cardiac Pacing and Implanted Defibrillation",
+      "record": "docs/chapter-33-cue-audit.json",
+      "report": "docs/chapter-33-cue-audit.md",
+      "selected_terms": 131,
+      "new_candidates": 38,
+      "reused_candidates": 75,
+      "holds": 18,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 156
+    },
+    {
+      "chapter_id": "34",
+      "title": "Pericardiocentesis",
+      "record": "docs/chapter-34-cue-audit.json",
+      "report": "docs/chapter-34-cue-audit.md",
+      "selected_terms": 84,
+      "new_candidates": 21,
+      "reused_candidates": 53,
+      "holds": 10,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 100
+    },
+    {
+      "chapter_id": "35",
+      "title": "Acute Pain Management",
+      "record": "docs/chapter-35-cue-audit.json",
+      "report": "docs/chapter-35-cue-audit.md",
+      "selected_terms": 125,
+      "new_candidates": 40,
+      "reused_candidates": 37,
+      "holds": 48,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 165
     }
   ],
   "hold_register": {
@@ -589,8 +631,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "33",
-    "title": "Cardiac Pacing and Implanted Defibrillation",
+    "chapter_id": "36",
+    "title": "Local and Regional Anesthesia",
     "status": "not_started_for_cue_review"
   },
   "spend": {

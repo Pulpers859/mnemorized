@@ -1,0 +1,1389 @@
+{
+  "main_integration_review": {"date": "2026-10-21", "source_and_conceptual_review": true, "scope": "Main independently checked every recorded term/page, keyword location, cue and resolved reuse reference within actual Chapter35 regions. New PDF hash and printed offset228 verified; entire right-column Chapter36 on PDF8 excluded. Author-pending notes below are historical and superseded. AI review only, not clinical, credentialed-human, recall or rendering validation.", "highlight_annotations_found": 0, "normalizations": "Table35-1 drug- / seeking behavior is joined with conventional hyphen preserved; not invented wording or a raw contiguous extraction. Explicit lexical aliases and shortened family fragments are not clinical equivalence. Ket-family collisions and nickname/category limitations require taught context and later testing.", "counts": {"selected_terms": 125, "new_candidates": 40, "reused_candidates": 37, "holds": 48}, "keyword_items": 165},
+  "schema_version": 1,
+  "chapter_id": "35",
+  "title": "Acute Pain Management",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Analgesia_Anesthesia_Procedural Sedation.pdf",
+    "sha256": "dc0444f631bf8c0dc22c3a6d67cfce06f8e3945c6e019bb0a7b892c4b1e841fb",
+    "pdf_pages": [1,2,3,4,5,6,7,8],
+    "printed_pages": [229,230,231,232,233,234,235,236],
+    "printed_page_offset": 228,
+    "boundary": "Actual Chapter35 title PDF1 left y139.6; right-column continuation begins y141.4. All chapter content on PDF1-7, including full-width tables. PDF8 ENTIRE LEFT column through REFERENCES belongs35; ENTIRE RIGHT column from actual Chapter36 title y37.2 excluded. Running headers and section opener are not chapter vocabulary.",
+    "verification": "Author computed matching SHA256, inspected all eight rendered pages, extracted font spans/coordinates and enumerated annotations (zero). Bounded author screen complete; main independent integration review and shared validation remain main-owned."
+  },
+  "scope": "Bounded offline vocabulary screening only. No clinical teaching, medical narration, production prompt, Forge, provider or mnemonic-image work.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {"selected_terms": 125, "new_candidates": 40, "reused_candidates": 37, "holds": 48},
+  "entries": [
+    {"term":"Acute Pain Management","pdf_page":1,"page":229,"source_match":"chapter_title","kind":"learned_name_or_category","cue":"A familiar pain-expression theatrical mask.","cue_scope":"Pain vocabulary only; acute and management not separately encoded","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#analgesia","reason":"Reuse existing broad pain ingredient without implying relief, mechanism or treatment.","tested":false},
+    {"term":"pain scales","pdf_page":1,"page":229,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A familiar pain-expression theatrical mask beside a plain balance scale.","cue_scope":"Broad pain measurement vocabulary","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale","reason":"Reuse scale ingredient only; remove rich gentleman, purse and sedation qualifiers. Pain mask follows existing analgesia family; not a specific instrument.","tested":false},
+    {"term":"hypersensitivity","pdf_page":3,"page":231,"source_match":"body","kind":"action","cue":"Oversized alarm bell visibly ringing after a feather barely touches its trigger.","cue_scope":"Broad hypersensitivity word association","decision":"reuse_candidate","prior":"docs/chapter-14-cue-audit.json#hypersensitivity","reason":"Existing retained family; no allergy mechanism or clinical consequence encoded.","tested":false},
+    {"term":"ketamine","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"partial_name_wordplay","cue":"A familiar kettle standing alone.","cue_scope":"Ketamine partial-name recall","decision":"reuse_candidate","prior":"docs/chapter-29A-cue-audit.json#Ketamine","reason":"Existing retained kettle family; historical workshop sound rejection remains historical.","tested":false},
+    {"term":"lidocaine","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"partial_name_wordplay","cue":"An ordinary container lid balanced on a familiar walking cane.","cue_scope":"Lidocaine partial-name recall","decision":"reuse_candidate","prior":"docs/chapter-29A-cue-audit.json#lidocaine","reason":"Reuse retained29A candidate, not held chapter2/19/24/25 or rejected workshop target. Earlier decisions remain intact.","tested":false},
+    {"term":"renal failure","pdf_page":7,"page":235,"source_match":"body","kind":"learned_name_or_category","cue":"Kidney-shaped factory with conspicuously broken gears.","cue_scope":"Renal failure vocabulary","decision":"reuse_candidate","prior":"docs/chapter-5-cue-audit.json#renal failure","reason":"Existing retained family; no organ function, dosing or treatment assertion.","tested":false},
+    {"term":"self-reporting","pdf_page":1,"page":229,"source_match":"body","kind":"action","cue":"A toy character pointing to itself while holding a reporter microphone.","cue_scope":"Self-report action only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar self plus reporting action; no assessment standard or diagnostic accuracy claim.","tested":false},
+    {"term":"opioid receptors","pdf_page":1,"page":229,"source_match":"body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A poppy beside a toy satellite receiver.","cue_scope":"Attempted opioid/receptor word association","decision":"hold","prior":"new_chapter_record","reason":"Receiver is plausible for receptor but the poppy ingredient is not yet an established opioid-family token in the checked banks; this combined proposal remains too weakly specified for this bounded pass.","tested":false},
+    {"term":"delta","pdf_page":1,"page":229,"source_match":"body","kind":"learned_name_or_category","cue":"A familiar branching river-delta model.","cue_scope":"Delta name only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar alternative meaning accepted without encoding a receptor function or subtype.","tested":false},
+    {"term":"kappa","pdf_page":1,"page":229,"source_match":"body","kind":"partial_name_wordplay","cue":"A familiar baseball cap.","cue_scope":"Kappa partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Cap/kappa fragment allowed; no every-syllable or uniqueness requirement.","tested":false},
+    {"term":"mu","pdf_page":1,"page":229,"source_match":"body","kind":"partial_name_wordplay","cue":"A familiar cow figurine.","attempted_cue":"A toy cow with an open mouth.","cue_scope":"Learned moo/mu near-sound association only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Main challenge accepted: familiar cow/moo association is useful without audio or letters, on the same broad partial-name standard as delta and kappa. No full phonetic recovery, subtype or receptor function claim.","tested":false},
+    {"term":"pain assessment","pdf_page":1,"page":229,"source_match":"body","kind":"learned_name_or_category","cue":"A familiar pain-expression mask beside a magnifying glass.","cue_scope":"Broad pain evaluation category","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#supported-inspection","reason":"Reuse inspection ingredient only, with existing pain mask family; not an assessment procedure or accuracy claim.","tested":false},
+    {"term":"addiction","pdf_page":2,"page":230,"source_match":"table_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A toy character magnetically stuck to a medicine cabinet.","cue_scope":"Attempted broad addiction vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Attachment alone does not express addiction well and risks conflating the separately headed dependence term; no stigmatizing character selected.","tested":false},
+    {"term":"diminished cognitive function","pdf_page":2,"page":230,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A dim lamp inside a thought-cloud token.","cue_scope":"Attempted cognition vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Dim lighting plus thought is vague and may suggest intelligence or consciousness instead; no candidate chosen.","tested":false},
+    {"term":"drug-seeking behavior","pdf_page":2,"page":230,"source_match":"table","kind":"action","cue":null,"attempted_cue":"A toy detective inspecting an anonymous pill token.","cue_scope":"Attempted phrase recall only","decision":"hold","prior":"new_chapter_record","reason":"Search action is drawable but insufficiently distinguishes this potentially stigmatizing phrase from routine medication checking; no clinical inference encoded.","tested":false},
+    {"term":"adjective rating scale","pdf_page":2,"page":230,"source_match":"table","kind":"learned_name_or_category","cue":"A plain balance scale beside a speech balloon containing a sequence of expressive theater masks.","cue_scope":"Descriptor-based scale family only","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale","reason":"Reuse scale ingredient only; remove rich gentleman/purse and sedation qualifiers. Added descriptive-mask ingredient is not a depiction of the source instrument or scoring instructions.","tested":false},
+    {"term":"visual analog scale","pdf_page":2,"page":230,"source_match":"table_and_body","kind":"learned_name_or_category","cue":"A plain unnumbered continuous slider bar.","cue_scope":"Familiar continuous visual scale category","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar tool form allowed; no source numeric endpoints, score or pain threshold encoded.","tested":false},
+    {"term":"numeric rating scale","pdf_page":2,"page":230,"source_match":"table","kind":"learned_name_or_category","cue":"A plain balance scale beside loose toy numeral shapes.","cue_scope":"Numeric-scale word family only","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale","reason":"Reuse scale ingredient only, remove rich gentleman/purse and sedation. No actual scale values or instructions. Numeral shapes are vocabulary props, not clinical numbers.","tested":false},
+    {"term":"5-Point global scale","pdf_page":2,"page":230,"source_match":"table","kind":"learned_name_or_category","cue":"A plain balance scale beside a familiar globe.","cue_scope":"Global-scale family; point count not encoded","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale","reason":"Reuse scale ingredient only, remove rich gentleman/purse and sedation; familiar global/globe association, not a five-point discriminator.","tested":false},
+    {"term":"verbal quantitative scale","pdf_page":2,"page":230,"source_match":"table","kind":"learned_name_or_category","cue":"A plain balance scale beside a speaking toy head.","cue_scope":"Verbal-scale family; quantitative qualifier not separately encoded","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#Richmond Agitation-Sedation Scale","reason":"Reuse scale ingredient only, remove rich gentleman/purse and sedation; familiar speaking association, not a specific assessment instrument.","tested":false},
+    {"term":"tiered approach","pdf_page":2,"page":230,"source_match":"body","kind":"learned_name_or_category","cue":"A toy staircase with visibly tiered platforms.","cue_scope":"Tiered vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Literal familiar tiers; no treatment sequence or endorsement depicted.","tested":false},
+    {"term":"opioid analgesics","pdf_page":3,"page":231,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A poppy beside the existing pain-mask-and-mute token.","cue_scope":"Attempted opioid category","decision":"hold","prior":"new_chapter_record","reason":"Pain relief ingredient exists but adding a poppy was not selected as an established opioid-class bridge; no claim that all class members share an origin.","tested":false},
+    {"term":"codeine","pdf_page":3,"page":231,"source_match":"body","kind":"partial_name_wordplay","cue":"A familiar combination padlock with a large toy code wheel.","cue_scope":"Code/codeine partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar code association allowed, not the full drug name or a dosing cue.","tested":false},
+    {"term":"tramadol","pdf_page":3,"page":231,"source_match":"body","kind":"partial_name_wordplay","cue":"A toy tram carrying a doll.","cue_scope":"Tram/doll name association","decision":"retain_candidate","prior":"new_chapter_record; docs/sound-bridge-workshop.json#tramadol held historical attempt","reason":"Reconsidered under chapter2 calibration: familiar tram/doll fragments are enough for a taught vocabulary candidate. Naming and pronunciation remain untested; historical hold preserved.","tested":false},
+    {"term":"meperidine","pdf_page":3,"page":231,"source_match":"body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy diner pointing to itself beside a pear.","cue_scope":"Attempted me/pear/dine bridge","decision":"hold","prior":"new_chapter_record","reason":"Three weakly linked actions/objects leave a cumbersome scene; no economical candidate selected, rather than requiring full-syllable matching.","tested":false},
+    {"term":"fentanyl","pdf_page":3,"page":231,"source_match":"body","kind":"partial_name_wordplay","cue":"A familiar electric fan standing alone.","cue_scope":"Fan/fen partial-name family only","decision":"retain_candidate","prior":"new_chapter_record; docs/chapter-29A-cue-audit.json#fentanyl and workshop historical holds/rejection","reason":"New partial-name attempt removes tunnel and does not claim whole-name recovery. Earlier fan+tunnel rejection is not a ban on a taught fan fragment; no effects or administration encoded.","tested":false},
+    {"term":"buprenorphine","pdf_page":3,"page":231,"source_match":"body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy buoy beside a prune.","cue_scope":"Attempted buoy/prune name fragment","decision":"hold","prior":"new_chapter_record","reason":"Objects make a fragment but no convincing easy bridge to this name selected; not a denial that incomplete cues can work.","tested":false},
+    {"term":"opioid agonists-antagonists","pdf_page":3,"page":231,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"Two toy actors pulling the same prop in opposite directions beside a poppy.","cue_scope":"Attempted compound category vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Opposition is visible but neither pharmacologic category nor opioid qualifier has a settled family here; reject mechanism-looking tug-of-war imagery for this vocabulary-only pass.","tested":false},
+    {"term":"morphine","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A single toy visibly half car and half robot, with wheels and robot limbs both clearly present.","cue_scope":"Morph/morphine partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar static morphing-toy category can cue the name fragment; no trademarked character, temporal transition, drug effect or transformation claim.","tested":false},
+    {"term":"hydromorphone","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar telephone with a conspicuous water-droplet ornament.","cue_scope":"Hydro/phone partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Concrete hydro and phone ingredients accepted; middle sound material not claimed represented.","tested":false},
+    {"term":"oxycodone","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy ox beside the existing code-wheel padlock.","cue_scope":"Ox/code partial-name recall","decision":"reuse_candidate","prior":"docs/chapter-35-cue-audit.json#codeine","reason":"Reuse code ingredient with ox qualifier; related code-name family, not a new standalone code discovery or a full-name discriminator.","tested":false},
+    {"term":"hydrocodone","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A water-droplet ornament beside the existing code-wheel padlock.","cue_scope":"Hydro/code partial-name recall","decision":"reuse_candidate","prior":"docs/chapter-35-cue-audit.json#codeine","reason":"Reuse code ingredient; hydrocodone appears both in a combination row and alone in Table35-5. No formulation relationship inferred from the cue.","tested":false},
+    {"term":"phenanthrene","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A fan beside a toy throne.","cue_scope":"Attempted class-name fragment","decision":"hold","prior":"new_chapter_record","reason":"Fan/throne fragment is possible but no useful learned family selected; fan already proposed for fentanyl, so stacking another obscure sound composition adds little.","tested":false},
+    {"term":"phenylpiperidine","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar toy piper with a long visible pipe.","cue_scope":"Piper partial-name family only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar partial-name character allowed without encoding a structural class or every syllable.","tested":false},
+    {"term":"histamine","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy historian holding a clock beside a mine entrance.","cue_scope":"Attempted hist/mine name bridge","decision":"hold","prior":"docs/chapter-14-cue-audit.json#histamine","reason":"Historian not visually established by clock; mine/cave naming and prop sprawl remain weak. Earlier hold remains open.","tested":false},
+    {"term":"hypotension","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"Vessel model under a pressure gauge whose needle points low.","cue_scope":"Low-pressure vocabulary","decision":"reuse_candidate","prior":"docs/chapter-20-cue-audit.json#hypotension","reason":"Existing family; unnumbered conceptual prop only, not a physiologic measurement.","tested":false},
+    {"term":"nausea","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"A familiar queasy-expression theatrical mask.","cue_scope":"Broad queasiness vocabulary","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar expression category, not clinical recognition or cause.","tested":false},
+    {"term":"emesis","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"A toy bucket with a familiar cartoon splatter token.","cue_scope":"Broad vomiting vocabulary","decision":"reuse_candidate","prior":"docs/chapter-29A-cue-audit.json#vomitus","reason":"Reuse retained vomiting family; no blood or mechanism added.","tested":false},
+    {"term":"chest wall rigidity","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"A treasure chest beside a brick wall.","cue_scope":"Chest-wall ingredient only; rigidity not separately encoded","decision":"reuse_candidate","prior":"docs/chapter-28-cue-audit.json#chest wall","reason":"Main reuse correction: same family as29A chest wall rigidity; direct retained28 root. No anatomy relationship or drug-effect claim.","tested":false},
+    {"term":"breakthrough pain","pdf_page":4,"page":232,"source_match":"table","kind":"action","cue":"A familiar pain-expression mask breaking through a paper screen.","cue_scope":"Breakthrough/pain lexical association","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#analgesia","reason":"Reuse pain-mask ingredient only, remove mute symbol; no clinical timing or cause.","tested":false},
+    {"term":"monoamine oxidase inhibitor","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A monocle beside an ox and a padlock.","cue_scope":"Attempted mono/ox/inhibition fragments","decision":"hold","prior":"new_chapter_record","reason":"Three disconnected props obscure the useful class name; not selected as an economical vocabulary aid.","tested":false},
+    {"term":"serotonin syndrome","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A cereal bowl beside a toy tin.","cue_scope":"Attempted sero/tin name fragments","decision":"hold","prior":"new_chapter_record","reason":"Cereal/tin makes an awkward name fragment and does not provide a helpful syndrome hook in this pass.","tested":false},
+    {"term":"neurotoxicity","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"A detached nerve-wire teaching token beside a familiar skull-and-crossbones token.","cue_scope":"Nerve/toxicity vocabulary only","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#toxicity-skull","reason":"Reuse toxicity ingredient plus existing nerve-wire category, not a depicted toxic process or effect.","tested":false},
+    {"term":"codeine-6-glucuronide","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A code-wheel padlock beside a glue bottle.","cue_scope":"Attempted metabolite-name recall","decision":"hold","prior":"new_chapter_record","reason":"Code/glue ingredients leave an unwieldy name and omitted numeric identity; no useful specific-metabolite candidate selected and no numeric fact encoded.","tested":false},
+    {"term":"pharmacokinetics","pdf_page":4,"page":232,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy farmer riding a kinetic wind-up toy.","cue_scope":"Farmer/kinetic partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar name-fragment association; not a drug concentration curve or physiological model.","tested":false},
+    {"term":"immediate release","pdf_page":4,"page":232,"source_match":"table","kind":"action","cue":"An opened toy latch releasing a loose ball.","cue_scope":"Release-form vocabulary only; timing not encoded","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar releasing action, no formulation properties, time or instructions.","tested":false},
+    {"term":"morphine milligram equivalents","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A morphing toy beside balanced identical weights.","cue_scope":"Attempted equivalence vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Generic balance cannot establish this specific name without an explanation; avoid turning table numbers into a conversion aid.","tested":false},
+    {"term":"withdrawal symptoms","pdf_page":5,"page":233,"source_match":"body","kind":"action","cue":"A detached toy hand withdrawing a blank card from a slot.","cue_scope":"Withdraw word association; symptoms not encoded","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar literal withdrawal action, not a depiction of a medical syndrome or instruction to stop a drug.","tested":false},
+    {"term":"acetaminophen","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"An ace playing card beside a tiny telephone.","cue_scope":"Attempted ace/tiny/phone name fragment","decision":"hold","prior":"new_chapter_record","reason":"Multi-prop sound assembly is strained and telephone does not make the name easier here; no unverified brand-package substitute selected.","tested":false},
+    {"term":"aspirin","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A familiar spiral spring.","cue_scope":"Attempted spir name fragment","decision":"hold","prior":"docs/sound-bridge-workshop.json#aspirin","reason":"New spring fragment avoids species-specific asp naming but did not yield a convincing simple bridge. Older asp/ring rejection remains intact.","tested":false},
+    {"term":"NSAIDs","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy knight holding a first-aid box.","cue_scope":"Attempted N/aids acronym association","decision":"hold","prior":"new_chapter_record","reason":"Knight plus aid box feels like a new sentence to learn instead of a useful class hook; no numerical or clinical encoding.","tested":false},
+    {"term":"nitrous oxide","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A familiar laughing theatrical mask.","cue_scope":"Culturally learned laughing-gas name association only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar category nickname is allowed, not a claim of guaranteed laughter, efficacy or effect.","tested":false},
+    {"term":"antidepressants","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A sad theater mask with a large crossed-circle token.","cue_scope":"Attempted anti/depression vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Crossing out sadness too readily reads as guaranteed emotional relief; no economical neutral class-name cue selected.","tested":false},
+    {"term":"anticonvulsants","pdf_page":5,"page":233,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A toy claw held still beneath a crossed-circle token.","cue_scope":"Attempted anti/seizing word association","decision":"hold","prior":"docs/chapter-29A-cue-audit.json#anticonvulsant","reason":"Claw could evoke retained seizure wordplay but a crossed/still claw is ambiguous about what is being negated. Historical hold retained; no effect claim.","tested":false},
+    {"term":"ondansetron","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy dancer sitting on a throne.","cue_scope":"Attempted on/dance/throne bridge","decision":"hold","prior":"new_chapter_record","reason":"Action/position and throne naming create a strained assembly; no economical name candidate selected.","tested":false},
+    {"term":"prochlorperazine","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A professional-looking toy painter beside a chlorine-pool float.","cue_scope":"Attempted pro/chlor fragments","decision":"hold","prior":"new_chapter_record","reason":"Professional identity and chlorine are not visible from those props; no useful supported family chosen.","tested":false},
+    {"term":"promethazine","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A familiar Prometheus-style torch-bearing toy.","cue_scope":"Attempted Prometh name fragment","decision":"hold","prior":"new_chapter_record","reason":"Torch-bearer does not identify that named figure without prior legend knowledge; no alternate economical cue selected.","tested":false},
+    {"term":"metoclopramide","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar metronome standing alone.","cue_scope":"Meto partial-name recall only","decision":"retain_candidate","prior":"new_chapter_record","reason":"A single familiar meto/metronome fragment is permissible; no full-name, class or drug-effect discrimination claimed.","tested":false},
+    {"term":"QT interval","pdf_page":5,"page":233,"source_match":"table","kind":"letter_name_sound_bridge","cue":"An ordinary pool cue beside a cup of tea.","attempted_cue":"A queue of toy characters beside a teacup.","cue_scope":"Q/T letter-name recall only","decision":"reuse_candidate","prior":"docs/chapter-11-cue-audit.json#long QT syndrome","reason":"Main reuse correction: existing cue/tea family also used26. Remove long qualifier for unqualified source headword; no interval measurement, ECG or syndrome assertion.","tested":false},
+    {"term":"extrapyramidal reactions","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy pyramid with a conspicuous extra miniature pyramid beside it.","cue_scope":"Extra/pyramid partial-name vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar lexical props are useful without a movement disorder depiction or an anatomy claim.","tested":false},
+    {"term":"butorphanol","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A butter dish beside a lone toy character.","cue_scope":"Attempted butter/orphan fragments","decision":"hold","prior":"new_chapter_record","reason":"Lone character does not establish orphan; butter fragment alone was not selected as useful for this name.","tested":false},
+    {"term":"dezocine","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy desert diorama beside a cinema projector.","cue_scope":"Attempted dez/cine fragments","decision":"hold","prior":"new_chapter_record","reason":"Desert/cinema is a cumbersome bridge with weak sound relation; source footnote status is not part of the cue.","tested":false},
+    {"term":"nalbuphine","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A large nail beside a toy buoy.","cue_scope":"Attempted nal/bu name fragments","decision":"hold","prior":"new_chapter_record","reason":"Nail/buoy does not produce a simple helpful name bridge in this pass; not held merely for missing syllables.","tested":false},
+    {"term":"pentazocine","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar pentagonal toy block.","cue_scope":"Penta name fragment only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar five-sided shape is a lexical fragment, not a dose, number of drugs or mechanism. Polygon naming needs eventual testing.","tested":false},
+    {"term":"morphinan","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":"A single toy visibly half car and half robot, with wheels and robot limbs both clearly present.","cue_scope":"Morph name family only","decision":"reuse_candidate","prior":"docs/chapter-35-cue-audit.json#morphine","reason":"Reuse morph fragment; different suffix not represented and no chemical equivalence asserted.","tested":false},
+    {"term":"benzomorphan","pdf_page":5,"page":233,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A park bench beside a morphing toy.","cue_scope":"Attempted benzo/morph fragments","decision":"hold","prior":"new_chapter_record","reason":"Bench is a weak benzo fragment; morph is available but did not rescue this class-name composition.","tested":false},
+    {"term":"cyclic antidepressants","pdf_page":6,"page":234,"source_match":"body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A bicycle beside a crossed-out sad mask.","cue_scope":"Attempted cyclic/class vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Cycle is familiar but the class ingredient remains unselected and could imply guaranteed emotional relief; no treatment claim accepted.","tested":false},
+    {"term":"serotonin-norepinephrine reuptake inhibitors","pdf_page":6,"page":234,"source_match":"body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A cereal bowl beside a north-pointing toy compass and an upward arrow blocked by a gate.","cue_scope":"Attempted multi-part class name","decision":"hold","prior":"new_chapter_record","reason":"Too many poorly linked fragments and the uptake graphic looks mechanistic; no economical vocabulary-only association selected.","tested":false},
+    {"term":"topical medications","pdf_page":6,"page":234,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A detached gel tube beside a plain toy patch.","cue_scope":"Broad familiar topical-product category","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar product forms accepted, not drug identity, site, depth, dose or application instructions.","tested":false},
+    {"term":"ibuprofen","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"An eyeball-shaped toy beside a buffet table.","cue_scope":"Attempted eye/bu name fragment","decision":"hold","prior":"new_chapter_record","reason":"Buffet fragment adds little to the name and a label-free pill would be anonymous; no candidate selected.","tested":false},
+    {"term":"naproxen","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy figure taking a nap on a large rock.","cue_scope":"Nap/rock partial-name recall","decision":"retain_candidate","prior":"new_chapter_record; docs/sound-bridge-workshop.json#naproxen historical rejection","reason":"Fresh familiar nap/rock association, not the rejected gnat/oxen assembly. Does not encode full pronunciation or drug effects.","tested":false},
+    {"term":"indomethacin","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar architectural dome.","cue_scope":"Indo/dome partial-name recall","decision":"retain_candidate","prior":"new_chapter_record","reason":"Single familiar dome fragment is a taught name ingredient, not full phonetics or pharmacology.","tested":false},
+    {"term":"ketorolac","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A kettle beside a familiar padlock.","cue_scope":"Ket/lock partial-name recall","decision":"reuse_candidate","prior":"docs/chapter-29A-cue-audit.json#Ketamine","reason":"Reuse kettle fragment with lock qualifier; ketorolac and ketamine not claimed interchangeable or uniquely distinguishable from the shared fragment alone.","tested":false},
+    {"term":"amitriptyline","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy traveler tripping over a loose cord beside a suitcase.","cue_scope":"Trip partial-name recall only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar trip action allowed, not a drug adverse-effect or fall-risk claim.","tested":false},
+    {"term":"nortriptyline","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy traveler tripping over a loose cord beside a north-pointing toy compass.","cue_scope":"Nor/trip name family only","decision":"reuse_candidate","prior":"docs/chapter-35-cue-audit.json#amitriptyline","reason":"Reuse trip ingredient, remove suitcase and add north fragment; suffix not encoded and no drug relationship asserted.","tested":false},
+    {"term":"carbamazepine","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy car inside a simple maze.","cue_scope":"Car/maze name fragment","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar objects produce an economical taught fragment; not full-name or drug-action encoding.","tested":false},
+    {"term":"oxcarbazepine","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A toy ox beside a toy car inside a simple maze.","cue_scope":"Ox/car/maze family fragment","decision":"reuse_candidate","prior":"docs/chapter-35-cue-audit.json#carbamazepine","reason":"Reuse existing car/maze family with ox qualifier, not another discovery or clinical equivalence claim.","tested":false},
+    {"term":"duloxetine","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"Two toy locks beside a tin.","cue_scope":"Attempted duo/locks/tin fragments","decision":"hold","prior":"new_chapter_record","reason":"Duo/locks/tin takes a coached multi-part reading; no useful simple candidate chosen.","tested":false},
+    {"term":"gabapentin","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar pen standing alone.","cue_scope":"Pen/pentin partial-name recall only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar partial-name ingredient accepted without claiming every syllable or unique medication identity.","tested":false},
+    {"term":"pregabalin","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy character at a party holding a balloon.","cue_scope":"Attempted pre/gala/balloon fragments","decision":"hold","prior":"new_chapter_record","reason":"Neither pre nor gala is visible in a generic party; no economical partial-name bridge selected.","tested":false},
+    {"term":"neuropathic pain","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"A detached nerve-wire teaching token beside the familiar pain-expression mask.","cue_scope":"Nerve/pain word family only","decision":"reuse_candidate","prior":"docs/chapter-8-cue-audit.json#nerve agents","reason":"Reuse nerve-wire ingredient only, remove secret agent; pain mask follows existing29B family. Not an anatomical lesion or mechanism.","tested":false},
+    {"term":"trigeminal neuralgia","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar triangle-shaped gemstone beside the pain-expression mask.","cue_scope":"Tri/gem/pain name fragments","decision":"retain_candidate","prior":"new_chapter_record","reason":"One triangular gem plus existing pain ingredient is a taught partial-name aid, not nerve anatomy or a syndrome depiction.","tested":false},
+    {"term":"diabetic neuropathic pain","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"A detached nerve-wire teaching token beside the familiar pain-expression mask.","cue_scope":"Broad nerve/pain family; diabetic qualifier omitted","decision":"reuse_candidate","prior":"docs/chapter-8-cue-audit.json#nerve agents","reason":"Reuse nerve-wire ingredient only, remove secret agent. Do not count qualifier variant as a new discovery; no diabetic cause or mechanism encoded.","tested":false},
+    {"term":"postherpetic neuralgia","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A fence post beside a toy pet and pain mask.","cue_scope":"Attempted post/pet/pain fragments","decision":"hold","prior":"new_chapter_record","reason":"The pet fragment is too loosely related and adds prop sprawl; no economical specific name association selected.","tested":false},
+    {"term":"necrosis","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A wilted toy flower.","cue_scope":"Attempted broad necrosis vocabulary","decision":"hold","prior":"docs/chapter-31-cue-audit.json#tissue necrosis","reason":"Wilted flower suggests temporary drooping rather than the term; historical tissue-necrosis hold remains open, no medical process inferred.","tested":false},
+    {"term":"platelet dysfunction","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar dinner plate with a broken toy crank attached.","cue_scope":"Plate/dysfunction word association only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Plate plus nonworking crank is a learned lexical composition, not an assertion about platelet shape or physiology.","tested":false},
+    {"term":"tinnitus","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar tin can standing alone.","cue_scope":"Tin name fragment only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Single familiar partial-name prop; no sound or symptom mechanism asserted.","tested":false},
+    {"term":"metabolic acidosis","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"Intact generic factory with a recognizable conveyor belt beside a conspicuous lemon.","cue_scope":"Existing metabolic/acid word family","decision":"reuse_candidate","prior":"docs/chapter-15-cue-audit.json#metabolic acidosis","reason":"Reuse exact retained family; no chemical mechanism, laboratory value or causal connection.","tested":false},
+    {"term":"bronchospasm","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A bronco squeezing a branching air hose visibly narrow.","cue_scope":"Existing broncho/squeeze word family","decision":"reuse_candidate","prior":"docs/chapter-2-cue-audit.json#bronchospasm","reason":"Reuse exact retained family; no source drug effect or airway procedure encoded.","tested":false},
+    {"term":"dystonic reactions","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy disc beside a tonic-water bottle.","cue_scope":"Attempted dys/tonic name fragment","decision":"hold","prior":"new_chapter_record","reason":"Bottle needs an unverifiable contents label and disc/tonic is not a useful enough bridge; no patient movement or effect depiction.","tested":false},
+    {"term":"laryngospasm","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":"A lariat squeezing a coiled spring.","cue_scope":"Existing lariat/spasm family","decision":"reuse_candidate","prior":"docs/chapter-28-cue-audit.json#laryngospasm","reason":"Reuse exact retained wordplay; no airway mechanism, drug effect or management instruction.","tested":false},
+    {"term":"hallucinations","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A toy character facing a transparent imaginary castle.","cue_scope":"Attempted perception vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Transparent castle may be a real glass model or fantasy rather than the term; no specific memorable vocabulary bridge selected.","tested":false},
+    {"term":"diclofenac","pdf_page":7,"page":235,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy discus beside a flowing stream.","cue_scope":"Attempted dic/flo fragments","decision":"hold","prior":"new_chapter_record","reason":"Two weak fragments make an arbitrary assembly; no useful candidate chosen for this bounded screen.","tested":false},
+    {"term":"ketoprofen","pdf_page":7,"page":235,"source_match":"table","kind":"partial_name_wordplay","cue":"A familiar kettle standing alone.","cue_scope":"Ket partial-name family only","decision":"reuse_candidate","prior":"docs/chapter-29A-cue-audit.json#Ketamine","reason":"Reuse ket/kettle ingredient without extra mine, professional or other weak qualifiers; source context must distinguish names, no drug-class equivalence claim.","tested":false},
+    {"term":"capsaicin","pdf_page":7,"page":235,"source_match":"table_and_body","kind":"learned_name_or_category","cue":"A familiar chili-pepper-shaped toy.","cue_scope":"Learned pepper association only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar learned ingredient association, not a statement of origin, pharmacology, product strength or safe use.","tested":false},
+    {"term":"methyl salicylate","pdf_page":7,"page":235,"source_match":"table_and_body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A toy sail beside a late-running alarm clock.","cue_scope":"Attempted salicylate sound fragment","decision":"hold","prior":"new_chapter_record","reason":"Sail/late is a weak split that does not provide a useful methyl-salicylate family here; no product-brand guess selected.","tested":false},
+    {"term":"the elderly","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A familiar gray-haired older-adult figurine.","cue_scope":"Broad older-adult vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar category cue, not an age threshold, impairment assumption or vulnerability claim.","tested":false},
+    {"term":"dependence","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A toy figure leaning on a support post.","cue_scope":"Attempted dependence vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Physical reliance on a post is too broad to help with the separately named drug-dependence term in this pass; no clinical definition encoded.","tested":false},
+    {"term":"renal and hepatic dysfunction","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"Kidney and liver teaching tokens beside a broken toy crank.","cue_scope":"Attempted combined organ/dysfunction vocabulary","decision":"hold","prior":"docs/chapter-29A-cue-audit.json#hepatorenal dysfunction","reason":"Three props could work after teaching but no clean combined family selected here. Existing renal-failure cue remains available separately; historical combined hold preserved.","tested":false},
+    {"term":"respiratory insufficiency","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"Recognizable bellows with a visibly broken handle.","cue_scope":"Broad respiratory inadequacy family only","decision":"reuse_candidate","prior":"docs/chapter-31-cue-audit.json#respiratory failure","reason":"Reuse broad bellows/failure ingredient; vocabulary-level family reuse does not assert equivalence of clinical diagnoses or severity.","tested":false},
+    {"term":"drug interactions","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"Two anonymous toy pill-shaped characters shaking hands.","cue_scope":"Interaction vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar interacting action, not a claim of beneficial, adverse or synergistic effects.","tested":false},
+    {"term":"nonpharmacologic modalities","pdf_page":7,"page":235,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A crossed-out anonymous pill beside a toolbox.","cue_scope":"Attempted non-drug category vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Generic negation and toolbox do not make a sufficiently helpful single association; specific techniques considered separately without encoding efficacy.","tested":false},
+    {"term":"abdominal pain","pdf_page":8,"page":236,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A detached belly-shaped mannequin token beside a pain-expression mask.","cue_scope":"Abdomen/pain vocabulary only","decision":"reuse_candidate","prior":"docs/chapter-22-cue-audit.json#abdominal pump theory","reason":"Reuse belly ingredient only, remove pump and thought cloud; add existing pain mask, no organ location, cause or treatment.","tested":false},
+    {"term":"trauma","pdf_page":8,"page":236,"source_match":"heading_and_body","kind":"learned_name_or_category","cue":"A visibly dented and cracked study-mannequin token.","cue_scope":"Broad trauma vocabulary","decision":"reuse_candidate","prior":"docs/chapter-24-cue-audit.json#trauma","reason":"Existing retained family; no injury mechanism, assessment or management claim.","tested":false},
+    {"term":"discharge instructions","pdf_page":8,"page":236,"source_match":"body","kind":"learned_name_or_category","cue":"A toy doorway with an outward arrow beside a blank folded instruction leaflet.","cue_scope":"Departure/instructions vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar departure and leaflet category; leaflet has no clinical content, dose or return instruction.","tested":false},
+    {"term":"constipation","pdf_page":8,"page":236,"source_match":"body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A toy toilet blocked by a padlock.","cue_scope":"Attempted constipation vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Locked toilet implies denied access rather than the term; no physiological blockage or management teaching substituted.","tested":false},
+    {"term":"euphoria","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":"An exuberantly smiling theatrical mask surrounded by loose party confetti.","cue_scope":"Broad exuberant-feeling vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar emotional expression, not a drug-effect prediction.","tested":false},
+    {"term":"cardiovascular depression","pdf_page":4,"page":232,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A drooping heart-shaped pump toy beside a sad theatrical mask.","cue_scope":"Attempted combined vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Heart/sadness graphic could imply mood or heartbreak; no useful category bridge selected and no mechanistic weakening depicted.","tested":false},
+    {"term":"sedation","pdf_page":5,"page":233,"source_match":"table","kind":"learned_name_or_category","cue":"Comfortable armchair holding a visibly drowsy toy character.","cue_scope":"Broad sedation vocabulary","decision":"reuse_candidate","prior":"docs/chapter-26-cue-audit.json#sedation","reason":"Reuse retained family; not a drug effect, clinical state assessment or depth scale.","tested":false},
+    {"term":"dizziness","pdf_page":5,"page":233,"source_match":"table","kind":"learned_name_or_category","cue":"A toy head wearing a little crown of circular swirl tokens.","cue_scope":"Familiar dizzy cartoon convention only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Learned cartoon-category association, not a symptom diagnosis or pharmacologic effect.","tested":false},
+    {"term":"headache","pdf_page":5,"page":233,"source_match":"table","kind":"learned_name_or_category","cue":"A detached toy head beside a familiar pain-expression mask.","cue_scope":"Head/pain vocabulary only","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#analgesia","reason":"Reuse pain-mask ingredient only, remove mute symbol; not a pain cause or syndrome distinction.","tested":false},
+    {"term":"GI irritation","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A detached stomach teaching token beside rough sandpaper.","cue_scope":"Attempted GI/irritation vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Sandpaper could imply abrasion or a literal injury rather than irritation; no clean neutral word association selected.","tested":false},
+    {"term":"mucosal bleeding","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"Transparent pipe visibly leaking red liquid into a puddle.","cue_scope":"Broad bleeding family only; mucosal qualifier not encoded","decision":"reuse_candidate","prior":"docs/chapter-26-cue-audit.json#bleeding","reason":"Reuse existing broad family without claiming tissue specificity or a drug effect.","tested":false},
+    {"term":"CNS toxicity","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"A familiar skull-and-crossbones token standing alone.","cue_scope":"Broad toxicity family only; CNS qualifier omitted","decision":"reuse_candidate","prior":"docs/visual-cue-catalog.json#toxicity-skull","reason":"Reuse broad danger/toxicity ingredient; no specific CNS mechanism or effect.","tested":false},
+    {"term":"agitation","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":"A washing-machine agitator with conspicuous motion marks.","attempted_cue":"A toy character shaking a closed box.","cue_scope":"Existing agitating word family only","decision":"reuse_candidate","prior":"docs/chapter-29B-cue-audit.json#agitation","reason":"Main reuse correction: retained washing-machine agitator replaces weak box-shaking attempt. Familiar word-family association only, no patient state or drug effect.","tested":false},
+    {"term":"migraine","pdf_page":6,"page":234,"source_match":"table","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A large grain of rice beside a toy head.","cue_scope":"Attempted grain/head name fragment","decision":"hold","prior":"new_chapter_record","reason":"Grain is a fragment but the head prop makes an awkward composition, not a useful selected candidate.","tested":false},
+    {"term":"renal colic","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A kidney teaching token beside a collar.","cue_scope":"Attempted renal/colic fragments","decision":"hold","prior":"new_chapter_record","reason":"Collar/colic bridge is weak and a kidney model alone does not supply the phrase; no symptom or mechanism invented.","tested":false},
+    {"term":"radicular low back pain","pdf_page":6,"page":234,"source_match":"table","kind":"learned_name_or_category","cue":null,"attempted_cue":"A radish beside a toy backrest and pain mask.","cue_scope":"Attempted radicular/back/pain fragments","decision":"hold","prior":"new_chapter_record","reason":"Three-part prop assembly does not provide an economical radicular bridge in this pass; no anatomy or cause claim.","tested":false},
+    {"term":"biofeedback","pdf_page":7,"page":235,"source_match":"body","kind":"partial_name_wordplay","cue":null,"attempted_cue":"A leaf beside a toy feeding bowl and a return arrow.","cue_scope":"Attempted bio/feed/back fragments","decision":"hold","prior":"new_chapter_record","reason":"Three loosely related props feel coached; no simple method-name cue selected or physiologic process taught.","tested":false},
+    {"term":"hypnosis","pdf_page":8,"page":236,"source_match":"body","kind":"learned_name_or_category","cue":"A familiar swinging-pocket-watch prop held by a toy performer.","cue_scope":"Familiar hypnosis stage convention only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Culturally learned category association; no technique, efficacy, altered state or treatment claim.","tested":false},
+    {"term":"transcutaneous electrical nerve stimulation","pdf_page":8,"page":236,"source_match":"body","kind":"learned_name_or_category","cue":null,"attempted_cue":"A detached toy control box with loose electrode pads.","cue_scope":"Attempted device-category vocabulary","decision":"hold","prior":"new_chapter_record","reason":"Plain control box/pads could represent many devices; no recognizable specific category chosen without labels or a procedure.","tested":false},
+    {"term":"acupuncture","pdf_page":8,"page":236,"source_match":"body","kind":"learned_name_or_category","cue":"A familiar freestanding acupuncture mannequin display with fine pins.","cue_scope":"Familiar technique-name category only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar model/device category allowed; no real patient, placement points, technique or efficacy taught.","tested":false},
+    {"term":"driving","pdf_page":8,"page":236,"source_match":"body","kind":"action","cue":"A toy driver holding the steering wheel of a toy car.","cue_scope":"Driving vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar action from bold clause, without copying its counseling instruction or connecting it to a medication.","tested":false},
+    {"term":"operating machinery","pdf_page":8,"page":236,"source_match":"body","kind":"action","cue":"A toy operator at the controls of a freestanding toy machine.","cue_scope":"Machine-operation vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar category/action, no operating instructions, medication connection or safety recommendation.","tested":false},
+    {"term":"climbing","pdf_page":8,"page":236,"source_match":"body","kind":"action","cue":"A toy climber on a short toy ladder.","cue_scope":"Climbing vocabulary only","decision":"retain_candidate","prior":"new_chapter_record","reason":"Familiar action from emphasized clause; no height, risk claim or patient instruction.","tested":false}
+  ],
+  "keyword_screen": {
+    "method": "Bounded author scan of all eight rendered pages with text spans/font names/coordinates and true column/full-width-table boundaries. Meaningful chapter/subsection headings, Tables35-1 through35-10 named rows and selected medical comment headwords, Figures35-1 through35-3 named scales/descriptor families, and lexical heads from MinionPro-Bold clauses explicitly mapped. Regular table/figure cells and selected regular technique names are not falsely described as bold. No exhaustive generic body-word inventory or clinical coverage claim. Case/whitespace/wrap joins normalized; duplicate casefold-term+page records merge emphasis notes.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Enumerated all annotations on PDF1-8: none. This does not exclude flattened publisher emphasis. Colored headings/table shading are layout, not asserted user highlights."
+    },
+    "items": [
+      {
+        "term": "Acute Pain Management",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "Actual chapter title MyriadPro-BlackSemiCn left PDF1 y139.6",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "pain scales",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MyriadPro-SemiboldCond subsection heading and MinionPro-Bold pain-scale purpose clause",
+        "entry_term": "pain scales"
+      },
+      {
+        "term": "hypersensitivity",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MinionPro-Bold hypersensitivity-reaction clause, line-wrapped hyper-/sensitivity",
+        "entry_term": "hypersensitivity"
+      },
+      {
+        "term": "ketamine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "ketamine"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "renal failure",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold renal-failure clause right PDF7 y437-447",
+        "entry_term": "renal failure"
+      },
+      {
+        "term": "self-reporting",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold self-reporting clause left PDF1 y662-672",
+        "entry_term": "self-reporting"
+      },
+      {
+        "term": "opioid receptors",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "opioid receptors"
+      },
+      {
+        "term": "delta",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "delta"
+      },
+      {
+        "term": "kappa",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "kappa"
+      },
+      {
+        "term": "mu",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold mu in receptor-name list right PDF1 y271; surrounding conjunction is regular",
+        "entry_term": "mu"
+      },
+      {
+        "term": "pain assessment",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "pain assessment"
+      },
+      {
+        "term": "addiction",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "addiction"
+      },
+      {
+        "term": "diminished cognitive function",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "diminished cognitive function"
+      },
+      {
+        "term": "drug-seeking behavior",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "drug-seeking behavior"
+      },
+      {
+        "term": "adjective rating scale",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold); Figure35-1 caption, regular MyriadPro-Cond; Table35-2 regular name cell",
+        "entry_term": "adjective rating scale"
+      },
+      {
+        "term": "visual analog scale",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold); MinionPro-Bold preferred-tool clause right y136-156; Table35-2 regular cell",
+        "entry_term": "visual analog scale"
+      },
+      {
+        "term": "numeric rating scale",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "numeric rating scale"
+      },
+      {
+        "term": "5-Point global scale",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "5-Point global scale"
+      },
+      {
+        "term": "verbal quantitative scale",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-1/2 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "verbal quantitative scale"
+      },
+      {
+        "term": "tiered approach",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "tiered approach"
+      },
+      {
+        "term": "opioid analgesics",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MyriadPro-SemiboldCond subsection heading, with regular body occurrences",
+        "entry_term": "opioid analgesics"
+      },
+      {
+        "term": "codeine",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "codeine"
+      },
+      {
+        "term": "tramadol",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "tramadol"
+      },
+      {
+        "term": "meperidine",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "meperidine"
+      },
+      {
+        "term": "fentanyl",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "Lexical drug-name headword in MinionPro-Bold transdermal fentanyl phrase, line-wrapped Transder-/mal; qualifier not a new entry",
+        "entry_term": "fentanyl"
+      },
+      {
+        "term": "buprenorphine",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "Lexical drug-name headword in MinionPro-Bold transdermal buprenorphine phrase; qualifier not a new entry",
+        "entry_term": "buprenorphine"
+      },
+      {
+        "term": "opioid agonists-antagonists",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MyriadPro-SemiboldCond subsection heading and regular body",
+        "entry_term": "opioid agonists-antagonists"
+      },
+      {
+        "term": "morphine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "morphine"
+      },
+      {
+        "term": "hydromorphone",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "hydromorphone"
+      },
+      {
+        "term": "oxycodone",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "oxycodone"
+      },
+      {
+        "term": "hydrocodone",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "hydrocodone"
+      },
+      {
+        "term": "phenanthrene",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "phenanthrene"
+      },
+      {
+        "term": "phenylpiperidine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "phenylpiperidine"
+      },
+      {
+        "term": "histamine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "histamine"
+      },
+      {
+        "term": "hypotension",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "hypotension"
+      },
+      {
+        "term": "nausea",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "nausea"
+      },
+      {
+        "term": "emesis",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "emesis"
+      },
+      {
+        "term": "chest wall rigidity",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "chest wall rigidity"
+      },
+      {
+        "term": "breakthrough pain",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "breakthrough pain"
+      },
+      {
+        "term": "monoamine oxidase inhibitor",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "monoamine oxidase inhibitor"
+      },
+      {
+        "term": "serotonin syndrome",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "serotonin syndrome"
+      },
+      {
+        "term": "neurotoxicity",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "neurotoxicity"
+      },
+      {
+        "term": "codeine-6-glucuronide",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "codeine-6-glucuronide"
+      },
+      {
+        "term": "pharmacokinetics",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "pharmacokinetics"
+      },
+      {
+        "term": "immediate release",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "immediate release"
+      },
+      {
+        "term": "morphine milligram equivalents",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "morphine milligram equivalents"
+      },
+      {
+        "term": "withdrawal symptoms",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "withdrawal symptoms"
+      },
+      {
+        "term": "acetaminophen",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "acetaminophen"
+      },
+      {
+        "term": "aspirin",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "aspirin"
+      },
+      {
+        "term": "NSAIDs",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "NSAIDs"
+      },
+      {
+        "term": "nitrous oxide",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "nitrous oxide"
+      },
+      {
+        "term": "antidepressants",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "antidepressants"
+      },
+      {
+        "term": "anticonvulsants",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "anticonvulsants"
+      },
+      {
+        "term": "ondansetron",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "ondansetron"
+      },
+      {
+        "term": "prochlorperazine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "prochlorperazine"
+      },
+      {
+        "term": "promethazine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "promethazine"
+      },
+      {
+        "term": "metoclopramide",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "metoclopramide"
+      },
+      {
+        "term": "QT interval",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "QT interval"
+      },
+      {
+        "term": "extrapyramidal reactions",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "extrapyramidal reactions"
+      },
+      {
+        "term": "butorphanol",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "butorphanol"
+      },
+      {
+        "term": "dezocine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "dezocine"
+      },
+      {
+        "term": "nalbuphine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "nalbuphine"
+      },
+      {
+        "term": "pentazocine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "pentazocine"
+      },
+      {
+        "term": "morphinan",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "morphinan"
+      },
+      {
+        "term": "benzomorphan",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "benzomorphan"
+      },
+      {
+        "term": "cyclic antidepressants",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "cyclic antidepressants"
+      },
+      {
+        "term": "serotonin-norepinephrine reuptake inhibitors",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "serotonin-norepinephrine reuptake inhibitors"
+      },
+      {
+        "term": "topical medications",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "topical medications"
+      },
+      {
+        "term": "ibuprofen",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "ibuprofen"
+      },
+      {
+        "term": "naproxen",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "naproxen"
+      },
+      {
+        "term": "indomethacin",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "indomethacin"
+      },
+      {
+        "term": "ketorolac",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "ketorolac"
+      },
+      {
+        "term": "amitriptyline",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "amitriptyline"
+      },
+      {
+        "term": "nortriptyline",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "nortriptyline"
+      },
+      {
+        "term": "carbamazepine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "carbamazepine"
+      },
+      {
+        "term": "oxcarbazepine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "oxcarbazepine"
+      },
+      {
+        "term": "duloxetine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "duloxetine"
+      },
+      {
+        "term": "gabapentin",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "gabapentin"
+      },
+      {
+        "term": "pregabalin",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "pregabalin"
+      },
+      {
+        "term": "neuropathic pain",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold); Table35-9 SemiboldCond title and ordinary condition cells",
+        "entry_term": "neuropathic pain"
+      },
+      {
+        "term": "trigeminal neuralgia",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "trigeminal neuralgia"
+      },
+      {
+        "term": "diabetic neuropathic pain",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "diabetic neuropathic pain"
+      },
+      {
+        "term": "postherpetic neuralgia",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "postherpetic neuralgia"
+      },
+      {
+        "term": "necrosis",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "necrosis"
+      },
+      {
+        "term": "platelet dysfunction",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "platelet dysfunction"
+      },
+      {
+        "term": "tinnitus",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "tinnitus"
+      },
+      {
+        "term": "metabolic acidosis",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "metabolic acidosis"
+      },
+      {
+        "term": "bronchospasm",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "bronchospasm"
+      },
+      {
+        "term": "dystonic reactions",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "dystonic reactions"
+      },
+      {
+        "term": "laryngospasm",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "laryngospasm"
+      },
+      {
+        "term": "hallucinations",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "hallucinations"
+      },
+      {
+        "term": "diclofenac",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary MyriadPro-Cond cells (not bold); not a highlighted drug label",
+        "entry_term": "diclofenac"
+      },
+      {
+        "term": "ketoprofen",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary MyriadPro-Cond cells (not bold); not a highlighted drug label",
+        "entry_term": "ketoprofen"
+      },
+      {
+        "term": "capsaicin",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary MyriadPro-Cond cells (not bold); not a highlighted drug label",
+        "entry_term": "capsaicin"
+      },
+      {
+        "term": "methyl salicylate",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary MyriadPro-Cond cells (not bold); not a highlighted drug label",
+        "entry_term": "methyl salicylate"
+      },
+      {
+        "term": "the elderly",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "the elderly"
+      },
+      {
+        "term": "dependence",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "dependence"
+      },
+      {
+        "term": "renal and hepatic dysfunction",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "renal and hepatic dysfunction"
+      },
+      {
+        "term": "respiratory insufficiency",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "respiratory insufficiency"
+      },
+      {
+        "term": "drug interactions",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "drug interactions"
+      },
+      {
+        "term": "nonpharmacologic modalities",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MyriadPro-BlackSemiCn heading; body below is regular",
+        "entry_term": "nonpharmacologic modalities"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MyriadPro-SemiboldCond subsection heading, PDF8 LEFT column",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "trauma",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MyriadPro-SemiboldCond subsection heading, PDF8 LEFT column",
+        "entry_term": "trauma"
+      },
+      {
+        "term": "discharge instructions",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "discharge instructions"
+      },
+      {
+        "term": "constipation",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "constipation"
+      },
+      {
+        "term": "euphoria",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "euphoria"
+      },
+      {
+        "term": "cardiovascular depression",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Full-width Table35-4/5 ordinary MyriadPro-Cond cells or SemiboldCond column labels; drug-name rows recur in both tables where present",
+        "entry_term": "cardiovascular depression"
+      },
+      {
+        "term": "sedation",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "sedation"
+      },
+      {
+        "term": "dizziness",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "dizziness"
+      },
+      {
+        "term": "headache",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-6/7 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "headache"
+      },
+      {
+        "term": "GI irritation",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "GI irritation"
+      },
+      {
+        "term": "mucosal bleeding",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "mucosal bleeding"
+      },
+      {
+        "term": "CNS toxicity",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "CNS toxicity"
+      },
+      {
+        "term": "agitation",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "agitation"
+      },
+      {
+        "term": "migraine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "migraine"
+      },
+      {
+        "term": "renal colic",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "renal colic"
+      },
+      {
+        "term": "radicular low back pain",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Full-width Table35-8/9 ordinary MyriadPro-Cond cells (not bold)",
+        "entry_term": "radicular low back pain"
+      },
+      {
+        "term": "biofeedback",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Selected regular MinionPro-Regular technique name under NONPHARMACOLOGIC MODALITIES continuation; NOT bold",
+        "entry_term": "biofeedback"
+      },
+      {
+        "term": "hypnosis",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "Selected regular MinionPro-Regular technique name under NONPHARMACOLOGIC MODALITIES continuation; NOT bold",
+        "entry_term": "hypnosis"
+      },
+      {
+        "term": "transcutaneous electrical nerve stimulation",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "Selected regular MinionPro-Regular technique name under NONPHARMACOLOGIC MODALITIES continuation; NOT bold",
+        "entry_term": "transcutaneous electrical nerve stimulation"
+      },
+      {
+        "term": "acupuncture",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "Selected regular MinionPro-Regular technique name under NONPHARMACOLOGIC MODALITIES continuation; NOT bold",
+        "entry_term": "acupuncture"
+      },
+      {
+        "term": "driving",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "driving"
+      },
+      {
+        "term": "operating machinery",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "operating machinery"
+      },
+      {
+        "term": "climbing",
+        "pdf_page": 8,
+        "page": 236,
+        "emphasis": "MinionPro-Bold lexical headword/inline lead-in or MyriadPro-Bold subsection heading; clinical statement not reproduced",
+        "entry_term": "climbing"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold pain-control and pain-assessment clauses; lexical headword only",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "pain control",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold individualized pain-control clause left y394-414",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "subjective reporting",
+        "pdf_page": 1,
+        "page": 229,
+        "emphasis": "MinionPro-Bold subjective report-/ing clause right y484-504; wrap joined",
+        "entry_term": "self-reporting"
+      },
+      {
+        "term": "pain scales",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Table35-2 title SemiboldCond and bold standardized-tool continuation; not all table cells bold",
+        "entry_term": "pain scales"
+      },
+      {
+        "term": "visual analog scale",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "Figure35-2 regular caption and Table35-3 ordinary abbreviation-expansion note",
+        "entry_term": "visual analog scale"
+      },
+      {
+        "term": "numeric rating scale",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "Figure35-3 regular caption and Table35-3 ordinary abbreviation-expansion note",
+        "entry_term": "numeric rating scale"
+      },
+      {
+        "term": "pain severity",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "Table35-3 SemiboldCond title/column heading, severity descriptors in regular cells; broad pain entry, no score encoded",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "mild pain",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Figure35-1 regular HelveticaLTStd-Roman scale labels; descriptor variants share pain family, not separate discoveries",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "moderate pain",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Figure35-1 regular HelveticaLTStd-Roman scale labels; descriptor variants share pain family, not separate discoveries",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "severe pain",
+        "pdf_page": 2,
+        "page": 230,
+        "emphasis": "Figure35-1 regular HelveticaLTStd-Roman scale labels; descriptor variants share pain family, not separate discoveries",
+        "entry_term": "Acute Pain Management"
+      },
+      {
+        "term": "opioids",
+        "pdf_page": 3,
+        "page": 231,
+        "emphasis": "MinionPro-Bold titration clause lexical headword; plural/class variant, no instruction copied",
+        "entry_term": "opioid analgesics"
+      },
+      {
+        "term": "codeine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4/5 regular drug-name cells; not body bold",
+        "entry_term": "codeine"
+      },
+      {
+        "term": "tramadol",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4/5 regular drug-name cells; not body bold",
+        "entry_term": "tramadol"
+      },
+      {
+        "term": "meperidine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4/5 regular drug-name cells; not body bold",
+        "entry_term": "meperidine"
+      },
+      {
+        "term": "fentanyl",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4/5 regular drug-name cells; not body bold",
+        "entry_term": "fentanyl"
+      },
+      {
+        "term": "pethidine",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4/5 regular parenthetical source alias; no independent new cue",
+        "entry_term": "meperidine"
+      },
+      {
+        "term": "hydrocodone/acetaminophen",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4 regular combination-name row; hydrocodone headword maps here and acetaminophen separately, no formulation claim",
+        "entry_term": "hydrocodone"
+      },
+      {
+        "term": "acetaminophen",
+        "pdf_page": 4,
+        "page": 232,
+        "emphasis": "Table35-4 regular combination-name row/comments; name headword, not new composition",
+        "entry_term": "acetaminophen"
+      },
+      {
+        "term": "buprenorphine",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-7 regular drug-name cell",
+        "entry_term": "buprenorphine"
+      },
+      {
+        "term": "phenanthrene",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-7 regular bracketed class cells",
+        "entry_term": "phenanthrene"
+      },
+      {
+        "term": "nausea",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-7 regular comment cells",
+        "entry_term": "nausea"
+      },
+      {
+        "term": "respiratory depression",
+        "pdf_page": 5,
+        "page": 233,
+        "emphasis": "Table35-7 regular comment cell; broad respiratory-inadequacy entry only, not a claim of equivalent clinical terms",
+        "entry_term": "respiratory insufficiency"
+      },
+      {
+        "term": "acetaminophen",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular drug-name cell",
+        "entry_term": "acetaminophen"
+      },
+      {
+        "term": "paracetamol",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular parenthetical source alias",
+        "entry_term": "acetaminophen"
+      },
+      {
+        "term": "aspirin",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular drug-name cell",
+        "entry_term": "aspirin"
+      },
+      {
+        "term": "acetylsalicylic acid",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular parenthetical source alias",
+        "entry_term": "aspirin"
+      },
+      {
+        "term": "ketamine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular drug-name cell",
+        "entry_term": "ketamine"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 regular drug-name cell",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "anticonvulsants",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "MinionPro-Bold class-list clause left y446-456; no initiation instruction copied",
+        "entry_term": "anticonvulsants"
+      },
+      {
+        "term": "liver dysfunction",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 ordinary comment lexical headword; component of combined held heading family, not diagnosis equivalence",
+        "entry_term": "renal and hepatic dysfunction"
+      },
+      {
+        "term": "renal dysfunction",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 ordinary comment lexical headword; component of combined held heading family",
+        "entry_term": "renal and hepatic dysfunction"
+      },
+      {
+        "term": "dizziness",
+        "pdf_page": 6,
+        "page": 234,
+        "emphasis": "Table35-8 ordinary comment lexical headword",
+        "entry_term": "dizziness"
+      },
+      {
+        "term": "ibuprofen",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary drug-name cell",
+        "entry_term": "ibuprofen"
+      },
+      {
+        "term": "lidocaine",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary drug-name cell",
+        "entry_term": "lidocaine"
+      },
+      {
+        "term": "topical patch",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary preparation cells; broad product-form vocabulary only, no strength/dose copied",
+        "entry_term": "topical medications"
+      },
+      {
+        "term": "gel",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary preparation cells; familiar form maps to broad product-form category",
+        "entry_term": "topical medications"
+      },
+      {
+        "term": "cream",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "Table35-10 ordinary preparation cells; familiar form maps to broad product-form category",
+        "entry_term": "topical medications"
+      },
+      {
+        "term": "addiction",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MyriadPro-Bold Addiction and Dependence inline subsection heading",
+        "entry_term": "addiction"
+      },
+      {
+        "term": "hydromorphone",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold renal-failure clause lexical drug name",
+        "entry_term": "hydromorphone"
+      },
+      {
+        "term": "fentanyl",
+        "pdf_page": 7,
+        "page": 235,
+        "emphasis": "MinionPro-Bold renal-failure clause lexical drug name",
+        "entry_term": "fentanyl"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 1,
+        "description": "Section opener, chapter number, author, running/footer page number; INTRODUCTION/PATHOPHYSIOLOGY/EVALUATION scaffolding and isolated bold not/is.",
+        "reason": "Organizational/grammatical material, not separate vocabulary targets. Pain control, self-reporting, receptor names, pain assessment and pain scales extracted from meaningful emphasized clauses."
+      },
+      {
+        "pdf_page": 2,
+        "description": "Table35-1 Patient/Provider/System Related labels and general barriers wording about education, standards, accountability, expectations and sanctions.",
+        "reason": "Organizational or general prose rather than selected medical headwords. Addiction, diminished cognitive function and drug-seeking behavior extracted; demographics and every generic barrier noun not separately inventoried."
+      },
+      {
+        "pdf_page": 2,
+        "description": "Pain-scale endpoints, descriptor values, centimeter/millimeter measures and sensitivity-change statements; broad treatment heading and general selection criteria.",
+        "reason": "No numeric thresholds, scoring instructions or clinical claims. Named scales, pain descriptors and tiered-approach headword retained in screen; generic safety/efficacy/selection nouns not padded into entries."
+      },
+      {
+        "pdf_page": 3,
+        "description": "Bold opioid titration and hypersensitivity instructions; figure axis numbers, worst/no-pain endpoint labels and table severity thresholds.",
+        "reason": "Extracted opioid and hypersensitivity lexical heads and named scale families; instructions, numeric facts and full clinical assertions excluded. No separate inventory of generic initial/dose/effect words."
+      },
+      {
+        "pdf_page": 4,
+        "description": "Table35-4/5 dose, route, onset/peak/duration values, time intervals and conversion formula/footer; synthetic/natural/semisynthetic and other row qualifiers.",
+        "reason": "Drug/class names, pharmacokinetics, immediate release, MME and selected medical comment headwords screened. No dosing/conversion teaching, qualifier-only discoveries or generic tablet/spray/route-word inventory."
+      },
+      {
+        "pdf_page": 5,
+        "description": "Table35-6/7 doses, half-lives and equivalence values; footnote geographic/availability claim; nonopioid/other-agent organizational headings.",
+        "reason": "Named rows/classes and meaningful comment terms extracted. Clinical claims and numeric facts excluded; no implication that source recommendations are current or validated."
+      },
+      {
+        "pdf_page": 6,
+        "description": "Tables35-8/9 dosage/titration columns, maxima, frequencies and clinical efficacy/adverse-effect statements.",
+        "reason": "Drug, condition and meaningful comment headwords screened separately. Source assertions and numbers excluded, not used as clinical instruction. Generic organ/action nouns inside longer prose not exhaustively inventoried."
+      },
+      {
+        "pdf_page": 7,
+        "description": "Table35-10 concentrations, gram/length amounts, timing, application and cutting instructions; body joint/limb lists and general PRECAUTIONS scaffold.",
+        "reason": "Named agents and recurring product-form headwords extracted without strengths or techniques. No generic limb/body-noun expansion. Bold organ/age/dependence/interaction headings and renal-failure clause screened."
+      },
+      {
+        "pdf_page": 8,
+        "description": "SPECIFIC SITUATIONS/DISPOSITION/REFERENCES scaffolding; full bold counseling clauses about subsequent doses/pain return, important decisions and working from heights.",
+        "reason": "Extracted meaningful pain, discharge-instructions, driving, operating-machinery, climbing and constipation headwords, without copying counseling or numeric return instructions. Generic decisions/work/dose nouns not independent target padding."
+      },
+      {
+        "pdf_page": 8,
+        "description": "Entire right column beginning actual Chapter36 title at y37.2.",
+        "reason": "Outside Chapter35; none of its anesthetic headings, classes, names or assertions admitted."
+      }
+    ]
+  },
+  "resolved_holds": [
+    {"term":"mu","resolution":"Local35 hold changed to retain_candidate after main challenge under chapter2 calibration.","history":[{"decision":"hold","attempt":"Cow with open mouth.","reason":"Initial author required visible moo sound, too strict for a familiar taught association.","scope":"Historical early35 draft."},{"decision":"retain_candidate","attempt":"Familiar cow figurine.","reason":"Learned moo/mu near-sound needs neither audio nor letters; not a full phonetic claim.","scope":"Current35 candidate."}],"scope":"local_hold_to_candidate","earlier_hold_remains_open":false},
+    {"term":"QT interval","resolution":"Local35 hold changed to reuse_candidate after main identified existing retained cue/tea family.","history":[{"decision":"hold","attempt":"Queue of characters plus tea.","reason":"Queue naming was awkward; existing pool-cue family missed initially.","scope":"Historical early35 draft."},{"decision":"reuse_candidate","attempt":"Ordinary pool cue plus tea, long qualifier removed.","reason":"Direct retained11 long-QT root;26 reuse corroborates family, no measurement encoded.","scope":"Current35 candidate."}],"scope":"local_hold_to_reuse","earlier_hold_remains_open":false},
+    {"term":"agitation","resolution":"Local35 hold changed to reuse_candidate after main found retained29B agitator family.","history":[{"decision":"hold","attempt":"Toy character shaking a closed box.","reason":"Unclear mixing/packing action.","scope":"Historical early35 draft."},{"decision":"reuse_candidate","attempt":"Washing-machine agitator with motion marks.","reason":"Use existing retained word family rather than retrying weak box scene.","scope":"Current35 candidate."}],"scope":"local_hold_to_reuse","earlier_hold_remains_open":false},
+    {"term":"tramadol","resolution":"Local35 retains tram/doll as a taught partial-name candidate; older workshop hold is not globally resolved.","history":[{"decision":"hold","attempt":"Tram plus doll.","reason":"Workshop held linking-vowel and regional object-naming concerns.","scope":"docs/sound-bridge-workshop.json#tramadol, unchanged."},{"decision":"retain_candidate","attempt":"Toy tram carrying a doll.","reason":"Chapter2 calibration permits familiar partial-name ingredients; naming/recall still untested.","scope":"Current35 only."}],"scope":"local_reconsideration_only","earlier_hold_remains_open":true},
+    {"term":"fentanyl","resolution":"Local35 selects fan alone as a partial-name candidate; older rejected fan/tunnel and held29A remain unchanged.","history":[{"decision":"hold","attempt":"Fan plus tunnel, or no selected29A candidate.","reason":"Earlier whole-name sound attempt was weak;29A held drug name.","scope":"Historical workshop rejection and docs/chapter-29A-cue-audit.json#fentanyl."},{"decision":"retain_candidate","attempt":"Familiar fan standing alone.","reason":"Fresh reduced partial-name association, not a whole-name phonetic claim.","scope":"Current35 only."}],"scope":"local_reconsideration_only","earlier_hold_remains_open":true},
+    {"term":"naproxen","resolution":"Local35 selects new nap/rock association; older gnat/oxen rejection remains unchanged.","history":[{"decision":"reject","attempt":"Gnat plus oxen.","reason":"Workshop noted missing distinctive consonants and fragile object identification.","scope":"docs/sound-bridge-workshop.json#naproxen, unchanged."},{"decision":"retain_candidate","attempt":"Toy figure napping on a rock.","reason":"Familiar reduced partial-name bridge without requiring every syllable.","scope":"Current35 only."}],"scope":"local_reconsideration_only","earlier_hold_remains_open":true}
+  ],
+  "reconciliation_history": [
+    {"topic":"Retained-root and broad-family reconciliation","note":"Scale variants redirected from local35 reuse pain scales to retained29B Richmond Agitation-Sedation Scale, scale ingredient only. Chest wall rigidity changed from provisional new composition to retained28 chest wall root (same family used29A). Morphine/morphinan toy clarified as static half-car/half-robot. No prior bank modified."}
+  ],
+  "source_wording_notes": {
+    "normalization":"Case/whitespace and wrap joins only. Table35-1 source prints drug- at line end then seeking behavior on next line; recorded drug-seeking behavior preserves its conventional hyphen. This is a spelling join, NOT nominalization or invented wording. Source/source aliases pethidine, paracetamol and acetylsalicylic acid are not separate discoveries.",
+    "qualifiers":"Transdermal fentanyl/buprenorphine map to their drug-name entries without new formulation cues. Broader reuses remove long-QT length, rich-gentleman/purse, secret-agent, abdominal-pump/thought and pain-relief mute modifiers as applicable.",
+    "ket_family":"Ketamine and ketoprofen share kettle alone; ketorolac adds lock. These taught partial-name fragments are NOT unique identifiers and do NOT assert drug equivalence. If names co-occur in an actual lesson they need disambiguating context/qualifiers and testing before use; none supplied as clinical teaching here.",
+    "nickname":"Nitrous oxide laughing-mask cue is ONLY a learned cultural nickname association, not an assertion the drug causes laughter or any effect.",
+    "history":"Earlier holds/rejections in older banks and workshops stay intact, even where a later retained root is reused. Resolved_holds contains actual entry terms only; batch/root notes live separately in reconciliation_history."
+  },
+  "evidence":{"render_audits":[],"recall_studies":[],"clinical_claim_validation":[]},
+  "spend":{"anthropic_calls":0,"other_paid_provider_calls":0,"image_renders":0},
+  "review_status":"Author-completed bounded offline screen. Main independently reviewing integration/source/cues and owns shared tests, held register, ledger, index, handoff and Git. AI reviews are not credentialed human, clinical, pronunciation, recall or rendering validation.",
+  "local_packet":"Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch33-35/chapter35/",
+  "coverage_limits":["Bounded meaningful headings/table/emphasis screen, not every generic body noun, every table-comment word, exhaustive clinical coverage or proof of chapter completeness.","No PDF annotations found does not exclude flattened publisher highlighting. Colored headings and table shading are layout, not asserted user highlights.","Selected regular nonpharmacologic names on7/8 are expressly not bold. Numeric dose/score/conversion and full clinical statements excluded after lexical screening.","Familiar props/categories, actions and partial names need eventual taught recognition and recall testing. Shared KET fragments and code/morph families require context, not blind uniqueness claims.","No recall, pronunciation, provider or mnemonic-image validation; all candidates untested, evidence empty, production admission false and spend zero."]
+}
