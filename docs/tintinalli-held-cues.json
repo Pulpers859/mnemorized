@@ -53,10 +53,15 @@
     "48",
     "49",
     "50",
-    "51"
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56"
   ],
-  "active_hold_occurrences": 589,
-  "unique_held_terms": 489,
+  "active_hold_occurrences": 827,
+  "unique_held_terms": 694,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -81,7 +86,8 @@
       "retained_in_other_chapters": [
         "23",
         "24",
-        "25"
+        "25",
+        "55"
       ]
     },
     {
@@ -314,7 +320,8 @@
       "attempted_cue": null,
       "reason": "No economical name cue proposed in this pass; generic emergency props would add little vocabulary identity. Not held merely for lacking a unique diagnosis cue.",
       "retained_in_other_chapters": [
-        "50"
+        "50",
+        "53"
       ]
     },
     {
@@ -536,7 +543,8 @@
       "attempted_cue": null,
       "reason": "No economical bridge selected in this bounded pass. Avoid nearly identical dough fragments for dopamine and dobutamine without a useful learned distinction; not a requirement to encode every syllable.",
       "retained_in_other_chapters": [
-        "50"
+        "50",
+        "55"
       ]
     },
     {
@@ -571,7 +579,8 @@
       "attempted_cue": null,
       "reason": "Existing hold preserved. Tried an Anna-name character with a protective shield; character naming and phylaxis recovery were not economical or familiar enough. No symptoms, drug relationship or table instructions imported.",
       "retained_in_other_chapters": [
-        "50"
+        "50",
+        "53"
       ]
     },
     {
@@ -597,7 +606,10 @@
       "retained_in_other_chapters": [
         "31",
         "48",
-        "50"
+        "50",
+        "52",
+        "55",
+        "56"
       ]
     },
     {
@@ -1120,7 +1132,8 @@
       "attempted_cue": null,
       "reason": "Preserves Chapter20 hold; similar dough fragments were considered but do not yet supply a useful distinction in this pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": [
-        "50"
+        "50",
+        "55"
       ]
     },
     {
@@ -1308,7 +1321,9 @@
       "report": "docs/chapter-26-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried cog wheel as coag opening fragment. Useful ingredient considered, but no selected short bridge to this target; no clotting function substituted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "55"
+      ]
     },
     {
       "chapter_id": "26",
@@ -2092,7 +2107,8 @@
       "retained_in_other_chapters": [
         "39",
         "45",
-        "46"
+        "46",
+        "55"
       ]
     },
     {
@@ -2366,7 +2382,8 @@
       "attempted_cue": null,
       "reason": "Tried a hemmed cloth beside a toy pit for hemo/pty; object naming and sound bridge were unappealing. No clinical manifestation used to rescue the cue.",
       "retained_in_other_chapters": [
-        "48"
+        "48",
+        "56"
       ]
     },
     {
@@ -2579,7 +2596,8 @@
       "attempted_cue": "A heart token beside a water pitcher.",
       "reason": "Familiar ingredients lack a useful economical pericardial name hook; no fluid-location teaching.",
       "retained_in_other_chapters": [
-        "34"
+        "34",
+        "55"
       ]
     },
     {
@@ -2708,7 +2726,8 @@
       "retained_in_other_chapters": [
         "39",
         "45",
-        "46"
+        "46",
+        "55"
       ]
     },
     {
@@ -2789,7 +2808,10 @@
       "report": "docs/chapter-32-cue-audit.md",
       "attempted_cue": null,
       "reason": "Attempted heart token inside a perimeter fence with an unwell mask. Hold: fence adds generic enclosure but weakly recovers pericardial; not held merely for lack of diagnostic uniqueness.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "52",
+        "55"
+      ]
     },
     {
       "chapter_id": "32",
@@ -2811,7 +2833,11 @@
       "report": "docs/chapter-33-cue-audit.md",
       "attempted_cue": "A sink beside a pea.",
       "reason": "Workshop attempt depends on fragile pea naming and inserted middle vowel; no stronger economical alternative found.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "52",
+        "54",
+        "55"
+      ]
     },
     {
       "chapter_id": "33",
@@ -2915,7 +2941,8 @@
       "retained_in_other_chapters": [
         "39",
         "45",
-        "46"
+        "46",
+        "55"
       ]
     },
     {
@@ -3053,7 +3080,8 @@
       "retained_in_other_chapters": [
         "39",
         "45",
-        "46"
+        "46",
+        "55"
       ]
     },
     {
@@ -3066,7 +3094,12 @@
       "attempted_cue": "A vinyl disc beside a toy knee.",
       "reason": "Tried disc/knee; awkward pronunciation and an arbitrary prop pair make this attempt unappealing. No symptom performance used as a substitute.",
       "retained_in_other_chapters": [
-        "48"
+        "48",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56"
       ]
     },
     {
@@ -3610,7 +3643,9 @@
       "report": "docs/chapter-35-cue-audit.md",
       "attempted_cue": "A large grain of rice beside a toy head.",
       "reason": "Grain is a fragment but the head prop makes an awkward composition, not a useful selected candidate.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "52"
+      ]
     },
     {
       "chapter_id": "35",
@@ -6014,7 +6049,12 @@
       "attempted_cue": "A toy bellows beside a distress mask.",
       "reason": "Breath/distress category tried but not selected; clinical breathing pattern must not be invented.",
       "retained_in_other_chapters": [
-        "48"
+        "48",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56"
       ]
     },
     {
@@ -6325,7 +6365,9 @@
       "report": "docs/chapter-49-cue-audit.md",
       "attempted_cue": null,
       "reason": "No appropriate simple R-name visual selected. ECG machine would only supply topic and does not encode this head.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "55"
+      ]
     },
     {
       "chapter_id": "49",
@@ -6504,7 +6546,8 @@
       "attempted_cue": "A short toy segment beside an upward arrow.",
       "reason": "Main feedback author repair: generic ECG machine was topic-only and is withdrawn. Segment/upward composition tried but not selected after main comparison with the older chapter33 ST hold; no economical retained root was identified in this review. No full-syllable or blind-decoding requirement; unresolved vocabulary hold, not a waveform or clinical meaning.",
       "retained_in_other_chapters": [
-        "49"
+        "49",
+        "55"
       ]
     },
     {
@@ -6562,7 +6605,9 @@
       "report": "docs/chapter-50-cue-audit.md",
       "attempted_cue": "A toy throne beside a light bulb.",
       "reason": "Previous pill merely supplied generic therapy context, not thrombolytic identity. Thrones/light name attempt not selected; Thrombolytics hold retained separately.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "56"
+      ]
     },
     {
       "chapter_id": "51",
@@ -6676,7 +6721,9 @@
       "report": "docs/chapter-51-cue-audit.md",
       "attempted_cue": "A toy fan beside a broken cart.",
       "reason": "Prior lung was only location, not an infarction name or distinctive category bridge. Fan/cart partial-name attempt not selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "56"
+      ]
     },
     {
       "chapter_id": "51",
@@ -6687,6 +6734,2666 @@
       "report": "docs/chapter-51-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical category token selected without turning a person into an impairment stereotype. No ability assessment or exercise instruction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Myocardial infarction",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Situational",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No selected economical vocabulary cue for the bare Situational head. Syncope context alone is insufficient. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Swallow",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy mouth beside a loose bead.",
+      "reason": "Mouth/bead is not an economical safe lexical swallowing cue; no ingestion scene or technique proposed. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Breath holding",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A detached bellows with a pause token.",
+      "reason": "Breathing/pause attempted but not selected as a useful lexical reminder; no breath-holding demonstration or mechanism. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Erectile dysfunction drugs",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "An upright toy building.",
+      "reason": "Erect/upright partial head tried but not selected; no useful neutral dysfunction/drug-class cue chosen. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Cardiac glycosides",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A glue pot beside a row of toy sides.",
+      "reason": "Glue/side fragment trial is awkward and was not selected. Do not substitute a generic cardiac prop or imply chemistry. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Diuretics",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A familiar toy deer.",
+      "reason": "Deer/diur partial-name trial considered but not selected as useful here; no drug-effect or toileting claim, and no full-syllable requirement. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "54"
+      ]
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Antiparkinsonism drugs",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A parked toy car.",
+      "reason": "Park fragment tried but not selected for the drug-class name; no claim it encodes Parkinsonism or anti- action. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Antidepressants",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A sad theater mask with a large crossed-circle token.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Phenothiazines",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "An ordinary fan.",
+      "reason": "Fan/phen approximate opening fragment considered but not selected; no forced syllable stack or drug action. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Acute myocardial infarction",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "48"
+      ]
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Brugada syndrome",
+      "printed_page": 363,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "autonomic dysfunction",
+      "printed_page": 364,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A wind-up automatic toy.",
+      "reason": "Automatic/autonomic fragment tried but not selected; no nervous-system mechanism or whole-name claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Neurologic Disorders Associated with Loss of Consciousness",
+      "printed_page": 364,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A closed-eye toy figure beside an awareness-lamp token.",
+      "reason": "Closed eyes are not consciousness status; no useful neutral name/category cue selected here. Do not silently identify sleep with loss of consciousness. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "loss of consciousness",
+      "printed_page": 364,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A closed-eye toy figure beside an awareness-lamp token.",
+      "reason": "Closed eyes are not consciousness status; no useful neutral name/category cue selected here. Do not silently identify sleep with loss of consciousness. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "palpitations",
+      "printed_page": 364,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A loosely vibrating toy heart.",
+      "reason": "Generic heart motion was considered but not selected as a distinctive palpitation/name cue; no symptom or rhythm assertion. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "bruits",
+      "printed_page": 365,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A pair of ordinary boots.",
+      "reason": "Boots/bruits fragment tried but not selected as useful here; no sound recording, auscultation technique or diagnostic assertion. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Diagnosis Established",
+      "printed_page": 365,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "San Francisco Syncope Rule",
+      "printed_page": 365,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy suspension bridge beside a blank rule card.",
+      "reason": "Bridge/San Francisco named-place reminder tried but not selected; no unique location or clinical rule implied. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Pittsburgh",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A small toy pit.",
+      "reason": "Pit/Pittsburgh fragment tried but not selected for the place/study header; no forced name stack. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "OESIL Score for Syncope",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy oil can.",
+      "reason": "Oil/OESIL fragment tried but not selected; source acronym expansion is a footnote, not an object name. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Canadian Syncope Risk Score",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A plain maple leaf token.",
+      "reason": "Canadian/maple learned-place association considered but not selected for the named score; no location, rule or discrimination claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "death",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A blank theatrical skull token.",
+      "reason": "Mortality/death category considered but not selected as a neutral reminder here; no prognosis or clinical outcome asserted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "53"
+      ]
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "conduction disorders",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy orchestra conductor holding an unused baton.",
+      "reason": "Conductor/conduction partial category considered but not selected for these compound heads; no electrical physiology encoded. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "axis deviation",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "An ordinary toy axle.",
+      "reason": "Axle/axis fragment considered but not selected; no ECG orientation, geometry or clinical meaning. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "ST-segment",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A familiar toy plant stem.",
+      "reason": "Stem does not directly supply the literal ST letters or segment head. No economical cue selected; generic ECG context would not fix this. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "Electrophysiology testing",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "An ordinary electric light bulb.",
+      "reason": "Electric fragment considered but not selected for the testing category; a generic ECG cannot stand in for every nearby test. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "preexcitation",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "An excited toy figure beside a closed stage curtain.",
+      "reason": "Pre/excitement fragments tried but not selected; no excitation mechanism or patient behavior claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "conduction abnormalities",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A toy orchestra conductor holding an unused baton.",
+      "reason": "Conductor/conduction partial category considered but not selected for these compound heads; no electrical physiology encoded. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "52",
+      "chapter_title": "Syncope",
+      "term": "sudden cardiac death",
+      "printed_page": 366,
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "attempted_cue": "A blank theatrical skull token.",
+      "reason": "Mortality/death category considered but not selected as a neutral reminder here; no prognosis or clinical outcome asserted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "55"
+      ]
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "warm extremities",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A familiar sun token.",
+      "reason": "Sun/warmth familiar association considered but not selected for this clinical descriptor; no temperature, perfusion or diagnostic implication. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Substance abuse",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No selected neutral cue for this compound substance-abuse head; a drug bottle would be topic-only and no behavior is inferred. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Iatrogenic",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A generic physician toy.",
+      "reason": "Physician alone supplies role/context, not the full head; no useful economical name ingredient selected and no cause assertion made. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "negative inotropic drugs",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy rope beside a heart token.",
+      "reason": "Rope/ino trial reviewed but not selected; no contractility or drug effect claim, no requirement to spell every syllable. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "NSAID",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy knight with a first-aid box.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "thiazolidinediones",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A loose necktie.",
+      "reason": "Tie/thia approximate fragment considered but not selected; no drug class, chemistry or action inferred. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "therapy reduction",
+      "printed_page": 368,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "Two different-sized toy blocks.",
+      "reason": "Smaller/reduction category considered but not selected; no therapy decrease or treatment instruction. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "diagnostic uncertainty",
+      "printed_page": 369,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A blank toy question-mark token.",
+      "reason": "Question/uncertainty category considered but not selected; no clinical diagnostic conclusion or algorithm. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "starting dose",
+      "printed_page": 370,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "An unmarked medicine bottle.",
+      "reason": "Bottle is only context, not dose; no useful economical dose name/category cue selected and no numbers supplied. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "initial therapy",
+      "printed_page": 370,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "An ordinary first-aid kit.",
+      "reason": "Kit is only generic treatment context, not a selected therapy/initial head cue; no clinical recommendation inferred. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "bumetanide",
+      "printed_page": 371,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy bumper car.",
+      "reason": "Bump/bume fragment tried but not selected as useful here; no forced prop stack or drug-effect cue. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "cardiorespiratory compromise",
+      "printed_page": 371,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "myocardial infarction",
+      "printed_page": 371,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Unsuspected sepsis",
+      "printed_page": 371,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy sea beside a zipper.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Diuretics",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A familiar toy deer.",
+      "reason": "Deer/diur partial-name trial considered but not selected as useful here; no drug-effect or toileting claim, and no full-syllable requirement. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "54"
+      ]
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Symptoms",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical symptom-specific lexical cue selected; generic patient/heart props would supply topic only. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "thiocyanate toxicity",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A cyan-colored toy tie.",
+      "reason": "Thio/tie and cyan-color fragments tried but not selected as a useful compact reminder here; no sulfur/color chemistry or cyanide equivalence. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "coronary steal",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A theatrical toy burglar holding an empty sack.",
+      "reason": "Steal/action category considered but not selected for coronary steal; no clinical blood-flow or mechanism claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "hyperuricemia",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "An ordinary urinal fixture.",
+      "reason": "Urinal is only a nearby urine-word association, not uric/name or analyte identity. No useful selected cue for the head. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "NSAIDs",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy knight with a first-aid box.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Disposition Decisions",
+      "printed_page": 372,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy forked path.",
+      "reason": "Choice/fork trial considered but not selected for a shared clinical decision; no recommendation or decision algorithm drawn. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Clinical Gestalt",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A completed toy jigsaw.",
+      "reason": "Whole/jigsaw learned-category trial considered but not selected for clinical gestalt; no diagnostic claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Vital signs",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Interviews",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "Two neutral toys facing one another.",
+      "reason": "Conversation/interview trial considered but not selected; no assessment, history or named clinical process claim. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "activation",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical literacy/numeracy/activation head cue selected in this bounded attempt; generic patient or heart props would be topic-only. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "literacy",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical literacy/numeracy/activation head cue selected in this bounded attempt; generic patient or heart props would be topic-only. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "numeracy",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical literacy/numeracy/activation head cue selected in this bounded attempt; generic patient or heart props would be topic-only. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Morbidity",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A visibly unwell theatrical mask.",
+      "reason": "Unwell mask is generic state context, not a selected morbidity head/category cue; no clinical state inferred. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Shared Decision Making",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A toy forked path.",
+      "reason": "Choice/fork trial considered but not selected for a shared clinical decision; no recommendation or decision algorithm drawn. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "Barthel index",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "An ordinary toy bar.",
+      "reason": "Bar/Barthel fragment tried but not selected for this named index; no score or functional assessment implied. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "activities of daily living",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A neutral dollhouse.",
+      "reason": "Dollhouse/living category considered but not selected for activities-of-daily-living head; no patient capability inference. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "NYHA classification",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A miniature toy skyline.",
+      "reason": "New York/NYHA place fragment considered but not selected; no classification letters or heart-failure class encoded. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "BMI",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A mannequin beside a book index and scale.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "BUN",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "QRS duration",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "Three toy letter blocks Q, R and S.",
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "ST2",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "MR-proADM",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "CRP",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "A C-shaped toy spring.",
+      "reason": "C/reactive fragment considered but not selected for this protein/acronym; no arbitrary letter-to-assay identification. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "MR-proANP",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "gender",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "home metolazone",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "pH",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "WBC",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "dementia",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "COPD",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "cirrhosis",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "cancer",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": [
+        "56"
+      ]
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "ADM",
+      "printed_page": 373,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "comorbidities",
+      "printed_page": 374,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "53",
+      "chapter_title": "Acute Heart Failure",
+      "term": "follow-up",
+      "printed_page": 374,
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "attempted_cue": "Two toy figures in a line.",
+      "reason": "Follow/order action considered but not selected for follow-up head; no clinical timing or advice. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "symptoms",
+      "printed_page": 374,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A generic unwell-expression theatrical mask.",
+      "reason": "Tried broad illness category; it does not meaningfully encode the general symptom word or its absent/present distinction. Hold is about this attempt, not a unique blind-decoding requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "pathologic",
+      "printed_page": 374,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A plain microscope.",
+      "reason": "Tried pathology-lab category; microscope alone is only a topic-context prop, not a sufficient bridge to pathologic.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "Asymptomatic",
+      "printed_page": 375,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A generic unwell-expression theatrical mask.",
+      "reason": "Tried broad illness category; it does not meaningfully encode the general symptom word or its absent/present distinction. Hold is about this attempt, not a unique blind-decoding requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "Symptomatic",
+      "printed_page": 375,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A generic unwell-expression theatrical mask.",
+      "reason": "Tried broad illness category; it does not meaningfully encode the general symptom word or its absent/present distinction. Hold is about this attempt, not a unique blind-decoding requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "harsh",
+      "printed_page": 375,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A rough sandpaper swatch.",
+      "reason": "Tried literal roughness analogy; tactile roughness is the wrong sensory sense for this sound adjective, with no economical selected revision.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "right axis deviation",
+      "printed_page": 376,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A plain arrow pointing right.",
+      "reason": "Tried directional fragment; it does not encode an axis or deviation as opposed to ordinary direction. No selected axis-specific model.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "Duroziez sign",
+      "printed_page": 378,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A familiar door beside a rose.",
+      "reason": "Tried door/rose fragments; this is a forced two-prop stack with uncertain spoken link. No economical selected fragment.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "de Musset sign",
+      "printed_page": 378,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A bowl of dessert mousse.",
+      "reason": "Tried a familiar mousse/Musset name fragment; pronunciation link is uncertain in this offline pass, so not selected. Not an all-syllable requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "54",
+      "chapter_title": "Valvular Emergencies",
+      "term": "complications",
+      "printed_page": 379,
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "attempted_cue": "A generic hazard flag.",
+      "reason": "Tried hazard category; only a topic-related warning prop, not an economical bridge to complication.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "MOGE(S)",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A mug beside a visibly open book.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Mug/mog is pronunciation-dependent and does not visibly supply the classification letters; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Brugada syndrome",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Ethanol",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "53"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Chemotherapeutic agents",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "An unmarked medicine bottle.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Bottle supplies only medicines, not chemo- identity; held as topic-level.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "doxorubicin",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy ox beside a ruby.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Ox and ruby offer partial sounds but stack is forced and doxo prefix uncertain; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Antiretroviral agents",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A cartoon virus beside a backward arrow.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Retro/backward plus virus are lexical pieces, but no simple selected cue for complete class; no mechanism depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "zidovudine",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "didanosine",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Phenothiazines",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Methamphetamine",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Infiltrative diseases",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A kitchen filter.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Filter/infiltr- offers a partial lexical bridge, not chosen because category distinction remains uncertain; no process assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Autoimmune disorders",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy automobile beside a cartoon germ.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Auto sound alone economical, but germ is topic-only for immune; full proposed stack not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Rheumatoid arthritis",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "56"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Metabolic",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy metal bell.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Met-/metal is weak partial sound and bell adds arbitrary syllable; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Nutritional deficiency",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "An empty food bowl.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Nutrition category is plausible, empty quantity state not a condition depiction; no selected full association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "thiamine",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Endocrine",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy crane.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Crane/crine weak partial sound with no economical endo bridge; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Electrolytic disturbance",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy electrical plug.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Electrical/electro partial head only; does not visibly supply electrolyte class; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Palpitations",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Pulsus bisferiens",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A pulse token beside two ferns.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Pulse is lexical head, bis/two and feriens/fern stack too forced; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Valsalva",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "54"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "low voltage of QRS",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "conduction disturbances",
+      "printed_page": 380,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "Tied tree branches beside a barrier.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Older bundle/branch/block could cue one conduction category, not conduction in general; not chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Human immunodeficiency virus",
+      "printed_page": 381,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Neisseria meningitidis",
+      "printed_page": 381,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "rheumatic fever",
+      "printed_page": 381,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Lyme disease",
+      "printed_page": 381,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Driveline",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy car on a plain line.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Drive/line offers literal heads but arbitrary two-prop stack and specialist device identity not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "QRS complexes",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "Three letter-shaped toy blocks beside a complicated knot.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "hemodynamically unstable",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "An unstable toy balance with a red droplet.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Hemo blood head plausible but full stack equates clinical instability with balance; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "precordium",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar musical cord.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Cord/cordium weak word fragment with wrong anatomical origin implication; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "acquired von Willebrand disease",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar willow tree.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Willow/Wille- approximate name fragment meaningful but uncertain; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "anticoagulation",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "54"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "inotropes",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Dopamine",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy door beside a mint sweet.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "tissue plasminogen activator",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "56"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "cardioversion",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A heart token turning over like a reversible card.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "amiodarone",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "warfarin",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A wharf beside a fern.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "INR",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "outflow conduit",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "An outward arrow beside a pipe.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Meaningful outflow/conduit heads but no selected economical single bridge; no device path encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Valsalva maneuver",
+      "printed_page": 383,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "S1",
+      "printed_page": 383,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy letter S beside one block.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Visible letter/number props are possible but not an economical nontext learned cue; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "S2",
+      "printed_page": 383,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy letter S beside two blocks.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Visible S needs an actual marked object, not an invisible alphabet block; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "hospitalization",
+      "printed_page": 384,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Idiopathic",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy ID card.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. ID/idio partial sound exists but requires letters to be genuinely visible; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Staphylococcus",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "acute rheumatic fever",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Mycobacterium tuberculosis",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Fungal",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Histoplasma capsulatum",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar capsule standing alone.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Capsul-/capsule partial head plausible; not selected without prior ingredient/context check.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "leukemia",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "lymphoma",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "melanoma",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "hydralazine",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Systemic rheumatic diseases",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar room model.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Rheum/room meaningful partial sound but substantial naming ambiguity; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Radiation induced",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Uremia",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A urine specimen cup beside a microphone.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Myxedema",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Depression",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A plain arrow pointing down.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Everyday depressed/lowered head possible; no ECG morphology assertion, held rather than psychiatric-mask wrong sense.",
+      "retained_in_other_chapters": [
+        "41"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Isoelectric",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy electrical plug.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Electric lexical fragment only; iso not supplied, held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Amplitude",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Ant Eff",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy ant beside an overflowing cup.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Ant/anterior partial sound and effusion head plausible but compound forced; no selected cue, not pear/cardigan context substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Post Eff",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A postal letter beside an overflowing cup.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Literal label, caption posterior effusion. Post/postal fragment meaningful but two props forced and effusion uncertain; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "calcification",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "CBC",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "differential WBC count",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "Several unmarked white study tokens beside a counter.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. White tokens would be arbitrary cells, not WBC identity; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "BUN",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "creatinine",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "53"
+      ]
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Infiltrate",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar kitchen filter.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Filter/infiltr- is only an approximate name fragment, no selected prop.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Serologic studies",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy study book.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Studies is generic and supplies no serologic identity; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Antinuclear antibodies",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy ant beside a globe nucleus model.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Antibody/name/category stack too forced; no selected economical cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "rheumatoid factor",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "viral antibody titers",
+      "printed_page": 387,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy ant with a large cartoon body.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Ant-body partial name could supply antibody, virus/titer omitted; held pending ingredient review.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "anticoagulant",
+      "printed_page": 388,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "postradiation",
+      "printed_page": 388,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "plethysmograph",
+      "printed_page": 388,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "Kussmaul sign",
+      "printed_page": 388,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy cow with a mallet.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Kuss/cow/maul sounds uncertain and stack forced, not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "automatic cuff",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar shirt cuff.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Cuff head is an economical homonym; no selected device-category cue in this draft.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "manual Doppler",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy hand beside an ultrasound probe.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Manual/hand and Doppler device category are lexical, but arbitrary stack not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "whirr",
+      "printed_page": 382,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A familiar spinning toy fan.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Whirr sound/action category plausible, fan alone may imply only a sound source; held with auditory dependence.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "free fluid",
+      "printed_page": 385,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A plain pouring-water prop.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Fluid head is an ordinary category, free not encoded; no selected actual reusable prop yet.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "55",
+      "chapter_title": "Cardiomyopathies and Pericardial Disease",
+      "term": "early repolarization",
+      "printed_page": 386,
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "attempted_cue": "A toy polar bear.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Polar/repolar partial sound meaningful, early/again unencoded; held pending old ingredient check.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "provoked",
+      "printed_page": 389,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy finger poking a plain cushion.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Provocation/action bridge plausible, not selected as classification depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "unprovoked",
+      "printed_page": 389,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A plain cushion left untouched.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Absence of provoking action is not a visible nontext cue; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "limb immobility",
+      "printed_page": 389,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy statue with a stationary limb.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Immobility ordinary category plausible; still image cannot prove lack of motion, not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Obesity",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A wide-bodied neutral study mannequin.",
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "BMI",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A generic mannequin beside an unnumbered scale.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Body mass index expansion in footnote; body/mass heads plausible, no formula or body-size caricature selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "body mass index",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A generic mannequin beside an unnumbered scale.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. No formula or caricature; plausible body/mass category, held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "postpartum state",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A postal letter.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Post/postal partial sound is meaningful, but no selected complete or reliable state cue; not muscle-topic substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "metastatic disease",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A cartoon study token with motion arrow.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Generic disease/motion would be topic-only, no meaningful selected name bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Acute leukemias",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "myeloma",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy mile-marker post.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Myel/mile is approximate pronunciation-dependent partial name, not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "thalidomide",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "factor V Leiden",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy ladder.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Leiden/ladder weak approximate fragment, not selected or misrepresented as full sound.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Immobility",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar statue standing still.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Ordinary stillness bridge plausible, a still prop does not demonstrate mobility state; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Smoking",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "systolic dysfunction",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy sister figurine.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Sis-/systolic sound approximate and context-dependent; no selected cue.",
+      "retained_in_other_chapters": [
+        "53"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Estrogen",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "contraceptives",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "transvaginal",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A detached vaginal teaching model.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Named category plausible but no selected prior ingredient/route cue; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Noninfectious inflammatory conditions",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A cartoon germ beside a stop barrier.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Absence/negation cannot be reduced to infection germ; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "inflammatory bowel disease",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar bowel teaching model.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Bowel explicit head plausible, not selected pending actual old ingredient; no inflammation assertion.",
+      "retained_in_other_chapters": [
+        "38"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "dementia",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "infarction",
+      "printed_page": 390,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy fan beside a cart.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Fan/cart fragment has real earlier failed attempts; no selected economical infarction bridge, not generic organ-topic substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Homan's sign",
+      "printed_page": 391,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy home.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Homan/home is an economical partial name, uncertain pronunciation/context; not selected, no examination maneuver.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "S wave",
+      "printed_page": 392,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "An ocean wave.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Wave head meaningful but S unencoded; not selected as S identity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "diagnostic pathway",
+      "printed_page": 392,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A plain toy path.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Pathway literal head meaningful, diagnostic omitted; held pending prior ingredient review.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "diagnostic algorithm",
+      "printed_page": 392,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "clinical gestalt",
+      "printed_page": 392,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "An ordinary jigsaw puzzle completed as one whole.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Whole/gestalt learned category is plausible but no selected economical cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Serum Cr",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "creatinine",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": [
+        "53"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Homogenous perfusion",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Diagnostic",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar blank exam sheet.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Generic diagnosis/test object supplies context only; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Nondiagnostic",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A blank sheet beside a stop barrier.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Negation not a distinct visible category cue; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Gestalt",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A completed jigsaw puzzle.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Whole/gestalt category plausible, not selected pending prior ingredients.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Quant",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar unnumbered counter.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Caption quantitative expansion; quantity head plausible, no selected full abbreviation cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "gestalt assessment",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A completed jigsaw puzzle.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Whole/gestalt partial category plausible; no scoring or probabilities encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "immobilization",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar statue standing still.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Still image cannot prove absence of movement, no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Paralysis",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "paresis",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "lower extremity",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A detached leg teaching model.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Leg category head meaningful, no selected old prop at draft checkpoint.",
+      "retained_in_other_chapters": [
+        "39"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Potential False-Positive Levels",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A plus-sign tile with a theatrical false nose.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Positive/false meaningful heads but stack arbitrary and not selected; no diagnostic error rate.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Potential False-Negative Levels",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A minus-sign tile with a theatrical false nose.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Negative/false meaningful heads but no selected economical category cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "metastasis",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A moving clay lump.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Motion/lump is only a topic/finding relation, no lexical bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Lipemia",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar pair of toy lips.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Lip-/lipem- approximate partial sound; no selected economical blood-condition cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "filling defect",
+      "printed_page": 394,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "An incompletely filled plain cup.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Everyday filling/defect head plausible, but no selected familiar independent category token.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "IV balanced crystalloid solutions",
+      "printed_page": 395,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar balance scale beside a crystal.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Balance/crystal lexical heads meaningful but compound stack forced; no solution/composition/route claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Transaxial",
+      "printed_page": 395,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy axle.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Axial/axle partial ordinary category bridge meaningful, no scan plane or anatomy claim; held pending prior ingredient scan.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "color-mapped images",
+      "printed_page": 395,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar plain colour swatch.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Colour head meaningful; not source map geography or lesion interpretation, no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "scintillation",
+      "printed_page": 395,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy scintillating star.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Sparkle category plausible but generic star would be only contextual without visible twinkle action; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "physiologic manifestation",
+      "printed_page": 396,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A generic study mannequin.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Generic mannequin is topic context only, not manifestation or physiology; held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Charlotte rule",
+      "printed_page": 396,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy charlotte cake.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Charlotte/cake learned name category is possible but naming familiarity uncertain; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "diagnostic sensitivity",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "diagnostic decision making",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy forked path.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Decision/forked-path category plausible; no selected cue or clinical pathway.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Factor Xa inhibitors",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar saw.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Xa/saw partial pronunciation uncertainty, no selected economical factor/inhibitor category.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Xarelto",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy xylophone.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Xa/xy approximate name fragment, pronunciation uncertain; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Apixaban",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar picture in a frame.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Apix/a-pic partial sound approximate, no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Pradaxa",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A plain unbranded handbag.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Brand-specific object would depend on protected logo and generic bag is topic-only; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Activase",
+      "printed_page": 397,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A toy actor in an active jumping pose.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Active/Activa partial word plausible, not source drug activity assertion; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Modified Hestia Criteria",
+      "printed_page": 398,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar hearth.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Hestia/hearth learned public myth-name/category plausible; familiarity uncertain, no selected cue pending ingredients.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Hestia criteria",
+      "printed_page": 398,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar hearth.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Same meaningful learned-name possibility, no scoring rule; pending ingredient check.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "IV narcotics",
+      "printed_page": 398,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Creatinine clearance",
+      "printed_page": 398,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "uncontrolled hypertension",
+      "printed_page": 399,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Surgical Embolectomy",
+      "printed_page": 399,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar toy elbow.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Embo/elbow approximate sound not full name; no arbitrary surgical kit substitute selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "contraindications",
+      "printed_page": 398,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar stop barrier beside a plain signpost.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Prohibition/sign heads are meaningful but do not supply the specific contraindication category economically; held. Full clinical instruction excluded only after this head trial.",
+      "retained_in_other_chapters": [
+        "51"
+      ]
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "Cr",
+      "printed_page": 393,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Literal caption abbreviation for creatinine; no chromium or other inferred sense.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "56",
+      "chapter_title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "term": "balanced crystalloid",
+      "printed_page": 395,
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "attempted_cue": "A familiar balance scale beside a crystal.",
+      "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Balanced and crystalloid/crystal lexical heads tried explicitly; compound not selected, no solution composition or effect asserted.",
       "retained_in_other_chapters": []
     }
   ],
@@ -7562,6 +10269,494 @@
       "report": "docs/chapter-51-cue-audit.md",
       "current_decision": "reuse_candidate",
       "resolution": "Current author attempt reconsidered using exact older nonheld root; no earlier source-bank hold asserted."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Syncope",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Pericardial disease",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Migraine",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Seizure",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "congestive heart failure",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Dyspnea",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Framingham Heart Study",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reconsider insufficient full-study-identity rejection; actual old frame only."
+    },
+    {
+      "chapter_id": "52",
+      "term": "Hyperventilation Maneuver",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reconsider hyper-modifier rejection; no clinical demonstration."
+    },
+    {
+      "chapter_id": "52",
+      "term": "palpations",
+      "source_record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reconsider literal action; preserve previous hold, not inferred intended word."
+    },
+    {
+      "chapter_id": "53",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Anaphylaxis",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment attempt only; every earlier source decision remains unchanged."
+    },
+    {
+      "chapter_id": "53",
+      "term": "rales",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "pulmonary congestion",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Low-output syndrome",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "hepatomegaly",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "routine measurement",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "interalveolar/interlobular septa",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "volume overload",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "discharge",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "preload-dependent",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Geospatial environment",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "GIS measures",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "coronary revascularization",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "low-output symptoms",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "history of cancer",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "glucose",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Author calibration: use actual older lexical/head/category ingredient with explicit omitted modifiers; preserve the earlier draft decision and attempt. No clinical equivalence or full-name coverage claim."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Nonadherence",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual older building-block ingredients reused in separated, non-sticking contrast to positive adherence. A lexical reminder need not establish patient medication or self-care behavior."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Medication nonadherence",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual older building-block ingredients reused in separated, non-sticking contrast to positive adherence. A lexical reminder need not establish patient medication or self-care behavior."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Medication adherence",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual older blocks and glue-pot ingredients reused as visibly joined/sticking wordplay. Withdraw the separated-block attempt because it had the wrong polarity for positive adherence, not because a cue must prove patient compliance."
+    },
+    {
+      "chapter_id": "53",
+      "term": "adherence",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual older blocks and glue-pot ingredients reused as visibly joined/sticking wordplay. Withdraw the separated-block attempt because it had the wrong polarity for positive adherence, not because a cue must prove patient compliance."
+    },
+    {
+      "chapter_id": "53",
+      "term": "Mortality",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual earlier skull-symbol ingredient reused for a familiar death category. Vocabulary wordplay does not require or assert patient prognosis; prior rejection on clinical-outcome grounds reconsidered."
+    },
+    {
+      "chapter_id": "53",
+      "term": "death",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Actual earlier skull-symbol ingredient reused for a familiar death category. Vocabulary wordplay does not require or assert patient prognosis; prior rejection on clinical-outcome grounds reconsidered."
+    },
+    {
+      "chapter_id": "53",
+      "term": "right ventricular infarction",
+      "source_record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Reuse actual earlier ventricular-name ingredient, not a whole-heart location proxy. The literal ventricular fragment is sufficient for a scoped partial association; infarction fan/cart attempt remains withdrawn."
+    },
+    {
+      "chapter_id": "54",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial/familiar category reconsideration does not erase actual older holds. No global resolution."
+    },
+    {
+      "chapter_id": "54",
+      "term": "small amplitude",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local initial attempt revised before author freeze; no earlier bank hold invented."
+    },
+    {
+      "chapter_id": "54",
+      "term": "slow rise",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local initial attempt revised before author freeze; no earlier bank hold invented."
+    },
+    {
+      "chapter_id": "54",
+      "term": "Signs",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Local initial attempt revised before author freeze; no earlier bank hold invented."
+    },
+    {
+      "chapter_id": "54",
+      "term": "Color flow Doppler",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main requested broad familiar device/class/partial-name recalibration. Current family-only association selected; previous attempts/reasons preserved. Actual older holds remain unchanged where present."
+    },
+    {
+      "chapter_id": "54",
+      "term": "diuretics",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main requested broad familiar device/class/partial-name recalibration. Current family-only association selected; previous attempts/reasons preserved. Actual older holds remain unchanged where present."
+    },
+    {
+      "chapter_id": "54",
+      "term": "parenteral",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Main requested broad familiar device/class/partial-name recalibration. Current family-only association selected; previous attempts/reasons preserved. Actual older holds remain unchanged where present."
+    },
+    {
+      "chapter_id": "54",
+      "term": "syncope",
+      "source_record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Use independently reviewed52 sink fragment in current54 only; preserve real33/workshop holds and current slumped attempt without global resolution."
+    },
+    {
+      "chapter_id": "55",
+      "term": "Pericardial Disease",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "Congestive heart failure",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "Fever",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "Syncope",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "Hepatitis B virus",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "dobutamine",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "defibrillation",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "infection",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "coagulopathy",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "ST-segment elevation",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "pericardial effusion",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "55",
+      "term": "R waves",
+      "source_record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "aPTT",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "activated partial thromboplastin time",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "Congestive heart failure",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "hemoptysis",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "pulmonary infarction",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
+    },
+    {
+      "chapter_id": "56",
+      "term": "Thrombolytic therapy",
+      "source_record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current broad vocabulary proposal does not erase earlier holds/rejections or validate recall."
     }
   ]
 }

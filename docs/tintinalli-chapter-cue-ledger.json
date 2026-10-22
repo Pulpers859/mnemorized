@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mode": "chapter_batched_review",
-  "requested_batch_size": 10,
+  "requested_batch_size": 5,
   "scope": "Selected source-grounded vocabulary only; not clinical lesson content, treatment guidance, a production Forge run, or exhaustive mnemonic possibility testing.",
   "chapters": [
     {
@@ -847,6 +847,76 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 181
+    },
+    {
+      "chapter_id": "52",
+      "title": "Syncope",
+      "record": "docs/chapter-52-cue-audit.json",
+      "report": "docs/chapter-52-cue-audit.md",
+      "selected_terms": 187,
+      "new_candidates": 6,
+      "reused_candidates": 151,
+      "holds": 30,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 202
+    },
+    {
+      "chapter_id": "53",
+      "title": "Acute Heart Failure",
+      "record": "docs/chapter-53-cue-audit.json",
+      "report": "docs/chapter-53-cue-audit.md",
+      "selected_terms": 271,
+      "new_candidates": 1,
+      "reused_candidates": 220,
+      "holds": 50,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 297
+    },
+    {
+      "chapter_id": "54",
+      "title": "Valvular Emergencies",
+      "record": "docs/chapter-54-cue-audit.json",
+      "report": "docs/chapter-54-cue-audit.md",
+      "selected_terms": 122,
+      "new_candidates": 7,
+      "reused_candidates": 106,
+      "holds": 9,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 161
+    },
+    {
+      "chapter_id": "55",
+      "title": "Cardiomyopathies and Pericardial Disease",
+      "record": "docs/chapter-55-cue-audit.json",
+      "report": "docs/chapter-55-cue-audit.md",
+      "selected_terms": 308,
+      "new_candidates": 9,
+      "reused_candidates": 216,
+      "holds": 83,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 342
+    },
+    {
+      "chapter_id": "56",
+      "title": "Venous Thromboembolism Including Pulmonary Embolism",
+      "record": "docs/chapter-56-cue-audit.json",
+      "report": "docs/chapter-56-cue-audit.md",
+      "selected_terms": 306,
+      "new_candidates": 4,
+      "reused_candidates": 236,
+      "holds": 66,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 353
     }
   ],
   "hold_register": {
@@ -856,8 +926,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "52",
-    "title": "Syncope",
+    "chapter_id": "57",
+    "title": "Systemic Hypertension",
     "status": "not_started_for_cue_review"
   },
   "spend": {

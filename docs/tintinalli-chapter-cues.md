@@ -1,6 +1,6 @@
 # Tintinalli Chapter Cue Review
 
-Review in requested ten-chapter batches with bounded chapter-specific lanes. This is source-grounded vocabulary screening,
+Review in requested five-chapter batches with bounded chapter-specific lanes. This is source-grounded vocabulary screening,
 not clinical lesson generation or a claim of validated mnemonic effectiveness.
 
 ## Chapter 1: Emergency Medical Services
@@ -385,8 +385,8 @@ candidates remain untested, nonproduction, evidence empty and spend zero.
 
 ## Next Chapter
 
-**Chapter 52, Syncope**, is next, not started for cue review.
-Continue in the requested ten-chapter batches. The primary cue catalog remains at
+**Chapter 57, Systemic Hypertension**, is next, not started for cue review.
+Continue in the requested five-chapter batches. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
 remains untouched.
@@ -410,4 +410,20 @@ Independent AI cross-review and main integration completed; not empirical valida
 
 Totals: 1,537 selected terms, 118 new candidates, 1,288 reuses, 131 holds and 1,824 keyword mappings. New means newly recorded, not proven novel or effective.
 
-Meaningful bold/heading/table/figure terms explicitly tried within verified regions; selected vocabulary and typography extraction are not exhaustive clinical coverage. Earlier holds remain in the separate revisit register. No production catalog admission, paid API calls or renders. Next: Chapter52 Syncope.
+Meaningful bold/heading/table/figure terms explicitly tried within verified regions; selected vocabulary and typography extraction are not exhaustive clinical coverage. Earlier holds remain in the separate revisit register. No production catalog admission, paid API calls or renders. Next: Chapter57 Systemic Hypertension.
+
+## Chapters 52-56: Five-Chapter Cardiovascular Batch
+
+Independent AI source/cue review and main integration completed; not empirical validation.
+
+| Chapter | Topic | Selected | New | Reused | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 52 | [Syncope](chapter-52-cue-audit.md) | 187 | 6 | 151 | 30 | 202 |
+| 53 | [Acute Heart Failure](chapter-53-cue-audit.md) | 271 | 1 | 220 | 50 | 297 |
+| 54 | [Valvular Emergencies](chapter-54-cue-audit.md) | 122 | 7 | 106 | 9 | 161 |
+| 55 | [Cardiomyopathies and Pericardial Disease](chapter-55-cue-audit.md) | 308 | 9 | 216 | 83 | 342 |
+| 56 | [Venous Thromboembolism Including Pulmonary Embolism](chapter-56-cue-audit.md) | 306 | 4 | 236 | 66 | 353 |
+
+Totals: 1194 selected terms, 27 new candidates, 929 reuses, 238 holds and 1355 keyword mappings. New means newly recorded, not proven novel or effective.
+
+Actual mixed-column regions and meaningful bold/heading/table/figure terms checked; source52 continues into LEFT39 while53 begins RIGHT39. Typography/selected vocabulary is not exhaustive clinical coverage. Earlier holds preserved separately. Canonical catalog unchanged; zero paid calls/renders. Next57, five-chapter cadence.
