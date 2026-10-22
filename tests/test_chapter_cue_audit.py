@@ -25,6 +25,10 @@ ROOT = Path(__file__).resolve().parents[1]
     (33, 74, 81, 142), (34, 81, 86, 142), (35, 1, 8, 228),
     (36, 8, 20, 228), (37, 20, 30, 228), (38, 31, 38, 228),
     (39, 1, 3, 266), (40, 3, 6, 266), (41, 6, 19, 266),
+    (42, 19, 26, 266), (43, 26, 33, 266), (44, 33, 41, 266),
+    (45, 41, 51, 266), (46, 51, 58, 266), (47, 58, 61, 266),
+    (48, 1, 5, 328), (49, 6, 24, 328), (50, 24, 29, 328),
+    (51, 29, 34, 328),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
@@ -42,6 +46,7 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
         142: ("Tintin_Resuscitation Procedures.pdf", "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689"),
         228: ("Tintin_Analgesia_Anesthesia_Procedural Sedation.pdf", "dc0444f631bf8c0dc22c3a6d67cfce06f8e3945c6e019bb0a7b892c4b1e841fb"),
         266: ("Tintin_Wound Management.pdf", "691e464e103295d5b27bf4173a60fa6a86e81261cdeb35f2c9b45411ea4c8119"),
+        328: ("Tintin_Cardiovascular.pdf", "53fb3bc68f3d15449fa1fe861a0c16831512d8e12fe9015e56ceda0830762fa6"),
     }
     assert (bank["source"]["file"], bank["source"]["sha256"].lower()) == source_files[offset]
     entries = bank["entries"]

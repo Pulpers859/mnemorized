@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "mode": "one_chapter_at_a_time",
+  "mode": "chapter_batched_review",
+  "requested_batch_size": 10,
   "scope": "Selected source-grounded vocabulary only; not clinical lesson content, treatment guidance, a production Forge run, or exhaustive mnemonic possibility testing.",
   "chapters": [
     {
@@ -706,6 +707,146 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 147
+    },
+    {
+      "chapter_id": "42",
+      "title": "Face and Scalp Lacerations",
+      "record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "selected_terms": 138,
+      "new_candidates": 7,
+      "reused_candidates": 115,
+      "holds": 16,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 151
+    },
+    {
+      "chapter_id": "43",
+      "title": "Arm, Forearm, and Hand Lacerations",
+      "record": "docs/chapter-43-cue-audit.json",
+      "report": "docs/chapter-43-cue-audit.md",
+      "selected_terms": 154,
+      "new_candidates": 21,
+      "reused_candidates": 131,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 165
+    },
+    {
+      "chapter_id": "44",
+      "title": "Thigh, Leg, and Foot Lacerations",
+      "record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "selected_terms": 186,
+      "new_candidates": 6,
+      "reused_candidates": 163,
+      "holds": 17,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 204
+    },
+    {
+      "chapter_id": "45",
+      "title": "Soft Tissue Foreign Bodies",
+      "record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "selected_terms": 132,
+      "new_candidates": 11,
+      "reused_candidates": 112,
+      "holds": 9,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 179
+    },
+    {
+      "chapter_id": "46",
+      "title": "Puncture Wounds and Bites",
+      "record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "selected_terms": 186,
+      "new_candidates": 21,
+      "reused_candidates": 132,
+      "holds": 33,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 215
+    },
+    {
+      "chapter_id": "47",
+      "title": "Postrepair Wound Care",
+      "record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "selected_terms": 87,
+      "new_candidates": 0,
+      "reused_candidates": 76,
+      "holds": 11,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 99
+    },
+    {
+      "chapter_id": "48",
+      "title": "Chest Pain",
+      "record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "selected_terms": 134,
+      "new_candidates": 22,
+      "reused_candidates": 106,
+      "holds": 6,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 149
+    },
+    {
+      "chapter_id": "49",
+      "title": "Acute Coronary Syndromes",
+      "record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "selected_terms": 277,
+      "new_candidates": 16,
+      "reused_candidates": 249,
+      "holds": 12,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 326
+    },
+    {
+      "chapter_id": "50",
+      "title": "Cardiogenic Shock",
+      "record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "selected_terms": 123,
+      "new_candidates": 7,
+      "reused_candidates": 102,
+      "holds": 14,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 155
+    },
+    {
+      "chapter_id": "51",
+      "title": "Low-Probability Acute Coronary Syndrome",
+      "record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "selected_terms": 120,
+      "new_candidates": 7,
+      "reused_candidates": 102,
+      "holds": 11,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 181
     }
   ],
   "hold_register": {
@@ -715,8 +856,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "42",
-    "title": "Face and Scalp Lacerations",
+    "chapter_id": "52",
+    "title": "Syncope",
     "status": "not_started_for_cue_review"
   },
   "spend": {

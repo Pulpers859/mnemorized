@@ -43,10 +43,20 @@
     "38",
     "39",
     "40",
-    "41"
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51"
   ],
-  "active_hold_occurrences": 458,
-  "unique_held_terms": 379,
+  "active_hold_occurrences": 589,
+  "unique_held_terms": 489,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -235,7 +245,9 @@
       "report": "docs/chapter-9-cue-audit.md",
       "attempted_cue": null,
       "reason": "Previously rejected docks plus bicycle assembly is not revived or silently reclassified as reuse. No improved economical partial association proposed in this pass. Broad calibration permits partial cues, but does not obligate retaining this particular attempt. No treatment association admitted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "46"
+      ]
     },
     {
       "chapter_id": "10",
@@ -301,7 +313,9 @@
       "report": "docs/chapter-14-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical name cue proposed in this pass; generic emergency props would add little vocabulary identity. Not held merely for lacking a unique diagnosis cue.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "14",
@@ -521,7 +535,9 @@
       "report": "docs/chapter-20-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical bridge selected in this bounded pass. Avoid nearly identical dough fragments for dopamine and dobutamine without a useful learned distinction; not a requirement to encode every syllable.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "20",
@@ -554,7 +570,9 @@
       "report": "docs/chapter-20-cue-audit.md",
       "attempted_cue": null,
       "reason": "Existing hold preserved. Tried an Anna-name character with a protective shield; character naming and phylaxis recovery were not economical or familiar enough. No symptoms, drug relationship or table instructions imported.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "20",
@@ -577,7 +595,9 @@
       "attempted_cue": null,
       "reason": "Tried heart token in a traffic jam for congestion; adding a failed vehicle to recover failure overcomplicates this attempt. No clinical state or diagnosis inferred from traffic metaphor; keep unresolved rather than force it.",
       "retained_in_other_chapters": [
-        "31"
+        "31",
+        "48",
+        "50"
       ]
     },
     {
@@ -886,7 +906,9 @@
       "report": "docs/chapter-24-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried oxygen-cylinder plus outside-body staging; it leaves the membrane-name bridge insufficiently clear in this pass. Existing oxygen primitive remains available. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "24",
@@ -1031,7 +1053,9 @@
       "report": "docs/chapter-25-cue-audit.md",
       "attempted_cue": null,
       "reason": "Same Chapter24 attempted outside-body oxygen-cylinder staging; membrane-name recovery remains insufficiently clear for selection. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "25",
@@ -1095,7 +1119,9 @@
       "report": "docs/chapter-25-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves Chapter20 hold; similar dough fragments were considered but do not yet supply a useful distinction in this pass. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "25",
@@ -1524,7 +1550,9 @@
       "report": "docs/chapter-28-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a red hat and mat for hema/toma; word repairs made this unattractive. No clinical swelling/bleeding mechanism substituted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "42"
+      ]
     },
     {
       "chapter_id": "28",
@@ -1924,7 +1952,10 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a clamp seizing a block; the seize/seizure reminder was not attractive enough here. An ordinary action cue was tried, not a patient manifestation or diagnosis.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "46",
+        "49"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2059,7 +2090,9 @@
       "attempted_cue": null,
       "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible.",
       "retained_in_other_chapters": [
-        "39"
+        "39",
+        "45",
+        "46"
       ]
     },
     {
@@ -2194,7 +2227,9 @@
       "report": "docs/chapter-29B-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves outside-body membrane/oxygen collection as cluttered. Considered an echoing microphone for ECMO; uncertain acronym sound without a compact selected name bridge. No circuit or treatment depicted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "50"
+      ]
     },
     {
       "chapter_id": "29B",
@@ -2317,7 +2352,9 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Reconsidered red hat on a mat; naming repair still made this proposal unattractive. No clinical appearance or mechanism substituted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "42"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2328,7 +2365,9 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a hemmed cloth beside a toy pit for hemo/pty; object naming and sound bridge were unappealing. No clinical manifestation used to rescue the cue.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "48"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2471,7 +2510,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A red puddle beside a tomato.",
       "reason": "Tomato tail is weak and puddle nonspecific; prior hold preserved.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "42"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2629,7 +2670,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A pear beside a bone-shaped token.",
       "reason": "Pear/peri fragment is weak and bone token too broad for useful recovery; no selected cue.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "43"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2663,7 +2706,9 @@
       "attempted_cue": "A generic cartoon germ.",
       "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained.",
       "retained_in_other_chapters": [
-        "39"
+        "39",
+        "45",
+        "46"
       ]
     },
     {
@@ -2686,7 +2731,10 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A weather vane at the bottom of a toy cave.",
       "reason": "Inferior/vane/cave fragments plausible, but cumbersome compound not selected; no anatomy relation.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "49",
+        "50"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2807,7 +2855,9 @@
       "report": "docs/chapter-33-cue-audit.md",
       "attempted_cue": "A pear beside a bone model.",
       "reason": "Pear/peri alone weak; no economical standalone category selected; earlier31 hold remains.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "43"
+      ]
     },
     {
       "chapter_id": "33",
@@ -2863,7 +2913,9 @@
       "attempted_cue": "A cartoon germ beside a broken toy shield.",
       "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain.",
       "retained_in_other_chapters": [
-        "39"
+        "39",
+        "45",
+        "46"
       ]
     },
     {
@@ -2974,7 +3026,9 @@
       "report": "docs/chapter-34-cue-audit.md",
       "attempted_cue": "A greeting-card heart beside a broken fraction tile.",
       "reason": "Tried card/fraction; fraction/infarction is strained and heart alone supplies only a broad category. No clinical depiction added to rescue the sound trial.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "49"
+      ]
     },
     {
       "chapter_id": "34",
@@ -2997,7 +3051,9 @@
       "attempted_cue": "A generic cartoon germ beside a doorway.",
       "reason": "Tried germ/entry; no useful infection-specific lexical hook selected. Existing rejected/held germ attempts remain historical; not a universal ban on category cues.",
       "retained_in_other_chapters": [
-        "39"
+        "39",
+        "45",
+        "46"
       ]
     },
     {
@@ -3009,7 +3065,9 @@
       "report": "docs/chapter-34-cue-audit.md",
       "attempted_cue": "A vinyl disc beside a toy knee.",
       "reason": "Tried disc/knee; awkward pronunciation and an arbitrary prop pair make this attempt unappealing. No symptom performance used as a substitute.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "48"
+      ]
     },
     {
       "chapter_id": "34",
@@ -3240,7 +3298,9 @@
       "report": "docs/chapter-35-cue-audit.md",
       "attempted_cue": "A familiar spiral spring.",
       "reason": "New spring fragment avoids species-specific asp naming but did not yield a convincing simple bridge. Older asp/ring rejection remains intact.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "49"
+      ]
     },
     {
       "chapter_id": "35",
@@ -3891,7 +3951,9 @@
       "report": "docs/chapter-36-cue-audit.md",
       "attempted_cue": "A long toy hall beside an extending telescope.",
       "reason": "Hall model is not a familiar standalone prop and this stack is overcoached; not rejected for absent syllables. Caption headword explicitly attempted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "44"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4133,7 +4195,10 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "A crown beside an artery token and a damaged gear.",
       "reason": "Crown/coronary fragment familiar but stack not economical; no avoidance or disease teaching.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "49",
+        "50"
+      ]
     },
     {
       "chapter_id": "37",
@@ -5168,6 +5233,1461 @@
       "attempted_cue": "A toy trend chart beside a castle.",
       "reason": "Revisited trend/castle attempt but not selected; no useful economical name token chosen. Earlier29A hold unchanged; no positioning demonstration.",
       "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "mucosa",
+      "printed_page": 285,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A familiar open-mouth teaching model.",
+      "reason": "Open mouth is location-only for mucosa, not a specific mucosal/name ingredient. No useful economical lexical reminder selected here; older36 mucosa hold remains open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Domestic Violence",
+      "printed_page": 285,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No selected neutral vocabulary-only cue for this sensitive interpersonal category; avoid caricaturing victims or implying diagnostic signs.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Galea aponeurosis",
+      "printed_page": 286,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached hair-bearing scalp model cap.",
+      "reason": "Scalp cap considered but rejected as a location-only surrogate for galea. No useful economical galea/aponeurosis cue selected here; older40 galea hold remains open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Subaponeurotic space",
+      "printed_page": 286,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached hair-bearing scalp model cap.",
+      "reason": "Cap is only nearby-topic anatomy, not a cue to subaponeurotic space. No useful selected name fragment or independently supported layer cue; hold rather than imply specificity.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Galea",
+      "printed_page": 287,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached hair-bearing scalp model cap.",
+      "reason": "Scalp cap considered but rejected as a location-only surrogate for galea. No useful economical galea/aponeurosis cue selected here; older40 galea hold remains open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "medial canthus",
+      "printed_page": 287,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token standing alone, without tube or barrier.",
+      "reason": "Final D recheck: The whole-eye token is location-only and supplies neither canthus nor medial. No economical meaningful cue selected in this bounded repair; hold without forcing a proposal or depicting clinical technique.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Frontal sinus",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A plain toy face model.",
+      "reason": "Whole face token is merely location-related to frontal sinus. No selected lexical sinus reminder here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Gland of Krause",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token.",
+      "reason": "Whole-eye token has no Krause/gland lexical ingredient. No useful economical fragment selected here; not held for incomplete syllable coverage.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Gland of Wolfring",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token.",
+      "reason": "Whole-eye token has no Wolfring/gland ingredient. Wolf/ring was considered but not selected as a useful compact association here; no prop stack forced.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Conjunctiva",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token.",
+      "reason": "Whole-eye token is location-only for Conjunctiva. No useful economical lexical fragment selected here; a narrower supported model remains possible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Orbital septum",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token.",
+      "reason": "Whole-eye token has no partition/septum ingredient. No selected economical cue here; do not substitute clinical geometry.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Meibomian gland in tarsal plate",
+      "printed_page": 288,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "An eyeball teaching token.",
+      "reason": "Whole-eye token does not encode Meibomian/gland/plate. No useful economical name ingredient selected here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "septum",
+      "printed_page": 289,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached familiar nose teaching model on a stand.",
+      "reason": "Final D recheck: The whole-nose token supplies neither septum/partition nor a meaningful name fragment. No economical meaningful cue selected in this bounded repair; hold without forcing a proposal or depicting clinical technique.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Alar margin",
+      "printed_page": 289,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached familiar nose teaching model on a stand.",
+      "reason": "Final D recheck: The whole-nose token is location-only and supplies no alar/margin ingredient. No economical meaningful cue selected in this bounded repair; hold without forcing a proposal or depicting clinical technique.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "Cheek anatomy",
+      "printed_page": 291,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A plain toy face model.",
+      "reason": "Whole face is location-only for the cheek head, not a selected specific cheek/category cue. No useful economical name fragment selected here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "42",
+      "chapter_title": "Face and Scalp Lacerations",
+      "term": "tragus",
+      "printed_page": 291,
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "attempted_cue": "A detached familiar ear token.",
+      "reason": "Whole ear is location-only for tragus and has no trag/name ingredient. No useful economical cue selected here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "43",
+      "chapter_title": "Arm, Forearm, and Hand Lacerations",
+      "term": "Sensory Function",
+      "printed_page": 292,
+      "source_record": "docs/chapter-43-cue-audit.json",
+      "report": "docs/chapter-43-cue-audit.md",
+      "attempted_cue": "A branching nerve-wire teaching token.",
+      "reason": "Nerve token alone did not provide a selected distinct sensory/function head. No useful economical sensory-category fragment chosen here; no neurological function inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "43",
+      "chapter_title": "Arm, Forearm, and Hand Lacerations",
+      "term": "Doppler probe",
+      "printed_page": 293,
+      "source_record": "docs/chapter-43-cue-audit.json",
+      "report": "docs/chapter-43-cue-audit.md",
+      "attempted_cue": "A standalone generic Doppler-device teaching prop.",
+      "reason": "Initial prop was not distinguished from the older ultrasound-probe family. No genuinely distinct familiar device ingredient or useful economical name fragment selected here; hold rather than new-count a generic device.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Lymphatics",
+      "printed_page": 300,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A toy figure with a limp.",
+      "reason": "Limp/lymph approximate fragment considered but not selected because it readily adds a movement or symptom reading rather than a useful neutral vocabulary reminder.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Internal iliac a.",
+      "printed_page": 300,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "An ordinary toy lily.",
+      "reason": "Lily/iliac fragment considered but not selected; the opening-name link is awkward here, not a ban on partial cues. Do not substitute a merely nearby pelvic model.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Pes anserinus",
+      "printed_page": 301,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A toy foot model.",
+      "reason": "Foot model tried but not selected for the source Latin-name fragment: would require an unverified lexical gloss. Avoid an unsupported anatomical translation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "sartorius",
+      "printed_page": 301,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A toy tailor beside cloth.",
+      "reason": "Tailor association considered but not selected: would rely on external etymological knowledge, not a verified source lexical bridge. Broad muscle model alone would not encode this bare name.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "gracilis",
+      "printed_page": 301,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A toy ballerina.",
+      "reason": "Grace/gracilis fragment considered but not selected: generic dancer is a weak reminder here, and the name in the insertion parenthesis has no explicit muscle lexical head. Not held for missing full syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Sural nerve",
+      "printed_page": 302,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A miniature sewer drain.",
+      "reason": "Sewer/sural name fragment considered but not selected: this fixture is likely named drain; no useful economical cue selected here. Earlier36 held sewer attempt remains unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Sensory distribution",
+      "printed_page": 302,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A branching nerve-wire teaching token.",
+      "reason": "Nerve token alone does not encode sensory distribution; no selected sensory/map lexical ingredient. No physiologic distribution or schematic clinical map inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Common iliac artery",
+      "printed_page": 303,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "An ordinary toy lily.",
+      "reason": "Lily/iliac fragment considered but not selected; the opening-name link is awkward here, not a ban on partial cues. Do not substitute a merely nearby pelvic model.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Internal iliac artery",
+      "printed_page": 303,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "An ordinary toy lily.",
+      "reason": "Lily/iliac fragment considered but not selected; the opening-name link is awkward here, not a ban on partial cues. Do not substitute a merely nearby pelvic model.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "External iliac artery",
+      "printed_page": 303,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "An ordinary toy lily.",
+      "reason": "Lily/iliac fragment considered but not selected; the opening-name link is awkward here, not a ban on partial cues. Do not substitute a merely nearby pelvic model.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Sural n.",
+      "printed_page": 304,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A miniature sewer drain.",
+      "reason": "Sewer/sural name fragment considered but not selected: this fixture is likely named drain; no useful economical cue selected here. Earlier36 held sewer attempt remains unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "necrosis",
+      "printed_page": 305,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A blank theatrical skull token.",
+      "reason": "Skull is a death association rather than a selected tissue-name cue; no appropriate simple alternative selected here. Broadness is allowed, but this attempt adds an unwanted mortality reading.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Primary excision",
+      "printed_page": 305,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A pre-cut slit in an ordinary sheet of craft paper, with no cutting tool.",
+      "reason": "Final D recheck: The prior paper slit encodes incision, not excision/removal; this is a wrong-sense mapping. No economical meaningful cue selected in this bounded repair; hold without forcing a proposal or depicting clinical technique.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "skin grafting",
+      "printed_page": 305,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A small potted plant with a visible graft union.",
+      "reason": "Familiar plant graft considered but not selected: recognition of the union is specialized. Do not render a skin-grafting procedure or infer equivalence.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Plastic surgery",
+      "printed_page": 305,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A loose toy scalpel on a display base.",
+      "reason": "Scalpel is only a broad tool association and does not encode the specialty head Plastic surgery. No selected economical lexical cue for this row; no procedure depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "Prophylactic Antibiotics",
+      "printed_page": 307,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside an ordinary shield.",
+      "reason": "Generic bottle/shield was considered but not selected: prevention/protection story would add a clinical implication rather than an economical assigned lexical cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "44",
+      "chapter_title": "Thigh, Leg, and Foot Lacerations",
+      "term": "antibiotic prophylaxis",
+      "printed_page": 307,
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside an ordinary shield.",
+      "reason": "Generic bottle/shield was considered but not selected: prevention/protection story would add a clinical implication rather than an economical assigned lexical cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "cod",
+      "printed_page": 310,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "An ordinary toy fish.",
+      "reason": "Tried fish category, but no economical cod-specific name association selected; not rejected for missing syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "haddock",
+      "printed_page": 310,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "A toy fish beside a model dock.",
+      "reason": "Fish/dock naming composition is not selected; generic fish could swamp the weak name fragment.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "chemically reactive material",
+      "printed_page": 314,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "Two blank laboratory bottles beside an exclamation token.",
+      "reason": "Generic bottle/alert would not cue this lexical material category economically; no reaction or chemistry lesson substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "venom",
+      "printed_page": 314,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "A toy snake beside a sealed blank vial.",
+      "reason": "Vial/snake association too broad for venom versus poison or animal identity; no mechanism substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "radiopaque",
+      "printed_page": 314,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "A plain opaque board beside a radiograph-film frame.",
+      "reason": "Tried opacity/radiograph pair but not selected; no radiopacity property asserted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "undermined",
+      "printed_page": 315,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "A loose paper flap above an empty gap.",
+      "reason": "Tried under-surface shape but risks demonstration; no selected vocabulary-only attempt.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "Shank",
+      "printed_page": 316,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "An ordinary detached hook.",
+      "reason": "Hook family does not single out shank; no economical distinct reminder selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "hyperechoic",
+      "printed_page": 312,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "An echoing toy megaphone.",
+      "reason": "Tried echo fragment; sound/brightness relationship risks imaging assertion. No selected vocabulary-only reminder.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "45",
+      "chapter_title": "Soft Tissue Foreign Bodies",
+      "term": "abscess",
+      "printed_page": 311,
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "attempted_cue": "A toy recess in a plain block.",
+      "reason": "Tried recess/abscess partial sound, weak learned association not selected; no anatomical lesion depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "chemotherapy",
+      "printed_page": 318,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy chemistry flask.",
+      "reason": "Chemistry fragment tried but too generic to select; no treatment mechanism or device implied.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "nonradiopaque",
+      "printed_page": 318,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A transparent board beside a radiograph-film frame.",
+      "reason": "Tried transparent/radiograph pair; weak negative-name distinction not selected. No visibility assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "abscess",
+      "printed_page": 318,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy recess in a plain block.",
+      "reason": "Recess/abscess partial sound tried; weak lexical association not selected. Earlier abscess hold retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Antibiotics",
+      "printed_page": 319,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside a stop barrier.",
+      "reason": "Broad anti/drug attempt does not economically cue antibiotic rather than other drugs. Historical antibiotic holds remain open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "antibiotic prophylaxis",
+      "printed_page": 319,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside a shield.",
+      "reason": "Tried medicine/protection combination; prophylactic purpose would risk an unsupported clinical assertion, so not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "antipseudomonal activity",
+      "printed_page": 319,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy pseudonymous stage mask.",
+      "reason": "Tried pseudo-/disguise fragment but not selected; must not imply antimicrobial coverage.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "heel",
+      "printed_page": 319,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A detached foot-and-ankle teaching model.",
+      "reason": "Draft foot cue was only adjacent anatomy/location, not heel lexical identity; hold after main calibration. No clinical depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "hepatitis A",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A liver teaching model beside a toy A block.",
+      "reason": "Familiar liver/letter category tried but no hepatitis-specific name reminder selected; clinical identity not inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "hepatitis B",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A liver teaching model beside a toy B block.",
+      "reason": "Tried familiar liver/letter category; not selected as hepatitis-specific name reminder, no infection relation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "hepatitis B e antigen",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A liver teaching model beside toy B/e blocks.",
+      "reason": "Letter/model stack not selected; antigen and test interpretation absent.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "hepatitis C",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A liver teaching model beside a toy C block.",
+      "reason": "Familiar liver/letter category tried, hepatitis-specific name bridge not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "HIV",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A familiar beehive toy.",
+      "reason": "Hive/HIV partial sound tried; strong competing everyday word and letter reading, not selected. No virus identity claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "epinephrine",
+      "printed_page": 321,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy pin beside a fir tree.",
+      "reason": "Earlier epi/pin/fir attempts reconsidered; no economical unambiguous selected fragment. Historical holds preserved, not a clinical claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "devitalized tissue",
+      "printed_page": 321,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A detached wilted cloth patch.",
+      "reason": "Tried lifeless/wilted partial category but not selected; no tissue viability assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Azithromycin",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy zither.",
+      "reason": "Zith-/zither partial name tried, but instrument familiarity uncertain; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Herpes simplex",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy harp.",
+      "reason": "Herp-/harp fragment tried; no economical selected reminder, not a lesion or virus.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "gerbils",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "An ordinary toy mouse.",
+      "reason": "Independent C correction: mouse supplied related-rodent topic only, not a gerbil name/category bridge. No economical gerbil-specific cue selected; earlier mouse-reuse attempt retained, no species equivalence.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Francisella tularensis",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "An ordinary toy tulip.",
+      "reason": "Tular-/tulip partial sound tried; too weak to select for name recall, no pathogen properties.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "carnivores",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy jaw beside a generic bowl.",
+      "reason": "Food/category depiction would imply biological diet; no economical vocabulary-only selection.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "omnivores",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "An ordinary omni-directional arrow.",
+      "reason": "Omni-/all-directions partial fragment tried but too abstract; no diet assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Herpes B virus",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy harp beside a B block.",
+      "reason": "Herp/B fragments tried but not selected; not a pathogen depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Cercopithecine herpesvirus",
+      "printed_page": 322,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A circus tent beside a toy harp.",
+      "reason": "Circo/herp attempted partial sounds too cumbersome and unstable, no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Exotic and Wild Animals",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy animal in an open landscape.",
+      "reason": "No single economical category reminder selected; not a risk/biological classification.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Malaise",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "An ordinary mayonnaise jar.",
+      "reason": "Old mayo/Malaise partial naming reconsidered; not selected for competing food name, no illness depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Nonlymphoid",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A detached model lymph node beside a blank stop token.",
+      "reason": "Lymphoid category negation attempt not selected; no anatomical or immunologic assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "synovitis",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy cinema ticket.",
+      "reason": "Syno-/cinema partial name tried after rejecting joint-only location cue; not selected as economical, no pathology claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "dyspnea",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy bellows beside a distress mask.",
+      "reason": "Breath/distress category tried but not selected; clinical breathing pattern must not be invented.",
+      "retained_in_other_chapters": [
+        "48"
+      ]
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "vision loss",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "An opaque blindfold on a detached display head.",
+      "reason": "Vision-occlusion category tried but not selected as loss versus voluntary covering; no impairment claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Herpes simplex virus",
+      "printed_page": 323,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy harp.",
+      "reason": "Herp-/harp fragment tried; remains unselected, no lesion or pathogen claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Human Immunodeficiency Virus Infections",
+      "printed_page": 324,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A familiar beehive toy.",
+      "reason": "HIV/hive partial tried; no economical selected cue; do not treat chapter reference as clinical content.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "Macacine herpesvirus 1",
+      "printed_page": 324,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A toy macaque beside a harp.",
+      "reason": "Attempt would encourage host/virus assertion, so no selected vocabulary-only association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "metacarpal",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A detached hand-and-wrist teaching model.",
+      "reason": "Draft whole-hand cue only supplied location, not metacarpal name or distinct structure. No selected economical bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "46",
+      "chapter_title": "Puncture Wounds and Bites",
+      "term": "proximal phalanx",
+      "printed_page": 320,
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "attempted_cue": "A detached toy finger.",
+      "reason": "Draft whole-finger cue supplied location only, not phalanx lexical identity. Hold rather than count exact bone coverage.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "Prophylactic Antibiotics",
+      "printed_page": 324,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside a shield.",
+      "reason": "Medicine/protection attempt too broad to select; no prophylactic treatment assertion. Older antibiotic holds open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "antibiotics",
+      "printed_page": 324,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A blank medicine bottle beside a stop barrier.",
+      "reason": "Anti/drug attempt tried; no selected antibiotic-specific economical cue, preserve older holds.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "systemic reaction",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A toy spring reacting to a tap.",
+      "reason": "Tried generic reaction action but not selected; systemic medical state not depicted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "Tdap",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A toy tap on a plain stand.",
+      "reason": "Tdap/tap partial sound tried; letter cluster not economically cued, no vaccine claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "saliva",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A toy salami.",
+      "reason": "Sal-/salami partial name tried but not selected; no clinical fluid category fabricated.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "feces",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "An ordinary waste bin.",
+      "reason": "Waste cue is associated context, not a distinctive feces name/category; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "ischemic",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A closed red tap beside an empty supply tube.",
+      "reason": "Old ischemia cue tried but is a clinical-mechanism relation; not selected for vocabulary-only bank. Older retained records untouched.",
+      "retained_in_other_chapters": [
+        "51"
+      ]
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "avulsions",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A toy hand pulling a blank card free.",
+      "reason": "Pull-away lexical action tried, but generic removal does not sufficiently identify avulsion; not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "Follow-Up",
+      "printed_page": 325,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A toy figure following another toy figure.",
+      "reason": "Follow action tried, but it does not economically cue the follow-up headword rather than literal pursuit; no care-process inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "Long-Term Cosmetic Outcome",
+      "printed_page": 327,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "An ordinary mirror beside an hourglass.",
+      "reason": "Cosmetic/outcome/time composition tried but not selected as economical; no cosmetic prognostic claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "47",
+      "chapter_title": "Postrepair Wound Care",
+      "term": "hyperpigmentation",
+      "printed_page": 327,
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "attempted_cue": "A darkened paint swatch.",
+      "reason": "Pigment/color category tried but not a distinctive lexical reminder for hyperpigmentation; no skin-outcome relation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "Pneumonia",
+      "printed_page": 331,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": "A detached lung teaching model standing alone.",
+      "reason": "Lung supplies only location/topic, not a meaningful pneumonia name fragment or distinctive category. Real earlier pneumonia holds remain open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "Rhabdomyolysis",
+      "printed_page": 333,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": "A toy robot beside a muscle model.",
+      "reason": "Robot/rhabdo is a loose partial sound; draft does not select it, and does not show muscle breakdown.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "Sepsis",
+      "printed_page": 333,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": "A familiar cartoon germ study token standing alone.",
+      "reason": "Germ supplies infection context, not a meaningful sepsis name fragment or distinctive category. Earlier sepsis holds remain open; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "URL",
+      "printed_page": 333,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Source figure expands URL as upper reference limit, not web location. No appropriate chosen visual; internet association would be wrong-sense.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "racial minorities",
+      "printed_page": 329,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": "A smaller group of plain neutral toy tokens beside a larger group.",
+      "reason": "Minority-count fragment was tried; no appropriate selected racial-category visual without identity inference or caricature. No risk/comparison endorsement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "48",
+      "chapter_title": "Chest Pain",
+      "term": "Acute distress",
+      "printed_page": 331,
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "attempted_cue": "A familiar distressed-expression theatrical mask.",
+      "reason": "General distress expression tried; not selected as a distinctive acute-distress lexical category, and no patient state inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "S3",
+      "printed_page": 334,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "A source heart-sound label; no appropriate nonnumeric visual selected without turning this into interpretation teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "MB fraction of creatine kinase",
+      "printed_page": 335,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "A familiar toy crate.",
+      "reason": "Crate/creat- is an attempted fragment, not rejected for missing the full name; no chosen economical MB/creatine-kinase cue in this draft.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "Anteroseptal",
+      "printed_page": 337,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "A toy ant beside a septum teaching token.",
+      "reason": "Anter-/ant and septum are available fragments but no selected simple location cue; no ECG territory teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "aVR",
+      "printed_page": 339,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "ECG machine supplies only surrounding topic, not this literal lead label. No selected visual; not an ECG interpretation lesson.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "R waves",
+      "printed_page": 343,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No appropriate simple R-name visual selected. ECG machine would only supply topic and does not encode this head.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "glycoprotein IIb/IIIa inhibitors",
+      "printed_page": 343,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "An ordinary glue pot standing alone.",
+      "reason": "Glue/glyco is too loose a partial sound for selection in this draft; ordinary glue is not a distinctive glycoprotein category.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "Adenosine diphosphate receptor antagonists",
+      "printed_page": 346,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "A familiar toy adding machine beside a nose teaching token.",
+      "reason": "Add/nose is an attempted partial-name bridge, not a chosen stable category here. Earlier adenosine holds remain unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "INR",
+      "printed_page": 346,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "Literal table acronym; no appropriate chosen vocabulary visual, and no numeric coagulation-test teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "Limiting infarct size",
+      "printed_page": 348,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "A heart identity token standing alone.",
+      "reason": "Heart is only related context for this heading, not an infarct/limiting/size lexical bridge; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "reinfarction",
+      "printed_page": 348,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "A heart identity token standing alone.",
+      "reason": "Heart supplies only topic, not re-/infarct name meaning. No simple appropriate selected cue; no clinical inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "Angiotensin-converting enzyme inhibitors",
+      "printed_page": 348,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "An ordinary toy engine beside a road barrier.",
+      "reason": "Enzyme/engine and inhibitor/barrier are broad fragments, but the named family is unresolved; no pathway assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "49",
+      "chapter_title": "Acute Coronary Syndromes",
+      "term": "partial thromboplastin time",
+      "printed_page": 344,
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "attempted_cue": "An ordinary clock beside a plug token.",
+      "reason": "Time/clot fragments tried; no selected economical name or distinctive assay category. No assay values, interpretation, timing or anticoagulation instruction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "infarct",
+      "printed_page": 353,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Fan/cart feels contrived for this author; no selected improvement on older myocardial infarction holds. Held for this composition, not incomplete syllables.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "myocardial infarction",
+      "printed_page": 353,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Previous generic unwell heart only named broad myocardial illness, not infarction. Earlier34 hold unchanged. Fan/cart partial-name attempt remains unselected, not rejected for missing syllables.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "Sepsis",
+      "printed_page": 353,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy sea beside a zipper.",
+      "reason": "Sea/zip assembly is not an economical preferred cue here. Earlier20/25/29B/31/33/37 holds preserved, not overwritten.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "Acute pulmonary decompensation",
+      "printed_page": 353,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A detached toy compass with its needle lying beside it.",
+      "reason": "Prior unpuffed lung only supplied location and did not encode decompensation. Compass/decomp partial attempt considered but not preferred; no forced stack.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "Thrombolytics",
+      "printed_page": 354,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy throne beside a light bulb.",
+      "reason": "Two-object sound attempt not preferred; no thrombus-dissolving demonstration or forced prop stack selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "dopamine",
+      "printed_page": 354,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy door beside a mint sweet.",
+      "reason": "Unchosen pairing still needs explanation without a satisfying name bridge; earlier20/25 holds remain open.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "norepinephrine",
+      "printed_page": 354,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy door with a no-entry sign.",
+      "reason": "Too generic for this selected composition; no full-syllable requirement. Earlier20/25 holds unchanged.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "inotrope",
+      "printed_page": 354,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A familiar rope standing alone.",
+      "reason": "Rope not chosen here because it is an awkward fragment for this author, not because it fails unique decoding. Older20 inotropes hold preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "ST-segment elevation",
+      "printed_page": 354,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A short toy segment beside an upward arrow.",
+      "reason": "Main feedback author repair: generic ECG machine was topic-only and is withdrawn. Segment/upward composition tried but not selected after main comparison with the older chapter33 ST hold; no economical retained root was identified in this review. No full-syllable or blind-decoding requirement; unresolved vocabulary hold, not a waveform or clinical meaning.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "aspirin",
+      "printed_page": 355,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A familiar spear beside a ring.",
+      "reason": "Earlier35 and workshop attempts reconsidered; pairing not selected, not held for absence of a full phonetic name. No administration or effect claim.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "alpha-blockers",
+      "printed_page": 355,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy alphabet block in front of a stop barrier.",
+      "reason": "Alphabet/block redundant and not preferred. Literal source uses Greek alpha; do not silently replace with beta based on clinical expectations.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "Epinephrine",
+      "printed_page": 356,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy pen beside a fringe.",
+      "reason": "Earlier2/14/20/24/25/29A/36/37/39/40 holds remain; reduced attempt not selected. No dose or drug-action metaphor.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "catecholamine",
+      "printed_page": 356,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A familiar cat beside a toy coal wagon.",
+      "reason": "Pairing not selected; reduced cat alone considered but not preferred. Not a chemistry/category equivalence.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "50",
+      "chapter_title": "Cardiogenic Shock",
+      "term": "Thrombolytic Therapy",
+      "printed_page": 356,
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "attempted_cue": "A toy throne beside a light bulb.",
+      "reason": "Previous pill merely supplied generic therapy context, not thrombolytic identity. Thrones/light name attempt not selected; Thrombolytics hold retained separately.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "myocardial infarction",
+      "printed_page": 357,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Previous unwell-heart prop only supplied topic/category context, not infarction. Fan/cart attempt remains unselected; earlier34 hold preserved.",
+      "retained_in_other_chapters": [
+        "49"
+      ]
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "AMI",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A familiar toy army soldier.",
+      "reason": "Previous unwell-heart prop supplied topic context but not AMI. Army/AMI toy-soldier fragment considered and not preferred, without requiring all syllables or unique decoding.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "ST-segment depression",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A short toy segment beside a downward arrow.",
+      "reason": "Main feedback author repair: generic ECG machine was topic-only and is withdrawn. Segment/downward composition tried but not selected after main comparison with the older chapter33 ST hold; no economical retained root was identified in this review. Unresolved vocabulary hold; no tracing or clinical interpretation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "repolarization abnormality",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy polar bear beside a return arrow.",
+      "reason": "No selected composition; polar bear/return not preferred. No electrocardiographic mechanism or diagnostic pattern asserted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "hypercholesterolemia",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy collar beside a star.",
+      "reason": "Unselected pairing still feels arbitrary; no dietary, chemical or laboratory assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "obesity",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No selected category or name-fragment cue without stereotyping a body. Earlier28/29A/37 holds remain open; not a requirement to diagnose from appearance.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "atherosclerosis",
+      "printed_page": 358,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A familiar miniature theater curtain.",
+      "reason": "Main feedback author repair: narrowed tube is a stenosis/physiology-related substitute, not an atherosclerosis name/meaning bridge. Theater/athero weak partial-name fragment tried but not selected; no arbitrary stack, full-syllable requirement, disease-definition or equivalence claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "hyperlipidemia",
+      "printed_page": 359,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy hippo beside a lip-shaped token.",
+      "reason": "Unselected composition; two fragments feel labored. Not a lipid model, chemical-origin or dietary claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "Acute myocardial infarction",
+      "printed_page": 360,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Previous unwell-heart prop did not bridge infarction. Acute/myocardial modifiers do not repair that gap; current hold preserves prior draft and earlier34 history.",
+      "retained_in_other_chapters": [
+        "48"
+      ]
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "pulmonary infarction",
+      "printed_page": 360,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": "A toy fan beside a broken cart.",
+      "reason": "Prior lung was only location, not an infarction name or distinctive category bridge. Fan/cart partial-name attempt not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "51",
+      "chapter_title": "Low-Probability Acute Coronary Syndrome",
+      "term": "Mental or physical impairment",
+      "printed_page": 360,
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical category token selected without turning a person into an impairment stereotype. No ability assessment or exercise instruction.",
+      "retained_in_other_chapters": []
     }
   ],
   "resolved_holds": [
@@ -5730,6 +7250,318 @@
       "report": "docs/chapter-41-cue-audit.md",
       "current_decision": "reuse_candidate",
       "resolution": "Local41 germ hold changed to actual retained39 broad-category reuse after main calibration; genuine older infection holds unchanged."
+    },
+    {
+      "chapter_id": "42",
+      "term": "Iris",
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "42",
+      "term": "hematoma",
+      "source_record": "docs/chapter-42-cue-audit.json",
+      "report": "docs/chapter-42-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "43",
+      "term": "Periosteum",
+      "source_record": "docs/chapter-43-cue-audit.json",
+      "report": "docs/chapter-43-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "43",
+      "term": "drain",
+      "source_record": "docs/chapter-43-cue-audit.json",
+      "report": "docs/chapter-43-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "44",
+      "term": "Patella",
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "44",
+      "term": "Tibia",
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "44",
+      "term": "Extensor hallucis longus",
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "44",
+      "term": "muscle",
+      "source_record": "docs/chapter-44-cue-audit.json",
+      "report": "docs/chapter-44-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded lexical attempt selected under broader category/fragment calibration; all prior decisions remain unchanged."
+    },
+    {
+      "chapter_id": "45",
+      "term": "infection",
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open."
+    },
+    {
+      "chapter_id": "45",
+      "term": "cotton",
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current local familiar cotton-ball category selected; preserve prior local unselected attempt, not a global earlier hold."
+    },
+    {
+      "chapter_id": "45",
+      "term": "sole",
+      "source_record": "docs/chapter-45-cue-audit.json",
+      "report": "docs/chapter-45-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Broader shared-headword shoe-sole category proposed for current source fish-name sole. Old anatomical-sole workshop rejection remains unchanged; no earlier hold invented."
+    },
+    {
+      "chapter_id": "46",
+      "term": "doxycycline",
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open."
+    },
+    {
+      "chapter_id": "46",
+      "term": "seizures",
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open."
+    },
+    {
+      "chapter_id": "46",
+      "term": "infection",
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open."
+    },
+    {
+      "chapter_id": "46",
+      "term": "amputation",
+      "source_record": "docs/chapter-46-cue-audit.json",
+      "report": "docs/chapter-46-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Local hold reconsidered after inspecting actual older6 category; old6 was retained, not a held attempt."
+    },
+    {
+      "chapter_id": "47",
+      "term": "crush injuries",
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current local hold reconsidered after reviewing actual earlier retained5/6/21 category; not a global prior hold resolution."
+    },
+    {
+      "chapter_id": "47",
+      "term": "wound infection",
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current actual nonheld term reuses39 germ category; actual older infection-family holds remain unchanged and open."
+    },
+    {
+      "chapter_id": "47",
+      "term": "infected",
+      "source_record": "docs/chapter-47-cue-audit.json",
+      "report": "docs/chapter-47-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current actual nonheld term reuses39 germ category; actual older infection-family holds remain unchanged and open."
+    },
+    {
+      "chapter_id": "48",
+      "term": "Acute myocardial infarction",
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "48",
+      "term": "NSTEMI",
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "48",
+      "term": "congestive heart failure",
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "48",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "48",
+      "term": "hemoptysis",
+      "source_record": "docs/chapter-48-cue-audit.json",
+      "report": "docs/chapter-48-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "myocardial infarction",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "aspirin",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "coronary artery disease",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "Inferior vena cava",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "STEMI",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "NSTEMI",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "seizures",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "49",
+      "term": "active asthma",
+      "source_record": "docs/chapter-49-cue-audit.json",
+      "report": "docs/chapter-49-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current nonheld broad cue does not erase real earlier holds."
+    },
+    {
+      "chapter_id": "50",
+      "term": "coronary artery disease",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "Congestive heart failure",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "Anaphylaxis",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "inferior vena cava",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "cardiac catheterization lab",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "dobutamine",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "50",
+      "term": "Extracorporeal Membrane Oxygenation",
+      "source_record": "docs/chapter-50-cue-audit.json",
+      "report": "docs/chapter-50-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current bounded category/fragment candidate only; no earlier bank changed."
+    },
+    {
+      "chapter_id": "51",
+      "term": "palpation",
+      "source_record": "docs/chapter-51-cue-audit.json",
+      "report": "docs/chapter-51-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current author attempt reconsidered using exact older nonheld root; no earlier source-bank hold asserted."
     }
   ]
 }

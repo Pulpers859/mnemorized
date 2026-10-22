@@ -1,6 +1,6 @@
 # Tintinalli Chapter Cue Review
 
-Review one chapter at a time. This is source-grounded vocabulary screening,
+Review in requested ten-chapter batches with bounded chapter-specific lanes. This is source-grounded vocabulary screening,
 not clinical lesson generation or a claim of validated mnemonic effectiveness.
 
 ## Chapter 1: Emergency Medical Services
@@ -385,9 +385,29 @@ candidates remain untested, nonproduction, evidence empty and spend zero.
 
 ## Next Chapter
 
-**Chapter 42, Face and Scalp Lacerations**, is next, not started
-for cue review. Do not move
-ahead until the next requested chapter run. The primary cue catalog remains at
+**Chapter 52, Syncope**, is next, not started for cue review.
+Continue in the requested ten-chapter batches. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
 remains untouched.
+
+## Chapters 42-51: Wounds And Cardiovascular Vocabulary
+
+Independent AI cross-review and main integration completed; not empirical validation.
+
+| Chapter | Topic | Selected | New | Reused | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 42 | [Face and Scalp Lacerations](chapter-42-cue-audit.md) | 138 | 7 | 115 | 16 | 151 |
+| 43 | [Arm, Forearm, and Hand Lacerations](chapter-43-cue-audit.md) | 154 | 21 | 131 | 2 | 165 |
+| 44 | [Thigh, Leg, and Foot Lacerations](chapter-44-cue-audit.md) | 186 | 6 | 163 | 17 | 204 |
+| 45 | [Soft Tissue Foreign Bodies](chapter-45-cue-audit.md) | 132 | 11 | 112 | 9 | 179 |
+| 46 | [Puncture Wounds and Bites](chapter-46-cue-audit.md) | 186 | 21 | 132 | 33 | 215 |
+| 47 | [Postrepair Wound Care](chapter-47-cue-audit.md) | 87 | 0 | 76 | 11 | 99 |
+| 48 | [Chest Pain](chapter-48-cue-audit.md) | 134 | 22 | 106 | 6 | 149 |
+| 49 | [Acute Coronary Syndromes](chapter-49-cue-audit.md) | 277 | 16 | 249 | 12 | 326 |
+| 50 | [Cardiogenic Shock](chapter-50-cue-audit.md) | 123 | 7 | 102 | 14 | 155 |
+| 51 | [Low-Probability Acute Coronary Syndrome](chapter-51-cue-audit.md) | 120 | 7 | 102 | 11 | 181 |
+
+Totals: 1,537 selected terms, 118 new candidates, 1,288 reuses, 131 holds and 1,824 keyword mappings. New means newly recorded, not proven novel or effective.
+
+Meaningful bold/heading/table/figure terms explicitly tried within verified regions; selected vocabulary and typography extraction are not exhaustive clinical coverage. Earlier holds remain in the separate revisit register. No production catalog admission, paid API calls or renders. Next: Chapter52 Syncope.

@@ -1,0 +1,4325 @@
+{
+  "main_integration_review": {"date": "2026-10-22", "source_and_conceptual_review": true, "scope": "Non-author independent AI lane reviewed recorded source/cue/attempt/prior and keyword traces; final reported repairs independently rechecked. Main integrated boundaries and reference diagnostics, not personally re-reading every entry. No human-expert, clinical, recall or rendering validation.", "independent_audit_record": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch42-51/laneC/crossaudit45-47.md", "highlight_annotations_found": 0, "normalizations": "Literal source forms, inferred classes and expanded/Greek aliases disclosed. Partial-name/category cues remain context-dependent. Reported definite repairs addressed; not exhaustive source or semantic coverage.", "counts": {"selected_terms": 186, "new_candidates": 21, "reused_candidates": 132, "holds": 33}, "keyword_items": 215},
+  "schema_version": 1,
+  "chapter_id": "46",
+  "title": "Puncture Wounds and Bites",
+  "review_date": "2026-10-21",
+  "keyword_screen_date": "2026-10-21",
+  "source": {
+    "file": "Tintin_Wound Management.pdf",
+    "sha256": "691e464e103295d5b27bf4173a60fa6a86e81261cdeb35f2c9b45411ea4c8119",
+    "pdf_pages": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58
+    ],
+    "printed_pages": [
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "printed_page_offset": 266,
+    "boundary": "PDF51 ONLY lower-right actual title y453.3 onward. PDF52-57 both columns and all tables/figures (full-width46-4 at56). PDF58 ONLY upper-left through REFERENCES y289.6/reference URL y311.6. Lower-left actual47 title y367.1 and ALL right belong47.",
+    "verification": "Matching source SHA256 and 62-page count. Full font spans/coordinates and page rasters41-62 saved and visually inspected. No annotations on41-62. Page62 has no text and visually blank raster."
+  },
+  "scope": "Offline vocabulary workshop only. No API/provider/image calls, Forge, narration or clinical teaching.",
+  "base_method_reference": "docs/chapter-1-broadened-cue-audit.md",
+  "method_reference": "docs/chapter-2-cue-audit.md#subsequent-user-calibration",
+  "production_admitted": false,
+  "counts": {
+    "selected_terms": 186,
+    "new_candidates": 21,
+    "reused_candidates": 132,
+    "holds": 33
+  },
+  "entries": [
+    {
+      "term": "Puncture Wounds and Bites",
+      "pdf_page": 51,
+      "page": 317,
+      "source_match": "chapter_title",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A recognizable lumber plank with a puncture hole.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#lumbar puncture",
+      "reason": "Reuse puncture ingredient only; bite headword mapped separately, no injury scene.",
+      "tested": false
+    },
+    {
+      "term": "Puncture Wounds",
+      "pdf_page": 51,
+      "page": 317,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Recognizable lumber plank with a conspicuous puncture hole.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#lumbar puncture",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Elderly",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar gray-haired older-adult figurine.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#elderly",
+      "reason": "Actual older37 elderly learned-age category reused verbatim; no new generic age/figure family or clinical risk claim.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "retain_candidate",
+          "cue": "An ordinary elderly toy person with grey hair.",
+          "prior": "new_chapter_record",
+          "reason": "Familiar learned age category only; no risk inference.",
+          "scope": "Current local draft; exact older37 match reconciliation"
+        }
+      ]
+    },
+    {
+      "term": "Diabetes",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar standalone glucose meter training prop.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#diabetes",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "microvascular complications",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small freestanding vessel teaching model.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#internal thoracic vessels",
+      "reason": "Vascular fragment only; complication/risk meaning not depicted.",
+      "tested": false
+    },
+    {
+      "term": "Immunocompromised",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone shield token without toy car.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#autoimmune",
+      "reason": "Immune shield ingredient only; compromise and clinical state not decoded.",
+      "tested": false
+    },
+    {
+      "term": "acquired immunodeficiency syndrome",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone shield token without toy car.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#autoimmune",
+      "reason": "Immune category only; no syndrome diagnosis or protective assertion.",
+      "tested": false
+    },
+    {
+      "term": "steroids",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary stereo speaker pair.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Stereo-/steroid partial sound fragment, not a chemical class lesson.",
+      "tested": false
+    },
+    {
+      "term": "chemotherapy",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Chemistry fragment tried but too generic to select; no treatment mechanism or device implied.",
+      "tested": false,
+      "attempted_cue": "A toy chemistry flask."
+    },
+    {
+      "term": "Peripheral vascular disease",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding transparent vessel teaching model.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#internal thoracic vessels",
+      "reason": "Vascular category only; peripheral/disease modifiers not encoded.",
+      "tested": false
+    },
+    {
+      "term": "soil",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A little mound of dirt without the bomb.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-10-cue-audit.json#dirty bombs",
+      "reason": "Direct actual old dirt ingredient, no new soil/material family.",
+      "tested": false,
+      "prior_attempt": {
+        "decision": "reuse_candidate",
+        "cue": "A little mound of garden soil.",
+        "prior": "docs/chapter-45-cue-audit.json#soil",
+        "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence."
+      }
+    },
+    {
+      "term": "debris",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Loose craft scraps without broom.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#Wound Debridement",
+      "reason": "Reuse scraps ingredient only; not wound contamination property.",
+      "tested": false
+    },
+    {
+      "term": "Bite wounds",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone tooth teaching model without pain mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Dental pain",
+      "reason": "Tooth-name category only; no bite mechanics or source/risk claim.",
+      "tested": false
+    },
+    {
+      "term": "foreign body",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Small unmistakably extraterrestrial toy figure standing alone on a display base.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "shoe",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar ballet pointe shoe without ribbon.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#torsades de pointes",
+      "reason": "Shoe family only, no subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "sock",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary loose sock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "jumping",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy figure frozen in a jump above a plain floor.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Common action-name association only, not an injury.",
+      "tested": false
+    },
+    {
+      "term": "falling",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A few dust-like tokens falling from a plain raised tray.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-10-cue-audit.json#nuclear fallout",
+      "reason": "Reuse falling relationship only, no injury mechanism.",
+      "tested": false
+    },
+    {
+      "term": "running",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A lone toy runner without heart token or other runners.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#cardiac pacemaker",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Plain radiographs",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A plain radiograph-film frame without chest token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#chest radiograph",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "fracture",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached broken-bone teaching model without opening.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#open fracture",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Infected wound",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "wood",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A recognizable lumber plank with no hole.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#wood",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "glass",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached transparent glass-shard display prop.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#glass",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "foreign body sensation",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy hand touching a textured fabric swatch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#foreign body sensation",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "US",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#ultrasonography",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Organic",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone miniature pipe organ without oxygen cylinder.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#organ oxygenation",
+      "reason": "Org- fragment only; no material-origin inference.",
+      "tested": false
+    },
+    {
+      "term": "nonradiopaque",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tried transparent/radiograph pair; weak negative-name distinction not selected. No visibility assertion.",
+      "tested": false,
+      "attempted_cue": "A transparent board beside a radiograph-film frame."
+    },
+    {
+      "term": "abscess",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Recess/abscess partial sound tried; weak lexical association not selected. Earlier abscess hold retained.",
+      "tested": false,
+      "attempted_cue": "A toy recess in a plain block."
+    },
+    {
+      "term": "CT",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar short-ring CT-scanner teaching miniature.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#CT",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "MRI",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar long-bore MRI-scanner teaching miniature.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#MRI",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "deep-space infection",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Infection category only; anatomical depth absent.",
+      "tested": false
+    },
+    {
+      "term": "pain",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Wound Cleansing",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An unused cleaning cloth beside a freestanding skin teaching tile.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#skin preparation",
+      "reason": "Actual cleaning-cloth/skin ingredients, no action on tissue.",
+      "tested": false
+    },
+    {
+      "term": "Irrigation",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone garden watering can.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#Wound Irrigation",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Debridement",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small broom sweeping loose scraps from a craft table.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#Wound Debridement",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "radiopaque foreign bodies",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An extraterrestrial toy figure standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "reason": "Foreign-body headword only; radiopacity modifier is not taught.",
+      "tested": false
+    },
+    {
+      "term": "Antibiotics",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Broad anti/drug attempt does not economically cue antibiotic rather than other drugs. Historical antibiotic holds remain open.",
+      "tested": false,
+      "attempted_cue": "A blank medicine bottle beside a stop barrier."
+    },
+    {
+      "term": "antibiotic prophylaxis",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tried medicine/protection combination; prophylactic purpose would risk an unsupported clinical assertion, so not selected.",
+      "tested": false,
+      "attempted_cue": "A blank medicine bottle beside a shield."
+    },
+    {
+      "term": "plantar punctures",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A lumber plank with a puncture hole.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#lumbar puncture",
+      "reason": "Puncture ingredient only; plantar location not decoded.",
+      "tested": false
+    },
+    {
+      "term": "contamination",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding damaged-skin teaching model with a few conspicuous dirt specks.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#contaminated wound",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "cephalosporin",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small ceiling panel without weather vane.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#cephalic vein",
+      "reason": "Cephal-/ceiling partial sound only; generation, route and drug class not inferred.",
+      "tested": false
+    },
+    {
+      "term": "amoxicillin-clavulanic acid",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy ox without code-wheel padlock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#oxycodone",
+      "reason": "Actual older ox ingredient supplies ox/oxic partial name; no new ox root or drug equivalence.",
+      "tested": false,
+      "prior_attempt": {
+        "decision": "retain_candidate",
+        "cue": "A familiar toy ox.",
+        "prior": "new_chapter_record",
+        "reason": "Ox/oxic partial name fragment only, not ingredient, class or acid chemistry."
+      }
+    },
+    {
+      "term": "fluoroquinolone",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A queen chess piece.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-19-cue-audit.json#quinidine",
+      "reason": "Quin-/queen fragment reused; no equivalence of drug names or classes.",
+      "tested": false
+    },
+    {
+      "term": "athletic shoes",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar ballet pointe shoe without ribbon.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#torsades de pointes",
+      "reason": "Shoe-family ingredient only; no footwear/risk equivalence.",
+      "tested": false
+    },
+    {
+      "term": "antipseudomonal activity",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tried pseudo-/disguise fragment but not selected; must not imply antimicrobial coverage.",
+      "tested": false,
+      "attempted_cue": "A toy pseudonymous stage mask."
+    },
+    {
+      "term": "ciprofloxacin",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy person taking a sip from a cup of tea, without pool cue.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-11-cue-audit.json#long QT syndrome",
+      "reason": "Cip-/sip partial sound/action reminder using actual older cup plus explicitly added ordinary sipping action; tea alone was not a sip cue. No clinical action, drug effect or full-name recovery.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "reuse_candidate",
+          "cue": "A cup of tea without pool cue.",
+          "attempted_cue": null,
+          "prior": "docs/chapter-11-cue-audit.json#long QT syndrome",
+          "reason": "Cip-/sip partial sound via sipping cup only; no drug effect or full-name recovery.",
+          "scope": "Current local draft before independent-C correction"
+        }
+      ],
+      "provenance_variant": {
+        "actual_old_ingredient": "Cup of tea in11 long QT syndrome",
+        "added_variant": "Ordinary visible sipping action",
+        "not_present_in_prior": true
+      }
+    },
+    {
+      "term": "Cellulitis",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy prison cell beside a small theatrical flame token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#cellulitis",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Deep Soft Tissue Infection",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Osteomyelitis",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached bone-shaped teaching token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#calcium-bone",
+      "reason": "Osteo-/bone learned category only; no diagnosis or infection mechanism.",
+      "tested": false
+    },
+    {
+      "term": "heel",
+      "pdf_page": 53,
+      "page": 319,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Draft foot cue was only adjacent anatomy/location, not heel lexical identity; hold after main calibration. No clinical depiction.",
+      "tested": false,
+      "attempted_cue": "A detached foot-and-ankle teaching model."
+    },
+    {
+      "term": "Needlestick Injuries",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached needle training prop without host.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#introducer needle",
+      "reason": "Needle ingredient only; no puncture injury or technique.",
+      "tested": false
+    },
+    {
+      "term": "hepatitis A",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Familiar liver/letter category tried but no hepatitis-specific name reminder selected; clinical identity not inferred.",
+      "tested": false,
+      "attempted_cue": "A liver teaching model beside a toy A block."
+    },
+    {
+      "term": "hepatitis B",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tried familiar liver/letter category; not selected as hepatitis-specific name reminder, no infection relation.",
+      "tested": false,
+      "attempted_cue": "A liver teaching model beside a toy B block."
+    },
+    {
+      "term": "hepatitis B e antigen",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Letter/model stack not selected; antigen and test interpretation absent.",
+      "tested": false,
+      "attempted_cue": "A liver teaching model beside toy B/e blocks."
+    },
+    {
+      "term": "hepatitis C",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Familiar liver/letter category tried, hepatitis-specific name bridge not selected.",
+      "tested": false,
+      "attempted_cue": "A liver teaching model beside a toy C block."
+    },
+    {
+      "term": "HIV",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Hive/HIV partial sound tried; strong competing everyday word and letter reading, not selected. No virus identity claim.",
+      "tested": false,
+      "attempted_cue": "A familiar beehive toy."
+    },
+    {
+      "term": "High-Pressure Injection Injuries",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached unmarked syringe without pain mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#Pain on Injection",
+      "reason": "Injection device category only; no pressure, injury or injection demonstration.",
+      "tested": false
+    },
+    {
+      "term": "Digital nerve blocks",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached toy finger model beside a branching nerve-wire token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#digital nerve block",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "finger compartments",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An oversized toy index finger without broom.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#finger sweep",
+      "reason": "Finger category only; no compartment anatomy or pressure claim.",
+      "tested": false
+    },
+    {
+      "term": "amputation",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Detachable study-mannequin limb removed and set apart from its body.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-6-cue-audit.json#amputation",
+      "reason": "After directly reviewing actual old6, this static detachable-model removal category is a meaningful amputation identity, not merely nearby anatomy or a procedure. Selected under broad learned-category rule, without indication, severity, trauma or technique.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "hold",
+          "cue": null,
+          "attempted_cue": "A detached mannequin limb.",
+          "prior": "offline_attempt_not_selected",
+          "reason": "Limb reminder tried; depicting detachment as injury/operation not selected for vocabulary-only cue.",
+          "scope": "Current local draft before independent-C correction"
+        }
+      ]
+    },
+    {
+      "term": "surgical debridement",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small broom sweeping loose scraps from a craft table.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#Wound Debridement",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "organic solvents",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone miniature pipe organ without oxygen cylinder.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#organ oxygenation",
+      "reason": "Org- fragment only, not chemistry or solvent behavior.",
+      "tested": false
+    },
+    {
+      "term": "Epinephrine Autoinjector Injuries",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone capped autoinjector training prop.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar device category only; drug identity, injury and use not encoded.",
+      "tested": false
+    },
+    {
+      "term": "epinephrine",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Earlier epi/pin/fir attempts reconsidered; no economical unambiguous selected fragment. Historical holds preserved, not a clinical claim.",
+      "tested": false,
+      "attempted_cue": "A toy pin beside a fir tree."
+    },
+    {
+      "term": "Mammalian Bites",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached tooth teaching model without mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Dental pain",
+      "reason": "Tooth category only, no animal identity or bite mechanics.",
+      "tested": false
+    },
+    {
+      "term": "primary repair",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A loose zipper closing on a fabric swatch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Wound closure",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A loose zipper closing on a fabric swatch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "local wound infection",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "systemic infection",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Capnocytophaga",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar ship captain without graph.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Capn-/captain taught partial name fragment; no taxonomic identity or disease property.",
+      "tested": false
+    },
+    {
+      "term": "immunodeficiencies",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone shield token without car.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#autoimmune",
+      "reason": "Immune fragment only; deficiency not inferred.",
+      "tested": false
+    },
+    {
+      "term": "Cat and Dog Bites",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached tooth teaching model without mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Dental pain",
+      "reason": "Bite-associated category only, no host/risk/organism link; cat and dog separately tried.",
+      "tested": false
+    },
+    {
+      "term": "Local Infections",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "dog",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy dog.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "face",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A plain toy face model without nerve wire.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#facial nerve blocks",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "scalp",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached hair-bearing scalp teaching-model cap on a stand.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-40-cue-audit.json#scalp",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "single-layer closure",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A loose zipper on a detached fabric swatch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#primary wound closure",
+      "reason": "Closure ingredient only; layer count/appropriateness not encoded.",
+      "tested": false
+    },
+    {
+      "term": "devitalized tissue",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tried lifeless/wilted partial category but not selected; no tissue viability assertion.",
+      "tested": false,
+      "attempted_cue": "A detached wilted cloth patch."
+    },
+    {
+      "term": "Cat",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy cat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "Pasteurella multocida",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small portion of ordinary pasta without overflowing basket.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#hypercarbia",
+      "reason": "Pasteur-/pasta partial-name fragment only; actual pasta ingredient reused, no species distinction.",
+      "tested": false
+    },
+    {
+      "term": "amoxicillin-clavulanate",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy ox without code-wheel padlock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#oxycodone",
+      "reason": "Direct actual old ox root, not local reuse chain; partial name only, no compound equivalence.",
+      "tested": false,
+      "prior_attempt": {
+        "decision": "reuse_candidate",
+        "cue": "A familiar toy ox.",
+        "prior": "docs/chapter-46-cue-audit.json#amoxicillin-clavulanic acid",
+        "reason": "Reuse ox partial-name root introduced at53, spelling difference explicitly retained."
+      }
+    },
+    {
+      "term": "Bartonella henselae",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar barn toy beside a toy hen.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Barn/hen two familiar name fragments, not organism origin or carrier.",
+      "tested": false
+    },
+    {
+      "term": "cat-scratch fever",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy cat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Cat",
+      "reason": "Cat root only; scratch/fever not encoded. Same-bank different retained root.",
+      "tested": false
+    },
+    {
+      "term": "Azithromycin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Zith-/zither partial name tried, but instrument familiarity uncertain; not selected.",
+      "tested": false,
+      "attempted_cue": "A toy zither."
+    },
+    {
+      "term": "Pasteurella",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small portion of ordinary pasta without overflowing basket.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#hypercarbia",
+      "reason": "Reuse actual older pasta ingredient directly; not local reuse chain or species recovery.",
+      "tested": false
+    },
+    {
+      "term": "streptococci",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A striped toy ball.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Strep-/stripe partial fragment only; no bacterial shape or grouping claim.",
+      "tested": false
+    },
+    {
+      "term": "staphylococci",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A walking staff without gold coins.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#Staphylococcus aureus",
+      "reason": "Staph/staff partial-name root only, no species inference.",
+      "tested": false
+    },
+    {
+      "term": "Capnocytophaga canimorsus",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar ship captain without graph.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-16-cue-audit.json#capnography",
+      "reason": "Capn- fragment only; species not decoded.",
+      "tested": false
+    },
+    {
+      "term": "Human",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary freestanding anatomical mannequin.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#anatomic-host",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Eikenella",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy hiker.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Eiken-/hiking partial sound reminder only; pronunciation and recall untested.",
+      "tested": false
+    },
+    {
+      "term": "Herpes simplex",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Herp-/harp fragment tried; no economical selected reminder, not a lesion or virus.",
+      "tested": false,
+      "attempted_cue": "A toy harp."
+    },
+    {
+      "term": "herpetic whitlow",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A white cushion without toy carts.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#buffers",
+      "reason": "Whitlow/white-pillow partial sound reminder using old cushion ingredient; no symptom or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "Acyclovir",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone bicycle without dice.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#dicyclomine",
+      "reason": "Cycl-/cycle partial root, no antiviral effect or equivalence.",
+      "tested": false
+    },
+    {
+      "term": "valacyclovir",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone bicycle without dice.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#dicyclomine",
+      "reason": "Cycle fragment shared with acyclovir; context required, not equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Rats",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy rat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "mice",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy mouse.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "squirrels",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy squirrel.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "gerbils",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Independent C correction: mouse supplied related-rodent topic only, not a gerbil name/category bridge. No economical gerbil-specific cue selected; earlier mouse-reuse attempt retained, no species equivalence.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "reuse_candidate",
+          "cue": "An ordinary toy mouse.",
+          "attempted_cue": null,
+          "prior": "docs/chapter-46-cue-audit.json#mice",
+          "reason": "Existing small-rodent family only; gerbil species not distinguished.",
+          "scope": "Current local draft before independent-C correction"
+        }
+      ],
+      "attempted_cue": "An ordinary toy mouse."
+    },
+    {
+      "term": "Streptobacillus moniliformis",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A striped toy ball.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#streptococci",
+      "reason": "Reuse strep-/stripe fragment only; genus/species suffixes not decoded.",
+      "tested": false
+    },
+    {
+      "term": "Spirillum minus/minor",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar spiral weather-symbol token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#Hurricaine",
+      "reason": "Spir-/spiral partial name only, no organism morphology, weather or geography claim.",
+      "tested": false
+    },
+    {
+      "term": "Livestock",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy farm cow.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "large game animals",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy deer.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "Brucella",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary paintbrush without brushstroke.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#stroke",
+      "reason": "Bruc-/brush partial name fragment; actual brush ingredient reused, no pathogen morphology.",
+      "tested": false
+    },
+    {
+      "term": "Leptospira",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar spiral weather-symbol token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#Hurricaine",
+      "reason": "Reuse actual old spiral ingredient directly; spira fragment only, no genus equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Francisella tularensis",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Tular-/tulip partial sound tried; too weak to select for name recall, no pathogen properties.",
+      "tested": false,
+      "attempted_cue": "An ordinary toy tulip."
+    },
+    {
+      "term": "Bats",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy bat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "monkeys",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy monkey.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "skunks",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy skunk.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "raccoons",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy raccoon.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+      "tested": false
+    },
+    {
+      "term": "foxes",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy fox without the miniature fox or size comparison.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-9-cue-audit.json#smallpox",
+      "reason": "Reuse actual older fox ingredient; no new fox family or animal/disease association.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "retain_candidate",
+          "cue": "An ordinary toy fox.",
+          "attempted_cue": null,
+          "prior": "new_chapter_record",
+          "reason": "Familiar generic object/category or explicitly partial name fragment; contextual learning required, untested.",
+          "scope": "Current local draft before independent-C correction"
+        }
+      ]
+    },
+    {
+      "term": "carnivores",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Food/category depiction would imply biological diet; no economical vocabulary-only selection.",
+      "tested": false,
+      "attempted_cue": "A toy jaw beside a generic bowl."
+    },
+    {
+      "term": "omnivores",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Omni-/all-directions partial fragment tried but too abstract; no diet assertion.",
+      "tested": false,
+      "attempted_cue": "An ordinary omni-directional arrow."
+    },
+    {
+      "term": "Rabies",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A ray-fish toy beside toy bees.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-rabies",
+      "reason": "Actual catalog ray/bees ingredients; no transmission or animal-risk link.",
+      "tested": false
+    },
+    {
+      "term": "Rabies immune globulin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A terrestrial globe on a stand.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-globe",
+      "reason": "Glob-/globe partial ingredient only; not antibody or product equivalence.",
+      "tested": false
+    },
+    {
+      "term": "rabies vaccine",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A ray-fish toy beside toy bees.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#phonetic-rabies",
+      "reason": "Rabies name only; vaccine, administration and efficacy not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Herpes B virus",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Herp/B fragments tried but not selected; not a pathogen depiction.",
+      "tested": false,
+      "attempted_cue": "A toy harp beside a B block."
+    },
+    {
+      "term": "Cercopithecine herpesvirus",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Circo/herp attempted partial sounds too cumbersome and unstable, no selected cue.",
+      "tested": false,
+      "attempted_cue": "A circus tent beside a toy harp."
+    },
+    {
+      "term": "Freshwater",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A clear water pitcher.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#water-pitcher",
+      "reason": "Water ingredient only, salinity not encoded.",
+      "tested": false
+    },
+    {
+      "term": "Aeromonas",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone toy jet airplane without windpipe.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#jet ventilation",
+      "reason": "Aero-/airplane partial name; actual jet ingredient reused, no organism habitat or property.",
+      "tested": false
+    },
+    {
+      "term": "trimethoprim-sulfamethoxazole",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A pile of cracked rotten eggs with exaggerated stink lines.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-6-cue-audit.json#sulfonylureas",
+      "reason": "Sulfa fragment only; actual old sulfur ingredient, not chemical origin or drug equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Saltwater",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A clear water pitcher.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#water-pitcher",
+      "reason": "Water category only; salinity not inferred.",
+      "tested": false
+    },
+    {
+      "term": "Vibrio",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone tuning fork with motion marks.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#vibrations",
+      "reason": "Vibr-/vibration fragment only; not morphology or disease.",
+      "tested": false
+    },
+    {
+      "term": "doxycycline",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone bicycle without dice.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#dicyclomine",
+      "reason": "Broader cycl-/cycle partial reminder reconsidered; older held/rejected doxy attempts remain open.",
+      "tested": false
+    },
+    {
+      "term": "Monkey bites",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy monkey.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#monkeys",
+      "reason": "Animal name only; no bite risk or mechanism.",
+      "tested": false
+    },
+    {
+      "term": "Hand",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached hand-and-wrist teaching model without cube.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#hand and wrist blocks",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "foot",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached foot-and-ankle teaching model without cube.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#foot and ankle blocks",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Diabetes mellitus",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar standalone glucose meter training prop.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#diabetes",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Cephalexin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small ceiling panel without weather vane.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#cephalic vein",
+      "reason": "Cephal-/ceiling partial sound only; no antibiotic class or indication.",
+      "tested": false
+    },
+    {
+      "term": "dicloxacillin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary unnumbered clock without bellows or arrow.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#inspiratory time",
+      "reason": "Clox-/clocks partial sound only, not drug equivalence.",
+      "tested": false
+    },
+    {
+      "term": "erythromycin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A few red-cell study tokens without overflowing pouch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#erythrocytosis",
+      "reason": "Erythro-/red ingredient only; no mechanism or efficacy claim.",
+      "tested": false
+    },
+    {
+      "term": "clindamycin",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy climber without ladder.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#climbing",
+      "reason": "Clin-/climb partial name; actual climber ingredient reused, no drug effect.",
+      "tested": false
+    },
+    {
+      "term": "Systemic Infections",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Cat-Scratch Disease",
+      "pdf_page": 56,
+      "page": 322,
+      "source_match": "heading_and_body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy cat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Cat",
+      "reason": "Cat root only; not organism association or clinical syndrome.",
+      "tested": false
+    },
+    {
+      "term": "Human Bites",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A tooth teaching model without mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Dental pain",
+      "reason": "Bite-category only; human/source/risk not inferred.",
+      "tested": false
+    },
+    {
+      "term": "closed-fist injury",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached toy hand closed into a fist without cube.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#hand and wrist blocks",
+      "reason": "Existing hand category with ordinary fist gesture, no injury.",
+      "tested": false
+    },
+    {
+      "term": "Rat-bite fever",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy rat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Rats",
+      "reason": "Animal headword only; not bite, infection or fever link.",
+      "tested": false
+    },
+    {
+      "term": "Rodents",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy rat.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Rats",
+      "reason": "Retained rat root used as learned rodent category; not species or disease claim.",
+      "tested": false
+    },
+    {
+      "term": "Exotic and Wild Animals",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "No single economical category reminder selected; not a risk/biological classification.",
+      "tested": false,
+      "attempted_cue": "A toy animal in an open landscape."
+    },
+    {
+      "term": "Systemic Viral Infections",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "heading",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A cartoon germ study token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Infection category only, not bacterial/viral morphology equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Organ",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone miniature pipe organ without oxygen cylinder.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#organ oxygenation",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Low-grade fever",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A theatrical flame token without mannequin.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#fever",
+      "reason": "Existing fever ingredient only; no temperature/degree.",
+      "tested": false
+    },
+    {
+      "term": "Malaise",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Old mayo/Malaise partial naming reconsidered; not selected for competing food name, no illness depiction.",
+      "tested": false,
+      "attempted_cue": "An ordinary mayonnaise jar."
+    },
+    {
+      "term": "fatigue",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A nearly depleted toy battery beside a resting clockwork toy.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#fatigue",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Headache",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached toy head beside a familiar pain-expression mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#headache",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Nausea",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar queasy-expression theatrical mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#nausea",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "anorexia",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy diner pushing away a full plate.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#Anorexia",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Nonlymphoid",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Lymphoid category negation attempt not selected; no anatomical or immunologic assertion.",
+      "tested": false,
+      "attempted_cue": "A detached model lymph node beside a blank stop token."
+    },
+    {
+      "term": "CNS",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy brain without status dial.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#mental status",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "encephalopathy",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy brain without status dial.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#mental status",
+      "reason": "Brain learned category only; no pathological state or diagnosis.",
+      "tested": false
+    },
+    {
+      "term": "seizures",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An oversized toy claw conspicuously seizing a small loose toy object.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#seizure",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "confusion",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A tangled ball of ordinary string.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Common muddle/tangle association, not clinical mental state.",
+      "tested": false
+    },
+    {
+      "term": "altered mental status",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A toy brain beside a simple blank status-indicator dial.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#mental status",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Musculoskeletal",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached skeletal-muscle teaching model beside a bone teaching token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#muscle",
+      "reason": "Actual older muscle and bone ingredients supply musculo-/skeletal learned roots; not invented catalog panels or a clinical condition.",
+      "tested": false,
+      "attempt_history": [
+        {
+          "decision": "reuse_candidate",
+          "cue": "A freestanding anatomical mannequin with visible study muscle/bone panels.",
+          "attempted_cue": null,
+          "prior": "docs/visual-cue-catalog.json#anatomic-host",
+          "reason": "Existing anatomical host family, not disease assertion.",
+          "scope": "Current local draft before independent-C correction"
+        }
+      ],
+      "secondary_prior": "docs/chapter-36-cue-audit.json#open fracture",
+      "provenance_variant": {
+        "actual_old_ingredients": [
+          "38 muscle detached skeletal-muscle model",
+          "36 open fracture bone teaching ingredient"
+        ],
+        "removed_qualifiers": [
+          "fracture/open state"
+        ],
+        "not_present_in_catalog_anatomic_host": true
+      }
+    },
+    {
+      "term": "synovitis",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Syno-/cinema partial name tried after rejecting joint-only location cue; not selected as economical, no pathology claim.",
+      "tested": false,
+      "attempted_cue": "A toy cinema ticket."
+    },
+    {
+      "term": "joint pain",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached hinged-joint teaching model.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#joint",
+      "reason": "Joint-name fragment only; pain separately mapped.",
+      "tested": false
+    },
+    {
+      "term": "swelling",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Puffy bundle of familiar tissue paper.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#tissue edema",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Lungs",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone lung-shaped study token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#stiff lungs",
+      "reason": "Existing lung ingredient without wood/stiffness qualifier.",
+      "tested": false
+    },
+    {
+      "term": "pneumonitis",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone lung-shaped study token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#stiff lungs",
+      "reason": "Pneumon-/lung learned lexical root category only, not merely a nearby organ/location cue; -itis/clinical condition, inflammation and pneumonia equivalence unencoded.",
+      "tested": false
+    },
+    {
+      "term": "dyspnea",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Breath/distress category tried but not selected; clinical breathing pattern must not be invented.",
+      "tested": false,
+      "attempted_cue": "A toy bellows beside a distress mask."
+    },
+    {
+      "term": "cough",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary toy figure with a theatrical cough motion.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Common action-name reminder only; no symptom diagnosis or contagiousness.",
+      "tested": false
+    },
+    {
+      "term": "Abdomen",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone belly-shaped mannequin token without mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "granulomatous hepatitis",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A transparent jar with a few granules beside it.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-14-cue-audit.json#degranulation",
+      "reason": "Granul- partial root only; liver pathology not depicted.",
+      "tested": false
+    },
+    {
+      "term": "splenitis",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached spleen insert on an anatomical mannequin display.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#anatomic-host",
+      "reason": "Splen-/specific spleen learned lexical category only; a newly specified regional-model variant of the old anatomical-host family, not a catalog ingredient or inflammation/diagnosis claim.",
+      "tested": false,
+      "provenance_variant": {
+        "base_reference": "docs/visual-cue-catalog.json#anatomic-host",
+        "actual_old_ingredient": "Anatomical mannequin only",
+        "added_variant": "Specific detachable spleen-region insert",
+        "not_present_in_prior": true
+      }
+    },
+    {
+      "term": "abdominal pain",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "Eyes",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone eye-shaped study model without gauge.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#intraocular pressure",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "retinitis",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A cutaway eyeball teaching model with an intact retinal lining.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#retinal detachment",
+      "reason": "Existing eye/retinal ingredient; remove peeling/detachment; no inflammation assertion.",
+      "tested": false
+    },
+    {
+      "term": "vision loss",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Vision-occlusion category tried but not selected as loss versus voluntary covering; no impairment claim.",
+      "tested": false,
+      "attempted_cue": "An opaque blindfold on a detached display head."
+    },
+    {
+      "term": "Herpes simplex virus",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Herp-/harp fragment tried; remains unselected, no lesion or pathogen claim.",
+      "tested": false,
+      "attempted_cue": "A toy harp."
+    },
+    {
+      "term": "vesicles",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A small empty transparent pouch, without heart, fluid or squeezing.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#cardiac tamponade",
+      "reason": "Reuse actual older pouch ingredient as small-sac learned vesicle category, no lesion/pattern or clinical inference.",
+      "tested": false,
+      "prior_attempt": {
+        "decision": "retain_candidate",
+        "cue": "A small empty transparent toy vesicle-shaped pouch.",
+        "reason": "Learned tiny-pouch category only; not a clinical lesion or diagnostic pattern."
+      }
+    },
+    {
+      "term": "erythematous",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A red-cell study token without pouch.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#erythrocytosis",
+      "reason": "Red/erythro ingredient only; no skin/vascular finding.",
+      "tested": false
+    },
+    {
+      "term": "edematous",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Puffy bundle of familiar tissue paper.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#tissue edema",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "distal finger",
+      "pdf_page": 57,
+      "page": 323,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An oversized toy index finger without broom.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#finger sweep",
+      "reason": "Finger category only, no location/lesion.",
+      "tested": false
+    },
+    {
+      "term": "Human Immunodeficiency Virus Infections",
+      "pdf_page": 58,
+      "page": 324,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "HIV/hive partial tried; no economical selected cue; do not treat chapter reference as clinical content.",
+      "tested": false,
+      "attempted_cue": "A familiar beehive toy."
+    },
+    {
+      "term": "Macacine herpesvirus 1",
+      "pdf_page": 58,
+      "page": 324,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Attempt would encourage host/virus assertion, so no selected vocabulary-only association.",
+      "tested": false,
+      "attempted_cue": "A toy macaque beside a harp."
+    },
+    {
+      "term": "occupational needlestick injury",
+      "pdf_page": 58,
+      "page": 324,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone needle training prop without host.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#introducer needle",
+      "reason": "Needle headword only; occupational protocol not encoded.",
+      "tested": false
+    },
+    {
+      "term": "index finger",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An oversized toy index finger without broom.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#finger sweep",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "water device",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A clear water pitcher.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/visual-cue-catalog.json#water-pitcher",
+      "reason": "Water category only; not actual device or pressure setting.",
+      "tested": false
+    },
+    {
+      "term": "metacarpal",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Draft whole-hand cue only supplied location, not metacarpal name or distinct structure. No selected economical bridge.",
+      "tested": false,
+      "attempted_cue": "A detached hand-and-wrist teaching model."
+    },
+    {
+      "term": "proximal phalanx",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": null,
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "hold",
+      "prior": "offline_attempt_not_selected",
+      "reason": "Draft whole-finger cue supplied location only, not phalanx lexical identity. Hold rather than count exact bone coverage.",
+      "tested": false,
+      "attempted_cue": "A detached toy finger."
+    },
+    {
+      "term": "subcutaneous air",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "Air-bubble study tokens without skin cover.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#subcutaneous emphysema",
+      "reason": "Bubble ingredient only, no tissue-plane or diagnostic relation.",
+      "tested": false
+    },
+    {
+      "term": "paint",
+      "pdf_page": 55,
+      "page": 321,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "An ordinary paintbrush without stroke.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Poststroke pain",
+      "reason": "Actual paintbrush ingredient; no injection device/action.",
+      "tested": false
+    },
+    {
+      "term": "skin",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "figure_label",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A freestanding skin teaching model.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "outdoors",
+      "pdf_page": 52,
+      "page": 318,
+      "source_match": "table",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar toy campsite under open sky.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "retain_candidate",
+      "prior": "new_chapter_record",
+      "reason": "Familiar outdoors category only; not exposure or risk.",
+      "tested": false
+    },
+    {
+      "term": "infection",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+      "tested": false
+    },
+    {
+      "term": "nonimmune",
+      "pdf_page": 54,
+      "page": 320,
+      "source_match": "body",
+      "kind": "learned_category_or_partial_name",
+      "cue": "A standalone shield token without car.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#autoimmune",
+      "reason": "Immune root only; negative modifier is explicitly not encoded.",
+      "tested": false
+    }
+  ],
+  "keyword_screen": {
+    "method": "Font-span coordinates (Minion Bold/BoldIt, Myriad SemiboldCond/BlackSemiCn headings/tables/captions) plus all owned page rasters and actual figure labels. Lexical heads extracted from emphasized clauses before excluding their clinical/numeric/procedural relationships. Selected ordinary body vocabulary only; no padded count or exhaustive clinical coverage claim.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "PyMuPDF enumerated all annotations on PDF41-62; none found. Printed color/typography is checked separately in rasters."
+    },
+    "typography_limits": "PDF font styles flag whole clauses, captions, panel letters and generic scaffolding as well as terms. Wrapped/hyphenated text normalized; actual mixed/full-width regions manually reviewed. Tiny sonogram device settings are not legible as clinical labels and are not inferred. No OCR completeness or every-body-word claim.",
+    "items": [
+      {
+        "term": "Puncture Wounds and Bites",
+        "pdf_page": 51,
+        "page": 317,
+        "emphasis": "lower-right actual title y453.3",
+        "entry_term": "Puncture Wounds and Bites"
+      },
+      {
+        "term": "Puncture Wounds",
+        "pdf_page": 51,
+        "page": 317,
+        "emphasis": "lower-right heading y524.3",
+        "entry_term": "Puncture Wounds"
+      },
+      {
+        "term": "Elderly",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y67",
+        "entry_term": "Elderly"
+      },
+      {
+        "term": "Diabetes",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y79",
+        "entry_term": "Diabetes"
+      },
+      {
+        "term": "microvascular complications",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y79",
+        "entry_term": "microvascular complications"
+      },
+      {
+        "term": "Immunocompromised",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y91",
+        "entry_term": "Immunocompromised"
+      },
+      {
+        "term": "acquired immunodeficiency syndrome",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y91",
+        "entry_term": "acquired immunodeficiency syndrome"
+      },
+      {
+        "term": "steroids",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y91",
+        "entry_term": "steroids"
+      },
+      {
+        "term": "chemotherapy",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y91",
+        "entry_term": "chemotherapy"
+      },
+      {
+        "term": "Peripheral vascular disease",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y103",
+        "entry_term": "Peripheral vascular disease"
+      },
+      {
+        "term": "soil",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y127",
+        "entry_term": "soil"
+      },
+      {
+        "term": "debris",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y127",
+        "entry_term": "debris"
+      },
+      {
+        "term": "Bite wounds",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y139",
+        "entry_term": "Bite wounds"
+      },
+      {
+        "term": "foreign body",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y151 and46-2 right y103",
+        "entry_term": "foreign body"
+      },
+      {
+        "term": "shoe",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y175",
+        "entry_term": "shoe"
+      },
+      {
+        "term": "sock",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y175",
+        "entry_term": "sock"
+      },
+      {
+        "term": "jumping",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y187",
+        "entry_term": "jumping"
+      },
+      {
+        "term": "falling",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y187",
+        "entry_term": "falling"
+      },
+      {
+        "term": "running",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y187",
+        "entry_term": "running"
+      },
+      {
+        "term": "Plain radiographs",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y55; bold body right y349.1",
+        "entry_term": "Plain radiographs"
+      },
+      {
+        "term": "fracture",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y67",
+        "entry_term": "fracture"
+      },
+      {
+        "term": "Infected wound",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y79",
+        "entry_term": "Infected wound"
+      },
+      {
+        "term": "wood",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y91",
+        "entry_term": "wood"
+      },
+      {
+        "term": "glass",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y91",
+        "entry_term": "glass"
+      },
+      {
+        "term": "foreign body sensation",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y103",
+        "entry_term": "foreign body sensation"
+      },
+      {
+        "term": "US",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y115",
+        "entry_term": "US"
+      },
+      {
+        "term": "Organic",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y127",
+        "entry_term": "Organic"
+      },
+      {
+        "term": "nonradiopaque",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y127",
+        "entry_term": "nonradiopaque"
+      },
+      {
+        "term": "abscess",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y139; heading53 right y451.6",
+        "entry_term": "abscess"
+      },
+      {
+        "term": "CT",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y151",
+        "entry_term": "CT"
+      },
+      {
+        "term": "MRI",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y151",
+        "entry_term": "MRI"
+      },
+      {
+        "term": "deep-space infection",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y163",
+        "entry_term": "deep-space infection"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-2 right y175",
+        "entry_term": "pain"
+      },
+      {
+        "term": "Wound Cleansing",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "right heading y705.1 lexical part of WOUND CLEANSING, IRRIGATION, AND DEBRIDEMENT",
+        "entry_term": "Wound Cleansing"
+      },
+      {
+        "term": "Irrigation",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "right heading y705.1",
+        "entry_term": "Irrigation"
+      },
+      {
+        "term": "Debridement",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "right heading y705.1",
+        "entry_term": "Debridement"
+      },
+      {
+        "term": "radiopaque foreign bodies",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "bold right y359.1",
+        "entry_term": "radiopaque foreign bodies"
+      },
+      {
+        "term": "Antibiotics",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "left heading y685.2; bold prophylaxis right y58.3",
+        "entry_term": "Antibiotics"
+      },
+      {
+        "term": "antibiotic prophylaxis",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y58.3",
+        "entry_term": "antibiotic prophylaxis"
+      },
+      {
+        "term": "plantar punctures",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y78.3",
+        "entry_term": "plantar punctures"
+      },
+      {
+        "term": "contamination",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y88.3",
+        "entry_term": "contamination"
+      },
+      {
+        "term": "cephalosporin",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y118.3-128.3",
+        "entry_term": "cephalosporin"
+      },
+      {
+        "term": "amoxicillin-clavulanic acid",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y128.3; source en dash between amoxicillin/clavulanic",
+        "entry_term": "amoxicillin-clavulanic acid"
+      },
+      {
+        "term": "fluoroquinolone",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y138.3 and y168.3",
+        "entry_term": "fluoroquinolone"
+      },
+      {
+        "term": "athletic shoes",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y168.3",
+        "entry_term": "athletic shoes"
+      },
+      {
+        "term": "antipseudomonal activity",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y178.3",
+        "entry_term": "antipseudomonal activity"
+      },
+      {
+        "term": "ciprofloxacin",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y178.3",
+        "entry_term": "ciprofloxacin"
+      },
+      {
+        "term": "Cellulitis",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "right heading y343.1",
+        "entry_term": "Cellulitis"
+      },
+      {
+        "term": "Deep Soft Tissue Infection",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "right heading y548.1",
+        "entry_term": "Deep Soft Tissue Infection"
+      },
+      {
+        "term": "Osteomyelitis",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "right heading y645.1",
+        "entry_term": "Osteomyelitis"
+      },
+      {
+        "term": "heel",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "Figure46-1 caption left y505.5",
+        "entry_term": "heel"
+      },
+      {
+        "term": "Needlestick Injuries",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "left heading y276.1 and bold y291.8",
+        "entry_term": "Needlestick Injuries"
+      },
+      {
+        "term": "hepatitis A",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y361.8",
+        "entry_term": "hepatitis A"
+      },
+      {
+        "term": "hepatitis B",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y361.8-371.8",
+        "entry_term": "hepatitis B"
+      },
+      {
+        "term": "hepatitis B e antigen",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y371.8",
+        "entry_term": "hepatitis B e antigen"
+      },
+      {
+        "term": "hepatitis C",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y371.8",
+        "entry_term": "hepatitis C"
+      },
+      {
+        "term": "HIV",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y381.8",
+        "entry_term": "HIV"
+      },
+      {
+        "term": "High-Pressure Injection Injuries",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "left heading y534.6 and bold y550.3",
+        "entry_term": "High-Pressure Injection Injuries"
+      },
+      {
+        "term": "Digital nerve blocks",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold right y592.0",
+        "entry_term": "Digital nerve blocks"
+      },
+      {
+        "term": "finger compartments",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold right y602.0",
+        "entry_term": "finger compartments"
+      },
+      {
+        "term": "amputation",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold right y612.0",
+        "entry_term": "amputation"
+      },
+      {
+        "term": "surgical debridement",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold right y612.0-622.0",
+        "entry_term": "surgical debridement"
+      },
+      {
+        "term": "organic solvents",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold right y622.0",
+        "entry_term": "organic solvents"
+      },
+      {
+        "term": "Epinephrine Autoinjector Injuries",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "right heading y684.5 and bold y700.5",
+        "entry_term": "Epinephrine Autoinjector Injuries"
+      },
+      {
+        "term": "epinephrine",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "regular left y38.6 and subsequent body",
+        "entry_term": "epinephrine"
+      },
+      {
+        "term": "Mammalian Bites",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "left heading y648.2",
+        "entry_term": "Mammalian Bites"
+      },
+      {
+        "term": "primary repair",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold right y311.8",
+        "entry_term": "primary repair"
+      },
+      {
+        "term": "Wound closure",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold right y411.8",
+        "entry_term": "Wound closure"
+      },
+      {
+        "term": "local wound infection",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold right y421.8",
+        "entry_term": "local wound infection"
+      },
+      {
+        "term": "systemic infection",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold right y431.8",
+        "entry_term": "systemic infection"
+      },
+      {
+        "term": "Capnocytophaga",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold italic right y431.7; heading56 y301.1",
+        "entry_term": "Capnocytophaga"
+      },
+      {
+        "term": "immunodeficiencies",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "bold right y461.8",
+        "entry_term": "immunodeficiencies"
+      },
+      {
+        "term": "Cat and Dog Bites",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "right heading y542.8",
+        "entry_term": "Cat and Dog Bites"
+      },
+      {
+        "term": "Local Infections",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "right heading y565.6",
+        "entry_term": "Local Infections"
+      },
+      {
+        "term": "dog",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Table46-3 right y679",
+        "entry_term": "dog"
+      },
+      {
+        "term": "face",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Table46-3 right y691",
+        "entry_term": "face"
+      },
+      {
+        "term": "scalp",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Table46-3 right y691",
+        "entry_term": "scalp"
+      },
+      {
+        "term": "single-layer closure",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Table46-3 right y703",
+        "entry_term": "single-layer closure"
+      },
+      {
+        "term": "devitalized tissue",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Table46-3 right y703",
+        "entry_term": "devitalized tissue"
+      },
+      {
+        "term": "Cat",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y69; Table46-5 and bold all-cat-bites clause left y412.3",
+        "entry_term": "Cat"
+      },
+      {
+        "term": "Pasteurella multocida",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y69 and Figure46-4 caption y720.6",
+        "entry_term": "Pasteurella multocida"
+      },
+      {
+        "term": "amoxicillin-clavulanate",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y69/94/107/133/145",
+        "entry_term": "amoxicillin-clavulanate"
+      },
+      {
+        "term": "Bartonella henselae",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y82",
+        "entry_term": "Bartonella henselae"
+      },
+      {
+        "term": "cat-scratch fever",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y82 parenthesis",
+        "entry_term": "cat-scratch fever"
+      },
+      {
+        "term": "Azithromycin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y82",
+        "entry_term": "Azithromycin"
+      },
+      {
+        "term": "Pasteurella",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y94 and bold right y262.3",
+        "entry_term": "Pasteurella"
+      },
+      {
+        "term": "streptococci",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y94/107/206/218",
+        "entry_term": "streptococci"
+      },
+      {
+        "term": "staphylococci",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y94/107/206/218",
+        "entry_term": "staphylococci"
+      },
+      {
+        "term": "Capnocytophaga canimorsus",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y94",
+        "entry_term": "Capnocytophaga canimorsus"
+      },
+      {
+        "term": "Human",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y107",
+        "entry_term": "Human"
+      },
+      {
+        "term": "Eikenella",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y107",
+        "entry_term": "Eikenella"
+      },
+      {
+        "term": "Herpes simplex",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y120",
+        "entry_term": "Herpes simplex"
+      },
+      {
+        "term": "herpetic whitlow",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y120 parenthesis; bold body57 left y559.1",
+        "entry_term": "herpetic whitlow"
+      },
+      {
+        "term": "Acyclovir",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y120/193",
+        "entry_term": "Acyclovir"
+      },
+      {
+        "term": "valacyclovir",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y120/193",
+        "entry_term": "valacyclovir"
+      },
+      {
+        "term": "Rats",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "Rats"
+      },
+      {
+        "term": "mice",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "mice"
+      },
+      {
+        "term": "squirrels",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "squirrels"
+      },
+      {
+        "term": "gerbils",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "gerbils"
+      },
+      {
+        "term": "Streptobacillus moniliformis",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "Streptobacillus moniliformis"
+      },
+      {
+        "term": "Spirillum minus/minor",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y133",
+        "entry_term": "Spirillum minus/minor"
+      },
+      {
+        "term": "Livestock",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y145",
+        "entry_term": "Livestock"
+      },
+      {
+        "term": "large game animals",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y145",
+        "entry_term": "large game animals"
+      },
+      {
+        "term": "Brucella",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y157",
+        "entry_term": "Brucella"
+      },
+      {
+        "term": "Leptospira",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y157",
+        "entry_term": "Leptospira"
+      },
+      {
+        "term": "Francisella tularensis",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y157",
+        "entry_term": "Francisella tularensis"
+      },
+      {
+        "term": "Bats",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "Bats"
+      },
+      {
+        "term": "monkeys",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170/193",
+        "entry_term": "monkeys"
+      },
+      {
+        "term": "skunks",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "skunks"
+      },
+      {
+        "term": "raccoons",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "raccoons"
+      },
+      {
+        "term": "foxes",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y180",
+        "entry_term": "foxes"
+      },
+      {
+        "term": "carnivores",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y180 parenthesis",
+        "entry_term": "carnivores"
+      },
+      {
+        "term": "omnivores",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y180 parenthesis",
+        "entry_term": "omnivores"
+      },
+      {
+        "term": "Rabies",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "Rabies"
+      },
+      {
+        "term": "Rabies immune globulin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "Rabies immune globulin"
+      },
+      {
+        "term": "rabies vaccine",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y170",
+        "entry_term": "rabies vaccine"
+      },
+      {
+        "term": "Herpes B virus",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y193",
+        "entry_term": "Herpes B virus"
+      },
+      {
+        "term": "Cercopithecine herpesvirus",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y193 parenthesis",
+        "entry_term": "Cercopithecine herpesvirus"
+      },
+      {
+        "term": "Freshwater",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y206",
+        "entry_term": "Freshwater"
+      },
+      {
+        "term": "Aeromonas",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y206; bold57 right y557.2",
+        "entry_term": "Aeromonas"
+      },
+      {
+        "term": "trimethoprim-sulfamethoxazole",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y206",
+        "entry_term": "trimethoprim-sulfamethoxazole"
+      },
+      {
+        "term": "Saltwater",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y218",
+        "entry_term": "Saltwater"
+      },
+      {
+        "term": "Vibrio",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y218; bold57 right y587.2",
+        "entry_term": "Vibrio"
+      },
+      {
+        "term": "doxycycline",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 full-width y218",
+        "entry_term": "doxycycline"
+      },
+      {
+        "term": "Monkey bites",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 left y643",
+        "entry_term": "Monkey bites"
+      },
+      {
+        "term": "Hand",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 left y667 and bold left y422.3; Figure46-4 caption y720.6 and Table46-5 y667",
+        "entry_term": "Hand"
+      },
+      {
+        "term": "foot",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 left y667",
+        "entry_term": "foot"
+      },
+      {
+        "term": "Diabetes mellitus",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 left y727",
+        "entry_term": "Diabetes mellitus"
+      },
+      {
+        "term": "Cephalexin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "bold left y562.3; Table46-4 full-width y107",
+        "entry_term": "Cephalexin"
+      },
+      {
+        "term": "dicloxacillin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "bold left y562.3",
+        "entry_term": "dicloxacillin"
+      },
+      {
+        "term": "erythromycin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "bold left y562.3",
+        "entry_term": "erythromycin"
+      },
+      {
+        "term": "clindamycin",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "bold left y562.3; continuation right y252.3",
+        "entry_term": "clindamycin"
+      },
+      {
+        "term": "Systemic Infections",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "right heading y285.1",
+        "entry_term": "Systemic Infections"
+      },
+      {
+        "term": "Cat-Scratch Disease",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "right bold subheading y403.8",
+        "entry_term": "Cat-Scratch Disease"
+      },
+      {
+        "term": "Human Bites",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "left heading y337.1",
+        "entry_term": "Human Bites"
+      },
+      {
+        "term": "closed-fist injury",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "bold left y409.1",
+        "entry_term": "closed-fist injury"
+      },
+      {
+        "term": "Rat-bite fever",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "bold left y720.6",
+        "entry_term": "Rat-bite fever"
+      },
+      {
+        "term": "Rodents",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "left heading y665.1; section title y630.1",
+        "entry_term": "Rodents"
+      },
+      {
+        "term": "Exotic and Wild Animals",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "left section title y630.1-642.1",
+        "entry_term": "Exotic and Wild Animals"
+      },
+      {
+        "term": "Systemic Viral Infections",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "right heading y608.6",
+        "entry_term": "Systemic Viral Infections"
+      },
+      {
+        "term": "Organ",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left title y42.2; category y115",
+        "entry_term": "Organ"
+      },
+      {
+        "term": "Low-grade fever",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y67.1",
+        "entry_term": "Low-grade fever"
+      },
+      {
+        "term": "Malaise",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y79.1",
+        "entry_term": "Malaise"
+      },
+      {
+        "term": "fatigue",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y79.1",
+        "entry_term": "fatigue"
+      },
+      {
+        "term": "Headache",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y91.1",
+        "entry_term": "Headache"
+      },
+      {
+        "term": "Nausea",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y103.1",
+        "entry_term": "Nausea"
+      },
+      {
+        "term": "anorexia",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y103.1",
+        "entry_term": "anorexia"
+      },
+      {
+        "term": "Nonlymphoid",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left subheading y115",
+        "entry_term": "Nonlymphoid"
+      },
+      {
+        "term": "CNS",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y127.1",
+        "entry_term": "CNS"
+      },
+      {
+        "term": "encephalopathy",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y127.1",
+        "entry_term": "encephalopathy"
+      },
+      {
+        "term": "seizures",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y127.1",
+        "entry_term": "seizures"
+      },
+      {
+        "term": "confusion",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y127.1",
+        "entry_term": "confusion"
+      },
+      {
+        "term": "altered mental status",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y127.1",
+        "entry_term": "altered mental status"
+      },
+      {
+        "term": "Musculoskeletal",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y139.1",
+        "entry_term": "Musculoskeletal"
+      },
+      {
+        "term": "synovitis",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y139.1",
+        "entry_term": "synovitis"
+      },
+      {
+        "term": "joint pain",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y139.1; Table46-6 y139",
+        "entry_term": "joint pain"
+      },
+      {
+        "term": "swelling",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y139.1",
+        "entry_term": "swelling"
+      },
+      {
+        "term": "Lungs",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y151.1",
+        "entry_term": "Lungs"
+      },
+      {
+        "term": "pneumonitis",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y151.1",
+        "entry_term": "pneumonitis"
+      },
+      {
+        "term": "dyspnea",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y151.1",
+        "entry_term": "dyspnea"
+      },
+      {
+        "term": "cough",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y151.1",
+        "entry_term": "cough"
+      },
+      {
+        "term": "Abdomen",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y163.1",
+        "entry_term": "Abdomen"
+      },
+      {
+        "term": "granulomatous hepatitis",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y163.1",
+        "entry_term": "granulomatous hepatitis"
+      },
+      {
+        "term": "splenitis",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y163.1",
+        "entry_term": "splenitis"
+      },
+      {
+        "term": "abdominal pain",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y163.1",
+        "entry_term": "abdominal pain"
+      },
+      {
+        "term": "Eyes",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y175.1",
+        "entry_term": "Eyes"
+      },
+      {
+        "term": "retinitis",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y175.1",
+        "entry_term": "retinitis"
+      },
+      {
+        "term": "vision loss",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 left y175.1",
+        "entry_term": "vision loss"
+      },
+      {
+        "term": "Herpes simplex virus",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Figure46-5 caption right y236.5",
+        "entry_term": "Herpes simplex virus"
+      },
+      {
+        "term": "vesicles",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Figure46-5 caption right y247.1",
+        "entry_term": "vesicles"
+      },
+      {
+        "term": "erythematous",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Figure46-5 caption right y247.1",
+        "entry_term": "erythematous"
+      },
+      {
+        "term": "edematous",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Figure46-5 caption right y247.1",
+        "entry_term": "edematous"
+      },
+      {
+        "term": "distal finger",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Figure46-5 caption right y247.1",
+        "entry_term": "distal finger"
+      },
+      {
+        "term": "Human Immunodeficiency Virus Infections",
+        "pdf_page": 58,
+        "page": 324,
+        "emphasis": "bold upper-left cross-reference y258.3-268.3",
+        "entry_term": "Human Immunodeficiency Virus Infections"
+      },
+      {
+        "term": "Macacine herpesvirus 1",
+        "pdf_page": 58,
+        "page": 324,
+        "emphasis": "selected upper-left italic y38.5",
+        "entry_term": "Macacine herpesvirus 1"
+      },
+      {
+        "term": "occupational needlestick injury",
+        "pdf_page": 58,
+        "page": 324,
+        "emphasis": "bold upper-left y238.3-248.3",
+        "entry_term": "occupational needlestick injury"
+      },
+      {
+        "term": "index finger",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2A right caption y458.8; Figure46-3A55 caption",
+        "entry_term": "index finger"
+      },
+      {
+        "term": "water device",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2A right caption y469.3",
+        "entry_term": "water device"
+      },
+      {
+        "term": "metacarpal",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2B right caption y469.3",
+        "entry_term": "metacarpal"
+      },
+      {
+        "term": "proximal phalanx",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2B right caption y469.3",
+        "entry_term": "proximal phalanx"
+      },
+      {
+        "term": "subcutaneous air",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2B right caption y479.8",
+        "entry_term": "subcutaneous air"
+      },
+      {
+        "term": "paint",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Figure46-3A left caption y329.7",
+        "entry_term": "paint"
+      },
+      {
+        "term": "skin",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2A right caption y458.8",
+        "entry_term": "skin"
+      },
+      {
+        "term": "outdoors",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 left y163",
+        "entry_term": "outdoors"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y341.8",
+        "entry_term": "infection"
+      },
+      {
+        "term": "nonimmune",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "bold left y341.8",
+        "entry_term": "nonimmune"
+      },
+      {
+        "term": "penetration",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1 y187 lexical head, before excluding deeper-risk relationship",
+        "entry_term": "Puncture Wounds"
+      },
+      {
+        "term": "Puncture Wounds",
+        "pdf_page": 52,
+        "page": 318,
+        "emphasis": "Table46-1/2 titles and bold radiograph clause",
+        "entry_term": "Puncture Wounds"
+      },
+      {
+        "term": "immunosuppression",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "regular right y98.3-108.3 literal immunosuppression after bold high-risk clause",
+        "entry_term": "Immunocompromised"
+      },
+      {
+        "term": "bites",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y78.3 literal punctures due to bites",
+        "entry_term": "Bite wounds"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y118",
+        "entry_term": "infection"
+      },
+      {
+        "term": "Puncture Wounds",
+        "pdf_page": 53,
+        "page": 319,
+        "emphasis": "bold right y68 and plantar puncture statement",
+        "entry_term": "Puncture Wounds"
+      },
+      {
+        "term": "fractures",
+        "pdf_page": 54,
+        "page": 320,
+        "emphasis": "Figure46-2B actual plural fractures y469.3",
+        "entry_term": "fracture"
+      },
+      {
+        "term": "radiopaque material",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Figure46-3B caption y340.3",
+        "entry_term": "radiopaque foreign bodies"
+      },
+      {
+        "term": "dog",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-4 y94, bold dog-bite statements y252.3/422.3",
+        "entry_term": "dog"
+      },
+      {
+        "term": "Cat",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Cat and Dog Bites heading y542.8",
+        "entry_term": "Cat"
+      },
+      {
+        "term": "Bite wounds",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Tables46-4/5 and bold dog/cat bites y252.3-432.3",
+        "entry_term": "Bite wounds"
+      },
+      {
+        "term": "Immunocompromised",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "bold left y412.3-422.3; Table46-5 immunosuppressed",
+        "entry_term": "Immunocompromised"
+      },
+      {
+        "term": "devitalized tissue",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 left y715",
+        "entry_term": "devitalized tissue"
+      },
+      {
+        "term": "infection",
+        "pdf_page": 56,
+        "page": 322,
+        "emphasis": "Table46-5 local infection y703; bold y262.3/292.3",
+        "entry_term": "infection"
+      },
+      {
+        "term": "Freshwater",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "right heading y541.6 lexical Freshwater",
+        "entry_term": "Freshwater"
+      },
+      {
+        "term": "Saltwater",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "right heading y541.6 lexical Saltwater",
+        "entry_term": "Saltwater"
+      },
+      {
+        "term": "Livestock",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "left section heading y630.1; right subsection y443.1",
+        "entry_term": "Livestock"
+      },
+      {
+        "term": "large game animals",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "right subsection y443.1",
+        "entry_term": "large game animals"
+      },
+      {
+        "term": "Cat Scratch Disease",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 title y42.2 source unhyphenated",
+        "entry_term": "Cat-Scratch Disease"
+      },
+      {
+        "term": "pain",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Table46-6 joint/abdominal pain and Figure46-5 Painful",
+        "entry_term": "pain"
+      },
+      {
+        "term": "herpetic whitlow",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "bold left split across y559.1-569.1; Figure46-5 caption",
+        "entry_term": "herpetic whitlow"
+      },
+      {
+        "term": "amoxicillin-clavulanate",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "bold left y519.1",
+        "entry_term": "amoxicillin-clavulanate"
+      },
+      {
+        "term": "HIV",
+        "pdf_page": 57,
+        "page": 323,
+        "emphasis": "Systemic Viral Infections body right y640.6",
+        "entry_term": "HIV"
+      },
+      {
+        "term": "HIV",
+        "pdf_page": 58,
+        "page": 324,
+        "emphasis": "bold cross-reference upper-left y258.3-268.3; regular y218.6",
+        "entry_term": "HIV"
+      },
+      {
+        "term": "needlestick injury",
+        "pdf_page": 58,
+        "page": 324,
+        "emphasis": "bold upper-left needlestick injury; singular actual form handled below",
+        "entry_term": "Needlestick Injuries"
+      },
+      {
+        "term": "index finger",
+        "pdf_page": 55,
+        "page": 321,
+        "emphasis": "Figure46-3A caption y329.7",
+        "entry_term": "index finger"
+      },
+      {
+        "term": "fracture",
+        "pdf_page": 55,
+        "page": 321,
+        "entry_term": "fracture",
+        "emphasis": "Table46-3 right y715 actual no underlying fracture; head extracted before excluding restriction"
+      },
+      {
+        "term": "immunocompromising",
+        "pdf_page": 55,
+        "page": 321,
+        "entry_term": "Immunocompromised",
+        "emphasis": "Table46-3 right y727 systemic immunocompromising conditions; immune head only, not risk recommendation"
+      },
+      {
+        "term": "Puncture wounds",
+        "pdf_page": 56,
+        "page": 322,
+        "entry_term": "Puncture Wounds",
+        "emphasis": "Table46-5 left y655 actual row; puncture head explicitly mapped"
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 51,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 52,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 53,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 54,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 55,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 56,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 57,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 58,
+        "description": "Running headers, page/chapter numbers, authors/publishers, reference/figure/table tokens, panel letters; generic Introduction/Pathophysiology/Assessment/Diagnosis/Treatment/Complications/Disposition and Follow-Up/Special Considerations/References organizing labels where present.",
+        "reason": "Scaffolding not cue targets; meaningful heading/table/figure/bold-clause lexical heads separately tried."
+      },
+      {
+        "pdf_page": 51,
+        "description": "All left-column45, top full-width Figure45-16, and right45 continuation/references above46 title y453.3.",
+        "reason": "Adjacent chapter excluded. Own ONLY lower-right46 title/body onward."
+      },
+      {
+        "pdf_page": 52,
+        "description": "Table46-1 risk relations and46-2 modality/indication relationships, generic patient/wound characteristics; bold detection percentage/diameter statement.",
+        "reason": "Diabetes/microvascular/immune/steroids/chemotherapy/vascular/soil/debris/bite/foreignbody/outdoors/shoe/sock/action heads and modalities/fracture/infection/material/abscess/deep-space/pain tried before excluding relationships/cutoffs. Failure to respond to treatment is full outcome clause, not a new lexical condition."
+      },
+      {
+        "pdf_page": 53,
+        "description": "Whole prophylaxis recommendations, timing/percentages, generation/route adjectives and antibiotic-use relationships.",
+        "reason": "Antibiotics/prophylaxis/punctures/plantar/bites/contamination/immune/cephalosporin/amoxicillin/fluoroquinolone/athletic shoes/antipseudomonal/ciprofloxacin heads tried before excluding clinical statements. Figure46-1 heel/wound/foreignbody/radiograph tried."
+      },
+      {
+        "pdf_page": 54,
+        "description": "Full exposure-risk percentages, needle/finger pressure/surgery timing clauses, organic-solvent relationships.",
+        "reason": "Needlestick/infection/nonimmune/hepatitisA/B/C/B-e-antigen/HIV, injection/digital nerve block/finger compartments/amputation/debridement/organic solvents/autoinjector heads extracted before excluding statements. Caption skin/indexfinger/waterdevice/fracture/metacarpal/phalanx/subcutaneousair tried."
+      },
+      {
+        "pdf_page": 55,
+        "description": "Bold active-treatment versus observation conclusion and infection-risk/closure recommendations; Table46-3 indications as full statements.",
+        "reason": "Observation/active treatment are generic comparative care/outcome labels, not invented diagnoses. Primary repair/closure/infection/Capnocytophaga/immune/bite/dog/face/scalp/layer/devitalized/fracture heads tried first. No scene or treatment copied."
+      },
+      {
+        "pdf_page": 56,
+        "description": "Table46-4 treatment links and geographic parentheticals North America/Asia; generic Animal/Organism/First-Line Antibiotic/Multiple organisms labels; Table46-5 risk clauses and bold infection percentages/drug exclusions.",
+        "reason": "All named animals/pathogens/drugs/immune products and condition/anatomy/material heads tried before excluding full relations. Taxonomic/source labels are name vocabulary only, not a disease teaching table."
+      },
+      {
+        "pdf_page": 57,
+        "description": "Table46-6 whole symptom/organ relationships and Constitutional symptoms organizing label; Figure46-5 entire case/pattern statement and reproduced-book credit.",
+        "reason": "Every named symptom/organ/condition head separately tried, including nonlymphoid/encephalopathy/synovitis/pneumonitis/hepatitis/splenitis/retinitis. Caption herpes/whitlow/vesicles/erythematous/edematous/finger extracted first; grouped/confluent/first/presumed-primary remain pattern qualifiers, not clinical assertions."
+      },
+      {
+        "pdf_page": 58,
+        "description": "Whole bold occupational protocol recommendation and chapter-number cross-reference; lower-left actual47 title y367.1 onward and ALL right47.",
+        "reason": "Needlestick/HIV/virus lexical heads tried before excluding protocol; no medical instructions copied into cues. Chapter46 ends upper-left references y289.6/311.6. Lower-left/right belong47."
+      }
+    ]
+  },
+  "resolved_holds": [
+    {
+      "term": "doxycycline",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open.",
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Previously rejected docks plus bicycle assembly is not revived or silently reclassified as reuse. No improved economical partial association proposed in this pass. Broad calibration permits partial cues, but does not obligate retaining this particular attempt. No treatment association admitted.",
+          "scope": "docs/chapter-9-cue-audit.json#doxycycline, unchanged"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A standalone bicycle without dice.",
+          "reason": "Broader cycl-/cycle partial reminder reconsidered; older held/rejected doxy attempts remain open.",
+          "scope": "Current46 only"
+        }
+      ]
+    },
+    {
+      "term": "seizures",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open.",
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a clamp seizing a block; the seize/seizure reminder was not attractive enough here. An ordinary action cue was tried, not a patient manifestation or diagnosis.",
+          "scope": "docs/chapter-29A-cue-audit.json#seizures, unchanged"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "An oversized toy claw conspicuously seizing a small loose toy object.",
+          "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+          "scope": "Current46 only"
+        }
+      ]
+    },
+    {
+      "term": "infection",
+      "resolution": "Current chapter uses a partial/category candidate via an actual nonheld retained root; historical holds remain unchanged and globally open.",
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible.",
+          "scope": "docs/chapter-29A-cue-audit.json#infection, unchanged"
+        },
+        {
+          "decision": "hold",
+          "attempt": "A generic cartoon germ.",
+          "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained.",
+          "scope": "docs/chapter-31-cue-audit.json#infection, unchanged"
+        },
+        {
+          "decision": "hold",
+          "attempt": "A cartoon germ beside a broken toy shield.",
+          "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain.",
+          "scope": "docs/chapter-33-cue-audit.json#infection, unchanged"
+        },
+        {
+          "decision": "hold",
+          "attempt": "A generic cartoon germ beside a doorway.",
+          "reason": "Tried germ/entry; no useful infection-specific lexical hook selected. Existing rejected/held germ attempts remain historical; not a universal ban on category cues.",
+          "scope": "docs/chapter-34-cue-audit.json#infection, unchanged"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "A familiar cartoon germ study token standing alone.",
+          "reason": "Reuse actual prior ingredient; only the named headword or partial category is cued, without subtype equivalence.",
+          "scope": "Current46 only"
+        }
+      ]
+    },
+    {
+      "term": "amputation",
+      "resolution": "Local hold reconsidered after inspecting actual older6 category; old6 was retained, not a held attempt.",
+      "scope": "local_reconsideration_only",
+      "earlier_hold_remains_open": false,
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "A detached mannequin limb.",
+          "reason": "Limb reminder tried; depicting detachment as injury/operation not selected for vocabulary-only cue.",
+          "scope": "Current46 prior draft"
+        },
+        {
+          "decision": "reuse_candidate",
+          "attempt": "Detachable study-mannequin limb removed and set apart from its body.",
+          "reason": "After directly reviewing actual old6, this static detachable-model removal category is a meaningful amputation identity, not merely nearby anatomy or a procedure. Selected under broad learned-category rule, without indication, severity, trauma or technique.",
+          "scope": "Current46 only"
+        }
+      ]
+    }
+  ],
+  "source_wording_notes": {
+    "normalization": "Literal lexical heads preferred. Source amoxicillin-clavulanic acid uses en dash normalized to ASCII; retained separately from actual amoxicillin-clavulanate. Wrapped names normalized. No full generation/route/treatment statements imported.",
+    "prior_search": "All terms searched banks1-41/catalog/both workshops, including family/ingredient names. Actual old pasta, captain, ceiling, queen, tea cup, bicycle, spiral, brush, airplane, climber, cushion, skull, shield and anatomy roots reused. Local reuse targets only different retained roots; no chain.",
+    "family_only": "Nerve/infection/puncture/immune/category cues do not cover qualifiers. Whole foot for heel and whole hand/finger for metacarpal/phalanx rejected as location-only; synovitis joint-only rejected. Specific root lexical reminders such as osteo/bone, pneumon/lung, splen/spleen remain context-dependent learned categories, not conditions or diagnosis.",
+    "collisions": "Cephalexin/cephalosporin share ceiling; fluoroquinolone/quinidine share queen; acyclovir/valacyclovir/doxycycline share cycle; Capnocytophaga/capnography share captain; Pasteurella/pasta, Brucella/brush, Aeromonas/airplane, clindamycin/climber are partial learned fragments only. No unique species/drug identity or property claimed.",
+    "historical": "Old antibiotic/abscess/epinephrine/HIV-related holds remain open. Current doxycycline partial cycle reconsideration does not erase old hold/rejected dog-cycle attempts. Prior-draft location attempts retained explicitly in review notes.",
+    "independent_C_fixes": "Ox already corrected to actual35 root; fox now actual9 reuse. Gerbil/mouse shortcut held with old attempt preserved. Cipro explicitly sipping. Muscle/bone actual old ingredients and spleen added regional-model variant declared. Added three Table46-3/5 page-specific traces. Amputation actual6 category reviewed, not automatic anatomy promotion."
+  },
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "review_status": "Author-completed bounded offline source/keyword/cue draft. Main independent integration review and shared ledger/register/index/validation remain main-owned; no main_integration_review assertion.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-21/batch42-51/laneB/",
+  "coverage_limits": [
+    "No clinical teaching or exhaustive clinical coverage.",
+    "All candidates untested; no novelty, full-name recovery, diagnosis or recall claim.",
+    "Rasters are source-inspection artifacts, not mnemonic image evidence."
+  ]
+}
