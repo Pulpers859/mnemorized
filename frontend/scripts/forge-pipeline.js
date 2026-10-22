@@ -255,7 +255,7 @@ function composeImagePrompt2(sceneDesc, assigned) {
   return 'Hand-drawn flat marker cartoon, wide 16:9 single coherent scene, varied ink outlines, vivid contrasting colors and even lighting. ' +
     'Grounded objects, uncluttered spatial hierarchy. Every described interaction appears once with distinct silhouettes.\n\n' +
     condenseForImage(sceneDesc) + '\n\n' + buildImageAnchorLines(assigned) + '\n\n' +
-    'Shapes and physical interactions carry the hooks; exact values remain in narration and flashcards.\n\n' +
+    'Shapes and interactions carry hooks; exact values stay in narration and cards.\n\n' +
     buildTextAllowlistFence(assigned);
 }
 
