@@ -31,6 +31,8 @@ ROOT = Path(__file__).resolve().parents[1]
     (51, 29, 34, 328),
     (52, 34, 39, 328), (53, 39, 46, 328), (54, 46, 52, 328),
     (55, 52, 60, 328), (56, 61, 71, 328),
+    (57, 71, 80, 328), (58, 80, 84, 328), (59, 84, 87, 328),
+    (60, 87, 91, 328), (61, 92, 95, 328),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())

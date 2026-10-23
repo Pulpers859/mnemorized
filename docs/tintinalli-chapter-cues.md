@@ -385,7 +385,7 @@ candidates remain untested, nonproduction, evidence empty and spend zero.
 
 ## Next Chapter
 
-**Chapter 57, Systemic Hypertension**, is next, not started for cue review.
+**Chapter 62, Respiratory Distress**, is next, not started for cue review.
 Continue in the requested five-chapter batches. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
@@ -410,7 +410,7 @@ Independent AI cross-review and main integration completed; not empirical valida
 
 Totals: 1,537 selected terms, 118 new candidates, 1,288 reuses, 131 holds and 1,824 keyword mappings. New means newly recorded, not proven novel or effective.
 
-Meaningful bold/heading/table/figure terms explicitly tried within verified regions; selected vocabulary and typography extraction are not exhaustive clinical coverage. Earlier holds remain in the separate revisit register. No production catalog admission, paid API calls or renders. Next: Chapter57 Systemic Hypertension.
+Meaningful bold/heading/table/figure terms explicitly tried within verified regions; selected vocabulary and typography extraction are not exhaustive clinical coverage. Earlier holds remain in the separate revisit register. No production catalog admission, paid API calls or renders. Next: Chapter62 Respiratory Distress.
 
 ## Chapters 52-56: Five-Chapter Cardiovascular Batch
 
@@ -426,4 +426,20 @@ Independent AI source/cue review and main integration completed; not empirical v
 
 Totals: 1194 selected terms, 27 new candidates, 929 reuses, 238 holds and 1355 keyword mappings. New means newly recorded, not proven novel or effective.
 
-Actual mixed-column regions and meaningful bold/heading/table/figure terms checked; source52 continues into LEFT39 while53 begins RIGHT39. Typography/selected vocabulary is not exhaustive clinical coverage. Earlier holds preserved separately. Canonical catalog unchanged; zero paid calls/renders. Next57, five-chapter cadence.
+Actual mixed-column regions and meaningful bold/heading/table/figure terms checked; source52 continues into LEFT39 while53 begins RIGHT39. Typography/selected vocabulary is not exhaustive clinical coverage. Earlier holds preserved separately. Canonical catalog unchanged; zero paid calls/renders. Next62, five-chapter cadence.
+
+## Chapters 57-61: Five-Chapter Vascular Batch
+
+Independent AI source/cue review and main integration completed; not empirical validation.
+
+| Chapter | Topic | Selected | New | Reused | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 57 | [Systemic Hypertension](chapter-57-cue-audit.md) | 403 | 13 | 378 | 12 | 576 |
+| 58 | [Pulmonary Hypertension](chapter-58-cue-audit.md) | 236 | 0 | 234 | 2 | 269 |
+| 59 | [Aortic Dissection and Related Aortic Syndromes](chapter-59-cue-audit.md) | 103 | 3 | 96 | 4 | 120 |
+| 60 | [Aneurysmal Disease](chapter-60-cue-audit.md) | 154 | 3 | 131 | 20 | 160 |
+| 61 | [Arterial Occlusion](chapter-61-cue-audit.md) | 269 | 4 | 232 | 33 | 287 |
+
+Totals: 1165 terms / 23 new / 1071 reused / 71 held; 1412 keyword mappings. New means newly recorded, not proven novel or effective.
+
+Actual mixed-column regions and meaningful emphasized/heading/table/figure lexical heads checked. Selected vocabulary/typography review is not exhaustive clinical coverage. Earlier holds preserved separately. Primary catalog unchanged; no paid calls/renders. Next62 Respiratory Distress, five-chapter cadence.

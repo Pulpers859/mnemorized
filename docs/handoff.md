@@ -199,6 +199,16 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-23 - Chapters57-61 five-chapter cue batch
+**Done:** Same broadened rubric. Three drafting lanes; D57/58/60, main59 and B61 independent source/conceptual reviews, with reported repairs rechecked before integration. Totals: 1165 terms / 23 new / 1071 reused / 71 held; 1412 keyword mappings. Cardiovascular source actual71RIGHT-95, offset328; blank96 excluded. Meaningful lexical heads tried before statement/value exclusions. Earlier holds preserved.
+
+**Limits:** AI editorial/source review, not human clinical, naming/recall/rendering evidence or exhaustive coverage. All candidates untested/nonproduction; primary catalog unchanged; zero paid calls/renders and $6 benchmark untouched.
+
+**Next:** Chapter62 Respiratory Distress, continue five-chapter cadence. Final validation/Git evidence in ignored batch57-61/main packet.
+
+**Older-bank follow-up:** Independent61 audit found that43's thumb record depicts an index finger.61 now uses an explicitly declared thumb-shaped variant of38's hand host;43 itself was not changed in this batch. Review that older root before reusing it as thumb-specific anatomy.
+
+
 ### 2026-10-22 - Chapters52-56 five-chapter cue batch
 **Done:** User changed cadence to five, rubric unchanged. Three drafting lanes; non-author52/53/55/56 audits plus main independent54 review and integration. Totals: 1194 terms / 27 new / 929 reused / 238 held; 1355 keyword mappings. Actual Cardiovascular PDF34-71 mixed-column regions checked, including52 LEFT39 and53 RIGHT39. Meaningful emphasized/table/figure lexical heads tried; earlier holds preserved.
 

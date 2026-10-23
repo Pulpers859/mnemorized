@@ -917,6 +917,76 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 353
+    },
+    {
+      "chapter_id": "57",
+      "title": "Systemic Hypertension",
+      "record": "docs/chapter-57-cue-audit.json",
+      "report": "docs/chapter-57-cue-audit.md",
+      "selected_terms": 403,
+      "new_candidates": 13,
+      "reused_candidates": 378,
+      "holds": 12,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 576
+    },
+    {
+      "chapter_id": "58",
+      "title": "Pulmonary Hypertension",
+      "record": "docs/chapter-58-cue-audit.json",
+      "report": "docs/chapter-58-cue-audit.md",
+      "selected_terms": 236,
+      "new_candidates": 0,
+      "reused_candidates": 234,
+      "holds": 2,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 269
+    },
+    {
+      "chapter_id": "59",
+      "title": "Aortic Dissection and Related Aortic Syndromes",
+      "record": "docs/chapter-59-cue-audit.json",
+      "report": "docs/chapter-59-cue-audit.md",
+      "selected_terms": 103,
+      "new_candidates": 3,
+      "reused_candidates": 96,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 120
+    },
+    {
+      "chapter_id": "60",
+      "title": "Aneurysmal Disease",
+      "record": "docs/chapter-60-cue-audit.json",
+      "report": "docs/chapter-60-cue-audit.md",
+      "selected_terms": 154,
+      "new_candidates": 3,
+      "reused_candidates": 131,
+      "holds": 20,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 160
+    },
+    {
+      "chapter_id": "61",
+      "title": "Arterial Occlusion",
+      "record": "docs/chapter-61-cue-audit.json",
+      "report": "docs/chapter-61-cue-audit.md",
+      "selected_terms": 269,
+      "new_candidates": 4,
+      "reused_candidates": 232,
+      "holds": 33,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 287
     }
   ],
   "hold_register": {
@@ -926,8 +996,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "57",
-    "title": "Systemic Hypertension",
+    "chapter_id": "62",
+    "title": "Respiratory Distress",
     "status": "not_started_for_cue_review"
   },
   "spend": {

@@ -55,6 +55,11 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Research Spend And First-Pass Benchmarks
 
+- For chapter cue decisions, use `docs/visual-cue-catalog.md` **Review And
+  Admission** as the standing rubric. Familiar category, packaging, action,
+  broad mechanism and partial-name cues may omit modifiers; full-syllable or
+  untrained unique identification is not a universal requirement. Record the
+  actual encoded scope and uncertainty, not unsupported medical specificity.
 - For chapter cue workshops, preserve every current hold in the separate
   `docs/tintinalli-held-cues.md` / `.json` register. After each batch or decision
   change, run `python tools/chapter_cue_holds.py --write`, then `--check` and
