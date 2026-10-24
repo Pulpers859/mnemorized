@@ -36,6 +36,48 @@ The pilot did NOT establish equivalent end-to-end cue authorship or net token/do
 - Scripts establish structure/reference identity, not semantic cue quality. A model's own schema check is not an independent audit. No promotion or generation success based only on passing tests.
 - Record source and rubric limitations. Account for preparation, stronger review and repair work when discussing efficiency; output bytes and wall time are not billed-token or quota-weight measurements.
 
+## Count Associations, Not Just Props
+
+The unit of creative yield is the **term-to-image association**, not a previously
+unused visual ingredient. Historical `new_candidates` / `reused_candidates`
+fields often count ingredient families; do not present them as counts of new
+useful associations. They remain historical bookkeeping, not proof of creativity
+or of exhausted chapter opportunities.
+
+For new association reviews, report these separate editorial classes:
+
+- `new_association`: a different lexical/conceptual bridge, even if its prop was
+  used for a different medical term. Record the actual prior term and image.
+- `meaningful_variant`: the same bridge with a substantive change to shape,
+  action, relationship or encoded scope. Explain the added value.
+- `unchanged_repeat`: the same bridge and substantially the same depiction;
+  spelling, inflection or incidental scene changes do not create a new item.
+- `hold`: no selected usable association in this review; preserve the attempt
+  and reason without claiming a better association is impossible.
+
+Ingredient provenance remains a separate axis. Bread-bun versus bread, calculator
+versus adding machine, or toothbrush versus paintbrush requires judgment about
+the association, not automatic rejection or acceptance by shared object family.
+Changing the medical term alone is not sufficient if the bridge is unchanged.
+Count synonyms and repeated appearances transparently; do not sum chapter
+occurrences into a claim of unique library growth without cross-bank review.
+
+State the comparison universe. A bounded second look can identify useful new
+proposals relative to named records but cannot establish corpus-wide novelty.
+Never infer these classes mechanically from the old decision or a term mismatch.
+Keep historical root counts and first decisions intact. A supplemental candidate
+does not silently resolve the original hold or enter production; changing a
+canonical hold still requires explicit bank history and register regeneration.
+Independent editorial review does not establish learner recall or render quality.
+
+Keep selection and review provenance separate from novelty. Supplemental records
+must declare `selection_status` (`candidate` or `hold`) and `change_origin`
+(`existing_candidate_recount`, `reconsidered_attempt` or `new_revision`). A useful
+unchanged attempt may be selected without being newly invented; a held attempt
+can be a repeat without being accepted. Report fresh revisions separately from
+existing bridges rediscovered by better accounting. Do not turn a relabeling
+exercise into a claim of newly expanded library size.
+
 ## Resume Record
 
 After each batch or interruption, record last completed chapter, unfinished chapter numbers, exact author/audit hashes, open findings, held-cue preservation state, agent IDs/roles, validation run and next action. Keep this separate from claims of completion. Mirrored repo delegation skills and `AGENTS.md` link here so future agents recover the same division of work.

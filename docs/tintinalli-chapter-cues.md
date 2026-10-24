@@ -458,4 +458,10 @@ Non-author AI source/conceptual audits and reported repair rechecks, then main i
 
 Totals: 1188 terms / 7 new / 1059 reused / 122 held; 1314 keyword mappings. New means newly recorded, not proven novel or effective.
 
+**Counting correction:** The seven above count ingredient families, not all new
+term-to-image associations. The [29-record second look](chapter-62-66-association-second-look.md)
+separates bridges, selection and invention: 17 existing candidate depictions
+recounted, three selected revisions, four newly selected old attempts and five
+holds. This is a bounded sample, not a reclassification of all 1188 records.
+
 Actual mixed-column source regions and meaningful emphasized/heading/table/figure lexical heads checked, with typography/extraction limits recorded in each bank. Not exhaustive clinical coverage. Earlier holds preserved separately; primary catalog unchanged; zero paid calls/renders. Next67, five-chapter cadence.

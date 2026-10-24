@@ -1,0 +1,297 @@
+{
+  "scope_chapters": [
+    62,
+    63,
+    64
+  ],
+  "status": "offline_untested",
+  "review_role": "Author proposals independently reviewed; main integrated bounded wording, selection and origin deltas. Offline candidates only; original banks and holds unchanged.",
+  "comparison_universe": "The existing chapter 62-64 entries, their named older prior records and saved attempts; targeted term matches and selected cue-ingredient matches in chapter audit JSON files numbered below 62, plus the canonical phonetic-lens record. This was not an exhaustive semantic, alias, workshop, external-mnemonic or corpus-wide originality audit. No new source extraction, internet, provider calls or renders.",
+  "classification_basis": "Novelty is relative to named comparisons, not this session or corpus-wide uniqueness. Selection and change_origin are separate axes. Existing candidate recounts are not newly added associations. Supplemental candidates do not resolve canonical holds or enter production.",
+  "counts": {
+    "entries": 15,
+    "association_classes": {
+      "hold": 4,
+      "meaningful_variant": 2,
+      "new_association": 7,
+      "unchanged_repeat": 2
+    },
+    "selection_status": {
+      "candidate": 11,
+      "hold": 4
+    },
+    "change_origin": {
+      "existing_candidate_recount": 9,
+      "new_revision": 1,
+      "reconsidered_attempt": 5
+    }
+  },
+  "limits": "Editorial language/image judgments only. No clinical assertions, source completeness, empirical pronunciation, object naming, learner recall, render quality or exhaustive novelty claims. A supplemental selection does not resolve a canonical hold. Historical decisions remain untouched.",
+  "entries": [
+    {
+      "chapter": 62,
+      "term": "Trepopnea",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-29A-cue-audit.json#Aintree catheter",
+      "proposed_cue": "An ordinary toy tree alone, without catheter; keep the existing proposal.",
+      "encoded_scope": "Approximate tre-/tree name fragment only; no breathing or positional content.",
+      "association_status": "unchanged_repeat",
+      "why": "The older Aintree catheter record actually pairs a toy tree with a detached hollow catheter. Tree already supplies a tree-name fragment there. Removing the device and assigning the same tree fragment to another word is useful reuse, but not enough to establish a different bridge. No extra prop is needed merely to claim yield.",
+      "limitations": "Tre-/tree compression and collision with other tree-name fragments require teaching. The original target has changed, but substantially the same partial-sound strategy remains.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#Trepopnea",
+        "docs/chapter-29A-cue-audit.json#Aintree catheter"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 62,
+      "term": "myasthenia gravis",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-27-cue-audit.json#deceased patients",
+      "proposed_cue": "A plain memorial gravestone alone; keep the existing partial-name proposal.",
+      "encoded_scope": "Grav-/grave sound reminder within gravis only; myasthenia and condition identity unencoded.",
+      "association_status": "new_association",
+      "why": "The actual older cue is a memorial gravestone beside a patient-name card, using the memorial/death category. The chapter 62 bridge instead uses grave as a name sound. That semantic-to-phonetic reassignment is a distinct useful association despite the old prop. Chapter 29A also has an unresolved same-term hold; this supplement does not erase it. Already present in chapter 62, not an additional invention in this review.",
+      "limitations": "The death-category baggage is a real collision risk; the cue must not imply mortality or prognosis. Partial-name recovery is untested.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#myasthenia gravis",
+        "docs/chapter-27-cue-audit.json#deceased patients",
+        "docs/chapter-29A-cue-audit.json#myasthenia gravis"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 62,
+      "term": "Guillain-Barr\u00e9 syndrome",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-15-cue-audit.json#metabolic alkalosis",
+      "proposed_cue": "An ordinary bar of soap alone, without factory or bubbles; keep the existing proposal.",
+      "encoded_scope": "Bar/Barr\u00e9 approximate partial-name reminder only; Guillain and syndrome identity omitted.",
+      "association_status": "new_association",
+      "why": "The actual metabolic alkalosis cue combines a factory/conveyor and soap/bubbles, using a learned soap/base category. Here the object's ordinary name bar supplies the sound bridge. This is not simply another alkalosis scene or a claim that soap is a novel object. Already present in chapter 62.",
+      "limitations": "Barr\u00e9 pronunciation and naming the object soap rather than bar may weaken recovery. No drug, chemistry, cause or syndrome meaning is inferred.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#Guillain-Barr\u00e9 syndrome",
+        "docs/chapter-15-cue-audit.json#metabolic alkalosis",
+        "docs/chapter-15-cue-audit.json#alkalosis"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 62,
+      "term": "Diffusion impairment",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-51-cue-audit.json#cardiac biomarkers",
+      "proposed_cue": "An ordinary marker pen beside a broad soft-edged ink patch on paper; retain the declared chapter 62 addition.",
+      "encoded_scope": "Diffuse/soft-edged everyday appearance only; impairment and physiological meaning unencoded.",
+      "association_status": "new_association",
+      "why": "The actual older cue is a heart token beside a marker pen: marker is the lexical bridge. It does not contain the soft-edged ink patch. Chapter 62 explicitly adds that appearance and uses diffuse rather than marker as the bridge. Both the changed association and the added visual state deserve recognition; no new root object is required. Already present in chapter 62.",
+      "limitations": "A static patch may read as a stain rather than diffusion. No gas exchange, impaired process or clinical explanation is depicted or validated.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#Diffusion impairment",
+        "docs/chapter-51-cue-audit.json#cardiac biomarkers"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 62,
+      "term": "Cyanosis",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-53-cue-audit.json#cyanide",
+      "proposed_cue": "A mannequin eye with a conspicuously cyan iris; keep the existing cyan-head cue without claiming a new bridge.",
+      "encoded_scope": "Cyan color/name head only; no cyanosis finding or cyanide identity.",
+      "association_status": "unchanged_repeat",
+      "why": "The actual cyanide record declares Cyan/eye name fragments, not cyan alone. Chapter62 reuses the identical cyan-iris eye but retains only the cyan fragment in its declared target scope. The retained cyan bridge and depiction are unchanged; dropping the eye fragment without changing the picture is not counted as a new association or substantive visual variant. The older cyanosis hold remains preserved.",
+      "limitations": "Strong cross-term collision is expected at this scope. Eye color must not be read as a diagnostic sign; the old hold is not resolved by this overlay.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#Cyanosis",
+        "docs/chapter-53-cue-audit.json#cyanide",
+        "docs/chapter-61-cue-audit.json#cyanosis"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 62,
+      "term": "Chlorpromazine",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": null,
+      "encoded_scope": "No selected association. Reconsidered the saved colored-paint-swatch attempt and a prom/dance name fragment.",
+      "association_status": "hold",
+      "why": "The saved chlor/color compression remains weak for this author. A prom reminder could use an interior fragment, which is allowed, but a generic dance scene would not reliably supply prom rather than dance or party. No economical concrete revision selected. The actual older Gray record is a color-category host, not evidence that a Chlorpromazine bridge already existed.",
+      "limitations": "Editorial nonselection, not measured failure or an all-syllables veto. A familiar prom association for a particular learner could change the judgment; no such evidence was collected.",
+      "prior_evidence": [
+        "docs/chapter-62-cue-audit.json#Chlorpromazine",
+        "docs/chapter-10-cue-audit.json#Gray"
+      ],
+      "selection_status": "hold",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 63,
+      "term": "schistosomiasis",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": null,
+      "encoded_scope": "No selected association. Reconsidered shirt and a schist-rock naming route.",
+      "association_status": "hold",
+      "why": "The saved shirt attempt still requires a substantial schist/shirt sound repair. A rock taught as schist would improve the lexical fragment but an ordinary rock does not make that particular name economical here. No biological or disease-topic prop was substituted for a name bridge.",
+      "limitations": "Rock-subtype familiarity was not tested. This does not rule out a learned schist cue for an audience already familiar with that word, and does not require whole-name recovery.",
+      "prior_evidence": [
+        "docs/chapter-63-cue-audit.json#schistosomiasis"
+      ],
+      "selection_status": "hold",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 63,
+      "term": "epistaxis",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A familiar taxi toy alone; remove the epic-story book from the held assembly.",
+      "encoded_scope": "Taxi/taxis approximate ending-name reminder only; epi- and clinical meaning unencoded.",
+      "association_status": "meaningful_variant",
+      "why": "The saved chapter 63 attempt already contains a taxi beside an epic-story book. Selecting the taxi fragment alone removes the hard-to-see epic category and arbitrary two-prop assembly. This is a narrower, more economical variant of an actual held attempt, not a newly invented taxi association. The older Abciximab cue also uses a taxi, but for the different approximate cixi/ksi fragment. This is the newly selected supplemental candidate in this review.",
+      "limitations": "The missing final s and taxi-versus-cab naming are explicit sound risks. The fragment is not unique and does not encode nose, blood or any clinical state. Canonical chapter 63 hold stays unchanged pending independent review.",
+      "prior_evidence": [
+        "docs/chapter-63-cue-audit.json#epistaxis",
+        "docs/chapter-49-cue-audit.json#Abciximab"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "new_revision"
+    },
+    {
+      "chapter": 63,
+      "term": "epinephrine",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A familiar capped autoinjector training prop, taught as an epinephrine packaging/device association.",
+      "encoded_scope": "Taught epinephrine packaging/device association only; not unique drug identification, contents, injury or use.",
+      "association_status": "new_association",
+      "why": "Main accepts the independent reviewer's broader category selection, disagreeing with the author's hold. The older chapter46 record encodes device category with drug identity explicitly omitted. This supplemental selection teaches a device-to-epinephrine association; that bridge differs from device category alone. It reconsiders an existing packaging route, not a newly invented prop, verified contents or a corpus-wide first association.",
+      "limitations": "Other drugs use autoinjectors. Context and teaching are required; no unique drug identity or empirical familiarity, recovery, safety, contents or technique claim. Original holds remain preserved. Author nonselection and reviewer/main disagreement are retained in the frozen author file and independent report.",
+      "prior_evidence": [
+        "docs/chapter-63-cue-audit.json#epinephrine",
+        "docs/chapter-37-cue-audit.json#Epinephrine",
+        "docs/chapter-46-cue-audit.json#Epinephrine Autoinjector Injuries"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 63,
+      "term": "Goodpasture's syndrome",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-57-cue-audit.json#Nimodipine",
+      "proposed_cue": "A plain patch of grass alone; keep the existing pasture-category proposal without adding decorative props.",
+      "encoded_scope": "Pasture/grass learned landscape category within the name only; Good- and syndrome identity unencoded.",
+      "association_status": "new_association",
+      "why": "The actual Nimodipine cue is a lawn mower mowing a grass patch, using mow/mo as an interior-name action. Chapter 63 removes the mower and recruits the grass patch for pasture, a different lexical/category bridge rather than another mow sound. The old ingredient family therefore understates association yield. Already present in chapter 63.",
+      "limitations": "A grass patch can be named lawn rather than pasture; the taught category bridge may be broad. No syndrome features, location or clinical claims follow from the landscape.",
+      "prior_evidence": [
+        "docs/chapter-63-cue-audit.json#Goodpasture's syndrome",
+        "docs/chapter-57-cue-audit.json#Nimodipine"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 64,
+      "term": "Echinacea",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": null,
+      "encoded_scope": "No selected association. Reconsidered the saved generic plant and an echo-based opening-name route.",
+      "association_status": "hold",
+      "why": "A generic potted plant remains topic-level rather than a helpful Echinacea-specific name/category reminder. Echo would require a less direct sound bridge plus a visual convention for repeated sound, so no concrete improvement selected. A specifically named plant could be a legitimate familiar category cue, but no saved identification evidence was consulted to specify one.",
+      "limitations": "No botanical identity, appearance, indication or effect is invented. This is not a rejection of all plant-category cues or of teaching a partial fragment.",
+      "prior_evidence": [
+        "docs/chapter-64-cue-audit.json#Echinacea"
+      ],
+      "selection_status": "hold",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 64,
+      "term": "azithromycin",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": null,
+      "encoded_scope": "No selected association. The existing toy-zither proposal remains a potentially teachable zith-/zither fragment, not a whole-name cue.",
+      "association_status": "hold",
+      "why": "The older chapter46 record already tried a toy zither and held it for instrument-name burden. Main retains the author's nonselection of this particular taught zither bridge; being old or lacking empirical familiarity evidence is not an admission veto. A generic guitar would lose the chosen zith-/zither name fragment. No alternative depiction is selected; the attempt remains eligible for future reconsideration.",
+      "limitations": "Instrument familiarity is uncertain, not empirically disproven. A learner who knows a zither may find this useful; no demand for all syllables or unique untrained naming is imposed. The historical hold stays open.",
+      "prior_evidence": [
+        "docs/chapter-64-cue-audit.json#azithromycin",
+        "docs/chapter-46-cue-audit.json#Azithromycin"
+      ],
+      "selection_status": "hold",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 64,
+      "term": "Rapivab",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-38-cue-audit.json#numbness",
+      "proposed_cue": "The old mannequin hand rapping its knuckles against a plain surface, without the sensory-mute icon; retain the chapter 64 added action.",
+      "encoded_scope": "Rap-/rapping ordinary action fragment only; remaining name and drug properties unencoded.",
+      "association_status": "new_association",
+      "why": "The actual older numbness cue is a sensory-mute icon beside a mannequin hand; it contains no rapping action. A hand now performing rap supplies a different lexical bridge. Calling this only an old hand prop misses the new association and action already declared in chapter 64.",
+      "limitations": "A static image may read knock rather than rap; action naming and learned drug-name recovery are untested. No drug effect, route or sensory claim is represented.",
+      "prior_evidence": [
+        "docs/chapter-64-cue-audit.json#Rapivab",
+        "docs/chapter-38-cue-audit.json#numbness"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 64,
+      "term": "acellular",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-31-cue-audit.json#abdominal aortic aneurysms",
+      "proposed_cue": "A household-battery cell with an explicitly added cancellation slash; retain the chapter 64 negation variant.",
+      "encoded_scope": "A-/cell shared-word graphic only, contrasted with the existing whole cell battery cue; no biological composition assertion.",
+      "association_status": "meaningful_variant",
+      "why": "The actual chapter 31 battery is an AAA acronym reminder, with no cancellation slash. Chapter 64 whole cell already uses the battery's ordinary cell name. Relative to that same-cell bridge, acellular adds a substantive visible negation and encoded scope; it is a meaningful variant, not another count for the battery alone. Already present in chapter 64. Earlier cancellation-slash grammar also exists elsewhere and is not claimed as new.",
+      "limitations": "The slash may read forbidden battery rather than a-/cell without teaching. The depicted battery is not a biological cell or a statement about a product's ingredients.",
+      "prior_evidence": [
+        "docs/chapter-64-cue-audit.json#acellular",
+        "docs/chapter-64-cue-audit.json#whole cell",
+        "docs/chapter-31-cue-audit.json#abdominal aortic aneurysms",
+        "docs/chapter-54-cue-audit.json#anticoagulation"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 64,
+      "term": "Relenza",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/visual-cue-catalog.json#phonetic-lens",
+      "proposed_cue": "A detached camera lens; retain the existing partial-name proposal.",
+      "encoded_scope": "Lenz-/lens interior-name reminder only; re-, final vowel and medication properties unencoded.",
+      "association_status": "new_association",
+      "why": "The actual canonical record has concept lens, objects detached camera lens and bridge lens -> lens; it does not encode Relenza. Chapter 64 applies that familiar object name to a different interior name fragment. This is a distinct name association relative to the literal lens headword, unlike merely reusing an already established cyan head. Already present in chapter 64, with no claim of corpus-wide first use.",
+      "limitations": "Lens/lenz sound tolerance and camera/zoom naming alternatives remain untested. This is not a medication identity test or an optical-effect claim.",
+      "prior_evidence": [
+        "docs/chapter-64-cue-audit.json#Relenza",
+        "docs/visual-cue-catalog.json#phonetic-lens"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    }
+  ],
+  "independent_review": "docs/chapter-62-66-association-second-look-review.md",
+  "production_admitted": false,
+  "evidence": {
+    "render": [],
+    "recall": []
+  }
+}

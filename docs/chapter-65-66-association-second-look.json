@@ -1,0 +1,280 @@
+{
+  "scope_chapters": [
+    65,
+    66
+  ],
+  "status": "offline_untested",
+  "comparison_universe": {
+    "scope": "Bounded editorial second look at chapters 65 and 66, their selected original_prior records, and targeted exact-term matches in chapter banks. Not a full source or giant-corpus rescan; no exhaustive originality claim.",
+    "classification_baseline": "For reuse records, compare the actual term and bridge in the named older prior, not the shared prop family or the already-recorded chapter 65/66 proposal. For held records, disclose unchanged attempted bridges as unchanged_repeat rather than count their reconsideration as invention. New_association means a different bridge relative to the cited comparison, not a newly invented proposal in this session or verified unique library growth.",
+    "evidence_limits": "Saved chapter records only; no fresh PDF, clinical, external, recall or render validation. Independent review and main delta integration completed. Original holds remain unchanged."
+  },
+  "entries": [
+    {
+      "chapter": 65,
+      "term": "BUN",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-16-cue-audit.json#hypercarbia",
+      "proposed_cue": "One recognizable round bread bun, without basket, pasta or overflow.",
+      "encoded_scope": "BUN/bun acronym homonym only.",
+      "association_status": "new_association",
+      "why": "The actual hypercarbia prior is an overflowing bread-and-pasta basket: carb-food plus excess. BUN uses bun as a direct spoken homonym, not carb plus excess. Sharing bread does not make these the same association. This endorses the existing chapter 65 proposal as a different bridge relative to that prior, not a new idea invented here.",
+      "limitations": "Round-roll versus bun naming and spoken acronym reading need testing. No analyte definition, chemical origin, diet or clinical meaning encoded. Earlier BUN holds remain open; no corpus-wide novelty claim.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#BUN",
+        "docs/chapter-16-cue-audit.json#hypercarbia",
+        "docs/chapter-53-cue-audit.json#BUN",
+        "docs/chapter-55-cue-audit.json#BUN",
+        "docs/chapter-61-cue-audit.json#BUN"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 65,
+      "term": "Poor oral hygiene",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-25-cue-audit.json#stroke",
+      "proposed_cue": "An ordinary recognizable toothbrush standing alone, without paint or a painted stroke.",
+      "encoded_scope": "Oral-cleaning/hygiene familiar object association only; poor state omitted.",
+      "association_status": "new_association",
+      "why": "The actual stroke prior is a paintbrush leaving a brushstroke, a shared-word bridge. A toothbrush instead invokes familiar oral cleaning. Its functional subtype and learned association matter; a common brush family is not evidence that this oral-hygiene bridge already existed in the stroke record. This reclassifies the existing proposal against that prior.",
+      "limitations": "A clean toothbrush does not encode poor hygiene, and that omission is explicit rather than repaired with invented clinical detail. Subtype recognition and learned recovery are untested. No dental advice or disease association asserted.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#Poor oral hygiene",
+        "docs/chapter-25-cue-audit.json#stroke"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "poor oral hygiene",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-65-cue-audit.json#Poor oral hygiene",
+      "proposed_cue": "The same ordinary toothbrush standing alone.",
+      "encoded_scope": "Oral-cleaning/hygiene object category only; poor state omitted.",
+      "association_status": "unchanged_repeat",
+      "why": "Unlike the paintbrush comparison, the actual chapter 65 prior already maps oral hygiene to this toothbrush. Case and chapter changes add no bridge or substantive depiction change. Preserve its usefulness without counting a second association.",
+      "limitations": "Shares the chapter 65 scope and recognition uncertainties; not independent library growth, poor-state coverage or recall evidence.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#poor oral hygiene",
+        "docs/chapter-65-cue-audit.json#Poor oral hygiene",
+        "docs/chapter-25-cue-audit.json#stroke"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "Gemella",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-48-cue-audit.json#amyloid",
+      "proposed_cue": "One familiar faceted amethyst gemstone, with the gem category visually clear.",
+      "encoded_scope": "Gem-/Gemella opening-name fragment only.",
+      "association_status": "new_association",
+      "why": "The older amyloid record selects an amethyst gemstone but only describes a familiar category or partial name. An amethyst/amy- reading is the reviewer's inference, not an explicitly documented prior bridge. Chapter66 explicitly uses gem/Gem-. A locally different association is reasonable relative to that disclosed interpretation, not proven against all readings or the whole corpus. The chapter66 cue already exists.",
+      "limitations": "Gem versus jewel naming and Gemella pronunciation need taught-context testing. Remainder of the name omitted. No organism identity, chemical origin or corpus-wide novelty established.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#Gemella",
+        "docs/chapter-48-cue-audit.json#amyloid"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "Paragonimus westermani",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-44-cue-audit.json#ceftriaxone",
+      "proposed_cue": "A recognizable western cowboy hat with a pinched crown and broad brim, without chef folds.",
+      "encoded_scope": "Western/wester- approximate partial-name category only.",
+      "association_status": "new_association",
+      "why": "The actual ceftriaxone record uses a chef hat for chef/cef-. Western styling changes both the discriminating subtype and the lexical bridge to wester-. This is not the same chef/cef association merely assigned another target; a generic hat-family count misses that value. The chapter 66 bank already proposes the subtype change.",
+      "limitations": "Cowboy may be named without western, so the taught bridge needs testing. Paragonimus and the rest of westermani are unencoded. No geographic, organism or clinical assertion.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#Paragonimus westermani",
+        "docs/chapter-44-cue-audit.json#ceftriaxone"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "Empyema",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-34-cue-audit.json#pericardial volume",
+      "proposed_cue": "An obviously empty transparent pitcher, without scale markings.",
+      "encoded_scope": "Emp-/empty approximate opening-name reminder only.",
+      "association_status": "unchanged_repeat",
+      "why": "Relative to pericardial volume's measuring pitcher, empty-state wordplay would be a different association. However, the targeted exact-term comparison found chapter 62 empyema already using an empty collection jug for the same Emp/empty bridge. Pitcher versus jug adds no substantive value here; do not count a new association just because the chapter 66 original_prior points elsewhere.",
+      "limitations": "Approximate sound and empty-state recognition remain untested. No contents, location, definition or clinical claim. This targeted counterexample is not an exhaustive originality search.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#Empyema",
+        "docs/chapter-34-cue-audit.json#pericardial volume",
+        "docs/chapter-62-cue-audit.json#empyema"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "hiatal hernia",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-38-cue-audit.json#numbness",
+      "proposed_cue": "A neutral toy hand raised in a familiar greeting wave, without a sensory-mute icon.",
+      "encoded_scope": "Hi/hiatal approximate opening sound only.",
+      "association_status": "new_association",
+      "why": "The actual numbness record pairs a mannequin hand with a sensory-mute icon for sensation-off. Greeting action instead supplies hi, a different lexical bridge using the same hand host. The action is the useful association, not hand provenance. This is the existing chapter 66 proposal reconsidered against its named prior.",
+      "limitations": "A static hand can be read as stop or waving goodbye; learned hi recovery needs testing. Hernia and the rest of hiatal are omitted. No anatomical or symptom claim.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#hiatal hernia",
+        "docs/chapter-38-cue-audit.json#numbness"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 66,
+      "term": "MIST",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-40-cue-audit.json#Raney",
+      "proposed_cue": "A low thin patch of mist, without rain streaks or a paper clip.",
+      "encoded_scope": "MIST as an ordinary spoken acronym word only.",
+      "association_status": "new_association",
+      "why": "Raney's actual rain cloud plus paper clip uses rain/Raney and clip category. Mist instead names the target acronym directly and drops the unrelated clip relationship. Atmospheric ingredient overlap does not preserve the old lexical bridge. This clarifies the association value of the already-proposed mist variant.",
+      "limitations": "Mist may be read as fog, steam or cloud; exact category rendering is untested. No trial numbering, expansion, results or medical effects encoded. No corpus-wide novelty claim.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#MIST",
+        "docs/chapter-40-cue-audit.json#Raney"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount"
+    },
+    {
+      "chapter": 65,
+      "term": "ANCA",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A familiar ship's anchor with a ring, shank and curved flukes.",
+      "encoded_scope": "ANCA/anchor approximate spoken acronym bridge only.",
+      "association_status": "unchanged_repeat",
+      "why": "Reconsider the existing anchor attempt as a promising economical partial sound cue; the final vowel/r mismatch is a testable limitation, not an automatic full-name veto. Nevertheless, this is the same anchor bridge and substantially the same depiction already saved in the hold, not newly generated creative yield.",
+      "limitations": "ANCA pronunciation, accent-dependent final r and anchor naming require testing. Original hold stays open. No acronym expansion, antibody specificity or clinical teaching asserted; provisional reconsideration is not admission.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#ANCA"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 65,
+      "term": "Rust-colored",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A metal washer with unmistakable flaky rust and a clearly visible rust-colored surface.",
+      "encoded_scope": "Rust material/color familiar category only.",
+      "association_status": "unchanged_repeat",
+      "why": "The original hold already contains the useful rusty-washer association. Recognizable rust can serve as a learned color reminder without naming any clinical material. Stronger surface legibility is a rendering requirement, not a new bridge or meaningful creative variant; reconsider usefulness without inflating novelty.",
+      "limitations": "Rust versus dirt or paint is depiction-dependent. This is not a rendered success, resolved hold, sputum description or diagnostic assertion.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#Rust-colored"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 65,
+      "term": "reticulonodular pattern",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A stretched mesh net with conspicuous rounded bead-like knobs fixed at its intersections, forming one integrated object.",
+      "encoded_scope": "Taught reticul-/net plus nodular/rounded-knob lexical composition only; not a clinical image pattern.",
+      "association_status": "meaningful_variant",
+      "why": "The held attempt is a knotted mesh net, with only the reticul-/net head provisionally considered. Deliberately enlarged rounded knobs make the second lexical head salient and physically integrate it into the mesh rather than adding unrelated props. This is a proposed scope extension, not a new net primitive or proof the older knots could never suggest nodules.",
+      "limitations": "Must distinguish rounded knobs from ordinary knots after teaching; if no meaningful distinction survives rendering, downgrade to repeat or hold. No assertion about radiographic morphology, anatomy or disease. Source-bank wording only, no fresh source audit.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#reticulonodular pattern",
+        "docs/chapter-65-cue-audit.json#reticulonodular pulmonary opacities"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "new_revision"
+    },
+    {
+      "chapter": 66,
+      "term": "weight loss",
+      "original_decision": "reuse_candidate",
+      "original_prior": "docs/chapter-37-cue-audit.json#underweight",
+      "proposed_cue": "A balance-scale pan losing a toy weight over its edge, with the departing weight and its motion clearly visible.",
+      "encoded_scope": "Literal weight-object plus loss/departure wordplay only.",
+      "association_status": "meaningful_variant",
+      "why": "The actual underweight prior places a scale beneath a toy weight; chapter 66 strips this to a scale and explicitly omits loss. A departing weight adds the missing loss relationship rather than merely changing the target word. It proposes useful added scope while retaining the familiar weight host.",
+      "limitations": "One still image may read as dropping, weighing or imbalance instead of loss; needs relationship recognition testing. No body-size, time-course, threshold or clinical interpretation. Chapter 65's weight loss hold remains untouched.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#weight loss",
+        "docs/chapter-37-cue-audit.json#underweight",
+        "docs/chapter-65-cue-audit.json#weight loss"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "new_revision"
+    },
+    {
+      "chapter": 66,
+      "term": "Cryptococcus",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": "A small stone crypt miniature with a recessed entrance, retaining the original partial-name attempt.",
+      "encoded_scope": "Crypt-/crypt literal opening-name fragment only.",
+      "association_status": "unchanged_repeat",
+      "why": "A taught crypt label could make the already-saved partial bridge useful despite tomb/crypt naming overlap. The broad rubric does not demand blind full-name recovery. However, the prior hold already tried a stone crypt: entrance clarification does not create a different association, so this is reconsideration rather than new yield.",
+      "limitations": "May be named tomb, mausoleum or doorway; no demonstrated recovery. Remainder omitted, original hold open. No organism habitat, morphology or clinical assertion.",
+      "prior_evidence": [
+        "docs/chapter-66-cue-audit.json#Cryptococcus"
+      ],
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt"
+    },
+    {
+      "chapter": 65,
+      "term": "pesticide",
+      "original_decision": "hold",
+      "original_prior": "offline_unresolved_attempt",
+      "proposed_cue": null,
+      "encoded_scope": "No selected association; reconsidered the saved sealed garden-spray bottle as familiar packaging.",
+      "association_status": "hold",
+      "why": "Main retains this author's nonselection of the particular generic garden-sprayer proposal as an editorial judgment about the taught pesticide-product association. Familiar packaging is allowed; water, cleaner and fertilizer alternatives are collision notes, not a universal uniqueness veto. No product-unique packaging or empirical recognition evidence is required for offline candidacy, and this hold is not proof no useful packaging cue exists.",
+      "limitations": "A better familiar package or taught action may work; this is not proof of impossibility. No chemical contents, exposure, use or safety advice inferred. Original attempt and hold remain unchanged.",
+      "prior_evidence": [
+        "docs/chapter-65-cue-audit.json#pesticide"
+      ],
+      "selection_status": "hold",
+      "change_origin": "reconsidered_attempt"
+    }
+  ],
+  "review_role": "Author proposals independently reviewed; main integrated bounded wording, selection and origin deltas. Offline candidates only; original banks and holds unchanged.",
+  "classification_basis": "Novelty is relative to named comparisons, not this session or corpus-wide uniqueness. Selection and change_origin are separate axes. Existing candidate recounts are not newly added associations. Supplemental candidates do not resolve canonical holds or enter production.",
+  "counts": {
+    "entries": 14,
+    "association_classes": {
+      "hold": 1,
+      "meaningful_variant": 2,
+      "new_association": 6,
+      "unchanged_repeat": 5
+    },
+    "selection_status": {
+      "candidate": 13,
+      "hold": 1
+    },
+    "change_origin": {
+      "existing_candidate_recount": 8,
+      "new_revision": 2,
+      "reconsidered_attempt": 4
+    }
+  },
+  "independent_review": "docs/chapter-62-66-association-second-look-review.md",
+  "production_admitted": false,
+  "evidence": {
+    "render": [],
+    "recall": []
+  }
+}

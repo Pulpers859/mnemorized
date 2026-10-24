@@ -203,6 +203,17 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-24 - Association counting correction and bounded62-66 second look
+**Done:** Recovered both paused author agents after queued inputs resumed despite initial usage-limit replies. Two disjoint29-record supplements, nonauthor review and main bounded integration. Canonical workflow now separates new_association/meaningful_variant/unchanged_repeat/hold from candidate/hold selection and existing-recount/reconsidered-attempt/new-revision origins. Seven-new headline from prior batch counted ingredient families, NOT all useful associations. No full1188-record reclassification claimed.
+
+**Result:**24 supplemental candidates:17 existing candidate depictions recounted,3 selected revisions (epistaxis taxi simplification, rounded-knob net, departing weight),4 newly selected existing attempts (epinephrine packaging, ANCA anchor, rusty washer, crypt);5 still held. Association classes13/4/7/5 are local comparison judgments, NOT13 inventions. Main accepts reviewer over author's epinephrine hold, with nonunique taught device-category scope. Cyanide prior includes cyan/eye; Gemella prior phonetic reading is inference. Full report docs/chapter-62-66-association-second-look.md and independent review preserve limits/disagreements.
+
+**Preserved:** Original chapter banks/holds/catalog unchanged; supplements do not silently resolve canonical holds or enter Forge. All untested; zero paid calls/renders; $6 untouched. Raw freezes/main materializer/checkpoint under Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/association-second-look/. Authors62-64=01a16bec-11b5-7a11-bd16-9cd08a9b81e9,65-66=01a16bec-2689-7cf1-b64d-60327979ec99; nonauthor=01a16dfd-3de6-7d90-a873-4723bc7d8df7. No need to recreate these lanes.
+
+**Validation:** Final full suite915 passed/2 skipped,149 subtests;17 focused workflow/supplement/hold checks passed; exporter current; original bank/hold/catalog diff empty; nonauthor bounded delta audit closed without new exceptions. Tests prove structure, not recall or image quality. Fetch still encounters the previously documented malformed local Codex checkpoint ref; authenticated remote HEAD matched64f4581 before edits, no destructive cleanup or auth retries. No browser/provider or new image validation.
+
+**Next:** Continue67-71 with revised accounting; do not count a repeated prop as automatically old or a changed medical term as automatically new. Keep supplemental selections distinct from canonical holds unless explicitly integrating histories/register. No empirical reliability established.
+
 ### 2026-10-23 - Workflow routing and chapters62-66 cue batch
 **Done:** Documented approved smaller-helper/stronger-curator split in docs/chapter-cue-workflow.md, AGENTS.md, CLAUDE.md, catalog and both delegation skills. Unchanged broadened rubric. Three drafting lanes; D62/63/65, main64 and B66 independent source/conceptual audits and repair rechecks. Totals: 1188 terms / 7 new / 1059 reused / 122 held; 1314 keyword mappings. Pulmonary source mixed-column regions checked; meaningful emphasized/table/figure lexical heads tried before exclusions. All earlier holds preserved.
 

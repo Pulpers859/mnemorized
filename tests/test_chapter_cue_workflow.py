@@ -19,3 +19,14 @@ def test_chapter_workflow_is_reachable_from_agent_entrypoints():
 def test_delegation_skill_mirrors_match():
     relative = "skills/mnemorized-agent-delegation/SKILL.md"
     assert (ROOT / ".agents" / relative).read_bytes() == (ROOT / ".claude" / relative).read_bytes()
+
+
+def test_association_reporting_distinguishes_bridges_from_ingredients():
+    workflow = (ROOT / "docs/chapter-cue-workflow.md").read_text(encoding="utf-8")
+    for category in (
+        "new_association", "meaningful_variant", "unchanged_repeat", "hold",
+    ):
+        assert f"`{category}`:" in workflow
+    assert "State the comparison universe" in workflow
+    assert "does not silently resolve the original hold" in workflow
+    assert "cannot establish corpus-wide novelty" in workflow
