@@ -68,6 +68,11 @@ requirement. Object identification remains useful diagnostic evidence, not an
 automatic veto of a teachable conceptual cue. This chapter candidate bank is
 separate from the canonical catalog and does not change its 76-entry count.
 
+For chapter workshops, follow the tested role split and resume/audit contracts in
+[Chapter Cue Workshop Workflow](chapter-cue-workflow.md): smaller helpers prepare
+bounded evidence and mechanical checks; stronger authors/reviewers retain all
+cue, scope/provenance and hold/reject judgments before main integration.
+
 [Workshop 2](sound-bridge-workshop-2.md) reviewed 26 entirely new terms with unchanged criteria: four untested candidates retained, seven held, 15 rejected. Only balloon, lens, iron and tapeworm were added. No follow-on delta batch or previous-term repair was used. Full data: `docs/sound-bridge-workshop-2.json`.
 
 The follow-on [sound-bridge workshop](sound-bridge-workshop.md) covered 103 distinct terms/headwords in 104 attempts and added only 11 untested candidates after independent review. Sixteen are held outside this catalog; 76 distinct terms were rejected. This is not 50 new usable sound bridges. The full structured workshop/rejection bank is `docs/sound-bridge-workshop.json`.

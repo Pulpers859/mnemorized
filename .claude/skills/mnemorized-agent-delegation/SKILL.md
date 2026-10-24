@@ -44,3 +44,18 @@ Main Codex is the architect, risk owner, and integrator. Subagents are bounded h
 ## Output Standard
 
 Subagents should return concise findings with file paths, line references when possible, changed files if any, and validation performed. Main Codex should state what is evidence-backed versus inferred.
+
+## Chapter Cue Workshops
+
+Follow `docs/chapter-cue-workflow.md`. The paired pilot supports only provisional
+lower-usage assistance for bounded source-head extraction, exact prior retrieval
+and deterministic bookkeeping, not equivalent end-to-end cue authorship or net
+savings. Keep cue selection, scope/collision/provenance adjudication and hold/reject
+decisions with stronger authors; require non-author stronger review before main
+integration. A smaller helper may flag exceptions, not decide semantic admission.
+
+Resume saved freezes and source evidence. Freeze once, report concise exceptions,
+repair concrete findings and recheck deltas rather than re-auditing unchanged
+chapters/corpora. Specify FULL output versus a base-hash-keyed overlay explicitly;
+materialize only declared operations and retain first artifacts. Scripts establish
+structure/reference identity, not empirical or semantic success.

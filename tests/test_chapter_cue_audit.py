@@ -33,6 +33,11 @@ ROOT = Path(__file__).resolve().parents[1]
     (55, 52, 60, 328), (56, 61, 71, 328),
     (57, 71, 80, 328), (58, 80, 84, 328), (59, 84, 87, 328),
     (60, 87, 91, 328), (61, 92, 95, 328),
+    (62, 1, 8, 424),
+    (63, 8, 12, 424),
+    (64, 12, 15, 424),
+    (65, 15, 25, 424),
+    (66, 25, 27, 424),
 ])
 def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     ledger = json.loads((ROOT / "docs/tintinalli-chapter-cue-ledger.json").read_text())
@@ -45,6 +50,7 @@ def test_later_chapter_banks_are_consistent(chapter, start, end, offset):
     assert bank["source"]["printed_pages"] == list(range(start + offset, end + offset + 1))
     assert len(bank["source"]["sha256"]) == 64
     source_files = {
+        424: ("Tintin_Pulm.pdf", "cd8a5f5dade877d8e1daeb8411fedcac8862e9dfcb6256ce5d7fbc8d5c761ee6"),
         18: ("Tintin_Disaster Management.pdf", "9820446fab820addfcf4a3024439cc12aacba6279be29ed47e84361ca2ac4e82"),
         52: ("Tintin_Resuscitation.pdf", "d644c7ff121f44da8684b9c5cb3e0e69c5b66aa391dd5bcb9d5e4789023c3b69"),
         142: ("Tintin_Resuscitation Procedures.pdf", "93ace1119e1628b57d1f22b91fa0b9a3cab0e285086d423b8f033a5b5054e689"),

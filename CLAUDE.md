@@ -9,6 +9,10 @@ a new dated entry there when you finish notable work.
 
 Claude-specific assumptions:
 
+- Chapter cue workshops follow `docs/chapter-cue-workflow.md`: lower-usage helpers
+  do bounded extraction/retrieval/mechanical checks; stronger agents retain cue,
+  scope/provenance and hold/reject judgment plus non-author review. The paired
+  pilot did not establish equivalent end-to-end cheaper authorship or net savings.
 - Source of truth: `C:\Dev\Mnemorized`
 - Normal branch: `main` tracking `origin/main`
 - Follow `C:\Dev\_Workflow\GITHUB_SYNC_RUNBOOK.md`: authenticated direct Git

@@ -150,6 +150,10 @@ Supabase persistence, quota; 3) Forge workflow regressions; 4) library save/load
   Old OneDrive/Desktop copies are STALE unless Patrick asks to inspect them.
 - **After every image/prompt run:** record structural findings (positive AND
   negative) into `docs/gemini-constitution.txt` and commit.
+- **Chapter cue allocation:** follow `docs/chapter-cue-workflow.md`; bounded
+  extraction/retrieval/mechanical checks may use smaller helpers, but stronger
+  authors and non-author reviewers own cue/scope/provenance/hold judgment. This
+  chapter-specific tested split takes precedence over generic model-role examples.
 - **Cost protocol:** use **Sonnet subagents** for runs/audits/verification/broad
   audits (keep polling and big blobs out of the main Opus context). `/compact`
   after every commit and after every AG round-trip. `/clear` between topics. Keep
@@ -198,6 +202,15 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 ---
 
 ## PART F — Session log (append-only; newest first)
+
+### 2026-10-23 - Workflow routing and chapters62-66 cue batch
+**Done:** Documented approved smaller-helper/stronger-curator split in docs/chapter-cue-workflow.md, AGENTS.md, CLAUDE.md, catalog and both delegation skills. Unchanged broadened rubric. Three drafting lanes; D62/63/65, main64 and B66 independent source/conceptual audits and repair rechecks. Totals: 1188 terms / 7 new / 1059 reused / 122 held; 1314 keyword mappings. Pulmonary source mixed-column regions checked; meaningful emphasized/table/figure lexical heads tried before exclusions. All earlier holds preserved.
+
+**Limits:** AI editorial/source review, not human clinical, naming/recall/rendering evidence or exhaustive coverage. All candidates untested/nonproduction; primary catalog unchanged; zero paid calls/renders; $6 benchmark untouched.
+
+**Verified:**171 focused chapter/hold/workflow tests passed; standard compile/test/smoke passed with912 tests passed/2 skipped and HTTP200 for `/`, `/forge`, `/library`, `/api/health`. All898 earlier active hold keys/reasons/attempts preserved; separate register now1020 occurrences/845 distinct terms. Chapter65 source-location enum corrected (16 bold-prose ->body,5 figure-caption ->figure_label); reviewed cue/hold/history/keyword/source data verified unchanged. Existing test rules were not relaxed.
+
+**Next:** Chapter67 Tuberculosis, continue five-chapter cadence. Final validation/Git evidence in ignored batch62-66/main packet. Older43 thumb/index root remains flagged in prior handoff entry.
 
 ### 2026-10-23 - Paired lower-usage agent workflow trial
 **Done:** User redirected unfinished62-66 batch to test cheaper delegation. Frozen two-source-excerpt/24-target paired trial: Luna medium vs Sol high, separate instruction-blind stronger reviewer, main corroboration, one repair maximum. Initial cue-workflow compliance7/24 vs24/24 (four substantive +13 minor issues in lean arm); after repair22/24 vs24/24. Final reference-head extraction70/70 both. See `docs/agent-workflow-pilot-2026-10-23.md` and ignored `Troubleshooting Prompts/agent_workflow_pilot_2026-10-23/` for original scores, precision sensitivity, hashes and limits.

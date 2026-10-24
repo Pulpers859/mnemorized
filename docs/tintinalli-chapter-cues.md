@@ -385,7 +385,7 @@ candidates remain untested, nonproduction, evidence empty and spend zero.
 
 ## Next Chapter
 
-**Chapter 62, Respiratory Distress**, is next, not started for cue review.
+**Chapter 67, Tuberculosis**, is next, not started for cue review.
 Continue in the requested five-chapter batches. The primary cue catalog remains at
 76 entries, unchanged. No pronunciation, image-naming, recall or rendering trial
 was performed. Anthropic calls and image renders: zero; the $6 benchmark budget
@@ -443,3 +443,19 @@ Independent AI source/cue review and main integration completed; not empirical v
 Totals: 1165 terms / 23 new / 1071 reused / 71 held; 1412 keyword mappings. New means newly recorded, not proven novel or effective.
 
 Actual mixed-column regions and meaningful emphasized/heading/table/figure lexical heads checked. Selected vocabulary/typography review is not exhaustive clinical coverage. Earlier holds preserved separately. Primary catalog unchanged; no paid calls/renders. Next62 Respiratory Distress, five-chapter cadence.
+
+## Chapters 62-66: Five-Chapter Pulmonary Batch
+
+Non-author AI source/conceptual audits and reported repair rechecks, then main integration. Main personally audited64; separate reviewers audited62/63/65/66. Not human-expert, clinical currency, naming, recall or rendering validation; not exhaustive coverage.
+
+| Chapter | Topic | Selected | New | Reused | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 62 | [Respiratory Distress](chapter-62-cue-audit.md) | 330 | 5 | 324 | 1 | 376 |
+| 63 | [Hemoptysis](chapter-63-cue-audit.md) | 156 | 0 | 152 | 4 | 176 |
+| 64 | [Acute Bronchitis and Upper Respiratory Tract Infections](chapter-64-cue-audit.md) | 92 | 1 | 87 | 4 | 102 |
+| 65 | [Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates](chapter-65-cue-audit.md) | 402 | 1 | 322 | 79 | 438 |
+| 66 | [Lung Empyema and Abscess](chapter-66-cue-audit.md) | 208 | 0 | 174 | 34 | 222 |
+
+Totals: 1188 terms / 7 new / 1059 reused / 122 held; 1314 keyword mappings. New means newly recorded, not proven novel or effective.
+
+Actual mixed-column source regions and meaningful emphasized/heading/table/figure lexical heads checked, with typography/extraction limits recorded in each bank. Not exhaustive clinical coverage. Earlier holds preserved separately; primary catalog unchanged; zero paid calls/renders. Next67, five-chapter cadence.

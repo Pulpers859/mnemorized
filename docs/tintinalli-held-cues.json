@@ -63,10 +63,15 @@
     "58",
     "59",
     "60",
-    "61"
+    "61",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66"
   ],
-  "active_hold_occurrences": 898,
-  "unique_held_terms": 748,
+  "active_hold_occurrences": 1020,
+  "unique_held_terms": 845,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -179,7 +184,9 @@
       "report": "docs/chapter-3-cue-audit.md",
       "attempted_cue": "Cricket beside a neck model.",
       "reason": "Cricket supplies only a weak opening fragment; the neck prop adds little to recover the remainder. Keep as an ingredient idea, not a useful complete bridge yet. No improvised cutting or procedure depiction.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "63"
+      ]
     },
     {
       "chapter_id": "4",
@@ -257,7 +264,8 @@
       "attempted_cue": null,
       "reason": "Previously rejected docks plus bicycle assembly is not revived or silently reclassified as reuse. No improved economical partial association proposed in this pass. Broad calibration permits partial cues, but does not obligate retaining this particular attempt. No treatment association admitted.",
       "retained_in_other_chapters": [
-        "46"
+        "46",
+        "65"
       ]
     },
     {
@@ -291,7 +299,9 @@
       "report": "docs/chapter-11-cue-audit.md",
       "attempted_cue": null,
       "reason": "No strong economical association proposed. No drug effect used as an unsourced identity shortcut.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "12",
@@ -350,7 +360,8 @@
       "attempted_cue": null,
       "reason": "No economical name association proposed; avoid a forced angel/edema rebus or an authored clinical swelling lesson.",
       "retained_in_other_chapters": [
-        "57"
+        "57",
+        "62"
       ]
     },
     {
@@ -417,7 +428,9 @@
       "report": "docs/chapter-18-cue-audit.md",
       "attempted_cue": null,
       "reason": "Prior hold preserved with no improved economical association. No effect, mechanism, dose or generic drug prop substituted as drug identity.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "19",
@@ -459,7 +472,9 @@
       "report": "docs/chapter-19-cue-audit.md",
       "attempted_cue": null,
       "reason": "Same unresolved Chapter11 hold, also carried into Chapter18. No strong economical name association proposed and no clinical property substituted for identity.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "19",
@@ -626,7 +641,9 @@
         "55",
         "56",
         "57",
-        "61"
+        "61",
+        "63",
+        "65"
       ]
     },
     {
@@ -904,7 +921,9 @@
       "report": "docs/chapter-24-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves Chapter11/18/19 hold without forced sound fragments or clinical-property shortcuts.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "24",
@@ -971,7 +990,8 @@
       "attempted_cue": null,
       "reason": "Tried the established thoracic-air cue with taut fabric for tension. The added tension prop is ambiguous, so this modifier-specific candidate is held rather than silently dropping tension. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
       "retained_in_other_chapters": [
-        "32"
+        "32",
+        "62"
       ]
     },
     {
@@ -1075,7 +1095,10 @@
       "reason": "Tried new-moon/moon wordplay. A new moon is not a distinctive visible object and a generic moon does not yet provide a selected pneumonia reminder here; not a blanket ban on partial learned bridges. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": [
         "58",
-        "59"
+        "59",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -1183,7 +1206,9 @@
       "report": "docs/chapter-25-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves established Chapter11/18/19 hold; no economical improved name association selected. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "25",
@@ -1349,7 +1374,8 @@
       "attempted_cue": null,
       "reason": "Tried cog wheel as coag opening fragment. Useful ingredient considered, but no selected short bridge to this target; no clotting function substituted.",
       "retained_in_other_chapters": [
-        "55"
+        "55",
+        "63"
       ]
     },
     {
@@ -1572,7 +1598,12 @@
       "report": "docs/chapter-28-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a cyst-like pouch with fibers. Pouch identity is vague and feels like an invented pathology lesson; no selected vocabulary composition.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62",
+        "63",
+        "64",
+        "65"
+      ]
     },
     {
       "chapter_id": "28",
@@ -1584,7 +1615,8 @@
       "attempted_cue": null,
       "reason": "Preserves Chapter14 hold: angel plus puffiness was considered but not selected there; no improved economical bridge selected here.",
       "retained_in_other_chapters": [
-        "57"
+        "57",
+        "62"
       ]
     },
     {
@@ -1644,7 +1676,10 @@
       "reason": "Tried an asterisk and a moth for asth/ma, but this is a strained multi-repair bridge. Bronchospasm's existing bronco cue was considered, not silently equated with asthma.",
       "retained_in_other_chapters": [
         "37",
-        "57"
+        "57",
+        "62",
+        "64",
+        "65"
       ]
     },
     {
@@ -1658,7 +1693,10 @@
       "reason": "Preserves Chapter25 hold: new-moon idea lacks a useful visible new-moon object. Generic moon considered, but no improved selected bridge here; no blind-diagnosis requirement.",
       "retained_in_other_chapters": [
         "58",
-        "59"
+        "59",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -1763,7 +1801,8 @@
       "attempted_cue": null,
       "reason": "Tried an angel beside a swollen sponge; angle/name repair and generic swelling made this attempt unappealing. Earlier holds remain; no diagnostic scene proposed.",
       "retained_in_other_chapters": [
-        "57"
+        "57",
+        "62"
       ]
     },
     {
@@ -1889,7 +1928,8 @@
       "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible.",
       "retained_in_other_chapters": [
         "33",
-        "37"
+        "37",
+        "66"
       ]
     },
     {
@@ -1950,7 +1990,10 @@
       "reason": "Tried a familiar inhaler as a broad category reminder; held because the medication-device association was not the desired lexical-name reminder here. Familiar categories are allowed; not claiming inhalers diagnose asthma or excluding later learned category proposals.",
       "retained_in_other_chapters": [
         "37",
-        "57"
+        "57",
+        "62",
+        "64",
+        "65"
       ]
     },
     {
@@ -2089,7 +2132,10 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a tiny muscle beside a heavy gravity ball; the name bridge remained too cumbersome. No symptom, contraindication or effect relationship.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62",
+        "65"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2150,7 +2196,8 @@
         "46",
         "55",
         "60",
-        "61"
+        "61",
+        "65"
       ]
     },
     {
@@ -2245,7 +2292,10 @@
       "reason": "Preserves earlier asterisk/moth sound attempt; considered familiar inhaler category, but did not select it as an asthma-specific name cue in this pass. Broader category cues are allowed, not banned.",
       "retained_in_other_chapters": [
         "37",
-        "57"
+        "57",
+        "62",
+        "64",
+        "65"
       ]
     },
     {
@@ -2259,7 +2309,10 @@
       "reason": "Preserves new-moon attempt lacking a visible new-moon token; considered generic moon but no improved selected partial-name bridge. Not held for inability to diagnose from an image.",
       "retained_in_other_chapters": [
         "58",
-        "59"
+        "59",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -2341,7 +2394,9 @@
       "report": "docs/chapter-29B-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a pea balanced beside an H-shaped block; relies on a visible letter and has no selected nonletter bridge. Numeric directive excluded only after this lexical trial.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2352,7 +2407,9 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried cricket beside a neck teaching token again; the pairing remains unappealing, not forbidden by a full-syllable rule. No cutting depiction substituted. Later28/29A spelling-family holds remain unchanged.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "63"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2433,7 +2490,10 @@
       "reason": "Tried a hemmed cloth beside a toy pit for hemo/pty; object naming and sound bridge were unappealing. No clinical manifestation used to rescue the cue.",
       "retained_in_other_chapters": [
         "48",
-        "56"
+        "56",
+        "63",
+        "65",
+        "66"
       ]
     },
     {
@@ -2456,7 +2516,9 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried hemmed fabric beside a theatrical nemesis mask; the second object's identity was awkward and not selected. No symptom scene substituted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "63"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2692,7 +2754,9 @@
       "report": "docs/chapter-31-cue-audit.md",
       "attempted_cue": "A chili pepper beside a toy treasure chest.",
       "reason": "Chili/chylo fragment not enough to select confidently; chest supplies only thorax family.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "66"
+      ]
     },
     {
       "chapter_id": "31",
@@ -2781,7 +2845,8 @@
         "46",
         "55",
         "60",
-        "61"
+        "61",
+        "65"
       ]
     },
     {
@@ -2896,7 +2961,8 @@
         "54",
         "55",
         "57",
-        "58"
+        "58",
+        "65"
       ]
     },
     {
@@ -3004,7 +3070,8 @@
         "46",
         "55",
         "60",
-        "61"
+        "61",
+        "65"
       ]
     },
     {
@@ -3122,7 +3189,8 @@
       "retained_in_other_chapters": [
         "49",
         "57",
-        "59"
+        "59",
+        "62"
       ]
     },
     {
@@ -3134,7 +3202,9 @@
       "report": "docs/chapter-34-cue-audit.md",
       "attempted_cue": "A urine specimen cup beside a microphone.",
       "reason": "Tried urine/mic; little reason for microphone beyond forced name completion. No body-fluid or biochemical claim intended.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "34",
@@ -3151,7 +3221,8 @@
         "46",
         "55",
         "60",
-        "61"
+        "61",
+        "65"
       ]
     },
     {
@@ -3171,7 +3242,10 @@
         "55",
         "56",
         "57",
-        "58"
+        "58",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -4147,7 +4221,10 @@
       "reason": "Scarf adds no useful name bridge without symptom teaching.",
       "retained_in_other_chapters": [
         "58",
-        "59"
+        "59",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -4428,7 +4505,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "A mannequin beside a book index and scale.",
       "reason": "Body/index ingredients familiar but three props not economical; no calculation encoded.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "64"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4749,7 +4828,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A poppy flower beside an unmarked medicine bottle.",
       "reason": "Poppy does not establish a useful broad class token here and could imply shared botanical origin; no clinical recommendation copied.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "38",
@@ -4892,7 +4973,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "Two blocks beside a hydrogen atom model.",
       "reason": "Hydrogen/two is an abstract letter-number representation rather than an economical familiar class token; earlier29B H2 blocker hold unchanged.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "38",
@@ -4958,7 +5041,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A toy bench beside a zipper.",
       "reason": "Bench/zipper remains a weak class-name fragment; earlier29B singular benzodiazepine hold unchanged.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5849,7 +5934,9 @@
       "report": "docs/chapter-46-cue-audit.md",
       "attempted_cue": "A toy chemistry flask.",
       "reason": "Chemistry fragment tried but too generic to select; no treatment mechanism or device implied.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "65"
+      ]
     },
     {
       "chapter_id": "46",
@@ -6143,7 +6230,10 @@
         "55",
         "56",
         "57",
-        "58"
+        "58",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -6313,7 +6403,8 @@
       "reason": "Follow action tried, but it does not economically cue the follow-up headword rather than literal pursuit; no care-process inference.",
       "retained_in_other_chapters": [
         "57",
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -6349,7 +6440,10 @@
       "reason": "Lung supplies only location/topic, not a meaningful pneumonia name fragment or distinctive category. Real earlier pneumonia holds remain open.",
       "retained_in_other_chapters": [
         "58",
-        "59"
+        "59",
+        "62",
+        "65",
+        "66"
       ]
     },
     {
@@ -6528,7 +6622,9 @@
       "report": "docs/chapter-49-cue-audit.md",
       "attempted_cue": "An ordinary toy engine beside a road barrier.",
       "reason": "Enzyme/engine and inhibitor/barrier are broad fragments, but the named family is unresolved; no pathway assertion.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "49",
@@ -6564,7 +6660,8 @@
       "retained_in_other_chapters": [
         "49",
         "57",
-        "59"
+        "59",
+        "62"
       ]
     },
     {
@@ -6725,7 +6822,8 @@
       "retained_in_other_chapters": [
         "49",
         "57",
-        "59"
+        "59",
+        "62"
       ]
     },
     {
@@ -6855,7 +6953,8 @@
       "retained_in_other_chapters": [
         "49",
         "57",
-        "59"
+        "59",
+        "62"
       ]
     },
     {
@@ -6878,7 +6977,9 @@
       "report": "docs/chapter-52-cue-audit.md",
       "attempted_cue": "A toy mouth beside a loose bead.",
       "reason": "Mouth/bead is not an economical safe lexical swallowing cue; no ingestion scene or technique proposed. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "52",
@@ -7222,7 +7323,9 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": "A generic physician toy.",
       "reason": "Physician alone supplies role/context, not the full head; no useful economical name ingredient selected and no cause assertion made. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "63"
+      ]
     },
     {
       "chapter_id": "53",
@@ -7335,7 +7438,8 @@
       "retained_in_other_chapters": [
         "49",
         "57",
-        "59"
+        "59",
+        "62"
       ]
     },
     {
@@ -7505,7 +7609,8 @@
       "reason": "Unwell mask is generic state context, not a selected morbidity head/category cue; no clinical state inferred. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
         "57",
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -7572,7 +7677,9 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "65"
+      ]
     },
     {
       "chapter_id": "53",
@@ -7660,7 +7767,9 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": null,
       "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "53",
@@ -7694,7 +7803,8 @@
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "57"
+        "57",
+        "65"
       ]
     },
     {
@@ -7718,7 +7828,8 @@
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "56"
+        "56",
+        "62"
       ]
     },
     {
@@ -7754,7 +7865,8 @@
       "reason": "Follow/order action considered but not selected for follow-up head; no clinical timing or advice. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
         "57",
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -8003,7 +8115,9 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
         "56",
-        "61"
+        "61",
+        "62",
+        "65"
       ]
     },
     {
@@ -8130,7 +8244,8 @@
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "58"
+        "58",
+        "66"
       ]
     },
     {
@@ -8291,7 +8406,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8392,7 +8509,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "66"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8414,7 +8533,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "66"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8425,7 +8546,10 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "63",
+        "66"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8458,7 +8582,10 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62",
+        "66"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8515,7 +8642,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": "A urine specimen cup beside a microphone.",
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8609,7 +8738,8 @@
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -8632,7 +8762,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "65"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8868,7 +9000,9 @@
       "report": "docs/chapter-56-cue-audit.md",
       "attempted_cue": "A generic mannequin beside an unnumbered scale.",
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. No formula or caricature; plausible body/mass category, held.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "64"
+      ]
     },
     {
       "chapter_id": "56",
@@ -8956,7 +9090,10 @@
       "report": "docs/chapter-56-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62",
+        "65"
+      ]
     },
     {
       "chapter_id": "56",
@@ -9789,7 +9926,8 @@
       "reason": "No economical lexical/category bridge selected. Following action meaningful but temporal clinical follow-up interpretation uncertain; held without requiring full definition.",
       "retained_in_other_chapters": [
         "57",
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -10065,7 +10203,9 @@
       "report": "docs/chapter-61-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "62"
+      ]
     },
     {
       "chapter_id": "61",
@@ -10154,7 +10294,8 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "58"
+        "58",
+        "66"
       ]
     },
     {
@@ -10178,7 +10319,8 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "57"
+        "57",
+        "62"
       ]
     },
     {
@@ -10289,7 +10431,9 @@
       "report": "docs/chapter-61-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "65"
+      ]
     },
     {
       "chapter_id": "61",
@@ -10301,7 +10445,8 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "58"
+        "58",
+        "63"
       ]
     },
     {
@@ -10335,6 +10480,1364 @@
       "report": "docs/chapter-61-cue-audit.md",
       "attempted_cue": "A toy argyle-patterned cloth.",
       "reason": "No economical lexical/category bridge selected. Arga-/argyle partial sound plausible but not selected after initial naming uncertainty.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "62",
+      "chapter_title": "Respiratory Distress",
+      "term": "Chlorpromazine",
+      "printed_page": 430,
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "attempted_cue": "An ordinary colored paint swatch.",
+      "reason": "Chlor/color opening-name trial is an unappealing sound compression in this pass; no selected reminder. This is editorial nonselection, not a missing-full-name, unique-object or clinical-definition requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "63",
+      "chapter_title": "Hemoptysis",
+      "term": "schistosomiasis",
+      "printed_page": 433,
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "attempted_cue": "An ordinary shirt.",
+      "reason": "Schist/shirt trial is an unappealing sound compression in this pass; no selected reminder. Not a full-name or clinical-definition requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "63",
+      "chapter_title": "Hemoptysis",
+      "term": "Beh\u00e7et's disease",
+      "printed_page": 433,
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "attempted_cue": "A familiar beach scene.",
+      "reason": "Behcet/beach trial has an unappealing pronunciation compression for this author; left unselected, not rejected for missing the whole name or clinical definition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "63",
+      "chapter_title": "Hemoptysis",
+      "term": "epistaxis",
+      "printed_page": 433,
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "attempted_cue": "An epic-story book beside a taxi toy.",
+      "reason": "Epi/epic plus taxis/taxi assembly feels forced in this pass; no selected reminder. Familiar partial cues remain allowed; this is editorial nonselection, not a missing-full-name veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "63",
+      "chapter_title": "Hemoptysis",
+      "term": "epinephrine",
+      "printed_page": 434,
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "attempted_cue": "An epic-story book alone, without leaf or frying pan.",
+      "reason": "Simpler Epi/epic opening-name trial remains unappealing in this pass; no selected cue. Not a clinical-definition, all-syllables or no-existing-root veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "64",
+      "chapter_title": "Acute Bronchitis and Upper Respiratory Tract Infections",
+      "term": "Echinacea",
+      "printed_page": 437,
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "attempted_cue": "A generic potted plant.",
+      "reason": "Plant alone is merely the broad botanical topic here, not a selected Echinacea name or distinctive familiar learned plant category. No medical effect or fabricated botanical identity inferred.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "64",
+      "chapter_title": "Acute Bronchitis and Upper Respiratory Tract Infections",
+      "term": "American Indians/Alaska Natives",
+      "printed_page": 438,
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "attempted_cue": "An unmarked toy globe.",
+      "reason": "A globe supplies geography generally, not a meaningful selected bridge to either actual American Indians or Alaska Natives name. No racial caricature or appearance-based ethnicity inference; no forced dessert/prop stack.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "64",
+      "chapter_title": "Acute Bronchitis and Upper Respiratory Tract Infections",
+      "term": "Zanamivir",
+      "printed_page": 438,
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "attempted_cue": "A toy clown making a zany gesture.",
+      "reason": "Tried Zan-/zany wordplay. This clown/gesture proposal adds a subjective zany adjective rather than a preferred economical name ingredient; hold this attempt, not every partial-name category.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "64",
+      "chapter_title": "Acute Bronchitis and Upper Respiratory Tract Infections",
+      "term": "azithromycin",
+      "printed_page": 439,
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "attempted_cue": "A toy zither.",
+      "reason": "Zithro-/zither fragment tried; uncommon instrument identification makes this particular proposal weak here. Earlier azithromycin hold stays historical; not a full-name recovery requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Nursing home/long-term care residents",
+      "printed_page": 439,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A neutral miniature house.",
+      "reason": "No economical Nursing home/long-term care residents name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Residence/house category plausible but no nursing/long-term-care distinction selected; no age or disability caricature.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "chronic wound care",
+      "printed_page": 439,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical chronic wound care name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Wound head only if reused; chronic/care relation omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Swallowing",
+      "printed_page": 439,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy figure making a swallowing motion.",
+      "reason": "No economical Swallowing name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Motion is difficult to distinguish from drinking at this static vocabulary scope; no chosen distinct swallowing action.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Debilitation",
+      "printed_page": 439,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A drooping toy figure.",
+      "reason": "No economical Debilitation name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Weakness metaphor plausible but posture alone was not selected as this name/category; no demographic or health inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Chronic diseases",
+      "printed_page": 439,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A generic unwell mask.",
+      "reason": "No economical Chronic diseases name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Disease category conceivable but this nonspecific editorial grouping has no selected vocabulary cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Symptoms",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A generic unwell theatrical mask.",
+      "reason": "No economical Symptoms name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Editorial grouping has no selected specific symptom word cue; nested actual symptoms screened.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Sputum",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A sealed sample cup.",
+      "reason": "No economical Sputum name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Sample cup does not specify sputum rather than any sample; no economical name bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Rust-colored",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A visibly rusty metal washer.",
+      "reason": "No economical Rust-colored name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Rust/colour category is meaningful but this corroded-washer variant remains depiction-dependent; no chosen cue or sputum interpretation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "diplococci",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A pair of round beads.",
+      "reason": "No economical diplococci name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Pair and round shapes are meaningful learned morphology heads but no selected cocci-name/category cue; not identification.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Purulent",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A model sample cup containing opaque liquid.",
+      "reason": "No economical Purulent name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Cup opacity alone is not a selected pus/purulence vocabulary cue; no source clinical assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "cocci in clusters",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A cluster of round toy beads.",
+      "reason": "No economical cocci in clusters name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Cluster learned arrangement tried; no cocci-name bridge selected, not a microbe interpretation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "infiltrates",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A kitchen filter.",
+      "reason": "No economical infiltrates name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Filter/infiltrate partial word association considered; filter/infiltrate direction and naming remain unresolved, not promoted merely because topic is pulmonary.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "lung abscess",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A plain block with a recessed pocket.",
+      "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound trial remains naming-dependent; no selected abscess visual and earlier holds preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "coccobacilli",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "Round beads beside short rods.",
+      "reason": "No economical coccobacilli name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Learned shapes possible but arbitrary two-shape stack not selected; no organism morphology teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "malaise",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A drooping theatre mask.",
+      "reason": "No economical malaise name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Nonspecific unwell expression does not supply a selected malaise name/category bridge here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "neutrophils",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A neutral-colour bead.",
+      "reason": "No economical neutrophils name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Neutral/neu- sound partial considered, bead has no selected economical name bridge; no cell-function teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "consolidation",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy block becoming solid.",
+      "reason": "No economical consolidation name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Solid/consolidation word-family action plausible; no selected simple static depiction in this draft, not a clinical density rule.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "cavitation",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A plain model cavity.",
+      "reason": "No economical cavitation name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Cavity ordinary category is meaningful but no selected economical recognizable cavity prop; no lung finding or mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "wheezing",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical wheezing name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "sinus symptoms",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical sinus symptoms name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Sinus lexical head only if selected, symptoms omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "bullous myringitis",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy bull beside a ring.",
+      "reason": "No economical bullous myringitis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Bull-/my-ring approximate fragments tried but forced two-prop stack not selected; missing suffix alone is not the reason.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "reticulonodular pattern",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A knotted mesh net.",
+      "reason": "No economical reticulonodular pattern name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Reticul-/net learned category plausible; no selected source-specific word bridge or nodule combination, not clinical morphology.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "patchy densities",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A patch of opaque fabric.",
+      "reason": "No economical patchy densities name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Patch literal head plausible; cloth opacity is not a selected clinical-density cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "putrid sputum",
+      "printed_page": 440,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A sample cup beside a theatrical bad-smell swirl.",
+      "reason": "No economical putrid sputum name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Bad-smell category tried but source sputum name unresolved, no chosen cue or odor assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "extensive infiltration",
+      "printed_page": 441,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A kitchen filter.",
+      "reason": "No economical extensive infiltration name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Infiltration/filter partial-name attempt, no selected visual; actual caption word, not a guessed raster label.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Pneumonia in Pregnant Women",
+      "printed_page": 443,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A neutral human figurine.",
+      "reason": "No economical Pneumonia in Pregnant Women name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. A generic person does not encode pregnancy; no selected nonstigmatizing pregnancy head cue, pneumonia separately screened.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Clarithromycin XL",
+      "printed_page": 444,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A clear acrylic toy panel.",
+      "reason": "No economical Clarithromycin XL name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Clari-/clear partial sound meaningful but panel not selected as an economical drug-name cue; XL dose form not pictured.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Azithromycin",
+      "printed_page": 444,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy zither.",
+      "reason": "No economical Azithromycin name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Azith-/zither partial sound trial; naming/pronunciation uncertainty remains and no chosen cue in this draft.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Comorbidities",
+      "printed_page": 444,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A pair of generic unwell masks.",
+      "reason": "No economical Comorbidities name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Co-/together grouping conceivable, no selected specific name/category bridge; no disease-risk relation encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Moxifloxacin",
+      "printed_page": 444,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A familiar mop.",
+      "reason": "No economical Moxifloxacin name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Mox-/mop only loosely overlapping fragment, not selected; no generic drug-effect substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "aminoglycoside",
+      "printed_page": 445,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy amino-letter block.",
+      "reason": "No economical aminoglycoside name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Literal labels are not an economical selected cue; no full-sound or whole-mechanism requirement imposed.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Aztreonam",
+      "printed_page": 445,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy astronaut.",
+      "reason": "No economical Aztreonam name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Astro-/aztre approximate name fragment plausible; no selected bridge, no organism effect substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "lincosamide",
+      "printed_page": 445,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A small chain link.",
+      "reason": "No economical lincosamide name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Linco-/link approximate fragment plausible; no selected composition, not rejection solely for suffix omission.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "aminoglycosides",
+      "printed_page": 445,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy amino-letter block.",
+      "reason": "No economical aminoglycosides name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Same failed label-dependent trial; source plural preserved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Comorbid conditions",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "Two generic unwell masks.",
+      "reason": "No economical Comorbid conditions name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Together/condition metaphor tried, no selected simple name bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Demographics",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A neutral mixed group of study figurines.",
+      "reason": "No economical Demographics name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Grouping alone not a selected demographic name cue; no appearance-based ethnicity/gender/age inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Male gender",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A conventional male-category symbol.",
+      "reason": "No economical Male gender name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Symbol-category candidate considered; no selected depiction or inference from body appearance, scoring omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Nursing home resident",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A neutral miniature house.",
+      "reason": "No economical Nursing home resident name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Residence partial category plausible but no chosen nursing/long-term-care naming bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Coexistent illness",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "Two generic unwell masks.",
+      "reason": "No economical Coexistent illness name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Co-/together partial action tried, not a selected illness-specific cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "pH",
+      "printed_page": 446,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A pool cue beside a toy ladder.",
+      "reason": "No economical pH name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. P/H letter props would be arbitrary sound stacking; no selected economical pH cue.",
+      "retained_in_other_chapters": [
+        "62"
+      ]
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Dementia",
+      "printed_page": 447,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical Dementia name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Prolonged supine position",
+      "printed_page": 447,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy mannequin lying face-up.",
+      "reason": "No economical Prolonged supine position name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Supine learned ordinary position category plausible; no selected actual root after scan, not a medical-position instruction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Eosinophils",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "An easel beside a neutral bead.",
+      "reason": "No economical Eosinophils name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Eosin-/easel approximate name fragment worth trying, arbitrary bead adds no useful head; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "interstitial spaces",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy spacer separating two blocks.",
+      "reason": "No economical interstitial spaces name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Between/spacer learned spatial category plausible, no selected interstitial name cue; not a pathology depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "bilateral consolidations",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A solid toy block.",
+      "reason": "No economical bilateral consolidations name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Solid/consolidation partial family considered; no selected static action, bilateral not a veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "reticular opacities",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A mesh net.",
+      "reason": "No economical reticular opacities name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Reticular/net learned shape plausible but no selected economical static cue here, opacity separate unresolved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "organic dust",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A conspicuous dust cloud.",
+      "reason": "No economical organic dust name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Dust lexical head meaningful but cloud material indistinct in a static model; no selected cue, organic omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "BOOP",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy button being booped.",
+      "reason": "No economical BOOP name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Boop ordinary action/name playful partial acronym category plausible; no simple static selected scene, not a disease mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Antinuclear cytoplasmic antibody",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy ant with a body segment.",
+      "reason": "No economical Antinuclear cytoplasmic antibody name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Ant-/antibody partial name considered; no chosen arbitrary body stack, no molecular/immune mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "ANCA",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A familiar anchor.",
+      "reason": "No economical ANCA name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. ANCA/anchor approximate acronym sound plausible; final vowel/r/context naming uncertainty, not selected in this draft.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Wegener's granulomatosis",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A familiar toy wagon.",
+      "reason": "No economical Wegener's granulomatosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Weg-/wagon partial surname trial plausible; sound/context uncertainty, no selected cue, not a whole-surname veto. Curly apostrophe normalized.",
+      "retained_in_other_chapters": [
+        "63"
+      ]
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Churg-Strauss syndrome",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A familiar drinking straw.",
+      "reason": "No economical Churg-Strauss syndrome name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Strauss/straw deliberately partial surname trial; first surname omitted, no selected sound bridge yet.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "allergic eosinophilic condition",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy easel.",
+      "reason": "No economical allergic eosinophilic condition name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Eosin-/easel approximate head trial; no selected cue, allergic/condition not encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "allergic rhinitis/sinusitis",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy rhinoceros.",
+      "reason": "No economical allergic rhinitis/sinusitis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Rhin-/rhino meaningful partial name tried; actual old rhino comparison needed, no generic nose-location substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "intestinal",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical intestinal name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "cyst",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical cyst name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "costophrenic angles",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy angle bracket.",
+      "reason": "No economical costophrenic angles name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Angle lexical head tried; bracket might be named merely corner/support, no chosen cue. Costophrenic anatomy omitted, not a full-modifier veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "hilar adenopathy",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy hill.",
+      "reason": "No economical hilar adenopathy name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Hilar/hill approximate partial sound possible; no selected cue, adenopathy unresolved, not generic anatomic location.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "weight loss",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical weight loss name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": [
+        "66"
+      ]
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Anti-glomerular basement membrane antibody disease",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy basement room.",
+      "reason": "No economical Anti-glomerular basement membrane antibody disease name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Basement word head meaningful; not chosen as a whole complex stack; native anti en-dash and wrap normalized, not molecular teaching.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "foreign substance",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "An unfamiliar small object.",
+      "reason": "No economical foreign substance name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Unfamiliarity alone is not a selected foreign-body/name bridge; no arbitrary topic prop.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "petroleum distillates",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "An oil-can prop.",
+      "reason": "No economical petroleum distillates name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Petroleum packaging candidate tried; generic oil-can contents are underspecified at this target, no selected fuel-packaging variant. No chemistry or exposure claim.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "pesticide",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A sealed garden-spray bottle.",
+      "reason": "No economical pesticide name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recognizable packaging plausible; not selected rather than assuming medicine bottle means pesticide.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "irritating gases",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A theatrical gas-cloud prop.",
+      "reason": "No economical irritating gases name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Gas broad category plausible but indistinct cloud depiction not selected as this lexical target; irritation omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "sputum production",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A sample cup.",
+      "reason": "No economical sputum production name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Sample cup alone not selected as sputum-specific head; no secretion assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "leukocytosis",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A white toy cell bead.",
+      "reason": "No economical leukocytosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. White bead alone not a selected leuko-name cue here, count/state omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Leukemic infiltrates",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A kitchen filter.",
+      "reason": "No economical Leukemic infiltrates name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Infiltrate partial-name attempt remains unresolved, leukemia separately screened.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "myeloid leukemia",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy marrow-shaped study insert.",
+      "reason": "No economical myeloid leukemia name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Marrow/myeloid learned anatomy root plausible but no selected recognizable specific model; leukemia unencoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "blast cell",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A theatrical blast burst.",
+      "reason": "No economical blast cell name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Blast word head tried; an isolated burst glyph has unresolved blast-versus-flash naming here, no chosen cue. Cell state not encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "endothelium",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy lining sheet.",
+      "reason": "No economical endothelium name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Lining is related category but no economical selected name cue; not an anatomy location stand-in.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "interstitial prominence",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A toy spacer.",
+      "reason": "No economical interstitial prominence name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Between/spacer category tried, no chosen interstitial lexical cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "stupor",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical stupor name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "delirium",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical delirium name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "leukemia",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A white toy bead.",
+      "reason": "No economical leukemia name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. White/leuko fragment is meaningful but not a selected simple name/category depiction here; no disease/model assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "sepsis",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A septic tank toy.",
+      "reason": "No economical sepsis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "transfusions",
+      "printed_page": 448,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": null,
+      "reason": "No economical transfusions name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "Clinical Features",
+      "printed_page": 449,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A generic unwell mask.",
+      "reason": "No economical Clinical Features name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Editorial scaffold not a named clinical condition; meaningful symptom heads individually tried on24.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "methylprednisolone",
+      "printed_page": 449,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "A familiar toy pretzel.",
+      "reason": "Actual LEFT25 native span prints methylprednisolone. Prior prednisolone row was an undisclosed author truncation; correct to literal source name and retain its pred-/pretzel failed attempt, without claiming the shorter drug name is equivalent.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "65",
+      "chapter_title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "term": "rheumatologist",
+      "printed_page": 449,
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "attempted_cue": "An articulated joint teaching model.",
+      "reason": "No economical rheumatologist name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Joint is a profession-topic association, not a selected profession-name ingredient; no chosen cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "pus",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A sealed cup of opaque liquid.",
+      "reason": "No economical pus name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Generic opacity does not select pus rather than other contents; no chosen pus-name cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "lung abscess",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A plain block with a recessed pocket.",
+      "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound tried; cavity shape alone does not identify abscess rather than any cavity, no selected abscess name bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "septicemia",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy septic tank.",
+      "reason": "No economical septicemia name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Septic ordinary packaging/name category plausible but exact tank appearance/naming uncertain; no selected cue, no medical mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "altered swallowing",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy figure making a swallowing motion.",
+      "reason": "No economical altered swallowing name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Swallowing action is plausible but static motion indistinct from drinking; no selected composition, not vetoed for altered modifier.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "ciliary function",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A row of toy eyelashes.",
+      "reason": "No economical ciliary function name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Cilia/lash learned name category plausible; no selected economical specific model, function omitted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "malaise",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A drooping theatre mask.",
+      "reason": "No economical malaise name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Nonspecific unwell expression has no selected malaise-name bridge here, no appearance-based patient inference.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "night sweats",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A crescent moon beside a droplet.",
+      "reason": "No economical night sweats name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Night/sweat category heads meaningful, but two-prop composition not selected; not a clinical manifestation assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "rhonchi",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy rhinoceros.",
+      "reason": "No economical rhonchi name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Rhon-/rhino approximate fragment tried; pronunciation/naming context remains uncertain, no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "purulent material",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A sealed cup of opaque liquid.",
+      "reason": "No economical purulent material name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Purulence attempt not selected; generic contents not pus-specific, no medical assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Gram stain",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A gram weight beside a paint stain.",
+      "reason": "No economical Gram stain name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Arbitrary weight/stain stack not selected; no staining technique or identification rule.",
+      "retained_in_other_chapters": [
+        "62"
+      ]
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "pH",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A pool cue beside a toy ladder.",
+      "reason": "No economical pH name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. P/H label-sound stack not selected; no clinical threshold.",
+      "retained_in_other_chapters": [
+        "62"
+      ]
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "interferon release assays",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy intercom.",
+      "reason": "No economical interferon release assays name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Inter-/intercom partial fragment worth trying but generic prefix not selected as economical interferon cue; release/assay unencoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "antibiotics",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "An ordinary unmarked medicine bottle alone, without pill token.",
+      "reason": "B66-5: withdraw the generic medicine-bottle substitution. Its medicine category is not a meaningful encoded anti-/antibiotic name or distinctive class bridge here. No more specific economical visual selected in this bounded review; not a full-syllable or unique-blind-name requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "NSAIDs",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy knight beside an aid box.",
+      "reason": "No economical NSAIDs name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Forced acronym/knight/aid stack not selected; no appropriate economical acronym cue chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "opioids",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A poppy flower beside an unmarked medicine bottle.",
+      "reason": "No economical opioids name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": [
+        "62"
+      ]
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "aminoglycosides",
+      "printed_page": 449,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy amino-letter block.",
+      "reason": "No economical aminoglycosides name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Literal label block is not an economical selected name cue; no drug-effect substitute.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Pathology",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A generic unwell theatre mask.",
+      "reason": "No economical Pathology name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Editorial grouping no selected pathology-name cue; actual nested condition heads screened.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "bacilli",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "Short rod-shaped teaching tokens.",
+      "reason": "No economical bacilli name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Bacill-/rod learned shape category plausible; no selected recognizable standalone name cue, not a microorganism-identification rule.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Postprocedure",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy instruction tool kit.",
+      "reason": "No economical Postprocedure name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Generic procedure-topic kit lacks a selected lexical bridge; post- not encoded.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Anaerobic abscess",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A plain block with a recessed pocket.",
+      "reason": "No economical Anaerobic abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial name attempted, no selected abscess-category cue; anaerobic modifier is not the veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Aerobic abscess",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A plain block with a recessed pocket.",
+      "reason": "No economical Aerobic abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Same partial-name attempt; aerobic subtype not a reason to demand full definition, no selected abscess cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Cryptococcus",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A small stone crypt miniature.",
+      "reason": "No economical Cryptococcus name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Crypt literal name fragment plausible; tomb/crypt naming remains context-dependent, not selected here, no clinical mechanism.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Echinococcosis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy echo-wave token.",
+      "reason": "No economical Echinococcosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Echin-/echo approximate opening sound is meaningful but abstract wave has weak echo-object bridge, no selected cue.",
+      "retained_in_other_chapters": [
+        "63"
+      ]
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Amebiasis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A generic blob-shaped study token.",
+      "reason": "No economical Amebiasis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Generic blob lacks an economical distinctive amoeba/category bridge in this draft; no chosen visual.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "squamous cell",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A toy scale-shaped teaching tile.",
+      "reason": "No economical squamous cell name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Squam-/scale learned lexical category plausible; simple tile not selected as recognizable scale here, no cell biology assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "colorectal",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A detached colon/rectum teaching-model insert.",
+      "reason": "No economical colorectal name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Specific anatomy category is allowed but no currently selected recognizable model; not a whole-stomach/location substitute or a full-modifier veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Hodgkin's disease",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A familiar toy hedgehog.",
+      "reason": "No economical Hodgkin's disease name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Hodg-/hedge approximate partial sound tried; naming/pronunciation uncertainty, no selected composition, no all-syllable requirement. Curly apostrophe normalized.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Wegener's granulomatosis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A familiar toy wagon.",
+      "reason": "No economical Wegener's granulomatosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Weg-/wagon approximate name trial, not selected; actual source table spelling, apostrophe normalized.",
+      "retained_in_other_chapters": [
+        "63"
+      ]
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "placebo",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A plain unmarked pill token.",
+      "reason": "No economical placebo name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Pill packaging is meaningful but does not encode placebo/inert status rather than any medication; no selected cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "necrosis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A wilted toy flower.",
+      "reason": "No economical necrosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "sepsis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A septic tank toy.",
+      "reason": "No economical sepsis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "Wegner's granulomatosis",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A familiar toy wagon.",
+      "reason": "No economical Wegner's granulomatosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Literal regular-body Wegner spelling differs from table Wegener; preserved as source variant, not silently corrected. Weg-/wagon partial trial still unselected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "consolidation",
+      "printed_page": 450,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "A solid toy block.",
+      "reason": "No economical consolidation name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Solid/consolidation word-family category plausible, no selected static transition depiction here; no radiographic interpretation.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "66",
+      "chapter_title": "Lung Empyema and Abscess",
+      "term": "antibiotic therapy",
+      "printed_page": 451,
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "attempted_cue": "An ordinary unmarked medicine bottle alone, without pill token.",
+      "reason": "B66-5: withdraw the generic medicine-bottle substitution. Its medicine category is not a meaningful encoded anti-/antibiotic name or distinctive class bridge here. No more specific economical visual selected in this bounded review; not a full-syllable or unique-blind-name requirement.",
       "retained_in_other_chapters": []
     }
   ],
@@ -12530,6 +14033,1062 @@
       "report": "docs/chapter-61-cue-audit.md",
       "current_decision": "reuse_candidate",
       "resolution": "Current proposal does not erase real older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Dyspnea",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Paroxysmal nocturnal dyspnea",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "asthma",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "chronic obstructive pulmonary disease",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "myocardial infarction",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Pneumonia",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "angioedema",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Tension pneumothorax",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Neuromuscular weakness",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "myasthenia gravis",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "opioids",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "benzodiazepines",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Cyanosis",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Depressed central respiratory drive",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "tetanus",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Thoracic cage disorders",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Morbid obesity",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Neuromuscular impairment",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Neuromuscular disease",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Neuromuscular toxin",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "upper respiratory infection",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Lower respiratory tract infection",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Environmental irritants",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Smoking",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Postinfectious",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Occupational and environmental irritants",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Recurrent aspiration",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "cystic fibrosis",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "lung irritants",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "angiotensin-converting enzyme inhibitors",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "antihistamine",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "H2 blockers",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "smoking cessation",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "otolaryngologist",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "laryngoscopy",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Excessive smoking",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "uremia",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "thoracic",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Swallow",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Nifedipine",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Exudates",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Cancer",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "Bacterial pneumonia",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "fungal infection",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "rheumatoid arthritis",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "amiodarone",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "exudative pleural effusion",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "pleural exudate",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "bacterial infection",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "parapneumonic",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "lymphoma",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "pH",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "fungal stains",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "adenosine deaminase",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "62",
+      "term": "bacteria",
+      "source_record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Hemoptysis",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "morbidity",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "mortality",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "mycetoma",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Infectious",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Iatrogenic",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Fungal",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "cystic fibrosis",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "organizing pneumonia",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Congestive heart failure",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Obstructive sleep apnea",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Bronchial adenoma",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "hematemesis",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "CBC",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "coagulation studies",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Follow-Up",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "FU PCP",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "FU",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "Coags",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "cricothyrotomy",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "coagulopathy",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "consult",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "63",
+      "term": "cuff",
+      "source_record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current scoped word/head attempt only; actual earlier holds and failed attempts remain independent historical decisions."
+    },
+    {
+      "chapter_id": "64",
+      "term": "human immunodeficiency virus infection",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "postpartum",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "aspirin therapy",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "morbidly obese",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "body mass index",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "asthma",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "cystic fibrosis",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "muscle",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "seizure disorders",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "tetanus",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current explicit head/category selected; historical holds/rejections and attempts remain unchanged, not globally resolved."
+    },
+    {
+      "chapter_id": "64",
+      "term": "macrolides",
+      "source_record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Resolve only current64 null-attempt hold after main identified actual47 retained macaroni variant. No actual older macrolides hold is invented or globally resolved."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Community-Acquired Pneumonia",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "pneumonia",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "infection",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "chemotherapy",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Seizure",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "syncope",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Congestive heart failure",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "fever",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "rigors",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "chills",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "diarrhea",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "COPD",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Pneumococcal Pneumonia",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Pneumonia in Human Immunodeficiency Virus Patients",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "myasthenia gravis",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Doxycycline",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "BUN",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Aspiration Pneumonia",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Aspiration pneumonias",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Noninfectious Pulmonary Infiltrates",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "asthma",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "cystic fibrosis",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "hemoptysis",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "smoking",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "rheumatoid arthritis",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "Autoimmune disease",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "65",
+      "term": "barium",
+      "source_record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "pneumonia",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "chylothorax",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "aspiration",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "fever",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "dyspnea",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "weight loss",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Aspiration pneumonia",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "human immunodeficiency virus",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Fungal",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Histoplasmosis",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Lymphoma",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Staphylococcus",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "Mycobacterium tuberculosis",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "hemoptysis",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds/rejections or establish recall."
+    },
+    {
+      "chapter_id": "66",
+      "term": "adenosine deaminase",
+      "source_record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current partial proposal does not erase older holds or establish recall."
     }
   ]
 }

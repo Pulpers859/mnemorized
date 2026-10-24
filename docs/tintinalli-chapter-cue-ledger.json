@@ -987,6 +987,76 @@
       "exhaustive_vocabulary_review": false,
       "empirical_validation": false,
       "keyword_items_screened": 287
+    },
+    {
+      "chapter_id": "62",
+      "title": "Respiratory Distress",
+      "record": "docs/chapter-62-cue-audit.json",
+      "report": "docs/chapter-62-cue-audit.md",
+      "selected_terms": 330,
+      "new_candidates": 5,
+      "reused_candidates": 324,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 376
+    },
+    {
+      "chapter_id": "63",
+      "title": "Hemoptysis",
+      "record": "docs/chapter-63-cue-audit.json",
+      "report": "docs/chapter-63-cue-audit.md",
+      "selected_terms": 156,
+      "new_candidates": 0,
+      "reused_candidates": 152,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 176
+    },
+    {
+      "chapter_id": "64",
+      "title": "Acute Bronchitis and Upper Respiratory Tract Infections",
+      "record": "docs/chapter-64-cue-audit.json",
+      "report": "docs/chapter-64-cue-audit.md",
+      "selected_terms": 92,
+      "new_candidates": 1,
+      "reused_candidates": 87,
+      "holds": 4,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 102
+    },
+    {
+      "chapter_id": "65",
+      "title": "Community-Acquired Pneumonia, Aspiration Pneumonia, and Noninfectious Pulmonary Infiltrates",
+      "record": "docs/chapter-65-cue-audit.json",
+      "report": "docs/chapter-65-cue-audit.md",
+      "selected_terms": 402,
+      "new_candidates": 1,
+      "reused_candidates": 322,
+      "holds": 79,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 438
+    },
+    {
+      "chapter_id": "66",
+      "title": "Lung Empyema and Abscess",
+      "record": "docs/chapter-66-cue-audit.json",
+      "report": "docs/chapter-66-cue-audit.md",
+      "selected_terms": 208,
+      "new_candidates": 0,
+      "reused_candidates": 174,
+      "holds": 34,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 222
     }
   ],
   "hold_register": {
@@ -996,8 +1066,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "62",
-    "title": "Respiratory Distress",
+    "chapter_id": "67",
+    "title": "Tuberculosis",
     "status": "not_started_for_cue_review"
   },
   "spend": {

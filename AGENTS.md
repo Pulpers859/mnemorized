@@ -115,6 +115,13 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 ## Delegation Constitution
 
 - Main Codex acts as architect, risk owner, and integrator.
+- For chapter cue work, follow `docs/chapter-cue-workflow.md`: smaller agents
+  assist with bounded extraction, exact retrieval and deterministic bookkeeping;
+  stronger agents own cue selection, scope/provenance judgments and hold/reject
+  decisions. Require non-author stronger review before main integration. The
+  paired pilot did not establish equivalent cheaper end-to-end authorship or
+  measured net savings. Use compact exception reports and bounded delta rechecks,
+  not repeated full-corpus/full-source reviews. Preserve unfinished freezes.
 - Keep provider proxy safety, auth, Supabase persistence, quota, usage logging, billing, secrets, Render, Supabase dashboard work, commits, and pushes under main-agent control.
 - Use explorer subagents for bounded read-only questions with evidence-backed findings.
 - Use worker subagents only for disjoint write scopes with explicit file/module ownership.
