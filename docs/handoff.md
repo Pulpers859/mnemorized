@@ -199,6 +199,15 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-23 - Paired lower-usage agent workflow trial
+**Done:** User redirected unfinished62-66 batch to test cheaper delegation. Frozen two-source-excerpt/24-target paired trial: Luna medium vs Sol high, separate instruction-blind stronger reviewer, main corroboration, one repair maximum. Initial cue-workflow compliance7/24 vs24/24 (four substantive +13 minor issues in lean arm); after repair22/24 vs24/24. Final reference-head extraction70/70 both. See `docs/agent-workflow-pilot-2026-10-23.md` and ignored `Troubleshooting Prompts/agent_workflow_pilot_2026-10-23/` for original scores, precision sensitivity, hashes and limits.
+
+**Judgment:** No equivalent end-to-end cue-authoring quality demonstrated. Smaller agents provisionally useful for bounded extraction/search/structured preparation; stronger cue curation/provenance/hold decisions remain necessary. No measured token/dollar savings; Codex account usage only, zero Anthropic/provider API calls/renders; $6 benchmark untouched. No app/Forge/provider code or primary catalog changes. No cue admitted or empirical recognition/recall/image result.
+
+**Unfinished batch62-66:** Eight untracked62/64/65/66 JSON/MD draft files remain deliberately uncommitted;63 bank not yet present. Do not skip to67 or mark this batch complete. Raw packet `Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-23/batch62-66/` preserves source27-page review, author builders and audit findings. A62/63=`01a1602b-198f-7960-aca9-b9e340a28ac9`, B64/66review=`01a1602b-2e99-7161-ad37-a7f8cd90aaf1`, C65/66=`01a1602b-4406-7122-a947-65dd6fe626db`, D62/63/65review=`01a1602b-5857-7e63-b76d-8f2bae98487b`; lanes closed for user-requested pilot, can resume when continuing batch.
+
+**Resume checkpoints:**62 initial621ea627...aae71, all entries/targets read byD but full audit not finalized (history-check format normalization pending); bounded adding-machine root cleared.64 M64-1closed; M64-2 saved d5276f9e...9e1ba, main final delta recheck pending.65 D65-1..5 repairs saved d47abd1a...3814; post-repair author validation/four-term search trace and D delta recheck still pending.66 frozen2c40aa97...25764; B reviewed but final report unsaved, possible DNA/diaphragm/contrast/adding-machine/medicine-category findings not yet adjudicated. A63 unfinished. Latest completed/integrated chapter remains61; old43 thumb/index warning remains open.
+
 ### 2026-10-23 - Chapters57-61 five-chapter cue batch
 **Done:** Same broadened rubric. Three drafting lanes; D57/58/60, main59 and B61 independent source/conceptual reviews, with reported repairs rechecked before integration. Totals: 1165 terms / 23 new / 1071 reused / 71 held; 1412 keyword mappings. Cardiovascular source actual71RIGHT-95, offset328; blank96 excluded. Meaningful lexical heads tried before statement/value exclusions. Earlier holds preserved.
 
