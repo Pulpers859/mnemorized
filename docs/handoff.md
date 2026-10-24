@@ -203,6 +203,21 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-24 - Chapters67-71 closed with corrected association accounting
+**Done:** Completed five source-grounded lexical banks:67 Tuberculosis,68 Pneumothorax,69 Acute Asthma/Status Asthmaticus,70 COPD,71 Acute Abdominal Pain. Three bounded stronger authors, cross-author nonauthor reviews67-68/69-70, main independent71 review and material corroboration. Resumed the same paused agents, no replacement cohort or paid provider. See docs/chapter-67-71-cue-review.md for findings, examples and caveats.
+
+**Counts:**734 terms/1076keyword mappings;121 locally different association occurrences,7 variants,513 repeats,93 holds. NOT121 unique additions: parallel lanes used named1-66/canonical/workshop/supplement priors and several bridge families repeat across this batch. No exhaustive semantic novelty claim. Main normalized280 origin-only fields after independent semantic closure; that normalization did not change cues/scopes/association classes. A separately reviewed final exact-lookup delta restored two existing cues and deliberately retained the opioid hold. Old ingredient/reference counts are retained separately.
+
+**Repairs:** Missed exact prior mappings, invalid no-inherited-approval hold gate, wrong anatomical/lexical heads, omitted meaningful emphasis/table/figure heads, false single-head keyword aliases, overcounted pyramid/weight/rhythm bridges.50 new-bank draft holds explicitly resolved with history; all1020 older active hold records' core fields preserved. Register now1113 occurrences/918 distinct terms. Remaining placeholder nonselections do not establish serious/exhaustive creative exploration. Primary76-entry catalog and Forge unchanged; all cues untested/nonproduction; zero paid calls/renders; $6 benchmark untouched.
+
+**Efficiency:** Smaller helper provided exact-index GI support after one repair and tools/chapter_cue_prior_matches.py with14 tests. Read-only casefold reporting separates selected/held prior matches and clamps future cutoffs; human semantic/ingredient adjudication remains necessary. Workflow now requires that report before freezing. No measured dollar/token savings or equivalent cheaper authorship claimed.
+
+**Evidence:** Ignored Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch67-71/ contains source27-47/1-9 evidence, accepted preintegration hashes, first freezes, review/delta reports and main partial-integration recovery. A=01a16e0b-2f57-7bb1-8925-4c998f68495c, B=01a16e0b-4446-7641-8ca8-48b902b7532c, C=01a16e0b-587d-7aa0-a56e-bdb2e347517d, smaller=01a16e0b-ad9e-74e3-a211-ee55fb1d173a. All assigned reviews closed before integration. Original intermediate1cc71 materialization was not the final author freeze; actual preserved836a base is recorded in71 audit. A metadata integration stopped after67/68 on pending69 placeholder; preflight was fixed and known main-owned partial state resumed, no cue rollback.
+
+**Validation:**203 focused chapter/keyword/hold/accounting/prior tests passed; final full suite949 passed/2 skipped/149 subtests; final note-delta keyword/accounting105 passed. Compileall and owned-server smoke passed with HTTP200 for `/`, `/forge`, `/library`, `/api/health`; smoke server stopped. Exporter current and all earlier hold core fields checked. Main runtime provider/browser/image behavior not exercised. Software checks are not recognition/recall/rendering evidence.
+
+**Next:**72-76 starting Nausea and Vomiting; actual72 title verified at GI9 LEFT576.7, allRIGHT9 belongs72, offset472. Do not redo closed67-71 source/corpus audits or promote cues based on tests. Historical43 thumb/index issue remains a separate prior warning.
+
 ### 2026-10-24 - Association counting correction and bounded62-66 second look
 **Done:** Recovered both paused author agents after queued inputs resumed despite initial usage-limit replies. Two disjoint29-record supplements, nonauthor review and main bounded integration. Canonical workflow now separates new_association/meaningful_variant/unchanged_repeat/hold from candidate/hold selection and existing-recount/reconsidered-attempt/new-revision origins. Seven-new headline from prior batch counted ingredient families, NOT all useful associations. No full1188-record reclassification claimed.
 

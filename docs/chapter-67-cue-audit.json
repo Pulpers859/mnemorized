@@ -1,0 +1,3088 @@
+{
+  "schema_version": 1,
+  "chapter_id": "67",
+  "title": "Tuberculosis",
+  "review_date": "2026-10-24",
+  "keyword_screen_date": "2026-10-24",
+  "source": {
+    "file": "Tintin_Pulm.pdf",
+    "sha256": "cd8a5f5dade877d8e1daeb8411fedcac8862e9dfcb6256ce5d7fbc8d5c761ee6",
+    "pdf_pages": [
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "printed_pages": [
+      451,
+      452,
+      453,
+      454,
+      455,
+      456,
+      457
+    ],
+    "printed_page_offset": 424,
+    "boundary": "LEFT27 from actual title y537.3 onward plus ALLRIGHT27 from top, including Table67-1 and Figure67-1. All28-32 including full-width Table67-3, Table67-4, Figures67-2/3/4. UPPERLEFT33 continuation, references y79.6 and publisher line only, before68 title y147.8. Exclude LEFT27 above title and ALLRIGHT33. Native column starts54/324 on odd pages,30/300 on even pages; gutter is not a blind x306 midpoint.",
+    "verification": "Main supplied purchased-PDF identity and native span/font/bbox inventories plus1.5x rasters. Author personally inspected every assigned raster and inventory/annotation array; see laneA/source-review.json. No new PDF hash claim by author."
+  },
+  "scope": "Offline lexical cue authorship only. No clinical facts, doses, recommendations, narration, scenes, provider calls or production admission.",
+  "production_admitted": false,
+  "entries": [
+    {
+      "term": "Tuberculosis",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "chapter_title",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool partial-name bridge only; no infection, clinical state or organism identity.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool partial-name bridge only; no infection, clinical state or organism identity. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "Mycobacterium tuberculosis",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-66-cue-audit.json#Mycobacterium tuberculosis",
+      "cue_scope": "Same tuber/cool reminder for the tuberculosis portion only; Mycobacterium portion unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-66-cue-audit.json#Mycobacterium tuberculosis (Mycobacterium tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Same tuber/cool reminder for the tuberculosis portion only; Mycobacterium portion unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "tubercles",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary potato tuber alone; sunglasses removed.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber opening-name fragment only; no nodule anatomy, pathology or complete tubercle pronunciation.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "meaningful_variant",
+      "selection_status": "candidate",
+      "change_origin": "new_revision",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuber with cool sunglasses), removing the cool fragment leaves the explicit tuber head for tubercles. Substantive encoded-scope reduction, not a new tuber primitive.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "sunglasses",
+        "removed"
+      ]
+    },
+    {
+      "term": "Ghon complex",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar brass gong on a stand.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Ghon/gong approximate surname sound only; complex, location and imaging appearance omitted.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Unlike docs/chapter-34-cue-audit.json#tuberculosis (tuber/cool), gong targets the source surname directly. No gong selected root returned in the bounded prior ingredient search; Ghon/gong final consonant and object naming remain uncertain.",
+      "ingredient_search_terms": [
+        "gong",
+        "Ghon",
+        "brass",
+        "stand"
+      ]
+    },
+    {
+      "term": "human immunodeficiency virus",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached toy shield alone.",
+      "prior": "docs/chapter-64-cue-audit.json#immunosuppression",
+      "cue_scope": "Immune/shield learned lexical category only; human, virus identity and deficiency not depicted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#immunosuppression, the same immune/shield category is used without a virus-specific claim. Earlier docs/chapter-55-cue-audit.json#Human immunodeficiency virus and46 HIV holds remain open; a beehive is not selected.",
+      "ingredient_search_terms": [
+        "shield"
+      ]
+    },
+    {
+      "term": "immigrants",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar travel suitcase crossing a model doorway.",
+      "prior": "docs/chapter-33-cue-audit.json#migration",
+      "cue_scope": "Migration/arrival action-category only; no nationality, legal status or patient appearance.",
+      "reason": "Candidate ordinary movement/arrival association, not an inference about a person or a medical risk.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-33-cue-audit.json#migration (suitcase moving between cubbies), same baggage/migration action bridge with an ordinary doorway instead of cubbies. This is not new association yield or an inference about nationality/legal status.",
+      "ingredient_search_terms": [
+        "suitcase",
+        "baggage",
+        "doorway",
+        "travel",
+        "crossing"
+      ]
+    },
+    {
+      "term": "prisons",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A recognizable barred model prison cell, without a ship mast.",
+      "prior": "docs/chapter-14-cue-audit.json#mast cells",
+      "cue_scope": "Prison/cell familiar setting category only; mast and medical meaning omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-14-cue-audit.json#mast cells (mast cells -> Ship's mast standing inside a recognizable barred prison cell.), this uses the same learned Prison/cell familiar setting category only; mast and medical meaning omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "barred",
+        "prison",
+        "cell",
+        "ship",
+        "mast"
+      ]
+    },
+    {
+      "term": "shelters for the homeless",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A neutral ordinary model house.",
+      "prior": "docs/chapter-64-cue-audit.json#nursing homes",
+      "cue_scope": "Shelter/home lexical head only; homelessness and a specific institution unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#nursing homes, the same house/shelter head is retained. It does not depict or diagnose homelessness; the source social descriptor is not inferred from appearance.",
+      "ingredient_search_terms": [
+        "neutral",
+        "house"
+      ]
+    },
+    {
+      "term": "Alcoholics",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A toy foamy beer mug standing alone, without cube.",
+      "prior": "docs/chapter-66-cue-audit.json#alcoholism",
+      "cue_scope": "Alcohol category reminder only, not a person, behavior judgment or diagnosis.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-66-cue-audit.json#alcoholism (alcoholism -> A toy foamy beer mug standing alone, without cube.), this uses the same learned Alcohol category reminder only, not a person, behavior judgment or diagnosis. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "foamy",
+        "beer",
+        "mug",
+        "cube"
+      ]
+    },
+    {
+      "term": "illicit drug users",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary unmarked medicine bottle alone, without pill token.",
+      "prior": "docs/chapter-66-cue-audit.json#IV drug abuse",
+      "cue_scope": "Drug/medicine familiar packaging category head only; illicit, users/person identity, IV/injection route, use/abuse and a specific substance omitted. No stigma, behavior judgment or clinical assertion.",
+      "reason": "C67-1: select actual66 drug-head medicine-bottle candidate. The available familiar drug category is useful without requiring illicit/user/injection modifiers. Original packet/prohibition trial remains in draft_history, not retroactively approved.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt",
+      "association_comparison": "Compared with docs/chapter-66-cue-audit.json#IV drug abuse (ordinary unmarked medicine bottle, IV/use/abuse omitted), this repeats the same drug-category head at the same deliberately limited scope. Underlying29A medications bottle is not a newly invented association. The earlier packet/prohibition ambiguity does not veto this available scoped head.",
+      "ingredient_search_terms": [
+        "medicine packet",
+        "prohibition",
+        "illicit",
+        "drug users",
+        "medicine",
+        "packet",
+        "behind",
+        "sign",
+        "medicine bottle",
+        "drug category"
+      ],
+      "attempted_cue": "An unmarked medicine packet behind a generic prohibition sign.",
+      "draft_history": [
+        {
+          "finding": "C67-1",
+          "frozen_input_sha256": "4c2e9808fe577b628a6d502cc252c0f3fce7fe24cc441c3e489f569e07397ecc",
+          "term": "illicit drug users",
+          "pdf_page": 27,
+          "page": 451,
+          "source_match": "table",
+          "kind": "familiar_category_action_or_partial_name",
+          "decision": "hold",
+          "cue": null,
+          "prior": "offline_unresolved_attempt",
+          "cue_scope": "Drug/prohibition category attempted; no selected reliable illicit-use or person identity.",
+          "reason": "Hold this particular packet/sign trial for weak category semantics, not for lacking every modifier or a novel prop; do not substitute patient stereotypes.",
+          "tested": false,
+          "association_status": "hold",
+          "selection_status": "hold",
+          "change_origin": "new_proposal",
+          "association_comparison": "Compared with docs/chapter-65-cue-audit.json#Alcoholism (beer mug) and33 needle props, neither a substance-specific alcohol bridge nor a needle represents unspecified illicit use. Packet/prohibition remains ambiguous between access restriction and an actual substance.",
+          "ingredient_search_terms": [
+            "medicine packet",
+            "prohibition",
+            "illicit",
+            "drug users",
+            "medicine",
+            "packet",
+            "behind",
+            "sign"
+          ],
+          "attempted_cue": "An unmarked medicine packet behind a generic prohibition sign."
+        }
+      ]
+    },
+    {
+      "term": "Elderly",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar calendar with many pages visibly turned back.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Elapsed-years/age category only, not a patient phenotype or age threshold.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-16-cue-audit.json#minute ventilation (clock/fan timing), calendar pages use elapsed years rather than respiratory rate. Calendar naming may suggest history; taught age bridge remains provisional.",
+      "ingredient_search_terms": [
+        "calendar",
+        "age",
+        "years",
+        "many",
+        "pages",
+        "visibly",
+        "turned",
+        "back"
+      ]
+    },
+    {
+      "term": "nursing home patients",
+      "pdf_page": 27,
+      "page": 451,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A neutral ordinary model house.",
+      "prior": "docs/chapter-64-cue-audit.json#nursing homes",
+      "cue_scope": "Home lexical head only; nursing, residents and level of care unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#nursing homes (nursing homes -> A single ordinary model house without a settlement.), this uses the same learned Home lexical head only; nursing, residents and level of care unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "neutral",
+        "house"
+      ]
+    },
+    {
+      "term": "primary tuberculosis",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; primary stage unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; primary stage unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "latent tuberculosis",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; latency and disease stage unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; latency and disease stage unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "reactivation tuberculosis",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; reactivation and clinical stage unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; reactivation and clinical stage unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "tuberculin skin test",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar freestanding skin cross-section teaching tile.",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "cue_scope": "Skin lexical category only; tuberculin, test result and reaction timing unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-36-cue-audit.json#intact dermis (intact dermis -> A freestanding familiar skin cross-section teaching model with an unbroken surface.), this uses the same learned Skin lexical category only; tuberculin, test result and reaction timing unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "skin",
+        "cross-section",
+        "tile"
+      ]
+    },
+    {
+      "term": "Mantoux",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar praying-mantis figurine.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Mant-/Mantoux approximate opening sound only; no full surname or skin-test interpretation.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis, mantis provides a separate Mant- name fragment rather than repeating the disease tuber. No selected mantis root found in the bounded ingredient search; insect species/object naming remains uncertain.",
+      "ingredient_search_terms": [
+        "mantis",
+        "Mantoux",
+        "praying-mantis",
+        "figurine"
+      ]
+    },
+    {
+      "term": "purified protein derivative",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A steak-shaped toy alone, without binder.",
+      "prior": "docs/chapter-62-cue-audit.json#protein",
+      "cue_scope": "Protein familiar food/category reminder only; purified/derivative, preparation, test or chemical origin unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#protein (protein -> A steak-shaped toy alone, without binder.), this uses the same learned Protein familiar food/category reminder only; purified/derivative, preparation, test or chemical origin unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "steak-shaped",
+        "binder"
+      ]
+    },
+    {
+      "term": "bacillus Calmette-Gu\u00e9rin",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A closed vaccine-vial study prop with detached toy shield.",
+      "prior": "docs/chapter-64-cue-audit.json#Immunization",
+      "cue_scope": "Source immunization context supplies the broad vaccine/immune packaging category; no strain/surname identity or equivalence among vaccines.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#Immunization (vaccine vial and shield), the same vaccine/immune category is selected because the source explicitly names immunization. Not a generic drug bottle substituted for the bacillus name; complete-name recovery requires context.",
+      "ingredient_search_terms": [
+        "closed",
+        "vaccine-vial",
+        "prop",
+        "shield"
+      ]
+    },
+    {
+      "term": "induration",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar rubber stamp pressing firmly against a hard wooden block.",
+      "prior": "docs/chapter-29A-cue-audit.json#false-negative reading",
+      "cue_scope": "Hardness/firmness ordinary category only; no skin finding, result or threshold.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#false-negative reading (minus/check-mark stamps), the known stamp host is now pressed against a hard block to cue firmness rather than a test reading. Explicit new action/category bridge on an old prop; no skin-test result encoded.",
+      "ingredient_search_terms": [
+        "hard block",
+        "firm",
+        "stamp",
+        "induration",
+        "rubber",
+        "pressing",
+        "firmly",
+        "against",
+        "hard",
+        "wooden",
+        "block"
+      ]
+    },
+    {
+      "term": "organ transplants",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potted plant being lifted with its root ball from one pot toward a second pot; weather vane removed.",
+      "prior": "docs/chapter-31-cue-audit.json#basilic vein",
+      "cue_scope": "Transplant ordinary plant-transfer double meaning only; no organ or clinical procedure.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#basilic vein (basil plus vane), the known plant host now uses the familiar transplanting action rather than basil-name sound. Plant-transfer bridge is new relative to that named record; not a surgical analogy.",
+      "ingredient_search_terms": [
+        "potted plant",
+        "transplant",
+        "pot",
+        "root ball",
+        "potted",
+        "plant",
+        "being",
+        "lifted",
+        "root",
+        "ball",
+        "one",
+        "toward",
+        "second",
+        "weather",
+        "vane",
+        "removed"
+      ]
+    },
+    {
+      "term": "prednisone",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy predatory dinosaur standing alone.",
+      "prior": "docs/chapter-38-cue-audit.json#prednisone",
+      "cue_scope": "Pred-/predator opening-name fragment only; no medication packaging or treatment claim.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-38-cue-audit.json#prednisone (prednisone -> A familiar toy predatory dinosaur standing alone.), this uses the same learned Pred-/predator opening-name fragment only; no medication packaging or treatment claim. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "predatory",
+        "dinosaur"
+      ]
+    },
+    {
+      "term": "silicosis",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "An ordinary silk scarf.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Sil-/silk approximate opening-name fragment only; no material exposure, chemical origin or diagnosis.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#silk suture, the selected old cue there is suit/chair, not a silk scarf. This is a different partial sound bridge, not reuse of a nonexistent selected silk prop.",
+      "ingredient_search_terms": [
+        "silk",
+        "scarf",
+        "silicosis"
+      ]
+    },
+    {
+      "term": "diabetes",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar standalone glucose-meter training prop.",
+      "prior": "docs/chapter-64-cue-audit.json#diabetes mellitus",
+      "cue_scope": "Same learned diabetes/glucose-meter category only; no diagnosis, reading or threshold.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#diabetes mellitus (diabetes mellitus -> A familiar standalone glucose-meter training prop.), this uses the same learned Same learned diabetes/glucose-meter category only; no diagnosis, reading or threshold. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "standalone",
+        "glucose-meter",
+        "training",
+        "prop"
+      ]
+    },
+    {
+      "term": "carcinoma of the head, neck, or lung",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Several clay-lump tumor-category study tokens, without neck model.",
+      "prior": "docs/chapter-62-cue-audit.json#adenocarcinoma",
+      "cue_scope": "Carcinoma/tumor-category head only; listed anatomy and subtype unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#adenocarcinoma (adenocarcinoma -> Several clay-lump tumor-category study tokens, without neck model.), this uses the same learned Carcinoma/tumor-category head only; listed anatomy and subtype unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "several",
+        "clay-lump",
+        "tumor-category",
+        "tokens",
+        "neck"
+      ]
+    },
+    {
+      "term": "anergic",
+      "pdf_page": 28,
+      "page": 452,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar household battery beside a blank empty charge icon.",
+      "prior": "docs/chapter-31-cue-audit.json#abdominal aortic aneurysms",
+      "cue_scope": "Anerg-/energy approximate name-wordplay only; no immune response or physiologic equivalence.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#abdominal aortic aneurysms (battery as AAA acronym), the same battery host now invokes energy/anerg- wordplay with empty-charge state. Different bridge; empty battery does not clinically define anergy.",
+      "ingredient_search_terms": [
+        "battery",
+        "empty charge",
+        "energy",
+        "anergy",
+        "household",
+        "blank",
+        "empty",
+        "charge",
+        "icon"
+      ]
+    },
+    {
+      "term": "blood tests",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "prior": "docs/chapter-29A-cue-audit.json#blood",
+      "cue_scope": "Blood lexical head only; testing, method and result unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#blood (blood -> A detached transparent vial containing plain red liquid.), this uses the same learned Blood lexical head only; testing, method and result unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "vial",
+        "containing",
+        "red",
+        "liquid"
+      ]
+    },
+    {
+      "term": "Interferon-gamma release assays (IGRAs)",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar radio console emitting a jagged static-noise token, without crew or physician.",
+      "prior": "docs/chapter-62-cue-audit.json#interferon-\u03b3",
+      "cue_scope": "Interfer-/interference approximate name bridge only; gamma, release, assay and test performance unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#interferon-\u03b3, radio interference repeats the same interfer- bridge. Earlier docs/chapter-66-cue-audit.json#interferon release assays intercom hold remains open; not a resolution of that different trial.",
+      "ingredient_search_terms": [
+        "radio",
+        "console",
+        "emitting",
+        "jagged",
+        "static-noise",
+        "crew",
+        "physician"
+      ]
+    },
+    {
+      "term": "chest radiograph",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached chest-shaped study token beside a plain radiograph-film frame.",
+      "prior": "docs/chapter-29A-cue-audit.json#chest radiograph",
+      "cue_scope": "Same learned chest-radiograph category only; no image interpretation or diagnostic claim.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#chest radiograph (chest radiograph -> A detached chest-shaped study token beside a plain radiograph-film frame.), this uses the same learned Same learned chest-radiograph category only; no image interpretation or diagnostic claim. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "chest-shaped",
+        "radiograph-film",
+        "frame"
+      ]
+    },
+    {
+      "term": "microscopy",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar tabletop microscope.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Microscopy familiar instrument category only; no organism, field or finding.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#ultrasonography (ultrasound probe/monitor), microscope is a distinct declared instrument, not a generic diagnostic-device substitution. No selected microscope root returned in the bounded saved ingredient results.",
+      "ingredient_search_terms": [
+        "microscope",
+        "microscopy",
+        "tabletop"
+      ]
+    },
+    {
+      "term": "cultures",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar closed laboratory culture dish alone, without blood drop.",
+      "prior": "docs/chapter-62-cue-audit.json#culture",
+      "cue_scope": "Same laboratory-culture dish category only; no organism, growth or test result.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#culture (culture -> A familiar closed laboratory culture dish alone, without blood drop.), this uses the same learned Same laboratory-culture dish category only; no organism, growth or test result. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "closed",
+        "laboratory",
+        "culture",
+        "dish",
+        "blood",
+        "drop"
+      ]
+    },
+    {
+      "term": "acid-fast bacilli",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous lemon alone; soap removed.",
+      "prior": "docs/chapter-31-cue-audit.json#acid-base",
+      "cue_scope": "Acid lexical category only; fastness and bacilli identity unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#acid-base (acid-base -> A lemon beside a bar of soap.), this uses the same learned Acid lexical category only; fastness and bacilli identity unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lemon",
+        "soap",
+        "removed"
+      ]
+    },
+    {
+      "term": "Ziehl-Neelsen stain",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy seal beside a kneeling toy figure.",
+      "prior": "docs/chapter-28-cue-audit.json#mask seal",
+      "cue_scope": "Ziehl/seal plus Neel-/kneel approximate partial-name bridge only; stain color, chemistry and procedure omitted.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-28-cue-audit.json#mask seal (seal carrying mask), the seal is a known ingredient but surname-sound plus kneeling action is a different bridge. Provisional surname pronunciation and seal/sea-lion naming need review.",
+      "ingredient_search_terms": [
+        "seal",
+        "kneel",
+        "Ziehl",
+        "Neelsen",
+        "kneeling",
+        "figure"
+      ]
+    },
+    {
+      "term": "nucleic acid amplification test (NAAT)",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous lemon alone; generic factory and conveyor belt removed.",
+      "prior": "docs/chapter-64-cue-audit.json#nucleic acid detection",
+      "cue_scope": "Acid lexical head only; nucleic, amplification and assay identity unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#nucleic acid detection (nucleic acid detection -> A conspicuous lemon alone; generic factory and conveyor belt removed.), this uses the same learned Acid lexical head only; nucleic, amplification and assay identity unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lemon",
+        "factory",
+        "conveyor",
+        "belt",
+        "removed"
+      ]
+    },
+    {
+      "term": "active tuberculosis",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; active state and treatment not encoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; active state and treatment not encoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "isoniazid",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous ice block alone.",
+      "prior": "docs/chapter-26-cue-audit.json#cooling",
+      "cue_scope": "Ice/iso- approximate opening-name sound only; no cooling effect or clinical action.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-26-cue-audit.json#cooling (ice as cold category), ice now supplies the opening eye-s sound of isoniazid. Different lexical bridge using the old host; remainder and medication effects omitted.",
+      "ingredient_search_terms": [
+        "ice",
+        "isoniazid",
+        "iso",
+        "block"
+      ]
+    },
+    {
+      "term": "rifampin",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar toy rifle, unloaded and on a display stand.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Rif-/rifle opening-name fragment only; no drug effect or full suffix.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-38-cue-audit.json#prednisone (predator name fragment), rifle supplies a separate economical Rif- bridge. No selected rifle root found in bounded prior ingredient search.",
+      "ingredient_search_terms": [
+        "rifle",
+        "rifampin",
+        "rif",
+        "unloaded",
+        "display",
+        "stand"
+      ]
+    },
+    {
+      "term": "rifapentine",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy rifle, unloaded and on a display stand.",
+      "prior": "docs/chapter-67-cue-audit.json#rifampin",
+      "cue_scope": "Same Rif-/rifle family fragment; -pentine and full drug identity omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-67-cue-audit.json#rifampin (rifampin -> A familiar toy rifle, unloaded and on a display stand.), this uses the same learned Same Rif-/rifle family fragment; -pentine and full drug identity omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "rifle",
+        "unloaded",
+        "display",
+        "stand"
+      ]
+    },
+    {
+      "term": "rifabutin",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy rifle, unloaded and on a display stand.",
+      "prior": "docs/chapter-67-cue-audit.json#rifampin",
+      "cue_scope": "Same Rif-/rifle family fragment; -butin and full drug identity omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-67-cue-audit.json#rifampin (rifampin -> A familiar toy rifle, unloaded and on a display stand.), this uses the same learned Same Rif-/rifle family fragment; -butin and full drug identity omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "rifle",
+        "unloaded",
+        "display",
+        "stand"
+      ]
+    },
+    {
+      "term": "ethambutol",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "One ordinary sturdy boot.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "-but-/boot approximate internal-name fragment only; opening and final name portions unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-52-cue-audit.json#bruits, boots was a held different sound trial, not a selected root. Here boot targets the stressed boot-like portion of ethambutol rather than bruits; no novel-object or full-name requirement. Naming/pronunciation uncertain.",
+      "ingredient_search_terms": [
+        "boot",
+        "ethambutol",
+        "butol",
+        "one",
+        "sturdy"
+      ]
+    },
+    {
+      "term": "pyrazinamide",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "One familiar toy pyramid, without an extra pyramid.",
+      "prior": "docs/chapter-35-cue-audit.json#extrapyramidal reactions",
+      "cue_scope": "Pyr-/pyramid approximate opening-name fragment only; remaining drug name and mechanism unencoded.",
+      "reason": "C67-2: keep the useful actual35 pyramid partial-name candidate and ingredient reuse, but recount it as unchanged_repeat rather than new_association. No complete-name or new-prop requirement; original classification preserved in draft_history.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "C67-2: compared with docs/chapter-35-cue-audit.json#extrapyramidal reactions (pyramid plus an extra miniature pyramid, explicit extra/pyramid partial-name vocabulary), the pyr-/pyramid name bridge already existed. Removing extra and shortening encoded scope preserves that bridge; a different drug name does not establish a new association or substantive variant.",
+      "ingredient_search_terms": [
+        "pyramid",
+        "pyrazinamide",
+        "one",
+        "extra"
+      ],
+      "draft_history": [
+        {
+          "finding": "C67-2",
+          "frozen_input_sha256": "4c2e9808fe577b628a6d502cc252c0f3fce7fe24cc441c3e489f569e07397ecc",
+          "term": "pyrazinamide",
+          "pdf_page": 31,
+          "page": 455,
+          "source_match": "table",
+          "kind": "familiar_category_action_or_partial_name",
+          "decision": "reuse_candidate",
+          "cue": "One familiar toy pyramid, without an extra pyramid.",
+          "prior": "docs/chapter-35-cue-audit.json#extrapyramidal reactions",
+          "cue_scope": "Pyr-/pyramid approximate opening-name fragment only; remaining drug name and mechanism unencoded.",
+          "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+          "tested": false,
+          "association_status": "new_association",
+          "selection_status": "candidate",
+          "change_origin": "new_proposal",
+          "association_comparison": "Compared with docs/chapter-35-cue-audit.json#extrapyramidal reactions (literal extra/pyramid name), one pyramid supplies the shorter pyr-/pyra- sound for pyrazinamide. Different partial-name bridge on a known prop, not a new pyramid family.",
+          "ingredient_search_terms": [
+            "pyramid",
+            "pyrazinamide",
+            "one",
+            "extra"
+          ]
+        }
+      ]
+    },
+    {
+      "term": "hepatitis",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar detached liver-lobe teaching model.",
+      "prior": "docs/chapter-34-cue-audit.json#liver lobe",
+      "cue_scope": "Hepat-/liver learned anatomy head only; inflammatory or viral subtype omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#liver lobe, same liver/hepat- anatomy category only. Earlier46 hepatitis A/B/C liver-plus-letter holds remain open; no subtype claim or full-name veto.",
+      "ingredient_search_terms": [
+        "liver-lobe"
+      ]
+    },
+    {
+      "term": "peripheral neuropathy",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A branching nerve-wire teaching token alone, without tibia or cube.",
+      "prior": "docs/chapter-61-cue-audit.json#neuropathy",
+      "cue_scope": "Same neuro-/nerve category only; peripheral, damage and clinical state unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-61-cue-audit.json#neuropathy (neuropathy -> A branching nerve-wire teaching token alone, without tibia or cube.), this uses the same learned Same neuro-/nerve category only; peripheral, damage and clinical state unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "branching",
+        "nerve-wire",
+        "tibia",
+        "cube"
+      ]
+    },
+    {
+      "term": "thrombocytopenia",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A small stack of miniature dinner plates.",
+      "prior": "docs/chapter-65-cue-audit.json#thrombocytopenia",
+      "cue_scope": "Platelet/little-plate learned family only; shortage/count and clinical meaning unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#thrombocytopenia (thrombocytopenia -> A small stack of miniature dinner plates.), this uses the same learned Platelet/little-plate learned family only; shortage/count and clinical meaning unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "small",
+        "stack",
+        "miniature",
+        "dinner",
+        "plates"
+      ]
+    },
+    {
+      "term": "GI disturbances",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar stomach teaching-model token alone.",
+      "prior": "docs/chapter-38-cue-audit.json#stomach",
+      "cue_scope": "Gastr-/GI learned stomach category only; intestinal breadth and disturbances unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-38-cue-audit.json#stomach (stomach -> A detached stomach teaching model on a display stand.), this uses the same learned Gastr-/GI learned stomach category only; intestinal breadth and disturbances unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "stomach",
+        "teaching-model"
+      ]
+    },
+    {
+      "term": "porphyria",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar purple paint swatch beside its paint tin.",
+      "prior": "docs/chapter-10-cue-audit.json#Gray",
+      "cue_scope": "Porphyr-/purple learned name-color association only; no urine color, symptom or biochemical origin.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-10-cue-audit.json#Gray (gray swatch for the unit homonym), a known swatch host now teaches porphyr/purple. This is a different lexical color bridge, not a new paint primitive; association needs teaching.",
+      "ingredient_search_terms": [
+        "purple",
+        "porphyria",
+        "paint swatch",
+        "paint",
+        "swatch",
+        "tin"
+      ]
+    },
+    {
+      "term": "retrobulbar neuritis",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A branching nerve-wire teaching token alone, without tibia or cube.",
+      "prior": "docs/chapter-61-cue-audit.json#neuropathy",
+      "cue_scope": "Neur-/nerve category only; retrobulbar location and inflammation omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-61-cue-audit.json#neuropathy (neuropathy -> A branching nerve-wire teaching token alone, without tibia or cube.), this uses the same learned Neur-/nerve category only; retrobulbar location and inflammation omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "branching",
+        "nerve-wire",
+        "tibia",
+        "cube"
+      ]
+    },
+    {
+      "term": "arthralgia",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An articulated joint teaching model alone.",
+      "prior": "docs/chapter-62-cue-audit.json#rheumatoid arthritis",
+      "cue_scope": "Arthr-/joint learned anatomy category only; pain and rheumatoid subtype not encoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#rheumatoid arthritis (rheumatoid arthritis -> An articulated joint teaching model alone, without motion arrow.), this uses the same learned Arthr-/joint learned anatomy category only; pain and rheumatoid subtype not encoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "articulated",
+        "joint"
+      ]
+    },
+    {
+      "term": "hyperuricemia",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar unmarked urine collection jug alone.",
+      "prior": "docs/chapter-12-cue-audit.json#urine output",
+      "cue_scope": "Uric-/urine approximate opening-family reminder only; urate, blood, excess and chemical identity not asserted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt",
+      "association_comparison": "Compared with docs/chapter-12-cue-audit.json#urine output (collection/output category), jug now cues the ur-/uric name fragment. Earlier docs/chapter-53-cue-audit.json#hyperuricemia urinal hold stays open; jug is an alternative scoped name trial, not a biochemical equivalence.",
+      "ingredient_search_terms": [
+        "urine jug",
+        "urinal",
+        "uric",
+        "hyperuricemia",
+        "urine",
+        "collection",
+        "jug"
+      ]
+    },
+    {
+      "term": "directly observed therapy (DOT)",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous watchful-eye token looking toward a plain closed medicine packet; bedside monitor removed.",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "cue_scope": "Observed/watchful-eye action category only; medication, regimen and therapeutic instructions omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "meaningful_variant",
+      "selection_status": "candidate",
+      "change_origin": "new_revision",
+      "association_comparison": "Compared with docs/chapter-23-cue-audit.json#procedural monitoring (monitor plus eye), eye-directed-to-packet adds the ordinary observation-of-medicine relation. Not an adherence protocol or clinical management claim.",
+      "ingredient_search_terms": [
+        "watchful eye",
+        "medicine packet",
+        "observed therapy",
+        "watchful-eye",
+        "looking",
+        "toward",
+        "closed",
+        "medicine",
+        "packet",
+        "bedside",
+        "monitor",
+        "removed"
+      ]
+    },
+    {
+      "term": "hypercalcemia",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Bone-shaped tokens visibly overflowing a transparent container.",
+      "prior": "docs/chapter-17-cue-audit.json#hypercalcemia",
+      "cue_scope": "Same learned calcium/excess category only; no laboratory interpretation, level or clinical link.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-17-cue-audit.json#hypercalcemia (hypercalcemia -> Bone-shaped tokens visibly overflowing a transparent container.), this uses the same learned Same learned calcium/excess category only; no laboratory interpretation, level or clinical link. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "bone-shaped",
+        "tokens",
+        "visibly",
+        "overflowing",
+        "container"
+      ]
+    },
+    {
+      "term": "paradoxical reaction",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "An ordinary toy arrow pointing against a matching row of arrows.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Contrary/paradox category only; no treatment response, timing or clinical mechanism.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#anterior approach (front relation), opposing arrows teach contradiction rather than anatomical direction. Arrow is familiar; no selected paradox bridge found in the bounded search.",
+      "ingredient_search_terms": [
+        "paradox",
+        "contrary",
+        "arrow",
+        "pointing",
+        "against",
+        "matching",
+        "row",
+        "arrows"
+      ]
+    },
+    {
+      "term": "immune reconstitution syndrome",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached toy shield alone.",
+      "prior": "docs/chapter-64-cue-audit.json#immunosuppression",
+      "cue_scope": "Immune/shield category only; reconstitution and syndrome mechanism unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#immunosuppression (immunosuppression -> A detached toy shield alone, closed vaccine vial removed.), this uses the same learned Immune/shield category only; reconstitution and syndrome mechanism unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "shield"
+      ]
+    },
+    {
+      "term": "high airflow",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar desk fan alone, hand crank removed.",
+      "prior": "docs/chapter-21-cue-audit.json#mechanical ventilation",
+      "cue_scope": "Airflow/ventilation fan category only; high state and rate unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-21-cue-audit.json#mechanical ventilation (mechanical ventilation -> Familiar desk fan with a conspicuous hand crank.), this uses the same learned Airflow/ventilation fan category only; high state and rate unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "desk",
+        "fan",
+        "hand",
+        "crank",
+        "removed"
+      ]
+    },
+    {
+      "term": "high-efficiency particulate filters",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar mesh sieve alone.",
+      "prior": "docs/chapter-56-cue-audit.json#GFR",
+      "cue_scope": "Filtering/sieve ordinary category only; particulate capture specification and performance unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-56-cue-audit.json#GFR (mesh sieve at filtering scope), same broad filtering bridge. No claim that a sieve is a respiratory filter, or that a specialized filter model was in the prior.",
+      "ingredient_search_terms": [
+        "mesh",
+        "sieve"
+      ]
+    },
+    {
+      "term": "ultraviolet germicidal irradiation",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary violet-colored lamp on a display stand.",
+      "prior": "docs/chapter-10-cue-audit.json#Gray",
+      "cue_scope": "Violet light/name-color fragment only; ultra-, germicidal action, radiation safety and clinical efficacy not encoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-10-cue-audit.json#Gray (color swatch), a violet lamp supplies a color/light category bridge. It is not a scientifically depicted ultraviolet spectrum or germ-killing mechanism. Lamp/color naming remains uncertain.",
+      "ingredient_search_terms": [
+        "violet",
+        "ultraviolet",
+        "lamp",
+        "irradiation",
+        "violet-colored",
+        "display",
+        "stand"
+      ]
+    },
+    {
+      "term": "negative-pressure isolation rooms",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar model room separated from neighboring rooms by a clear gap.",
+      "prior": "docs/chapter-21-cue-audit.json#confinement anxiety",
+      "cue_scope": "Isolation/separation ordinary relationship only; pressure sign, ventilation and room standards unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-21-cue-audit.json#confinement anxiety (cramped booth), detached room emphasizes separation, not anxiety or confinement. Known room/booth host, different ordinary isolation bridge.",
+      "ingredient_search_terms": [
+        "room",
+        "booth",
+        "isolation",
+        "negative pressure",
+        "separated",
+        "neighboring",
+        "rooms",
+        "clear",
+        "gap"
+      ]
+    },
+    {
+      "term": "particulate filter masks or respirators",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A standalone surgical-style mask with ear loops.",
+      "prior": "docs/chapter-33-cue-audit.json#mask",
+      "cue_scope": "Mask familiar object category only; filter type, respirator subtype and efficacy unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-33-cue-audit.json#mask, same mask category only. Surgical-style appearance is explicitly not claimed to be a high-efficiency respirator; source alternatives mapped at shared mask lexical head.",
+      "ingredient_search_terms": [
+        "standalone",
+        "surgical-style",
+        "mask",
+        "ear",
+        "loops"
+      ]
+    },
+    {
+      "term": "multidrug-resistant tuberculosis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; number of drugs, resistance and definitions unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; number of drugs, resistance and definitions unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "Extensive drug-resistant tuberculosis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; literal Extensive wording preserved, resistance and definitions unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; literal Extensive wording preserved, resistance and definitions unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "delamanid",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar delicatessen counter with unlabelled sandwiches in its display.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Dela-/deli approximate opening-name bridge only; no mechanism, efficacy or full suffix.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-29B-cue-audit.json#delirium (held deli counter plus spinning toy), the counter alone is a separate scoped dela-name trial without arbitrary spinning. An old held ingredient is not a selected root or veto; naming may be deli/shop/food counter.",
+      "ingredient_search_terms": [
+        "deli counter",
+        "delamanid",
+        "delirium",
+        "delicatessen",
+        "counter",
+        "unlabelled",
+        "sandwiches",
+        "display"
+      ]
+    },
+    {
+      "term": "bedaquiline",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary toy bed alone.",
+      "prior": "docs/chapter-56-cue-audit.json#Bed rest",
+      "cue_scope": "Bed opening-name fragment only; rest, remaining name and clinical use unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-56-cue-audit.json#Bed rest (literal bed/rest category), bed now serves the opening beda-/bed sound. Different lexical bridge, same known bed; no proposed quill needed.",
+      "ingredient_search_terms": [
+        "bed",
+        "bedaquiline"
+      ]
+    },
+    {
+      "term": "pretomanid",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar knotted pretzel.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Pret-/pretzel opening-name fragment only; remainder and drug action unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-38-cue-audit.json#prednisone (predator fragment), pretzel is a different pret- sound fragment with a familiar food shape. No selected pretzel root found in bounded ingredient search.",
+      "ingredient_search_terms": [
+        "pretzel",
+        "pretomanid",
+        "knotted"
+      ]
+    },
+    {
+      "term": "SQ-109",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "hold",
+      "cue": null,
+      "prior": "offline_unresolved_attempt",
+      "cue_scope": "Opaque alphanumeric development code; no selected economical identity bridge.",
+      "reason": "Hold the attempted square/code construction: arbitrary alphanumeric props do not add a useful recognizable association.",
+      "tested": false,
+      "association_status": "hold",
+      "selection_status": "hold",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#E cylinder, that code has a source-named actual device category, while square plus numbers here would merely print/rebus an opaque identifier. Not a full-syllable or untrained-naming veto.",
+      "ingredient_search_terms": [
+        "SQ-109",
+        "square",
+        "number blocks",
+        "unlabelled",
+        "tile",
+        "row",
+        "number",
+        "blocks"
+      ],
+      "attempted_cue": "An unlabelled square tile beside a row of number blocks."
+    },
+    {
+      "term": "children",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A neutral smaller toy figure beside an otherwise matching adult-size toy figure.",
+      "prior": "docs/chapter-2-cue-audit.json#personal protective equipment",
+      "cue_scope": "Child/adult familiar relative-age category only; no age threshold or clinical distinction.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-2-cue-audit.json#personal protective equipment (person in protective suit), a known person host now uses familiar relative-age/size category, without the suit. No specific chronological age or medical risk encoded.",
+      "ingredient_search_terms": [
+        "toy figure",
+        "child",
+        "adult",
+        "neutral",
+        "smaller",
+        "figure",
+        "otherwise",
+        "matching",
+        "adult-size"
+      ]
+    },
+    {
+      "term": "cervical lymphadenitis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar lime beside an ordinary tied knot.",
+      "prior": "docs/chapter-31-cue-audit.json#acid-base",
+      "cue_scope": "Lymph/lime plus node/knot approximate name-family reminder only; cervical location and inflammation unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#acid-base (lemon/soap), lime is a declared citrus-host variant for lymph sound rather than acid. Knot adds node-family wordplay; not a depiction of lymphatic anatomy. Earlier bank had no selected exact lymphadenitis root.",
+      "ingredient_search_terms": [
+        "lime",
+        "lymph",
+        "knot",
+        "node",
+        "lymphadenitis",
+        "tied"
+      ]
+    },
+    {
+      "term": "miliary tuberculosis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "An ordinary scoop of millet seed beside its unlabelled seed packet.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Miliary/millet familiar name association only; no distribution, pathology, organ or clinical definition.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuber/cool), millet targets the miliary qualifier instead of repeating the tuber. Source names millet; seed species recognition requires context and is not untrained diagnosis. No selected millet ingredient found in bounded search.",
+      "ingredient_search_terms": [
+        "millet",
+        "seed",
+        "miliary",
+        "scoop",
+        "unlabelled",
+        "packet"
+      ]
+    },
+    {
+      "term": "extrapulmonary tuberculosis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber/cool name reminder only; extrapulmonary scope and organ distribution unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Tuber/cool name reminder only; extrapulmonary scope and organ distribution unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "tuberculosis cutis miliaris disseminata",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar freestanding skin cross-section teaching tile.",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "cue_scope": "Cutis/skin learned lexical category only; miliary, dissemination and disease features unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-36-cue-audit.json#intact dermis (intact dermis -> A freestanding familiar skin cross-section teaching model with an unbroken surface.), this uses the same learned Cutis/skin learned lexical category only; miliary, dissemination and disease features unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "skin",
+        "cross-section",
+        "tile"
+      ]
+    },
+    {
+      "term": "tuberculosis cutis acuta generalisata",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar freestanding skin cross-section teaching tile.",
+      "prior": "docs/chapter-36-cue-audit.json#intact dermis",
+      "cue_scope": "Cutis/skin learned lexical category only; acuta, generalisata and disease features unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-36-cue-audit.json#intact dermis (intact dermis -> A freestanding familiar skin cross-section teaching model with an unbroken surface.), this uses the same learned Cutis/skin learned lexical category only; acuta, generalisata and disease features unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "skin",
+        "cross-section",
+        "tile"
+      ]
+    },
+    {
+      "term": "tuberculous meningitis",
+      "pdf_page": 32,
+      "page": 456,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar brain teaching model with a separately lifted outer covering.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Mening-/meningeal covering learned anatomy category only; no inflammation, organism or specific disease.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#left lung (detached lung anatomy token), the lung is not a meningeal subtype. A brain-covering teaching model is a declared new model, not an invented earlier specific meningeal root. Anatomy naming remains specialized.",
+      "ingredient_search_terms": [
+        "meningeal model",
+        "brain",
+        "covering",
+        "meningitis",
+        "separately",
+        "lifted",
+        "outer"
+      ]
+    },
+    {
+      "term": "hydrocephalus",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary transparent pitcher of water, without scale marks.",
+      "prior": "docs/chapter-34-cue-audit.json#pericardial volume",
+      "cue_scope": "Hydro-/water familiar lexical head only; cephalic site, collection and disease unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#pericardial volume (measuring pitcher/volume), explicit water contents supply hydro- word-family rather than volume. Not a hydrocephalus anatomy or mechanism claim.",
+      "ingredient_search_terms": [
+        "water",
+        "pitcher",
+        "hydrocephalus",
+        "scale",
+        "marks"
+      ]
+    },
+    {
+      "term": "community-acquired pneumonia",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token, without blockage or hourglass.",
+      "prior": "docs/chapter-65-cue-audit.json#pneumonia",
+      "cue_scope": "Pneumon-/lung lexical head only; community acquisition and infection unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#pneumonia (pneumonia -> A detached lung-shaped teaching token, without blockage or hourglass.), this uses the same learned Pneumon-/lung lexical head only; community acquisition and infection unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lung-shaped",
+        "blockage",
+        "hourglass"
+      ]
+    },
+    {
+      "term": "antibiotics",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar ant figurine alone.",
+      "prior": "docs/chapter-64-cue-audit.json#antigen detection",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#antigen detection (ant for anti-/antigen opening), this repeats the same anti-/ant opening sound without the old assay context. Earlier docs/chapter-66-cue-audit.json#antibiotics and#antibiotic therapy generic-bottle holds stay open; a specific class is not claimed.",
+      "ingredient_search_terms": [
+        "ant",
+        "antibiotic",
+        "shield",
+        "figurine"
+      ]
+    },
+    {
+      "term": "cavitary",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An empty hollow toy block alone.",
+      "prior": "docs/chapter-31-cue-audit.json#marrow cavity",
+      "cue_scope": "Cavity/hollow shape category only; lesion, disease and location omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#marrow cavity (marrow cavity -> A vegetable marrow beside an empty hollow toy block.), this uses the same learned Cavity/hollow shape category only; lesion, disease and location omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "empty",
+        "hollow",
+        "block"
+      ]
+    },
+    {
+      "term": "upper lobe",
+      "pdf_page": 30,
+      "page": 454,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token alone.",
+      "prior": "docs/chapter-34-cue-audit.json#left lung",
+      "cue_scope": "Lung anatomy lexical category only; upper, side, apex and lobe subdivision omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#left lung (left lung -> A lung-shaped teaching token standing alone, without a blockage or hourglass.), this uses the same learned Lung anatomy lexical category only; upper, side, apex and lobe subdivision omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lung-shaped"
+      ]
+    },
+    {
+      "term": "infiltrates",
+      "pdf_page": 29,
+      "page": 453,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar kitchen mesh sieve alone.",
+      "prior": "docs/chapter-56-cue-audit.json#GFR",
+      "cue_scope": "-filtr-/filter approximate internal-name fragment only; no imaging opacity, anatomy or filtering mechanism.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "reconsidered_attempt",
+      "association_comparison": "Compared with docs/chapter-55-cue-audit.json#Infiltrate (held kitchen-filter attempt), this keeps the same partial filter bridge rather than claiming a new idea. The actual selected sieve host is docs/chapter-56-cue-audit.json#GFR, where filtering is a category bridge. Earlier55/65 infiltrate holds remain open.",
+      "ingredient_search_terms": [
+        "filter",
+        "sieve",
+        "infiltrate",
+        "kitchen",
+        "mesh"
+      ]
+    },
+    {
+      "term": "drug interactions",
+      "pdf_page": 31,
+      "page": 455,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An anonymous closed medicine-vial token alone, without atomic symbol.",
+      "prior": "docs/chapter-51-cue-audit.json#Nuclear Medicine",
+      "cue_scope": "Medicine packaging category only; no drug identity, interaction direction or effect.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-51-cue-audit.json#Nuclear Medicine (atomic toy plus medicine vial), same medicine-packaging head with atomic symbol removed. The interaction qualifier is explicitly NOT encoded; no new relational bridge or pharmacology claim.",
+      "ingredient_search_terms": [
+        "medicine vial",
+        "interaction",
+        "pair",
+        "two",
+        "anonymous",
+        "closed",
+        "medicine-vial",
+        "tokens",
+        "facing",
+        "each",
+        "other",
+        "atomic",
+        "symbol"
+      ]
+    }
+  ],
+  "counts": {
+    "selected_terms": 78,
+    "new_candidates": 12,
+    "reused_candidates": 65,
+    "holds": 1
+  },
+  "resolved_holds": [
+    {
+      "term": "illicit drug users",
+      "scope": "current_bank_only",
+      "earlier_hold_remains_open": true,
+      "date": "2026-10-24",
+      "finding": "C67-1",
+      "resolution": "Current67 frozen packet/prohibition hold replaced by actual66 selected drug-head bottle category, with illicit/user/injection/substance qualifiers explicitly omitted. Only this67 hold resolved; no older bank hold or historical packet trial erased, and no empirical recognition claim.",
+      "history": [
+        {
+          "decision": "hold",
+          "attempt": "An unmarked medicine packet behind a generic prohibition sign.",
+          "reason": "Hold this particular packet/sign trial for weak category semantics, not for lacking every modifier or a novel prop; do not substitute patient stereotypes.",
+          "reference": "laneA/before-C67/chapter-67-cue-audit.json#illicit drug users",
+          "frozen_input_sha256": "4c2e9808fe577b628a6d502cc252c0f3fce7fe24cc441c3e489f569e07397ecc"
+        }
+      ]
+    }
+  ],
+  "prior_hold_history": [
+    {
+      "term": "Mycobacterium tuberculosis",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-55-cue-audit.json#Mycobacterium tuberculosis",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "human immunodeficiency virus",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-55-cue-audit.json#Human immunodeficiency virus",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term."
+        },
+        {
+          "reference": "docs/chapter-61-cue-audit.json#human immunodeficiency virus",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "No economical lexical/category bridge selected."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "hyperuricemia",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-53-cue-audit.json#hyperuricemia",
+          "decision": "hold",
+          "attempt": "An ordinary urinal fixture.",
+          "reason": "Urinal is only a nearby urine-word association, not uric/name or analyte identity. No useful selected cue for the head. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "antibiotics",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-33-cue-audit.json#antibiotics",
+          "decision": "hold",
+          "attempt": "A toy aunt beside a small robot.",
+          "reason": "Aunt/robot does not stably recover antibiotic; anonymous pill would be too broad for class recall."
+        },
+        {
+          "reference": "docs/chapter-39-cue-audit.json#antibiotics",
+          "decision": "hold",
+          "attempt": "A toy aunt beside a small robot.",
+          "reason": "Tried older aunt/robot pairing; awkward two-prop sound route remains less useful than a familiar class object. Generic pill alone does not add a specific antibiotic association here; hold is not for omitted qualifiers."
+        },
+        {
+          "reference": "docs/chapter-46-cue-audit.json#Antibiotics",
+          "decision": "hold",
+          "attempt": "A blank medicine bottle beside a stop barrier.",
+          "reason": "Broad anti/drug attempt does not economically cue antibiotic rather than other drugs. Historical antibiotic holds remain open."
+        },
+        {
+          "reference": "docs/chapter-47-cue-audit.json#antibiotics",
+          "decision": "hold",
+          "attempt": "A blank medicine bottle beside a stop barrier.",
+          "reason": "Anti/drug attempt tried; no selected antibiotic-specific economical cue, preserve older holds."
+        },
+        {
+          "reference": "docs/chapter-66-cue-audit.json#antibiotics",
+          "decision": "hold",
+          "attempt": "An ordinary unmarked medicine bottle alone, without pill token.",
+          "reason": "B66-5: withdraw the generic medicine-bottle substitution. Its medicine category is not a meaningful encoded anti-/antibiotic name or distinctive class bridge here. No more specific economical visual selected in this bounded review; not a full-syllable or unique-blind-name requirement."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "infiltrates",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-65-cue-audit.json#infiltrates",
+          "decision": "hold",
+          "attempt": "A kitchen filter.",
+          "reason": "No economical infiltrates name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Filter/infiltrate partial word association considered; filter/infiltrate direction and naming remain unresolved, not promoted merely because topic is pulmonary."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    }
+  ],
+  "keyword_screen": {
+    "method": "Actual owned regions reviewed in every supplied1.5x raster with native span/font/bbox text and annotation arrays; headings, bold/italic lexical emphasis, tables including comments/footnotes, figures/captions/labels and selected promising body heads. Administrative prose and numbers excluded only after meaningful lexical heads mapped. Occurrence list is bounded lexical screening, not exhaustive clinical coverage.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "All assigned native annotation arrays empty. Visible rasters inspected; flattened or historical markup cannot be excluded."
+    },
+    "items": [
+      {
+        "term": "Tuberculosis",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Mycobacterium tuberculosis",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Mycobacterium tuberculosis",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "tubercles",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "tubercles",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Ghon complex",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Ghon complex",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "human immunodeficiency virus",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "human immunodeficiency virus",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "immigrants",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "immigrants",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "prisons",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "prisons",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "shelters for the homeless",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "shelters for the homeless",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Alcoholics",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Alcoholics",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "illicit drug users",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "illicit drug users",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated.",
+        "wording_note": "C67-1 scoped drug/medicine head only; literal source descriptor preserved, illicit/user/injection route omitted. Injection and illicit are not equated; no specific substance inferred. Prior packet attempt preserved."
+      },
+      {
+        "term": "Elderly",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Elderly",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "nursing home patients",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "nursing home patients",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "primary tuberculosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "primary tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "latent tuberculosis",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "latent tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "reactivation tuberculosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "reactivation tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "tuberculin skin test",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "tuberculin skin test",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Mantoux",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "Mantoux",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "purified protein derivative",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "purified protein derivative",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "bacillus Calmette-Gu\u00e9rin",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "bacillus Calmette-Gu\u00e9rin",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "induration",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "induration",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "organ transplants",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "organ transplants",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "prednisone",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "prednisone",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "silicosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "silicosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "diabetes",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "diabetes",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "carcinoma of the head, neck, or lung",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "carcinoma of the head, neck, or lung",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "anergic",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "anergic",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "blood tests",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "blood tests",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Interferon-gamma release assays (IGRAs)",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "Interferon-gamma release assays (IGRAs)",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "chest radiograph",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "chest radiograph",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "microscopy",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "microscopy",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "cultures",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "cultures",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "acid-fast bacilli",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "acid-fast bacilli",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Ziehl-Neelsen stain",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "Ziehl-Neelsen stain",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "nucleic acid amplification test (NAAT)",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "nucleic acid amplification test (NAAT)",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "active tuberculosis",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "active tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "isoniazid",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "isoniazid",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "rifampin",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "rifampin",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "rifapentine",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "rifapentine",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "rifabutin",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "rifabutin",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "ethambutol",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "ethambutol",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "pyrazinamide",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "pyrazinamide",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "hepatitis",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "hepatitis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "peripheral neuropathy",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "peripheral neuropathy",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "thrombocytopenia",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "thrombocytopenia",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "GI disturbances",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "GI disturbances",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "porphyria",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "porphyria",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "retrobulbar neuritis",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "retrobulbar neuritis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "arthralgia",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "arthralgia",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "hyperuricemia",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "hyperuricemia",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "directly observed therapy (DOT)",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "directly observed therapy (DOT)",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "hypercalcemia",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "hypercalcemia",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "paradoxical reaction",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "paradoxical reaction",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "immune reconstitution syndrome",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "immune reconstitution syndrome",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "high airflow",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "high airflow",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "high-efficiency particulate filters",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "high-efficiency particulate filters",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "ultraviolet germicidal irradiation",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "ultraviolet germicidal irradiation",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "negative-pressure isolation rooms",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "negative-pressure isolation rooms",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "particulate filter masks or respirators",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "particulate filter masks or respirators",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "multidrug-resistant tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "multidrug-resistant tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Extensive drug-resistant tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "Extensive drug-resistant tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "delamanid",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "delamanid",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "bedaquiline",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "bedaquiline",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "pretomanid",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "pretomanid",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "SQ-109",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "SQ-109",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "children",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "children",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "cervical lymphadenitis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "cervical lymphadenitis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "miliary tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "miliary tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "extrapulmonary tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "extrapulmonary tuberculosis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "tuberculosis cutis miliaris disseminata",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "tuberculosis cutis miliaris disseminata",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "tuberculosis cutis acuta generalisata",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "tuberculosis cutis acuta generalisata",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "tuberculous meningitis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "tuberculous meningitis",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "hydrocephalus",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "hydrocephalus",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Repeated actual title/table/caption/body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Repeated actual title/table/caption/body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Repeated actual title/table/caption/body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Repeated actual title/table/caption/body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Repeated actual title/table/caption/body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "tuberculosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Boundary continuation body lexical head.",
+        "wording_note": "Case normalized; qualifiers screened separately where meaningful."
+      },
+      {
+        "term": "Primary Ghon complex",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Ghon complex",
+        "emphasis": "Figure67-1 caption",
+        "wording_note": "Primary qualifier omitted by the surname cue; arrow is a pointer, not a medical head."
+      },
+      {
+        "term": "Patients With a High Prevalence of Tuberculosis",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Table67-1 title",
+        "wording_note": "Prevalence/risk ordering is not encoded; population lexical heads are separately screened."
+      },
+      {
+        "term": "skin test",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "tuberculin skin test",
+        "emphasis": "Bold full statement lexical head",
+        "wording_note": "Timing and positivity clause excluded only after extracting skin test."
+      },
+      {
+        "term": "Mantoux or tuberculin skin test",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "Mantoux",
+        "emphasis": "Actual subheading",
+        "wording_note": "Two lexical alternatives split; skin-test head has its own entry."
+      },
+      {
+        "term": "human immunodeficiency virus",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "human immunodeficiency virus",
+        "emphasis": "Table67-2 cell"
+      },
+      {
+        "term": "injection drug users",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "illicit drug users",
+        "emphasis": "Table67-2 cell",
+        "wording_note": "C67-1 scoped drug/medicine head only; literal source descriptor preserved, illicit/user/injection route omitted. Injection and illicit are not equated; no specific substance inferred. Prior packet attempt preserved."
+      },
+      {
+        "term": "immigrants",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "immigrants",
+        "emphasis": "Table67-2 cell"
+      },
+      {
+        "term": "long-term care facility residents",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "nursing home patients",
+        "emphasis": "Table67-2 cell",
+        "wording_note": "Explicit related institutional/home head alias; no clinical equivalence or full descriptor encoding."
+      },
+      {
+        "term": "Children",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "children",
+        "emphasis": "Table67-2 cell",
+        "wording_note": "Age cutoff excluded after child head extracted."
+      },
+      {
+        "term": "Interpretation of a Purified Protein Derivative Skin Test",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "purified protein derivative",
+        "emphasis": "Table67-2 title",
+        "wording_note": "Protein derivative and skin-test lexical heads both screened, interpretation/thresholds excluded."
+      },
+      {
+        "term": "Detection of newly infected persons in a screening program",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Table67-2 emphasized row heading",
+        "wording_note": "Tuberculosis topic head mapped only; screening/detection generic process wording excluded, infection state not depicted."
+      },
+      {
+        "term": "M. tuberculosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "Mycobacterium tuberculosis",
+        "emphasis": "Italic abbreviated organism",
+        "wording_note": "Explicit abbreviation expansion, line-wrap normalized."
+      },
+      {
+        "term": "M. tuberculosis",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "Mycobacterium tuberculosis",
+        "emphasis": "Italic abbreviated organism",
+        "wording_note": "Explicit abbreviation expansion."
+      },
+      {
+        "term": "Reactivation infections",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "reactivation tuberculosis",
+        "emphasis": "Bold body phrase",
+        "wording_note": "Contextual reactivation-tuberculosis alias; infection state not encoded."
+      },
+      {
+        "term": "Reactivation tuberculosis",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "reactivation tuberculosis",
+        "emphasis": "Figure67-2 caption"
+      },
+      {
+        "term": "community-acquired pneumonia",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "community-acquired pneumonia",
+        "emphasis": "Figure67-2 caption lexical term",
+        "wording_note": "Caption lexical term; same source head as65 pneumonia, community-acquired qualifier omitted."
+      },
+      {
+        "term": "antibiotics",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "antibiotics",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "Cavitary tuberculosis of the right upper lobe",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Figure67-3 caption",
+        "wording_note": "Cavitary and anatomical heads screened below; full disease depiction not claimed."
+      },
+      {
+        "term": "cavitary",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "cavitary",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "upper lobe",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "upper lobe",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "Advanced pulmonary tuberculosis involving apex and upper lobe",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Figure67-4 caption",
+        "wording_note": "Advanced qualifier not encoded; pulmonary/apex head maps to upper lobe at lung-only scope, not a fabricated specific apex model."
+      },
+      {
+        "term": "apex",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "upper lobe",
+        "emphasis": "Figure67-4 caption",
+        "wording_note": "Lung-only category mapping; apex is not depicted."
+      },
+      {
+        "term": "Treatment of Tuberculosis (Adults)",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Table67-3 title",
+        "wording_note": "Treatment not encoded; Adults generic age-category comparator screened through children entry."
+      },
+      {
+        "term": "Adults",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "children",
+        "emphasis": "Table67-3 title",
+        "wording_note": "Child/adult relative category comparator only; no age cutoff."
+      },
+      {
+        "term": "Drug interactions",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "drug interactions",
+        "emphasis": "Table67-3 comments",
+        "wording_note": "Interaction relation separately tried, not equated with illicit drug use."
+      },
+      {
+        "term": "antituberculous medications",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Bold full clinical instruction lexical head",
+        "wording_note": "Tuberculous head explicitly mapped, no claim generic medicines encode a specific regimen; instruction excluded."
+      },
+      {
+        "term": "HIV testing",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "human immunodeficiency virus",
+        "emphasis": "Bold full clinical instruction lexical head",
+        "wording_note": "Acronym expanded to the spelled-out virus phrase in this chapter; testing instruction not encoded."
+      },
+      {
+        "term": "Engineering Controls to Reduce the Transmission of Tuberculosis",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Table67-4 title",
+        "wording_note": "Listed control-device/room/light heads separately screened; no transmission or efficacy claim."
+      },
+      {
+        "term": "ventilation system",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "high airflow",
+        "emphasis": "Table67-4 cell",
+        "wording_note": "Fan category only, efficiency/rate omitted."
+      },
+      {
+        "term": "external exhaust",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "high airflow",
+        "emphasis": "Table67-4 cell",
+        "wording_note": "Airflow/fan lexical category only; routing/external qualifier omitted."
+      },
+      {
+        "term": "Personal respiratory protection",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "particulate filter masks or respirators",
+        "emphasis": "Table67-4 cell",
+        "wording_note": "Shared mask/protection category, no particular respirator certification encoded."
+      },
+      {
+        "term": "human immunodeficiency virus",
+        "pdf_page": 31,
+        "page": 455,
+        "entry_term": "human immunodeficiency virus",
+        "emphasis": "Actual special-population heading and table comment"
+      },
+      {
+        "term": "delamanid",
+        "pdf_page": 30,
+        "page": 454,
+        "entry_term": "delamanid",
+        "emphasis": "Promising body drug-name head",
+        "wording_note": "Repeated later in bold32."
+      },
+      {
+        "term": "cervical lymphadenitis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "cervical lymphadenitis",
+        "emphasis": "Promising body head",
+        "wording_note": "Later bold32 occurrence separately recorded."
+      },
+      {
+        "term": "Extrapulmonary tuberculosis",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "extrapulmonary tuberculosis",
+        "emphasis": "Italicized statement lexical head",
+        "wording_note": "Statement not used as whole-sentence exclusion; disease lexical head explicitly retained."
+      },
+      {
+        "term": "M. tuberculosis",
+        "pdf_page": 32,
+        "page": 456,
+        "entry_term": "Mycobacterium tuberculosis",
+        "emphasis": "Italic abbreviated organism"
+      },
+      {
+        "term": "infiltrates",
+        "pdf_page": 29,
+        "page": 453,
+        "entry_term": "infiltrates",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "primary and latent infection",
+        "pdf_page": 27,
+        "page": 451,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Actual subheading",
+        "wording_note": "Disease/topic head mapped; primary/latent modifiers separately occur in28/29 entries."
+      },
+      {
+        "term": "nursing home patients",
+        "pdf_page": 28,
+        "page": 452,
+        "entry_term": "nursing home patients",
+        "emphasis": "Table67-2 long-term care alias",
+        "wording_note": "Long-term care facility residents is related institutional wording; home category only."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 27,
+        "description": "Chapter number, authors, running headers, Introduction and Epidemiology, Pathophysiology, Primary and Latent Infection framing; numerical prevalence/risk ranks",
+        "reason": "Administrative/navigation or generic framing, not additional lexical cues. Tuberculosis, primary/latent and population heads separately mapped. No clinical data copied."
+      },
+      {
+        "pdf_page": 28,
+        "description": "Clinical Features and Diagnosis/Differential Diagnosis framing; full skin-test timing and mimic statements; Table67-2 numeric cutoffs, timing, positivity, generic close contact/screening/detection program prose",
+        "reason": "Lexical skin test, extrapulmonary tuberculosis, induration, human immunodeficiency virus, organ transplant, prednisone, silicosis, diabetes, carcinoma, children and anergic heads separately mapped before excluding thresholds/claims."
+      },
+      {
+        "pdf_page": 29,
+        "description": "Figure IDs/panel letters, pointer arrows, embedded acquisition stamps; full Figure67-2 treatment-response narrative and numeric diagnostic performance",
+        "reason": "Caption disease/antibiotic/infiltrate heads separately screened where meaningful; identifiers and clinical sequence are not visual vocabulary targets. Tiny acquisition text not interpreted."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Treatment framing and bullet regimens, frequencies, weeks, percentages, drug combinations; connecting italic or; full adverse-effect paragraphs",
+        "reason": "Individual named drug heads selected, not regimen facts. Paradoxical reaction/immune reconstitution extracted from split bold spans before excluding clinical prose."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Table67-3 schedule/dose columns, daily/weekly maximum labels, Comments framing, PO, numeric DOT schedules and URL footnote; Disposition/Follow-Up, Outpatient Care, Hospital Admission and Special Populations framing",
+        "reason": "DOT lexical expansion separately selected; drug names, meaningful comment heads and HIV/TB instruction heads separately screened. Generic care-location/navigation/administrative text, not clinical recommendations."
+      },
+      {
+        "pdf_page": 32,
+        "description": "Children age thresholds, resistance definitions/regimens, generic organ list in regular body, connecting italic after and or, figure/table navigation",
+        "reason": "All meaningful disease/subheading and italic disease names mapped. Regular-body incidental organ census not expanded into a redundant bank. Selected body drug names included without copying treatment facts."
+      },
+      {
+        "pdf_page": 33,
+        "description": "References header and publisher URL; upperLEFT67 treatment continuation instruction",
+        "reason": "Hydrocephalus, tuberculous meningitis and tuberculosis lexical heads already mapped. Exclude ALLRIGHT33 and lowerLEFT68, not chapter67 source."
+      }
+    ]
+  },
+  "comparison_universe": "Chapters1-66, canonical catalog, two sound workshops,62-64 and65-66 association second-look supplements. Exact term/root and actual cue-ingredient searches saved in laneA. No concurrent69-71 bank references; possible parallel overlap not adjudicated. Association classes are reasoned local comparisons, not corpus-wide novelty or unique library-growth counts.",
+  "cue_policy": "Familiar category, packaging, action and partial-name bridges allowed with explicit scope. No all-syllable or untrained-unique-name requirement. No unsupported specific subtype or generic topic prop presented as a name cue.",
+  "review_status": "Independent source/conceptual review and bounded repair rechecks complete; main integrated. Offline untested; not production admitted.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch67-71/laneA/",
+  "coverage_limits": [
+    "Native line spans are not exact per-word boxes; line wraps, ligatures and shared heads normalized explicitly. Rasters corroborate layout, not exhaustive clinical coverage.",
+    "No visible highlight was identified and annotation arrays were empty; flattened markup or tiny embedded image overlays may escape identification.",
+    "Selected scope may omit qualifiers. Taught object/category/sound naming remains uncertain; no clinical currency, recall, rendering, originality or production evidence.",
+    "Older bank holds remain open. One actual current67 frozen hold (illicit drug users) explicitly resolved at drug-head-only scope in resolved_holds; first attempt preserved."
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "association_counts": {
+    "hold": 1,
+    "meaningful_variant": 2,
+    "new_association": 25,
+    "unchanged_repeat": 50
+  },
+  "counting_note": "Historical new/reused candidate counts are ingredient/reference bookkeeping, NOT new-association or unique-library-growth counts. Association counts are local editorial comparisons and include repeated head families across entries; do not add chapter occurrences into unique growth.",
+  "table_locations": {
+    "human immunodeficiency virus": "PDF27/printed451; see native spans and raster in source/.",
+    "immigrants": "PDF27/printed451; see native spans and raster in source/.",
+    "prisons": "PDF27/printed451; see native spans and raster in source/.",
+    "shelters for the homeless": "PDF27/printed451; see native spans and raster in source/.",
+    "Alcoholics": "PDF27/printed451; see native spans and raster in source/.",
+    "illicit drug users": "PDF27/printed451; see native spans and raster in source/.",
+    "Elderly": "PDF27/printed451; see native spans and raster in source/.",
+    "nursing home patients": "PDF27/printed451; see native spans and raster in source/.",
+    "induration": "PDF28/printed452; see native spans and raster in source/.",
+    "organ transplants": "PDF28/printed452; see native spans and raster in source/.",
+    "prednisone": "PDF28/printed452; see native spans and raster in source/.",
+    "silicosis": "PDF28/printed452; see native spans and raster in source/.",
+    "diabetes": "PDF28/printed452; see native spans and raster in source/.",
+    "carcinoma of the head, neck, or lung": "PDF28/printed452; see native spans and raster in source/.",
+    "anergic": "PDF28/printed452; see native spans and raster in source/.",
+    "isoniazid": "PDF31/printed455; see native spans and raster in source/.",
+    "rifampin": "PDF31/printed455; see native spans and raster in source/.",
+    "rifapentine": "PDF31/printed455; see native spans and raster in source/.",
+    "rifabutin": "PDF31/printed455; see native spans and raster in source/.",
+    "ethambutol": "PDF31/printed455; see native spans and raster in source/.",
+    "pyrazinamide": "PDF31/printed455; see native spans and raster in source/.",
+    "hepatitis": "PDF31/printed455; see native spans and raster in source/.",
+    "peripheral neuropathy": "PDF31/printed455; see native spans and raster in source/.",
+    "thrombocytopenia": "PDF31/printed455; see native spans and raster in source/.",
+    "GI disturbances": "PDF31/printed455; see native spans and raster in source/.",
+    "porphyria": "PDF31/printed455; see native spans and raster in source/.",
+    "retrobulbar neuritis": "PDF31/printed455; see native spans and raster in source/.",
+    "arthralgia": "PDF31/printed455; see native spans and raster in source/.",
+    "hyperuricemia": "PDF31/printed455; see native spans and raster in source/.",
+    "directly observed therapy (DOT)": "PDF31/printed455; see native spans and raster in source/.",
+    "high airflow": "PDF31/printed455; see native spans and raster in source/.",
+    "high-efficiency particulate filters": "PDF31/printed455; see native spans and raster in source/.",
+    "ultraviolet germicidal irradiation": "PDF31/printed455; see native spans and raster in source/.",
+    "negative-pressure isolation rooms": "PDF31/printed455; see native spans and raster in source/.",
+    "particulate filter masks or respirators": "PDF31/printed455; see native spans and raster in source/.",
+    "drug interactions": "PDF31/printed455; see native spans and raster in source/."
+  },
+  "author_checkpoint_review_status": "Author refrozen after C67-1/C67-2 only; C delta recheck and main integration pending. Untested/nonproduction.",
+  "main_integration_review": {
+    "date": "2026-10-24",
+    "source_and_conceptual_review": true,
+    "scope": "Independent non-author AI source/lexical/conceptual review and bounded repair rechecks, then main integration. Not human-expert review, exhaustive clinical coverage, corpus-wide novelty, recall or image validation.",
+    "independent_audit_record": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch67-71/rawlaneC/review67-68.md",
+    "counts": {
+      "selected_terms": 78,
+      "new_candidates": 12,
+      "reused_candidates": 65,
+      "holds": 1
+    },
+    "keyword_items": 117,
+    "association_occurrences": {
+      "hold": 1,
+      "meaningful_variant": 2,
+      "new_association": 25,
+      "unchanged_repeat": 50
+    },
+    "change_origin_occurrences": {
+      "existing_candidate_recount": 47,
+      "new_proposal": 25,
+      "new_revision": 2,
+      "reconsidered_attempt": 4
+    },
+    "origin_accounting_corrections": [],
+    "counts_not_unique_library_growth": true
+  }
+}

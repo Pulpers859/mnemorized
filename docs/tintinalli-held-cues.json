@@ -68,10 +68,15 @@
     "63",
     "64",
     "65",
-    "66"
+    "66",
+    "67",
+    "68",
+    "69",
+    "70",
+    "71"
   ],
-  "active_hold_occurrences": 1020,
-  "unique_held_terms": 845,
+  "active_hold_occurrences": 1113,
+  "unique_held_terms": 918,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -142,7 +147,9 @@
       "report": "docs/chapter-2-cue-audit.md",
       "attempted_cue": null,
       "reason": "No clear economical bridge proposed in this bounded pass. Generic emergency imagery does not distinguish the drug. Do not force sound fragments.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "2",
@@ -265,7 +272,8 @@
       "reason": "Previously rejected docks plus bicycle assembly is not revived or silently reclassified as reuse. No improved economical partial association proposed in this pass. Broad calibration permits partial cues, but does not obligate retaining this particular attempt. No treatment association admitted.",
       "retained_in_other_chapters": [
         "46",
-        "65"
+        "65",
+        "70"
       ]
     },
     {
@@ -373,7 +381,9 @@
       "report": "docs/chapter-14-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves prior unresolved status; no effect-based identity shortcut or forced new rebus proposed.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "15",
@@ -523,7 +533,9 @@
       "report": "docs/chapter-20-cue-audit.md",
       "attempted_cue": null,
       "reason": "Preserves unresolved Chapter2/14 hold. Generic emergency objects and effect-based shortcuts are not name cues; no improved proposal here.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "20",
@@ -643,7 +655,8 @@
         "57",
         "61",
         "63",
-        "65"
+        "65",
+        "70"
       ]
     },
     {
@@ -910,7 +923,9 @@
       "report": "docs/chapter-24-cue-audit.md",
       "attempted_cue": null,
       "reason": "Existing hold unchanged; no economical improved name association proposed and no drug effect substituted for identity.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "24",
@@ -991,7 +1006,8 @@
       "reason": "Tried the established thoracic-air cue with taut fabric for tension. The added tension prop is ambiguous, so this modifier-specific candidate is held rather than silently dropping tension. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded.",
       "retained_in_other_chapters": [
         "32",
-        "62"
+        "62",
+        "68"
       ]
     },
     {
@@ -1098,7 +1114,9 @@
         "59",
         "62",
         "65",
-        "66"
+        "66",
+        "70",
+        "71"
       ]
     },
     {
@@ -1123,7 +1141,9 @@
       "report": "docs/chapter-25-cue-audit.md",
       "attempted_cue": null,
       "reason": "Earlier unresolved drug-name hold preserved; no economical improved name association selected. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "25",
@@ -1375,7 +1395,8 @@
       "reason": "Tried cog wheel as coag opening fragment. Useful ingredient considered, but no selected short bridge to this target; no clotting function substituted.",
       "retained_in_other_chapters": [
         "55",
-        "63"
+        "63",
+        "71"
       ]
     },
     {
@@ -1602,7 +1623,8 @@
         "62",
         "63",
         "64",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -1679,7 +1701,10 @@
         "57",
         "62",
         "64",
-        "65"
+        "65",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -1696,7 +1721,9 @@
         "59",
         "62",
         "65",
-        "66"
+        "66",
+        "70",
+        "71"
       ]
     },
     {
@@ -1915,7 +1942,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried an epic book beside a generic ring; neither full nor partial name reminder felt economical. Earlier holds preserved. Generic vial considered but not chosen as a useful learned-name category.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -1929,7 +1958,10 @@
       "retained_in_other_chapters": [
         "33",
         "37",
-        "66"
+        "66",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -1993,7 +2025,10 @@
         "57",
         "62",
         "64",
-        "65"
+        "65",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -2005,7 +2040,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried an owl beside a toy bull; the name reminder felt forced, so held. Short lexical screen only, no drug comparison.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -2197,7 +2234,8 @@
         "55",
         "60",
         "61",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -2295,7 +2333,10 @@
         "57",
         "62",
         "64",
-        "65"
+        "65",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -2312,7 +2353,9 @@
         "59",
         "62",
         "65",
-        "66"
+        "66",
+        "70",
+        "71"
       ]
     },
     {
@@ -2395,7 +2438,8 @@
       "attempted_cue": null,
       "reason": "Tried a pea balanced beside an H-shaped block; relies on a visible letter and has no selected nonletter bridge. Numeric directive excluded only after this lexical trial.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "70"
       ]
     },
     {
@@ -2846,7 +2890,8 @@
         "55",
         "60",
         "61",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -3071,7 +3116,8 @@
         "55",
         "60",
         "61",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -3162,7 +3208,9 @@
       "report": "docs/chapter-33-cue-audit.md",
       "attempted_cue": "A toy aunt beside a small robot.",
       "reason": "Aunt/robot does not stably recover antibiotic; anonymous pill would be too broad for class recall.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "34",
@@ -3190,7 +3238,9 @@
         "49",
         "57",
         "59",
-        "62"
+        "62",
+        "70",
+        "71"
       ]
     },
     {
@@ -3203,7 +3253,8 @@
       "attempted_cue": "A urine specimen cup beside a microphone.",
       "reason": "Tried urine/mic; little reason for microphone beyond forced name completion. No body-fluid or biochemical claim intended.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "71"
       ]
     },
     {
@@ -3222,7 +3273,8 @@
         "55",
         "60",
         "61",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -3245,7 +3297,10 @@
         "58",
         "62",
         "65",
-        "66"
+        "66",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -3863,7 +3918,9 @@
       "report": "docs/chapter-36-cue-audit.md",
       "attempted_cue": "An epic toy knight beside a frying pan.",
       "reason": "Epic is not a stable visible object and knight/frying composition is labored. Earlier holds remain open; no adrenaline effect used to rescue the name.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "36",
@@ -4164,7 +4221,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "A toy head with a glowing bulb.",
       "reason": "Bulb suggests ideas or alertness; no helpful selected consciousness cue.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "70"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4224,7 +4283,9 @@
         "59",
         "62",
         "65",
-        "66"
+        "66",
+        "70",
+        "71"
       ]
     },
     {
@@ -4542,7 +4603,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "A toy epic book beside a leaf.",
       "reason": "Epi/leaf attempted but weak; familiar autoinjector category considered, not selected; older holds unchanged.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4795,7 +4858,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A toy metro train at the end of its track.",
       "reason": "End/metro is concrete but too stretched as a familiar partial-name bridge; no useful candidate selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "71"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5008,7 +5073,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A toy helicopter beside a pillar.",
       "reason": "Helico/pillar is a plausible but stretched object stack without a selected simple organism-name cue.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "71"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5098,7 +5165,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "An unmarked medicine bottle beside a crossed-circle token.",
       "reason": "Prohibition symbol would be a legal judgment rather than a specific neutral vocabulary cue; no person depicted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5186,7 +5255,9 @@
       "report": "docs/chapter-39-cue-audit.md",
       "attempted_cue": "A toy aunt beside a small robot.",
       "reason": "Tried older aunt/robot pairing; awkward two-prop sound route remains less useful than a familiar class object. Generic pill alone does not add a specific antibiotic association here; hold is not for omitted qualifiers.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "39",
@@ -5230,7 +5301,9 @@
       "report": "docs/chapter-39-cue-audit.md",
       "attempted_cue": "A toy epic book beside a leaf.",
       "reason": "Revisited actual epic-book/leaf attempt; weak fragment and arbitrary leaf still make this two-prop route awkward. Not held for failing every syllable; no familiar drug-specific object found in bounded pass.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "40",
@@ -5263,7 +5336,9 @@
       "report": "docs/chapter-40-cue-audit.md",
       "attempted_cue": "A toy epic book beside a leaf.",
       "reason": "Revisited37 attempt; epic status and epi/leaf bridge remain weak for this learner-facing proposal. Earlier holds unchanged; no effect, dose, indication or autoinjector use substituted for identity.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "40",
@@ -5969,7 +6044,9 @@
       "report": "docs/chapter-46-cue-audit.md",
       "attempted_cue": "A blank medicine bottle beside a stop barrier.",
       "reason": "Broad anti/drug attempt does not economically cue antibiotic rather than other drugs. Historical antibiotic holds remain open.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "46",
@@ -6068,7 +6145,9 @@
       "report": "docs/chapter-46-cue-audit.md",
       "attempted_cue": "A toy pin beside a fir tree.",
       "reason": "Earlier epi/pin/fir attempts reconsidered; no economical unambiguous selected fragment. Historical holds preserved, not a clinical claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "46",
@@ -6233,7 +6312,10 @@
         "58",
         "62",
         "65",
-        "66"
+        "66",
+        "68",
+        "69",
+        "70"
       ]
     },
     {
@@ -6322,7 +6404,9 @@
       "report": "docs/chapter-47-cue-audit.md",
       "attempted_cue": "A blank medicine bottle beside a stop barrier.",
       "reason": "Anti/drug attempt tried; no selected antibiotic-specific economical cue, preserve older holds.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "47",
@@ -6404,7 +6488,8 @@
       "retained_in_other_chapters": [
         "57",
         "58",
-        "63"
+        "63",
+        "71"
       ]
     },
     {
@@ -6443,7 +6528,9 @@
         "59",
         "62",
         "65",
-        "66"
+        "66",
+        "70",
+        "71"
       ]
     },
     {
@@ -6635,7 +6722,9 @@
       "report": "docs/chapter-49-cue-audit.md",
       "attempted_cue": "An ordinary clock beside a plug token.",
       "reason": "Time/clot fragments tried; no selected economical name or distinctive assay category. No assay values, interpretation, timing or anticoagulation instruction.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "71"
+      ]
     },
     {
       "chapter_id": "50",
@@ -6661,7 +6750,9 @@
         "49",
         "57",
         "59",
-        "62"
+        "62",
+        "70",
+        "71"
       ]
     },
     {
@@ -6784,7 +6875,9 @@
       "report": "docs/chapter-50-cue-audit.md",
       "attempted_cue": "A toy pen beside a fringe.",
       "reason": "Earlier2/14/20/24/25/29A/36/37/39/40 holds remain; reduced attempt not selected. No dose or drug-action metaphor.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "50",
@@ -6823,7 +6916,9 @@
         "49",
         "57",
         "59",
-        "62"
+        "62",
+        "70",
+        "71"
       ]
     },
     {
@@ -6954,7 +7049,9 @@
         "49",
         "57",
         "59",
-        "62"
+        "62",
+        "70",
+        "71"
       ]
     },
     {
@@ -7439,7 +7536,9 @@
         "49",
         "57",
         "59",
-        "62"
+        "62",
+        "70",
+        "71"
       ]
     },
     {
@@ -7508,7 +7607,9 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": "An ordinary urinal fixture.",
       "reason": "Urinal is only a nearby urine-word association, not uric/name or analyte identity. No useful selected cue for the head. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "53",
@@ -7768,7 +7869,8 @@
       "attempted_cue": null,
       "reason": "Older exact-name hold and attempt reviewed. No economical replacement selected in this bounded workshop; not held for missing full syllables or unique blind decoding. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "70"
       ]
     },
     {
@@ -7804,7 +7906,8 @@
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
         "57",
-        "65"
+        "65",
+        "70"
       ]
     },
     {
@@ -7829,7 +7932,8 @@
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
         "56",
-        "62"
+        "62",
+        "68"
       ]
     },
     {
@@ -7866,7 +7970,8 @@
       "retained_in_other_chapters": [
         "57",
         "58",
-        "63"
+        "63",
+        "71"
       ]
     },
     {
@@ -8117,7 +8222,8 @@
         "56",
         "61",
         "62",
-        "65"
+        "65",
+        "68"
       ]
     },
     {
@@ -8151,7 +8257,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "71"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8245,7 +8353,8 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
         "58",
-        "66"
+        "66",
+        "67"
       ]
     },
     {
@@ -8534,7 +8643,8 @@
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "66"
+        "66",
+        "67"
       ]
     },
     {
@@ -8643,7 +8753,8 @@
       "attempted_cue": "A urine specimen cup beside a microphone.",
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "71"
       ]
     },
     {
@@ -8739,7 +8850,9 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
         "58",
-        "63"
+        "63",
+        "69",
+        "70"
       ]
     },
     {
@@ -9927,7 +10040,8 @@
       "retained_in_other_chapters": [
         "57",
         "58",
-        "63"
+        "63",
+        "71"
       ]
     },
     {
@@ -10204,7 +10318,8 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "70"
       ]
     },
     {
@@ -10295,7 +10410,8 @@
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
         "58",
-        "66"
+        "66",
+        "67"
       ]
     },
     {
@@ -10343,7 +10459,9 @@
       "report": "docs/chapter-61-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "71"
+      ]
     },
     {
       "chapter_id": "61",
@@ -10446,7 +10564,9 @@
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
         "58",
-        "63"
+        "63",
+        "69",
+        "70"
       ]
     },
     {
@@ -10535,7 +10655,9 @@
       "report": "docs/chapter-63-cue-audit.md",
       "attempted_cue": "An epic-story book alone, without leaf or frying pan.",
       "reason": "Simpler Epi/epic opening-name trial remains unappealing in this pass; no selected cue. Not a clinical-definition, all-syllables or no-existing-root veto.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "64",
@@ -10711,7 +10833,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": "A kitchen filter.",
       "reason": "No economical infiltrates name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Filter/infiltrate partial word association considered; filter/infiltrate direction and naming remain unresolved, not promoted merely because topic is pulmonary.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "65",
@@ -10722,7 +10846,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": "A plain block with a recessed pocket.",
       "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound trial remains naming-dependent; no selected abscess visual and earlier holds preserved.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "68"
+      ]
     },
     {
       "chapter_id": "65",
@@ -10788,7 +10914,10 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical wheezing name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69",
+        "70"
+      ]
     },
     {
       "chapter_id": "65",
@@ -11020,7 +11149,8 @@
       "attempted_cue": "A pool cue beside a toy ladder.",
       "reason": "No economical pH name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. P/H letter props would be arbitrary sound stacking; no selected economical pH cue.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "70"
       ]
     },
     {
@@ -11233,7 +11363,8 @@
       "attempted_cue": null,
       "reason": "No economical weight loss name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
       "retained_in_other_chapters": [
-        "66"
+        "66",
+        "70"
       ]
     },
     {
@@ -11443,7 +11574,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": "A familiar toy pretzel.",
       "reason": "Actual LEFT25 native span prints methylprednisolone. Prior prednisolone row was an undisclosed author truncation; correct to literal source name and retain its pred-/pretzel failed attempt, without claiming the shorter drug name is equivalent.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "69"
+      ]
     },
     {
       "chapter_id": "65",
@@ -11476,7 +11609,9 @@
       "report": "docs/chapter-66-cue-audit.md",
       "attempted_cue": "A plain block with a recessed pocket.",
       "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound tried; cavity shape alone does not identify abscess rather than any cavity, no selected abscess name bridge.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "68"
+      ]
     },
     {
       "chapter_id": "66",
@@ -11578,7 +11713,8 @@
       "attempted_cue": "A pool cue beside a toy ladder.",
       "reason": "No economical pH name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. P/H label-sound stack not selected; no clinical threshold.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "70"
       ]
     },
     {
@@ -11601,7 +11737,9 @@
       "report": "docs/chapter-66-cue-audit.md",
       "attempted_cue": "An ordinary unmarked medicine bottle alone, without pill token.",
       "reason": "B66-5: withdraw the generic medicine-bottle substitution. Its medicine category is not a meaningful encoded anti-/antibiotic name or distinctive class bridge here. No more specific economical visual selected in this bounded review; not a full-syllable or unique-blind-name requirement.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "67"
+      ]
     },
     {
       "chapter_id": "66",
@@ -11838,6 +11976,1035 @@
       "report": "docs/chapter-66-cue-audit.md",
       "attempted_cue": "An ordinary unmarked medicine bottle alone, without pill token.",
       "reason": "B66-5: withdraw the generic medicine-bottle substitution. Its medicine category is not a meaningful encoded anti-/antibiotic name or distinctive class bridge here. No more specific economical visual selected in this bounded review; not a full-syllable or unique-blind-name requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "67",
+      "chapter_title": "Tuberculosis",
+      "term": "SQ-109",
+      "printed_page": 454,
+      "source_record": "docs/chapter-67-cue-audit.json",
+      "report": "docs/chapter-67-cue-audit.md",
+      "attempted_cue": "An unlabelled square tile beside a row of number blocks.",
+      "reason": "Hold the attempted square/code construction: arbitrary alphanumeric props do not add a useful recognizable association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "Sputum production",
+      "printed_page": 462,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A sealed specimen cup.",
+      "reason": "R2 remaining-attempt adjudication: Specimen packaging is familiar, but this undifferentiated cup supplies no selected sputum-name or sputum-category bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "inhaled short-acting beta2-agonist",
+      "printed_page": 462,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "beta-Adrenergic Agents",
+      "printed_page": 462,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "beta2-Agonists",
+      "printed_page": 464,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "beclomethasone",
+      "printed_page": 465,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A detached toy bird beak.",
+      "reason": "R2 remaining-attempt adjudication: Bec-/beak approximate opening tried; beck/beak vowel mismatch and very short overlap leave no selected useful bridge here. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "mometasone",
+      "printed_page": 465,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A toy clock paused for a moment.",
+      "reason": "R2 remaining-attempt adjudication: Mome-/moment partial wordplay tried; a still clock encodes time, not a selected moment/name fragment. No selected bridge, not an all-syllable rule. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "Aminophylline",
+      "printed_page": 466,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A tiny toy mine entrance.",
+      "reason": "R2 remaining-attempt adjudication: Amino-/a mine approximate sound tried; small mine may be named cave and the sound is weak. No selected association. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "69",
+      "chapter_title": "Acute Asthma and Status Asthmaticus",
+      "term": "zileuton",
+      "printed_page": 466,
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "attempted_cue": "A small toy zipper.",
+      "reason": "R2 remaining-attempt adjudication: Zi-/zip opening fragment tried; overlap is too short and nonspecific for selection in this attempt. No universal full-name requirement. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "alpha1-Antitrypsin deficiency",
+      "printed_page": 467,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy tripod beside a spinning top.",
+      "reason": "R2 remaining-attempt adjudication: Tryp-/trip and -sin/spin partial sounds tried; tripod/top assembly is cumbersome and pronunciation overlap weak. No selected depiction yet. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "mucus",
+      "printed_page": 467,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A closed cup with a detached droplet token.",
+      "reason": "R2 remaining-attempt adjudication: Secretion/sample packaging trial considered; droplet/cup names many fluids, with no selected secretion-name bridge in this attempt. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "sputum production",
+      "printed_page": 467,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A sealed specimen cup.",
+      "reason": "R2 remaining-attempt adjudication: Specimen packaging is familiar, but this undifferentiated cup supplies no selected sputum-name or sputum-category bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "Secretion Mobilization",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A closed cup with a detached droplet token.",
+      "reason": "R2 remaining-attempt adjudication: Secretion/sample packaging trial considered; droplet/cup names many fluids, with no selected secretion-name bridge in this attempt. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "beta2-agonists",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "olodaterol",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A familiar date fruit alone.",
+      "reason": "R2 remaining-attempt adjudication: Dat-/date internal sound trial meaningful, but the small fruit may be named raisin and the connection remains weak in this attempt; no selected cue. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "glycopyrronium",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A theatrical gleeful mask beside a toy pier.",
+      "reason": "R2 remaining-attempt adjudication: Gly-/glee and pyr-/pier fragments tried; compression and pier naming need too much support in this attempt. No selected composition. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "mometasone",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy clock paused for a moment.",
+      "reason": "R2 remaining-attempt adjudication: Mome-/moment partial wordplay tried; a still clock encodes time, not a selected moment/name fragment. No selected bridge, not an all-syllable rule. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "theophylline",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy theater miniature.",
+      "reason": "R2 remaining-attempt adjudication: Theo-/theater opening sound trial considered; theater building recognition and vowel compression remain weak. No selected name bridge. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "antihistamines",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy snake hissing beside a barrier.",
+      "reason": "R2 remaining-attempt adjudication: Hist-/hiss approximate sound plus anti-/barrier tried; static hissing and extra relationship remain weak, no chosen economical cue. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "mucolytics",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A closed cup with a detached droplet token.",
+      "reason": "R2 remaining-attempt adjudication: Secretion/sample packaging trial considered; droplet/cup names many fluids, with no selected secretion-name bridge in this attempt. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "beta blockers",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "opioids",
+      "printed_page": 468,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "An ordinary toy poppy blossom.",
+      "reason": "Final exact-prior adjudication explicitly considered62 opioids: open doorway at approximate Opi/ope-open fragment scope. Main does not select that particular taught sound compression for this occurrence; the poppy attempt also remains unselected. This is a bounded editorial disagreement, not lack of prior approval, complete-name/unique-ID or empirical-familiarity requirement. Better cue proposals remain possible.",
+      "retained_in_other_chapters": [
+        "62"
+      ]
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "beta2-Adrenergic Agonists",
+      "printed_page": 469,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy address envelope beside an energetic wind-up toy.",
+      "reason": "R2 remaining-attempt adjudication: Adr-/address and energ-/energy fragments tried; address needs writing and energetic state is weak in a still cue. No chosen economical bridge in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "antibiotics",
+      "printed_page": 469,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "An ant beside a familiar medicine bottle.",
+      "reason": "R2 remaining-attempt adjudication: Anti-/ant sound plus medicine category tried; combination remains a weak antibiotic lexical-class hook here. No selected cue, not a requirement to show medical action. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": [
+        "67"
+      ]
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "estrogen",
+      "printed_page": 469,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy ostrich alone.",
+      "reason": "R2 remaining-attempt adjudication: Estr-/ostrich approximate sound trial is weak in pronunciation and remaining overlap; no selected cue. Not rejected for omitted suffix. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "azithromycin",
+      "printed_page": 470,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A toy zither alone.",
+      "reason": "R2 remaining-attempt adjudication: Azith-/zither partial sound has vowel/boundary uncertainty and unfamiliar instrument naming; no selected cue in this review. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "aminophylline",
+      "printed_page": 470,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A tiny toy mine entrance.",
+      "reason": "R2 remaining-attempt adjudication: Amino-/a mine approximate sound tried; small mine may be named cave and the sound is weak. No selected association. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "70",
+      "chapter_title": "Chronic Obstructive Pulmonary Disease",
+      "term": "secretions",
+      "printed_page": 470,
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "attempted_cue": "A closed cup with a detached droplet token.",
+      "reason": "R2 remaining-attempt adjudication: Secretion/sample packaging trial considered; droplet/cup names many fluids, with no selected secretion-name bridge in this attempt. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Parietal pain",
+      "printed_page": 473,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A pair of ordinary tall toy towers.",
+      "reason": "Pair/tall attempt is awkward to teach and depicts no ordinary pair-tall category; no full-syllable or blind-name requirement imposed. This pass has no selected parietal-name bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Foregut",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A bookend at the front of an open intestinal teaching model.",
+      "reason": "Front bookend attempted; generic location marker does not provide an economical foregut-name association in this proposal. Not held because embryologic detail is absent.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "jejunum",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached jejunum study-model segment on a base.",
+      "reason": "Tried a specific model, but the proposed detached segment supplies no visible jejunum category distinction. A familiar named model could work; none selected in this draft.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "ileum",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached ileum study-model segment on a base.",
+      "reason": "Tried an ileal model; as specified it is indistinguishable from the jejunal segment. This is a visual-host definition issue, not a full-name veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "cecum",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A letter C-shaped hook alone.",
+      "reason": "C hook does not supply a useful cecum bridge beyond a generic initial. No selected economical alternative; not proof a better bridge is impossible.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "appendix",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An ordinary book opened to its end appendix section, with unreadable print.",
+      "reason": "End-of-book section is a promising double meaning, but unreadable print leaves it indistinct from index/references. This attempt does not define a recognizable appendix visual.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "sigmoid",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A freestanding large-intestine teaching model with its familiar framing shape.",
+      "reason": "Attempted generic colon host; no visible S-shaped segment or useful sig-/sigmoid bridge selected here. This hold is not a requirement for all modifiers on other colon cues.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "rectum",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached rectum teaching-model segment alone.",
+      "reason": "Isolated rectal-segment attempt remains visually undefined beyond tube; no selected familiar rectum host in this pass.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "intraperitoneal GU organs",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached pelvic-bone teaching model on a stand.",
+      "reason": "Tried pelvic model but rejected as selected association because it encodes a neighboring region rather than the named organ category; no unsupported anatomy substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Suprapubic area",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached pelvic-bone teaching model on a stand.",
+      "reason": "A pelvic-bone host is too broad for the proposed pubic relation without a specified pubic landmark. No selected spatial/name bridge, not a clinical fact gap.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "volvulus",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy Volvo-like unbranded station wagon; no readable badge.",
+      "reason": "Volvo/volvulus partial sound considered; unspecified car subtype cannot be named from its visual. Not held for failing to encode every syllable.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "hernia",
+      "printed_page": 474,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy heron beside a nest.",
+      "reason": "Heron/hernia compression tried but economical taught sound fit remains weak in this particular attempt; no selected cue, not a universal ban on partial names.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "ondansetron",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "35 same-name hold remains open. Generic bottle attempt does not improve that bridge; partial-name alternatives remain possible rather than prohibited.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "diphenhydramine",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "36 diphenhydramine hold remains open. Medicine bottles do not add a selected name/category bridge to that held term.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "urinary catheters",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A hand keeping a plain token in its closed grasp.",
+      "reason": "Tried a grasped token but it gives retention, not catheter identity. No selected device model specified; does not ignore the named bold instruction head.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "WBC",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A white toy cell token beside an ordinary Luke-like figure.",
+      "reason": "65 leukocytosis hold considered. Arbitrary white cell or unnamed Luke character lacks a selected useful category/sound cue; no blood-test claims generated.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Appendicitis",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An ordinary book opened to its end appendix section, with unreadable print.",
+      "reason": "Same unresolved book-section visual as local appendix; unreadable print cannot identify the section. No arbitrary condition prop selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Splenic rupture/distention",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A thick freestanding panel with an open bore visibly passing through its full thickness.",
+      "reason": "Tried perforated-panel shape; wrong lexical action/subtype and missing selected splenic category. No generic injury proxy selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "terminal ileitis",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached ileum study-model segment on a base.",
+      "reason": "Same local ileum model problem: detached segment does not define the specific anatomy category as drawn. No selected bridge; not held for missing terminal modifier.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Inguinal hernia",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy heron beside a nest.",
+      "reason": "Same unresolved heron/hernia compression as local hernia, not rescued by clinical location.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Psoas abscess",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy sewing needle and a plain letter P token.",
+      "reason": "P/sew attempt is arbitrary sound assembly. Older abscess holds remain open; no general cavity or anatomy proxy substituted.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Hereditary angioedema",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A familiar angel toy beside an unmarked photograph.",
+      "reason": "Angio/angel could supply a fragment, but photograph is graph-specific and irrelevant here. No economical revised angio-only choice made; prior angiography is not falsely called same disease.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Metabolic disorder",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Tried bottles; wrong lexical category. Parenthetical Addisonian/AKA/DKA/porphyria/uremia heads separately attempted, so statement/group exclusion does not skip them.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "alcoholic ketoacidosis",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A familiar standalone glucose meter training prop.",
+      "reason": "Tried nearby glucose device but this would substitute a neighboring category. No selected lexical bridge; explicit AKA caption expansion considered.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Peritonitis",
+      "printed_page": 475,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "No selected peritoneal model or economical peri-name cue from bottle attempt. Not a statement exclusion and not a full-name requirement.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Abdominal sepsis",
+      "printed_page": 476,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A miniature septic tank alone.",
+      "reason": "Earlier septic-family holds remain open. A bare tank is not visually septic-specific; this host-definition defect, not lack of full syllables, leaves the attempt held.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "beta-Human chorionic gonadotropin",
+      "printed_page": 476,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A miniature trophy beside a gonad teaching model.",
+      "reason": "Gonad/trophy two-prop attempt has weak tropical/tropin recovery and no defined gonad host; not selected. The meaningful assay head is not skipped with its numeric instructions.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Gonococcal testing",
+      "printed_page": 476,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A plain toy gonad model.",
+      "reason": "Bare gonad model does not supply selected gonococcal identity in this draft; no invented organism morphology.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "urethritis",
+      "printed_page": 476,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A ureter teaching-model pair shown connected to a neutral bladder token.",
+      "reason": "Source paired cervicitis/urethritis split into heads first. Ureter model is wrong anatomical subtype for urethr-, so held rather than silently relabeled.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Sepsis",
+      "printed_page": 476,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A miniature septic tank alone.",
+      "reason": "Same unresolved septic-tank visual category as local abdominal sepsis; related older septic-family holds remain open, no new selected bridge.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "antibiotics",
+      "printed_page": 477,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A generic medicine bottle beside a cartoon germ crossed out.",
+      "reason": "66 antibiotics/antibiotic therapy hold preserved. Germ cancellation attempts to show effect rather than a selected lexical/class package; no new class cue chosen here.",
+      "retained_in_other_chapters": [
+        "67"
+      ]
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "leukocytosis",
+      "printed_page": 477,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A white toy cell token beside an ordinary Luke-like figure.",
+      "reason": "65 same-name hold remains open. Arbitrary white cell/Luke figure still lacks a selected economical vocabulary association here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "bariatric surgery",
+      "printed_page": 477,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached stomach teaching model on a display stand.",
+      "reason": "Tried neighboring stomach model, but not a selected bariatric lexical/category bridge. Named surgery subtype heads below separately tried; no body-size stereotypes used.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Benign prostatic hypertrophy",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful named nested table diagnosis extracted before demographic exclusion; no selected prostate model or lexical wordplay from this attempt.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "CRP",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Named assay head retained as a hold rather than omitted with test-performance numbers. Bottle is generic and does not encode the head.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "aspartate aminotransferase",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Tried generic bottle, inadequate name/category link. Extracted from wrapped table assay statement before numerical sensitivity exclusion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "alkaline phosphatase",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Generic bottle attempt does not encode either assay head; not rescued by neighboring test context.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "adult respiratory distress syndrome",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Named nested complication explicitly attempted; generic medicine class is not its lexical head. No source clinical assertion retained.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Murphy sign",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Named sign extracted from likelihood statement; generic medicine does not encode eponym, no clinical maneuver generated.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "jaundice",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful nested table head extracted; unmarked bottle is not yellow-color disease coding or a selected name association.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "right subscapular area",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An unspecified shoulder-blade model on a base.",
+      "reason": "Tried shoulder-blade model but no underside relation specified. Ordinary anatomical cue could be designed; no selected actual host in this draft, not mapped to epigastric region.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "fecal occult blood",
+      "printed_page": 478,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A red-liquid drop token wearing a globe-shaped hat.",
+      "reason": "Named assay/material head extracted from statement first. Neighboring assay association is not automatically interchangeable; no stool test instruction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "vaginal discharge",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful nested table head tried before whole clinical statement exclusion; no selected secretion or body-area composition.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "dyspareunia",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Generic bottle is unrelated. Meaningful nested symptom remains explicitly held, not swallowed by a statement exclusion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "infertility",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Named nested complication explicitly attempted; no selected family/empty-cradle metaphor or clinical assertion.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "adnexal mass",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Source meaningful head extracted; no actual adnexal host or economical lexical association selected in this attempt.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "flank",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached side-of-torso mannequin piece.",
+      "reason": "Tried detached side piece but it lacks flank-specific visible landmarks. Not relabeled as renal anatomy or a pain disorder.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "groin",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A disconnected pelvic-bone model.",
+      "reason": "Tried pelvic bone, but neighboring bone category does not define this printed anatomical region; no unsupported subtype substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "scrotum",
+      "printed_page": 479,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An unspecified detached anatomical sac model.",
+      "reason": "Tried generic sac, but model definition does not establish the anatomical category; not a testis/ovary substitution.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "cilastatin",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful partner head extracted before drug dose excluded; generic medicine is insufficient and not silently represented by imipenem's pencil.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "tazobactam",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful partner head tried independently; pipe encodes piper only, not this omitted partner. Generic bottle not selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Combination Therapy",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Two generic medicines tried, no selected content-specific name/category bridge. Single-agent/additional-agent table scaffolding maps here without implying regimen choices.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Malabsorptive",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A dry sponge with beads resting on its surface instead of soaking in.",
+      "reason": "Dry sponge with beads confuses nonabsorption with wrong material; no useful defined malabsorb relationship chosen. Not held for needing all modifiers.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "Roux-en-Y",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A small saucepan of visibly stirred roux beside a Y-shaped toy fork.",
+      "reason": "Unlabelled stirred sauce may be any sauce, not recognizable roux; Y-fork alone does not repair that host. This is a naming limitation, not a demand to include all syllables on bypass cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "salpingitis",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An ordinary salt shaker beside a safety pin.",
+      "reason": "Two weak fragments add prop burden without a selected economical salping bridge here. A familiar salpinx model could be considered later; no anatomy invented.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "internal hernia",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy heron beside a nest.",
+      "reason": "Same unselected heron attempt as local hernia; no new category/relationship chosen.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "volvulus of Roux limb",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A toy Volvo-like unbranded station wagon; no readable badge.",
+      "reason": "Same unrecognizable Volvo-specific car attempt; not counted as a selected anatomical Roux-limb depiction.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "vitamin B12",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An unmarked vitamin-bottle-shaped container.",
+      "reason": "Nested table deficiency head extracted before full metabolic statement excluded. No selected class/device/name bridge from bottle attempt.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "vitamin deficiencies",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An unmarked vitamin-bottle-shaped container.",
+      "reason": "No selected vitamin package/name bridge; not held for missing every vitamin label. Earlier unrelated vitamin holds not resolved.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "gastrojejunostomy",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A detached jejunum study-model segment on a base.",
+      "reason": "Named head from table/anastomosis wording explicitly attempted; undefined model does not select gastric/jejunal relation or ostomy category.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "ileus",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "An ordinary eye model beside a loose letter L token.",
+      "reason": "Tried eye plus letter, but object/name repair burden exceeds useful selected fragment in this pass. Familiar anatomy/category cues allowed; not a full-name veto.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "obstipation",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Meaningful body symptom in operative section tried; generic medicine packaging is unrelated. No clinical constipation narrative used to rescue attempt.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "peristalsis",
+      "printed_page": 480,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Generic medicine does not encode peristalsis. This pass does not invent physiological motion or clinical facts as a cue.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "valvulae conniventes",
+      "printed_page": 481,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "Two unmarked medicine bottles side by side.",
+      "reason": "Generic medicine lacks lexical relation. No anatomy labels guessed from chapter image or invented folds.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "71",
+      "chapter_title": "Acute Abdominal Pain",
+      "term": "transition point",
+      "printed_page": 481,
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "attempted_cue": "A continuous toy tube visibly narrowed at its middle.",
+      "reason": "Tried narrowed tube but no selected transition-boundary representation in this proposal. Does not turn an imaging statement into a clinical rule.",
       "retained_in_other_chapters": []
     }
   ],
@@ -15089,6 +16256,406 @@
       "report": "docs/chapter-66-cue-audit.md",
       "current_decision": "reuse_candidate",
       "resolution": "Current partial proposal does not erase older holds or establish recall."
+    },
+    {
+      "chapter_id": "67",
+      "term": "illicit drug users",
+      "source_record": "docs/chapter-67-cue-audit.json",
+      "report": "docs/chapter-67-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Current67 frozen packet/prohibition hold replaced by actual66 selected drug-head bottle category, with illicit/user/injection/substance qualifiers explicitly omitted. Only this67 hold resolved; no older bank hold or historical packet trial erased, and no empirical recognition claim."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Mast cell modifiers",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Wheezing",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "budesonide",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "SABA",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "nebulizer",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "cromolyn",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "nedocromil",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Anticholinergics",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "agonist",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "valved holding chamber",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "drowsiness",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Leukotrienes",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Methylxanthines",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "69",
+      "term": "Vocal cord dysfunction",
+      "source_record": "docs/chapter-69-cue-audit.json",
+      "report": "docs/chapter-69-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Final exact-prior adjudication resolves only this current-bank hold using docs/chapter-62-cue-audit.json#vocal cord dysfunction; older holds and their reasons remain independently open."
+    },
+    {
+      "chapter_id": "70",
+      "term": "macrolides",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "wheezing",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "budesonide",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "Anticholinergics",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "spacer",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "somnolence",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "lethargy",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "tremor",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "agitation",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "arrhythmias",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "dysrhythmias",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "decongestants",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "methylxanthines",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "indacaterol",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "aclidinium",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "umeclidinium",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "electrolytes",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "70",
+      "term": "Extreme obesity",
+      "source_record": "docs/chapter-70-cue-audit.json",
+      "report": "docs/chapter-70-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "R1/R2 local author hold resolved after main-accepted non-author review; original entry and attempt retained in draft_history/first-freeze. No older-bank hold resolved."
+    },
+    {
+      "chapter_id": "71",
+      "term": "antiemetics",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "metabolic acidosis",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "Atrial fibrillation",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "gangrene",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "edema",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "anorexia",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "Laboratory testing",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "admission",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "follow-up",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "hematuria",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "Urinalysis",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "uremia",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "fistula",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "air-fluid levels",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "bloating",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "hemodynamic collapse",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "retain_candidate",
+      "resolution": "V71 bounded current-bank hold-to-candidate correction only. Older bank holds and reasons remain unchanged/open; no empirical or production admission."
+    },
+    {
+      "chapter_id": "71",
+      "term": "stabilization",
+      "source_record": "docs/chapter-71-cue-audit.json",
+      "report": "docs/chapter-71-cue-audit.md",
+      "current_decision": "reuse_candidate",
+      "resolution": "Final exact-prior adjudication resolves only this current-bank hold using docs/chapter-50-cue-audit.json#Stabilization; older holds and their reasons remain independently open."
     }
   ]
 }

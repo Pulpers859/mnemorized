@@ -465,3 +465,19 @@ recounted, three selected revisions, four newly selected old attempts and five
 holds. This is a bounded sample, not a reclassification of all 1188 records.
 
 Actual mixed-column source regions and meaningful emphasized/heading/table/figure lexical heads checked, with typography/extraction limits recorded in each bank. Not exhaustive clinical coverage. Earlier holds preserved separately; primary catalog unchanged; zero paid calls/renders. Next67, five-chapter cadence.
+
+## Chapters 67-71: Pulmonary To GI Batch
+
+[Reviewed batch findings, examples and limits](chapter-67-71-cue-review.md).
+
+Independent non-author AI source/lexical/conceptual review and bounded repair rechecks, then main integration. Not human-expert review, exhaustive clinical coverage, corpus-wide novelty, recall or image validation.
+
+| Chapter | Topic | Terms Tried | Different Bridges | Meaningful Variants | Unchanged Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 67 | [Tuberculosis](chapter-67-cue-audit.md) | 78 | 25 | 2 | 50 | 1 | 117 |
+| 68 | [Pneumothorax](chapter-68-cue-audit.md) | 79 | 13 | 1 | 65 | 0 | 128 |
+| 69 | [Acute Asthma and Status Asthmaticus](chapter-69-cue-audit.md) | 123 | 18 | 0 | 97 | 8 | 190 |
+| 70 | [Chronic Obstructive Pulmonary Disease](chapter-70-cue-audit.md) | 162 | 16 | 0 | 127 | 19 | 221 |
+| 71 | [Acute Abdominal Pain](chapter-71-cue-audit.md) | 292 | 49 | 4 | 174 | 65 | 420 |
+
+Counts are chapter occurrences relative to named comparisons, not a verified count of unique new associations. Prop novelty is not association novelty. Synonyms and repeated lexical heads can recur across chapters. No whole-library novelty audit or empirical cue validation. Earlier holds preserved separately. Primary catalog unchanged; no paid calls/renders. Next72, Nausea and Vomiting.

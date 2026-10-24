@@ -23,7 +23,9 @@ The pilot did NOT establish equivalent end-to-end cue authorship or net token/do
 2. Main or a qualified source reviewer verifies the purchased PDF hash, actual title/mixed-column boundaries, printed offset, native fonts/highlight annotations and necessary rasters. Reuse saved evidence when unchanged. Whole-page running headers and an image-block-only scan are not ownership/coverage proof.
 3. Give a smaller helper a bounded region or specific mechanical question. Extract meaningful bolded/highlighted/heading/table/figure heads, including named heads inside larger statements before excluding numeric/procedure prose. Return literal wording/region, explicit aliases, omissions/uncertainty and actual prior-record snippets. Do not dump every incidental body word or the entire library.
 4. Use deterministic parsing/search/checks for exact refs, duplicate keys, counts and hold preservation. Search term roots AND actual cue ingredients. A returned old hold is not a selected root; a selected generic host is not proof its specific new subtype already existed. Helper flags are leads requiring stronger adjudication, not automatic semantic decisions.
+   Before freezing, run `python tools/chapter_cue_prior_matches.py --bank docs/chapter-N-cue-audit.json --limit 3` and save the report locally. Resolve flagged same-term selected priors explicitly. This exact casefold lookup is read-only and cannot find all aliases, shared heads or visual ingredients; it does not automatically accept a cue or overturn an intentional hold.
 5. Stronger author makes every cue/hold decision under the unchanged broad rubric. Familiar categories/packaging, actions/relationships and partial names may omit modifiers; unique untrained naming or all syllables are not universal requirements. Reject wrong lexical subtypes, undefined visual objects, arbitrary topic props or unsupported specificity. Record actual encoded scope, collision/naming uncertainty, exact prior roots, declared variants and earlier attempts. All candidates remain untested/nonproduction.
+   Absence of an older selected bridge is not a reason to hold a useful new proposal. An unrelated generic-bottle placeholder records nonselection, not a meaningful creative trial or proof of exhausted possibilities. Keyword mappings must name the actual head tried: clinically related words are not lexical aliases, and full statements require explicit extracted-head notes.
 6. Freeze author JSON/MD hashes. A non-author stronger reviewer checks the real source regions, meaningful lexical screen and actual prior ingredients once. Report counts/hash and exceptions, not a repeated annotated copy of every entry. If finding-free, state the review scope and limits. Main independently corroborates material findings.
 7. Repair only concrete findings, preserving original attempts/holds and first snapshots. Recheck changed entries/mappings and affected counts/refs; do not repeat a full chapter/source audit after a bounded delta. Any newly introduced defect remains open. Do not repair indefinitely to force a score or run a new paid cohort without scope/budget.
 8. Main integrates only genuinely closed banks, ledger/index and handoff. Preserve every older hold in the separate revisit register; a term retained elsewhere does not resolve it. Run `python tools/chapter_cue_holds.py --write`, then `--check`, focused chapter/keyword/hold tests and realistic repo validation before commit/push. Report separately source/editorial review, software checks and untested clinical/recognition/recall/render claims.
@@ -77,6 +79,19 @@ unchanged attempt may be selected without being newly invented; a held attempt
 can be a repeat without being accepted. Report fresh revisions separately from
 existing bridges rediscovered by better accounting. Do not turn a relabeling
 exercise into a claim of newly expanded library size.
+
+Starting with chapter 67, initial chapter banks also record these three axes on
+each entry, plus a reasoned `association_comparison`. Initial discovery may use
+`change_origin: new_proposal`; that means proposed in this chapter review, not
+proven original or empirically effective. Preserve the old decision/count fields
+for reference tooling, but label those as ingredient/reference bookkeeping rather
+than creative yield. Report association occurrences separately; chapter repetition,
+aliases and shared head bridges prevent an automatic unique-library-growth total.
+
+An `unchanged_repeat` is not a freshly authored depiction: its origin is
+`existing_candidate_recount` or, for a reselected local held attempt,
+`reconsidered_attempt`. A newly authored `meaningful_variant` uses `new_revision`.
+Do not let default origin values turn unchanged repeat records into fresh yield.
 
 ## Resume Record
 

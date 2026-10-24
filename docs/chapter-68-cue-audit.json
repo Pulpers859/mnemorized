@@ -1,0 +1,3138 @@
+{
+  "schema_version": 1,
+  "chapter_id": "68",
+  "title": "Pneumothorax",
+  "review_date": "2026-10-24",
+  "keyword_screen_date": "2026-10-24",
+  "source": {
+    "file": "Tintin_Pulm.pdf",
+    "sha256": "cd8a5f5dade877d8e1daeb8411fedcac8862e9dfcb6256ce5d7fbc8d5c761ee6",
+    "pdf_pages": [
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "printed_pages": [
+      457,
+      458,
+      459,
+      460,
+      461
+    ],
+    "printed_page_offset": 424,
+    "boundary": "LEFT33 from actual title y147.8 onward plus ALLRIGHT33 continuation from top; Table68-1 belongs68. All34-36 including Figures68-1/2/3/4/5 and Tables68-2/3/4. UPPERLEFT37 through REFERENCES y174.6 and publisher line, before69 title y250.1. Exclude ALLRIGHT37, which is69 including Table69-1, and LEFT33 above68 title. Native starts54/324 on odd pages,30/300 on even pages; full-width tables/figures inspected, no midpoint clipping.",
+    "verification": "Main supplied purchased-PDF identity and native span/font/bbox inventories plus1.5x rasters. Author personally inspected every assigned raster and inventory/annotation array; see laneA/source-review.json. No new PDF hash claim by author."
+  },
+  "scope": "Offline lexical cue authorship only. No clinical facts, doses, recommendations, narration, scenes, provider calls or production admission.",
+  "production_admitted": false,
+  "entries": [
+    {
+      "term": "Pneumothorax",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "chapter_title",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad learned pneumothorax relational family only; not a diagnostic image, mechanism, severity or management instruction.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad learned pneumothorax relational family only; not a diagnostic image, mechanism, severity or management instruction. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Primary pneumothoraces",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family; primary modifier unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family; primary modifier unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Secondary pneumothoraces",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family; secondary modifier unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family; secondary modifier unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "primary spontaneous pneumothorax",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family; primary and spontaneous modifiers unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family; primary and spontaneous modifiers unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "secondary spontaneous pneumothorax",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family; secondary and spontaneous modifiers unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family; secondary and spontaneous modifiers unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Traumatic pneumothoraces",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family; traumatic and iatrogenic cause unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family; traumatic and iatrogenic cause unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Tension pneumothorax",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Pneumothorax learned family only; tension not independently encoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces and32 tension pneumothorax, same broad balloon/lung/chest bridge without tension. Earlier24 tension hold stays open; no severity or pressure claim is rescued by the new occurrence.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Airway disease",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached windpipe teaching-model token standing alone, without elastic band.",
+      "prior": "docs/chapter-49-cue-audit.json#reactive airway disease",
+      "cue_scope": "Airway/windpipe lexical category only; reactive state and disease identity omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-49-cue-audit.json#reactive airway disease (reactive airway disease -> A detached windpipe teaching-model token standing alone, without elastic band.), this uses the same learned Airway/windpipe lexical category only; reactive state and disease identity omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "windpipe",
+        "teaching-model",
+        "elastic",
+        "band"
+      ]
+    },
+    {
+      "term": "Chronic obstructive pulmonary disease",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Freestanding windpipe teaching model with a conspicuous cork blocking its opening.",
+      "prior": "docs/chapter-62-cue-audit.json#Obstructive airway disease",
+      "cue_scope": "Broad airway-obstruction family only; chronicity, pulmonary subtype and complete disease name unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#Obstructive airway disease (Obstructive airway disease -> Freestanding windpipe teaching model with a conspicuous cork blocking its opening.), this uses the same learned Broad airway-obstruction family only; chronicity, pulmonary subtype and complete disease name unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "windpipe",
+        "cork",
+        "blocking",
+        "opening"
+      ]
+    },
+    {
+      "term": "Asthma",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar standalone inhaler training prop.",
+      "prior": "docs/chapter-62-cue-audit.json#asthma",
+      "cue_scope": "Same familiar inhaler/asthma learned category only; not a drug, treatment, indication or full diagnostic discriminator.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#asthma (asthma -> A familiar standalone inhaler training prop.), this uses the same learned Same familiar inhaler/asthma learned category only; not a drug, treatment, indication or full diagnostic discriminator. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "standalone",
+        "inhaler",
+        "training",
+        "prop"
+      ]
+    },
+    {
+      "term": "Cystic fibrosis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar fiber-yarn spool alone, without muscle model.",
+      "prior": "docs/chapter-65-cue-audit.json#cystic fibrosis",
+      "cue_scope": "Same fibr-/fiber name fragment only; cystic and clinical fibrosis unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#cystic fibrosis (cystic fibrosis -> A familiar fiber-yarn spool alone, without muscle model.), this uses the same learned Same fibr-/fiber name fragment only; cystic and clinical fibrosis unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "fiber-yarn",
+        "spool",
+        "muscle"
+      ]
+    },
+    {
+      "term": "Interstitial lung disease",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token alone.",
+      "prior": "docs/chapter-34-cue-audit.json#left lung",
+      "cue_scope": "Lung lexical anatomy category only; interstitial distribution and disease omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#left lung (left lung -> A lung-shaped teaching token standing alone, without a blockage or hourglass.), this uses the same learned Lung lexical anatomy category only; interstitial distribution and disease omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lung-shaped"
+      ]
+    },
+    {
+      "term": "Sarcoidosis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A plain toy sack standing alone.",
+      "prior": "docs/chapter-58-cue-audit.json#sarcoidosis",
+      "cue_scope": "Same sarc-/sack approximate opening-name fragment only; not tissue, granulomas or disease appearance.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-58-cue-audit.json#sarcoidosis (sarcoidosis -> A plain toy sack standing alone.), this uses the same learned Same sarc-/sack approximate opening-name fragment only; not tissue, granulomas or disease appearance. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "sack"
+      ]
+    },
+    {
+      "term": "Pulmonary fibrosis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar fiber-yarn spool alone, without muscle model.",
+      "prior": "docs/chapter-65-cue-audit.json#pulmonary fibrosis",
+      "cue_scope": "Same fibr-/fiber lexical fragment only; pulmonary location and clinical change unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#pulmonary fibrosis (pulmonary fibrosis -> A familiar fiber-yarn spool alone, without muscle model.), this uses the same learned Same fibr-/fiber lexical fragment only; pulmonary location and clinical change unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "fiber-yarn",
+        "spool",
+        "muscle"
+      ]
+    },
+    {
+      "term": "Tuberous sclerosis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary potato tuber alone, sunglasses removed.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Tuber opening-name fragment only; sclerosis and a relationship to tuberculosis are NOT encoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuber/cool), the tuber fragment is repeated for the literal tuberous head; cool suffix removed. Same tuber-name bridge, not a disease equivalence or new association.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "sunglasses",
+        "removed"
+      ]
+    },
+    {
+      "term": "Infection",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar cartoon germ study token alone.",
+      "prior": "docs/chapter-65-cue-audit.json#infection",
+      "cue_scope": "Same broad germ/infection category only; no organism, site or transmission claim.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#infection (infection -> A familiar cartoon germ study token alone.), this uses the same learned Same broad germ/infection category only; no organism, site or transmission claim. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "cartoon",
+        "germ"
+      ]
+    },
+    {
+      "term": "Human immunodeficiency virus infection",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached toy shield alone.",
+      "prior": "docs/chapter-64-cue-audit.json#immunosuppression",
+      "cue_scope": "Immune/shield lexical category only; human, deficiency, virus identity and infection omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-64-cue-audit.json#immunosuppression, same immune/shield category. Earlier55 Human immunodeficiency virus and46 HIV holds remain open; a specific virus model or beehive is not claimed.",
+      "ingredient_search_terms": [
+        "shield"
+      ]
+    },
+    {
+      "term": "Pneumocystis pneumonia",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token, without blockage or hourglass.",
+      "prior": "docs/chapter-65-cue-audit.json#pneumonia",
+      "cue_scope": "Pneumon-/lung lexical category only; Pneumocystis name and organism identity unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#pneumonia (pneumonia -> A detached lung-shaped teaching token, without blockage or hourglass.), this uses the same learned Pneumon-/lung lexical category only; Pneumocystis name and organism identity unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lung-shaped",
+        "blockage",
+        "hourglass"
+      ]
+    },
+    {
+      "term": "Tuberculosis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A potato tuber wearing familiar cool-character sunglasses.",
+      "prior": "docs/chapter-34-cue-audit.json#tuberculosis",
+      "cue_scope": "Same tuber/cool partial-name reminder only; no infection or clinical state.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#tuberculosis (tuberculosis -> A potato tuber wearing familiar cool-character sunglasses.), this uses the same learned Same tuber/cool partial-name reminder only; no infection or clinical state. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "potato",
+        "tuber",
+        "wearing",
+        "cool-character",
+        "sunglasses"
+      ]
+    },
+    {
+      "term": "Bacterial pneumonia, necrotizing",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar cartoon germ study token alone.",
+      "prior": "docs/chapter-62-cue-audit.json#bacteria",
+      "cue_scope": "Bacterial/germ category only; pneumonia, necrosis and organisms unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#bacteria (bacteria -> A familiar cartoon germ study token alone.), this uses the same learned Bacterial/germ category only; pneumonia, necrosis and organisms unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "cartoon",
+        "germ"
+      ]
+    },
+    {
+      "term": "Lung abscess",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token alone.",
+      "prior": "docs/chapter-34-cue-audit.json#left lung",
+      "cue_scope": "Lung lexical head only; abscess not independently encoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#left lung, same lung model bridge only. Earlier65/66 lung-abscess and33/45/46 abscess holds stay open; selecting the lung head does not resolve the abscess-name trial.",
+      "ingredient_search_terms": [
+        "lung-shaped"
+      ]
+    },
+    {
+      "term": "Connective tissue disease",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A plain flat sheet of ordinary tissue paper, without puffing.",
+      "prior": "docs/chapter-50-cue-audit.json#edema",
+      "cue_scope": "Tissue/tissue-paper lexical category only; connective relation, edema and disease unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-50-cue-audit.json#edema (puffy tissue bundle), tissue-paper word identity is reused with puffing removed. This does not pretend a specific connective-tissue model existed in that root.",
+      "ingredient_search_terms": [
+        "flat",
+        "sheet",
+        "tissue",
+        "paper",
+        "puffing"
+      ]
+    },
+    {
+      "term": "Marfan's syndrome",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar desk fan, with the hand crank removed.",
+      "prior": "docs/chapter-59-cue-audit.json#Marfan's syndrome",
+      "cue_scope": "Same fan/Marfan partial-name fragment only; no syndrome phenotype.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-59-cue-audit.json#Marfan's syndrome (Marfan's syndrome -> A familiar desk fan, with the hand crank removed.), this uses the same learned Same fan/Marfan partial-name fragment only; no syndrome phenotype. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "desk",
+        "fan",
+        "hand",
+        "crank",
+        "removed"
+      ]
+    },
+    {
+      "term": "Ehlers-Danlos syndrome",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar eel figurine posed in a dancing motion.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Ehl-/eel plus Dan-/dance approximate partial surname bridge only; syndrome and remainder omitted.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-59-cue-audit.json#Marfan's syndrome (fan sound fragment), dancing eel supplies two teachable familiar surname fragments rather than a clinical phenotype. No selected eel/dancing root found in bounded search; eel/snake naming and surname pronunciation uncertain.",
+      "ingredient_search_terms": [
+        "eel",
+        "dance",
+        "Ehlers",
+        "Danlos",
+        "figurine",
+        "posed",
+        "dancing",
+        "motion"
+      ]
+    },
+    {
+      "term": "Scleroderma",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A freestanding familiar skin cross-section teaching model, without intact qualifier.",
+      "prior": "docs/chapter-48-cue-audit.json#scleroderma",
+      "cue_scope": "Same derm-/skin category only; hardening and disease specificity unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-48-cue-audit.json#scleroderma (scleroderma -> A freestanding familiar skin cross-section teaching model, without intact qualifier.), this uses the same learned Same derm-/skin category only; hardening and disease specificity unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "skin",
+        "cross-section",
+        "intact",
+        "qualifier"
+      ]
+    },
+    {
+      "term": "Rheumatoid arthritis",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An articulated joint teaching model alone, without motion arrow.",
+      "prior": "docs/chapter-62-cue-audit.json#rheumatoid arthritis",
+      "cue_scope": "Same arthr-/joint anatomy category only; rheumatoid and inflammatory/pain features unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#rheumatoid arthritis (rheumatoid arthritis -> An articulated joint teaching model alone, without motion arrow.), this uses the same learned Same arthr-/joint anatomy category only; rheumatoid and inflammatory/pain features unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "articulated",
+        "joint",
+        "motion",
+        "arrow"
+      ]
+    },
+    {
+      "term": "Cancer",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Several clay-lump tumor-category study tokens, without neck model.",
+      "prior": "docs/chapter-62-cue-audit.json#adenocarcinoma",
+      "cue_scope": "Same broad tumor-category tokens only; cancer type, malignancy behavior and organ unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#adenocarcinoma (adenocarcinoma -> Several clay-lump tumor-category study tokens, without neck model.), this uses the same learned Same broad tumor-category tokens only; cancer type, malignancy behavior and organ unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "several",
+        "clay-lump",
+        "tumor-category",
+        "tokens",
+        "neck"
+      ]
+    },
+    {
+      "term": "primary lung or metastatic disease",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Several clay-lump study tokens alone, without neck model.",
+      "prior": "docs/chapter-66-cue-audit.json#Metastatic cancer",
+      "cue_scope": "Tumor-category only; source shared disease head restored for metastatic disease, primary/lung/dissemination unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-66-cue-audit.json#Metastatic cancer, same tumor-category clay tokens. Shared table phrase primary lung or metastatic disease is preserved literally; the cue does not newly encode metastasis or lung location.",
+      "ingredient_search_terms": [
+        "several",
+        "clay-lump",
+        "tokens",
+        "neck"
+      ]
+    },
+    {
+      "term": "Catamenial pneumothorax",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary toy cat.",
+      "prior": "docs/chapter-63-cue-audit.json#Catamenial",
+      "cue_scope": "Same cat-/cat approximate opening-name fragment only; menstrual relation and pneumothorax omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-63-cue-audit.json#Catamenial (Catamenial -> An ordinary toy cat.), this uses the same learned Same cat-/cat approximate opening-name fragment only; menstrual relation and pneumothorax omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "cat"
+      ]
+    },
+    {
+      "term": "chest radiograph",
+      "pdf_page": 33,
+      "page": 457,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached chest-shaped study token beside a plain radiograph-film frame.",
+      "prior": "docs/chapter-29A-cue-audit.json#chest radiograph",
+      "cue_scope": "Same learned chest-radiograph category only; no positioning, result or diagnosis.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#chest radiograph (chest radiograph -> A detached chest-shaped study token beside a plain radiograph-film frame.), this uses the same learned Same learned chest-radiograph category only; no positioning, result or diagnosis. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "chest-shaped",
+        "radiograph-film",
+        "frame"
+      ]
+    },
+    {
+      "term": "deep sulcus sign",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary wooden block with a conspicuous deep groove cut into its surface.",
+      "prior": "docs/chapter-31-cue-audit.json#marrow cavity",
+      "cue_scope": "Deep/groove learned shape category only; sulcus vocabulary must be taught, no anatomy or imaging sign interpretation.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#marrow cavity (hollow block), groove is an explicitly different open elongated surface shape, not an existing specific sulcus model. Known block host, different groove/sulcus category bridge.",
+      "ingredient_search_terms": [
+        "groove",
+        "sulcus",
+        "deep",
+        "block",
+        "wooden",
+        "cut",
+        "into",
+        "surface"
+      ]
+    },
+    {
+      "term": "Pneumothorax size",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family only; size, thresholds and measurement unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family only; size, thresholds and measurement unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "US",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "prior": "docs/chapter-29A-cue-audit.json#ultrasonography",
+      "cue_scope": "Same ultrasound device category only; US explicitly means ultrasound here, not country initials or diagnostic performance.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#ultrasonography (ultrasonography -> A familiar standalone ultrasound probe beside an unmarked monitor.), this uses the same learned Same ultrasound device category only; US explicitly means ultrasound here, not country initials or diagnostic performance. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "standalone",
+        "ultrasound",
+        "probe",
+        "monitor"
+      ]
+    },
+    {
+      "term": "comet tail",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar comet toy with a trailing tail.",
+      "prior": "docs/chapter-45-cue-audit.json#comet tail artifact",
+      "cue_scope": "Same comet-with-tail name/shape bridge only; not an ultrasound sign or result.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-45-cue-audit.json#comet tail artifact (comet tail artifact -> A familiar comet toy with a trailing tail.), this uses the same learned Same comet-with-tail name/shape bridge only; not an ultrasound sign or result. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "comet",
+        "trailing",
+        "tail"
+      ]
+    },
+    {
+      "term": "sliding sign",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar playground slide with a toy figure sliding down.",
+      "prior": "docs/chapter-39-cue-audit.json#presentation",
+      "cue_scope": "Sliding ordinary action category only; no pleural movement, finding, presence/absence or diagnosis.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-39-cue-audit.json#presentation (figure arriving at doorway), known figure host now performs the familiar sliding action on a declared slide. Different action bridge; no selected slide root found in bounded search.",
+      "ingredient_search_terms": [
+        "slide",
+        "sliding",
+        "toy figure",
+        "playground",
+        "figure",
+        "down"
+      ]
+    },
+    {
+      "term": "Chest CT",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar short-ring CT-scanner teaching miniature.",
+      "prior": "docs/chapter-39-cue-audit.json#CT",
+      "cue_scope": "Same CT-device learned category only; chest, imaging result and diagnostic performance unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-39-cue-audit.json#CT (CT -> A familiar short-ring CT-scanner teaching miniature.), this uses the same learned Same CT-device learned category only; chest, imaging result and diagnostic performance unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "short-ring",
+        "ct-scanner",
+        "miniature"
+      ]
+    },
+    {
+      "term": "spontaneous hemopneumothorax",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "prior": "docs/chapter-29A-cue-audit.json#blood",
+      "cue_scope": "Hemo-/blood lexical head only; spontaneous, pneumo-/thorax and imaging features omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#blood (blood -> A detached transparent vial containing plain red liquid.), this uses the same learned Hemo-/blood lexical head only; spontaneous, pneumo-/thorax and imaging features omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "vial",
+        "containing",
+        "red",
+        "liquid"
+      ]
+    },
+    {
+      "term": "pleural line",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached pleural-space teaching-model token on its own display base.",
+      "prior": "docs/chapter-34-cue-audit.json#pleural space",
+      "cue_scope": "Pleural learned anatomy category only; line shape and image appearance omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#pleural space (pleural space -> A detached pleural-space teaching-model token on its own display base.), this uses the same learned Pleural learned anatomy category only; line shape and image appearance omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "pleural-space",
+        "teaching-model",
+        "own",
+        "display",
+        "base"
+      ]
+    },
+    {
+      "term": "M-mode",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary metronome with a visibly moving pendulum.",
+      "prior": "docs/chapter-23-cue-audit.json#metronome",
+      "cue_scope": "M-/motion familiar movement reminder only; not the definition or appearance of a sonographic mode.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-23-cue-audit.json#metronome (mechanical pendulum instrument), the same known prop now supplies motion/M initial rather than the literal instrument name. Different taught initial/category bridge, not a clinical sonography definition.",
+      "ingredient_search_terms": [
+        "metronome",
+        "M-mode",
+        "motion",
+        "visibly",
+        "moving",
+        "pendulum"
+      ]
+    },
+    {
+      "term": "B-mode",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary unlabelled dimmer switch beside a bright lamp.",
+      "prior": "docs/chapter-30-cue-audit.json#Cook Medical ENK Oxygen Flow Modulator Set",
+      "cue_scope": "B-/brightness initial/category reminder only; not a sonography definition, mode comparison or diagnostic result.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#Cook Medical ENK Oxygen Flow Modulator Set (control knob), a familiar dimmer/brightness relation is a declared different use of the known control host. Brightness/B initial requires teaching; not an image-generation evidence claim.",
+      "ingredient_search_terms": [
+        "dimmer",
+        "brightness",
+        "B-mode",
+        "lamp",
+        "unlabelled",
+        "switch",
+        "bright"
+      ]
+    },
+    {
+      "term": "sea and shore",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar small beach model showing water meeting a dry shoreline.",
+      "prior": "docs/chapter-16-cue-audit.json#tidal volume",
+      "cue_scope": "Sea/shore literal category and boundary only; no normal/abnormal sonographic comparison.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "meaningful_variant",
+      "selection_status": "candidate",
+      "change_origin": "new_revision",
+      "association_comparison": "Compared with docs/chapter-16-cue-audit.json#tidal volume (seaside tide washing into pitcher), sea/shore boundary reuses the actual seaside ingredient without the pitcher/volume relation. This is a meaningful reduced-scope depiction of the same coastal-water bridge, not a new beach family.",
+      "ingredient_search_terms": [
+        "sea",
+        "shore",
+        "seashore",
+        "beach",
+        "small",
+        "showing",
+        "water",
+        "meeting",
+        "dry",
+        "shoreline"
+      ]
+    },
+    {
+      "term": "bullous emphysema",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A few air-bubble toy tokens alone, without skin or arm model.",
+      "prior": "docs/chapter-62-cue-audit.json#Emphysema",
+      "cue_scope": "Same broad emphysema/air-bubble learned category only; bullous subtype and radiologic appearance omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#Emphysema (Emphysema -> A few air-bubble toy tokens alone, without skin or arm model.), this uses the same learned Same broad emphysema/air-bubble learned category only; bullous subtype and radiologic appearance omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "few",
+        "air-bubble",
+        "tokens",
+        "skin",
+        "arm"
+      ]
+    },
+    {
+      "term": "respiratory rate",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Familiar detached bellows alone, without airway.",
+      "prior": "docs/chapter-2-cue-audit.json#continuous positive airway pressure",
+      "cue_scope": "Respiratory/breathing bellows category only; rate and numeric criteria omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-2-cue-audit.json#continuous positive airway pressure (continuous positive airway pressure -> Bellows holding an air passage open.), this uses the same learned Respiratory/breathing bellows category only; rate and numeric criteria omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "bellows",
+        "airway"
+      ]
+    },
+    {
+      "term": "dyspnea",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Familiar detached bellows standing alone, without airway.",
+      "prior": "docs/chapter-48-cue-audit.json#dyspnea",
+      "cue_scope": "Same breathing/bellows lexical category only; rest, severity, absence and symptom interpretation omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-48-cue-audit.json#dyspnea (dyspnea -> Familiar detached bellows standing alone, without airway.), this uses the same learned Same breathing/bellows lexical category only; rest, severity, absence and symptom interpretation omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "bellows",
+        "airway"
+      ]
+    },
+    {
+      "term": "Pulse",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A generic pulse-shaped zigzag token alone, without generator.",
+      "prior": "docs/chapter-65-cue-audit.json#Pulse",
+      "cue_scope": "Same pulse/zigzag token only; rate, numbers and absence/presence unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-65-cue-audit.json#Pulse (Pulse -> A generic pulse-shaped zigzag token alone, without generator.), this uses the same learned Same pulse/zigzag token only; rate, numbers and absence/presence unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "pulse-shaped",
+        "zigzag",
+        "generator"
+      ]
+    },
+    {
+      "term": "blood pressure",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An artery-shaped toy beside an unnumbered pressure gauge, without a scowling face.",
+      "prior": "docs/chapter-31-cue-audit.json#blood pressure",
+      "cue_scope": "Same arterial-pressure category only; normal, values and clinical stability unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#blood pressure (blood pressure -> An artery-shaped toy beside an unnumbered pressure gauge, without a scowling face.), this uses the same learned Same arterial-pressure category only; normal, values and clinical stability unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "artery-shaped",
+        "unnumbered",
+        "pressure",
+        "gauge",
+        "scowling",
+        "face"
+      ]
+    },
+    {
+      "term": "oxygen saturation",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.",
+      "prior": "docs/chapter-29B-cue-audit.json#oxygen saturation",
+      "cue_scope": "Same saturation/oxygen learned composition only; no threshold, physiology or diagnostic criterion.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29B-cue-audit.json#oxygen saturation (oxygen saturation -> A water-saturated sponge beside a recognizable oxygen cylinder, with no connection between them.), this uses the same learned Same saturation/oxygen learned composition only; no threshold, physiology or diagnostic criterion. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "water-saturated",
+        "sponge",
+        "oxygen",
+        "cylinder",
+        "connection",
+        "between",
+        "them"
+      ]
+    },
+    {
+      "term": "hemothorax",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "prior": "docs/chapter-29A-cue-audit.json#blood",
+      "cue_scope": "Hemo-/blood lexical head only; absence, thoracic collection and diagnosis unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-29A-cue-audit.json#blood (red-liquid vial), same blood lexical head; not the more detailed chest-shell relational cue of chapter3. Source absence in Table68-2 is explicitly not encoded.",
+      "ingredient_search_terms": [
+        "vial",
+        "containing",
+        "red",
+        "liquid"
+      ]
+    },
+    {
+      "term": "Oxygen",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Recognizable oxygen cylinder standing alone.",
+      "prior": "docs/chapter-22-cue-audit.json#oxygen",
+      "cue_scope": "Same oxygen-cylinder category only; no dosage, delivery method or recommendation.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-22-cue-audit.json#oxygen (oxygen -> Recognizable oxygen cylinder standing alone.), this uses the same learned Same oxygen-cylinder category only; no dosage, delivery method or recommendation. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "oxygen",
+        "cylinder"
+      ]
+    },
+    {
+      "term": "Observation",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar magnifying glass standing alone.",
+      "prior": "docs/chapter-51-cue-audit.json#Observation unit",
+      "cue_scope": "Same examination/watchful-observation category only; care setting, duration and management unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-51-cue-audit.json#Observation unit (Observation unit -> A familiar magnifying glass standing alone.), this uses the same learned Same examination/watchful-observation category only; care setting, duration and management unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "magnifying",
+        "glass"
+      ]
+    },
+    {
+      "term": "Aspiration",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue_scope": "Same inward-drawing ordinary action family only; no procedure, material or clinical indication.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-33-cue-audit.json#aspiration (aspiration -> A detached unmarked syringe pulling loose beads inward into its barrel.), this uses the same learned Same inward-drawing ordinary action family only; no procedure, material or clinical indication. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "syringe",
+        "pulling",
+        "loose",
+        "beads",
+        "inward",
+        "into",
+        "barrel"
+      ]
+    },
+    {
+      "term": "tube thoracostomy",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached loose tube alone, without windpipe model.",
+      "prior": "docs/chapter-62-cue-audit.json#thoracostomy tubes",
+      "cue_scope": "Tube lexical category only; thoracic route, placement and procedure omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-62-cue-audit.json#thoracostomy tubes (thoracostomy tubes -> A detached loose tube alone, without windpipe model.), this uses the same learned Tube lexical category only; thoracic route, placement and procedure omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "loose",
+        "tube",
+        "windpipe"
+      ]
+    },
+    {
+      "term": "needle",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached needle training prop standing alone, without a host or driver.",
+      "prior": "docs/chapter-34-cue-audit.json#needle",
+      "cue_scope": "Same detached needle object category only; no gauge, route, placement or use.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#needle (needle -> A detached needle training prop standing alone, without a host or driver.), this uses the same learned Same detached needle object category only; no gauge, route, placement or use. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "needle",
+        "training",
+        "prop",
+        "host",
+        "driver"
+      ]
+    },
+    {
+      "term": "syringe",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "prior": "docs/chapter-28-cue-audit.json#syringes",
+      "cue_scope": "Same syringe object category only; no quantity, attachment or procedural sequence.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-28-cue-audit.json#syringes (syringes -> A recognizable generic unmarked syringe without a needle.), this uses the same learned Same syringe object category only; no quantity, attachment or procedural sequence. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "syringe",
+        "needle"
+      ]
+    },
+    {
+      "term": "catheter",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "cue_scope": "Same hollow-catheter training-prop category only; no size, route or insertion.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#catheter (catheter -> A detached hollow catheter training prop, without a tree.), this uses the same learned Same hollow-catheter training-prop category only; no size, route or insertion. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "hollow",
+        "catheter",
+        "training",
+        "prop",
+        "tree"
+      ]
+    },
+    {
+      "term": "pigtail catheter",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar toy pig with an exaggerated curly tail.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Pig/tail literal-name bridge only; catheter, clinical shape and device specification omitted.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#pigtail catheter (plain generic catheter), the pig-tail word-image bridge is a new proposal rather than an unchanged generic device repeat. No selected pig ingredient found in bounded prior search.",
+      "ingredient_search_terms": [
+        "pig",
+        "curly tail",
+        "pigtail",
+        "exaggerated",
+        "curly",
+        "tail"
+      ]
+    },
+    {
+      "term": "Seldinger technique",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A toy shopkeeper behind a counter ringing a bell.",
+      "prior": "docs/chapter-30-cue-audit.json#Seldinger technique",
+      "cue_scope": "Same sell/ding shopkeeper-and-bell partial-name bridge only; technique and insertion sequence unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#Seldinger technique (Seldinger technique -> A toy shopkeeper behind a counter ringing a bell.), this uses the same learned Same sell/ding shopkeeper-and-bell partial-name bridge only; technique and insertion sequence unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "shopkeeper",
+        "behind",
+        "counter",
+        "ringing",
+        "bell"
+      ]
+    },
+    {
+      "term": "diameter",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary straight ruler alone, without torn fabric.",
+      "prior": "docs/chapter-66-cue-audit.json#diameter",
+      "cue_scope": "Same dimension/measurement category only; numeric French sizes and conversions unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-66-cue-audit.json#diameter (diameter -> An ordinary straight ruler alone, without torn fabric.), this uses the same learned Same dimension/measurement category only; numeric French sizes and conversions unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "straight",
+        "ruler",
+        "torn",
+        "fabric"
+      ]
+    },
+    {
+      "term": "French (F)",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary French baguette loaf beside an unlabelled bread basket.",
+      "prior": "docs/chapter-16-cue-audit.json#hypercarbia",
+      "cue_scope": "French familiar cultural-food category reminder only; not a definition, unit conversion or tube sizing.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-16-cue-audit.json#hypercarbia (carb-food basket), a declared baguette subtype now cues French naming rather than carbohydrate excess. Known bread host, different name/category bridge; cultural naming uncertain.",
+      "ingredient_search_terms": [
+        "baguette",
+        "French",
+        "bread",
+        "basket",
+        "french",
+        "loaf",
+        "unlabelled"
+      ]
+    },
+    {
+      "term": "Heimlich valve",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar toy valve alone.",
+      "prior": "docs/chapter-48-cue-audit.json#Aortic valve disease",
+      "cue_scope": "Valve familiar hardware category only; Heimlich surname, one-way action and procedure unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-48-cue-audit.json#Aortic valve disease, same generic valve host/category. Explicitly not a selected specific Heimlich-valve model. Earlier22 Heimlich maneuver arms/cushion hold remains unrelated and open.",
+      "ingredient_search_terms": [
+        "valve"
+      ]
+    },
+    {
+      "term": "water seal",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "table",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar seal figurine alone, mask removed.",
+      "prior": "docs/chapter-28-cue-audit.json#mask seal",
+      "cue_scope": "Seal ordinary wordplay only; water, drainage, equipment and clinical mechanism unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-28-cue-audit.json#mask seal, same seal-animal homonym with mask removed. Modifier omission does not create a new bridge or imply a water-seal apparatus.",
+      "ingredient_search_terms": [
+        "seal",
+        "figurine",
+        "mask",
+        "removed"
+      ]
+    },
+    {
+      "term": "needle decompression",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar compressed spring visibly expanding after its clamp is released.",
+      "prior": "docs/chapter-35-cue-audit.json#immediate release",
+      "cue_scope": "De-compression ordinary release/expansion category only; needle component separately screened, no thoracic technique.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-35-cue-audit.json#immediate release (latch releasing ball), familiar clamp/release host now acts on an expanding spring, adding explicit de-compression action rather than simple release. Different action association; no medical pressure analogy asserted.",
+      "ingredient_search_terms": [
+        "spring",
+        "clamp",
+        "decompression",
+        "release",
+        "compressed",
+        "visibly",
+        "expanding",
+        "after",
+        "released"
+      ]
+    },
+    {
+      "term": "intercostal space",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached intercostal-space teaching-model token on its own display base.",
+      "prior": "docs/chapter-34-cue-audit.json#intercostal space",
+      "cue_scope": "Same learned intercostal-space anatomy model only; second/fourth/fifth positions, insertion and avoidance instructions omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#intercostal space (intercostal space -> A detached intercostal-space teaching-model token on its own display base.), this uses the same learned Same learned intercostal-space anatomy model only; second/fourth/fifth positions, insertion and avoidance instructions omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "intercostal-space",
+        "teaching-model",
+        "own",
+        "display",
+        "base"
+      ]
+    },
+    {
+      "term": "rib",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A freestanding rib-cage study model, without a hand pump or thought cloud.",
+      "prior": "docs/chapter-34-cue-audit.json#rib",
+      "cue_scope": "Same rib-cage learned anatomy category only; above/below relations and needle placement omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#rib (rib -> A freestanding rib-cage study model, without a hand pump or thought cloud.), this uses the same learned Same rib-cage learned anatomy category only; above/below relations and needle placement omitted. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "rib-cage",
+        "hand",
+        "pump",
+        "thought",
+        "cloud"
+      ]
+    },
+    {
+      "term": "anterior axillary line",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy axe alone, weather vane removed.",
+      "prior": "docs/chapter-31-cue-audit.json#axillary vein",
+      "cue_scope": "Ax-/axe approximate axillary-name fragment only; anterior, line and vessel/site identity unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#axillary vein (axe plus vane), same axe/axillary name fragment with vane removed. No particular vein, anatomical surface line or insertion position encoded.",
+      "ingredient_search_terms": [
+        "axe",
+        "weather",
+        "vane",
+        "removed"
+      ]
+    },
+    {
+      "term": "midclavicular line",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached clavicle teaching-model token on a display base.",
+      "prior": "docs/chapter-30-cue-audit.json#clavicle",
+      "cue_scope": "Clavicular learned anatomy head only; mid-, line and procedural location unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#clavicle (clavicle -> A detached clavicle teaching-model token on a display base.), this uses the same learned Clavicular learned anatomy head only; mid-, line and procedural location unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "clavicle",
+        "teaching-model",
+        "display",
+        "base"
+      ]
+    },
+    {
+      "term": "collapsed lung",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached lung-shaped teaching token alone.",
+      "prior": "docs/chapter-34-cue-audit.json#left lung",
+      "cue_scope": "Lung learned anatomy lexical head only; collapse, side and clinical mechanics unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#left lung (left lung -> A lung-shaped teaching token standing alone, without a blockage or hourglass.), this uses the same learned Lung learned anatomy lexical head only; collapse, side and clinical mechanics unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "lung-shaped"
+      ]
+    },
+    {
+      "term": "small-size catheters",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "cue_scope": "Same generic catheter category only; small-size and technique unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#catheter (catheter -> A detached hollow catheter training prop, without a tree.), this uses the same learned Same generic catheter category only; small-size and technique unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "hollow",
+        "catheter",
+        "training",
+        "prop",
+        "tree"
+      ]
+    },
+    {
+      "term": "Pigtail Catheters Using Seldinger Technique",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "heading_and_body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A toy shopkeeper behind a counter ringing a bell.",
+      "prior": "docs/chapter-30-cue-audit.json#Seldinger technique",
+      "cue_scope": "Seldinger sell/ding partial-name bridge only; pigtail catheter separately tried, placement technique unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#Seldinger technique (Seldinger technique -> A toy shopkeeper behind a counter ringing a bell.), this uses the same learned Seldinger sell/ding partial-name bridge only; pigtail catheter separately tried, placement technique unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "shopkeeper",
+        "behind",
+        "counter",
+        "ringing",
+        "bell"
+      ]
+    },
+    {
+      "term": "triangle of safety",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar triangle-shaped gemstone alone.",
+      "prior": "docs/chapter-44-cue-audit.json#femoral triangle",
+      "cue_scope": "Triangle literal shape category only; safety, borders and clinical location unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-44-cue-audit.json#femoral triangle (femoral triangle -> A familiar triangle-shaped gemstone standing alone, without pain mask.), this uses the same learned Triangle literal shape category only; safety, borders and clinical location unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "triangle-shaped",
+        "gemstone"
+      ]
+    },
+    {
+      "term": "pectoralis major",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy woodpecker pecking an ordinary wood block.",
+      "prior": "docs/chapter-31-cue-audit.json#marrow cavity",
+      "cue_scope": "Pect-/peck approximate opening-name fragment only; major, muscle anatomy and location omitted.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-31-cue-audit.json#marrow cavity (hollow block), an intact wooden-block host now receives a declared woodpecker/peck action for Pect-. Different sound/action bridge, not a cavity or anatomy claim. Earlier33 prepectoral parcel/front/chest hold remains open; the woodpecker itself is new, not an old selected subtype.",
+      "ingredient_search_terms": [
+        "woodpecker",
+        "peck",
+        "pectoral",
+        "pectoralis",
+        "pecking",
+        "wood",
+        "block"
+      ]
+    },
+    {
+      "term": "latissimus dorsi",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "retain_candidate",
+      "cue": "A familiar garden lattice panel.",
+      "prior": "new_offline_proposal",
+      "cue_scope": "Latiss-/lattice approximate opening-name sound/shape object only; dorsi and muscle anatomy unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-38-cue-audit.json#interstitial cystitis (held bladder/lattice attempt), lattice now supplies the latiss- sound rather than a proposed interstitial anatomy metaphor. Different association relative to that named hold; no selected lattice root found.",
+      "ingredient_search_terms": [
+        "lattice",
+        "latissimus",
+        "dorsi",
+        "garden",
+        "panel"
+      ]
+    },
+    {
+      "term": "iatrogenic pneumothorax",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Air balloon in the space between a lung model and a transparent chest shell.",
+      "prior": "docs/chapter-3-cue-audit.json#pneumothoraces",
+      "cue_scope": "Same broad pneumothorax family only; iatrogenic cause unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#pneumothoraces (pneumothoraces -> Air balloon in the space between a lung model and a transparent chest shell.), this uses the same learned Same broad pneumothorax family only; iatrogenic cause unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "air",
+        "balloon",
+        "space",
+        "between",
+        "lung",
+        "chest",
+        "shell"
+      ]
+    },
+    {
+      "term": "Air transport with pneumothorax",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy airplane alone.",
+      "prior": "docs/chapter-30-cue-audit.json#VBM Manujet III",
+      "cue_scope": "Airplane/air-transport literal category only; pneumothorax, altitude and safety instructions unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-30-cue-audit.json#VBM Manujet III (jet as name fragment), ordinary airplane now invokes literal air transport rather than Manujet/jet sound. Different bridge using the same selected airplane host.",
+      "ingredient_search_terms": [
+        "airplane",
+        "air transport",
+        "jet"
+      ]
+    },
+    {
+      "term": "Diving",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "heading",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar swim-diver figurine wearing a diving mask and fins.",
+      "prior": "docs/chapter-28-cue-audit.json#simple facemask",
+      "cue_scope": "Diving familiar activity category only; depth, ascent, physiology and restrictions unencoded.",
+      "reason": "Select this economical familiar lexical association for later independent review; naming and taught recovery remain untested.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-28-cue-audit.json#simple facemask (plain face mask), an explicitly declared diving-mask/fin subtype and activity is different, not proof that a diving mask already existed in the medical mask root. Known mask host, new activity bridge.",
+      "ingredient_search_terms": [
+        "diving",
+        "diving mask",
+        "fins",
+        "swim-diver",
+        "figurine",
+        "wearing",
+        "mask"
+      ]
+    },
+    {
+      "term": "Boyle's law",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "Boy wearing a judge's wig beside a large balloon.",
+      "prior": "docs/chapter-3-cue-audit.json#Boyle's law",
+      "cue_scope": "Same boy/law name-pun composition only; no pressure-volume relation, altitude or diving guidance.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-3-cue-audit.json#Boyle's law (Boyle's law -> Boy wearing a judge's wig beside a large balloon.), this uses the same learned Same boy/law name-pun composition only; no pressure-volume relation, altitude or diving guidance. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "boy",
+        "wearing",
+        "judge",
+        "wig",
+        "large",
+        "balloon"
+      ]
+    },
+    {
+      "term": "sentinel eye",
+      "pdf_page": 35,
+      "page": 459,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "A familiar watchful-eye token alone, bedside monitor removed.",
+      "prior": "docs/chapter-23-cue-audit.json#procedural monitoring",
+      "cue_scope": "Eye literal name-head only; sentinel function, tube-hole location and imaging interpretation omitted.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-23-cue-audit.json#procedural monitoring (monitor plus watchful eye), same watchful-eye/name category at eye-only scope. Not a specific tube hole or a placement check.",
+      "ingredient_search_terms": [
+        "watchful-eye",
+        "bedside",
+        "monitor",
+        "removed"
+      ]
+    },
+    {
+      "term": "air leak",
+      "pdf_page": 36,
+      "page": 460,
+      "source_match": "body",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary toy pitcher leaking a few water drops from a small crack.",
+      "prior": "docs/chapter-34-cue-audit.json#pericardial volume",
+      "cue_scope": "Leak ordinary escaping-fluid action category only; air, thoracic source and clinical result unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "new_association",
+      "selection_status": "candidate",
+      "change_origin": "new_proposal",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#pericardial volume (measuring pitcher), leaking action is a declared different association rather than volume. Does not assert a liquid leak is air or illustrate pleural mechanics.",
+      "ingredient_search_terms": [
+        "leak",
+        "pitcher",
+        "crack",
+        "leaking",
+        "few",
+        "water",
+        "drops",
+        "small"
+      ]
+    },
+    {
+      "term": "air-fluid level",
+      "pdf_page": 34,
+      "page": 458,
+      "source_match": "figure_label",
+      "kind": "familiar_category_action_or_partial_name",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary unmarked transparent pitcher holding plain liquid.",
+      "prior": "docs/chapter-34-cue-audit.json#pericardial volume",
+      "cue_scope": "Fluid/volume pitcher category only; air, level, lung appearance and interpretation unencoded.",
+      "reason": "Select the actual nonheld prior bridge at the stated lexical scope; omitted qualifiers are not a veto and are not silently encoded.",
+      "tested": false,
+      "association_status": "unchanged_repeat",
+      "selection_status": "candidate",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Compared with docs/chapter-34-cue-audit.json#pericardial volume (pericardial volume -> A transparent measuring pitcher with no scale, without a paintbrush stroke.), this uses the same learned Fluid/volume pitcher category only; air, level, lung appearance and interpretation unencoded. No substantive new association is claimed by a new occurrence or omitted modifier.",
+      "ingredient_search_terms": [
+        "pitcher",
+        "holding",
+        "liquid"
+      ]
+    }
+  ],
+  "counts": {
+    "selected_terms": 79,
+    "new_candidates": 3,
+    "reused_candidates": 76,
+    "holds": 0
+  },
+  "resolved_holds": [],
+  "prior_hold_history": [
+    {
+      "term": "Tension pneumothorax",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-24-cue-audit.json#tension pneumothorax",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried the established thoracic-air cue with taut fabric for tension. The added tension prop is ambiguous, so this modifier-specific candidate is held rather than silently dropping tension. No claim that all syllables or isolated unique identification are required; no source clinical statement encoded."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Asthma",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-28-cue-audit.json#asthma",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried an asterisk and a moth for asth/ma, but this is a strained multi-repair bridge. Bronchospasm's existing bronco cue was considered, not silently equated with asthma."
+        },
+        {
+          "reference": "docs/chapter-29A-cue-audit.json#asthma",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a familiar inhaler as a broad category reminder; held because the medication-device association was not the desired lexical-name reminder here. Familiar categories are allowed; not claiming inhalers diagnose asthma or excluding later learned category proposals."
+        },
+        {
+          "reference": "docs/chapter-29B-cue-audit.json#asthma",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Preserves earlier asterisk/moth sound attempt; considered familiar inhaler category, but did not select it as an asthma-specific name cue in this pass. Broader category cues are allowed, not banned."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Cystic fibrosis",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-28-cue-audit.json#cystic fibrosis",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a cyst-like pouch with fibers. Pouch identity is vague and feels like an invented pathology lesson; no selected vocabulary composition."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Infection",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-29A-cue-audit.json#infection",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a generic germ toy; held because this specific token was not appealing enough as a new lexical cue. Not a diagnostic-uniqueness requirement; future familiar-category trial remains possible."
+        },
+        {
+          "reference": "docs/chapter-31-cue-audit.json#infection",
+          "decision": "hold",
+          "attempt": "A generic cartoon germ.",
+          "reason": "Germ is plausible category but may mean organism or contamination; no selected revision, prior hold retained."
+        },
+        {
+          "reference": "docs/chapter-33-cue-audit.json#infection",
+          "decision": "hold",
+          "attempt": "A cartoon germ beside a broken toy shield.",
+          "reason": "Germ/broken shield too broad to distinguish infection from exposure; no new economical identity selected; older holds remain."
+        },
+        {
+          "reference": "docs/chapter-34-cue-audit.json#infection",
+          "decision": "hold",
+          "attempt": "A generic cartoon germ beside a doorway.",
+          "reason": "Tried germ/entry; no useful infection-specific lexical hook selected. Existing rejected/held germ attempts remain historical; not a universal ban on category cues."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Lung abscess",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-65-cue-audit.json#lung abscess",
+          "decision": "hold",
+          "attempt": "A plain block with a recessed pocket.",
+          "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound trial remains naming-dependent; no selected abscess visual and earlier holds preserved."
+        },
+        {
+          "reference": "docs/chapter-66-cue-audit.json#lung abscess",
+          "decision": "hold",
+          "attempt": "A plain block with a recessed pocket.",
+          "reason": "No economical lung abscess name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Recess/-cess partial sound tried; cavity shape alone does not identify abscess rather than any cavity, no selected abscess name bridge."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Rheumatoid arthritis",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-55-cue-audit.json#Rheumatoid arthritis",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Cancer",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-53-cue-audit.json#cancer",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "dyspnea",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-34-cue-audit.json#dyspnea",
+          "decision": "hold",
+          "attempt": "A vinyl disc beside a toy knee.",
+          "reason": "Tried disc/knee; awkward pronunciation and an arbitrary prop pair make this attempt unappealing. No symptom performance used as a substitute."
+        },
+        {
+          "reference": "docs/chapter-46-cue-audit.json#dyspnea",
+          "decision": "hold",
+          "attempt": "A toy bellows beside a distress mask.",
+          "reason": "Breath/distress category tried but not selected; clinical breathing pattern must not be invented."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    },
+    {
+      "term": "Aspiration",
+      "earlier_hold_remains_open": true,
+      "history": [
+        {
+          "reference": "docs/chapter-29A-cue-audit.json#aspiration",
+          "decision": "hold",
+          "attempt": null,
+          "reason": "Tried a vacuum beside a tiny aspirational trophy; neither sense made an appealing economical name reminder, so held. No aspirating patient or clinical mechanism; future familiar category cue remains possible."
+        }
+      ],
+      "note": "No canonical older hold is resolved by this chapter occurrence. A selected partial association is not a deletion or independent approval of that older attempt."
+    }
+  ],
+  "keyword_screen": {
+    "method": "Actual owned regions reviewed in every supplied1.5x raster with native span/font/bbox text and annotation arrays; headings, bold/italic lexical emphasis, tables including comments/footnotes, figures/captions/labels and selected promising body heads. Administrative prose and numbers excluded only after meaningful lexical heads mapped. Occurrence list is bounded lexical screening, not exhaustive clinical coverage.",
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "All assigned native annotation arrays empty. Visible rasters inspected; flattened or historical markup cannot be excluded."
+    },
+    "items": [
+      {
+        "term": "Pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Primary pneumothoraces",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Primary pneumothoraces",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Secondary pneumothoraces",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Secondary pneumothoraces",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "primary spontaneous pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "primary spontaneous pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "secondary spontaneous pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "secondary spontaneous pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Traumatic pneumothoraces",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Traumatic pneumothoraces",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Tension pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Tension pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Airway disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Airway disease",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Chronic obstructive pulmonary disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Chronic obstructive pulmonary disease",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Asthma",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Asthma",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Cystic fibrosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Cystic fibrosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Interstitial lung disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Interstitial lung disease",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Sarcoidosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Sarcoidosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Pulmonary fibrosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Pulmonary fibrosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Tuberous sclerosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Tuberous sclerosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Infection",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Infection",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Human immunodeficiency virus infection",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Human immunodeficiency virus infection",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Pneumocystis pneumonia",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Pneumocystis pneumonia",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Tuberculosis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Tuberculosis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Bacterial pneumonia, necrotizing",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Bacterial pneumonia, necrotizing",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Lung abscess",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Lung abscess",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Connective tissue disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Connective tissue disease",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Marfan's syndrome",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Marfan's syndrome",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Ehlers-Danlos syndrome",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Ehlers-Danlos syndrome",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Scleroderma",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Scleroderma",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Rheumatoid arthritis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Rheumatoid arthritis",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Cancer",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Cancer",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "primary lung or metastatic disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "primary lung or metastatic disease",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Catamenial pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Catamenial pneumothorax",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "chest radiograph",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "chest radiograph",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "deep sulcus sign",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "deep sulcus sign",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Pneumothorax size",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "Pneumothorax size",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "US",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "US",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "comet tail",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "comet tail",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "sliding sign",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "sliding sign",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Chest CT",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "Chest CT",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "spontaneous hemopneumothorax",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "spontaneous hemopneumothorax",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "pleural line",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "pleural line",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "M-mode",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "M-mode",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "B-mode",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "B-mode",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "sea and shore",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "sea and shore",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "bullous emphysema",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "bullous emphysema",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "respiratory rate",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "respiratory rate",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "dyspnea",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "dyspnea",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Pulse",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pulse",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "blood pressure",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "blood pressure",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "oxygen saturation",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "oxygen saturation",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "hemothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "hemothorax",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Oxygen",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Oxygen",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Observation",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Observation",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Aspiration",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Aspiration",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "tube thoracostomy",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "needle",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "needle",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "syringe",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "syringe",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "catheter",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "catheter",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "pigtail catheter",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "pigtail catheter",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Seldinger technique",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Seldinger technique",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "diameter",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "diameter",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "French (F)",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "French (F)",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "Heimlich valve",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Heimlich valve",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "water seal",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "water seal",
+        "emphasis": "Table title/cell/comment/footnote lexical head; numeric and procedural prose separated."
+      },
+      {
+        "term": "needle decompression",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "needle decompression",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "intercostal space",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "intercostal space",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "rib",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "rib",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "anterior axillary line",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "anterior axillary line",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "midclavicular line",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "midclavicular line",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "collapsed lung",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "collapsed lung",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "small-size catheters",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "small-size catheters",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Pigtail Catheters Using Seldinger Technique",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Pigtail Catheters Using Seldinger Technique",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "triangle of safety",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "triangle of safety",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "pectoralis major",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "pectoralis major",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "latissimus dorsi",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "latissimus dorsi",
+        "emphasis": "Actual figure label or caption lexical head; not a clinical image interpretation."
+      },
+      {
+        "term": "iatrogenic pneumothorax",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "iatrogenic pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Air transport with pneumothorax",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Air transport with pneumothorax",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Diving",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Diving",
+        "emphasis": "Actual chapter/subheading or native emphasized lexical head; see source-review inventory."
+      },
+      {
+        "term": "Boyle's law",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Boyle's law",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "sentinel eye",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "sentinel eye",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "air leak",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "air leak",
+        "emphasis": "Selected promising regular-body lexical head; not a census of incidental body nouns."
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Repeated actual title/table/caption/boundary continuation lexical head.",
+        "wording_note": "Singular/plural and case normalized; no extra association count for repetition."
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Repeated actual title/table/caption/boundary continuation lexical head.",
+        "wording_note": "Singular/plural and case normalized; no extra association count for repetition."
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Repeated actual title/table/caption/boundary continuation lexical head.",
+        "wording_note": "Singular/plural and case normalized; no extra association count for repetition."
+      },
+      {
+        "term": "pneumothorax",
+        "pdf_page": 37,
+        "page": 461,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Repeated actual title/table/caption/boundary continuation lexical head.",
+        "wording_note": "Singular/plural and case normalized; no extra association count for repetition."
+      },
+      {
+        "term": "Causes of Secondary Pneumothorax",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Secondary pneumothoraces",
+        "emphasis": "Table68-1 title",
+        "wording_note": "Title plural/singular variant, causes not encoded."
+      },
+      {
+        "term": "Pneumocystis",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Pneumocystis pneumonia",
+        "emphasis": "Italic organism in body and table",
+        "wording_note": "Lung-only partial category selected; organism name is not independently encoded."
+      },
+      {
+        "term": "primary lung disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Interstitial lung disease",
+        "emphasis": "Table68-1 shared-head alias",
+        "wording_note": "Restores disease across primary lung or metastatic disease; lung head only, no interstitial implication."
+      },
+      {
+        "term": "metastatic disease",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "primary lung or metastatic disease",
+        "emphasis": "Table68-1 shared-head alias",
+        "wording_note": "Restores shared disease head; no metastasis-specific cue claimed."
+      },
+      {
+        "term": "necrotizing",
+        "pdf_page": 33,
+        "page": 457,
+        "entry_term": "Bacterial pneumonia, necrotizing",
+        "emphasis": "Table68-1 qualifier",
+        "wording_note": "Bacterial head only; qualifier tried via existing germ cue but necrosis omitted."
+      },
+      {
+        "term": "air-fluid level",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "air-fluid level",
+        "emphasis": "Figure68-1 caption lexical head",
+        "wording_note": "Literal caption head at fluid-only category scope; not an image interpretation."
+      },
+      {
+        "term": "right hemithorax",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "rib",
+        "emphasis": "Figure68-1 caption lexical head",
+        "wording_note": "Thorax/rib-cage category only; right/hemi not encoded."
+      },
+      {
+        "term": "collapse",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "collapsed lung",
+        "emphasis": "Figure68-1 caption lexical head",
+        "wording_note": "Lung-only scope, not a collapse finding."
+      },
+      {
+        "term": "lung",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "collapsed lung",
+        "emphasis": "Figure68-1 caption lexical head",
+        "wording_note": "Same lung anatomy host; collapsed qualifier omitted."
+      },
+      {
+        "term": "Slide sign",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "sliding sign",
+        "emphasis": "Figure68-2 embedded label",
+        "wording_note": "Literal Slide sign label is explicit action-name variant of bold sliding sign, not a diagnostic equivalence."
+      },
+      {
+        "term": "pleura",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "pleural line",
+        "emphasis": "Figure68-2 caption",
+        "wording_note": "Pleural anatomy category only; line/imaging state omitted."
+      },
+      {
+        "term": "horizontal artifact",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "sea and shore",
+        "emphasis": "Figure68-2 embedded multi-line label",
+        "wording_note": "Only quoted sea/shore lexical image is selected; artifact orientation and normal separation are not encoded."
+      },
+      {
+        "term": "Secondary spontaneous pneumothorax",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "secondary spontaneous pneumothorax",
+        "emphasis": "Figure68-3 caption"
+      },
+      {
+        "term": "emphysema",
+        "pdf_page": 34,
+        "page": 458,
+        "entry_term": "bullous emphysema",
+        "emphasis": "Figure68-3 caption",
+        "wording_note": "Shared head, bullous qualifier remains unencoded."
+      },
+      {
+        "term": "Criteria for Stable Patient With Pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Table68-2 title",
+        "wording_note": "Stability/criteria clinical relation excluded after respiratory/pulse/pressure/oxygen/hemothorax heads screened."
+      },
+      {
+        "term": "Aspiration and Thoracostomy Devices",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Aspiration",
+        "emphasis": "Table68-3 title",
+        "wording_note": "Aspiration and tube thoracostomy heads independently selected; device sizes excluded."
+      },
+      {
+        "term": "Single aspiration",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Aspiration",
+        "emphasis": "Table68-3 row",
+        "wording_note": "Single frequency qualifier omitted."
+      },
+      {
+        "term": "Needle aspiration",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Aspiration",
+        "emphasis": "Table68-3 row",
+        "wording_note": "Needle separately mapped, aspiration action only."
+      },
+      {
+        "term": "small-size catheter",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "catheter",
+        "emphasis": "Table68-3/4 cell",
+        "wording_note": "Size qualifier unencoded."
+      },
+      {
+        "term": "Small-size chest tube",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Table68-3/4 cell or footnote",
+        "wording_note": "Shared chest-tube head; comparative size, rigidity, route and procedural use unencoded."
+      },
+      {
+        "term": "Moderate-size chest tube",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Table68-3/4 cell or footnote",
+        "wording_note": "Shared chest-tube head; comparative size, rigidity, route and procedural use unencoded."
+      },
+      {
+        "term": "Large-size chest tube",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Table68-3/4 cell or footnote",
+        "wording_note": "Shared chest-tube head; comparative size, rigidity, route and procedural use unencoded."
+      },
+      {
+        "term": "chest tube",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Table68-3/4 cell or footnote",
+        "wording_note": "Shared chest-tube head; comparative size, rigidity, route and procedural use unencoded."
+      },
+      {
+        "term": "Treatment of Pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Table68-4 title",
+        "wording_note": "Treatment relations not encoded."
+      },
+      {
+        "term": "small primary pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Primary pneumothoraces",
+        "emphasis": "Table68-4 row",
+        "wording_note": "Small omitted; prior family only."
+      },
+      {
+        "term": "small secondary pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Secondary pneumothoraces",
+        "emphasis": "Table68-4 row",
+        "wording_note": "Small omitted; prior family only."
+      },
+      {
+        "term": "large pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Table68-4 row",
+        "wording_note": "Large/side/number qualifiers omitted."
+      },
+      {
+        "term": "bilateral pneumothoraces",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Pneumothorax",
+        "emphasis": "Table68-4 row",
+        "wording_note": "Bilateral omitted, family only."
+      },
+      {
+        "term": "tension pneumothorax",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "Tension pneumothorax",
+        "emphasis": "Bold full statement, Table68-4 and Figure68-4 label",
+        "wording_note": "Tension state not encoded; statement head explicitly mapped."
+      },
+      {
+        "term": "thoracostomy",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Bold full instruction lexical head",
+        "wording_note": "Shared procedure-name head; tube only in cue, no technique."
+      },
+      {
+        "term": "second intercostal space just above the rib",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "intercostal space",
+        "emphasis": "Bold full instruction lexical heads",
+        "wording_note": "Intercostal space and rib extracted separately; number and placement relation excluded."
+      },
+      {
+        "term": "fourth intercostal space just above the rib and at the anterior axillary line",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "intercostal space",
+        "emphasis": "Bold full instruction lexical heads",
+        "wording_note": "Intercostal space, rib and anterior axillary line separately screened; numeric/site instruction excluded."
+      },
+      {
+        "term": "Second intercostal space",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "intercostal space",
+        "emphasis": "Figure68-4 label",
+        "wording_note": "Second position omitted."
+      },
+      {
+        "term": "Fourth intercostal space",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "intercostal space",
+        "emphasis": "Figure68-4 label",
+        "wording_note": "Fourth position omitted."
+      },
+      {
+        "term": "needle thoracostomy",
+        "pdf_page": 35,
+        "page": 459,
+        "entry_term": "needle decompression",
+        "emphasis": "Figure68-4 caption",
+        "wording_note": "Related procedure phrase mapped at decompression ordinary action only, not a procedure or technique equivalence."
+      },
+      {
+        "term": "midclavicular line",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "midclavicular line",
+        "emphasis": "Body continuation lexical head"
+      },
+      {
+        "term": "Needle or Catheter Aspiration",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Aspiration",
+        "emphasis": "Actual subheading",
+        "wording_note": "Needle and catheter individual lexical heads separately mapped35; action cue only."
+      },
+      {
+        "term": "Tube Thoracostomy",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Actual bold subheading"
+      },
+      {
+        "term": "Pigtail Catheters",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "pigtail catheter",
+        "emphasis": "Actual bold subheading",
+        "wording_note": "Inflection normalized; Seldinger name separately mapped."
+      },
+      {
+        "term": "Seldinger Technique",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "Seldinger technique",
+        "emphasis": "Actual bold subheading",
+        "wording_note": "Case normalized; no technique shown."
+      },
+      {
+        "term": "triangle",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "triangle of safety",
+        "emphasis": "Figure68-5 caption",
+        "wording_note": "Triangle-only lexical shape, not safety assertion or a depicted procedural site."
+      },
+      {
+        "term": "fifth intercostal space",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "intercostal space",
+        "emphasis": "Figure68-5 caption",
+        "wording_note": "Fifth position omitted."
+      },
+      {
+        "term": "Lateral border of pectoralis major muscle",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "pectoralis major",
+        "emphasis": "Figure68-5 embedded label",
+        "wording_note": "Pectoralis lexical head retained; border relation, muscle and laterality omitted."
+      },
+      {
+        "term": "Anterior border of latissimus dorsi muscle",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "latissimus dorsi",
+        "emphasis": "Figure68-5 embedded label",
+        "wording_note": "Latissimus lexical head retained; border relation, muscle and anterior qualifier omitted."
+      },
+      {
+        "term": "chest tube",
+        "pdf_page": 36,
+        "page": 460,
+        "entry_term": "tube thoracostomy",
+        "emphasis": "Figure68-5 caption lexical head",
+        "wording_note": "Tube-only category; safe location claim not reproduced."
+      },
+      {
+        "term": "diving",
+        "pdf_page": 37,
+        "page": 461,
+        "entry_term": "Diving",
+        "emphasis": "Boundary continuation lexical head",
+        "wording_note": "Activity only; contraindication statement excluded."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 33,
+        "description": "Author names/chapter number/running header, Introduction/Epidemiology, Pathophysiology, Clinical Features, Diagnosis and Imaging framing; Table68-1 numerical risk parenthesis",
+        "reason": "Administrative framing not additional terms. Meaningful disease-family/title and every named table head separately tried. Body was screened selectively rather than every noun."
+      },
+      {
+        "pdf_page": 34,
+        "description": "Figure68-1/2/3 identifiers, A/B panel IDs, permissions/citation text, patient age, tiny acquisition markers; normal/abnormal and no-separation assertion; measurement cutoffs",
+        "reason": "Clinical/identifying prose not cues. Caption and embedded meaningful lexical heads hemopneumothorax, air-fluid level, thorax/lung, slide, pleural line, M/B-mode, sea/shore and bullous emphysema separately mapped."
+      },
+      {
+        "pdf_page": 35,
+        "description": "Treatment framing; full bold tension-treatment instruction; Table68-2 numerical stability criteria/negations; Table68-3 gauges, sizes and conversion formula; Table68-4 management durations, placements, condition/options column labels",
+        "reason": "Extracted tension pneumothorax, needle/decompression/thoracostomy, oxygen/observation/aspiration, each meaningful device/valve/seal and French/diameter head before excluding numbers and clinical instructions. No doses, clinical rules or sizing data copied."
+      },
+      {
+        "pdf_page": 35,
+        "description": "Figure68-4 pointer lines, X marks and full numeric placement instruction/caption",
+        "reason": "Intercostal space, rib, axillary, clavicular, tension pneumothorax, collapsed lung and needle/thoracostomy heads explicitly mapped; position/placement relation not encoded."
+      },
+      {
+        "pdf_page": 36,
+        "description": "Treatment Complications and Special Considerations framing; full device/procedure sequences, complication-rate and effectiveness prose; Figure68-5 pointer lines and safe-placement statement",
+        "reason": "All actual subheadings and figure/caption lexical heads mapped. Regular-body complication nouns not mechanically expanded into giant redundant bank; selected promising Boyd/Boyle, air leak and triangle heads separately tried."
+      },
+      {
+        "pdf_page": 37,
+        "description": "Disposition and References framing, publisher URL; clinical discharge and diving-restriction instructions in upperLEFT",
+        "reason": "Pneumothorax and diving lexical heads mapped; disposition/navigation and clinical conditions not selected cues. Exclude actual69 title and ALLRIGHT37, including Table69-1, from68."
+      }
+    ]
+  },
+  "comparison_universe": "Chapters1-66, canonical catalog, two sound workshops,62-64 and65-66 association second-look supplements. Exact term/root and actual cue-ingredient searches saved in laneA. No concurrent69-71 bank references; possible parallel overlap not adjudicated. Association classes are reasoned local comparisons, not corpus-wide novelty or unique library-growth counts.",
+  "cue_policy": "Familiar category, packaging, action and partial-name bridges allowed with explicit scope. No all-syllable or untrained-unique-name requirement. No unsupported specific subtype or generic topic prop presented as a name cue.",
+  "review_status": "Independent source/conceptual review and bounded repair rechecks complete; main integrated. Offline untested; not production admitted.",
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch67-71/laneA/",
+  "coverage_limits": [
+    "Native line spans are not exact per-word boxes; line wraps, ligatures and shared heads normalized explicitly. Rasters corroborate layout, not exhaustive clinical coverage.",
+    "No visible highlight was identified and annotation arrays were empty; flattened markup or tiny embedded image overlays may escape identification.",
+    "Selected scope may omit qualifiers. Taught object/category/sound naming remains uncertain; no clinical currency, recall, rendering, originality or production evidence.",
+    "Older bank holds remain open even when this chapter selects a related scoped cue. No same-bank hold existed before this new bank, so resolved_holds is empty."
+  ],
+  "evidence": {
+    "render_audits": [],
+    "recall_studies": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "association_counts": {
+    "meaningful_variant": 1,
+    "new_association": 13,
+    "unchanged_repeat": 65
+  },
+  "counting_note": "Historical new/reused candidate counts are ingredient/reference bookkeeping, NOT new-association or unique-library-growth counts. Association counts are local editorial comparisons and include repeated head families across entries; do not add chapter occurrences into unique growth.",
+  "table_locations": {
+    "Airway disease": "PDF33/printed457; see native spans and raster in source/.",
+    "Chronic obstructive pulmonary disease": "PDF33/printed457; see native spans and raster in source/.",
+    "Asthma": "PDF33/printed457; see native spans and raster in source/.",
+    "Cystic fibrosis": "PDF33/printed457; see native spans and raster in source/.",
+    "Interstitial lung disease": "PDF33/printed457; see native spans and raster in source/.",
+    "Sarcoidosis": "PDF33/printed457; see native spans and raster in source/.",
+    "Pulmonary fibrosis": "PDF33/printed457; see native spans and raster in source/.",
+    "Tuberous sclerosis": "PDF33/printed457; see native spans and raster in source/.",
+    "Infection": "PDF33/printed457; see native spans and raster in source/.",
+    "Human immunodeficiency virus infection": "PDF33/printed457; see native spans and raster in source/.",
+    "Pneumocystis pneumonia": "PDF33/printed457; see native spans and raster in source/.",
+    "Tuberculosis": "PDF33/printed457; see native spans and raster in source/.",
+    "Bacterial pneumonia, necrotizing": "PDF33/printed457; see native spans and raster in source/.",
+    "Lung abscess": "PDF33/printed457; see native spans and raster in source/.",
+    "Connective tissue disease": "PDF33/printed457; see native spans and raster in source/.",
+    "Marfan's syndrome": "PDF33/printed457; see native spans and raster in source/.",
+    "Ehlers-Danlos syndrome": "PDF33/printed457; see native spans and raster in source/.",
+    "Scleroderma": "PDF33/printed457; see native spans and raster in source/.",
+    "Rheumatoid arthritis": "PDF33/printed457; see native spans and raster in source/.",
+    "Cancer": "PDF33/printed457; see native spans and raster in source/.",
+    "primary lung or metastatic disease": "PDF33/printed457; see native spans and raster in source/.",
+    "Catamenial pneumothorax": "PDF33/printed457; see native spans and raster in source/.",
+    "respiratory rate": "PDF35/printed459; see native spans and raster in source/.",
+    "dyspnea": "PDF35/printed459; see native spans and raster in source/.",
+    "Pulse": "PDF35/printed459; see native spans and raster in source/.",
+    "blood pressure": "PDF35/printed459; see native spans and raster in source/.",
+    "oxygen saturation": "PDF35/printed459; see native spans and raster in source/.",
+    "hemothorax": "PDF35/printed459; see native spans and raster in source/.",
+    "needle": "PDF35/printed459; see native spans and raster in source/.",
+    "syringe": "PDF35/printed459; see native spans and raster in source/.",
+    "catheter": "PDF35/printed459; see native spans and raster in source/.",
+    "pigtail catheter": "PDF35/printed459; see native spans and raster in source/.",
+    "Seldinger technique": "PDF35/printed459; see native spans and raster in source/.",
+    "diameter": "PDF35/printed459; see native spans and raster in source/.",
+    "French (F)": "PDF35/printed459; see native spans and raster in source/.",
+    "Heimlich valve": "PDF35/printed459; see native spans and raster in source/.",
+    "water seal": "PDF35/printed459; see native spans and raster in source/."
+  },
+  "author_checkpoint_review_status": "Author freeze only; non-author stronger source/conceptual audit and main integration pending. Not independent approval.",
+  "main_integration_review": {
+    "date": "2026-10-24",
+    "source_and_conceptual_review": true,
+    "scope": "Independent non-author AI source/lexical/conceptual review and bounded repair rechecks, then main integration. Not human-expert review, exhaustive clinical coverage, corpus-wide novelty, recall or image validation.",
+    "independent_audit_record": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch67-71/rawlaneC/review67-68.md",
+    "counts": {
+      "selected_terms": 79,
+      "new_candidates": 3,
+      "reused_candidates": 76,
+      "holds": 0
+    },
+    "keyword_items": 128,
+    "association_occurrences": {
+      "meaningful_variant": 1,
+      "new_association": 13,
+      "unchanged_repeat": 65
+    },
+    "change_origin_occurrences": {
+      "existing_candidate_recount": 65,
+      "new_proposal": 13,
+      "new_revision": 1
+    },
+    "origin_accounting_corrections": [],
+    "counts_not_unique_library_growth": true
+  }
+}
