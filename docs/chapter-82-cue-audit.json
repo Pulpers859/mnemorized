@@ -1,0 +1,3479 @@
+{
+  "schema_version": 1,
+  "chapter_id": "82",
+  "title": "Diverticulitis",
+  "review_date": "2026-10-25",
+  "keyword_screen_date": "2026-10-25",
+  "source": {
+    "file": "Tintin_GI.pdf",
+    "sha256": "f4b4343cf51073b2858b1e255d36f476e174083e54d5886fba8cdc67d391a915",
+    "printed_page_offset": 472,
+    "pdf_pages": [
+      55,
+      56,
+      57
+    ],
+    "printed_pages": [
+      527,
+      528,
+      529
+    ],
+    "regions": {
+      "55": [
+        [
+          0,
+          280,
+          320,
+          783
+        ],
+        [
+          320,
+          30,
+          612,
+          783
+        ]
+      ],
+      "56": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "57": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 105,
+    "new_candidates": 50,
+    "reused_candidates": 55,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 90,
+    "new_association": 8,
+    "meaningful_variant": 7
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 89,
+    "new_proposal": 8,
+    "new_revision": 7,
+    "reconsidered_attempt": 1
+  },
+  "entries": [
+    {
+      "term": "Diverticulitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          55,
+          29
+        ],
+        [
+          55,
+          143
+        ],
+        [
+          56,
+          120
+        ],
+        [
+          57,
+          74
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Diverticulitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vasa recta",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          61
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A pair of straight transparent vessel teaching tubes beside a visibly curved reference tube.",
+      "cue_scope": "Vasa/vessel taught category plus recta/straight word head only; no actual vascular distribution.",
+      "reason": "Straight-versus-curved comparison encodes the recta head.",
+      "association_status": "new_association",
+      "association_comparison": "Straight vessel/name relationship proposed; not arbitrary vase decoration or a claim of renal anatomy.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "True diverticula",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          63
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Divert head only; true not encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected diver, not a truth-status subtype cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "False diverticula",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          66
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Divert head only; false not encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same diver as True diverticula, no second subtype yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bacteroides",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          79
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Bacteroides",
+      "cue": "A familiar chair turned to show only its back.",
+      "cue_scope": "Bact/back approximate opening-name sound only; remainder and organism identity omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Bacteroides; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clostridium",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          81
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Clostridium",
+      "cue": "An ordinary storage-compartment host explicitly adapted into an open clothes closet with hanging garments; bulging, overpacking and pressure gauge removed.",
+      "cue_scope": "Clos-/closet partial name only; wardrobe naming may compete. Explicit compartment-to-closet variant, not a literal old closet scene; no new generic storage-family root or clinical mechanism. Clos-/closet partial name only; difficile omitted, not a new storage-compartment family. Initial withdrawn new-count decision preserved.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Clostridium; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peptostreptococcus",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          83
+        ],
+        [
+          55,
+          84
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar pepper mill beside a stretchy elastic strip.",
+      "cue_scope": "Pept/pepper and strept/stretch approximate opening fragments only; coccus, organism identity and pronunciation precision omitted.",
+      "reason": "Pepper and stretch provide concrete partial hosts without claiming a bacterial shape.",
+      "association_status": "new_association",
+      "association_comparison": "Proposed pepper/stretch sound relationship, not a generic germ relabeled as this organism.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Escherichia coli",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          86
+        ],
+        [
+          55,
+          97
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Escherichia coli",
+      "cue": "A collie teaching figurine with its characteristic long muzzle and coat.",
+      "cue_scope": "Coli/collie approximate ending-name only; Escherichia omitted; breed identity taught.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Escherichia coli; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Enterococcus",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          86
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Enterococcus",
+      "cue": "A toy figure halfway through an open doorway, with its trailing foot still outside.",
+      "cue_scope": "Enter/entero approximate opening-word action only; coccus and organism identity omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Enterococcus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pseudomonas aeruginosa",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          88
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Pseudomonas aeruginosa",
+      "cue": "A familiar theatrical false nose alone.",
+      "cue_scope": "Pseudo-/false lexical head only; not organism species or condition. Pseudo-/false lexical opening only; remainder/species omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Pseudomonas aeruginosa; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Klebsiella",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          90
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Klebsiella",
+      "cue": "A familiar toy club-shaped bat standing alone.",
+      "cue_scope": "Kleb/club approximate opening-name sound only; species and organism category omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Klebsiella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bacteroides fragilis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "body",
+      "source_refs": [
+        [
+          55,
+          95
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Bacteroides",
+      "cue": "A familiar chair turned to show only its back.",
+      "cue_scope": "Bact/back approximate opening-name sound only; remainder and organism identity omitted.",
+      "reason": "Bact/back root sufficient here; fragilis omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected genus reminder, not novel species identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute appendicitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          146
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Appendicitis",
+      "cue": "A small appendix teaching model displayed alone on a base.",
+      "cue_scope": "Taught appendix anatomy head only; inflammation omitted.",
+      "reason": "Appendix anatomy only; acute omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Existing selected anatomy root, also reused in81; no new modifier cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          149
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Colitis",
+      "cue": "A colon teaching model beside a theatrical flame.",
+      "cue_scope": "Col/colon anatomy plus inflame/flame word-family convention only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Colitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ischemic colitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          149
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ischemic colitis",
+      "cue": "A closed red supply tap beside a visibly depleted supply tube.",
+      "cue_scope": "Supply interruption taught ischemia category only; not anatomy, test result or mechanism instruction. Ischemic head only; colon/inflammation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ischemic colitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Infectious colitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          149
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Infectious colitis",
+      "cue": "A colon teaching model beside a theatrical flame and a familiar toy germ.",
+      "cue_scope": "Colon anatomy, flame/inflammation convention and generic infection/germ category only; organism and mechanism omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-76-cue-audit.json#Infectious colitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inflammatory bowel disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          152
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Inflammatory bowel disease",
+      "cue": "A theatrical flame beside a detached intestinal teaching model.",
+      "cue_scope": "Inflammatory/bowel name ingredients only; disease qualifier not separately encoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#Inflammatory bowel disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Crohn's disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          152
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#Crohn's disease",
+      "cue": "A familiar crown standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#Crohn's disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ulcerative colitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          152
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Ulcerative colitis",
+      "cue": "A colon teaching model beside a freestanding ulcer-crater teaching token.",
+      "cue_scope": "Colon anatomy plus ulcer/crater learned category only; no diagnostic definition.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Ulcerative colitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colon cancer",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          155
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Cancer",
+      "cue": "Several clay-lump tumor-category study tokens, without neck model.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Tumor category only; colon and malignancy-specific appearance omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing broad category, not a new organ-specific model.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Irritable bowel syndrome",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          158
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Irritable bowel syndrome",
+      "cue": "An intestinal teaching model as a grumpy character swatting away a tapping finger.",
+      "cue_scope": "Irritable plus bowel ordinary character/anatomy relation; syndrome omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Irritable bowel syndrome; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pseudomembranous colitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Colitis",
+      "cue": "A colon teaching model beside a theatrical flame.",
+      "cue_scope": "Col/colon anatomy plus inflame/flame word-family convention only.",
+      "reason": "Colitis heads retained; pseudomembranous omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact colon/flame root, no unsupported membrane identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epiploic appendagitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          164
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Epiploic appendagitis",
+      "cue": "A familiar epaulette attached to a toy uniform shoulder.",
+      "cue_scope": "Epi-/epaulette partial opening sound only; appendagitis and inflammation omitted. Epi-/epaulette approximate opening-name fragment only; appendagitis omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Epiploic appendagitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gallbladder disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          167
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-80-cue-audit.json#Gallbladder",
+      "cue": "A detached gallbladder-and-bile-duct teaching model standing alone.",
+      "cue_scope": "Biliary learned anatomy/category only; specific disease unencoded. Compound gallbladder-and-duct host includes the named head; ducts do not encode disease.",
+      "reason": "Gallbladder anatomical head only.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone biliary model, not newly isolated from stones.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incarcerated hernia",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          170
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Incarcerated hernia",
+      "cue": "A bulging toy pouch trapped behind a tiny barred cage.",
+      "cue_scope": "Hernia/bulge plus incarcerated/imprisoned wordplay only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Incarcerated hernia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mesenteric infarction",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          173
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A detached mesentery teaching model showing its fan-shaped membrane attaching a loop of intestine to a narrow root.",
+      "cue_scope": "Mesenteric taught anatomical head only; infarction, perfusion and tissue death omitted.",
+      "reason": "Actual mesentery head, not clinically related ischemia substituted as a lexical alias.",
+      "association_status": "new_association",
+      "association_comparison": "Named mesentery anatomy model rather than the selected ischemia supply-tap metaphor; no new infarction bridge claimed.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Complicated ulcer disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          176
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Peptic ulcer disease",
+      "cue": "A familiar freestanding ulcer-crater teaching token, without stomach location model.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Ulcer head only; complicated/disease course omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "48 already selected the standalone crater; intrinsic rim/hollow wording is not a depiction variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peritonitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          179
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Peritonitis",
+      "cue": "A familiar pear standing alone.",
+      "cue_scope": "Peri/pear approximate opening sound only; inflammation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Peritonitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obstruction",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          182
+        ],
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#bowel obstruction",
+      "cue": "A plug visibly seated across a pipe mouth.",
+      "cue_scope": "Obstruction ordinary blockage category only; no particular organ/site. Obstruction/blockage only; bowel host absent.",
+      "reason": "Use actual broad blockage root rather than inheriting airway-specific host.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected ordinary pipe obstruction already exists.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ovarian torsion",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          185
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian torsion",
+      "cue": "A twisted ribbon held at both ends.",
+      "cue_scope": "Torsion/twisting literal action category only; no tissue or vascular effect. Torsion twist action only, ovary omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ovarian torsion; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ectopic pregnancy",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          188
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ectopic pregnancy",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Pregnancy taught category only; site, viability, test result and rupture omitted. Pregnancy head only; ectopic site and rupture omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ectopic pregnancy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ovarian cyst",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          191
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian cyst",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ovarian cyst; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ovarian mass",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          191
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian cyst",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "reason": "Ovary head only; mass not depicted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected paired-ovary model, not a new mass bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pelvic inflammatory disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          194
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Pelvic inflammatory disease",
+      "cue": "A detached pelvic-bone teaching model on a stand.",
+      "cue_scope": "Pelvic learned anatomy head only. Pelvic learned anatomy head only; inflammatory disease omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Pelvic inflammatory disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cystitis",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          197
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#interstitial cystitis",
+      "cue": "A detached urinary-bladder teaching model beside a theatrical flame.",
+      "cue_scope": "Cyst/bladder taught anatomy plus inflame/flame word-family only; no actual inflammation appearance or diagnosis.",
+      "reason": "Specific bladder model rather than arbitrary rounded vessel.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Held bladder-inside-lattice attempt already tried bladder anatomy; selected73 Colitis supplies existing anatomy/flame composition. New bladder-site composition, not new flame bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Kidney stone",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          200
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#kidney stones",
+      "cue": "A detached kidney teaching model beside ordinary pebbles.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Actual singular/plural same head and composition.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact kidney/stone root; number grammar creates no novelty.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal pathology",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          203
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Renal insufficiency",
+      "cue": "A detached kidney teaching model alone, without pebbles.",
+      "cue_scope": "Renal/nephr/kidney head only; function, failure and measurements omitted.",
+      "reason": "Renal head only; pathology not depicted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone kidney, no new isolation variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pancreatic disease",
+      "pdf_page": 55,
+      "page": 527,
+      "source_match": "table",
+      "source_refs": [
+        [
+          55,
+          206
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Pancreas",
+      "cue": "A familiar cooking pan alone; theatrical flame removed.",
+      "cue_scope": "Pan-/pancreas approximate opening-name fragment only; no inflammation, anatomy, enzyme function or clinical meaning.",
+      "reason": "Pan partial word head only, disease omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing standalone pan.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Imaging",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          56,
+          10
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#imaging",
+      "cue": "A plain radiograph-film frame standing alone.",
+      "cue_scope": "Broad imaging category only; not every modality, a result or detection claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#imaging; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Uncomplicated diverticulitis",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          56,
+          52
+        ],
+        [
+          57,
+          80
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Divert head only; uncomplicated not encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing diver.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antibiotics",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          120
+        ],
+        [
+          56,
+          183
+        ],
+        [
+          56,
+          184
+        ],
+        [
+          57,
+          76
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-67-cue-audit.json#antibiotics; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Outpatient management",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          121
+        ],
+        [
+          57,
+          76
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Outpatient",
+      "cue": "A familiar hospital-building miniature beside an outward doorway.",
+      "cue_scope": "In/out patient-setting learned composition only; hospital/mannequin/doorway ingredients, not a care, admission, treatment or discharge instruction.",
+      "reason": "Outpatient setting head only, management omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected setting composition.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Metronidazole",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          124
+        ],
+        [
+          56,
+          142
+        ],
+        [
+          56,
+          172
+        ],
+        [
+          56,
+          181
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#metronidazole",
+      "cue": "A recognizable mechanical metronome with pendulum and no readable scale.",
+      "cue_scope": "Metro/metronidazole name fragment only; no chemical origin, drug action or rate",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-44-cue-audit.json#metronidazole; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ciprofloxacin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          126
+        ],
+        [
+          56,
+          145
+        ],
+        [
+          56,
+          174
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#ciprofloxacin",
+      "cue": "An ordinary toy person taking a sip from a cup of tea, without pool cue.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#ciprofloxacin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Levofloxacin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          128
+        ],
+        [
+          56,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Levofloxacin",
+      "cue": "A familiar carpenter's level alone; pressure transducer removed.",
+      "cue_scope": "Levo-/level approximate partial-name fragment only; no drug meaning or full sound. Levo-/level partial name only, no clinical relation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Levofloxacin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Trimethoprim-sulfamethoxazole",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          130
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#trimethoprim-sulfamethoxazole",
+      "cue": "A pile of cracked rotten eggs with exaggerated stink lines.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#trimethoprim-sulfamethoxazole; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cefuroxime",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          133
+        ],
+        [
+          56,
+          153
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#ceftriaxone",
+      "cue": "A familiar chef hat standing alone, without control knob.",
+      "cue_scope": "Chef/cef approximate name fragment only; agent suffix not encoded, not a chemical or drug-family claim",
+      "reason": "Cef opening fragment only; uro/xime omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone chef root, not a new antibiotic-family cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Amoxicillin-clavulanate",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          135
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#amoxicillin-clavulanate",
+      "cue": "An ordinary toy ox without code-wheel padlock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#amoxicillin-clavulanate; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Moxifloxacin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          137
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#amoxicillin-clavulanate",
+      "cue": "An ordinary toy ox without code-wheel padlock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Ox internal name fragment; m/floxacin omitted. Prefer recognizable ox over65 held loose mop/mox fragment.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Selected ox bridge already used in amoxicillin; exact host/scope borrowed for shared internal sound, not a new moxi association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inpatient management",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          138
+        ],
+        [
+          57,
+          109
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Inpatient",
+      "cue": "A familiar hospital-building miniature containing a small mannequin token.",
+      "cue_scope": "In/out patient-setting learned composition only; hospital/mannequin/doorway ingredients, not a care, admission, treatment or discharge instruction.",
+      "reason": "Inpatient head only, management omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected hospital-inside composition.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aztreonam",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          149
+        ],
+        [
+          56,
+          179
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Aztreonam",
+      "cue": "A toy astronaut.",
+      "cue_scope": "Aztre/astro approximate opening-name fragment only; remainder, organism and drug effect omitted.",
+      "reason": "Recognizable astronaut supports a useful partial, without demanding complete drug identification.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Explicitly reselect65 held astronaut attempt; not a newly invented host or erased old hold.",
+      "change_origin": "reconsidered_attempt",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ceftriaxone",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          151
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#ceftriaxone",
+      "cue": "A familiar chef hat standing alone, without control knob.",
+      "cue_scope": "Chef/cef approximate name fragment only; agent suffix not encoded, not a chemical or drug-family claim",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-44-cue-audit.json#ceftriaxone; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ertapenem",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          155
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ertapenem",
+      "cue": "An ordinary pencil alone, without prescription pad or eraser.",
+      "cue_scope": "Pen-/pencil approximate internal name fragment only; not distinct drug identity. Pen internal fragment only; erta omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ertapenem; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Piperacillin-tazobactam",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          156
+        ],
+        [
+          56,
+          166
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Piperacillin-tazobactam",
+      "cue": "A plain pipe alone; red fluid, leak and puddle removed.",
+      "cue_scope": "Piper-/pipe partial-name head only; not full combination, bleeding or chemical origin. Piper-/pipe partial name only, tazobactam omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Piperacillin-tazobactam; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ticarcillin-clavulanate",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          158
+        ],
+        [
+          56,
+          168
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Carbamazepine",
+      "cue": "A familiar toy car with its distinctive wheels and cabin.",
+      "cue_scope": "Car approximate internal name fragment only; ti/cillin, clavulanate and pharmacology omitted.",
+      "reason": "Recognizable car is a useful partial; broad collision risk acknowledged.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "35/79 Carbamazepine already uses the actual car sound in car-plus-maze. Standalone car narrows that composition to shared car sound, not a new CAR bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Imipenem",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          162
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Imipenem",
+      "cue": "An ordinary pencil alone, without prescription pad or eraser.",
+      "cue_scope": "Pen-/penem/pencil deliberately partial name fragment only; not drug family mechanism or full name. Pen-/penem partial head only; imi omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Imipenem; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cilastatin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          162
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Simvastatin",
+      "cue": "A familiar marble statue standing alone.",
+      "cue_scope": "Stat/statue approximate interior-ending name fragment only; prava and remaining name omitted.",
+      "reason": "Stat/statue fragment already useful; cila omitted. Inherited prava omission is irrelevant and unencoded, not a cilastatin claim.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected stat/statue bridge;71 two-bottle attempt remains held.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Meropenem",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          164
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Meropenem",
+      "cue": "An ordinary pencil alone, without prescription pad or eraser.",
+      "cue_scope": "Pen-/penem/pencil deliberately partial name fragment only; not drug family mechanism or full name. Pen-/penem partial head only; mero omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Meropenem; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ampicillin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          170
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Ampicillin",
+      "cue": "A familiar guitar amplifier standing alone.",
+      "cue_scope": "Amp opening-name fragment only; suffix/class omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Ampicillin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Amikacin",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          176
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar microphone standing alone on its base.",
+      "cue_scope": "Mik/mic approximate interior name fragment only; a, acin and drug identity omitted.",
+      "reason": "Concrete microphone provides an economical taught fragment.",
+      "association_status": "new_association",
+      "association_comparison": "Mic/mik name bridge, not an undefined drug bottle or efficacy symbol.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Penicillin allergy",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          177
+        ],
+        [
+          56,
+          178
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#penicillin allergy",
+      "cue": "An ordinary pencil alone, without prescription pad or eraser.",
+      "cue_scope": "Pen-/penem/pencil deliberately partial name fragment only; not drug family mechanism or full name. Pen- name fragment only, allergy not encoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#penicillin allergy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dose adjustments",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          183
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-78-cue-audit.json#Dosage adjustments",
+      "cue": "A toy measuring dispenser beside a familiar adjustment dial with its pointer between two marked positions.",
+      "cue_scope": "Dose/measuring-device category plus adjustment/dial metaphor only; no amount, direction or instruction.",
+      "reason": "Dose/dosage alias uses the already selected head-only composition.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "78 dispenser/dial already lacks liver; adjective changes or removing80 hepatic adjunct cannot create a new variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal impairment",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          183
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Renal insufficiency",
+      "cue": "A detached kidney teaching model alone, without pebbles.",
+      "cue_scope": "Renal/nephr/kidney head only; function, failure and measurements omitted.",
+      "reason": "Renal head only, impairment omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual standalone selected kidney already exists.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Liver impairment",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          183
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#liver impairment",
+      "cue": "A detached liver-lobe study model alone.",
+      "cue_scope": "Hepatic/liver category only; enzyme, failure or level omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#liver impairment; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antibiograms",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          184
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Anti opening head only; gram/chart and testing omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact ant root, no claim that it encodes susceptibility results.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antibiotic resistance patterns",
+      "pdf_page": 56,
+      "page": 528,
+      "source_match": "table",
+      "source_refs": [
+        [
+          56,
+          184
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Ant/anti reminder only; resistance/patterns omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected partial word root, not a resistance mechanism cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Complicated diverticulitis",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          57,
+          26
+        ],
+        [
+          57,
+          113
+        ],
+        [
+          57,
+          121
+        ],
+        [
+          57,
+          122
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Divert head only; complication status omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same diver as uncomplicated form; not two creative yields.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vital signs",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          84
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Vital signs",
+      "cue": "A freestanding empty road-sign panel beside an unnumbered pulse-oximeter teaching prop.",
+      "cue_scope": "Sign/shared-word host plus broad vital-sign-monitoring device category only; not a complete set, values or clinical state.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-76-cue-audit.json#Vital signs; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tenderness",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          88
+        ],
+        [
+          57,
+          166
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#tenderness",
+      "cue": "A toy hand gently touching a squishy tender peach.",
+      "cue_scope": "Offline tenderness vocabulary only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-33-cue-audit.json#tenderness; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Physical examination",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          88
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#physical examination",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#physical examination; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal distention",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          92
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Abdominal distention",
+      "cue": "An inflated belly-shaped teaching balloon beside a matching deflated one.",
+      "cue_scope": "Belly site plus ordinary expansion comparison only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Abdominal distention; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vomiting",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          96
+        ],
+        [
+          57,
+          134
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#vomiting; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fluids",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          96
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#fluids",
+      "cue": "A clear water pitcher standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-37-cue-audit.json#fluids; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Medications",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          96
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#medications",
+      "cue": "An ordinary unmarked medicine bottle beside a pill-shaped study token.",
+      "cue_scope": "Broad medication category only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#medications; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pain control",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          100
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-47-cue-audit.json#Pain Control",
+      "cue": "A familiar pain-expression mask.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-47-cue-audit.json#Pain Control; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Oral medications",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          100
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#medications",
+      "cue": "An ordinary unmarked medicine bottle beside a pill-shaped study token.",
+      "cue_scope": "Broad medication category only",
+      "reason": "Medication packaging only; oral route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad packaging, not route-specific identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Follow-up",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          104
+        ],
+        [
+          57,
+          138
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#Follow-Up",
+      "cue": "An unmarked hourglass standing alone.",
+      "cue_scope": "Follow-up interval/time category only; no timing, disposition or advice.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#Follow-Up; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Self-care at home",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          108
+        ],
+        [
+          57,
+          138
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "One articulated teddy-bear character inside a dollhouse uses its right paw to wrap a blanket around its own left arm; no second figure or bear is present.",
+      "cue_scope": "Self/tending-own plus home/dollhouse ordinary category relationship only; no treatment or care instruction.",
+      "reason": "One recognizable character is both caregiver and recipient, making self-care unambiguous.",
+      "association_status": "new_association",
+      "association_comparison": "Self-directed care/home composition retained; clarified same-character action rather than a hybrid human/bear or care for another recipient.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phlegmon",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A conspicuous glob of theatrical phlegm beside a toy monitor.",
+      "cue_scope": "Phleg/phlegm plus mon/monitor approximate fragments only; no tissue, material or disease-definition claim.",
+      "reason": "Two concrete named hosts support a deliberately partial lexical reminder.",
+      "association_status": "new_association",
+      "association_comparison": "Sound-host phlegm/monitor composition, not clinical pus substituted as a phlegmon depiction.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abscess",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Abscess",
+      "cue": "A toy abdomen beside a chess set.",
+      "cue_scope": "Abs/chess approximate name sounds only; no anatomy or pus depiction.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Abscess; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Perforation",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#perforation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fistula",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#fistula",
+      "cue": "A detached toy hand clenched into a recognizable fist.",
+      "cue_scope": "Fist-/fist ordinary approximate opening-name fragment only; no tract, connection, tissue or pathology.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#fistula; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Stricture",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          113
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Strictures",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "reason": "Ordinary narrowing category applies, site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected singular/plural narrowing root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clinical risk factors",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          119
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Risk stratify",
+      "cue": "A familiar warning triangle beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Risk/screening category only; factors and clinical criteria omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected warning/screening root, no new factors cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diagnostic risk factors",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          120
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Risk stratify",
+      "cue": "A familiar warning triangle beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Risk/screening category only, diagnostic criteria omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same existing risk composition.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "CT imaging risk factors",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          121
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#CT",
+      "cue": "A familiar short-ring CT-scanner teaching miniature.",
+      "cue_scope": "Learned device/acronym category only; no modality comparison or detection claim.",
+      "reason": "CT head only; risk factors omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact device root rather than an unmarked risk checklist.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Treatment failure",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          118
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy repair technician's wrench slipping off a visibly broken toy wheel, which remains detached.",
+      "cue_scope": "Attempted treatment/repair plus failure/unsuccessful action metaphor only; no medical efficacy or outcome.",
+      "reason": "Failed attempted repair represents failure without a generic static broken prop alone.",
+      "association_status": "new_association",
+      "association_comparison": "Unsuccessful repair-action relationship proposed, not a medicine bottle granted failure identity.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fever",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          130
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#fever",
+      "cue": "Theatrical flame token beside a study mannequin.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-26-cue-audit.json#fever; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inability to tolerate PO",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          134
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Oral intake",
+      "cue": "A mouth teaching token beside a toy food pellet moving inward through a freestanding entry gate.",
+      "cue_scope": "Oral/mouth anatomy and intake/inward relation only; no swallowing physiology or quantity.",
+      "reason": "PO/oral intake head only; inability and tolerance omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected oral-intake root, no negation inferred from static position.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Comorbid conditions",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          142
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Comorbid conditions",
+      "cue": "Two visibly unwell toy characters standing together.",
+      "cue_scope": "Co/together plus morbid/unwell learned word-family only; not two diagnosed conditions or prognosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-76-cue-audit.json#Comorbid conditions; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immunocompromised",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          146
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Immunocompromised",
+      "cue": "A standalone shield token without toy car.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#Immunocompromised; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corticosteroid use",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          150
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-69-cue-audit.json#corticosteroid use",
+      "cue": "An ordinary stereo speaker pair.",
+      "cue_scope": "Ster-/stereo partial sound only; cortico-, route, effects and regimen omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-69-cue-audit.json#corticosteroid use; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Malnutrition",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          154
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-6-cue-audit.json#malnutrition",
+      "cue": "Gaunt study mannequin reaching into an empty lunchbox.",
+      "cue_scope": "Inadequate nourishment category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-6-cue-audit.json#malnutrition; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Active malignancy",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          158
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-56-cue-audit.json#Active malignancy",
+      "cue": "Several clay-lump tumor-category study tokens, without neck model.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-56-cue-audit.json#Active malignancy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Chronic opiate use",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          162
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Opiates",
+      "cue": "A familiar poppy seedpod teaching prop.",
+      "cue_scope": "Learned opiate/poppy category association only; no chemistry, source or use claim.",
+      "reason": "Opiate category head; chronic/use omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing poppy root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Generalized abdominal pain",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          166
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Abdomen/pain vocabulary only",
+      "reason": "Abdomen and pain only; generalized distribution omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing belly/mask composition.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Left lower quadrant",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          166
+        ],
+        [
+          57,
+          167
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A square divided into four equal panes, with only the lower-left pane filled with a solid tactile block.",
+      "cue_scope": "Left/lower/quadrant ordinary diagram-position words only, from the viewer's perspective; no patient-side or abdominal anatomy inference.",
+      "reason": "Four panes and explicit selected position encode the lexical location.",
+      "association_status": "new_association",
+      "association_comparison": "Quarter-grid spatial relationship, not an unmarked belly assigned a location.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Leukocytosis",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          171
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#WBC",
+      "cue": "A crowded tray of white blood-cell teaching tokens beside a matching tray containing only three tokens.",
+      "cue_scope": "Leuko/white-cell taught category plus ordinary excess-count contrast only; no clinical threshold or diagnosis.",
+      "reason": "Explicit count contrast avoids65 held lone white bead with no state encoded.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Selected white-cell/count-tray bridge already exists; excess comparison adds a state, not a new leukocyte identity.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "WBC",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          171
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#WBC",
+      "cue": "Three conspicuously white blood-cell teaching tokens beside a blank counting tray.",
+      "cue_scope": "White/blood/cell expanded acronym category only; no count or finding.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#WBC; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "CRP",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          177
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#C-reactive protein",
+      "cue": "A familiar steak-shaped toy alone, without book binder.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Expanded acronym's protein category only; C/reactive omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected expanded-name protein host, not the53 held C-spring attempt.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sepsis",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          181
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#septicemia",
+      "cue": "A toy septic tank with its underground chamber, inlet pipe and access lid exposed as a cutaway.",
+      "cue_scope": "Seps/septic approximate name-family only; no medical mechanism, organism or diagnostic inference.",
+      "reason": "Concrete taught septic-tank configuration is usable despite naming uncertainty.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "66 held a toy septic tank; explicit exposed chamber/pipe/lid improves the actual depiction within the same septic-name family, not a new root.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fluid collections",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          185
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#fluids",
+      "cue": "Several shallow bowls collecting clear liquid dripping from a plain spout.",
+      "cue_scope": "Fluid/liquid plus collecting ordinary action category only; no tissue, imaging or pathological collection.",
+      "reason": "Actual gathering action represents collections.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing water/fluid category moves from pitcher to collection action; not new fluid identity.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rectum",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          185
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-76-cue-audit.json#Rectal examination",
+      "cue": "A detached rectum teaching model retaining its distal curve and anal outlet, with no magnifying glass.",
+      "cue_scope": "Taught rectal anatomy only; no examination technique, disease or arbitrary tube relabeling.",
+      "reason": "Anatomical landmarks supply specificity absent71 held isolated tube attempt.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "76 already selects rectum-model anatomy with magnifier; this changes the depiction to a landmark-preserving anatomy-only model, not a new rectal bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inflamed colon",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          189
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Colitis",
+      "cue": "A colon teaching model beside a theatrical flame.",
+      "cue_scope": "Col/colon anatomy plus inflame/flame word-family convention only.",
+      "reason": "Same explicit anatomy and inflame heads.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected colon/flame relation, not new from rewording colitis.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inflamed diverticulum",
+      "pdf_page": 57,
+      "page": 529,
+      "source_match": "table",
+      "source_refs": [
+        [
+          57,
+          193
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins beside a theatrical flame token.",
+      "cue_scope": "Divert/diver approximate name fragment plus inflame/flame convention only; no anatomical outpouching or actual fire.",
+      "reason": "Adds the extracted inflamed head explicitly.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing diver root combined with established inflammation/flame head, not a new divert bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Diverticulitis",
+        "entry_term": "Diverticulitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "title/table title",
+        "wording_note": ""
+      },
+      {
+        "term": "Diverticulitis",
+        "entry_term": "Diverticulitis",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table title",
+        "wording_note": ""
+      },
+      {
+        "term": "Diverticulitis",
+        "entry_term": "Diverticulitis",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table title",
+        "wording_note": ""
+      },
+      {
+        "term": "Vasa recta",
+        "entry_term": "Vasa recta",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "True diverticula",
+        "entry_term": "True diverticula",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "False diverticula",
+        "entry_term": "False diverticula",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Bacteroides",
+        "entry_term": "Bacteroides",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Clostridium",
+        "entry_term": "Clostridium",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Peptostreptococcus",
+        "entry_term": "Peptostreptococcus",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": "Joined Peptostreptococ-/cus across spans."
+      },
+      {
+        "term": "Escherichia coli",
+        "entry_term": "Escherichia coli",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": "Full name and explicit E. coli abbreviation combined; second organism in86 mapped separately."
+      },
+      {
+        "term": "Enterococcus",
+        "entry_term": "Enterococcus",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": "Second organism in coordinated span."
+      },
+      {
+        "term": "Pseudomonas aeruginosa",
+        "entry_term": "Pseudomonas aeruginosa",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Klebsiella",
+        "entry_term": "Klebsiella",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Bacteroides fragilis",
+        "entry_term": "Bacteroides fragilis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute appendicitis",
+        "entry_term": "Acute appendicitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Colitis",
+        "entry_term": "Colitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "General condition head retained alongside actual subtypes."
+      },
+      {
+        "term": "Ischemic colitis",
+        "entry_term": "Ischemic colitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "Shared colitis noun applied to ischemic modifier."
+      },
+      {
+        "term": "Infectious colitis",
+        "entry_term": "Infectious colitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "Shared colitis noun applied to infectious modifier."
+      },
+      {
+        "term": "Inflammatory bowel disease",
+        "entry_term": "Inflammatory bowel disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Crohn\u2019s disease",
+        "entry_term": "Crohn's disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "Nested named condition, apostrophe normalized."
+      },
+      {
+        "term": "Ulcerative colitis",
+        "entry_term": "Ulcerative colitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "Nested named condition."
+      },
+      {
+        "term": "Colon cancer",
+        "entry_term": "Colon cancer",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Irritable bowel syndrome",
+        "entry_term": "Irritable bowel syndrome",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pseudomembranous colitis",
+        "entry_term": "Pseudomembranous colitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epiploic appendagitis",
+        "entry_term": "Epiploic appendagitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gallbladder disease",
+        "entry_term": "Gallbladder disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Incarcerated hernia",
+        "entry_term": "Incarcerated hernia",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Mesenteric infarction",
+        "entry_term": "Mesenteric infarction",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Complicated ulcer disease",
+        "entry_term": "Complicated ulcer disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Peritonitis",
+        "entry_term": "Peritonitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Obstruction",
+        "entry_term": "Obstruction",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Obstruction",
+        "entry_term": "Obstruction",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Ovarian torsion",
+        "entry_term": "Ovarian torsion",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ectopic pregnancy",
+        "entry_term": "Ectopic pregnancy",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ovarian cyst",
+        "entry_term": "Ovarian cyst",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ovarian mass",
+        "entry_term": "Ovarian mass",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": "Shared ovarian modifier applied to second coordinated finding."
+      },
+      {
+        "term": "Pelvic inflammatory disease",
+        "entry_term": "Pelvic inflammatory disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cystitis",
+        "entry_term": "Cystitis",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Kidney stone",
+        "entry_term": "Kidney stone",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Renal pathology",
+        "entry_term": "Renal pathology",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pancreatic disease",
+        "entry_term": "Pancreatic disease",
+        "pdf_page": 55,
+        "page": 527,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Imaging",
+        "entry_term": "Imaging",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Uncomplicated diverticulitis",
+        "entry_term": "Uncomplicated diverticulitis",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Uncomplicated diverticulitis",
+        "entry_term": "Uncomplicated diverticulitis",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antibiotics",
+        "entry_term": "Antibiotics",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table title/footnote",
+        "wording_note": ""
+      },
+      {
+        "term": "Antibiotics",
+        "entry_term": "Antibiotics",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table header",
+        "wording_note": ""
+      },
+      {
+        "term": "Outpatient",
+        "entry_term": "Outpatient management",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table category",
+        "wording_note": "Setting label normalized to management category; operation noun is not a verbatim source quote."
+      },
+      {
+        "term": "Outpatient management",
+        "entry_term": "Outpatient management",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table header",
+        "wording_note": ""
+      },
+      {
+        "term": "Metronidazole",
+        "entry_term": "Metronidazole",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": "Repeated drug head and IV/PO dose alternatives combined; doses excluded."
+      },
+      {
+        "term": "Ciprofloxacin",
+        "entry_term": "Ciprofloxacin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Levofloxacin",
+        "entry_term": "Levofloxacin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Trimethoprim-sulfamethoxazole",
+        "entry_term": "Trimethoprim-sulfamethoxazole",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cefuroxime",
+        "entry_term": "Cefuroxime",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Amoxicillin-clavulanate",
+        "entry_term": "Amoxicillin-clavulanate",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Moxifloxacin",
+        "entry_term": "Moxifloxacin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Inpatient",
+        "entry_term": "Inpatient management",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table category",
+        "wording_note": "Setting label normalized to management category; not a literal full phrase."
+      },
+      {
+        "term": "Inpatient management",
+        "entry_term": "Inpatient management",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table header",
+        "wording_note": ""
+      },
+      {
+        "term": "Aztreonam",
+        "entry_term": "Aztreonam",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ceftriaxone",
+        "entry_term": "Ceftriaxone",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ertapenem",
+        "entry_term": "Ertapenem",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Piperacillin-tazobactam",
+        "entry_term": "Piperacillin-tazobactam",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": "Dose text excluded without validating source units."
+      },
+      {
+        "term": "Ticarcillin-clavulanate",
+        "entry_term": "Ticarcillin-clavulanate",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Imipenem",
+        "entry_term": "Imipenem",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": "First slash-separated ingredient head."
+      },
+      {
+        "term": "Cilastatin",
+        "entry_term": "Cilastatin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": "Second slash-separated ingredient head; not a synonym for imipenem."
+      },
+      {
+        "term": "Meropenem",
+        "entry_term": "Meropenem",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ampicillin",
+        "entry_term": "Ampicillin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Amikacin",
+        "entry_term": "Amikacin",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Penicillin allergy",
+        "entry_term": "Penicillin allergy",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table",
+        "wording_note": "Joined split condition."
+      },
+      {
+        "term": "Dose adjustments",
+        "entry_term": "Dose adjustments",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table footnote",
+        "wording_note": ""
+      },
+      {
+        "term": "Renal impairment",
+        "entry_term": "Renal impairment",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table footnote",
+        "wording_note": "Shared impairment noun applied to renal modifier."
+      },
+      {
+        "term": "Liver impairment",
+        "entry_term": "Liver impairment",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table footnote",
+        "wording_note": ""
+      },
+      {
+        "term": "Antibiograms",
+        "entry_term": "Antibiograms",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table footnote",
+        "wording_note": "Local modifier omitted."
+      },
+      {
+        "term": "Antibiotic resistance patterns",
+        "entry_term": "Antibiotic resistance patterns",
+        "pdf_page": 56,
+        "page": 528,
+        "emphasis": "table footnote",
+        "wording_note": "Local modifier omitted."
+      },
+      {
+        "term": "Complicated diverticulitis",
+        "entry_term": "Complicated diverticulitis",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "bold/table",
+        "wording_note": "Joined split heading complication target; case normalized."
+      },
+      {
+        "term": "Vital signs",
+        "entry_term": "Vital signs",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Normal qualifier omitted."
+      },
+      {
+        "term": "Tenderness",
+        "entry_term": "Tenderness",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Severity and general/local comparison excluded after head extraction."
+      },
+      {
+        "term": "physical exam",
+        "entry_term": "Physical examination",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Exam abbreviation expanded."
+      },
+      {
+        "term": "Abdominal distention",
+        "entry_term": "Abdominal distention",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Named finding inside negated criterion, not asserting presence."
+      },
+      {
+        "term": "Vomiting",
+        "entry_term": "Vomiting",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Negated criterion and later positive risk head combined; no clinical presence assertion."
+      },
+      {
+        "term": "Fluids",
+        "entry_term": "Fluids",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Actual tolerance-target head, not a dose."
+      },
+      {
+        "term": "Medications",
+        "entry_term": "Medications",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "control pain",
+        "entry_term": "Pain control",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Operation normalized to noun phrase."
+      },
+      {
+        "term": "Oral medications",
+        "entry_term": "Oral medications",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Follow-up",
+        "entry_term": "Follow-up",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Follow up verb normalized to operation noun; interval excluded."
+      },
+      {
+        "term": "care for self at home",
+        "entry_term": "Self-care at home",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Operation normalized to compact noun phrase; ability/negation not a care recommendation."
+      },
+      {
+        "term": "Phlegmon",
+        "entry_term": "Phlegmon",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Abscess",
+        "entry_term": "Abscess",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Perforation",
+        "entry_term": "Perforation",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Fistula",
+        "entry_term": "Fistula",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Stricture",
+        "entry_term": "Stricture",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Clinical risk factors",
+        "entry_term": "Clinical risk factors",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Diagnostic risk factors",
+        "entry_term": "Diagnostic risk factors",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "CT imaging risk factors",
+        "entry_term": "CT imaging risk factors",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table category",
+        "wording_note": "For-progression qualification omitted; actual CT imaging operation retained."
+      },
+      {
+        "term": "Treatment failure",
+        "entry_term": "Treatment failure",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table category",
+        "wording_note": "Named outcome head inside broader high-risk heading."
+      },
+      {
+        "term": "Fever",
+        "entry_term": "Fever",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Inability to tolerate PO",
+        "entry_term": "Inability to tolerate PO",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Actual functional criterion head, abbreviation retained."
+      },
+      {
+        "term": "Comorbid conditions",
+        "entry_term": "Comorbid conditions",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Multiple modifier omitted."
+      },
+      {
+        "term": "Immunocompromised",
+        "entry_term": "Immunocompromised",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Corticosteroid use",
+        "entry_term": "Corticosteroid use",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Malnutrition",
+        "entry_term": "Malnutrition",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Active malignancy",
+        "entry_term": "Active malignancy",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Chronic opiate use",
+        "entry_term": "Chronic opiate use",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Generalized abdominal pain",
+        "entry_term": "Generalized abdominal pain",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Left lower quadrant",
+        "entry_term": "Left lower quadrant",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Joined split location, comparison statement excluded after lexical head."
+      },
+      {
+        "term": "Leukocytosis",
+        "entry_term": "Leukocytosis",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "WBC",
+        "entry_term": "WBC",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Actual lab head before numeric threshold."
+      },
+      {
+        "term": "CRP",
+        "entry_term": "CRP",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Actual lab head before numeric threshold."
+      },
+      {
+        "term": "Sepsis",
+        "entry_term": "Sepsis",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Signs of wrapper omitted."
+      },
+      {
+        "term": "Fluid collections",
+        "entry_term": "Fluid collections",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Rectum",
+        "entry_term": "Rectum",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table nested anatomy",
+        "wording_note": "Actual anatomic head inside location parenthesis."
+      },
+      {
+        "term": "Inflamed colon",
+        "entry_term": "Inflamed colon",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Length comparison/numbers excluded."
+      },
+      {
+        "term": "Inflamed diverticulum",
+        "entry_term": "Inflamed diverticulum",
+        "pdf_page": 57,
+        "page": 529,
+        "emphasis": "table",
+        "wording_note": "Numeric size criterion excluded."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 55,
+        "description": "Native source span(s) 55:30, 55:31, 55:59, 55:92, 55:93, 55:112, 55:124, 55:134, 55:139",
+        "reason": "Author/chapter/section/table numbering scaffold and cross-reference, not additional lexical targets; all meaningful italic organisms/anatomy and differential heads retained."
+      },
+      {
+        "pdf_page": 56,
+        "description": "Native source span(s) 56:41, 56:48, 56:50, 56:116, 56:122, 56:123, 56:125, 56:127, 56:129, 56:131, 56:132, 56:134, 56:136, 56:139, 56:140, 56:141, 56:143, 56:144, 56:146, 56:148, 56:150, 56:152, 56:154, 56:157, 56:159, 56:160, 56:161, 56:163, 56:165, 56:167, 56:169, 56:171, 56:173, 56:175, 56:178, 56:180, 56:182, 56:183, 56:184",
+        "reason": "Treatment/table scaffold, first-line/alternative severity bins, conjunctions and all dose/route/interval/guidance statements excluded after actual drugs, setting, allergy, impairment, adjustment and antibiogram/resistance heads extracted. Source dose/unit correctness not validated."
+      },
+      {
+        "pdf_page": 57,
+        "description": "Native source span(s) 57:50, 57:64, 57:68, 57:70, 57:74, 57:75, 57:76, 57:84, 57:88, 57:92, 57:96, 57:100, 57:104, 57:108, 57:113, 57:117, 57:118, 57:126, 57:134, 57:138, 57:166, 57:167, 57:171, 57:172, 57:173, 57:177, 57:181, 57:185, 57:189, 57:193",
+        "reason": "Whole admission/outpatient ability/negation/risk/severity rules, numeric age/lab/length/size/sensitivity/specificity/interval values and scaffold excluded only after all named diseases, symptoms, operations, labs, location and nested complication heads extracted."
+      },
+      {
+        "pdf_page": 57,
+        "description": "Native source span(s) 57:194, 57:195, 57:196, 57:197, 57:198, 57:199, 57:200, 57:201, 57:202, 57:203, 57:204, 57:205, 57:206, 57:207",
+        "reason": "Table bibliography/source credits, not new lexical targets."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch81-85",
+  "limits": "Phase1 inventory only; no cues/priors. Assigned native emphasis and cached gi55-57 rasters inspected, including all three tables and nested footnote/comment heads;82 does not own58. Main-verified manifest used, sparse zero-based pointers, metadata code-owned. Native annotations checked by main; flattened highlights uncertain. Shared-noun/abbreviation/operation normalizations declared. Numeric guidance excluded after lexical heads, not clinical validation or exhaustive incidental-prose coverage.",
+  "sparse_provenance": {
+    "inventory_sha256": "421a162d06dc4f84bfbf1427ee840e2c4f5dcd43dae1cbc304413e47b55cfa06",
+    "decisions_sha256": "b0eb85c9ae6ac5832233209b499a7856ef044e238d108aa4e05c8f503b96bf7b",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "440f8d3988b8166a2f693ef8de1952792b83d2b874518c27a378369bcbbeed7b",
+    "prior_freeze_sha256": "b8958e90eaa741abef4fba0e20f72dbc75f003a3a3e2b224998b5809e22286e7",
+    "source_cache_sha256": {
+      "55": "f6996ec2a68e3eb466b4f606d7c2ae9b882d5f54bca3fd80e5dfa52af3f0f4c3",
+      "56": "86d9f598dd7b27f175547c5d6d49ccca70ddee3d435dbcebb41135c58a7f4947",
+      "57": "0c0f657b66e8413557eaf3f89b4c0fbabcf631803b32c115572c8e4f2513ac30"
+    },
+    "exact_unchanged_reuse_rows": 55,
+    "explicit_semantic_rows": 50
+  },
+  "main_integration_review": {
+    "date": "2026-10-25",
+    "source_and_conceptual_review": true,
+    "scope": "Main non-author independently reviewed all 591 cue/scope rows, 700 selected keyword mappings and all 29 owned PDF rasters/native emphasis, actual columns, tables and meaningful captions. Fifteen findings closed across sixteen changed rows after bounded delta review; separate pre-main82 semantic repair preserved. Actual named priors and local dependencies checked. Selected lexical review only, not exhaustive vocabulary, clinical, pronunciation, recall or render validation; all candidates untested/nonproduction.",
+    "counts": {
+      "selected_terms": 105,
+      "new_candidates": 50,
+      "reused_candidates": 55,
+      "holds": 0
+    },
+    "keyword_items": 112,
+    "materialized_sha256": "6d61052afb9970b0f0b6d30c67c7b71786c2ccf5d06d1a65c262705e983f495b",
+    "report": "docs/chapter-81-85-sparse-workshop.md"
+  }
+}

@@ -1,0 +1,2473 @@
+{
+  "schema_version": 1,
+  "chapter_id": "84",
+  "title": "Hernias",
+  "review_date": "2026-10-25",
+  "keyword_screen_date": "2026-10-25",
+  "source": {
+    "file": "Tintin_GI.pdf",
+    "sha256": "f4b4343cf51073b2858b1e255d36f476e174083e54d5886fba8cdc67d391a915",
+    "printed_page_offset": 472,
+    "pdf_pages": [
+      60,
+      61,
+      62,
+      63,
+      64
+    ],
+    "printed_pages": [
+      532,
+      533,
+      534,
+      535,
+      536
+    ],
+    "regions": {
+      "60": [
+        [
+          0,
+          417,
+          295,
+          783
+        ],
+        [
+          295,
+          30,
+          612,
+          783
+        ]
+      ],
+      "61": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "62": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "63": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "64": [
+        [
+          0,
+          30,
+          295,
+          322
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 67,
+    "new_candidates": 55,
+    "reused_candidates": 12,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 47,
+    "meaningful_variant": 13,
+    "new_association": 7
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 47,
+    "new_revision": 13,
+    "new_proposal": 7
+  },
+  "entries": [
+    {
+      "term": "Hernias",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          60,
+          41
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Hernias; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Reducible hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          52
+        ],
+        [
+          60,
+          53
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft toy pouch bulges through a fabric opening, with a broad toy hand gently returning the pouch through that same opening.",
+      "cue_scope": "Hernia/bulge plus reducible/returnable ordinary action metaphor only; no manual technique or care instruction.",
+      "reason": "Actual return action encodes reducibility, not a still pouch.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing pouch-through-sheet bridge gains reversible return relation.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incarcerated hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          55
+        ],
+        [
+          60,
+          56
+        ],
+        [
+          61,
+          18
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Incarcerated hernia",
+      "cue": "A bulging toy pouch trapped behind a tiny barred cage.",
+      "cue_scope": "Hernia/bulge plus incarcerated/imprisoned wordplay only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Incarcerated hernia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Strangulation",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          60
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Strangulated hernia",
+      "cue": "A soft toy pouch bulging through a tight ring that visibly pinches its neck.",
+      "cue_scope": "Herniation/bulge plus strangulation/pinching metaphor only; no tissue viability or treatment claim.",
+      "reason": "Existing pinching metaphor already encodes the head.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected pouch/ring relation, not new after removing hernia from term.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inguinal hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          60,
+          73
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head useful; inguinal site omitted, older71 heron hold not inherited.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected category root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Direct inguinal hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          97
+        ],
+        [
+          61,
+          8
+        ],
+        [
+          62,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia only; direct and inguinal distinctions omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same selected broad root, no subtype yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Indirect inguinal hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          107
+        ],
+        [
+          61,
+          10
+        ],
+        [
+          62,
+          42
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia only; indirect and inguinal distinctions omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same category root, not inferred anatomy.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ventral hernias",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          60,
+          116
+        ],
+        [
+          60,
+          117
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; ventral site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incisional hernias",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          60,
+          116
+        ],
+        [
+          60,
+          125
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulges through a visibly cut slit in a stretched fabric sheet, with the parted cut edges exposed.",
+      "cue_scope": "Incision/cut plus hernia/bulge ordinary word relationship only; no operative complication claim.",
+      "reason": "Actual cut edges encode incision rather than arbitrary scar decoration.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing bulge-through-opening bridge changes opening to explicit cut slit.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Umbilical hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          60,
+          140
+        ],
+        [
+          61,
+          27
+        ],
+        [
+          62,
+          45
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A belly teaching model with a raised navel and a soft toy pouch protruding through a small opening at that navel.",
+      "cue_scope": "Umbilical/navel taught head plus bulge metaphor only; no diagnosis or actual anatomy of herniation.",
+      "reason": "Navel identifies the lexical region without a generic belly-only claim.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing hernia/bulge bridge transferred to taught navel site.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Femoral hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          60,
+          151
+        ],
+        [
+          61,
+          9
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; femoral site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad root; no femur anatomy inferred.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Spigelian hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          60,
+          172
+        ],
+        [
+          62,
+          43
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar water spigot standing alone with its handle and short outlet clearly visible.",
+      "cue_scope": "Spig/spigot approximate opening-name fragment only; remaining eponym, hernia and anatomy omitted.",
+      "reason": "Recognizable spigot gives an economical partial instead of a tortured complete-name assembly.",
+      "association_status": "new_association",
+      "association_comparison": "Spig/spigot word bridge proposed; not a new hernia mechanism.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lateral ventral hernia",
+      "pdf_page": 60,
+      "page": 532,
+      "source_match": "body",
+      "source_refs": [
+        [
+          60,
+          174
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; both positional modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact root, not another site variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inguinal ligament",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          7
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#inguinal ligament",
+      "cue": "A toy iguana beside a loose ribbon tied like a ligament study token.",
+      "cue_scope": "Approximate inguinal/iguana name fragment",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#inguinal ligament; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Groin hernia",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          12
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; groin omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incarcerated femoral hernia",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          20
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Incarcerated hernia",
+      "cue": "A bulging toy pouch trapped behind a tiny barred cage.",
+      "cue_scope": "Hernia/bulge plus incarcerated/imprisoned wordplay only.",
+      "reason": "Incarceration and bulge only; femoral omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cage/pouch relationship.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Small-bowel segment",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          20
+        ],
+        [
+          61,
+          23
+        ],
+        [
+          61,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#bowel",
+      "cue": "A detached coiled intestinal teaching model.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Bowel anatomy head only; subtype and segment extent omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone bowel root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Femoral canal",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          20
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#femoral vein",
+      "cue": "A femur teaching token beside a miniature open water canal with clearly defined banks.",
+      "cue_scope": "Femur/femoral name-family plus canal/shared-word host only; no anatomical passage or vessel relation.",
+      "reason": "Actual canal rather than arbitrary tube labeled canal.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Established femur/femoral composition replaces vein/vane with literal canal host.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incarcerated incisional hernia",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          22
+        ],
+        [
+          61,
+          23
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Incarcerated hernia",
+      "cue": "A bulging toy pouch trapped behind a tiny barred cage.",
+      "cue_scope": "Hernia/bulge plus incarcerated/imprisoned wordplay only.",
+      "reason": "Incarcerated hernia heads only; incisional omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact cage/pouch, not a new incisional variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal wall",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          25
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#abdominal wall",
+      "cue": "A detached belly-shaped model alone, without pain mask.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-55-cue-audit.json#abdominal wall; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dilated small-bowel loops",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:83#Distended loops of small bowel",
+      "cue": "A coiled intestinal teaching tube visibly expanded beside an otherwise matching slender reference tube.",
+      "cue_scope": "Bowel taught anatomy plus loop/expansion ordinary contrast only; small-bowel subtype and imaging findings omitted.",
+      "reason": "Same broad expansion contrast; dilation not a new finding.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local83 loop/expansion depiction.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fluid space",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#fluids",
+      "cue": "A clear water pitcher standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Fluid head only; space unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected liquid-category root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hernia sac",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Pouch supplies broad sac/bulge reminder, not actual sac anatomy.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact pouch root, not newly authored sac.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hernia orifice",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Opening already visible; no new anatomical claim.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact original bulge-through-opening relation.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fascia",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          30
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-61-cue-audit.json#fascia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fascial defect",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "table",
+      "source_refs": [
+        [
+          61,
+          30
+        ],
+        [
+          63,
+          165
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "cue": "A detached fascia teaching-model sheet with a conspicuous missing patch revealing an open hole.",
+      "cue_scope": "Fascia anatomy head plus defect/missing-piece ordinary geometry only; no actual lesion or repair technique.",
+      "reason": "Missing patch explicitly encodes defect.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Selected fascia sheet gains an encoded missing-piece relation.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hernia reduction",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "table",
+      "source_refs": [
+        [
+          61,
+          30
+        ],
+        [
+          63,
+          150
+        ],
+        [
+          63,
+          153
+        ],
+        [
+          63,
+          159
+        ],
+        [
+          63,
+          167
+        ],
+        [
+          63,
+          170
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:84#Reducible hernia",
+      "cue": "A soft toy pouch bulges through a fabric opening, with a broad toy hand gently returning the pouch through that same opening.",
+      "cue_scope": "Hernia/bulge plus reducible/returnable ordinary action metaphor only; no manual technique or care instruction.",
+      "reason": "Same lexical return/reduction action.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Identical local returnable-pouch cue, not a second reduction association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incarcerated obturator hernia",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          32
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Incarcerated hernia",
+      "cue": "A bulging toy pouch trapped behind a tiny barred cage.",
+      "cue_scope": "Hernia/bulge plus incarcerated/imprisoned wordplay only.",
+      "reason": "Incarceration/bulge only; obturator site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Femoral region",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          32
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#femoral artery",
+      "cue": "A detached femur teaching-model token standing alone, without artery.",
+      "cue_scope": "Femur/femoral learned name-family only; precise region and vascular anatomy omitted.",
+      "reason": "Concrete named bone head, not an arbitrary long bone.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Already selected femur/femoral bridge in femoral artery/vein; standalone depiction removes vessel, not a new bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pectineus muscle",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          32
+        ],
+        [
+          61,
+          33
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#Rectus femoris m.",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Broad muscle category only; individual muscle and action modifiers not encoded",
+      "reason": "Muscle category useful; pectineus specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected generic muscle model, no specific anatomy granted.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Femoral artery",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          35
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#femoral artery",
+      "cue": "A detached femur study token beside a toy artery token.",
+      "cue_scope": "Femur/femoral name fragment",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#femoral artery; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Femoral vein",
+      "pdf_page": 61,
+      "page": 533,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          61,
+          35
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#femoral vein",
+      "cue": "A standalone femur-shaped study token beside a weather vane.",
+      "cue_scope": "Femur/femoral fragment + vein",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#femoral vein; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transversalis fascia",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          7
+        ],
+        [
+          62,
+          8
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "reason": "Fascia head only; transversalis omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual standalone fascia root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transversus abdominus",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          9
+        ],
+        [
+          62,
+          10
+        ],
+        [
+          62,
+          39
+        ],
+        [
+          62,
+          40
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#Rectus femoris m.",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Broad muscle category only; individual muscle and action modifiers not encoded",
+      "reason": "Taught muscle category only; uncertain source spelling and specific abdominal layer not normalized or depicted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact generic muscle root, not a new transversus model.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Internal oblique",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          11
+        ],
+        [
+          62,
+          12
+        ],
+        [
+          62,
+          26
+        ],
+        [
+          62,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#Rectus femoris m.",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Broad muscle category only; individual muscle and action modifiers not encoded",
+      "reason": "Muscle head only; internal/oblique orientation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact muscle root, no layer-specific anatomy claim.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "External oblique",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          13
+        ],
+        [
+          62,
+          21
+        ],
+        [
+          62,
+          28
+        ],
+        [
+          62,
+          29
+        ],
+        [
+          62,
+          36
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#Rectus femoris m.",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Broad muscle category only; individual muscle and action modifiers not encoded",
+      "reason": "Muscle head only; external/oblique orientation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same generic model as Internal oblique, not another variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obliterated process vaginalis",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          14
+        ],
+        [
+          62,
+          15
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A soft transparent toy sleeve with one segment visibly sealed flat between fused edges, beside a matching open sleeve.",
+      "cue_scope": "Obliterated/closed-off ordinary channel contrast only; source wording uncertain, process/vaginalis anatomy and mechanism omitted.",
+      "reason": "Sealed-versus-open comparison represents the actual obliterated head without normalizing the anatomical name.",
+      "association_status": "new_association",
+      "association_comparison": "Explicit fused-closed versus open sleeve relationship; not just obstruction by a removable plug.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inferior epigastric vessels",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          16
+        ],
+        [
+          62,
+          32
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Epigastric area",
+      "cue": "An upper-belly teaching-model token standing alone, without pain mask.",
+      "cue_scope": "Epigastric learned region head only. Area category only, no embryologic localization.",
+      "reason": "Epigastric head only; inferior and named vessels omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected upper-belly region token, not a new vessel cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hernia neck",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          17
+        ],
+        [
+          63,
+          163
+        ],
+        [
+          63,
+          164
+        ],
+        [
+          63,
+          167
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Strangulated hernia",
+      "cue": "A soft pouch bulging through a generous fabric opening, with its naturally narrow connecting neck clearly visible and no pinching ring or compression.",
+      "cue_scope": "Hernia/bulge and pouch-neck ordinary shape metaphor only; no strangulation, constriction, viability or clinical anatomy claim.",
+      "reason": "Neutral visible neck supplies head without importing an unsupported strangulated state.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "72 pinched-neck host changes to an uncompressed naturally necked pouch; actual shape/state and encoded scope change, not exact repeat.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transversus aponeurosis",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          18
+        ],
+        [
+          62,
+          19
+        ],
+        [
+          62,
+          33
+        ],
+        [
+          62,
+          34
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-42-cue-audit.json#Levator palpebrae aponeurosis",
+      "cue": "A detached fascia teaching-model sheet on a display base.",
+      "cue_scope": "Broad fascia/sheet family only; regional and layer modifiers omitted",
+      "reason": "Broad aponeurotic-sheet category only; transversus layer omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected sheet root, no new regional anatomy.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aponeurosis of external oblique",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          20
+        ],
+        [
+          62,
+          21
+        ],
+        [
+          62,
+          35
+        ],
+        [
+          62,
+          36
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-42-cue-audit.json#Levator palpebrae aponeurosis",
+      "cue": "A detached fascia teaching-model sheet on a display base.",
+      "cue_scope": "Broad fascia/sheet family only; regional and layer modifiers omitted",
+      "reason": "Sheet category only; external-oblique muscle and attachment omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected aponeurosis/sheet family.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "External inguinal ring",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          22
+        ],
+        [
+          62,
+          37
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#inguinal ligament",
+      "cue": "A toy iguana beside a large ordinary metal ring placed outside a transparent display box.",
+      "cue_scope": "Inguinal/iguana approximate sound, ring/shared-word and external/outside relation only; no anatomical opening or surgical landmark.",
+      "reason": "Outside placement has an explicit box boundary; ring is concrete.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing iguana/inguinal bridge with ribbon replaced by ring/outside relation.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testis",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          23
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "reason": "Specific anatomical model rather than arbitrary eggs assigned organ identity.",
+      "association_status": "new_association",
+      "association_comparison": "Prior Testicular torsion selected twist-only ribbon omitted testis; this supplies actual taught anatomical head.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Persistent processus vaginalis",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          30
+        ],
+        [
+          62,
+          31
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:84#Obliterated process vaginalis",
+      "cue": "A transparent toy sleeve held visibly open by a rigid internal spacer, beside a matching collapsed sleeve.",
+      "cue_scope": "Persistent/staying-open ordinary relationship only; source anatomical wording not validated, processus/vaginalis anatomy omitted.",
+      "reason": "Spacer actively maintains open shape, not mere static placement claimed as persistence.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local closed/open sleeve contrast changes to an explicitly maintained-open state.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Internal inguinal ring",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          38
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:84#External inguinal ring",
+      "cue": "A toy iguana beside a large ordinary metal ring placed inside a transparent display box.",
+      "cue_scope": "Inguinal/iguana approximate sound, ring/shared-word and internal/inside relation only; no anatomical opening or surgical landmark.",
+      "reason": "Box boundary makes inside relation visible.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Same local iguana/ring bridge with opposite encoded inside/outside relation.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Arcuate line",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          44
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Arch of aorta",
+      "cue": "A plain curved arch-shaped strip tracing one continuous bowed line.",
+      "cue_scope": "Arcuate/arched plus line ordinary geometry only; no abdominal anatomy or landmark.",
+      "reason": "Arc shape supplies ordinary head, not a clinical landmark.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "77 already arch/curve contrasted against straight aorta segment; plain curved line removes aorta and narrows depiction/scope, not a new arch bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epigastric hernia",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          46
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; epigastric site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing bulge model, not another site variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Linea alba",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          47
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A single bright white cord stretched in a straight line against a dark plain board.",
+      "cue_scope": "Linea/line and alba/white learned word heads only; no fascial anatomy or true landmark.",
+      "reason": "White line directly supplies the two ordinary lexical meanings.",
+      "association_status": "new_association",
+      "association_comparison": "Line/white word relationship proposed rather than generic belly anatomy.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anterior abdominal wall hernia",
+      "pdf_page": 62,
+      "page": 534,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          62,
+          49
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only; anterior and wall anatomy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator hernia",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          63,
+          16
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "reason": "Hernia head only, obturator omitted rather than wrong-device anatomy.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad root;30 device cue not falsely used as pelvic anatomy.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Richter hernia",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          63,
+          34
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A miniature rickshaw with two large wheels, passenger seat and paired pulling shafts.",
+      "cue_scope": "Rich/rick approximate eponym opening only; remaining name, hernia and bowel-wall anatomy omitted.",
+      "reason": "Recognizable rickshaw offers an economical partial host; approximate sound remains taught.",
+      "association_status": "new_association",
+      "association_comparison": "Rick/rickshaw name fragment, distinct from existing bulge-through-opening category bridge.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Imaging",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          63,
+          51
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#imaging",
+      "cue": "A plain radiograph-film frame standing alone.",
+      "cue_scope": "Broad imaging category only; not every modality, a result or detection claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#imaging; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dynamic abdominal sonography for hernia",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "body",
+      "source_refs": [
+        [
+          63,
+          59
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-45-cue-audit.json#Ultrasound",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Sonography/US device head only; dynamic, abdominal and hernia findings omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected device category, no scanning-motion technique invented.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Reduction en mass",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "body",
+      "source_refs": [
+        [
+          63,
+          129
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:84#Reducible hernia",
+      "cue": "A soft toy pouch bulges through a fabric opening, with a broad toy hand gently returning the pouch through that same opening.",
+      "cue_scope": "Hernia/bulge plus reducible/returnable ordinary action metaphor only; no manual technique or care instruction.",
+      "reason": "Reduction head only; uncertain source spelling and special en-mass condition not normalized or encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local return action; not a new named complication depiction.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator canal",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          63,
+          138
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:84#Femoral canal",
+      "cue": "A miniature open water canal with clear banks beside an ordinary sealing plug.",
+      "cue_scope": "Canal/shared-word plus obturate/plug ordinary closure head only; no actual pelvic canal or device instruction.",
+      "reason": "Concrete canal and plug encode partial ordinary meanings.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing local canal host changes femur adjunct to closure/plug; canal bridge is not new.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator membrane",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          63,
+          139
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "cue": "A thin translucent toy membrane sheet stretched across a hoop.",
+      "cue_scope": "Membrane/sheet broad taught category only; obturator site and anatomical attachments omitted.",
+      "reason": "Actual thin sheet represents membrane head, not named anatomy inferred from placement.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing fascia/sheet category depicted as stretched translucent membrane; no new tissue-sheet bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pubic tubercle",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          63,
+          140
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A pubic-bone teaching model with its small projecting tubercle clearly preserved in the model geometry.",
+      "cue_scope": "Taught pubic-bone/tubercle anatomy only; no palpable landmark technique or diagnosis.",
+      "reason": "Actual named anatomy rather than an arbitrary pebble relabeled tubercle.",
+      "association_status": "new_association",
+      "association_comparison": "Specific taught pubic-bone projection model proposed; not generic bone identity claimed as a complete pubic landmark.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator foramen",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          63,
+          142
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A pelvic-bone teaching model preserving its paired large obturator openings and pubic/ischial rims.",
+      "cue_scope": "Taught obturator-foramen anatomy only; no contents, herniation or clinical maneuver.",
+      "reason": "Actual paired pelvic openings supply the named anatomical head.",
+      "association_status": "new_association",
+      "association_comparison": "Distinct learned anatomy host, not30 obturator-device wordplay or generic hole assigned pelvic identity.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "NPO status",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          153
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#NPO status",
+      "cue": "A toy dinner plate and drinking cup behind a simple stop barrier.",
+      "cue_scope": "Nothing-by-mouth/eating-drinking prohibition learned phrase only; no instruction for a person or duration.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#NPO status; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "IV narcotic analgesia",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          156
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-80-cue-audit.json#Analgesics",
+      "cue": "A familiar pain-expression mask resting beside a mute symbol.",
+      "cue_scope": "Broad analgesia family",
+      "reason": "Analgesia head only; IV route and narcotic specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected analgesia root, no unmarked syringe granted drug identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cold packs",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          159
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#ice packs",
+      "cue": "A familiar reusable ice pack with visible frozen contents.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Cold/ice pack lexical equivalence declared at broad familiar product category only; no application or temperature instruction.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "26 already selected the actual reusable frozen-content pack; transparent-cube wording did not create a new variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Swelling",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          159
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#swelling",
+      "cue": "A puffy inflated toy shape, without brain features.",
+      "cue_scope": "Broad puffing/swelling word association only; no anatomy, diagnosis or mechanism.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#swelling; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pressure",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          164
+        ],
+        [
+          63,
+          166
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-45-cue-audit.json#Pressure",
+      "cue": "An unnumbered pressure gauge standing alone.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-45-cue-audit.json#Pressure; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ultrasound",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          165
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-45-cue-audit.json#Ultrasound",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-45-cue-audit.json#Ultrasound; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bulging",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          166
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#bulging fissure sign",
+      "cue": "A continuous vessel-shaped teaching tube with one localized bulge beside a narrower reference segment.",
+      "cue_scope": "Localized-bulge learned aneurysm shape/category only; not any dilation equals aneurysm, no diagnostic criterion or risk claim. Bulging geometry head only via localized-bulge tube, NOT aneurysm equals this sign, fissure unencoded.",
+      "reason": "Broad bulging geometry only, no aneurysm or fissure inference.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact existing bulge/reference geometry.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ballooning",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          167
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#distention",
+      "cue": "An inflated balloon beside a matching deflated balloon; no lung or chest shell.",
+      "cue_scope": "Distention/expansion ordinary comparative shape category only; no organ or clinical implication. Ordinary expansion shape only, not a clinical distention sign.",
+      "reason": "Literal balloon expansion head, not Foley catheter identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected balloon expansion contrast.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Surgical consultation",
+      "pdf_page": 63,
+      "page": 535,
+      "source_match": "table",
+      "source_refs": [
+        [
+          63,
+          170
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Surgical head only, consultation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected surgery root, same as81;60 phone hold unchanged.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Hernias",
+        "entry_term": "Hernias",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "title",
+        "wording_note": ""
+      },
+      {
+        "term": "Reducible hernia",
+        "entry_term": "Reducible hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "bold predicate",
+        "wording_note": "Hernia noun joined with bold reducible predicate; normalized order, not verbatim phrase."
+      },
+      {
+        "term": "Incarcerated hernia",
+        "entry_term": "Incarcerated hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "bold predicate",
+        "wording_note": "Hernia noun joined with bold incarcerated predicate; normalized order."
+      },
+      {
+        "term": "Incarcerated hernia",
+        "entry_term": "Incarcerated hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Strangulation",
+        "entry_term": "Strangulation",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Inguinal hernia",
+        "entry_term": "Inguinal hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Direct inguinal hernia",
+        "entry_term": "Direct inguinal hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Direct inguinal hernia",
+        "entry_term": "Direct inguinal hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Direct inguinal hernia",
+        "entry_term": "Direct inguinal hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Indirect inguinal hernia",
+        "entry_term": "Indirect inguinal hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Indirect inguinal hernia",
+        "entry_term": "Indirect inguinal hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Indirect inguinal hernia",
+        "entry_term": "Indirect inguinal hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Ventral hernias",
+        "entry_term": "Ventral hernias",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading/bold",
+        "wording_note": "Shared hernias noun applied to ventral modifier in heading; repeated explicit phrase combined."
+      },
+      {
+        "term": "Incisional hernias",
+        "entry_term": "Incisional hernias",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading/bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Umbilical hernia",
+        "entry_term": "Umbilical hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Umbilical hernia",
+        "entry_term": "Umbilical hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Umbilical hernia",
+        "entry_term": "Umbilical hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Femoral hernia",
+        "entry_term": "Femoral hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Femoral hernia",
+        "entry_term": "Femoral hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Spigelian hernia",
+        "entry_term": "Spigelian hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Spigelian hernia",
+        "entry_term": "Spigelian hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Lateral ventral hernia",
+        "entry_term": "Lateral ventral hernia",
+        "pdf_page": 60,
+        "page": 532,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Inguinal ligament",
+        "entry_term": "Inguinal ligament",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Groin hernia",
+        "entry_term": "Groin hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Incarcerated femoral hernia",
+        "entry_term": "Incarcerated femoral hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Small-bowel segment",
+        "entry_term": "Small-bowel segment",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": "Repeated anatomical head across panels combined."
+      },
+      {
+        "term": "Femoral canal",
+        "entry_term": "Femoral canal",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "Incarcerated incisional hernia",
+        "entry_term": "Incarcerated incisional hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": "Joined split condition name."
+      },
+      {
+        "term": "Abdominal wall",
+        "entry_term": "Abdominal wall",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "Dilated small-bowel loops",
+        "entry_term": "Dilated small-bowel loops",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Fluid space",
+        "entry_term": "Fluid space",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Hernia sac",
+        "entry_term": "Hernia sac",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "Hernia orifice",
+        "entry_term": "Hernia orifice",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "Fascia",
+        "entry_term": "Fascia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "defect of the fascia",
+        "entry_term": "Fascial defect",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": "Actual phrase normalized to adjective/noun head."
+      },
+      {
+        "term": "Fascial defect",
+        "entry_term": "Fascial defect",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table nested head",
+        "wording_note": "Repeated head within same span combined."
+      },
+      {
+        "term": "reduced by manipulation",
+        "entry_term": "Hernia reduction",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": "Actual reduction operation normalized to noun; no procedural guidance retained."
+      },
+      {
+        "term": "Hernia reduction",
+        "entry_term": "Hernia reduction",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table title/body",
+        "wording_note": "Repeated reduction operations joined to explicit table-title hernia head, not false full-source quotes."
+      },
+      {
+        "term": "Incarcerated obturator hernia",
+        "entry_term": "Incarcerated obturator hernia",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Femoral region",
+        "entry_term": "Femoral region",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": "Deep modifier omitted."
+      },
+      {
+        "term": "Pectineus muscle",
+        "entry_term": "Pectineus muscle",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption",
+        "wording_note": "Joined split anatomical name."
+      },
+      {
+        "term": "Femoral artery",
+        "entry_term": "Femoral artery",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": "Actual caption supports raster A locator; no invented native image-label span."
+      },
+      {
+        "term": "Femoral vein",
+        "entry_term": "Femoral vein",
+        "pdf_page": 61,
+        "page": 533,
+        "emphasis": "figure caption anatomy",
+        "wording_note": "Shared femoral modifier applied to vein; caption supports raster V locator."
+      },
+      {
+        "term": "Transversalis fascia",
+        "entry_term": "Transversalis fascia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split label."
+      },
+      {
+        "term": "Transversus abdominus",
+        "entry_term": "Transversus abdominus",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split labels and repeated occurrences; source abdominus spelling preserved, not silently corrected."
+      },
+      {
+        "term": "Internal oblique",
+        "entry_term": "Internal oblique",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split labels; repetitions combined."
+      },
+      {
+        "term": "External oblique",
+        "entry_term": "External oblique",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Repeated explicit anatomy head, including component named in aponeurosis labels; split occurrences joined."
+      },
+      {
+        "term": "Obliterated process vaginalis",
+        "entry_term": "Obliterated process vaginalis",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split label; source process spelling preserved, not substituted with processus."
+      },
+      {
+        "term": "Inferior epigastric vessels",
+        "entry_term": "Inferior epigastric vessels",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Neck of hernia",
+        "entry_term": "Hernia neck",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Word order normalized to anatomical noun phrase."
+      },
+      {
+        "term": "Hernia neck",
+        "entry_term": "Hernia neck",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table anatomy head",
+        "wording_note": ""
+      },
+      {
+        "term": "Transversus aponeurosis",
+        "entry_term": "Transversus aponeurosis",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split labels; repeated head combined."
+      },
+      {
+        "term": "Aponeurosis of external oblique",
+        "entry_term": "Aponeurosis of external oblique",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split labels and repetitions."
+      },
+      {
+        "term": "External inguinal ring",
+        "entry_term": "External inguinal ring",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Testis",
+        "entry_term": "Testis",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Persistent processus vaginalis",
+        "entry_term": "Persistent processus vaginalis",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": "Joined split label; actual processus spelling preserved."
+      },
+      {
+        "term": "Internal inguinal ring",
+        "entry_term": "Internal inguinal ring",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Arcuate line",
+        "entry_term": "Arcuate line",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Epigastric hernia",
+        "entry_term": "Epigastric hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Linea alba",
+        "entry_term": "Linea alba",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Anterior abdominal wall hernia",
+        "entry_term": "Anterior abdominal wall hernia",
+        "pdf_page": 62,
+        "page": 534,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator hernia",
+        "entry_term": "Obturator hernia",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Richter hernia",
+        "entry_term": "Richter hernia",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Imaging",
+        "entry_term": "Imaging",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Dynamic abdominal sonography for hernia",
+        "entry_term": "Dynamic abdominal sonography for hernia",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Reduction en mass",
+        "entry_term": "Reduction en mass",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "bold",
+        "wording_note": "Actual source mass spelling retained, not silently corrected to another phrase."
+      },
+      {
+        "term": "Obturator canal",
+        "entry_term": "Obturator canal",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator membrane",
+        "entry_term": "Obturator membrane",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Pubic tubercle",
+        "entry_term": "Pubic tubercle",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "native figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator foramen",
+        "entry_term": "Obturator foramen",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "figure caption anatomy",
+        "wording_note": ""
+      },
+      {
+        "term": "NPO status",
+        "entry_term": "NPO status",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "IV narcotic analgesia",
+        "entry_term": "IV narcotic analgesia",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": "Adequate qualifier omitted; named intervention head retained without guidance."
+      },
+      {
+        "term": "Cold packs",
+        "entry_term": "Cold packs",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Swelling",
+        "entry_term": "Swelling",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pressure",
+        "entry_term": "Pressure",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": "Firm/steady/proximal/distal action guidance excluded after actual pressure head."
+      },
+      {
+        "term": "US",
+        "entry_term": "Ultrasound",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": "Explicit device/modality abbreviation expanded; not the book title in figure credit."
+      },
+      {
+        "term": "Bulging",
+        "entry_term": "Bulging",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table nested head",
+        "wording_note": ""
+      },
+      {
+        "term": "Ballooning",
+        "entry_term": "Ballooning",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table nested head",
+        "wording_note": ""
+      },
+      {
+        "term": "Consult surgery",
+        "entry_term": "Surgical consultation",
+        "pdf_page": 63,
+        "page": 535,
+        "emphasis": "table",
+        "wording_note": "Operation normalized to noun phrase; attempts/count not retained as guidance."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 60,
+        "description": "Native source span(s) 60:42, 60:43, 60:44, 60:69, 60:77, 60:79, 60:80, 60:91, 60:103, 60:111, 60:122, 60:147",
+        "reason": "Authors, introduction/anatomy-common/uncommon scaffold, chapter numbering and figure cross-references; actual hernia states/types retained."
+      },
+      {
+        "pdf_page": 61,
+        "description": "Native source span(s) 61:11, 61:13, 61:14, 61:15, 61:16, 61:17, 61:19, 61:21, 61:24, 61:26, 61:28, 61:29, 61:30, 61:31, 61:34, 61:36, 61:37, 61:38",
+        "reason": "Figure numbers/panel letters/arrows and publication credits. Whole easily-reduced/manipulation and positional case descriptions not retained as procedural rules; actual hernias/anatomy/defect/reduction heads extracted first."
+      },
+      {
+        "pdf_page": 62,
+        "description": "Native source span(s) 62:24, 62:41, 62:48",
+        "reason": "Figure numbering only; all meaningful native labels and caption hernia heads retained."
+      },
+      {
+        "pdf_page": 63,
+        "description": "Native source span(s) 63:19, 63:43, 63:107, 63:123, 63:141, 63:143, 63:144, 63:145, 63:146, 63:150, 63:153, 63:156, 63:159, 63:160, 63:163, 63:164, 63:165, 63:166, 63:167, 63:170",
+        "reason": "Diagnosis/treatment/table/figure scaffold and credits; whole reduction-position/force/analgesia/cold-pack/surgery guidance and attempt numbers excluded only after procedure, device, drug/category, finding and anatomy heads extracted."
+      },
+      {
+        "pdf_page": 64,
+        "description": "Native source span(s) 64:23, 64:28",
+        "reason": "Acknowledgments/references scaffold. Chapter85 starts outside84 ownership and not attributed here."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch81-85",
+  "limits": "Phase1 only; no cues/priors. Native emphasis and cached gi60-64 rasters inspected for owned84 regions, all six figures/native anatomical labels and reduction table. Source label spellings abdominus/process vaginalis/reduction en mass preserved as cached; not anatomically corrected or treated as medical guidance. Sparse zero-based native pointers; caption supports image-only A/V locators, no invented spans. Native annotations checked by main; flattened highlights uncertain. Meaningful lexical scope, not exhaustive prose/clinical coverage.",
+  "sparse_provenance": {
+    "inventory_sha256": "58d748f25ebc401714df71c3134688aa84e920ee4f1374ba93c773ad7901fdba",
+    "decisions_sha256": "5e1eb5a308f6a5ebfd1b1e385065e0d1126e58d01d627e22f916b1fee053adbe",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "440f8d3988b8166a2f693ef8de1952792b83d2b874518c27a378369bcbbeed7b",
+    "prior_freeze_sha256": "b8958e90eaa741abef4fba0e20f72dbc75f003a3a3e2b224998b5809e22286e7",
+    "source_cache_sha256": {
+      "60": "d655124d5ae97e1eb6c0b34eea74b391597982b66f9bf1f83f45e75b8a4ab40e",
+      "61": "8016b80caaa81c8bf135fdbbadc43b2cc39bfc511716a290a0df55b2e7c2588c",
+      "62": "0cb51c83e6dc8d83d7ad75aea6e8665d5032f14efc287f888dcc6a08baad7722",
+      "63": "8734ad157071b4fce3334e5bc0453ee1ac5cdd7d8c3975737af7cdac80c162ec",
+      "64": "b2e9f69bbffb675432f8c44a7af7ff4b855748698af4652630cabf88d3719b54"
+    },
+    "exact_unchanged_reuse_rows": 12,
+    "explicit_semantic_rows": 55
+  },
+  "main_integration_review": {
+    "date": "2026-10-25",
+    "source_and_conceptual_review": true,
+    "scope": "Main non-author independently reviewed all 591 cue/scope rows, 700 selected keyword mappings and all 29 owned PDF rasters/native emphasis, actual columns, tables and meaningful captions. Fifteen findings closed across sixteen changed rows after bounded delta review; separate pre-main82 semantic repair preserved. Actual named priors and local dependencies checked. Selected lexical review only, not exhaustive vocabulary, clinical, pronunciation, recall or render validation; all candidates untested/nonproduction.",
+    "counts": {
+      "selected_terms": 67,
+      "new_candidates": 55,
+      "reused_candidates": 12,
+      "holds": 0
+    },
+    "keyword_items": 79,
+    "materialized_sha256": "1d1fd6ca0dfaf37621d8883ff9669e350acbda6171c548c1bacd72f0d6176cbf",
+    "report": "docs/chapter-81-85-sparse-workshop.md"
+  }
+}

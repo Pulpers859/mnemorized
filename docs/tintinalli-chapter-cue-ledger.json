@@ -1426,6 +1426,132 @@
         "reconsidered_attempt": 1
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "81",
+      "title": "Acute Appendicitis",
+      "record": "docs/chapter-81-cue-audit.json",
+      "report": "docs/chapter-81-cue-audit.md",
+      "selected_terms": 86,
+      "new_candidates": 54,
+      "reused_candidates": 32,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 98,
+      "association_occurrences": {
+        "unchanged_repeat": 61,
+        "meaningful_variant": 13,
+        "new_association": 12
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 61,
+        "new_revision": 13,
+        "new_proposal": 12
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "82",
+      "title": "Diverticulitis",
+      "record": "docs/chapter-82-cue-audit.json",
+      "report": "docs/chapter-82-cue-audit.md",
+      "selected_terms": 105,
+      "new_candidates": 50,
+      "reused_candidates": 55,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 112,
+      "association_occurrences": {
+        "unchanged_repeat": 90,
+        "new_association": 8,
+        "meaningful_variant": 7
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 89,
+        "new_proposal": 8,
+        "new_revision": 7,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "83",
+      "title": "Bowel Obstruction",
+      "record": "docs/chapter-83-cue-audit.json",
+      "report": "docs/chapter-83-cue-audit.md",
+      "selected_terms": 56,
+      "new_candidates": 25,
+      "reused_candidates": 31,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 63,
+      "association_occurrences": {
+        "unchanged_repeat": 43,
+        "meaningful_variant": 10,
+        "new_association": 3
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 43,
+        "new_revision": 10,
+        "new_proposal": 3
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "84",
+      "title": "Hernias",
+      "record": "docs/chapter-84-cue-audit.json",
+      "report": "docs/chapter-84-cue-audit.md",
+      "selected_terms": 67,
+      "new_candidates": 55,
+      "reused_candidates": 12,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 79,
+      "association_occurrences": {
+        "unchanged_repeat": 47,
+        "meaningful_variant": 13,
+        "new_association": 7
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 47,
+        "new_revision": 13,
+        "new_proposal": 7
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "85",
+      "title": "Anorectal Disorders",
+      "record": "docs/chapter-85-cue-audit.json",
+      "report": "docs/chapter-85-cue-audit.md",
+      "selected_terms": 277,
+      "new_candidates": 216,
+      "reused_candidates": 61,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 348,
+      "association_occurrences": {
+        "unchanged_repeat": 197,
+        "meaningful_variant": 46,
+        "new_association": 34
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 197,
+        "new_revision": 46,
+        "new_proposal": 34
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1435,8 +1561,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "81",
-    "title": "Acute Appendicitis",
+    "chapter_id": "86",
+    "title": "Gastrointestinal Procedures and Devices",
     "status": "not_started_for_cue_review"
   },
   "spend": {

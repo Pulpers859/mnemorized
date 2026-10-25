@@ -114,6 +114,13 @@ durable report and next-chapter record. It preflights the complete packet and
 refuses stale evidence, skipped progress or overwriting an integrated chapter;
 it does not grant production admission or run Git/provider operations.
 
+The 81-85 follow-up did not demonstrate lower usage: combined authored bytes per
+term rose from461.47to544.19 (first-main-observed proxy), and242full semantic rows
+were unchanged repeats. See `chapter-81-85-sparse-workshop.md`. A future explicit
+author-selected alias-adoption format may reduce duplicate prose, but requires
+separate tool tests, actual selected prior identity/scope and independent review.
+Do not change the schema during a frozen batch or auto-admit semantic aliases.
+
 ## Count Associations, Not Just Props
 
 The unit of creative yield is the **term-to-image association**, not a previously

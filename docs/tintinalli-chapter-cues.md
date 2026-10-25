@@ -517,3 +517,17 @@ Association occurrences, not unique growth or empirical validation. Earlier hold
 | 80 | [Hepatic Disorders](chapter-80-cue-audit.md) | 217 | 45 | 54 | 118 | 0 | 225 |
 
 Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
+
+## Chapters 81-85: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-81-85-sparse-workshop.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 81 | [Acute Appendicitis](chapter-81-cue-audit.md) | 86 | 12 | 13 | 61 | 0 | 98 |
+| 82 | [Diverticulitis](chapter-82-cue-audit.md) | 105 | 8 | 7 | 90 | 0 | 112 |
+| 83 | [Bowel Obstruction](chapter-83-cue-audit.md) | 56 | 3 | 10 | 43 | 0 | 63 |
+| 84 | [Hernias](chapter-84-cue-audit.md) | 67 | 7 | 13 | 47 | 0 | 79 |
+| 85 | [Anorectal Disorders](chapter-85-cue-audit.md) | 277 | 34 | 46 | 197 | 0 | 348 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.

@@ -203,6 +203,52 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-25 - Sparse chapter workshop81-85 completed
+**Done:** Five-chapter offline source/cue workflow through Acute Appendicitis,
+Diverticulitis, Bowel Obstruction, Hernias and Anorectal Disorders. Existing
+stronger author Mendel resumed; non-author main reviewed all591materialized
+cue/scope rows,700selected keyword mappings,29owned source rasters/native
+emphasis, actual title/column boundaries, named tables/captions and bounded
+prior-reference evidence. Fifteen main findings closed across16changed rows,
+plus a separately preserved pre-main82semantic repair. Author completed and
+closed. See `docs/chapter-81-85-sparse-workshop.md`.
+
+**Results:**64different-bridge occurrences/89variants/438repeats/0newholds;
+not64unique additions or tested learning/render success. All591candidates
+untested/nonproduction, primary76-entry catalog and Forge unchanged. All1,129
+older active hold core records preserved; register remains1,129occurrences/
+933distinct terms. No old hold implicitly resolved by a retained alias.
+
+**Efficiency:** Generic sparse tool unchanged.191minimal reuse rows,400full
+semantic rows;242of the latter were unchanged repeats. Combined first-main
+author bytes/term544.19versus461.47previously,17.9%higher, not evidence of
+savings. Author-initial82 differs from first-main freeze and is preserved.
+No additional cohort/advisor or weaker-creative-author equivalence trial. Future
+explicit alias-adoption compression needs separately tested contract and review,
+not automatic equivalence or a mid-batch schema change. No Anthropic/paid-provider
+calls or renders; separate$6imagebenchmark untouched. Actual Codex usage not metered.
+
+**Evidence:** Ignored packet
+`Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch81-85/`
+preserves source/manifest, initials/freezes, prior/alias evidence, repairs,
+main-first snapshots, metrics, main-audit, hash-bound approval and hold comparison.
+Final85raw bank cad221c3279efaeddca713869d9e354d34fe6af6f3466fe3f2a3f4cfadef6823.
+Main integrated through existing reviewed-hash helper. Source vocabulary,
+clinical correctness, sound pronunciation, novelty and recall are not exhaustive
+or experimentally validated. Agent01a16f78-cf37-7721-bda2-09a3060080e7closed.
+
+**Validation:** Hold register current and1,129older core records preserved.
+Full local backend compile,1,040pytestpassed/2skipped and four-route HTTP200
+smoke passed; server stopped. No live provider or browser-generation validation.
+Git/CI verification is separate against the final commit; known malformed local
+Codex checkpoint ref prevented fetch, but authenticated ls-remote matched baseline
+08a390e4dec4082dd3cf599aa6995aff5c41aaca. No ref deletion or credential retries.
+
+**Next:**86Gastrointestinal Procedures and Devices, not started for cue review.
+Do not restart81-85or erase freezes. Consider separately tested explicit alias
+adoption before the next fixed five-chapter batch; retain stronger semantic
+author/non-author review and bounded delta rechecks.
+
 ### 2026-10-25 - Sparse chapter workshop76-80 completed
 **Done:** Continued five-chapter offline workflow through76Lower GI Bleeding,
 77Esophageal Emergencies,78Peptic Ulcer Disease/Gastritis,79Pancreatitis/
