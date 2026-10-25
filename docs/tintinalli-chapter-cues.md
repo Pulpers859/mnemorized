@@ -503,3 +503,17 @@ Chapter occurrences, not unique-library growth or empirical quality. First freez
 | 75 | [Upper Gastrointestinal Bleeding](chapter-75-cue-audit.md) | 54 | 20 | 11 | 22 | 1 | 56 |
 
 Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
+
+## Chapters 76-80: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-76-80-sparse-workshop.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 76 | [Lower Gastrointestinal Bleeding](chapter-76-cue-audit.md) | 63 | 6 | 11 | 45 | 1 | 74 |
+| 77 | [Esophageal Emergencies](chapter-77-cue-audit.md) | 171 | 42 | 25 | 104 | 0 | 184 |
+| 78 | [Peptic Ulcer Disease and Gastritis](chapter-78-cue-audit.md) | 40 | 8 | 6 | 26 | 0 | 42 |
+| 79 | [Pancreatitis and Cholecystitis](chapter-79-cue-audit.md) | 257 | 34 | 60 | 162 | 1 | 304 |
+| 80 | [Hepatic Disorders](chapter-80-cue-audit.md) | 217 | 45 | 54 | 118 | 0 | 225 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.

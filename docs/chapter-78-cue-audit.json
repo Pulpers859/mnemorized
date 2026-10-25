@@ -1,0 +1,1582 @@
+{
+  "schema_version": 1,
+  "chapter_id": "78",
+  "title": "Peptic Ulcer Disease and Gastritis",
+  "review_date": "2026-10-24",
+  "keyword_screen_date": "2026-10-24",
+  "source": {
+    "file": "Tintin_GI.pdf",
+    "sha256": "f4b4343cf51073b2858b1e255d36f476e174083e54d5886fba8cdc67d391a915",
+    "printed_page_offset": 472,
+    "pdf_pages": [
+      33,
+      34,
+      35,
+      36
+    ],
+    "printed_pages": [
+      505,
+      506,
+      507,
+      508
+    ],
+    "regions": {
+      "33": [
+        [
+          0,
+          473,
+          320,
+          783
+        ],
+        [
+          320,
+          30,
+          612,
+          783
+        ]
+      ],
+      "34": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "35": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "36": [
+        [
+          0,
+          30,
+          295,
+          783
+        ],
+        [
+          295,
+          30,
+          612,
+          273
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 40,
+    "new_candidates": 16,
+    "reused_candidates": 24,
+    "holds": 0
+  },
+  "association_counts": {
+    "meaningful_variant": 6,
+    "unchanged_repeat": 26,
+    "new_association": 8
+  },
+  "change_origin_counts": {
+    "new_revision": 6,
+    "existing_candidate_recount": 26,
+    "new_proposal": 8
+  },
+  "entries": [
+    {
+      "term": "Peptic Ulcer Disease and Gastritis",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          33,
+          47
+        ],
+        [
+          33,
+          48
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Peptic ulcer disease",
+      "cue": "An ulcer-crater teaching token beside a detached stomach teaching model.",
+      "cue_scope": "Ulcer/crater learned category plus gastr/stomach anatomy only; peptic, inflammation and disease distinctions omitted.",
+      "reason": "Two useful chapter heads, not a complete diagnosis.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Combines read48 ulcer-crater and48 Gastritis stomach identities, no new lexical family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peptic ulcer disease",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          52
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Peptic ulcer disease",
+      "cue": "A familiar freestanding ulcer-crater teaching token, without stomach location model.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#Peptic ulcer disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastritis",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          62
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Gastritis",
+      "cue": "A detached stomach teaching model on a display stand.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination. Partial explicit anatomy/word-family head only; location, disease, modifier and complete named structure are not encoded. Count is a tried term, not full-name coverage.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#Gastritis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dyspepsia",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          65
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-58-cue-audit.json#dyspepsia",
+      "cue": "An ordinary pepper shaker alone.",
+      "cue_scope": "Pep/pepper interior-name fragment only; dys and symptom definition omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-58-cue-audit.json#dyspepsia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Helicobacter pylori",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          57
+        ],
+        [
+          33,
+          76
+        ],
+        [
+          33,
+          83
+        ],
+        [
+          33,
+          97
+        ],
+        [
+          33,
+          119
+        ],
+        [
+          33,
+          126
+        ],
+        [
+          33,
+          131
+        ],
+        [
+          33,
+          138
+        ],
+        [
+          33,
+          142
+        ],
+        [
+          33,
+          152
+        ],
+        [
+          33,
+          154
+        ],
+        [
+          33,
+          160
+        ],
+        [
+          33,
+          165
+        ],
+        [
+          33,
+          171
+        ],
+        [
+          33,
+          181
+        ],
+        [
+          33,
+          194
+        ],
+        [
+          34,
+          106
+        ],
+        [
+          34,
+          109
+        ],
+        [
+          34,
+          112
+        ],
+        [
+          34,
+          115
+        ],
+        [
+          34,
+          127
+        ],
+        [
+          34,
+          133
+        ],
+        [
+          34,
+          141
+        ],
+        [
+          34,
+          151
+        ],
+        [
+          34,
+          162
+        ],
+        [
+          34,
+          168
+        ],
+        [
+          34,
+          173
+        ],
+        [
+          34,
+          187
+        ],
+        [
+          35,
+          18
+        ],
+        [
+          35,
+          25
+        ],
+        [
+          35,
+          28
+        ],
+        [
+          35,
+          34
+        ],
+        [
+          35,
+          57
+        ],
+        [
+          35,
+          167
+        ],
+        [
+          35,
+          170
+        ],
+        [
+          35,
+          189
+        ],
+        [
+          35,
+          195
+        ],
+        [
+          35,
+          203
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Helicobacter pylori",
+      "cue": "A toy helicopter alone.",
+      "cue_scope": "Helico-/helicopter approximate opening-name fragment only; pylori omitted. Only helicopter selected; pylori/rice omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Helicobacter pylori; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Helicobacter heilmannii",
+      "pdf_page": 33,
+      "page": 505,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          102
+        ],
+        [
+          33,
+          103
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Helicobacter pylori",
+      "cue": "A toy helicopter alone.",
+      "cue_scope": "Helico-/helicopter approximate opening-name fragment only; pylori omitted. Only helicopter selected; pylori/rice omitted.",
+      "reason": "Same genus opening, species unencoded; prior scope's pylori caveat retained verbatim, not a taxonomic claim.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact helico/helicopter cue/scope, not a new species identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pain",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          24
+        ],
+        [
+          34,
+          25
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain expression ingredient",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#pain; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric contents",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          24
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#stomach",
+      "cue": "A stomach teaching model with several neutral toy tokens visibly inside its transparent cavity.",
+      "cue_scope": "Gastric anatomy plus contents/inside relationship only; no food type, amount or function.",
+      "reason": "Explicit boundary makes contents visible.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing stomach identity with literal contained-token relationship; no new gastric bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ancillary testing",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          34,
+          83
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-52-cue-audit.json#Ancillary Testing",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Examination/evaluation category only; test result, disposition and diagnosis not encoded",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-52-cue-audit.json#Ancillary Testing; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Upper GI endoscopy",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          95
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Scope head only; upper/GI omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact telescope partial bridge/scope.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "H. pylori tests",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          34,
+          106
+        ],
+        [
+          34,
+          107
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Helicobacter pylori",
+      "cue": "A toy helicopter alone.",
+      "cue_scope": "Helico-/helicopter approximate opening-name fragment only; pylori omitted. Only helicopter selected; pylori/rice omitted.",
+      "reason": "Expanded H genus opening only; test operation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact organism-name fragment cue/scope, no testing yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rapid urease test",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          124
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar pink eraser standing alone.",
+      "cue_scope": "Urease/erase approximate internal-ending sound only; rapid and test omitted.",
+      "reason": "Concrete familiar host; initial vowel/sound shift taught.",
+      "association_status": "new_association",
+      "association_comparison": "Eraser word bridge proposed, not an unlabeled laboratory tube claimed urease-specific.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immunoglobulin G antibodies",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          140
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Rabies immune globulin",
+      "cue": "A familiar boxing glove standing alone.",
+      "cue_scope": "Globulin/glove approximate internal-name fragment only; immune, G and antibody function omitted.",
+      "reason": "Economical partial sound host, glove/globin collision acknowledged.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "46 Rabies immune globulin and47 tetanus immune globulin already use globe/stand for glob-name family. Glove changes host within that partial glob bridge, not a new globulin association.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urea breath test",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          149
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy figure blowing a small pinwheel, with the pinwheel shown in two successive turned positions.",
+      "cue_scope": "Breath/blowing action category only; urea, test and result omitted.",
+      "reason": "Concrete breath action without claiming assay mechanism.",
+      "association_status": "new_association",
+      "association_comparison": "Actual blowing/pinwheel relation, not generic air balloon relabeled urea.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alarm features",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          198
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar ringing alarm bell with its striker visibly against the bell.",
+      "cue_scope": "Alarm shared-word object/action only; features and clinical warning criteria omitted.",
+      "reason": "Concrete named alarm, not undefined emergency-style prop.",
+      "association_status": "new_association",
+      "association_comparison": "Literal alarm host, no medical specificity or urgency proof.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Endoscopy",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          198
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#endoscopy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Weight loss",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          204
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#weight loss",
+      "cue": "An ordinary weighing scale alone; toy weight removed.",
+      "cue_scope": "Weight literal instrument-category head only; loss/clinical meaning unencoded. Weight instrument/category head only; loss not encoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#weight loss; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vomiting",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          207
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#vomiting; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dysphagia",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          210
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:77#Dysphagia",
+      "cue": "A toy food pellet halted at a closed gate in an abstract feeding chute.",
+      "cue_scope": "Difficulty passing/swallowing learned category metaphor only; not cause, site or definition.",
+      "reason": "Existing authored77 broad category usable unchanged.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual local77 selected attempt;30 historical hold remains open.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Odynophagia",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          210
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:77#Odynophagia",
+      "cue": "A toy diner with an exaggerated theatrical pain-face mask beside a plate.",
+      "cue_scope": "Painful eating/swallowing learned category only; no cause or diagnostic distinction.",
+      "reason": "Same taught category, not blind symptom identification.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual77 cue/scope, no new association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Iron deficiency anemia",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          213
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-74-cue-audit.json#Iron",
+      "cue": "An almost empty learned-capacity tray holding a single familiar clothes iron.",
+      "cue_scope": "Iron shared-word host plus deficiency/sparse-container metaphor only; anemia and serum measurement omitted.",
+      "reason": "Taught capacity reference required; no dietary/chemical inference.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "74 Iron already selects clothes iron. Adds the familiar sparse-container deficiency state to that existing iron bridge, not a new root.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "GI bleeding",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          213
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-49-cue-audit.json#GI bleeding",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-49-cue-audit.json#GI bleeding; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal mass",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          216
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "cue": "A belly teaching model beside a conspicuous clay lump.",
+      "cue_scope": "Abdominal/belly anatomy plus broad mass/lump category only; no tumor diagnosis or size.",
+      "reason": "Two heads without pathological implication.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "72 mass/lump identity with abdominal-site model; same lump bridge, scope extension.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lymphadenopathy",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          216
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A cluster of lymph-node teaching beads enlarged beside matching smaller reference beads.",
+      "cue_scope": "Lymph-node learned anatomy plus enlargement contrast only; no cause or diagnostic threshold.",
+      "reason": "Actual taught node cluster, not arbitrary pearls relabeled anatomy.",
+      "association_status": "new_association",
+      "association_comparison": "Node-category/size proposal, not a full-name sound assembly.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Family history",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          219
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-51-cue-audit.json#family history",
+      "cue": "A familiar family-photo album beside an old history scroll.",
+      "cue_scope": "Familiar family/history composition Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-51-cue-audit.json#family history; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Upper GI malignancy",
+      "pdf_page": 34,
+      "page": 506,
+      "source_match": "table",
+      "source_refs": [
+        [
+          34,
+          219
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#malignancies",
+      "cue": "Several clay-lump study tokens alone, without neck model.",
+      "cue_scope": "Tumor/neoplasm learned category only, not site or pathology subtype. Tumor broad learned category only, malignancy unencoded; footnote.",
+      "reason": "Broad tumor category only, upper/GI and malignant distinction omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected malignancies cue/scope read for76.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Proton pump inhibitors",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          41
+        ],
+        [
+          35,
+          53
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#proton pump inhibitors",
+      "cue": "An ordinary mechanical pump alone, without heart identity token.",
+      "cue_scope": "pump existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#proton pump inhibitors; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ulcers",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          53
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Peptic ulcer disease",
+      "cue": "A familiar freestanding ulcer-crater teaching token, without stomach location model.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Ulcer head only.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact crater cue/scope; plurality does not add a bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "H2 receptor antagonists",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          53
+        ],
+        [
+          35,
+          54
+        ],
+        [
+          35,
+          55
+        ],
+        [
+          35,
+          56
+        ],
+        [
+          35,
+          90
+        ],
+        [
+          35,
+          91
+        ],
+        [
+          35,
+          92
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar radio receiver behind a simple stop barrier.",
+      "cue_scope": "Receptor/receiver learned word-category and antagonist/blocking metaphor only; H2 and pharmacology omitted.",
+      "reason": "Concrete receiver and barrier; reception not actual receptor function.",
+      "association_status": "new_association",
+      "association_comparison": "Proposes receptor/receiver bridge; barrier family already used for anti/against, no new barrier identity.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clostridium difficile",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          69
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#Clostridium difficile",
+      "cue": "An ordinary storage-compartment host explicitly adapted into an open clothes closet with hanging garments; bulging, overpacking and pressure gauge removed.",
+      "cue_scope": "Clos-/closet partial name only; wardrobe naming may compete. Explicit compartment-to-closet variant, not a literal old closet scene; no new generic storage-family root or clinical mechanism. Clos-/closet partial name only; difficile omitted, not a new storage-compartment family. Initial withdrawn new-count decision preserved.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#Clostridium difficile; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal excretion",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          106
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-56-cue-audit.json#renal excretion",
+      "cue": "A detached kidney teaching model standing alone, without pebbles.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-56-cue-audit.json#renal excretion; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dosage adjustments",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          106
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy measuring dispenser beside a familiar adjustment dial with its pointer between two marked positions.",
+      "cue_scope": "Dose/measuring-device category plus adjustment/dial metaphor only; no amount, direction or instruction.",
+      "reason": "Concrete control relationship without a medical dose.",
+      "association_status": "new_association",
+      "association_comparison": "Adjustable dispenser category proposal rather than numeric dosing scene.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal failure",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          107
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#renal failure",
+      "cue": "Kidney-shaped factory with conspicuously broken gears.",
+      "cue_scope": "Kidney plus failure metaphor",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-5-cue-audit.json#renal failure; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sucralfate",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          127
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar sugar bowl standing alone.",
+      "cue_scope": "Sucr/sugar learned name-family fragment only; alf ate remainder, chemistry and drug action omitted.",
+      "reason": "Economical partial head, sugar identity taught.",
+      "association_status": "new_association",
+      "association_comparison": "Sucr/sugar lexical proposal, not chemical-origin assertion.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antacids",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          140
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#antacids",
+      "cue": "Ant holding an acid bottle with a familiar corrosive pictogram.",
+      "cue_scope": "Ant plus acid name bridge",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-4-cue-audit.json#antacids; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Misoprostol",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "body",
+      "source_refs": [
+        [
+          35,
+          154
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A bowl of miso soup standing alone.",
+      "cue_scope": "Miso shared opening-name fragment only; prostol and drug category omitted.",
+      "reason": "Recognizable taught soup identity; untrained soup naming uncertain.",
+      "association_status": "new_association",
+      "association_comparison": "Concrete food-name fragment rather than unsupported prostaglandin mechanism.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "H. pylori eradication",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          35,
+          167
+        ],
+        [
+          35,
+          168
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Helicobacter pylori",
+      "cue": "A toy helicopter being swept completely out of a shallow toy tray by a broom.",
+      "cue_scope": "Helico/helicopter name fragment plus eradication/removal metaphor only; pylori and actual treatment omitted.",
+      "reason": "Visible removal relationship, not ordinary absent-object assumption.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Same helicopter bridge with actual sweeping/removal action; no new organism identity.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemorrhage",
+      "pdf_page": 35,
+      "page": 507,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          35,
+          210
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-13-cue-audit.json#hemorrhage; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Perforation",
+      "pdf_page": 36,
+      "page": 508,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          36,
+          26
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#perforation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obstruction",
+      "pdf_page": 36,
+      "page": 508,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          36,
+          63
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#obstruction",
+      "cue": "Freestanding windpipe teaching model with a conspicuous cork blocking its opening.",
+      "cue_scope": "Obstruction family; airway context supplied",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-28-cue-audit.json#obstruction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Peptic Ulcer Disease and Gastritis",
+        "entry_term": "Peptic Ulcer Disease and Gastritis",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "title",
+        "wording_note": "Joined two title spans."
+      },
+      {
+        "term": "Peptic ulcer disease",
+        "entry_term": "Peptic ulcer disease",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastritis",
+        "entry_term": "Gastritis",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Dyspepsia",
+        "entry_term": "Dyspepsia",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Helicobacter pylori",
+        "entry_term": "Helicobacter pylori",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "italic",
+        "wording_note": "Full name and H. pylori abbreviation; trailing compound dash omitted."
+      },
+      {
+        "term": "H. pylori",
+        "entry_term": "Helicobacter pylori",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "italic/bold italic",
+        "wording_note": "Abbreviation expanded."
+      },
+      {
+        "term": "H. pylori",
+        "entry_term": "Helicobacter pylori",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "italic/bold italic",
+        "wording_note": "Abbreviation expanded; heading capitalization normalized."
+      },
+      {
+        "term": "Helicobacter heilmannii",
+        "entry_term": "Helicobacter heilmannii",
+        "pdf_page": 33,
+        "page": 505,
+        "emphasis": "italic",
+        "wording_note": "Joined adjacent genus/species spans."
+      },
+      {
+        "term": "Pain",
+        "entry_term": "Pain",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": "Lexical head inside recurrent-pain assertion."
+      },
+      {
+        "term": "Gastric contents",
+        "entry_term": "Gastric contents",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": "Actual noun phrase inside emptying assertion."
+      },
+      {
+        "term": "Ancillary testing",
+        "entry_term": "Ancillary testing",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Upper GI endoscopy",
+        "entry_term": "Upper GI endoscopy",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": "Terminal punctuation omitted."
+      },
+      {
+        "term": "H. pylori tests",
+        "entry_term": "H. pylori tests",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold heading",
+        "wording_note": "Joined organism and operation heading; abbreviation retained."
+      },
+      {
+        "term": "Rapid urease test",
+        "entry_term": "Rapid urease test",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Immunoglobulin G antibodies",
+        "entry_term": "Immunoglobulin G antibodies",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": "Antibody head extracted before target preposition; H. pylori mapped separately."
+      },
+      {
+        "term": "Urea breath test",
+        "entry_term": "Urea breath test",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Alarm features",
+        "entry_term": "Alarm features",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table title",
+        "wording_note": "Category head extracted from title."
+      },
+      {
+        "term": "Endoscopy",
+        "entry_term": "Endoscopy",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table title",
+        "wording_note": "Procedure head extracted from title."
+      },
+      {
+        "term": "Weight loss",
+        "entry_term": "Weight loss",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Unexplained modifier omitted."
+      },
+      {
+        "term": "Vomiting",
+        "entry_term": "Vomiting",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Persistent modifier omitted."
+      },
+      {
+        "term": "Dysphagia",
+        "entry_term": "Dysphagia",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "First coordinated head."
+      },
+      {
+        "term": "Odynophagia",
+        "entry_term": "Odynophagia",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Second coordinated head."
+      },
+      {
+        "term": "Iron deficiency anemia",
+        "entry_term": "Iron deficiency anemia",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "First coordinated condition."
+      },
+      {
+        "term": "GI bleeding",
+        "entry_term": "GI bleeding",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Second coordinated condition."
+      },
+      {
+        "term": "Abdominal mass",
+        "entry_term": "Abdominal mass",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "First coordinated finding."
+      },
+      {
+        "term": "Lymphadenopathy",
+        "entry_term": "Lymphadenopathy",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Second coordinated finding."
+      },
+      {
+        "term": "Family history",
+        "entry_term": "Family history",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "History category extracted alongside actual malignancy head."
+      },
+      {
+        "term": "Upper GI malignancy",
+        "entry_term": "Upper GI malignancy",
+        "pdf_page": 34,
+        "page": 506,
+        "emphasis": "table",
+        "wording_note": "Disease head inside family-history criterion."
+      },
+      {
+        "term": "Proton pump inhibitors",
+        "entry_term": "Proton pump inhibitors",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "heading/bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Ulcers",
+        "entry_term": "Ulcers",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": "Disease head inside comparative healing claim."
+      },
+      {
+        "term": "H2 receptor antagonists",
+        "entry_term": "H2 receptor antagonists",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "heading/bold",
+        "wording_note": "Joined H, subscript2 and split receptor-antagonist spans; comparative claim not treated as a name."
+      },
+      {
+        "term": "Clostridium difficile",
+        "entry_term": "Clostridium difficile",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Renal excretion",
+        "entry_term": "Renal excretion",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": "Mechanism head extracted from dosage assertion."
+      },
+      {
+        "term": "Dosage adjustments",
+        "entry_term": "Dosage adjustments",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": "Named operation extracted; no numeric instruction retained."
+      },
+      {
+        "term": "Renal failure",
+        "entry_term": "Renal failure",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Sucralfate",
+        "entry_term": "Sucralfate",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Antacids",
+        "entry_term": "Antacids",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Misoprostol",
+        "entry_term": "Misoprostol",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "H. pylori eradication",
+        "entry_term": "H. pylori eradication",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "heading",
+        "wording_note": "Joined organism and eradication operation."
+      },
+      {
+        "term": "Hemorrhage",
+        "entry_term": "Hemorrhage",
+        "pdf_page": 35,
+        "page": 507,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Perforation",
+        "entry_term": "Perforation",
+        "pdf_page": 36,
+        "page": 508,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Obstruction",
+        "entry_term": "Obstruction",
+        "pdf_page": 36,
+        "page": 508,
+        "emphasis": "heading",
+        "wording_note": ""
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 33,
+        "description": "Native source span(s) 33:49, 33:50, 33:51, 33:89, 33:90, 33:112",
+        "reason": "Authors, chapter number and introduction/pathophysiology scaffold; actual disease/organism heads retained."
+      },
+      {
+        "pdf_page": 34,
+        "description": "Native source span(s) 34:18, 34:56, 34:102, 34:181, 34:194",
+        "reason": "Clinical features/diagnosis/treatment scaffold and table number/cross-reference; actual tests and alarm heads retained."
+      },
+      {
+        "pdf_page": 34,
+        "description": "Native source span(s) 34:24, 34:25, 34:26, 34:201",
+        "reason": "Whole timing/awakening assertion and age threshold/new-onset-symptom criterion excluded after Pain and Gastric contents heads extracted; generic symptoms not an additional named condition."
+      },
+      {
+        "pdf_page": 35,
+        "description": "Native source span(s) 35:53, 35:55, 35:56, 35:106, 35:107, 35:126, 35:206",
+        "reason": "Comparative efficacy/dose instruction, Other agents and complications scaffold excluded after actual drug/class, ulcer, renal and dosage-operation heads extracted."
+      },
+      {
+        "pdf_page": 36,
+        "description": "Native source span(s) 36:73, 36:105",
+        "reason": "Disposition/follow-up and references scaffold, not additional lexical targets."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch76-80",
+  "limits": "Phase1 only; no cues or priors. Assigned native emphasis and gi33-36 cached rasters inspected, including alarm table and mixed chapter boundaries. Annotation arrays empty; flattened highlights uncertain. Sparse zero-based pointers; metadata code-owned. Full claims excluded after lexical heads, no incidental-body or exhaustive clinical-coverage claim.",
+  "sparse_provenance": {
+    "inventory_sha256": "9c69668fc96df48507d029dcecfb0c8e71b7198a3e536a4dc05099b2f4550c9b",
+    "decisions_sha256": "152cbd2dfdf48840f57f2eca5288811ecf2a977456b7780bc3b233fc1bf2d8c0",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "a4873ffbc0481063695422bd7b81dd60caec94000ca129036d7d48ef72e900cd",
+    "prior_freeze_sha256": "7b2e40813cdd531ad52dc582e8baeb5a72684326d71beb10f32689ea12ef59ba",
+    "source_cache_sha256": {
+      "33": "a5578210cfbb74d7eae4efa381b267c595452c9ec4082a90d1bc3764c950ec0a",
+      "34": "f3d729344896cb5ea30d93fe7dbde4afb894e5bcdd633fd84e20ce14f32bf32f",
+      "35": "b6675567c613c0be6efa47bbaa5888d7894a4dbd55f93cd4af57dc08d4f17d5c",
+      "36": "7e042c5306c9019f18bab8345a105d4c7f4bc2317693d93fb9b1bbcf16fa481e"
+    },
+    "exact_unchanged_reuse_rows": 19,
+    "explicit_semantic_rows": 21
+  },
+  "main_integration_review": {
+    "date": "2026-10-25",
+    "source_and_conceptual_review": true,
+    "scope": "Non-author main reviewed all26owned source rasters/native emphasis/actual column regions,829keyword mappings and all748materialized cue/scope rows, with bounded named prior/alias and hold/provenance checks; independently closed25post-first-valid changed rows plus2prevalid local-status repairs and1source-gutter preparation correction. Source/editorial review only, not exhaustive vocabulary/clinical coverage, corpus novelty, human-specialist, pronunciation, recognition/recall or rendered validation.",
+    "counts": {
+      "selected_terms": 40,
+      "new_candidates": 16,
+      "reused_candidates": 24,
+      "holds": 0
+    },
+    "keyword_items": 42,
+    "materialized_sha256": "a4137b7fcaf00c4e2cd3a6aaf6d1c38ef631ca69355a733c4148de1a9b7e9f22",
+    "report": "docs/chapter-76-80-sparse-workshop.md"
+  }
+}

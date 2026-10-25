@@ -96,6 +96,18 @@ preserves first drafts and closes bounded repairs before integrating docs,
 ledger/index/holds. Software tests and minimal author files cannot substitute
 for that review. Count reusable-tool setup and code-review costs when evaluating
 the first trial; author-written bytes are not billed tokens or measured savings.
+For later batches, keep the tool unchanged unless a concrete integrity defect
+requires a tested repair. Keep a packet-local alias/ingredient supplement only
+for observed exact-lookup misses: query, actual prior reference and selection
+status, cue/scope excerpt and stronger adjudication. Preserve no-hit results.
+Clinical relatedness or a shared prop is not proof of the same lexical bridge;
+aliases still require explicit semantic rows, not automatic sparse inheritance.
+Report each independent review compactly: bank hash, actual source/keyword/prior
+scope checked, counts, exceptions and limits. Each exception names the term,
+defect, correction and closure evidence. Keep full evidence locally and recheck
+only changed entries and affected metadata after repair. Compress reports, not
+review scope. Count advisor preparation and review as effort; a shorter report
+or unchanged tool does not establish net billed-token savings.
 Main may then call `integrate_reviewed` using a local `main-approval.json` with
 the reviewed materialized hashes, explicit source/conceptual review scope/date,
 durable report and next-chapter record. It preflights the complete packet and

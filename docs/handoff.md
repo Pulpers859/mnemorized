@@ -203,6 +203,53 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-25 - Sparse chapter workshop76-80 completed
+**Done:** Continued five-chapter offline workflow through76Lower GI Bleeding,
+77Esophageal Emergencies,78Peptic Ulcer Disease/Gastritis,79Pancreatitis/
+Cholecystitis and80Hepatic Disorders. Stronger author Mendel resumed existing
+context; non-author main checked all26owned source rasters/native emphasis,
+829keyword mappings and748materialized cue/scope rows, plus bounded actual-prior
+alias checks and repair deltas. See `docs/chapter-76-80-sparse-workshop.md`.
+
+**Results:**135different-bridge occurrences/156variants/455repeats/2holds, not
+135unique original additions or empirical recall/render evidence. All746selected
+occurrences untested/nonproduction; primary76-entry catalog and Forge unchanged.
+NSAID use nest/hearing-aid and Murphy-M/sign attempts held. All1,127older core
+holds preserved; current register1,129occurrences/933distinct terms. No local
+first-frozen hold resolved. Botanical source spellings/partial names retain
+explicit uncertainty, not taxonomic or pronunciation verification.
+
+**Efficiency:** Existing generic sparse tool unchanged;295minimal exact reuse
+rows/453fullsemantic rows in first valid drafts. One bounded read-only advisor
+Anscombe01a1711f-cc80-7f62-874d-70ff180adf7d suggested targeted observed-alias
+supplement and compact hash-bound exception reports, now documented in workflow.
+Author inventory/first-valid bytes per term461.47versus557.00previously,17.2%less,
+NOT measured net token/billing savings. Different source density/chapters confound
+comparison; advisor/main review/repair/evidence/integration still consume effort.
+25post-first-valid changedrows(4/7/2/9/3), two prevalid local-reference statuses
+and main's page28gutter preparation repair remain recorded, not hidden. Overnight
+pause excluded from active-work claims. No paid-provider/Anthropic calls/renders;
+separate$6imagebenchmark untouched. No weaker-model equivalence claim.
+
+**Evidence:** Ignored packet `Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch76-80/`
+holds verified manifest/source, author freezes/initials/repairs/alias supplement,
+main-first snapshots, main-audit, metrics, hash-bound approval and hold comparison.
+Main integrated only final reviewed materializations via existing helper.
+Author Mendel01a16f78-cf37-7721-bda2-09a3060080e7 completed; advisor completed and
+closed. Source/clinical/vocabulary/corpus-novelty exhaustiveness not established.
+
+**Validation:** Hold register --check/current and explicit old-hold core comparison
+passed. Backend compile,1,020pytestpassed/2skipped and HTTP200four-route smoke
+passed; smoke server stopped. Git/CI outcomes recorded in final verification;
+no provider/browser-generation test performed in this offline task.
+Auth works; fetch still hits known malformed local Codex checkpoint ref. Remote
+SHA verified independently, no credential retry or ref deletion.
+
+**Next:**81Acute Appendicitis, not started. Resume normal five-chapter cadence only
+when requested. Reuse existing tooling; bounded singular/plural/head-only/older
+attempt checks before creative accounting are the remaining useful refinement,
+not a new whole-corpus census or a reduced independent-review requirement.
+
 ### 2026-10-24 - Sparse authoring trial74-75 completed
 **Done:** Tested the recommended sparse authoring on74 Constipation and75 Upper Gastrointestinal Bleeding only. Same stronger author resumed; main independently reviewed real source and all185 materialized cue/scope rows. Separate non-author code lane reviewed materialization-core integrity/deltas. See `docs/chapter-74-75-sparse-trial.md` and the Sparse Authoring Contract in `docs/chapter-cue-workflow.md`. No production Forge/catalog/provider changes or empirical recall/image outcome.
 

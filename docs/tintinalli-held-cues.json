@@ -77,10 +77,15 @@
     "72",
     "73",
     "74",
-    "75"
+    "75",
+    "76",
+    "77",
+    "78",
+    "79",
+    "80"
   ],
-  "active_hold_occurrences": 1127,
-  "unique_held_terms": 931,
+  "active_hold_occurrences": 1129,
+  "unique_held_terms": 933,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -172,7 +177,8 @@
         "35",
         "36",
         "37",
-        "40"
+        "40",
+        "80"
       ]
     },
     {
@@ -313,7 +319,9 @@
       "attempted_cue": null,
       "reason": "No strong economical association proposed. No drug effect used as an unsourced identity shortcut.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -445,7 +453,9 @@
       "attempted_cue": null,
       "reason": "Prior hold preserved with no improved economical association. No effect, mechanism, dose or generic drug prop substituted as drug identity.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -476,7 +486,8 @@
         "35",
         "36",
         "37",
-        "40"
+        "40",
+        "80"
       ]
     },
     {
@@ -489,7 +500,9 @@
       "attempted_cue": null,
       "reason": "Same unresolved Chapter11 hold, also carried into Chapter18. No strong economical name association proposed and no clinical property substituted for identity.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -663,7 +676,8 @@
         "61",
         "63",
         "65",
-        "70"
+        "70",
+        "79"
       ]
     },
     {
@@ -944,7 +958,9 @@
       "attempted_cue": null,
       "reason": "Preserves Chapter11/18/19 hold without forced sound fragments or clinical-property shortcuts.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -964,7 +980,8 @@
         "35",
         "36",
         "37",
-        "40"
+        "40",
+        "80"
       ]
     },
     {
@@ -1126,7 +1143,8 @@
         "66",
         "70",
         "71",
-        "72"
+        "72",
+        "77"
       ]
     },
     {
@@ -1172,7 +1190,8 @@
         "35",
         "36",
         "37",
-        "40"
+        "40",
+        "80"
       ]
     },
     {
@@ -1239,7 +1258,9 @@
       "attempted_cue": null,
       "reason": "Preserves established Chapter11/18/19 hold; no economical improved name association selected. No requirement to recover all syllables or identify the target without learned context; no clinical statement held as a term.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -1409,7 +1430,8 @@
         "55",
         "63",
         "71",
-        "75"
+        "75",
+        "80"
       ]
     },
     {
@@ -1637,7 +1659,8 @@
         "63",
         "64",
         "65",
-        "68"
+        "68",
+        "79"
       ]
     },
     {
@@ -1676,7 +1699,9 @@
       "report": "docs/chapter-28-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried an oversized toy as a size/category reminder. Toy size alone is an unappealing target bridge; no body stereotype or clinical criterion supplied.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "28",
@@ -1717,7 +1742,9 @@
         "65",
         "68",
         "69",
-        "70"
+        "70",
+        "77",
+        "80"
       ]
     },
     {
@@ -1737,7 +1764,8 @@
         "66",
         "70",
         "71",
-        "72"
+        "72",
+        "77"
       ]
     },
     {
@@ -1808,7 +1836,9 @@
       "report": "docs/chapter-29A-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried a broad belt around a featureless mannequin; not selected because the belt alone offers a poor learned name reminder in this pass. Same term remains held in Chapter28; no demand for unique diagnostic imagery.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "29A",
@@ -1878,7 +1908,8 @@
       "attempted_cue": null,
       "reason": "Tried a freestanding larynx study model and the historical lair/lynx bridge; no economical chosen shape or partial-name proposal in this pass. Literal teaching models are allowed; hold is specific to unselected proposals, not the old sound rejection alone.",
       "retained_in_other_chapters": [
-        "30"
+        "30",
+        "77"
       ]
     },
     {
@@ -1975,7 +2006,8 @@
         "66",
         "68",
         "69",
-        "70"
+        "70",
+        "77"
       ]
     },
     {
@@ -2044,7 +2076,9 @@
         "65",
         "68",
         "69",
-        "70"
+        "70",
+        "77",
+        "80"
       ]
     },
     {
@@ -2187,7 +2221,8 @@
       "reason": "Tried a tiny muscle beside a heavy gravity ball; the name bridge remained too cumbersome. No symptom, contraindication or effect relationship.",
       "retained_in_other_chapters": [
         "62",
-        "65"
+        "65",
+        "77"
       ]
     },
     {
@@ -2252,7 +2287,9 @@
         "61",
         "65",
         "68",
-        "72"
+        "72",
+        "77",
+        "79"
       ]
     },
     {
@@ -2353,7 +2390,9 @@
         "65",
         "68",
         "69",
-        "70"
+        "70",
+        "77",
+        "80"
       ]
     },
     {
@@ -2373,7 +2412,8 @@
         "66",
         "70",
         "71",
-        "72"
+        "72",
+        "77"
       ]
     },
     {
@@ -2567,7 +2607,9 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Reconsidered straw/door and a striding toy beside a door. Straw mismatch remains; striding silhouette could read as walking, so no chosen composition. Partial-name standard allowed; old sound rejection preserved.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2592,7 +2634,10 @@
       "report": "docs/chapter-30-cue-audit.md",
       "attempted_cue": null,
       "reason": "Tried disc beside a page; page/phag is a strained bridge in this particular attempt. A different learned category remains possible; no clinical meaning encoded.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77",
+        "78"
+      ]
     },
     {
       "chapter_id": "30",
@@ -2772,7 +2817,8 @@
       "reason": "Familiar ingredients lack a useful economical pericardial name hook; no fluid-location teaching.",
       "retained_in_other_chapters": [
         "34",
-        "55"
+        "55",
+        "79"
       ]
     },
     {
@@ -2890,7 +2936,8 @@
       "attempted_cue": "A theatrical false nose beside a bulging tube.",
       "reason": "Pseudo/false ingredient possible; no useful economical aneurysm hook selected.",
       "retained_in_other_chapters": [
-        "60"
+        "60",
+        "79"
       ]
     },
     {
@@ -2911,7 +2958,9 @@
         "61",
         "65",
         "68",
-        "72"
+        "72",
+        "77",
+        "79"
       ]
     },
     {
@@ -3027,7 +3076,8 @@
         "55",
         "57",
         "58",
-        "65"
+        "65",
+        "76"
       ]
     },
     {
@@ -3138,7 +3188,9 @@
         "61",
         "65",
         "68",
-        "72"
+        "72",
+        "77",
+        "79"
       ]
     },
     {
@@ -3162,7 +3214,8 @@
       "attempted_cue": "A toy abdomen beside a chess set.",
       "reason": "Ab/chess distorted sound and fragile segmentation; no familiar category alternative selected.",
       "retained_in_other_chapters": [
-        "73"
+        "73",
+        "79"
       ]
     },
     {
@@ -3235,7 +3288,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -3267,7 +3321,8 @@
         "62",
         "70",
         "71",
-        "72"
+        "72",
+        "79"
       ]
     },
     {
@@ -3303,7 +3358,9 @@
         "61",
         "65",
         "68",
-        "72"
+        "72",
+        "77",
+        "79"
       ]
     },
     {
@@ -3557,7 +3614,9 @@
       "reason": "Multi-prop sound assembly is strained and telephone does not make the name easier here; no unverified brand-package substitute selected.",
       "retained_in_other_chapters": [
         "57",
-        "72"
+        "72",
+        "79",
+        "80"
       ]
     },
     {
@@ -3572,7 +3631,8 @@
       "retained_in_other_chapters": [
         "49",
         "61",
-        "72"
+        "72",
+        "76"
       ]
     },
     {
@@ -3646,7 +3706,8 @@
       "attempted_cue": "A familiar Prometheus-style torch-bearing toy.",
       "reason": "Torch-bearer does not identify that named figure without prior legend knowledge; no alternate economical cue selected.",
       "retained_in_other_chapters": [
-        "72"
+        "72",
+        "80"
       ]
     },
     {
@@ -3768,7 +3829,9 @@
       "report": "docs/chapter-35-cue-audit.md",
       "attempted_cue": "A wilted toy flower.",
       "reason": "Wilted flower suggests temporary drooping rather than the term; historical tissue-necrosis hold remains open, no medical process inferred.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "35",
@@ -4313,7 +4376,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "A wide-bodied neutral study mannequin.",
       "reason": "Silhouette not a helpful selected association; prior28/29A holds preserved.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4332,7 +4397,8 @@
         "66",
         "70",
         "71",
-        "72"
+        "72",
+        "77"
       ]
     },
     {
@@ -4355,7 +4421,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "Scattered corks inside clear tubing.",
       "reason": "No economical selected name association; not a clotting diagram.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4626,7 +4694,9 @@
       "report": "docs/chapter-37-cue-audit.md",
       "attempted_cue": "Two damaged toy tokens paired together.",
       "reason": "Co/paired plausible but morbid/condition identity weak; no selected association.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "76"
+      ]
     },
     {
       "chapter_id": "37",
@@ -4912,7 +4982,8 @@
       "attempted_cue": "A toy metro train at the end of its track.",
       "reason": "End/metro is concrete but too stretched as a familiar partial-name bridge; no useful candidate selected.",
       "retained_in_other_chapters": [
-        "71"
+        "71",
+        "76"
       ]
     },
     {
@@ -5026,7 +5097,8 @@
       "attempted_cue": "A familiar lore-story book beside a zipper.",
       "reason": "Lore/zip is a stretched two-object bridge without a sufficiently familiar name association selected here.",
       "retained_in_other_chapters": [
-        "72"
+        "72",
+        "80"
       ]
     },
     {
@@ -5077,7 +5149,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A familiar kettle beside a pine branch.",
       "reason": "Kettle/pine sound is stretched for quetiapine and adds a kettle collision with ketamine/ketorolac/ketoprofen; no economical familiar alternative selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5136,7 +5210,8 @@
       "reason": "Helico/pillar is a plausible but stretched object stack without a selected simple organism-name cue.",
       "retained_in_other_chapters": [
         "71",
-        "75"
+        "75",
+        "78"
       ]
     },
     {
@@ -5322,7 +5397,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -5910,7 +5986,9 @@
       "report": "docs/chapter-44-cue-audit.md",
       "attempted_cue": "A blank theatrical skull token.",
       "reason": "Skull is a death association rather than a selected tissue-name cue; no appropriate simple alternative selected here. Broadness is allowed, but this attempt adds an unwanted mortality reading.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "44",
@@ -6020,7 +6098,9 @@
       "report": "docs/chapter-45-cue-audit.md",
       "attempted_cue": "A plain opaque board beside a radiograph-film frame.",
       "reason": "Tried opacity/radiograph pair but not selected; no radiopacity property asserted.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "45",
@@ -6065,7 +6145,8 @@
       "attempted_cue": "A toy recess in a plain block.",
       "reason": "Tried recess/abscess partial sound, weak learned association not selected; no anatomical lesion depicted.",
       "retained_in_other_chapters": [
-        "73"
+        "73",
+        "79"
       ]
     },
     {
@@ -6103,7 +6184,8 @@
       "attempted_cue": "A toy recess in a plain block.",
       "reason": "Recess/abscess partial sound tried; weak lexical association not selected. Earlier abscess hold retained.",
       "retained_in_other_chapters": [
-        "73"
+        "73",
+        "79"
       ]
     },
     {
@@ -6119,7 +6201,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -6489,7 +6572,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -6617,7 +6701,8 @@
         "66",
         "70",
         "71",
-        "72"
+        "72",
+        "77"
       ]
     },
     {
@@ -6799,7 +6884,8 @@
       "attempted_cue": "An ordinary toy engine beside a road barrier.",
       "reason": "Enzyme/engine and inhibitor/barrier are broad fragments, but the named family is unresolved; no pathway assertion.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79"
       ]
     },
     {
@@ -6842,7 +6928,8 @@
         "62",
         "70",
         "71",
-        "72"
+        "72",
+        "79"
       ]
     },
     {
@@ -6943,7 +7030,8 @@
       "retained_in_other_chapters": [
         "49",
         "61",
-        "72"
+        "72",
+        "76"
       ]
     },
     {
@@ -7010,7 +7098,8 @@
         "62",
         "70",
         "71",
-        "72"
+        "72",
+        "79"
       ]
     },
     {
@@ -7066,7 +7155,9 @@
       "report": "docs/chapter-51-cue-audit.md",
       "attempted_cue": null,
       "reason": "No selected category or name-fragment cue without stereotyping a body. Earlier28/29A/37 holds remain open; not a requirement to diagnose from appearance.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "51",
@@ -7144,7 +7235,8 @@
         "62",
         "70",
         "71",
-        "72"
+        "72",
+        "79"
       ]
     },
     {
@@ -7214,7 +7306,8 @@
       "attempted_cue": "A familiar toy deer.",
       "reason": "Deer/diur partial-name trial considered but not selected as useful here; no drug-effect or toileting claim, and no full-syllable requirement. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "54"
+        "54",
+        "79"
       ]
     },
     {
@@ -7516,7 +7609,8 @@
       "attempted_cue": "A generic physician toy.",
       "reason": "Physician alone supplies role/context, not the full head; no useful economical name ingredient selected and no cause assertion made. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "63"
+        "63",
+        "77"
       ]
     },
     {
@@ -7634,7 +7728,8 @@
         "62",
         "70",
         "71",
-        "72"
+        "72",
+        "79"
       ]
     },
     {
@@ -7658,7 +7753,8 @@
       "attempted_cue": "A familiar toy deer.",
       "reason": "Deer/diur partial-name trial considered but not selected as useful here; no drug-effect or toileting claim, and no full-syllable requirement. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "54"
+        "54",
+        "79"
       ]
     },
     {
@@ -7749,7 +7845,10 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "76",
+        "79"
+      ]
     },
     {
       "chapter_id": "53",
@@ -7807,7 +7906,8 @@
       "retained_in_other_chapters": [
         "57",
         "58",
-        "63"
+        "63",
+        "76"
       ]
     },
     {
@@ -7875,7 +7975,9 @@
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "65"
+        "65",
+        "76",
+        "79"
       ]
     },
     {
@@ -8018,7 +8120,8 @@
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "73"
+        "73",
+        "80"
       ]
     },
     {
@@ -8033,7 +8136,8 @@
       "retained_in_other_chapters": [
         "56",
         "62",
-        "68"
+        "68",
+        "77"
       ]
     },
     {
@@ -8057,7 +8161,8 @@
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
       "retained_in_other_chapters": [
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -8209,7 +8314,8 @@
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "53"
+        "53",
+        "77"
       ]
     },
     {
@@ -8265,7 +8371,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8339,7 +8447,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": "A toy metal bell.",
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Met-/metal is weak partial sound and bell adds arbitrary syllable; not selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8622,7 +8732,9 @@
       "attempted_cue": null,
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "79",
+        "80"
       ]
     },
     {
@@ -8986,7 +9098,9 @@
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
-        "65"
+        "65",
+        "76",
+        "79"
       ]
     },
     {
@@ -9000,7 +9114,9 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
         "53",
-        "61"
+        "61",
+        "76",
+        "79"
       ]
     },
     {
@@ -9201,7 +9317,9 @@
       "report": "docs/chapter-56-cue-audit.md",
       "attempted_cue": "A wide-bodied neutral study mannequin.",
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "56",
@@ -9340,7 +9458,9 @@
       "report": "docs/chapter-56-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77"
+      ]
     },
     {
       "chapter_id": "56",
@@ -9386,7 +9506,8 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Bowel explicit head plausible, not selected pending actual old ingredient; no inflammation assertion.",
       "retained_in_other_chapters": [
         "38",
-        "73"
+        "73",
+        "76"
       ]
     },
     {
@@ -9488,7 +9609,9 @@
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
       "retained_in_other_chapters": [
         "53",
-        "61"
+        "61",
+        "76",
+        "79"
       ]
     },
     {
@@ -10013,7 +10136,9 @@
       "report": "docs/chapter-57-cue-audit.md",
       "attempted_cue": "A familiar toy lasso.",
       "reason": "Los/lasso partial-name trial has an unappealing vowel reduction here; not rejected for missing endings or no existing root.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "57",
@@ -10186,7 +10311,10 @@
       "report": "docs/chapter-60-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77",
+        "78"
+      ]
     },
     {
       "chapter_id": "60",
@@ -10197,7 +10325,9 @@
       "report": "docs/chapter-60-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77"
+      ]
     },
     {
       "chapter_id": "60",
@@ -10466,7 +10596,9 @@
       "report": "docs/chapter-61-cue-audit.md",
       "attempted_cue": "A wilted toy flower.",
       "reason": "No economical lexical/category bridge selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "61",
@@ -10551,7 +10683,8 @@
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
         "57",
-        "62"
+        "62",
+        "80"
       ]
     },
     {
@@ -10575,7 +10708,8 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "71"
+        "71",
+        "77"
       ]
     },
     {
@@ -10665,7 +10799,9 @@
       "attempted_cue": null,
       "reason": "No economical lexical/category bridge selected.",
       "retained_in_other_chapters": [
-        "65"
+        "65",
+        "76",
+        "79"
       ]
     },
     {
@@ -10726,7 +10862,9 @@
       "report": "docs/chapter-62-cue-audit.md",
       "attempted_cue": "An ordinary colored paint swatch.",
       "reason": "Chlor/color opening-name trial is an unappealing sound compression in this pass; no selected reminder. This is editorial nonselection, not a missing-full-name, unique-object or clinical-definition requirement.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "63",
@@ -10783,7 +10921,9 @@
       "report": "docs/chapter-64-cue-audit.md",
       "attempted_cue": "A generic potted plant.",
       "reason": "Plant alone is merely the broad botanical topic here, not a selected Echinacea name or distinctive familiar learned plant category. No medical effect or fabricated botanical identity inferred.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "64",
@@ -11149,7 +11289,8 @@
       "attempted_cue": "A pair of generic unwell masks.",
       "reason": "No economical Comorbidities name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Co-/together grouping conceivable, no selected specific name/category bridge; no disease-risk relation encoded.",
       "retained_in_other_chapters": [
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -11216,7 +11357,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": "Two generic unwell masks.",
       "reason": "No economical Comorbid conditions name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Together/condition metaphor tried, no selected simple name bridge.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "76"
+      ]
     },
     {
       "chapter_id": "65",
@@ -11488,7 +11631,11 @@
       "retained_in_other_chapters": [
         "66",
         "70",
-        "72"
+        "72",
+        "77",
+        "78",
+        "79",
+        "80"
       ]
     },
     {
@@ -11632,7 +11779,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": null,
       "reason": "No economical stupor name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "65",
@@ -11827,7 +11976,8 @@
       "attempted_cue": "A gram weight beside a paint stain.",
       "reason": "No economical Gram stain name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Arbitrary weight/stain stack not selected; no staining technique or identification rule.",
       "retained_in_other_chapters": [
-        "62"
+        "62",
+        "80"
       ]
     },
     {
@@ -11868,7 +12018,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -12062,7 +12213,9 @@
       "report": "docs/chapter-66-cue-audit.md",
       "attempted_cue": "A wilted toy flower.",
       "reason": "No economical necrosis name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "79"
+      ]
     },
     {
       "chapter_id": "66",
@@ -12318,7 +12471,8 @@
       "attempted_cue": "A toy snake hissing beside a barrier.",
       "reason": "R2 remaining-attempt adjudication: Hist-/hiss approximate sound plus anti-/barrier tried; static hissing and extra relationship remain weak, no chosen economical cue. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
       "retained_in_other_chapters": [
-        "72"
+        "72",
+        "80"
       ]
     },
     {
@@ -12380,7 +12534,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -12392,7 +12547,9 @@
       "report": "docs/chapter-70-cue-audit.md",
       "attempted_cue": "A toy ostrich alone.",
       "reason": "R2 remaining-attempt adjudication: Estr-/ostrich approximate sound trial is weak in pronunciation and remaining overlap; no selected cue. Not rejected for omitted suffix. Local nonselection of this particular depiction/sound assembly; neither absence of prior approval, full-name blind naming, modifier completeness nor empirical prevalidation is required for a new candidate. No claim that better alternatives are impossible.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "77"
+      ]
     },
     {
       "chapter_id": "70",
@@ -12787,7 +12944,8 @@
         "67",
         "72",
         "73",
-        "75"
+        "75",
+        "79"
       ]
     },
     {
@@ -12843,7 +13001,9 @@
       "report": "docs/chapter-71-cue-audit.md",
       "attempted_cue": "Two unmarked medicine bottles side by side.",
       "reason": "Tried generic bottle, inadequate name/category link. Extracted from wrapped table assay statement before numerical sensitivity exclusion.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "71",
@@ -12855,7 +13015,8 @@
       "attempted_cue": "Two unmarked medicine bottles side by side.",
       "reason": "Generic bottle attempt does not encode either assay head; not rescued by neighboring test context.",
       "retained_in_other_chapters": [
-        "73"
+        "73",
+        "80"
       ]
     },
     {
@@ -12891,7 +13052,9 @@
       "reason": "Meaningful nested table head extracted; unmarked bottle is not yellow-color disease coding or a selected name association.",
       "retained_in_other_chapters": [
         "72",
-        "73"
+        "73",
+        "79",
+        "80"
       ]
     },
     {
@@ -12947,7 +13110,9 @@
       "report": "docs/chapter-71-cue-audit.md",
       "attempted_cue": "Two unmarked medicine bottles side by side.",
       "reason": "Named nested complication explicitly attempted; no selected family/empty-cradle metaphor or clinical assertion.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "80"
+      ]
     },
     {
       "chapter_id": "71",
@@ -13323,6 +13488,28 @@
       "report": "docs/chapter-75-cue-audit.md",
       "attempted_cue": "A singing toy character holding a stake beside a black-painted tube.",
       "reason": "Current scene overpacks unrelated role/tool/color handles and singing is weak without sound; no economical selected bridge yet.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "76",
+      "chapter_title": "Lower Gastrointestinal Bleeding",
+      "term": "NSAID use",
+      "printed_page": 499,
+      "source_record": "docs/chapter-76-cue-audit.json",
+      "report": "docs/chapter-76-cue-audit.md",
+      "attempted_cue": "A nest beside a hearing-aid model.",
+      "reason": "Nest adds an unsupported T and drops letter order; compound has no stable taught NSAID pronunciation here.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "79",
+      "chapter_title": "Pancreatitis and Cholecystitis",
+      "term": "Murphy's sign",
+      "printed_page": 513,
+      "source_record": "docs/chapter-79-cue-audit.json",
+      "report": "docs/chapter-79-cue-audit.md",
+      "attempted_cue": "A toy character beside a large letter M on a road-sign panel.",
+      "reason": "Bare initial adds little stable recovery for this eponym; no concrete Murphy host selected in this attempt.",
       "retained_in_other_chapters": []
     }
   ],

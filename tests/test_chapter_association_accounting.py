@@ -9,7 +9,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("chapter", range(67, 76))
+@pytest.mark.parametrize("chapter", range(67, 81))
 def test_new_banks_separate_association_selection_and_origin(chapter):
     bank = json.loads((ROOT / f"docs/chapter-{chapter}-cue-audit.json").read_text(encoding="utf-8"))
     for entry in bank["entries"]:

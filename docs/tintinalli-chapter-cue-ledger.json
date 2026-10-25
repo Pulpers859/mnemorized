@@ -1296,6 +1296,136 @@
         "reconsidered_attempt": 1
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "76",
+      "title": "Lower Gastrointestinal Bleeding",
+      "record": "docs/chapter-76-cue-audit.json",
+      "report": "docs/chapter-76-cue-audit.md",
+      "selected_terms": 63,
+      "new_candidates": 19,
+      "reused_candidates": 43,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 74,
+      "association_occurrences": {
+        "unchanged_repeat": 45,
+        "meaningful_variant": 11,
+        "new_association": 6,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 45,
+        "new_revision": 11,
+        "new_proposal": 7
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "77",
+      "title": "Esophageal Emergencies",
+      "record": "docs/chapter-77-cue-audit.json",
+      "report": "docs/chapter-77-cue-audit.md",
+      "selected_terms": 171,
+      "new_candidates": 81,
+      "reused_candidates": 90,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 184,
+      "association_occurrences": {
+        "unchanged_repeat": 104,
+        "new_association": 42,
+        "meaningful_variant": 25
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 103,
+        "new_proposal": 42,
+        "new_revision": 25,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "78",
+      "title": "Peptic Ulcer Disease and Gastritis",
+      "record": "docs/chapter-78-cue-audit.json",
+      "report": "docs/chapter-78-cue-audit.md",
+      "selected_terms": 40,
+      "new_candidates": 16,
+      "reused_candidates": 24,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 42,
+      "association_occurrences": {
+        "meaningful_variant": 6,
+        "unchanged_repeat": 26,
+        "new_association": 8
+      },
+      "change_origin_occurrences": {
+        "new_revision": 6,
+        "existing_candidate_recount": 26,
+        "new_proposal": 8
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "79",
+      "title": "Pancreatitis and Cholecystitis",
+      "record": "docs/chapter-79-cue-audit.json",
+      "report": "docs/chapter-79-cue-audit.md",
+      "selected_terms": 257,
+      "new_candidates": 113,
+      "reused_candidates": 143,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 304,
+      "association_occurrences": {
+        "meaningful_variant": 60,
+        "unchanged_repeat": 162,
+        "new_association": 34,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "new_revision": 60,
+        "existing_candidate_recount": 157,
+        "new_proposal": 35,
+        "reconsidered_attempt": 5
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "80",
+      "title": "Hepatic Disorders",
+      "record": "docs/chapter-80-cue-audit.json",
+      "report": "docs/chapter-80-cue-audit.md",
+      "selected_terms": 217,
+      "new_candidates": 112,
+      "reused_candidates": 105,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 225,
+      "association_occurrences": {
+        "unchanged_repeat": 118,
+        "new_association": 45,
+        "meaningful_variant": 54
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 117,
+        "new_proposal": 45,
+        "new_revision": 54,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1305,8 +1435,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "76",
-    "title": "Lower Gastrointestinal Bleeding",
+    "chapter_id": "81",
+    "title": "Acute Appendicitis",
     "status": "not_started_for_cue_review"
   },
   "spend": {
