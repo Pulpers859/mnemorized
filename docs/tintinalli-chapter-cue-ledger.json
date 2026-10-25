@@ -1242,6 +1242,60 @@
         "reconsidered_attempt": 7
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "74",
+      "title": "Constipation",
+      "record": "docs/chapter-74-cue-audit.json",
+      "report": "docs/chapter-74-cue-audit.md",
+      "selected_terms": 131,
+      "new_candidates": 96,
+      "reused_candidates": 34,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 137,
+      "association_occurrences": {
+        "unchanged_repeat": 50,
+        "new_association": 59,
+        "meaningful_variant": 21,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 48,
+        "new_proposal": 60,
+        "new_revision": 21,
+        "reconsidered_attempt": 2
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "75",
+      "title": "Upper Gastrointestinal Bleeding",
+      "record": "docs/chapter-75-cue-audit.json",
+      "report": "docs/chapter-75-cue-audit.md",
+      "selected_terms": 54,
+      "new_candidates": 35,
+      "reused_candidates": 18,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 56,
+      "association_occurrences": {
+        "meaningful_variant": 11,
+        "unchanged_repeat": 22,
+        "new_association": 20,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "new_revision": 11,
+        "existing_candidate_recount": 21,
+        "new_proposal": 21,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1251,8 +1305,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "74",
-    "title": "Constipation",
+    "chapter_id": "76",
+    "title": "Lower Gastrointestinal Bleeding",
     "status": "not_started_for_cue_review"
   },
   "spend": {

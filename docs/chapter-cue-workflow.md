@@ -42,6 +42,66 @@ The pilot did NOT establish equivalent end-to-end cue authorship or net token/do
 - Keep source/keyword inventory and creative decision freezes separate. Record omissions and coordinate corrections before creative authoring too; moving a repair earlier does not erase its cost. Laboratory/testing/imaging operation heads are not automatically excluded merely because they appear in headings. Exclude pure navigation explicitly; extract meaningful heads first.
 - Record source and rubric limitations. Account for preparation, stronger review and repair work when discussing efficiency; output bytes and wall time are not billed-token or quota-weight measurements.
 
+## Sparse Authoring Contract
+
+`tools/chapter_cue_sparse.py` supports the chapter74-75 trial and later compatible
+packets. It is an offline materializer, not a medical gate or semantic reviewer.
+Main verifies a packet's source hash and actual chapter-region manifest first.
+The author selects meaningful lexical heads and native page/span IDs in
+`author/inventoryN.json`; code copies literal text/font/bbox/page into the ignored
+inventory evidence. Canonical entries retain compact source pointers and hashes,
+not full source excerpts. Source-kind labels, aliases and exclusions still need
+human/stronger editorial judgment; valid IDs do not prove complete coverage.
+
+From the repository root:
+
+```powershell
+python -m tools.chapter_cue_sparse --packet "Troubleshooting Prompts/<packet>" --chapter N --prepare
+python -m tools.chapter_cue_sparse --packet "Troubleshooting Prompts/<packet>" --chapter N --build
+python -m pytest tests/test_chapter_cue_sparse.py
+```
+
+Prepare BEFORE creative authoring. It freezes the inventory/source-cache hashes,
+emits bounded exact-prior leads and freezes the prior corpus. Query `hold` values
+are placeholders, not authored holds. Do not regenerate preparation over existing
+decisions; preserve the old freeze and explicitly reconcile an approved inventory
+repair first. Outputs stay under the ignored packet's `materialized/` directory.
+
+Author decisions declare the exact inventory SHA and cover every term once:
+
+- `reuse`: explicit `[exact term, selected prior reference]` pairs, only after
+  reading and approving the actual cue AND scope. Same-casefold name and exact
+  inherited cue/scope are required. These intentionally mean unchanged repeat
+  and existing-candidate recount; code records that author-selected meaning.
+- `changes`: complete semantic decisions for new/modified/aliased cues, scope
+  changes, variants, local repeats and holds. Author owns cue/attempt, encoded
+  scope, reason and reasoned association comparison. These are not auto-filled.
+- `resolved_holds`: explicit local first-draft hold resolutions only; never erase
+  another chapter's history just because this chapter selects the term.
+
+If a full semantic decision cites a selected canonical prior while claiming
+`unchanged_repeat`, cue and scope must match that prior exactly, irrespective of
+the current retain/reuse status. Exception: a genuinely missing/blank legacy scope
+may be supplied in a FULL authored semantic row while keeping its cue exact;
+code records `legacy_scope_supplied`, and main must review that scope. Sparse
+inheritance still rejects missing scopes. Do not manufacture a visual variant
+merely to repair missing metadata. A different actual bridge needs its real class;
+do not relabel a wording change as creative yield merely to satisfy the tool.
+For a same-batch repeat, name the actual local comparison rather than falsely
+claiming an unchanged copy of a different older selected root. A held attempt may
+be reconsidered explicitly, not inherited as a selected cue.
+
+Main independently reviews the fully materialized cue/scope/source evidence,
+preserves first drafts and closes bounded repairs before integrating docs,
+ledger/index/holds. Software tests and minimal author files cannot substitute
+for that review. Count reusable-tool setup and code-review costs when evaluating
+the first trial; author-written bytes are not billed tokens or measured savings.
+Main may then call `integrate_reviewed` using a local `main-approval.json` with
+the reviewed materialized hashes, explicit source/conceptual review scope/date,
+durable report and next-chapter record. It preflights the complete packet and
+refuses stale evidence, skipped progress or overwriting an integrated chapter;
+it does not grant production admission or run Git/provider operations.
+
 ## Count Associations, Not Just Props
 
 The unit of creative yield is the **term-to-image association**, not a previously

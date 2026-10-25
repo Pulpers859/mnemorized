@@ -1,0 +1,1948 @@
+{
+  "schema_version": 1,
+  "chapter_id": "75",
+  "title": "Upper Gastrointestinal Bleeding",
+  "review_date": "2026-10-24",
+  "keyword_screen_date": "2026-10-24",
+  "source": {
+    "file": "Tintin_GI.pdf",
+    "sha256": "f4b4343cf51073b2858b1e255d36f476e174083e54d5886fba8cdc67d391a915",
+    "printed_page_offset": 472,
+    "pdf_pages": [
+      23,
+      24,
+      25,
+      26
+    ],
+    "printed_pages": [
+      495,
+      496,
+      497,
+      498
+    ],
+    "regions": {
+      "23": [
+        [
+          320,
+          30,
+          612,
+          783
+        ]
+      ],
+      "24": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "25": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "26": [
+        [
+          0,
+          30,
+          295,
+          567
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 54,
+    "new_candidates": 35,
+    "reused_candidates": 18,
+    "holds": 1
+  },
+  "association_counts": {
+    "meaningful_variant": 11,
+    "unchanged_repeat": 22,
+    "new_association": 20,
+    "hold": 1
+  },
+  "change_origin_counts": {
+    "new_revision": 11,
+    "existing_candidate_recount": 21,
+    "new_proposal": 21,
+    "reconsidered_attempt": 1
+  },
+  "entries": [
+    {
+      "term": "Upper gastrointestinal bleeding",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          23,
+          98
+        ],
+        [
+          23,
+          99
+        ],
+        [
+          24,
+          74
+        ],
+        [
+          24,
+          75
+        ],
+        [
+          24,
+          162
+        ],
+        [
+          24,
+          163
+        ],
+        [
+          25,
+          162
+        ],
+        [
+          25,
+          185
+        ],
+        [
+          25,
+          217
+        ],
+        [
+          25,
+          218
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A coiled intestinal teaching model on an upper display shelf beside a toy pipe leaking red liquid.",
+      "cue_scope": "Broad GI anatomy, upper/spatial word and bleeding/leak metaphor only; no anatomical boundary or finding.",
+      "reason": "Explicit upper placement and broad GI host extend the familiar bleeding convention.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Adds lexical site/upper placement to chapter73 Hemorrhage leak family; same bleeding bridge with scoped context, not a new leak metaphor.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Helicobacter pylori",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "body",
+      "source_refs": [
+        [
+          23,
+          111
+        ],
+        [
+          23,
+          139
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Helicobacter pylori",
+      "cue": "A toy helicopter alone.",
+      "cue_scope": "Helico-/helicopter approximate opening-name fragment only; pylori omitted. Only helicopter selected; pylori/rice omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Helicobacter pylori; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peptic ulcer disease",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          124
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Peptic ulcer disease",
+      "cue": "A familiar freestanding ulcer-crater teaching token, without stomach location model.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#Peptic ulcer disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Erosive gastritis",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          145
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A stomach teaching model beside a toy eraser rubbing away a painted patch.",
+      "cue_scope": "Gastr/stomach head plus erosive/wearing-away metaphor only; inflammation and actual pathology omitted.",
+      "reason": "Visible erasing makes erosion a concrete ordinary relationship.",
+      "association_status": "new_association",
+      "association_comparison": "New erosion/action bridge on existing stomach-model family; not just a different anatomy prop or clinical abrasion.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophagitis",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          145
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An esophageal teaching-model tube beside a small theatrical flame.",
+      "cue_scope": "Esophag/esophagus anatomy and inflame/flame word-family heads only.",
+      "reason": "Named anatomy and familiar lexical flame supply actual heads.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Pairs chapter72 Esophageal disorders anatomy host with chapter73 Inflammation flame, preserving existing component bridges with added paired scope.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Candida",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "body",
+      "source_refs": [
+        [
+          23,
+          154
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#Candida",
+      "cue": "A familiar wrapped candy.",
+      "cue_scope": "Candy/Candida partial-name vocabulary",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#Candida; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal varices",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An esophageal teaching tube beside a rope model with conspicuously bulging loops.",
+      "cue_scope": "Esophageal anatomy plus varic/bulging-vessel learned metaphor only; no clinical morphology or finding.",
+      "reason": "Bulging rope offers a concrete taught category alongside actual site.",
+      "association_status": "new_association",
+      "association_comparison": "New bulging-rope category pairing relative to exact packet; not anatomy inferred from a generic tube alone.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric varices",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A stomach teaching model beside a rope model with conspicuously bulging loops.",
+      "cue_scope": "Gastric/stomach anatomy plus broad varic/bulging-vessel metaphor only.",
+      "reason": "Actual stomach host distinguishes the named site in taught context.",
+      "association_status": "meaningful_variant",
+      "prior": "local:75#Esophageal varices",
+      "association_comparison": "Changes esophageal site host to stomach with same bulging-rope bridge; site variant, not new varices-family yield.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mallory-Weiss syndrome",
+      "pdf_page": 23,
+      "page": 495,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          23,
+          182
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A miniature shopping mall with several storefronts and a central walkway.",
+      "cue_scope": "Mall/Mallory approximate opening-name fragment only; Weiss and syndrome omitted.",
+      "reason": "Recognizable taught mall category offers an economical partial head.",
+      "association_status": "new_association",
+      "association_comparison": "New mall-name proposal relative to exact packet; no need to assemble every syllable or depict a clinical tear.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dieulafoy lesions",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          24,
+          10
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Two toy fencers dueling with foil swords.",
+      "cue_scope": "Duel/foil approximate name fragments only; lesions omitted, sport/weapon naming taught.",
+      "reason": "One clear duel relationship supplies two familiar partial sounds.",
+      "association_status": "new_association",
+      "association_comparison": "New duel/foil action-name pairing relative to exact packet; pronunciation approximate, no vascular lesion claim.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rectal bleeding",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          61
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A rectal teaching token beside a toy pipe visibly leaking red liquid.",
+      "cue_scope": "Rectal site plus bleeding/leak learned metaphor only.",
+      "reason": "Actual named site adds useful scope to the broad leak host.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Adds rectal host to chapter73 Hemorrhage leak bridge; same blood-loss metaphor, not a new source or clinical claim.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Physical examination",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          24,
+          72
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#physical examination",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#physical examination; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Visual inspection",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          73
+        ],
+        [
+          24,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A magnifying glass held over a plain toy surface.",
+      "cue_scope": "Looking/inspection ordinary action only; no diagnostic performance or result.",
+      "reason": "Viewing relationship makes inspection explicit.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Narrows chapter48 Physical examination mannequin/magnifier host to visible looking at an object; same inspection convention, no new magnifier family.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vomitus",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          73
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomitus",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#vomitus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aspirate",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          24,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy suction bulb drawing colored water along a transparent tube into a collecting cup.",
+      "cue_scope": "Aspirate/drawn-up material ordinary suction metaphor only; no bodily site, sample or technique.",
+      "reason": "Explicit suction and collected material give the head a concrete host.",
+      "association_status": "new_association",
+      "association_comparison": "New suction/collection relationship in this packet; not procedural instruction or an identified biological sample.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bloody appearance",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          73
+        ],
+        [
+          24,
+          74
+        ],
+        [
+          24,
+          161
+        ],
+        [
+          24,
+          162
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy paint swatch covered in conspicuous red theatrical splashes beside an unpainted comparison swatch.",
+      "cue_scope": "Blood/red appearance learned color convention only; paint not blood or a clinical test.",
+      "reason": "Comparison emphasizes visible appearance without claiming actual contents.",
+      "association_status": "new_association",
+      "association_comparison": "New appearance/color-comparison association rather than claiming chapter63 Hematemesis blood-vial cue encodes visual diagnosis.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Maroon appearance",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          73
+        ],
+        [
+          24,
+          74
+        ],
+        [
+          24,
+          161
+        ],
+        [
+          24,
+          162
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A maroon-painted toy swatch beside a paler red comparison swatch.",
+      "cue_scope": "Maroon color and comparative appearance only; no contents or diagnosis.",
+      "reason": "Familiar taught color comparison supports actual wording.",
+      "association_status": "meaningful_variant",
+      "prior": "local:75#Bloody appearance",
+      "association_comparison": "Changes color state of the local paint-appearance comparison; same appearance bridge, not new pigment props.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coffee-ground appearance",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "body",
+      "source_refs": [
+        [
+          24,
+          73
+        ],
+        [
+          24,
+          74
+        ],
+        [
+          24,
+          162
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A small heap of coffee grounds in a dry teaching dish beside an empty matching dish.",
+      "cue_scope": "Coffee-ground literal texture/name and appearance comparison only; not biological material or diagnostic equivalence.",
+      "reason": "Actual familiar grounds supply the shared descriptive words.",
+      "association_status": "new_association",
+      "association_comparison": "Different literal grounds/texture bridge from red/maroon paint appearance; not a claim of clinical recognition.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Laboratory testing",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          24,
+          101
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#Laboratory Testing",
+      "cue": "A familiar unused test-tube rack.",
+      "cue_scope": "Broad laboratory/testing category Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-50-cue-audit.json#Laboratory Testing; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric lavage",
+      "pdf_page": 24,
+      "page": 496,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          24,
+          134
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Nose and stomach teaching tokens beside a small wash bucket.",
+      "cue_scope": "Naso/nose, gastr/stomach and lavage/washing learned words only; no route or technique.",
+      "reason": "Named hosts carry actual lexical heads without a procedure scene.",
+      "association_status": "new_association",
+      "association_comparison": "New washing-head pairing compared with chapter73 Nasogastric suction suction-cup bridge; shared nose/stomach ingredients do not imply same action association.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Risk stratification",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          25,
+          10
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-49-cue-audit.json#risk stratification",
+      "cue": "A familiar warning triangle beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-49-cue-audit.json#risk stratification; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Blood transfusion",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          40
+        ],
+        [
+          25,
+          189
+        ],
+        [
+          25,
+          190
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Red-liquid teaching vials with liquid visibly transferred from one to another through a toy funnel.",
+      "cue_scope": "Blood/red learned token plus transfer/pouring metaphor only; no compatibility, route, dose or treatment.",
+      "reason": "Visible transfer supplies the actual transfusion action head.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Uses the group-transfer relation of73 Fecal microbiota transfer with a blood-category host; same transfer metaphor, different named material context.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coagulopathy",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          63
+        ],
+        [
+          25,
+          196
+        ],
+        [
+          25,
+          200
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#coagulopathy",
+      "cue": "A plug in a transparent vessel model, without crown.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-55-cue-audit.json#coagulopathy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Proton pump inhibitors",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          25,
+          91
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#proton pump inhibitors",
+      "cue": "An ordinary mechanical pump alone, without heart identity token.",
+      "cue_scope": "pump existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#proton pump inhibitors; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Somatostatin analogues",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          25,
+          111
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy sofa whose rocking feet are held immobile by a visible clamp.",
+      "cue_scope": "Soma/sofa approximate opening sound and stat/stopped wordplay only; analogue and hormone identity omitted.",
+      "reason": "Clamp supplies explicit restraint rather than unencoded ordinary static placement.",
+      "association_status": "new_association",
+      "association_comparison": "New sofa/stopped relationship relative to exact packet; not a claim of a biological inhibitory mechanism.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Octreotide",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          111
+        ],
+        [
+          25,
+          206
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#octreotide",
+      "cue": "A toy octopus alone; cyan glue pot removed.",
+      "cue_scope": "Oct-/octopus approximate opening-name fragment only; remainder of octreotide omitted. Oct opening-name fragment only; remainder omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#octreotide; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antibiotics",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          127
+        ],
+        [
+          25,
+          214
+        ],
+        [
+          25,
+          217
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-67-cue-audit.json#antibiotics; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Promotility agents",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          25,
+          139
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy conveyor set moving by a professional operator turning a crank.",
+      "cue_scope": "Pro/professional sound and motility/movement ordinary action only; agent identity and effect omitted, role taught.",
+      "reason": "Visible movement provides the actual motility head.",
+      "association_status": "new_association",
+      "association_comparison": "Adds a pro/operator name bridge to the existing moving-conveyor family; not merely another conveyor shape or treatment effect.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Endoscopy",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          25,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#endoscopy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Advanced age",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          166
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-49-cue-audit.json#Advanced age",
+      "cue": "A familiar gray-haired older-adult figurine.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination. Older-adult learned category only; gray hair is an untested toy cue, not an age threshold, real-person classification or risk assertion.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-49-cue-audit.json#Advanced age; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Comorbidities",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          167
+        ],
+        [
+          25,
+          168
+        ],
+        [
+          25,
+          194
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#comorbidities",
+      "cue": "Two sick-expression toy characters standing together under one small canopy.",
+      "cue_scope": "Co/together plus broad illness category metaphor only; no diagnostic count or actual coexistence rule.",
+      "reason": "Together relationship makes co explicit without requiring every name syllable.",
+      "association_status": "new_association",
+      "association_comparison": "Chapter53 had no concrete selected attempt; new together/illness metaphor, not a no-prior veto or patient portrayal.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Endoscopic procedures",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          168
+        ],
+        [
+          25,
+          169
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Existing actual scope head remains useful while procedures add no encoded technique.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected62 Endoscopy cue/scope; adjectival procedures wording creates no new association or technique claim.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transjugular intrahepatic portosystemic shunt procedures",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          168
+        ],
+        [
+          25,
+          169
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A liver teaching model inside a doorway portal, beside a toy railroad switch diverting a train.",
+      "cue_scope": "Hepatic/liver, intra/inside, portal shared word and shunt/diversion ordinary metaphor; transjugular, systemic and procedure omitted.",
+      "reason": "Inside/portal/diversion relationships supply meaningful heads without pretending complete-name coverage.",
+      "association_status": "new_association",
+      "association_comparison": "New diversion/shunt relationship combined with existing liver and73 Portal vein thrombosis doorway family; not an operation diagram or new prop inventory.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hematemesis",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          170
+        ],
+        [
+          25,
+          171
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-63-cue-audit.json#hematemesis",
+      "cue": "A transparent vial of plain red liquid alone.",
+      "cue_scope": "blood existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-63-cue-audit.json#hematemesis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hematochezia",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          172
+        ],
+        [
+          25,
+          173
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A red-liquid teaching vial beside a toy stool seat.",
+      "cue_scope": "Hemato/blood and stool shared-word learned category only; no site, color criterion or diagnosis.",
+      "reason": "Literal stool double meaning adds a meaningful host to blood category.",
+      "association_status": "new_association",
+      "association_comparison": "New blood/stool lexical pairing relative to exact packet; shared red/stool props do not prove unique library growth.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Melena",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          173
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A melon teaching prop standing alone.",
+      "cue_scope": "Melen/melon approximate opening-name fragment only; full pronunciation and clinical appearance omitted.",
+      "reason": "One familiar named object offers an economical partial bridge.",
+      "association_status": "new_association",
+      "association_comparison": "New melon/name proposal in bounded packet; no black-stool or diagnostic claim.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric aspirate",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          174
+        ],
+        [
+          25,
+          175
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Nose and stomach teaching tokens beside a toy suction bulb drawing colored water into a cup.",
+      "cue_scope": "Naso/nose, gastr/stomach and aspirate/suction-collection metaphor only; no sample or technique.",
+      "reason": "Actual site words add context to a concrete collection action.",
+      "association_status": "meaningful_variant",
+      "prior": "local:75#Aspirate",
+      "association_comparison": "Extends local suction/collection bridge with named nose/stomach hosts; same action association with site-word scope.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemodynamically stable",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          176
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A level toy balance holding a red-droplet teaching token securely in its pan.",
+      "cue_scope": "Hemo/blood-red convention plus stable/balanced ordinary property only; no vital signs or assessment.",
+      "reason": "Level balance supplies a concrete stable relation.",
+      "association_status": "meaningful_variant",
+      "change_origin": "new_revision",
+      "prior": "local:75#Hemodynamically unstable",
+      "association_comparison": "Changes the tilted/unstable state of the local75 and held55 blood/balance bridge to level/stable, not a different association family. Explicitly compared selected60#stable and63#Stable: both already use a simple level balance scale; red token adds the hemo head, not a new balance metaphor or patient-stability claim.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemodynamically unstable",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          178
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#hemodynamically unstable",
+      "cue": "An unstable toy balance with a red droplet.",
+      "cue_scope": "Hemo/blood-red learned token plus unstable/balance ordinary metaphor only; no measurement or diagnosis.",
+      "reason": "Instability is an economical taught property; complete-name or blind clinical identification is not required.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "reconsidered_attempt",
+      "association_comparison": "Exact chapter55 held unstable-balance/red-droplet attempt reselected at explicit limited scope; not newly invented or automatic historical hold resolution.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Laboratory studies",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          179
+        ],
+        [
+          25,
+          180
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#Laboratory Testing",
+      "cue": "A familiar unused test-tube rack.",
+      "cue_scope": "Broad laboratory/testing category Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Actual laboratory head can share the established unused device category.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected50 Laboratory Testing cue/scope; studies wording adds no new association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "INR",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          198
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-49-cue-audit.json#INR",
+      "cue": "A toy inn with a conspicuous oar leaning against its door.",
+      "cue_scope": "IN/inn and R/oar approximate written-code sound reminder only; no assay expansion or result.",
+      "reason": "Familiar inn and oar give a teachable partial code bridge, with inn/hotel and R/oar vowel ambiguity disclosed.",
+      "association_status": "new_association",
+      "association_comparison": "Chapter49 had no concrete selected cue; new inn/oar trial, not proof of unique blind initialism naming.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Platelets",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          198
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#platelets",
+      "cue": "Small stack of miniature dinner plates.",
+      "cue_scope": "Plate- plus smallness learned name bridge",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-13-cue-audit.json#platelets; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Stents",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          201
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar mesh-tube stent training prop on its own display base.",
+      "cue_scope": "Named device category only; size, material, site and use omitted.",
+      "reason": "Concrete training-object form can be taught directly.",
+      "association_status": "new_association",
+      "association_comparison": "New named stent-device proposal relative to exact packet; not a procedure or composition claim.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Valves",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          201
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An ordinary mechanical one-way flap valve teaching prop.",
+      "cue_scope": "Valve ordinary device category only; cardiac site or prosthetic type omitted.",
+      "reason": "Recognizable opening/closing device supports the shared word.",
+      "association_status": "new_association",
+      "association_comparison": "New broad valve-category host relative to packet; no cardiac-device equivalence or clinical instruction.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Omeprazole",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          202
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An omega-shaped teaching token beside a toy pretzel.",
+      "cue_scope": "Ome/omega and praz/pretzel approximate name fragments only; remainder omitted.",
+      "reason": "Recognizable named shape and pretzel supply partial sounds after teaching.",
+      "association_status": "new_association",
+      "association_comparison": "New omega/pretzel pairing relative to exact packet; Greek-shape naming taught, no chemical or mechanism claim.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ulcer bleeding",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          205
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A freestanding ulcer-crater teaching token beside a toy pipe leaking red liquid.",
+      "cue_scope": "Ulcer/crater category plus bleeding/leak metaphor only; no lesion behavior or treatment.",
+      "reason": "Both actual heads have established concrete hosts.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Pairs chapter48 Peptic ulcer disease crater with chapter73 Hemorrhage leak; existing component bridges with extra paired scope, not novel props.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Varices",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          210
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A rope teaching model with conspicuously bulging loops.",
+      "cue_scope": "Broad varic/bulging-vessel learned metaphor only; site and actual morphology omitted.",
+      "reason": "Conspicuous bulging gives a concrete category host.",
+      "association_status": "meaningful_variant",
+      "prior": "local:75#Esophageal varices",
+      "association_comparison": "Removes site host from local esophageal/rope cue while preserving the same bulging-category bridge; not another new varices association.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ciprofloxacin",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          215
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#ciprofloxacin",
+      "cue": "An ordinary toy person taking a sip from a cup of tea, without pool cue.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#ciprofloxacin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ceftriaxone",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          216
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#ceftriaxone",
+      "cue": "A familiar chef hat standing alone, without control knob.",
+      "cue_scope": "Chef/cef approximate name fragment only; agent suffix not encoded, not a chemical or drug-family claim",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-44-cue-audit.json#ceftriaxone; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cirrhotics",
+      "pdf_page": 25,
+      "page": 497,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          217
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Cirrhosis",
+      "cue": "A toy knight holding a bouquet of roses.",
+      "cue_scope": "Sir/roses approximate name sounds only.",
+      "reason": "Existing taught partial-name relationship supports the printed word family without identifying patients or encoding patient status.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected73 Cirrhosis cue/scope, explicitly read and copied. Patient-category wording adds no association or patient-identification claim; initial comparison-only reference and expanded scope wording corrected before freeze.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Balloon tamponade",
+      "pdf_page": 26,
+      "page": 498,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          26,
+          24
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An inflated toy balloon pressing a soft pad firmly against a toy panel.",
+      "cue_scope": "Balloon literal host plus tamponade/pressing learned ordinary metaphor only; no body site, force or technique.",
+      "reason": "Pressure relationship is explicit rather than inferred from balloon presence.",
+      "association_status": "new_association",
+      "association_comparison": "New balloon/pad pressure relation in packet; not a procedural illustration or new balloon ingredient.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sengstaken-Blakemore tube",
+      "pdf_page": 26,
+      "page": 498,
+      "source_match": "body",
+      "source_refs": [
+        [
+          26,
+          29
+        ]
+      ],
+      "decision": "hold",
+      "attempted_cue": "A singing toy character holding a stake beside a black-painted tube.",
+      "cue_scope": "Sing/stake/black attempted partial name sounds only; more and exact device omitted.",
+      "reason": "Current scene overpacks unrelated role/tool/color handles and singing is weak without sound; no economical selected bridge yet.",
+      "association_status": "hold",
+      "association_comparison": "Concrete partial-name attempt, not lack-prior or complete-name veto; no implication all shorter category proposals are impossible.",
+      "change_origin": "new_proposal",
+      "prior": "offline_unresolved_attempt",
+      "cue": null,
+      "tested": false,
+      "selection_status": "hold"
+    },
+    {
+      "term": "Minnesota tube",
+      "pdf_page": 26,
+      "page": 498,
+      "source_match": "body",
+      "source_refs": [
+        [
+          26,
+          33
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A mitten teaching prop beside an ordinary toy tube.",
+      "cue_scope": "Min/mitten approximate opening name and tube literal category; geographic identity and remainder omitted.",
+      "reason": "Familiar mitten gives a simple partial host without an unrecognizable state-specific shape.",
+      "association_status": "new_association",
+      "association_comparison": "New mitten/tube name pairing relative to exact packet; not an actual device-type or geographic discriminator.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Surgery",
+      "pdf_page": 26,
+      "page": 498,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          26,
+          41
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#surgery; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Upper gastrointestinal bleeding",
+        "entry_term": "Upper gastrointestinal bleeding",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "title",
+        "wording_note": "Adjacent title-span join."
+      },
+      {
+        "term": "upper GI bleeding",
+        "entry_term": "Upper gastrointestinal bleeding",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statements",
+        "wording_note": "GI expanded to gastrointestinal; actual bleeding head joins74-75 and162-163. Repeated same-page head combined. Upper GI sources in61-62 is not used as a bleeding alias; no full assertion or percentage retained."
+      },
+      {
+        "term": "Upper GI bleeding",
+        "entry_term": "Upper gastrointestinal bleeding",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1/table75-2 titles and comment",
+        "wording_note": "GI expansion and Bleed/Bleeding inflection declared; repeated same-page heads combined,217-218 adjacent-line join. No risk/treatment claim retained."
+      },
+      {
+        "term": "Helicobacter pylori",
+        "entry_term": "Helicobacter pylori",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "italic organism",
+        "wording_note": "Repeated full Helicobacter pylori and abbreviated H. pylori on same page; explicit genus expansion, not continuous quote."
+      },
+      {
+        "term": "Peptic ulcer disease",
+        "entry_term": "Peptic ulcer disease",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Erosive gastritis",
+        "entry_term": "Erosive gastritis",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": "First actual head in coordinated heading."
+      },
+      {
+        "term": "Esophagitis",
+        "entry_term": "Esophagitis",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": "Second actual head, not mapped to gastritis."
+      },
+      {
+        "term": "Candida",
+        "entry_term": "Candida",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "italic organism",
+        "wording_note": ""
+      },
+      {
+        "term": "Esophageal varices",
+        "entry_term": "Esophageal varices",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": "Declared coordinated shared-noun extraction of Esophageal + varices from ESOPHAGEAL AND GASTRIC VARICES; not contiguous Esophageal varices quote. Gastric head separately inventoried."
+      },
+      {
+        "term": "Gastric varices",
+        "entry_term": "Gastric varices",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Mallory-Weiss syndrome",
+        "entry_term": "Mallory-Weiss syndrome",
+        "pdf_page": 23,
+        "page": 495,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Dieulafoy lesions",
+        "entry_term": "Dieulafoy lesions",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Rectal bleeding",
+        "entry_term": "Rectal bleeding",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statement",
+        "wording_note": "Actual rectal bleeding head; bright red/maroon modifiers not separately turned into conditions; percentage/origin assertion excluded."
+      },
+      {
+        "term": "Physical examination",
+        "entry_term": "Physical examination",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Visual inspection",
+        "entry_term": "Visual inspection",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold operation",
+        "wording_note": "Repeated actual operation head in vomitus and aspirate statements on same page; not a continuous quote or clinical reliability claim."
+      },
+      {
+        "term": "Vomitus",
+        "entry_term": "Vomitus",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statement",
+        "wording_note": "Actual material head, not mapped to related Hematemesis."
+      },
+      {
+        "term": "Aspirate",
+        "entry_term": "Aspirate",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statement",
+        "wording_note": "Actual aspirate head, not equated to vomitus or nasogastric-specific target."
+      },
+      {
+        "term": "Bloody appearance",
+        "entry_term": "Bloody appearance",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statements",
+        "wording_note": "Declared shared-noun extraction bloody + appearance from coordinated bloody, maroon, or coffee-ground appearance; repeated statements consolidated,73-74 dehyphenation/line join and161-162 line join. Not a contiguous Bloody appearance quote."
+      },
+      {
+        "term": "Maroon appearance",
+        "entry_term": "Maroon appearance",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statements",
+        "wording_note": "Declared shared-noun extraction maroon + appearance from coordinated bloody, maroon, or coffee-ground appearance; not a disease alias or contiguous Maroon appearance quote. Repeated same-page statements combined."
+      },
+      {
+        "term": "Coffee-ground appearance",
+        "entry_term": "Coffee-ground appearance",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "bold statements",
+        "wording_note": "First occurrence adjacent-line dehyphenation; second literal compound in162. Repeated same head combined, no diagnosis/reliability assertion retained."
+      },
+      {
+        "term": "Laboratory testing",
+        "entry_term": "Laboratory testing",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasogastric lavage",
+        "entry_term": "Nasogastric lavage",
+        "pdf_page": 24,
+        "page": 496,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Risk stratification",
+        "entry_term": "Risk stratification",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "operation heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Blood transfusion",
+        "entry_term": "Blood transfusion",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading/table75-2 treatment",
+        "wording_note": "Plural heading normalized to singular; table189-190 adjacent-line join, repeated same-page head combined."
+      },
+      {
+        "term": "Coagulopathy",
+        "entry_term": "Coagulopathy",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading/table75-2 treatment and comment",
+        "wording_note": "Repeated actual coagulopathy head; corrective instructions not part of target."
+      },
+      {
+        "term": "Proton pump inhibitors",
+        "entry_term": "Proton pump inhibitors",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Somatostatin analogues",
+        "entry_term": "Somatostatin analogues",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading",
+        "wording_note": "Actual class head before slash; Octreotide separately retained, not treated as a lexical alias."
+      },
+      {
+        "term": "Octreotide",
+        "entry_term": "Octreotide",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading/table75-2 treatment",
+        "wording_note": "Repeated same head in slash heading and table."
+      },
+      {
+        "term": "Antibiotics",
+        "entry_term": "Antibiotics",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading/table75-2 treatment/comment",
+        "wording_note": "Repeated same class head; named antibiotic examples separately extracted."
+      },
+      {
+        "term": "Promotility agents",
+        "entry_term": "Promotility agents",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Endoscopy",
+        "entry_term": "Endoscopy",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Advanced age",
+        "entry_term": "Advanced age",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": ""
+      },
+      {
+        "term": "Comorbidities",
+        "entry_term": "Comorbidities",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1/table75-2 nested comment",
+        "wording_note": "Same actual head repeated in negative and positive risk rows and transfusion qualifier; polarity/major/prior qualifiers not asserted as term."
+      },
+      {
+        "term": "Endoscopic procedures",
+        "entry_term": "Endoscopic procedures",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1 nested",
+        "wording_note": "Declared coordinated shared-noun extraction endoscopic + procedures from endoscopic or transjugular intrahepatic portosystemic shunt procedures; prior qualifier omitted. Not a contiguous Endoscopic procedures quote."
+      },
+      {
+        "term": "Transjugular intrahepatic portosystemic shunt procedures",
+        "entry_term": "Transjugular intrahepatic portosystemic shunt procedures",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1 nested",
+        "wording_note": "Adjacent-line join transjugular + intrahepatic portosystemic shunt procedures; no acronym invented."
+      },
+      {
+        "term": "Hematemesis",
+        "entry_term": "Hematemesis",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Repeated actual head in negative/positive history rows; red/history/polarity omitted."
+      },
+      {
+        "term": "Hematochezia",
+        "entry_term": "Hematochezia",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Repeated actual head in negative/positive rows; negative polarity not a clinical assertion."
+      },
+      {
+        "term": "Melena",
+        "entry_term": "Melena",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1 nested",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasogastric aspirate",
+        "entry_term": "Nasogastric aspirate",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Repeated actual compound head; Negative/Positive states omitted, not a claim of equivalent findings."
+      },
+      {
+        "term": "Hemodynamically stable",
+        "entry_term": "Hemodynamically stable",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Printed adjective/adverb phrase retained, not silently replaced by a disease or noun normalization."
+      },
+      {
+        "term": "Hemodynamically unstable",
+        "entry_term": "Hemodynamically unstable",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Distinct printed state from stable, not a clinical-related alias."
+      },
+      {
+        "term": "Laboratory studies",
+        "entry_term": "Laboratory studies",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-1",
+        "wording_note": "Repeated actual head with Normal/Abnormal modifiers omitted; Laboratory testing heading separately retained as printed wording."
+      },
+      {
+        "term": "INR",
+        "entry_term": "INR",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 nested threshold",
+        "wording_note": "Actual laboratory acronym retained before numerical correction instruction excluded."
+      },
+      {
+        "term": "Platelets",
+        "entry_term": "Platelets",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 nested threshold",
+        "wording_note": "Actual named head retained before numeric instruction excluded."
+      },
+      {
+        "term": "Stents",
+        "entry_term": "Stents",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 parenthetical example",
+        "wording_note": ""
+      },
+      {
+        "term": "Valves",
+        "entry_term": "Valves",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 parenthetical example",
+        "wording_note": ""
+      },
+      {
+        "term": "Omeprazole",
+        "entry_term": "Omeprazole",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 treatment",
+        "wording_note": ""
+      },
+      {
+        "term": "Ulcer bleeding",
+        "entry_term": "Ulcer bleeding",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 comment",
+        "wording_note": "Actual compound head retained before labeled-use assertion excluded."
+      },
+      {
+        "term": "Varices",
+        "entry_term": "Varices",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 comment",
+        "wording_note": "Actual broad head, not assigned esophageal/gastric subtype from another region."
+      },
+      {
+        "term": "Ciprofloxacin",
+        "entry_term": "Ciprofloxacin",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 nested treatment",
+        "wording_note": ""
+      },
+      {
+        "term": "Ceftriaxone",
+        "entry_term": "Ceftriaxone",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 nested treatment",
+        "wording_note": ""
+      },
+      {
+        "term": "Cirrhotics",
+        "entry_term": "Cirrhotics",
+        "pdf_page": 25,
+        "page": 497,
+        "emphasis": "table75-2 comment",
+        "wording_note": "Printed patient-category wording retained; no undeclared normalization to Cirrhosis."
+      },
+      {
+        "term": "Balloon tamponade",
+        "entry_term": "Balloon tamponade",
+        "pdf_page": 26,
+        "page": 498,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Sengstaken-Blakemore tube",
+        "entry_term": "Sengstaken-Blakemore tube",
+        "pdf_page": 26,
+        "page": 498,
+        "emphasis": "bold device name",
+        "wording_note": ""
+      },
+      {
+        "term": "Minnesota tube",
+        "entry_term": "Minnesota tube",
+        "pdf_page": 26,
+        "page": 498,
+        "emphasis": "bold device name",
+        "wording_note": ""
+      },
+      {
+        "term": "Surgery",
+        "entry_term": "Surgery",
+        "pdf_page": 26,
+        "page": 498,
+        "emphasis": "operation heading",
+        "wording_note": ""
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 23,
+        "description": "Native source span(s) 23:100, 23:101, 23:102, 23:103, 23:104, 23:120, 23:189, 23:190",
+        "reason": "Author credits, chapter number and Introduction/Pathophysiology scaffold; actual title and named disease/organism headings retained."
+      },
+      {
+        "pdf_page": 24,
+        "description": "Native source span(s) 24:25, 24:33, 24:37",
+        "reason": "Other causes/Diagnosis/History section scaffold; physical examination, laboratory testing and nasogastric lavage are retained as actual operation heads."
+      },
+      {
+        "pdf_page": 24,
+        "description": "Native source span(s) 24:60, 24:61, 24:62",
+        "reason": "Whole bold origin/14-percent assertion excluded only after actual Rectal bleeding and upper-GI context heads handled; Bright/red/maroon are descriptive modifiers, not separate diagnoses or numeric targets."
+      },
+      {
+        "pdf_page": 24,
+        "description": "Native source span(s) 24:73, 24:74, 24:75, 24:161, 24:162, 24:163",
+        "reason": "Full bold most-reliable-diagnosis statements excluded, not endorsed. Actual Visual inspection, Vomitus, Aspirate, Bloody/Maroon/Coffee-ground appearance and Upper gastrointestinal bleeding heads retained with explicit shared-noun and line joins. ED abbreviation is setting metadata."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Native source span(s) 25:15, 25:24, 25:35, 25:69, 25:158, 25:162, 25:163, 25:164, 25:181, 25:185, 25:186, 25:187, 25:188",
+        "reason": "Cross-reference/table numbers, Treatment scaffold and table column labels, very-low/high risk comparison labels and standalone mathematical sign are organization rather than additional targets. Risk stratification, named treatments and table-title bleeding head retained."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Native source span(s) 25:165, 25:167, 25:168, 25:169, 25:170, 25:172, 25:174, 25:175, 25:176, 25:177, 25:178, 25:179, 25:180",
+        "reason": "Age cutoff, No/Negative/Positive/Normal/Abnormal status, ED presentation and prior-history framing not separately authored as conditions. Actual age, comorbidities, named procedures, hematemesis/hematochezia, nasogastric aspirate, stable/unstable and laboratory-study heads retained, with coordinated procedure noun explicit."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Native source span(s) 25:192, 25:193, 25:194, 25:195, 25:198, 25:199, 25:200, 25:201, 25:203, 25:204, 25:207, 25:208, 25:209, 25:210, 25:211, 25:212, 25:213, 25:215, 25:216, 25:217, 25:218",
+        "reason": "Doses, routes, thresholds, elderly dosing modifiers, correction/use/indication assertions not targets. Actual Comorbidities, Coagulopathy, INR, Platelets, Stents, Valves, Varices, Ciprofloxacin, Ceftriaxone, Cirrhotics and upper-GI bleeding heads extracted before instruction/comment exclusion; no dose guidance supplied."
+      },
+      {
+        "pdf_page": 26,
+        "description": "Native source span(s) 26:50, 26:55, 26:56",
+        "reason": "Disposition/follow-up scaffold and bibliography navigation. Surgery and Balloon tamponade operation headings and both bold tube names retained. Chapter76 and right26 excluded by manifest ownership."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-24/batch74-75",
+  "limits": "Phase1 sparse literal inventory only, no cues/decisions or prior searches. Assigned native spans and all gi23..26 cached rasters inspected; native annotation arrays empty, flattened highlights uncertain. Manifest owns mixed columns and title boundary; no running-header ownership inference. No copied source text/coordinates, new renders or scripts. Repeated same-page heads consolidated; shared-noun expansions, GI abbreviation, inflection and split-line joins explicit. Meaningful emphasized/heading/table/nested heads are targeted, not all incidental body vocabulary or exhaustive clinical coverage. Source pointers and derived traces remain code-owned.",
+  "sparse_provenance": {
+    "inventory_sha256": "556604701e08d42693b460cd598308077841dcc78264699e3b122722074b8637",
+    "decisions_sha256": "9f6dc4182c81aad9014475457533ecaba5bdeef9428b052a4439de1a1fc7623f",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "6bc29df03bd40101b2a43ad480ee90bc07339e54bdd74ed201c201857f8b681b",
+    "prior_freeze_sha256": "f2dc088ac6b48fa43260013b769f1ed55bb1e7c92a62a766ecff718243b63260",
+    "source_cache_sha256": {
+      "23": "9c97880cc94d92714bbfd5edb53a3e38ab9c3649a02806ad2c0ff0e0c53bd329",
+      "24": "67d66eb2ceeeb5d878a7e108613bf06abc0a64fa22bf3b3cc97dd87e9430a45b",
+      "25": "ab244b5b7f9b0c49e16cf17120ebbb5e5815c0eeb655dfc8cc327cef1d810cfb",
+      "26": "255868a605a87df07da3a955163fe74911f5b5db1bfdfacacec66f74588773c2"
+    },
+    "exact_unchanged_reuse_rows": 18,
+    "explicit_semantic_rows": 36
+  },
+  "main_integration_review": {
+    "date": "2026-10-24",
+    "source_and_conceptual_review": true,
+    "scope": "Non-author main reviewed all seven source rasters/native chapter regions, actual lexical mappings and all185 materialized cue/scope rows, named prior roots/variants/holds, and five changed decision deltas. Offline source/editorial review only, not exhaustive vocabulary, clinical fact, corpus novelty, recall or rendering validation.",
+    "counts": {
+      "selected_terms": 54,
+      "new_candidates": 35,
+      "reused_candidates": 18,
+      "holds": 1
+    },
+    "keyword_items": 56,
+    "materialized_sha256": "a28211524cc0cbd440dd6fa5ff3bf41f65f3d06d711d744f3aee1e4451463903",
+    "report": "docs/chapter-74-75-sparse-trial.md"
+  }
+}

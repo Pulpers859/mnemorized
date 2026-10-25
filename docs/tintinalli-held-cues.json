@@ -75,10 +75,12 @@
     "70",
     "71",
     "72",
-    "73"
+    "73",
+    "74",
+    "75"
   ],
-  "active_hold_occurrences": 1125,
-  "unique_held_terms": 929,
+  "active_hold_occurrences": 1127,
+  "unique_held_terms": 931,
   "active_holds": [
     {
       "chapter_id": "1",
@@ -1406,7 +1408,8 @@
       "retained_in_other_chapters": [
         "55",
         "63",
-        "71"
+        "71",
+        "75"
       ]
     },
     {
@@ -2576,7 +2579,8 @@
       "attempted_cue": null,
       "reason": "Tried hemmed fabric beside a theatrical nemesis mask; the second object's identity was awkward and not selected. No symptom scene substituted.",
       "retained_in_other_chapters": [
-        "63"
+        "63",
+        "75"
       ]
     },
     {
@@ -3230,7 +3234,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -3854,7 +3859,8 @@
       "retained_in_other_chapters": [
         "38",
         "57",
-        "72"
+        "72",
+        "74"
       ]
     },
     {
@@ -5032,7 +5038,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "An oil can beside a stone.",
       "reason": "Lube/stone misses the recognizable middle and is not a useful compact family selected here; incompleteness alone is not the rejection.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "74"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5056,7 +5064,9 @@
       "report": "docs/chapter-38-cue-audit.md",
       "attempted_cue": "A toy seal beside a small lily.",
       "reason": "Seal/lily is a weak two-object sound stack; no economical association selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "74"
+      ]
     },
     {
       "chapter_id": "38",
@@ -5125,7 +5135,8 @@
       "attempted_cue": "A toy helicopter beside a pillar.",
       "reason": "Helico/pillar is a plausible but stretched object stack without a selected simple organism-name cue.",
       "retained_in_other_chapters": [
-        "71"
+        "71",
+        "75"
       ]
     },
     {
@@ -5310,7 +5321,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -6106,7 +6118,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -6475,7 +6488,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -6749,7 +6763,9 @@
       "report": "docs/chapter-49-cue-audit.md",
       "attempted_cue": null,
       "reason": "Literal table acronym; no appropriate chosen vocabulary visual, and no numeric coagulation-test teaching.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "75"
+      ]
     },
     {
       "chapter_id": "49",
@@ -8040,7 +8056,9 @@
       "report": "docs/chapter-53-cue-audit.md",
       "attempted_cue": null,
       "reason": "Term explicitly considered after source extraction and older-bank/catalog/workshop search; no appropriate economical cue selected. No topic-only substitute, forced stack or unsupported device identity accepted. Untested vocabulary only; no diagnosis, clinical assertion, dose, technique, mechanism, chemical-origin, novelty or proven-recall claim.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "75"
+      ]
     },
     {
       "chapter_id": "53",
@@ -8507,7 +8525,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": "An unstable toy balance with a red droplet.",
       "reason": "No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term. Hemo blood head plausible but full stack equates clinical instability with balance; not selected.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "75"
+      ]
     },
     {
       "chapter_id": "55",
@@ -8625,7 +8645,9 @@
       "report": "docs/chapter-55-cue-audit.md",
       "attempted_cue": null,
       "reason": "Earlier hold reconsidered under broad partial-name/category criteria; no selected economical bridge in this draft. No economical visual with a meaningful lexical or distinctive learned-category bridge selected; generic topic/location prop would not name this term.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "75"
+      ]
     },
     {
       "chapter_id": "55",
@@ -11126,7 +11148,9 @@
       "report": "docs/chapter-65-cue-audit.md",
       "attempted_cue": "A pair of generic unwell masks.",
       "reason": "No economical Comorbidities name/category cue selected after prior and ingredient comparison; not a full-name or modifier requirement. Co-/together grouping conceivable, no selected specific name/category bridge; no disease-risk relation encoded.",
-      "retained_in_other_chapters": []
+      "retained_in_other_chapters": [
+        "75"
+      ]
     },
     {
       "chapter_id": "65",
@@ -11843,7 +11867,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -12354,7 +12379,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -12523,7 +12549,8 @@
       "attempted_cue": "A toy Volvo-like unbranded station wagon; no readable badge.",
       "reason": "Volvo/volvulus partial sound considered; unspecified car subtype cannot be named from its visual. Not held for failing to encode every syllable.",
       "retained_in_other_chapters": [
-        "72"
+        "72",
+        "74"
       ]
     },
     {
@@ -12759,7 +12786,8 @@
       "retained_in_other_chapters": [
         "67",
         "72",
-        "73"
+        "73",
+        "75"
       ]
     },
     {
@@ -13273,6 +13301,28 @@
       "report": "docs/chapter-73-cue-audit.md",
       "attempted_cue": "A year calendar beside a senior toy character.",
       "reason": "Year calendar and senior role introduce two naming dependencies, while sinia sound remains weak; current pair is not economical.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "74",
+      "chapter_title": "Constipation",
+      "term": "Ogilvie's syndrome",
+      "printed_page": 495,
+      "source_record": "docs/chapter-74-cue-audit.json",
+      "report": "docs/chapter-74-cue-audit.md",
+      "attempted_cue": "A toy oar beside a gill teaching token and a violin.",
+      "reason": "The oar/gill/vi sequence needs three unrelated naming choices and compresses poorly; no economical current bridge selected.",
+      "retained_in_other_chapters": []
+    },
+    {
+      "chapter_id": "75",
+      "chapter_title": "Upper Gastrointestinal Bleeding",
+      "term": "Sengstaken-Blakemore tube",
+      "printed_page": 498,
+      "source_record": "docs/chapter-75-cue-audit.json",
+      "report": "docs/chapter-75-cue-audit.md",
+      "attempted_cue": "A singing toy character holding a stake beside a black-painted tube.",
+      "reason": "Current scene overpacks unrelated role/tool/color handles and singing is weak without sound; no economical selected bridge yet.",
       "retained_in_other_chapters": []
     }
   ],

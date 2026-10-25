@@ -492,3 +492,14 @@ Counts are chapter occurrences relative to named comparisons, not a verified cou
 | 73 | [Disorders Presenting Primarily With Diarrhea](chapter-73-cue-audit.md) | 201 | 91 | 32 | 77 | 1 | 254 |
 
 Chapter occurrences, not unique-library growth or empirical quality. First freezes and disagreements preserved; all older holds preserved separately. One stronger author plus independent main review, no paid provider calls/renders. Task-specific two-chapter trial complete; next74 Constipation, not started. Standing default cadence remains five unless Patrick specifies otherwise.
+
+## Chapters 74-75: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-74-75-sparse-trial.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 74 | [Constipation](chapter-74-cue-audit.md) | 131 | 59 | 21 | 50 | 1 | 137 |
+| 75 | [Upper Gastrointestinal Bleeding](chapter-75-cue-audit.md) | 54 | 20 | 11 | 22 | 1 | 56 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
