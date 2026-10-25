@@ -481,3 +481,14 @@ Independent non-author AI source/lexical/conceptual review and bounded repair re
 | 71 | [Acute Abdominal Pain](chapter-71-cue-audit.md) | 292 | 49 | 4 | 174 | 65 | 420 |
 
 Counts are chapter occurrences relative to named comparisons, not a verified count of unique new associations. Prop novelty is not association novelty. Synonyms and repeated lexical heads can recur across chapters. No whole-library novelty audit or empirical cue validation. Earlier holds preserved separately. Primary catalog unchanged; no paid calls/renders. Next72, Nausea and Vomiting.
+
+## Chapters 72-73: Two-Chapter Workflow Trial
+
+[Results, independent findings and honest efficiency evaluation](chapter-72-73-workflow-trial.md).
+
+| Chapter | Topic | Terms Tried | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 72 | [Nausea and Vomiting](chapter-72-cue-audit.md) | 200 | 94 | 21 | 74 | 11 | 213 |
+| 73 | [Disorders Presenting Primarily With Diarrhea](chapter-73-cue-audit.md) | 201 | 91 | 32 | 77 | 1 | 254 |
+
+Chapter occurrences, not unique-library growth or empirical quality. First freezes and disagreements preserved; all older holds preserved separately. One stronger author plus independent main review, no paid provider calls/renders. Task-specific two-chapter trial complete; next74 Constipation, not started. Standing default cadence remains five unless Patrick specifies otherwise.

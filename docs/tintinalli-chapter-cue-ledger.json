@@ -1188,6 +1188,60 @@
         "reconsidered_attempt": 25
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "72",
+      "title": "Nausea and Vomiting",
+      "record": "docs/chapter-72-cue-audit.json",
+      "report": "docs/chapter-72-cue-audit.md",
+      "selected_terms": 200,
+      "new_candidates": 117,
+      "reused_candidates": 72,
+      "holds": 11,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 213,
+      "association_occurrences": {
+        "meaningful_variant": 21,
+        "new_association": 94,
+        "hold": 11,
+        "unchanged_repeat": 74
+      },
+      "change_origin_occurrences": {
+        "new_revision": 37,
+        "new_proposal": 88,
+        "existing_candidate_recount": 70,
+        "reconsidered_attempt": 5
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "73",
+      "title": "Disorders Presenting Primarily With Diarrhea",
+      "record": "docs/chapter-73-cue-audit.json",
+      "report": "docs/chapter-73-cue-audit.md",
+      "selected_terms": 201,
+      "new_candidates": 121,
+      "reused_candidates": 79,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 254,
+      "association_occurrences": {
+        "unchanged_repeat": 77,
+        "new_association": 91,
+        "meaningful_variant": 32,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 71,
+        "new_proposal": 89,
+        "new_revision": 34,
+        "reconsidered_attempt": 7
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1197,8 +1251,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "72",
-    "title": "Nausea and Vomiting",
+    "chapter_id": "74",
+    "title": "Constipation",
     "status": "not_started_for_cue_review"
   },
   "spend": {
