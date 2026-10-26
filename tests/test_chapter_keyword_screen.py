@@ -9,7 +9,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("chapter", [*range(26, 29), "29A", "29B", *range(30, 86)])
+@pytest.mark.parametrize("chapter", [*range(26, 29), "29A", "29B", *range(30, 91)])
 def test_new_batch_reuses_resolve_to_retained_entries(chapter):
     bank_path = ROOT / f"docs/chapter-{chapter}-cue-audit.json"
     bank = json.loads(bank_path.read_text())
@@ -41,7 +41,7 @@ def test_new_batch_reuses_resolve_to_retained_entries(chapter):
             assert targets[0]["decision"] == "retain_candidate"
 
 
-@pytest.mark.parametrize("chapter", [*range(20, 29), "29A", "29B", *range(30, 86)])
+@pytest.mark.parametrize("chapter", [*range(20, 29), "29A", "29B", *range(30, 91)])
 def test_emphasized_keywords_have_explicit_cue_attempts(chapter):
     bank = json.loads((ROOT / f"docs/chapter-{chapter}-cue-audit.json").read_text())
     screen = bank["keyword_screen"]

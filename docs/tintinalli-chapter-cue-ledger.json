@@ -1552,6 +1552,135 @@
         "new_proposal": 34
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "86",
+      "title": "Gastrointestinal Procedures and Devices",
+      "record": "docs/chapter-86-cue-audit.json",
+      "report": "docs/chapter-86-cue-audit.md",
+      "selected_terms": 146,
+      "new_candidates": 106,
+      "reused_candidates": 40,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 150,
+      "association_occurrences": {
+        "unchanged_repeat": 116,
+        "meaningful_variant": 21,
+        "new_association": 9
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 116,
+        "new_revision": 21,
+        "new_proposal": 9
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "87",
+      "title": "Complications of General Surgical Procedures",
+      "record": "docs/chapter-87-cue-audit.json",
+      "report": "docs/chapter-87-cue-audit.md",
+      "selected_terms": 233,
+      "new_candidates": 133,
+      "reused_candidates": 100,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 282,
+      "association_occurrences": {
+        "unchanged_repeat": 198,
+        "meaningful_variant": 31,
+        "new_association": 4
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 198,
+        "new_revision": 31,
+        "new_proposal": 4
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "88",
+      "title": "Acute Kidney Injury",
+      "record": "docs/chapter-88-cue-audit.json",
+      "report": "docs/chapter-88-cue-audit.md",
+      "selected_terms": 285,
+      "new_candidates": 185,
+      "reused_candidates": 100,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 321,
+      "association_occurrences": {
+        "unchanged_repeat": 225,
+        "meaningful_variant": 46,
+        "new_association": 14
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 222,
+        "new_revision": 44,
+        "reconsidered_attempt": 5,
+        "new_proposal": 14
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "89",
+      "title": "Rhabdomyolysis",
+      "record": "docs/chapter-89-cue-audit.json",
+      "report": "docs/chapter-89-cue-audit.md",
+      "selected_terms": 142,
+      "new_candidates": 81,
+      "reused_candidates": 61,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 152,
+      "association_occurrences": {
+        "unchanged_repeat": 119,
+        "meaningful_variant": 16,
+        "new_association": 7
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 119,
+        "reconsidered_attempt": 1,
+        "new_revision": 15,
+        "new_proposal": 7
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "90",
+      "title": "End-Stage Renal Disease",
+      "record": "docs/chapter-90-cue-audit.json",
+      "report": "docs/chapter-90-cue-audit.md",
+      "selected_terms": 192,
+      "new_candidates": 119,
+      "reused_candidates": 72,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 230,
+      "association_occurrences": {
+        "unchanged_repeat": 173,
+        "new_association": 6,
+        "meaningful_variant": 12,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 173,
+        "new_proposal": 6,
+        "reconsidered_attempt": 2,
+        "new_revision": 11
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1561,8 +1690,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "86",
-    "title": "Gastrointestinal Procedures and Devices",
+    "chapter_id": "91",
+    "title": "Urinary Tract Infections and Hematuria",
     "status": "not_started_for_cue_review"
   },
   "spend": {

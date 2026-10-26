@@ -1,0 +1,4572 @@
+{
+  "schema_version": 1,
+  "chapter_id": "89",
+  "title": "Rhabdomyolysis",
+  "review_date": "2026-10-25",
+  "keyword_screen_date": "2026-10-25",
+  "source": {
+    "file": "Tintin_Renal_GU.pdf",
+    "sha256": "6e47e3801ced29aa53ad7be1024c0fd1f3ce20834078c1d6cc628db2885b7e67",
+    "printed_page_offset": 562,
+    "pdf_pages": [
+      8,
+      9,
+      10
+    ],
+    "printed_pages": [
+      570,
+      571,
+      572
+    ],
+    "regions": {
+      "8": [
+        [
+          0,
+          606,
+          295,
+          783
+        ],
+        [
+          295,
+          30,
+          612,
+          783
+        ]
+      ],
+      "9": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "10": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 142,
+    "new_candidates": 81,
+    "reused_candidates": 61,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 119,
+    "meaningful_variant": 16,
+    "new_association": 7
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 119,
+    "reconsidered_attempt": 1,
+    "new_revision": 15,
+    "new_proposal": 7
+  },
+  "entries": [
+    {
+      "term": "Rhabdomyolysis",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          8,
+          72
+        ],
+        [
+          8,
+          75
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          169
+        ],
+        [
+          10,
+          142
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#myoglobin",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "Myo-/muscle explicit lexical root only; not pain, infarction or inflammation.",
+      "reason": "Myo/muscle actual root only;48 robot attempt preserved, rhabdo/lysis omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Drugs of abuse",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          8,
+          86
+        ],
+        [
+          9,
+          27
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#drugs of abuse",
+      "cue": "An anonymous toy pill-shaped character standing alone.",
+      "cue_scope": "Drug/pill category only; abuse omitted Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-50-cue-audit.json#drugs of abuse; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alcohol",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          86
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-52-cue-audit.json#Alcohol",
+      "cue": "A toy foamy beer mug standing alone, without cube.",
+      "cue_scope": "Broad learned alcohol/beverage category only; not proof of contents, exposure or clinical effect",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-52-cue-audit.json#Alcohol; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Medications",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          8,
+          86
+        ],
+        [
+          8,
+          87
+        ],
+        [
+          9,
+          14
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#medications",
+      "cue": "An ordinary unmarked medicine bottle beside a pill-shaped study token.",
+      "cue_scope": "Broad medication category only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#medications; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Muscle diseases",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          87
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#muscle",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Muscle/muscular lexical head only; dystrophy, symptoms and biological function unencoded.",
+      "reason": "Actual muscle head only; disease omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Trauma",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          8,
+          87
+        ],
+        [
+          9,
+          12
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad learned injury-category token",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-24-cue-audit.json#trauma; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Neuroleptic malignant syndrome",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          87
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Neuroleptic malignant syndrome",
+      "cue": "A branching nerve-wire teaching token beside a malicious-grinning villain toy.",
+      "cue_scope": "Neuro/nerve plus malignant/malign wordplay; leptic/syndrome omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Neuroleptic malignant syndrome; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Seizures",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          8,
+          88
+        ],
+        [
+          9,
+          137
+        ],
+        [
+          10,
+          143
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#seizures",
+      "cue": "An oversized toy claw conspicuously seizing a small loose toy object.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#seizures; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immobility",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A wheeled toy car with its wheel visibly held in a locking chock beside a freely rolling reference car.",
+      "cue_scope": "Immobile/motion-prevented ordinary relationship only; no patient restraint, posture or cause.",
+      "reason": "Concrete immobilizing relation, not static placement alone.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "56 held motionless statue gives no visible stillness evidence; wheel/chock/reference makes prevented movement explicit.",
+      "change_origin": "reconsidered_attempt",
+      "prior": "docs/chapter-56-cue-audit.json#Immobility",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Infection",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          88
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Strenuous physical activity",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#exercise",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Exercise category",
+      "reason": "Physical activity/exercise broad category; strenuous degree omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Heat-related illness",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          89
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#fever",
+      "cue": "Theatrical flame token beside a study mannequin.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Broad learned heat/flame reminder only; not fever equivalence or specific illness.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Statin-related myopathies",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          110
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Cilastatin",
+      "cue": "A familiar marble statue standing alone.",
+      "cue_scope": "Stat/statue approximate interior-ending name fragment only; prava and remaining name omitted.",
+      "reason": "Stat/statue shared name fragment only; relation and muscle effect omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Serum creatine kinase",
+      "pdf_page": 8,
+      "page": 570,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          173
+        ],
+        [
+          9,
+          168
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#Creatinine",
+      "cue": "A familiar cargo crate alone, without after-dinner plate.",
+      "cue_scope": "Crate/creat approximate opening-name fragment only; no renal state, laboratory finding or full pronunciation",
+      "reason": "Creat/crate shared opening fragment only; serum, kinase and value omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Crush injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          9,
+          16
+        ],
+        [
+          10,
+          13
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#crush injury",
+      "cue": "Limb mannequin compressed in a large vise.",
+      "cue_scope": "Crushing injury category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-5-cue-audit.json#crush injury; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Electrical injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          22
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An electrical plug beside a visibly cracked study-mannequin token.",
+      "cue_scope": "Electric familiar device category plus injury/cracked-toy category only; no actual current path or mechanism.",
+      "reason": "Two declared category tokens only.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing electro/plug host recombines with24 injury mannequin, not a new electric root.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-72-cue-audit.json#Electrolyte disorders",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lightning injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          22
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar zigzag lightning-bolt teaching token beside a cracked mannequin token.",
+      "cue_scope": "Lightning learned symbol and injury broad category only; no actual strike path or clinical effects.",
+      "reason": "Symbol is explicit, not a diagnosis.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing electrical-category bridge changes host to lightning symbol and adds injury token.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-72-cue-audit.json#Electrolyte disorders",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Amphetamines",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          32
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#amphetamines",
+      "cue": "A familiar guitar amplifier standing alone.",
+      "cue_scope": "amphetamine existing learned vocabulary family only; extra source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#amphetamines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ecstasy",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          32
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy character with an ecstatic broad smile and raised arms amid celebratory confetti.",
+      "cue_scope": "Ecstasy ordinary joy/celebration word sense only; no drug, tablet contents or effects.",
+      "reason": "Taught emotional category; not drug behavior.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "35 euphoria already selects an exuberantly smiling theatrical mask with party confetti. Full character with raised arms revises that same joy/celebration bridge, not a new emotion root.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-35-cue-audit.json#euphoria",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "3,4-methylenedioxymethamphetamine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          33
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#methamphetamines",
+      "cue": "A familiar guitar amplifier standing alone.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Amp/amplifier partial-name family only; numbers and remaining syllables omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Caffeine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          43
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Caffeine",
+      "cue": "An ordinary coffee cup with coffee beans beside it.",
+      "cue_scope": "Coffee/caffeine familiar product-category reminder only; not contents, dose or all caffeine sources.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-77-cue-audit.json#Caffeine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cocaine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          49
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Cocaine",
+      "cue": "A mound of cocoa powder in a kitchen bowl.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#Cocaine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ethanol",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          55
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#ethanol",
+      "cue": "A toy foamy beer mug standing alone, without cube.",
+      "cue_scope": "Broad learned alcohol/beverage category only; no proof of contents, exposure or clinical effect",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#ethanol; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Heroin",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          61
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Opiates",
+      "cue": "A familiar poppy seedpod teaching prop.",
+      "cue_scope": "Learned opiate/poppy category association only; no chemistry, source or use claim.",
+      "reason": "Broad taught opiate/poppy category reminder only; not contents, substance source or use.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lysergic acid diethylamide",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          67
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar lyre instrument beside a lemon.",
+      "cue_scope": "Ly/lyre approximate opening sound plus acid/lemon learned head only; sergic, diethylamide and chemistry omitted.",
+      "reason": "Two concrete partial heads, pronunciation unvalidated.",
+      "association_status": "new_association",
+      "association_comparison": "Lyre/ly-name fragment deliberately added to known acid token; not a claim all syllables encoded.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Methadone",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          73
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:88#Methanol",
+      "cue": "A recognizable mechanical metronome with pendulum and no readable scale.",
+      "cue_scope": "Metro/metronidazole name fragment only; no chemical origin, drug action or rate",
+      "reason": "Same written met partial opening only; meth/met consonants unvalidated. Inherited44 scope does not encode methadone remainder or drug identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact repaired local88 Methanol cue and scope, rooted in44 metronidazole metronome. Same written met fragment, no new meth root or clinical equivalence.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Methamphetamines",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          79
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#methamphetamines",
+      "cue": "A familiar guitar amplifier standing alone.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#methamphetamines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Opiates",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          85
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Opiates",
+      "cue": "A familiar poppy seedpod teaching prop.",
+      "cue_scope": "Learned opiate/poppy category association only; no chemistry, source or use claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Opiates; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phencyclidine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          90
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An ordinary desk fan beside a bicycle.",
+      "cue_scope": "Phen/fan and cycl/cycle approximate name fragments only; idine and drug identity omitted.",
+      "reason": "Partial sound composition, no clinical equivalence.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing phen/fan bridge recombines with57 cyclo/cycle host rather than adding a new fan or cycle root.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-72-cue-audit.json#Phenothiazines",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Excessive muscular activity",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          95
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#muscle",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Muscle/muscular lexical head only; dystrophy, symptoms and biological function unencoded.",
+      "reason": "Muscular actual head only; amount and activity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Contact sports",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          101
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Two padded toy athletes visibly touching shoulder-to-shoulder beside a sports ball.",
+      "cue_scope": "Contact/touch plus broad sport category only; no specific sport, collision injury or training advice.",
+      "reason": "Visible two-character contact supplies relational head.",
+      "association_status": "new_association",
+      "association_comparison": "Touch/contact relation deliberately selected, different from isolated exercise dumbbell.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Delirium tremens",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          107
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand visibly trembling with several offset ghost positions beside a steady reference hand.",
+      "cue_scope": "Trem/trembling learned action category only; delirium, alcohol association and clinical tremor diagnosis omitted.",
+      "reason": "Explicit motion convention, not static hand granted a syndrome.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "70 tremor already selects a wind-up toy visibly shaking with motion marks, after older shivering context. Shaking hand plus steady reference changes host/comparison within that established trem/trembling bridge, not a new action root.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-70-cue-audit.json#tremor",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dystonia",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Dystonia",
+      "cue": "A toy disc twisted into an exaggerated crooked shape.",
+      "cue_scope": "Dys/disc approximate opening plus twisted-tone learned category; full name omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Dystonia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Excessive exercise",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          119
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#exercise",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Exercise category",
+      "reason": "Exercise actual category only; excess omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "CrossFit",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          119
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#exercise",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Exercise category",
+      "reason": "Broad physical-fitness/exercise learned category only; named regimen and technique omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Spinning",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          119
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar spinning top with circular motion arrows and offset rotational positions.",
+      "cue_scope": "Spinning/rotation ordinary action only; no named exercise regimen or physiology.",
+      "reason": "No second rotation-family root.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing rota/rotation wheel bridge changes to top and removes germ.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-72-cue-audit.json#Rotavirus",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immobilization",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          125
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A wheeled toy car with its wheel visibly held in a locking chock beside a freely rolling reference car.",
+      "cue_scope": "Immobile/motion-prevented ordinary relationship only; no patient restraint, posture or cause.",
+      "reason": "Same ordinary immobilizing relationship.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local movement-blocking cue, not another root;56 held statue history preserved.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "local:89#Immobility",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Psychosis",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          131
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-52-cue-audit.json#Antipsychotics",
+      "cue": "A familiar thought-cloud prop standing alone, without cube.",
+      "cue_scope": "Mental/thought learned category only; not a specific psychiatric condition or diagnosis",
+      "reason": "Broad thought/mental category only; no specific psychiatric diagnosis.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Marathons",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          143
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy runner on a long winding marked course approaching a finish arch, with repeated earlier course positions.",
+      "cue_scope": "Marathon learned endurance-race category only; no numeric distance, pace or health claim.",
+      "reason": "Familiar race context, no complete-name decoding requirement.",
+      "association_status": "new_association",
+      "association_comparison": "Long-course running/race category differs from isolated32 exercise dumbbell or limping-walk name cue.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Military basic training",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          143
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy military-boot pair and helmet beside a simple obstacle-course training frame.",
+      "cue_scope": "Military learned equipment category plus training/obstacle-course category only; no rank, regimen or instructions.",
+      "reason": "Familiar kit/course pairing, not a factual training sequence.",
+      "association_status": "new_association",
+      "association_comparison": "Concrete military-training category selected; no arbitrary insignia assigned rank.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Heatstroke",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          146
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A large sun teaching token beside a thermometer whose unnumbered pointer is near a flame marker.",
+      "cue_scope": "Heat ordinary high-temperature teaching category only; stroke, temperature threshold and diagnosis omitted.",
+      "reason": "Relative heat convention, not fever/heatstroke equivalence.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing flame/heat reminder changes to explicit sun/thermometer display; not a new thermal family.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-26-cue-audit.json#fever",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Genetic disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          149
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#Genetic",
+      "cue": "A familiar pair of denim jeans.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Gene/jeans actual sound family only; disorders omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Glycolysis disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          153
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:88#Aminoglycosides",
+      "cue": "A small cluster of ordinary sugar-cube teaching tokens alone.",
+      "cue_scope": "Glyco/sugar learned partial word-family only; amino, side, drug class and composition omitted.",
+      "reason": "Glyco/sugar actual name-category head only; lysis and disorder omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Glycogenolysis disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          153
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:88#Aminoglycosides",
+      "cue": "A small cluster of ordinary sugar-cube teaching tokens alone.",
+      "cue_scope": "Glyco/sugar learned partial word-family only; amino, side, drug class and composition omitted.",
+      "reason": "Same glyco/sugar name head; geno/lysis and disorder omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fatty acid oxidation disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          157
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar butter-dish teaching prop beside a lemon and oxygen cylinder.",
+      "cue_scope": "Fatty learned food-token, acid/lemon and oxygen/oxid approximate category heads only; no actual fat composition or oxidation pathway.",
+      "reason": "Broad lexical composition, not biological reaction or food advice.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing butter/food category recombines with established acid and oxygen tokens.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-87-cue-audit.json#Fatty foods",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mitochondrial metabolism disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A detached recognizable mitochondrion teaching-model prop with a conspicuous broken-off piece.",
+      "cue_scope": "Mitochondria lexical identity",
+      "reason": "Mitochondrion learned category only; metabolism and exact defect omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded qualifier.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-32-cue-audit.json#mitochondria defect",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Respiratory chain metabolism disorders",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          161
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An ordinary linked metal chain standing alone, without saw or engine.",
+      "cue_scope": "Chain literal head only; respiratory, metabolism and disorders omitted.",
+      "reason": "Actual visible chain, no cellular transport claim.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing chain-containing device name changes to standalone linked-chain host, not a new chain word family.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-44-cue-audit.json#Chainsaws",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immunologic diseases involving muscle",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          13
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#muscle",
+      "cue": "A detached familiar skeletal-muscle teaching model on a stand.",
+      "cue_scope": "Muscle/muscular lexical head only; dystrophy, symptoms and biological function unencoded.",
+      "reason": "Actual muscle lexical head only; immune cause omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dermatomyositis",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          18
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#Dermatomyositis",
+      "cue": "A freestanding familiar skin cross-section teaching model, without intact qualifier.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-55-cue-audit.json#Dermatomyositis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Polymyositis",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          24
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Polymyositis",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "muscle existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-77-cue-audit.json#Polymyositis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bacterial infection",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          28
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#bacterial infection",
+      "cue": "A familiar cartoon germ study token alone.",
+      "cue_scope": "infection existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#bacterial infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clostridium",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          35
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Clostridium",
+      "cue": "An ordinary storage-compartment host explicitly adapted into an open clothes closet with hanging garments; bulging, overpacking and pressure gauge removed.",
+      "cue_scope": "Clos-/closet partial name only; wardrobe naming may compete. Explicit compartment-to-closet variant, not a literal old closet scene; no new generic storage-family root or clinical mechanism. Clos-/closet partial name only; difficile omitted, not a new storage-compartment family. Initial withdrawn new-count decision preserved.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Clostridium; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Group A beta-hemolytic streptococci",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          39
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "reason": "Broad infection/germ category only; not streptococcal group or hemolysis discrimination.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Klebsiella",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          45
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Klebsiella",
+      "cue": "A familiar toy club-shaped bat standing alone.",
+      "cue_scope": "Kleb/club approximate opening-name sound only; species and organism category omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Klebsiella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Legionella",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          51
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Legionella",
+      "cue": "A detached leg teaching token alone; arm and cube removed.",
+      "cue_scope": "Leg-/legion approximate opening-name head only; not an organism model or complete name. Leg-/legion partial-name fragment, not complete genus.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Legionella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mycoplasma",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          57
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#Mycoplasma",
+      "cue": "A familiar microphone alone, with ordinary cords removed.",
+      "cue_scope": "Myco-/mic or mike partial-name bridge only; plasma, species and biological identity unencoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-64-cue-audit.json#Mycoplasma; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Salmonella",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          63
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Salmonella",
+      "cue": "A salmon toy sheltering beneath an umbrella.",
+      "cue_scope": "Salmon/ella approximate name sounds; umbrella supplies ending fragment only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Salmonella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Shigella",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          69
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Shigella",
+      "cue": "A toy character making a shushing gesture beside a bowl of jiggly gelatin.",
+      "cue_scope": "Shh/jell approximate name sounds; ending supplied in teaching.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Shigella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Staphylococcus aureus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          75
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#Staphylococcus aureus",
+      "cue": "A walking staff beside a pile of gold coins.",
+      "cue_scope": "Staff fragment + aur/gold learned-name cue",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#Staphylococcus aureus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Streptococcus pneumoniae",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          81
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#Streptococcus pneumoniae",
+      "cue": "A standalone lung-shaped study token.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-55-cue-audit.json#Streptococcus pneumoniae; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Viral infection",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          86
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#Viral infection",
+      "cue": "A familiar cartoon germ study token alone.",
+      "cue_scope": "Broad infectious-agent learned category only; no viral/bacterial subtype discrimination claimed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#Viral infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coxsackievirus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          92
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#coxsackie virus",
+      "cue": "A plain toy sack standing alone.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Spacing join of same name; sack fragment only, virus identity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cytomegalovirus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          97
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Cytomegalovirus",
+      "cue": "An ordinary household battery cell alone.",
+      "cue_scope": "Cell/cyto learned word category only; no cell count or tumor subtype.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-85-cue-audit.json#Cytomegalovirus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epstein-Barr virus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          103
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-55-cue-audit.json#Epstein-Barr virus",
+      "cue": "A plain unnumbered slider bar alone.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-55-cue-audit.json#Epstein-Barr virus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Enterovirus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          109
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "reason": "Broad infectious-agent/germ category only; entero and viral specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hepatitis virus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          115
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-80-cue-audit.json#Hepatitis",
+      "cue": "A familiar detached liver-lobe teaching model.",
+      "cue_scope": "Hepat-/liver learned anatomy head only; inflammatory or viral subtype omitted.",
+      "reason": "Hepat/liver actual head only; viral cause and subtype omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Herpes simplex virus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          121
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Herpes zoster",
+      "cue": "A familiar harp instrument.",
+      "cue_scope": "Herp-/harp approximate opening-name fragment only; zoster/species omitted. Herp-/harp opening sound only; not virus appearance.",
+      "reason": "Herp/harp opening-name head only; no simplex/zoster discrimination.46 harp hold remains preserved.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Human immunodeficiency virus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          127
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-58-cue-audit.json#human immunodeficiency virus",
+      "cue": "A neutral adult human figurine alone.",
+      "cue_scope": "Literal human head in source-expanded human immunodeficiency virus only; virus, immunity and HIV letters omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-58-cue-audit.json#human immunodeficiency virus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Influenza virus A",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          133
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#Influenza",
+      "cue": "A recognizable brick chimney with its flue opening conspicuous.",
+      "cue_scope": "Flu/flue partial-name bridge only; other name parts, viral identity and treatment effects unencoded.",
+      "reason": "Flu/flue actual name fragment only; A and organism specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Influenza virus B",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          133
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#Influenza",
+      "cue": "A recognizable brick chimney with its flue opening conspicuous.",
+      "cue_scope": "Flu/flue partial-name bridge only; other name parts, viral identity and treatment effects unencoded.",
+      "reason": "Same flu/flue cue; B and organism specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rotavirus",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          139
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Rotavirus",
+      "cue": "A cartoon germ riding a rotating toy wheel.",
+      "cue_scope": "Rota/rotation plus virus category only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Rotavirus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ischemic injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          144
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#ischemia",
+      "cue": "Limb model downstream of a closed red supply tap and visibly depleted supply tube.",
+      "cue_scope": "Existing ischemia name-family reminder",
+      "reason": "Ischemic family retained; extra injury descriptor omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Compartment syndrome",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          148
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#compartment syndrome",
+      "cue": "Overpacked closed compartment bulging around its contents beneath a high pressure gauge.",
+      "cue_scope": "Confined compartment under pressure",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-7-cue-audit.json#compartment syndrome; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Compression",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          151
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-56-cue-audit.json#compression",
+      "cue": "An ordinary vise squeezing a plain cloth toy, without limb anatomy.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-56-cue-audit.json#compression; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antipsychotics",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          20
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-52-cue-audit.json#Antipsychotics",
+      "cue": "A familiar thought-cloud prop standing alone, without cube.",
+      "cue_scope": "Mental/thought learned category only; not a specific psychiatric condition or diagnosis",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-52-cue-audit.json#Antipsychotics; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Barbiturates",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          26
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#barbiturates",
+      "cue": "A familiar barbell beside a tiny turret.",
+      "cue_scope": "Barbiturate partial-name reminder",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#barbiturates; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Benzodiazepines",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          30
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#benzodiazepines",
+      "cue": "A familiar luxury-sedan toy taught as a Benz, without key ring.",
+      "cue_scope": "benzodiazepine existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#benzodiazepines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Chemotherapeutic agents",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          37
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Chemotherapy",
+      "cue": "A toy chemist's flask beside a therapist's couch.",
+      "cue_scope": "Chemo/chemistry plus therapy word fragments; not chemical origin or cancer treatment.",
+      "reason": "Actual chemo/therapy fragments only; not55 held medicine-bottle identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clofibrate",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          41
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A loose bundle of fibers without bronco or scope.",
+      "cue_scope": "fiber existing learned head only; other source modifiers omitted.",
+      "reason": "Fibr/fiber actual interior name family only; clo, ate and drug identity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded qualifier.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-85-cue-audit.json#Cystic fibrosis",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colchicine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          47
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "An ordinary charcoal briquette standing alone, without power-button symbol.",
+      "cue_scope": "Col/coal approximate opening-name sound only; chicine, drug identity and chemical origin omitted.",
+      "reason": "Material is only a name reminder, not drug composition.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing charcoal host loses activated superhero display; coal/col partial family application, not a new coal ingredient.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-4-cue-audit.json#activated charcoal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corticosteroids",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          53
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#corticosteroids",
+      "cue": "An ordinary stereo speaker pair.",
+      "cue_scope": "steroid existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#corticosteroids; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diphenhydramine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          59
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Diphenhydramine",
+      "cue": "A diver dipping beside a conspicuous rotating fan.",
+      "cue_scope": "Dip/fan approximate opening sounds only; hydramine remainder omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Diphenhydramine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hypnotics",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          65
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#hypnotic",
+      "cue": "A familiar swinging-pocket-watch prop held by a toy performer.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Singular/plural of learned hypnosis prop category; not actual drug action.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sedatives",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          65
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#sedatives",
+      "cue": "Comfortable armchair holding a visibly drowsy toy character.",
+      "cue_scope": "sedation existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#sedatives; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Isoniazid",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          71
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#isoniazid",
+      "cue": "A conspicuous ice block alone.",
+      "cue_scope": "Ice/iso- approximate opening-name sound only; no cooling effect or clinical action.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-67-cue-audit.json#isoniazid; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lithium",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          77
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:88#Lithium",
+      "cue": "A loose pebble alone, without appendix model.",
+      "cue_scope": "Lith/stone learned partial name-family only; ium, elemental identity and origin omitted.",
+      "reason": "Exact saved88 lithium partial lith/stone cue; no elemental identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Monoamine oxidase inhibitors",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          83
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#monoamine oxidase inhibitors",
+      "cue": "An ordinary one-wheeled unicycle.",
+      "cue_scope": "Mono/one learned lexical head only; amine/oxidase/inhibition omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#monoamine oxidase inhibitors; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Narcotics",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Opiates",
+      "cue": "A familiar poppy seedpod teaching prop.",
+      "cue_scope": "Learned opiate/poppy category association only; no chemistry, source or use claim.",
+      "reason": "Broad learned narcotic/opiate category reminder only; not a subtype identity or substance origin.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Neuroleptic agents",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          94
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#neuropathy",
+      "cue": "A branching nerve-wire teaching token alone, without tibia or cube.",
+      "cue_scope": "Neur-/nerve lexical root only; branch, sensory finding or disease not encoded.",
+      "reason": "Neuro/nerve actual root only; leptic and drug identity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phenothiazines",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          99
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Phenothiazines",
+      "cue": "An ordinary fan blowing across a stack of magazines.",
+      "cue_scope": "Pheno/fan and zine/magazine approximate name fragments; thia omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Phenothiazines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Propofol",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          105
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#Propofol",
+      "cue": "A familiar stage prop beside a folded sheet of foil.",
+      "cue_scope": "Propofol partial-name reminder",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#Propofol; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Salicylates",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          111
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Salicylates",
+      "cue": "A familiar salt shaker standing alone, without channel or barrier.",
+      "cue_scope": "Sal/salt approximate opening sound only; class and chemistry omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Salicylates; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Selective serotonin reuptake inhibitors",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          117
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A row of small tone-producing bells standing alone, without agent character.",
+      "cue_scope": "Ton/tone interior-name fragment only; serotonin identity, selectivity, uptake and inhibition omitted.",
+      "reason": "No mechanism granted to bells.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Actual tone-bells/agent composition narrowed to tone head.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-74-cue-audit.json#Serotonergic agents",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Statins",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          123
+        ],
+        [
+          10,
+          143
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Cilastatin",
+      "cue": "A familiar marble statue standing alone.",
+      "cue_scope": "Stat/statue approximate interior-ending name fragment only; prava and remaining name omitted.",
+      "reason": "Stat/statue partial-name family; no clinical class discrimination.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Theophylline",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          129
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Theophylline",
+      "cue": "A teapot visibly filling a cup to its brim.",
+      "cue_scope": "Tea/fill approximate opening-middle sounds; full name omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Theophylline; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tricyclic antidepressants",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          135
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy tricycle standing alone.",
+      "cue_scope": "Tri/tricycle approximate opening-name fragment only; glycerides and chemistry omitted.",
+      "reason": "Tri/tricycle partial name only; no glycerides, ring chemistry, antidepressant identity or effect asserted for this target.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact79 Triglycerides standalone tricycle cue and scope; not an isolation variant from the overflowing tricycle bin.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-79-cue-audit.json#Triglycerides",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Zidovudine",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "table",
+      "source_refs": [
+        [
+          9,
+          141
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A cut wooden log with bark and visible growth rings standing alone.",
+      "cue_scope": "Vud/wood approximate interior-name fragment only; zido, ine and drug identity omitted.",
+      "reason": "Ordinary material-name cue, sound approximation unvalidated.",
+      "association_status": "new_association",
+      "association_comparison": "55 prior hold had no actual attempted visual; concrete wood/vud bridge newly tried, not proof all alternatives exhausted.",
+      "change_origin": "new_proposal",
+      "prior": "docs/chapter-55-cue-audit.json#zidovudine",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cardiac injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          168
+        ],
+        [
+          9,
+          169
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#cardiac injury",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#cardiac injury; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Brain injury",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          169
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-64-cue-audit.json#brain",
+      "cue": "A generic brain teaching token alone; inspection magnifier removed.",
+      "cue_scope": "Neuro-/cerebral/brain lexical category only; development, palsy, deficit and named conditions unencoded.",
+      "reason": "Actual brain category only; injury omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Myoglobinuria",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          183
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#myoglobin",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "Myo-/muscle explicit lexical root only; not pain, infarction or inflammation.",
+      "reason": "Myo/muscle head only; urine contents and globin omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Myoglobin",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          193
+        ],
+        [
+          9,
+          194
+        ],
+        [
+          9,
+          195
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#myoglobin",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "Myo-/muscle explicit lexical root only; not pain, infarction or inflammation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-61-cue-audit.json#myoglobin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Heme",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          194
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#red blood cells",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "blood existing learned vocabulary family only; extra source modifiers omitted.",
+      "reason": "Heme/hemo blood-name family only; no molecular identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dipstick test",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          194
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:88#Dipstick test",
+      "cue": "A familiar unused multipad reagent-test strip with several differently colored square pads.",
+      "cue_scope": "Dipstick/test-strip familiar device category only; no urine contents, analyte, result or interpretation.",
+      "reason": "Exact saved88 test-strip category; no result or analyte.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemoglobin",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          195
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#hemoglobin",
+      "cue": "A red-liquid drop token wearing a globe-shaped hat.",
+      "cue_scope": "Hemo/globin partial-name recall",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-32-cue-audit.json#hemoglobin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Red blood cells",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "body",
+      "source_refs": [
+        [
+          9,
+          195
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#red blood cells",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "blood existing learned vocabulary family only; extra source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#red blood cells; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Differential diagnosis",
+      "pdf_page": 9,
+      "page": 571,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          9,
+          236
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-56-cue-audit.json#diagnostic test",
+      "cue": "A blank exam booklet alone, without toy train.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Broad diagnostic/testing category only; differential sorting unencoded;59 held card-sorting attempt preserved.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prehospital care",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          10,
+          11
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#prehospital",
+      "cue": "Toy ambulance outside the gate of a hospital model.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Actual prehospital/ambulance-setting category; care details omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Potassium-containing solutions",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          24
+        ],
+        [
+          10,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#potassium level",
+      "cue": "Familiar bananas standing alone, without channel or barrier.",
+      "cue_scope": "Learned potassium ingredient association only; source K+ expansion requires context, no value or biological origin inferred",
+      "reason": "Potassium/banana learned head only; actual solution contents not asserted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lactate-containing solutions",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Lactate",
+      "cue": "A familiar milk bottle standing alone.",
+      "cue_scope": "Lact-/milk learned lexical association only; no source, metabolism or result claim. No result, metabolism or milk-origin claim.",
+      "reason": "Lact/milk name association only; no real lactate source or solution contents.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Electrolyte status",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Electrolyte disorders",
+      "cue": "A toy electrical plug beside a salt shaker.",
+      "cue_scope": "Electro/electric plus electrolyte/salt learned category; disorders omitted.",
+      "reason": "Electro/electric plus salt category only; no status or measured values.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acid-base status",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          25
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A lemon resting beside a clearly separate raised display base.",
+      "cue_scope": "Acid/lemon learned category plus base/ordinary support wordplay only; no values, pH or compensation.",
+      "reason": "Two ordinary word heads, not an acid-base interpretation.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Established acid/lemon host recomposed with base literal support rather than milk/lactic qualifier.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-15-cue-audit.json#lactic acidosis",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Emergency department care",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          10,
+          30
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A hospital-model entrance with a conspicuous medical-cross sign and toy ambulance at its doorway.",
+      "cue_scope": "Emergency/hospital care-setting learned category only; no department organization or treatment.",
+      "reason": "Familiar setting, not a disposition instruction.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing ambulance/outside-hospital category refocuses display on entrance.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-26-cue-audit.json#prehospital",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "IV rehydration",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          31
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Rehydration",
+      "cue": "A dried sponge visibly drinking up water poured from a bottle until it expands.",
+      "cue_scope": "Re/water-restoration ordinary action only; no treatment technique.",
+      "reason": "Rehydration/water-restoration action only; IV route and technique omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prospective controlled studies",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          41
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Two matching potted plants on an experiment bench, one under a lamp and one under an empty matching stand, beside a blank comparison clipboard.",
+      "cue_scope": "Controlled-study ordinary matched-comparison category only; no clinical design, causal result or timing rule.",
+      "reason": "Concrete control/comparison scene, not medical evidence.",
+      "association_status": "new_association",
+      "association_comparison": "Matched experimental comparison relation selected, not just a blank examination booklet.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fluid choice",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          41
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand selecting one of two clear-water pitchers, with a selection arrow pointing to the touched pitcher.",
+      "cue_scope": "Fluid ordinary liquid-container category plus choice/selection relation only; no recommended fluid or composition.",
+      "reason": "Visible choice action, not treatment advice.",
+      "association_status": "new_association",
+      "association_comparison": "Selection relationship deliberately added, not an unmarked container given a specific solution identity.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urine alkalinization",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          42
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A urine-collection jug beside an ordinary raised display base.",
+      "cue_scope": "Urine collection-category and alkali/basic/base learned wordplay only; no actual pH change, agent or technique.",
+      "reason": "Base is wordplay only, not actual alkalinity.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Same base/support word relationship recombined with urine jug instead of acid/lemon.",
+      "change_origin": "new_revision",
+      "prior": "local:89#Acid-base status",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sodium bicarbonate",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          42
+        ],
+        [
+          10,
+          43
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#bicarbonate",
+      "cue": "Familiar orange baking-soda box with a small heap of white powder; no brand logo or answer label needed.",
+      "cue_scope": "Bicarbonate family identity",
+      "reason": "Bicarbonate actual family identity only; sodium modifier omitted, avoiding null-scope legacy2 row.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Forced diuresis",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          43
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-58-cue-audit.json#diuresis",
+      "cue": "An unused familiar bathroom urinal fixture.",
+      "cue_scope": "Urination/diuresis word category only; no drug effect or output measurement.",
+      "reason": "Diuresis/urination head only; forced intervention omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mannitol",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          43
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Man/male learned symbol-category partial name reminder only; nitol and drug identity omitted, not actual patient sex.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded qualifier.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-51-cue-audit.json#Male sex",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Loop diuretics",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          43
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#Loop Diuretics",
+      "cue": "A toy racetrack with two joined loops in a figure-eight shape.",
+      "cue_scope": "Literal loop name/shape head only; diuretic, medication class and medical use not encoded",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#Loop Diuretics; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hypocalcemia",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          72
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-17-cue-audit.json#hypocalcemia",
+      "cue": "Only a few bone-shaped tokens remain in a large transparent container.",
+      "cue_scope": "Calcium token plus depleted-state association",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-17-cue-audit.json#hypocalcemia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hyperkalemia-induced cardiotoxicity",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          75
+        ],
+        [
+          10,
+          76
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-5-cue-audit.json#hyperkalemia",
+      "cue": "Bananas overflowing a container.",
+      "cue_scope": "Potassium plus excess",
+      "reason": "Potassium/excess learned category only; cardiotoxicity and causality omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "McMahon score",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          102
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar sports scoreboard with a row of blank score windows.",
+      "cue_scope": "Score/scoring shared-word category only; no scale, thresholds, risk model or actual score.",
+      "reason": "Score actual word head only; surname, model, risk and thresholds omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded qualifier.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-76-cue-audit.json#Scoring system",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Death",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          102
+        ],
+        [
+          10,
+          159
+        ],
+        [
+          10,
+          160
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#death",
+      "cue": "A familiar skull-and-crossbones token standing alone, without oxygen cylinder.",
+      "cue_scope": "Familiar symbolic death/mortality vocabulary category only; no patient prognosis, outcome, hazard exposure, causation or likelihood is asserted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#death; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dialysis",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          102
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#dialysis",
+      "cue": "A blood-drop study token beside a familiar sieve.",
+      "cue_scope": "Hemo/filtering learned category only; not a dialysis method, renal state or clinical recommendation",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#dialysis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Laboratory parameters",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          103
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Laboratory testing",
+      "cue": "A familiar unused test-tube rack.",
+      "cue_scope": "Broad laboratory/testing category Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Broad laboratory category only; no numeric parameter or result.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Creatinine",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          109
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#Creatinine",
+      "cue": "A familiar cargo crate alone, without after-dinner plate.",
+      "cue_scope": "Crate/creat approximate opening-name fragment only; no renal state, laboratory finding or full pronunciation",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#Creatinine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Calcium",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          117
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-13-cue-audit.json#calcium",
+      "cue": "Recognizable bone-shaped teaching token.",
+      "cue_scope": "Calcium identity association",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-13-cue-audit.json#calcium; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Creatine kinase",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          121
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#Creatinine",
+      "cue": "A familiar cargo crate alone, without after-dinner plate.",
+      "cue_scope": "Crate/creat approximate opening-name fragment only; no renal state, laboratory finding or full pronunciation",
+      "reason": "Creat/crate shared name head only; kinase omitted, no result.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phosphate",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          125
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-17-cue-audit.json#phosphorus",
+      "cue": "Familiar matchbox with a few unlit matches beside it.",
+      "cue_scope": "Learned phosphorus/match association",
+      "reason": "Phosph learned match-family reminder only; phosphate identity, composition and level not claimed.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bicarbonate",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          134
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-15-cue-audit.json#bicarbonate",
+      "cue": "Familiar orange baking-soda box with a small heap of white powder; no brand logo or answer label needed.",
+      "cue_scope": "Bicarbonate family identity",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-15-cue-audit.json#bicarbonate; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Historical variables",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          138
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A closed medical-chart folder beside an old-fashioned history scroll.",
+      "cue_scope": "History category only; comorbidities omitted Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "History actual head only; variables and comorbidities omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded qualifier.",
+      "change_origin": "existing_candidate_recount",
+      "prior": "docs/chapter-51-cue-audit.json#History and Comorbidities",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Syncope",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          143
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-52-cue-audit.json#Syncope",
+      "cue": "A familiar kitchen sink standing alone.",
+      "cue_scope": "Sink/sync approximate opening-name fragment only; not fainting, cause, physiology or whole-name recovery",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-52-cue-audit.json#Syncope; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Exercise",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          143
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-32-cue-audit.json#exercise",
+      "cue": "A standalone familiar dumbbell.",
+      "cue_scope": "Exercise category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-32-cue-audit.json#exercise; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Myositis",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          144
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#myoglobin",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "Myo-/muscle explicit lexical root only; not pain, infarction or inflammation.",
+      "reason": "Myo/muscle root only; inflammation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sex",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          146
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Detached familiar male- and female-symbol teaching tokens side by side.",
+      "cue_scope": "Sex learned category symbols only; no anatomy, patient traits or binary clinical rule.",
+      "reason": "Conventional vocabulary symbols, not a claim about every person.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing female-symbol category expands display with51 male-symbol token.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-50-cue-audit.json#Female",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Female",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#Female",
+      "cue": "A detached familiar female-symbol token.",
+      "cue_scope": "Learned category symbol; no patient traits Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-50-cue-audit.json#Female; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Age",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          149
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#age",
+      "cue": "An unmarked hourglass beside an old family photo album.",
+      "cue_scope": "age",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-28-cue-audit.json#age; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal replacement therapy",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "table",
+      "source_refs": [
+        [
+          10,
+          159
+        ],
+        [
+          10,
+          160
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#kidney",
+      "cue": "A detached kidney teaching model alone, without pebbles.",
+      "cue_scope": "Renal/nephr/kidney head only; function, failure and measurements omitted.",
+      "reason": "Renal actual head only; replacement modality and therapy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Disposition and follow-up",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          10,
+          198
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#follow-up",
+      "cue": "An unmarked hourglass standing alone.",
+      "cue_scope": "Follow-up interval/time category only; no duration, disposition or clinical advice.",
+      "reason": "Follow-up/time actual head only; disposition and actual timing omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Exertional rhabdomyolysis",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          200
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#myoglobin",
+      "cue": "A detached muscle teaching model alone, without fiber spool.",
+      "cue_scope": "Myo-/muscle explicit lexical root only; not pain, infarction or inflammation.",
+      "reason": "Myo/muscle actual interior root only; exertion, rhabdo and lysis omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected cue and scope; no new root or encoded modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Comorbidities",
+      "pdf_page": 10,
+      "page": 572,
+      "source_match": "body",
+      "source_refs": [
+        [
+          10,
+          202
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-75-cue-audit.json#Comorbidities",
+      "cue": "Two sick-expression toy characters standing together under one small canopy.",
+      "cue_scope": "Co/together plus broad illness category metaphor only; no diagnostic count or actual coexistence rule.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-75-cue-audit.json#Comorbidities; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Rhabdomyolysis",
+        "entry_term": "Rhabdomyolysis",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "title/bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Rhabdomyolysis",
+        "entry_term": "Rhabdomyolysis",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table heading/bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Rhabdomyolysis",
+        "entry_term": "Rhabdomyolysis",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Drugs of abuse",
+        "entry_term": "Drugs of abuse",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Drugs of abuse",
+        "entry_term": "Drugs of abuse",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Alcohol",
+        "entry_term": "Alcohol",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "medica-tions",
+        "entry_term": "Medications",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": "Line-end hyphen removed from actual split head."
+      },
+      {
+        "term": "Medications",
+        "entry_term": "Medications",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Muscle diseases",
+        "entry_term": "Muscle diseases",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Trauma",
+        "entry_term": "Trauma",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Trauma",
+        "entry_term": "Trauma",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Neuroleptic malignant syndrome",
+        "entry_term": "Neuroleptic malignant syndrome",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Seizures",
+        "entry_term": "Seizures",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Seizures",
+        "entry_term": "Seizures",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Seizures",
+        "entry_term": "Seizures",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Immobility",
+        "entry_term": "Immobility",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Infection",
+        "entry_term": "Infection",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Strenuous physical activity",
+        "entry_term": "Strenuous physical activity",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Heat-related illness",
+        "entry_term": "Heat-related illness",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Statin-related myopathies",
+        "entry_term": "Statin-related myopathies",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Serum creatine kinase",
+        "entry_term": "Serum creatine kinase",
+        "pdf_page": 8,
+        "page": 570,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Serum creatine kinase",
+        "entry_term": "Serum creatine kinase",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Crush injury",
+        "entry_term": "Crush injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Crush injury",
+        "entry_term": "Crush injury",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Electrical",
+        "entry_term": "Electrical injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Shared injury noun in electrical or lightning injury; expansion declared."
+      },
+      {
+        "term": "Lightning injury",
+        "entry_term": "Lightning injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Amphetamines",
+        "entry_term": "Amphetamines",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ecstasy",
+        "entry_term": "Ecstasy",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "3,4-methylenedioxymethamphetamine",
+        "entry_term": "3,4-methylenedioxymethamphetamine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Actual named agent in parenthetical, not a numeric instruction."
+      },
+      {
+        "term": "Caffeine",
+        "entry_term": "Caffeine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cocaine",
+        "entry_term": "Cocaine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ethanol",
+        "entry_term": "Ethanol",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Heroin",
+        "entry_term": "Heroin",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Lysergic acid diethylamide",
+        "entry_term": "Lysergic acid diethylamide",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Methadone",
+        "entry_term": "Methadone",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Methamphetamines",
+        "entry_term": "Methamphetamines",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Opiates",
+        "entry_term": "Opiates",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Phencyclidine",
+        "entry_term": "Phencyclidine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Excessive muscular activity",
+        "entry_term": "Excessive muscular activity",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Contact sports",
+        "entry_term": "Contact sports",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Delirium tremens",
+        "entry_term": "Delirium tremens",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Dystonia",
+        "entry_term": "Dystonia",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Excessive exercise",
+        "entry_term": "Excessive exercise",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "CrossFit",
+        "entry_term": "CrossFit",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Explicit activity example retained, not a prescribed exercise recommendation."
+      },
+      {
+        "term": "Spinning",
+        "entry_term": "Spinning",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Immobilization",
+        "entry_term": "Immobilization",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Psychosis",
+        "entry_term": "Psychosis",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Marathons",
+        "entry_term": "Marathons",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Military basic training",
+        "entry_term": "Military basic training",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Heatstroke",
+        "entry_term": "Heatstroke",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Genetic disorders",
+        "entry_term": "Genetic disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Glycolysis",
+        "entry_term": "Glycolysis disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Disorders shared with coordinated glycogenolysis; declared expansion."
+      },
+      {
+        "term": "Glycogenolysis disorders",
+        "entry_term": "Glycogenolysis disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Fatty acid oxidation disorders",
+        "entry_term": "Fatty acid oxidation disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Mitochondrial",
+        "entry_term": "Mitochondrial metabolism disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Metabolism disorders shared by coordinated mitochondrial and respiratory chain; grammatical expansion declared."
+      },
+      {
+        "term": "Respiratory chain metabolism disorders",
+        "entry_term": "Respiratory chain metabolism disorders",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Immunologic diseases involving muscle",
+        "entry_term": "Immunologic diseases involving muscle",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Dermatomyositis",
+        "entry_term": "Dermatomyositis",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Polymyositis",
+        "entry_term": "Polymyositis",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bacterial infection",
+        "entry_term": "Bacterial infection",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Clostridium",
+        "entry_term": "Clostridium",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Group A \u03b2-hemolytic streptococci",
+        "entry_term": "Group A beta-hemolytic streptococci",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Greek beta transliterated to ASCII."
+      },
+      {
+        "term": "Klebsiella",
+        "entry_term": "Klebsiella",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Legionella",
+        "entry_term": "Legionella",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Mycoplasma",
+        "entry_term": "Mycoplasma",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Salmonella",
+        "entry_term": "Salmonella",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Shigella",
+        "entry_term": "Shigella",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Staphylococcus aureus",
+        "entry_term": "Staphylococcus aureus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Streptococcus pneumoniae",
+        "entry_term": "Streptococcus pneumoniae",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Viral infection",
+        "entry_term": "Viral infection",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Coxsackievirus",
+        "entry_term": "Coxsackievirus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cytomegalovirus",
+        "entry_term": "Cytomegalovirus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epstein-Barr virus",
+        "entry_term": "Epstein-Barr virus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Enterovirus",
+        "entry_term": "Enterovirus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Hepatitis virus",
+        "entry_term": "Hepatitis virus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Herpes simplex virus",
+        "entry_term": "Herpes simplex virus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Human immunodeficiency virus",
+        "entry_term": "Human immunodeficiency virus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "A",
+        "entry_term": "Influenza virus A",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Actual type A head in Influenza virus (A and B), expanded using shared Influenza virus modifier; no separate species assertion."
+      },
+      {
+        "term": "B",
+        "entry_term": "Influenza virus B",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": "Actual type B head expanded using shared Influenza virus modifier; no false contiguous quote."
+      },
+      {
+        "term": "Rotavirus",
+        "entry_term": "Rotavirus",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ischemic injury",
+        "entry_term": "Ischemic injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Compartment syndrome",
+        "entry_term": "Compartment syndrome",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Compression",
+        "entry_term": "Compression",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antipsychotics",
+        "entry_term": "Antipsychotics",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Barbiturates",
+        "entry_term": "Barbiturates",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Benzodiazepines",
+        "entry_term": "Benzodiazepines",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Chemotherapeutic agents",
+        "entry_term": "Chemotherapeutic agents",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Clofibrate",
+        "entry_term": "Clofibrate",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Colchicine",
+        "entry_term": "Colchicine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Corticosteroids",
+        "entry_term": "Corticosteroids",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Diphenhydramine",
+        "entry_term": "Diphenhydramine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Hypnotics",
+        "entry_term": "Hypnotics",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Sedatives",
+        "entry_term": "Sedatives",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Isoniazid",
+        "entry_term": "Isoniazid",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Lithium",
+        "entry_term": "Lithium",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Monoamine oxidase inhibitors",
+        "entry_term": "Monoamine oxidase inhibitors",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Narcotics",
+        "entry_term": "Narcotics",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Neuroleptic agents",
+        "entry_term": "Neuroleptic agents",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Phenothiazines",
+        "entry_term": "Phenothiazines",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Propofol",
+        "entry_term": "Propofol",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Salicylates",
+        "entry_term": "Salicylates",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Selective serotonin reuptake inhibitors",
+        "entry_term": "Selective serotonin reuptake inhibitors",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Statins",
+        "entry_term": "Statins",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Statins",
+        "entry_term": "Statins",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Theophylline",
+        "entry_term": "Theophylline",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tricyclic antidepressants",
+        "entry_term": "Tricyclic antidepressants",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Zidovudine",
+        "entry_term": "Zidovudine",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "cardiac",
+        "entry_term": "Cardiac injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": "Injury noun shared by cardiac or brain in source bold statement; expansion declared."
+      },
+      {
+        "term": "Brain injury",
+        "entry_term": "Brain injury",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Myoglobinuria",
+        "entry_term": "Myoglobinuria",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Myoglobin",
+        "entry_term": "Myoglobin",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": "Split myo-/globin and full repeated head combined; line-end hyphen removed in expansion."
+      },
+      {
+        "term": "Heme",
+        "entry_term": "Heme",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Dipstick test",
+        "entry_term": "Dipstick test",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Hemoglobin",
+        "entry_term": "Hemoglobin",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Red blood cells",
+        "entry_term": "Red blood cells",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Differential diagnosis",
+        "entry_term": "Differential diagnosis",
+        "pdf_page": 9,
+        "page": 571,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Prehospital care",
+        "entry_term": "Prehospital care",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "potassium-",
+        "entry_term": "Potassium-containing solutions",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Containing solutions shared with coordinated lactate-containing; expansion declared before injunction exclusion."
+      },
+      {
+        "term": "Lactate-containing solutions",
+        "entry_term": "Lactate-containing solutions",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "electrolyte",
+        "entry_term": "Electrolyte status",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Status noun shared by electrolyte and acid-base; expansion declared."
+      },
+      {
+        "term": "Acid-base status",
+        "entry_term": "Acid-base status",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Emergency department care",
+        "entry_term": "Emergency department care",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "IV rehydration",
+        "entry_term": "IV rehydration",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Actual operation head; aggressive modifier and time interval excluded."
+      },
+      {
+        "term": "Prospective controlled studies",
+        "entry_term": "Prospective controlled studies",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Actual research-operation head within negative evidence statement; no evidence conclusion authored."
+      },
+      {
+        "term": "Fluid choice",
+        "entry_term": "Fluid choice",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "alkalinization of the urine",
+        "entry_term": "Urine alkalinization",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Word-order normalization of actual lexical operation head."
+      },
+      {
+        "term": "Sodium bicarbonate",
+        "entry_term": "Sodium bicarbonate",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Split actual agent head joined."
+      },
+      {
+        "term": "Forced diuresis",
+        "entry_term": "Forced diuresis",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Mannitol",
+        "entry_term": "Mannitol",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Loop diuretics",
+        "entry_term": "Loop diuretics",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Hypocalcemia",
+        "entry_term": "Hypocalcemia",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "Hyperkalemia-induced cardiotoxicity",
+        "entry_term": "Hyperkalemia-induced cardiotoxicity",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "bold",
+        "wording_note": "Split head joined."
+      },
+      {
+        "term": "McMahon score",
+        "entry_term": "McMahon score",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Death",
+        "entry_term": "Death",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table heading/footnote",
+        "wording_note": "Endpoint lexical head only, no score/risk prediction authored."
+      },
+      {
+        "term": "Dialysis",
+        "entry_term": "Dialysis",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Laboratory parameters",
+        "entry_term": "Laboratory parameters",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Creatinine",
+        "entry_term": "Creatinine",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Calcium",
+        "entry_term": "Calcium",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Creatine kinase",
+        "entry_term": "Creatine kinase",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Phosphate",
+        "entry_term": "Phosphate",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bicarbonate",
+        "entry_term": "Bicarbonate",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Historical variables",
+        "entry_term": "Historical variables",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table subheading",
+        "wording_note": ""
+      },
+      {
+        "term": "Syncope",
+        "entry_term": "Syncope",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Exercise",
+        "entry_term": "Exercise",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Myositis",
+        "entry_term": "Myositis",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Sex",
+        "entry_term": "Sex",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Female",
+        "entry_term": "Female",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Age",
+        "entry_term": "Age",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table category",
+        "wording_note": ""
+      },
+      {
+        "term": "Renal replacement therapy",
+        "entry_term": "Renal replacement therapy",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "table footnote",
+        "wording_note": "Lexical operation head only; numeric prediction excluded."
+      },
+      {
+        "term": "Disposition and follow-up",
+        "entry_term": "Disposition and follow-up",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Exertional rhabdomyolysis",
+        "entry_term": "Exertional rhabdomyolysis",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "italic",
+        "wording_note": ""
+      },
+      {
+        "term": "Comorbidities",
+        "entry_term": "Comorbidities",
+        "pdf_page": 10,
+        "page": 572,
+        "emphasis": "italic",
+        "wording_note": "Head extracted from without comorbidities; absence is not a separate clinical claim."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 8,
+        "description": "Native source span(s) 8:73, 8:74, 8:80, 8:81, 8:82, 8:85, 8:86, 8:87, 8:88, 8:89, 8:137, 8:155, 8:171",
+        "reason": "Author/chapter/section/table scaffolding and full prevalence/causal sentence excluded AFTER all meaningful drugs/alcohol/medications/muscle/trauma/NMS/seizures/activity/infection/heat heads extracted."
+      },
+      {
+        "pdf_page": 9,
+        "description": "Native source span(s) 9:7, 9:166, 9:167, 9:168, 9:169, 9:193, 9:194, 9:195",
+        "reason": "Table number and full diagnostic threshold/assay non-discrimination statements excluded after creatine-kinase, cardiac/brain injury, myoglobin/heme/dipstick/hemoglobin/red-cell heads extracted; no numeric or diagnostic rule authored."
+      },
+      {
+        "pdf_page": 10,
+        "description": "Native source span(s) 10:7, 10:24, 10:25, 10:26, 10:31, 10:32, 10:41, 10:42, 10:43, 10:44, 10:93, 10:98, 10:104, 10:105, 10:106, 10:107, 10:108, 10:110, 10:111, 10:112, 10:114, 10:115, 10:116, 10:118, 10:119, 10:120, 10:122, 10:123, 10:124, 10:126, 10:127, 10:128, 10:129, 10:131, 10:132, 10:133, 10:135, 10:136, 10:137, 10:139, 10:140, 10:141, 10:143, 10:145, 10:148, 10:150, 10:151, 10:153, 10:154, 10:156, 10:157, 10:158, 10:159, 10:160, 10:182, 10:214",
+        "reason": "Generic treatment/disease-navigation, units, table identifiers, score points/age ranges/risks and full treatment/evidence prohibitions excluded AFTER actual electrolyte/solution/rehydration/alkalinization/drug/test/laboratory/demographic/endpoint heads extracted. Numeric chemical name3,4-methylenedioxymethamphetamine retained as real agent, not mistakenly discarded as dose."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch86-90/batch88-90",
+  "limits": "Phase1 only, no cue/prior work. Owned renal8leftbelow606 plus8right and9..10 by main manifest. Inspected all3scoped rasters and native emphasis, adult causes table89-1activities/classes/drugs/organisms and score table89-2lexical heads.0 native annotations; flattened highlights uncertain. Actual span IDs only; explicit coordinated/genus/line-break normalizations. Not every incidental body noun or clinical coverage proof. No scripts, extraction/render/API/Git.",
+  "sparse_provenance": {
+    "inventory_sha256": "864f59dbb9ee083271be873b05a781fc163590d45c3fd06868c7fcc0860b791f",
+    "decisions_sha256": "7539af41b84462fd9a03829bfa05af2c838fa4a956952faa8e10495dd4a60039",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "bfb00b387c0df44e317c0e9a6c72672c575875d58cd6f1192ca6f858d33d0550",
+    "prior_freeze_sha256": "9b958dca2288a3097f4f7f38fcdd4995039f0a848dc7f5b4e0c5da0c9423124a",
+    "source_cache_sha256": {
+      "8": "567cb3157bf387e104f1467b6712451f8d7182c3ad5eb3deb50465c79b98dc31",
+      "9": "800e1c9d9b1e0ae292965469832649ccc1f89ef436f1c686f07bcabd09e222be",
+      "10": "c224dc9964c600c6d39a031be817aa894699faf97874cd3f6de9a5669eb07244"
+    },
+    "exact_unchanged_reuse_rows": 61,
+    "explicit_semantic_rows": 81
+  },
+  "main_integration_review": {
+    "date": "2026-10-26",
+    "source_and_conceptual_review": true,
+    "scope": "Non-author main reviewed all619entries,703keyword mappings and16ownedrenalrasters; actual title/column boundaries, native emphasis/table heads and exclusions, selected prior cue/scope lineages, all authored-repeat notes, bounded findings and repair dependencies. Chapters88/89/90closed after10/3/4changedrows;88two reviewer false alarms withdrawn unchanged. Earlier author initials, first-valid and first-main freezes preserved separately. Editorial source/cue review only, not exhaustive clinical coverage, corpus-wide novelty, medical expert validation, learner recall or image generation. All candidates untested/nonproduction; no paid calls.",
+    "counts": {
+      "selected_terms": 142,
+      "new_candidates": 81,
+      "reused_candidates": 61,
+      "holds": 0
+    },
+    "keyword_items": 152,
+    "materialized_sha256": "b498cfea7217d42472cf4f571ec58b1ac487455b9f3689c0a0a6f204224e5015",
+    "report": "docs/chapter-86-90-sparse-workshop.md"
+  }
+}

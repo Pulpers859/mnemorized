@@ -203,6 +203,85 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-26 - Chapter86-90review and integration complete
+**Done:** Resumed the existing stronger author, independently closed89three-row
+and90four-row repair deltas; integrated88-90after the already closed86-87pair.
+All998terms/1,135keyword mappings/27owned source rasters reviewed in this batch.
+Final40different-bridge occurrences,126variants,831repeats,1hold; not unique
+library growth, recall/render proof or production admission. Stop90; next91
+Urinary Tract Infections and Hematuria has not started cue review.
+**Preserved:** First author/first-valid/first-main freezes and bounded repairs.
+29rows changed versus firstMAIN, including dependencies/provenance. Two88main
+scope false alarms withdrawn unchanged after recovering full per-alias notes.
+All1,129older core holds preserved, Bruit adds one:1,130occurrences/934distinct
+terms. Primary76-entry catalog unchanged; no paid-provider calls or renders.
+**Efficiency:**545.03combined authored bytes/term versus544.19previous batch,
+not token measurement.447of625full semantic rows are unchanged repeats; no
+demonstrated net savings. Future alias-adoption format needs separate testing,
+not an undocumented mid-batch schema change. No new cheaper creative arm/cohort.
+**Evidence:** `docs/chapter-86-90-sparse-workshop.md`; ignored packet
+`Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch86-90/`.
+Final raw89b498cfea7217d42472cf4f571ec58b1ac487455b9f3689c0a0a6f204224e5015;
+90d992f7c34776db2852b1429cc1b7aa1e6e87773d7306361387e844311d80f4ce.
+**Validation/Git:** Backend compile,1,060tests passed/2skipped, including12hold
+tests; four smoke routes HTTP200, server stopped. Hold check and old-core
+preservation check passed. Commit/push follows; final SHA/remote/CI evidence
+belongs in the closing response, not a self-referential commit hash here.
+
+### 2026-10-26 - Resumed frozen86-90workshop
+**Resume:** Same authorMendel01a16f78-cf37-7721-bda2-09a3060080e7running;
+90draft checkpoint now saved (170of192rows at first check). No new cohort,
+schema change, source scan or paid calls. Main remains independent reviewer.
+88closed raw7d90cf1b1e8b22509f9f5321b3c061ef16482cef78e80b2576f1c17c8ee01dfe,
+14new46variants225repeats; two main false alarms withdrawn after full alias
+notes read. Ten changed88rows preserved, one self-corrected before main request.
+89all142rows/152mappings plus57authored-repeat notes reviewed; exactly three
+bounded corrections sent (joy/confetti and trembling-hand variants; existing
+standalone tricycle repeat). FirstMAIN89hash
+0783f7b0fb6f61afd81cfd9e20925fe2e46ce8536a3b09376bad672560637181preserved.
+**Next:** Close89delta, independently review90, integrate88-90, regenerate holds,
+finish report/metrics, run full validation, commit/push/CI. Stop after90.
+Git stillmaintrackingorigin/main; authenticated remote remainsd41cb0f.
+Earlier in-progress entry below is historical, not current completion status.
+
+### 2026-10-25 - Chapter workshop86-90 in progress
+**Scope:** Fixed five chapters86-90, offline only. Source inventories all closed:
+998terms/1,135selected keyword mappings,27owned rasters plus blankGI90checked.
+Two purchased source packets because unchanged sparse tool is single-source.
+GIoffset472andrenaloffset562; source hashes/actual column transitions in
+`docs/chapter-86-90-sparse-workshop.md` and ignored parent packet
+`Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch86-90/`.
+
+**Closed/integrated:**86=9differentbridges21variants116repeats;87=4/31/198,
+no new holds. Main independently reviewed all379cue/scope rows/432mappings;
+9findings changed12rows, including dependencies. Late86consult alias correction
+preserved earlier closure, no full repeat audit. Final raw86hash
+0f6be6f17719f5b8ba606a5828fb86c9365556bdf97c7dce71b48ef73d36f7a9;
+87hash690a1206756ccfb4195d831a761fb9decbf6636ec83980dbc024213b1f1a94b2.
+Canonical pair integrated via reviewed-hash helper, not committed yet.
+
+**Unfinished:**88/89/90inventories285/142/192terms and321/152/230mappings.
+All prepared in `batch88-90`,prior_before88nowincludes86/87. Existing stronger
+authorMendel01a16f78-cf37-7721-bda2-09a3060080e7resumed after usage pause,
+owns only packet author/files and is authoring88then89then90. Main owns independent
+review/integration; no new cohort. Do not reprepare over decisions or restart
+source/old chapters. Stop after90;91not started for cue review. Preserve initials,
+freezes, prior cutoff and bounded repairs. Main read-only exact-prose grouped
+review view retains every term/prior mapping; no semantic auto-approval.
+
+**Validation so far:**12hold tests passed; register current and all1,129older
+core records preserved,933distinct terms. Test ranges extended through90with
+new renal source SHA, so full suite must wait until all five banks integrated.
+No provider/render/API calls, primary76-entry production catalog unchanged.
+All cues untested/nonproduction. No measured token savings; no schema/tool change.
+Separate$6imagebenchmark untouched. Source misread sponge-bolster lead disproven
+and excluded; initial source/inventory repairs retained as effort.
+
+**Git:**main tracksorigin/main atd41cb0fbaseline. Known malformed local Codex
+checkpoint ref blocks fetch; authenticatedls-remote matched baseline. Do not
+delete refs or retry credentials. Finish all five, validate, commit/push and prove
+matching remote/CI before claiming synchronized completion.
+
 ### 2026-10-25 - Sparse chapter workshop81-85 completed
 **Done:** Five-chapter offline source/cue workflow through Acute Appendicitis,
 Diverticulitis, Bowel Obstruction, Hernias and Anorectal Disorders. Existing

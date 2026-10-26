@@ -1,0 +1,4809 @@
+{
+  "schema_version": 1,
+  "chapter_id": "86",
+  "title": "Gastrointestinal Procedures and Devices",
+  "review_date": "2026-10-25",
+  "keyword_screen_date": "2026-10-25",
+  "source": {
+    "file": "Tintin_GI.pdf",
+    "sha256": "f4b4343cf51073b2858b1e255d36f476e174083e54d5886fba8cdc67d391a915",
+    "printed_page_offset": 472,
+    "pdf_pages": [
+      79,
+      80,
+      81,
+      82,
+      83
+    ],
+    "printed_pages": [
+      551,
+      552,
+      553,
+      554,
+      555
+    ],
+    "regions": {
+      "79": [
+        [
+          320,
+          167,
+          612,
+          783
+        ]
+      ],
+      "80": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "81": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "82": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "83": [
+        [
+          0,
+          30,
+          320,
+          783
+        ],
+        [
+          320,
+          30,
+          612,
+          445
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 146,
+    "new_candidates": 106,
+    "reused_candidates": 40,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 116,
+    "meaningful_variant": 21,
+    "new_association": 9
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 116,
+    "new_revision": 21,
+    "new_proposal": 9
+  },
+  "entries": [
+    {
+      "term": "Gastrointestinal Procedures and Devices",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          79,
+          64
+        ],
+        [
+          79,
+          65
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#GI",
+      "cue": "A detached stomach-and-intestine teaching model.",
+      "cue_scope": "Gastrointestinal broad taught anatomy category only; no particular condition.",
+      "reason": "GI anatomy head only; procedures/devices not separately encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected expanded GI head, not new chapter-title yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric aspiration",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          79,
+          67
+        ],
+        [
+          79,
+          68
+        ],
+        [
+          79,
+          83
+        ],
+        [
+          79,
+          84
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Aspiration/inward-pull head only; nasogastric route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected aspiration action, not a new named technique.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Liquid contents removal",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "body",
+      "source_refs": [
+        [
+          79,
+          82
+        ],
+        [
+          79,
+          83
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached syringe drawing blue toy-liquid beads out of a clear cup into its barrel.",
+      "cue_scope": "Liquid/container contents plus removal/inward-draw ordinary action only; no clinical procedure or amount.",
+      "reason": "Cup-to-barrel transfer makes removal visible.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing syringe inward-bead aspiration bridge gains explicit liquid source container;80 ascitic-fluid aspirate also draws toy liquid. Not a new suction family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "GI bleeding",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          79,
+          83
+        ],
+        [
+          79,
+          84
+        ],
+        [
+          79,
+          128
+        ],
+        [
+          79,
+          136
+        ],
+        [
+          82,
+          128
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-49-cue-audit.json#GI bleeding",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-49-cue-audit.json#GI bleeding; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hematemesis",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          129
+        ],
+        [
+          79,
+          131
+        ],
+        [
+          79,
+          137
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-63-cue-audit.json#hematemesis",
+      "cue": "A transparent vial of plain red liquid alone.",
+      "cue_scope": "blood existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-63-cue-audit.json#hematemesis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rapid bleeding",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          130
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Retroperitoneal hemorrhage",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "reason": "Bleeding head only; rapid rate omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad leak root, no speed inferred from a still puddle.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemodynamic instability",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          132
+        ],
+        [
+          79,
+          139
+        ],
+        [
+          79,
+          140
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-70-cue-audit.json#Hemodynamic instability",
+      "cue": "A detached transparent vial containing plain red liquid.",
+      "cue_scope": "Blood/hemo- learned red-vial category only; cell count, blood test, pressure or result unencoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-70-cue-audit.json#Hemodynamic instability; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Slow or mild bleeding",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          133
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Retroperitoneal hemorrhage",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "reason": "Bleeding head only; slow/mild qualifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same actual leak root as Rapid bleeding; no contradictory rate encoding.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coffee grounds",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          134
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-75-cue-audit.json#Coffee-ground appearance",
+      "cue": "A small heap of coffee grounds in a dry teaching dish beside an empty matching dish.",
+      "cue_scope": "Coffee-ground literal texture/name and appearance comparison only; not biological material or diagnostic equivalence.",
+      "reason": "Literal grounds head, no bodily-material identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected coffee-ground host, not novel because plural exact query differs.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Blood-streaked emesis",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          134
+        ],
+        [
+          79,
+          135
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "cue": "A toy bucket with a cartoon splatter token crossed by several thin red-liquid streaks.",
+      "cue_scope": "Emesis/vomit category plus blood/red and streak/line convention only; no source, quantity or diagnosis.",
+      "reason": "Visible streaks encode the extracted modifier, not severity.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing bucket/splatter and blood-color heads recombined with actual linear streak display.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Massive rectal bleeding",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          138
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Rectal bleeding",
+      "cue": "A rectal teaching token beside a toy pipe visibly leaking red liquid.",
+      "cue_scope": "Rectal site plus bleeding/leak learned metaphor only.",
+      "reason": "Rectal/bleeding heads only; massive amount omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual rectal/leak root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lower GI source",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          141
+        ],
+        [
+          79,
+          142
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#GI",
+      "cue": "A detached stomach-and-intestine teaching model.",
+      "cue_scope": "Gastrointestinal broad taught anatomy category only; no particular condition.",
+      "reason": "GI anatomy only; lower and source localization omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad GI model, not a locating test.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bright red blood per rectum",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          142
+        ],
+        [
+          79,
+          143
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Rectal bleeding",
+      "cue": "A rectal teaching token beside a toy pipe visibly leaking red liquid.",
+      "cue_scope": "Rectal site plus bleeding/leak learned metaphor only.",
+      "reason": "Rectal/bleeding heads; brightness and diagnostic pattern omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected rectal leak composition.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Blood urea nitrogen",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          143
+        ],
+        [
+          79,
+          144
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#BUN",
+      "cue": "A familiar bread bun alone, explicitly proposed as a bread-shape variant; basket, pasta and overflow removed.",
+      "cue_scope": "BUN/bun acronym homonym only; bread explicitly shaped into a bun variant of the older bread ingredient, not a literal old bun scene. No analyte definition, diet or chemical-origin claim.",
+      "reason": "BUN expansion uses the known bun homonym, not analyte chemistry.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected abbreviated-name root; no new blood/urea ingredients claimed.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Creatinine",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          144
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-53-cue-audit.json#Creatinine",
+      "cue": "A familiar cargo crate alone, without after-dinner plate.",
+      "cue_scope": "Crate/creat approximate opening-name fragment only; no renal state, laboratory finding or full pronunciation",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-53-cue-audit.json#Creatinine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Small bowel dilation",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          146
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-84-cue-audit.json#Dilated small-bowel loops",
+      "cue": "A coiled intestinal teaching tube visibly expanded beside an otherwise matching slender reference tube.",
+      "cue_scope": "Bowel taught anatomy plus loop/expansion ordinary contrast only; small-bowel subtype and imaging findings omitted.",
+      "reason": "Broad bowel/expansion heads, no imaging interpretation.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected expansion contrast already exists.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Small bowel obstruction",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Small bowel obstruction",
+      "cue": "A coiled intestinal teaching tube with a cork blocking its end.",
+      "cue_scope": "Bowel plus blockage metaphor; small-bowel subtype omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Small bowel obstruction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ileus",
+      "pdf_page": 79,
+      "page": 551,
+      "source_match": "table",
+      "source_refs": [
+        [
+          79,
+          148
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Ileus",
+      "cue": "A toy intestinal conveyor with its motor switched visibly off.",
+      "cue_scope": "Bowel stillness learned category metaphor only; no clinical definition.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Ileus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric tubes",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          11
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube category only; nasogastric route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone tubing, also83 Nasogastric tube broad head.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasoenteric tubes",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          11
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube category only; nasoenteric route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact generic tube host, not subtype discrimination.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epistaxis",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          14
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-63-cue-audit.json#epistaxis",
+      "cue": "A nose teaching model beside a transparent toy spout leaking red liquid.",
+      "cue_scope": "Taught nosebleed/epistaxis category metaphor only; no cause, precise vessel or treatment.",
+      "reason": "Concrete taught nose/bleed category avoids the older epic-book/taxi sound assembly.",
+      "association_status": "new_association",
+      "association_comparison": "63 held epic book plus taxi; actual nose/bleeding category is a different lexical bridge. Red-leak ingredient already exists, not newly invented.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Intracranial placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          17
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Intraluminal procedures",
+      "cue": "A toy hand placing a plain cube into an open display box, with the cube halfway across the box rim.",
+      "cue_scope": "Placement/putting-in ordinary action only; cranial or other anatomical site omitted.",
+      "reason": "Actual putting-in action represents placement without invented site identity.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing inside-container relation changes intact tube/tool to explicit moving hand/cube/box. Not a new inside bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bronchial placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          20
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Intracranial placement",
+      "cue": "A toy hand placing a plain cube into an open display box, with the cube halfway across the box rim.",
+      "cue_scope": "Placement/putting-in ordinary action only; cranial or other anatomical site omitted.",
+      "reason": "Placement head only; bronchial site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local placing action, no new anatomical subtype.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pharyngeal placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          23
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Intracranial placement",
+      "cue": "A toy hand placing a plain cube into an open display box, with the cube halfway across the box rim.",
+      "cue_scope": "Placement/putting-in ordinary action only; cranial or other anatomical site omitted.",
+      "reason": "Placement head only; pharyngeal site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local placing action.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal obstruction",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          26
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#bowel obstruction",
+      "cue": "A plug visibly seated across a pipe mouth.",
+      "cue_scope": "Obstruction ordinary blockage category only; no particular organ/site. Obstruction/blockage only; bowel host absent.",
+      "reason": "Obstruction head only; esophagus omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual broad pipe/plug root, not clinical bowel/esophageal equivalence.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal rupture",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          26
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#Esophageal rupture",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#Esophageal rupture; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bronchial perforation",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          29
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Perforation head only; bronchial site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected through-hole root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alveolar perforation",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          29
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Perforation head only; alveolar site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same panel hole, no new alveolar anatomy.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pneumothorax",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          32
+        ],
+        [
+          82,
+          83
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-7-cue-audit.json#pneumothorax",
+      "cue": "Air balloon outside a lung but inside a transparent chest shell.",
+      "cue_scope": "Thoracic air outside lung",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-7-cue-audit.json#pneumothorax; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Charcoal instillation",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          35
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-4-cue-audit.json#activated charcoal",
+      "cue": "A few familiar charcoal briquettes dropping from a small hopper into a transparent toy tube.",
+      "cue_scope": "Charcoal familiar material plus instillation/introducing-into ordinary action only; no lung, indication or technique.",
+      "reason": "Concrete transfer supplies operation head without clinical instruction.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing charcoal briquette identity retained; activation superhero removed and introducing-into relation added, not new charcoal bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lungs",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          35
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Lungs",
+      "cue": "A standalone lung-shaped study token.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#Lungs; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pleural cavity",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          35
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A thoracic cross-section teaching model with the pleural space distinctly shown between lung surface and chest-wall outline.",
+      "cue_scope": "Taught pleural-space anatomy only; no air, fluid, pressure or disease.",
+      "reason": "Specific learned spatial anatomy, not an arbitrary box labeled pleural.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "7 pneumothorax already lung/chest-space arrangement; anatomical-only cross-section removes air balloon and narrows scope, not a new thoracic-space family.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric rupture",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          38
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#stomach",
+      "cue": "A detached stomach teaching model on a display stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Gastric anatomy head only; rupture omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact standalone stomach, no ruptured state inferred.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Duodenal rupture",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          38
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Duodenum",
+      "cue": "A standalone duodenum teaching-model segment on a display base.",
+      "cue_scope": "Duodenum taught anatomy category only; not a generic hose relabeled as a specific organ. Specific learned duodenal model required; no generic tube relabeling.",
+      "reason": "Duodenal head only; rupture omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected duodenal model, not a new tube subtype.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vocal cord paralysis",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          41
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-69-cue-audit.json#Vocal cord dysfunction",
+      "cue": "A pair of ordinary cords beside a familiar microphone.",
+      "cue_scope": "Vocal/cord literal name family only; no dysfunction or airway technique.",
+      "reason": "Vocal/cord name heads only; paralysis omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected literal cords/microphone, not a paralysis mechanism.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pneumomediastinum",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          44
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#pneumomediastinum",
+      "cue": "A mediastinal-compartment teaching model shown centrally between paired lung outlines on a thoracic display.",
+      "cue_scope": "Taught mediastinal anatomy head only; pneumo/air and disease state omitted.",
+      "reason": "Specific learned compartment model rather than new/middle/stadium assembly.",
+      "association_status": "new_association",
+      "association_comparison": "33 held new toy in middle of stadium; anatomical mediastinum host is a different bridge, not a reselected sound attempt.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Laryngeal injuries",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          47
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Laryngoscopy",
+      "cue": "A detached freestanding larynx teaching model.",
+      "cue_scope": "larynx existing learned head only; other source modifiers omitted.",
+      "reason": "Larynx head only; injury omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone larynx model.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Knotting",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          50
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#cervical lymphadenitis",
+      "cue": "Two toy hands tying the ends of an ordinary rope into a conspicuous overhand knot.",
+      "cue_scope": "Knot/tying ordinary action category only; no tube, obstruction or removal instruction.",
+      "reason": "Actual tying action represents knotting.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing lime/knot composition already has tied-knot host; active rope tying changes depiction, not a newly invented knot ingredient.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric tube insertion",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          55
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; route and insertion omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same generic tube root as Nasogastric tubes.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Absorbent pad",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          58
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-74-cue-audit.json#Nonabsorbable sugars",
+      "cue": "A blue-backed white quilted pad visibly soaking up a small blue-liquid puddle beside a dry matching pad.",
+      "cue_scope": "Pad product category plus absorption/soaking ordinary action only; no brand, clinical use or capacity.",
+      "reason": "Wet/dry and disappearing puddle make absorption concrete.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "74 sugar/sponge nonabsorption already absorption family; absorbent quilted pad and soaking state revise that relationship, not new absorb root.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Chux",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          58
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy character visibly chucking a folded cloth pad into an open bin.",
+      "cue_scope": "Chux/chuck approximate brand-name sound/action only; no brand identification or product-performance claim.",
+      "reason": "Concrete throwing/chucking action is an economical partial sound host.",
+      "association_status": "new_association",
+      "association_comparison": "Different chuck-action name bridge from local absorbent-pad product category, despite shared cloth prop.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Kidney basin",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          61
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#kidney stones",
+      "cue": "A familiar kidney-shaped basin with a deep curved rim, standing alone.",
+      "cue_scope": "Kidney-shaped basin familiar device/form category only; no kidney anatomy, contents or procedure.",
+      "reason": "Actual curved basin object, not kidney model mislabeled equipment.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing kidney/form head changes anatomical model to familiar kidney-shaped basin host, not a new kidney word family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anesthesia",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          64
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-23-cue-audit.json#anesthesia",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Offline learned vocabulary association only; no clinical teaching or unique diagnosis/mode requirement.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-23-cue-audit.json#anesthesia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vasoconstriction",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          64
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#vasoconstriction",
+      "cue": "A detached vessel-shaped toy encircled by a tightening toy belt.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-37-cue-audit.json#vasoconstriction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nebulizer",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          67
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#nebulizer",
+      "cue": "A recognizable detached nebulizer cup and loose tubing.",
+      "cue_scope": "Familiar nebulizer device category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#nebulizer; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasal atomizer",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          67
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Hygiene sprays",
+      "cue": "A familiar small pump atomizer with a short nasal spray tip releasing a fine mist onto a blank display card.",
+      "cue_scope": "Atomizer/spray familiar device category only; nasal route, ingredients and patient use not demonstrated.",
+      "reason": "Recognizable atomizer hardware supplies device head.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "85 already spray-bottle/mist action; pump atomizer changes hardware and display, not a new spray bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Local anesthetic",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          70
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#local anesthetic",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Broad anesthesia category; local qualifier contextual",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-34-cue-audit.json#local anesthetic; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Lidocaine",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          70
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#lidocaine",
+      "cue": "An ordinary container lid balanced on a familiar walking cane.",
+      "cue_scope": "Lidocaine partial learned-name reminder only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#lidocaine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vasoconstrictor",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          73
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#vasoconstrictor",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Broad narrowing category only; not stenosis equivalence Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-50-cue-audit.json#vasoconstrictor; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Oxymetazoline",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          73
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#amoxicillin-clavulanate",
+      "cue": "An ordinary toy ox without code-wheel padlock.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Ox approximate opening-name head only; remainder/class omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected ox name-sound host, not new from a different drug name.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phenylephrine",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          73
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-58-cue-audit.json#phenylephrine",
+      "cue": "A familiar desk fan alone, without clock.",
+      "cue_scope": "Phen/fan approximate opening-name fragment only; no drug effect or equivalence.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-58-cue-audit.json#phenylephrine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Water-soluble lubricant",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          76
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#water-soluble lubricant",
+      "cue": "A water pitcher beside a familiar lubricant squeeze bottle.",
+      "cue_scope": "water-soluble lubricant",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-28-cue-audit.json#water-soluble lubricant; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cup of water with straw",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          79
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#fluids",
+      "cue": "A transparent cup of clear water with a familiar drinking straw, beside an empty matching cup.",
+      "cue_scope": "Cup/water/straw literal objects only; no drinking instruction, contents beyond teaching-water convention or clinical use.",
+      "reason": "Actual familiar equipment group is concrete.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing water-pitcher/fluid category changes to cup/straw reference display; not new water identity.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasogastric Salem sump tube",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          82
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; Salem/sump/type and route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual generic tube root, no unsupported brand/type identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter-tip syringe",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          85
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-68-cue-audit.json#syringe",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "cue_scope": "Same syringe object category only; no quantity, attachment or procedural sequence.",
+      "reason": "Syringe category only; catheter-tip attachment omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual standalone selected syringe, not an attachment variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Suction device",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Suction",
+      "cue": "Vacuum nozzle with loose crumbs visibly gathered at its opening.",
+      "cue_scope": "Suction/vacuum learned everyday action category only; no clinical device or technique.",
+      "reason": "Suction head only, no medical hardware claim.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected nozzle/crumb suction action.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Wall suction",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Suction",
+      "cue": "Vacuum nozzle with loose crumbs visibly gathered at its opening.",
+      "cue_scope": "Suction/vacuum learned everyday action category only; no clinical device or technique.",
+      "reason": "Suction head only; wall installation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same suction root, not new from mounting modifier.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tubing",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          88
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-28-cue-audit.json#tubing; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nasointestinal feeding tube placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          93
+        ],
+        [
+          80,
+          94
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; anatomy/feeding/placement omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact generic tube, no specific placement technique.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          95
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Intracranial placement",
+      "cue": "A toy hand placing a plain cube into an open display box, with the cube halfway across the box rim.",
+      "cue_scope": "Placement/putting-in ordinary action only; cranial or other anatomical site omitted.",
+      "reason": "Placement head only; gastric site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local placing action, not a new gastric association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epigastric auscultation",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          98
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Auscultation of Bowel Sounds",
+      "cue": "A familiar standalone stethoscope teaching prop.",
+      "cue_scope": "Auscultation learned device/action category only. Auscultation head only; bowel site and sound pattern omitted.",
+      "reason": "Auscultation device category only; epigastric site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected stethoscope root, not newly isolated device.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Air insufflation",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          98
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Air",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "reason": "Air/putting-in through inflation metaphor only, no bodily technique.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected connected pump/balloon root, already reviewed as an older air-family variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aspiration",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          101
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-33-cue-audit.json#aspiration; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "GI secretions",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          101
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#GI",
+      "cue": "A detached stomach-and-intestine teaching model.",
+      "cue_scope": "Gastrointestinal broad taught anatomy category only; no particular condition.",
+      "reason": "GI head only; secretion unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad GI model; no specific fluid identity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "pH testing",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          104
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#pH",
+      "cue": "An unused pH-test strip beside an unmarked color comparator.",
+      "cue_scope": "Familiar pH-testing-device category only; no displayed value, chemical rule or specimen result.",
+      "reason": "Actual selected pH strip/comparator already supplies this device head.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "62 pH selected the same strip/comparator depiction; kit/card wording did not introduce a new bridge or meaningful variant. Exact cue/scope adopted.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aspirates",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          104
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Aspiration word-family action only; sample identity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected aspiration root, no new aspirate specimen cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tracheobronchial placement",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          105
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Intracranial placement",
+      "cue": "A toy hand placing a plain cube into an open display box, with the cube halfway across the box rim.",
+      "cue_scope": "Placement/putting-in ordinary action only; cranial or other anatomical site omitted.",
+      "reason": "Placement head only; tracheobronchial anatomy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same putting-in action as other placement rows.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coughing",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          108
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Coughing",
+      "cue": "A familiar cough-drop lozenge teaching prop beside an opened blister strip.",
+      "cue_scope": "Learned cough-drop packaging/category reminder only; not a drug, treatment or visible cough.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-77-cue-audit.json#Coughing; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Choking",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          108
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Choking",
+      "cue": "A plug seated across the mouth of a freestanding transparent pipe.",
+      "cue_scope": "Broad obstruction ingredient",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-77-cue-audit.json#Choking; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inability to speak",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          111
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar microphone beside a large mute symbol, with its sound-wave tokens visibly crossed by the mute bar.",
+      "cue_scope": "Not-speaking/muted-voice ordinary communication metaphor only; no clinical loss of speech, cause or diagnosis.",
+      "reason": "Explicit mute relationship supplies negative speaking head.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "69 vocal/cord microphone and existing sensory-mute convention recombined; not a new microphone or generic mute ingredient.",
+      "change_origin": "new_revision",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Air bubbles",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "table",
+      "source_refs": [
+        [
+          80,
+          114
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-45-cue-audit.json#air bubbles",
+      "cue": "Detached air-bubble study tokens without skin cover or arm.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-45-cue-audit.json#air bubbles; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anoscopy",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          80,
+          169
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Scope head only; ano/device specificity omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual standalone scope root, same as85 Anoscope.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Orogastric lavage",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          80,
+          174
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Irrigation",
+      "cue": "A stomach teaching model displayed as an open toy basin, with a watering can rinsing loose colored beads out into a catch tray.",
+      "cue_scope": "Gastric/stomach anatomy plus lavage/washing broad learned metaphor only; oral route, patient, substance and procedure omitted.",
+      "reason": "Actual rinse-out action gives a limited wash reminder, not an instruction.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing irrigation/watering-can wash family combined with selected stomach model and rinse-out relation.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal balloon tamponade",
+      "pdf_page": 80,
+      "page": 552,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          80,
+          204
+        ],
+        [
+          80,
+          205
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-75-cue-audit.json#Balloon tamponade",
+      "cue": "An inflated toy balloon pressing a soft pad firmly against a toy panel.",
+      "cue_scope": "Balloon literal host plus tamponade/pressing learned ordinary metaphor only; no body site, force or technique.",
+      "reason": "Balloon/pressing heads only; esophageal site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected balloon/pad relation already exists.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sengstaken-Blakemore tube",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          97
+        ],
+        [
+          81,
+          99
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-75-cue-audit.json#Sengstaken-Blakemore tube",
+      "cue": "A Sengstaken-Blakemore training-tube model with paired distal balloons and three clearly separated proximal ports.",
+      "cue_scope": "Taught named-device category only; no port assignment, inflation, placement, force or clinical use.",
+      "reason": "Actual recognizable taught hardware category avoids three loosely linked name props.",
+      "association_status": "new_association",
+      "association_comparison": "75 held singing character/stake/black tube assembly remains historical. This selects an actual learned device host instead, not that same sound attempt.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal balloon inflation",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          86
+        ],
+        [
+          81,
+          87
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Air",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "reason": "Balloon/inflation head only; anatomical site and port use omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected inflation-action host, no clinical procedure.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric aspiration",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          88
+        ],
+        [
+          81,
+          89
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Aspiration head only; gastric site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected inward-pull cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric balloon inflation",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          90
+        ],
+        [
+          81,
+          91
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Air",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "reason": "Inflation head only; gastric site/port omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same inflation root as esophageal label, not second variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal balloon",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          92
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#pacing catheter balloon",
+      "cue": "An ordinary balloon standing alone.",
+      "cue_scope": "Broad balloon component category",
+      "reason": "Balloon head only; esophageal site/device type omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "33 already selected standalone balloon component,29A balloon also familiar party balloon. Tied neck added no substantive depiction change; exact33 cue/scope adopted.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric balloon",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          93
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Esophageal balloon",
+      "cue": "An ordinary balloon standing alone.",
+      "cue_scope": "Broad balloon component category",
+      "reason": "Balloon head only; gastric site/type omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local copy propagated from canonical33 standalone-balloon root; no gastric subtype yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal paracentesis",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          81,
+          29
+        ],
+        [
+          82,
+          66
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-80-cue-audit.json#Ascitic fluid aspirate",
+      "cue": "An abdomen teaching display with a detached toy syringe drawing loose blue-liquid beads out of its transparent cavity.",
+      "cue_scope": "Abdominal anatomy plus paracentesis/aspiration broad learned category metaphor only; no patient, needle location, volume or technique.",
+      "reason": "Actual abdomen and drawing-fluid relationship supply a taught category without a syllable puzzle.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "80 syringe drawing blue liquid with site sound host changes to actual abdomen cavity;33 aspiration action already selected. Not a new suction family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diagnostic paracentesis",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "body",
+      "source_refs": [
+        [
+          81,
+          52
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Abdominal paracentesis",
+      "cue": "An abdomen teaching display with a detached toy syringe drawing loose blue-liquid beads out of its transparent cavity.",
+      "cue_scope": "Abdominal anatomy plus paracentesis/aspiration broad learned category metaphor only; no patient, needle location, volume or technique.",
+      "reason": "Paracentesis category only; diagnostic purpose omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Identical local abdomen/aspiration cue, no extra diagnostic prop.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "US view",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          101
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-45-cue-audit.json#Ultrasound",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Expanded US device head only; result/view details omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected ultrasound root, not generic imaging falsely equivalent to every modality.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Puncture site",
+      "pdf_page": 81,
+      "page": 553,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          81,
+          101
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "A plain thick craft panel with a toy needle just completing one visible small puncture hole.",
+      "cue_scope": "Puncture/piercing ordinary action and site/hole location only; no anatomy or clinical entry point.",
+      "reason": "Actual needle-through-panel action encodes puncture.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing through-hole shape changes to explicit piercing action with small hole; no new opening bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Needle introduction",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          65
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Puncture site",
+      "cue": "A plain thick craft panel with a toy needle just completing one visible small puncture hole.",
+      "cue_scope": "Puncture/piercing ordinary action and site/hole location only; no anatomy or clinical entry point.",
+      "reason": "Needle entering/piercing ordinary action, not a clinical introduction technique.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local needle/panel action, not a second puncture association.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Left lower quadrant",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          65
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Left lower quadrant",
+      "cue": "A square divided into four equal panes, with only the lower-left pane filled with a solid tactile block.",
+      "cue_scope": "Left/lower/quadrant ordinary diagram-position words only, from the viewer's perspective; no patient-side or abdominal anatomy inference.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-82-cue-audit.json#Left lower quadrant; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Right lower quadrant",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          65
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Right lower quadrant",
+      "cue": "A square divided into four equal panes, with only the lower-right pane filled with a solid tactile block.",
+      "cue_scope": "Right/lower/quadrant ordinary diagram-position words only, from the viewer's perspective; no patient-side or abdominal anatomy inference.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-83-cue-audit.json#Right lower quadrant; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transabdominal feeding tubes",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          82,
+          25
+        ],
+        [
+          82,
+          71
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube category only; route and feeding purpose omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected tube root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Leakage from stoma",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          74
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Retroperitoneal hemorrhage",
+      "cue": "A transparent toy pipe leaking clear water through a small side opening into a catch tray.",
+      "cue_scope": "Leakage through opening ordinary relation only; no stoma anatomy, blood or bodily fluid identity.",
+      "reason": "Actual leak relation supplies head with clinical site omitted.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Selected red-pipe-leak bridge revised to clear-water leak and neutral opening; not a new leakage family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Outer bolster position",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          75
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Bolster",
+      "cue": "A familiar long cylindrical bolster pillow with rounded ends, standing alone.",
+      "cue_scope": "Bolster/pillow ordinary shared-word category only; no actual tube-retention hardware or anatomy.",
+      "reason": "Bolster literal head only; outer/position omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local pillow word host, not a placement instruction.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tube malposition",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          75
+        ],
+        [
+          82,
+          76
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Intracranial placement",
+      "cue": "A toy hand puts a loose tube into a square socket while its matching round socket remains visibly empty beside it.",
+      "cue_scope": "Tube and mal/wrong-fit placement ordinary relationship only; no anatomy, clinical placement test or technique.",
+      "reason": "Mismatched socket plus matching reference makes wrong placement visible.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local placement/putting-in bridge gains actual mismatch/reference state; not a new placement family.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tube occlusion",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          77
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#bowel obstruction",
+      "cue": "A plug visibly seated across a pipe mouth.",
+      "cue_scope": "Obstruction ordinary blockage category only; no particular organ/site. Obstruction/blockage only; bowel host absent.",
+      "reason": "Tube/blockage ordinary category only.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact pipe/plug root, occlusion/obstruction broad category not new.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Irrigation",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          78
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Irrigation",
+      "cue": "A standalone garden watering can.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#Irrigation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dislodged tubes",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          80
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Tube malposition",
+      "cue": "A loose tube hangs completely outside its matching empty display socket, beside an otherwise identical tube securely seated in a second socket.",
+      "cue_scope": "Tube plus dislodged/unseated ordinary state contrast only; no anatomy, replacement or clinical action.",
+      "reason": "Seated/unseated comparison makes dislodgment visible.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing local tube/socket placement relationship changes to entirely unseated state, not a new tube bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "X-rays",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          82
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#imaging",
+      "cue": "A plain radiograph-film frame standing alone.",
+      "cue_scope": "Broad imaging category only; not every modality, a result or detection claim.",
+      "reason": "Radiograph/imaging category only; no result or technique.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual selected radiograph host.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Needle aspiration",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          84
+        ],
+        [
+          82,
+          85
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Aspiration head only; needle route/technique omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected inward-pull root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bacteremia",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          86
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#bacteremia",
+      "cue": "A cartoon bacterium holding an ordinary blood-drop study token.",
+      "cue_scope": "Bacterium + blood-word ingredient",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#bacteremia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Septic patient",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          87
+        ],
+        [
+          82,
+          88
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Sepsis",
+      "cue": "A toy septic tank with its underground chamber, inlet pipe and access lid exposed as a cutaway.",
+      "cue_scope": "Seps/septic approximate name-family only; no medical mechanism, organism or diagnostic inference.",
+      "reason": "Septic name head only; no real-person state inference.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected82 septic-tank cutaway;66 earlier tank hold remains historical.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bleeding from tract",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          89
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Retroperitoneal hemorrhage",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "reason": "Bleeding head only; tract anatomy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact broad bleeding root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Local injection",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          90
+        ],
+        [
+          82,
+          91
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Injection",
+      "cue": "An unused toy syringe standing alone without eye model.",
+      "cue_scope": "Injection/syringe learned device category only; no route, substance, patient or technique.",
+      "reason": "Injection device head only; local site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone syringe category, not a new injection action.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bleeding from granuloma buildup",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          92
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Retroperitoneal hemorrhage",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "reason": "Bleeding head only; granuloma/buildup and causation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact leak root, no granules clinically labeled granuloma.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Silver nitrate",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          93
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar silverware spoon and fork displayed together.",
+      "cue_scope": "Silver/silverware ordinary product-name fragment only; actual metal composition, nitrate and pharmacology omitted.",
+      "reason": "Recognizable silverware lexical host avoids claiming a gray object is chemically silver.",
+      "association_status": "new_association",
+      "association_comparison": "Silverware/silver partial-word product bridge proposed, not undefined chemical bottle or effect symbol.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Infection of surrounding skin",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          94
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "reason": "Infection head only; skin site and surrounding relation omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected germ category, no topical specificity.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Consultation",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          95
+        ],
+        [
+          82,
+          100
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-63-cue-audit.json#consult",
+      "cue": "Two toy professional figures examining the same blank folder together across a small desk.",
+      "cue_scope": "Consultation/seeking another view broad social-action category only; no profession, advice content or disposition.",
+      "reason": "Shared deliberation provides a useful taught consultation reminder without demanding unique naming.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "63 consult already uses physician/crew conversation beside a radio console for the consult/social-action category. Two professionals jointly reviewing a folder at a desk revise that existing social relationship and depiction, not a new consult root. The older60 telephone hold remains preserved.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "IV antibiotics",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          95
+        ],
+        [
+          82,
+          101
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "reason": "Anti/ant name head only; IV route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected ant root, despite some other chapters holding generic antibiotic bottles.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Necrotizing fasciitis",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          96
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "reason": "Fascia head only; necrotizing and inflammatory state omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone fascia root;21 condition hold preserved, no newly selected necrosis bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "MRI",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          97
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#MRI",
+      "cue": "A familiar long-bore MRI-scanner teaching miniature.",
+      "cue_scope": "Learned device/acronym category only; no safety or diagnostic claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#MRI; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Surgical debridement",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          97
+        ],
+        [
+          82,
+          98
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#surgical debridement",
+      "cue": "A small broom sweeping loose scraps from a craft table.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#surgical debridement; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peritonitis",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          99
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Peritonitis",
+      "cue": "A familiar pear standing alone.",
+      "cue_scope": "Peri/pear approximate opening sound only; inflammation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Peritonitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fistula",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          100
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#fistula",
+      "cue": "A detached toy hand clenched into a recognizable fist.",
+      "cue_scope": "Fist-/fist ordinary approximate opening-name fragment only; no tract, connection, tissue or pathology.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#fistula; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pulmonary aspiration of feedings",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          102
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Aspiration word/category head only; pulmonary site/feeding and clinical mechanism omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected aspiration reminder, no claim that syringe action depicts pulmonary aspiration physiology.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "J-tube",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          104
+        ],
+        [
+          82,
+          110
+        ],
+        [
+          82,
+          134
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; source J/jejunostomy expansion not visually encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected broad tubing category.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Jejunostomy tube",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table_and_body",
+      "source_refs": [
+        [
+          82,
+          134
+        ],
+        [
+          83,
+          90
+        ],
+        [
+          83,
+          95
+        ],
+        [
+          83,
+          96
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; jejunal anatomy/ostomy route omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same root as J-tube, source expansion not extra novelty.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vomiting",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          105
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#vomiting; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diarrhea",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          105
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#diarrhea",
+      "cue": "A toy toilet beside a rapid-flow arrow.",
+      "cue_scope": "Broad diarrhea vocabulary association only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#diarrhea; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastroesophageal reflux",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          108
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#Gastroesophageal reflux",
+      "cue": "A detached esophageal teaching-model tube alone.",
+      "cue_scope": "Esophageal vocabulary category only; reflux action or condition definition omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#Gastroesophageal reflux; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Intestinal obstruction",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          111
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Intestinal obstruction",
+      "cue": "A coiled intestinal teaching tube with a cork blocking its end.",
+      "cue_scope": "Bowel plus blockage metaphor; small-bowel subtype omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-83-cue-audit.json#Intestinal obstruction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "NPO",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          112
+        ],
+        [
+          82,
+          134
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-84-cue-audit.json#NPO status",
+      "cue": "A toy dinner plate and drinking cup behind a simple stop barrier.",
+      "cue_scope": "Nothing-by-mouth/eating-drinking prohibition learned phrase only; no instruction for a person or duration.",
+      "reason": "Source-expanded NPO phrase, no patient instruction.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected plate/cup/barrier root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric outlet obstruction",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Gastric outlet obstruction",
+      "cue": "A stomach teaching model whose toy exit gate is visibly corked shut.",
+      "cue_scope": "Stomach/outlet plus blockage metaphor only; no mechanism.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Gastric outlet obstruction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric volvulus",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          115
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Volvulus",
+      "cue": "A soft toy tube visibly twisted into a spiral kink.",
+      "cue_scope": "Twisting learned category only; no organ or diagnosis.",
+      "reason": "Volvulus/twist head only; gastric site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected twist root, not older held unbranded car attempt.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Surgical consult",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          116
+        ],
+        [
+          82,
+          118
+        ],
+        [
+          82,
+          120
+        ],
+        [
+          82,
+          122
+        ],
+        [
+          82,
+          124
+        ],
+        [
+          82,
+          132
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Surgical consult",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-77-cue-audit.json#Surgical consult; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gastric perforation",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          117
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Perforation head only; stomach omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact through-hole root, not a new organ lesion.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Esophageal perforation",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          119
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#esophageal perforation",
+      "cue": "A detached esophageal teaching-model tube on a display stand.",
+      "cue_scope": "Taught esophagus anatomy category Esophagus lexical model only; perforation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#esophageal perforation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colonic perforation",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          121
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#perforation",
+      "cue": "An open bore through a thick freestanding panel.",
+      "cue_scope": "Through-opening category",
+      "reason": "Perforation head only; colon omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same selected hole root, no second site variant.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colocutaneous fistula",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          123
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#fistula",
+      "cue": "A detached toy hand clenched into a recognizable fist.",
+      "cue_scope": "Fist-/fist ordinary approximate opening-name fragment only; no tract, connection, tissue or pathology.",
+      "reason": "Fistula name head only; colon/skin connection omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected fist-name root.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Electrolyte abnormalities",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          125
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-51-cue-audit.json#Electrolyte abnormalities",
+      "cue": "Familiar electric light bulbs.",
+      "cue_scope": "Existing electric-light name fragment; abnormalities omitted Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-51-cue-audit.json#Electrolyte abnormalities; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Free water",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          126
+        ],
+        [
+          82,
+          127
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#fluids",
+      "cue": "A clear water pitcher standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Water category only; free composition/physiology omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected standalone water host.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Endoscopy",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          129
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#endoscopy",
+      "cue": "A familiar telescope alone, without transparent box.",
+      "cue_scope": "Scope/telescope learned name head only; endo, site and examination technique omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#endoscopy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bolster buried in abdominal wall",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "table",
+      "source_refs": [
+        [
+          82,
+          131
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Bolster",
+      "cue": "A familiar long cylindrical bolster pillow with rounded ends, standing alone.",
+      "cue_scope": "Bolster/pillow ordinary shared-word category only; no actual tube-retention hardware or anatomy.",
+      "reason": "Bolster head only; burial/wall/state omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local pillow word host, not clinical buried-device depiction.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "G-tube",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          135
+        ],
+        [
+          82,
+          139
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube category only; G/gastrostomy unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same broad tube root, not specific device identification.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bolster",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          136
+        ],
+        [
+          82,
+          140
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar long cylindrical bolster pillow with rounded ends, standing alone.",
+      "cue_scope": "Bolster/pillow ordinary shared-word category only; no actual tube-retention hardware or anatomy.",
+      "reason": "Actual everyday bolster category offers a concrete word host.",
+      "association_status": "new_association",
+      "association_comparison": "85 Pilonidal sinus uses pillow/pilo sound; bolster/pillow literal object name is a different word bridge despite familiar pillow prop.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Stomach",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          137
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#stomach",
+      "cue": "A detached stomach teaching model on a display stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#stomach; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Percutaneous endoscopic gastrostomy tube",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          139
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Tube head only; named route/procedure/device modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact generic tube root, no forced complete-procedure assembly.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mushroom bolster",
+      "pdf_page": 82,
+      "page": 554,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          82,
+          139
+        ],
+        [
+          82,
+          140
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#fungi",
+      "cue": "A familiar mushroom teaching token alone.",
+      "cue_scope": "Fung-/fungal learned category only; not organism species, treatment or infection.",
+      "reason": "Mushroom familiar shape/category only; no actual organism or bolster identity.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual selected plain mushroom host already exists; modifier relation omitted, not a newly isolated mushroom cue.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tube replacement",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          83,
+          22
+        ],
+        [
+          83,
+          58
+        ],
+        [
+          83,
+          59
+        ],
+        [
+          83,
+          60
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "One toy tube is lifted from a display socket while a matching spare tube is lowered into the vacated socket.",
+      "cue_scope": "Tube category plus replacement/exchange ordinary action only; no patient, route, sizing or technique.",
+      "reason": "Old-out/new-in relationship explicitly encodes replacement.",
+      "association_status": "new_association",
+      "association_comparison": "Tubing ingredient already selected; the exchange/replace action is the proposed new lexical bridge, not new tube identity.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mushroom",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          26
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#fungi",
+      "cue": "A familiar mushroom teaching token alone.",
+      "cue_scope": "Fung-/fungal learned category only; not organism species, treatment or infection.",
+      "reason": "Literal mushroom/category reminder for alternate bolster word, not fungus in device.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual plain mushroom root, same as Mushroom bolster.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bumper",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          28
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Carbamazepine",
+      "cue": "A detached familiar toy-car bumper with its broad curved protective bar and mounting brackets.",
+      "cue_scope": "Bumper ordinary vehicle-part word only; no actual medical retention device or tube function.",
+      "reason": "Recognizable bumper provides literal alternate-name host.",
+      "association_status": "new_association",
+      "association_comparison": "Existing car/maze uses car sound; vehicle bumper as a distinct named-part head is a different word bridge, not automatic novelty from new prop alone.",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Immature tract",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          62
+        ],
+        [
+          83,
+          63
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#Intractable",
+      "cue": "A short toy railway track with its final rail section still missing beside a matching completed track.",
+      "cue_scope": "Tract/track approximate name sound plus immature/unfinished ordinary metaphor only; no tissue maturation or time interval.",
+      "reason": "Incomplete-versus-complete reference adds an actual unfinished state to existing track head.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "62 Intractable already selects toy railway track for tract/track fragment. Missing rail/completed reference changes depiction and encoded state, not a new tract sound bridge.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tract closure",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          59
+        ],
+        [
+          83,
+          60
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Immature tract",
+      "cue": "A miniature gate visibly closing across a short toy railway track.",
+      "cue_scope": "Tract/track approximate sound plus closure/gate ordinary action only; no tissue closure or timing.",
+      "reason": "Closing gate supplies actual closure relation.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local unfinished-track variant derives from62 Intractable selected track/tract root; gate closure changes the depicted state again, not a new tract root.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Foley catheter",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          95
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-77-cue-audit.json#Foley balloon catheter technique",
+      "cue": "A detached Foley balloon-catheter training prop with its retention balloon already expanded.",
+      "cue_scope": "Foley balloon-catheter familiar device category only; no placement, inflation or removal instruction.",
+      "reason": "Actual taught Foley device category, not an inflation command.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected Foley model, source caution does not alter cue into procedure advice.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Balloon inflation",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          96
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-83-cue-audit.json#Air",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "reason": "Literal balloon/inflation action only, not Foley use.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected inflation relationship, same as port-label rows.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ostomy complications",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          83,
+          103
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar ostomy-appliance training display with an adhesive wafer and detachable collection pouch, unconnected to a person.",
+      "cue_scope": "Taught ostomy-appliance category only; organ/site, complication, contents and physiology omitted.",
+      "reason": "Actual recognizable taught appliance, not generic bag granted clinical identity.",
+      "association_status": "new_association",
+      "association_comparison": "71 gastrojejunostomy-site entries encode narrowing only; this proposes actual ostomy appliance head, not that omitted site.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colostomies",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          105
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Ostomy complications",
+      "cue": "A familiar ostomy-appliance training display with an adhesive wafer and detachable collection pouch, unconnected to a person.",
+      "cue_scope": "Taught ostomy-appliance category only; organ/site, complication, contents and physiology omitted.",
+      "reason": "Broad ostomy-appliance category only; colon not encoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same local appliance, no colon subtype yield.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ileostomies",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          105
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:86#Ostomy complications",
+      "cue": "A familiar ostomy-appliance training display with an adhesive wafer and detachable collection pouch, unconnected to a person.",
+      "cue_scope": "Taught ostomy-appliance category only; organ/site, complication, contents and physiology omitted.",
+      "reason": "Broad ostomy appliance only; ileal site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Same appliance as colostomy row, no organ-specific distinction.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheterizable ileal pouches",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          106
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Hernias",
+      "cue": "A small ordinary drawstring pouch displayed open at the top, without fabric wall or bulging relation.",
+      "cue_scope": "Pouch/container ordinary word category only; catheterization, ileal anatomy, urinary function and internal reservoir omitted.",
+      "reason": "Literal pouch head only; not external ostomy appliance falsely substituted for internal reservoir.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Existing soft-pouch host in hernia composition narrowed to standalone container depiction; no new pouch ingredient.",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ileal conduits",
+      "pdf_page": 83,
+      "page": 555,
+      "source_match": "body",
+      "source_refs": [
+        [
+          83,
+          106
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#tubing",
+      "cue": "A loose coil of ordinary transparent tubing.",
+      "cue_scope": "tubing",
+      "reason": "Broad conduit/tubular-channel category only; ileal/urinary anatomy and function omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual generic tubular conduit host, not a specific ileal model.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Gastrointestinal Procedures and Devices",
+        "entry_term": "Gastrointestinal Procedures and Devices",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "title",
+        "wording_note": "Adjacent title spans joined."
+      },
+      {
+        "term": "Nasogastric aspiration",
+        "entry_term": "Nasogastric aspiration",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "heading/bold",
+        "wording_note": "Full heading and expanded NG body wording; NG is the source abbreviation, not a separate clinical alias."
+      },
+      {
+        "term": "Removal of liquid contents",
+        "entry_term": "Liquid contents removal",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "bold",
+        "wording_note": "Word-order normalization of split bold lexical operation head; remainder of management statement excluded."
+      },
+      {
+        "term": "GI bleeding",
+        "entry_term": "GI bleeding",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "bold/table",
+        "wording_note": ""
+      },
+      {
+        "term": "GI bleeding",
+        "entry_term": "GI bleeding",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Hematemesis",
+        "entry_term": "Hematemesis",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Rapid bleeding",
+        "entry_term": "Rapid bleeding",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Hemodynamic instability",
+        "entry_term": "Hemodynamic instability",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": "Split repeated hemodynamic/instability wording joined; refractory modifier not promoted to a numerical criterion."
+      },
+      {
+        "term": "Slow or mild bleeding",
+        "entry_term": "Slow or mild bleeding",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Coffee grounds",
+        "entry_term": "Coffee grounds",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Blood-streaked emesis",
+        "entry_term": "Blood-streaked emesis",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": "Adjacent split head joined."
+      },
+      {
+        "term": "Massive rectal bleeding",
+        "entry_term": "Massive rectal bleeding",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Lower GI source",
+        "entry_term": "Lower GI source",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": "Split table phrase joined; the accompanying predictive statement is not an authored clinical claim."
+      },
+      {
+        "term": "Bright red blood per rectum",
+        "entry_term": "Bright red blood per rectum",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": "Adjacent split lexical head; age threshold excluded."
+      },
+      {
+        "term": "Blood urea nitrogen",
+        "entry_term": "Blood urea nitrogen",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": "Split analyte head extracted before ratio/threshold exclusion."
+      },
+      {
+        "term": "Creatinine",
+        "entry_term": "Creatinine",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Small bowel dilation",
+        "entry_term": "Small bowel dilation",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Small bowel obstruction",
+        "entry_term": "Small bowel obstruction",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ileus",
+        "entry_term": "Ileus",
+        "pdf_page": 79,
+        "page": 551,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasogastric",
+        "entry_term": "Nasogastric tubes",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table heading",
+        "wording_note": "Tube noun shared by coordinated Nasogastric and Nasoenteric Tubes; declared grammatical expansion."
+      },
+      {
+        "term": "Nasoenteric Tubes",
+        "entry_term": "Nasoenteric tubes",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epistaxis",
+        "entry_term": "Epistaxis",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Intracranial placement",
+        "entry_term": "Intracranial placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bronchial placement",
+        "entry_term": "Bronchial placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pharyngeal placement",
+        "entry_term": "Pharyngeal placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Esophageal obstruction",
+        "entry_term": "Esophageal obstruction",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "rupture",
+        "entry_term": "Esophageal rupture",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Esophageal is the shared coordinated modifier in obstruction or rupture; declared expansion."
+      },
+      {
+        "term": "Bronchial",
+        "entry_term": "Bronchial perforation",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Perforation shared by Bronchial or alveolar; declared expansion."
+      },
+      {
+        "term": "Alveolar perforation",
+        "entry_term": "Alveolar perforation",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pneumothorax",
+        "entry_term": "Pneumothorax",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pneumothorax",
+        "entry_term": "Pneumothorax",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Charcoal instillation",
+        "entry_term": "Charcoal instillation",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Lungs",
+        "entry_term": "Lungs",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pleural cavity",
+        "entry_term": "Pleural cavity",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastric",
+        "entry_term": "Gastric rupture",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Rupture shared across gastric or duodenal; declared expansion."
+      },
+      {
+        "term": "Duodenal rupture",
+        "entry_term": "Duodenal rupture",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Vocal cord paralysis",
+        "entry_term": "Vocal cord paralysis",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pneumomediastinum",
+        "entry_term": "Pneumomediastinum",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Laryngeal injuries",
+        "entry_term": "Laryngeal injuries",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Knotting",
+        "entry_term": "Knotting",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasogastric tube insertion",
+        "entry_term": "Nasogastric tube insertion",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Absorbent pad",
+        "entry_term": "Absorbent pad",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Chux",
+        "entry_term": "Chux",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Source brand head retained; corrupted trademark glyph not part of head."
+      },
+      {
+        "term": "Kidney basin",
+        "entry_term": "Kidney basin",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Anesthesia",
+        "entry_term": "Anesthesia",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Vasoconstriction",
+        "entry_term": "Vasoconstriction",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nebulizer",
+        "entry_term": "Nebulizer",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasal atomizer",
+        "entry_term": "Nasal atomizer",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Local anesthetic",
+        "entry_term": "Local anesthetic",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Lidocaine",
+        "entry_term": "Lidocaine",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Vasoconstrictor",
+        "entry_term": "Vasoconstrictor",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Oxymetazoline",
+        "entry_term": "Oxymetazoline",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Phenylephrine",
+        "entry_term": "Phenylephrine",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Water-soluble lubricant",
+        "entry_term": "Water-soluble lubricant",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cup of water with straw",
+        "entry_term": "Cup of water with straw",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasogastric Salem sump tube",
+        "entry_term": "Nasogastric Salem sump tube",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Device head before corrupted dash and size designation; size excluded."
+      },
+      {
+        "term": "Catheter-tip syringe",
+        "entry_term": "Catheter-tip syringe",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Suction device",
+        "entry_term": "Suction device",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Wall suction",
+        "entry_term": "Wall suction",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tubing",
+        "entry_term": "Tubing",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nasointestinal Feeding Tube Placement",
+        "entry_term": "Nasointestinal feeding tube placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table heading",
+        "wording_note": "Adjacent split table heading joined."
+      },
+      {
+        "term": "Gastric placement",
+        "entry_term": "Gastric placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epigastric auscultation",
+        "entry_term": "Epigastric auscultation",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "air insufflated",
+        "entry_term": "Air insufflation",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": "Nominalization of table operation; not a quoted noun phrase."
+      },
+      {
+        "term": "Aspiration",
+        "entry_term": "Aspiration",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "GI secretions",
+        "entry_term": "GI secretions",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "pH testing",
+        "entry_term": "pH testing",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Aspirates",
+        "entry_term": "Aspirates",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tracheobronchial placement",
+        "entry_term": "Tracheobronchial placement",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Coughing",
+        "entry_term": "Coughing",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Choking",
+        "entry_term": "Choking",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Inability to speak",
+        "entry_term": "Inability to speak",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Air bubbles",
+        "entry_term": "Air bubbles",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Anoscopy",
+        "entry_term": "Anoscopy",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Orogastric lavage",
+        "entry_term": "Orogastric lavage",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "ESOPHAGEAL BALLOON (SENGSTAKEN-BLAKEMORE) TAMPONADE",
+        "entry_term": "Esophageal balloon tamponade",
+        "pdf_page": 80,
+        "page": 552,
+        "emphasis": "heading",
+        "wording_note": "Parenthetical device eponym removed from operation name; separate device entry below."
+      },
+      {
+        "term": "Sengstaken-Blakemore tube",
+        "entry_term": "Sengstaken-Blakemore tube",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Esophageal balloon inflation",
+        "entry_term": "Esophageal balloon inflation",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure label",
+        "wording_note": "Adjacent label spans joined."
+      },
+      {
+        "term": "Gastric aspiration",
+        "entry_term": "Gastric aspiration",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure label",
+        "wording_note": "Adjacent label spans joined."
+      },
+      {
+        "term": "Gastric balloon inflation",
+        "entry_term": "Gastric balloon inflation",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure label",
+        "wording_note": "Adjacent label spans joined."
+      },
+      {
+        "term": "Esophageal balloon",
+        "entry_term": "Esophageal balloon",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastric balloon",
+        "entry_term": "Gastric balloon",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Abdominal paracentesis",
+        "entry_term": "Abdominal paracentesis",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Abdominal paracentesis",
+        "entry_term": "Abdominal paracentesis",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Diagnostic paracentesis",
+        "entry_term": "Diagnostic paracentesis",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "US view",
+        "entry_term": "US view",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Puncture site",
+        "entry_term": "Puncture site",
+        "pdf_page": 81,
+        "page": 553,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Needle introduction",
+        "entry_term": "Needle introduction",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "left",
+        "entry_term": "Left lower quadrant",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": "Lower quadrant is shared by coordinated left or right; declared expansion, not exact contiguous quote."
+      },
+      {
+        "term": "Right lower quadrant",
+        "entry_term": "Right lower quadrant",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Transabdominal feeding tubes",
+        "entry_term": "Transabdominal feeding tubes",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "heading/table heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Leakage from stoma",
+        "entry_term": "Leakage from stoma",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Outer bolster position",
+        "entry_term": "Outer bolster position",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tube malposition",
+        "entry_term": "Tube malposition",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Adjacent split instruction head joined."
+      },
+      {
+        "term": "Tube occlusion",
+        "entry_term": "Tube occlusion",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Irrigation",
+        "entry_term": "Irrigation",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Dislodged tubes",
+        "entry_term": "Dislodged tubes",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "X-rays",
+        "entry_term": "X-rays",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Needle aspiration",
+        "entry_term": "Needle aspiration",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Adjacent split head joined."
+      },
+      {
+        "term": "Bacteremia",
+        "entry_term": "Bacteremia",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Septic patient",
+        "entry_term": "Septic patient",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Adjacent split head joined."
+      },
+      {
+        "term": "Bleeding from tract",
+        "entry_term": "Bleeding from tract",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Local injection",
+        "entry_term": "Local injection",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Adjacent split head joined."
+      },
+      {
+        "term": "Bleeding from granuloma buildup",
+        "entry_term": "Bleeding from granuloma buildup",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Silver nitrate",
+        "entry_term": "Silver nitrate",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Infection of surrounding skin",
+        "entry_term": "Infection of surrounding skin",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Consultation",
+        "entry_term": "Consultation",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "IV antibiotics",
+        "entry_term": "IV antibiotics",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Necrotizing fasciitis",
+        "entry_term": "Necrotizing fasciitis",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "MRI",
+        "entry_term": "MRI",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Surgical debridement",
+        "entry_term": "Surgical debridement",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Split head joined."
+      },
+      {
+        "term": "Peritonitis",
+        "entry_term": "Peritonitis",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Fistula",
+        "entry_term": "Fistula",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pulmonary aspiration of feedings",
+        "entry_term": "Pulmonary aspiration of feedings",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "J-tube",
+        "entry_term": "J-tube",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Jejunostomy tube",
+        "entry_term": "Jejunostomy tube",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table abbreviation expansion",
+        "wording_note": ""
+      },
+      {
+        "term": "jejunostomy",
+        "entry_term": "Jejunostomy tube",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "body/bold",
+        "wording_note": "Tube/catheter source wording in caution maps to actual jejunostomy device head; catheter synonym declared, not a new disease alias."
+      },
+      {
+        "term": "Vomiting",
+        "entry_term": "Vomiting",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Diarrhea",
+        "entry_term": "Diarrhea",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastroesophageal reflux",
+        "entry_term": "Gastroesophageal reflux",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Intestinal obstruction",
+        "entry_term": "Intestinal obstruction",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "NPO",
+        "entry_term": "NPO",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Source explicitly expands NPO as nothing by mouth; no care instruction authored."
+      },
+      {
+        "term": "Gastric outlet obstruction",
+        "entry_term": "Gastric outlet obstruction",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastric volvulus",
+        "entry_term": "Gastric volvulus",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Surgical consult",
+        "entry_term": "Surgical consult",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gastric perforation",
+        "entry_term": "Gastric perforation",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Esophageal perforation",
+        "entry_term": "Esophageal perforation",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Colonic perforation",
+        "entry_term": "Colonic perforation",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Colocutaneous fistula",
+        "entry_term": "Colocutaneous fistula",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Electrolyte abnormalities",
+        "entry_term": "Electrolyte abnormalities",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Free water",
+        "entry_term": "Free water",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": "Split head joined; feeding modification instructions excluded."
+      },
+      {
+        "term": "Endoscopy",
+        "entry_term": "Endoscopy",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bolster buried in abdominal wall",
+        "entry_term": "Bolster buried in abdominal wall",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "G-tube",
+        "entry_term": "G-tube",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure label/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Bolster",
+        "entry_term": "Bolster",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure label/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Stomach",
+        "entry_term": "Stomach",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure label",
+        "wording_note": ""
+      },
+      {
+        "term": "Percutaneous endoscopic gastrostomy tube",
+        "entry_term": "Percutaneous endoscopic gastrostomy tube",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Mushroom bolster",
+        "entry_term": "Mushroom bolster",
+        "pdf_page": 82,
+        "page": 554,
+        "emphasis": "figure caption",
+        "wording_note": "Adjacent split head joined."
+      },
+      {
+        "term": "Tube replacement",
+        "entry_term": "Tube replacement",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "heading/bold",
+        "wording_note": "Heading names operation inside bold rapid-replacement caution; timing not retained as term."
+      },
+      {
+        "term": "Mushroom",
+        "entry_term": "Mushroom",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "italic",
+        "wording_note": "Source alternate bolster name, not a fungal organism claim."
+      },
+      {
+        "term": "Bumper",
+        "entry_term": "Bumper",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "italic",
+        "wording_note": "Source alternate bolster name."
+      },
+      {
+        "term": "Immature tract",
+        "entry_term": "Immature tract",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "bold",
+        "wording_note": "Meaningful lexical head extracted before numeric interval and prohibition exclusion."
+      },
+      {
+        "term": "closure of the tract",
+        "entry_term": "Tract closure",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "bold",
+        "wording_note": "Nominal word-order normalization of actual split bold head."
+      },
+      {
+        "term": "Foley catheter",
+        "entry_term": "Foley catheter",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "bold",
+        "wording_note": ""
+      },
+      {
+        "term": "balloon should never be inflated",
+        "entry_term": "Balloon inflation",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "bold",
+        "wording_note": "Extracted operation head, nominalized without retaining prohibition as term; not clinical instruction."
+      },
+      {
+        "term": "Ostomy complications",
+        "entry_term": "Ostomy complications",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Colostomies",
+        "entry_term": "Colostomies",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "section category list",
+        "wording_note": ""
+      },
+      {
+        "term": "Ileostomies",
+        "entry_term": "Ileostomies",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "section category list",
+        "wording_note": ""
+      },
+      {
+        "term": "Catheterizable ileal pouches",
+        "entry_term": "Catheterizable ileal pouches",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "section category list",
+        "wording_note": ""
+      },
+      {
+        "term": "Ileal conduits",
+        "entry_term": "Ileal conduits",
+        "pdf_page": 83,
+        "page": 555,
+        "emphasis": "section category list",
+        "wording_note": ""
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 79,
+        "description": "Native source span(s) 79:66, 79:118, 79:119, 79:120, 79:124, 79:125, 79:126, 79:127",
+        "reason": "Author/chapter/table navigation and patient-selection scaffolding; nasogastric aspiration and actual clinical table heads extracted separately."
+      },
+      {
+        "pdf_page": 79,
+        "description": "Native source span(s) 79:82, 79:83, 79:84, 79:143, 79:144",
+        "reason": "Management clause, age and laboratory ratio/threshold not vocabulary entries after liquid-removal, aspiration, GI bleeding, rectal blood and analyte heads extracted."
+      },
+      {
+        "pdf_page": 80,
+        "description": "Native source span(s) 80:7, 80:51, 80:89, 80:93, 80:94, 80:104, 80:114",
+        "reason": "Table numbers and placement-technique assertions/thresholds excluded; device, auscultation, aspiration, pH, air-bubble and symptom heads extracted."
+      },
+      {
+        "pdf_page": 81,
+        "description": "Native source span(s) 81:85, 81:94, 81:95, 81:96, 81:98, 81:100, 81:102, 81:103",
+        "reason": "Panel letters, arrows and figure identifiers, not lexical anatomy/device heads."
+      },
+      {
+        "pdf_page": 82,
+        "description": "Native source span(s) 82:64, 82:72, 82:73, 82:138",
+        "reason": "Figure identifiers and generic column scaffolding, not lexical anatomy/device heads."
+      },
+      {
+        "pdf_page": 82,
+        "description": "Native source span(s) 82:75, 82:78, 82:79, 82:81, 82:84, 82:87, 82:90, 82:93, 82:95, 82:97, 82:100, 82:103, 82:106, 82:109, 82:112, 82:114, 82:126, 82:129",
+        "reason": "Full treatment commands/feed-strength or rate instructions excluded AFTER bolster/malposition, irrigation, imaging/aspiration, septic patient, injection, silver nitrate, consultation/antibiotics, MRI/debridement, fistula, J-tube/NPO, water and endoscopy heads extracted; no dosing/technique claims authored."
+      },
+      {
+        "pdf_page": 83,
+        "description": "Native source span(s) 83:58, 83:59, 83:60, 83:62, 83:63, 83:95, 83:96, 83:131",
+        "reason": "Timing/prohibitions and references navigation excluded after replacement, tract closure/immaturity, Foley/jejunostomy and balloon-inflation heads extracted."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-25/batch86-90/batch86-87",
+  "limits": "Phase1 lexical inventory only, no cues or prior search. Main manifest owns exact mixed columns GI79right below167 through83left plus83right above445; GI90 excluded. Inspected all five cached rasters, native fonts, table86-1..5 and figure86-1..4 labels/captions. Native annotation arrays0; flattened highlights uncertain. Joins, nominalizations and coordinated expansions declared; source metadata stays code-owned. Selected meaningful section/device lists, not every incidental body noun, numeric instruction or comprehensive clinical coverage. No source extraction/render/API/Git or script writes.",
+  "sparse_provenance": {
+    "inventory_sha256": "bf9363895c019f31b279c155e91a61b9d192d33f4258495f539a53150f038f44",
+    "decisions_sha256": "242dcada2356720e14d121a7d65fefc7a8442e99af02a7fb4771104ea754332e",
+    "tool_sha256": "3cb5cde950afc3291405865a48764d1b4a32cfb60007a6f416d192dbbaab86da",
+    "manifest_sha256": "1a7a9bb450cc5ef174a458cb8fbf84d834714f7acbe66c1d4843667fda6f1f93",
+    "prior_freeze_sha256": "aece9b686ba6cff8c22577f499f3f00c8b038b09808e2fbf87a3d8c7211eeda8",
+    "source_cache_sha256": {
+      "79": "cc67c003c98505ac97842ecc3cb825801f2a656d257c7e7b4efadb9ba11b05b4",
+      "80": "b031e99d6e58e71fe1d547698b06fab98e25fd6e91ab1453e9a8affa3aa9e932",
+      "81": "259a414330d176ed273ca26a0f318df0ec6599b8b04280b42639c3892d5ee31f",
+      "82": "208f082ce18b5f4f82725d4d9b526c6a18e74aab2a9a9c6dbdcae72f28200c7c",
+      "83": "9fce4dd0ef49080475f9e6c128e133fabdb570bf31a3922b24651f90de03caa2"
+    },
+    "exact_unchanged_reuse_rows": 40,
+    "explicit_semantic_rows": 106
+  },
+  "main_integration_review": {
+    "date": "2026-10-25",
+    "source_and_conceptual_review": true,
+    "scope": "Main non-author independently reviewed all379cue/scope mappings and432selected keyword mappings against11owned GIrasters/native emphasis, actual mixed-column titles, tables and captions. Nine findings/twelvechangedrows closed with bounded prior and dependent-delta checks. Read-only exact-prose grouping retained every term/prior mapping. Late consult alias miss and prior closure preserved, no full re-audit. Selected lexical review only, not exhaustive vocabulary/clinical/pronunciation/recall/render validation; all untested/nonproduction.",
+    "counts": {
+      "selected_terms": 146,
+      "new_candidates": 106,
+      "reused_candidates": 40,
+      "holds": 0
+    },
+    "keyword_items": 150,
+    "materialized_sha256": "0f6be6f17719f5b8ba606a5828fb86c9365556bdf97c7dce71b48ef73d36f7a9",
+    "report": "docs/chapter-86-90-sparse-workshop.md"
+  }
+}

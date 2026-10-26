@@ -531,3 +531,26 @@ Association occurrences, not unique growth or empirical validation. Earlier hold
 | 85 | [Anorectal Disorders](chapter-85-cue-audit.md) | 277 | 34 | 46 | 197 | 0 | 348 |
 
 Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
+
+## Chapters 86-87: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-86-90-sparse-workshop.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 86 | [Gastrointestinal Procedures and Devices](chapter-86-cue-audit.md) | 146 | 9 | 21 | 116 | 0 | 150 |
+| 87 | [Complications of General Surgical Procedures](chapter-87-cue-audit.md) | 233 | 4 | 31 | 198 | 0 | 282 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
+
+## Chapters 88-90: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-86-90-sparse-workshop.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 88 | [Acute Kidney Injury](chapter-88-cue-audit.md) | 285 | 14 | 46 | 225 | 0 | 321 |
+| 89 | [Rhabdomyolysis](chapter-89-cue-audit.md) | 142 | 7 | 16 | 119 | 0 | 152 |
+| 90 | [End-Stage Renal Disease](chapter-90-cue-audit.md) | 192 | 6 | 12 | 173 | 1 | 230 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
