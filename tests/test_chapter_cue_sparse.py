@@ -72,6 +72,110 @@ def test_explicit_unchanged_reuse_inherits_only_reviewed_cue_and_scope(packet):
     assert "source_locations" not in e  # Full source text stays in the ignored packet.
 
 
+def alias_choice():
+    return {"term": "Head", "prior": "docs/chapter-1-cue-audit.json#Head",
+            "reason": "Only the explicit head category; other target modifiers omitted.",
+            "association_comparison": "Author selected the unchanged prior bridge and depiction."}
+
+
+def test_alias_adoption_copies_frozen_content_and_keeps_authored_scope_notes(packet):
+    root, p = packet
+    inventory = read(p/"author/inventory2.json")
+    inventory["terms"][0]["term"] = "Head category alias"
+    write(p/"author/inventory2.json", inventory)
+    (p/"author/decisions2.json").unlink()
+    prepare(p, "2", root)
+    row = {**alias_choice(), "term": "Head category alias"}
+    write(p/"author/decisions2.json", {"chapter_id": "2", "inventory_sha256": digest(p/"author/inventory2.json"),
+                                    "reuse": [], "aliases": [row], "changes": []})
+    bank = build(p, "2", root)
+    e = bank["entries"][0]
+    assert e["cue"] == "A literal head model." and e["cue_scope"] == "Head only."
+    assert e["reason"] == row["reason"] and e["association_comparison"] == row["association_comparison"]
+    assert e["association_status"] == "unchanged_repeat" and e["change_origin"] == "existing_candidate_recount"
+    assert bank["sparse_provenance"]["explicit_alias_adoption_rows"] == 1
+    assert bank["counts"]["reused_candidates"] == 1
+
+
+@pytest.mark.parametrize("update", [{"cue": "Override"}, {"cue_scope": "Override"},
+                                  {"association_status": "new_association"}, {"reason": ""},
+                                  {"association_comparison": ""}, {"prior": "local:2#Head"},
+                                  {"prior": "docs/chapter-1-cue-audit.json#Held"},
+                                  {"prior": "../outside.json#Head"}])
+def test_alias_rejects_overrides_unselected_and_unexplained_adoptions(packet, update):
+    root, p = packet
+    choices(p, lambda d: d.update(reuse=[], aliases=[{**alias_choice(), **update}]))
+    with pytest.raises(ValueError):
+        build(p, "2", root)
+
+
+def test_alias_cannot_duplicate_reuse_or_bypass_frozen_prior(packet):
+    root, p = packet
+    choices(p, lambda d: d.update(aliases=[alias_choice()]))
+    with pytest.raises(ValueError, match="Duplicate"):
+        build(p, "2", root)
+    choices(p, lambda d: d.update(reuse=[]))
+    prior = root/"docs/chapter-1-cue-audit.json"
+    original = read(prior)
+    original["entries"][0]["cue"] = "Changed content."
+    write(prior, original)
+    with pytest.raises(ValueError, match="Changed/invalid prior"):
+        build(p, "2", root)
+
+
+@pytest.mark.parametrize("value", [{}, "", None, False, 0])
+def test_alias_collection_must_be_an_array(packet, value):
+    root, p = packet
+    choices(p, lambda d: d.update(aliases=value))
+    with pytest.raises(ValueError, match="must be an array"):
+        build(p, "2", root)
+
+
+@pytest.mark.parametrize("scope", [None, "", " "])
+def test_alias_requires_real_existing_scope(packet, scope):
+    root, p = packet
+    prior = root/"docs/chapter-1-cue-audit.json"
+    data = read(prior)
+    data["entries"][0]["cue_scope"] = scope
+    write(prior, data)
+    freeze = read(p/"prior-freeze.json")
+    freeze["docs/chapter-1-cue-audit.json"] = digest(prior)
+    write(p/"prior-freeze.json", freeze)
+    choices(p, lambda d: d.update(reuse=[], aliases=[alias_choice()]))
+    with pytest.raises(ValueError, match="lacks inheritable"):
+        build(p, "2", root)
+
+
+@pytest.mark.parametrize("update", [{}, {"prior": "docs/chapter-1-cue-audit.json#Held"},
+                                  {"cue": "Override"}, {"reason": ""}])
+def test_cross_chapter_alias_target_uses_the_same_validation(packet, update):
+    root, p = packet
+    manifest = read(p/"manifest.json")
+    manifest["chapters"]["3"] = manifest["chapters"]["2"]
+    write(p/"manifest.json", manifest)
+    write(p/"materialized/inventory2.json", materialize_inventory(p, "2", root))
+    write(p/"author/decisions3.json", {"reuse": [], "aliases": [{**alias_choice(), "term": "Root", **update}], "changes": []})
+    choices(p, lambda d: d.update(reuse=[], changes=[{**explicit(), "prior": "local:3#Root"}]))
+    if update:
+        with pytest.raises(ValueError):
+            build(p, "2", root)
+    else:
+        assert build(p, "2", root)["entries"][0]["prior"] == "local:3#Root"
+
+
+@pytest.mark.parametrize("value", [{}, "", None, False, 0])
+def test_cross_chapter_alias_collection_must_be_an_array(packet, value):
+    root, p = packet
+    manifest = read(p/"manifest.json")
+    manifest["chapters"]["3"] = manifest["chapters"]["2"]
+    write(p/"manifest.json", manifest)
+    write(p/"materialized/inventory2.json", materialize_inventory(p, "2", root))
+    write(p/"author/decisions3.json", {"reuse": [], "aliases": value, "changes": []})
+    choices(p, lambda d: d.update(reuse=[], changes=[{**explicit(), "prior": "local:3#Root"}]))
+    with pytest.raises(ValueError, match="must be an array"):
+        build(p, "2", root)
+
+
 @pytest.mark.parametrize("field,value", [("at", [[1, 1]]), ("at", [[1, -1]]), ("at", [[1, True]])])
 def test_invalid_or_foreign_source_pointers_rejected(packet, field, value):
     root, p = packet

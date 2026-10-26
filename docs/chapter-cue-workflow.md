@@ -76,6 +76,20 @@ Author decisions declare the exact inventory SHA and cover every term once:
 - `changes`: complete semantic decisions for new/modified/aliased cues, scope
   changes, variants, local repeats and holds. Author owns cue/attempt, encoded
   scope, reason and reasoned association comparison. These are not auto-filled.
+- Optional `aliases`: explicit canonical-prior adoptions with exactly `term`,
+  `prior`, `reason` and `association_comparison`. The stronger author must read
+  the actual selected prior cue/scope and explain the target's encoded head and
+  omitted modifiers in the reason. Code copies that frozen cue/scope verbatim;
+  it records unchanged repeat/existing-candidate recount, never new yield.
+  It accepts no cue, scope, status or provenance overrides, no held/restricted
+  prior, no missing legacy scope and no local reference. Use a FULL `changes`
+  row for actual variants, scope revisions, legacy scope repair, local repeats
+  or reconsidered holds. The prior-file hash is bound by `prior-freeze.json`.
+  An author-selected alias is not a mechanically inferred clinical synonym;
+  independent review must read its per-target notes, not just grouped cue prose.
+  Optional alias rows are counted separately in sparse provenance. Older packets
+  without this field retain their existing schema behavior. This format is a
+  new91-95trial, not a retroactive rewrite or measured token-saving claim.
 - `resolved_holds`: explicit local first-draft hold resolutions only; never erase
   another chapter's history just because this chapter selects the term.
 

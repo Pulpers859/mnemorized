@@ -153,7 +153,8 @@ def build(packet, chapter, root=ROOT):
     inventory = materialize_inventory(packet, chapter, root)
     require(inventory == read(packet/f"materialized/inventory{chapter}.json"), "Inventory/source evidence changed after freeze")
     choices = read(packet/f"author/decisions{chapter}.json")
-    require(set(choices) <= {"chapter_id", "inventory_sha256", "reuse", "changes", "resolved_holds"}, "Unknown decision field")
+    require(set(choices) <= {"chapter_id", "inventory_sha256", "reuse", "aliases", "changes", "resolved_holds"}, "Unknown decision field")
+    require(isinstance(choices.get("aliases", []), list), "Aliases must be an array")
     require(str(choices["chapter_id"]) == chapter and choices["inventory_sha256"] == inventory["input_sha256"], "Wrong decision inventory freeze")
     frozen = read(packet/"prior-freeze.json")
 
@@ -184,6 +185,26 @@ def build(packet, chapter, root=ROOT):
             "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
             "association_status": "unchanged_repeat", "change_origin": "existing_candidate_recount",
             "association_comparison": f"Same bridge, depiction and encoded scope as {reference}; explicitly reviewed unchanged reuse, not new creative yield."}
+    def alias_decision(row):
+        # Copy only frozen selected content, never an inferred alias match.
+        require(isinstance(row, dict) and set(row) == {"term", "prior", "reason", "association_comparison"},
+                "Alias requires explicit term, prior, reason and comparison only")
+        name, reference = row["term"], row["prior"]
+        require(isinstance(name, str) and name.strip(), "Blank alias decision")
+        require(isinstance(reference, str) and reference.startswith("docs/") and "#" in reference,
+                "Alias requires frozen canonical prior")
+        for field in ("reason", "association_comparison"):
+            require(isinstance(row[field], str) and row[field].strip(), f"Missing alias {field}")
+        record = prior(reference)
+        require(record.get("cue") and isinstance(record.get("cue_scope"), str) and record["cue_scope"].strip(),
+                "Alias prior lacks inheritable cue/scope")
+        return {**row, "decision": "reuse_candidate", "cue": record["cue"], "cue_scope": record["cue_scope"],
+            "association_status": "unchanged_repeat", "change_origin": "existing_candidate_recount"}
+
+    for row in choices.get("aliases", []):
+        item = alias_decision(row)
+        require(item["term"] not in decisions, "Duplicate alias decision")
+        decisions[item["term"]] = item
     for item in choices["changes"]:
         require(not set(item)-CHOICE_FIELDS, "Unknown semantic field/source override")
         name = item["term"]
@@ -213,7 +234,9 @@ def build(packet, chapter, root=ROOT):
         require(node not in trail, "Circular local prior")
         if target_chapter not in local_maps:
             other = read(packet/f"author/decisions{target_chapter}.json")
-            records = [{"term": row[0], "decision": "reuse_candidate", "prior": row[1]} for row in other["reuse"]]+other["changes"]
+            require(isinstance(other.get("aliases", []), list), "Aliases must be an array")
+            records = ([{"term": row[0], "decision": "reuse_candidate", "prior": row[1]} for row in other["reuse"]]
+                       + [alias_decision(row) for row in other.get("aliases", [])] + other["changes"])
             require(len(records) == len({e["term"].casefold() for e in records}), "Duplicate local source decisions")
             local_maps[target_chapter] = {e["term"].casefold(): e for e in records}
         target = local_maps[target_chapter].get(name.casefold())
@@ -265,6 +288,8 @@ def build(packet, chapter, root=ROOT):
                               "tool_sha256": digest(Path(__file__)), "manifest_sha256": inventory["manifest_sha256"],
                               "prior_freeze_sha256": digest(packet/"prior-freeze.json"),
                               "source_cache_sha256": inventory["source_cache_sha256"], "exact_unchanged_reuse_rows": len(choices["reuse"]), "explicit_semantic_rows": len(choices["changes"])}}
+    if "aliases" in choices:
+        bank["sparse_provenance"]["explicit_alias_adoption_rows"] = len(choices["aliases"])
     return bank
 
 

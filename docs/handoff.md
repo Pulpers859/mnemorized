@@ -203,6 +203,34 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-26 - Chapter91-95alias trial started
+**Scope:** Fixed five chapters91-95, purchased renalPDF16-44,offset562; main
+viewed all29owned rasters and actual title/column transitions. Source SHA unchanged.
+Same authorMendel01a16f78-cf37-7721-bda2-09a3060080e7resumed, author/only;
+phase1inventory91draft saved, all inventory closure/creative decisions pending.
+Packet `Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-26/batch91-95/`;
+manifest and source cache ready. Main source review/exact preparation before
+author phase2; do not overwrite a saved freeze or skip unfinished chapters.
+**Efficiency:** Before authoring, optional canonical `aliases` adoption added to
+generic sparse tool and documented. Explicit selected prior and target-specific
+reason/comparison; code copies frozen cue/scope unchanged. No inferred synonym,
+scope override, local alias, unselected prior or missing legacy scope adoption.
+Independent reviewerMeitner01a17975-5241-72a3-b460-e384fae6497bclosed one array-
+type finding after repair;62focused tests passed, including cross-chapter guards.
+Tool frozen c2d60c2ee25db457c92ce4a87b362f29f7a1609955936f1f76b2618f8a47ea8c.
+Tool-only full validation1,087passed/2skipped,compile and four routes HTTP200.
+91source audit closed three bounded inventory repairs,304terms370mappings,
+prepared againstprior_before91; correctedinventorySHA
+67f3e2a8ee64c0942d48dbad9e0ee00460c1703b4f7cc151ff42318a9eccc440.
+Reviewer closed; main remains non-author source/cue reviewer. No measured savings
+claim, no cheaper creative-author trial, no paid API calls/renders. All cues
+untested/nonproduction; previous holds remain. Stop95,96Abnormal Uterine Bleeding
+not started (title checked in purchased TOC). Report in
+`docs/chapter-91-95-sparse-workshop.md` remains explicitly in progress.
+**Git:** Baseline cbac3f2, cleanmaintrackingorigin/main before edits. Authenticated
+remote SHA matched; fetch still blocked by known malformed local Codex checkpoint
+ref, not auth. No deletion/retry loop. Full validation/commit/push still pending.
+
 ### 2026-10-26 - Chapter86-90review and integration complete
 **Done:** Resumed the existing stronger author, independently closed89three-row
 and90four-row repair deltas; integrated88-90after the already closed86-87pair.
