@@ -9,7 +9,42 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("chapter", [*range(26, 29), "29A", "29B", *range(30, 91)])
+def test_chapters_91_95_local_repeat_dependencies_remain_selected_and_exact():
+    banks = {
+        str(chapter): json.loads((ROOT / f"docs/chapter-{chapter}-cue-audit.json").read_text())
+        for chapter in range(91, 96)
+    }
+    entries = {
+        chapter: {entry["term"].casefold(): entry for entry in bank["entries"]}
+        for chapter, bank in banks.items()
+    }
+
+    def follow(chapter, term, trail):
+        node = chapter, term.casefold()
+        assert node not in trail, f"Local cue cycle: {node}"
+        entry = entries[chapter][node[1]]
+        assert entry["decision"] in {"retain_candidate", "reuse_candidate"}
+        reference = entry.get("prior", "")
+        if reference.startswith("local:"):
+            target_chapter, target_term = reference.removeprefix("local:").split("#", 1)
+            assert target_chapter in entries
+            follow(target_chapter, target_term, trail | {node})
+
+    for chapter, bank in banks.items():
+        for entry in bank["entries"]:
+            reference = entry.get("prior", "")
+            if not reference.startswith("local:"):
+                continue
+            target_chapter, target_term = reference.removeprefix("local:").split("#", 1)
+            assert target_chapter in entries
+            target = entries[target_chapter][target_term.casefold()]
+            follow(target_chapter, target_term, {(chapter, entry["term"].casefold())})
+            if entry["association_status"] == "unchanged_repeat":
+                assert entry["cue"] == target["cue"], reference
+                assert entry["cue_scope"] == target["cue_scope"], reference
+
+
+@pytest.mark.parametrize("chapter", [*range(26, 29), "29A", "29B", *range(30, 96)])
 def test_new_batch_reuses_resolve_to_retained_entries(chapter):
     bank_path = ROOT / f"docs/chapter-{chapter}-cue-audit.json"
     bank = json.loads(bank_path.read_text())
@@ -41,7 +76,7 @@ def test_new_batch_reuses_resolve_to_retained_entries(chapter):
             assert targets[0]["decision"] == "retain_candidate"
 
 
-@pytest.mark.parametrize("chapter", [*range(20, 29), "29A", "29B", *range(30, 91)])
+@pytest.mark.parametrize("chapter", [*range(20, 29), "29A", "29B", *range(30, 96)])
 def test_emphasized_keywords_have_explicit_cue_attempts(chapter):
     bank = json.loads((ROOT / f"docs/chapter-{chapter}-cue-audit.json").read_text())
     screen = bank["keyword_screen"]

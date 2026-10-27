@@ -1,0 +1,5424 @@
+{
+  "schema_version": 1,
+  "chapter_id": "92",
+  "title": "Acute Urinary Retention",
+  "review_date": "2026-10-26",
+  "keyword_screen_date": "2026-10-26",
+  "source": {
+    "file": "Tintin_Renal_GU.pdf",
+    "sha256": "6e47e3801ced29aa53ad7be1024c0fd1f3ce20834078c1d6cc628db2885b7e67",
+    "printed_page_offset": 562,
+    "pdf_pages": [
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "printed_pages": [
+      586,
+      587,
+      588,
+      589,
+      590
+    ],
+    "regions": {
+      "24": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "25": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "26": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "27": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "28": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 164,
+    "new_candidates": 29,
+    "reused_candidates": 135,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 149,
+    "meaningful_variant": 8,
+    "new_association": 7
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 149,
+    "new_revision": 8,
+    "new_proposal": 7
+  },
+  "entries": [
+    {
+      "term": "Acute urinary retention",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          24,
+          126
+        ],
+        [
+          24,
+          50
+        ],
+        [
+          25,
+          69
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Acute urinary retention",
+      "cue": "A hand keeping a plain token in its closed grasp.",
+      "cue_scope": "Retention ordinary keeping/holding action only; not urine accumulation or treatment. Retention ordinary holding only; urinary/acute omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Acute urinary retention; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute urinary obstruction",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          11
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "reason": "Obstruction/narrowing broad category only; acute timing and urinary anatomy omitted.",
+      "association_comparison": "Same narrowed tube, not a new urinary blockage depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Men",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          12
+        ]
+      ],
+      "prior": "docs/chapter-51-cue-audit.json#Male sex",
+      "reason": "Male learned-symbol category only; age/person identity omitted.",
+      "association_comparison": "Existing male-symbol token unchanged.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Women",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          13
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#women",
+      "cue": "A neutral adult-woman study figurine standing alone.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination. Neutral learned gender-category proposal only; not a real-person identity/sex inference from appearance, a stereotype or endorsement of a clinical comparison.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#women; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obstructive causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          14
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          24,
+          51
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "reason": "Obstruction/narrowing category only; cause identity omitted.",
+      "association_comparison": "Existing narrowed-tube category, no causal rule.",
+      "decision": "reuse_candidate",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Benign prostatic hypertrophy",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          16
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "reason": "Prost/prosthetic fragment only; benign/hypertrophy and prostate anatomy omitted.71 bottles remain held; actual80 selected head adopted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Actual80 selected prosthetic-hand cue/scope, not a revival of the71 bottle attempt.",
+      "prior": "docs/chapter-80-cue-audit.json#Benign prostatic hyperplasia",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostate cancer",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          19
+        ],
+        [
+          25,
+          64
+        ],
+        [
+          25,
+          65
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phimosis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          21
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hood covering a small round knob, with a conspicuously narrowed opening at its front.",
+      "cue_scope": "Broad tight-cover/narrow-opening taught category metaphor only; not a diagnostic genital model or manipulation instruction.",
+      "reason": "An economical constricted-cover metaphor; complete sound spelling is not required.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "82 Stricture already uses a narrowed tube; narrow-front hood changes host within that constriction category.",
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Paraphimosis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          23
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hood rolled back behind a round knob, with the gathered hood forming a tight band behind it.",
+      "cue_scope": "Broad trapped-back-cover/pinching metaphor only; no patient anatomy or reduction instruction.",
+      "reason": "The changed cover position is explicit, not an unexplained accessory or static timing claim.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local Phimosis supplies hood/knob constriction; rolled-back position changes the taught depiction, not the general tight-cover bridge.",
+      "prior": "local:92#Phimosis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Meatal stenosis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          64
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "reason": "Stenosis/stricture narrowing category only; named location omitted.",
+      "association_comparison": "Same continuous narrowed tube; stenosis and stricture share the narrowed-category head.",
+      "decision": "reuse_candidate",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral strangulation",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral soft toy tube visibly pinched by a tight ring around its middle.",
+      "cue_scope": "Strangulation/pinching category metaphor only; urethral anatomy, viability and treatment omitted.",
+      "reason": "Keeps the actual pinching relationship without inventing a hernia pouch in this target.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "72 Strangulated hernia already has pouch/neck pinched by ring; neutral tube changes host/site in the same pinching bridge.",
+      "prior": "docs/chapter-72-cue-audit.json#Strangulated hernia",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Infectious causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          28
+        ],
+        [
+          24,
+          41
+        ],
+        [
+          24,
+          104
+        ]
+      ],
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "reason": "Infection/germ category only; causation and organism omitted.",
+      "association_comparison": "Same selected germ token.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostatitis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          30
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "reason": "Prost/prosthetic partial-name head only; prostate anatomy and inflammation omitted.",
+      "association_comparison": "Same prosthetic-hand socket, not a new prostate host.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cystocele",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          33
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Cyst/bladder anatomy head only; cele/prolapse omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "prior": "local:91#Bladder",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ovarian tumor",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          35
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Uterine tumor",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          37
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Operative causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          38
+        ],
+        [
+          24,
+          113
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Incontinence surgery",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          40
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pelvic inflammatory disease",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          43
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Pelvic inflammatory disease",
+      "cue": "A detached pelvic-bone teaching model on a stand.",
+      "cue_scope": "Pelvic learned anatomy head only. Pelvic learned anatomy head only; inflammatory disease omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Pelvic inflammatory disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral stricture",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          53
+        ],
+        [
+          25,
+          63
+        ],
+        [
+          25,
+          64
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "reason": "Stenosis/stricture narrowing category only; named location omitted.",
+      "association_comparison": "Same continuous narrowed tube; stenosis and stricture share the narrowed-category head.",
+      "decision": "reuse_candidate",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder calculi",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          55
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A few familiar pebbles without kidney model.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Calculus/stone head only; bladder site omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Stones/calculi cue/scope rooted in docs/chapter-45-cue-audit.json#gravel; no new bridge.",
+      "prior": "local:91#Stones/calculi",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder neoplasm",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          57
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Foreign body",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          59
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "cue": "Small unmistakably extraterrestrial toy figure standing alone on a display base.",
+      "cue_scope": "Foreign plus body learned wordplay",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-22-cue-audit.json#foreign body; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Neurogenic causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          60
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#neuropathy",
+      "reason": "Neur/nerve head only; genesis/causation omitted.",
+      "association_comparison": "Same actual standalone branching nerve, not a clinical diagnosis.",
+      "decision": "reuse_candidate",
+      "cue": "A branching nerve-wire teaching token alone, without tibia or cube.",
+      "cue_scope": "Neur-/nerve lexical root only; branch, sensory finding or disease not encoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Multiple sclerosis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          62
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A rigid toy slab beside a matching soft slab visibly dented beneath a small block.",
+      "cue_scope": "Scler/hard taught name-family contrast only; multiple, neural lesions and clinical syndrome omitted.",
+      "reason": "A hardness contrast for the name root, not a portrayal of the disease's actual tissue or mechanism.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "79 Sclerosing cholangitis already supplies rigid/flexible contrast and72 Scleroderma a stiff backing for sclero/hard. Slab contrast revises the host, not the hardening bridge.",
+      "prior": "docs/chapter-79-cue-audit.json#Sclerosing cholangitis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Parkinson's disease",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          64
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-74-cue-audit.json#Parkinson's disease",
+      "cue": "A toy car parking beside a son figurine.",
+      "cue_scope": "Park/son approximate name fragments; remainder omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-74-cue-audit.json#Parkinson's disease; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Shy-Drager syndrome",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          66
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy figure dragging a suitcase along the floor by its extended handle.",
+      "cue_scope": "Drager/drag approximate action-name head only; shy, syndrome and remaining sounds omitted.",
+      "reason": "Visible dragging is a real action host; no invented named Drager character.",
+      "association_status": "new_association",
+      "association_comparison": "Existing retained name-role cues do not make the suitcase a new prop claim; proposed bridge is the explicit dragging word/action.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Brain tumors",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          68
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cerebral vascular disease",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          70
+        ]
+      ],
+      "prior": "docs/chapter-64-cue-audit.json#brain",
+      "reason": "Cerebral/brain anatomy head only; vascular disease omitted.",
+      "association_comparison": "Same brain token, no vascular finding.",
+      "decision": "reuse_candidate",
+      "cue": "A generic brain teaching token alone; inspection magnifier removed.",
+      "cue_scope": "Neuro-/cerebral/brain lexical category only; development, palsy, deficit and named conditions unencoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cauda equina syndrome",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          72
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar horse teaching figurine with its long tail prominently visible.",
+      "cue_scope": "Cauda/tail and equina/horse taught name-family category only; spinal anatomy and clinical syndrome omitted.",
+      "reason": "The horse-tail word-family is taught explicitly; this is not a horse presented as spinal anatomy.",
+      "association_status": "new_association",
+      "association_comparison": "30 hoarseness already selects horse for horse/hoarse sound. Here equina/horse and cauda/tail use taught name translation, a different lexical bridge with a familiar horse host, not a new prop.",
+      "prior": "docs/chapter-30-cue-audit.json#hoarseness",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Metastatic spinal cord lesions",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          74
+        ]
+      ],
+      "prior": "docs/chapter-50-cue-audit.json#spinal cord injury",
+      "reason": "Spinal-cord anatomy only; metastasis, lesions and injury omitted.",
+      "association_comparison": "Same selected cord model.",
+      "decision": "reuse_candidate",
+      "cue": "A detached spinal-cord teaching model on a stand.",
+      "cue_scope": "Anatomy category only; injury/pain omitted Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Intervertebral disk herniation",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          76
+        ]
+      ],
+      "prior": "docs/chapter-83-cue-audit.json#Hernia",
+      "reason": "Hernia/bulging-through-opening category only; vertebra/disk anatomy and actual disease omitted.",
+      "association_comparison": "83 already selects the literal hernia/bulge category; no new spinal version.",
+      "decision": "reuse_candidate",
+      "cue": "A soft pouch bulging through a hole in a stretched fabric sheet.",
+      "cue_scope": "Bulge-through-opening learned category metaphor only.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Neuropathy",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          78
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#neuropathy",
+      "cue": "A branching nerve-wire teaching token alone, without tibia or cube.",
+      "cue_scope": "Neur-/nerve lexical root only; branch, sensory finding or disease not encoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-61-cue-audit.json#neuropathy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diabetes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          78
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#diabetes",
+      "cue": "A familiar standalone glucose meter training prop.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-37-cue-audit.json#diabetes; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nerve injury from pelvic surgery",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          80
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; nerve injury/causation and pelvic site omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Postoperative retention",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          82
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Acute urinary retention",
+      "reason": "Retention/keeping action only; postoperative/clot/urinary qualifiers omitted.",
+      "association_comparison": "Same hand holding token, not a clinical retention process.",
+      "decision": "reuse_candidate",
+      "cue": "A hand keeping a plain token in its closed grasp.",
+      "cue_scope": "Retention ordinary keeping/holding action only; not urine accumulation or treatment. Retention ordinary holding only; urinary/acute omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Traumatic causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          83
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Injury/trauma broad category only; named urinary site and mechanism omitted.",
+      "association_comparison": "Same cracked mannequin, no named-organ injury depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral injury",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          85
+        ],
+        [
+          25,
+          64
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Injury/trauma broad category only; named urinary site and mechanism omitted.",
+      "association_comparison": "Same cracked mannequin, no named-organ injury depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder injury",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          87
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Injury/trauma broad category only; named urinary site and mechanism omitted.",
+      "association_comparison": "Same cracked mannequin, no named-organ injury depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Spinal cord injury",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          89
+        ],
+        [
+          25,
+          58
+        ],
+        [
+          25,
+          59
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-50-cue-audit.json#spinal cord injury",
+      "cue": "A detached spinal-cord teaching model on a stand.",
+      "cue_scope": "Anatomy category only; injury/pain omitted Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-50-cue-audit.json#spinal cord injury; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Extraurinary causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          90
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#urinary tract",
+      "reason": "Urinary/urinal head only; extra negation/location and causes unencoded.",
+      "association_comparison": "Same wordplay fixture; not an assertion of urinary causation.",
+      "decision": "reuse_candidate",
+      "cue": "An unused bathroom urinal fixture.",
+      "cue_scope": "Urinary/urinal lexical head only; no body output or procedure.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Perirectal or pelvic abscesses",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          92
+        ]
+      ],
+      "prior": "docs/chapter-73-cue-audit.json#Abscess",
+      "reason": "Abs/chess approximate name sounds only; local/perirectal/pelvic site omitted.",
+      "association_comparison": "73 selected abs+chess already exists;33 hold not erased.",
+      "decision": "reuse_candidate",
+      "cue": "A toy abdomen beside a chess set.",
+      "cue_scope": "Abs/chess approximate name sounds only; no anatomy or pus depiction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rectal or retroperitoneal masses",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          94
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fecal impaction",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          96
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-74-cue-audit.json#Fecal impaction",
+      "cue": "A toy stool seat wedged tightly into a narrow doorway.",
+      "cue_scope": "Fecal/stool shared word plus impacted/wedged ordinary relation only.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-74-cue-audit.json#Fecal impaction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal aortic aneurysm",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          98
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-60-cue-audit.json#Abdominal aortic aneurysm",
+      "cue": "A detached aorta teaching model alone, without peeled wall layers.",
+      "cue_scope": "Aortic lexical head only; dissection/aneurysm state and location omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-60-cue-audit.json#Abdominal aortic aneurysm; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Psychogenic causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          99
+        ]
+      ],
+      "prior": "docs/chapter-52-cue-audit.json#Psychogenic",
+      "reason": "Mental/thought category only; genesis and cause identity omitted.",
+      "association_comparison": "Same thought-cloud token.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar thought-cloud prop standing alone, without cube.",
+      "cue_scope": "Mental/thought learned category only; not a specific psychiatric condition or diagnosis",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Psychosexual stress",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          101
+        ]
+      ],
+      "prior": "docs/chapter-85-cue-audit.json#Stress",
+      "reason": "Stress/physical-tension metaphor only; sexual, psychological and physiologic meanings omitted.",
+      "association_comparison": "Same taut/slack reference strips, not a new stress bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A plain elastic strip held visibly taut between two fixed clamps beside a slack matching strip.",
+      "cue_scope": "Stress/tension ordinary physical-category metaphor only; no psychiatric diagnosis, symptoms or physiology.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute anxiety",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          103
+        ]
+      ],
+      "prior": "docs/chapter-37-cue-audit.json#anxiety",
+      "reason": "Anxiety-expression category only; acute timing omitted.",
+      "association_comparison": "Same anxious mask.",
+      "decision": "reuse_candidate",
+      "cue": "An anxious theatrical mask standing alone, without mute token.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cystitis",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          106
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Cystitis",
+      "cue": "A detached urinary-bladder teaching model beside a theatrical flame.",
+      "cue_scope": "Cyst/bladder taught anatomy plus inflame/flame word-family only; no actual inflammation appearance or diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-82-cue-audit.json#Cystitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Herpes simplex (genital)",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          108
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Herpes zoster",
+      "reason": "Herp/harp approximate opening only; simplex/zoster, genital/pelvic site and virus identity omitted.",
+      "association_comparison": "Actual71 selected harp, not automatic46 held-attempt adoption.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar harp instrument.",
+      "cue_scope": "Herp-/harp approximate opening-name fragment only; zoster/species omitted. Herp-/harp opening sound only; not virus appearance.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Herpes zoster involving pelvic region",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          110
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Herpes zoster",
+      "reason": "Herp/harp approximate opening only; simplex/zoster, genital/pelvic site and virus identity omitted.",
+      "association_comparison": "Actual71 selected harp, not automatic46 held-attempt adoption.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar harp instrument.",
+      "cue_scope": "Herp-/harp approximate opening-name fragment only; zoster/species omitted. Herp-/harp opening sound only; not virus appearance.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Local abscess",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          112
+        ]
+      ],
+      "prior": "docs/chapter-73-cue-audit.json#Abscess",
+      "reason": "Abs/chess approximate name sounds only; local/perirectal/pelvic site omitted.",
+      "association_comparison": "73 selected abs+chess already exists;33 hold not erased.",
+      "decision": "reuse_candidate",
+      "cue": "A toy abdomen beside a chess set.",
+      "cue_scope": "Abs/chess approximate name sounds only; no anatomy or pus depiction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Postoperative bleeding",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          115
+        ]
+      ],
+      "prior": "docs/chapter-26-cue-audit.json#bleeding",
+      "reason": "Bleeding/red-liquid leak metaphor only; postoperative context omitted.",
+      "association_comparison": "Same red-liquid leaking pipe.",
+      "decision": "reuse_candidate",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clots",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          115
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#Thrombus",
+      "reason": "Clot/plug learned category only; plural/site/material omitted.",
+      "association_comparison": "Same selected vessel/plug, not a new clot arrangement.",
+      "decision": "reuse_candidate",
+      "cue": "A plug in a transparent vessel model, without crown.",
+      "cue_scope": "Thrombo-/clot learned category head only; no site, embolization or causal relation.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epidural anesthesia",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          117
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-56-cue-audit.json#epidural anesthesia",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-56-cue-audit.json#epidural anesthesia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Childhood causes",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          118
+        ]
+      ],
+      "prior": "docs/chapter-44-cue-audit.json#child",
+      "reason": "Child broad taught category only; age limits and causes omitted.",
+      "association_comparison": "Same selected child-sized figures.",
+      "decision": "reuse_candidate",
+      "cue": "Recognizable child-sized toy figures.",
+      "cue_scope": "Broad child category only; not age, behavior or treatment",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Posterior urethral valves",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          120
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A urinary-bladder teaching model with its single lower outlet tube emphasized and the paired upper ureter tubes subdued.",
+      "cue_scope": "Taught urethral outlet anatomy head only; disease, sex-specific dimensions and procedure omitted.",
+      "reason": "Urethral anatomy head only; posterior/valves/atresia modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Urethra cue/scope rooted in docs/chapter-88-cue-audit.json#Urethral disease; no new bridge.",
+      "prior": "local:91#Urethra",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Rhabdomyosarcoma of the bladder",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          122
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad mass/tumor-category head only; site, subtype, malignant behavior and other modifiers omitted.",
+      "association_comparison": "Same selected clay lump, not a new named-site model.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral atresia",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          124
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A urinary-bladder teaching model with its single lower outlet tube emphasized and the paired upper ureter tubes subdued.",
+      "cue_scope": "Taught urethral outlet anatomy head only; disease, sex-specific dimensions and procedure omitted.",
+      "reason": "Urethral anatomy head only; posterior/valves/atresia modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Urethra cue/scope rooted in docs/chapter-88-cue-audit.json#Urethral disease; no new bridge.",
+      "prior": "local:91#Urethra",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pharmacologic agents",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "table",
+      "source_refs": [
+        [
+          24,
+          125
+        ],
+        [
+          25,
+          11
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#Pharmacologic Agents",
+      "cue": "An ordinary unmarked pill bottle.",
+      "cue_scope": "Medication packaging category only; no named drug or use.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#Pharmacologic Agents; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alpha-adrenergic agents",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          12
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "cue": "A freestanding Greek alpha-symbol teaching token.",
+      "cue_scope": "Literal alpha symbol/name only; receptor number, agonism/blockade and effects omitted.",
+      "reason": "Alpha literal learned-symbol head only; adrenergic and agents omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "57 actual Greek-source alpha1 entry already selects this alpha token; no new symbol bridge.",
+      "prior": "docs/chapter-57-cue-audit.json#\u03b11-adrenergic receptor blocker",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Amphetamines",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          13
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#amphetamines",
+      "cue": "A familiar guitar amplifier standing alone.",
+      "cue_scope": "amphetamine existing learned vocabulary family only; extra source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#amphetamines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Androgens",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          14
+        ]
+      ],
+      "prior": "docs/chapter-51-cue-audit.json#Male sex",
+      "reason": "Andro/male learned name-category symbol only; gen and hormone function omitted.",
+      "association_comparison": "Existing male symbol supplies a taught root, not endocrine physiology.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anesthesia agents",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          15
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#anesthetics",
+      "reason": "Anesthesia learned category only; agent identity and actual sensory effect omitted.",
+      "association_comparison": "Same sleep-mask/mute composition.",
+      "decision": "reuse_candidate",
+      "cue": "Sleep mask beside a freestanding sensory-mute symbol.",
+      "cue_scope": "anesthesia existing learned head only; other source modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anticholinergics",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          16
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-69-cue-audit.json#Anticholinergics",
+      "cue": "An ordinary cola bottle behind a simple stop barrier; cola subtype explicitly declared.",
+      "cue_scope": "Anti-/against plus chol-/cola approximate name fragments only; remaining name and receptor/drug effects omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-69-cue-audit.json#Anticholinergics; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antihistamines",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          17
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Antihistamines",
+      "cue": "A toy snake hissing beside a barrier.",
+      "cue_scope": "Anti/barrier plus hist/hiss approximate sounds; amine and effects omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Antihistamines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antiparkinsonian agents",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          18
+        ]
+      ],
+      "prior": "docs/chapter-74-cue-audit.json#Parkinson's disease",
+      "reason": "Park/son approximate name fragments only; anti, remainder and agents omitted.",
+      "association_comparison": "Same parking car+son composition, not a drug-action claim.",
+      "decision": "reuse_candidate",
+      "cue": "A toy car parking beside a son figurine.",
+      "cue_scope": "Park/son approximate name fragments; remainder omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antipsychotic agents",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          19
+        ]
+      ],
+      "prior": "docs/chapter-52-cue-audit.json#Antipsychotics",
+      "reason": "Psych/thought learned head only; anti and actual agent identity omitted.",
+      "association_comparison": "Same selected thought cloud.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar thought-cloud prop standing alone, without cube.",
+      "cue_scope": "Mental/thought learned category only; not a specific psychiatric condition or diagnosis",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Antispasmodics",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          20
+        ]
+      ],
+      "prior": "docs/chapter-67-cue-audit.json#antibiotics",
+      "reason": "Anti/ant opening-name fragment only; spasm, drug identity and action omitted.",
+      "association_comparison": "Same selected ant, not an antibiotic/antispasmodic medical alias.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar ant figurine alone.",
+      "cue_scope": "Anti-/ant opening-name fragment only; biotic/class, organism, drug identity and mechanism unencoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Benzodiazepines",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          21
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#benzodiazepines",
+      "cue": "A familiar luxury-sedan toy taught as a Benz, without key ring.",
+      "cue_scope": "benzodiazepine existing learned head only; other source modifiers omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#benzodiazepines; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Beta-adrenergic agents",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          22
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "cue": "A freestanding Greek beta symbol.",
+      "cue_scope": "Beta literal lexical-name symbol only; lactam/allergy omitted, no chemical structure, origin or cross-reactivity",
+      "reason": "Beta literal name/symbol head only; adrenergic and agent identity omitted.69 address/energy attempt remains held.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "44 beta-lactam allergy already selects this standalone beta symbol; not a new symbol based on69's held attempt.",
+      "prior": "docs/chapter-44-cue-audit.json#beta-lactam allergy",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Calcium channel blockers",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          23
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-19-cue-audit.json#calcium channel blockers",
+      "cue": "Bone-shaped teaching token beside a tabletop water-channel model whose opening is stopped by a barrier.",
+      "cue_scope": "Calcium plus channel plus block class-name reminder",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-19-cue-audit.json#calcium channel blockers; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Carbamazepine",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          24
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#carbamazepine",
+      "cue": "A toy car inside a simple maze.",
+      "cue_scope": "Car/maze name fragment",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-35-cue-audit.json#carbamazepine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Decongestants",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          25
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-70-cue-audit.json#decongestants",
+      "cue": "Ordinary toy cars dispersing from a congested model road into visibly open lanes; shield removed.",
+      "cue_scope": "De-congest/traffic-clearing ordinary action metaphor only; no respiratory/vascular mechanism or treatment effect.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-70-cue-audit.json#decongestants; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Estrogens",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          26
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Estrogens",
+      "cue": "A toy ostrich alone.",
+      "cue_scope": "Estr/ostrich approximate opening sound only; rest of name and hormone category omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Estrogens; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hydralazine",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          27
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#Hydralazine",
+      "cue": "A water-droplet ornament alone, without code-wheel padlock.",
+      "cue_scope": "Hydra/hydro approximate opening-name fragment only; no water content or drug effect.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#Hydralazine; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Muscle relaxants",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          28
+        ]
+      ],
+      "prior": "docs/chapter-37-cue-audit.json#muscle relaxation",
+      "reason": "Relaxation/slack category only; muscle specificity and drug effect omitted.",
+      "association_comparison": "Actual selected slack band already stands alone.",
+      "decision": "reuse_candidate",
+      "cue": "A slack elastic band standing alone, without windpipe model.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "NSAIDs",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          29
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-88-cue-audit.json#NSAIDs",
+      "cue": "A familiar first-aid kit box with carry handle and a conspicuous cross pictogram, without a knight.",
+      "cue_scope": "Aid/first-aid learned spelling-fragment reminder only; NS, class identity and actual analgesic effects omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-88-cue-audit.json#NSAIDs; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Opiates",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          30
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Opiates",
+      "cue": "A familiar poppy seedpod teaching prop.",
+      "cue_scope": "Learned opiate/poppy category association only; no chemistry, source or use claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Opiates; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Progesterone",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          31
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-38-cue-audit.json#progesterone",
+      "cue": "A familiar stage jester standing alone.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-38-cue-audit.json#progesterone; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Selective serotonin reuptake inhibitors",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          32
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-89-cue-audit.json#Selective serotonin reuptake inhibitors",
+      "cue": "A row of small tone-producing bells standing alone, without agent character.",
+      "cue_scope": "Ton/tone interior-name fragment only; serotonin identity, selectivity, uptake and inhibition omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-89-cue-audit.json#Selective serotonin reuptake inhibitors; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tetracyclic antidepressants",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          33
+        ]
+      ],
+      "prior": "docs/chapter-46-cue-audit.json#doxycycline",
+      "reason": "Cycl/cycle internal-name fragment only; tetra, antidepressant and class identity omitted.",
+      "association_comparison": "Same standalone bicycle, not a four-cycle chemical claim.",
+      "decision": "reuse_candidate",
+      "cue": "A standalone bicycle without dice.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tricyclic antidepressants",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          34
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-89-cue-audit.json#Tricyclic antidepressants",
+      "cue": "A toy tricycle standing alone.",
+      "cue_scope": "Tri/tricycle approximate opening-name fragment only; glycerides and chemistry omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-89-cue-audit.json#Tricyclic antidepressants; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Recognition",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          40
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand matching an unmarked picture card to an identical picture on a small display board.",
+      "cue_scope": "Recognition/matching ordinary action category only; actual identity, accuracy and clinical interpretation omitted.",
+      "reason": "Visible same-picture match makes the ordinary recognition action concrete.",
+      "association_status": "new_association",
+      "association_comparison": "48 Initial assessment uses mannequin/magnifier; explicit matching is a different recognition relation.",
+      "prior": "docs/chapter-48-cue-audit.json#initial assessment",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Initial assessment",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          42
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#initial assessment",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#initial assessment; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "History",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          43
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#history",
+      "cue": "A closed medical-chart folder beside an old-fashioned history scroll.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#history; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Physical examination",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          43
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#physical examination",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#physical examination; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder volume",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          46
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Bladder",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Bladder/cyst anatomy head only; wall/neck, volume and distention modifiers unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope, now rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Initial stabilization",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          48
+        ]
+      ],
+      "prior": "docs/chapter-50-cue-audit.json#Stabilization",
+      "reason": "Stable/support category only; initial timing and clinical process omitted.",
+      "association_comparison": "Same tripod, no new stabilization method.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy tripod standing firmly on a flat surface.",
+      "cue_scope": "Stable/support learned category only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Risk assessment",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          50
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#risk assessment",
+      "cue": "A familiar warning triangle beside a magnifying glass.",
+      "cue_scope": "Risk/assessment vocabulary only; no prediction or clinical score.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#risk assessment; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Recurrence",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          51
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy train on a closed loop with two successive small views showing it passing the same unmarked station again.",
+      "cue_scope": "Recur/again broad repetition category only; timing, frequency and clinical recurrence omitted.",
+      "reason": "The repeated station encounter is explicit rather than inferred from one static placement.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "73 Relapse already uses a runner returning to a starting line; train/closed-loop views revise the return/repeat depiction.",
+      "prior": "docs/chapter-73-cue-audit.json#Relapse",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Surgical intervention",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          51
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Morbidity",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          52
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-57-cue-audit.json#morbidity",
+      "cue": "A sick-looking toy character alone, without sine-wave shape or thermometer.",
+      "cue_scope": "Morbid/unwell learned vocabulary category only; no patient diagnosis or prognosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-57-cue-audit.json#morbidity; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Age",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          52
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-28-cue-audit.json#age",
+      "cue": "An unmarked hourglass beside an old family photo album.",
+      "cue_scope": "age",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-28-cue-audit.json#age; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Comorbidity",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          53
+        ]
+      ],
+      "prior": "docs/chapter-75-cue-audit.json#Comorbidities",
+      "reason": "Co/together and broad illness-category metaphor only; count and diagnosis omitted.",
+      "association_comparison": "Singular/plural source wording, same sick characters/canopy.",
+      "decision": "reuse_candidate",
+      "cue": "Two sick-expression toy characters standing together under one small canopy.",
+      "cue_scope": "Co/together plus broad illness category metaphor only; no diagnostic count or actual coexistence rule.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostate size",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          53
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "reason": "Prost/prosthetic approximate name head only; size and prostate anatomy omitted.",
+      "association_comparison": "Same prosthetic socket, no metric or new shape.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Postvoid residual",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          53
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand lifting a scoop of beads from a bowl while several beads remain visibly at its bottom.",
+      "cue_scope": "Residual/remaining ordinary category only; voiding, urine and numeric volume omitted.",
+      "reason": "Shows an actual remainder; no unmarked liquid or medical measurement is asserted.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "16 functional residual capacity already selects liquid left after pouring. Beads remaining after scooping change host/action within the same residual/leftover bridge.",
+      "prior": "docs/chapter-16-cue-audit.json#functional residual capacity",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Maximum urine flow rate",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          53
+        ],
+        [
+          25,
+          54
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#urinalysis",
+      "reason": "Urine head only; maximum, flow and rate omitted.",
+      "association_comparison": "Same empty collection jug, not a measurement or flow claim.",
+      "decision": "reuse_candidate",
+      "cue": "A recognizable urine-collection jug alone; liquid, colour and amount removed.",
+      "cue_scope": "Urine lexical head only; no analysis, output value or test result.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Inpatient care",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          55
+        ],
+        [
+          25,
+          56
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Inpatient management",
+      "reason": "In/patient-setting category only; actual care content omitted.",
+      "association_comparison": "Same hospital/mannequin composition.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar hospital-building miniature containing a small mannequin token.",
+      "cue_scope": "In/out patient-setting learned composition only; hospital/mannequin/doorway ingredients, not a care, admission, treatment or discharge instruction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Malignancy",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          58
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-34-cue-audit.json#malignancy",
+      "cue": "A villainous toy character with a conspicuously malicious grin.",
+      "cue_scope": "Malign/malicious ordinary-language association only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-34-cue-audit.json#malignancy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Spinal cord compression",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          58
+        ],
+        [
+          25,
+          59
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-3-cue-audit.json#spinal cord compression",
+      "cue": "Spinal cord model visibly squeezed by a broad clamp.",
+      "cue_scope": "Cord plus compression concept",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-3-cue-audit.json#spinal cord compression; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hematuria",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          59
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-60-cue-audit.json#hematuria",
+      "cue": "A transparent vial of plain red liquid alone.",
+      "cue_scope": "Blood/hemo- explicit lexical root only; no site, bleeding mechanism or result.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-60-cue-audit.json#hematuria; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urinary tract infection",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          59
+        ],
+        [
+          25,
+          60
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Urinary tract infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Infection learned germ category only; no organism identity or causation. Infection category only, urinary site omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Urinary tract infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sepsis",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          60
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Sepsis",
+      "cue": "A toy septic tank with its underground chamber, inlet pipe and access lid exposed as a cutaway.",
+      "cue_scope": "Seps/septic approximate name-family only; no medical mechanism, organism or diagnostic inference.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-82-cue-audit.json#Sepsis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urologic consultation",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          61
+        ],
+        [
+          25,
+          62
+        ]
+      ],
+      "prior": "docs/chapter-86-cue-audit.json#Consultation",
+      "reason": "Consultation/social-action category only; urologic profession and advice omitted.",
+      "association_comparison": "Actual86 folder/desk comparison, already a variant of63 consult, not a new consult root.",
+      "decision": "reuse_candidate",
+      "cue": "Two toy professional figures examining the same blank folder together across a small desk.",
+      "cue_scope": "Consultation/seeking another view broad social-action category only; no profession, advice content or disposition.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute febrile prostatitis",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          65
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "reason": "Prost/prosthetic name fragment only; acute, fever and inflammation omitted.",
+      "association_comparison": "Same prosthetic-hand head.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urologic postoperative complications",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          65
+        ],
+        [
+          25,
+          66
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Outpatient management",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          67
+        ],
+        [
+          25,
+          68
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Outpatient management",
+      "cue": "A familiar hospital-building miniature beside an outward doorway.",
+      "cue_scope": "In/out patient-setting learned composition only; hospital/mannequin/doorway ingredients, not a care, admission, treatment or discharge instruction.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-82-cue-audit.json#Outpatient management; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bleeding",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          70
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#bleeding",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-26-cue-audit.json#bleeding; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Infection",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          71
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Broad infection category association only; no diagnosis, organism, contamination equivalence or risk assertion.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Renal function impairment",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          71
+        ]
+      ],
+      "prior": "docs/chapter-57-cue-audit.json#renal insufficiency",
+      "reason": "Renal/kidney name head only; function and impairment omitted.",
+      "association_comparison": "Actual standalone kidney, no new functional-loss depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A detached kidney teaching model alone, without pebbles.",
+      "cue_scope": "Renal/nephr/kidney head only; function, failure and measurements omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Foley catheter",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          71
+        ],
+        [
+          25,
+          72
+        ],
+        [
+          26,
+          32
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-86-cue-audit.json#Foley catheter",
+      "cue": "A detached Foley balloon-catheter training prop with its retention balloon already expanded.",
+      "cue_scope": "Foley balloon-catheter familiar device category only; no placement, inflation or removal instruction.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-86-cue-audit.json#Foley catheter; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Leg bag",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          72
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar empty drainage-bag training prop strapped to a detached lower-leg mannequin section.",
+      "cue_scope": "Leg/bag familiar device-category composition only; contents, placement technique and drainage function omitted.",
+      "reason": "Literal leg+bag form supports the source device without labeling unknown contents.",
+      "association_status": "new_association",
+      "association_comparison": "31 Catheter selects a hollow catheter device; leg-mounted collection bag is a different named-device composition.",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alpha-adrenergic receptor blocker",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          72
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A freestanding Greek alpha-symbol teaching token.",
+      "cue_scope": "Literal alpha symbol/name only; receptor number, agonism/blockade and effects omitted.",
+      "reason": "Alpha learned-symbol head only; adrenergic, receptor and blockade omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local Alpha-adrenergic agents copy, rooted in57 Greek alpha1 receptor-blocker entry; no new bridge.",
+      "prior": "local:92#Alpha-adrenergic agents",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Alfuzosin",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          73
+        ],
+        [
+          27,
+          53
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar elf teaching figurine with pointed ears and a pointed hat.",
+      "cue_scope": "Alf/elf approximate opening-name sound only; uzosin and drug identity omitted.",
+      "reason": "The familiar elf role is taught; vowel approximation is explicit and no complete drug name is claimed.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "37 Alfentanil already selects elf+fan for alf/elf opening; this removes fan and isolates the same elf name bridge.",
+      "change_origin": "new_revision",
+      "prior": "docs/chapter-37-cue-audit.json#Alfentanil",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tamsulosin",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          73
+        ],
+        [
+          27,
+          54
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar tambourine with jingles around its circular rim.",
+      "cue_scope": "Tam/tambourine opening-name fragment only; sulosin and drug identity omitted.",
+      "reason": "A concrete ordinary instrument supports the short tam head without forced extra fragments.",
+      "association_status": "new_association",
+      "association_comparison": "89 serotonin inhibitors' tone bells use ton/tone; tambourine/tam is a different opening-word bridge.",
+      "prior": "docs/chapter-89-cue-audit.json#Selective serotonin reuptake inhibitors",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diagnosis",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          84
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-88-cue-audit.json#Diagnosis",
+      "cue": "A blank exam booklet alone, without toy train.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-88-cue-audit.json#Diagnosis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urologic surgery",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          113
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Radical prostatectomy",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          114
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; site, procedure, cause and timing omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Complex urethral reconstruction",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          114
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Broad operative/surgery category only; reconstruction and urethral technique omitted.",
+      "association_comparison": "Same empty operating table/lamp, not a new procedure or complication.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter placement",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          115
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral catheterization",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          119
+        ],
+        [
+          26,
+          35
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pain",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          130
+        ],
+        [
+          25,
+          131
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain expression ingredient",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#pain; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter balloon inflation",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          131
+        ]
+      ],
+      "prior": "docs/chapter-86-cue-audit.json#Balloon inflation",
+      "reason": "Balloon/inflating ordinary action only; catheter and clinical procedure omitted.",
+      "association_comparison": "Same connected pump/balloon action, no new inflation bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          132
+        ],
+        [
+          25,
+          133
+        ],
+        [
+          26,
+          42
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Bladder",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Bladder/cyst anatomy head only; wall/neck, volume and distention modifiers unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope, now rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral damage",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "body",
+      "source_refs": [
+        [
+          25,
+          132
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Injury/trauma broad category only; named urinary site and mechanism omitted.",
+      "association_comparison": "Same cracked mannequin, no named-organ injury depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Suprapubic catheterization",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          25,
+          160
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "US",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          47
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          27,
+          9
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#US",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound device/acronym family only; no image result, scanning or sensitivity claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#US; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral catheter",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          49
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Suprapubic catheter",
+      "pdf_page": 25,
+      "page": 587,
+      "source_match": "table",
+      "source_refs": [
+        [
+          25,
+          49
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator technique",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          26,
+          14
+        ],
+        [
+          28,
+          8
+        ]
+      ],
+      "prior": "docs/chapter-30-cue-audit.json#obturator",
+      "reason": "Obturator learned device category only; technique omitted.",
+      "association_comparison": "Same actual30 device prop.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar obturator training prop beside its empty display stand.",
+      "cue_scope": "Learned device category only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peel-away sheath technique",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          26,
+          27
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A loose tubular wrapper with its two flaps visibly peeled apart along a seam.",
+      "cue_scope": "Peel/away and sheath/cover ordinary object-action category only; catheter technique, material and clinical use omitted.",
+      "reason": "Peel/sheath object-action heads only; actual insertion technique omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact local Peel-away sheath cue/scope, not a new technique.",
+      "prior": "local:92#Peel-away sheath",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Obturator",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          16
+        ],
+        [
+          26,
+          22
+        ],
+        [
+          26,
+          23
+        ],
+        [
+          26,
+          24
+        ],
+        [
+          28,
+          10
+        ],
+        [
+          28,
+          14
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#obturator",
+      "cue": "A detached familiar obturator training prop beside its empty display stand.",
+      "cue_scope": "Learned device category only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-30-cue-audit.json#obturator; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urinary catheter",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          16
+        ],
+        [
+          26,
+          17
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Port",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          17
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A small harbor-port teaching miniature with a quay and a boat moored beside it.",
+      "cue_scope": "Port internal shared-word/name head only; Al, syndrome and remaining name omitted.",
+      "reason": "Port shared-word harbor head only; catheter aperture and access function omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected local91 Alport's syndrome harbor-port proposal, itself a new_offline_proposal rather than a canonical borrowed root; no undefined lineage or new port yield.",
+      "prior": "local:91#Alport's syndrome",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Needle tip",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          19
+        ]
+      ],
+      "prior": "docs/chapter-34-cue-audit.json#needle",
+      "reason": "Needle device category only; tip specialization, finding/advancement omitted.",
+      "association_comparison": "Same detached training needle.",
+      "decision": "reuse_candidate",
+      "cue": "A detached needle training prop standing alone, without a host or driver.",
+      "cue_scope": "Broad familiar needle category only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Anterior bladder wall",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          26
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Bladder",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Bladder/cyst anatomy head only; wall/neck, volume and distention modifiers unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope, now rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Seldinger technique",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          29
+        ],
+        [
+          26,
+          30
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#Seldinger technique",
+      "cue": "A toy shopkeeper behind a counter ringing a bell.",
+      "cue_scope": "Sell/ding approximate opening-name wordplay only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-30-cue-audit.json#Seldinger technique; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Finder needle",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          30
+        ]
+      ],
+      "prior": "docs/chapter-34-cue-audit.json#needle",
+      "reason": "Needle device category only; tip specialization, finding/advancement omitted.",
+      "association_comparison": "Same detached training needle.",
+      "decision": "reuse_candidate",
+      "cue": "A detached needle training prop standing alone, without a host or driver.",
+      "cue_scope": "Broad familiar needle category only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter balloon",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          32
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#balloon",
+      "reason": "Balloon literal object head only; catheter and clinical role omitted.",
+      "association_comparison": "Existing ordinary party balloon, not a tied-neck variant.",
+      "decision": "reuse_candidate",
+      "cue": "party balloon",
+      "cue_scope": "balloon",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostatic urethra",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          32
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Urethra",
+      "cue": "A urinary-bladder teaching model with its single lower outlet tube emphasized and the paired upper ureter tubes subdued.",
+      "cue_scope": "Taught urethral outlet anatomy head only; disease, sex-specific dimensions and procedure omitted.",
+      "reason": "Urethral anatomy only; prostatic segment omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Urethra cue/scope, now rooted in docs/chapter-88-cue-audit.json#Urethral disease; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Meatus",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          39
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar meat teaching prop on a plain plate.",
+      "cue_scope": "Meat/meatus deliberately partial written/opening-name reminder only; ending, anatomy and actual contents omitted.",
+      "reason": "A familiar meat host; not a claim the meatus is meat or an edible structure.",
+      "association_status": "new_association",
+      "association_comparison": "91 Foods is an ordinary food-category plate; meat/meatus is a different explicit partial-name bridge.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Male pelvis",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          41
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Pelvic inflammatory disease",
+      "reason": "Pelvic-bone learned anatomy head only; male qualifier and inflammation omitted.",
+      "association_comparison": "Same standalone pelvic bone, not a sex-specific anatomical claim.",
+      "decision": "reuse_candidate",
+      "cue": "A detached pelvic-bone teaching model on a stand.",
+      "cue_scope": "Pelvic learned anatomy head only. Pelvic learned anatomy head only; inflammatory disease omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter cuff",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          42
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#cuff",
+      "reason": "Cuff ordinary shared-word only; catheter device role omitted.",
+      "association_comparison": "Same actual shirt cuff.",
+      "decision": "reuse_candidate",
+      "cue": "A detached shirt cuff.",
+      "cue_scope": "Cuff ordinary-word reminder",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urine aspiration",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          44
+        ]
+      ],
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "reason": "Aspiration/inward drawing metaphor only; urine content and suprapubic site omitted.",
+      "association_comparison": "Same syringe drawing beads, no procedure instruction.",
+      "decision": "reuse_candidate",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Balloon inflation",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          46
+        ],
+        [
+          26,
+          47
+        ],
+        [
+          28,
+          12
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-86-cue-audit.json#Balloon inflation",
+      "cue": "A transparent hand pump visibly inflating a clear balloon through a connected hose.",
+      "cue_scope": "Air/inflating ordinary substance-action category only; not bowel gas, ventilation or a clinical process.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-86-cue-audit.json#Balloon inflation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Bladder neck",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          49
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Bladder",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Bladder/cyst anatomy head only; wall/neck, volume and distention modifiers unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope, now rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter ports",
+      "pdf_page": 26,
+      "page": 588,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          26,
+          39
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A small harbor-port teaching miniature with a quay and a boat moored beside it.",
+      "cue_scope": "Port internal shared-word/name head only; Al, syndrome and remaining name omitted.",
+      "reason": "Port shared-word harbor head only; plural, catheter aperture and function omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected local91 Alport's syndrome harbor-port proposal, itself a new_offline_proposal rather than a canonical borrowed root; no undefined lineage or new port yield.",
+      "prior": "local:91#Alport's syndrome",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostate",
+      "pdf_page": 24,
+      "page": 586,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          24,
+          19
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#prostate; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Distended bladder",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          8
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Bladder",
+      "cue": "A detached urinary-bladder teaching model alone, without flame.",
+      "cue_scope": "Urinary bladder taught anatomy category only; obstruction and actual retention omitted.",
+      "reason": "Bladder/cyst anatomy head only; wall/neck, volume and distention modifiers unencoded.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Bladder cue/scope, now rooted in docs/chapter-88-cue-audit.json#Bladder obstruction; no new bridge.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Suprapubic aspiration",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          9
+        ]
+      ],
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "reason": "Aspiration/inward drawing metaphor only; urine content and suprapubic site omitted.",
+      "association_comparison": "Same syringe drawing beads, no procedure instruction.",
+      "decision": "reuse_candidate",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Needle advancement",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          10
+        ]
+      ],
+      "prior": "docs/chapter-34-cue-audit.json#needle",
+      "reason": "Needle device category only; tip specialization, finding/advancement omitted.",
+      "association_comparison": "Same detached training needle.",
+      "decision": "reuse_candidate",
+      "cue": "A detached needle training prop standing alone, without a host or driver.",
+      "cue_scope": "Broad familiar needle category only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Syringe",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          15
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#syringe",
+      "cue": "A recognizable generic unmarked syringe without a needle.",
+      "cue_scope": "Broad syringe category; volume omitted",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-30-cue-audit.json#syringe; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Guidewire",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          16
+        ],
+        [
+          27,
+          17
+        ],
+        [
+          27,
+          18
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-30-cue-audit.json#guidewire",
+      "cue": "A toy tour guide holding a loose wire.",
+      "cue_scope": "Guide/wire vocabulary wordplay only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-30-cue-audit.json#guidewire; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peel-away sheath",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          27,
+          17
+        ],
+        [
+          27,
+          19
+        ],
+        [
+          27,
+          20
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A loose tubular wrapper with its two flaps visibly peeled apart along a seam.",
+      "cue_scope": "Peel/away and sheath/cover ordinary object-action category only; catheter technique, material and clinical use omitted.",
+      "reason": "A visible peeling relation, not a neutral sleeve declared already removed.",
+      "association_status": "new_association",
+      "association_comparison": "31 Catheter is a passive hollow device; peel-apart wrapper adds a different actual peel/cover bridge.",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Postcatheterization care",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          26
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Disposition and follow-up",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          64
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-89-cue-audit.json#Disposition and follow-up",
+      "cue": "An unmarked hourglass standing alone.",
+      "cue_scope": "Follow-up interval/time category only; no duration, disposition or clinical advice.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-89-cue-audit.json#Disposition and follow-up; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urine leakage around a suprapubic catheter",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          91
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "reason": "Catheter device head only; site, placement/collection/care and leakage modifiers omitted.",
+      "association_comparison": "Same hollow training prop, no additional clinical procedure.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Females with urinary retention",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          101
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Acute urinary retention",
+      "reason": "Retention/holding action only; female/urinary/acute qualifiers omitted.",
+      "association_comparison": "Same selected hand keeping a token.",
+      "decision": "reuse_candidate",
+      "cue": "A hand keeping a plain token in its closed grasp.",
+      "cue_scope": "Retention ordinary keeping/holding action only; not urine accumulation or treatment. Retention ordinary holding only; urinary/acute omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gross hematuria",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          119
+        ]
+      ],
+      "prior": "docs/chapter-60-cue-audit.json#hematuria",
+      "reason": "Hemo/blood head only; gross amount and urinary site omitted.",
+      "association_comparison": "Same red-liquid vial, no new amount depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A transparent vial of plain red liquid alone.",
+      "cue_scope": "Blood/hemo- explicit lexical root only; no site, bleeding mechanism or result.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Clot retention",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          119
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Acute urinary retention",
+      "reason": "Retention/keeping action only; postoperative/clot/urinary qualifiers omitted.",
+      "association_comparison": "Same hand holding token, not a clinical retention process.",
+      "decision": "reuse_candidate",
+      "cue": "A hand keeping a plain token in its closed grasp.",
+      "cue_scope": "Retention ordinary keeping/holding action only; not urine accumulation or treatment. Retention ordinary holding only; urinary/acute omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Postoperative urinary retention",
+      "pdf_page": 27,
+      "page": 589,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          27,
+          137
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Acute urinary retention",
+      "reason": "Retention/keeping action only; postoperative/clot/urinary qualifiers omitted.",
+      "association_comparison": "Same hand holding token, not a clinical retention process.",
+      "decision": "reuse_candidate",
+      "cue": "A hand keeping a plain token in its closed grasp.",
+      "cue_scope": "Retention ordinary keeping/holding action only; not urine accumulation or treatment. Retention ordinary holding only; urinary/acute omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Catheter",
+      "pdf_page": 28,
+      "page": 590,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          28,
+          10
+        ],
+        [
+          28,
+          14
+        ],
+        [
+          28,
+          16
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#catheter",
+      "cue": "A detached hollow catheter training prop, without a tree.",
+      "cue_scope": "Broad catheter device category",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#catheter; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Collecting tube",
+      "pdf_page": 28,
+      "page": 590,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          28,
+          16
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral transparent toy tube standing alone without an internal tool token.",
+      "cue_scope": "Tube literal object/space category only; collecting function, contents and catheter identity omitted.",
+      "reason": "An isolated real tube, not a newly named catheter procedure.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "77 Intraluminal procedures already has tool inside intact transparent tube; remove tool and narrow to the tube head.",
+      "prior": "docs/chapter-77-cue-audit.json#Intraluminal procedures",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Acute urinary retention",
+        "entry_term": "Acute urinary retention",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute urinary retention",
+        "entry_term": "Acute urinary retention",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute urinary obstruction",
+        "entry_term": "Acute urinary obstruction",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Men",
+        "entry_term": "Men",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Women",
+        "entry_term": "Women",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Obstructive causes",
+        "entry_term": "Obstructive causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Benign prostatic hypertrophy",
+        "entry_term": "Benign prostatic hypertrophy",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Prostate cancer",
+        "entry_term": "Prostate cancer",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Prostate cancer",
+        "entry_term": "Prostate cancer",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Phimosis",
+        "entry_term": "Phimosis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Paraphimosis",
+        "entry_term": "Paraphimosis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Meatal stenosis",
+        "entry_term": "Meatal stenosis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Meatal stenosis",
+        "entry_term": "Meatal stenosis",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral strangulation",
+        "entry_term": "Urethral strangulation",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Infectious causes",
+        "entry_term": "Infectious causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Prostatitis",
+        "entry_term": "Prostatitis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cystocele",
+        "entry_term": "Cystocele",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ovarian tumor",
+        "entry_term": "Ovarian tumor",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Uterine tumor",
+        "entry_term": "Uterine tumor",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Operative causes",
+        "entry_term": "Operative causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Incontinence surgery",
+        "entry_term": "Incontinence surgery",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pelvic inflammatory disease",
+        "entry_term": "Pelvic inflammatory disease",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral stricture",
+        "entry_term": "Urethral stricture",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral stricture",
+        "entry_term": "Urethral stricture",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split urethral stricture head joined."
+      },
+      {
+        "term": "Bladder calculi",
+        "entry_term": "Bladder calculi",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bladder neoplasm",
+        "entry_term": "Bladder neoplasm",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Foreign body",
+        "entry_term": "Foreign body",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Neurogenic causes",
+        "entry_term": "Neurogenic causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Multiple sclerosis",
+        "entry_term": "Multiple sclerosis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Parkinson\u2019s disease",
+        "entry_term": "Parkinson's disease",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": "Apostrophe normalized."
+      },
+      {
+        "term": "Shy-Drager syndrome",
+        "entry_term": "Shy-Drager syndrome",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Brain tumors",
+        "entry_term": "Brain tumors",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cerebral vascular disease",
+        "entry_term": "Cerebral vascular disease",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cauda equina syndrome",
+        "entry_term": "Cauda equina syndrome",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Metastatic spinal cord lesions",
+        "entry_term": "Metastatic spinal cord lesions",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Intervertebral disk herniation",
+        "entry_term": "Intervertebral disk herniation",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Neuropathy",
+        "entry_term": "Neuropathy",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Diabetes",
+        "entry_term": "Diabetes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nerve injury from pelvic surgery",
+        "entry_term": "Nerve injury from pelvic surgery",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Postoperative retention",
+        "entry_term": "Postoperative retention",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Traumatic causes",
+        "entry_term": "Traumatic causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral injury",
+        "entry_term": "Urethral injury",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral injury",
+        "entry_term": "Urethral injury",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bladder injury",
+        "entry_term": "Bladder injury",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Spinal cord injury",
+        "entry_term": "Spinal cord injury",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "injury",
+        "entry_term": "Spinal cord injury",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Shared spinal-cord modifier across coordinated compression/injury label."
+      },
+      {
+        "term": "Extraurinary causes",
+        "entry_term": "Extraurinary causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Perirectal or pelvic abscesses",
+        "entry_term": "Perirectal or pelvic abscesses",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Rectal or retroperitoneal masses",
+        "entry_term": "Rectal or retroperitoneal masses",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Fecal impaction",
+        "entry_term": "Fecal impaction",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Abdominal aortic aneurysm",
+        "entry_term": "Abdominal aortic aneurysm",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Psychogenic causes",
+        "entry_term": "Psychogenic causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Psychosexual stress",
+        "entry_term": "Psychosexual stress",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute anxiety",
+        "entry_term": "Acute anxiety",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Cystitis",
+        "entry_term": "Cystitis",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Herpes simplex (genital)",
+        "entry_term": "Herpes simplex (genital)",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Herpes zoster involving pelvic region",
+        "entry_term": "Herpes zoster involving pelvic region",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Local abscess",
+        "entry_term": "Local abscess",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Postoperative bleeding",
+        "entry_term": "Postoperative bleeding",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Clots",
+        "entry_term": "Clots",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epidural anesthesia",
+        "entry_term": "Epidural anesthesia",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Childhood causes",
+        "entry_term": "Childhood causes",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Posterior urethral valves",
+        "entry_term": "Posterior urethral valves",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Rhabdomyosarcoma of the bladder",
+        "entry_term": "Rhabdomyosarcoma of the bladder",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral atresia",
+        "entry_term": "Urethral atresia",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pharmacologic agents",
+        "entry_term": "Pharmacologic agents",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pharmacologic agents",
+        "entry_term": "Pharmacologic agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "\u03b1-Adrenergic agents",
+        "entry_term": "Alpha-adrenergic agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Greek letter spelled out; source head retained."
+      },
+      {
+        "term": "Amphetamines",
+        "entry_term": "Amphetamines",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Androgens",
+        "entry_term": "Androgens",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Anesthesia agents",
+        "entry_term": "Anesthesia agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Anticholinergics",
+        "entry_term": "Anticholinergics",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antihistamines",
+        "entry_term": "Antihistamines",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antiparkinsonian agents",
+        "entry_term": "Antiparkinsonian agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antipsychotic agents",
+        "entry_term": "Antipsychotic agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Antispasmodics",
+        "entry_term": "Antispasmodics",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Benzodiazepines",
+        "entry_term": "Benzodiazepines",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "\u03b2-Adrenergic agents",
+        "entry_term": "Beta-adrenergic agents",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Greek letter spelled out; source head retained."
+      },
+      {
+        "term": "Calcium channel blockers",
+        "entry_term": "Calcium channel blockers",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Carbamazepine",
+        "entry_term": "Carbamazepine",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Decongestants",
+        "entry_term": "Decongestants",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Estrogens",
+        "entry_term": "Estrogens",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Hydralazine",
+        "entry_term": "Hydralazine",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Muscle relaxants",
+        "entry_term": "Muscle relaxants",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "NSAIDs",
+        "entry_term": "NSAIDs",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Opiates",
+        "entry_term": "Opiates",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Progesterone",
+        "entry_term": "Progesterone",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Selective serotonin reuptake inhibitors",
+        "entry_term": "Selective serotonin reuptake inhibitors",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tetracyclic antidepressants",
+        "entry_term": "Tetracyclic antidepressants",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tricyclic antidepressants",
+        "entry_term": "Tricyclic antidepressants",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Recognition",
+        "entry_term": "Recognition",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Initial assessment",
+        "entry_term": "Initial assessment",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "History",
+        "entry_term": "History",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Physical examination",
+        "entry_term": "Physical examination",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Bladder volume",
+        "entry_term": "Bladder volume",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Initial stabilization",
+        "entry_term": "Initial stabilization",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Risk assessment",
+        "entry_term": "Risk assessment",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Recurrence",
+        "entry_term": "Recurrence",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Surgical intervention",
+        "entry_term": "Surgical intervention",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Morbidity",
+        "entry_term": "Morbidity",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Age",
+        "entry_term": "Age",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Comorbidity",
+        "entry_term": "Comorbidity",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Prostate size",
+        "entry_term": "Prostate size",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Postvoid residual",
+        "entry_term": "Postvoid residual",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Maximum urine flow rate",
+        "entry_term": "Maximum urine flow rate",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Maximum modifier begins preceding span; split head joined."
+      },
+      {
+        "term": "Inpatient care",
+        "entry_term": "Inpatient care",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Malignancy",
+        "entry_term": "Malignancy",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Spinal cord compression",
+        "entry_term": "Spinal cord compression",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Hematuria",
+        "entry_term": "Hematuria",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urinary tract infection",
+        "entry_term": "Urinary tract infection",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Sepsis",
+        "entry_term": "Sepsis",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urologic consultation",
+        "entry_term": "Urologic consultation",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Acute febrile prostatitis",
+        "entry_term": "Acute febrile prostatitis",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Urologic postoperative complications",
+        "entry_term": "Urologic postoperative complications",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Outpatient management",
+        "entry_term": "Outpatient management",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Bleeding",
+        "entry_term": "Bleeding",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Infection",
+        "entry_term": "Infection",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Renal function impairment",
+        "entry_term": "Renal function impairment",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Foley catheter",
+        "entry_term": "Foley catheter",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Foley catheter",
+        "entry_term": "Foley catheter",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Leg bag",
+        "entry_term": "Leg bag",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "\u03b1-adrenergic receptor blocker",
+        "entry_term": "Alpha-adrenergic receptor blocker",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Greek letter spelled out; source head retained."
+      },
+      {
+        "term": "Alfuzosin",
+        "entry_term": "Alfuzosin",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Alfuzosin",
+        "entry_term": "Alfuzosin",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Tamsulosin",
+        "entry_term": "Tamsulosin",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tamsulosin",
+        "entry_term": "Tamsulosin",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Diagnosis",
+        "entry_term": "Diagnosis",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urologic surgery",
+        "entry_term": "Urologic surgery",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Radical prostatectomy",
+        "entry_term": "Radical prostatectomy",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Complex urethral reconstruction",
+        "entry_term": "Complex urethral reconstruction",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Catheter placement",
+        "entry_term": "Catheter placement",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral catheterization",
+        "entry_term": "Urethral catheterization",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral catheter insertion",
+        "entry_term": "Urethral catheterization",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": "Declared catheter-insertion/catheterization wording equivalence."
+      },
+      {
+        "term": "Pain",
+        "entry_term": "Pain",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Catheter balloon inflation",
+        "entry_term": "Catheter balloon inflation",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Bladder",
+        "entry_term": "Bladder",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": "Split lexical head joined; instruction/threshold not retained."
+      },
+      {
+        "term": "Bladder",
+        "entry_term": "Bladder",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral damage",
+        "entry_term": "Urethral damage",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Suprapubic catheterization",
+        "entry_term": "Suprapubic catheterization",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "US",
+        "entry_term": "US",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Source abbreviation retained."
+      },
+      {
+        "term": "US",
+        "entry_term": "US",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral catheter",
+        "entry_term": "Urethral catheter",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "suprapubic catheter",
+        "entry_term": "Suprapubic catheter",
+        "pdf_page": 25,
+        "page": 587,
+        "emphasis": "table",
+        "wording_note": "Shared catheter head expanded in urethral or suprapubic label."
+      },
+      {
+        "term": "Obturator technique",
+        "entry_term": "Obturator technique",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator technique",
+        "entry_term": "Obturator technique",
+        "pdf_page": 28,
+        "page": 590,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Peel-away sheath technique",
+        "entry_term": "Peel-away sheath technique",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator",
+        "entry_term": "Obturator",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": ""
+      },
+      {
+        "term": "Obturator",
+        "entry_term": "Obturator",
+        "pdf_page": 28,
+        "page": 590,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Urinary catheter",
+        "entry_term": "Urinary catheter",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": "Adjacent line split joined."
+      },
+      {
+        "term": "Port",
+        "entry_term": "Port",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": ""
+      },
+      {
+        "term": "Needle tip",
+        "entry_term": "Needle tip",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": ""
+      },
+      {
+        "term": "Anterior bladder wall",
+        "entry_term": "Anterior bladder wall",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": ""
+      },
+      {
+        "term": "Seldinger technique",
+        "entry_term": "Seldinger technique",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": "Adjacent line split joined."
+      },
+      {
+        "term": "Finder needle",
+        "entry_term": "Finder needle",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "named technique/body",
+        "wording_note": ""
+      },
+      {
+        "term": "Catheter balloon",
+        "entry_term": "Catheter balloon",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Prostatic urethra",
+        "entry_term": "Prostatic urethra",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": "US raster has image-only Prostate/Foley/bladder labels; actual caption words anchor this anatomical head."
+      },
+      {
+        "term": "Meatus",
+        "entry_term": "Meatus",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Male pelvis",
+        "entry_term": "Male pelvis",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "cuff",
+        "entry_term": "Catheter cuff",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": "Catheter governs cuff in the figure-caption sentence."
+      },
+      {
+        "term": "Urine aspiration",
+        "entry_term": "Urine aspiration",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "inflate the balloon",
+        "entry_term": "Balloon inflation",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": "Nominalized caption action; not an inflation instruction."
+      },
+      {
+        "term": "balloon is inflated",
+        "entry_term": "Balloon inflation",
+        "pdf_page": 28,
+        "page": 590,
+        "emphasis": "caption",
+        "wording_note": "Caption action nominalized; no procedural instruction."
+      },
+      {
+        "term": "Bladder neck",
+        "entry_term": "Bladder neck",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "ports",
+        "entry_term": "Catheter ports",
+        "pdf_page": 26,
+        "page": 588,
+        "emphasis": "caption",
+        "wording_note": "Governing catheter in same caption supplies modifier."
+      },
+      {
+        "term": "Prostate",
+        "entry_term": "Prostate",
+        "pdf_page": 24,
+        "page": 586,
+        "emphasis": "caption",
+        "wording_note": "Raster26 Prostate label lacks native text; actual prostate word in table anchors organ head, not a new image span."
+      },
+      {
+        "term": "Distended bladder",
+        "entry_term": "Distended bladder",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Suprapubic aspiration",
+        "entry_term": "Suprapubic aspiration",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Needle advancement",
+        "entry_term": "Needle advancement",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Syringe",
+        "entry_term": "Syringe",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": "Figure equipment anchored to actual nearby procedure words; no invented raster label span."
+      },
+      {
+        "term": "Guidewire",
+        "entry_term": "Guidewire",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": "Figure equipment anchored to actual nearby procedure words; no invented raster label span."
+      },
+      {
+        "term": "Peel-away sheath",
+        "entry_term": "Peel-away sheath",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "caption",
+        "wording_note": "Figure equipment anchored to actual nearby procedure words; no invented raster label span."
+      },
+      {
+        "term": "Postcatheterization care",
+        "entry_term": "Postcatheterization care",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Disposition and follow-up",
+        "entry_term": "Disposition and follow-up",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urine leakage around a suprapubic catheter",
+        "entry_term": "Urine leakage around a suprapubic catheter",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Females with urinary retention",
+        "entry_term": "Females with urinary retention",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Gross hematuria",
+        "entry_term": "Gross hematuria",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Clot retention",
+        "entry_term": "Clot retention",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Postoperative urinary retention",
+        "entry_term": "Postoperative urinary retention",
+        "pdf_page": 27,
+        "page": 589,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Catheter",
+        "entry_term": "Catheter",
+        "pdf_page": 28,
+        "page": 590,
+        "emphasis": "caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Collecting tube",
+        "entry_term": "Collecting tube",
+        "pdf_page": 28,
+        "page": 590,
+        "emphasis": "caption",
+        "wording_note": ""
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 24,
+        "description": "Native source span(s) 24:7, 24:17, 24:44, 24:45, 24:46, 24:127, 24:128, 24:129, 24:146, 24:185, 24:193, 24:195, 24:206, 24:207, 24:221",
+        "reason": "Table IDs, author/chapter labels, pure intro/pathophysiology/clinical-feature scaffold, footnote priority and cross-references; named table causes/categories extracted."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Native source span(s) 25:7, 25:35, 25:39, 25:41, 25:43, 25:44, 25:45, 25:46, 25:47, 25:49, 25:51, 25:52, 25:53, 25:54, 25:57, 25:58, 25:59, 25:60, 25:63, 25:64, 25:65, 25:66, 25:69, 25:70, 25:71, 25:72, 25:73, 25:74",
+        "reason": "Full assessment/admission/placement and numeric drug/follow-up instructions excluded after named operation, catheter, risk-variable, disease and drug heads extracted."
+      },
+      {
+        "pdf_page": 25,
+        "description": "Native source span(s) 25:105, 25:107, 25:113, 25:114, 25:115, 25:125, 25:130, 25:131, 25:132, 25:133, 25:134, 25:136, 25:170",
+        "reason": "Navigation and full bold surgical/balloon-warning statements excluded after surgery/prostatectomy/reconstruction, placement, pain/balloon/bladder/urethral heads extracted; no clinical advice or mechanism."
+      },
+      {
+        "pdf_page": 26,
+        "description": "Native source span(s) 26:18, 26:31, 26:33, 26:34, 26:36, 26:38, 26:40, 26:43, 26:45, 26:48, 26:50, 26:51, 26:52, 26:53, 26:54, 26:55, 26:56, 26:57, 26:58",
+        "reason": "Figure IDs/panel letters/credits excluded. Caption equipment/anatomical/action heads and named technique heads mapped; image-only US labels never assigned fictitious native IDs."
+      },
+      {
+        "pdf_page": 26,
+        "description": "Native source span(s) 26:7, 26:8, 26:9, 26:10, 26:11, 26:12, 26:13, 26:16, 26:17, 26:19, 26:20, 26:21, 26:22, 26:23, 26:24, 26:25, 26:26, 26:30",
+        "reason": "Full numerical-angle/depth/advancement technique prose excluded after actual obturator/catheter/port/needle/sheath and bladder-wall heads; not procedural instructions."
+      },
+      {
+        "pdf_page": 27,
+        "description": "Native source span(s) 27:7, 27:8, 27:9, 27:10, 27:11, 27:12, 27:13, 27:14, 27:87",
+        "reason": "Figure identifier/credits, quantitative placement guidance and generic special-consideration scaffold excluded after US/distended-bladder/aspiration/needle heads."
+      },
+      {
+        "pdf_page": 28,
+        "description": "Native source span(s) 28:7, 28:9, 28:10, 28:11, 28:12, 28:13, 28:14, 28:15, 28:16, 28:17, 28:18, 28:19, 28:20, 28:21, 28:22, 28:23, 28:24, 28:28",
+        "reason": "Figure IDs/panel letters/credits/acknowledgment/references and numerical procedural prose excluded after obturator/catheter/balloon/collecting-tube heads."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-26/batch91-95",
+  "limits": "Selected native emphasis/table and procedural figure/caption heads across renal24-28; all5 rasters inspected. Annotation arrays0; flattened highlights uncertain. Image-only US labels anchored to actual caption/body words with notes, never invented native spans. Numeric instructions/doses excluded after named heads. Not exhaustive prose/clinical coverage; no cues/prepare.",
+  "sparse_provenance": {
+    "inventory_sha256": "cc989443b611228f7e84d471c85faaa39f317f911d2bb75c0eef0f71fe32a38d",
+    "decisions_sha256": "556e86bdff259e3ba0d75a6d291598236df9949c47b496c213bedc4276621b0a",
+    "tool_sha256": "c2d60c2ee25db457c92ce4a87b362f29f7a1609955936f1f76b2618f8a47ea8c",
+    "manifest_sha256": "0e033719c2b15285331646bf0ea49bc35baf3fcd20c4894c68008443d1ad80a5",
+    "prior_freeze_sha256": "6e1b65ae3e8767daab2e7fe3468f759ab12bc2b501734ef4fe6cfc6b302c4e46",
+    "source_cache_sha256": {
+      "24": "63c30ac988b7d411461ff63710774ad843958264c419f67a6a10127e1e486afb",
+      "25": "28c37f7861b3b4c1d89904178debd3ef203a51c4a3482c1bc83c533e0455d4ea",
+      "26": "7254ffbb3c3421f2f2a8e6bb9bc063fff539e326b4d3298f52444fd6b2efdc41",
+      "27": "00e0de59bdb022cc5a166cbc7d31cdf94ca99583bdd06d2a324a274f6fb0e2a2",
+      "28": "d99fa160f920291208e5fe4ce61c05aadbe421b2c4bc5f941a959924d0ed6c07"
+    },
+    "exact_unchanged_reuse_rows": 53,
+    "explicit_semantic_rows": 32,
+    "explicit_alias_adoption_rows": 79
+  },
+  "main_integration_review": {
+    "date": "2026-10-27",
+    "source_and_conceptual_review": true,
+    "scope": "All five saved source/ownership/emphasis/keyword reviews closed on October26 (888terms/1044mappings); all initial cue/scope/actual-prior and per-target note reviews closed, with bounded repairs corroborated by main and independent non-author stronger review. October27 resumed93delta and94/95completion without source/corpus restart. All first artifacts retained; older holds remain unresolved. Editorial design candidates only, no exhaustive vocabulary/clinical/render/recall or net-cost validation.",
+    "counts": {
+      "selected_terms": 164,
+      "new_candidates": 29,
+      "reused_candidates": 135,
+      "holds": 0
+    },
+    "keyword_items": 180,
+    "materialized_sha256": "19b18439de69cb0e307cebbdf3a390bc0697ca577acfe199b2d8e623b9ce7735",
+    "report": "docs/chapter-91-95-sparse-workshop.md"
+  }
+}

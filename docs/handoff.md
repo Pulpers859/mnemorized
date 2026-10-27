@@ -203,6 +203,33 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-27 - Chapters91-95integrated; real workflow observed
+**Done:** Completed saved93repair and94/95authoring with one bounded stronger
+author(Newton) and one non-author stronger reviewer(Herschel). Main corroborated
+findings and integrated all five reviewed hashes.888terms/1,044keyword mappings:
+51different-bridge occurrences,46variants,789repeats,2holds; not unique growth.
+All candidates untested/nonproduction. Source/initial/first-valid/first-MAIN and
+repair artifacts retained. Chapter96Abnormal Uterine Bleeding is next, not started.
+**Review:**93two-row delta closed;94three classification findings closed,160rows
+unchanged;95one hold-rationale finding closed,140unchanged.95reselects the exact
+supper-setting attempt as reconsidered/unchanged rather than fresh invention.
+Only that local first-draft hold resolved. All1,130older core holds preserved;
+newactive91Schistosomiasis and94Ephedrine. Register1,132occurrences/934terms.
+**Efficiency:** Both new compact views failed the earlier5%hurdle:94=4.62%,
+95=2.16%; originals dispatched, no format savings credited. Zero configured
+editorial warnings, but semantic/classification review still required repairs.
+Agent recovery reads/preparation cost remains. No metered quota/net-saving claim,
+no paid providers/images, no new council or source restart. Five-report prototype
+not used for smaller assignments. Observation log and independent audit are under
+Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-26/batch91-95/.
+**Validation:**375focused checks passed; full1,156passed2skipped/149subtests;
+backend compile and all4HTTP200route smokes passed. No clinical/render/recall or
+live-generation validation. Report:docs/chapter-91-95-sparse-workshop.md. Existing
+chapter progress edits reconciled; materializer code/source/prior freezes unchanged.
+**Git:**Pre-commit main/origin/authenticatedremote matched6272dfb; normal push
+and post-push remote verification recorded in the task closeout. Known malformed
+local Codex ref still blocks fetch; no ref deletion or credential retry.
+
 ### 2026-10-26 - Persist audited efficiency workflow; reject source-range trial
 **Done:** Promoted previously audited semantic-table, retrieval-card and narrow
 editorial-warning helpers into stdlib-only `tools/chapter_cue_review_payloads.py`
@@ -227,6 +254,30 @@ equivalent checks ran directly without changing policy. Existing progress edits
 preserved. Fetch still fails
 on malformed local refs/codex checkpoint; authenticated GitHub REST confirms
 remote main matches pre-edit866dcd6. No ref deletion or credential retries.
+
+### 2026-10-26 - Chapter91-95source phase closed; cue phase running
+**Done:** All five source inventories independently reviewed and prepared:
+91=304terms370mappings,92=164/180,93=116/140,94=163/189,95=141/165;
+total888/1044. Six bounded source repairs in91/92closed; none93-95. All29owned
+rasters/native emphasis/exclusions and actual title/column boundaries checked.
+Source-wording Cysteine94andProtease95preserved.91UTI19free-text emphasis label
+says table though actual repaired coordinates/text are a bold statement; recorded
+minor metadata caveat rather than another source-freeze churn.
+**Unfinished:** Strong authorMendel01a16f78-cf37-7721-bda2-09a3060080e7now phase2,
+91decisions draft saved. Owns author/only; no final bank independently closed.
+Main will review all cue/scope rows and target-specific alias notes, preserve
+initial/first-valid/first-main files and recheck bounded deltas only. Source
+inventory and canonical prior_before91freezes must not be regenerated over cues.
+Next92-95cue drafts then integration/hold register/final tests. Stop95,96notstarted.
+**Efficiency/Git:** Optional canonical alias adoption committed/pushed866dcd6,
+local/remote matched0/0. Independent code finding repaired before freeze;62focused
+tests and full local1,087passed2skipped/routes200; CI1,089passed. Code/tool hash
+c2d60c2ee25db457c92ce4a87b362f29f7a1609955936f1f76b2618f8a47ea8cunchanged.
+No measured tokens/net savings yet, no paid API calls or renders. Compact source
+view retains all terms plus literal mismatches/exclusions/uncovered native bold,
+not a semantic auto-admission tool. Normalized serialization baseline86-90is
+505,558chars/998terms=506.57chars/term; whitespace/output bytes not billed tokens.
+Local packet and report paths in prior entry; report still explicitly in progress.
 
 ### 2026-10-26 - Chapter91-95alias trial started
 **Scope:** Fixed five chapters91-95, purchased renalPDF16-44,offset562; main

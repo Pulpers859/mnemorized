@@ -554,3 +554,17 @@ Association occurrences, not unique growth or empirical validation. Earlier hold
 | 90 | [End-Stage Renal Disease](chapter-90-cue-audit.md) | 192 | 6 | 12 | 173 | 1 | 230 |
 
 Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.
+
+## Chapters 91-95: Sparse Authoring Trial
+
+[Independent findings, examples and efficiency limits](chapter-91-95-sparse-workshop.md).
+
+| Chapter | Topic | Terms | Different Bridges | Variants | Repeats | Held | Keyword Mappings |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 91 | [Urinary Tract Infections and Hematuria](chapter-91-cue-audit.md) | 304 | 29 | 18 | 256 | 1 | 370 |
+| 92 | [Acute Urinary Retention](chapter-92-cue-audit.md) | 164 | 7 | 8 | 149 | 0 | 180 |
+| 93 | [Male Genital Problems](chapter-93-cue-audit.md) | 116 | 8 | 10 | 98 | 0 | 140 |
+| 94 | [Urologic Stone Disease](chapter-94-cue-audit.md) | 163 | 6 | 5 | 151 | 1 | 189 |
+| 95 | [Complications of Urologic Procedures and Devices](chapter-95-cue-audit.md) | 141 | 1 | 5 | 135 | 0 | 165 |
+
+Association occurrences, not unique growth or empirical validation. Earlier holds preserved separately; all candidates untested/nonproduction. No paid provider calls or AI image renders.

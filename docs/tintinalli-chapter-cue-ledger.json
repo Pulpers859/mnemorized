@@ -1681,6 +1681,137 @@
         "new_revision": 11
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "91",
+      "title": "Urinary Tract Infections and Hematuria",
+      "record": "docs/chapter-91-cue-audit.json",
+      "report": "docs/chapter-91-cue-audit.md",
+      "selected_terms": 304,
+      "new_candidates": 59,
+      "reused_candidates": 244,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 370,
+      "association_occurrences": {
+        "meaningful_variant": 18,
+        "unchanged_repeat": 256,
+        "new_association": 29,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "new_revision": 18,
+        "existing_candidate_recount": 254,
+        "new_proposal": 30,
+        "reconsidered_attempt": 2
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "92",
+      "title": "Acute Urinary Retention",
+      "record": "docs/chapter-92-cue-audit.json",
+      "report": "docs/chapter-92-cue-audit.md",
+      "selected_terms": 164,
+      "new_candidates": 29,
+      "reused_candidates": 135,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 180,
+      "association_occurrences": {
+        "unchanged_repeat": 149,
+        "meaningful_variant": 8,
+        "new_association": 7
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 149,
+        "new_revision": 8,
+        "new_proposal": 7
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "93",
+      "title": "Male Genital Problems",
+      "record": "docs/chapter-93-cue-audit.json",
+      "report": "docs/chapter-93-cue-audit.md",
+      "selected_terms": 116,
+      "new_candidates": 37,
+      "reused_candidates": 79,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 140,
+      "association_occurrences": {
+        "unchanged_repeat": 98,
+        "new_association": 8,
+        "meaningful_variant": 10
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 97,
+        "new_proposal": 8,
+        "new_revision": 10,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "94",
+      "title": "Urologic Stone Disease",
+      "record": "docs/chapter-94-cue-audit.json",
+      "report": "docs/chapter-94-cue-audit.md",
+      "selected_terms": 163,
+      "new_candidates": 19,
+      "reused_candidates": 143,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 189,
+      "association_occurrences": {
+        "unchanged_repeat": 151,
+        "meaningful_variant": 5,
+        "hold": 1,
+        "new_association": 6
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 151,
+        "new_revision": 4,
+        "new_proposal": 7,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "95",
+      "title": "Complications of Urologic Procedures and Devices",
+      "record": "docs/chapter-95-cue-audit.json",
+      "report": "docs/chapter-95-cue-audit.md",
+      "selected_terms": 141,
+      "new_candidates": 11,
+      "reused_candidates": 130,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 165,
+      "association_occurrences": {
+        "unchanged_repeat": 135,
+        "meaningful_variant": 5,
+        "new_association": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 134,
+        "new_revision": 5,
+        "new_proposal": 1,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1690,8 +1821,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "91",
-    "title": "Urinary Tract Infections and Hematuria",
+    "chapter_id": "96",
+    "title": "Abnormal Uterine Bleeding",
     "status": "not_started_for_cue_review"
   },
   "spend": {

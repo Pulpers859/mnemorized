@@ -1,0 +1,4195 @@
+{
+  "schema_version": 1,
+  "chapter_id": "93",
+  "title": "Male Genital Problems",
+  "review_date": "2026-10-26",
+  "keyword_screen_date": "2026-10-26",
+  "source": {
+    "file": "Tintin_Renal_GU.pdf",
+    "sha256": "6e47e3801ced29aa53ad7be1024c0fd1f3ce20834078c1d6cc628db2885b7e67",
+    "printed_page_offset": 562,
+    "pdf_pages": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "printed_pages": [
+      591,
+      592,
+      593,
+      594,
+      595,
+      596,
+      597,
+      598
+    ],
+    "regions": {
+      "29": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "30": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "31": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "32": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "33": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "34": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "35": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "36": [
+        [
+          0,
+          30,
+          295,
+          326
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 116,
+    "new_candidates": 37,
+    "reused_candidates": 79,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 98,
+    "new_association": 8,
+    "meaningful_variant": 10
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 97,
+    "new_proposal": 8,
+    "new_revision": 10,
+    "reconsidered_attempt": 1
+  },
+  "entries": [
+    {
+      "term": "Male genital problems",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          29,
+          7
+        ]
+      ],
+      "prior": "docs/chapter-51-cue-audit.json#Male sex",
+      "reason": "Male learned-symbol head only; genital anatomy and problems omitted.",
+      "association_comparison": "Same existing male symbol.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Penis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          23
+        ],
+        [
+          29,
+          85
+        ],
+        [
+          31,
+          74
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar penile cross-section teaching model with its external outline and three internal body sections visible.",
+      "cue_scope": "Penis learned named-anatomy category only; function, disease and procedure omitted.",
+      "reason": "Uses a correct taught anatomical host rather than an unrelated organ or an invented name-bearing object.",
+      "association_status": "new_association",
+      "association_comparison": "88 Urethral disease already depicts outlet anatomy; whole penile cross-section is a different named anatomical host.",
+      "prior": "docs/chapter-88-cue-audit.json#Urethral disease",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Scrotum",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          39
+        ],
+        [
+          29,
+          93
+        ],
+        [
+          29,
+          106
+        ],
+        [
+          30,
+          71
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A scrotal-sac teaching cutaway surrounding a paired-testis model.",
+      "cue_scope": "Scrotal sac taught anatomy category only; function, pathology and actual-person identification omitted.",
+      "reason": "Outer sac is explicit rather than assumed from bare testes;60 blank hold has no cue to copy.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "84 Testis already selects paired testes; adding the visible sac extends that anatomical display, not a new testis prop.",
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Colles fascia",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          46
+        ],
+        [
+          29,
+          112
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "reason": "Fascia tissue-sheet head only; named location/eponym omitted.",
+      "association_comparison": "Actual61 standalone fascia already selected.",
+      "decision": "reuse_candidate",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          56
+        ],
+        [
+          29,
+          93
+        ],
+        [
+          29,
+          100
+        ],
+        [
+          29,
+          106
+        ],
+        [
+          33,
+          47
+        ],
+        [
+          33,
+          51
+        ],
+        [
+          33,
+          57
+        ],
+        [
+          33,
+          94
+        ],
+        [
+          33,
+          130
+        ],
+        [
+          33,
+          131
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-84-cue-audit.json#Testis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Buck's fascia",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          86
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "reason": "Fascia tissue-sheet head only; named location/eponym omitted.",
+      "association_comparison": "Actual61 standalone fascia already selected.",
+      "decision": "reuse_candidate",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Skin",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          87
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-41-cue-audit.json#skin",
+      "cue": "A freestanding familiar skin cross-section teaching model.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-41-cue-audit.json#skin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corpus cavernosum",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          88
+        ],
+        [
+          29,
+          89
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A penile cross-section teaching model with its paired upper corporal cylinders emphasized and the lower body subdued.",
+      "cue_scope": "Corpus cavernosum taught anatomy head only; erectile function and disease omitted.",
+      "reason": "The actual paired structure is highlighted; no arbitrary cave icon substitutes for anatomy.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local Penis already supplies cross-section; targeted paired-body emphasis changes encoded anatomical focus.",
+      "prior": "local:93#Penis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethra",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          90
+        ],
+        [
+          35,
+          192
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:91#Urethra",
+      "cue": "A urinary-bladder teaching model with its single lower outlet tube emphasized and the paired upper ureter tubes subdued.",
+      "cue_scope": "Taught urethral outlet anatomy head only; disease, sex-specific dimensions and procedure omitted.",
+      "reason": "Actual taught urethral outlet anatomy only; disease and procedure omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact selected91 copy of88 Urethral disease; not71's wrong-ureter hold.",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corpus spongiosum",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          91
+        ]
+      ],
+      "prior": "docs/chapter-41-cue-audit.json#Polysorb",
+      "reason": "Spongi/sponge learned partial-name family only; corpus and actual tissue anatomy/function omitted.",
+      "association_comparison": "Ordinary sponge already selected41 and91 Medullary sponge disease; not a new sponge host.",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary household sponge standing alone.",
+      "cue_scope": "Vocabulary name association only; not a clinical assertion, dose, material property or procedural demonstration.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gubernaculum testis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          96
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis anatomy head only; gubernaculum structure omitted.",
+      "association_comparison": "Existing84 paired-testis model; no new ligament anatomy.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tunica vaginalis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          94
+        ],
+        [
+          29,
+          95
+        ],
+        [
+          29,
+          97
+        ],
+        [
+          29,
+          111
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar sleeveless tunic teaching garment standing alone.",
+      "cue_scope": "Tunica/tunic approximate name head only; vaginalis, sheath anatomy and actual clothing function omitted.",
+      "reason": "Concrete tunic word host, not an incorrect vaginal-canal model.",
+      "association_status": "new_association",
+      "association_comparison": "63 Schistosomiasis held an ordinary shirt for a weak shirt/schisto bridge; tunica/tunic is a different more direct written-name family.",
+      "prior": "docs/chapter-63-cue-audit.json#schistosomiasis",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hydrocele",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          95
+        ],
+        [
+          29,
+          99
+        ]
+      ],
+      "prior": "docs/chapter-67-cue-audit.json#hydrocephalus",
+      "reason": "Hydro/water name head only; cele and actual fluid collection omitted.",
+      "association_comparison": "Same pitcher, not hydrocele/hydrocephalus clinical equivalence.",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary transparent pitcher of water, without scale marks.",
+      "cue_scope": "Hydro-/water familiar lexical head only; cephalic site, collection and disease unencoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Closed processus vaginalis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          101
+        ],
+        [
+          29,
+          102
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A closed book beside an otherwise matching open book.",
+      "cue_scope": "Closed ordinary cover-state contrast only; processus/vaginalis and anatomy omitted.",
+      "reason": "Open/closed reference makes the state visible without inventing a genital structure or time sequence.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "71 Endometriosis already uses a book closing at its final page; matching open/closed reference revises that closing display.",
+      "prior": "docs/chapter-71-cue-audit.json#Endometriosis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ductus deferens",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          103
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral transparent toy tube standing alone without an internal tool token.",
+      "cue_scope": "Tube literal object/space category only; collecting function, contents and catheter identity omitted.",
+      "reason": "Ductus/duct-tube learned category only; deferens and named anatomy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual92 Collecting tube cue/scope; omitted components are not newly encoded.",
+      "prior": "local:92#Collecting tube",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peritoneum",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          104
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Peritoneum",
+      "cue": "A cutaway abdominal teaching model with a distinct continuous peritoneal lining folded around its displayed intestinal organs.",
+      "cue_scope": "Taught peritoneum lining anatomy only; no fluid, infection or functional mechanism.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-85-cue-audit.json#Peritoneum; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vas deferens",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          107
+        ],
+        [
+          30,
+          10
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "cue": "A familiar vase standing alone, without artery or clamp.",
+      "cue_scope": "Vaso/vase approximate name fragment only; vagal/reflex/clinical effects omitted",
+      "reason": "Vas/vase approximate opening-name head only; deferens and actual duct anatomy omitted. Inherited vagal caveat is earlier lineage, not a claim about this target.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "52 Vasovagal already selects this standalone vase; neither a new vase nor an isolation variant of20's vase/press.",
+      "prior": "docs/chapter-52-cue-audit.json#Vasovagal",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Spermatic artery and vein",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          108
+        ]
+      ],
+      "prior": "docs/chapter-63-cue-audit.json#arteriovenous malformations",
+      "reason": "Artery learned anatomy head only; spermatic location and vein component omitted.",
+      "association_comparison": "Same selected isolated artery token.",
+      "decision": "reuse_candidate",
+      "cue": "A detached artery study token alone, without radial-spoked wheel.",
+      "cue_scope": "artery existing learned head only; other source modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Appendix epididymis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          109
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "The crescent-shaped epididymal contours emphasized on a paired-testis teaching model, with the testes subdued.",
+      "cue_scope": "Epididymis taught named-anatomy contour only; function and inflammation omitted.",
+      "reason": "Epididymis anatomy head only; appendix/appendage omitted, no gastrointestinal appendix substitution.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Epididymis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Epididymis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Appendix testis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          110
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis anatomy head only; appendix/appendage structure omitted. Not the gastrointestinal appendix model.",
+      "association_comparison": "Existing84 testis, no wrong-organ appendix substitution.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dartos fascia",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          113
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#fascia",
+      "reason": "Fascia tissue-sheet head only; named location/eponym omitted.",
+      "association_comparison": "Actual61 standalone fascia already selected.",
+      "decision": "reuse_candidate",
+      "cue": "A detached fascia teaching-model sheet alone.",
+      "cue_scope": "Fascia lexical head only, not pretracheal site or clinical relation.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epididymis",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          29,
+          114
+        ],
+        [
+          30,
+          10
+        ],
+        [
+          33,
+          49
+        ],
+        [
+          33,
+          52
+        ],
+        [
+          33,
+          95
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "The crescent-shaped epididymal contours emphasized on a paired-testis teaching model, with the testes subdued.",
+      "cue_scope": "Epididymis taught named-anatomy contour only; function and inflammation omitted.",
+      "reason": "Highlights the correct attached structure, not the testicle itself renamed as epididymis.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "84 Testis already includes attached epididymal contours; emphasis/subdued-testis display revises encoded anatomical focus.",
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Seminiferous tubules",
+      "pdf_page": 29,
+      "page": 591,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          29,
+          115
+        ],
+        [
+          29,
+          116
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral transparent toy tube standing alone without an internal tool token.",
+      "cue_scope": "Tube literal object/space category only; collecting function, contents and catheter identity omitted.",
+      "reason": "Tubule/tube object-category head only; seminiferous and named anatomy omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual92 Collecting tube cue/scope; omitted components are not newly encoded.",
+      "prior": "local:92#Collecting tube",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prostate",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          30,
+          30
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#prostate; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Physical examination",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          30,
+          37
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#physical examination",
+      "cue": "A mannequin beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#physical examination; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Scrotal edema",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          30,
+          82
+        ]
+      ],
+      "prior": "docs/chapter-33-cue-audit.json#edema",
+      "reason": "Edema/puffing broad taught category only; scrotal location omitted.",
+      "association_comparison": "Same puffy tissue-paper bundle.",
+      "decision": "reuse_candidate",
+      "cue": "A puffy bundle of familiar tissue paper.",
+      "cue_scope": "Offline edema vocabulary only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Edema",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "body",
+      "source_refs": [
+        [
+          30,
+          80
+        ],
+        [
+          31,
+          159
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#edema",
+      "cue": "A puffy bundle of familiar tissue paper.",
+      "cue_scope": "Offline edema vocabulary only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-33-cue-audit.json#edema; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Scrotal abscess",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          30,
+          102
+        ]
+      ],
+      "prior": "docs/chapter-73-cue-audit.json#Abscess",
+      "reason": "Abs/chess partial name only; scrotal location and actual contents omitted.",
+      "association_comparison": "Same selected73 abs/chess composition.",
+      "decision": "reuse_candidate",
+      "cue": "A toy abdomen beside a chess set.",
+      "cue_scope": "Abs/chess approximate name sounds only; no anatomy or pus depiction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fournier's gangrene",
+      "pdf_page": 30,
+      "page": 592,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          30,
+          79
+        ],
+        [
+          30,
+          123
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-21-cue-audit.json#Fournier's gangrene",
+      "cue": "Group of green street-gang figurines.",
+      "cue_scope": "Gangrene family reminder within an already identified Fournier lesson",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-21-cue-audit.json#Fournier's gangrene; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diagnosis",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          31,
+          26
+        ],
+        [
+          33,
+          147
+        ],
+        [
+          34,
+          99
+        ],
+        [
+          35,
+          120
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-88-cue-audit.json#Diagnosis",
+      "cue": "A blank exam booklet alone, without toy train.",
+      "cue_scope": "Untested vocabulary association only, not a clinical assertion, dose, procedure, chemical origin or diagnostic rule. Partial head/name/category cues do not encode omitted modifiers or the complete named structure; learned context is needed.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-88-cue-audit.json#Diagnosis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Balanoposthitis",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          31,
+          77
+        ],
+        [
+          31,
+          100
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar balance scale standing level without readable marks.",
+      "cue_scope": "Balan/balance deliberately approximate opening-name family only; posthitis and genital anatomy omitted.",
+      "reason": "Actual balance host supports a partial spelling/sound bridge; not a diagnosis or balance finding.",
+      "association_status": "new_association",
+      "association_comparison": "60 Stable already selects a level balance scale for stability category. Here balan/balance is a different explicit partial-name bridge, not a new scale.",
+      "prior": "docs/chapter-60-cue-audit.json#stable",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Candida",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          82
+        ],
+        [
+          31,
+          104
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-31-cue-audit.json#Candida",
+      "cue": "A familiar wrapped candy.",
+      "cue_scope": "Candy/Candida partial-name vocabulary",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-31-cue-audit.json#Candida; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Staphylococcus",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          84
+        ],
+        [
+          31,
+          85
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#Staphylococcus",
+      "cue": "A walking staff alone, without gold coins.",
+      "cue_scope": "Staph-/staff approximate partial-name head only; species, resistance and microbial appearance omitted. Actual staff name fragment only; no gold/species inference.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#Staphylococcus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Streptococcus",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          87
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#Streptococcus",
+      "cue": "A plain fabric strip alone; tear removed.",
+      "cue_scope": "Strep-/strip approximate opening sound only; no organism species or sound-identity guarantee.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#Streptococcus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mycoplasma genialium",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          91
+        ],
+        [
+          31,
+          92
+        ]
+      ],
+      "prior": "docs/chapter-64-cue-audit.json#Mycoplasma",
+      "reason": "Myco/mic partial opening only; plasma and source-spelled genialium omitted, not normalized or taxonomically claimed.",
+      "association_comparison": "Same selected mic; source spelling uncertainty preserved.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar microphone alone, with ordinary cords removed.",
+      "cue_scope": "Myco-/mic or mike partial-name bridge only; plasma, species and biological identity unencoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Diabetes",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          101
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-37-cue-audit.json#diabetes",
+      "cue": "A familiar standalone glucose meter training prop.",
+      "cue_scope": "Vocabulary association only; no clinical definition, effect, instruction or numeric claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-37-cue-audit.json#diabetes; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gardnerella",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          106
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A gardener teaching figurine holding a trowel beside a flowerpot.",
+      "cue_scope": "Gardner/gardener approximate opening-name role only; ella, organism and biological identity omitted.",
+      "reason": "Familiar taught gardener role; no named person or invisible identity required.",
+      "association_status": "new_association",
+      "association_comparison": "91 Gentamicin uses gent/gentleman; gardener/gardner is a different actual role/name bridge, not a new human-figure prop.",
+      "prior": "local:91#Gentamicin",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Phimosis",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          31,
+          128
+        ],
+        [
+          31,
+          135
+        ],
+        [
+          31,
+          136
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hood covering a small round knob, with a conspicuously narrowed opening at its front.",
+      "cue_scope": "Broad tight-cover/narrow-opening taught category metaphor only; not a diagnostic genital model or manipulation instruction.",
+      "reason": "Same tight-cover/narrowing metaphor; no anatomical finding or clinical instruction.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual92 Phimosis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:92#Phimosis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Paraphimosis",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          31,
+          135
+        ],
+        [
+          31,
+          137
+        ],
+        [
+          31,
+          150
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hood rolled back behind a round knob, with the gathered hood forming a tight band behind it.",
+      "cue_scope": "Broad trapped-back-cover/pinching metaphor only; no patient anatomy or reduction instruction.",
+      "reason": "Same rolled-back cover metaphor; no reduction technique.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual92 Paraphimosis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:92#Paraphimosis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Glans",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          159
+        ],
+        [
+          32,
+          11
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A penile teaching-model tip enlarged on its display base, with the rounded glans outline and its rim emphasized.",
+      "cue_scope": "Glans taught named-anatomy category only; function, foreskin state and procedure omitted.",
+      "reason": "Actual rounded distal structure, not the spelling-near but wrong gland anatomy.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "Local Penis supplies the anatomical host; enlarged tip/emphasized rim changes region/depiction.",
+      "prior": "local:93#Penis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Elastic bandage",
+      "pdf_page": 31,
+      "page": 593,
+      "source_match": "body",
+      "source_refs": [
+        [
+          31,
+          159
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-42-cue-audit.json#elastic bandage",
+      "cue": "A loose elastic bandage roll standing alone.",
+      "cue_scope": "Familiar bandage category only; no wrap, tightness or pressure instruction",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-42-cue-audit.json#elastic bandage; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hair",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          32,
+          8
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-62-cue-audit.json#hair",
+      "cue": "A familiar tuft of hair alone, without treasure chest.",
+      "cue_scope": "Literal hair head only; body site and manipulation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-62-cue-audit.json#hair; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Coronal sulcus",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          32,
+          8
+        ]
+      ],
+      "prior": "docs/chapter-85-cue-audit.json#Sulcus",
+      "reason": "Sulcus/groove head only; coronal location omitted.",
+      "association_comparison": "Actual85 generic groove already selected; no new crown prop.",
+      "decision": "reuse_candidate",
+      "cue": "A thick wooden teaching block with one conspicuous smooth groove carved along its upper surface.",
+      "cue_scope": "Sulcus/groove learned shape category only; no named anatomy or diagnostic appearance.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Entrapment injuries",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          12
+        ]
+      ],
+      "prior": "docs/chapter-29A-cue-audit.json#injury",
+      "reason": "Injury broad category only; entrapment mechanism omitted.",
+      "association_comparison": "Same damaged mannequin.",
+      "decision": "reuse_candidate",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad injury/trauma family only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Penile hair-tourniquet syndrome",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "body",
+      "source_refs": [
+        [
+          32,
+          40
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#hair",
+      "reason": "Literal hair head only; penile site, tourniquet mechanism and syndrome omitted.",
+      "association_comparison": "Same tuft, not a new constriction depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar tuft of hair alone, without treasure chest.",
+      "cue_scope": "Literal hair head only; body site and manipulation omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fracture of the penis",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          62
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral toy rod separated into two matching pieces.",
+      "cue_scope": "Fracture/break ordinary object-category only; penile anatomy and actual clinical injury omitted.",
+      "reason": "Neutral break metaphor avoids implying the penis contains a bone.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "80 Broken bones already selects separated bone-shaped pieces; neutral rod changes host while retaining break relation.",
+      "prior": "docs/chapter-80-cue-audit.json#Broken bones",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Peyronie's disease",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          87
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand paying one coin into a small shop's open cash drawer.",
+      "cue_scope": "Pey/pay approximate opening-name action only; ronie and disease identity omitted.",
+      "reason": "Visible ordinary payment, not an invented Peyronie character or clinical mechanism.",
+      "association_status": "new_association",
+      "association_comparison": "80 Cassia angustifolia already selects cash register for cass/cash name sound. Here pay/Pey uses a different payment-action name bridge with an existing register ingredient;30 Seldinger's sell/ding scene is also not new commercial scenery.",
+      "prior": "docs/chapter-80-cue-audit.json#Cassia angustifolia",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Priapism",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          97
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar triangular glass prism teaching prop standing alone.",
+      "cue_scope": "Pri/prism deliberately written-opening fragment only; vowel/pronunciation mismatch, apism and clinical condition unencoded.",
+      "reason": "A simple spelling-led partial host, not a validated complete pronunciation or symptom depiction.",
+      "association_status": "new_association",
+      "association_comparison": "Completed bounded prism ingredient query returned no selected or held prism cue hit. This supports a provisional spelling-led pri/prism proposal, not an exhaustive absence/novelty or pronunciation claim.",
+      "change_origin": "new_proposal",
+      "prior": "new_offline_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ischemic priapism",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "body",
+      "source_refs": [
+        [
+          32,
+          118
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar triangular glass prism teaching prop standing alone.",
+      "cue_scope": "Pri/prism deliberately written-opening fragment only; vowel/pronunciation mismatch, apism and clinical condition unencoded.",
+      "reason": "Pri/prism written opening only; subtype, negation, stuttering and clinical state omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Priapism cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Priapism",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nonischemic priapism",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "body",
+      "source_refs": [
+        [
+          32,
+          121
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar triangular glass prism teaching prop standing alone.",
+      "cue_scope": "Pri/prism deliberately written-opening fragment only; vowel/pronunciation mismatch, apism and clinical condition unencoded.",
+      "reason": "Pri/prism written opening only; subtype, negation, stuttering and clinical state omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Priapism cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Priapism",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Stuttering priapism",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "body",
+      "source_refs": [
+        [
+          32,
+          123
+        ],
+        [
+          32,
+          124
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar triangular glass prism teaching prop standing alone.",
+      "cue_scope": "Pri/prism deliberately written-opening fragment only; vowel/pronunciation mismatch, apism and clinical condition unencoded.",
+      "reason": "Pri/prism written opening only; subtype, negation, stuttering and clinical state omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Priapism cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Priapism",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Aspiration",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#aspiration",
+      "cue": "A detached unmarked syringe pulling loose beads inward into its barrel.",
+      "cue_scope": "Offline aspiration vocabulary category or name ingredients only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-33-cue-audit.json#aspiration; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Irrigation",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          147
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#Irrigation",
+      "cue": "A standalone garden watering can.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#Irrigation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corpora cavernosa",
+      "pdf_page": 32,
+      "page": 594,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          32,
+          147
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A penile cross-section teaching model with its paired upper corporal cylinders emphasized and the lower body subdued.",
+      "cue_scope": "Corpus cavernosum taught anatomy head only; erectile function and disease omitted.",
+      "reason": "Same named anatomy category, plural wording; no aspiration or irrigation instruction.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Corpus cavernosum cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Corpus cavernosum",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute scrotal pain",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          11
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "reason": "Pain-expression category only; acute timing and scrotal site omitted.",
+      "association_comparison": "Same familiar pain mask.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain expression ingredient",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testicular torsion",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          33,
+          12
+        ],
+        [
+          33,
+          96
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Testicular torsion",
+      "cue": "A twisted ribbon held at both ends.",
+      "cue_scope": "Torsion/twisting literal action category only; no tissue or vascular effect. Torsion action only; testicular location omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Testicular torsion; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epididymitis",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          33,
+          13
+        ],
+        [
+          34,
+          72
+        ],
+        [
+          35,
+          11
+        ],
+        [
+          35,
+          16
+        ],
+        [
+          35,
+          29
+        ],
+        [
+          35,
+          62
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "The crescent-shaped epididymal contours emphasized on a paired-testis teaching model, with the testes subdued.",
+      "cue_scope": "Epididymis taught named-anatomy contour only; function and inflammation omitted.",
+      "reason": "Epididymis anatomy head only; inflammation, acute timing and orchitis component omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Epididymis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Epididymis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Appendage torsion",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          14
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Testicular torsion",
+      "reason": "Torsion/twisting category only; appendage identity and testicular site omitted.",
+      "association_comparison": "Same twisted ribbon, no new torsion.",
+      "decision": "reuse_candidate",
+      "cue": "A twisted ribbon held at both ends.",
+      "cue_scope": "Torsion/twisting literal action category only; no tissue or vascular effect. Torsion action only; testicular location omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Appendageal torsion",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          34,
+          47
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Testicular torsion",
+      "reason": "Torsion/twisting category only; appendage identity and testicular site omitted.",
+      "association_comparison": "Same twisted ribbon, no new torsion.",
+      "decision": "reuse_candidate",
+      "cue": "A twisted ribbon held at both ends.",
+      "cue_scope": "Torsion/twisting literal action category only; no tissue or vascular effect. Torsion action only; testicular location omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Neonates",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          17
+        ],
+        [
+          33,
+          21
+        ]
+      ],
+      "prior": "docs/chapter-85-cue-audit.json#Congenital",
+      "reason": "Birth/newborn learned category only; exact age and actual congenital condition omitted.",
+      "association_comparison": "85 cradle/newborn already selected; not another new newborn host.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar birth-announcement cradle with a small toy newborn, without abnormal-shape tokens.",
+      "cue_scope": "Congenital/birth learned category only; no genetic cause, abnormality or diagnosis.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Adolescents",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          17
+        ],
+        [
+          33,
+          18
+        ],
+        [
+          33,
+          22
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral teen-age study figurine carrying a school backpack.",
+      "cue_scope": "Adolescent broad taught age-role category only; exact age, puberty and real-person inference omitted.",
+      "reason": "Backpack is contextual role support, not proof that all students are adolescents; category is learned.",
+      "association_status": "new_association",
+      "association_comparison": "61 Young adults held a neutral adult; this proposes a taught teen-role example rather than imposing a blind age-threshold test.",
+      "prior": "docs/chapter-61-cue-audit.json#young adults",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Young adults",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          18
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A neutral adult study figurine.",
+      "cue_scope": "Adult learned category only; young modifier, exact age and real-person age inference omitted.",
+      "reason": "Reconsider the actual61 neutral-adult attempt under the broad taught-category rubric; no perfect age-threshold identification required.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact61 held attempt retained for adult head only; old hold history is not erased.",
+      "prior": "docs/chapter-61-cue-audit.json#young adults",
+      "change_origin": "reconsidered_attempt",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Prepubertal",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          19
+        ]
+      ],
+      "prior": "docs/chapter-44-cue-audit.json#child",
+      "reason": "Broad child learned-category example only; actual puberty state and age threshold omitted.",
+      "association_comparison": "Same selected44 child-sized figures; no age-stage medical inference.",
+      "decision": "reuse_candidate",
+      "cue": "Recognizable child-sized toy figures.",
+      "cue_scope": "Broad child category only; not age, behavior or treatment",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Risk factors",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          20
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-48-cue-audit.json#risk factors",
+      "cue": "A familiar warning triangle beside a magnifying glass.",
+      "cue_scope": "Untested vocabulary association only; no clinical assertion, diagnosis, dose, technique, chemical origin or full-name discrimination.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-48-cue-audit.json#risk factors; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Undescended testicle",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          21
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis/testicle anatomy head only; descent, size, position and subregion modifiers omitted.",
+      "association_comparison": "Same actual84 anatomy model, no new positional depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testicular size",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          22
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis/testicle anatomy head only; descent, size, position and subregion modifiers omitted.",
+      "association_comparison": "Same actual84 anatomy model, no new positional depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Orchiopexy",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          23
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Orchi/testis learned anatomical-name root only; pexy/fixation and procedure omitted.",
+      "association_comparison": "Same testis model; no orchid prop or clinical fixation demonstration.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Sexual activity",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          24
+        ]
+      ],
+      "prior": "docs/chapter-51-cue-audit.json#Male sex",
+      "reason": "Sex/learned-symbol category only; activity, behavior, attraction and actual-person identity omitted.",
+      "association_comparison": "Same learned symbol as a partial name reminder, not an activity depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Promiscuity",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          24
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy professional athlete alone, without the cup of tea.",
+      "cue_scope": "Pro approximate opening-name fragment only; remainder and sexual behavior omitted, professional role taught.",
+      "reason": "Keeps only an economical role/name fragment rather than depicting partner behavior.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "85 Proteus already supplies professional athlete+tea; isolate existing pro head.",
+      "prior": "docs/chapter-85-cue-audit.json#Proteus",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pain onset",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          27
+        ]
+      ],
+      "prior": "docs/chapter-31-cue-audit.json#pain",
+      "reason": "Pain category only; onset timing omitted.",
+      "association_comparison": "Same mask, no timeline.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar pain-expression theatrical mask.",
+      "cue_scope": "Pain expression ingredient",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nausea",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          31
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#nausea",
+      "cue": "A familiar queasy-expression theatrical mask.",
+      "cue_scope": "Broad queasiness vocabulary",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-35-cue-audit.json#nausea; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vomiting",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          31
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-29A-cue-audit.json#vomiting",
+      "cue": "A toy bucket with a familiar cartoon splatter token.",
+      "cue_scope": "Broad vomit vocabulary family",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-29A-cue-audit.json#vomiting; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Dysuria",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          35
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-87-cue-audit.json#Dysuria",
+      "cue": "A recognizable urine-collection jug beside a familiar pain-expression mask.",
+      "cue_scope": "Urine/urinary product-category and pain convention only; no test result, cause or clinical diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-87-cue-audit.json#Dysuria; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Fever",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          40
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-26-cue-audit.json#fever",
+      "cue": "Theatrical flame token beside a study mannequin.",
+      "cue_scope": "Learned vocabulary only; qualifiers and omitted name fragments require topic context.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-26-cue-audit.json#fever; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Epididymo-orchitis",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          44
+        ],
+        [
+          35,
+          12
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "The crescent-shaped epididymal contours emphasized on a paired-testis teaching model, with the testes subdued.",
+      "cue_scope": "Epididymis taught named-anatomy contour only; function and inflammation omitted.",
+      "reason": "Epididymis anatomy head only; inflammation, acute timing and orchitis component omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Epididymis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Epididymis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Swelling",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          46
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#swelling",
+      "cue": "A puffy inflated toy shape, without brain features.",
+      "cue_scope": "Broad puffing/swelling word association only; no anatomy, diagnosis or mechanism.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#swelling; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Tenderness",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          46
+        ],
+        [
+          33,
+          130
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-33-cue-audit.json#tenderness",
+      "cue": "A toy hand gently touching a squishy tender peach.",
+      "cue_scope": "Offline tenderness vocabulary only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-33-cue-audit.json#tenderness; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cremasteric reflex",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          53
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#Hypothenar hammer syndrome",
+      "reason": "Reflex-hammer examination-device category only; cremasteric site, actual response and technique omitted. Inherited scope records hammer-head lineage, not a new response claim.",
+      "association_comparison": "37 baroreflex already uses the reflex hammer for a reflex-name compound;61 already selects that device alone. Adopt actual selected cue/scope, no isolated-hammer novelty.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar reflex-hammer training prop alone, without barometer.",
+      "cue_scope": "Hammer ordinary word head only; hypothenar syndrome/technique unencoded.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testicle position",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          57
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis/testicle anatomy head only; descent, size, position and subregion modifiers omitted.",
+      "association_comparison": "Same actual84 anatomy model, no new positional depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transverse alignment",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          58
+        ]
+      ],
+      "prior": "docs/chapter-43-cue-audit.json#Transverse",
+      "reason": "Transverse/crosswise ordinary spatial category only; anatomy and actual angle omitted.",
+      "association_comparison": "Actual43 crossed craft sticks already selected.",
+      "decision": "reuse_candidate",
+      "cue": "Two craft sticks laid crosswise on an ordinary tabletop.",
+      "cue_scope": "Transverse/crosswise familiar spatial association only; no finger, body angle or clinical geometry",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Vertical alignment",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          59
+        ],
+        [
+          33,
+          60
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "Two upright craft sticks standing parallel beside an otherwise matching crosswise pair.",
+      "cue_scope": "Vertical/upright ordinary spatial contrast only; anatomical alignment and exact angles omitted.",
+      "reason": "Explicit upright-vs-crosswise geometry, not an inferred diagnosis.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "41 Vertical mattress sutures already selects upright mattress/vertical category. Craft-stick orientation and crosswise reference revise host/display within that same upright bridge.",
+      "prior": "docs/chapter-41-cue-audit.json#Vertical mattress sutures",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Genitourinary anomalies",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          24
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#urinary tract",
+      "reason": "Urinary/urinal name head only; genital component, anomalies and instrumentation omitted.",
+      "association_comparison": "Same actual62 urinal wordplay, not a clinical alias.",
+      "decision": "reuse_candidate",
+      "cue": "An unused bathroom urinal fixture.",
+      "cue_scope": "Urinary/urinal lexical head only; no body output or procedure.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Genitourinary instrumentation",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          25
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#urinary tract",
+      "reason": "Urinary/urinal name head only; genital component, anomalies and instrumentation omitted.",
+      "association_comparison": "Same actual62 urinal wordplay, not a clinical alias.",
+      "decision": "reuse_candidate",
+      "cue": "An unused bathroom urinal fixture.",
+      "cue_scope": "Urinary/urinal lexical head only; no body output or procedure.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Appendages",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          26
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A testis/epididymis teaching model with its small stalked appendage tokens emphasized.",
+      "cue_scope": "Testicular appendage taught anatomy category only; not gastrointestinal appendix, torsion or actual finding.",
+      "reason": "Correct source-region appendages rather than substituting the similarly named GI organ.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "84 Testis supplies paired model/epididymal contours; stalked-appendage emphasis adds a different anatomical detail.",
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "High-riding testicle",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          58
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis/testicle anatomy head only; descent, size, position and subregion modifiers omitted.",
+      "association_comparison": "Same actual84 anatomy model, no new positional depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemiscrotal involvement",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          47
+        ],
+        [
+          33,
+          48
+        ],
+        [
+          33,
+          49
+        ],
+        [
+          33,
+          50
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A scrotal-sac teaching cutaway surrounding a paired-testis model.",
+      "cue_scope": "Scrotal sac taught anatomy category only; function, pathology and actual-person identification omitted.",
+      "reason": "Scrotal sac anatomy head only; hemi/laterality and involvement omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Scrotum cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Scrotum",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Head of testicle",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "table",
+      "source_refs": [
+        [
+          33,
+          51
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Testis/testicle anatomy head only; descent, size, position and subregion modifiers omitted.",
+      "association_comparison": "Same actual84 anatomy model, no new positional depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Penile carcinoma",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          33,
+          86
+        ]
+      ],
+      "prior": "docs/chapter-72-cue-audit.json#Tumor",
+      "reason": "Broad tumor/lump category only; penile site and malignant subtype omitted.",
+      "association_comparison": "Same selected72 clay mass.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Firmness",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          130
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A rigid toy slab beside a matching soft slab visibly dented beneath a small block.",
+      "cue_scope": "Scler/hard taught name-family contrast only; multiple, neural lesions and clinical syndrome omitted.",
+      "reason": "Hard/firm physical-category contrast only; no disease, anatomy or mechanism inferred from the inherited sclero wording.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual92 Multiple sclerosis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:92#Multiple sclerosis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Transverse lie",
+      "pdf_page": 33,
+      "page": 595,
+      "source_match": "body",
+      "source_refs": [
+        [
+          33,
+          131
+        ],
+        [
+          33,
+          132
+        ]
+      ],
+      "prior": "docs/chapter-43-cue-audit.json#Transverse",
+      "reason": "Transverse/crosswise ordinary spatial category only; anatomy and actual angle omitted.",
+      "association_comparison": "Actual43 crossed craft sticks already selected.",
+      "decision": "reuse_candidate",
+      "cue": "Two craft sticks laid crosswise on an ordinary tabletop.",
+      "cue_scope": "Transverse/crosswise familiar spatial association only; no finger, body angle or clinical geometry",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Detorsion",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          34,
+          30
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand untwisting a ribbon beside its otherwise matching twisted reference ribbon.",
+      "cue_scope": "De/undo plus torsion/twist ordinary category only; organ, direction and clinical technique omitted.",
+      "reason": "Explicit untwisting comparison, not testicular manipulation instructions.",
+      "association_status": "meaningful_variant",
+      "association_comparison": "71 Testicular torsion already supplies twisted ribbon; reversal and reference revise the same twisting bridge.",
+      "prior": "docs/chapter-71-cue-audit.json#Testicular torsion",
+      "change_origin": "new_revision",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testicular detorsion",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          34,
+          152
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A toy hand untwisting a ribbon beside its otherwise matching twisted reference ribbon.",
+      "cue_scope": "De/undo plus torsion/twist ordinary category only; organ, direction and clinical technique omitted.",
+      "reason": "Untwisting ordinary metaphor only; testicular anatomy and technique omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Detorsion cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Detorsion",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gonorrhea",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          77
+        ],
+        [
+          35,
+          17
+        ],
+        [
+          35,
+          30
+        ]
+      ],
+      "prior": "docs/chapter-85-cue-audit.json#Neisseria gonorrhoeae",
+      "reason": "Gon/gondola approximate opening only; remainder and organism identity omitted.",
+      "association_comparison": "Same actual85 gondola, not a new gon-name bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar gondola boat with raised curved prow standing alone.",
+      "cue_scope": "Gon/gondola approximate species-name opening only; Neisseria, remainder and organism identity omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Chlamydia",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          79
+        ],
+        [
+          35,
+          16
+        ],
+        [
+          35,
+          29
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Chlamydia",
+      "cue": "An ordinary clam shell.",
+      "cue_scope": "Chlam-/clam approximate opening-name sound only; no organism shape or transmission. Chlam-/clam opening sound only, testing omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-85-cue-audit.json#Chlamydia; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Escherichia coli",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          87
+        ],
+        [
+          35,
+          130
+        ],
+        [
+          35,
+          170
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-73-cue-audit.json#Escherichia coli",
+      "cue": "A collie teaching figurine with its characteristic long muzzle and coat.",
+      "cue_scope": "Coli/collie approximate ending-name only; Escherichia omitted; breed identity taught.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-73-cue-audit.json#Escherichia coli; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Klebsiella",
+      "pdf_page": 34,
+      "page": 596,
+      "source_match": "body",
+      "source_refs": [
+        [
+          34,
+          89
+        ],
+        [
+          35,
+          134
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Klebsiella",
+      "cue": "A familiar toy club-shaped bat standing alone.",
+      "cue_scope": "Kleb/club approximate opening-name sound only; species and organism category omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Klebsiella; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute epididymitis",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          16
+        ],
+        [
+          35,
+          29
+        ],
+        [
+          35,
+          62
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "The crescent-shaped epididymal contours emphasized on a paired-testis teaching model, with the testes subdued.",
+      "cue_scope": "Epididymis taught named-anatomy contour only; function and inflammation omitted.",
+      "reason": "Epididymis anatomy head only; inflammation, acute timing and orchitis component omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual93 Epididymis cue/scope; omitted components are not newly encoded.",
+      "prior": "local:93#Epididymis",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ceftriaxone",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          20
+        ],
+        [
+          35,
+          33
+        ],
+        [
+          35,
+          81
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-44-cue-audit.json#ceftriaxone",
+      "cue": "A familiar chef hat standing alone, without control knob.",
+      "cue_scope": "Chef/cef approximate name fragment only; agent suffix not encoded, not a chemical or drug-family claim",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-44-cue-audit.json#ceftriaxone; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Doxycycline",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          22
+        ],
+        [
+          35,
+          35
+        ],
+        [
+          35,
+          82
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-46-cue-audit.json#doxycycline",
+      "cue": "A standalone bicycle without dice.",
+      "cue_scope": "Vocabulary name association only. No clinical assertion, dose, technique, chemical origin or unique blind diagnosis.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-46-cue-audit.json#doxycycline; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Enteric organisms",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          30
+        ],
+        [
+          35,
+          62
+        ]
+      ],
+      "prior": "docs/chapter-79-cue-audit.json#Enterococcus",
+      "reason": "Enter/entero approximate opening-name action only; organism and enteric clinical identity omitted.",
+      "association_comparison": "Same doorway-entering action.",
+      "decision": "reuse_candidate",
+      "cue": "A toy figure halfway through an open doorway, with its trailing foot still outside.",
+      "cue_scope": "Enter/entero approximate opening-word action only; coccus and organism identity omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Insertive anal sex",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          30
+        ]
+      ],
+      "prior": "docs/chapter-77-cue-audit.json#Intraluminal procedures",
+      "reason": "Insertive/inside positional head only; anal/sexual components and actual activity omitted.",
+      "association_comparison": "Existing tool-inside-tube spatial category, not a sexual or medical procedure model.",
+      "decision": "reuse_candidate",
+      "cue": "A small tool token placed inside an intact transparent tube.",
+      "cue_scope": "Intra/inside and lumen/tube-space positional category only; no actual procedure.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Gram-negative bacilli",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          41
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#Gram-negative bacilli",
+      "cue": "A conspicuous crossed-out checkmark alone; detached eye host removed.",
+      "cue_scope": "Negative/negation conventional mark category only, not a test result or medical state. Negative word component only, bacillus subtype separately tried.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#Gram-negative bacilli; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Levofloxacin",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          46
+        ],
+        [
+          35,
+          67
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#Levofloxacin",
+      "cue": "A familiar carpenter's level alone; pressure transducer removed.",
+      "cue_scope": "Levo-/level approximate partial-name fragment only; no drug meaning or full sound. Levo-/level partial name only, no clinical relation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-65-cue-audit.json#Levofloxacin; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Ofloxacin",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "table",
+      "source_refs": [
+        [
+          35,
+          56
+        ],
+        [
+          35,
+          77
+        ],
+        [
+          35,
+          84
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A small flock of familiar sheep teaching figurines.",
+      "cue_scope": "Flox/flocks approximate interior-name sound only; o, acin, organism and drug effects omitted.",
+      "reason": "A familiar flock-category host, not an actual drug-family claim.",
+      "association_status": "new_association",
+      "association_comparison": "65 Levofloxacin uses levo/level; flock/flox is a different interior-name bridge. Bounded sheep/flock ingredient leads39 shear/57 shear forces are shearing tools, not flock imagery; no exhaustive absence claim.",
+      "prior": "docs/chapter-65-cue-audit.json#Levofloxacin",
+      "change_origin": "new_proposal",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Orchitis",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          85
+        ]
+      ],
+      "prior": "docs/chapter-84-cue-audit.json#Testis",
+      "reason": "Orchi/testis learned name-category root only; inflammation omitted.",
+      "association_comparison": "Existing taught testis anatomy, no newly invented orchid bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A paired-testis teaching model with recognizable ovoid testes and attached epididymal contours, displayed without torsion ribbon.",
+      "cue_scope": "Taught testis anatomy head only; no reproductive function, pathology or actual-person inference.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Testicular malignancy",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          107
+        ]
+      ],
+      "prior": "docs/chapter-34-cue-audit.json#malignancy",
+      "reason": "Malign/malicious word family only; testicular site and actual malignancy inference omitted.",
+      "association_comparison": "Same malicious-grin character.",
+      "decision": "reuse_candidate",
+      "cue": "A villainous toy character with a conspicuously malicious grin.",
+      "cue_scope": "Malign/malicious ordinary-language association only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Acute prostatitis",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          119
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#prostate",
+      "reason": "Prost/prosthetic partial name only; acute, prostate anatomy and inflammation omitted.",
+      "association_comparison": "Same selected prosthetic-hand socket.",
+      "decision": "reuse_candidate",
+      "cue": "A detached hand-and-wrist model with an obvious prosthetic socket.",
+      "cue_scope": "Prost/prosthetic partial-name family only; not a prostate anatomy model or intervention.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Pseudomonas",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          132
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-66-cue-audit.json#Pseudomonas",
+      "cue": "A familiar theatrical false nose alone.",
+      "cue_scope": "Pseudo-/false lexical head only; not organism species or condition. Pseudo-/false literal opening only, monas unencoded.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-66-cue-audit.json#Pseudomonas; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Enterobacter",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          136
+        ]
+      ],
+      "prior": "docs/chapter-79-cue-audit.json#Enterococcus",
+      "reason": "Enter/entero opening action only; bacter and organism identity omitted.",
+      "association_comparison": "Same actual entering-doorway bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A toy figure halfway through an open doorway, with its trailing foot still outside.",
+      "cue_scope": "Enter/entero approximate opening-word action only; coccus and organism identity omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Serratia",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          138
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A familiar serrated bread knife with its saw-toothed edge plainly visible.",
+      "cue_scope": "Serra/serrated approximate opening-name family only; tia, marcescens and infection omitted.",
+      "reason": "Serra/serrated opening-name family only; remainder and organism omitted.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Serratia marcescens infection cue/scope; omitted components are not newly encoded.",
+      "prior": "local:91#Serratia marcescens infection",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Enterococcus",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          138
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#Enterococcus",
+      "cue": "A toy figure halfway through an open doorway, with its trailing foot still outside.",
+      "cue_scope": "Enter/entero approximate opening-word action only; coccus and organism identity omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#Enterococcus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Proteus",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          140
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-85-cue-audit.json#Proteus",
+      "cue": "A toy professional athlete balancing a cup of tea.",
+      "cue_scope": "Pro and tea approximate opening/middle sounds only; us and organism identity omitted, professional role taught.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-85-cue-audit.json#Proteus; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethritis",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          194
+        ]
+      ],
+      "decision": "retain_candidate",
+      "cue": "A urinary-bladder teaching model with its single lower outlet tube emphasized and the paired upper ureter tubes subdued.",
+      "cue_scope": "Taught urethral outlet anatomy head only; disease, sex-specific dimensions and procedure omitted.",
+      "reason": "Actual urethral outlet anatomy only; inflammation omitted.71 wrong-ureter hold remains historical.",
+      "association_status": "unchanged_repeat",
+      "association_comparison": "Exact actual91 Urethra cue/scope; omitted components are not newly encoded.",
+      "prior": "local:91#Urethra",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral strictures",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          198
+        ]
+      ],
+      "prior": "docs/chapter-82-cue-audit.json#Stricture",
+      "reason": "Stricture/narrowing category only; urethral site and plural omitted.",
+      "association_comparison": "Same standalone narrowed tube.",
+      "decision": "reuse_candidate",
+      "cue": "A continuous toy tube visibly narrowed at its middle.",
+      "cue_scope": "Learned name/category head; other modifiers omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Urethral foreign bodies",
+      "pdf_page": 35,
+      "page": 597,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          35,
+          201
+        ]
+      ],
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "reason": "Foreign/body alien wordplay only; urethral site and plural omitted.",
+      "association_comparison": "Same extraterrestrial toy.",
+      "decision": "reuse_candidate",
+      "cue": "Small unmistakably extraterrestrial toy figure standing alone on a display base.",
+      "cue_scope": "Foreign plus body learned wordplay",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hematospermia",
+      "pdf_page": 36,
+      "page": 598,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          36,
+          9
+        ]
+      ],
+      "prior": "docs/chapter-60-cue-audit.json#hematuria",
+      "reason": "Hemat/hemo learned blood-name family only, not a claim of literal hemo substring; spermia and actual finding omitted.",
+      "association_comparison": "Same selected blood vial.",
+      "decision": "reuse_candidate",
+      "cue": "A transparent vial of plain red liquid alone.",
+      "cue_scope": "Blood/hemo- explicit lexical root only; no site, bleeding mechanism or result.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Male genital problems",
+        "entry_term": "Male genital problems",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Penis",
+        "entry_term": "Penis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Disorders of the penis",
+        "entry_term": "Penis",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": "Anatomic head of category heading."
+      },
+      {
+        "term": "Scrotum",
+        "entry_term": "Scrotum",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Disorders of the scrotum",
+        "entry_term": "Scrotum",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": "Anatomic head of category heading."
+      },
+      {
+        "term": "Colles\u2019 fascia",
+        "entry_term": "Colles fascia",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Apostrophe variation; same named fascia."
+      },
+      {
+        "term": "Colles fascia",
+        "entry_term": "Colles fascia",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Testes",
+        "entry_term": "Testis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": "Plural normalized to singular."
+      },
+      {
+        "term": "Testis",
+        "entry_term": "Testis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicle",
+        "entry_term": "Testis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Testicle/testis source synonym; position-specific heads also mapped."
+      },
+      {
+        "term": "Testes",
+        "entry_term": "Testis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Plural source heading normalized."
+      },
+      {
+        "term": "Testis",
+        "entry_term": "Testis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Testis head in emphasized finding statement."
+      },
+      {
+        "term": "Buck\u2019s fascia",
+        "entry_term": "Buck's fascia",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Apostrophe normalized."
+      },
+      {
+        "term": "Skin",
+        "entry_term": "Skin",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Corpus cavernosum",
+        "entry_term": "Corpus cavernosum",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Adjacent split figure label joined."
+      },
+      {
+        "term": "Urethra",
+        "entry_term": "Urethra",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Disorders of the urethra",
+        "entry_term": "Urethra",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": "Anatomic head of heading."
+      },
+      {
+        "term": "Corpus spongiosum",
+        "entry_term": "Corpus spongiosum",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Gubernaculum testis",
+        "entry_term": "Gubernaculum testis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Tunica vaginalis",
+        "entry_term": "Tunica vaginalis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Hydrocele",
+        "entry_term": "Hydrocele",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Closed part of processus vaginalis",
+        "entry_term": "Closed processus vaginalis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Split figure label; closed-part qualifier retained."
+      },
+      {
+        "term": "Ductus deferens",
+        "entry_term": "Ductus deferens",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Peritoneum",
+        "entry_term": "Peritoneum",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Vas deferens",
+        "entry_term": "Vas deferens",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Vas deferens",
+        "entry_term": "Vas deferens",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Spermatic a. & v.",
+        "entry_term": "Spermatic artery and vein",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Artery/vein abbreviations expanded by caption29:106 key."
+      },
+      {
+        "term": "Appendix epididymis",
+        "entry_term": "Appendix epididymis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Terminal conjunction belongs to paired next label."
+      },
+      {
+        "term": "Appendix testis",
+        "entry_term": "Appendix testis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Dartos fascia",
+        "entry_term": "Dartos fascia",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymis",
+        "entry_term": "Epididymis",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymis",
+        "entry_term": "Epididymis",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymis",
+        "entry_term": "Epididymis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Repeated anatomic head including split category heading."
+      },
+      {
+        "term": "Seminiferous tubules",
+        "entry_term": "Seminiferous tubules",
+        "pdf_page": 29,
+        "page": 591,
+        "emphasis": "figure/caption",
+        "wording_note": "Split figure label joined."
+      },
+      {
+        "term": "Prostate",
+        "entry_term": "Prostate",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Physical examination",
+        "entry_term": "Physical examination",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Scrotal edema",
+        "entry_term": "Scrotal edema",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Edema",
+        "entry_term": "Edema",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Edema",
+        "entry_term": "Edema",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Scrotal abscess",
+        "entry_term": "Scrotal abscess",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Fournier\u2019s gangrene",
+        "entry_term": "Fournier's gangrene",
+        "pdf_page": 30,
+        "page": 592,
+        "emphasis": "bold/heading",
+        "wording_note": "Apostrophe normalized; caption and heading."
+      },
+      {
+        "term": "Diagnosis",
+        "entry_term": "Diagnosis",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": "Operation head within combined heading."
+      },
+      {
+        "term": "Diagnosis",
+        "entry_term": "Diagnosis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Diagnosis",
+        "entry_term": "Diagnosis",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": "Operation head within combined heading."
+      },
+      {
+        "term": "Diagnosis",
+        "entry_term": "Diagnosis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": "Operation head within combined heading."
+      },
+      {
+        "term": "Balanoposthitis",
+        "entry_term": "Balanoposthitis",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Candida",
+        "entry_term": "Candida",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Staphylococ-cus",
+        "entry_term": "Staphylococcus",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": "Hyphenated line split joined, not a clinical alias."
+      },
+      {
+        "term": "Streptococcus",
+        "entry_term": "Streptococcus",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Mycoplasma genialium",
+        "entry_term": "Mycoplasma genialium",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": "Split italic name joined; source prints genialium, not silently normalized or taxonomically validated."
+      },
+      {
+        "term": "Diabetes",
+        "entry_term": "Diabetes",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Gardnerella",
+        "entry_term": "Gardnerella",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Phimosis",
+        "entry_term": "Phimosis",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Paraphimosis",
+        "entry_term": "Paraphimosis",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Glans",
+        "entry_term": "Glans",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Glans",
+        "entry_term": "Glans",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Elastic bandage",
+        "entry_term": "Elastic bandage",
+        "pdf_page": 31,
+        "page": 593,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Hair",
+        "entry_term": "Hair",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Coronal sulcus",
+        "entry_term": "Coronal sulcus",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Entrapment injuries",
+        "entry_term": "Entrapment injuries",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Penile hair-tourniquet syndrome",
+        "entry_term": "Penile hair-tourniquet syndrome",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Fracture of the penis",
+        "entry_term": "Fracture of the penis",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Peyronie\u2019s disease",
+        "entry_term": "Peyronie's disease",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": "Apostrophe normalized."
+      },
+      {
+        "term": "Priapism",
+        "entry_term": "Priapism",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "ischemic",
+        "entry_term": "Ischemic priapism",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": "Subtype adjective expanded with governing priapism heading."
+      },
+      {
+        "term": "nonischemic",
+        "entry_term": "Nonischemic priapism",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": "Subtype adjective expanded with governing priapism heading."
+      },
+      {
+        "term": "Stuttering pria-pism",
+        "entry_term": "Stuttering priapism",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": "Hyphenated line split joined."
+      },
+      {
+        "term": "Aspiration",
+        "entry_term": "Aspiration",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Irrigation",
+        "entry_term": "Irrigation",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Corpora cavernosa",
+        "entry_term": "Corpora cavernosa",
+        "pdf_page": 32,
+        "page": 594,
+        "emphasis": "bold/heading",
+        "wording_note": "Source plural anatomical head retained rather than conflated with singular label."
+      },
+      {
+        "term": "Acute scrotal pain",
+        "entry_term": "Acute scrotal pain",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicular torsion",
+        "entry_term": "Testicular torsion",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymitis",
+        "entry_term": "Epididymitis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymitis",
+        "entry_term": "Epididymitis",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymitis",
+        "entry_term": "Epididymitis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Appendage torsion",
+        "entry_term": "Appendage torsion",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Appendageal torsion",
+        "entry_term": "Appendageal torsion",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Neonates",
+        "entry_term": "Neonates",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Adolescents",
+        "entry_term": "Adolescents",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Young adults",
+        "entry_term": "Young adults",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Prepubertal",
+        "entry_term": "Prepubertal",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Risk factors",
+        "entry_term": "Risk factors",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Undescended testicle",
+        "entry_term": "Undescended testicle",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicular size",
+        "entry_term": "Testicular size",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Orchiopexy",
+        "entry_term": "Orchiopexy",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Sexual activity",
+        "entry_term": "Sexual activity",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Promiscuity",
+        "entry_term": "Promiscuity",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Pain onset",
+        "entry_term": "Pain onset",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Nausea",
+        "entry_term": "Nausea",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Vomiting",
+        "entry_term": "Vomiting",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Dysuria",
+        "entry_term": "Dysuria",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Fever",
+        "entry_term": "Fever",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymo-orchitis",
+        "entry_term": "Epididymo-orchitis",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Epididymo-orchitis",
+        "entry_term": "Epididymo-orchitis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Swelling",
+        "entry_term": "Swelling",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Tenderness",
+        "entry_term": "Tenderness",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "tender",
+        "entry_term": "Tenderness",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Adjective nominalized; same finding as table tenderness."
+      },
+      {
+        "term": "Cremasteric reflex",
+        "entry_term": "Cremasteric reflex",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicle position",
+        "entry_term": "Testicle position",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Transverse alignment",
+        "entry_term": "Transverse alignment",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Vertical alignment",
+        "entry_term": "Vertical alignment",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "GU anomalies",
+        "entry_term": "Genitourinary anomalies",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": "GU abbreviation expanded."
+      },
+      {
+        "term": "GU instrumentation",
+        "entry_term": "Genitourinary instrumentation",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": "GU abbreviation expanded."
+      },
+      {
+        "term": "Appendages",
+        "entry_term": "Appendages",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "High riding",
+        "entry_term": "High-riding testicle",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": "Table testicle-position modifier expanded from row head."
+      },
+      {
+        "term": "Hemiscrotal involvement",
+        "entry_term": "Hemiscrotal involvement",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": "Repeated split finding heads joined."
+      },
+      {
+        "term": "head of affected testicle",
+        "entry_term": "Head of testicle",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "table",
+        "wording_note": "Affected modifier omitted, actual anatomic head retained."
+      },
+      {
+        "term": "Penile carcinoma",
+        "entry_term": "Penile carcinoma",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "firm",
+        "entry_term": "Firmness",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Adjective nominalized for lexical trial."
+      },
+      {
+        "term": "Transverse lie",
+        "entry_term": "Transverse lie",
+        "pdf_page": 33,
+        "page": 595,
+        "emphasis": "bold/heading",
+        "wording_note": "Split bold finding joined."
+      },
+      {
+        "term": "Detorsion",
+        "entry_term": "Detorsion",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicular detorsion",
+        "entry_term": "Testicular detorsion",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "figure/caption",
+        "wording_note": ""
+      },
+      {
+        "term": "Gonorrhea",
+        "entry_term": "Gonorrhea",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Gonorrhea",
+        "entry_term": "Gonorrhea",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Chlamydia",
+        "entry_term": "Chlamydia",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Chlamydia",
+        "entry_term": "Chlamydia",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Escherichia coli",
+        "entry_term": "Escherichia coli",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "E. coli",
+        "entry_term": "Escherichia coli",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": "Source genus abbreviation expanded."
+      },
+      {
+        "term": "Klebsiella",
+        "entry_term": "Klebsiella",
+        "pdf_page": 34,
+        "page": 596,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Klebsiella",
+        "entry_term": "Klebsiella",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute epididymitis",
+        "entry_term": "Acute epididymitis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ceftriaxone",
+        "entry_term": "Ceftriaxone",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Doxycycline",
+        "entry_term": "Doxycycline",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Enteric organisms",
+        "entry_term": "Enteric organisms",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Insertive anal sex",
+        "entry_term": "Insertive anal sex",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Gram-negative bacilli",
+        "entry_term": "Gram-negative bacilli",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Levofloxacin",
+        "entry_term": "Levofloxacin",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Ofloxacin",
+        "entry_term": "Ofloxacin",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "table",
+        "wording_note": ""
+      },
+      {
+        "term": "Orchitis",
+        "entry_term": "Orchitis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Testicular malignancy",
+        "entry_term": "Testicular malignancy",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Acute prostatitis",
+        "entry_term": "Acute prostatitis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Pseudomonas",
+        "entry_term": "Pseudomonas",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Enterobacter",
+        "entry_term": "Enterobacter",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Serratia",
+        "entry_term": "Serratia",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Enterococcus",
+        "entry_term": "Enterococcus",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Proteus",
+        "entry_term": "Proteus",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethritis",
+        "entry_term": "Urethritis",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral strictures",
+        "entry_term": "Urethral strictures",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Urethral foreign bodies",
+        "entry_term": "Urethral foreign bodies",
+        "pdf_page": 35,
+        "page": 597,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      },
+      {
+        "term": "Hematospermia",
+        "entry_term": "Hematospermia",
+        "pdf_page": 36,
+        "page": 598,
+        "emphasis": "bold/heading",
+        "wording_note": ""
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 29,
+        "description": "Native source span(s) 29:8, 29:9, 29:19, 29:27, 29:49, 29:74, 29:82, 29:83, 29:84, 29:92, 29:98, 29:105",
+        "reason": "Author, chapter/figure IDs, cross-references and structural headings/label connector; actual anatomy and caption heads inventoried."
+      },
+      {
+        "pdf_page": 30,
+        "description": "Native source span(s) 30:81",
+        "reason": "Caption continuation only; penis and edema heads handled in their actual spans."
+      },
+      {
+        "pdf_page": 31,
+        "description": "Native source span(s) 31:50, 31:131, 31:134, 31:158, 31:162",
+        "reason": "Treatment scaffold, cross-reference/figure ID, wrapping instruction introduction and symbol; actual diabetes/glans/bandage/edema heads extracted from full statements."
+      },
+      {
+        "pdf_page": 32,
+        "description": "Native source span(s) 32:7, 32:9, 32:10, 32:42",
+        "reason": "Figure ID/arrow label, caption connector and cross-reference; actual hair/sulcus/glans heads handled."
+      },
+      {
+        "pdf_page": 33,
+        "description": "Native source span(s) 33:7, 33:15, 33:16, 33:28, 33:29, 33:30, 33:32, 33:33, 33:34, 33:36, 33:37, 33:38, 33:39, 33:41, 33:42, 33:43, 33:45, 33:54, 33:55, 33:56, 33:102, 33:122",
+        "reason": "Table ID, organizational rows, timing/likelihood cells and rule/scaffold text; named pain, symptoms, anatomy, risk/position/reflex heads extracted, not clinical probability claims."
+      },
+      {
+        "pdf_page": 34,
+        "description": "Native source span(s) 34:18, 34:31, 34:35, 34:122, 34:125, 34:151, 34:153, 34:154, 34:155, 34:156, 34:157, 34:158, 34:159, 34:160, 34:161, 34:162, 34:163",
+        "reason": "Treatment scaffold, cross-references, figure IDs/panels/credits and directional book-opening procedure guidance; detorsion head extracted."
+      },
+      {
+        "pdf_page": 35,
+        "description": "Native source span(s) 35:7, 35:24, 35:25, 35:37, 35:38, 35:58, 35:79, 35:159",
+        "reason": "Table ID, numerical doses/routes/course instructions and treatment scaffold; all named regimen/organism heads extracted before exclusion."
+      },
+      {
+        "pdf_page": 36,
+        "description": "Native source span(s) 36:35",
+        "reason": "References heading; following94 ownership excluded."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-26/batch91-95",
+  "limits": "Owned29-35 and36 left above326 only; cached rasters/native emphasis, tables93-1/2 and figure93-1..7 reviewed. Native annotations0; flattened highlights uncertain. Selected lexical heads, not every body noun or exhaustive clinical coverage. Source spelling retained; split labels and expansions declared. No cue/prior decisions.",
+  "sparse_provenance": {
+    "inventory_sha256": "263e0947dfa7dd70a279b9d31f18430f07f0db010c03a7c5ebfe955633e5907b",
+    "decisions_sha256": "7c6bcd269d88e54f3cf6472ace4ff9a59e16a128ebfde8dc4c6f8592fbd41c00",
+    "tool_sha256": "c2d60c2ee25db457c92ce4a87b362f29f7a1609955936f1f76b2618f8a47ea8c",
+    "manifest_sha256": "0e033719c2b15285331646bf0ea49bc35baf3fcd20c4894c68008443d1ad80a5",
+    "prior_freeze_sha256": "6e1b65ae3e8767daab2e7fe3468f759ab12bc2b501734ef4fe6cfc6b302c4e46",
+    "source_cache_sha256": {
+      "29": "7e1dc7c10fce9ebc39fe43d8d9692d6b18f5f708ef52068d07745329f997eb78",
+      "30": "45726334cd0940e8bb73a48bbbbadbaed2ffb5c99e90bab8022e49c88c4042b7",
+      "31": "ed476783bee581f94076eeaa04494910d7f6b6a11a64b5218a833d90aef08812",
+      "32": "c1cdf02c631eabc72142323e61df6952c9694486d24beaf792b5df8f1bab6329",
+      "33": "8197495937300ca6d4d78a7757b01eb1af3793540e1f02ebd0e1e481e3aa6e48",
+      "34": "4b5e5abc839c881fdb07ba00833a61504bf642ca0377510f0583d7eb0169753a",
+      "35": "b01ad18e0c9327d641dc7b2c3985f21fddfe54ccbbf9abf21e580dbeea7710d6",
+      "36": "97500b96aa893fc4cd24d3618596de0def6845d92a233e18bd993d44b1a23287"
+    },
+    "exact_unchanged_reuse_rows": 34,
+    "explicit_semantic_rows": 38,
+    "explicit_alias_adoption_rows": 44
+  },
+  "main_integration_review": {
+    "date": "2026-10-27",
+    "source_and_conceptual_review": true,
+    "scope": "All five saved source/ownership/emphasis/keyword reviews closed on October26 (888terms/1044mappings); all initial cue/scope/actual-prior and per-target note reviews closed, with bounded repairs corroborated by main and independent non-author stronger review. October27 resumed93delta and94/95completion without source/corpus restart. All first artifacts retained; older holds remain unresolved. Editorial design candidates only, no exhaustive vocabulary/clinical/render/recall or net-cost validation.",
+    "counts": {
+      "selected_terms": 116,
+      "new_candidates": 37,
+      "reused_candidates": 79,
+      "holds": 0
+    },
+    "keyword_items": 140,
+    "materialized_sha256": "1686634b75d905eabb8aa5bb5fbb0e2337c0fd555731eb23dcdad3153f03f457",
+    "report": "docs/chapter-91-95-sparse-workshop.md"
+  }
+}
