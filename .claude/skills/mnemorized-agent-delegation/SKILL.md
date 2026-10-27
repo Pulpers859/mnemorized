@@ -59,3 +59,9 @@ repair concrete findings and recheck deltas rather than re-auditing unchanged
 chapters/corpora. Specify FULL output versus a base-hash-keyed overlay explicitly;
 materialize only declared operations and retain first artifacts. Scripts establish
 structure/reference identity, not empirical or semantic success.
+
+For future chapter runs, use the tracked `tools/chapter_cue_review_payloads.py`
+helpers as documented in `docs/chapter-cue-workflow.md` (Audited Efficiency Tools):
+narrow editorial warnings, exact semantic tables and lossless evidence cards.
+Retain original-view fallback and independent all-row review. Local input-token
+reductions are not measured quota/net savings; do not send both formats together.

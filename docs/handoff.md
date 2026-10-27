@@ -203,6 +203,31 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-26 - Persist audited efficiency workflow; reject source-range trial
+**Done:** Promoted previously audited semantic-table, retrieval-card and narrow
+editorial-warning helpers into stdlib-only `tools/chapter_cue_review_payloads.py`
+with a read-only UTF-8 CLI and53focusedtests. Standing chapter workflow, AGENTS
+and both mirrored delegation skills now direct future runs to the tracked tool.
+Raw provenance remains under Troubleshooting Prompts/token_efficiency_council_2026-10-26.
+No provider calls, image renders or new medical-cue authoring.
+**New trial:** Ordered source-exclusion span ranges preserve original view text
+on all five saved chapters and pass5focusedtests, but17,501to15,772local input
+tokens is9.88%, below the frozen15%gate. Rejected; no source-view promotion.
+Prior retrieval-card22.48% and semantic-view9.58%/5.43%measurements remain
+surface-specific local tokenizer proxies, not total quota or net-cost savings.
+**Current chapter state:**91/92independently closed, not integrated;93saved
+two-row repair awaits materialization/delta closure;94draft saved,95unfinished.
+All888source terms/1,044mappings remain source-closed. Older log entries below
+describe earlier states; use the packet's main-audit.md and compact checkpoint.
+**Validation/Git:** Independent promotion finding (empty evidence-form cue loss)
+fixed with selected/held regressions;53focused tests and local source-range5tests
+passed. Backend/tool compile, full suite1,140passed2skipped/149subtests and all
+four HTTP200smoke routes passed. PowerShell launcher blocked by execution policy;
+equivalent checks ran directly without changing policy. Existing progress edits
+preserved. Fetch still fails
+on malformed local refs/codex checkpoint; authenticated GitHub REST confirms
+remote main matches pre-edit866dcd6. No ref deletion or credential retries.
+
 ### 2026-10-26 - Chapter91-95alias trial started
 **Scope:** Fixed five chapters91-95, purchased renalPDF16-44,offset562; main
 viewed all29owned rasters and actual title/column transitions. Source SHA unchanged.

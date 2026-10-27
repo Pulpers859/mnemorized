@@ -42,6 +42,56 @@ The pilot did NOT establish equivalent end-to-end cue authorship or net token/do
 - Keep source/keyword inventory and creative decision freezes separate. Record omissions and coordinate corrections before creative authoring too; moving a repair earlier does not erase its cost. Laboratory/testing/imaging operation heads are not automatically excluded merely because they appear in headings. Exclude pure navigation explicitly; extract meaningful heads first.
 - Record source and rubric limitations. Account for preparation, stronger review and repair work when discussing efficiency; output bytes and wall time are not billed-token or quota-weight measurements.
 
+## Audited Efficiency Tools
+
+Use `tools/chapter_cue_review_payloads.py` for the optional audited review
+representations and narrow editorial preflight. It is stdlib-only, reads local
+inputs and emits UTF-8 stdout; it does not write banks, retrieve medicine, call a
+provider or grant admission. Save inputs/outputs under the batch's ignored
+`Troubleshooting Prompts/` packet. Do not send both representations to a reviewer.
+
+```powershell
+python -X utf8 -m tools.chapter_cue_review_payloads lint --input "Troubleshooting Prompts/<packet>/materialized/chapter-N-cue-audit.json"
+python -X utf8 -m tools.chapter_cue_review_payloads semantic --input "Troubleshooting Prompts/<packet>/original-review.txt"
+python -X utf8 -m tools.chapter_cue_review_payloads evidence --input "Troubleshooting Prompts/<packet>/expanded-retrieval.json"
+python -m pytest tests/test_chapter_cue_review_payloads.py
+```
+
+- Before reviewer dispatch, inspect editorial warnings after the existing sparse
+  build. They flag known undefined-root and unfinished-ingredient-check phrases
+  in reasons/comparisons only. Investigate each warning against real evidence;
+  quoted historical text can require acknowledgement rather than correction.
+  Zero warnings is not semantic, source or schema approval. Do not delete
+  qualifications merely to silence a warning.
+- The semantic table lists field names once, retaining every value and other
+  review lines. Require exact original-text reconstruction. It replaces only
+  representation, not all-row coverage or independent stronger review.
+- Evidence cards group exact cue/scope/status triples separately within selected
+  and held results. Retain every displayed ref, exact term, null scope and record
+  multiplicity. Ref abbreviation removes fixed path syntax only; distinct terms
+  are not interchangeable. Matched counts remain corpus totals, distinct from
+  displayed refs; retain no-hit queries and truncation. Query identity/counts and
+  record multisets must round-trip; grouped display order can change.
+- Unknown fields or unsupported layouts must not be silently dropped. Use the
+  original view when format conversion fails or positional columns impede review.
+  This tool does not prove completeness of upstream source/prior evidence.
+
+Local retrospective measurements (2026-10-26): semantic review inputs fell
+9.58%/5.43% on chapters91/92; fourteen retrieval-query inputs fell from2,229to
+1,728local `o200k_base` tokens (22.48%), including schema/instructions, while
+retaining31original and9additional saved displayed records. No new retrieval
+occurred. Editorial warnings detected three known historical note defects, not
+measured avoided repairs. These are separate surfaces; do not add their
+percentages into an app-wide claim. Earlier failed experiments remain failures.
+
+Actual Codex quota, reasoning/cache costs, reviewer comprehension, held-out
+quality and setup-adjusted net savings remain unproven. No automatic smaller-model
+creative authorship or review-scope reduction is authorized. Use new experiments
+only when explicitly requested, with frozen scope/gates, first results preserved,
+bounded advisor effort and independent audit. Do not routinely reconvene councils
+per chapter. Raw evidence is in the local token_efficiency_council_2026-10-26
+packet; tracked tool tests provide standalone integrity regressions.
+
 ## Sparse Authoring Contract
 
 `tools/chapter_cue_sparse.py` supports the chapter74-75 trial and later compatible

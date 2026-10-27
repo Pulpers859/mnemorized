@@ -122,6 +122,10 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
   paired pilot did not establish equivalent cheaper end-to-end authorship or
   measured net savings. Use compact exception reports and bounded delta rechecks,
   not repeated full-corpus/full-source reviews. Preserve unfinished freezes.
+- For future chapter review runs, use the audited stdlib helpers in
+  `tools/chapter_cue_review_payloads.py` as documented in the chapter workflow:
+  editorial warnings, exact semantic tables and lossless retrieval cards. Keep
+  original-view fallback; local token reductions are not measured quota savings.
 - Keep provider proxy safety, auth, Supabase persistence, quota, usage logging, billing, secrets, Render, Supabase dashboard work, commits, and pushes under main-agent control.
 - Use explorer subagents for bounded read-only questions with evidence-backed findings.
 - Use worker subagents only for disjoint write scopes with explicit file/module ownership.
