@@ -203,6 +203,35 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-28 - Chapters96-100 independently reviewed and integrated
+**Done:** One strong author(Ptolemy) and one non-author strong reviewer(Franklin),
+resumed in the same contexts after usage pause. All five source inventories and
+ALL781cue/scope/prior/target-note rows independently reviewed; main corroborated
+material findings and integrated hash-bound final banks.901keyword mappings:
+35different-bridge occurrences,37variants,708repeats,1hold. Not unique library
+growth or measured recall/render quality; canonical catalog76unchanged.
+**Review:**96four findings/five changed rows;97two/two;98two/two;99one/one;
+100no concrete bank findings. Final evidence-note consistency cleared; first
+draft/first-valid/first-MAIN/author-final/repair histories preserved. Source repairs
+were two97emphasis labels, one98limits phrase and four100omitted lexical heads.
+No new source pass after bounded repairs. Full-width table98onPDF16 separated
+from99; purchased OBGYN hash/offset606/actual transitions independently verified.
+**Holds:**All1,132older core active holds and older resolutions preserved;
+register1,133occurrences/935terms. Only new active96Ginseng. Yaz reselects its
+same first local held jazz-sax attempt, explicit history/resolution, not new yield
+or resolution of any external hold. Older holds stay on the separate revisit list.
+**Validation:**273focused checks passed; full1,172passed2skipped/149subtests;
+backend compile and all4HTTP200route smokes passed, temporary server terminated.
+No paid provider calls, Anthropic calls, AI renders or production cue admission.
+Codex work used account usage; no efficiency experiment or savings claim.
+**Next:**101 Emergency Delivery, not started; fixed batch stops100. Report:
+docs/chapter-96-100-cue-workshop.md. Raw packet and final Git closeout:
+Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-27/batch96-100/.
+Both agents finished and closed; no unfinished96-100lane. Main tracks origin/main.
+Known malformed local Codex checkpoint still blocks fetch; no retry/ref deletion.
+Authenticated GitHub branch and local HEAD matched3b7fe4ab before this commit;
+final push/remote proof is recorded in the packet closeout, not inferred from tests.
+
 ### 2026-10-27 - Chapters91-95integrated; real workflow observed
 **Done:** Completed saved93repair and94/95authoring with one bounded stronger
 author(Newton) and one non-author stronger reviewer(Herschel). Main corroborated

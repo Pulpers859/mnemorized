@@ -1812,6 +1812,132 @@
         "reconsidered_attempt": 1
       },
       "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "96",
+      "title": "Abnormal Uterine Bleeding",
+      "record": "docs/chapter-96-cue-audit.json",
+      "report": "docs/chapter-96-cue-audit.md",
+      "selected_terms": 156,
+      "new_candidates": 55,
+      "reused_candidates": 100,
+      "holds": 1,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 184,
+      "association_occurrences": {
+        "unchanged_repeat": 126,
+        "meaningful_variant": 15,
+        "new_association": 14,
+        "hold": 1
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 125,
+        "new_revision": 15,
+        "new_proposal": 15,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "97",
+      "title": "Abdominal and Pelvic Pain in the Nonpregnant Female",
+      "record": "docs/chapter-97-cue-audit.json",
+      "report": "docs/chapter-97-cue-audit.md",
+      "selected_terms": 51,
+      "new_candidates": 7,
+      "reused_candidates": 44,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 55,
+      "association_occurrences": {
+        "unchanged_repeat": 48,
+        "meaningful_variant": 3
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 48,
+        "new_revision": 3
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "98",
+      "title": "Ectopic Pregnancy and Emergencies in the First 20 Weeks of Pregnancy",
+      "record": "docs/chapter-98-cue-audit.json",
+      "report": "docs/chapter-98-cue-audit.md",
+      "selected_terms": 153,
+      "new_candidates": 31,
+      "reused_candidates": 122,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 185,
+      "association_occurrences": {
+        "unchanged_repeat": 138,
+        "new_association": 11,
+        "meaningful_variant": 4
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 138,
+        "new_proposal": 11,
+        "new_revision": 4
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "99",
+      "title": "Comorbid Disorders in Pregnancy",
+      "record": "docs/chapter-99-cue-audit.json",
+      "report": "docs/chapter-99-cue-audit.md",
+      "selected_terms": 250,
+      "new_candidates": 30,
+      "reused_candidates": 220,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 272,
+      "association_occurrences": {
+        "unchanged_repeat": 234,
+        "new_association": 6,
+        "meaningful_variant": 10
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 233,
+        "new_proposal": 6,
+        "new_revision": 10,
+        "reconsidered_attempt": 1
+      },
+      "counts_not_unique_library_growth": true
+    },
+    {
+      "chapter_id": "100",
+      "title": "Maternal Emergencies After 20 Weeks of Pregnancy and in the Peripartum Period",
+      "record": "docs/chapter-100-cue-audit.json",
+      "report": "docs/chapter-100-cue-audit.md",
+      "selected_terms": 171,
+      "new_candidates": 19,
+      "reused_candidates": 152,
+      "holds": 0,
+      "independent_source_and_conceptual_review": true,
+      "exhaustive_vocabulary_review": false,
+      "empirical_validation": false,
+      "keyword_items_screened": 205,
+      "association_occurrences": {
+        "unchanged_repeat": 162,
+        "meaningful_variant": 5,
+        "new_association": 4
+      },
+      "change_origin_occurrences": {
+        "existing_candidate_recount": 162,
+        "new_revision": 5,
+        "new_proposal": 4
+      },
+      "counts_not_unique_library_growth": true
     }
   ],
   "hold_register": {
@@ -1821,8 +1947,8 @@
     "verify": "python tools/chapter_cue_holds.py --check"
   },
   "next_chapter": {
-    "chapter_id": "96",
-    "title": "Abnormal Uterine Bleeding",
+    "chapter_id": "101",
+    "title": "Emergency Delivery",
     "status": "not_started_for_cue_review"
   },
   "spend": {

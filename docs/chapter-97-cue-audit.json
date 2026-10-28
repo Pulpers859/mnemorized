@@ -1,0 +1,1813 @@
+{
+  "schema_version": 1,
+  "chapter_id": "97",
+  "title": "Abdominal and Pelvic Pain in the Nonpregnant Female",
+  "review_date": "2026-10-27",
+  "keyword_screen_date": "2026-10-27",
+  "source": {
+    "file": "Tintin_OBGYN.pdf",
+    "sha256": "5a3a434223a4d8c18251cbd82c0ccbf7de448dbab8fb34ec1f09a76c15bc47f5",
+    "printed_page_offset": 606,
+    "pdf_pages": [
+      6,
+      7,
+      8,
+      9
+    ],
+    "printed_pages": [
+      612,
+      613,
+      614,
+      615
+    ],
+    "regions": {
+      "6": [
+        [
+          0,
+          554,
+          295,
+          783
+        ],
+        [
+          295,
+          30,
+          612,
+          783
+        ]
+      ],
+      "7": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "8": [
+        [
+          0,
+          30,
+          612,
+          783
+        ]
+      ],
+      "9": [
+        [
+          0,
+          30,
+          320,
+          211
+        ]
+      ]
+    }
+  },
+  "production_admitted": false,
+  "scope": "Offline lexical cues only; no clinical facts, instructions, recall or rendering claims.",
+  "counts": {
+    "selected_terms": 51,
+    "new_candidates": 7,
+    "reused_candidates": 44,
+    "holds": 0
+  },
+  "association_counts": {
+    "unchanged_repeat": 48,
+    "meaningful_variant": 3
+  },
+  "change_origin_counts": {
+    "existing_candidate_recount": 48,
+    "new_revision": 3
+  },
+  "entries": [
+    {
+      "term": "Abdominal and Pelvic Pain in the Nonpregnant Female",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          6,
+          57
+        ],
+        [
+          6,
+          58
+        ]
+      ],
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "reason": "Abdomen/pain vocabulary head only; pelvic location and nonpregnant/female population qualifiers omitted.",
+      "association_comparison": "Exact belly token plus pain mask and inherited scope. Longer title is an occurrence of the existing abdomen/pain bridge, not a new compound scene.",
+      "decision": "reuse_candidate",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Abdomen/pain vocabulary only",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Abdominal Pain",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          62
+        ],
+        [
+          6,
+          63
+        ],
+        [
+          7,
+          13
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-35-cue-audit.json#abdominal pain",
+      "cue": "A detached belly-shaped mannequin token beside a pain-expression mask.",
+      "cue_scope": "Abdomen/pain vocabulary only",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-35-cue-audit.json#abdominal pain; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "pelvic pain",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          62
+        ],
+        [
+          6,
+          63
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#pelvic",
+      "reason": "Pelvic anatomy head only; pain and underlying cause omitted, not a diagnostic bony-pelvis assertion.",
+      "association_comparison": "Exact detached pelvic-bone model and vocabulary scope, not an added pain-expression variant.",
+      "decision": "reuse_candidate",
+      "cue": "A detached pelvic-bone teaching model on a stand.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Nonpregnant Female",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "chapter_title",
+      "source_refs": [
+        [
+          6,
+          58
+        ]
+      ],
+      "prior": "docs/chapter-50-cue-audit.json#Female",
+      "reason": "Female taught category symbol only; nonpregnant status, anatomy and individual identity omitted. Symbol cannot establish pregnancy absence.",
+      "association_comparison": "Same familiar female-symbol token and scope, not the pregnancy mannequin with an inferred negative state.",
+      "decision": "reuse_candidate",
+      "cue": "A detached familiar female-symbol token.",
+      "cue_scope": "Learned category symbol; no patient traits Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "sexual activity",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          86
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-93-cue-audit.json#Sexual activity",
+      "cue": "A detached familiar male-symbol token.",
+      "cue_scope": "Learned category symbol only Vocabulary association only; no clinical inference, dose, technique or chemical-origin claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-93-cue-audit.json#Sexual activity; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "menstrual history",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          86
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:96#Menstrual history",
+      "cue": "A familiar wrapped menstrual pad beside an unnumbered month-calendar grid.",
+      "cue_scope": "Menstrual-product/period broad taught category only; no amount, frequency, duration, pain or diagnosis.",
+      "reason": "Menstrual/period category only; history and actual past events omitted. This is a repeated provisional local96 association, not independently approved merely because96 is under review.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Exact local96 Menstrual history cue/scope, ultimately its Menses host. Same pad/calendar category bridge; no new history or packaging yield. Recheck this dependency if96 review changes its selected host or scope.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "pregnancy",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          87
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-25-cue-audit.json#pregnancy",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Broad pregnancy category token",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-25-cue-audit.json#pregnancy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "lab",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "body",
+      "source_refs": [
+        [
+          6,
+          145
+        ]
+      ],
+      "prior": "docs/chapter-61-cue-audit.json#Laboratory Evaluation",
+      "reason": "Lab/laboratory broad device category only; particular test, result and indication omitted.",
+      "association_comparison": "Exact unused test-tube rack and laboratory scope; common shortened word does not create a new association.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar unused test-tube rack.",
+      "cue_scope": "Laboratory device/category head only, no test indication.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "imaging",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          6,
+          145
+        ],
+        [
+          7,
+          78
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#imaging",
+      "cue": "A plain radiograph-film frame standing alone.",
+      "cue_scope": "Broad imaging category only; not every modality, a result or detection claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#imaging; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "LABORATORY EVALUATION",
+      "pdf_page": 6,
+      "page": 612,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          6,
+          149
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-61-cue-audit.json#Laboratory Evaluation",
+      "cue": "A familiar unused test-tube rack.",
+      "cue_scope": "Laboratory device/category head only, no test indication.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-61-cue-audit.json#Laboratory Evaluation; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "urinary tract infection",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          73
+        ],
+        [
+          7,
+          74
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Urinary tract infection",
+      "cue": "A familiar cartoon germ study token standing alone.",
+      "cue_scope": "Infection learned germ category only; no organism identity or causation. Infection category only, urinary site omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Urinary tract infection; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "US",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          79
+        ],
+        [
+          8,
+          112
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#US",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound device/acronym family only; no image result, scanning or sensitivity claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#US; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "genital tract pathology",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          79
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-60-cue-audit.json#congenital disorders",
+      "cue": "A toy genie visibly emerging in a curling plume from a recognizable ornamental magic lamp.",
+      "cue_scope": "Geni/genie approximate name fragment only; tal, tract, pathology, anatomy and congenital status omitted.",
+      "reason": "Lamp/emergence anchors the familiar genie identity, providing a teachable approximate opening fragment without an arbitrary organ or disease prop. Pronunciation remains approximate and contextual.",
+      "association_status": "meaningful_variant",
+      "change_origin": "new_revision",
+      "earlier_holds_remain_open": true,
+      "association_comparison": "Actual chapter60 hold tried only a toy genie for geni. Add the lamp/emergence relationship to make that identity explicit; same basic name bridge, declared meaningful depiction variant, not exact inheritance from a held cue or a resolution of congenital-disorders history.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ovarian cyst",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          80
+        ],
+        [
+          7,
+          23
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian cyst",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ovarian cyst; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ectopic pregnancy",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          80
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ectopic pregnancy",
+      "cue": "Recognizably pregnant study mannequin with a rounded abdomen.",
+      "cue_scope": "Pregnancy taught category only; site, viability, test result and rupture omitted. Pregnancy head only; ectopic site and rupture omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ectopic pregnancy; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "uterine mass",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          80
+        ]
+      ],
+      "prior": "docs/chapter-91-cue-audit.json#Neoplasms",
+      "reason": "Broad lump/mass category only; uterine location, benign/malignant status and histology omitted.",
+      "association_comparison": "Exact clay lump and broad mass scope; no uterus/cancer inference or new site-specific image.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ovarian mass",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          80
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-82-cue-audit.json#Ovarian mass",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-82-cue-audit.json#Ovarian mass; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "tubo-ovarian abscess",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          80
+        ],
+        [
+          7,
+          81
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Tubo-ovarian abscess",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovarian anatomical head only; tubo-/abscess omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Tubo-ovarian abscess; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "CT",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          88
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-39-cue-audit.json#CT",
+      "cue": "A familiar short-ring CT-scanner teaching miniature.",
+      "cue_scope": "Learned device/acronym category only; no modality comparison or detection claim.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-39-cue-audit.json#CT; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "GI",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          89
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-79-cue-audit.json#GI",
+      "cue": "A detached stomach-and-intestine teaching model.",
+      "cue_scope": "Gastrointestinal broad taught anatomy category only; no particular condition.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-79-cue-audit.json#GI; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "GU",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          89
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-81-cue-audit.json#GU",
+      "cue": "A detached genitourinary teaching display with paired kidneys, ureters, bladder and reproductive-organ tokens.",
+      "cue_scope": "Taught genitourinary expanded-acronym anatomy category only; no condition, sex-specific claim or completeness requirement.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-81-cue-audit.json#GU; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "appendicitis",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          89
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-72-cue-audit.json#Appendicitis",
+      "cue": "A small appendix teaching model displayed alone on a base.",
+      "cue_scope": "Taught appendix anatomy head only; inflammation omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-72-cue-audit.json#Appendicitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "diverticulitis",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          89
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Diverticulitis",
+      "cue": "A toy diver with mask and fins.",
+      "cue_scope": "Divert-/diver approximate opening-name fragment only; no disease location. Divert-/diver opening-name fragment only, no location or inflammation.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Diverticulitis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "bowel obstruction",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          89
+        ],
+        [
+          7,
+          90
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#bowel obstruction",
+      "cue": "A plug visibly seated across a pipe mouth.",
+      "cue_scope": "Obstruction ordinary blockage category only; no particular organ/site. Obstruction/blockage only; bowel host absent.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#bowel obstruction; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "renal stones",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          90
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#kidney stones",
+      "reason": "Renal/kidney and ordinary stones lexical category only; no number, actual location within kidney, symptoms or treatment.",
+      "association_comparison": "Exact detached kidney beside pebbles and inherited vocabulary-only scope; explicit renal/kidney alias, not ureter substituted for kidney.",
+      "decision": "reuse_candidate",
+      "cue": "A detached kidney teaching model beside ordinary pebbles.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Follicular cysts",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          30
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:96#Follicular phase",
+      "cue": "A detached hair-follicle teaching model with one conspicuous hair shaft seated in its surrounding bulb.",
+      "cue_scope": "Follicle broad taught anatomical/name family only; hair is a lexical host, not an ovarian tissue claim. Phase, hormones and time omitted.",
+      "reason": "Follicular name head only; cyst and ovarian tissue identity omitted. Hair follicle is a naming-category host, not an image of the actual cyst.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Exact local96 follicle host and scope; not an invented new cyst morphology. Provisional local dependency remains subject to96 independent review, and no new yield claimed.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Corpus luteum cysts",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          33
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:96#Corpus luteum",
+      "cue": "A recognizable pear-bodied lute instrument with short neck and visible strings.",
+      "cue_scope": "Lute/luteal approximate opening-name sound only; phase, tissue, hormones and luteal physiology omitted.",
+      "reason": "Lute/luteum partial name only; corpus and cysts omitted. This is an instrument-name bridge, not an anatomical drawing or cyst-effect assertion.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Exact local96 Corpus luteum/lute association and scope; additional cyst modifier contributes no new association. Pending local96 review dependency noted.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Hemorrhagic cysts",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          44
+        ]
+      ],
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Hemorrhagic/bleeding head only; cyst identity, site, rupture and amount unencoded.",
+      "association_comparison": "Exact transparent red-liquid leaking pipe and bleeding-category scope. Not a newly authored bleeding-cyst structure.",
+      "decision": "reuse_candidate",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Mittelschmerz",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          49
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Mittelschmerz",
+      "cue": "An ordinary mitten alone.",
+      "cue_scope": "Mittel-/mitten approximate opening-name fragment only; -schmerz/pain omitted. Mittel-/mitten opening-name fragment only; pain omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Mittelschmerz; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Complicated cyst rupture",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          54
+        ]
+      ],
+      "prior": "docs/chapter-60-cue-audit.json#rupture",
+      "reason": "Rupture/tear ordinary head only; cyst, complicated clinical status and consequences omitted.",
+      "association_comparison": "Exact torn fabric strip and tear-only scope. The old ruptured-ovarian-cyst cue selected ovary alone, whereas this explicitly selects a different existing lexical head without claiming new creative yield.",
+      "decision": "reuse_candidate",
+      "cue": "A detached torn strip of fabric alone.",
+      "cue_scope": "Rupture/tear head only, no anatomy or clinical consequences.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "dermoid cyst",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "body",
+      "source_refs": [
+        [
+          7,
+          60
+        ],
+        [
+          8,
+          15
+        ]
+      ],
+      "prior": "docs/chapter-65-cue-audit.json#skin",
+      "reason": "Derm/skin lexical root only; oid, cyst, contents, tumor class and site omitted. Skin model is a naming host, not a claim about cyst contents.",
+      "association_comparison": "Exact selected skin cross-section model and derm-root scope, not a new cyst containing hair/teeth or an arbitrary clinical substitution.",
+      "decision": "reuse_candidate",
+      "cue": "A freestanding skin cross-section model alone, without intact qualifier.",
+      "cue_scope": "Derm-/skin lexical root only, not disease/location substitution.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "hemorrhagic ovarian cyst",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          7,
+          152
+        ]
+      ],
+      "prior": "docs/chapter-13-cue-audit.json#hemorrhage",
+      "reason": "Bleeding/hemorrhagic head only; ovarian site, cyst, size and rupture omitted.",
+      "association_comparison": "Same exact leaking pipe/scope as Hemorrhagic cysts. Additional ovarian modifier and figure occurrence are not new association growth.",
+      "decision": "reuse_candidate",
+      "cue": "Transparent pipe visibly leaking red liquid into a puddle.",
+      "cue_scope": "Bleeding category reminder",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "endovaginal US",
+      "pdf_page": 7,
+      "page": 613,
+      "source_match": "figure_label",
+      "source_refs": [
+        [
+          7,
+          152
+        ]
+      ],
+      "prior": "docs/chapter-39-cue-audit.json#US",
+      "reason": "Ultrasound device/category only; endovaginal location, probe route, procedure and finding omitted.",
+      "association_comparison": "Exact ultrasound probe and unmarked monitor with inherited scope; no new endovaginal probe shape or placement depicted.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound device/acronym family only; no image result, scanning or sensitivity claim.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Cysts",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          13
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-88-cue-audit.json#Cystatin C",
+      "cue": "A small familiar cyst-shaped teaching model: a discrete enclosed sac with a visible thin wall, without contents labels.",
+      "cue_scope": "Cyst enclosed-sac learned category only; statin, C and analyte identity omitted.",
+      "reason": "Adopt the actual closest selected enclosed-sac/cyst category host and scope exactly. No site, contents rule, histology or diagnosis encoded; the prior's omitted statin/C/analyte modifiers are not newly added to this target.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "earlier_holds_remain_open": true,
+      "association_comparison": "Selected88 Cystatin C already depicts the discrete thin-walled enclosed sac and explicitly selects cyst category only. Initial97 transparent liquid pouch expresses the same bridge; its extra clear contents do not justify new-association yield. Copy88 exactly, not the parent82 bladder/flame Cystitis sense. Preserve65 cyst hold and initial97proposal unchanged in snapshots.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "solid",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          14
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-65-cue-audit.json#bilateral consolidations",
+      "cue": "A cutaway solid toy cube whose exposed interior is continuously filled with the same material, beside a matching hollow cube with an empty central cavity.",
+      "cue_scope": "Solid/filled-rather-than-hollow ordinary material property only; no density measurement, tumor character, tissue, consolidation or diagnosis.",
+      "reason": "The exposed filled interior and hollow reference make the actual property visible; no clinical-state inference is needed to retain this literal morphology head.",
+      "association_status": "meaningful_variant",
+      "change_origin": "new_revision",
+      "earlier_holds_remain_open": true,
+      "association_comparison": "Chapter65 bilateral-consolidations hold attempted an undifferentiated solid block; chapter66 consolidation also held that attempt. Add cutaway interior plus hollow comparator to make solidity visible. This is a real property-depiction variant of the old solid bridge, not a new block ingredient or a resolution of either consolidation hold.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "multiloculated",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          14
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-43-cue-audit.json#Extensor Compartments",
+      "cue": "An empty ordinary storage box with divided compartments.",
+      "cue_scope": "Compartment shared lexical category only; no anatomic boundaries or syndrome",
+      "reason": "Adopt exact existing divided-compartment category as a broad locule/chamber reminder. Multi is supported only at ordinary several-compartment level, not a count, tissue diagram or diagnostic distinction. Transparency and an unpartitioned reference were not necessary added scope here.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Selected43 Extensor Compartments already supplies the partitions/divided box overlooked in the initial comparison with21 seats-in-one-chamber. Exact43 cue/scope recount; the initial97 transparency/reference was a redundant explanatory comparison, not enough new relationship/scope to count a meaningful variant.66 loculated effusion encodes outpouring only and is not a locule host. First97 result preserved.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "neoplasm",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          14
+        ],
+        [
+          8,
+          15
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-63-cue-audit.json#neoplasm",
+      "cue": "A familiar plastic shopping bag alone.",
+      "cue_scope": "Plas/plastic approximate name fragment only; neo, tumor identity and growth not encoded. Plastic material is wordplay, not a tissue or chemical-source assertion.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-63-cue-audit.json#neoplasm; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "endometriomas",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          8,
+          15
+        ],
+        [
+          8,
+          19
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Endometriosis",
+      "reason": "Endo/end opening-name fragment only; metrium, oma, ovarian site and lesion type omitted. Not asserting clinical synonymy with endometriosis.",
+      "association_comparison": "Exact book closing on final page and end-fragment scope. Shared lexical opening is unchanged association; lesion distinction remains contextual.",
+      "decision": "reuse_candidate",
+      "cue": "An ordinary book closing at its final page.",
+      "cue_scope": "Endo-/end approximate partial-name bridge only; remaining word unencoded. Endo-/end opening-name fragment only; not anatomy or disease.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "OVARIAN NEOPLASM",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          26
+        ]
+      ],
+      "prior": "docs/chapter-91-cue-audit.json#Neoplasms",
+      "reason": "Broad lump/mass category only; ovarian site and benign/malignant distinction omitted.",
+      "association_comparison": "Exact clay-lump category host, not the plastic/plas sound selected for unqualified neoplasm. Author explicitly chooses this existing mass bridge for this target; no new ovarian-neoplasm depiction.",
+      "decision": "reuse_candidate",
+      "cue": "A conspicuous clay lump standing alone.",
+      "cue_scope": "Broad lump/mass learned category only; no benign/malignant distinction.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "OVARIAN HYPERSTIMULATION SYNDROME",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          8,
+          36
+        ],
+        [
+          8,
+          40
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian cyst",
+      "reason": "Ovary learned anatomical head only; hyperstimulation, syndrome, treatment, severity and reproductive outcome omitted.",
+      "association_comparison": "Exact paired-ovary teaching model and anatomy-only scope. Shared ovarian category does not imply cyst/hyperstimulation equivalence or new syndrome yield.",
+      "decision": "reuse_candidate",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "fertility treatments",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          42
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "docs/chapter-80-cue-audit.json#Infertility",
+      "cue": "A taught ferret figurine standing alone with its long body and short legs clearly visible, without a stop barrier.",
+      "cue_scope": "Fert/ferret approximate opening-name fragment only; fertility physiology, conception, treatment type and outcomes omitted.",
+      "reason": "A familiar taught ferret can carry the shared fert opening. Treatment head and clinical meaning remain contextual; no apparent reproductive action is fabricated.",
+      "association_status": "meaningful_variant",
+      "change_origin": "new_revision",
+      "earlier_holds_remain_open": true,
+      "association_comparison": "Actual selected Infertility cue places a ferret behind a stop barrier for in/not plus fert. Remove the negating barrier and explicitly retain only fert fragment, changing depicted relationship and scope. Not a new ferret association; chapter71 infertility medicine-bottle hold remains unresolved.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ENDOMETRIOSIS",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          60
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Endometriosis",
+      "cue": "An ordinary book closing at its final page.",
+      "cue_scope": "Endo-/end approximate partial-name bridge only; remaining word unencoded. Endo-/end opening-name fragment only; not anatomy or disease.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Endometriosis; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ADENOMYOSIS",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          60
+        ]
+      ],
+      "prior": "docs/chapter-62-cue-audit.json#adenosine deaminase",
+      "reason": "Add/aden approximate opening-name fragment only; myosis, uterus, diagnosis and hormone effects omitted.",
+      "association_comparison": "Exact adding machine and reviewed partial-name scope; also same bridge selected locally in96, not a new association or copied gland-disease fact.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar toy adding machine with unreadable keys.",
+      "cue_scope": "Add/aden approximate opening-name reminder only; no enzyme, receptor or clinical effect.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "FOREIGN BODY",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          69
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-22-cue-audit.json#foreign body",
+      "cue": "Small unmistakably extraterrestrial toy figure standing alone on a display base.",
+      "cue_scope": "Foreign plus body learned wordplay",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-22-cue-audit.json#foreign body; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "TRAUMA",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          69
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-24-cue-audit.json#trauma",
+      "cue": "A visibly dented and cracked study-mannequin token.",
+      "cue_scope": "Broad learned injury-category token",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-24-cue-audit.json#trauma; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "OVARIAN TORSION",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading_and_body",
+      "source_refs": [
+        [
+          8,
+          75
+        ],
+        [
+          8,
+          76
+        ],
+        [
+          8,
+          113
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian torsion",
+      "cue": "A twisted ribbon held at both ends.",
+      "cue_scope": "Torsion/twisting literal action category only; no tissue or vascular effect. Torsion twist action only, ovary omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-71-cue-audit.json#Ovarian torsion; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "surgical emergency",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          76
+        ]
+      ],
+      "prior": "docs/chapter-38-cue-audit.json#surgery",
+      "reason": "Surgery/operating-room taught category only; emergency timing, urgency, indication and actual procedure omitted.",
+      "association_comparison": "Exact empty operating table/lamp and vocabulary-only scope. No alarm/emergency response added and no claim this depicts torsion management.",
+      "decision": "reuse_candidate",
+      "cue": "A miniature empty operating-room table under an operating lamp.",
+      "cue_scope": "Vocabulary association only; no clinical assertion or diagnostic discriminator.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ovarian function",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          77
+        ]
+      ],
+      "prior": "docs/chapter-71-cue-audit.json#Ovarian cyst",
+      "reason": "Ovary anatomical head only; function, perfusion and reproductive outcome omitted, rather than inventing a normal-function result.",
+      "association_comparison": "Exact paired-ovary model and scope. Function adjective does not create a new physiologic bridge.",
+      "decision": "reuse_candidate",
+      "cue": "A freestanding paired-ovary teaching model on its own base.",
+      "cue_scope": "Ovarian learned anatomical head only; no cyst, torsion or reproductive outcome. Ovary learned anatomical head only; cyst/rupture omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "Doppler",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "body",
+      "source_refs": [
+        [
+          8,
+          112
+        ]
+      ],
+      "prior": "docs/chapter-87-cue-audit.json#Doppler studies",
+      "reason": "Familiar ultrasound-device category only; Doppler physics, flow, result and study sensitivity omitted.",
+      "association_comparison": "Exact reviewed ultrasound probe/monitor and explicit device-only scope. Earlier chapter43 Doppler-probe and chapter55 manual-Doppler holds remain open; not inheriting a held undefined device.",
+      "decision": "reuse_candidate",
+      "cue": "A familiar standalone ultrasound probe beside an unmarked monitor.",
+      "cue_scope": "Ultrasound familiar device category only; no finding or scope of examination. Ultrasound device learned category only; Doppler/flow result omitted.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "ADOLESCENTS",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          150
+        ]
+      ],
+      "decision": "reuse_candidate",
+      "prior": "docs/chapter-93-cue-audit.json#Adolescents",
+      "cue": "A neutral teen-age study figurine carrying a school backpack.",
+      "cue_scope": "Adolescent broad taught age-role category only; exact age, puberty and real-person inference omitted.",
+      "reason": "Author explicitly reselected the exact same-term cue and scope without semantic changes.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Same bridge, depiction and encoded scope as docs/chapter-93-cue-audit.json#Adolescents; explicitly reviewed unchanged reuse, not new creative yield.",
+      "tested": false,
+      "selection_status": "candidate"
+    },
+    {
+      "term": "PREMENARCHAL GIRLS",
+      "pdf_page": 8,
+      "page": 614,
+      "source_match": "heading",
+      "source_refs": [
+        [
+          8,
+          150
+        ]
+      ],
+      "decision": "retain_candidate",
+      "prior": "local:96#menarche",
+      "cue": "A simple freestanding stone archway with its curved top clearly visible.",
+      "cue_scope": "Arch/arche approximate internal-name fragment only; men, onset of menses, age and puberty omitted.",
+      "reason": "Arch fragment in menarchal only; pre, girl/female category and actual developmental stage omitted. No puberty inference from an individual's appearance.",
+      "association_status": "unchanged_repeat",
+      "change_origin": "existing_candidate_recount",
+      "association_comparison": "Exact local96 menarche/archway host and scope. Added premenarchal/girls wording is a repeated partial-name association, not a newly depicted before-menarche state; dependency remains provisional pending96 review.",
+      "tested": false,
+      "selection_status": "candidate"
+    }
+  ],
+  "keyword_screen": {
+    "method": "Author-selected lexical heads/native span IDs; source metadata copied by code, independent source/semantic review required.",
+    "items": [
+      {
+        "term": "Abdominal and Pelvic Pain in the Nonpregnant Female",
+        "entry_term": "Abdominal and Pelvic Pain in the Nonpregnant Female",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "chapter title",
+        "wording_note": "Two-line literal title; component pain heads separately screened."
+      },
+      {
+        "term": "Abdominal Pain",
+        "entry_term": "Abdominal Pain",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "introductory body lexical component",
+        "wording_note": ""
+      },
+      {
+        "term": "undifferentiated abdominal pain",
+        "entry_term": "Abdominal Pain",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold disposition statement",
+        "wording_note": "Undifferentiated qualifier retained in hit, not a specific diagnosis."
+      },
+      {
+        "term": "pelvic pain",
+        "entry_term": "pelvic pain",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "introductory body lexical component",
+        "wording_note": ""
+      },
+      {
+        "term": "Nonpregnant Female",
+        "entry_term": "Nonpregnant Female",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "title population head",
+        "wording_note": ""
+      },
+      {
+        "term": "sexual activity",
+        "entry_term": "sexual activity",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "bold statement lexical head",
+        "wording_note": ""
+      },
+      {
+        "term": "menstrual history",
+        "entry_term": "menstrual history",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "bold statement lexical head",
+        "wording_note": ""
+      },
+      {
+        "term": "pregnancy",
+        "entry_term": "pregnancy",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "bold statement lexical head",
+        "wording_note": "Exclusion warning is not turned into a cue fact."
+      },
+      {
+        "term": "lab",
+        "entry_term": "lab",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "bold diagnostic statement operation head",
+        "wording_note": "Literal abbreviation retained; not a particular assay."
+      },
+      {
+        "term": "imaging",
+        "entry_term": "imaging",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "bold diagnostic statement operation head",
+        "wording_note": ""
+      },
+      {
+        "term": "IMAGING",
+        "entry_term": "imaging",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "subheading",
+        "wording_note": ""
+      },
+      {
+        "term": "LABORATORY EVALUATION",
+        "entry_term": "LABORATORY EVALUATION",
+        "pdf_page": 6,
+        "page": 612,
+        "emphasis": "diagnostic-operation subheading",
+        "wording_note": ""
+      },
+      {
+        "term": "urinary tract infection",
+        "entry_term": "urinary tract infection",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold diagnostic caution lexical head",
+        "wording_note": ""
+      },
+      {
+        "term": "US",
+        "entry_term": "US",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement operation head",
+        "wording_note": "Literal abbreviation; no expansion falsely attributed to this span."
+      },
+      {
+        "term": "US",
+        "entry_term": "US",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold diagnostic limitation operation head",
+        "wording_note": ""
+      },
+      {
+        "term": "genital tract pathology",
+        "entry_term": "genital tract pathology",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement category",
+        "wording_note": ""
+      },
+      {
+        "term": "ovarian cyst",
+        "entry_term": "ovarian cyst",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement and section heading",
+        "wording_note": "Plural heading OVARIAN CYSTS; literal singular in statement."
+      },
+      {
+        "term": "ectopic pregnancy",
+        "entry_term": "ectopic pregnancy",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement head",
+        "wording_note": ""
+      },
+      {
+        "term": "uterine mass",
+        "entry_term": "uterine mass",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement head",
+        "wording_note": "Shared mass head in uterine or ovarian mass."
+      },
+      {
+        "term": "ovarian mass",
+        "entry_term": "ovarian mass",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement head",
+        "wording_note": ""
+      },
+      {
+        "term": "tubo-ovarian abscess",
+        "entry_term": "tubo-ovarian abscess",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold split imaging statement head",
+        "wording_note": ""
+      },
+      {
+        "term": "CT",
+        "entry_term": "CT",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement operation head",
+        "wording_note": ""
+      },
+      {
+        "term": "GI",
+        "entry_term": "GI",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement system abbreviation",
+        "wording_note": ""
+      },
+      {
+        "term": "GU",
+        "entry_term": "GU",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement system abbreviation",
+        "wording_note": ""
+      },
+      {
+        "term": "appendicitis",
+        "entry_term": "appendicitis",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement condition",
+        "wording_note": ""
+      },
+      {
+        "term": "diverticulitis",
+        "entry_term": "diverticulitis",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement condition",
+        "wording_note": ""
+      },
+      {
+        "term": "bowel obstruction",
+        "entry_term": "bowel obstruction",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold split imaging statement condition",
+        "wording_note": ""
+      },
+      {
+        "term": "renal stones",
+        "entry_term": "renal stones",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold imaging statement condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Follicular cysts",
+        "entry_term": "Follicular cysts",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold cyst subtype",
+        "wording_note": ""
+      },
+      {
+        "term": "Corpus luteum cysts",
+        "entry_term": "Corpus luteum cysts",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold cyst subtype",
+        "wording_note": ""
+      },
+      {
+        "term": "Hemorrhagic cysts",
+        "entry_term": "Hemorrhagic cysts",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold cyst subtype",
+        "wording_note": ""
+      },
+      {
+        "term": "Mittelschmerz",
+        "entry_term": "Mittelschmerz",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold condition",
+        "wording_note": ""
+      },
+      {
+        "term": "Complicated cyst rupture",
+        "entry_term": "Complicated cyst rupture",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold complication",
+        "wording_note": ""
+      },
+      {
+        "term": "dermoid cyst",
+        "entry_term": "dermoid cyst",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "bold subtype",
+        "wording_note": ""
+      },
+      {
+        "term": "dermoid cysts",
+        "entry_term": "dermoid cyst",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold morphology warning",
+        "wording_note": ""
+      },
+      {
+        "term": "hemorrhagic ovarian cyst",
+        "entry_term": "hemorrhagic ovarian cyst",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "figure caption condition head",
+        "wording_note": "Figure size measurement excluded, subtype retained; not silently identical lexical target to all hemorrhagic cysts."
+      },
+      {
+        "term": "endovaginal US",
+        "entry_term": "endovaginal US",
+        "pdf_page": 7,
+        "page": 613,
+        "emphasis": "figure caption imaging-operation head",
+        "wording_note": ""
+      },
+      {
+        "term": "Cysts",
+        "entry_term": "Cysts",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold morphology statement head",
+        "wording_note": ""
+      },
+      {
+        "term": "solid",
+        "entry_term": "solid",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold morphology statement descriptor",
+        "wording_note": "Morphology only, not inferred histology."
+      },
+      {
+        "term": "multiloculated",
+        "entry_term": "multiloculated",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold morphology statement descriptor",
+        "wording_note": ""
+      },
+      {
+        "term": "neoplasm",
+        "entry_term": "neoplasm",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold split morphology statement head",
+        "wording_note": ""
+      },
+      {
+        "term": "endometriomas",
+        "entry_term": "endometriomas",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold morphology statement and condition heading",
+        "wording_note": "Literal plural preserved."
+      },
+      {
+        "term": "OVARIAN NEOPLASM",
+        "entry_term": "OVARIAN NEOPLASM",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "condition heading",
+        "wording_note": ""
+      },
+      {
+        "term": "OVARIAN HYPERSTIMULATION SYNDROME",
+        "entry_term": "OVARIAN HYPERSTIMULATION SYNDROME",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "condition heading and bold clinical statement",
+        "wording_note": ""
+      },
+      {
+        "term": "fertility treatments",
+        "entry_term": "fertility treatments",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold clinical statement treatment head",
+        "wording_note": ""
+      },
+      {
+        "term": "ENDOMETRIOSIS",
+        "entry_term": "ENDOMETRIOSIS",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "compound condition heading component",
+        "wording_note": ""
+      },
+      {
+        "term": "ADENOMYOSIS",
+        "entry_term": "ADENOMYOSIS",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "compound condition heading component",
+        "wording_note": ""
+      },
+      {
+        "term": "FOREIGN BODY",
+        "entry_term": "FOREIGN BODY",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "compound heading component",
+        "wording_note": ""
+      },
+      {
+        "term": "TRAUMA",
+        "entry_term": "TRAUMA",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "compound heading component",
+        "wording_note": ""
+      },
+      {
+        "term": "OVARIAN TORSION",
+        "entry_term": "OVARIAN TORSION",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "condition heading and bold emergency/diagnostic statements",
+        "wording_note": "Age modifiers from adolescent/premenarchal subheading separately screened."
+      },
+      {
+        "term": "surgical emergency",
+        "entry_term": "surgical emergency",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold clinical statement category head",
+        "wording_note": ""
+      },
+      {
+        "term": "ovarian function",
+        "entry_term": "ovarian function",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold statement physiologic head",
+        "wording_note": ""
+      },
+      {
+        "term": "Doppler",
+        "entry_term": "Doppler",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "bold diagnostic statement operation head",
+        "wording_note": ""
+      },
+      {
+        "term": "ADOLESCENTS",
+        "entry_term": "ADOLESCENTS",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "population subheading component",
+        "wording_note": ""
+      },
+      {
+        "term": "PREMENARCHAL GIRLS",
+        "entry_term": "PREMENARCHAL GIRLS",
+        "pdf_page": 8,
+        "page": 614,
+        "emphasis": "population subheading component",
+        "wording_note": "Literal developmental modifier kept."
+      }
+    ],
+    "excluded_non_terms": [
+      {
+        "pdf_page": 6,
+        "description": "Native source span(s) 6:59, 6:60, 6:70, 6:71",
+        "reason": "Author credits and chapter navigation, not medical heads."
+      },
+      {
+        "pdf_page": 6,
+        "description": "Native source span(s) 6:61, 6:74, 6:78, 6:108, 6:131",
+        "reason": "Generic introduction/general approach/history/physical examination/diagnosis organization; diagnostic lab/imaging heads retained separately."
+      },
+      {
+        "pdf_page": 6,
+        "description": "Native source span(s) 6:85, 6:86, 6:87, 6:143, 6:144, 6:145",
+        "reason": "Full clinical cautions excluded after sexual activity, menstrual history, pregnancy, lab and imaging lexical heads extracted. Generic benign causes/serious pathology are nonspecific evaluative wording."
+      },
+      {
+        "pdf_page": 7,
+        "description": "Native source span(s) 7:12, 7:13, 7:14, 7:15, 7:16, 7:17",
+        "reason": "Disposition/follow-up instruction excluded after undifferentiated abdominal pain extracted."
+      },
+      {
+        "pdf_page": 7,
+        "description": "Native source span(s) 7:121, 7:140, 7:151, 7:153, 7:154, 7:155, 7:156",
+        "reason": "Generic treatment/disposition headings, figure number and reproduction credit; caption condition and imaging head retained."
+      },
+      {
+        "pdf_page": 8,
+        "description": "Native source span(s) 8:13, 8:14, 8:15",
+        "reason": "Size threshold and full morphology warning excluded only after cysts, solid, multiloculated, neoplasm, dermoid cysts and endometriomas extracted."
+      },
+      {
+        "pdf_page": 8,
+        "description": "Native source span(s) 8:40, 8:41, 8:42, 8:43, 8:112, 8:113",
+        "reason": "Clinical recommendation and numeric sensitivity/specificity statement excluded after syndrome, fertility treatments, US/Doppler and torsion heads extracted."
+      },
+      {
+        "pdf_page": 8,
+        "description": "Native source span(s) 8:146",
+        "reason": "Generic special-considerations organization."
+      },
+      {
+        "pdf_page": 9,
+        "description": "Native source span(s) 9:12, 9:16",
+        "reason": "Acknowledgment and references navigation."
+      }
+    ],
+    "highlight_annotation_check": {
+      "checked": true,
+      "highlight_annotations_found": 0,
+      "note": "Native annotation arrays checked; flattened highlights remain uncertain."
+    }
+  },
+  "resolved_holds": [],
+  "review_status": "Independent main source/cue review and repair delta closed; untested/nonproduction",
+  "evidence": {
+    "render": [],
+    "recall": [],
+    "clinical_claim_validation": []
+  },
+  "spend": {
+    "anthropic_calls": 0,
+    "other_paid_provider_calls": 0,
+    "image_renders": 0
+  },
+  "local_packet": "Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-27/batch96-100",
+  "limits": "Full author-selected meaningful bold/heading/figure lexical-head inventory in final main manifest chapter97 regions, not exhaustive bodywords or clinical coverage. No tables in this chapter's owned native regions. Native annotation availability does not rule out flattened highlights or raster-only text. Literal terminology/abbreviations and scope qualifiers retained; cue decisions and exact-prior preparation await main. No paid calls or renders.",
+  "sparse_provenance": {
+    "inventory_sha256": "daab23f9797fb1b47c37ff7ddb4ce8acc87ba8aa73f1ea0fc767337107d16968",
+    "decisions_sha256": "27e1ab2c1317365190f43b5a684d8b90c858f922af6e32f691c9699e22ed3ac8",
+    "tool_sha256": "c2d60c2ee25db457c92ce4a87b362f29f7a1609955936f1f76b2618f8a47ea8c",
+    "manifest_sha256": "1a247e1f3b5bd4dc34b2f42af018005c14e1e9c72e9c18dba337d3ece75759cc",
+    "prior_freeze_sha256": "c343f9752e4a4cd8b7b63a5eab2ce0408b869e3a602c17e2e9c3ba1b9fae316e",
+    "source_cache_sha256": {
+      "6": "cd222683a2ed9f240889a323ce9f60d1870ed7099ee65a27547e1ed2b6df6d7e",
+      "7": "68bce4add951703a1ca0b15571397b7c6ac40bc52ce61d973487eb3ed83d4625",
+      "8": "e0147a1199dd2d39b905fd91aa8ed4cdb5e074e64239ea8e86718460152abd9f",
+      "9": "2c46c63390f164e1391c1073715cb70a7e59adbaed0727c40006b77bfe3716d4"
+    },
+    "exact_unchanged_reuse_rows": 24,
+    "explicit_semantic_rows": 9,
+    "explicit_alias_adoption_rows": 18
+  },
+  "main_integration_review": {
+    "date": "2026-10-28",
+    "source_and_conceptual_review": true,
+    "scope": "Main verified source identity, ownership/title boundaries, native typography and inventory structure; non-author independent source/lexical review of all five inventories and ALL781 cue/scope/actual-prior/target-note rows. Main read all nonrepeat rows and corroborated material findings; bounded repair deltas and final sidecar consistency closed.901 keyword mappings; selected vocabulary only, not exhaustive clinical coverage, recall/render evidence or production admission. First attempts and older holds preserved.",
+    "counts": {
+      "selected_terms": 51,
+      "new_candidates": 7,
+      "reused_candidates": 44,
+      "holds": 0
+    },
+    "keyword_items": 55,
+    "materialized_sha256": "b5edba68c8403f5fcf118c711f161615eaf792e81fe165c592fdafb6945db794",
+    "report": "docs/chapter-96-100-cue-workshop.md"
+  }
+}
