@@ -108,7 +108,7 @@ def configure_server(monkeypatch, tmp_path, configured=True):
     settings = replace(main.get_settings(), anthropic_api_key="test-key", app_env="development", demo_auth_bypass=True,
                        supabase_url="", supabase_anon_key="", supabase_service_role_key="", openai_api_key="",
                        research_budget_path=path if configured else None)
-    monkeypatch.setattr(main.app.state, "settings", settings, raising=False)
+    monkeypatch.setitem(main.app.state._state, "settings", settings)
     return path
 
 
@@ -139,7 +139,7 @@ def test_guard_counts_final_body_and_never_dispatches_generation(monkeypatch, tm
     # Actual evidence injection executes; only retrieval itself is a nonclinical stub.
     settings = replace(main.app.state.settings, supabase_url="https://fixture.supabase.co", supabase_anon_key="fixture",
                        supabase_service_role_key="fixture", openai_api_key="fixture")
-    monkeypatch.setattr(main.app.state, "settings", settings)
+    monkeypatch.setitem(main.app.state._state, "settings", settings)
     async def retrieve(**kwargs):
         return [{"title": "Workshop", "source_key": "fixture", "page_start": 1, "page_end": 1,
                  "similarity": .9, "chunk_text": "Workshop fixture evidence."}], {}

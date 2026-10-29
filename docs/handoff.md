@@ -203,6 +203,15 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-28 - CI portability correction for rehearsal fixture
+
+CI40799845044atd735d37ran1276passing assertions but failed five teardown cases
+under its newer Starlette State implementation: twice-monkeypatched dynamic
+settings attributes were deleted twice. Changed the test fixture to patch the
+State backing mapping with monkeypatch.setitem for reliable restoration. No
+runtime or spending behavior changed. Preserve the failed CI result; local
+1274pass/2skip result alone did not prove CI compatibility.
+
 ### 2026-10-28 - Council roadmap and first-attempt infrastructure
 
 Patrick requested a council and substantial execution, not another planning-only
