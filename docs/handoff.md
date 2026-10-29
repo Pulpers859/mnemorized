@@ -203,6 +203,37 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-29 - Completed frozen live pilot: six pre-render failures
+
+Executed Patrick's requested real workflow as far as the frozen production path
+allowed, not just code tests. Implementation b4661fd pushed/synchronized; CI
+40925219338success. Four local route smokes200; existing full validation
+1303passed/2skipped/165subtests. Seeded draw after novelty review selected syncope,
+diverticulitis, abnormal uterine bleeding; two arm ledgers frozen before any
+generation. Six fresh Forge browser attempts ran in predeclared randomized order.
+
+Outcome: baseline0/3and candidate0/3end-to-end. Three VISUAL-length failures,
+one66-word opening failure, two preflight cross-field quote failures. All20Claude
+responses succeeded without truncation; no retries, repairs or prompt2generated.
+ZeroQA packs, AGrenders or prospective pixel audits. No image-quality pass claim.
+Matched medical gate in3attempts is not independent whole-lesson clinical clearance.
+Raman independently diagnosed actual request/output/validator evidence; not a
+human medical expert. Counterexample: one quote failure also had a real object-
+count/teaching-text mismatch, so syntax-only repair would not make it acceptable.
+
+Cost: Anthropic verified-usage tariff settlements$1.093251; conservative full
+embedding reservations23x$0.000164=$0.003772; recorded total$1.097023/$6, zero
+pending. These are ledger figures, not provider invoices. Isolated paid-call
+server stopped. Do not spend unused balance on repairs/new cohort automatically.
+
+Durable report: docs/one-shot-pilot-2026-10-29.md. Full local artifacts/ledgers/
+exact final source-injected requests: Troubleshooting Prompts/roadmap_2026-10-29/
+paired_pilot/. Keep every failed arm in denominator; no substitution/reset.
+Candidate not promoted; default normal production repair path was not evaluated.
+Next scoped target: unify writer/validator limits and review field routing,
+remove contradictory planner guidance, replay saved failures offline before a
+new explicitly scoped/budgeted cohort. Image-quality goal remains unmet.
+
 ### 2026-10-29 - Resume roadmap: full-bound live admission and blinded calibration
 
 Patrick explicitly rejected stopping at offline infrastructure. Main continued

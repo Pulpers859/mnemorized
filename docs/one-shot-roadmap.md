@@ -13,12 +13,12 @@ implementation. No new chapter mining or open-ended councils.
 
 | Milestone | Acceptance | Status |
 | --- | --- | --- |
-|1. Bound the experiment|Both arms use the same four ordered Sonnet requests, no advisor, no retries or repairs, eight source-grounded units; terminal failures preserved|Implemented; offline checks passed, live path unverified|
-|2. Rehearse spending admission|Final source/tool-injected request counted; integer durable reservations, concurrency/restart/cap tests, unknown settings fail closed; no live spend without a defensible hard bound|2026-10-29: separately reviewed v2full-model-bound reservation/known-usage settlement implemented; validation/freeze before activation|
-|3. One candidate only|Candidate omits only the body-system setting row of the embedded metaphor list; baseline unchanged, sources/contract/compiler identical|Implemented opt-in; no image-effectiveness claim|
+|1. Bound the experiment|Both arms use the same four ordered Sonnet requests, no advisor, no retries or repairs, eight source-grounded units; terminal failures preserved|Live pilot executed; all six failed before prompt2, so generation reliability is NOT achieved|
+|2. Rehearse spending admission|Final source/tool-injected request counted; integer durable reservations, concurrency/restart/cap tests, unknown settings fail closed; no live spend without a defensible hard bound|V2 activated for frozen pilot:20Claude and23embedding calls settled; $1.097023recorded liability of$6, zero pending; isolated server stopped|
+|3. One candidate only|Candidate omits only the body-system setting row of the embedded metaphor list; baseline unchanged, sources/contract/compiler identical|Both arms0/3end-to-end; no image comparison, candidate NOT promoted|
 |4. Offline verification|Actual JS and backend code tested for failed/truncated calls, stage/call limits, clinical preservation and exact arm difference; existing artifacts are development data only|2026-10-29: blinded old-case calibration both55/REGENERATE, same3missing units; N=1only, historical grades unchanged; expanded validation below|
-|5. Frozen paired trial|Three untouched topics, two arms, six maximum AG renders, twelve independent primary audits, all failures in denominator; reuse first-pass ledger|Preparing prospective freeze; no new paid generation yet|
-|6. Evidence-based release|Report first-image and end-to-end results, disagreement, actual spend and uncertainty; promote only supported changes, otherwise retain baseline|Not started|
+|5. Frozen paired trial|Three untouched topics, two arms, six maximum AG renders, twelve independent primary audits, all failures in denominator; reuse first-pass ledger|Complete:3randomizedtopics x2arms, six fresh Forge attempts,0eligibleprompts/0images/0prospectivepixel audits; no repairs or substitutions|
+|6. Evidence-based release|Report first-image and end-to-end results, disagreement, actual spend and uncertainty; promote only supported changes, otherwise retain baseline|Complete negative result; retain baseline. See [live pilot report](one-shot-pilot-2026-10-29.md)|
 
 ## Executable Envelope
 
@@ -63,12 +63,14 @@ No image/recall gains may be claimed from software tests or this roadmap.
 
 ## Resume Order
 
-Do not resume chapter mining or add another feature layer. Resolve the live
-financial admission validation first, then novelty draw, pairing manifest and
-both frozen ledgers before running milestone5. The v1dry-run guard deliberately
-has no live switch; use only separately initialized reviewed v2. Blinded old-case
-calibration is saved under roadmap_2026-10-29/calibration; no historical scores
-were overwritten. Evidence and code tests do not substitute for the six images.
+Do not resume chapter mining or add another feature layer. The declared cohort
+is complete with six pre-render failures, not six images. Preserve both frozen
+ledgers and all first results; do not reopen these topics or treat the unused
+balance as authorization for another cohort. Next scoped development should
+address the observed writer/validator/critic contract failures offline, as
+specified in the live pilot report. V1dry-run still cannot dispatch; v2must not
+be reset. Calibration and historical grades remain unchanged. The image-quality
+goal remains unmet; no pixel reliability gain has been demonstrated.
 
 ## Verification Closeout
 
