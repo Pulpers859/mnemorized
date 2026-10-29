@@ -203,6 +203,45 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-29 - Resume roadmap: full-bound live admission and blinded calibration
+
+Patrick explicitly rejected stopping at offline infrastructure. Main continued
+financial admission while existing council prepared/calibrated old artifacts.
+New packet: Troubleshooting Prompts/roadmap_2026-10-29/.
+
+Implemented separately initialized v2bounded_live ledger, preserving immutable
+v1dry-run semantics. Reserve the FULL verified Sonnet4.6input bound1Mtokens plus
+6144output at pinned standard/global rates ($3.09216), not count estimates.
+Atomic liability<=6USD, one provider call outstanding; verified exact200usage/
+request/model/unique response ID appends actual settlement and releases only
+KNOWN unused capacity. Unknown/error/crash never releases and halts pilot.
+Server explicitly pins standard_only/global before dispatch; no retries/redirects.
+Embeddings single-string small model reserve164microUSD each in SAME$6ledger.
+Metadata freeGETverified1Minput/128koutput and rechecked beforeeach paid call.
+Source evidence, active Constitution and client schemas remain in final accounting.
+Provider request/metadata/receipt/response packets saved without key headers.
+
+Independent Galileo reviewed design/code; fixed nested-usage/exact200gaps and
+reviewer delta cleared. Main caught auto-priority/workspace-geography defaults
+and pinned them explicitly before transport. Full current local validation:
+1303passed/2skipped/165subtests; source/persistence focused checks also passed.
+No paid calls yet. V2must be frozen/initialized for this one pilot, never rotated.
+
+Old C01calibration: Raman prepared blinded packet; fresh Pascal/Archimedes locked
+all8contract readings before pixels, independently examined1024ordinary/native
+images. Both55/REGENERATE, missing1/3/7; different explanations preserved. Their
+verbose G1grammar required derived syntax-only normalization; originals retained,
+no score changed or historical grade overwritten. N=1not general reliability.
+Ordinary AIview uses supplied1024raster, not certified physical-screen pixels.
+
+Novelty/source eligibility inventory prepared from actual saved metadata, including
+failed cohorts; no topic draw/generation before prospective freeze. Antigravity
+2.19.1launched in visual-lab lane; agentapi chat CLI present, no render requested.
+Next: finish validation/Git, freeze3random untouchedtopics/twoarms/sharedbudget,
+run real Forge once per arm, source-audit realbundles, exact QApack+AGoneimage,
+two independent primary pixel audits. All blocks remain in denominator; do not
+stop merely because code tests pass. No extra cohort or repair renders within pilot.
+
 ### 2026-10-28 - CI portability correction for rehearsal fixture
 
 CI40799845044atd735d37ran1276passing assertions but failed five teardown cases

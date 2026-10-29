@@ -14,10 +14,10 @@ implementation. No new chapter mining or open-ended councils.
 | Milestone | Acceptance | Status |
 | --- | --- | --- |
 |1. Bound the experiment|Both arms use the same four ordered Sonnet requests, no advisor, no retries or repairs, eight source-grounded units; terminal failures preserved|Implemented; offline checks passed, live path unverified|
-|2. Rehearse spending admission|Final source/tool-injected request counted; integer durable reservations, concurrency/restart/cap tests, unknown settings fail closed; no live spend without a defensible hard bound|Dry-run implemented and independently reviewed; live blocked|
+|2. Rehearse spending admission|Final source/tool-injected request counted; integer durable reservations, concurrency/restart/cap tests, unknown settings fail closed; no live spend without a defensible hard bound|2026-10-29: separately reviewed v2full-model-bound reservation/known-usage settlement implemented; validation/freeze before activation|
 |3. One candidate only|Candidate omits only the body-system setting row of the embedded metaphor list; baseline unchanged, sources/contract/compiler identical|Implemented opt-in; no image-effectiveness claim|
-|4. Offline verification|Actual JS and backend code tested for failed/truncated calls, stage/call limits, clinical preservation and exact arm difference; existing artifacts are development data only|1274tests passed,2skipped,165subtests; desktop/mobile checks passed; blinded judge calibration still pending|
-|5. Frozen paired trial|Three untouched topics, two arms, six maximum AG renders, twelve independent primary audits, all failures in denominator; reuse first-pass ledger|Blocked by2 and freeze prerequisites|
+|4. Offline verification|Actual JS and backend code tested for failed/truncated calls, stage/call limits, clinical preservation and exact arm difference; existing artifacts are development data only|2026-10-29: blinded old-case calibration both55/REGENERATE, same3missing units; N=1only, historical grades unchanged; expanded validation below|
+|5. Frozen paired trial|Three untouched topics, two arms, six maximum AG renders, twelve independent primary audits, all failures in denominator; reuse first-pass ledger|Preparing prospective freeze; no new paid generation yet|
 |6. Evidence-based release|Report first-image and end-to-end results, disagreement, actual spend and uncertainty; promote only supported changes, otherwise retain baseline|Not started|
 
 ## Executable Envelope
@@ -34,8 +34,11 @@ NOT a proven dollar bound, and the$6task-wide budget is not increased.
 Official token counting is described as an estimate. A margin and post-response
 usage check cannot guarantee the triggering request stays below a dollar cap.
 Dry-run enforcement is useful but must not be mislabeled live financial safety.
-Until a defensible billable-input bound or a verified non-overshooting provider
-cap exists, live execution stays blocked. Do not ask to refill or spend anyway.
+Version1still cannot dispatch. Version2now reserves the FULL provider model maximum
+input+bounded output, then settles only known verified usage; see the reviewed
+[admission design](research-admission-rehearsal.md#remaining-live-gate). It never
+reuses an uncertain reservation. The counter estimate no longer supplies the
+financial proof. Conservative admission can still block later arms within$6.
 Sources checked2026-10-28:
 [pricing](https://platform.claude.com/docs/en/about-claude/pricing) and
 [token counting](https://platform.claude.com/docs/en/build-with-claude/token-counting).
@@ -61,10 +64,11 @@ No image/recall gains may be claimed from software tests or this roadmap.
 ## Resume Order
 
 Do not resume chapter mining or add another feature layer. Resolve the live
-financial admission issue first, then complete blinded calibration, novelty draw,
-pairing manifest and both frozen ledgers before running milestone5. The dry-run
-guard deliberately has no live switch. Changing that requires a reviewed design,
-not bypassing409. Evidence and code tests do not substitute for the six images.
+financial admission validation first, then novelty draw, pairing manifest and
+both frozen ledgers before running milestone5. The v1dry-run guard deliberately
+has no live switch; use only separately initialized reviewed v2. Blinded old-case
+calibration is saved under roadmap_2026-10-29/calibration; no historical scores
+were overwritten. Evidence and code tests do not substitute for the six images.
 
 ## Verification Closeout
 

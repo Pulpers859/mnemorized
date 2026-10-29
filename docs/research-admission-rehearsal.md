@@ -1,8 +1,10 @@
 # Research Admission Rehearsal
 
-This is **dry-run safety infrastructure**, not an implemented hard financial cap.
-There is no supported live mode. Do not remove its409response to run a benchmark.
-The$6total Anthropic budget and six AG renders are unchanged.
+Version1remains **dry-run safety infrastructure**, not a hard financial cap.
+Do not remove its409response. A separately initialized and reviewed version2
+bounded-live mode was added2026-10-29; it does not convert or reset a v1ledger.
+The$6task-wide ceiling and six AG renders are unchanged. Version2also includes
+retrieval embeddings conservatively within that same dollar ceiling.
 
 ## Behavior
 
@@ -54,8 +56,44 @@ The normal default list, medical checks and image compiler are unchanged.
 
 ## Remaining Live Gate
 
-A defensible billable-input bound or verified non-overshooting provider spending
-control is still required. Headroom, integer accounting and blocking later calls
-do not prevent a single underestimated request from exceeding a dollar promise.
-Once resolved, independently review the transport changes before adding a live
-dispatch mode. This rehearsal must not be silently relabeled safe for spending.
+The token estimate is still NOT a financial bound. Version2uses a different proof:
+before each Anthropic dispatch, verify the provider Models API still reports the
+pinned Sonnet4.6maximum input of1,000,000tokens. The request explicitly pins
+service_tier=standard_only,inference_geo=global; no caching, beta, media, server
+tools, advisor or other paid features are allowed. Standard/global rates across
+the full window are$3/Minput and$15/Moutput, rechecked2026-10-29.
+
+Reserve1,000,000*3+6,144*15=3,092,160USD microdollars BEFORE forwarding, not the
+30,000-token estimate. In one SQLite transaction require existing settled charges
+plus all outstanding full reservations plus this new maximum to be<=6,000,000.
+Only one provider request may be outstanding. After exact HTTP200, validate model,
+unique response identity, request body hash, token ranges, all billable fields
+and standard/global usage; append a settlement for the known actual charge.
+Only its known unused allocation becomes available again. Never reclaim an
+uncertain reservation after timeout, malformed response, error or process crash.
+Any pending reservation halts further dispatch, including across restarts.
+
+This is a bound under the provider's documented enforced input/output limits and
+listed standard/global tariff, not a promise against provider billing bugs or
+other applications' account spend. Unknown settings/bounds block dispatch.
+The conservative full-window reserve may block the cohort before24calls even
+when a smaller estimated counter would fit. Preserve those blocked denominators.
+
+Text-embedding-3-small uses a single string input only (no input arrays), max8192
+tokens at$0.02/M. Reserve164microdollars per call, rounded UP, within the SAME
+ledger; retain that full amount even after valid success. Max100embedding calls.
+Any unknown embedding outcome remains pending and halts the pilot too. Other
+generation/probe lanes and replay remain disabled. No retries or redirects.
+
+Version2policy retains the same six keys as v1with version2/mode bounded_live.
+Initialize through LiveBudgetLedger.create only after reviewed code, calibration
+and prospective freeze prerequisites are met. No ledger rotation or reset to
+evade the task cap. Body, metadata, receipt and response packets are preserved
+under the ledger's provider_packets directory without API-key headers.
+
+Primary references:
+[context limits](https://platform.claude.com/docs/en/build-with-claude/context-windows),
+[pricing](https://platform.claude.com/docs/en/about-claude/pricing),
+[service tiers](https://platform.claude.com/docs/en/api/service-tiers),
+[embedding limits](https://developers.openai.com/api/reference/resources/embeddings/methods/create),
+[embedding price](https://developers.openai.com/api/docs/models/text-embedding-3-small).

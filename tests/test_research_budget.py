@@ -4,6 +4,8 @@ from dataclasses import replace
 import asyncio
 import json
 import sqlite3
+import subprocess
+import sys
 
 import httpx
 import pytest
@@ -11,7 +13,8 @@ from fastapi.testclient import TestClient
 
 from backend.app import main
 from backend.app.research_budget import (
-    AdmissionError, BudgetLedger, COUNT_URL, MODEL, RESERVATION, STAGES, validate_request,
+    AdmissionError, BudgetLedger, LiveBudgetLedger, COUNT_URL, MODEL, MODEL_URL, MODEL_INPUT_BOUND,
+    LIVE_RESERVATION, EMBEDDING_RESERVATION, RESERVATION, STAGES, open_ledger, validate_request,
 )
 
 
@@ -107,6 +110,7 @@ def configure_server(monkeypatch, tmp_path, configured=True):
         BudgetLedger.create(path, policy())
     settings = replace(main.get_settings(), anthropic_api_key="test-key", app_env="development", demo_auth_bypass=True,
                        supabase_url="", supabase_anon_key="", supabase_service_role_key="", openai_api_key="",
+                       usage_log_path=tmp_path / "usage.jsonl",
                        research_budget_path=path if configured else None)
     monkeypatch.setitem(main.app.state._state, "settings", settings)
     return path
@@ -216,3 +220,181 @@ def test_reservations_cannot_be_deleted_or_released(tmp_path):
         with sqlite3.connect(ledger.path) as db, pytest.raises(sqlite3.IntegrityError):
             db.execute(statement)
     assert ledger.report()["requests_reserved"] == 1
+
+
+def live_policy(**changes):
+    return policy(version=2, mode="bounded_live", **changes)
+
+
+def live_body(**changes):
+    return body(service_tier="standard_only", inference_geo="global", **changes)
+
+
+def live_response(name="msg_fixture", input_tokens=10, output_tokens=20, **changes):
+    return {"id": name, "model": MODEL, "stop_reason": "end_turn", "content": [{"type": "text", "text": "Fixture response."}],
+            "usage": {"input_tokens": input_tokens, "output_tokens": output_tokens,
+                      "service_tier": "standard", "inference_geo": "global", "speed": "standard"}, **changes}
+
+
+def test_full_bound_reservation_then_verified_settlement(tmp_path):
+    path = tmp_path / "budget.sqlite3"
+    ledger = LiveBudgetLedger.create(path, live_policy())
+    assert isinstance(open_ledger(path), LiveBudgetLedger)
+    receipt = ledger.reserve("r1", "one", "baseline", STAGES[0], live_body(), 20, {})
+    assert receipt["reserved_microdollars"] == LIVE_RESERVATION == 3092160
+    with pytest.raises(AdmissionError, match="Pending"):
+        LiveBudgetLedger(path).reserve("r2", "two", "baseline", STAGES[0], live_body(), 20, {})
+    ledger.settle("r1", live_body(), live_response())
+    assert ledger.report()["liability_microdollars"] == 330
+    assert not ledger.report()["dispatch_halted"]
+    ledger.reserve("r2", "one", "baseline", STAGES[1], live_body(), 20, {})
+    assert LiveBudgetLedger(path).report()["pending_requests"] == 1
+    with pytest.raises(AdmissionError):
+        ledger.settle("r2", live_body(), live_response())  # Same provider response cannot fund two requests.
+    assert ledger.report()["pending_requests"] == 1
+
+
+@pytest.mark.parametrize("prior,allowed", [(2907840, True), (2907841, False)])
+def test_live_exact_cap_boundary(tmp_path, prior, allowed):
+    ledger = LiveBudgetLedger.create(tmp_path / "budget.sqlite3", live_policy())
+    ledger.reserve("first", "one", "baseline", STAGES[0], live_body(), 10, {})
+    # Every integer liability can be represented with the pinned $3 input rate
+    # only in multiples of 3; seed one conservative embedding-cent remainder.
+    with sqlite3.connect(ledger.path) as db:
+        db.execute("INSERT INTO settlements VALUES(?,?,?,?,?)", ("first", prior, "fixture", "{}", "msg_seed"))
+    if allowed:
+        receipt = ledger.reserve("next", "two", "baseline", STAGES[0], live_body(), 10, {})
+        assert receipt["total_liability_microdollars"] == 6000000
+    else:
+        with pytest.raises(AdmissionError, match="remaining cap"):
+            ledger.reserve("next", "two", "baseline", STAGES[0], live_body(), 10, {})
+
+
+def test_live_concurrent_single_inflight(tmp_path):
+    path = tmp_path / "budget.sqlite3"
+    LiveBudgetLedger.create(path, live_policy())
+    def reserve(i):
+        try:
+            return LiveBudgetLedger(path).reserve(str(i), "one", "baseline", STAGES[0], live_body(), 20, {})
+        except AdmissionError:
+            return None
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        assert sum(r is not None for r in pool.map(reserve, range(12))) == 1
+    assert LiveBudgetLedger(path).report()["pending_requests"] == 1
+
+
+def test_live_reservation_is_process_safe_and_survives_process_exit(tmp_path):
+    path = tmp_path / "budget.sqlite3"
+    LiveBudgetLedger.create(path, live_policy())
+    code = """
+import sys
+from pathlib import Path
+from backend.app.research_budget import LiveBudgetLedger,AdmissionError,MODEL,STAGES
+body={'model':MODEL,'max_tokens':6144,'system':'Fixture','service_tier':'standard_only','inference_geo':'global','messages':[{'role':'user','content':'Workshop'}]}
+try:
+ LiveBudgetLedger(Path(sys.argv[1])).reserve(sys.argv[2],'one','baseline',STAGES[0],body,10,{})
+ print('admitted')
+except AdmissionError:
+ print('blocked')
+"""
+    def reserve(i):
+        return subprocess.run([sys.executable, "-c", code, str(path), str(i)], capture_output=True,
+                              text=True, check=True, timeout=20).stdout.strip()
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        outcomes = list(pool.map(reserve, range(4)))
+    assert outcomes.count("admitted") == 1 and outcomes.count("blocked") == 3
+    assert LiveBudgetLedger(path).report()["pending_requests"] == 1
+
+
+@pytest.mark.parametrize("mutation", ["missing", "negative", "bool", "input_over", "output_over", "model", "premium", "unknown", "nested_unknown", "nested_type"])
+def test_invalid_settlement_never_releases_bound(tmp_path, mutation):
+    ledger = LiveBudgetLedger.create(tmp_path / "budget.sqlite3", live_policy())
+    ledger.reserve("pending", "one", "baseline", STAGES[0], live_body(), 10, {})
+    result = live_response()
+    if mutation == "missing": result.pop("usage")
+    elif mutation == "model": result["model"] = "other"
+    elif mutation == "premium": result["usage"]["service_tier"] = "priority"
+    elif mutation == "unknown": result["usage"]["new_billable_feature"] = 1
+    elif mutation == "nested_unknown": result["usage"]["output_tokens_details"] = {"unknown": 0}
+    elif mutation == "nested_type": result["usage"]["output_tokens_details"] = []
+    else: result["usage"]["input_tokens" if mutation != "output_over" else "output_tokens"] = {
+        "negative": -1, "bool": True, "input_over": 1000001, "output_over": 6145}[mutation]
+    with pytest.raises(AdmissionError): ledger.settle("pending", live_body(), result)
+    assert ledger.report()["liability_microdollars"] == LIVE_RESERVATION
+    assert LiveBudgetLedger(ledger.path).report()["dispatch_halted"]
+
+
+def test_embedding_is_in_same_total_bound(tmp_path):
+    ledger = LiveBudgetLedger.create(tmp_path / "budget.sqlite3", live_policy())
+    request = {"model": "text-embedding-3-small", "input": "Workshop"}
+    ledger.reserve_embedding("embed", request)
+    with pytest.raises(AdmissionError):
+        ledger.reserve("scene", "one", "baseline", STAGES[0], live_body(), 10, {})
+    ledger.settle_embedding("embed", request, {"model": "text-embedding-3-small", "usage": {"prompt_tokens": 2, "total_tokens": 2}})
+    assert ledger.report()["liability_microdollars"] == EMBEDDING_RESERVATION == 164
+    ledger.reserve("scene", "one", "baseline", STAGES[0], live_body(), 10, {})
+    assert ledger.report()["liability_microdollars"] == LIVE_RESERVATION + 164
+
+
+@pytest.mark.parametrize("value", [["one", "two"], [1, 2, 3], "", None])
+def test_live_embedding_cannot_expand_into_multiple_inputs(tmp_path, value):
+    ledger = LiveBudgetLedger.create(tmp_path / "budget.sqlite3", live_policy())
+    with pytest.raises(AdmissionError):
+        ledger.reserve_embedding("bad", {"model": "text-embedding-3-small", "input": value})
+    assert ledger.report()["liability_microdollars"] == 0
+
+
+@pytest.mark.parametrize("mode", ["success", "timeout", "bad_usage", "bad_metadata", "nonjson", "non200"])
+def test_live_backend_dispatch_and_uncertainty_lock(monkeypatch, tmp_path, mode):
+    path = configure_server(monkeypatch, tmp_path, configured=False)
+    ledger = LiveBudgetLedger.create(path, live_policy())
+    monkeypatch.setitem(main.app.state._state, "settings", replace(main.app.state.settings, research_budget_path=path))
+    calls = []
+    class Provider:
+        async def get(self, url, **kwargs):
+            assert url == MODEL_URL
+            return httpx.Response(200, json={"id": MODEL, "max_input_tokens": 2000000 if mode == "bad_metadata" else MODEL_INPUT_BOUND, "max_tokens": 128000})
+        async def post(self, url, **kwargs):
+            calls.append(url)
+            if url == COUNT_URL:
+                return httpx.Response(200, json={"input_tokens": 20})
+            assert url == main.MESSAGE_URL and ledger.report()["pending_requests"] == 1
+            assert kwargs["follow_redirects"] is False
+            if mode == "timeout": raise httpx.ReadTimeout("fixture timeout")
+            if mode == "nonjson": return httpx.Response(200, text="not json")
+            result = live_response()
+            if mode == "bad_usage": result.pop("usage")
+            return httpx.Response(201 if mode == "non200" else 200, json=result)
+    monkeypatch.setattr(main, "_get_http_client", lambda request: (Provider(), False))
+    response = TestClient(main.app).post("/api/anthropic/messages", json=body(), headers=HEADERS)
+    if mode == "success":
+        assert response.status_code == 200 and ledger.report()["liability_microdollars"] == 330
+        assert list((path.parent / "provider_packets").glob("*.request.json"))
+    elif mode == "bad_metadata":
+        assert response.status_code == 409 and calls == [] and ledger.report()["requests_reserved"] == 0
+    else:
+        assert response.status_code in (502, 504) and ledger.report()["liability_microdollars"] == LIVE_RESERVATION
+        before = len(calls)
+        assert TestClient(main.app).post("/api/anthropic/messages", json=body(), headers=HEADERS).status_code == 409
+        assert len(calls) == before
+
+
+@pytest.mark.parametrize("status", [200, 201, 302])
+def test_live_embedding_transport_requires_exact_success(monkeypatch, tmp_path, status):
+    path = configure_server(monkeypatch, tmp_path, configured=False)
+    ledger = LiveBudgetLedger.create(path, live_policy())
+    settings = replace(main.app.state.settings, research_budget_path=path, openai_api_key="test-key")
+    class Provider:
+        async def post(self, url, **kwargs):
+            assert url == main.OPENAI_EMBEDDINGS_URL and kwargs["follow_redirects"] is False
+            assert ledger.report()["pending_requests"] == 1
+            return httpx.Response(status, json={"model": "text-embedding-3-small", "data": [{"embedding": [.1]}],
+                                               "usage": {"prompt_tokens": 2, "total_tokens": 2}})
+    monkeypatch.setattr(main, "_get_http_client", lambda request: (Provider(), False))
+    if status == 200:
+        asyncio.run(main._create_openai_embedding(request=None, settings=settings, text="Workshop"))
+        assert ledger.report()["pending_requests"] == 0 and ledger.report()["settled_microdollars"] == 164
+    else:
+        with pytest.raises(main.HTTPException) as error:
+            asyncio.run(main._create_openai_embedding(request=None, settings=settings, text="Workshop"))
+        assert error.value.status_code == 502 and ledger.report()["pending_requests"] == 1

@@ -30,7 +30,7 @@ from .auth import AuthenticatedUser, SupabaseTokenVerifier
 from .config import Settings, get_settings
 from .dev_tools import clear_plan_override, read_plan_override, write_plan_override
 from .rate_limit import InMemoryRateLimiter
-from .research_budget import AdmissionError, BudgetLedger, COUNT_URL, MESSAGE_URL, validate_request
+from .research_budget import AdmissionError, BudgetLedger, LiveBudgetLedger, COUNT_URL, MESSAGE_URL, MODEL_URL, open_ledger, serialized, validate_request
 from .replay import (
     clear_cassette,
     get_replay_meta,
@@ -1317,8 +1317,15 @@ async def _create_openai_embedding(
     settings: Settings,
     text: str,
 ) -> tuple[list[float], dict[str, Any]]:
+    research_ledger = None
+    embedding_request_id = None
     if settings.research_budget_path:
-        raise HTTPException(status_code=409, detail="Admission rehearsal forbids live embeddings; use an offline captured-source harness.")
+        path = settings.research_budget_path.resolve()
+        if not settings.dev_mode or not path.is_relative_to(REPO_ROOT / "Troubleshooting Prompts"):
+            raise HTTPException(status_code=409, detail="Research must use an isolated local ledger.")
+        research_ledger = open_ledger(path)
+        if not isinstance(research_ledger, LiveBudgetLedger):
+            raise HTTPException(status_code=409, detail="Admission rehearsal forbids live embeddings; use an offline captured-source harness.")
     if not settings.openai_embeddings_configured:
         raise HTTPException(
             status_code=503,
@@ -1332,6 +1339,13 @@ async def _create_openai_embedding(
     if settings.openai_embedding_dimensions > 0:
         body["dimensions"] = settings.openai_embedding_dimensions
 
+    if research_ledger:
+        embedding_request_id = str(uuid4())
+        try:
+            research_ledger.reserve_embedding(embedding_request_id, body)
+        except (AdmissionError, sqlite3.Error) as exc:
+            raise HTTPException(status_code=409, detail="Embedding budget admission failed closed.") from exc
+
     http_client, owns_http_client = _get_http_client(request)
     try:
         response = await http_client.post(
@@ -1342,6 +1356,7 @@ async def _create_openai_embedding(
             },
             json=body,
             timeout=httpx.Timeout(60.0, connect=10.0),
+            follow_redirects=False,
         )
     except httpx.TimeoutException as exc:
         raise HTTPException(status_code=504, detail="OpenAI embeddings timed out.") from exc
@@ -1351,6 +1366,8 @@ async def _create_openai_embedding(
         if owns_http_client:
             await http_client.aclose()
 
+    if research_ledger and response.status_code != 200:
+        raise HTTPException(status_code=502, detail="Embedding response was not HTTP 200; budget reservation remains locked.")
     if response.status_code >= 400:
         logger.error("OpenAI embeddings error: HTTP %s — %s", response.status_code, response.text[:500])
         raise HTTPException(
@@ -1364,7 +1381,10 @@ async def _create_openai_embedding(
         embedding = data[0].get("embedding") if isinstance(data, list) and data else None
         if not isinstance(embedding, list) or not embedding:
             raise ValueError("missing embedding data")
-        return [float(value) for value in embedding], payload.get("usage", {})
+        vector = [float(value) for value in embedding]
+        if research_ledger:
+            research_ledger.settle_embedding(embedding_request_id, body, payload)
+        return vector, payload.get("usage", {})
     except (ValueError, TypeError, AttributeError) as exc:
         raise HTTPException(status_code=502, detail="OpenAI embeddings returned an unexpected payload.") from exc
 
@@ -1864,7 +1884,7 @@ async def reject_oversized_api_requests(request: Request, call_next):
                     or request.headers.get("x-forge-first-attempt") != "v1"
                     or request.headers.get("x-forge-replay")):
                 raise AdmissionError("Invalid isolated rehearsal or replay requested")
-            ledger = BudgetLedger(path)
+            ledger = open_ledger(path)
             ledger.precheck(request.headers.get("x-research-topic-id", ""), request.headers.get("x-research-arm", ""),
                             request.headers.get("x-research-stage", ""))
             request.state.research_ledger = ledger
@@ -3211,9 +3231,10 @@ async def proxy_anthropic_messages(
     if beta_parts:
         upstream_headers["anthropic-beta"] = ",".join(dict.fromkeys(beta_parts))
 
+    research_ledger = None
     if active_settings.research_budget_path:
         # The final body now includes source evidence, Constitution and tool schemas.
-        # Rehearsal deliberately cannot forward a billable messages request.
+        # Dry-run never forwards. Live reserves the full provider model bound.
         http_client, owns_http_client = _get_http_client(request)
         try:
             path = active_settings.research_budget_path.resolve()
@@ -3222,7 +3243,16 @@ async def proxy_anthropic_messages(
             if active_settings.anthropic_api_url != MESSAGE_URL or request.headers.get("x-forge-first-attempt") != "v1":
                 raise AdmissionError("Isolated rehearsal requires the exact endpoint and first-attempt profile")
             ledger = request.state.research_ledger
+            if isinstance(ledger, LiveBudgetLedger):
+                body["service_tier"] = "standard_only"
+                body["inference_geo"] = "global"
             count_body = validate_request(body, upstream_headers)
+            if isinstance(ledger, LiveBudgetLedger):
+                metadata_response = await http_client.get(MODEL_URL, headers=upstream_headers,
+                                                         timeout=httpx.Timeout(20, connect=10))
+                if metadata_response.status_code != 200:
+                    raise AdmissionError("Model bound could not be verified")
+                ledger.verify_model_metadata(metadata_response.json())
             count_response = await http_client.post(COUNT_URL, headers=upstream_headers, json=count_body,
                                                     timeout=httpx.Timeout(30, connect=10))
             if count_response.status_code != 200:
@@ -3233,14 +3263,23 @@ async def proxy_anthropic_messages(
             receipt = ledger.reserve(request_id, request.headers.get("x-research-topic-id", ""),
                                      request.headers.get("x-research-arm", ""), request.headers.get("x-research-stage", ""),
                                      body, count_result.get("input_tokens"), upstream_headers)
-            return JSONResponse(status_code=409, headers={"X-Request-ID": request_id}, content={
-                "error": {"type": "research_dry_run", "message": "Reservation rehearsed. Live generation remains blocked: token estimates are not a hard dollar cap."},
-                "research_admission": receipt})
+            if isinstance(ledger, LiveBudgetLedger):
+                packets = ledger.path.parent / "provider_packets"
+                packets.mkdir(exist_ok=True)
+                (packets / (request_id + ".request.json")).write_text(serialized(body), encoding="utf-8")
+                (packets / (request_id + ".metadata.json")).write_text(serialized(metadata_response.json()), encoding="utf-8")
+                (packets / (request_id + ".receipt.json")).write_text(serialized(receipt), encoding="utf-8")
+                research_ledger = ledger
+            else:
+                return JSONResponse(status_code=409, headers={"X-Request-ID": request_id}, content={
+                    "error": {"type": "research_dry_run", "message": "Reservation rehearsed. Live generation remains blocked: token estimates are not a hard dollar cap."},
+                    "research_admission": receipt})
         except (AdmissionError, OSError, ValueError, sqlite3.Error, httpx.HTTPError) as exc:
             return JSONResponse(status_code=409, headers={"X-Request-ID": request_id}, content={
                 "error": {"type": "research_admission_blocked", "message": "Research admission failed closed: " + type(exc).__name__}})
         finally:
-            _release_quota_reservation(request, user)
+            if research_ledger is None:
+                _release_quota_reservation(request, user)
             if owns_http_client:
                 await http_client.aclose()
 
@@ -3254,6 +3293,7 @@ async def proxy_anthropic_messages(
             headers=upstream_headers,
             json=body,
             timeout=httpx.Timeout(active_settings.anthropic_timeout_seconds, connect=10.0),
+            follow_redirects=False,
         )
     except httpx.TimeoutException:
         _release_quota_reservation(request, user)
@@ -3294,6 +3334,19 @@ async def proxy_anthropic_messages(
     upstream_ok = 200 <= upstream_response.status_code < 300
     if not upstream_ok:
         _release_quota_reservation(request, user)
+
+    if research_ledger and upstream_ok and upstream_response.status_code != 200:
+        _release_quota_reservation(request, user)
+        return JSONResponse(status_code=502, headers={"X-Request-ID": request_id}, content={
+            "error": {"type": "research_usage_uncertain", "message": "Provider did not return HTTP 200. Full reservation remains locked and the pilot is halted."}})
+    if research_ledger and upstream_response.status_code == 200:
+        try:
+            (research_ledger.path.parent / "provider_packets" / (request_id + ".response.json")).write_text(serialized(response_payload), encoding="utf-8")
+            research_ledger.settle(request_id, body, response_payload)
+        except (AdmissionError, OSError, ValueError, TypeError, AttributeError, sqlite3.Error):
+            _release_quota_reservation(request, user)
+            return JSONResponse(status_code=502, headers={"X-Request-ID": request_id}, content={
+                "error": {"type": "research_usage_uncertain", "message": "Provider usage could not be verified. Full reservation remains locked and the pilot is halted."}})
 
     try:
         _write_usage_log(
