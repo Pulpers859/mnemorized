@@ -281,6 +281,11 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
         setStageDetail('prompt', `Pre-render review ${round + 1}: checking source fidelity and all ${story.voLines.length} visual relationships.`);
         let result = await review(topic, story, gate, signals, round, options.expertReview, options.externalFeedback);
         active();
+        if (root.MnemorizedFirstAttempt?.isActive() && (result.clinical_status !== 'supported' ||
+            result.anchors.some(row => row.status === 'repair') || result.scene?.issues?.length ||
+            signals.risks.some(risk => risk.blocking))) {
+          throw new Error('First-attempt preflight blocked; repairs and redesign are not permitted.');
+        }
         if (result.clinical_status === 'needs_repair' && round === 0 && local.clinical_repair_count === 0) {
           if (options.allowedRepairUnits && result.clinical_findings.some(f => f.n !== null && !options.allowedRepairUnits.includes(f.n))) {
             throw new Error('Clinical findings exceed the selected anchor repair scope.');
@@ -373,6 +378,7 @@ COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words;
         local.repair_count++;
       }
     } catch (error) {
+      root.MnemorizedFirstAttempt?.fail();
       local.status = 'blocked'; local.error = error.message;
       if (local.clinical_failure) local.clinical_failure.error = error.message;
       throw error;

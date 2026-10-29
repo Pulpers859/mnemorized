@@ -1190,7 +1190,7 @@ def test_forge_pipeline_uses_sanctioned_visual_metaphor_library() -> None:
     assert "banana bunch = potassium" in pipeline
     assert "box of baking soda (household carton) = bicarbonate" in pipeline
     compact = pipeline.split("const compactStorySystem = `", 1)[1].split("`;", 1)[0]
-    assert "${VISUAL_METAPHOR_LIBRARY}" in compact
+    assert "${window.MnemorizedFirstAttempt?.metaphorLibrary(VISUAL_METAPHOR_LIBRARY) ?? VISUAL_METAPHOR_LIBRARY}" in compact
     assert "system: compactStorySystem" in pipeline
     # Pure visual metaphor must be the top encoding tier, ahead of the last-resort text label.
     assert "pure visual metaphor first, then metaphor with a short mnemonic name" in compact
@@ -1325,7 +1325,8 @@ def test_forge_uses_direct_compact_requests_for_generation_and_repair() -> None:
     attempts = pipeline.split("const storyAttempts = [];", 1)[1].split("let storyValidation", 1)[0]
     assert "max_tokens: 6144" in attempts
     assert "system: compactStorySystem" in attempts
-    assert "storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'compact'));" in attempts
+    assert "storyAttempts.push(compactBody(denseProtocol && !window.MnemorizedFirstAttempt?.isActive() ? 'dense-compact' : 'compact'));" in attempts
+    assert attempts.count("if (!window.MnemorizedFirstAttempt?.isActive()) storyAttempts.push") == 2
     assert "'dense-compact-strict' : 'compact-strict'" in attempts
     assert "'dense-visual-hard-gate' : 'visual-hard-gate'" in attempts
     assert attempts.count("storyAttempts.push(") == 3

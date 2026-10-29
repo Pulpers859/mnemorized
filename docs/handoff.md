@@ -203,6 +203,48 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-28 - Council roadmap and first-attempt infrastructure
+
+Patrick requested a council and substantial execution, not another planning-only
+answer. Roadmap: docs/one-shot-roadmap.md. Two bounded AI agents (Raman evaluation,
+Galileo compiler/test worker), main retained provider/budget/Git ownership. No
+chapter mining, paid calls or AG renders. Chapters101-105 remain deferred.
+
+Implemented opt-in immutable first-attempt profile: four ordered Sonnet calls,
+eight-unit/source prerequisites, no retries/micro/clinical/visual repairs or expert
+escalation, terminal failures and export metadata. Candidate's only story-prompt
+difference is removing the body-system setting metaphor row. Normal Forge default
+list/repair behavior unchanged. Alternate Gemini director/API image lane blocked
+for experimental profiles; use frozen AG handoff. Browser runner supports arm/ID.
+
+Implemented SQLite reservation REHEARSAL under optional RESEARCH_BUDGET_PATH:
+final source/Constitution/tool-aware count request, immutable reservations,
+restart/concurrency/ceilings, early stage/profile/replay rejection, no live embeddings
+or alternate provider lanes. ALWAYS blocks billable Messages dispatch; there is NO
+live switch or hard-dollar-cap claim. Docs: research-admission-rehearsal.md.
+Optional cohort first_attempt metadata makes existing ledger registration require
+the matching arm/topic/four-call receipt and zero pre-render repairs.
+
+Independent review caught embedding/replay/type-handling gaps; main fixed and
+reviewer delta found no remaining material safety issue (static review only).
+Worker's adversarial tests caught beta-header/failure-state gaps; fixed54/54pass.
+Budget35/35pass. Packet: Troubleshooting Prompts/roadmap_2026-10-28/ includes council
+decisions, prospective audit protocol and desktop/mobile safety screenshots.
+
+Remaining: defensible LIVE financial admission first, then actual blinded rubric
+calibration, novelty draw, shared pairing manifest/two frozen ledgers and six-image
+trial. Existing$6TOTAL/six-render limits unchanged. Do not bypass409, rotate a ledger,
+resume chapter mining or claim software tests establish image reliability.
+
+Closeout validation:1274passed/2skipped/165subtests; compileall and JS syntax passed,
+four HTTP200route smokes passed, desktop1440/mobile390browser safety checks passed,
+diff check clean. First full regression's two stale exact-string assertions were
+updated for the intentional conditional code, not image criteria relaxed. No
+live provider/full medical-generation/image/recall validation. Both agents closed.
+Known malformed local Codex checkpoint ref still prevents fetch; no retry/delete.
+Remote SHA verified directly before normal non-force push, then verify HEAD/SHA,
+0/0 and previous remote ancestry. Never claim CIpass without checking actual run.
+
 ### 2026-10-28 - Stop blanket mining; implement Forge-gap cue workflow
 
 Patrick approved ending exhaustive library expansion in favor of real Forge gaps.

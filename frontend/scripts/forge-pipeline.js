@@ -812,6 +812,10 @@ async function generateImages() {
       return;
     }
 
+    if (window.MnemorizedFirstAttempt?.isActive()) {
+      throw new Error('First-attempt images must use the frozen Antigravity handoff, not the Gemini API lane.');
+    }
+
     if (forgeReplayMode !== 'replay') {
       if (!backendState.checked) await refreshBackendStatus();
       if (!active()) return;
@@ -1028,6 +1032,7 @@ function downloadForgeBundle() {
     topic: topic,
     model: CLAUDE_MODEL,
     sketchy_style_prompt: SKETCHY_STYLE,
+    first_attempt_profile: window.MnemorizedFirstAttempt?.snapshot() || null,
     anti_meta_text: ANTI_META_TEXT,
     story: currentStoryData || null,
     image_prompts: {
@@ -1324,6 +1329,12 @@ async function runPipeline() {
 
   // ── STAGE 1: Clinical Context (with evidence grounding) ──
   const evidenceAvailable = !!((authState.user || appConfig.demoAuthBypass) && appConfig.medicalKnowledgeEnabled && backendState.medicalKnowledgeConfigured);
+  if (window.MnemorizedFirstAttempt?.isActive() && (!evidenceAvailable || requestedAnchorCount(topic) !== 8)) {
+    window.MnemorizedFirstAttempt.fail();
+    setStatus('story', 'First-attempt source/scope contract blocked', 'error');
+    setStageDetail('story', 'This profile requires source retrieval and exactly eight requested anchors.');
+    return;
+  }
   if (evidenceAvailable) {
     setStatus('story', '✦ Retrieving source evidence…', 'running');
     setStageDetail('story', 'Searching private medical knowledge base before generating concepts.');
@@ -1383,6 +1394,7 @@ Output ONLY these two XML tags, nothing else:
   } catch(e) {
     if (!currentRun()) return;
     console.warn('Clinical context extraction failed:', e.message);
+    window.MnemorizedFirstAttempt?.fail();
     setStatus('story', '✗ Clinical planning failed', 'error');
     setStageDetail('story', e.message);
     showDebug('CLINICAL PLANNING ERROR', e.message);
@@ -1438,7 +1450,7 @@ Visual mnemonic rules:
 - No proprietary mnemonic scenes, characters, symbols, or layouts.
 
 VISUAL ENCODING HIERARCHY: pure visual metaphor first, then metaphor with a short mnemonic name, then a name only when no stronger hook exists. Every hook must pass the silhouette test. Prefer a simple object interaction over an annotated list or a generic labeled prop. Use these sanctioned associations when relevant to the source facts:
-${VISUAL_METAPHOR_LIBRARY}
+${window.MnemorizedFirstAttempt?.metaphorLibrary(VISUAL_METAPHOR_LIBRARY) ?? VISUAL_METAPHOR_LIBRARY}
 
 ${clinicalContext}
 
@@ -1470,12 +1482,12 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     });
     // Start with the bounded writer; the large advisor request repeatedly timed
     // out before reaching this same recovery path in real student runs.
-    storyAttempts.push(compactBody(denseProtocol ? 'dense-compact' : 'compact'));
-    storyAttempts.push(compactBody(
+    storyAttempts.push(compactBody(denseProtocol && !window.MnemorizedFirstAttempt?.isActive() ? 'dense-compact' : 'compact'));
+    if (!window.MnemorizedFirstAttempt?.isActive()) storyAttempts.push(compactBody(
       denseProtocol ? 'dense-compact-strict' : 'compact-strict',
       'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, an exact-value clock/dial/gauge, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, physical thresholds, scale, position, containment, blocking, and contrast. Exact numbers and formulas remain only in NARRATION and ANCHOR.'
     ));
-    storyAttempts.push(compactBody(
+    if (!window.MnemorizedFirstAttempt?.isActive()) storyAttempts.push(compactBody(
       denseProtocol ? 'dense-visual-hard-gate' : 'visual-hard-gate',
       'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no exact-value clocks, dials, gauges, or precision plaques; no more than one quoted mnemonic name per anchor; no more than one text-bearing object per anchor; no checklist ribbons, logbook rows, or multi-label signs. Preserve all essential medical facts by moving exact values into NARRATION and ANCHOR, while the VISUAL uses one strong shape-first object interaction.'
     ));
@@ -1542,7 +1554,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
         const retryableValidation = raw?.stop_reason === 'max_tokens'
           || storyValidation.fatal.some(message => /Too many anchors|visual|text surfaces|arrow glyphs|speech bubble/i.test(message));
         if (retryableValidation && attemptIndex < storyAttempts.length - 1) continue;
-        if (retryableValidation) {
+        if (retryableValidation && !window.MnemorizedFirstAttempt?.isActive()) {
           // Iterative micro-repair. One pass frequently can't drag a stubborn
           // over-length VISUAL under the word cap, and a single leftover fatal must
           // not abort an otherwise-complete scene. Re-run the repair, feeding the
@@ -1607,6 +1619,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     const prev = box.textContent;
     box.style.display = 'block';
     box.textContent = `── STORY ERROR ──\n${e.message}\n\n── Previous debug output ──\n${prev}`;
+    window.MnemorizedFirstAttempt?.fail();
     setStatus('story', '✗ ' + e.message.slice(0, 80), 'error');
     setStageDetail('story', 'Scene generation stopped before a usable script was created.');
     btn.disabled = false; btn.innerHTML = '✦ FORGE PALACE';
@@ -1635,6 +1648,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     showBody('prompt');
     setStageDetail('prompt', 'The palace script is still available, but image prompts failed to build.');
     console.error('Image prompt error:', e);
+    window.MnemorizedFirstAttempt?.fail();
     invalidateImagePrompts();
     setCurrentPalaceData(storyData, '', '');
     if (currentQualityGateData) renderQualityGateResult(currentQualityGateData);

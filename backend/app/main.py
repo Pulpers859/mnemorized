@@ -5,6 +5,7 @@ import base64
 import json
 import logging
 import re
+import sqlite3
 import time
 from contextlib import asynccontextmanager
 from datetime import UTC, datetime
@@ -29,6 +30,7 @@ from .auth import AuthenticatedUser, SupabaseTokenVerifier
 from .config import Settings, get_settings
 from .dev_tools import clear_plan_override, read_plan_override, write_plan_override
 from .rate_limit import InMemoryRateLimiter
+from .research_budget import AdmissionError, BudgetLedger, COUNT_URL, MESSAGE_URL, validate_request
 from .replay import (
     clear_cassette,
     get_replay_meta,
@@ -1315,6 +1317,8 @@ async def _create_openai_embedding(
     settings: Settings,
     text: str,
 ) -> tuple[list[float], dict[str, Any]]:
+    if settings.research_budget_path:
+        raise HTTPException(status_code=409, detail="Admission rehearsal forbids live embeddings; use an offline captured-source harness.")
     if not settings.openai_embeddings_configured:
         raise HTTPException(
             status_code=503,
@@ -1849,6 +1853,27 @@ app.add_middleware(
 @app.middleware("http")
 async def reject_oversized_api_requests(request: Request, call_next):
     active_settings = _get_runtime_settings(request)
+    if (request.headers.get("x-forge-first-attempt") and not active_settings.research_budget_path
+            and request.url.path == "/api/anthropic/messages"):
+        return JSONResponse(status_code=409, content={"error": {"type": "research_not_configured", "message": "First-attempt research requires the isolated server-side rehearsal guard. No paid call was sent."}})
+    if active_settings.research_budget_path and request.url.path == "/api/anthropic/messages":
+        try:
+            path = active_settings.research_budget_path.resolve()
+            if (not active_settings.dev_mode or not path.is_relative_to(REPO_ROOT / "Troubleshooting Prompts")
+                    or active_settings.anthropic_api_url != MESSAGE_URL
+                    or request.headers.get("x-forge-first-attempt") != "v1"
+                    or request.headers.get("x-forge-replay")):
+                raise AdmissionError("Invalid isolated rehearsal or replay requested")
+            ledger = BudgetLedger(path)
+            ledger.precheck(request.headers.get("x-research-topic-id", ""), request.headers.get("x-research-arm", ""),
+                            request.headers.get("x-research-stage", ""))
+            request.state.research_ledger = ledger
+        except (AdmissionError, OSError, ValueError, sqlite3.Error):
+            return JSONResponse(status_code=409, content={"error": {"type": "research_admission_blocked", "message": "Research pre-admission failed closed; no provider request was sent."}})
+    if active_settings.research_budget_path and request.url.path in {
+        "/api/generate-image", "/api/gemini/prompt-director", "/api/diagnose-gemini", "/api/elevenlabs/tts"
+    }:
+        return JSONResponse(status_code=409, content={"error": {"type": "research_dry_run", "message": "Other generation lanes are disabled during admission rehearsal."}})
     if (
         request.url.path.startswith("/api/")
         and request.method in {"POST", "PUT", "PATCH"}
@@ -3019,6 +3044,14 @@ async def proxy_anthropic_messages(
     active_settings = _get_runtime_settings(request)
     request_id = str(uuid4())
 
+    if active_settings.research_budget_path:
+        try:
+            if payload.betas:
+                raise AdmissionError("Beta features are not admitted")
+            validate_request(payload.model_dump(exclude_none=True, exclude={"betas"}), dict(request.headers))
+        except AdmissionError:
+            return JSONResponse(status_code=409, content={"error": {"type": "research_admission_blocked", "message": "Unsupported research request; no provider call was sent."}})
+
     if not active_settings.anthropic_configured:
         return JSONResponse(
             status_code=503,
@@ -3177,6 +3210,39 @@ async def proxy_anthropic_messages(
         beta_parts.extend(b.strip() for b in header_beta.split(",") if b.strip())
     if beta_parts:
         upstream_headers["anthropic-beta"] = ",".join(dict.fromkeys(beta_parts))
+
+    if active_settings.research_budget_path:
+        # The final body now includes source evidence, Constitution and tool schemas.
+        # Rehearsal deliberately cannot forward a billable messages request.
+        http_client, owns_http_client = _get_http_client(request)
+        try:
+            path = active_settings.research_budget_path.resolve()
+            if not active_settings.dev_mode or not path.is_relative_to(REPO_ROOT / "Troubleshooting Prompts"):
+                raise AdmissionError("Research rehearsal is local-only under Troubleshooting Prompts")
+            if active_settings.anthropic_api_url != MESSAGE_URL or request.headers.get("x-forge-first-attempt") != "v1":
+                raise AdmissionError("Isolated rehearsal requires the exact endpoint and first-attempt profile")
+            ledger = request.state.research_ledger
+            count_body = validate_request(body, upstream_headers)
+            count_response = await http_client.post(COUNT_URL, headers=upstream_headers, json=count_body,
+                                                    timeout=httpx.Timeout(30, connect=10))
+            if count_response.status_code != 200:
+                raise AdmissionError("Final-request token counting failed; no generation was sent")
+            count_result = count_response.json()
+            if not isinstance(count_result, dict):
+                raise AdmissionError("Invalid token count response")
+            receipt = ledger.reserve(request_id, request.headers.get("x-research-topic-id", ""),
+                                     request.headers.get("x-research-arm", ""), request.headers.get("x-research-stage", ""),
+                                     body, count_result.get("input_tokens"), upstream_headers)
+            return JSONResponse(status_code=409, headers={"X-Request-ID": request_id}, content={
+                "error": {"type": "research_dry_run", "message": "Reservation rehearsed. Live generation remains blocked: token estimates are not a hard dollar cap."},
+                "research_admission": receipt})
+        except (AdmissionError, OSError, ValueError, sqlite3.Error, httpx.HTTPError) as exc:
+            return JSONResponse(status_code=409, headers={"X-Request-ID": request_id}, content={
+                "error": {"type": "research_admission_blocked", "message": "Research admission failed closed: " + type(exc).__name__}})
+        finally:
+            _release_quota_reservation(request, user)
+            if owns_http_client:
+                await http_client.aclose()
 
     started = time.perf_counter()
     client_id = _client_id(request)

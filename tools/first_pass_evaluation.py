@@ -31,6 +31,25 @@ class Invalid(ValueError):
     """A ledger operation or audit failed closed."""
 
 
+def validate_first_attempt(bundle, arm, topic_id):
+    """Validate an optional frozen experimental receipt, not provider billing truth."""
+    profile = bundle.get("first_attempt_profile")
+    require(isinstance(profile, dict) and profile.get("version") == "first-attempt-v1"
+            and profile.get("arm") == arm and profile.get("topicId") == topic_id
+            and profile.get("topic") == bundle.get("topic") and profile.get("blocked") is False,
+            "Missing/mismatched first-attempt profile")
+    expected = [("stage1-clinical-context", 2600), ("medical-contract-source-review", 2600),
+                ("stage2-story-script-compact", 6144), ("visual-preflight-review-0", 5000)]
+    require(profile.get("requests") == [{"stage": s, "model": "claude-sonnet-4-6", "max_tokens": n}
+                                        for s, n in expected], "First-attempt call graph changed")
+    review = bundle.get("visual_preflight")
+    require(isinstance(review, dict) and review.get("version") == "visual-preflight-v2" and review.get("repair_count") == 0
+            and review.get("clinical_repair_count") == 0 and review.get("visual_repair_requests") == 0
+            and review.get("repair_failures") == [] and review.get("clinical_attempts") == []
+            and review.get("visual_preservation_reviews") == [] and len(review.get("attempts", [])) == 1,
+            "First-attempt profile forbids pre-render repairs")
+
+
 def require(condition, message):
     if not condition:
         raise Invalid(message)
@@ -442,6 +461,13 @@ class Ledger:
         known = {normalized(x) for x in prior}
         topics = cohort.get("topics")
         require(isinstance(topics, list) and topics, "Cannot freeze an empty cohort")
+        experiment = cohort.get("first_attempt")
+        if experiment is not None:
+            require(isinstance(experiment, dict) and set(experiment) == {"version", "arm", "model"}
+                    and experiment["version"] == "first-attempt-v1" and experiment["arm"] in {"baseline", "candidate"}
+                    and experiment["model"] == "claude-sonnet-4-6", "Invalid first-attempt experiment")
+            require(len(topics) == 3 and all(t.get("expected_anchor_count") == 8 for t in topics if isinstance(t, dict)),
+                    "Paired pilot requires three eight-unit topics per arm")
         ids = set()
         for topic in topics:
             require(isinstance(topic, dict), "Malformed topic")
@@ -536,6 +562,9 @@ class Ledger:
                     require(len(anchor_ids) == topics[topic]["expected_anchor_count"],
                             "Export does not match the prospectively frozen anchor count")
                 require(not any((bundle.get("generated_images") or {}).values()), "Bundle already contains a render")
+                experiment = frozen["cohort"].get("first_attempt")
+                if experiment:
+                    validate_first_attempt(bundle, experiment["arm"], topic)
                 status, repair_count = exported_preflight(bundle, prompt)
                 preflight = {"status": status, "reason": "Structured exported Forge preflight",
                              "bundle_sha256": payload["artifacts"]["bundle"]["sha256"],

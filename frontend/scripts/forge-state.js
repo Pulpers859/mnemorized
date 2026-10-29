@@ -21,6 +21,46 @@ function withAdvisor(requestBody) {
   };
 }
 
+// Explicit laboratory profile only. A server-side guard is required for live use.
+window.MnemorizedFirstAttempt = (() => {
+  let config = null, requests = [], blocked = false;
+  const stages = ['stage1-clinical-context', 'medical-contract-source-review',
+    'stage2-story-script-compact', 'visual-preflight-review-0'];
+  function configure(value) {
+    if (config) throw new Error('First-attempt profile cannot be reset.');
+    if (!value || !['baseline', 'candidate'].includes(value.arm) ||
+        !/^[a-z0-9-]{1,64}$/.test(value.topicId || '') ||
+        typeof value.topic !== 'string' || !value.topic.trim()) {
+      throw new Error('Invalid first-attempt profile.');
+    }
+    config = Object.freeze({arm: value.arm, topicId: value.topicId, topic: value.topic.trim()});
+  }
+  function admit(body, stage, headers = {}) {
+    if (!config) return {};
+    const topic = document.getElementById('topic').value.trim();
+    if (blocked || topic !== config.topic || requests.length >= stages.length ||
+        stage !== stages[requests.length] || body.model !== CLAUDE_MODEL ||
+        !Number.isInteger(body.max_tokens) || body.max_tokens < 1 || body.max_tokens > 6144 || body.betas?.length ||
+        Object.entries(headers).some(([key, value]) => key.toLowerCase() === 'anthropic-beta' && value) ||
+        body.tools?.some(tool => tool.name !== 'submit_visual_preflight_review' || tool.type)) {
+      blocked = true;
+      throw new Error('First-attempt contract blocked: changed topic, extra call, retry, model or tool.');
+    }
+    requests.push({stage, model: body.model, max_tokens: body.max_tokens});
+    return {'x-forge-first-attempt': 'v1', 'x-research-arm': config.arm,
+      'x-research-topic-id': config.topicId, 'x-research-stage': stage};
+  }
+  function fail() { if (config) blocked = true; }
+  function snapshot() { return config ? {...config, version: 'first-attempt-v1',
+    blocked, requests: requests.map(request => ({...request}))} : null; }
+  function metaphorLibrary(text) {
+    return config?.arm === 'candidate'
+      ? text.split('\n').filter(line => !line.startsWith('- Body systems (setting-level):')).join('\n')
+      : text;
+  }
+  return Object.freeze({configure, admit, fail, snapshot, metaphorLibrary, isActive: () => !!config});
+})();
+
 let forgeReplayMode = 'live';
 
 function encodeHeaderValue(value) {
@@ -210,6 +250,7 @@ async function claudeFetch(body, stage, extraHeaders) {
   }
 
   let res;
+  Object.assign(headers, window.MnemorizedFirstAttempt.admit(body, stage, headers));
   try {
     res = await fetch(getApiUrl('/api/anthropic/messages'), {
       method: 'POST',
@@ -217,6 +258,7 @@ async function claudeFetch(body, stage, extraHeaders) {
       body: JSON.stringify(body)
     });
   } catch (err) {
+    window.MnemorizedFirstAttempt.fail();
     backendState = {
       checked: true,
       reachable: false,
@@ -229,6 +271,14 @@ async function claudeFetch(body, stage, extraHeaders) {
     syncConnectionModal(`Could not reach ${getApiUrl('/api/anthropic/messages')}. Start the backend and retry.`);
     openConnectionModal();
     throw new Error(`Proxy unavailable: ${err.message}`);
+  }
+
+  if (window.MnemorizedFirstAttempt.isActive()) {
+    const result = await res.clone().json().catch(() => null);
+    if (!res.ok || !result || result.stop_reason === 'max_tokens') {
+      window.MnemorizedFirstAttempt.fail();
+      throw new Error('First-attempt provider failure or truncation; no retry is permitted.');
+    }
   }
 
   if (res.status === 401) {
@@ -258,6 +308,10 @@ async function claudeFetch(body, stage, extraHeaders) {
 }
 
 async function geminiPromptDirectorFetch(body, stage, extraHeaders) {
+  if (window.MnemorizedFirstAttempt.isActive()) {
+    window.MnemorizedFirstAttempt.fail();
+    throw new Error('First-attempt mode forbids alternate prompt-director calls.');
+  }
   if (!backendState.checked) await refreshBackendStatus();
 
   if (forgeReplayMode !== 'replay') {

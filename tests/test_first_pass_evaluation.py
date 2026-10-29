@@ -11,8 +11,45 @@ import tempfile
 import unittest
 
 from tools.first_pass_evaluation import (
-    CAPS, CONSTITUTION, Invalid, Ledger, REPO, RUBRIC, decode_json, digest, parse_audit,
+    CAPS, CONSTITUTION, Invalid, Ledger, REPO, RUBRIC, decode_json, digest, parse_audit, validate_first_attempt,
 )
+
+
+class FirstAttemptReceiptTests(unittest.TestCase):
+    def receipt(self):
+        stages = [("stage1-clinical-context", 2600), ("medical-contract-source-review", 2600),
+                  ("stage2-story-script-compact", 6144), ("visual-preflight-review-0", 5000)]
+        return {"topic": "Nonclinical workshop", "first_attempt_profile": {
+            "version": "first-attempt-v1", "arm": "candidate", "topicId": "workshop", "topic": "Nonclinical workshop",
+            "blocked": False, "requests": [{"stage": s, "model": "claude-sonnet-4-6", "max_tokens": n} for s, n in stages]},
+            "visual_preflight": {"version": "visual-preflight-v2", "repair_count": 0, "clinical_repair_count": 0,
+                "visual_repair_requests": 0, "repair_failures": [], "clinical_attempts": [],
+                "visual_preservation_reviews": [], "attempts": [{}]}}
+
+    def test_receipt_binds_arm_topic_call_graph_and_no_repairs(self):
+        good = self.receipt()
+        validate_first_attempt(good, "candidate", "workshop")
+        variants = []
+        for field, value in (("arm", "baseline"), ("topic", "changed"), ("topicId", "other"),
+                             ("blocked", True), ("version", "other")):
+            bad = deepcopy(good)
+            bad["first_attempt_profile"][field] = value
+            variants.append(bad)
+        for field, value in (("repair_count", 1), ("clinical_repair_count", 1), ("visual_repair_requests", 1),
+                             ("repair_failures", [{}]), ("clinical_attempts", [{}]), ("attempts", [{}, {}])):
+            bad = deepcopy(good)
+            bad["visual_preflight"][field] = value
+            variants.append(bad)
+        for field, value in (("model", "advisor"), ("max_tokens", 6000), ("stage", "retry")):
+            bad = deepcopy(good)
+            bad["first_attempt_profile"]["requests"][2][field] = value
+            variants.append(bad)
+        bad = deepcopy(good)
+        bad["first_attempt_profile"]["requests"].append({})
+        variants.extend((bad, {"topic": good["topic"]}))
+        for bad in variants:
+            with self.subTest(bad=bad), self.assertRaises(Invalid):
+                validate_first_attempt(bad, "candidate", "workshop")
 
 
 def block(scores=(30, 20, 15, 15, 10, 10), gates="none", missing=(), decision="PASS", cap=100):

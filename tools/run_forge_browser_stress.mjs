@@ -48,6 +48,13 @@ const resumeBundlePath = argValue('--resume-bundle');
 const redesign = process.argv.includes('--redesign');
 const repair = process.argv.includes('--repair');
 const expertReview = process.argv.includes('--expert-review');
+const firstAttemptArm = argValue('--first-attempt-arm');
+const firstAttemptTopicId = argValue('--first-attempt-topic-id');
+if (firstAttemptArm && (!['baseline', 'candidate'].includes(firstAttemptArm) ||
+    !/^[a-z0-9-]{1,64}$/.test(firstAttemptTopicId) || resumeBundlePath || expertReview || redesign || repair)) {
+  throw new Error('First-attempt mode needs baseline/candidate and a topic ID, without recovery/repair/expert flags.');
+}
+if (firstAttemptTopicId && !firstAttemptArm) throw new Error('A first-attempt topic ID requires an arm.');
 const feedbackPath = argValue('--feedback-file');
 const repairUnitsArg = argValue('--repair-units');
 if (process.argv.includes('--repair-units') && !repairUnitsArg.trim()) throw new Error('--repair-units needs a nonempty anchor selection.');
@@ -163,6 +170,10 @@ try {
 
   await page.goto(`${baseUrl}/forge`, { waitUntil: 'networkidle', timeout: 60000 });
   await page.fill('#topic', topic);
+  if (firstAttemptArm) {
+    await page.evaluate(profile => window.MnemorizedFirstAttempt.configure(profile),
+      {arm: firstAttemptArm, topicId: firstAttemptTopicId, topic});
+  }
   await page.evaluate(() => {
     const demo = document.getElementById('demo-mode-toggle');
     if (demo) demo.checked = false;
@@ -246,6 +257,7 @@ try {
       exported_at: new Date().toISOString(),
       topic,
       model: typeof CLAUDE_MODEL !== 'undefined' ? CLAUDE_MODEL : '',
+      first_attempt_profile: window.MnemorizedFirstAttempt?.snapshot() || null,
       sketchy_style_prompt: typeof SKETCHY_STYLE !== 'undefined' ? SKETCHY_STYLE : '',
       story: currentStoryData || null,
       image_prompts: {

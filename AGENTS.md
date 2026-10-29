@@ -55,6 +55,11 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Research Spend And First-Pass Benchmarks
 
+- First-image roadmap: `docs/one-shot-roadmap.md`. The opt-in first-attempt
+  experiment is separate from normal Forge. `docs/research-admission-rehearsal.md`
+  describes a dry-run-only guard, NOT a completed hard dollar cap. Never remove
+  its generation block, rotate ledgers or disable the guard to get a live trial.
+
 - Current cue-work default (2026-10-28): real Forge gaps, not chapter completion.
   Follow `docs/chapter-cue-workflow.md` Current Default. Preserve the deferred
   101-105 packet; do not resume blanket mining on a generic "continue". Search

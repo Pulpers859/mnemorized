@@ -107,6 +107,7 @@ class Settings:
     elevenlabs_default_voice: str
     admin_emails: tuple[str, ...]
     web_concurrency: int
+    research_budget_path: Path | None = None
 
     @property
     def elevenlabs_configured(self) -> bool:
@@ -257,4 +258,5 @@ def get_settings() -> Settings:
         elevenlabs_default_voice=os.getenv("ELEVENLABS_DEFAULT_VOICE", "Rachel").strip(),
         admin_emails=_split_csv(os.getenv("ADMIN_EMAILS", "")),
         web_concurrency=_env_int("WEB_CONCURRENCY", 1),
+        research_budget_path=Path(os.environ["RESEARCH_BUDGET_PATH"]) if os.getenv("RESEARCH_BUDGET_PATH", "").strip() else None,
     )

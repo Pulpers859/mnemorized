@@ -6,6 +6,19 @@ import the backend, or run Git. All cohort files, exports, images, audits, recei
 SQLite ledgers and redirected reports must live under `Troubleshooting Prompts/`.
 Tests use temporary synthetic repositories instead.
 
+## Optional First-Attempt Experiment
+
+For the roadmap's paired pilot, freeze two ledgers with identical three-topic
+lists and a shared pairing manifest (randomized order and settings fixed before
+either arm generates). Each cohort adds `first_attempt` with exactly
+`{"version":"first-attempt-v1","arm":"baseline","model":"claude-sonnet-4-6"}`;
+the other uses arm `candidate`. Every topic must request eight anchors.
+Registration then additionally requires the matching exported profile, exact four
+ordered requests and zero clinical/visual/pre-render repairs. Existing cohorts
+without this option retain their original rules. These exported receipts are
+attestations, not cryptographic proof of billing or permission to spend.
+See [roadmap](one-shot-roadmap.md) and [admission rehearsal](research-admission-rehearsal.md).
+
 ## Freeze Before Generation
 
 Finish production edits first. Freeze the cohort **before any topic is submitted
