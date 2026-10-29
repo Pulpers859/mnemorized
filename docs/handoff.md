@@ -203,6 +203,47 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-28 - Stop blanket mining; implement Forge-gap cue workflow
+
+Patrick approved ending exhaustive library expansion in favor of real Forge gaps.
+Current default is now in chapter-cue-workflow.md, AGENTS.md and both delegation
+skills. Generic continue does not resume101-105. Source inventories and101author
+draft preserved/deferred, no independent cue approval/integration; both agents closed.
+Catalog76, holds1133/935 and canonical next101 unchanged.
+
+Extended existing chapter_cue_prior_matches.py with repeated --term lookup, exact
+cue/scope content IDs, separate selected/held/blocked groups and truncation counts.
+No synthetic query banks, auto-admission, medical inference or production injection.
+Tests cover grouping, provenance, missing scope, restrictions, limits and CLI.
+Retrospective real serotonin export/feedback lookup is in
+Troubleshooting Prompts/forge_cue_gap_reset_2026-10-28/. Existing candidates may
+help cue identity, not physical placement; no new cue selection or image score.
+No paid calls. Original $6/six-render plan remains subject to its enforceable
+final-request spending gate, not supplied by these offline tools.
+
+Validation:1184passed/2skipped/149subtests; backend compileall and four HTTP200
+route smokes passed. Catalog validates76entries; hold register current; mirrored
+skills identical; diff check clean. Main code review and regression tests, not a
+new independent semantic/pixel audit. No browser/provider/recall validation.
+Git fetch remains blocked by the previously diagnosed malformed local Codex
+checkpoint ref; no retry/delete. Authenticated remote SHA checked directly before
+push; normal push and post-push SHA/ancestry checks are the synchronization route.
+
+### 2026-10-28 - Batch101-105 source freezes; creative work in progress
+**Source done, cue review NOT done:** All five purchased OBGYN inventories source
+reviewed/prepared before creativity:1,266terms/1,474keyword mappings.101372/425,
+102209/268,103192/226,104265/302,105228/253.101two bounded source findings and
+102one heading repaired/delta-closed;103-105finding-free. BlankPDF62excluded;
+actual105ends61. No clinical normalization/exhaustive coverage/recall claim.
+**Active:** Same author Ptolemy01a1802d-b15a-7742-8028-35343e4f4160 creative101;
+same independent reviewer Franklin01a1802e-e725-7513-a7a7-85117b08a3a9 waiting
+for authored101bank. No newcohort/efficiencyexperiment/paidproviders/renders.
+**Resume:**Troubleshooting Prompts/tintinalli_chapter_cues_2026-10-28/batch101-105/
+resume-checkpoint.md and source-review.md; report docs/chapter-101-105-cue-workshop.md.
+Ledger stillnext101; do not skip or regenerate source/prior preparation over
+choices. Preserve1,133older active holds. Stop105; next106EmergencyCareofChildren.
+No101-105bank integrated or final validation/commit yet; prior5e67224is synced.
+
 ### 2026-10-28 - Chapters96-100 independently reviewed and integrated
 **Done:** One strong author(Ptolemy) and one non-author strong reviewer(Franklin),
 resumed in the same contexts after usage pause. All five source inventories and

@@ -40,6 +40,22 @@ An empty evidence list means no qualifying evidence recorded. Do not manufacture
 
 ## Offline Tools
 
+The canonical catalog and historical chapter banks serve different purposes.
+Chapter banks are unvalidated reference leads, not automatic catalog admissions.
+Search here first; use a bounded exact-term historical lookup only for an actual
+Forge gap:
+
+```powershell
+python tools/chapter_cue_prior_matches.py --term insulin --limit 3
+```
+
+Results group identical cue/scope text under stable content IDs, retaining separate
+selected, held and blocked groups, counts, references and truncation notices.
+These IDs prove neither semantic equivalence nor applicability. Missing scope is
+explicit; no-hit results do not prove absence. Read the referenced record before
+reuse or any scope change. Nothing merges banks into this catalog or injects them
+into production. See [the current workflow](chapter-cue-workflow.md#current-default-forge-gaps-not-chapter-completion).
+
 From the repository root:
 
 ```powershell

@@ -55,6 +55,13 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Research Spend And First-Pass Benchmarks
 
+- Current cue-work default (2026-10-28): real Forge gaps, not chapter completion.
+  Follow `docs/chapter-cue-workflow.md` Current Default. Preserve the deferred
+  101-105 packet; do not resume blanket mining on a generic "continue". Search
+  existing scoped cues first; only new/changed/ambiguous meaning needs creative
+  review. Exhaustive chapter-screen rules below apply when a chapter scan is
+  explicitly commissioned. Do not routinely create efficiency councils.
+
 - For chapter cue decisions, use `docs/visual-cue-catalog.md` **Review And
   Admission** as the standing rubric. Familiar category, packaging, action,
   broad mechanism and partial-name cues may omit modifiers; full-syllable or

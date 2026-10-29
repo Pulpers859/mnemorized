@@ -1,6 +1,42 @@
 # Chapter Cue Workshop Workflow
 
-Use this workflow for the offline Tintinalli vocabulary library, normally five chapters per batch. It does not replace Forge source retrieval/medical gating, authorize image generation or admit cues to production. Standing cue criteria remain in [Review And Admission](visual-cue-catalog.md#review-and-admission).
+Use this workflow for offline cue work. It does not replace Forge source retrieval/medical gating, authorize image generation or admit cues to production. Standing cue criteria remain in [Review And Admission](visual-cue-catalog.md#review-and-admission).
+
+## Current Default: Forge Gaps, Not Chapter Completion
+
+Patrick approved this change on 2026-10-28. Stop unsolicited chapter mining and
+efficiency councils. Chapters 101-105 are deferred, not failed or approved;
+preserve their source inventories, author snapshots and open review state. A
+generic "continue" does not authorize resuming the chapter backlog. The batch
+procedure below applies only to an explicitly commissioned chapter scan.
+
+1. Start with a real Forge export and its independent medical gate/source evidence.
+   Record the bundle hash, anchor ID, existing cue and observed failure. Distinguish
+   a missing/ambiguous cue from layout, relationship, retrieval or generation-format
+   failures. Do not invent medical anchors or mini-prompts to create work.
+2. Search the 76-entry structured catalog first. For a specific unmet term, use
+   `python tools/chapter_cue_prior_matches.py --term TERM --limit 3` (repeat
+   `--term` for a few actual gaps). This reads existing chapter banks without a
+   synthetic query bank. Exact matches are leads, not clinical applicability or
+   evidence of recall. Check bounded aliases/ingredients only when necessary.
+3. Reuse an applicable existing cue with its scope and provenance instead of
+   authoring another chapter copy. Exact text/ID checks can verify unchanged
+   content; new targets, altered scopes and ambiguous aliases require semantic
+   review. Held/restricted records are not selected alternatives. Preserve holds.
+4. For a real remaining gap, allow one bounded author pass and one non-author
+   semantic review, followed by at most one concrete correction/recheck. Unresolved
+   ideas stay held. No elaborate creative rescue or all-row corpus reread. Main
+   retains integration and safety decisions; a helper is unnecessary for a script.
+5. Keep proposed changes offline until the agreed evaluation admits them. Use the
+   existing first-pass evaluation tooling and frozen rubric; do not build another
+   evaluation framework. Preserve first failures and compare the complete image,
+   not just whether a cue exists in a dictionary. No topic-specific repairs during
+   scored first-pass trials. Paid calls require the existing task-wide budget,
+   saved call/render plan and enforceable final-request spending admission gate.
+
+Success is better held-out Forge/image performance, not terms mined, documents
+written or tests passed. Retrospective diagnosis can prioritize work but is not a
+held-out result. Do not claim usage savings without measured total costs.
 
 ## Tested Division Of Work
 

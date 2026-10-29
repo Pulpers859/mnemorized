@@ -47,6 +47,14 @@ Subagents should return concise findings with file paths, line references when p
 
 ## Chapter Cue Workshops
 
+Current default (2026-10-28): address observed real Forge cue gaps, not blanket
+chapter completion. Preserve deferred 101-105 freezes; generic "continue" is not
+authorization to resume mining. Search catalog/history first, use deterministic
+checks for exact copies, and reserve non-author semantic review for new/changed
+or ambiguous meanings. One author pass, one review and one bounded correction;
+unresolved ideas stay held. No routine councils or script-launching helpers.
+The exhaustive batch procedure applies only to explicitly commissioned scans.
+
 Follow `docs/chapter-cue-workflow.md`. The paired pilot supports only provisional
 lower-usage assistance for bounded source-head extraction, exact prior retrieval
 and deterministic bookkeeping, not equivalent end-to-end cue authorship or net

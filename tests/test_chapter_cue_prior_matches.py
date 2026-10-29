@@ -4,7 +4,62 @@ import json
 
 import pytest
 
-from tools.chapter_cue_prior_matches import find_prior_matches, main
+from tools.chapter_cue_prior_matches import find_prior_matches, find_term_matches, main
+
+
+def test_term_lookup_groups_exact_content_without_writes(tmp_path):
+    for n in range(1, 5):
+        bank(tmp_path, n, [entry("kite", reason=f"Target note {n}")])
+    bank(tmp_path, 5, [entry("kite", cue_scope="different scope")])
+    bank(tmp_path, 6, [entry("kite", "hold", attempted_cue="source cue")])
+    before = {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()}
+    r = find_term_matches(["KITE", "kite"], limit=2, root=tmp_path)["results"][0]
+    assert r["selected_record_count"] == 5 and r["selected_group_count"] == 2
+    group = r["selected"][0]
+    assert group["reference_count"] == 4 and group["references_truncated"] is True
+    assert len(group["references"]) == 2
+    assert group["references"][0]["reason"] == "Target note 1"
+    assert r["held_record_count"] == 1
+    assert r["held"][0]["cue_id"] != group["cue_id"]
+    assert group["requires_semantic_review"] is True
+    assert {p: p.read_bytes() for p in tmp_path.rglob("*") if p.is_file()} == before
+
+
+def test_term_lookup_no_semantic_inference_and_stable_ids(tmp_path):
+    bank(tmp_path, "29A", [entry("Stra\u00dfe"), entry("cat")])
+    bank(tmp_path, "29B", [entry("Stra\u00dfe", cue="different")])
+    results = find_term_matches(["STRASSE", "cats", " cat"], before="29B", root=tmp_path)["results"]
+    assert results[0]["selected_group_count"] == 1
+    assert results[1]["selected"] == results[2]["selected"] == []
+    first_id = results[0]["selected"][0]["cue_id"]
+    assert find_term_matches(["Stra\u00dfe"], root=tmp_path)["results"][0]["selected"][0]["cue_id"] == first_id
+
+
+def test_term_lookup_reports_group_truncation_missing_scope_and_restriction(tmp_path):
+    bank(tmp_path, 1, [entry("kite", cue_scope=None)])
+    bank(tmp_path, 2, [entry("kite", cue="second")])
+    bank(tmp_path, 3, [entry("kite", cue="third", selection_status="restricted")])
+    r = find_term_matches(["kite"], limit=1, root=tmp_path)["results"][0]
+    assert r["selected_group_count"] == 2 and r["selected_groups_truncated"] is True
+    assert r["selected"][0]["missing_cue_or_scope"] is True
+    assert r["blocked_record_count"] == 1 and r["held_record_count"] == 0
+
+
+@pytest.mark.parametrize("terms,limit,before", [([], 3, None), ([""], 3, None),
+    ("kite", 3, None), ([1], 3, None), (["kite"], True, None),
+    (["kite"], 0, None), (["kite"], 9, None), (["kite"], 3, "bad")])
+def test_term_lookup_rejects_invalid_inputs(tmp_path, terms, limit, before):
+    with pytest.raises(ValueError):
+        find_term_matches(terms, limit=limit, before=before, root=tmp_path)
+
+
+def test_term_cli_needs_no_synthetic_bank(tmp_path, capsys):
+    bank(tmp_path, 1, [entry("kite")])
+    assert main(["--term", "kite", "--term", "missing"], root=tmp_path) == 0
+    r = json.loads(capsys.readouterr().out)
+    assert r["results"][0]["selected_record_count"] == 1
+    assert r["results"][1]["selected_record_count"] == 0
+    assert "not proof" in r["usage"]
 
 
 def bank(root, chapter, entries):
