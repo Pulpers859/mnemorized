@@ -29,6 +29,10 @@ For quota reservation mechanics and provider transport quirks (dual Gemini auth 
    - local missing-key mode is clear
    - a dev plan override in `backend/dev_data/plan_overrides.json` is not silently masking the behavior under test
 4. Validate syntax with `python -m compileall backend`; provider-call validation requires real local or hosted keys.
+5. Admit changed strict tool schemas with the free provider count endpoint before
+   paid clinical planning. Save exact full-schema identity and receipts; local
+   grammar tests alone missed an actual provider regex restriction. These free
+   probes do not establish medical or image quality. Read artifacts as UTF-8.
 
 ## Avoid
 

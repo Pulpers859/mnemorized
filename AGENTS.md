@@ -106,6 +106,12 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 - Before live work, enforce admission/reservation against the final provider request,
   including injected source text, tool schemas and maximum output. Unknown pricing,
   usage or an unenforceable cap blocks spending; an estimated counter is not a hard cap.
+- Admit changed strict tool schemas through the provider's free count endpoint
+  before paid clinical planning. Save exact full-schema requests and receipts;
+  local tests and broad documentation alone do not prove provider support.
+- Read saved JSON/text artifacts explicitly as UTF-8. Windows Python's locale
+  default can misdecode intact clinical operators/ranges as mojibake; verify
+  original code points before diagnosing or modifying source content.
 - A first-pass benchmark allows one initial image per predeclared topic/arm, no
   topic-specific repairs or hook-reset loopholes. Source, format and budget failures
   remain in the denominator. Freeze code, models, source policy, contracts and rubric.

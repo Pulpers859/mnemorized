@@ -231,8 +231,18 @@ not reported as passes. Patrick asked for autonomous completion; a concise async
 request asks permission for one additional three-topic cohort inside remaining
 original$6cap, not a cap increase. Continue useful offline work while pending;
 do not reuse exposed topics, old ledgers or pretend a followup succeeded.
-Raman checking apparent mojibake in p11source excerpts vs model output, saved
-source-integrity evidence only; no medical values may be repaired from memory.
+Raman's saved-packet source integrity review found intact operators/ranges/beta
+in both final source and responses. Main reproduced the apparent corruption by
+Path.read_text() under Windowscp1252; explicitencoding=utf-8reads correct symbols.
+This was a diagnostic-reader error, not an established medical-source defect.
+No source content was changed or clinically cleared. Free probe bodies derived
+using the bad default reader are grammar checks ONLY, never clinical evidence;
+their code-point contents do not certify final clinical request identity.
+Regex correctionbc5a31a pushed/synchronized, CI40996178635success. All1366tests
+passed, source-identical actual scene tool matched free-admitted schema. User's
+async paid-scope reply still pending at this entry; no paid calls beyond initial
+two followup planning calls. Do not end useful in-scope work merely at tests, and
+do not cross the explicit paid-cohort gate without Patrick's answer.
 
 ### 2026-10-29 - Corrective scene contract implementation; continue end-to-end
 
