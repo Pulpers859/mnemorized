@@ -4,7 +4,17 @@
   const limits = Object.freeze({visualTarget:24, visualMax:34, openingTargetMin:20,
     openingTargetMax:35, openingMax:60, anchorTarget:30, anchorWarning:35});
   const wordCount = text => String(text || '').trim().split(/\s+/).filter(Boolean).length;
-  const bounded = max => ({type:'string', pattern:`^\\S+(\\s+\\S+){0,${max - 1}}$`});
+  // Ranged variable-length groups are unsupported; flat optionals backtrack
+  // exponentially. Prefix chains in <=30-level chunks avoid both that and the
+  // provider's nesting ceiling. The decoder independently checks word counts.
+  function bounded(max) {
+    let pattern = '^\\S+';
+    for (let remaining = max - 1; remaining > 0; remaining -= 30) {
+      const size = Math.min(30, remaining);
+      pattern += '(\\s+\\S+'.repeat(size) + ')?'.repeat(size);
+    }
+    return {type:'string', pattern:pattern + '$'};
+  }
   const text = () => ({type:'string', pattern:'\\S'});
   function schema(count = 8) {
     if (!Number.isInteger(count) || count < 1 || count > 10) throw new Error('Invalid scene anchor count.');

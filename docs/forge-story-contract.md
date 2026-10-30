@@ -22,10 +22,16 @@ rescored. Their failures led to these production changes:
   review when clinical text is supported. Invalid old reviews remain invalid;
   there is no automatic rerouting, unsupported clearance or medical gap filling.
 
-Anthropic documents simple bounded regex patterns, strict tools and primitive
-enums as supported; `maxLength`, `maxItems` and most numeric constraints are not
-supported. See [official structured-output limitations](https://platform.claude.com/docs/en/build-with-claude/structured-outputs#json-schema-limitations),
-checked2026-10-29. Mechanical conformance is not clinical truth, coherent recall
+Anthropic documents limited regex patterns, strict tools and primitive enums;
+`maxLength`, `maxItems` and most numeric constraints are unsupported. The free
+counter rejected ranged repetition of a variable-length word group despite the
+broad documented quantifier support. Flat optional groups exhibited pathological
+negative-case backtracking offline; a single60-word nested chain exceeded the
+provider's50-level ceiling. Prefix chains in at-most30-level chunks preserve the
+same exact word bound, reject long inputs quickly and were admitted in the full
+eight-unit scene request by the free counter. See [official structured-output limitations](https://platform.claude.com/docs/en/build-with-claude/structured-outputs#json-schema-limitations),
+checked2026-10-29. Counter admission is not paid generation validation.
+Mechanical conformance is not clinical truth, coherent recall
 or pixel quality. Source review and independent image audits remain mandatory.
 
 Regression tests execute actual JS modules, including excerpts from failed

@@ -203,6 +203,37 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-29 - Follow-up caught provider regex incompatibility; no scene charged
+
+Corrective implementation623cece pushed/synchronized; CI40994607460success.
+Fresh frozen single-arm followup selected COPD(p11), valvular emergencies(p03),
+systemic hypertension(p04). Original budget ledger sealed read-only; followup
+allocation4902977microUSD carried prior1097023liability forward under same$6cap.
+Only p11submitted: first2Claude calls succeeded; free count endpoint rejected
+scene schema before paid scene dispatch: ranged repetition of variable-length
+word group unsupported. No third reservation, no scene/story/image produced.
+All3followup slots blocked and preserved; p03/p04not submitted to known broken
+schema. Followup cost90633Anthropic+492embedding=91125microUSD. Combined task
+liability1188148, remaining4811852; both paid ledgers read-only, server stopped.
+
+Main tested schema variants ONLY through free counter (not medical generation).
+Flat optional-word pattern admitted but pathological negative-case backtracking
+found offline; one deep prefix chain rejected at provider50-level ceiling.
+At-most30-level prefix-chain chunks preserve exact34/60word bounds, reject long
+inputs quickly and full eight-unit production request admitted200. Actual module
+tool schema equality checked against admitted request. Full8anchor preflight
+schema also admitted free200. No new paid calls for these checks; no fabricated
+medical prompts or image scores. Artifacts under story_contract_fix_2026-10-29/.
+
+New regex correction validated: focused62tests and full suite1366passed/2skipped/
+165subtests. Earlier regex test runs interrupted due slow negative cases,
+not reported as passes. Patrick asked for autonomous completion; a concise async
+request asks permission for one additional three-topic cohort inside remaining
+original$6cap, not a cap increase. Continue useful offline work while pending;
+do not reuse exposed topics, old ledgers or pretend a followup succeeded.
+Raman checking apparent mojibake in p11source excerpts vs model output, saved
+source-integrity evidence only; no medical values may be repaired from memory.
+
 ### 2026-10-29 - Corrective scene contract implementation; continue end-to-end
 
 Patrick explicitly requested autonomous completion, not another stop at a negative

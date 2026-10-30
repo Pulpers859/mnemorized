@@ -43,9 +43,16 @@ def test_fixed_inventory_and_provider_supported_bounds():
     schema = evaluate('api.schema(8)')
     assert len(schema['properties']['anchors']['required']) == 8
     assert schema['properties']['anchors']['additionalProperties'] is False
-    assert schema['properties']['opening']['pattern'] == r'^\S+(\s+\S+){0,59}$'
+    assert schema['properties']['opening']['pattern'].count(r'\S+') == 60
     for slot in schema['properties']['anchors']['properties'].values():
-        assert slot['properties']['visual']['pattern'] == r'^\S+(\s+\S+){0,33}$'
+        pattern = slot['properties']['visual']['pattern']
+        assert pattern.count(r'\S+') == 34
+        assert '{' not in pattern
+        depth = maximum = 0
+        for char in pattern:
+            depth += (char == '(') - (char == ')')
+            maximum = max(maximum, depth)
+        assert depth == 0 and maximum <= 30
         assert set(slot['required']) == {'hook', 'narration', 'visual', 'anchor', 'review'}
     encoded = json.dumps(schema)
     assert not any(key in encoded for key in ['maxItems', 'minLength', 'maxLength'])
@@ -73,6 +80,15 @@ def test_opening_is_checked_before_story_acceptance(size):
     })()""", size=size)
     assert bool(result['error']) is not (1 <= size <= 60)
     assert any('opening' in message for message in result['fatal']) is not (1 <= size <= 60)
+
+
+@pytest.mark.parametrize('size', [1, 34, 35, 60, 61, 1000])
+def test_opening_pattern_has_exact_bound_without_exponential_rejection(size):
+    result = evaluate("""(() => {
+      const pattern=api.schema(2).properties.opening.pattern;
+      return new RegExp(pattern).test(Array(input.size).fill('object').join(' '));
+    })()""", size=size)
+    assert result is (1 <= size <= 60)
 
 
 @pytest.mark.parametrize('change', [
