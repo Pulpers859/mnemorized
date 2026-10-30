@@ -203,6 +203,37 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-30 - Approved three-topic benchmark blocked by unknown timeout charge
+
+Patrick explicitly approved one new three-topic cohort inside remaining$4.811852
+of original$6cap, no increase. Frozen code190babe, unchanged rubric/Constitution;
+new seeded draw: appendicitis(p15), hemoptysis(p06), pulmonary hypertension(p05).
+Only p15submitted: first2planning calls200; scene schema passed free admission,
+but local180second httpx timeout returned504without provider response or usage.
+No story, gate clearance, prompts, AG image or pixel audit. p06/p05not submitted:
+unknown reservation halted all dispatch. All3slots blocked,0/3end-to-end; image
+score/rate undefined. Do not describe this as three generated lessons/images.
+
+Prior settled liability1188148+new85434=1273582microUSD, including conservative
+prior embedding allowances. Unknown request retains3092160microUSD maximum;
+combined conservative liability4365742of6000000, NOT actual spend. No release,
+reset, retry, cap increase or new cohort. Paid server stopped. Console reached
+sign-in, no authenticated Chrome console tab/admin-usage credential available;
+no authoritative reconciliation possible. Do not infer zero charge from timeout.
+
+Galileo independently confirmed captured/current schema identity and transport
+timeout; grammar latency is a hypothesis, not a demonstrated cause. Its bounded
+offline ablation changed exactly9regexes in a disposable clone,6737to3157bytes,
+depth30to0;22checks passed including unchanged runtime overlength/inventory
+rejection. Candidate allows overlength at schema level; no latency gain proven.
+Frozen production hashes verified unchanged. Focused budget/evaluation tests:
+111passed/1skipped/165subtests. This is diagnostic only. Scratch
+runner stdout encoding failed after saved timeout, not its cause; print fixed
+without rerun. Source/provider/image goal remains unmet despite prior1366tests.
+Report: docs/one-shot-benchmark-2026-10-30.md. Full saved packet:
+Troubleshooting Prompts/approved_benchmark_2026-10-30/. Continue only safe offline
+work or authoritative usage reconciliation; never spend around the pending lock.
+
 ### 2026-10-29 - Follow-up caught provider regex incompatibility; no scene charged
 
 Corrective implementation623cece pushed/synchronized; CI40994607460success.

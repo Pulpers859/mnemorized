@@ -81,3 +81,30 @@ desktop/mobile with no page errors or horizontal overflow; experimental requests
 without a server guard were blocked409. No complete live Forge generation,
 clinical source audit, six-image trial, image-effectiveness or recall test ran.
 Independent reviewer cleared repaired rehearsal paths by static delta review.
+
+## 2026-10-30 Approved Follow-Up
+
+Patrick approved one additional three-topic cohort within the original remaining
+$4.811852, not a budget increase. Frozen commit190babe selected Acute Appendicitis,
+Hemoptysis and Pulmonary Hypertension before generation. Only appendicitis was
+submitted: two planning calls returned, then the scene request timed out after
+180seconds without provider response/usage. The full unknown reservation remains
+pending; the other two slots were not submitted and remain blocked denominators.
+No retry, story, prompt, image or pixel audit. End-to-end0/3; image-quality rate
+undefined. This does NOT demonstrate better first-image reliability.
+
+Settled task accounting liability$1.273582 (includes conservative embedding
+allowances), plus at most$3.092160unknown reservation. Conservative combined
+liability$4.365742, not confirmed actual spend. The pending lock forbids dispatch
+even though$1.634258is arithmetically unencumbered. Console reconciliation was
+unavailable without sign-in/admin access; no estimate was used to release money.
+Paid server stopped. See [full result](one-shot-benchmark-2026-10-30.md).
+
+Next: authoritative timeout-usage reconciliation and bounded offline schema
+simplification analysis. Do not reset this ledger, change the frozen attempt,
+retry exposed topics, automatically buy/refill credits or start another cohort.
+The independent review establishes transport timeout only, not its root cause.
+Disposable offline schema ablation: nine patterns removed,6737to3157bytes,
+depth30to0,22checks passed with existing runtime rejection intact. This could
+increase generated overlength failures and has no measured provider latency or
+quality benefit. Production remains frozen/unchanged; do not promote it yet.
