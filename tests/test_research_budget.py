@@ -28,6 +28,18 @@ def body(**changes):
             "messages": [{"role": "user", "content": "Workshop objects"}], **changes}
 
 
+def test_scene_tool_preserves_final_count_payload():
+    request = body(tools=[{"name":"submit_memory_palace", "description":"Bounded scene.",
+        "strict":True, "input_schema":{"type":"object","properties":{},"additionalProperties":False}}],
+        tool_choice={"type":"tool","name":"submit_memory_palace","disable_parallel_tool_use":True})
+    counted = validate_request(request, {})
+    assert counted["tools"] == request["tools"]
+    assert counted["tool_choice"] == request["tool_choice"]
+    request["tool_choice"]["name"] = "submit_visual_preflight_review"
+    with pytest.raises(AdmissionError, match="tool choice"):
+        validate_request(request, {})
+
+
 def test_restart_caps_all_arms_and_no_reset(tmp_path):
     path = tmp_path / "budget.sqlite3"
     ledger = BudgetLedger.create(path, policy())

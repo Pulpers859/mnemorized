@@ -13,6 +13,9 @@ Ground-truth architecture of the forge surface, verified 2026-07. Read this befo
 - Load order (must be preserved; `forge-state.js` first, everything depends on it):
   1. `palace-api.js` — shared fetch wrapper + palace/catalog/admin API namespaces (also used by library and admin pages)
   2. `forge-state.js` — globals, model IDs, Advisor config, `claudeFetch` proxy wrapper, backend-status modal
+     `forge-story-contract.js` follows state: shared word limits, strict bounded
+     scene-tool schema/decoder and lossless legacy-repair adapter. Auth, pipeline
+     and preflight depend on it; keep it before those scripts.
   3. `forge-auth.js` — Supabase client init, session, sign-in/out
   4. `forge-upload.js` — Stage 0 document intelligence (optional PDF/doc → concepts → `#topic` textarea)
   5. `forge-input-builder.js` — guided input builder; writes into the same `#topic` textarea so the pipeline is unaware of it

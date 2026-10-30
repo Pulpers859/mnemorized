@@ -104,6 +104,7 @@ function deferred() {
   return {promise, resolve, reject};
 }
 `, context);
+vm.runInContext(fs.readFileSync('frontend/scripts/forge-story-contract.js', 'utf8'), context);
 vm.runInContext(fs.readFileSync('frontend/scripts/forge-visual-preflight.js', 'utf8'), context);
 vm.runInContext('const api = window.MnemorizedVisualPreflight;', context);
 if (input.pipeline || input.integration) {
@@ -537,14 +538,15 @@ def test_review_uses_forced_strict_tool_with_request_derived_evidence_and_anchor
                for node in schema_nodes)
     finding_variants = result["finding"]["anyOf"]
     scoped = [variant for variant in finding_variants if "source_refs" in variant["properties"]]
-    assert len(scoped) == 2
-    assert scoped[0]["properties"]["n"]["enum"] == [1, 2]
-    assert scoped[0]["properties"]["field"]["enum"] == ["anchor", "narration"]
-    assert scoped[1]["properties"]["n"] == {"type": "null"}
-    assert scoped[1]["properties"]["field"]["enum"] == ["review_script"]
+    assert len(scoped) == 5
+    assert [(v["properties"]["n"].get("enum"), v["properties"]["field"]["enum"])
+            for v in scoped] == [([1], ["anchor"]), ([1], ["narration"]),
+                                 ([2], ["anchor"]), ([2], ["narration"]), (None, ["review_script"])]
+    assert all(len(v["properties"]["quote"]["enum"]) == 1 for v in scoped)
+    assert scoped[-1]["properties"]["n"] == {"type": "null"}
     source_refs = result["schema"]["properties"]["anchors"]["items"]["properties"]["source_refs"]["items"]
-    assert source_refs["properties"]["source_key"]["enum"] == ["workshop-reference"]
-    assert source_refs["properties"]["page_start"]["enum"] == [1]
+    assert source_refs["anyOf"][0]["properties"]["source_key"]["enum"] == ["workshop-reference"]
+    assert source_refs["anyOf"][0]["properties"]["page_start"]["enum"] == [1]
 
 
 @pytest.mark.parametrize(("response", "message"), [

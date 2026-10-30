@@ -203,6 +203,33 @@ bypasses the browser gate), `tools/visual_qa_pack.py` (build a QA pack),
 
 ## PART F — Session log (append-only; newest first)
 
+### 2026-10-29 - Corrective scene contract implementation; continue end-to-end
+
+Patrick explicitly requested autonomous completion, not another stop at a negative
+report. New shared forge-story-contract.js uses a forced strict scene tool with
+fixed anchor slots, bounded word-pattern fields and a local fail-closed decoder.
+Hard limits remain VISUAL34/opening60 (targets24/20-35), not loosened. Clinical
+extraction no longer invents scene_logic. Preflight target/field/full-quote and
+source/page pairs are bound to actual input by strict enums; old invalid reviews
+remain invalid. Ordinary XML format recovery now preserves all learning text and
+inventory, rejects truncation, and checks lossless original parsing before spend.
+Inline field-label parser regression fixed. Cache versions and both forge-map
+skills updated. Patrick's completion preference persisted in AGENTS.md.
+
+Raman implemented disjoint preflight changes/tests. Independent Galileo found
+two ordinary recovery risks, main fixed them with actual-parser regressions;
+focused delta cleared. Full local suite1360passed/2skipped/165subtests, compileall
+passed. Real browser1440/390: modules loaded, eight tool slots, no page errors or
+overflow; allPOSTs blocked, no paid generation in these tests. UI screenshots and
+results: Troubleshooting Prompts/story_contract_fix_2026-10-29/. Mechanical tests
+are not image or clinical validation. Details: docs/forge-story-contract.md.
+
+Work is continuing: commit/CI/freeze corrected pipeline, then a bounded new
+end-to-end cohort with untouched topics under the original$6TASK-WIDEcap, carrying
+forward prior$1.097023liability, never resetting it. Original six failures remain
+in original ledgers. Save prospective scope/call/render plan before new calls;
+no paid repairs or topic substitutions, no claim of image success before pixels.
+
 ### 2026-10-29 - Completed frozen live pilot: six pre-render failures
 
 Executed Patrick's requested real workflow as far as the frozen production path

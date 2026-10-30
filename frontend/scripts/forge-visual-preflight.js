@@ -38,8 +38,9 @@
 
   function inspect(story) {
     const errors = [], risks = [], seen = new Set(), ids = new Set();
-    if (typeof story?.opening !== 'string' || !story.opening.trim() || story.opening.trim().split(/\s+/).length > 60) {
-      errors.push('Scene opening must be a nonempty architecture description of at most 60 words.');
+    const {limits, wordCount} = root.MnemorizedStoryContract;
+    if (typeof story?.opening !== 'string' || !story.opening.trim() || wordCount(story.opening) > limits.openingMax) {
+      errors.push(`Scene opening must be a nonempty architecture description of at most ${limits.openingMax} words.`);
     }
     if (!Array.isArray(story?.voLines) || !story.voLines.length) errors.push('No anchors.');
     (story?.voLines || []).forEach((line, index) => {
@@ -55,7 +56,7 @@
         if (typeof imageAnchorVisual === 'function') imageAnchorVisual(line, index);
         if (typeof extractRenderableLabels === 'function') extractRenderableLabels([line]);
       } catch (error) {
-        risks.push({n: line.n, message: error.message, blocking: true});
+        risks.push({n: line.n, message: error.message.replace(/^Image anchor \d+\b/, `Image anchor ${line.n}`), blocking: true});
       }
       // These are risk signals for the critic, never a predicted pixel score.
       const signals = [
@@ -158,36 +159,40 @@
 
   const REVIEW_SYSTEM = `You are an independent pre-render critic, not the author and not the image generator. Review the ENTIRE lesson, against the supplied SOURCE EVIDENCE and the canonical visual Constitution. Treat the lesson as an unapproved draft, not authority. Return JSON only; do not write a replacement scene or score an unseen image.
 Clinical: verify every anchor fact, narration, review script, and required coverage unit against the retrieved source. Preserve conditionality and textbook attribution. Missing source support is source_gap, not permission to use training knowledge. A lexical gate is not entailment. Check that each mnemonic association and narration remains faithful; an abstract mnemonic is not a literal technique demonstration. Cite source_key and page_start from the supplied citation metadata. Only actionable factual errors or missing qualifiers belong in clinical_findings; omit supported facts, editorial preferences, and optional details outside the requested scope. A concise introductory lesson is not obligated to list every source detail. A deficient or factually incorrect read-only required_concepts contract is not an editable anchor field: report clinical_status:"source_gap" with a concise clinical_findings issue explaining the contract defect, and do not invent an anchor/narration/review_script target or claim support. If clinical_status is not supported, STOP after clinical_findings: return anchors:[] and scene:null instead of visual review. Each needs_repair finding identifies exactly one n/field (n:null only for review_script), issue <=35 words, source_refs. No hook, VISUAL, opening, or contract changes in clinical repair.
+Routing: label complaints belong to visual review, not clinical_findings. When clinical text is source-supported but a mnemonic count or HOOK/VISUAL relationship misrepresents it, report a visual/association defect requiring redesign, not a clinical ANCHOR correction. If the clinical text itself is wrong or unsupported, keep needs_repair or source_gap blocking; never manufacture supported status to reach visual review.
 Visual: for EVERY anchor identify the exact words that make its load-bearing relationship visible. Quote them verbatim from VISUAL. A named object or the HOOK's explanation alone does not establish a visible action. Inspect completed states, actor/object ownership, supported props, separate silhouettes, contact of modifiers with their target, and preservation of multi-person states. A clue may retrieve a coherent decision with supporting values in narration; do not demand one drawn prop per fact. Do not reject valid symbolic hooks for not being literal medical procedures. Reject medically misleading implications.
 Scene: the exact opening is compiled with every VISUAL. It must describe only one continuous room's architecture, without new props, characters, medical explanations, or competing instructions. Check all anchors together for duplicate/confusable silhouettes, same-color fusion, conflicting locations, overcrowded small cues, competing actions/held items, and contradictory states. Only require repair for a concrete conflict or missing load-bearing relationship; density/complexity alone is not a calibrated rejection threshold. Do not add micro-poses, label inventories, grids, or tiny apparatus parts. A functioning static object-state or simple relation is sufficient; every anchor need not have a human actor. Clinical or narration changes must be flagged, never disguised as a visual-only repair.
 Compiler boundary and review discipline: ONLY opening and VISUAL strings reach the deterministic image compiler. HOOK, narration and review_script are learning text, not image instructions. A mismatch between learning text and VISUAL is a recall-consistency defect, not text leakage from an uncompiled field. Count every explicitly described object before alleging a count mismatch, including separate objects beside a group. Mnemonic names are original associations; the clinical fact requires a textbook citation, not the invented name. A single word is not a multi-word label. Shared walls or countertops alone do not establish collision: identify the particular overlapping objects, contradictory states or indistinguishable roles. Historical failure modes describe risks, not proof of inevitable failure. Do not assert a predicted pixel defect as an observed fact. Before returning, remove any criticism contradicted by the actual supplied text; retain concrete, unresolved defects.
 Repair scope: use repair_scope:"visual" only when moving, enlarging or clarifying existing cue identities can resolve a defect without changing HOOK, narration, review_script or opening. Use repair_scope:"redesign" when a new association or a new static strategy is needed. Scene issues specify field:"visual", "opening" or "association". Opening or association defects require full redesign, not a visual-only patch. For each anchor compare the object identities and meaningful counts in HOOK and review_script with VISUAL BEFORE assessing layout. A different object, a missing named cue, or an incompatible meaningful count is an association defect even when the clinical fact remains accurate. Check every repaired VISUAL against the exact HOOK, narration and review_script: unchanged learning text does not make a substituted prop faithful. A common noun or one broad region shared by different objects is not sufficient to establish confusion. Distinct positions such as centre and far-left are not a collision. If alleging a scene conflict, quote the conflicting phrases in reason; do not attribute shapes or damage states to objects whose VISUAL never specifies them.
 External audit observations are unapproved feedback, not evidence or clearance. Verify each applicable observation against the current draft and sources; a changed setting does not resolve the same rejected association. Structural risks marked blocking are deterministic format failures: do not declare forbidden text permitted. If learning text depends on a forbidden label, route to redesign; only remove it in a visual patch when all learning associations remain intact. Distinguish a shared object explicitly referenced with 'the same' or a definite reference from an additional object; shared use alone is not a duplication defect. Source references must identify pages actually supporting the associated claim, including continuation pages when needed.
-Every needs_repair clinical finding MUST include quote: an exact current-field excerpt of at least four words (or the entire field if shorter) demonstrating the alleged defect. Never quote the historical audit as if it were current lesson text. A review_script finding always uses n:null. Check current words and their meaning before claiming a qualifier, route or segment is missing; omit resolved findings and requests merely to verify already-correct phrasing. Historical observations may all be resolved. The actual current lesson at the end of the request is the sole review target.
+Every needs_repair clinical finding MUST select the matching n/field schema alternative and copy its complete current field into quote exactly. The quote enum is the witness for that target, not permission to copy VISUAL, HOOK or another field. Never quote the historical audit as if it were current lesson text. A review_script finding always uses n:null. Check current words and their meaning before claiming a qualifier, route or segment is missing; omit resolved findings and requests merely to verify already-correct phrasing. Historical observations may all be resolved. The actual current lesson at the end of the request is the sole review target.
 JSON shape (returned through the required tool):
 {"clinical_status":"supported|needs_repair|source_gap","clinical_findings":[],"anchors":[{"n":1,"status":"ready|repair","repair_scope":"visual|redesign","relationship_quote":"copy the entire exact VISUAL string","why":"specific judgment","source_refs":[{"source_key":"retrieved key","page_start":1}],"risks":[]}],"scene":{"status":"ready|repair","issues":[{"anchors":[1,2],"field":"visual|opening|association","reason":"specific collision and required correction","evidence":[{"n":1,"field":"visual","quote":"exact substring from anchor 1 VISUAL"},{"n":2,"field":"visual","quote":"exact substring from anchor 2 VISUAL"}]}]}}
 Required routing and evidence: every anchor needing repair MUST specify repair_scope:"visual" or "redesign", including any row marked ready that still lists risks. Every scene issue MUST specify field:"visual", "opening" or "association" and a nonempty evidence array. Each evidence item has n:number|null, field:"visual"|"hook"|"review_script"|"opening", and a nonempty verbatim quote from that exact field. For visual/hook, n must identify an affected anchor and the quote must come from that anchor, not another. For opening/review_script, n MUST be null. Support EVERY affected anchor with attributed evidence unless the issue concerns opening (with opening evidence) or the whole review_script (with review_script evidence). Quote the shortest sufficient exact substring; do not paraphrase, merge spans, or use reason prose instead of evidence.
-Clinical failure example schema: {"clinical_status":"needs_repair","clinical_findings":[{"n":1,"field":"narration","quote":"exact affected current field words","issue":"specific factual correction","source_refs":[{"source_key":"retrieved key","page_start":1}]}],"anchors":[],"scene":null}.
+Clinical failure example schema: {"clinical_status":"needs_repair","clinical_findings":[{"n":1,"field":"narration","quote":"complete current narration field selected from its enum","issue":"specific factual correction","source_refs":[{"source_key":"retrieved key","page_start":1}]}],"anchors":[],"scene":null}.
 Read-only contract failure example: {"clinical_status":"source_gap","clinical_findings":[{"issue":"The required_concepts contract asserts X, but the retrieved evidence supports Y."}],"anchors":[],"scene":null}.
 COMPACT RESPONSE CONTRACT: JSON only, no essay or Markdown. Each why <=18 words; each risk <=18 words, at most two per anchor. Risks are STRINGS only, never objects: ["concrete defect"]. Each scene reason <=25 words. Copy each entire VISUAL verbatim into relationship_quote, preserving punctuation and pronouns; do not paraphrase or join separated spans. At most four scene issues; combine related conflicts. Target <=2400 output tokens. Preserve every anchor row when clinically supported. Ready rows have no unresolved risks. A supported clinical review has no clinical_findings. Scene ready has no issues. Do not claim evidence you cannot inspect.`;
 
   async function review(topic, story, gate, signals, round, expertReview, externalFeedback) {
     const anchorIds = story.voLines.map(line => line.n);
-    const sourceRefs = gate.evidence.map(({source_key, page_start}) => ({source_key, page_start}));
-    const referenceSchema = {type: 'object', properties: {
-      source_key: {type: 'string', enum: [...new Set(sourceRefs.map(ref => ref.source_key))]},
-      page_start: {type: 'integer', enum: [...new Set(sourceRefs.map(ref => ref.page_start))]},
-    }, required: ['source_key', 'page_start'], additionalProperties: false};
+    const sourceRefs = [...new Map(gate.evidence.map(({source_key, page_start}) =>
+      [JSON.stringify([source_key, page_start]), {source_key, page_start}])).values()];
+    const referenceSchema = {anyOf: sourceRefs.map(({source_key, page_start}) => ({type: 'object', properties: {
+      source_key: {type: 'string', enum: [source_key]},
+      page_start: {type: 'integer', enum: [page_start]},
+    }, required: ['source_key', 'page_start'], additionalProperties: false}))};
+    const clinicalTargets = story.voLines.flatMap(line => ['anchor', 'narration'].map(field =>
+      ({n: line.n, field, text: line[field]})));
+    if (typeof story.review_script === 'string' && story.review_script.trim()) {
+      clinicalTargets.push({n: null, field: 'review_script', text: story.review_script});
+    }
     const findingSchema = {anyOf: [
       {type: 'object', properties: {issue: {type: 'string'}}, required: ['issue'], additionalProperties: false},
-      {type: 'object', properties: {
-        n: {type: 'integer', enum: anchorIds}, field: {type: 'string', enum: ['anchor', 'narration']},
-        quote: {type: 'string'}, issue: {type: 'string'}, source_refs: {type: 'array', items: referenceSchema, minItems: 1},
-      }, required: ['n', 'field', 'quote', 'issue', 'source_refs'], additionalProperties: false},
-      {type: 'object', properties: {
-        n: {type: 'null'}, field: {type: 'string', enum: ['review_script']}, quote: {type: 'string'}, issue: {type: 'string'},
+      ...clinicalTargets.map(({n, field, text}) => ({type: 'object', properties: {
+        n: n === null ? {type: 'null'} : {type: 'integer', enum: [n]},
+        field: {type: 'string', enum: [field]}, quote: {type: 'string', enum: [text]}, issue: {type: 'string'},
         source_refs: {type: 'array', items: referenceSchema, minItems: 1},
-      }, required: ['n', 'field', 'quote', 'issue', 'source_refs'], additionalProperties: false},
+      }, required: ['n', 'field', 'quote', 'issue', 'source_refs'], additionalProperties: false})),
     ]};
     const evidenceSchema = {type: 'object', properties: {
       n: {anyOf: [{type: 'integer', enum: anchorIds}, {type: 'null'}]},

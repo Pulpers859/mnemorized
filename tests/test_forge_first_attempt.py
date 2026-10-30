@@ -59,6 +59,7 @@ function errorOf(fn) {
 }
 `, context);
 vm.runInContext(fs.readFileSync('frontend/scripts/forge-state.js', 'utf8'), context);
+vm.runInContext(fs.readFileSync('frontend/scripts/forge-story-contract.js', 'utf8'), context);
 vm.runInContext(`
 backendState = {checked: true, reachable: true, configured: true,
   geminiConfigured: true, medicalKnowledgeConfigured: true, providerAuthReady: true};
@@ -411,7 +412,9 @@ def test_actual_story_attempt_construction_is_single_only_when_profile_active(ar
     for attempt in result:
         assert attempt["body"]["max_tokens"] == 6144
         assert attempt["body"]["model"] == "claude-sonnet-4-6"
-        assert "tools" not in attempt["body"] and "betas" not in attempt["body"]
+        assert attempt["body"]["tools"][0]["name"] == "submit_memory_palace"
+        assert attempt["body"]["tools"][0]["strict"] is True
+        assert "betas" not in attempt["body"]
 
 
 @pytest.mark.parametrize("failure", ["visual", "clinical", "truncated"])

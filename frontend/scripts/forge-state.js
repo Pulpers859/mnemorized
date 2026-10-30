@@ -42,7 +42,8 @@ window.MnemorizedFirstAttempt = (() => {
         stage !== stages[requests.length] || body.model !== CLAUDE_MODEL ||
         !Number.isInteger(body.max_tokens) || body.max_tokens < 1 || body.max_tokens > 6144 || body.betas?.length ||
         Object.entries(headers).some(([key, value]) => key.toLowerCase() === 'anthropic-beta' && value) ||
-        body.tools?.some(tool => tool.name !== 'submit_visual_preflight_review' || tool.type)) {
+        body.tools?.some(tool => tool.type || tool.name !== (stage === 'stage2-story-script-compact'
+          ? 'submit_memory_palace' : stage === 'visual-preflight-review-0' ? 'submit_visual_preflight_review' : null))) {
       blocked = true;
       throw new Error('First-attempt contract blocked: changed topic, extra call, retry, model or tool.');
     }

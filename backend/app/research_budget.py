@@ -62,11 +62,11 @@ def validate_request(body: dict, headers: dict) -> dict:
     if tools is not None:
         if (not isinstance(tools, list) or len(tools) != 1 or not isinstance(tools[0], dict)
                 or set(tools[0]) != {"name", "description", "strict", "input_schema"}
-                or tools[0]["name"] != "submit_visual_preflight_review"
+                or tools[0]["name"] not in {"submit_visual_preflight_review", "submit_memory_palace"}
                 or tools[0]["strict"] is not True or not isinstance(tools[0]["description"], str)
                 or not isinstance(tools[0]["input_schema"], dict)):
-            raise AdmissionError("Only the client preflight output tool is supported")
-        if body.get("tool_choice") != {"type": "tool", "name": "submit_visual_preflight_review", "disable_parallel_tool_use": True}:
+            raise AdmissionError("Only a client scene or preflight output tool is supported")
+        if body.get("tool_choice") != {"type": "tool", "name": tools[0]["name"], "disable_parallel_tool_use": True}:
             raise AdmissionError("Unexpected tool choice")
     elif "tool_choice" in body:
         raise AdmissionError("Tool choice without tool")

@@ -1102,27 +1102,31 @@ async function repairStoryVisualFormat(xmlText, validation, options = {}) {
   const active = () => options.operation === forgeOperation &&
     options.topic === document.getElementById('topic').value.trim();
   if (!active()) return '';
+  const before = options.originalStory || parseStoryXml(xmlText);
+  if (!before.voLines?.length || !window.MnemorizedStoryContract.preservesLearningText(before, parseStoryXml(xmlText))) {
+    throw new Error('Scene format repair requires a complete, lossless original lesson.');
+  }
   // When the only remaining fatals are VISUALs over the hard word cap, escalate to
   // a focused length-repair: a general repair pass often leaves a dense anchor one
   // or two words over, and a single word-count fatal must not abort a complete scene.
   const lengthDirective = options.lengthOnly
-    ? `\n\nCRITICAL LENGTH REPAIR: The only remaining problems are VISUAL fields over the hard word cap. Compress ONLY the named over-length VISUAL fields to 24 words or fewer each. Do NOT shorten by dropping clinical facts — move every number, dose, threshold, and detail into that same anchor's NARRATION and ANCHOR. Leave every already-valid VISUAL and all other fields byte-for-byte unchanged.`
+    ? `\n\nCRITICAL LENGTH REPAIR: Compress ONLY the named over-length VISUAL fields toward ${window.MnemorizedStoryContract.limits.visualTarget} words (maximum ${window.MnemorizedStoryContract.limits.visualMax}). Preserve all cue identities and load-bearing relationships. Every other field, including all learning text, stays byte-for-byte unchanged. If that is impossible, return the original unchanged; do not delete or relocate teaching content.`
     : '';
   const body = {
     model: CLAUDE_MODEL,
     max_tokens: 6144,
     system: `You repair XML medical memory-palace scripts for visual format only.
 
-Return ONLY the full corrected XML. Preserve scene_title, opening, anchor count, narration medical facts, anchors, and review_script substance.
+Return ONLY the full corrected XML. Preserve scene_title, opening, anchor count/order, HOOK, NARRATION, ANCHOR, and review_script byte-for-byte.
 
-Only rewrite VISUAL fields and review_script image references when necessary.
+Only rewrite VISUAL fields. Do not change cue identities or learning text. A different association requires full Forge redesign, not format repair.
 Rules for every VISUAL:
-- 24 words or fewer.
+- Target ${window.MnemorizedStoryContract.limits.visualTarget} words, maximum ${window.MnemorizedStoryContract.limits.visualMax}.
 - One compact physical drawing instruction.
 - One main object or character interaction plus one location phrase.
 - No arrow glyphs, speech bubbles, checklist rows, multi-label signs, or more than one text-bearing surface.
 - Replace exact-value clock faces, clock hands, stopwatches, dials, gauges, and precision plaques with an unmarked physical threshold, obvious size contrast, or at most five countable objects.
-- Move excess medical detail into NARRATION or ANCHOR; do not delete clinical facts.`,
+- Preserve every load-bearing relationship. Do not move content into NARRATION or ANCHOR or delete clinical facts.`,
     messages: [{
       role: 'user',
       content: `Fix these validation errors:\n- ${errors}${lengthDirective}\n\nOriginal XML:\n${xmlText}`
@@ -1142,7 +1146,12 @@ Rules for every VISUAL:
   }
   if (!res.ok) return '';
   const raw = JSON.parse(rawText);
-  return parseProviderContent(raw, 'Scene Narrative visual micro-repair');
+  if (raw.stop_reason !== 'end_turn') throw new Error('Scene format repair did not finish; no partial lesson was accepted.');
+  const repaired = parseProviderContent(raw, 'Scene Narrative visual micro-repair');
+  if (!window.MnemorizedStoryContract.preservesLearningText(before, parseStoryXml(repaired))) {
+    throw new Error('Scene format repair changed protected learning text, room architecture or anchor inventory.');
+  }
+  return repaired;
 }
 
 // ── Main pipeline ────────────────────────────────────────────────
@@ -1340,7 +1349,7 @@ async function runPipeline() {
     setStageDetail('story', 'Searching private medical knowledge base before generating concepts.');
   } else {
     setStatus('story', '✦ Analyzing topic…', 'running');
-    setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
+    setStageDetail('story', 'Extracting source-grounded clinical teaching units.');
   }
   let clinicalContext = '';
   let coreConcepts = [];
@@ -1363,15 +1372,16 @@ COMPLETENESS CHECK: Before finalizing, verify the relevant categories within the
 
 When SOURCE EVIDENCE is provided below, derive your core concepts from that material. Preserve its terminology, qualifiers, thresholds, and clinical details. Identify any missing source coverage explicitly instead of supplying facts from memory.
 ${lessonBlueprintText ? `\n${lessonBlueprintText}\n\nStay inside this blueprint's scope: cover every MUST category, and do NOT expand into the out-of-scope areas unless the topic clearly demands it.\n` : ''}
-Output ONLY these two XML tags, nothing else:
+This step defines clinical coverage ONLY. Do not design a room, invent mnemonic objects, prescribe labels, or suggest clocks/dials/poses. The scene writer handles visual associations separately.
+Output ONLY this XML tag, nothing else:
 
 <core_concepts>Use the requested anchor count when specified, otherwise 8-12 concise teaching units. One per line, at most 45 words each. Cover essential recognition, diagnostic pitfalls, immediate treatment, escalation, and disposition when relevant. Each unit teaches one coherent decision or relationship. Preserve source qualifiers, uncertainty, ranges, and thresholds exactly; do not turn approximate evidence into false precision. Omit out-of-scope molecular detail and epidemiology. Do not omit essential safety steps.</core_concepts>
-<scene_logic>In 60-100 words, describe one coherent room and its left-to-right reading path. Use physical object interactions only. Keep exact facts in core_concepts; the room plan has blank surfaces, unmarked props, and no text panels, written numbers, checklists, diagrams, or speech bubbles. The scene writer will invent the final hooks.</scene_logic>`,
+`,
         messages: [{ role: 'user', content: `Clinical topic: ${topic}\nLearner: ${lessonSpec?.learner || 'Use the learner level in the clinical topic; otherwise medical student'} — needs precise, high-yield anchors.` }]
       }, 'stage1-clinical-context', evidenceHeaders);
     if (!currentRun()) return;
     setStatus('story', '✦ Analyzing topic…', 'running');
-    setStageDetail('story', 'Extracting high-yield clinical concepts and a spatial scene plan.');
+    setStageDetail('story', 'Extracting source-grounded clinical teaching units.');
     const ctxRaw = await ctxRes.json();
     if (!currentRun()) return;
     if (!ctxRes.ok || ctxRaw.stop_reason === 'max_tokens') {
@@ -1379,9 +1389,8 @@ Output ONLY these two XML tags, nothing else:
     }
     const ctxTxt = parseProviderContent(ctxRaw, 'Clinical Context');
     const core   = extractXmlTag(ctxTxt, 'core_concepts');
-    const logic  = extractXmlTag(ctxTxt, 'scene_logic');
-    if (!core || !logic) throw new Error('Clinical planning returned an incomplete fact map. Retry the lesson.');
-    if (core && logic) {
+    if (!core) throw new Error('Clinical planning returned an incomplete fact map. Retry the lesson.');
+    if (core) {
       coreConcepts = core.split('\n').map(l => l.replace(/^[-•*\d.)\s]+/, '').trim()).filter(Boolean);
       if (evidenceAvailable) {
         setStageDetail('story', 'Independently reviewing the clinical coverage contract against source evidence.');
@@ -1389,7 +1398,7 @@ Output ONLY these two XML tags, nothing else:
         if (!currentRun()) return;
       }
       const blueprintSuffix = lessonBlueprintText ? `\n\n${lessonBlueprintText}` : '';
-      clinicalContext = `CLINICAL DESIGN CONTEXT — bake these facts and spatial logic into the scene:\n\nCORE CONCEPTS:\n${coreConcepts.join('\n')}\n\nSCENE LAYOUT:\n${logic}\n\nEvery anchor must encode a specific fact from above.${blueprintSuffix}`;
+      clinicalContext = `SOURCE-GROUNDED CLINICAL COVERAGE:\n${coreConcepts.join('\n')}\n\nEvery anchor must encode a specific teaching unit above. Invent visual associations only in this scene-writing step; no upstream room plan is authoritative.${blueprintSuffix}`;
     }
   } catch(e) {
     if (!currentRun()) return;
@@ -1426,7 +1435,7 @@ For EVERY anchor, state the HOOK first (sound-alike, look-alike, functional, con
   try {
     const compactStorySystem = `You write original medical visual mnemonic memory-palace scripts for a single static illustration.
 
-Return ONLY XML in this exact order: <scene_title>, <opening>, exactly ${requestedAnchorCount(topic) || '8-10'} repeated <vo_line> blocks, <review_script>.
+Return only the required submit_memory_palace tool. Fill every one of its ${requestedAnchorCount(topic) || 8} ordered anchor slots. Each slot supplies its own hook, narration, visual, clinical anchor and rapid-review line. No XML or additional prose.
 
 Clinical accuracy and completeness are mandatory:
 - For scoring systems, protocols, algorithms, and classifications, cover every major item in sequence.
@@ -1440,10 +1449,10 @@ Visual mnemonic rules:
 - VISUAL must be one compact physical drawing instruction, not a label list: one main object/character interaction, one location phrase, and at most one visible text surface (a name, never a number).
 - Avoid the words labeled, reads, showing, shows, sign, chalkboard, ribbon, stamped, or plaque unless that single word describes the only text-bearing surface in the anchor.
 - Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props, modern screens, glass, chrome, and medical equipment used literally.
-- VISUAL is max 24 words. ANCHOR is max 30 words. NARRATION is 2-3 concise spoken sentences.
+- VISUAL target ${window.MnemorizedStoryContract.limits.visualTarget} words, absolute maximum ${window.MnemorizedStoryContract.limits.visualMax}. ANCHOR target ${window.MnemorizedStoryContract.limits.anchorTarget} words, preserving every necessary source qualifier. NARRATION is 2-3 concise spoken sentences.
 - Draw one memorable cue for each coherent teaching unit; supporting lists and qualifiers remain in narration. A referral decision needs a clear decision hook, not a separate drawn item for every referral criterion.
 - ANCHOR is the clinical fact only. NARRATION points to the exact visible object, explains the memory link, and teaches its source-supported fact.
-- Use a single coherent room with large distinct objects. The opening is 20-35 words of architecture ONLY: walls, floor, ceiling, doorways. No people, props, clinical explanations, labels, or diagram layouts. This exact opening will be compiled into the image prompt.
+- Use a single coherent room with large distinct objects. The opening target is ${window.MnemorizedStoryContract.limits.openingTargetMin}-${window.MnemorizedStoryContract.limits.openingTargetMax} words, absolute maximum ${window.MnemorizedStoryContract.limits.openingMax}, of architecture ONLY: walls, floor, ceiling, doorways. No people, props, clinical explanations, labels, or diagram layouts. This exact opening will be compiled into the image prompt.
 - Make each VISUAL state the load-bearing relationship explicitly: who owns the object, what is already applied/connected/blocked, and what is distinct from neighboring props. Preparatory actions do not count as completed clinical actions. Use stable static states, not micro-poses or multi-hand choreography.
 - Check the whole scene for overlapping locations, repeated silhouettes, and same-color fusion. Supporting props rest on a surface; critical contact is explicit. Simplify the physical interaction without changing its clinical association or deleting teaching units.
 - Use strong shape or functional associations before sound-alike names. Preserve source qualifiers and uncertainty in every medical statement.
@@ -1454,17 +1463,8 @@ ${window.MnemorizedFirstAttempt?.metaphorLibrary(VISUAL_METAPHOR_LIBRARY) ?? VIS
 
 ${clinicalContext}
 
-Schema:
-<vo_line>
-HOOK: [strategy] - why the visual encodes the fact
-NARRATION: [concise spoken explanation]
-VISUAL: [drawn object/character, position, one short mnemonic NAME only if needed — never a number/dose/formula]
-ANCHOR: [clinical fact only]
-</vo_line>
-
-<review_script>
-One line per anchor: "When you see [image element] - remember [clinical fact]"
-</review_script>`;
+Per-anchor tool fields: hook starts with the encoding strategy and explains the association; narration teaches the source-supported fact through the same cue; visual describes only drawable objects and relationships; anchor states the clinical fact; review is one line: "When you see [same image element] - remember [clinical fact]".
+The bounded fields are not permission to omit a load-bearing relationship or source qualifier. Simplify the scene, not the medicine. Do not encode a count that contradicts the clinical classification or its learning text.`;
 
     const denseProtocol = isDenseProtocolTopic(topic, coreConcepts);
     const storyAttempts = [];
@@ -1474,6 +1474,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
         model: CLAUDE_MODEL,
         max_tokens: 6144,
         system: compactStorySystem,
+        ...window.MnemorizedStoryContract.request(requestedAnchorCount(topic) || 8),
         messages: [{
           role: 'user',
           content: extraUser ? `${storyUser}\n\n${extraUser}` : storyUser
@@ -1485,11 +1486,11 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
     storyAttempts.push(compactBody(denseProtocol && !window.MnemorizedFirstAttempt?.isActive() ? 'dense-compact' : 'compact'));
     if (!window.MnemorizedFirstAttempt?.isActive()) storyAttempts.push(compactBody(
       denseProtocol ? 'dense-compact-strict' : 'compact-strict',
-      'STRICT RETRY REQUIREMENT: The final output is invalid if it contains more than 10 <vo_line> blocks, any VISUAL over 30 words, arrow glyphs, speech bubbles, an exact-value clock/dial/gauge, or more than one visible text surface in one anchor. Each VISUAL must be one compact drawing instruction: one object/character interaction plus one location phrase. Merge related sub-items until there are exactly 8-10 anchors. Do not omit facts; encode dense clinical facts with silhouette-first object interactions, physical thresholds, scale, position, containment, blocking, and contrast. Exact numbers and formulas remain only in NARRATION and ANCHOR.'
+      `STRICT RETRY REQUIREMENT: Use every requested tool slot. Each VISUAL targets ${window.MnemorizedStoryContract.limits.visualTarget} words, maximum ${window.MnemorizedStoryContract.limits.visualMax}; no arrow glyphs, speech bubbles, exact-value clocks/dials/gauges, or more than one visible text surface. Use one object/character interaction and one location phrase. Preserve every teaching unit and source qualifier; group supporting details without deleting them. Exact values remain in NARRATION and ANCHOR.`
     ));
     if (!window.MnemorizedFirstAttempt?.isActive()) storyAttempts.push(compactBody(
       denseProtocol ? 'dense-visual-hard-gate' : 'visual-hard-gate',
-      'FINAL VISUAL HARD GATE: Rewrite the scene with 8-10 anchors and make every VISUAL pass these rules: 24 words or fewer; no arrow glyphs; no speech bubbles; no exact-value clocks, dials, gauges, or precision plaques; no more than one quoted mnemonic name per anchor; no more than one text-bearing object per anchor; no checklist ribbons, logbook rows, or multi-label signs. Preserve all essential medical facts by moving exact values into NARRATION and ANCHOR, while the VISUAL uses one strong shape-first object interaction.'
+      `FINAL VISUAL HARD GATE: Fill the complete requested anchor inventory. VISUAL target ${window.MnemorizedStoryContract.limits.visualTarget} words, maximum ${window.MnemorizedStoryContract.limits.visualMax}; no arrow glyphs, speech bubbles, exact-value clocks, dials, gauges, or precision plaques; at most one short mnemonic name on one object. No checklist ribbons, logbook rows or multi-label signs. Preserve all essential facts and qualifiers in learning text while using one strong shape-first relationship per VISUAL.`
     ));
 
     let storyValidation = null;
@@ -1539,14 +1540,14 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
 
       let txt = '';
       try {
-        txt = parseAPIResponse(raw, 'Scene Narrative');
+        storyData = window.MnemorizedStoryContract.decode(raw, requestedAnchorCount(topic) || 8);
+        txt = window.MnemorizedStoryContract.xml(storyData);
       } catch(parseErr) {
         lastStoryError = parseErr;
         if (raw?.stop_reason === 'max_tokens' && attemptIndex < storyAttempts.length - 1) continue;
         throw parseErr;
       }
 
-      storyData = parseStoryXml(txt);
       storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));
       if (storyValidation.fatal.length) {
         showDebug(`STORY VALIDATION FAILED (${attempt.label})`, storyValidation);
@@ -1565,7 +1566,7 @@ One line per anchor: "When you see [image element] - remember [clinical fact]"
           for (let repairPass = 0; repairPass < MAX_MICRO_REPAIRS; repairPass++) {
             if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
             const lengthOnly = storyValidation.fatal.every(m => /visual is \d+ words;/i.test(m));
-            const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly, topic, operation, evidenceAvailable });
+            const repairedText = await repairStoryVisualFormat(repairInput, storyValidation, { lengthOnly, topic, operation, evidenceAvailable, originalStory:storyData });
             if (operation !== forgeOperation || topic !== document.getElementById('topic').value.trim()) return;
             if (!repairedText) break;
             storyData = parseStoryXml(repairedText);

@@ -55,6 +55,14 @@ Mnemorized is a static web frontend served by a FastAPI backend. Optimize for me
 
 ## Research Spend And First-Pass Benchmarks
 
+- Patrick's execution preference: carry an authorized task through corrective
+  implementation, non-author review and end-to-end verification. A diagnosis,
+  roadmap, passing code tests or negative trial report is not the requested
+  product outcome. Continue useful in-scope work without routine confirmations;
+  preserve failed trials and report genuinely binding budget/source/access
+  limits honestly. This does not authorize new spending caps, fabricated clinical
+  content, discarded failures or unplanned paid cohorts.
+
 - First-image roadmap: `docs/one-shot-roadmap.md`. The opt-in first-attempt
   experiment is separate from normal Forge. `docs/research-admission-rehearsal.md`
   describes the immutable v1dry-run guard and separately reviewed v2full-model-bound

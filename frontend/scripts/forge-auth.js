@@ -264,7 +264,7 @@ function parseStoryXml(text) {
   const voLines = voRaw.map((block, index) => {
     const getField = (label) => {
       const re = new RegExp(
-        `${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n(?:HOOK|NARRATION|VISUAL|ANCHOR):|$)`,
+        `(?:^|\\n)[\\t ]*${label}:\\s*\\[?([\\s\\S]*?)\\]?(?=\\n[\\t ]*(?:HOOK|NARRATION|VISUAL|ANCHOR):|$)`,
         'i'
       );
       const match = block.match(re);
@@ -289,7 +289,7 @@ function parseStoryXml(text) {
 }
 
 function countWords(text) {
-  return String(text || '').trim().split(/\s+/).filter(Boolean).length;
+  return window.MnemorizedStoryContract.wordCount(text);
 }
 
 function validateStoryData(storyData) {
@@ -303,7 +303,10 @@ function validateStoryData(storyData) {
     return { fatal, warnings, all: fatal.concat(warnings) };
   }
   if (!storyData.scene_title) warnings.push('Missing scene title.');
-  if (!storyData.opening) warnings.push('Missing opening narration.');
+  const limits = window.MnemorizedStoryContract.limits;
+  if (!storyData.opening || countWords(storyData.opening) > limits.openingMax) {
+    fatal.push(`Scene opening must be a nonempty architecture description of at most ${limits.openingMax} words.`);
+  }
   if (!lines.length) fatal.push('No vo_line anchors were returned.');
   if (lines.length && lines.length < 6) warnings.push(`Only ${lines.length} anchors returned; most topics need 8-10.`);
   if (lines.length > 10) fatal.push(`Too many anchors returned (${lines.length}); merge to 8-10 before image generation.`);
@@ -321,10 +324,10 @@ function validateStoryData(storyData) {
     }
 
     const visualWordCount = countWords(line.visual);
-    if (visualWordCount > 34) {
-      fatal.push(`${label} visual is ${visualWordCount} words; visual anchors must be 30 words or fewer before image generation.`);
-    } else if (visualWordCount > 30) {
-      warnings.push(`${label} visual is ${visualWordCount} words; target is 30 or fewer.`);
+    if (visualWordCount > limits.visualMax) {
+      fatal.push(`${label} visual is ${visualWordCount} words; visual anchors must be ${limits.visualMax} words or fewer before image generation.`);
+    } else if (visualWordCount > limits.visualTarget) {
+      warnings.push(`${label} visual is ${visualWordCount} words; target is ${limits.visualTarget} or fewer (maximum ${limits.visualMax}).`);
     }
 
     const visualText = String(line.visual || '');
@@ -354,7 +357,7 @@ function validateStoryData(storyData) {
     }
 
     const anchorWordCount = countWords(line.anchor);
-    if (anchorWordCount > 35) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);
+    if (anchorWordCount > limits.anchorWarning) warnings.push(`${label} anchor is wordy; keep ANCHOR to one crisp clinical fact.`);
     if (/\bget it\b|\bremember\b|\bthis is your\b/i.test(line.anchor || '')) {
       warnings.push(`${label} anchor contains mnemonic/narration language; ANCHOR should be clinical fact only.`);
     }

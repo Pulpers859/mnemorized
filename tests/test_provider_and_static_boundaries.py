@@ -1173,7 +1173,8 @@ def test_stage_one_source_review_precedes_scene_context_and_fails_closed() -> No
     assert "if (evidenceAvailable) {" in planning[parsed_at:reviewed_at]
     assert "${coreConcepts.join('\\n')}" in planning[context_at:]
     assert "${core}" not in planning[context_at:]
-    assert "${logic}" in planning[context_at:]
+    assert "${logic}" not in planning[context_at:]
+    assert "SCENE LAYOUT:" not in planning[context_at:]
     assert "${blueprintSuffix}" in planning[context_at:]
     failure = failure.split("// ── STAGE 2:", 1)[0]
     assert "Clinical planning failed" in failure
@@ -1248,7 +1249,8 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     assert "function validateStoryData" in auth
     assert "storyValidation = validateRequestedStory(storyData, requestedAnchorCount(topic));" in pipeline
     assert "const result = validateStoryData(story);" in pipeline
-    assert "storyData = parseStoryXml(txt);" in pipeline
+    assert "storyData = window.MnemorizedStoryContract.decode(raw, requestedAnchorCount(topic) || 8);" in pipeline
+    assert "storyData = parseStoryXml(repairedText);" in pipeline
     assert "Too many anchors returned" in auth
     assert "dense-compact-strict" in pipeline
     assert "IMAGE_PROMPT_MAX_CHARS = 7800" in pipeline
@@ -1256,7 +1258,7 @@ def test_forge_story_generation_uses_shared_parser_and_validator() -> None:
     assert "ANCHOR is the clinical fact only" in pipeline
     assert "anchor contains mnemonic/narration language" in auth
     assert "visual uses a precision clock or dial reading" in auth
-    assert "no exact-value clocks, dials, gauges, or precision plaques" in pipeline
+    assert "exact-value clocks, dials, gauges, or precision plaques" in pipeline
     assert "const scene_title   = extractXmlTag(txt, 'scene_title');" not in pipeline
     assert "const voRaw = extractAllXmlTags(txt, 'vo_line');" not in pipeline
 
@@ -1275,7 +1277,8 @@ def test_forge_story_prompt_prioritizes_masterful_visual_mnemonic_cues() -> None
     assert "one main object/character interaction, one location phrase" in compact
     assert "single coherent room with large distinct objects" in compact
     assert "Avoid checklists, generic posters, ordinary clipboards, repeated same-shaped props" in compact
-    assert "VISUAL is max 24 words" in compact
+    assert "VISUAL target ${window.MnemorizedStoryContract.limits.visualTarget}" in compact
+    assert "absolute maximum ${window.MnemorizedStoryContract.limits.visualMax}" in compact
     assert "ANCHOR is the clinical fact only" in compact
     assert "preserve every distinct number, range, angle, duration, threshold, and exception" in compact
     assert "Preserve source qualifiers and uncertainty" in compact
@@ -1349,7 +1352,7 @@ def test_forge_parses_text_blocks_and_rejects_empty_provider_output() -> None:
     # return multiple/non-text blocks or stop before emitting usable text.
     assert "parseProviderContent(ctxRaw, 'Clinical Context')" in pipeline
     assert "parseProviderContent(raw, context)" in pipeline
-    assert "parseAPIResponse(raw, 'Scene Narrative')" in pipeline
+    assert "MnemorizedStoryContract.decode(raw, requestedAnchorCount(topic) || 8)" in pipeline
     assert "parseProviderContent(raw, 'Medical Repair')" in auth
     assert "parseProviderContent(data, 'Document Sections')" in upload
     assert "parseProviderContent(data, 'Concept Extraction')" in upload

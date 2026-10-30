@@ -51,6 +51,7 @@ ctx.claudeFetch=async()=>{
  return {ok:true,json:async()=>({text:'<core_concepts>Vase on stand\nKite on hook</core_concepts><scene_logic>A workshop.</scene_logic>'}),
  text:async()=>JSON.stringify({text:'fixture scene'})};
 };
+vm.runInContext(fs.readFileSync('frontend/scripts/forge-story-contract.js','utf8'),ctx);
 vm.runInContext(source.slice(start,end),ctx);
 (async()=>{
  const pending=vm.runInContext('runPipeline()',ctx);

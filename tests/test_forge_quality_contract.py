@@ -192,17 +192,22 @@ let finish, requests=[], topic={value:'Workshop'}, debug={style:{},textContent:'
 const ctx=vm.createContext({forgeOperation:1,CLAUDE_MODEL:'stub',encodeHeaderValue:encodeURIComponent,
  document:{getElementById:id=>id==='topic'?topic:debug},parseProviderContent:raw=>raw.text,
  claudeFetch:async(body,stage,headers)=>{requests.push(headers);return await new Promise(r=>finish=r);}});
+vm.runInContext('window=globalThis;',ctx);
+vm.runInContext(fs.readFileSync('frontend/scripts/forge-story-contract.js','utf8'),ctx);
+const auth=fs.readFileSync('frontend/scripts/forge-auth.js','utf8');
+vm.runInContext(auth.slice(auth.indexOf('function extractXmlTag('),auth.indexOf('function renderQualityGateMessage(')),ctx);
+ctx.fixture='<scene_title>Workshop</scene_title><opening>An open workshop.</opening><vo_line>\nHOOK: spatial: vase on stand\nNARRATION: The vase rests on its stand.\nVISUAL: A blue vase rests on a broad stand.\nANCHOR: Vase on stand\n</vo_line><review_script>Recall the stand.</review_script>';
 vm.runInContext(source.slice(start,end),ctx);
 if(mode==='stale_topic')topic.value='New topic';
 if(mode==='stale_operation')ctx.forgeOperation++;
 ctx.options={topic:'Workshop',operation:1,evidenceAvailable:mode!=='ungrounded'};
 (async()=>{
- const pending=vm.runInContext("repairStoryVisualFormat('<scene/>',{fatal:['visual is 35 words;']},options)",ctx);
+ const pending=vm.runInContext("repairStoryVisualFormat(fixture,{fatal:['visual is 35 words;']},options)",ctx);
  if(mode==='late_topic')topic.value='New topic';
  if(mode==='late_operation')ctx.forgeOperation++;
- if(finish)finish({ok:true,status:200,text:async()=>JSON.stringify({text:'Repaired'})});
+ if(finish)finish({ok:true,status:200,text:async()=>JSON.stringify({stop_reason:'end_turn',content:[{type:'text',text:ctx.fixture}]})});
  const result=await pending;
- const again=mode.startsWith('late_')?await vm.runInContext("repairStoryVisualFormat('<scene/>',{fatal:['visual is 35 words;']},options)",ctx):null;
+ const again=mode.startsWith('late_')?await vm.runInContext("repairStoryVisualFormat(fixture,{fatal:['visual is 35 words;']},options)",ctx):null;
  process.stdout.write(JSON.stringify({result,again,requests,debug}));
 })();
 """
@@ -211,7 +216,7 @@ ctx.options={topic:'Workshop',operation:1,evidenceAvailable:mode!=='ungrounded'}
     data = json.loads(result.stdout)
     assert len(data['requests']) == (0 if mode.startswith('stale_') else 1)
     if mode in ('active', 'ungrounded'):
-        assert data['result'] == 'Repaired'
+        assert data['result'].startswith('<scene_title>Workshop</scene_title>')
     else:
         assert data['result'] == ''
         assert data['debug']['textContent'] == 'unchanged'

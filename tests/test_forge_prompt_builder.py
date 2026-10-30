@@ -22,6 +22,7 @@ const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const boundary = source.indexOf(input.ui ? 'const demoToggle =' : 'function renderImagePromptPair(');
 if (boundary < 0) throw new Error('Prompt builder boundary missing');
 const context = vm.createContext({window: {}, input: input.data, console: {info() {}, warn() {}, error() {}}});
+vm.runInContext(fs.readFileSync('frontend/scripts/forge-story-contract.js', 'utf8'), context);
 vm.runInContext(source.slice(0, boundary), context);
 if (input.ui) {
   const start = source.indexOf('function invalidateImagePrompts(');
@@ -82,7 +83,7 @@ document = {
   },
   querySelector: () => null
 };
-window = {__mnemorizedAntigravityPrompts: ['old handoff']};
+window = {...window, __mnemorizedAntigravityPrompts: ['old handoff']};
 currentStoryData = null;
 currentPromptData = {prompt1: 'old room', prompt2: 'old scene'};
 currentQualityGateData = null;
@@ -365,9 +366,14 @@ def test_existing_demo_blocks_invalid_visuals_and_restores_controls():
 def test_stage_three_failure_invalidates_dom_and_keeps_new_story():
     result = evaluate(UI_SETUP + """
     isDemoMode = () => false;
+    const slots = Object.fromEntries(Array.from({length:8}, (_,i) => ['anchor_'+(i+1), {
+      hook:'spatial: supported frame', narration:'The frame rests on a stand.',
+      visual:'A wooden frame rests on a stand.', anchor:'Supported frame.', review:'Recall the stand.'}]));
+    const scene = {stop_reason:'tool_use',content:[{type:'tool_use',name:'submit_memory_palace',
+      input:{scene_title:'Workshop',opening:'An open workshop.',anchors:slots}}]};
     claudeFetch = async () => ({ok: true,
       json: async () => ({text: 'Ordinary objects'}),
-      text: async () => JSON.stringify({text: 'Ordinary objects'})});
+      text: async () => JSON.stringify(scene)});
     parseProviderContent = raw => raw.text;
     extractXmlTag = () => 'Ordinary objects';
     parseStoryXml = () => ({scene_title: 'Workshop', voLines: [{visual: 'A wooden frame.'}]});
